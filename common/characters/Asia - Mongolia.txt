@@ -1,0 +1,130 @@
+﻿characters = {
+	MON_yumjaagiin_tsedenbal = {
+		name = MON_yumjaagiin_tsedenbal
+		portraits = {
+			civilian = { large = "gfx/leaders/MON/Portrait_Mongolia_Yuumjaagiin_Tsedenbal.dds" }
+			army = { large = "gfx/leaders/MON/Portrait_Mongolia_Yuumjaagiin_Tsedenbal.dds" }	
+		}
+			field_marshal = {
+				traits = { war_hero }
+				legacy_id = 0
+				skill = 3
+				attack_skill = 3
+				defense_skill = 1
+				planning_skill = 2
+				logistics_skill = 2
+			}
+			country_leader = {
+				desc = "POLITICS_YUMJAAGIIN_TSEDENBAL_DESC"
+				ideology = despotism_partisan_movement_subtype
+				expire = "1999.1.1.1"
+				id = -1
+			}
+	}
+
+
+	MON_Tsaganlamyn_Dugersuren = {
+		name = MON_Tsaganlamyn_Dugersuren
+		portraits = { 
+		civilian = { small = "GFX_idea_MON_minister_Tsaganlamyn_Dugersuren"	} 
+		}
+		advisor = {
+			slot = economy_minister
+			idea_token = MON_Tsaganlamyn_Dugersuren_hog
+			allowed = { has_government = partisan_movement }
+			traits = {
+				economy_minister
+				eco_union_man
+			}
+			ledger = civilian
+			cost = -1
+			removal_cost = -1
+			ai_will_do = { factor = 0 }
+		}
+	}
+	
+	MON_Wulanfu = {
+		name = MON_Wulanfu
+		portraits = { 
+		civilian = { small = "GFX_idea_MON_minister_Wulanfu" } 
+	}
+		advisor = {
+			slot = head_of_government
+			idea_token = MON_Wulanfu_hog
+			allowed = { has_government = partisan_movement }
+			traits = {
+				head_of_government
+                hog_reformist_soldier				
+			}
+			ledger = civilian
+			cost = -1
+			removal_cost = -1
+			ai_will_do = { factor = 0 }
+		}
+	}
+
+	MON_Sukhbaataryn_Yanzhmaa = {
+		name = MON_Sukhbaataryn_Yanzhmaa
+		portraits = { 
+		civilian = { small = "GFX_idea_MON_minister_Sukhbaataryn_Yanzhmaa" } 
+	}
+		advisor = {
+			slot = foreign_minister
+			idea_token = MON_Sukhbaataryn_Yanzhmaa_hog
+			allowed = { has_government = partisan_movement }
+			traits = {
+				foreign_minister
+				for_great_compromiser
+			}
+			ledger = civilian
+			cost = -1
+			removal_cost = -1
+			ai_will_do = { factor = 0 }
+		}
+    }
+	MON_Jambyn_Lkhumbe = {
+		name = MON_Jambyn_Lkhumbe
+		portraits = { 
+		civilian = { small = "GFX_idea_MON_minister_Jambyn_Lkhumbe" }
+		army = { large = "gfx/leaders/MON/Portrait_Mongolia_Jambyn_Lkhumbe.dds" }
+	}
+	corps_commander = {
+		traits = { career_officer infantry_leader }
+		legacy_id = 4040
+		skill = 3
+		attack_skill = 2
+		defense_skill = 2
+		planning_skill = 3
+		logistics_skill = 1
+	}
+		advisor = {
+			slot = security_minister
+			idea_token = MON_Jambyn_Lkhumbe_hog
+			allowed = { has_government = partisan_movement }
+			traits = {
+				security_minister
+				sec_secret_police_chief
+			}
+			ledger = civilian
+			cost = -1
+			removal_cost = -1
+			ai_will_do = { factor = 0 }
+		}
+    }
+	MON_Buraev_Efrem = {
+		name = "MON_Buraev_Efrem"
+		portraits = { army = { large = "gfx/leaders/MON/Portrait_Mongolia_Buraev_Efrem.dds" } 
+		}
+		corps_commander = {
+			skill = 2
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 1
+			traits = { trait_reckless infantry_officer trickster }
+			legacy_id = 3602
+		}
+	}
+}	
+
+	

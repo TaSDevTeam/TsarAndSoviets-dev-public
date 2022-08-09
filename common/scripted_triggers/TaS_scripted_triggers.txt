@@ -1,0 +1,93 @@
+TaS_is_alone_with_Berezniki = {
+	AND = {
+		OR = {
+			original_tag = WRS
+			NOT = {country_exists = WRS}
+		}
+		OR = {
+			original_tag = PLS
+			NOT = {country_exists = PLS}
+		}
+		OR = {
+			original_tag = UKH
+			NOT = {country_exists = UKH}
+		}
+		OR = {
+			original_tag = VOL
+			NOT = {country_exists = VOL}
+		}
+		OR = {
+			original_tag = KOM
+			NOT = {country_exists = KOM}
+		}
+		OR = {
+			original_tag = VYT
+			NOT = {country_exists = VYT}
+		}
+		OR = {
+			original_tag = TAR
+			NOT = {country_exists = TAR}
+		}
+		OR = {
+			original_tag = PRM
+			NOT = {country_exists = PRM}
+		}
+		OR = {
+			original_tag = BKR
+			NOT = {country_exists = BKR}
+		}
+		OR = {
+			original_tag = SAM
+			NOT = {country_exists = SAM}
+		}
+		OR = {
+			original_tag = GOR
+			NOT = {country_exists = GOR}
+		}
+	}
+}
+is_german_unifier = {
+	OR = {
+		original_tag = GWS
+		original_tag = GRH
+		original_tag = GBW
+		original_tag = GBV
+		original_tag = GAU
+		original_tag = GCZ
+		original_tag = GWF
+		original_tag = GRA
+		original_tag = GSU
+	}
+}
+is_russian_postger = {
+	OR = {
+		original_tag = BRL
+		original_tag = ZNE
+	}
+}
+can_form_germany = {
+	AND = {
+			owns_state = 28
+			owns_state = 42
+			owns_state = 51
+			owns_state = 8
+			owns_state = 775
+			owns_state = 188
+			owns_state = 56
+			owns_state = 59
+			owns_state = 1373
+			owns_state = 57
+			owns_state = 55
+			owns_state = 50
+			owns_state = 72
+			owns_state = 54
+			owns_state = 53
+			owns_state = 52
+			owns_state = 1025
+			owns_state = 4
+			owns_state = 770
+			owns_state = 152
+			owns_state = 153
+			owns_state = 69
+	}
+}

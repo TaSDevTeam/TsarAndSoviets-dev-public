@@ -1,0 +1,1063 @@
+﻿l_english:
+ 
+ TaS_newsheader_Iskra: "\n£custom_header_MAR_Iskra\n\n\n\n\n"
+ TaS_newsheader_Bodrost: "\n£custom_header_MAR_Courage\n\n\n\n\n"
+ TaS_newsheader_K_Rosii: "\n£custom_header_MAR_To_Young_Russia\n\n\n\n\n\n"
+ ###Warplans####
+ TaS_WRW2_warplan_categories:0 "War Plans"
+ TaS_WRW2_warplan_categories_desc:0 "Our current diplomatic weight: §B[?TaS_WRW2_DiploW]§!"
+ TaS_WRW2_WARPLAN_ALPHA:0 "War Plan §Y\"ALPHA"§!"
+ TaS_WRW2_WARPLAN_GAMMA:0 "War Plan §Y\"GAMMA\"§!"
+ TaS_WRW2_WARPLAN_OMEGA:0 "War Plan §Y\"OMEGA"§!"
+
+###Post WRW2####
+ #news events
+ berez_world_news.5.t:0 "[Get_newspaper_header]Russia Liberates Central Europe!"
+ berez_world_news.5.d:0 "The first news has just arrived of the cessation of all Nazi resistance to the troops of the Russian People's Kingdom. The act of unconditional surrender was signed overnight and the full text will soon be published, but we already know that with the surrender the Nazi reign, which began over 30 years ago, ends.\n\nIn the end of the war between Germany and Russia in favor of the latter gives us a clear indication that the situation in world politics has shifted dramatically in the direction of the OSN. But it is not yet clear what the Russian People's Kingdom will do next, and it is not known how these circumstances will affect the course of the Cold War in the future."
+ berez_world_news.5.a:0 "Our hike is over!"
+ berez_world_news.5.b:0 "What awaits Germany?"
+ 
+ MAR_2WRW_world_news.1.t:0 "[Get_newspaper_header]Russia Invades Central Asia"
+ MAR_2WRW_world_news.1.d:0 "Today word has arrived of a massive crossing of the borders of the Central Asian states by the army of the Russian People's Kingdom. Fighting on various scales is taking place all along the front line from the Caspian Sea to the Tian Shan ranges. \n\n the scattered warlords of Central Asia suffer one defeat after another. Russian troops have already advanced 20 kilometers from the borders in some areas. \n\n Afghanistan and Japan condemned the "barbaric attack on the free peoples" and demanded an immediate withdrawal. The United States and Germany ignored the situation. In Russia, this operation has already been dubbed "the return of stolen lands." 
+ MAR_2WRW_world_news.1.a:0 "We'll definitely get them back!" #forRussia
+ MAR_2WRW_world_news.1.b:0 "The Russian war machine is gaining momentum"
+ 
+ MAR_2WRW_world_news.2.t:0 "[Get_newspaper_header]Russia concludes truce with Afghanistan"
+ MAR_2WRW_world_news.2.d:0 "Representatives of Afghanistan, whose country went to war in Central Asia on protection guarantees with Kyrgyzstan and Tajikistan, are meeting with Russian representatives in Samarkand at the end of the current war. \n\n Russia, for its part, withdraws all troops from Afghanistan in exchange for small territorial concessions and demilitarization of border areas. Despite some issues, the main list of agreements satisfied both sides, which put an end to the Russian campaign in Central Asia. \n\nIn the near future, Russia will establish its administration in the freshly recaptured territories, and Afghanistan will withdraw its troops from the predominantly Tajik-populated border areas." 
+ MAR_2WRW_world_news.2.a:0 "The Graveyard of Empires Left Unconquered" 
+ 
+ MAR_2WRW_world_news.3.t:0 "[Get_newspaper_header]Russian troops entered Kabul"
+ MAR_2WRW_world_news.3.d:0 "Sudden news comes from Kabul, with units of motorized rifle divisions entering the Afghan capital, Kabul. Fighting is reported in the center of the capital and the palace of King Mohammed Zahir Shah, Zahir Shah himself and his inner circle have fled to Kandahar. \n\n But, the fall of Afghanistan is near and Russia has put forward a number of demands for peace, such as the transfer of the Uzbek- and Tajik-populated areas of Turkestan, the formation of Pakistan and the entrance of Afghanistan into the economic sphere of Russia." 
+ MAR_2WRW_world_news.3.a:0 "The Graveyard of Empires Conquered?"
+ 
+ MAR_2WRW_world_news.4.t:0 "[Get_newspaper_header]Rise of the Far Eastern Army"
+ MAR_2WRW_world_news.4.d:0 "The Japanese-occupied Soviet territories at the end of World War II had been one of the weakest points of the Sphere of Resistance from the beginning, but now the resistance there has reached a new level. There had been rumors of a mass uprising in Khabarovsk for some time, but the scale of the disaster only became clear when Japan declared martial law in all but the major cities of Manchuria and Primorye, including occupied Vladivostok. Russia, which had recently risen from the ashes, handed over to the rebels Blagoveshchensk and the surrounding territories under Manchurian control back in the 1960s." 
+ MAR_2WRW_world_news.4.a:0 "Peace in Asia seems to be over" 
+
+ MAR_2WRW_world_news.5.t:0 "[Get_newspaper_header]Manchuria plunges into chaos"
+ MAR_2WRW_world_news.5.d:0 "The failure of the Manchurian Martial Law to deal with the Russian rebels in Khabarovsk did not end the confrontation in the region, but instead led to a worsening of the situation. According to the most reliable version, during the powerlessness in the big cities the forces, which had been preparing for their revenge against the Japanese pawns for decades, formed a shadow government, which was able to protect Xinjing from the assault of the limited JIA contingent. Achieving a Pyrrhic victory, the army could not defeat the rebels before they spread their word into the countryside. \n\nThe Manchurian military maintained control of the southeast and completed regrouping, Harbin and the north proved loyal to the democratic movement, and another group of rebels, the so-called Total Liberation Front of Manchuria, took Mukden and territories south of it." 
+ MAR_2WRW_world_news.5.a:0 "Japanese Hegemony is not as stable as they would like it to be" 
+
+ MAR_2WRW_world_news.6.t:0 "[Get_newspaper_header]Beginning of the Second West Russian War"
+ MAR_2WRW_world_news.6.d:0 "Early this morning the conflict in Eastern Europe moved into its final form. Russian state forces have launched a large-scale offensive along the entire eastern border of the Reichskommissariat. Earlier this was preceded by large-scale military exercises on both sides and various statements by the leaders of the states. \n\nThe current Czar of Russia, Sergei Belozersky, made a resounding statement-"Our army will only stop after the Cossack horses have drunk from the Spree River." This statement had a bombshell effect and provoked a whole cascade of discussions. \n\nFor his part, the Führer of the German Reich called the current situation a conflict actively fomented by the United States and said that Germany would fight for these territories to the very end, then added that the German side could use nuclear weapons if the situation required it."
+ MAR_2WRW_world_news.6.a:0 "All we have to do is watch the conflict unfold"
+ MAR_2WRW_world_news.6.b:0 "The Russian army will be defeated as it was three decades ago" 
+ MAR_2WRW_world_news.6.c:0 "To the West!" 
+
+ MAR_2WRW_world_news.7.t:0 "[Get_newspaper_header]Moscow taken by the Russian Army"
+ MAR_2WRW_world_news.7.d:0 "This morning, after prolonged fighting for the city of Moscow, the forces of the Russian Empire officially came under their control. According to information received from representatives of the Russian Empire, despite the retreat of German forces, some skirmishes are still going on, and the sappers are still working on demining the Kremlin. Also, according to the information available, General Semyon Hitler is in charge of clearing the city. \n\nThe population of the city has greeted the liberators positively and even enlisted as volunteers. On the other hand, there are reports of sabotage and little resistance in some parts of the city. One way or another, Russia continues its march to the west. \n\nThe Reich representatives have already announced that they are preparing a counterattack to bring the city back under the control of the reichskommissariat forces."
+ MAR_2WRW_world_news.7.a:0 "The Russian army seems unstoppable" 
+ MAR_2WRW_world_news.7.b:0 "This is not the end of the war!" 
+ MAR_2WRW_world_news.7.c:0 "White stone in our hands" 
+ 
+ MAR_2WRW_world_news.8.t:0 "[Get_newspaper_header]Battle of Berlin"
+ MAR_2WRW_world_news.8.d:0 "A momentous event in the history of the Western Russian War and of the twentieth century as a whole occurred today. The German army was forced to retreat from Germany and the city was effectively taken over by Russian troops. Czar Sergei Belozersky had already declared that the end of Germany was only a matter of time. \n\nGerman Reich officials are not making any statements on the matter. However, there are reports that the Führer is in a safe place away from the front lines, but, in fact, all power in the country now actually belongs to the military, headed by the current Field Marshal Ernst Remer." 
+ MAR_2WRW_world_news.8.a:0 "The fate of the Reich is already sealed" 
+ MAR_2WRW_world_news.8.b:0 "This is the end..." 
+ MAR_2WRW_world_news.8.c:0 "The death of the Nazi empire is near "
+
+ MAR_2WRW_world_news.9.t:0 "[Get_newspaper_header]The Second West Russian War is Over"
+ MAR_2WRW_world_news.9.d:0 "Today representatives of Germany and Russia have met to announce the terms of a peace treaty. Under its terms, the German Reich shall place under Russian control the territories of the East European commissariats of the Empire and undertake to pay reparations for a short period of time, while retaining control of the remaining commissariats.\n\no other positions stand out the conclusion of peace for 20 years and the obligation for Russia not to expel to Germany the descendants of settlers without their wishes and to allow them to become Russian citizens with the preservation of all property. Also, special rights are to be granted to German corporations, and their property is inviolable. In turn, the Reich allows the Russian inhabitants of the eastern commissariats to move to Russia and does not hinder this in any way.\n\n  Peace has come to Europe but much of the infrastructure is destroyed raging disease and famine and the Reich's position has been severely tested. Even though Germany retained control of some of the territory is weak."
+ MAR_2WRW_world_news.9.a:0 "At least it's over"
+ MAR_2WRW_world_news.9.b:0 "It was necessary to save the Reich"
+ MAR_2WRW_world_news.9.c:0 "Our campaign is over"
+
+ MAR_2WRW_world_news.10.t:0 "[Get_newspaper_header]Russian Victory in the Second West Russian"
+ MAR_2WRW_world_news.10.d:0 "Today representatives of Germany and Russia met to announce the terms of a peace treaty. In accordance with its terms, the German Reich shall transfer all the territories of the East European commissariats to Russian control and shall pay reparations to the empire for an extended period of time. \n\nAmong other provisions, a 20-year peace was concluded between the countries; Germany was obliged to accept all deported Germans and to transfer control over the property of the corporations into the hands of representatives of the Russian Empire. \n\nPeace came again in Europe and the cracks that were to a man far away became fully exposed. The hegemony of the Third Reich was unequivocally shattered. Nevertheless, there is a long period of reconstruction ahead and epidemics and famine still rage in eastern Europe, but the fact remains that the German hegemony in Europe is destroyed." 
+ MAR_2WRW_world_news.10.a:0 "The Rise of a New Hegemon"
+ MAR_2WRW_world_news.10.b:0 "We had no choice"
+ MAR_2WRW_world_news.10.c:0 "We won!"
+
+ MAR_2WRW_world_news.11.t:0 "[Get_newspaper_header]Collapse of Germany"
+ MAR_2WRW_world_news.11.d:0 "Today is a fateful day The German Reich, which Führer Adolf Hitler had assured it would last a thousand years, has ceased to exist. After the defeat in the Second West German War, a wave of uprisings swept through the country, resulting in the final fall of the central government. \n\nMost of the Nazi party members were captured or executed on the spot. The fate of the Führer, however, is unknown, according to available information, he tried to leave German territory on a government plane. The leads have already been sent to intelligence agencies around the world and an investigation has begun in Germany itself. \n\nThe rebels are already negotiating with representatives of the Russian Empire, but we can say for sure that today the world has changed forever."
+ MAR_2WRW_world_news.11.a:0 "Is all of Europe now controlled from the Kremlin?"
+ MAR_2WRW_world_news.11.a:0 "Woe to the vanquished"
+ 
+ MAR_2WRW_world_news.12.t:0 "[Get_newspaper_header]Defeat of Russia in the Second West Russian War"
+ MAR_2WRW_world_news.12.d:0 "" 
+ MAR_2WRW_world_news.12.a:0 ""
+ MAR_2WRW_world_news.12.b:0 ""
+
+ MAR_2WRW_world_news.13.t:0 "[Get_newspaper_header]Third Time of Troubles"
+ MAR_2WRW_world_news.13.d:0 "" 
+ MAR_2WRW_world_news.13.a:0 ""
+ #Superevent
+ BE_WRW2R_title:0 "RUSSIA'S WINNING"
+ BE_WRW2R_answer:0 "Hegemon Rising"
+ BE_WRW2_Flavour:0"\n\nWar is not only a shock, but also a spiritual trial and spiritual judgment.\nIvan Ilyin"
+ #leaders
+ GNR_Finn_Gustavsen:0 "Finn Gustavsen"
+ GHL_Wilhelmina:0 "Juliana I of Orange-Nassau"
+ GDN_Arveprins_Knud:0 "Knud VII Glucksburg"
+ GAU_Otto_Von_Habsburg:0 "Otto I Habsburg"
+ GBW_Max_von_Baden:0 "Maximilian II Zeringen"
+ GBV_Franz_von_Bayern:0 "Franz I Wittelsbach"
+ GWS_Waldemar_Schmidt:0 "Waldemar Schmidt"
+ GRH_Walter_Scheel:0 "Walter Scheel"
+ GSL_Ludwik_Muzyczka:0 "Ludwik Muzyczka"
+ GPL_Jan_Jozef_Lipski:0 "Jan Josef Lipski"
+ GCZ_Alois_Grebenicek:0 "Alois Grebenicek"
+ GSV_Michal_Kovac:0 "Michal Kovac"
+ GWF_Otto_Ernst_Remer:0 "Otto Ernst_Remer"
+ GSU_Kurt_Knispel:0 "Kurt Knispel"
+ GRA_Andreas_Baader:0 "Andreas Baader"
+ ZNE_Joseph_Beyrle:0 "Joseph Beyrly"
+ BRL_Vladimir_Gil:0 "Vladimir Gil"
+ PUS_Otto_Schmidt:0 "Otto Schmidt"
+ BEL_Leon_Degrelle:0 "Leon Degrelle"
+ GSG_Rudi_Dutschke:0 "Rudy Dutschke"
+ #Generic
+ Post_WRW2_Werewolf_party:0 "German Liberation Party"
+ Post_WRW2_Russian_Army_party:0 "RA Supreme Command"
+ Post_WRW2_KPG_party:0 "German Communist Party"
+ Post_WRW2_Monarchist_party:0 "The King's Party"
+ 
+ TaS_Post2WRW_werewolf_activity:0 "Werewolf Activity"
+ TaS_Post2WRW_werewolf_activity_desc:0 "put text here plz"
+ TaS_Post2WRW_commie_activity:0 "Spartacist activity"
+ TaS_Post2WRW_commie_activity_desc:0 "put text here plz"
+ TaS_Post2WRW_fast_denazification:0 "Accelerated Denazification"
+ TaS_Post2WRW_fast_denazification_desc:0 "put text here plz"
+ TaS_Post2WRW_avg_denazification:0 "Normal Denazification"
+ TaS_Post2WRW_avg_denazification_desc:0 "put text here plz"
+ TaS_Post2WRW_slow_denazification:0 "Slow Denazification"
+ TaS_Post2WRW_slow_denazification_desc:0 "put text here plz"
+ #sud german front
+ GSG_authoritarian_democracy:0 "South German Liberation Front"
+ GSG_authoritarian_democracy_DEF:0 "South German Liberation Front"
+ GSG_authoritarian_democracy_ADJ:0 "South German"
+ #Poland
+ GPL_socialist:0 "Polish People's Republic"
+ GPL_socialist_DEF:0 "Polish People's Republic"
+ GPL_socialist_ADJ:0 "Polish."
+ 
+ POL_Post_WRW2_communist_party_Long:0 "Coalition Front"
+ POL_Post_WRW2_communist_party:0 "Coalition Front"
+ POL_Post_WRW2_socialist_party_Long:0 "Coalition Front"
+ POL_Post_WRW2_socialist_party:0 "Coalition Front"
+ POL_Post_WRW2_social_democracy_party_Long:0 "Solidarity"
+ POL_Post_WRW2_social_democracy_party:0 "Solidarity"
+ POL_Post_WRW2_liberal_democracy_party_Long:0 "Law and Justice"
+ POL_Post_WRW2_liberal_democracy_party:0 "PiS"
+ POL_Post_WRW2_authoritarian_democracy_party_Long:0 "Krajowa Army"
+ POL_Post_WRW2_authoritarian_democracy_party:0 "Krajowa Army"
+ POL_Post_WRW2_national_socialism_party_Long:0 "Polish-German Volksbund"
+ POL_Post_WRW2_national_socialism_party:0 "PGFB"
+ 
+ TaS_Post2WRW_GPL_ludowa_kraiowa_army:0 "Two Armies"
+ TaS_Post2WRW_GPL_ludowa_kraiowa_army_desc:0 "put text here plz"
+ TaS_Post2WRW_GPL_government_of_confidence:0 "General Trust Government"
+ TaS_Post2WRW_GPL_government_of_confidence_desc:0 "put text here plz"
+ TaS_Post2WRW_GPL_german_problem:0 "German Problem"
+ TaS_Post2WRW_GPL_german_problem_desc:0 "put text here plz"
+ 
+ POSTWRW2_JAN_LIPSKY_DESC:0 "Poland will live forever. It was this idea that Jan Jozef carried in his heart through the 20th century. When the Germans occupied his homeland he did not surrender, his family helped hide Jews from the regime and he himself was part of the resistance. \n\nHe had been in countless partisan organizations in his life, including the national army. But he was constantly forced to change them because of the defeat. But the executioners couldn't take his soul. \n\nAs soon as Russian forces entered Poland, he realized that it was time to act. Warsaw flamed up again and the Germans fled, away from Polish soil. In general, he was a perfect compromise between the interests of the people's and the national armies, so his appointment as the leader of Poland was not considered in Moscow for a long time. And Jan Jozef would gladly accept it. \n\nPoland is not yet lost."
+ #Prussia
+ PUS_liberal_democracy_party:0 "Freedom Party"
+ PUS_liberal_democracy_party_Long:0 "Freedom Party"
+ 
+ PUS:0 "Prussian Autonomy"
+ PUS_DEF:0 "Prussian Autonomous Republic"
+ PUS_ADJ:0 "Prussian"
+
+ TaS_Post2WRW_PUS_russian_colony:0 "Russian Colony"
+ TaS_Post2WRW_PUS_russian_colony_desc:0 "put text here plz"
+ TaS_Post2WRW_PUS_ethnic_problems:0 "Ethnic Problems
+ TaS_Post2WRW_PUS_ethnic_problems_desc:0 "put text here plz"
+ TaS_Post2WRW_PUS_ordens_mission:0 "Mission of the Order of St. George"
+ TaS_Post2WRW_PUS_ordens_mission_desc:0 "put text here plz"
+ 
+ POSTWRW2_Otto_Smidt_DESC:0 "Schmidt never even hoped to become a state leader at all, ever. A successful scientist he did a great deal in his life. Exploring the North Pole, the Pamirs. A mathematician, physicist and geographer, he seemed to have tried everything in his life. \n\nUnfortunately, he even went to war. When the Germans invaded, Otto took up a rifle, but was seriously wounded and was evacuated beyond the Urals. Afterwards, a rather hard life awaited him. However, under the Mladorosses he was able to recover and was even able to participate in research again. \n\nAfter the fall of Germany, he sent the Imperial government a plan for the renewal of Prussia. And this plan was gladly accepted. Now the homeland of German unification would become a de facto part of the reborn Russian kingdom. Though his heart still aches at the thought of what has become of Germany and he himself feels that he is no longer in the best of health, the scholar's eye is fixed on the future." 
+ #Silesia
+ SII_Post_WRW2_authoritarian_democracy_party:0 "Integros"
+ GSI:0 "Silesia"
+ GSI_DEF:0 "Silesian Integration Zone"
+ GSI_ADJ:0 "Silesian."
+
+ POSTWRW2_Muzyczka_DESC:0 "Ideas do not die as long as people loyal to them live, and Ludwig Muzyczka was clearly loyal to the idea of a Free Poland. He had been fighting for Poland since 1916, when he joined the Polish Corps in the Austrian army. He joined the Polish Army immediately after World War I, he enshrined the Polish administration in Vilnius. But in 1939 his world was shattered. He became a fighter, he became a member of the Krajowa Army.\n\nWhen the Germans invaded London, he had no choice but to flee. He found his new home in New York, but even there his faith in his homeland did not fade. Finally, in the '50s, the Russians struck in Germany, revealing the Achilles' heel of that colossus - partisan movements. Together with the Krajowa Army, Muzyczka left for his homeland, where he set up the "Shadow State". Fortunately, the new German regime had no time to destroy its prisoners. Muzyczka held on, withstanding blow after blow. And then the Russians came, and all hell broke loose. Poland returned as free as ever, and Muzyczka was given a new role, so similar to the one that fell to him after World War I: the return of Silesia to its native Polish Harbor.nIn this time Muzyczka will not allow a repeat of the Polish Tragedy."
+ #Zentral Europa
+ ZNE:0 "Tsetralnoevropeyskiy Garnizon"
+ ZNE_DEF:0 "Central European Garrison of the Russian Army"
+ ZNE_ADJ:0 "Central European"
+ TaS_Post2WRW_ZNE_exec_centre:0 "Solution Execution Center"
+ TaS_Post2WRW_ZNE_exec_centre_desc:0 "As brilliant as an idea is, it is nothing without execution. Thus, the long arms of the Central European Garrison extend throughout the former Nazi empire, ready to carry out any order from Headquarters. At least that is what Joseph Beyrle would have wanted. In fact, the garrison is bogged down in suppressing the gigantic lands of East Germany, unable to significantly influence either the regimes west of the Elbe or the buffer states of Eastern Europe. At least few have the nerve to rise up against us, knowing what sword of Damocles hangs over their heads."
+ TaS_Post2WRW_BRL_ZNE_russian_army:0 "RA Presence"
+ TaS_Post2WRW_BRL_ZNE_russian_army_desc:0 "Communists talk about power as a monopoly on violence, and it is hard to disagree with them. In such unstable areas as Germany's ruins, the army plays a key role in maintaining order and some kind of stability. One could say that the army is the power here. Let the Russian Army not be afraid to destroy any threats to our power in the region. Remember brothers, our cause is just!"
+ 
+ POSTWRW2_Beyrle_DESC:0 "Revenge is a dish that is served cold. During World War II, Joseph Beyerle was taken prisoner, and to his own surprise, he was forgotten. When the war ended, many Americans were released in prisoner-of-war exchanges, but not Byerly. \n\nThe years spent on the plantations in Moskovia took their toll on him, the hunger, the horrible conditions. So when a former SS division leader who introduced himself as Rodion offered him the opportunity to escape, even into Russian anarchy, he agreed without thinking. What followed was a lost war, total anarchy and unification wars. \n\nBut the time for revenge had come. Germany is on fire after the surrender and Byerly's goal will be to keep the lands around the former capital of the world calm. The Werewolfs, other Nazi organizations are stronger in this territory than anywhere else. But this will not help them. §Justice will prevail and every German will get what he deserves."
+ #Berlin Zone
+ BRL:0 "GUOT"
+ BRL_DEF:0 "Glavnoe Upravleniye Osvobojdennykh Territoriy"
+ BRL_ADJ:0 "Berliner."
+
+ TaS_Post2WRW_BRL_mind_centre:0 "Decision Making Center"
+ TaS_Post2WRW_BRL_mind_centre_desc:0 "The General Directorate of the Liberated Territories is the independent control center of Russia-occupied Germany. It is from offices that once belonged to militant Nazis and now belong to militant anti-fascists that all laws, directives and orders for the fate of vast territories from Amsterdam to Lvov and from Vienna to Oslo emanate. Vladimir Gil, who stands at the top of a vast network of organs, ministries and departments, can watch from its height how his deeds forge the history of Europe."
+ TaS_Post2WRW_BRL_nazi_heartland_1:0 "Heart of Darkness"
+ TaS_Post2WRW_BRL_nazi_heartland_1_desc:0 "The land we have been given is the home of the worst crimes in world history. The legitimate outcome of German and Western European philosophy has created a regime that has turned humans into deceived animals. And today these animals are trying to knock us out. Vladimir Gil and Joseph Beyrle still have much work to do to cleanse this land of the legacy of Nazism, but it does not frighten them."
+ TaS_Post2WRW_BRL_nazi_heartland_2:0 "Heart of Darkness"
+ TaS_Post2WRW_BRL_nazi_heartland_2_desc:0 "Under the wise leadership of the GUOT bureaucrats we were able to establish our power in the heart of the German Reich. Now the former Nazis and their accomplices are trembling in fear waiting for our next steps, which will end Nazism. Once and for all."    
+ TaS_Post2WRW_BRL_nazi_heartland_3:0 "Heart of Darkness"
+ TaS_Post2WRW_BRL_nazi_heartland_3_desc:0 "The Volkshalle, the apotheosis of Nazi gigantomania, lies in ruins, and the other monuments of the "German capital of the world" will follow. We will beat it into the Germans' heads that their nation is not as exceptional as they were taught at school. Any wings will burn if you fly too close to the sun."
+ TaS_Post2WRW_BRL_nazi_heartland_4:0 "Heart of Darkness"
+ TaS_Post2WRW_BRL_nazi_heartland_4_desc:0 "Defeating the enemy on the battlefield proved to be only a prelude to the real war on Nazism: a war of wits, a war of agitation and propaganda. The Berlin police now act for the benefit of the German people, not the NSDAP, and Hitler's portraits no longer occupy the most prominent places in homes. However, this does not mean that Nazism has been defeated. Yes, it has retreated, but it is preparing to strike back. That is why our work is not over and we are not going anywhere."
+ POSTWRW2_Gil_DESC:0 "Sometimes in life there are moments when it is worthwhile to look back and see all the way you went. Did Lieutenant Colonel Gil know that the Soviet Union was doomed? I don't think so. Did a collaborator named Rodion know that Germany would soon find itself in a state of civil war? Of course not. Did the common soldier Vladimir know that the West Russian War would end in a complete collapse of the old regime? No. \n\nBut does the past mean that much? It can only be viewed through the prism of one's own perception. And it's very hard for Vladimir to look back. But history is not subject to the subjunctive mood. Of course Gil could become a martyr and a hero of the Union posthumously. Rodion would have been a pawn of the corporation based in Tambov. And Vladimir could have been a hero-liberator of the Soviet Union. Only it didn't happen. \n\nThe only thing that matters is that now the whole of Central Europe is in the hands of the general of the army of the reborn Russian Empire. Red partisans, werewolves, collapsed infrastructure, and that's just part of the problem. But Gil has vowed that he is here until the end, and as long as this case is entrusted to him, Germany will not rise again."
+ 
+ #Denmark
+ GDN_social_democracy_party:0 "Ventre"
+ GDN:0 "Free Denmark"
+ GDN_DEF:0 "Free Kingdom of Denmark"
+ GDN_ADJ:0 "Danish.
+ 
+ TaS_Post2WRW_GDN_GNR_scandinavian_liberation:0 "Liberation of Scandinavia@
+ TaS_Post2WRW_GDN_GNR_scandinavian_liberation_desc:0 "put text here plz"
+ TaS_Post2WRW_GDN_antimonarch_protests:0 "Antimonarch Protests"
+ TaS_Post2WRW_GDN_antimonarch_protests_desc:0 "put text here plz"
+ 
+ POSTWRW2_Knud_of_denmark_DESC:0 "It is unpleasant to be just a shadow of your father, and even worse to be just a face to hate. But Knud has no choice.\n\nIn the aftermath of World War II, Christian was considered king of Iceland for a while, of course, before the Americans came. Then he finally became a nobody. And now, it would seem, after the fall of Germany there was a chance to return to his homeland he decided to take it. It wouldn't get any worse.\n\nIn some ways, it really didn't. At least the king returned to his homeland. He was not, however, much welcomed there. But as long as Frederick has the support of Moscow, he doesn't really care. Maybe someday people's opinion will change."
+ #Rhineland
+ FRR_liberal_democracy_party:0 "Rheinas"
+ GRH:0 "Rheinische Union"
+ GRH_DEF:0 "Rhenish Union"
+ GRH_ADJ:0 "Rhenish"
+ 
+ GRH_Unified:0 "Free German Republic"
+ GRH_Unified_DEF:0 "Free German Republic"
+ GRH_Unified_ADJ:0 "German."
+ 
+ TaS_Post2WRW_GRH_rhein_industrial_district:0 "Industrial center of Germany"
+ TaS_Post2WRW_GRH_rhein_industrial_district_desc:0 "The 19th century was the century of Steel and Blood for Germany, and the interfluvial Ruhr and Rhine can be proud of what provided Germany with coal and steel no matter what. Be it economic crises, diverse regimes, slave civil uprisings and world wars, the proud workers of this land continued to toil for the homeland."
+ TaS_Post2WRW_GRH_lot_of_nazis:0 "Nazi Asylum"
+ TaS_Post2WRW_GRH_lot_of_nazis_desc:0 "National Socialism was indeed a disaster for Germany, as our Russian comrades tell us. Walter Scheel, however, believes that they overestimate the threat of fanatics who can supposedly overthrow our regime. Most of the targets the GUOT orders to attack are ordinary people who were not lucky enough to get a party card or to be drafted into the Wehrmacht. Rhein has more important things to do than be paranoid."
+ 
+ POSTWRW2_Scheel_DESC:0 "Walter Scheel was never a particularly distinguished man. An ordinary fighter pilot, he simply defended his homeland against bombing and was unaware of what his compatriots in other countries were doing. Or maybe he just convinces everybody now. And his life wasn't anything special. Even after the war, he preferred political activity to peaceful work in a bank, and that's all he needed to live. However, he did have one special skill Walter always knew where the wind was blowing from. And when the wind began to blow in the smell of engine oil and burning from the east, Scheel decided to take action. He might not have been the best option for Rhine, but he knew how to present himself properly."
+ #Netherlands
+ GHL_authoritarian_democracy_party:0 "KDP"
+ GHL:0 "Kingdom of the Netherlands"
+ GHL_DEF:0 "Kingdom of the Netherlands"
+ GHL_ADJ:0 "Dutch."
+ 
+ TaS_Post2WRW_GHL_careless_monach:0 "Forsaken Monarch"
+ TaS_Post2WRW_GHL_careless_monach_desc:0 "put text here plz"
+ TaS_Post2WRW_GHL_holland_identity:0 "Dutch Identity
+ TaS_Post2WRW_GHL_holland_identity_desc:0 "put text here plz"
+ 
+ POSTWRW2_Juliana_DESC:0 "Juliana no longer dreamed of returning home. She did not, however, stay in one place for long after the fall of the Netherlands. And when the Japanese invaded Indonesia, she had to flee again. Australia, Brazil, Canada, this eternal escape was exhausting, and when it seemed that there was no chance to return, a miracle happened.King Belozersky personally sent a letter to Juliana with an offer to return. God knows what made him do it. Either it was an attempt to mimic old diplomatic assessments, or such a show of solidarity between exiled monarchs.However, when the queen returned, she realized that things were not so rosy at all. Her homeland was destroyed by wars, people lost hope because of the brutal repressions. But the natural outcome is a broken queen for a broken nation."
+ #Hannower
+ HAN_conservative_democracy_party:0 "CDU (k)"
+ GWS:0 "Westphalian Federation"
+ GWS_DEF:0 "Federation of Westphalia and Hannover"
+ GWS_ADJ:0 "Westphalian."
+ 
+ GWS_Unified:0 "West German Union"
+ GWS_Unified_DEF:0 "West German Union of the Federal Free Länder of Westphalia, Rhineland, Baden, Wuettemberg, Bavaria, Tyrol, and Austria"
+ GWS_Unified_ADJ:0 "German.
+ 
+ TaS_Post2WRW_GWS_volkswagen:0 "Volkswagen"
+ TaS_Post2WRW_GWS_volkswagen_desc: "Nazism has left a deep scar on the body of Germany. The most tangible sign of its presence are four key megacorporations: IG Farben, Daimler-Benz, Siemens and the Reichswerke Hermann Goering. It was the latter corporation that became home to Ferdinand Porsche's unremarkable company, Volkswagen, after a series of habitual Reich manipulations and forgery. Only the fall of the Reich was able to knock the automobile factories out of the hands of this bloated, rotting corpse. Now Volkswagen is the symbol of a new German corporation for a new free Germany, the face of Westphalia for the world."
+ TaS_Post2WRW_GWS_german_democracy:0 "German Democracy"
+ TaS_Post2WRW_GWS_german_democracy_desc:0 "The history of German democracy is sad indeed. The seed first sown when Napoleon brought the ideas of the French Great Revolution to German lands germinated in the chaos of the Revolution of 1848. Then the sprout rotted under the authoritarian rule of the Prussians and it seemed that the Weimar Republic would allow it to flourish. Unfortunately, the Berliners decided otherwise, and the regime of Adolf Hitler rolled the dream of a free Germany into concrete. But you can't kill a living tree that easily. The Nazis fell and now Westphalia is ruled by the three D's: Denazification, Democratization and Demilitarization. At the moment Westphalia is the only functioning democracy in Germany, with all its pros and cons."
+ 
+ POSTWRW2_Waldemar_Schmidt_DESC:0 "Sometimes fate gives second chances, if not always as one might expect, and Waldemar Schmidt knows it. All his conscious life he considered himself a communist. A diligent student of the Lenin School, he first saw the greatness of the Soviet Union and then learned of its horrible death. \n\nOn his return home he joined the anti-fascist movement and was soon imprisoned in Brandenburg, where he remained until the 1950s. The SS mutiny allowed him to escape and join the Red Army, even though his views were not always in line with the Meinhof ideas, on the other hand they were still better than the Nazis.And when the Russians came Waldemar realized that this was his chance to set things right. With the members of the Red Army and the rebellious anti-fascists he managed to gain control of Hanover and get in touch with the government of the Empire. Though his hands are now tied to a certain extent, he is full of strength and ready to punish the Nazis for all they have done."
+ #CZECHIA
+ GCZ_ultranationalism_party:0 "Czech National Union"
+ GCZ:0 "Czech State"
+ GCZ_DEF:0 "Czech State"
+ GCZ_ADJ:0 "Czech.
+
+ GCZ_ssr:0 "Czech ASR"
+ GCZ_ssr_DEF:0 "Czech Autonomous Socialist Republic"
+ 
+ GCZ_Unified:0 "Velké české Impérium"
+ GCZ_Unified_DEF:0 "Velké české Impérium"
+ GCZ_Unified_ADJ:0 "Czech"
+ 
+ GWS_czech:0 "Allemania Integration Zone"
+ GBW_czech:0 "Nemecko Integration Zone"
+ GAU_czech:0 "Carinthinia Integration Zone"
+ 
+ GWS_integration_committee:0 "The 'Allemania' Integration Committee"
+ POSTWRW2_Integration_Committee_GWS_DESC:0 "A thousand and a half years ago the Frankish tribes ravaged Gaul, leaving behind only blood, destruction and dashed hopes. Such, after all, is the nature of the Germans. Only a short time later, however, Roman Civilization broke the barbaric spirit of these people, transforming them into the French: connoisseurs of art, culture, free-thinking and independent people. However, many Germanic tribes found themselves outside the Roman orbit. This led to the emergence of the Germanic nations and then Germany: a monster state that tore at everything it touched. \The Czech state and its great leader managed to subdue the Germanic beast, but for how long? To never be slaves again, the Czechs would have to do what Rome once did to the Franks: turn barbarians into civilized human beings. But why reinvent the wheel when French culture already exists? \The members of the Allemannian Integration Committee have prepared a program to destroy the barbaric German culture, the barbaric German language and the Germanic identity itself, and then to replace them with a superior French culture, the French language and a new Allemannian identity respectful of those who liberated them from the shackles of barbarism."
+ GBW_integration_committee:0 "The 'Nemecko' Integration Committee"
+ POSTWRW2_Integration_Committee_GBW_DESC:0 "Germany must suffer. This thought emerged after World War I, but traitors in the high offices of Washington and London decided to spare the most terrible state the land of Europe had ever borne. This mistake cost more than a hundred million lives, and now it is in our power not to repeat it. Germany was the beginning of infecting the whole world with the cancer of extremist misanthropic ideologies, Germany practically destroyed the people of Czechoslovakia, Poland, Russia and France. The crimes of this nation cannot be justified. \Germany must suffer. Industry must be destroyed, agriculture sabotaged, and people must repent or die. The land cleansed of cancer will be populated by more peace-loving peoples, such as Czechs, Poles, Jews. The doors of this land will be open to all who are willing to keep the peace. \An eye for an eye, a blood for a blood. And much blood will be shed."
+ GAU_integration_committee:0 "Integration Committee 'Carinthinia'"
+ POSTWRW2_Integration_Committee_GAU_DESC:0 "One of the greatest crimes of the Germans occurred in the ninth century, when the independent and strong state of Carantinia fell under the German boot. The first state formation of the Slavs was deceived by the Germans, who promised protection in exchange for vassal oaths. In the end, the legacy of Karantania was forgotten, and the Germans continued to Germanize the land of the Slavs and beyond. \Now the Czechs have a chance to revive this state, just as they revived their own. From the ashes of time will rise a new strong state, friend and ally. For this to happen, the process of Germanization will have to be reversed. Fortunately for Bohemia this is not the first time."
+ 
+ TaS_Post2WRW_GCZ_zone_of_integration:0 "Integration Zone"
+ 
+ GCZ_Antonin_Novotny:0 "Antonin Novotny"
+ 
+ TaS_Post2WRW_GCZ_sudetenland_genocide:0 "Sudetenland Genocide"
+ TaS_Post2WRW_GCZ_sudetenland_genocide_desc:0 "put text here plz"
+ TaS_Post2WRW_GCZ_big_brother:0 "Big North Brother"
+ TaS_Post2WRW_GCZ_big_brother_desc:0 "put text here plz"
+ TaS_Post2WRW_GCZ_czechia_revival:0 "Revival of the Czech Republic"
+ TaS_Post2WRW_GCZ_czechia_revival_desc:0 "put text here plz"
+ 
+ POSTWRW2_Alois_Grebenicek_DESC:0 "Alois' life, like that of any Czech, can be described in two words: shame and betrayal.\n\nIn the son of a butcher, Alois always wanted to be a butcher and even became one, but when the Germans came, everything changed. They were destroying his culture, his language and all of his Czech heritage. He could not stand it - so he soon joined the Resistance movement, which almost succeeded in killing the worst scoundrel in Bohemia, Reinhard Heydrich. However, he survived and was purged en masse throughout Bohemia, with the result that most resistance fighters were killed or sent to death camps, and Alois was imprisoned there as well. He did not surrender after enduring torture, on the contrary, he promised himself that he would avenge the German bastards. He prepared to escape and only 10 years later, with the outbreak of the German Civil War, he and several others managed to escape. A few days after his escape, he managed to return to his native land, where little else reminded him of the times before the war. There he organized a partisan detachment that acted with the utmost caution, waiting for the opportunity to make one last strike against his enemy.nIt took many more years before they began to act. When he heard about the new war with the Russians and their victories, he began terrorist acts all over Bohemia and when the Russian flag flew over Berlin, he was able to negotiate for the governance of Bohemia to be given to him.nAlois had suffered a lot in his life, as had his people. But now, he would do everything in his power to rebuild his country, and that no German would leave the borders of Bohemia on his own feet.\n\n§Revenge time is now!"
+ #Wurtemberg
+ GBW:0 "Kingdom of Baden-Württemberg"
+ GBW_DEF:0 "Kingdom of Baden-Württemberg"
+ GBW_ADJ:0 "Württemberg."
+
+ GBW_Unified:0 "Westdeutsche Königreich"
+ GBW_Unified_DEF:0 "Kingdom of West Germany"
+ GBW_Unified_ADJ:0 "German."
+ 
+ TaS_Post2WRW_GBW_dumb_king:0 "Incompetent King"
+ TaS_Post2WRW_GBW_dumb_king_desc:0 "'Long live King Maximilian!" has been heard lately in old palaces and modern banqueting halls, but not in residential neighborhoods and slums. In fact, everybody hates Maximilian: sycophants hate to grovel, monarchists hate his weakness, and the people hate his aloofness. Perhaps he even deserves it: all his life he has ruled the vineyard, not the state, and the state he seems unwilling to rule. At least he is the rightful heir to the throne."
+ TaS_Post2WRW_GBW_baden_wine:0 "Wineries of Baden"
+ TaS_Post2WRW_GBW_baden_wine_desc:0 "Baden's economy has been greatly... has been restructured lately. When His Highness got his hands on money from the treasury he decided to engage in "economic development," which in his mind meant subsidies to his favorite business - viticulture and winemaking. In fact, it even bore fruit, rehabilitating the economy of the postwar kingdom."
+ 
+ POSTWRW2_Maximilian_Andreas_Friedrich_Gustav_Ernst_August_Bernhard_DESC:0 "Life is a very funny thing as it turned out, and Maximilian realized this quite suddenly. All his life he has had little interest in politics, wars and the like. He was much more interested in his winery and his personal garden. He considered his belonging to an ancient lineage to be more of an amusing fact than a weighty factor, but he was wrong. When the Russian army suddenly came, Maximilian received an offer to rule in the Kingdom of Baden, however to rule is a bit too strong a word. But what difference does it make when a monarch can do what he likes as long as the country is ruled by ministers and generals? The fate of the state, the budget and other complicated matters do not interest the monarch so much as the state of the winery, and Maximilian does not need more."
+
+ #Bavaria
+ GBV:0 "Kingdom of Bavaria"
+ GBV_DEF:0 "Kingdom of Bavaria"
+ GBV_ADJ:0 "Bavarian."
+
+ GBV_Unified:0 "German Kingdom"
+ GBV_Unified_DEF:0 "German Kingdom"
+ GBV_Unified_ADJ:0 "German."
+ 
+ TaS_Post2WRW_GBV_ingerman_segregation:0 "Intra-German Segregation"
+ TaS_Post2WRW_GBV_ingerman_segregation_desc:0 "Germany is nothing more than a collective term used by the Prussians to justify their brutal conquests of the territories of Bavaria, Baden, Silesia, then Bohemia, the Baltic, Ukraine, even Russia. These bastards never change and we cannot allow them to coexist with real Bavarians in our society. The people will learn all the ethnic, linguistic, cultural and religious differences between Bavarians and the rest of the "Germans," who must henceforth be called Germanic peoples, which they are. Now the idea of German imperialism is dead and its place has been taken by segregation, the only way to purify the nation."
+ TaS_Post2WRW_GBV_bavarian_identity:0 "Bavarian Identity"
+ TaS_Post2WRW_GBV_bavarian_identity_desc:0 "What can be done to a nation in one century? Actually quite a lot, like wiping it off the face of the earth almost completely. Unfortunately that's exactly what happened to the isolated and beautiful Bavarian culture, which was ruthlessly and deliberately destroyed by the Prussian invaders. Fortunately we now have the opportunity and the will to restore it from the ashes and show it to the world."
+ 
+ POSTWRW2_Franz_Bonaventura_Adalbert_Maria_Herzog_von_Bayern_DESC:0 "Franz's life was not too good. Just six years after his birth, his parents fled Germany for Hungary, but that didn't help them either. In 1944, Adalberg'sentire family ended up in a concentration camp. The young heir remembers this decade well. He well remembered the hungry people who were more like bones, the horrible conditions and death, it was even possible to get used to it. He would never forget Sachsenhausen. \n\nFranz lost his father after the end of World War II, Alberecht was killed while building Germany, the new capital of the world. And his son remembered it well. Then he, a descendant of a highly respected family, was made a slave and forced to work in a factory in Bavaria. \n\nBut justice was served. As soon as the Reich regime began to crumble, Franz started an uprising that managed to occupy most of Bavaria. And of course he was the perfect candidate for the Russian government. Now he had enough power and strength. \n\nAnd now the Prussians will pay for everything."
+ #SLOvakia
+ SLO_conservative_democracy_party:0 "Democratic Party of Slovakia"
+ GSV:0 "Second Slovak Republic"
+ GSV_DEF:0 "Second Slovak Republic"
+ GSV_ADJ:0 "Slovak"
+
+ POSTWRW2_Michal_Kovac_DESC:0 "Michal Kovac was always displeased with the occupation. The Germans came to his country and established their regime here. And the situation became much worse after World War II. The country became dependent on Germany for everything and became an appendage of the Reich. \n\nBut Mihaj always had a dream, a dream of a free Slovakia without the Nazis. And he started moving in this direction long before the fall of the Reich. Being an ardent patriot of his country, having served in the Glinka Guards, he tried to reform the country peacefully, but he did not have enough political weight. \n\nAnd the opportunity to fully realize his dream came with the arrival of the Russians. Moscow was not so much interested in Bratislava and Mikhail was given a carte blanche which he intended to use to the full. The main thing is that his allies are not too interested in who sits in the government."
+ #Austria
+ AUS_authoritarian_democracy_party:0 "Otto's Supporters"
+ GAU:0 "Archduke of Austria"
+ GAU_DEF:0 "Archduke of Austria"
+ GAU_ADJ:0 "Austrian."
+ 
+ GAU_Unified:0 "Austro-German Empire"
+ GAU_Unified_DEF:0 "Austro-German Empire"
+ GAU_Unified_ADJ:0 "Austro-German."
+ 
+ TaS_Post2WRW_GAU_habsburg_returns:0 "Return of the Habsburgs"
+ TaS_Post2WRW_GAU_habsburg_returns_desc:0 "Sometimes, perhaps once every half century, miracles happen. For example, such a miracle was when Otto von Habsburg set foot in his own person on Nazi-Free Austrian soil and now rules it as he should by birthright. When his father was banished from the crumbling Empire it seemed that they would never see the throne again, but thanks to the help of King Belozersky it happened. This time the Habsburgs will learn from their mistakes and will not surrender power. \n\n§YAustriae Est Imperare Orbi universo! §!"
+ TaS_Post2WRW_GAU_dreams_of_germany:0 "Dreams of Germany"
+ TaS_Post2WRW_GAU_dreams_of_germany_desc:0 "There was once another possibility before the monarchy of Austria, which unfortunately was not destined to come true. There were times when we ruled over the Holy Roman Empire of the German Nation. But unfortunately in the last century the Austrian destiny was stolen by Prussia, while we had to play second fiddle, their weak subordinates. Now fate has given us a second chance, which only needs to be taken: to unite Germany as it should have been from the beginning!"
+ 
+ POSTWRW2_Otto_von_Habsburg_DESC:0 "Otto von Habsburg never expected to see his beautiful homeland again, much less become its ruler. A series of happy accidents, however, allowed him to return to Austria. There, after a quick coronation, he ascended the throne as Otto I.\n\nUnfortunately, the situation in the country was...to put it mildly - deplorable. Most of the industry had been destroyed in the war with the Russians, a lot of people were left homeless, and the Nazis, not resigned to defeat in the war, continued to attack the Russian garrisons and police stations. So, Austria is entering a period in which, under the firm hand of her king, she must pass like a ship through the impending storm."
+ #Norway 
+ GNR_communist:0 "People's Kingdom of Norway"
+ GNR_communist_DEF:0 "People's Kingdom of Norway"
+ GNR_communist_ADJ:0 "Norwegian."
+ Post_WRW2_Norway_party:0 "Royal Party"
+ Post_WRW2_Norway_party_long:0 "Monarcho-Communist Party"
+ 
+ TaS_Post2WRW_GNR_ulaf_v:0 "The People's King Ulaf V"
+ TaS_Post2WRW_GNR_ulaf_v_desc:0 "put text here plz"
+ 
+ POSTWRW2_Finn_Gustavsen_DESC:0 "Finn Gustavsen was an ordinary socialist party leader in the early 20th century. A middle-class family, an attempt to create an organization. And then the Germans came and ruined everything.  \n\nBut Finn wasn't discouraged. Instead of politics, he decided to give himself to the cause he loved and become a journalist. Despite the fact that his articles were often censored and a couple of times the "journalist of the people" was even threatened with serious danger, not only because of his socialist, but also because of his pro-monarchist views. At one time he even sanctified the interesting ideology of the Mladorossians. Nevertheless, he always got away with it. \n\nWhen the German Empire began to burst at the seams, the people of Norway felt a wind of freedom. The Russian army was not going to be here long and Finn got his hands on the country and now he will do his best to turn Norway into a fair country where all men are equal. And where everyone will live like a king. And luckily King Ulaf 5 is not at all against the current direction of the state."
+ #Remer revolt
+ HGR_Revolt_esoteric_nazism_party:0 "SS-Werewolves"
+ HGR_Revolt_ultranationalism_party:0 "Wehrmacht-Werewolfs"
+ GWF:0 "Army of National Salvation"
+ GWF_DEF:0 "Army of the National Salvation"
+ GWF_ADJ:0 "Werewolfs"
+  
+ GWF_Unified:0 "German National Liberation Government"
+ GWF_Unified_DEF:0 "German National Liberation Government"
+ GWF_Unified_ADJ:0 "German."
+ 
+ GWF_ded:0 ""
+ GWF_ded_DEF:0 ""
+ GWF_ded_ADJ:0 ""
+ 
+ TaS_Post2WRW_GWF_for_the_reich:0 "March for the Führer!"
+ TaS_Post2WRW_GWF_for_the_reich_desc:0 "put text here plz"
+ 
+ POSTWRW2_Remer_DESC:0 "Germany flew too fast toward the sun and fell like Icarus from ancient legends. This is exactly what happened, according to Remer, to the Great German Reich. Having tasted the fruits of victory too early and remaining in the enemy's ring, it went completely soft after the conclusion of peace. \n\nThe civil war did not change anything, the new leadership was not intent on destroying the enemies that had only grown stronger since the first victory. And the decision eventually brought the Germans down to earth. \n\nMost of the once great Germany was occupied, the useless local czars, the Unterminians and the Red Czar's appointees divided the ruined nation amongst themselves. \n\nBut this could not last long, the spirit of revenge of the German people was awakened and the faithful sons of the fatherland rose up to reclaim their fathers' land. And not only hers, all former enemies will know wrath, like a pack of wolves they will hunt down their enemies, and they will not rest until the German flag will be flying over the world. "
+ #Sudet revolt
+ APF_Revolt_national_socialism_party:0 "Sudeten Volksfront"
+ GSU:0 "Sudeten Volksfront"
+ GSU_DEF:0 "Sudeten Volksfront"
+ GSU_ADJ:0 "Sudeten"
+ 
+ GSU_Unified:0 "German Restoration Government"
+ GSU_Unified_DEF:0 "German Restoration Government"
+ GSU_Unified_ADJ:0 "German."
+ 
+ TaS_Post2WRW_GSU_victory_or_death:0 "Victory or death!"
+ TaS_Post2WRW_GSU_victory_or_death_desc:0 "put text here plz"
+ 
+ POSTWRW2_Knispel_DESC:0 "Kurt Knispel lived an interesting life. The so-called "Hitler's tank ace" was somewhat ashamed of his title. As a propaganda hero, he appeared in war films, gave interviews and even wrote books. \n\nBut he wondered all his life whether he was worthy of the title, and whether he should be proud of it at all. However, this could be forgotten as long as Germany took care of its ace. An estate in the Sudetes and a large number of slaves helped to dull the anguish from within. \n\nBut recently something happened that he could not tolerate. After the fall of the Reich, the lands of the Sudetes were given to the insane Czechs, who immediately began mass evictions and shootings. And now the whole of West Germany is in flames while the Russian garrison lost power over this territory. \n\nHe may not think of himself as a hero, but he must become one. For himself, for the people who followed him. For Germany."
+ #Cummies revolt
+ SSN_Revolt_communist_party:0 "German Red Army"
+ SSN_Revolt_social_democracy_party:0 "Student Movements"
+ SSN_Revolt_socialist_party:0 "People's Party"
+ GRA:0 "People's Front of Germany"
+ GRA_DEF:0 "People's Front of Germany"
+ GRA_ADJ:0 "Comm."
+ 
+ TaS_Post2WRW_GRA_workers_and_peasant_army:0 "Spartacus Army"
+ TaS_Post2WRW_GRA_workers_and_peasant_army_desc:0 "put text here plz"
+ 
+ GRA_Unified:0 "German Socialist State"
+ GRA_Unified_DEF:0 "German Socialist State"
+ GRA_Unified_ADJ:0 "German."
+ POSTWRW2_Baader_DESC:0 "Andreas Baader fell into disfavor very often during his short life. Apparently his ideas were not to the liking of the Nazis. But Andreas had no intention of giving up; he was willing to make any sacrifice so that his country would be free.\n\n The leader of the German Red Army was willing to become a terrorist so that the Nazis would be afraid. \n\nAnd the chance loomed on the horizon, the Russians from the east hated the Germans as much as they hated the Germans, and were not even against socialist ideas. \n\nBut the dream of a Red Germany fell apart in an instant. The German lands were divided between opportunists and half-forgotten kings whose power was only held by a contingent of Russians. \n\nAnd now Baader must fight. Not for himself. For the people of Germany, for a brighter future. For Meinhof... she would be happy."
+ #Meme austria
+ AUS_ITA_despotism:0 "Austrian Military Directory"
+ AUS_ITA_despotism_party:0 "Alpine Command"
+ AUS_ITA_authoritarian_democracy_party:0 "Gaddafi loyalists"
+ POSTWRW2_Gaddafi_DESC:0 "Coming from a poor Bedouin family in southern Libya. Muammar Gaddafi never thought anything like this would happen. In his 30 years, he was able to achieve the maximum credibility that a native from a colony could get. Always he was running small garrisons in the deserts of Tripolitania. And going to Europe seemed to him something fantastic. \n\nSuddenly for him, he became commander of the advanced forces of the Alpine troops, crossing the mountains and straining for Vienna to establish an Italian protectorate in Germany, which was collapsing under the Russian onslaught. After the capture of Vienna and Salzburg, the Italian occupation was established, where Gaddafi did not take the last place. Thanks to the confusion going on 'With the Northern Territory,' Muammar seized almost absolute control of Austria. \n\n\n\na}Gaining, though ruined, a huge German legacy. He may not depend on the Roman generals. The only thing preventing him are the small garrisons beyond the Alps watching over him. But that won't last long.   \n\no one can stop him now."
+ #Meme Rhein
+ FRR_Real_esoteric_nazism:0 "SS-Ordensstadt Rhineland"
+ FRR_Real_esoteric_nazism_party:0 "SS-Werewolves"
+ POSTWRW2_Beisheim_DESC:0 "Why True Alexei Path is truly the best submod for TNO.10 Reasons \n\n1. \n\n2. \n\n3. \n\n4. \n\n5. \n\n6. \n\n7. \n\n8. \n\n9. \n\n10. \n\nThat's it!"
+ #Meme Holland
+ HOL_Real_authoritarian_democracy:0 "Mandate of the OFN North Germany"
+ HOL_Real_authoritarian_democracy_party:0 "U.S. Army"
+ POSTWRW2_Afton_DESC:0 "William Afton, successful businessman and owner of Fazbear Incorporated, is now the main mandate of the OFN North Germany. Connections, money, and a little bit of choice pizza were able to secure him that position. \n\now north is just a new location. His OFN overseers have little interest in disappearing people, mass-producing animatronics, or any of the other things Afton may be doing. The fact remains, however, that silver eyes are watching everyone in northern Germany. And one wrong step could end up in a fatal brain amputation. Just remember, Freddy Bear is your friend."
+ #Meme Bavaria
+ BAV_Real_fascism:0 "Homobavaria"
+ BAV_Real_fascism_party:0 "Pink Swastika"
+ BAV_Real_national_socialism_party:0 "Fighting Faggots"
+ POSTWRW2_Rohm_DESC:0 "On July 1, 1934 Ernst Röhm died, or at least the Nazis thought so. For years he hid from the punitive units and constantly changed his place of residence, living only on hatred of the Nazi regime. \n\nAnd when the Reich's regime began to collapse under the onslaught of the Russian bear, Röhm realized that the time to act had come. Together with his faithful comrades-in-arms, the heir to the French paladin and others, he intends to eradicate the very essence of the contagion of Nazism, women. It was they who destroyed those original bonds, based on the pure feelings of men it was they who drove Adolf mad and destroyed the Reich.But it will not happen again. The pink swastika hangs over Bavaria only for now, but not for long, soon all of Germany will be cleansed of the feminine contagion."
+ #Meme Hannover
+ HAN_Real_communist:0 "Islamic State of Frankfurt"
+ HAN_Real_communist_party:0 "True Believers"
+ HAN_Real_socialist_party:0 "Infidels!"
+ POSTWRW2_Speer_DESC:0 "National Socialism was a mistake-now Speer clearly understands this. Even this ideology was exploited by the forces of Judaism. Democracy, monarchism, fascism, all led Germany to ruin time after time. Even its allies were never loyal to the Reich, but were always looking for a moment to stab it in the back...all except the Arabs. When the Russian barbarian hordes invaded Reich territory, Speer realized that the blood enemies of all Slavs, Jews and other enemies of Germany were the nations that practiced Islam. By studying the Koran and the works that gave rise to Baathism, he finally found a solution to all the problems of his homeland. Islamic Marxism will not only give new strength to the Reich but also faithful allies with whom they will declare Jihad on all infidels! And the new prophet Alibirt al-Shibiri will lead Germany and its faithful allies into a new glorious age of victory and accomplishment. Whether she wants it or not."
+ #Meme OstGermany
+ ZNE_Real_communist:0 "German Democratic Republic"
+ ZNE_Real_communist_party:0 "SEPG"
+ ZNE_Real_communist_party_long:0 "Socialist United Party of Germany"
+ ZNE_Real_socialist_party:0 "OSNP"
+ ZNE_Real_socialist_party_long:0 "Association of Free German Trade Unions"
+ ZNE_Real_liberal_democracy_party:0 "LDPG"
+ ZNE_Real_liberal_democracy_party_long:0 "German Liberal Democratic Party"
+ ZNE_Real_conservative_democracy_party:0 "CDU"
+ ZNE_Real_conservative_democracy_party_long:0 "Christian Democratic Union"
+ ZNE_Real_authoritarian_democracy_party:0 "PDPG"
+ ZNE_Real_authoritarian_democracy_party_long:0 "German National Democratic Party
+ ZNE_Real_social_democracy_party:0 "SSNM"
+ ZNE_Real_social_democracy_party_long:0 "Free German Youth Union"
+ POSTWRW2_Honecker_DESC:0 "Fuck" were the first words spoken by Erich Honecker when he was transported to another reality. No one could have guessed that the GDR Secretary General would suddenly wake up not in his bed but in a fragmented Germany that was an eerie reflection of his home world.  \n\nAnd now he finds himself in a precarious position. In the shards of the Nazi empire, madmen are taking over and the country is being torn apart by foreign invaders, local warlords seem to have lost their minds, and radioactive ash is coming inexorably from the East.  \n\nBut Erich is not going to back down, because he has sworn to protect the people of this country, and the leader of the GDR does not intend to break his word."
+ #Meme Berlin
+ BRL_Real_social_democracy:0 "Berlin Base of the Russian Army"
+ BRL_Real_social_democracy_party:0 "False Based"
+ BRL_Real_esoteric_nazism_party:0 "True Based"
+ POSTWRW2_Bateman_DESC:0 "Yes, this is the based department, and we are calling you to let you know that your actions have impressed us,' is exactly what Paul's job was, it sounds quite simple. War criminals, maniacs, murderers got that call every day. Too bad Germany couldn't be reached. Why was this done? So that they wouldn't lose heart and continue to act, because the department is watching.  \n\nHowever, everything changed when Gil died, the idiot couldn't stop the nuclear missile launch and now all of Russia has turned into PEPHEL. Bateman realized the time had come to act and promptly seized power over the dying garrison. Now, while he strokes the tame doodle lying on his lap, he contemplates what to do next. Gamers, psychopaths, netizens, racists, and others have already been invited to the new state. From now on, no more skanky people and other horror, now the BASE rules in Berlin, and soon it will rule all of Germany."
+ #Meme Czech
+ CZE_Real_socialist:0 "Czech-German Commonwealth"
+ CZE_Real_socialist_party:0 "Popular Front"
+ CZE_Real_social_democracy_party:0 "Front of Particularity"
+ POSTWRW2_Gejdrich_DESC:0 "The lands of Bohemia have endured much. The demise of Austria, the occupation by the Germans, the occupation by the Russians and finally the total lawlessness after the collapse of the Nazi empire. However, at this time there was a man who would save the situation. Richard Heydrichovsky, also known as "The Gardener of Prague". \n\nHe was the one who picked up the country at this difficult time. The horrors of the occupation killed many and this must be addressed, but we should not forget about the Germans who arrived, should we not throw them out in the cold? \n\nThe Czech Republic is in for a major transformation and Richard is here to see the country through it, no more butchers and murderers in this land. \n\now only an era of peaceful prosperity."
+  #Meme Kiel
+ DSG_Real_national_socialism:0 "Kyeldeytsch Bunt"
+ POSTWRW2_Merkel_DESC:0 "Angela Merkel lived quite normally. children, kitchen, church. Did an ordinary German woman need anything else? Maybe a better husband and less harassment from Bormann, but that's just science fiction. \n\nBut her life changed when the Russians came. An inexorable roller swept through Germany leaving nothing alive, it was at this point that Angela decided to join the Freikor organization. Her squad was pushed back to Kiel, after nuclear bombs stopped the Russian monster, but Germany itself was in ruins. Madmen, foreigners and other creatures want to destroy the greatness of the Reich, but Angel will not allow it. The Angel of Death and the Valkyrie of Nazism is on the warpath and no one can stop her as long as the heart of the Aryan beats."
+ #Meme Silesia
+ SII_Real_national_socialism:0 "Grobvenedisch Reich"
+ SII_Real_national_socialism_party:0 "NSDAP"
+ POSTWRW2_Hitler_DESC:0 "There are individuals whose fate is simply to perish in history, to remain nameless. Perhaps this oblivion is not a bad thing, their grave will never be littered, they will not be hated decades later, and perhaps this is a legitimate outcome of their lives. \n\nBut Adjutant Hütting has no intention of accepting this fate. Maybe he was destined to be an impostor. For a long time he ran the African Commissariat while the paranoid man himself sat in his office shouting insults in the direction of the blacks. And nobody, not a single idiot in Germany suspected anything wrong when they received a letter with the wrong signature. \n\nAfter the collapse of the Reichstadt, our hero moved to Germany, and again no idiot suspected anything wrong. \n\nAnd now that Germany is gone, Hütting introduces himself as Hitler the survivor and gathers people around him. His real name might be forever forgotten by history, but the African executioner would not stop. German culture itself is henceforth a reanimated rabble-rouser and spit on its work. And in order to purify oneself one must go back to ancient times. Venetia will rise from the ashes and finally restore glory to all of Europe."
+ #Meme Poland
+ POL_Real_liberal_democracy:0 "Free Poland"
+ POL_Real_liberal_democracy_party:0 "Anarcho-Capitalist Party"
+ POSTWRW2_Korwin_DESC:0 "Janusz Korwen Micke lived the life of an ordinary Pole. German occupation. Poverty and racism. But on the other hand he always had a dream. \n\nAnd when the Russians first came and soon left, he took power in Poland in his own hands. Now the Polish rooster spread his wings. But all the naive people who came here to find an island of tranquility will be disappointed. \n\nForced feminization, corporate power and the other horrors of capitalism have blossomed here like flowers after the rain. The main thing to remember is that Poland is always a winner."
+ #Meme Pommern
+ FPG_Real_despotism:0 "Sneaky Blinders"
+ FPG_Real_despotism_party:0 "Sneaky Blinders"
+ POSTWRW2_Shelby_DESC:0 "The dickheads in Germany have gotten completely cocky, the goddamn German bureaucrats have stolen the whole country. How long ago did grandmothers eat buckwheat? How long ago did the States visit the graveyard called Germany? The question is rhetorical. \n\nAs soon as the nuclear missiles flew overhead, Thomas Shelby went into action. The dickhead named Hitler got what he deserved, but there were still many left. Fucking Speer plugged the holes in the Wolskhalle with buckwheat when he could have given it all to the grandmothers. The Russian bureaucrats and the rest of the scum will be killed. \n\nAnd a new regime will be established in Germany, one that is truly GOOD."
+ #Meme Galicia
+ GGN_Real_despotism:0 "Kingdom of New Vinnitsa"
+ GGN_Real_despotism_party:0 "Party 14.1"
+ POSTWRW2_Papich_DESC:0 "Sometimes it's time to run. And that's exactly what Vitaly Tsal did when they came to him. The cops can't get to him in the parallel reality he went to with the computer and they can shove all those accusations of child molestation up their ass. \n\nUpon arriving in the new world, Papich was surprised by its realism and, thanks to his dexterity and sharp wit, was able to gather supporters to become king. To the east of him lies a radioactive wasteland and to the west is Europe, a place where the Aryans kneel, the Negroes serve in the SS and the women get their hands on the army. \n\nPapich himself rules from Nova Vinnitsa solo and is not going to give up his seat to anyone. Let them come and take it themselves if they want. But if suddenly they try, they will immediately realize why he was called a psychopath from Vinnitsa."
+ #Meme Denmark
+ DEN_Real_fascism:0 "Narco-Dania"
+ DEN_Real_fascism_party:0 "Diller Party"
+ POSTWRW2_Tony_DESC:0 "Denmark, after the collapse of the Reich, found itself in a very difficult situation. A complete collapse of the residents' surveillance system, an administrative crisis. In the end, when the storm was over, the inhabitants found in the building where the Commissar used to sit...Tony himself \n\n The new leader refused to make direct contact, and despite the lack of any explanation, the almost complete state to state affairs and the open distribution of drugs, people felt a respect for him. His ideas will always be relevant. Denmark is currently deprived of many of its territories and is a hub with gigantic amounts of drugs, prostitutes and other things. But on the other hand does the king care about other people's judgment? Fools always dislike geniuses."
+ #Meme Prussia
+ PUS_Real_national_socialism:0 "Verfolf Revolt"
+ PUS_Real_national_socialism_party:0 "Lycanthropic Front"
+ POSTWRW2_Wolf_DESC:0 "Germany fell under the onslaught of the Russians. Endless attacks broke the German army but not its men. \n\nThe end of the Reich for the pack meant only a new beginning. With beastly ferocity they would gnaw at the monsters that had come to this one, they might think of werewolves as beasts, call them monsters. But they weren't the ones who came to the land and plundered the land, they weren't the ones who left the scorched earth behind. \n\nThe wolves have smelled blood, the bear has gone to lick its wounds while the German wolf has awakened. And the pack will tear for the salvation of their country, until there is no one left to stand against it."
+ #Meme Slovakia
+ SLO_Real_ultranationalism:0 "German Reich in Exile"
+ SLO_Real_ultranationalism_party:0 "NSDAP-G"
+ POSTWRW2_Goebbels_DESC:0 "Joseph Goebbels became an enigma man in the 20th century, an enigma within an enigma. Sent to Slovakia after the end of World War II, he was surprised to find that... everyone in the Reich believed he was dead. Allegedly there is even a legend that he was killed by Moscovian partisans. \n\nA very surprised Goebbels now finds himself in a difficult position. The country he's in doesn't honor the invaders very much. No one believes the suddenly resurrected Goebbels and the Reich government itself has completely disintegrated. \n\nBut Goebbels has no intention of giving up, an all-out war will bring the NSDAP back to power in Germany, Europe will be destroyed and the whole world will once again bow down before German might."
+ #Meme Norway
+ NOR_Real_authoritarian_democracy:0 "Boring country"
+ NOR_Real_party:0 "Standard Party"
+ POSTWRW2_Minor_DESC:0 "Dude, you thought something was going to happen here? Ohhhh you fucked up. Go and don't look at that description again, you reek of major, I can smell it even through the screen."
+ #Burgundy
+ BRG_Real_esoteric_nazism:0 "Order of the State of Burgundy"
+ 
+ #goyfriends
+ 
+ #goyfriends of the fucking rofl
+ AUS_Muammar_Gaddafi: "Muammar Qadaffi"
+ FRR_Otto_Beisheim: "Otto Beisheim
+ HOL_William_Afton: "William Afton"
+ BAV_Ernst_Rohm: "Ernst Rohm"
+ HAN_Albert_Speer: "Alibirt Al-Shpiri
+ ZNE_Erich_Honecker: "Erich Honecker
+ BRL_Pavel_Beitmanov: "Pavel Beitmanov
+ CZE_Ryszard_Gejdrichwski: "Rychzard Hejdrywski"
+ DSG_Angela_Merkel: "Angela Merkel"
+ SII_Adolf_Hitler: "Adolf Hitler"
+ POL_Janusz_Korwin: "Janusz Korwin-Micke
+ FPG_Thomas_Shelby: "Thomas Shelby"
+ GGN_Papich: "Vitaly I Tsal"
+ DEN_Tony_Life: "Tony Life"
+ SLO_Joseph_Goebbels: "Joseph Goebbels
+ NOR_Minor: "minor state))))"
+  #2zrv
+ #Japan
+ KOR_RUSrevolt:0 "Japanese Military Corps"
+ AMR_RUSrevolt:0 "Far Eastern Free Front"
+ AMR_Sergei_Zaikin:0 "Sergei Zaikin"
+ 
+ KOR_RUSrevolt_DEF:0 "Japanese Military Corps"
+ AMR_RUSrevolt_DEF:0 "Far Eastern Free Front"
+ 
+ KOR_RUSrevolt_ADJ:0 "Japanese"
+ AMR_RUSrevolt_ADJ:0 "Russian"
+ 
+ TaS_WRW2_far_east_proxies:0 "Looking to the Far East"
+ TaS_WRW2_far_east_proxies_desc:0 "We must find a way to reclaim Primorye."
+ TaS_WRW2_seek_oportunities_fe:0 "Seek Opportunities"
+ MAR_support_rebels_effigy:0 "Rebel Support"
+ MAR_send_guns_rebels:0 "Send weapons"
+ MAR_send_propoganda_rebels:0 "Send volunteers"
+ MAR_send_partisans_rebels:0 "Send saboteurs to the Japanese rear"
+ MAR_send_advisors_rebels:0 "Send advisors"
+ MAR_FErebels_mission:0 "§RStart of the Rebellion!"
+ 
+ TaS_WRW2_manchu_crisis:0 "Manchurian Crisis"
+ TaS_WRW2_manchu_crisis_desc:0 "The uprising has begun. We must act."
+ TaS_WRW2_expand_operations:0 "Expand presence"
+ TaS_WRW2_authorize_bombing_runs:0 "Bombing Japanese positions"
+ TaS_WRW2_send_rebels_equipment_small:0 "Send some weapons"
+ TaS_WRW2_send_rebels_equipment_medium:0 "Send enough weapons"
+ TaS_WRW2_send_rebels_equipment_big:0 "Send many weapons"
+ 
+ MAN_Kuan_Chung:0 "Kuan Chung"
+ MAN_Second_CW:0 "Free Manchuria"
+ KOR_Hiromichi_Yahara:0 "Hiromichi Yahara"
+ KOR_Second_CW:0 "Manchurian Martial Law"
+ SCC_Wang_Enmao:0 "Wang Enmao"
+ SCC_Second_CW:0 "Han Front"
+ #Deutschland
+ TaS_WRW2_prepare_for_final_battle:0 "Preparing for the decisive battle"
+ TaS_WRW2_prepare_for_final_battle_desc:0 "Our readiness level is [?RUS2WRWWarPreparedness]/100"
+ 
+ TaS_WRW2_launch_attack_on_germany:0 "Give back what belongs to us"
+ TaS_WRW2_establish_southborders_fortifications:0 "South line of defense"
+ TaS_WRW2_establish_northborders_fortifications:0 "Northern Defense Line"
+ TaS_WRW2_mobilize_airmobile_units:0 "Deploy airfields at the border"
+ TaS_WRW2_prepare_industrial_centers:0 "Prepare industrial centers"
+ TaS_WRW2_send_partisans:0 "Support partisans"
+ TaS_WRW2_cryptology_efforts:0 "Decrypt German ciphers"
+ TaS_WRW2_send_diversantos:0 "Send saboteurs"
+ TaS_WRW2_develop_front_railways:0 "Expand frontline infrastructure"
+ TaS_WRW2_raise_additional_reserves:0 "Call up reserves"
+ 
+ TaS_WRW2_the_final_battle:0 "Final Battle"
+ TaS_WRW2_the_final_battle_desc:0 "Our exhaustion level is [? RUS_devastation]/150([GetRusDevastation]) \n\n\n\nthe Fritz exhaustion level is [? GER_devastation]/200([GetGerDevastation])"
+ RUS_Devastation_Low:0 "Low"
+ RUS_Devastation_Medium:0 "Medium"
+ RUS_Devastation_High:0 "High"
+ 
+ TaS_WRW2_devastation_tick:0 "Devastation growth!"
+ 
+ TaS_WRW2_show_war_plans:0 "Display list of military operations"
+ TaS_WRW2_hide_war_plans:0 "Hide list of military operations"
+ 
+ TaS_WRW2_activate_plan_spb:0 "§OOperation 'Alexander Nevsky'§!"
+ TaS_WRW2_activate_plan_spb_mission:0 "Time for §Operation 'Alexander Nevsky'§!"
+ 
+ TaS_WRW2_activate_plan_msk:0 "§ROperation 'Minin and Pozharsky'§!"
+ TaS_WRW2_activate_plan_msk_mission: "Time for §ROperation 'Minin and Pozharsky'§!"
+ 
+ TaS_WRW2_activate_plan_volga:0 "§YOperation 'Dmitry Donskoy'§!"
+ TaS_WRW2_activate_plan_volga_mission: "Time for §ҮOperation 'Dmitry Donskoy'§!"
+ 
+ TaS_WRW2_activate_plan_kyiv:0 "§GOperation 'Svyatoslav Igorevich'§!"
+ TaS_WRW2_activate_plan_kyiv_mission:0 "Time for §GOperation 'Svyatoslav Igorevich'§!" 
+ 
+ TaS_WRW2_activate_plan_riga:0 "§GOperation 'Ivan the Terrible'§!"
+ TaS_WRW2_activate_plan_riga_mission:0 "Time for Operation Ivan the Terrible!
+ 
+ TaS_WRW2_show_war_decisions:0 "Show list of military decisions"
+ TaS_WRW2_hide_war_decisions:0 "Hide list of military decisions"
+ 
+ TaS_WRW2_activate_partisans:0 "Raise saboteurs and partisans"
+ TaS_WRW2_expand_industries:0 "Expand factories and plants"
+ TaS_WRW2_expand_war_bonds:0 "Expand weapon orders"
+ TaS_WRW2_millitary_parade:0 "Hold a military parade"
+ TaS_WRW2_promise_victory:0 "Promise a quick victory"
+ TaS_WRW2_ask_for_ofn_help:0 "Ask OFN for help"
+ TaS_WRW2_get_rid_of_traitors:0 "Unsuitable Items Cleanup"
+ TaS_WRW2_economic_mobilization:0 "Wartime Laws"
+ 
+ TaS_WRW2_show_emergency_decisions:0 "Introduce emergency measures"
+ TaS_WRW2_cancel_war_decisions:0 "Return everything to normal"
+ TaS_WRW2_total_war_mobilization:0 "Mobilization for Total War"
+ TaS_WRW2_equipment_old:0 "Sweep all warehouses"
+ TaS_WRW2_army_mobilization:0 "Mobilization of all who can shoot"
+ TaS_WRW2_our_last_stand:0 "There's no retreat!"
+ TaS_WRW2_ultima_ratio:0 "§RUltima Ratio§!"
+ 
+ TaS_WRW2_offer_total_capitulation:0 "Request total surrender"
+ 
+ #ultimatums
+ TaS_WRW2_europe_ultimatums:0 "Residue return"
+ TaS_WRW2_finland_ultimatum:0 "Claims on Vyborg"
+ TaS_WRW2_romania_ultimatum:0 "Claims on Odessa"
+ TaS_WRW2_turkey_ultimatum:0 "Claims on Armenia"
+ #collapse
+ char_projebavshij:0 "Broken King"
+ goverment_of_misery:0 "Government of Loss"
+ naked_king:0 "The Naked King"
+ MAR_Regent_council:0 "Board of Regents"
+ POLITICS_REGENCY_DESC:0 "The Council of Regents is an organization assembled after the untimely death of Czar Sergei Belozersky. Although the situation is slowly spiraling out of control, radical rebellions and disputes within the council itself may soon put an end to a united Russia."
+ POLITICS_SERGEY_BELOZERSKI_F_DESC:0 "The sleepless nights of recent months have had a bad effect on Tsar Belozersky's health, but they have not led him to the miserable condition in which he now finds himself. Hundreds of thousands of ruined lives now hang in his balance, like holographic marks on a card. Those he could not save, those who died in his crusade of fools, those whom he left behind on his path to the throne... All these sacrifices turned out to be in vain. He is the murderer of Russian hope.{nOnly with such a burden on his shoulders is the choice between the bottle or the noose. Sergei Sergeyevich, to his shame, chose the bottle. It is shame that fuels his endless binge drinking, and the desire to escape from this bitter feeling that forces him to down another shot. There is no escape from nothingness. There are only endless cycles of guilt."
+ POLITICS_RUTSKOJ_COLLAPSE_DESC:0 "Despair. Bargaining. And finally, Anger. \n\nThese were the very feelings Alexander Rutskoi was experiencing as he watched the reports from the fronts of the new Patriotic War. Russian guys were dying under the bombing and artillery fire because of incompetence of the Mladorussian command, while Rutskoi was forced to deal with the problems of savages in the steppe. Last time he was still a baby, but now he will try to save Russia from itself. One more time. \n\nThis time, Sanya the Mad will not trust the bureaucrats and useless nobles. §RHis country will be in his hands and it will be stronger than ever. No matter the sacrifices he has to make."
+ POLITICS_BEK_COLLAPSE_DESC:0 "If only he had known how things would turn out in the end, maybe Kazem-Bek would never have organized the Young Russians and would have continued writing books about religion and pining for a lost Russia. But he couldn't, and for the sake of honesty he couldn't. Homesickness. \n\nIn betraying his country and joining the forces of Tsar Vladimir, Alexander put an end to his destiny. At the time when Russia was uniting and strengthening he forgot about his deeds. But as always, the road to hell was paved with good intentions. \n\nAnd now the leader of Mladorossov is sitting in Berezniki again, depressed and devastated, he doesn't know what he should do next. Every day his heart is getting worse and he has less and less hope. But now he is sitting like a real king on a sword chair, standing on a field full of blood, ruling his kingdom of ashes."
+ POLITICS_BEYRLE_COLLAPSE_DESC:0 "Joseph Byerly's life can be described as a series of disasters and betrayals. At a time when victory in the war seemed in his hands, fate destroyed that dream, and then did it again, already in the Western Russian War. Byerly seemed to have found his place in life when he joined the Young Russians. Reaching the position of Tsar Belozersky's favorite general, he became the tip of the spear that was to smash the colossus of Europe... \n\nThis all turned to ashes in an instant. Now the Czar General is dead, and his general is certain that the only culprit is Kazembek, the head of the traitorous Mladorosses. Byerly no longer cares about the fate of Russia or the necessary sacrifices. His goal is to clear the good name of his comrade-in-arms, to avenge the murderers of the Tsar, and to allow the descendants of Belozersky to rule Russia... Whatever it may be."
+ POLITICS_GIL_COLLAPSE_DESC:0 "Memories are shattered, the truth will never be told again. And it seems that Gil himself has already begun to forget his name, to forget the reason why he is here. Having betrayed his homeland 30 years ago, he chose his own path. People were constantly dying around him, and the situation was turned upside down. First the Reds, then the Germans, then the Reds again, the forces of Tsar Vladimir and finally the Mladorosses, time after time he thought that he had seized fate by the tail and finally won. However, each time fate proved that it knows how to joke. \n\nMaybe then, during the Second Western Russian War, when Gil's headquarters came under artillery fire, Vladimir really died, his mind fading and dissolving amidst machine gun fire, shouts on the battlefield, and endless artillery strikes. In spite of this, the general's body continued to walk, in spite of fate, in spite of the world, and in spite of intelligent design.  \n\nAnd it's not going to stop."
+ POLITICS_JARUZELSKI_COLLAPSE_DESC:0 "Never a Russian will be an ally of a Pole, a truth which Jaruzelski understood through difficult experience. Vladimir Gil taking command over the Polish legion almost completely buried it in one battle. Arkhangelsk was clearly not worth it, it was clear to everyone that the battle was lost, and Gil knew it. \n\now Wojciech is in a difficult position, he is surrounded by Kazakhs and bloodthirsty Russians, it is clear that their blood was not enough already pierced. But now he will not lose Poland and will not give it into the hands of the enemy. \n\new Poland is not yet lost."
+ ##eventttts
+ MAR_Collapse.1.t:0 "The King is Dead, Long Live the King!"
+ MAR_Collapse.1.d:0 "For the last few days no one saw Sergei Sergeyevich. He locked himself in his office, periodically asking for more and more bottles of Vyatka from his supplies. However, for the past twelve hours he has not done this either. The guards did not dare to go in as they were well aware that in this state of mind the Tsar could without hesitation order anyone to be shot for no apparent reason. The defeat in the war had a great effect on Belozersky's mental state, as it probably did on the state of all the inhabitants of Russia. His dreams of a just retribution and a long and happy life were shattered like a shot glass of still unfinished vodka falling from the weakened tsar's hand. The sound of the broken glass was probably the last sound that Sergei Belozersky heard before he finally lost consciousness. \n\nFourteen hours later the guards decided to enter the cabinet. They were faced with a rather pitiful sight. The whole room was littered with bottles of varying degrees of content, especially many on the desk. In addition to the bottles and shot glasses the Tsar was lying on the table. The soldiers, smelling something amiss, having asked a few questions without getting an answer, decided to go closer to the body and check for a pulse. There was no pulse. The doctor, who arrived at lightning speed, after a brief unpretentious check, stated:"
+ MAR_Collapse.1.a:0 ""The King is Dead""
+
+ MAR_Collapse.2.t:0 "Disorder and Staggering"
+ MAR_Collapse.2.d:0 ""Dear comrades! All of you know that we are gathered here with truly unfortunate news. I think that any words would be superfluous. This meeting of the Board of Regents is now called to order!" - However, it was hard to call it a meeting - everyone was chattering and did not react to his attempts to bring discipline into the hall. Antipin shouted the loudest, or rather squealed: "Repent! Repent before it's too late! You're all lost! Do you hear? You're all lost!" \n\nWhen one of the ministers who hadn't yet gone into a frenzy tried to stop the overexcited priest, he took a huge cross off his chest and charged him in the forehead. The minister, who clearly had not been prepared for this in his life, immediately fainted. \n\nKazem-Bek, who decided it was time to end it all, thought of shooting his service weapon into the ceiling, but realized that it was no longer on the table where it had been kept. \n\nWhen he looked at the bacchanalia going on, he saw the only person sitting quietly and not getting into any kind of altercation with anyone. He was sitting in the corner of the office with a smile on his lips, unlocking his service weapon, which belonged to Alexander Lvovich. He was about to stop him, but did not have time. A mixture of blood and brains splattered the wall. \n\nAt the sound of the gunshot the guards came and stopped the brawl, and Kazem-Bek, who had returned to his office, started thinking about what to do next."
+ MAR_Collapse.2.a:0 "Everything goes to hell"
+
+ MAR_Collapse.3.t:0 "Fuss in the Palace"
+ MAR_Collapse.3.d:0 "From early this morning until late in the evening, Maria Romanova's house was bustling. \n\nThe servants were busily packing numerous suitcases, while their colleagues were burning whole volumes of stationery in bonfires in the courtyard. The owner of the now-vibrant place herself was scurrying around the mansion, checking every nuance. There were only about three hours left before her departure. Perhaps by controlling all the minutiae Maria tried to distract herself from the frightening thoughts about her future fate. How much war can change people's lives. Especially the defeats in it. Not long ago it had seemed that the Vyatka's life would last forever, and now they had to go to the other continent in the hope that they could at least get by there. \n\nAll this thinking had kept her awake for the past week. But it didn't matter now, the sound of the helicopter blades was getting louder and louder, and that meant that all this nightmare was over."
+ MAR_Collapse.3.a:0 "Better Salvation"
+ 
+ MAR_Collapse.4.t:0 "A Day in the Capital"
+ MAR_Collapse.4.d:0 " The scraping of the caterpillars on the paving stones grew louder and louder. Olga, who had recently owned a pastry shop, and now a room with a pile of garbage, huddled against the basement wall. There was an explosion and the sound of flying glass - a grenade exploded nearby and blew out the shop windows. The woman shuddered. She could hardly keep from bursting into tears. Yesterday's best candy store in the capital was in ruins, and the BMP drove over the cake that had been in the window in the morning, but now spilled over the sidewalk. \n\nSuddenly the loudspeakers started blaring. The voice coming out of them was familiar to almost everyone. \n\nAttention! Stop your senseless resistance! We are the lawful authority and the guarantor of the country's security! Anyone who surrenders voluntarily will be guaranteed life!" - Alexander Kazem-Bek's speech resounded loudly. \n\nOlga already knew this message by heart. It had been two days since the troops had entered the capital, though it seemed like a whole year. \n\nFifteen minutes later, when the rattle of the caterpillars was barely audible, she decided to leave the basement. When she saw what her life's work had become, the work her father had bequeathed her, who had given everything he had for this place to thrive, the woman turned pale, fell to her knees, and sobbed. "
+ MAR_Collapse.4.a:0 "Horror without an end."
+
+ MAR_Collapse.5.t:0 "New order in the district center"
+ MAR_Collapse.5.d:0 "A crowd has formed near the building of the city MIA. Tonight, officials hurriedly packed their bags and fled in an unknown direction. The most enterprising citizens, who by a surprising coincidence have a criminal record, hastily began to remove all the valuable items from the expensive offices. However, the lucky people who grabbed the gifts of fortune were waiting at the door for the same ones who were trying to grab the blue bird by the tail. \n\nIn about 20 minutes the whole thing turned into a mass brawl. \n\nBut retired police captain Pronin, a lifelong law enforcement officer, had no intention of leaving things as they were. \n\nTaking his service pistol, the man went to the parking lot. He found a life-beaten truck there, smashed the glass with a brick he had found in the driveway, and, with some simple manipulation, started up the truck and drove it downtown. \n\nBefore he reached the crowd about 500 meters away, Pronin got out of the car and put the brick on the gas pedal. The 8 tons of steel crashed at high speed first into the crowds, who had not had time to disperse, and then rammed through the door, blocking the passage to the station. Pronin, who came closer, looked at the shocked crowd; the crowd looked back. \n\nThe man pulled out a cigarette and a gun. The cigarette lit up. The safety clicked."
+ MAR_Collapse.5.a:0 "And the shot..."
+ 
+ MAR_Collapse.6.t:0 ""
+ MAR_Collapse.6.d:0 ""
+ MAR_Collapse.6.a:0 ""
+ 
+ MAR_Collapse.7.t:0 ""
+ MAR_Collapse.7.d:0 ""
+ MAR_Collapse.7.a:0 ""
+
+ MAR_Collapse.8.t:0 ""
+ MAR_Collapse.8.d:0 ""
+ MAR_Collapse.8.a:0 ""
+
+ MAR_Collapse.9.t:0 ""
+ MAR_Collapse.9.d:0 ""
+ MAR_Collapse.9.a:0 ""
+
+ MAR_Collapse.10.t:0 ""
+ MAR_Collapse.10.d:0 ""
+ MAR_Collapse.10.a:0 ""
+ 
+ MAR_Collapse.11.t:0 ""
+ MAR_Collapse.11.d:0 ""
+ MAR_Collapse.11.a:0 ""
+ 
+ MAR_Collapse.12.t:0 ""
+ MAR_Collapse.12.d:0 ""
+ MAR_Collapse.12.a:0 ""
+ 
+ MAR_Collapse.13.t:0 ""
+ MAR_Collapse.13.d:0 ""
+ MAR_Collapse.13.a:0 ""
+ 
+ MAR_Collapse.14.t:0 ""
+ MAR_Collapse.14.d:0 ""
+ MAR_Collapse.14.a:0 ""
+ 
+ MAR_Collapse.15.t:0 ""
+ MAR_Collapse.15.d:0 ""
+ MAR_Collapse.15.a:0 ""
+
+ MAR_Collapse.16.t:0 ""
+ MAR_Collapse.16.d:0 ""
+ MAR_Collapse.16.a:0 ""
+ 
+ MAR_Collapse.17.t:0 ""
+ MAR_Collapse.17.d:0 ""
+ MAR_Collapse.17.a:0 ""
+ 
+ PAV_MAR_collapse:0 "Kazakh Republic"
+ MAG_MAR_collapse:0 "Far Eastern People's Republic"
+ YAK_MAR_collapse:0 "Sakha Republic"
+ BRY_MAR_collapse:0 "Republic of Buryatia"
+ NOV_MAR_collapse:0 "Provisional All-Russian Regency"
+ OMS_MAR_collapse:0 "National Urals Republic"
+ SVR_MAR_collapse:0 "Tyumen Republic"
+ KOM_MAR_collapse:0 "North Russian State"
+ TAR_MAR_collapse:0 "Idel-Ural"
+ NPL_MAR_collapse:0 "Nowa Polska"
+ 
+
+ 
+ MAR_Vitaliy_Mukha:0 "Vitaliy Mukha"
+ POLITICS_MUKHA_COLLAPSE_DESC:0 "After all that Russia experienced in the twentieth century, Vitaly Mukha seems like a man who came from another world. A pen pal of Boris Yeltsin, he led the life of a bureaucrat in the monstrous womb of Novosibirsk. With the constant changes of power, little had changed except the banner over his place of work and the modification of the AK by his racketeers. However, by his thirty-five, he had had enough of it. Fortunately the program of "Development of the Steppe", de facto russification of the Kazakh bureaucracy, came to hand. Life was just as leisurely, perhaps more stable. He felt that he was not just a cog in Kazakhstan. \n\nBut stability is not the most stable thing. The defeat of the Russians in the European campaign was followed by mass uprisings, political wrangling, chaos. And then it all went silent when Rutskoi's military mandate in the south began to stir. Ironically, none other than Mukha climbed to the top of the pyramid of the new republic. This little man has a big task ahead of him: to protect the people of Kazakhstan from any threats and to restore the stability he loves so much. Firmly and clearly."
+ 
+ MAR_Evgeny_Primakov:0 "Evgeny Primakov"
+ POLITICS_PRIMAKOV_COLLAPSE_DESC:0 "Eugene probably can't remember a time in his life when everything was quiet, maybe five years ago or even less. But who cares anymore. Former Governor of the Tyumen Region, he is now the first President of the Tyumen Republic. \n\nIn this hard time he swore to the people that he would protect them, defending them from the czarists in the west, from the madmen in the east, and, of course, from the general who killed hundreds of thousands to save himself. Russia may be lost, but there is still hope Tyumen will be saved, and after it the entire Urals."
+ 
+ MAR_Mintimer_Shaymiev:0 "Mintimer Shaymiev"
+ POLITICS_SHAYMIEV_COLLAPSE_DESC:0 "This hour has once again come, Russia once again lies in ruins by its folly. It has lost everything, its people, its integrity, and it seems that the Russian spirit itself has been broken after this war. \n\nAnd Shaimiev knows that now is the time to act. Just a few months ago he was a simple soldier, who miraculously survived the meat grinder on the western front. Now he is the first president of the Idel-Ural Republic. A hero to the common people and the savior of the Tatar and Bashkir nations. But we must not relax, the enemy's forces are still strong and the Russians, even in a state of agony, may still try to wipe out the independent Idel-Urals. \n\nLet them try, there is enough room for everyone. "
+ 
+ MAR_Dmitry_Vasilyev:0 "Dmitry Vasilyev"
+ POLITICS_VASILYEV_COLLAPSE_DESC:0 "One cannot say that Dmitry Vasilyev was a particularly outstanding man. Certainly he was doing quite well in surviving Russian anarchy and even initially took the arrival of the Young Russians to power positively. The return of the Tsar, the revival of old traditions, it seemed that finally the hour had come when Russia would arise again and show the world. But... this was not to be. \n\nAnd Dima knew that this day would come. Autocracy, the very essence of the Russian nation, and godless socialism, which ultimately led to its collapse, cannot be mixed together. In the end, the Mladorossians realized this the hard way, tens of thousands lie in the damp earth and hundreds more are badly wounded and no one else will save them. Russia got its way by turning its back on God. But there is still a chance to set things right."
+ 
+ MAR_Susanna_Pechuro:0 "Susanna Pechuro"
+ POLITICS_PECHURO_COLLAPSE_DESC:0 "History admits no subjunctive mood, and this is a fact which, one way or another, one has to accept. Of course, and Susannah is happy at times to fall into a world of dreams. In a world where the USSR did not lose the war with the Reich, where the Union is the greatest power. But now, it doesn't matter. \n\nWhen you come back to reality, you have to think about a lot of things, about Buryatia being in ruins, about Russia losing again, about the fact that you're actually the vassal of a very ambitious general with an army of mercenaries. But who cares? As long as you can, you have to cling to it."
+ 
+ MAR_Mikhail_Nikolayev:0 "Mikhail Nikolaev"
+ POLITICS_NIKOLAYEV_COLLAPSE_DESC:0 "To be honest, Mikhail never dreamed of being a leader of the state. What was it? Peaceful life had always appealed to him more, but when wars swept over the Far East with renewed vigor, he could not stay away. \n\now he sits in the middle of an icy wasteland, the Mladoros never able to repair anything, surrounded by mercenaries, deer, and scattered communes, driven by a mercenary commander from the east. Life certainly knows how to surprise."
+ 
+ MAR_Vladimir_Zhirinovsky:0 "Vladimir Zhirinovsky" 
+ POLITICS_ZHIRIK_COLLAPSE_DESC:0 "The Jackal of Iraq, as he was nicknamed by the people of the Middle East, returned to Russia in her darkest hour. Enthusiastic, it did not notice how it came too close to the sun and burned to the ground. But Vladimir Volfovich wouldn't be himself if he didn't have a plan to make things right. \n\nZhirinovsky really does have a great army, mercenaries, Russian peacekeepers, and people who have decided to help Russia in its hour of need, just as Zhirinovsky helped them recently. And of course the most powerful ally, Uncle Sam's own dollar, is behind the leader of the Far Eastern Republic. At another hour it would have been just another piece of dirty paper, but now all means are good. \n\nothing can break the hardened spirit of a patriot, Russia will be free!"
+ 
+ MAR_MAR_collapse_party:0 "OMD"
+ MAR_MAR_collapse_party_long:0 "All-Russian Mladoros Movement"
+ 
+ PAV_MAR_collapse_party:0 "Amanat"
+ PAV_MAR_collapse_party_long:0 "Amanat"
+ 
+ MAG_MAR_collapse_party:0 "LDPDV"
+ MAG_MAR_collapse_party_long:0 "Liberal Democratic Party of the Far East"
+ 
+ YAK_MAR_collapse_party:0 "LDPJ"
+ YAK_MAR_collapse_party_long:0 "Liberal Democratic Party of Yakutia"
+ 
+ BRY_MAR_collapse_party:0 "SP(NS)"
+ BRY_MAR_collapse_party_long:0 "Socialist Party - Neo-Sablinists"
+ 
+ NOV_MAR_collapse_party:0 "Regent's Union"
+ NOV_MAR_collapse_party_long:0 "Regent Union"
+ 
+ OMS_MAR_collapse_party:0 "NLP"
+ OMS_MAR_collapse_party_long:0 "National Liberation Party"
+ 
+ SVR_MAR_collapse_party:0 "Our Home is Russia"
+ SVR_MAR_collapse_party_long:0 "Our Home is Russia"
+ 
+ KOM_MAR_collapse_party:0 "RNU"
+ KOM_MAR_collapse_party_long:0 "Russian National Unity"
+ 
+ TAR_MAR_collapse_party:0 "Idel"
+ TAR_MAR_collapse_party_long:0 "Idel"
+ 
+ NPL_MAR_collapse_party:0 "PONP"
+ NPL_MAR_collapse_party_long: "Polish United People's Party"
+ #DAS EPILOGUS
+ TaS_WRW2_GER_epilogue:0 "THE EPILOGUE"
+ TaS_WRW2_GER_epilogue_desc:0 "\n\n\n\n\n\nGermany has been destroyed and the evil that oppressed Europe is gone. But the people have remained, and now only with their help can we learn what the New Germany is like."
+ var_nationality.500: "Czech, §R completely cleared of the consequences§! of §ҮGermanization!"
+ TaS_return_to_berezniki:0 "Return to [MAR.GetFlag] §Y[MAR.GetName]§!"
+ TaS_play_guot:0 "Explore [BRL.GetFlag] §Y[BRL.GetName]§!"
+ TaS_play_garnizon:0 "Explore [ZNE.GetFlag] §Y[ZNE.GetName]§!"
+ TaS_play_westphalia:0 "Explore [GWS.GetFlag] §Y[GWS.GetName]§!"
+ TaS_play_rheinland:0 "Explore [GRH.GetFlag] §Y[GRH.GetName]§!"
+ TaS_play_baden:0 "Explore [GBW.GetFlag] §Y[GBW.GetName]§!"
+ TaS_play_bavaria:0 "Explore [GBV.GetFlag] §Y[GBV.GetName]§!"
+ TaS_play_austria:0 "Explore [GAU.GetFlag] §Y[GAU.GetName]§!"
+ TaS_play_czechia:0 "Explore [GCZ.GetFlag] §Y[GCZ.GetName]§!"
+ TaS_play_remer:0 "Explore [GWF.GetFlag] §Y[GWF.GetName]§!"
+ TaS_play_baader:0 "Explore [GRA.GetFlag] §Y[GRA.GetName]§!"
+ TaS_play_sudeten:0 "Explore [GSU.GetFlag] §Y[GSU.GetName]§!"
+ TaS_PostGER_second_cw:0 "Beginning of §bSecond§! §ҮGerman! §RCivil War!"
+ TaS_PostGER_second_cw_desc:0 "§eWARNING! Once a war has started, you cannot switch between countries. Choose the country you like before the timer expires.§!"
+ TaS_invade_czechia:0 "Invade the Czech Republic"
+ TaS_west_german_reunification:0 "German Unification!"
+ TaS_PostGER_second_cw_looming_russian_invastion:0 "§RLOOMING GUOT INVASION§!"
+ 
+ PostGER_second_cw:0 "The Second German Civil War is on"
+ PostGER_secown_cw_started:0 "§RThe Second German Civil War will begin§!"
+ PostGER_warsended:0 "The war is over"
+ 
+ GER_unification_tt:0 "We will unify Germany!"
+ CzechSSR_tt:0 "A loyal Czech State will be formed"
+ UnforseenConsequences_tt:0 "§RThis will come to unintended consequences§!"
+ RemoveDeutsch_tt:0 "We'll solve the German problem once and for all!"
+ Guotintervention_tt:0 "We made the Russians too angry..."
+ 
+ TNO_Anarchy_ZZZ_Remer_tt:0 "§RGerman wasteland - consequence of Russian nuclear strikes§!"
+ TNO_Anarchy_ZZZ_Remer_tt_delayed:0 "§RGermans should have studied history better.§!"
+
+###ivents
+ TaS_GEREpilogue.1.t: "A New Order"
+ TaS_GEREpilogue.1.d: "Vladimir Gil has already lost the habit of doing paperwork, with the last months being spent in the front lines, or at least close to it. By now, such papers have become the main enemy of the field marshal, that even being shot by Werewolf Partisans dull in effect compared to the fear of being buried under a pile of documents: under the window of the temporary headquarters, screams are constantly heard, and someone even threw stones at the guards, but they were quickly dispersed. But today, today was a special day— the Decree on Denazification signed a week ago finally came into force and it is only right that the leader of the GUOT should have been personally present at the event. \n\nGil pulled on his jacket and went out into the street, entering his car's backseat. Germania now looked much less friendly than usual, but it didn't matter anymore. As the Germanmade car moved, the GUOT leader noticed all the marks the fascists; street names, plaques, or still-standing monuments, the biggest of which-the Volkshalle—imposed upon the horizon."
+ TaS_GEREpilogue.1.a: "It won't last"
+ TaS_the_neu_ordung_tt:0 "We still have a lot of work to do."
+ 
+ TaS_GEREpilogue.2.t: "The End of An Era"
+ TaS_GEREpilogue.2.d: "And so the car arrived at the Volkshalle, the former symbol of the greatness of the German nation. The majestic building was noticeably battered, artillery and air raids broke through the roof in several places, and the eagle, which previously towered at the very top, lying broken near the entrance. Nevertheless, the building still inspired some feeling of trepidation even in this state. "They certainly knew something about architecture," Gil thought to himself as he approached the zone where the main show was supposed to take place, at a safe distance where all kinds journalists, photographers, and ordinary onlookers gathered to look at the end of the majestic building. Security, of course, did not allow anyone to be close enough but the very sight of journalists made Gil sick. As soon as he joined the crowd, a young woman immediately approached him in the company of an operator, his camera etched with hieroglyphs that Gil could not even read, much less understand. "Hello, dear viewers, now we have Vladimir Gil, head of the German Office of the Occupied Territories and proponent behind the so-called, Denazification Decree. One of the major points is the demolition of the 'People's Hall' seen before us, do you want to add something on this?" Asked the presenter of the state TV channel, offering a microphone to Vladimir. \n\nLeaning slightly, Gil began to speak: "Yes-today, as part of Denazification efforts, the Volkshalle will be demolished, afterwhich denazification will begin in full force, eliminating all manners of monuments, the names of institutions of streets, and all other references to the fuhrers and national-socialism as a whole. There will also be trials of NDSAP members and their accomplices, historical injustice will be corrected." Finishing, he smiled and turned to the sappers, already waiting in position. Under the spotlight of both foreign and Russian journalists the lead sapper ceremonially approached Gil, saluting. "The sappers have carried out the order, waiting for further instructions!" \n\nGil picturesquely took a few steps forward, raised his right arm, and reported; "At my command! One, Two, Three!" Afterwhich he waved his raised arm to the sight of explosives devices detonating simultaneously, bringing down the beams and pillars of the structure afterwhich it fell, seamlessly dissolving into the ground with a large shook, a large wave of dust appearing afterward. Observing the situation for a few more moments, Vladimir Gil spares no time, lifting his feet and returning to his car-there is work to do."
+ TaS_GEREpilogue.2.a: "And so, a new era begins"
+ TaS_rip_big_building_tt:0 "The brainchild of Nazism, 'Germany' no longer exists."
+ 
+ TaS_GEREpilogue.3.t: "Sisyphean labor"
+ TaS_GEREpilogue.3.d: "Gil's car moved slowly through the streets of Berlin. Following the demolition of the Volkhshalle, Germania seems to enter an outrage as rallies soon appearing, turning into armed collisions. There is no end in sight to the discontent of the Germans. \n\nAt one point, something went particularly wrong—in a protest near Gil's motorcade, one especially angry protester escaped from the crowd and tried to release several bullets into Gil's car. While bullets from Tsarist guards restraining the protests reached him first and he was unable to run far from arrest, the suicide-explosion that he did reached the guards and some protestors, luckily having been done some distance from the cars. Soon, firearm shots rang from the buildings and crowds, a clear sign of a Werewolf ambush. \n\nThe skirmish did not last long, and the ill-equipped fanatics cannot surpass protecting Tsarist troops. It was a clear sign however, that it is still early-way too early-to leave Germany."
+ TaS_GEREpilogue.3.a: "The occupation continues"
+ TaS_denazification_tt:0 ""
+
+ TaS_GEREpilogue.4.t: "The Rescue"
+ TaS_GEREpilogue.4.d: "The Nazis are undoubtedly heartless, and their decision to leave their slaves labouring in factories even as bombing starts or during full-scale offensives barely showed their worst side. Following the Reich's formal capitulation however, the army didn't fight much-if mostly one-sided skirmishes with Werewolf partisans can be considered a fight at all. Much more often, Russian soldiers helped rescue people either from rubble or from the captivity of very desperate Werewolfs. Liberated people are then given first-aid medical assistance if neccesary and a survey to clarify their previous place of residence, after which they will be sent home by train. \n\nThus, many Czechs, Poles, Jews, Russians, and many more are given a better world, second chance and a ticket home. But not everyone was equally lucky, and many could no longer be saved. The Russians come as liberators, but many can never see this liberation."
+ TaS_GEREpilogue.4.a: "Eternal memory to the fallen"
+ TaS_spasenie_tt: ""
+
+ TaS_GEREpilogue.5.t: "Execution"
+ TaS_GEREpilogue.5.d: "Joseph Beyrle wasn't a man of vengeance—key word: wasn't. The years he weathered on Moskowien's plantations certainly did something to him, and that feeling lingered, longer and longer. Perhaps it is simply the lingering sense of noble duty, or of self-defense and retaliation. Is there even a point in it? \n\nThese are questions often lingered upon by the Central European Garrison's esteemed leader, but not today. Today, he is faced upon a special condition, and certainly a justified one. The man he is faced with are not conscripts, and not even concentration camp guards. No, they are a mix of reichskommissars, gauleiters, collaborators, and other disguting filth: architects of genocide and the industrialists gladly supporting them. The court had given their verdict, and now it is up to Beyrle for the direct administration of some well-needed justice. \n\nPerhaps he can make them suffer—just as they had inflicted to the millions-but by then, how will his liberators differ from these... monsters in human skin? Certainly it is God's duty to see to them, but his to send them up nonetheless. He took out his pistol, extended his right arm, and took aim, along with the squad at his command."
+ TaS_GEREpilogue.4.a: "On my call; one, two, THREE!"
+ TaS_kazn_tt: ""
+
+ TaS_GEREpilogue.6.t: "Bogatyr"
+ TaS_GEREpilogue.6.d: "Despite fervent devotion to his nation, Old Hans has little love for power, by whatever incarnation. Power had previously stripped the honest veteran of everything he held dear, all starting with the two world wars and descending into the west russian war, the civil war, and now, the russian occupation of his fatherland. Said Russians had come, bombed his house, and hanged an old aquaintance, leaving the man with nothing but to live on. \n\not only do they bombed his house, but also the plumbing. While they had promised to eventually repair it-good of them-they shouldn't have broke it in the first place, and he personally doubted their promises. And so Hans now walked daily, carrying buckets of water back from a nearby well. On one of his daily trips, he in interrupted by a severe back pain, forcing him to gently lower his buckets, tried to straighten up, and re-lift the bucket, when he caught glance of an oncoming russian soldier, looking at the old man with some confusion. Already heard of what the soldiers did to german civilians—robbing, killing, or even raping for fun-he took a few steps back, obviously not boding well. It was supposedly as revenge for what his nation did twice, but that was already so long ago! \n\nThe soldier broke the running thoughts in his head, asking if he needed any assistance. \n\nHans did not understand russian however, and it seems that the soldier didn't understand German either. Thus, he shook his head and pointed at his ears warily: it isn't the clearest way to display his misunderstanding, but he didn't think of it at the fear of the moment. \n\nInstead of any fantasies Old Hans might have gotten, the soldier simply shrugged, raised the buckets, and shook his head questioningly. Hans stood still for awhile, then pointed to his house with his hand, as the soldier silently walked to such direction, the old man trotting after him. \n\nSomething is certainly wrong here—the soldier didn't seem to resemble the brutish mongoloid the newspapers told him. Is it a ruse? Propaganda? Maybe an act of kindness, only to be shown as tyranny? Hans thought, his head hurting. Perhaps those questions should maybe be directed to the fatherland he blindly served for so long, instead of people he had never even met? He knew the nazis lied, so why is it beyond reason to think that they lied here too? Why is it so hard to believe such? \n\nOld Hans began to break, tears threatening to roll out. As the Russian soldier placed down his buckets of water, he turned around and wiped some sweat, smiling. Hans observed him closely-the man is young—not much older than the average Germam conscript, so what is the difference anyways? He sighed, realizing he should've cried alot by now. \n\nHe supposed he had to move on now."
+ TaS_GEREpilogue.6.a: "Now we have to move on."
+ TaS_bogatyr_tt: ""
+
+ TaS_GEREpilogue.7.t: "An Omen"
+ TaS_GEREpilogue.7.d: "Joseph Beyrle's day began as usual; washing, eating, and brushing his teeth, he would then clock into his office and sign papers for the rest of the day, a routine that bothered him as much as it would any other person. Recently, he had been also bothered by by another matter: seemingly contradictory census data coming from the Czech State showed the numbers of Germans in the population had sharply decreased, but then suddenly reincreased to previous levels as if nothing had seemingly happened, which seemed to be the case. In addition, he had heard more and more whispers about strange happenings in the Czechia, from the soldiers in particular. Something is clearly wrong, but he couldn't do much in such obscurity so he simply tried to refocus on work. \n\nWhen mail came in, Beyrle caught sight of an unmarked brown folder that easily contrasted itself among the generally white pile, catching the commander's attention who instictively move to open it, only realizing the potential security risks afterward. \n\nLuckily, what came out is no trap, nor a bomb, but images; pictures of killed Germans with Czech soldiers standing nearby, photographs of eviction processes, and many more. \n\nWhoever took these images was certainly involved, but also wanted people to know about it. \n\nThe Commander of the Central European Garrison immidiately took up his telephone to report the incident to the GOLT. After tense seconds connecting him to Vladimir Gil, a voice on the other side can be heard: "Yes, Joseph. What happened?""
+ TaS_GEREpilogue.7.a: ""Listen Vladimir-we NEED to talk. Now.""
+ TaS_czech_tt: ""
+
+ TaS_GEREpilogue.8.t: "Nation and the nationalist"
+ TaS_GEREpilogue.8.d: "The inhabitants of Liberec woke up to the daily broadcasts from the national radio's morning program, most of which being hypernationalist rhetoric, today even more than before. Today, Alois Grebenicek himself spoke on the national radio, the leader of the Czech State informing upon the new decrees and orders from government, their subjects subserviently settling down next to their radio, whereever they are. \n\n ...and once more, I would like to remind you that my-our primary duty is to restore Czech culture throughout our homeland. The only true solution to undo the ungodly imposition of German culture is the promotion of Czech culture, people, and tradition. So soon decrees relating to such will come into force... 'On the Protection of Czech Culture', 'On the Preservation of Czech Nationality', 'On the Restoration of Czech Traditions', and many more. I would like to remind you too of the culprit forcing our heavy-handed actions, the despicable German! It is because of German people that our nation returned to subjugation so soon after liberation, and it is because of the Germans that we all became slaves for thirty long and painful years! Never again—they are certainly the root of all our problems." \n\n"Therefore, I am obliged to announce the creation of our force of protectors—of National Security Battalions, true heroes of the state. These formations will have the power to evict and move the colonizing German away from their stolen homes into special camps located outside cities, but fear not: when you meet them in your daily duties in the reconstruction of our beloved nation, DO NOT discourage them, for they perform a sacred duty! A duty to clean the Czech State of the German taint, assisted by efforts of Degermanization and Denazification through all manners of places and peoples, but also particularly in languange. All German names will be changed to Czech, and our great Czech languange shall be the only legal languange of the nation, with German banned to be spoken in public. \n\nThe Czech State will be for Czechs, and for Czechs ONLY!" \n\nThat was the end of Alois Grebenicek's speech, now deeply imprinted into Czech memory. Reactions are mixed—some moved to celebrate, others to flee. Yet, all are distracted by fanfares that are heard through the nation, men of the newly formed National Security Battalions proudly passing down streets, dragging with them Germans of all age and sex out of town. The onlookers stare dumbfoundedly, preferring to remain silent in contrast to the occassional minority cheer, but Battalion members proudly chant their motto at the top of their lungs:"
+ TaS_GEREpilogue.8.a: "THE CZECH STATE WILL BE CZECH!"
+ TaS_cznation_tt: ""
+
+ TaS_GEREpilogue.9.t: "Czech Night"
+ TaS_GEREpilogue.9.d: "The last battalions were being trained while the rest were preparing for the operation. National Security units were stationed all over Bohemia and preparing for the so-called 'Czech Night,' an operation to drive the Germans out of the borders of the Czech State. A special effort was made by propaganda, which urged ordinary citizens to stand in solidarity with the troops. Finally, hours before the operation began, a decree was read out at the battalion locations to deprive them of criminal responsibility for killing Germans who resisted the expulsion. \n\nAnd then, at last, this day came. After Alois Grebenicek announced the beginning of the operation, pogroms against the Germans began throughout Bohemia. According to a prearranged plan of action, the battalions began to act. Breaking down the door of an apartment or a house, they drove the Germans out into the street. Resisting Germans were shot on the spot. They were formed into columns and driven to the border, disregarding casualties among the Germans. The main objective, to expel the Germans from the Czech Republic, was carried out by any means necessary. \n\nBy morning, Operation Czech Night was over. At least, its first stage was over. Now several problems had to be dealt with: the Germans had to be driven out of the Czech territory quickly. Each battalion had five trucks for this purpose. The Germans were crammed into them as much as possible and driven to the nearest border. Alois Hrebeníček congratulated the National Battalions on the air, but reminded them that the operation was still going on. At last revenge on the Germans has come true!"
+ TaS_GEREpilogue.9.a: "Glory to Alois Grebenicek - defender of the Czech nation!"
+ TaS_cznight_tt: ""
+
+ TaS_GEREpilogue.10.t: "Remember Munich '38"
+ TaS_GEREpilogue.10.d: "Operation 'Czech Night' took the Germans of Bohemia by surprise. Most of them were unable to stand up to the National Security fighters, so they were taken prisoner. But not in the Sudetes. The Germans were in the majority in the Sudetes, and thus they were able to give a decent response to the National Security battalions. But the forces were unequal, and therefore all the Germans were systematically shot. This turned the former Wehrmacht soldiers into a frenzy, which is why Kurt Knispel put his own men into insurrection. \n\nThe training of his soldiers, their caches of weapons and their motivation enabled them to successfully fight the Czech troops. But to act in daylight in enemy-controlled territory was veritable suicide. That is why his unit decided to go into partisanship. Small counterattacks on National Security units bore fruit - the unit grew rapidly and initiated skirmishes with the enemy not only at night but also during the day. \n\nIt soon got to the point where all Czech military formations in the Sudetenland were attacked by Knispel's troops. Because of that they were forced to leave the Sudetes, the "Česká Noche" operation there was hastily curtailed. For now, Grebenicek is in no hurry to send his troops into the trap and is waiting for Knispel to make a mistake. The latter, in turn, adheres to the same tactic. In addition, the Czechs began to be driven out of the Sudetes, using the same methods as Hrebeníček. One thing can be said with certainty so far..."
+ TaS_GEREpilogue.10.a: "The Sudetes remained German..."
+ TaS_czmunich_tt: ""
+
+ TaS_GEREpilogue.11.t: "Unanswered Questions"
+ TaS_GEREpilogue.11.d: "At noon, Grebenicek's telegrapher informed him that the GUOT and the Garrison demanded explanations about the situation of the Germans in Bohemia in general and the Sudetenland in particular. Alois was clearly distraught: he did not expect that Gil and Beyrle would find out the truth about his house. \n\nThey are expecting an answer within the next hour," said the telegraph operator. \n\nFuck," Alois muttered to himself, "make up any answer you want, but don't talk about all the shit we've got going on. \n\nThat's right," said the telegrapher and went back to his room. \n\n"We have to act!" - Hrebeníček thought and immediately started writing orders to the troops. "Due to the difficult situation in the Sudetenland, I REQUEST that the German militia be destroyed, that the infrastructure nodes be taken over and that the 'Czech night' in the Sudetenland be terminated!" This order was sent out to all units of the Czech army. The commanders immediately moved their subordinates to the area where the alleged "Remains of the Wehrmacht" were located. \n\n\n\n Expect that personnel losses will begin to grow exponentially, but one cannot go against the order ... so also Grebenicek demanded to act quietly and unnoticed by the GUOT and the Garrison, because he has no answers to the questions."
+ TaS_GEREpilogue.11.a: "Suppress these upstarts immediately!"
+ TaS_czguot_tt: ""
+
+ TaS_GEREpilogue.12.t: "It's hard to tolerate a friend"
+ TaS_GEREpilogue.12.d: "The incessant stream of calls was already tiring Walter out. He had hoped to be finished by 6:00, but it was almost 8:00. Requests for funding, solutions for captured Nazis, Red Army rampages-all this pestered him all day long. The second chance Schmidt got, he made the most of it. \n\nBut at last the phone was going silent and Schmidt could rest. Pouring a glass of whiskey, he reflected on his situation and looked out the window. The sunset blinded him, and he involuntarily turned away. People were walking home to the tinkling sound of birds. "Beautiful!" - thought Waldemar. After drinking the contents of his glass, he started making phone calls again. \n\nSuddenly there was a knock on the door. "Sorry, I'll call you back," said Waldemar on the phone and let him in. It was Andreas Baader, his former comrade-in-arms, one of the leading members of the Red Army along with Ulrike Meinhof. \n\nHello, old chap," Schmidt said cheerfully. \n\nice to see you too," Baader replied. \n\nWhat are you doing here? - Schmidt asked, filling his glass with more whiskey. \n\nThanks, I'm good," said Baader. - I'm here on business. \n\nWell, spit it out," said Schmidt enthusiastically. \n\nMy guys here found the location of the werewolves. We'll try to handle it peacefully, of course, but we can't rule out an aggressive scenario, either. Would you mind turning a blind eye to this event? \n\nYeah," Schmidt said without any initiative. You understand the risks, right? \n\nAbsolutely, Walter, but their crimes are out of bounds, you know? \n\nOkay, but this is the last time, okay? \n\nAll right, Waldemar, all right," Andreas said enthusiastically and hurried away. \n\nThere were certainly many more such requests from members of the Red Army and other armed formations, and Waldemar tolerated them. "It is better to know the enemy than to be in the dark about him," Schmidt believed."
+ TaS_GEREpilogue.12.a: "It's hard to be head of state"
+ TaS_baader_tt: ""
+
+ TaS_GEREpilogue.13.t: "Murder on the Pavement"
+ TaS_GEREpilogue.13.d: "The streets of Hanover were deserted, the streetlights came on, and Baader went to the bar. No, he didn't want to flood his position. The bar was the meeting point with Meinhof. Ever since the democratic government in Westphalia had been established, her life had become much closer to the end. \n\nAt the appointed time, Baader was in the bar, drinking yet another glass of good beer. Suddenly, someone grabbed him by the scruff of his neck and dragged him out the back door to the street. \n\nYou're out of your mind! - Meinhof hissed, "Have you seen werewolves in a bar? \n\nI-I just..." mumbled Andreas, who had been drinking heavily. \n\nLet's get out of here before anyone sees anything. \n\nOkay. \n\nThey walked in silence, occasionally glancing at each other to assess the situation. Finally, when they arrived at the park, they could discuss their plans. \n\nSince the collapse of the German Reich, the Red Army has lost a significant number of participants, as many consider the objective accomplished. But we know there's still a lot of work to be done," Meinhof said. \n\nWe need to start a new wave of propaganda. There are a lot of young people out there who are ideologically minded and looking for a vocation. \n\nI agree, but we have to be careful, we're close to collapse. Before Meinhof could finish his sentence, a bullet from a werewolf gun hit him in the chest. Immediately, Baaden fired indiscriminately at the supposed location of the shooter. When he heard a moan subside, he lifted Ulrika up. \n\nDamn werewolves..." Meinhof barely heard her say. \n\nStop! Wait! You can't do that! - Andreas shouted. - There's still a lot of work to be done! \n\nRemember... You... must... continue... the... revolution... in Germany... Right, Comrade Meinhof... She no longer showed any signs of life. Baader had to get away from the murder scene in a hurry. He walked over to the shooter and emptied the whole magazine into him. Now he knew where to go."
+ TaS_GEREpilogue.13.a: "To the office of Waldemar Schmidt"
+ TaS_fmeinhoff_tt: ""
+
+ TaS_GEREpilogue.14.t: "Ultimatum"
+ TaS_GEREpilogue.14.d: "Schmidt, as is his custom, arrived at the office on time. Expecting another day of routine chitchat with various people, he brought his lunch, so as not to be distracted during working hours. The first calls, the first tedious problems, and the first tedious answers. Nothing new. But Baader's appearance came as a surprise. \n\nHe burst into the office uninvited, saw Walter hanging up the phone, and began: \n\nThey killed Ulrika, Waldemar, they killed Ulrika! \n\nWho did? - Schmidt asked in bewilderment, a half-eaten sandwich in his hand. \n\nThose bitchy pigs are werewolves. In the street, Walter, you know, in the street! - Andreas said, out of breath. \n\nI hear you. - Schmidt said grimly. \n\no, Waldemar, you don't understand shit! - Andreas said. - She died in my arms. I have to carry on her work, our work, you understand? \n\nWell, I'll have a funeral... What the fuck kind of funeral, Waldemar? - Andreas interrupted. - Those bastards are going to come back and shoot all of us. They have to be exterminated. All of them. Every last one. I'll do it myself, just give me the okay. \n\nYou want to massacre the werewolves? - Waldemar asked. \n\nYes, that's what our time demands. - Andreas affirmed. \n\no," said Schmidt calmly. \n\nWhat do you mean no? - Baader, who was taken aback, asked again. \n\nI will not allow war to break out in the streets of Westphalia. My only and final answer is no. I understand your pain, but it is too much. - Schmidt explained judiciously. \n\nYou're gonna be sorry, okay? You're going to be very sorry! When the flames of the revolution hit Germany, you'll beg for mercy, but I won't give you shit, okay? You'll be very sorry! You'll rot in the same ditch as these GREAT VERVOLFs! - Andreas Baader shouted as the guards forcibly escorted him out of the office. \n\nSchmidt looked out the window. The sun was already illuminating the central square. "I hope Ulrika will forgive me and him," Walter thought. After standing for a while, he sat down again at his oak table, and with a bitterness in his heart he realized..."
+ TaS_GEREpilogue.14.a: "He lost a friend"
+ TaS_fmeinhoff_tt: ""
+
+ TaS_GEREpilogue.15.t: "Immersed in thoughts(and sleep)"
+ TaS_GEREpilogue.15.d: "Preparations for the establishment of the Constitution were underway in the parliamentroom. Politicians from different parties took turns expressing their opinions on the draft, its pros and cons, and the very meaning of issuing the Constitution at such a time. And while the narrator's monotonous voice was in the air, Maximilian - the head of Baden - nodded silently as a sign of propriety. \n\nFrom the very beginning, he urged his colleagues to let him go and hold the meeting without him, but they were adamant. "If you're not there, there's no point in gathering," they objected. Maximilian was happy to cancel the stupid event, but something inside made him come. \n\nHe'd been here for about an hour and a half, and the voices kept changing and changing. "Lord, are there a thousand of these people?" - The newly minted monarch spoke to himself in a pleading voice. His status and position were almost incidental. Without knowing it, he found himself the closest heir to the King of Baden, or so he thought. Either way, he didn't know how and didn't want to rule the state, but that's how fate turned out. \n\nIn his mind, he cursed everyone here for daring to pull him out of his beloved winery. He had been one of the best winemakers in Baden, but now he had to sit and listen to the chatter of these uncles. Deeper and deeper into his thoughts, Maximilian did not notice how he fell asleep. However, he was not much concerned about it, if he had found out. Still, sleep would be much more useful than "hearing the bill for a new constitution for the Kingdom of Baden-Württemberg."
+ TaS_GEREpilogue.15.a: "How I understand him..."
+ TaS_sleepymax_tt: ""
+
+ TaS_GEREpilogue.16.t: "It's hard to be King"
+ TaS_GEREpilogue.16.d: "He was free. After days of being dragged through offices and various waiting rooms, he was finally free. Immediately he headed to his winery. Spending time at the winery was what he considered the best and most rewarding activity of his life. Picking up his personal driver and part-time winemaker best friend, he was in his workshop in half an hour. \n\nAfter chatting with the workers, whom he knew personally and with whom he was on good terms, he went to his taster friend, Duck Salder. Maximilian complained about his troubled life. Duck offered him a fresh red semi-dry wine. The monarch gladly agreed and, after thanking his respected friend, he hurried to his study. \n\nBut today he decided to be more or less productive - to read. But he chose wisely. "After such a busy week, we should rest!" - thought Makimilian and took "Sherlock Holmes" by Arthur Conan Doyle from the library. Pouring a glass of wine and sitting in an armchair, he began to drink it judiciously, trying to understand the most subtle notes of taste. But the first glass ended too quickly and Maximilian could not understand it. Then he drank another, another... when the bottle was empty, the Monarch's hands first dropped, then the book fell out of them, and finally he fell asleep sitting in his chair."
+ TaS_GEREpilogue.16.a: "Maybe I'm a little like him..."
+ TaS_depressioninking_tt: ""
+
+ TaS_GEREpilogue.17.t: "The ball is over"
+ TaS_GEREpilogue.17.d: "At first he did not understand what happened. The ringing in his ears remained for some time, during which he still did not understand anything. Looking at the glass of his house, Maximilian saw cracks sprawling all over the window and a bullet hole in the center. Although he did not fully understand what had happened, he decided to crawl into a closet and get dressed. Suddenly Maximilian heard gunfire outside his window, someone screaming and some people coming into his house. Half a minute later, the men of the Kingsguard, a special unit of the forces, entered his room. The most important of them all seemed to say, "Your Highness, please come with us," and he held out his helmet. \n\nAll right," the winemaker agreed timidly, and they headed for the exit. \n\nAlthough he wanted to know more, his instinct for self-preservation did not allow him to do so until they were in the car. \n\nWhat's going on? - Maximilian asked. \n\nAn attempt has been made on your life, Your Highness," the soldier replied gruffly. - After passing certain laws against former Nazis, they have decided to overthrow you and your government. According to the information we have, there is a fascist uprising in the west of Baden-Württemberg. The leader of the uprising is none other than Ernst fucking Remer. \n\nSo what do we do next? \n\nI think we should take you to a safe house and ask for instructions from Berlin. \n\nWith the answer to his question, Maximilian was silent and took one last look at his house, his winery, and realized:"
+ TaS_GEREpilogue.17.a: "Enough feasting, the people need CHOICE!"
+ TaS_badenrevolt_tt: ""
+
+ TaS_GEREpilogue.18.t: "Offer"
+ TaS_GEREpilogue.18.d: "And yet, I was very lucky! - thought Walter Scheel, sitting in his study. His decision to start the uprising at a time when Russian troops had already crossed the Oder was an indicator of legitimacy for Moscow. Gil personally came to him to discuss the terms on which Scheel would be the head of state. \n\nSuddenly the telephone rang. When he picked up the phone, he heard: \n\nHello, is this Walter Scheel? - the man asked. \n\nYes, it is," Walter said with a little surprise. \n\nI'm glad to have this conversation with you. I have a very interesting proposition for you. - the man said. \n\nWell, I'm all ears. \n\nYou see, I've had quite close ties to the Nazis in the past, and I'm one of the leading industrialists, so I'm afraid for my life. \n\nAlright, I understand. - Scheel answered. Could you give me the opportunity to settle down in the Rhine? But in return, I am prepared to give you complete or nearly complete protection. In addition, my subjects are willing to work for you. Agreeing with me is in your interest. \n\nAfter pondering the proposal for a few seconds, Scheel finally answered: \n\nWell, I think your offer is quite favorable. I'm willing to give you the land and take care of all the paperwork. \n\nFine," replied the industrialist, "I'll explain the nature of this security later. \n\nOkay, goodbye," Scheel ended the conversation. \n\nAnother Nazi fled to the Rhine from the oppression of the new governments. And Scheel made the difficult decision to harbor them. In return, he was getting valuable employees and other useful things, like the same protection. But he was beginning to suspect that such volumes might make many people wary, including the Garrison and Gil. So he should have reduced the flow of such refugees. But he was too fond of profit."
+ TaS_GEREpilogue.18.a: "We hope that no one finds out Raine's little secret."
+ TaS_rheinsecret_tt: ""
+
+ TaS_GEREpilogue.19.t: "No secret will come to light"
+ TaS_GEREpilogue.19.d: "Toward evening Walter decided to relax. He was sitting in a chair, sipping a strong gin, when the phone rang. \n\nYes," Scheel said in a tired voice. \n\nHello, Walter," the voice was painfully familiar. Instantly realizing the identity of his interlocutor, Scheel put the bottle on the table and confidently continued. \n\nHello, Vladimir," he said, referring to Gil. \n\nHow are you? - Gil inquired. "Not bad overall, could be much worse. \n\nI'm glad to hear that. But I'd like to ask you, how long will you be hosting the Nazis? Gil probably smirked when he realized the tricky nature of the question. \n\nI'm going to stop taking them soon. \n\nSoon, when is that? - Gil continued. \n\nWithin the next month. \n\nOkay, but how many Nazis have you taken? - Gil was getting more and more obsessive. \n\nHow should I know, I don't keep records. - Scheel replied. Your rough estimate. \n\nAbout a few hundred officials of all stripes. \n\nOkay, Walter. You know I love you, so I don't pry into your business, but just know that you can only do this for the rest of the month. \n\naturally, Vladimir. I'll have that gate closed right away. \n\nOkay, I'll talk to you soon. \n\nI'll talk to you soon. - Scheel replied and exhaled. No one had ever asked him for that much information before. He'd already figured it out..."
+ TaS_GEREpilogue.19.a: "It won't go away."
+ TaS_rheinnazis_tt: ""
+
+ TaS_GEREpilogue.20.t: "An Ordinary Day in Strasbourg"
+ TaS_GEREpilogue.20.d: "The situation in the Rhine has changed dramatically in the last few weeks. After the flow of Nazis began to be artificially reduced, scattered units of werewolves flocked there in droves, intending to change such a situation. Scheel may have suspected that they would want to change the situation, but the way they did it came as a complete surprise to him. \n\nBy 10 a.m., several trucks full of werewolves with guns had arrived at Strasbourg's central square. They surrounded Scheel's administration and did not allow anyone to come near him. Soon their ringleader made demands: the armed formations in Strasbourg must lay down their arms and Walter must surrender with his guards. Scheel was given half an hour to think about it. \n\nHe was in a desperate situation. The Werewolves had cut the cables of the telephones and most of the telegraphs. Walter was doomed. He asked the head of the encirclement to let the women out of their staff and they, after thinking about it, agreed to comply. "Now my conscience is clear," thought Scheel. After half an hour the werewolves demanded an answer. If they refused, they were going to blow up the building. Soberly assessing the situation, Scheel agreed to surrender the garrison of the city and himself. \n\nWhen it seemed that nothing could save him from certain death, the Nazi fighters began shooting at him from different streets. Scheel decided to take matters into his own hands. Taking a machine gun from one of the dead fighters, he began shooting at the werewolves. Soon they decided to spit on Strasbourg and go far away, but the roads were blocked. Then they had no choice but to surrender. \n\nIt turned out that one of the soldiers had been on vacation in the Rhine capital when the Nazis invaded. He was not confused and immediately reported to his comrades, who immediately rushed from nearby units to Strasburg. Walter Scheel personally congratulated this fighter and said that he would be awarded a medal. \n\nWalter, already reeling from the early shock, was reflecting on what had happened. "You know, this is just the beginning," Walter said to himself, "the Nazis feel their power, that's why they attack. And they're right about something." The silence was interrupted by a phone call. Scheel already knew who it was. Moscow. Gil or Byerly. It didn't matter. We've got to think of something urgently to keep them from removing him from office."
+ TaS_GEREpilogue.20.a: "This is going to be a very long conversation."
+ TaS_rheinrevolt_tt: ""
+
+ TaS_GEREpilogue.21.t: "Payback"
+ TaS_GEREpilogue.21.d: "It was a hectic night near the Westphalian border, with a bunch of uniformed men bustling about in the woods at the edge of the forest. Among them were several former Reich officers, soldiers and even one very decent-looking industrialist. Late at night, however, they tried to sit as quietly as possible so as not to attract the attention of the Bavarian military. \n\nTime passed slowly and they were beginning to get nervous. The young officer, Heinrich, approached his old acquaintance, Siegfried, they had served together in the German army, fighting in the Civil War and the Second West Russian War. \n\nDo you think," Heinrich began, "that maybe he ditched us, took the money and took off. \n\nLook, I've known Max for a long time, he's moved a lot of people across the border, don't worry. \n\nHe's been gone a long time, I think someone's watching. \n\nBuddy, it's just nerves. It'll be fine. Maybe you're right. \n\nHenrich sighed and even calmed down a little bit when suddenly the clearing came alive. It all started with a single shot in the air, then the glade was retreated by the armed men. Eventually all those who tried to escape were loaded into a truck with the symbols of the Bavarian State. Max stood nearby and watched the whole thing. Did he feel guilty about it? No, he was taking revenge on the Nazis, would he continue to do so? Yes, he won't forget what they did to Maya, ever."
+ TaS_GEREpilogue.21.a: "Justice will prevail."
+ TaS_bavariarasplate_tt: ""
+
+ TaS_GEREpilogue.22.t: "Performance"
+ TaS_GEREpilogue.22.d: "Walter had been playing for ... about a day, although he himself had lost track of time. Without a break, without a rest, he sat at the piano in the dilapidated house and played. He pressed the same keys every fifteen minutes. He could not stop, even though the skin on his fingers was almost worn off he continued, if suddenly he stopped doing it he would be shot. The patrols of the Bavarian forces changed several times, I think it was the fifth. \n\nHis head was throbbing and his eyes were watering, but he kept going. Around him stood them, soldiers, unwashed and unshaven, not long ago they had been slaves, and now they stood over him. They laughed, they cheered, the music clearly pleased their ears, but their strength was running out and soon the former Reich soldier would be unconscious. \n\nAnd then he couldn't help himself, he couldn't take it anymore. "Please... let me go... I was just a driver... I... I'm sorry," the unwilling musician shouted. Soon he felt someone pat him on the shoulder. Through the humming in his head he heard, "Calm down. And then with difficulty he raised his head and opened his tear-shrouded eyes and saw the barrel of a gun pointed directly at him. In just a moment the white keys were covered in blood mixed with the remains of the Nazi's skull. "We'll have to tell the next one that the concert is over," pronounced one of the soldiers. "Yeah, he was starting to falsify towards the end anyway," said the other one. So the squad left the building leaving the musician lying on the floor, the next patrol will take the body."
+ TaS_GEREpilogue.22.a: "Encore performance is over "
+ TaS_bavariavystup_tt: ""
+
+ TaS_GEREpilogue.23.t: "Betrayal"
+ TaS_GEREpilogue.23.d: "Today Franz was incredibly angry. The well-paced denazification of Bavaria was being thwarted. And by whom! Bloody Baader and the socialists are taking over city after city and there's nothing the army can do about it. \n\nIt got to the point where these assholes started freeing Nazis from the factories where they were put to be re-educated. No, no, it was more complicated than that. Goddamn Baader was never anti-Nazi. He put on the red cape and remained a bastard, only to become a red-brown bastard. \n\nIt can't go on. It can't! If bloody Baader thinks he can plunge Germany into barbarism again he's wrong... very wrong. Franz got up abruptly from his desk and went to an emergency meeting with the generals. "If the damn Nazis are serious about taking revenge, I'll teach them a lesson. The whole of Germany will burn until the last bastard is dead and I will personally see to it," he thought to himself as he put on his suit. \n\nThe unruly North Germans will pay for their stupidity..."
+ TaS_GEREpilogue.23.a: "and I will personally supervise it"
+ TaS_bavariacommie_tt: ""
+
+ TaS_GEREpilogue.24.t: "The end of one and the beginning of the other"
+ TaS_GEREpilogue.24.d: "Home, sweet home! - thought Otto as he stepped off the plane. He had returned to his homeland, Austria. He had seen its rise and its catastrophic fall, and no longer expected to return to his native land. But fate had decided otherwise. He was greeted by a crowd of people who were genuinely happy for him. "How glad I am to be back," Otto said, wiping away a tear of happiness. \n\nRight at the gate, they put him in a luxury car. The joyful Austrians ran after the car, but it quickly sped away from them. "Congratulations on your return, Otto," the MP said, "there's a lot of work to be done." Otto, in a show of support, nodded. As we approached the airport, King got out of the car and walked through all the stages of the arrival, thus showing that he was just as ordinary as he was. \n\nFrom there, Otto saw the most interesting thing of all: a dozen or so soldiers and a crowd supporting them were tearing down a monument to Adolf Hitler. Journalists immediately ran up to King and asked for his opinion on this event. Otto was silent and went to his waiting car. \n\nAlready in the car, he told the driver that he was proud of the people who were destroying the memory of this "scum of society. The driver agreed and said he was also involved in the denazification of Austria. Otto praised him and they drove the rest of the time in complete silence. "Still, the Austrians are the best people in the world," thought Otto.
+ TaS_GEREpilogue.24.a: "Ahead both the future and the work"
+ TaS_ottohere_tt: ""
+
+ TaS_GEREpilogue.25.t: "Memories"
+ TaS_GEREpilogue.25.d: "It was evening. He soon finished all his business and headed out. After locking his office, Otto headed to the checkroom to retrieve his coat. "Where are you going, Your Majesty?" - A young cleaning lady inquired. "To the park," replied Otto briefly, "I want to take a stroll through evening Vienna. He got dressed and left the parliament building and headed for the park. \n\nThe weather was beautiful and Otto was immersed in his dreams. And in them he saw a powerful union of the German Empire and the Austro-Hungarian Empire, together surviving the crises. He saw monarchy as the best form of government for all of Europe. He pondered the reasons that led to the defeat of the Central Powers in World War I and that if they had won, the world would not have seen the horrors of Nazism and Fascism. \n\nHe had forgotten all about the time. It was almost 10 p.m. In his hurry back to life, he headed home. Walking through the streets of his beloved Vienna, he involuntarily thought about other cities. Berlin, the capital of the world, had been transformed by Albert Speer into an ugly concrete colossus whose main purpose was to demonstrate the power of the Nazis. Rome suffered much less under the Nazis, but was nevertheless also turned into a "show of force capital". But it is amazing how well preserved Vienna is. Its old streets with their alleys and nooks still reminded him of the old days of the Austro-Hungarian Union. \n\nUnWhen he got home, he looked at Vienna and realized..."
+ TaS_GEREpilogue.25.a: "This is the city he wants to live in"
+ TaS_ottovienna_tt: ""
+
+ TaS_GEREpilogue.26.t: "Principles and their Violations"
+ TaS_GEREpilogue.26.d: "On this day nothing foretold trouble. Otto von Habsburg went to work as usual. As he was writing his report to the accounting department, a panting young guardsman suddenly ran in and said clearly and firmly, "Your Majesty, the reds have risen in the north of the country!" Otto was surprised, but clearly not confused. After pondering what he had said, he replied, "It was to be expected. In our 'brave new world,' there is no other way. If you give power to the right, the left will rise, and vice versa. The world is changing. You can't change anything." \n\nThen he fell silent and stared out the window for a long time. The sun was just reaching its zenith. The greenery was pleasantly soothing to him. But in the distance he could see the dark clouds coming in. A storm was coming. "What are you going to do?" - The fighter asked, already out of breath. Otto looked out of the window a little longer, then turned around, sat down at the table and said with pain in his soul, "As fearless as the Austrians are, so stupid are they. Send out the army." The soldier, after hesitating a bit, waiting for another "most interesting" lecture, nodded his head and rushed to the phone. \n\nSoon Otto called his assistant and asked him to dial Gil. Otto, being a lover of accuracy, was going to paint a picture of what was happening in Austria. It might, of course, have caused anxiety in Berlin, but he knew for certain that the Austrians would listen to no one else. Thinking over his words again, he dialed the telephone. \n\n "Yes, Mr. Otto, Vladimir Gil is at the machine," said a clear voice.
+ TaS_GEREpilogue.26.a: "Good afternoon, Vladimir, I have bad news..."
+ TaS_austriarevolt_tt: ""
+
+ TaS_GEREpilogue.27.t: "First Class"
+ TaS_GEREpilogue.27.d: "Remer has been on the move all day today, heading to an emergency staging area near Strasbourg to assess the success of previously planned operations, and things have clearly not gone according to plan. Not only had the original plan to seize the territories of Westphalia and Baden failed and the local leaders miraculously escaped death, but the cursed Baader had also spoiled everything with his rebellion. \n\nWest Germany looked more and more like a patchwork quilt, ripping apart before our eyes. As he approached the city, Otto-Ernst heard the sounds of air defenses and the thundering explosions of exploding artillery shells, indicating that the Rhineland Alliance forces intended to go on the offensive in the region and push back the Werewolf forces. The Reich General could not allow this to happen. \n\nOnce there, Otto left the armored personnel carrier and saw the new army with his own eyes, unwashed, hungry, and with frantic eyes, the last of the Reich loyalists looked like this. The situation was depressing, and then the commander's mind began to flood with memories. Of the campaign of '41 and the fight against Russia, even though it initially seemed that the expanse of Russia would swallow the German war machine, he proved that the German spirit was invincible. And now he will prove it again. \n\nAs the commander-in-chief approached the headquarters, the thought suddenly flashed through his mind that the war he was now engaged in was only an echo of that war more than 30 years earlier. Every word was another bullet, every order a grenade. And at the head of it all stands the soldier Remer, the last Loyalist turned warrior, who stands and conducts the army like an orchestra, destroying everything..."
+ TaS_GEREpilogue.27.a: "Like World War II"
+ TaS_remerstate_tt: "To Führer Römer and the rebirth of the Third Reich!"
+
+ TaS_GEREpilogue.28.t: "Morning Star"
+ TaS_GEREpilogue.28.d: "Since morning Salzburg was turbulent. Left without orders from above, the garrison of the city opened fire on the rioting workers at night, which was a fatal mistake, and by seven o'clock the garrison was completely overwhelmed, the bodies of the executioner soldiers were hanging on the street poles, giving the whole place an atmosphere of a kind of madness. A revolutionary frenzy that did not abate for a minute. \n\nBy ten o'clock, a total pogrom of shops, banks, police stations began. All this became the target of popular anger. A little later, the arsenal fell to the onslaught of the crowd. And at the head of it all was Baader, who had personally arrived in town. \n\nAround lunchtime he stood on the square surrounded by ordinary people, tired of the oppression of the bourgeoisie, of the Nazis and Russians who had occupied these lands and later handed Germany over to loyal czars. Now was clearly not the moment for long and loud speeches, but Baader knew what to do. In a couple of jerks he climbed into the armored vehicle like another leader of the revolution half a century earlier and began to push his speech. "Comrades! To the workers of Austria and Germany. The time has come to throw off the shackles of imperialism, to wrest Germany from the hands of the bourgeoisie and foreign influence. Today the bourgeoisie has given us an unheard of gift! They gave us a machine gun! With which we're going to beat down the cities of those who are not ready to accept the revolution. And you are witnessing the birth of a new Germany, free, honest and strong! So let us comrades make the great leap toward communism and free the motherland from its clutches," when Baader finished he decided to take a better look at the crowd around him. \n\nThese were not ragamuffins, not expendable material to be burned in factories. There were people cheering, and shouting. They were ready to follow Baader anywhere, even to hell, just to make Germany great again. The only thing Baader was thinking about now after the inspection was unusual, however. He distanced himself from the crowd and from the noise and thought, "What will be the last sound I hear? I hope it's a gunshot..."
+ TaS_GEREpilogue.28.a: "...not to think about what you didn't have time for"
+ TaS_baaderstate_tt: ""
+
+ TaS_GEREpilogue.29.t: "Movie"
+ TaS_GEREpilogue.29.d: "Kurt watched movies as a child. Even then he marveled at the way pictures came to life on the screen, in the Triumph of the Will he could personally be at the sixth annual congress of the NSDAP. The heroes of ancient times and modern times came to life before him. The pictures in general had an incredibly powerful effect on him. \n\nThen the war broke out, in which Kurt felt like a major hero, or at least they tried to make him one. "The most effective tanker in history", "Hitler's tank ace", he was literally showered with titles and became a hero to many. But deep down, he didn't understand, was that war necessary? Still, sometimes wars are fought for no particular reason. \n\nAfter the war, he just wanted to be alone, but he couldn't. Even a house in the Sudetes, a family, and a decent amount of servants couldn't drown out the sounds of his conscience. Every night he woke up with nightmares. And every morning he would rather leave, preferring to spend his time outside. \n\nAnd now the tanker got a chance to be a real hero to his men. He climbs back into the tank, knowing the night is short and the goal is far away. He swore to the Germans a long time ago that he would protect them to the last man and now it's time for him to keep his promise. To become what he has always been called and what he has always wanted to be..."
+ TaS_GEREpilogue.29.a: "The Last Hero"
+ TaS_sudeten_tt: "We are preparing for our last march."
+ 
+ TaS_GEREpilogue.30.t: "I'm tired"
+ TaS_GEREpilogue.30.d: "Remer began quietly enough, the artillery guns were not hitting his position even formed some sense of calm. The enemies of the new Germany were defeated for the moment and one could even rest a little. With sluggish, lubricated movements he did get to the closet and looked at his uniform, all dirty with drops of blood... "We'll have to order a new one later", thought to himself the general. Nevertheless, almost to the door he decided to sit on the chair, a couple of minutes will not do anything now. \n\nBut then the unexpected happened. A sharp knock on the door broke all the plans of the new Führer. On the other side stood a young soldier, looking slightly inappropriate: frantic eyes, disheveled, something was clearly wrong. "Rockets! The Russians have launched!" - no formality, no appeal, but even that was enough to make Otto's pupil dilate. His heart raced and it was as if a concert had begun, squeezing out what was left of reason in his head. \n\nIt would be very difficult to describe the events further. Remer jumped into the armored personnel carrier in a state of rage and made his way to the nearest bunker. His mind was jumbled with absolutely everything it could be. Plans were ruined and in general. Was there any point in hiding in the bunker?  \n\nevertheless, after half an hour of driving, the armored personnel carrier approached an inconspicuous hiding place somewhere in the German forests, a place for only one because of the size of the bunker and the amount of supplies there. The soldiers saluted Remer one last time as he closed the hatch behind him. He couldn't believe it, the work of his life was collapsing for the second time because of the damned Russians. When the general pulled himself together and decided to come out something shook the bunker as if a giant monster was walking through the woods from above. General Reich never found the strength to come out. \n\nAnd now he was alone in the bunker, the executioner of the German people, like Sisyphus, whose work had just been reduced to atoms. In the darkness, he was nevertheless able to light a candle on a small table and sit in a chair. Somewhere in his pocket he fumbled for a cross, there could be no better moment for it. Remer took it in his hands, folded them in a prayerful pose, and closed his eyes."
+ TaS_GEREpilogue.30.a: "Help me, Lord, for I am so tired."
+ TaS_germnany_tt: "§R It looks like the history of Germany ends here!"
+ 
+ TaS_GEREpilogue_news.1.t: "[Get_newspaper_header]Democrats Unite West Germany!"
+ TaS_GEREpilogue_news.1.d: "After the collapse of Germany and the ensuing crisis in Germany, the Second Civil War began. It seemed that the brainchild of Otto von Bismarck would be finally destroyed. \n\nBut in this struggle, the winner was Waldemar Schmidt, former head of the Red Army and current president of the German Republic. After fierce fighting, through blood, sweat, and tears, his men were able to pull out the victory. \n\now he has the hard work of rebuilding his homeland, which had suffered from the Russian invasion and the ensuing conflict within Germany. \n\nThe people look to Schmidt as the head who will lead them to democracy and prosperity."
+ TaS_GEREpilogue_news.1.a: "And he will do it"
+ TaS_GEREpilogue_news.1.b: "Let's Watch a Mutilated Germany"
+ 
+ TaS_GEREpilogue_news.2.t: "[Get_newspaper_header]Liberals Unite West Germany!"
+ TaS_GEREpilogue_news.2.d: "The result of the bloody power struggle in a divided Germany was the Second Civil War. Many assumed that Russia, not wanting to look at this mess, would simply introduce its troops and hand over the territories to the Garrison. But contrary to these assumptions, Germany emerged victorious in the war for power. \n\nThe previously unassuming pilot became the head of the Rhine Union and was about to increase his profits, when suddenly his troops were able to regain control of the part of Germany that the Garrison had no control over. \n\now Walter Scheel set a clear goal to rebuild Germany after the war and to destroy the radicals in the government. By declaring neutrality, he emphasized Germany's independence from Russia and the OFN. \n\now he must try hard to ensure that one of these political players does not take him over."
+ TaS_GEREpilogue_news.2.a: "Welcome Walter Scheel as President of West Germany!"
+ TaS_GEREpilogue_news.2.b: "Let's see his ability to maneuver in world politics"
+ 
+ TaS_GEREpilogue_news.3.t: "[Get_newspaper_header]Winemaker and his subordinates are uniting West Germany!"
+ TaS_GEREpilogue_news.3.d: "After tense weeks in Germany, the powder keg exploded, starting the Second Civil War. The Germans were killing Germans and it seemed like it would never stop, but the most worthy of all was found. And if there is a fate in the world, it made perhaps a fatal mistake here. \n\nA winegrower from Baden with family ties to the House of the Princes of Baden became king quite by accident. It seemed as if Maximilian was ready to give up his duties altogether, if only no one would bother him in the winery. \n\nBut his subjects proved to be the best fighters in all of ruined Germany and with incredible effort and propaganda, they were able to unite the Germans, destroying the rest. \n\now it looks like Maximilian will have to accept his fate and take the reins."
+ TaS_GEREpilogue_news.3.a: "Long live King Maximilian I!"
+ TaS_GEREpilogue_news.3.b: "God forbid this clown does something funny."
+ 
+ TaS_GEREpilogue_news.4.t: "[Get_newspaper_header]Monarchists Unite West Germany!"
+ TaS_GEREpilogue_news.4.d: "The remnants of the Third Reich under Moscow's supervision could not coexist peacefully even after a few months. The Second Civil War soon broke out. Swallowed up in the ashes of war, the states perished one by one, bringing the end closer. But only the strongest survived: Bavaria. \n\nCreated under the leadership of the titular Duke Franz of Bavaria, it was able to weather the storm and all the hardships, becoming the only legitimate government of the moment. \n\nRemembering the horrors of the concentration camps and the Nazis, Franz will not leave them even an inch of land. He must destroy this contagion once and for all. Germans see him as a strong and resolute monarch who can restore Germany's image in the eyes of the world community. \n\nBut for now it is important to restore Germany after another fratricide and to keep power in his hands. And Franz will do his best to do so."
+ TaS_GEREpilogue_news.4.a: "Long live Franz Bavarian!"
+ TaS_GEREpilogue_news.4.b: "We will expect prudence, not revenge"
+ 
+ TaS_GEREpilogue_news.5.t: "[Get_newspaper_header]Austria Unites West Germany!"
+ TaS_GEREpilogue_news.5.d: "The Second Civil War shocked the entire world community, putting it before the fact of fratricide on German territory. It seemed that no one would survive in such a situation on the remnants of the Nazi state. But they were greatly mistaken. \n\nIn the north of Austria, the Red Army revolt erupted as the civil war began. Otto von Habsburg, only to return to his homeland, was forced to act. The Austrian Armed Forces, one of the best-trained, moved easily through Germany, destroying one clique after another. This eventually gave Otto control of all of West Germany. \n\now, having proclaimed the Austro-German Empire, he must rebuild the devastated territories of Germany and Austria and raise his image in the eyes of the world. So far Otto enjoys the trust of Russia, so he should focus on domestic politics. But how long this will last - no one knows."
+ TaS_GEREpilogue_news.5.a: "Time to get down to business!"
+ TaS_GEREpilogue_news.5.b: "Let's take a wait-and-see attitude about them"
+ 
+ TaS_GEREpilogue_news.6.t: "[Get_newspaper_header]Czech Republic Splits West Germany!"
+ TaS_GEREpilogue_news.6.d: "The striking result of the bloody Second German Civil War, after exhaustive fighting in Germany itself, the victor rashly went to war on the Czech state. The attempt of the winner of the main battle to enslave Bohemia again ended in complete defeat and the Czechs took over the whole of West Germany. \n\nThe Czech troops had already paraded through the largest cities in Germany, and their leader, Alois Hrebiniček, had already announced "the complete resolution of the German question and the beginning of the total assimilation of the Germans. By order of Alois, the Czech state was transformed into the Great Moravian Empire, appropriating the territories of Bavaria and Austria. \n\nIn the rest of West Germany, puppet states were organized, entirely subordinate to Prague. There are already numerous reports of Czech atrocities in German cities. \n\nSo far there has been no public reaction to this situation."
+ TaS_GEREpilogue_news.6.a: "The German threat is destroyed once and for all!"
+ TaS_GEREpilogue_news.6.b: "What is the fate of the German people from now on?"
+ 
+ TaS_GEREpilogue_news.7.t: "[Get_newspaper_header]Ex-military unites West Germany!"
+ TaS_GEREpilogue_news.7.d: "Who would have thought that peace would soon come to Germany after the outbreak of the Second Civil War. But it turned out the way it did. And it seems that the weakest faction there won, which was almost completely destroyed by Alois Grebenicek, the Czech ultranationalist. \n\nAfter the Czech Noche, the ethnic Germans in the Sudetes rose up under the leadership of Kurt Knispel. With successful tactics, training and luck, he and his troops were able to successfully repel the Czech attack and then launch an assault on the remnants of Germany. \n\nAt the end of the war, West Germany is now under the full control of his troops. Now Kurt is ready to begin the plan of "Restoration". According to it, he should destroy all socialist movements, establish a rigid one-party dictatorship and rebuild Germany after the war. \n\nBut the Knispel government has no intention of restoring Nazism. How true these statements are is unclear. But one thing is clear - Germany will never be the same again."
+ TaS_GEREpilogue_news.7.a: "Let's Start the Recovery!"
+ TaS_GEREpilogue_news.7.b: "At least they won't be prying into their neighbors anytime soon."
+ 
+ TaS_GEREpilogue_news.8.t: "[Get_newspaper_header]Red Front Unites West Germany!"
+ TaS_GEREpilogue_news.8.d: "Despite all the efforts made to maintain peace between the remnants of the German Reich, they could not live a few months in normal relations. The Second Civil War began. \n\nIn the meantime, while some leaned on the bottle and worried about a new conflict, someone was preparing for an unseen strike. An enraged Andreas Baader and his remnants of the Red Army, who had survived the death of Ulrike Meinhof, were ready to avenge the Werewolves. And they got their revenge. \n\nUnsupported by the Reds from Austria and Bavaria, they were able to quickly take control of the area and begin their bloody march on the remaining Nazis. By killing everyone on their way to their cherished goal, Baader was able to unite West Germany under the red banner of his troops. \n\now he is ready to embark on his main goal: the destruction of the Nazis. But Baader would be a complete idiot if he did not take care of his men. By instructing his closest men to establish socialism in the country, he hopes to rally the Germans against the common enemy, Nazism."
+ TaS_GEREpilogue_news.8.a: "And they shall know fear!"
+ TaS_GEREpilogue_news.8.b: "Be on your guard, we don't know what to expect from them."
+ 
+ TaS_GEREpilogue_news.9.t: "[Get_newspaper_header]Nazis Unite West Germany!"
+ TaS_GEREpilogue_news.9.d: "After the collapse of the Third Reich, a huge number of states were formed on its remains, ready to kill each other. This, however, happened after a while. The Second Civil War was the backdrop for the survivor rebellion. \n\nAfter the collapse of the Third Reich, not everyone accepted its death. A large number of former Wehrmacht servicemen banded together to fight to restore Hitler's ideals. And they succeeded, much to their astonishment and fear. \n\nErnst Rehmer's subordinates were destroying the last enemy formations when he spoke from the podium in Munich. Reminding the troops that it was here that the Beer Putsch took place and the very idea of National Socialism was born, he proudly raised his hand and said "Sieg Heil". Instantly, the entire military went "Heil Remer. \n\nevertheless, the resurgence of the Nazi state on German territory greatly frightens the neighboring countries. Only time will tell what will happen next."
+ TaS_GEREpilogue_news.9.a: "For Hitler's brainchild we are all ready to die together!"
+ TaS_GEREpilogue_news.9.b: "The Final Solution to Nazism"
+ 
+ TaS_GEREpilogue_news.10.t: "[Get_newspaper_header]The Final Solution to Nazi Problem"
+ TaS_GEREpilogue_news.10.d: "After the disappointing news from Germany, following the Civil War won by Ernst Rehmer and his accomplices, many world media began to ask: "What is the point of Russia defeating the Third Reich if his followers are still alive?" Such phrases were heard more and more from different sides. And it made Russia very angry. \n\nThe boiling point was reached when news of a large contingent of troops advancing from the PNOG arrived from the outposts in the Garrison. Then Vladimir Gil personally ordered the launch of a nuclear bombardment of the Nazis' most important cities. \n\nMore than 10 shells, embodying the full force of the atom, were sent to destroy Munich, Hamburg, Strasbourg and others. Within moments, these cities turned to radioactive ash, ending the German nation as a whole. \n\nThe consequences of such a step are not yet fully understood, but one thing is certain...".
+ TaS_GEREpilogue_news.10.a: "Real anarchy reigned over Germany for years to come"
+ TaS_GEREpilogue_news.10.b: "Apparently Germans don't learn history very well"
+ 
+ TaS_GEREpilogue_news.11.t: "[Get_newspaper_header]Central European Garrison and GUOT invade the Second Civil War!"
+ TaS_GEREpilogue_news.11.d: "War is always a long suffering and horror, especially a civil war. Where a brother shoots his brother, a son shoots his father, each other. The Second Civil War would not have seen its end had it not been for the GUOT's decision to send troops into the rest of Germany and establish a private administration. \n\n All along the border there are reports of fighting with Russian troops. But the poorly trained and exhausted German resistance is quickly being destroyed. Vladimir Gil, chairman of the General Directorate of Liberated Territories said, "We can no longer sit back and wait for the German monster to calm down again, we had to intervene, our purpose is to protect the people and stability in Europe, which has long been disrupted by a bloody civil war." \n\n It looks like Germany's fate will be decided in the coming days."
+ TaS_GEREpilogue_news.11.a: "We must end the bloodshed"
+ TaS_GEREpilogue_news.11.b: "The Russians didn't get enough the first time?"
+
+ 
+ ##STATES NAMUSUS
+ STATE_1052_czech:0 "Khotimyrets"
+ VICTORY_POINTS_11666_czech:0 "Khotimyrets"
+ STATE_89_czech:0 "Ustecký kraj"
+ VICTORY_POINTS_11432_czech:0 "Usti-nad-Labem"
+ STATE_74_czech:0 "Moravskoslezský kraj"
+ VICTORY_POINTS_3414_czech:0 "Ostrava
+ VICTORY_POINTS_6418_czech:0 "Plzen"
+ VICTORY_POINTS_11542_czech:0 "Praha"
+ VICTORY_POINTS_9541_czech:0 "Moravské Budějovice"
+ VICTORY_POINTS_3553_czech:0 "Jihlava"
+ VICTORY_POINTS_3569_czech:0 "Brno"
+ VICTORY_POINTS_3541_czech:0 "Radasbona"
+ VICTORY_POINTS_673_czech:0 "Oenimost"
+ VICTORY_POINTS_692_czech:0 "Mnich"
+ VICTORY_POINTS_9517_czech:0 "Schwabsko"
+ VICTORY_POINTS_6488_czech:0 "Frangwe"
+ VICTORY_POINTS_587_czech:0 "Column"
+ VICTORY_POINTS_6469_czech:0 "Assyndia" 
+ STATE_64_rus:0 "Berlin"
+ VICTORY_POINTS_6521_rus:0 "Berlin"
+ 
+ VICTORY_POINTS_9347_nuke:0 "Ruins of Hamburg"
+
+
+ #stuff what i forgor :skullemoji:#
+  MAR_KOR_Bombing_runs:0 "Russian Bombing"
+ TaS_war_partisans:0 "Partisan activity"
+ TaS_KOR_advisors:0 "Russian advisors"
+ MAR_go_oper:0 "Going Operation"
+ MAR_oper_fail_1:0 "Special Operations Situation: Unsatisfactory."
+ MAR_oper_fail_2:0 "Special Operations Situation: Poor."
+ MAR_oper_fail_3:0 "Special Operations Situation: Terrible."
+ MAR_oper_fail_4:0 "Special Operations Situation: Terrifying."
+ MAR_oper_fail_5:0 "Special Operations Situation: Catastrophic."
+ MAR_oper_succ_1:0 "Special Operations Situation: Satisfactory."
+ MAR_oper_succ_2:0 "Special Operations Situation: Not bad."
+ MAR_oper_succ_3:0 "Special Operations Situation: Good."
+ MAR_oper_succ_4:0 "Special Operations Situation: Excellent."
+ MAR_oper_succ_5:0 "Special Operations Situation: Perfect."
+ MAR_oper_zero:0 "Special Operations Situation: None."
+ TaS_2WRW_sanctions:0 "OFN sanctions"
+ TaS_2WRW_ofn_advisors:0 "OFN advisors"
+ TaS_2WRW_last_stand:0 "Not one step back!"
+ 
+ TaS_WRW2_second_manchu_cw:0 "Manchurian Civil War"
+ TaS_WRW2_use_the_opportunity:0 "Use the situation"
+ TaS_WRW2_send_volunteers_man:0 "Send volunteers"
+ TaS_WRW2_authorize_bombing_runs_scw:0 "Allow bombings" 
+ TaS_WRW2_send_rebels_equipment_small:0 "Arms deliveries"
+ TaS_WRW2_attack_menjiang:0 "Invade Mengjian"
+ 
+ GSG_authoritarian_democracy_party:0 "Einheitsfront"
+ GSG_authoritarian_democracy_party_long:0 "Einheitsfront"
+
+ TaS_2WRW_north_sea_problems:0 "Difficulties of landing"

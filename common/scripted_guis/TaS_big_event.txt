@@ -1,0 +1,74 @@
+scripted_gui = {	
+
+	TNO_SG_big_event_Belozerskiy_reunification = { 
+		context_type = player_context
+		window_name = "TNO_SG_big_event_Belozerskiy_reunification_window"
+
+		visible = {
+			has_country_flag = TaS_Belozerskiy_Russia_Reunification
+		}
+	}
+
+	TNO_SG_big_event_frame_Belozerskiy_reunification = { 
+		context_type = player_context
+		window_name = "TNO_SG_big_event_frame_Belozerskiy_reunification"
+
+		visible = {
+			has_country_flag = TaS_Belozerskiy_Russia_Reunification
+		}
+
+		effects = {
+			Option_click = {
+				clr_country_flag = TaS_Belozerskiy_Russia_Reunification
+			}
+		}
+	}
+	
+	TaS_BE_WRW2_Russia_Victory = { 
+		context_type = player_context
+		window_name = "TaS_BE_WRW2_Russia_Victory_window"
+
+		visible = {
+			has_country_flag = TaS_End_of_WRW2_Russia_Victory_BE_fl
+		}
+	}
+
+	TaS_BE_WRW2_Russia_Victory_frame = { 
+		context_type = player_context
+		window_name = "TaS_BE_WRW2_Russia_Victory_frame_window"
+
+		visible = {
+			has_country_flag = TaS_End_of_WRW2_Russia_Victory_BE_fl
+		}
+
+		effects = {
+			Option_click = {
+				clr_country_flag = TaS_End_of_WRW2_Russia_Victory_BE_fl
+			}
+		}
+	}
+	
+	TaS_BE_WRW2_Belooz_Start = { 
+		context_type = player_context
+		window_name = "TaS_BE_WRW2_Belooz_started"
+
+		visible = {
+			has_country_flag = TaS_2WRW_BELOOZ_STARTED_BE_fl
+		}
+	}
+
+	TaS_BE_WRW2_Belooz_Start_frame = { 
+		context_type = player_context
+		window_name = "TaS_BE_WRW2_Belooz_started_frame"
+
+		visible = {
+			has_country_flag = TaS_2WRW_BELOOZ_STARTED_BE_fl
+		}
+
+		effects = {
+			Option_click = {
+				clr_country_flag = TaS_2WRW_BELOOZ_STARTED_BE_fl
+			}
+		}
+	}
+}

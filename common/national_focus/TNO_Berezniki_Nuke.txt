@@ -1,0 +1,207 @@
+focus_tree = {
+	id = MAR_Nuke_Belozer
+	country = {
+		factor = 0
+	}
+	shared_focus = MAR_Grozni
+}	
+
+shared_focus = {
+	id = MAR_Grozni
+	icon = MAR_Grozni
+	cost = 3,00
+	x = 22
+	y = 1
+	ai_will_do = {
+		factor = 20
+	}
+	completion_reward = {
+	    country_event = { 
+			id = berez_nuke_belo.1
+			days = 0
+		}
+		custom_effect_tooltip = RUS_RWS_nukes_into_the_atomic_age_tt
+		add_timed_idea = { idea = RUS_RWS_nukes_into_the_atomic_age_misc_costs days = 90 }
+		RUS_init_nuke_system = yes
+	}
+}
+shared_focus = {
+	id = MAR_otdel_nayki
+	icon = GFX_MAR_otdel_nayki
+	cost = 3,00
+	prerequisite = {
+		focus = MAR_Grozni
+	}
+	x = 20
+	y = 2
+	ai_will_do = {
+		factor = 20
+	}
+	completion_reward = {
+		set_temp_variable = { temp_econ_spending_amount = 0.35 }
+		econ_spend_money_once_effect_raw_money = yes
+		custom_effect_tooltip = RUS_RWS_nukes_establish_closed_facilities_tt
+		random_owned_controlled_state = {
+			limit = {
+				has_state_category = city
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = RUS_nuclear_program_phase_1
+			}
+			add_to_variable = { RUSNukesTheoryProgress = 5 }
+		}
+		add_to_variable = { RUSNukesMonthlyProgress = 1 }
+	}
+}
+shared_focus = {
+	id = MAR_pindos_spec
+	icon = GFX_MAR_pindos_spec
+	cost = 3,00
+	prerequisite = {
+		focus = MAR_otdel_nayki
+	}
+	x = 20
+	y = 3
+	completion_reward = {
+		set_temp_variable = { temp_econ_spending_amount = 0.3 }
+		econ_spend_money_once_effect_raw_money = yes
+		custom_effect_tooltip = RUS_RWS_nukes_a_foundation_for_research_tt
+		TNO_improve_research_facilities_med = yes
+		if = {
+			limit = {
+				has_country_flag = RUS_nuclear_program_phase_1
+			}
+			add_to_variable = { RUSNukesTheoryProgress = 15 }
+		}
+		add_to_variable = { RUSNukesMonthlyProgress = 3 }
+		hidden_effect = {
+			if = {
+				limit = {
+					tag = SAM
+					has_government = fascism
+				}
+				country_event = { id = SAM_oktan.4 days = 7 random = 48 }
+			}
+		}
+	}
+}
+shared_focus = {
+	id = MAR_Yran_problem
+	icon = GFX_MAR_Yran_problem
+	cost = 3,00
+	prerequisite = {
+		focus = MAR_Grozni
+	}
+	x = 24
+	y = 2
+	completion_reward = {
+		custom_effect_tooltip = RUS_RWS_nukes_address_the_uranium_problem_tt
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = RUS_nuclear_program_phase_2
+					has_country_flag = RUS_nuclear_program_phase_1
+				}
+			}
+			add_to_variable = { RUSNukesMatsProgress = 5 }
+		}
+		add_to_variable = { RUSNukesMonthlyProgress = 2 }
+		add_to_variable = { national_debt = 0.15 } #already converted to billion
+	}
+}
+shared_focus = {
+	id = MAR_podarok_USA
+	icon = GFX_MAR_podarok_USA
+	cost = 3,00
+	prerequisite = {
+		focus = MAR_Yran_problem
+	}
+	x = 24
+	y = 3
+	completion_reward = {
+		country_event = { 
+			id = berez_nuke_belo.2
+			days = 0
+		}
+		custom_effect_tooltip = RUS_RWS_nukes_expand_the_dalur_mines_tt
+		572 = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+			add_resource = {
+				 type = uranium
+				 amount = 8
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = RUS_nuclear_program_phase_2
+					has_country_flag = RUS_nuclear_program_phase_1
+				}
+			}
+			add_to_variable = { RUSNukesMatsProgress = 10 }
+		}
+		add_to_variable = { RUSNukesMonthlyProgress = 1 }
+		add_to_variable = { national_debt = 0.35 } #already converted to billion
+	}
+}
+shared_focus = {
+	id = MAR_Curgan_shat
+	icon = GFX_MAR_Curgan_shat
+	cost = 3,00
+	prerequisite = {
+		focus = MAR_Yran_problem
+	}
+	x = 26
+	y = 3
+	completion_reward = {
+		custom_effect_tooltip = RUS_RWS_nukes_source_foreign_materials_tt
+		add_stability = -0.03
+		add_political_power = -25
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = RUS_nuclear_program_phase_2
+					has_country_flag = RUS_nuclear_program_phase_1
+				}
+			}
+			add_to_variable = { RUSNukesMatsProgress = 10 }
+		}
+		add_to_variable = { national_debt = 0.1 } #already converted to billion
+	}
+}
+shared_focus = {
+	id = MAR_Ruchnoe_Solnce
+	icon = GFX_MAR_Ruchnoe_Solnce
+	cost = 3,00
+	prerequisite = {
+		focus = MAR_pindos_spec
+	}
+	prerequisite = {
+		focus = MAR_podarok_USA
+	}
+	x = 22
+	y = 4
+	completion_reward = {
+		country_event = { 
+			id = berez_nuke_belo.3
+			days = 0
+		}
+		custom_effect_tooltip = RUS_RWS_nukes_chasing_the_sun_tt
+		add_timed_idea = { idea = RUS_RWS_nukes_chasing_the_sun_misc_costs days = 90 }
+		add_to_variable = { RUSNukesMonthlyProgress = 3 }
+		TNO_improve_industrial_expertise_med = yes
+	}
+}

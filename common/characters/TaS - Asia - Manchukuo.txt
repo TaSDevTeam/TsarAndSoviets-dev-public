@@ -1,0 +1,58 @@
+characters = {
+	KOR_Hiromichi_Yahara = {
+		name = "KOR_Hiromichi_Yahara"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/MAN/MAN_Hiromichi_Yahara.dds"
+			}
+		}
+		country_leader = {
+			desc = "POLITICS_HIROMICHI_YAHARA_DESC"
+			ideology = despotism_military_junta_subtype
+			expire = "1999.1.1.1"
+			id = -1
+		}
+	}
+	AMR_Sergei_Zaikin = {
+		name = "AMR_Sergei_Zaikin"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/MAN/AMR_Sergei_Zaikin.dds"
+			}
+		}
+		country_leader = {
+			desc = "POLITICS_SERGEI_ZAIKIN_DESC"
+			ideology = despotism_partisan_movement_subtype
+			expire = "1999.1.1.1"
+			id = -1
+		}
+	}	
+	MAN_Kuan_Chung = {
+		name = "MAN_Kuan_Chung"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/MAN/MAN_Kuan_Chung.dds"
+			}
+		}
+		country_leader = {
+			desc = "POLITICS_KUAN_CHUNG_DESC"
+			ideology = liberal_democracy_national_liberal_subtype
+			expire = "1999.1.1.1"
+			id = -1
+		}
+	}	
+	SCC_Wang_Enmao = {
+		name = "SCC_Wang_Enmao"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/MAN/SCC_Wang_Enmao.dds"
+			}
+		}
+		country_leader = {
+			desc = "POLITICS_WANG_ENMAO_DESC"
+			ideology = ultranationalism_subtype
+			expire = "1999.1.1.1"
+			id = -1
+		}
+	}	
+}

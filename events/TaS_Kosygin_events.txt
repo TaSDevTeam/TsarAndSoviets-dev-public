@@ -1,0 +1,241 @@
+add_namespace = MAR_Kosygin
+
+country_event = {#Dolzhnik
+	id = MAR_Kosygin.1
+	title = MAR_Kosygin.1.t
+	desc = MAR_Kosygin.1.d
+	picture = GFX_event_MAR_Kosygin_1
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_Kosygin.1.a
+		ai_chance = { factor = 1 }	
+		country_event = {
+			id = MAR_Kosygin.2
+			days = 2
+		}
+	}
+}
+
+country_event = {#Vnezapniy doklad
+	id = MAR_Kosygin.2
+	title = MAR_Kosygin.2.t
+	desc = MAR_Kosygin.2.d
+	picture = GFX_event_MAR_Kosygin_2
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_Kosygin.2.a
+		ai_chance = { factor = 1 }	
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = -100
+		}
+	}
+}
+
+country_event = {#Oblava
+	id = MAR_Kosygin.3
+	title = MAR_Kosygin.3.t
+	desc = MAR_Kosygin.3.d
+	picture = GFX_event_MAR_Kosygin_3
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_Kosygin.3.a
+		ai_chance = { factor = 1 }	
+		add_political_power = -50
+	}
+}
+
+country_event = {#Presolniki
+	id = MAR_Kosygin.4
+	title = MAR_Kosygin.4.t
+	desc = MAR_Kosygin.4.d
+	picture = GFX_event_MAR_Kosygin_4
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_Kosygin.4.a
+		ai_chance = { factor = 1 }	
+		country_event = {
+			id = MAR_Kosygin.5
+			days = 4
+		}
+	}
+}
+
+country_event = {#Prioritety
+	id = MAR_Kosygin.5
+	title = MAR_Kosygin.5.t
+	desc = MAR_Kosygin.5.d
+	picture = GFX_event_MAR_Kosygin_5
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_Kosygin.5.a
+		ai_chance = { factor = 1 }	
+		RUS_decrease_administrative_strain = yes
+	}
+}
+
+country_event = {#Always hide your cheat engine
+	id = MAR_Kosygin.6
+	title = MAR_Kosygin.6.t
+	desc = MAR_Kosygin.6.d
+	picture = GFX_event_MAR_Kosygin_6
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_Kosygin.6.a
+		MAR_enable_prestol = yes
+		ai_chance = { factor = 1 }
+	}
+	option = {
+		name = MAR_Kosygin.6.b
+		ai_chance = { factor = 0 }
+		#Insert Neko Ark here
+	}
+}
+
+country_event = {#Podgotovka
+	id = MAR_Kosygin.7
+	title = MAR_Kosygin.7.t
+	desc = MAR_Kosygin.7.d
+	picture = GFX_event_MAR_Kosygin_7
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_Kosygin.7.a
+		ai_chance = { factor = 1 }	
+		hidden_effect = {
+			country_event = {id = MAR_Kosygin.8 days = 7}
+		}
+		effect_tooltip = {
+			country_event = {id = MAR_Kosygin.10 days = 0}
+		}
+	}
+}
+
+country_event = {#Sled
+	id = MAR_Kosygin.8
+	title = MAR_Kosygin.8.t
+	desc = MAR_Kosygin.8.d
+	picture = GFX_event_MAR_Kosygin_8
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_Kosygin.8.a
+		ai_chance = { factor = 1 }
+		hidden_effect = {
+			country_event = {id = MAR_Kosygin.9 days = 1}
+		}
+	}
+}
+
+country_event = {#Plan boini
+	id = MAR_Kosygin.9
+	title = MAR_Kosygin.9.t
+	desc = MAR_Kosygin.9.d
+	picture = GFX_event_MAR_Kosygin_9
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_Kosygin.9.a
+		ai_chance = { factor = 1 }
+		hidden_effect = {
+			country_event = {id = MAR_Kosygin.10 days = 1}
+		}
+	}
+}
+
+country_event = {#Three men
+	id = MAR_Kosygin.10
+	title = MAR_Kosygin.10.t
+	desc = MAR_Kosygin.10.d
+	picture = GFX_event_MAR_Kosygin_10
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_Kosygin.10.a
+		ai_chance = { factor = 1 }
+		hidden_effect = {
+			country_event = {id = MAR_Kosygin.11 days = 1}
+		}
+		effect_tooltip = {
+			country_event = {id = MAR_Kosygin.6 days = 0}
+		}
+	}
+}
+
+country_event = {#Koren Zla
+	id = MAR_Kosygin.11
+	title = MAR_Kosygin.11.t
+	desc = MAR_Kosygin.11.d
+	picture = GFX_event_MAR_Kosygin_11
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_Kosygin.11.a
+		ai_chance = { factor = 1 }
+		hidden_effect = {
+			country_event = {id = MAR_Kosygin.12 days = 1}
+		}
+		add_manpower = -1
+	}
+}
+
+country_event = {#Atack
+	id = MAR_Kosygin.12
+	title = MAR_Kosygin.12.t
+	desc = MAR_Kosygin.12.d
+	picture = GFX_event_MAR_Kosygin_12
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_Kosygin.12.a
+		ai_chance = { factor = 1 }	
+		country_event = {id = MAR_Kosygin.13 days = 0}
+		400 = {
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+	}
+}
+
+country_event = {#Shock
+	id = MAR_Kosygin.13
+	title = MAR_Kosygin.13.t
+	desc = MAR_Kosygin.13.d
+	picture = GFX_event_MAR_Kosygin_13
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_Kosygin.13.a
+		ai_chance = { factor = 1 }	
+		country_event = {id = MAR_Kosygin.14 days = 0}
+		400 = {
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		add_manpower = -502
+	}
+}
+
+country_event = {#Aftermaths
+	id = MAR_Kosygin.14
+	title = MAR_Kosygin.14.t
+	desc = MAR_Kosygin.14.d
+	picture = GFX_event_MAR_Kosygin_14
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_Kosygin.14.a
+		ai_chance = { factor = 1 }	
+		MAR_enable_prestol = yes
+	}
+}

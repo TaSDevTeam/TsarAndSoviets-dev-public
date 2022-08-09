@@ -1,0 +1,360 @@
+on_actions = {
+	on_capitulation = {
+				effect = {
+				if = {
+					limit = {
+						FROM = {
+							original_tag = MAR
+						}
+						ROOT = { 
+							OR = {
+								original_tag = TAJ
+								original_tag = KYR
+								original_tag = UZB
+								original_tag = UTL
+								original_tag = TRK
+								original_tag = KRK
+							}
+						}
+						AND = {
+							NOT = {
+								country_exists = TAJ
+							}
+							NOT = {
+								country_exists = KYR
+							}
+							NOT = {
+								country_exists = UZB
+							}
+							NOT = {
+								country_exists = UTL
+							}
+							NOT = {
+								country_exists = TRK
+							}
+							NOT = {
+								country_exists = KRK
+							}
+						}
+					}
+					FROM = {
+						MAR_Turkestan_govern = yes
+						set_country_flag = MAR_has_central_asia
+					}
+					set_global_flag = skip_default_capitulation
+				}
+				else_if = {
+					limit = {
+						FROM = {
+							original_tag = KUR
+						}
+						ROOT = { 
+							OR = {
+								original_tag = IRQ
+								original_tag = SNI
+								original_tag = BIR
+								original_tag = IRP
+							}
+						}
+					}
+					FROM = {
+							if = {
+								limit = {
+									original_tag = KUR
+									KUR = {
+									has_idea = MAR_volunteer_mladojopa_for
+									}
+								}
+								KUR = { country_event = { id = IraqCW.14 } }
+								OIL_KUR_win_iraq = yes
+							}
+					set_global_flag = skip_default_capitulation
+				}
+			}
+			else_if = {
+					limit = {
+						FROM = {
+							original_tag = PFF
+						}
+						ROOT = { 
+							original_tag = KOR
+						}w
+					}
+					FROM = {
+					white_peace = ROOT
+					transfer_state = 408
+					transfer_state = 809
+					}
+					MAR = {
+						country_event = {
+							id = MAR_Japan.6 days = 2
+						}
+					}
+					MAN = {
+						transfer_state = 714
+						add_state_core = 714
+						transfer_state = 715
+						add_state_core = 715
+						transfer_state = 717
+						add_state_core = 717
+						transfer_state = 716
+						add_state_core = 716
+						transfer_state = 610
+						add_state_core = 610				
+						#country_event = {
+						#	id = MAR_Japan.1 days = 10
+						#}
+					}
+					set_global_flag = skip_default_capitulation
+			}
+			else_if = {
+					limit = {
+						FROM = {
+							original_tag = KOR
+						}
+						ROOT = { 
+							original_tag = PFF
+						}
+					}
+					FROM = {
+					white_peace = ROOT
+					}
+					MAR = {
+						transfer_state = 1364
+						set_country_flag = MAR_has_primorie
+					}
+					MAN = {
+						transfer_state = 714
+						add_state_core = 714
+						transfer_state = 715
+						add_state_core = 715
+						transfer_state = 717
+						add_state_core = 717
+						transfer_state = 716
+						add_state_core = 716
+						transfer_state = 610
+						add_state_core = 610
+						transfer_state = 408
+						add_state_core = 408
+						transfer_state = 409
+						add_state_core = 409
+						transfer_state = 657
+						add_state_core = 657
+					}
+					JAP = {
+						transfer_state = 809
+						add_state_core = 809
+					}
+					set_global_flag = skip_default_capitulation
+			}
+			else_if = {
+					limit = {
+						FROM = {
+							original_tag = MAN
+						}
+						ROOT = { 
+							OR = {
+								original_tag = KOR
+								original_tag = HAN
+							}
+						}
+					}
+					FROM = {
+					 econ_join_sphere_MAR = yes
+					}
+					set_global_flag = skip_default_capitulation
+			}
+			else_if = {
+					limit = {
+						FROM = {
+							if = {
+								limit = {
+									original_tag = MAR
+									MAR = {
+									has_idea = TaS_2WRW_fastwar
+									}
+								}
+							}
+						}
+						ROOT = { 
+							original_tag = FIN
+						}
+					}
+					FROM = {
+					white_peace = ROOT
+					}
+					MAR = {
+						transfer_state = 216
+						transfer_state = 215
+						transfer_state = 213
+						transfer_state = 1359
+						transfer_state = 722
+						transfer_state = 147
+						transfer_state = 146
+						remove_ideas = TaS_2WRW_fastwar
+					}
+					FIN = {
+						econ_join_sphere_MAR = yes
+					}
+					set_global_flag = skip_default_capitulation
+			}
+			else_if = {
+					limit = {
+						FROM = {
+							original_tag = FIN
+						}
+						ROOT = { 
+							original_tag = MAR
+						}
+					}
+					FROM = {
+					white_peace = ROOT
+					}
+					FIN = {
+						transfer_state = 216
+						transfer_state = 215
+						transfer_state = 213
+						transfer_state = 1359
+						transfer_state = 722
+						transfer_state = 147
+						transfer_state = 146
+						transfer_state = 859
+						transfer_state = 858
+					}
+					MAR = {
+						remove_ideas = TaS_2WRW_fastwar
+					}
+					set_global_flag = skip_default_capitulation
+			}
+			else_if = {
+					limit = {
+						FROM = {
+							if = {
+								limit = {
+									original_tag = MAR
+									MAR = {
+									has_idea = TaS_2WRW_fastwar
+									}
+								}
+							}
+						}
+						ROOT = { 
+							original_tag = TUR
+						}
+					}
+					FROM = {
+					white_peace = ROOT
+					}
+					MAR = {
+						transfer_state = 783
+						transfer_state = 1565
+						transfer_state = 1448
+						transfer_state = 230
+						transfer_state = 1568
+						transfer_state = 1567
+						transfer_state = 354
+						remove_ideas = TaS_2WRW_fastwar
+					}
+					TUR = {
+						econ_join_sphere_MAR = yes
+					}
+					set_global_flag = skip_default_capitulation
+			}
+			else_if = {
+					limit = {
+						FROM = {
+							original_tag = TUR
+						}
+						ROOT = { 
+							original_tag = MAR
+						}
+					}
+					FROM = {
+					white_peace = ROOT
+					}
+					TUR = {
+						transfer_state = 231
+						transfer_state = 1554
+						transfer_state = 1557
+						transfer_state = 1556
+						transfer_state = 1553
+					}
+					MAR = {
+						remove_ideas = TaS_2WRW_fastwar
+					}
+					set_global_flag = skip_default_capitulation
+			}
+			else_if = {
+					limit = {
+						FROM = {
+							original_tag = MAR
+						}
+						ROOT = { 
+							original_tag = MEN
+						}
+					}
+					FROM = {
+					white_peace = ROOT
+					}
+					MON = {
+						transfer_state = 814
+						transfer_state = 330
+						transfer_state = 815
+						econ_join_sphere_MAR = yes
+					}
+					MEN = {
+						transfer_state = 612
+						transfer_state = 621
+						transfer_state = 955
+					}
+					set_global_flag = skip_default_capitulation
+			}
+			else_if = {
+					limit = {
+						FROM = {
+							original_tag = GSU
+						}
+						ROOT = { 
+							original_tag = GCZ
+						}
+					}
+					FROM = {
+					white_peace = ROOT
+					}
+					GSU = {
+						transfer_state = 9
+						transfer_state = 74
+						declare_war_on = {
+							target = GRA
+							type = annex_everything
+						}
+						declare_war_on = {
+							target = GAU
+							type = annex_everything
+						}
+						declare_war_on = {
+							target = GBV
+							type = annex_everything
+						}
+						declare_war_on = {
+							target = GBW
+							type = annex_everything
+						}
+						declare_war_on = {
+							target = GWF
+							type = annex_everything
+						}
+						declare_war_on = {
+							target = GRH
+							type = annex_everything
+						}
+						declare_war_on = {
+							target = GWS
+							type = annex_everything
+						}
+					}
+					
+					set_global_flag = skip_default_capitulation
+			}
+		}
+}

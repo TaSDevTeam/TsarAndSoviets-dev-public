@@ -1,0 +1,90 @@
+defined_text = {
+	name = GetRusDevastation
+	text = {
+		trigger = {
+			check_variable = {
+				RUS_devastation < 50
+			}
+		}
+		localization_key = RUS_Devastation_Low
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				RUS_devastation < 100
+			}
+		}
+		localization_key = RUS_Devastation_Medium
+	}
+	text = {
+		localization_key = RUS_Devastation_High
+	}
+}
+
+defined_text = {
+	name = GetRusDevastationGain
+	text = {
+		trigger = {
+			check_variable = {
+				RUS_devastation_gain < 2
+			}
+		}
+		localization_key = RUS_Devastation_Gain_Low
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				RUS_devastation_gain < 3
+			}
+		}
+		localization_key = RUS_Devastation_Gain_Medium
+	}
+	text = {
+		localization_key = RUS_Devastation_Gain_High
+	}
+}
+defined_text = {
+	name = GetGerDevastation
+	text = {
+		trigger = {
+			check_variable = {
+				GER_devastation < 50
+			}
+		}
+		localization_key = RUS_Devastation_Low
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GER_devastation < 100
+			}
+		}
+		localization_key = RUS_Devastation_Medium
+	}
+	text = {
+		localization_key = RUS_Devastation_High
+	}
+}
+
+defined_text = {
+	name = GetGerDevastationGain
+	text = {
+		trigger = {
+			check_variable = {
+				GER_devastation_gain < 2
+			}
+		}
+		localization_key = RUS_Devastation_Gain_Low
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				GER_devastation_gain < 3
+			}
+		}
+		localization_key = RUS_Devastation_Gain_Medium
+	}
+	text = {
+		localization_key = RUS_Devastation_Gain_High
+	}
+}

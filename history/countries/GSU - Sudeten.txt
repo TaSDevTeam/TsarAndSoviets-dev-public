@@ -1,0 +1,107 @@
+﻿capital = 69
+
+
+# Vacant
+recruit_character = GSU_Generic_Vacant
+fill_empty_minister_nochecks = yes 
+
+set_country_flag = is_postger_nation
+
+
+add_manpower = 75000
+
+load_focus_tree = shattered_ambitions
+set_variable = {
+	TNO_economy_type = 3
+	TNO_economy_subtype = 6
+}
+set_politics = {
+	ruling_party = despotism
+	elections_allowed = no
+	last_election = "1935.12.17"
+	election_frequency = 48
+}
+set_popularities = {
+	communist = 0
+	ultranationalism = 23
+	socialist = 0
+	social_democracy = 0
+	liberal_democracy = 0
+	conservative_democracy = 0
+	authoritarian_democracy = 0
+	despotism = 21
+	fascism = 0
+	national_socialism = 45
+	esoteric_nazism = 11
+}
+set_party_name = { 
+	ideology = esoteric_nazism
+	long_name = HGR_Revolt_esoteric_nazism_party
+	name = HGR_Revolt_esoteric_nazism_party
+}
+set_party_name = { 
+	ideology = ultranationalism 
+	long_name = HGR_Revolt_ultranationalism_party
+	name = HGR_Revolt_ultranationalism_party
+}
+set_party_name = { 
+	ideology = despotism
+	long_name = APF_Revolt_national_socialism_party
+	name = APF_Revolt_national_socialism_party
+}
+# Leaders
+recruit_character = GSU_Kurt_Knispel
+
+add_ideas = {
+	### Standard ###
+	TaS_Post2WRW_GSU_victory_or_death
+
+	### Political ###
+	tno_political_parties_one_party_state
+	tno_religious_rights_pluralism
+	tno_trade_unions_illegal
+	tno_immigration_closed_borders
+	tno_slavery_corvee
+	tno_public_meetings_outlawed
+	tno_press_rights_state_press_only
+	tno_vote_franchise_no_voting
+	tno_refugees_skilled
+
+	### Military ###
+	tno_conscription_four_year_draft
+	tno_women_total_equality
+	tno_military_supervision_kill_em_all
+	tno_training_basic_training
+	tno_racial_integration_none
+	tno_draft_exemptions_none
+
+	### Economic ###
+	tno_trade_laws_closed_economy
+	tno_income_taxation_flat_taxes
+	tno_minimum_wage_no_minimum_wage
+	tno_max_workhours_unlimited_work_day
+	tno_child_labor_legal
+	tno_pensions_no_pensions
+	tno_unemployment_no_subsidies
+
+	### Social ###
+	tno_safety_no_regulations
+	tno_health_care_service_for_care 
+	tno_pollution_no_controls
+	tno_education_elite_only
+	tno_penal_system_penal_labor
+	tno_lgbt_rights_lgbt_outlawed
+	tno_gender_rights_traditional_roles
+	tno_minorities_oppression
+	tno_security_police
+
+	### Social Development ###
+	
+	tno_army_professionalism_cronyism
+	tno_industrial_expertise_experienced
+	tno_industrial_equipment_factory_complexes
+	tno_agriculture_basic_mechanized
+	tno_research_facilities_basic
+	tno_academic_base_basic_literacy
+	tno_admin_efficiency_illegitimate_administration
+}
