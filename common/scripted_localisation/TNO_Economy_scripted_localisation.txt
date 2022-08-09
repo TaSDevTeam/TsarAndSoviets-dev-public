@@ -1299,15 +1299,15 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			has_idea = tno_unemployment_generous_subsidies
+			has_idea = tno_unemployment_moderate_subsidies
 		}
-		localization_key = tno_unemployment_generous_subsidies_gui
+		localization_key = tno_unemployment_moderate_subsidies_gui
 	}
 	text = {
 		trigger = {
-			has_idea = tno_unemployment_basic_income
+			has_idea = tno_unemployment_generous_subsidies
 		}
-		localization_key = tno_unemployment_basic_income_gui
+		localization_key = tno_unemployment_generous_subsidies_gui
 	}
 }
 
@@ -2562,13 +2562,6 @@ defined_text = {
 	text = {
 		trigger = { has_idea = endsieg }
 		localization_key = econ_poverty_rate_change_endsieg_tt
-	}
-}
-defined_text = {
-	name = econ_poverty_rate_change_UKR_shroud_of_generalplan_ost_sl
-	text = {
-		trigger = { has_idea = UKR_shroud_of_generalplan_ost }
-		localization_key = econ_poverty_rate_change_UKR_shroud_of_generalplan_ost_tt
 	}
 }
 
@@ -4662,7 +4655,7 @@ defined_text = {
 	text = {
 		trigger = {
 			set_temp_variable = { temp_debt_ceiling_adjusted = debt_ceiling }
-			subtract_from_temp_variable = { temp_debt_ceiling_adjusted = .25 }
+			multiply_temp_variable = { temp_debt_ceiling_adjusted = .75 }
 			check_variable = { debt_to_GDP_ratio > temp_debt_ceiling_adjusted }
 		}
 		localization_key = credit_rating_debt_level_bad
@@ -4764,7 +4757,15 @@ defined_text = {
 		localization_key = econ_sphere_name_WOL
 	}
 	text = {
-		trigger = { check_variable = { ECON_SPHERE_LEADER = FFR } }
+		trigger = {
+			OR = {
+				check_variable = { ECON_SPHERE_LEADER = FFR }
+				AND = {
+					check_variable = { ECON_SPHERE_LEADER = FRA }
+					has_global_flag = FFR_reclamation_successful
+				}
+			}
+		}
 		localization_key = econ_sphere_name_FFR
 	}
 	text = {
@@ -4835,7 +4836,19 @@ defined_text = {
 		localization_key = econ_sphere_name_WOL
 	}
 	text = {
-		trigger = { check_variable = { ECON_SPHERE_LEADER = FFR } }
+		trigger = { check_variable = { ECON_SPHERE_LEADER = MAR } }
+		localization_key = econ_sphere_name_MAR
+	}
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { ECON_SPHERE_LEADER = FFR }
+				AND = {
+					check_variable = { ECON_SPHERE_LEADER = FRA }
+					has_global_flag = FFR_reclamation_successful
+				}
+			}
+		}
 		localization_key = econ_sphere_name_FFR
 	}
 	text = {
@@ -4845,10 +4858,6 @@ defined_text = {
 	text = {
 		trigger = { check_variable = { ECON_SPHERE_LEADER = ENG } }
 		localization_key = econ_sphere_name_ENG
-	}
-	text = {
-		trigger = { check_variable = { ECON_SPHERE_LEADER = MAR } }
-		localization_key = econ_sphere_name_MAR
 	}
 	text = {
 		trigger = {
@@ -5074,7 +5083,13 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			check_variable = { ECON_SPHERE_LEADER = FFR }
+			OR = {
+				check_variable = { ECON_SPHERE_LEADER = FFR }
+				AND = {
+					check_variable = { ECON_SPHERE_LEADER = FRA }
+					has_global_flag = FFR_reclamation_successful
+				}
+			}
 		}
 		localization_key = "GFX_econ_sphere_icon_FFR"
 	}
@@ -5107,12 +5122,6 @@ defined_text = {
 			check_variable = { ECON_SPHERE_LEADER = ENG }
 		}
 		localization_key = "GFX_econ_sphere_icon_ENG"
-	}
-	text = {
-		trigger = {
-			check_variable = { ECON_SPHERE_LEADER = MAR }
-		}
-		localization_key = "GFX_econ_sphere_icon_MAR"
 	}
 	text = {
 		localization_key = "GFX_econ_sphere_icon_none"
@@ -5499,6 +5508,17 @@ defined_text = {
 }
 
 defined_text = {
+	name = get_econ_social_unemployment_slider_tt
+	text = {
+		trigger = { check_variable = { tno_unemployment_law_has_price = 0 } }
+		localization_key = econ_social_unemployment_slider_yes_tt
+	}
+	text = {
+		localization_key = econ_social_unemployment_slider_no_tt
+	}
+}
+
+defined_text = {
 	name = GetConsumerGoodsProductionModiferGoodBadNeutral
 	text = {
 		trigger = {
@@ -5722,7 +5742,27 @@ defined_text = {
 		trigger = { check_variable = { TNO_economy_subtype = 19 } } 
 		localization_key = econ_subtype_yagoda_title
 	}
-	
+	text = {	
+		trigger = { 
+			check_variable = { TNO_economy_subtype = 20 }
+			check_variable = { TNO_economy_type = 1 }
+		}
+		localization_key = econ_subtype_colonial_economy_free_market_title
+	}
+	text = {	
+		trigger = { 
+			check_variable = { TNO_economy_subtype = 20 }
+			check_variable = { TNO_economy_type = 3 }
+		}
+		localization_key = econ_subtype_colonial_economy_planned_economy_title
+	}
+	text = {	
+		trigger = { 
+			check_variable = { TNO_economy_subtype = 20 }
+			check_variable = { TNO_economy_type = 2 }
+		}
+		localization_key = econ_subtype_colonial_economy_corporatism_title
+	}
 	text = {
 		trigger = { 
 			check_variable = { TNO_economy_type = 1 }
@@ -5825,6 +5865,27 @@ defined_text = {
 		trigger = { check_variable = { TNO_economy_subtype = 19} } 
 		localization_key = "GFX_econ_type_yagoda"
 	}
+	text = {	
+		trigger = { 
+			check_variable = { TNO_economy_subtype = 20 }
+			check_variable = { TNO_economy_type = 1 }
+		}
+		localization_key = "GFX_econ_type_free_market_colonial_economy"
+	}
+	text = {	
+		trigger = { 
+			check_variable = { TNO_economy_subtype = 20 }
+			check_variable = { TNO_economy_type = 3 }
+		}
+		localization_key = "GFX_econ_type_state_planned_colonial_economy"
+	}
+	text = {	
+		trigger = { 
+			check_variable = { TNO_economy_subtype = 20 }
+			check_variable = { TNO_economy_type = 2 }
+		}
+		localization_key = "GFX_econ_type_corporatism_colonial_economy"
+	}
 	text = {
 		trigger = { 
 			check_variable = { TNO_economy_type = 1 }
@@ -5915,17 +5976,38 @@ defined_text = {
 		trigger = { check_variable = { TNO_economy_subtype = 16 } }
 		localization_key = econ_subtype_social_market_tt
 	}
-		text = {
+	text = {
 		trigger = { check_variable = { TNO_economy_subtype = 17 } }
 		localization_key = econ_subtype_agrarian_spartanism_tt
 	}
-    	text = {
+    text = {
 		trigger = { check_variable = { TNO_economy_subtype = 18 } }
 		localization_key = econ_subtype_futurist_corporatism_tt
 	}
 	text = {
 		trigger = { check_variable = { TNO_economy_subtype = 19 } }
 		localization_key = econ_subtype_yagoda_tt
+	}
+	text = {	
+		trigger = { 
+			check_variable = { TNO_economy_subtype = 20 }
+			check_variable = { TNO_economy_type = 1 }
+		}
+		localization_key = econ_subtype_colonial_economy_free_market_tt
+	}
+	text = {	
+		trigger = { 
+			check_variable = { TNO_economy_subtype = 20 }
+			check_variable = { TNO_economy_type = 3 }
+		}
+		localization_key = econ_subtype_colonial_economy_planned_economy_tt
+	}
+	text = {	
+		trigger = { 
+			check_variable = { TNO_economy_subtype = 20 }
+			check_variable = { TNO_economy_type = 2 }
+		}
+		localization_key = econ_subtype_colonial_economy_corporatism_tt
 	}
 
 	text = {
@@ -6044,7 +6126,7 @@ defined_text = {
 defined_text = {
 	name = econ_empty_racks_coverage
 	text = {
-		trigger = {NOT = {has_variable = state_without_racks}}
+		trigger = {check_variable = {barrack_in_best_empty_state=0}}
 		localization_key = ""
 	}
 	text = {
@@ -6055,7 +6137,7 @@ defined_text = {
 defined_text = {
 	name = econ_empty_prisons_coverage
 	text = {
-		trigger = {NOT = {has_variable = state_without_prisons}}
+		trigger = {check_variable = {prison_in_best_empty_state=0}}
 		localization_key = ""
 	}
 	text = {
@@ -6104,3 +6186,4 @@ defined_text = {
 		localization_key = econ_help_3_d
 	}
 }
+

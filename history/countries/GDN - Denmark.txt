@@ -13,19 +13,19 @@ load_focus_tree = shattered_ambitions
 set_variable = { TNO_economy_type = 1 }
 set_variable = { TNO_economy_subtype = 0 }
 set_politics = {
-	ruling_party = social_democracy
+	ruling_party = progressivism
 	elections_allowed = no
 	last_election = "1935.12.17"
 	election_frequency = 48
 }
 set_popularities = {
 	communist = 0
-	ultranationalism = 0
+	ultramilitarism = 0
 	socialist = 0
-	social_democracy = 30
-	liberal_democracy = 30
-	conservative_democracy = 0
-	authoritarian_democracy = 25
+	progressivism = 30
+	liberalism = 30
+	conservatism = 0
+	paternalism = 25
 	despotism = 0
 	fascism = 0
 	national_socialism = 15
@@ -45,6 +45,11 @@ set_party_name = {
 	ideology = communist 
 	long_name = Post_WRW2_KPG_party
 	name = Post_WRW2_KPG_party
+}
+set_party_name = { 
+	ideology = progressivism
+	long_name = DEN_POSTWRW2_progressivism_party
+	name = DEN_POSTWRW2_progressivism_party
 }
 # Leaders
 recruit_character = GDN_Arveprins_Knud

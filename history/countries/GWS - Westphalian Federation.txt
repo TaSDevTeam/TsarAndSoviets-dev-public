@@ -16,20 +16,20 @@ set_variable = {
 	TNO_economy_subtype = 16
 }
 set_politics = {
-	ruling_party = conservative_democracy
+	ruling_party = conservatism
 	elections_allowed = no
 	last_election = "1935.12.17"
 	election_frequency = 48
 }
 set_popularities = {
 	communist = 0
-	ultranationalism = 0
+	ultramilitarism = 3
 	socialist = 0
-	social_democracy = 5
-	liberal_democracy = 7
-	conservative_democracy = 33
-	authoritarian_democracy = 0
-	despotism = 3
+	progressivism = 5
+	liberalism = 7
+	conservatism = 33
+	paternalism = 0
+	despotism = 0
 	fascism = 2
 	national_socialism = 50
 	esoteric_nazism = 0
@@ -50,13 +50,13 @@ set_party_name = {
 	name = Post_WRW2_KPG_party
 }
 set_party_name = { 
-	ideology = conservative_democracy
-	long_name = HAN_conservative_democracy_party
-	name = HAN_conservative_democracy_party
+	ideology = conservatism
+	long_name = HAN_conservatism_party
+	name = HAN_conservatism_party
 }
 # Leaders
 recruit_character = GWS_Waldemar_Schmidt
-recruit_character =	GWS_integration_committee
+
 add_ideas = {
 	### Standard ###
 	TaS_Post2WRW_fast_denazification

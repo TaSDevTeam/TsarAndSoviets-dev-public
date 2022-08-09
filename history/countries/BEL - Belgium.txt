@@ -158,7 +158,7 @@ set_technology = {
 }
 
 set_politics = {	
-	ruling_party = ultranationalism
+	ruling_party = ultramilitarism
 	last_election = "1933.3.5"
 	election_frequency = 48
 	elections_allowed = no
@@ -259,14 +259,14 @@ set_variable = { tno_draft_exemptions_effectiveness = 50 }
 
 set_popularities = {
     communist = 0
-    ultranationalism = 82
+    ultramilitarism = 82
     national_socialism = 8
     socialist = 0
-    social_democracy = 0
-    liberal_democracy = 0
+    progressivism = 0
+    liberalism = 0
 
-    conservative_democracy = 0
-    authoritarian_democracy = 0
+    conservatism = 0
+    paternalism = 0
     despotism = 0
     fascism = 0
     esoteric_nazism = 10
@@ -277,7 +277,7 @@ create_country_leader = {
 	desc = "POLITICS_LEON_DEGRELLE_DESC"
 	picture = "Portrait_Belgium_Leon_Degrelle.dds"
 	expire = "1983.1.1"
-	ideology = ultranationalism_ultramilitarism_subtype
+	ideology = ultramilitarism_ultramilitarism_subtype
 	traits = {
 		dictator
 	}

@@ -89,7 +89,7 @@ add_ideas = {
 	tno_safety_minimal_regulations
 	tno_health_care_low_income_protections
 	tno_pollution_no_controls
-	tno_education_elite_only
+	tno_education_stratified_education
 	tno_penal_system_penal_labor
 	tno_lgbt_rights_lgbt_outlawed
 	tno_gender_rights_women_in_the_workplace
@@ -297,7 +297,7 @@ add_equipment_production = {
 }
 
 set_politics = {
-	ruling_party = authoritarian_democracy
+	ruling_party = paternalism
 	last_election = "1933.3.5"
 	election_frequency = 48
 	elections_allowed = no
@@ -305,13 +305,13 @@ set_politics = {
 
 set_popularities = {
 	communist = 20
-	ultranationalism = 18
+	ultramilitarism = 18
 	socialist = 0
-	social_democracy = 0
-	liberal_democracy = 0
+	progressivism = 0
+	liberalism = 0
 
-	conservative_democracy = 0
-	authoritarian_democracy = 62
+	conservatism = 0
+	paternalism = 62
 	despotism = 0
 	fascism = 0
 	

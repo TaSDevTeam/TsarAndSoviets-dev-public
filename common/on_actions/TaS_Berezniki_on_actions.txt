@@ -1,0 +1,12 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			MAR = {
+					set_variable = { RUS_integration_cost_days = 70 }
+				}
+			MAR = {
+					give_resource_rights = { receiver = VYT state = 398 }
+				}
+		}
+	}
+}

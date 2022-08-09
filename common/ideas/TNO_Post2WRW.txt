@@ -151,7 +151,7 @@ ideas = {
 			picture = GPL_twoarmies
 			modifier = {
 				political_power_gain = -0.2
-				authoritarian_democracy_drift = 0.05
+				paternalism_drift = 0.05
 				communist_drift = 0.05
 			}
 		}
@@ -182,7 +182,7 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = PUS_Ethnic_conflict
+			picture = dummy
 			modifier = {
 				political_power_gain = -0.1
 				weekly_manpower = -500
@@ -376,7 +376,7 @@ ideas = {
 			removal_cost = -1
 			picture = GDN_protests
 			modifier = {
-				social_democracy_drift = -0.01
+				progressivism_drift = -0.01
 				stability_factor = -0.05
 			}
 		}
@@ -410,7 +410,7 @@ ideas = {
 			removal_cost = -1
 			picture = GHL_careless_queen
 			modifier = {
-				authoritarian_democracy_drift = -0.005
+				paternalism_drift = -0.005
 			}
 		}
 	}

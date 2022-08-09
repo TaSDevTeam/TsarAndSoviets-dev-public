@@ -1,0 +1,445 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			every_country = {
+			
+				# Top tabs
+				add_to_array = { CountryInfo_top_tab_array = 1 }
+				if = {
+					limit = { is_russian_nation = no }
+					add_to_array = { CountryInfo_top_tab_array = 2 }
+				}
+				add_to_array = { CountryInfo_top_tab_array = 3 }
+				set_variable = { CountryInfo_tab = 1 }
+				
+				# Econ Data Setup
+				add_to_array = { CountryInfo_economic_store = 1 }
+				add_to_array = { CountryInfo_economic_store = 2 }
+				
+				# Tutorial setup
+				add_to_array = { CountryInfo_tutorial_store = 101 }
+				add_to_array = { CountryInfo_tutorial_store = 1 }
+				add_to_array = { CountryInfo_tutorial_store = 2 }
+				add_to_array = { CountryInfo_tutorial_store = 3 }
+				
+				add_to_array = { CountryInfo_folder_tutorial_101 = 1 }
+				add_to_array = { CountryInfo_folder_tutorial_101 = 2 }
+				add_to_array = { CountryInfo_folder_tutorial_101 = 3 }
+			
+				## Note: This uses if, else_if statements instead of outright scoping tags so that those without content can easily be assigned generic stuff
+				# - Scars
+				
+				if = {
+					limit = {
+						original_tag = GER
+					}
+					add_to_array = { CountryInfo_array_main = 101 }
+					add_to_array = { CountryInfo_array_main = 1 }
+					add_to_array = { CountryInfo_array_main = 2 }
+					
+					add_to_array = { CountryInfo_folder_country_101 = 1 }
+					add_to_array = { CountryInfo_folder_country_101 = 2 }
+					
+					add_to_array = { CountryInfo_array_main = 102 }
+					add_to_array = { CountryInfo_array_main = 3 }
+					add_to_array = { CountryInfo_array_main = 4 }
+					
+					add_to_array = { CountryInfo_folder_country_102 = 3 }
+					add_to_array = { CountryInfo_folder_country_102 = 4 }
+				}
+				else_if = {
+					limit = {
+						original_tag = WRS
+					}
+					add_to_array = { CountryInfo_array_main = 101 }
+					add_to_array = { CountryInfo_array_main = 1 }
+					
+					add_to_array = { CountryInfo_folder_country_101 = 1 }
+					
+					add_to_array = { CountryInfo_array_main = 102 }
+					add_to_array = { CountryInfo_array_main = 2 }
+					add_to_array = { CountryInfo_array_main = 3 }
+					add_to_array = { CountryInfo_array_main = 4 }
+					
+					add_to_array = { CountryInfo_folder_country_102 = 2 }
+					add_to_array = { CountryInfo_folder_country_102 = 3 }
+					add_to_array = { CountryInfo_folder_country_102 = 4 }
+					
+					add_to_array = { CountryInfo_array_main = 103 }
+					add_to_array = { CountryInfo_array_main = 5 }
+					add_to_array = { CountryInfo_array_main = 6 }
+					add_to_array = { CountryInfo_array_main = 7 }
+					
+					add_to_array = { CountryInfo_folder_country_103 = 5 }
+					add_to_array = { CountryInfo_folder_country_103 = 6 }
+					add_to_array = { CountryInfo_folder_country_103 = 7 }
+					
+					add_to_array = { CountryInfo_array_main = 104 }
+					add_to_array = { CountryInfo_array_main = 8 }
+					add_to_array = { CountryInfo_array_main = 9 }
+					add_to_array = { CountryInfo_array_main = 10 }
+					add_to_array = { CountryInfo_array_main = 11 }
+					
+					add_to_array = { CountryInfo_folder_country_104 = 8 }
+					add_to_array = { CountryInfo_folder_country_104 = 9 }
+					add_to_array = { CountryInfo_folder_country_104 = 10 }
+					add_to_array = { CountryInfo_folder_country_104 = 11 }
+					
+					add_to_array = { CountryInfo_array_main = 105 }
+					add_to_array = { CountryInfo_array_main = 12 }
+					add_to_array = { CountryInfo_array_main = 13 }
+					add_to_array = { CountryInfo_array_main = 14 }
+					add_to_array = { CountryInfo_array_main = 15 }
+					
+					add_to_array = { CountryInfo_folder_country_105 = 12 }
+					add_to_array = { CountryInfo_folder_country_105 = 13 }
+					add_to_array = { CountryInfo_folder_country_105 = 14 }
+					add_to_array = { CountryInfo_folder_country_105 = 15 }
+					
+				}
+				else_if = {
+					limit = {
+						original_tag = KOM
+					}
+					add_to_array = { CountryInfo_array_main = 101 }
+					add_to_array = { CountryInfo_array_main = 1 }
+					add_to_array = { CountryInfo_array_main = 2 }
+					
+					add_to_array = { CountryInfo_folder_country_101 = 1 }
+					add_to_array = { CountryInfo_folder_country_101 = 2 }
+				}
+				else_if = {
+					limit = {
+						original_tag = VYT
+					}
+					add_to_array = { CountryInfo_array_main = 101 }
+					add_to_array = { CountryInfo_array_main = 1 }
+					add_to_array = { CountryInfo_array_main = 2 }
+					
+					add_to_array = { CountryInfo_folder_country_101 = 1 }
+					add_to_array = { CountryInfo_folder_country_101 = 2 }
+				}
+				else_if = {
+					limit = {
+						original_tag = MAR
+					}
+
+					add_to_array = { CountryInfo_array_main = 101 }
+					add_to_array = { CountryInfo_array_main = 1 }
+					add_to_array = { CountryInfo_folder_country_101 = 1 }
+					add_to_array = { CountryInfo_array_main = 2 }
+					add_to_array = { CountryInfo_folder_country_101 = 2 }
+					
+					add_to_array = { CountryInfo_array_main = 102 }
+					add_to_array = { CountryInfo_array_main = 3 }
+					add_to_array = { CountryInfo_array_main = 4 }
+					add_to_array = { CountryInfo_array_main = 5 }
+					add_to_array = { CountryInfo_array_main = 6 }
+					add_to_array = { CountryInfo_folder_country_102 = 3 }
+					add_to_array = { CountryInfo_folder_country_102 = 4 }
+					add_to_array = { CountryInfo_folder_country_102 = 5 }
+					add_to_array = { CountryInfo_folder_country_102 = 6 }
+				}
+				else_if = {
+					limit = {
+						original_tag = ITA
+					}
+					
+					#Introduction
+					add_to_array = { CountryInfo_array_main = 101 }
+					add_to_array = { CountryInfo_folder_country_101 = 1 }
+					
+					#History
+					add_to_array = { CountryInfo_array_main = 102 }
+					add_to_array = { CountryInfo_folder_country_102 = 2 }
+					add_to_array = { CountryInfo_folder_country_102 = 3 }
+
+					#WWII
+					add_to_array = { CountryInfo_array_main = 103 }
+					add_to_array = { CountryInfo_folder_country_103 = 4 }
+					add_to_array = { CountryInfo_folder_country_103 = 5 }
+					add_to_array = { CountryInfo_folder_country_103 = 6 }
+
+					#Post WW2 history
+					add_to_array = { CountryInfo_array_main = 104 }
+					add_to_array = { CountryInfo_folder_country_104 = 7 }
+					add_to_array = { CountryInfo_folder_country_104 = 8 }
+					add_to_array = { CountryInfo_folder_country_104 = 9 }
+
+					#Current Situation
+					add_to_array = { CountryInfo_array_main = 105 }
+					add_to_array = { CountryInfo_folder_country_105 = 10 }
+					add_to_array = { CountryInfo_folder_country_105 = 11 }
+					add_to_array = { CountryInfo_folder_country_105 = 12 }
+
+					#Features
+					add_to_array = { CountryInfo_array_main = 106 }
+					add_to_array = { CountryInfo_folder_country_106 = 13 }
+					add_to_array = { CountryInfo_folder_country_106 = 14 }
+				}
+				else_if = {
+					limit = {
+						original_tag = NOV
+					}
+
+					add_to_array = { CountryInfo_array_main = 101 }
+					add_to_array = { CountryInfo_array_main = 1 }
+					add_to_array = { CountryInfo_array_main = 2 }
+					add_to_array = { CountryInfo_folder_country_101 = 1 }
+					add_to_array = { CountryInfo_folder_country_101 = 2 }
+
+					add_to_array = { CountryInfo_array_main = 102 }
+					add_to_array = { CountryInfo_array_main = 3 }
+					add_to_array = { CountryInfo_array_main = 4 }
+					add_to_array = { CountryInfo_folder_country_102 = 3 }
+					add_to_array = { CountryInfo_folder_country_102 = 4 }
+				}
+
+				else_if = {
+					limit = {
+						original_tag = KEM
+					}
+
+					add_to_array = { CountryInfo_array_main = 101 }
+					add_to_array = { CountryInfo_array_main = 1 }
+					add_to_array = { CountryInfo_folder_country_101 = 1 }
+
+					add_to_array = { CountryInfo_array_main = 102 }
+					add_to_array = { CountryInfo_array_main = 2 }
+					add_to_array = { CountryInfo_array_main = 3 }
+					add_to_array = { CountryInfo_array_main = 4 }
+					add_to_array = { CountryInfo_folder_country_102 = 2 }
+					add_to_array = { CountryInfo_folder_country_102 = 3 }
+					add_to_array = { CountryInfo_folder_country_102 = 4 }
+				}
+				
+				else_if = {
+					limit = {
+						original_tag = SBA
+					}
+
+					add_to_array = { CountryInfo_array_main = 101 }
+					add_to_array = { CountryInfo_array_main = 1 }
+					add_to_array = { CountryInfo_array_main = 2 }
+					add_to_array = { CountryInfo_folder_country_101 = 1 }
+					add_to_array = { CountryInfo_folder_country_101 = 2 }
+					
+					add_to_array = { CountryInfo_array_main = 102 }
+					add_to_array = { CountryInfo_array_main = 3 }
+					add_to_array = { CountryInfo_array_main = 4 }
+					add_to_array = { CountryInfo_array_main = 5 }
+					add_to_array = { CountryInfo_folder_country_102 = 3 }
+					add_to_array = { CountryInfo_folder_country_102 = 4 }
+					add_to_array = { CountryInfo_folder_country_102 = 5 }
+				}
+
+				else_if = {
+					limit = {
+						original_tag = TOM
+					}
+
+					add_to_array = { CountryInfo_array_main = 101 }
+					add_to_array = { CountryInfo_array_main = 1 }
+					add_to_array = { CountryInfo_array_main = 2 }
+					add_to_array = { CountryInfo_array_main = 3 }
+					add_to_array = { CountryInfo_array_main = 4 }
+					add_to_array = { CountryInfo_folder_country_101 = 1 }
+					add_to_array = { CountryInfo_folder_country_101 = 2 }
+					add_to_array = { CountryInfo_folder_country_101 = 3 }
+					add_to_array = { CountryInfo_folder_country_101 = 4 }
+					
+					add_to_array = { CountryInfo_array_main = 102 }
+					add_to_array = { CountryInfo_array_main = 5 }
+					add_to_array = { CountryInfo_array_main = 6 }
+					add_to_array = { CountryInfo_folder_country_102 = 5 }
+					add_to_array = { CountryInfo_folder_country_102 = 6 }
+				}
+
+				else_if = {
+					limit = {
+						original_tag = IRK
+					}
+
+					add_to_array = { CountryInfo_array_main = 101 }
+					add_to_array = { CountryInfo_array_main = 1 }
+					add_to_array = { CountryInfo_array_main = 2 }
+					add_to_array = { CountryInfo_folder_country_101 = 1 }
+					add_to_array = { CountryInfo_folder_country_101 = 2 }
+					
+					add_to_array = { CountryInfo_array_main = 102 }
+					add_to_array = { CountryInfo_array_main = 3 }
+					add_to_array = { CountryInfo_array_main = 4 }
+					add_to_array = { CountryInfo_folder_country_102 = 3 }
+					add_to_array = { CountryInfo_folder_country_102 = 4 }
+				}
+
+				else_if = {
+					limit = {
+						original_tag = BRY
+					}
+
+					add_to_array = { CountryInfo_array_main = 101 }
+					add_to_array = { CountryInfo_array_main = 1 }
+					add_to_array = { CountryInfo_array_main = 2 }
+					add_to_array = { CountryInfo_folder_country_101 = 1 }
+					add_to_array = { CountryInfo_folder_country_101 = 2 }
+					
+					add_to_array = { CountryInfo_array_main = 102 }
+					add_to_array = { CountryInfo_array_main = 3 }
+					add_to_array = { CountryInfo_array_main = 4 }
+					add_to_array = { CountryInfo_folder_country_102 = 3 }
+					add_to_array = { CountryInfo_folder_country_102 = 4 }
+				}
+
+				else_if = {
+					limit = {
+						original_tag = CHT
+					}
+
+					add_to_array = { CountryInfo_array_main = 101 }
+					add_to_array = { CountryInfo_array_main = 1 }
+					add_to_array = { CountryInfo_array_main = 2 }
+					add_to_array = { CountryInfo_folder_country_101 = 1 }
+					add_to_array = { CountryInfo_folder_country_101 = 2 }
+					
+					add_to_array = { CountryInfo_array_main = 102 }
+					add_to_array = { CountryInfo_array_main = 3 }
+					add_to_array = { CountryInfo_array_main = 4 }
+					add_to_array = { CountryInfo_array_main = 5 }
+					add_to_array = { CountryInfo_folder_country_102 = 3 }
+					add_to_array = { CountryInfo_folder_country_102 = 4 }
+					add_to_array = { CountryInfo_folder_country_102 = 5 }
+				}
+
+				else_if = {
+					limit = {
+						original_tag = AMR
+					}
+
+					add_to_array = { CountryInfo_array_main = 101 }
+					add_to_array = { CountryInfo_array_main = 1 }
+					add_to_array = { CountryInfo_array_main = 2 }
+					add_to_array = { CountryInfo_folder_country_101 = 1 }
+					add_to_array = { CountryInfo_folder_country_101 = 2 }
+					
+					add_to_array = { CountryInfo_array_main = 102 }
+					add_to_array = { CountryInfo_array_main = 3 }
+					add_to_array = { CountryInfo_array_main = 4 }
+					add_to_array = { CountryInfo_folder_country_102 = 3 }
+					add_to_array = { CountryInfo_folder_country_102 = 4 }
+				}
+
+				else_if = {
+					limit = {
+						original_tag = MAG
+					}
+
+					add_to_array = { CountryInfo_array_main = 101 }
+					add_to_array = { CountryInfo_array_main = 1 }
+					add_to_array = { CountryInfo_array_main = 2 }
+					add_to_array = { CountryInfo_folder_country_101 = 1 }
+					add_to_array = { CountryInfo_folder_country_101 = 2 }
+					
+					add_to_array = { CountryInfo_array_main = 102 }
+					add_to_array = { CountryInfo_array_main = 3 }
+					add_to_array = { CountryInfo_array_main = 4 }
+					add_to_array = { CountryInfo_array_main = 5 }
+					add_to_array = { CountryInfo_folder_country_102 = 3 }
+					add_to_array = { CountryInfo_folder_country_102 = 4 }
+					add_to_array = { CountryInfo_folder_country_102 = 5 }
+				}
+
+				else_if = {
+					limit = {
+						original_tag = BRA
+					}
+
+					add_to_array = { CountryInfo_array_main = 101 }
+					add_to_array = { CountryInfo_array_main = 1 }
+					add_to_array = { CountryInfo_array_main = 2 }
+					add_to_array = { CountryInfo_folder_country_101 = 1 }
+					add_to_array = { CountryInfo_folder_country_101 = 2 }
+					
+					add_to_array = { CountryInfo_array_main = 102 }
+					add_to_array = { CountryInfo_array_main = 3 }
+					add_to_array = { CountryInfo_array_main = 4 }
+					add_to_array = { CountryInfo_array_main = 5 }
+					add_to_array = { CountryInfo_folder_country_102 = 3 }
+					add_to_array = { CountryInfo_folder_country_102 = 4 }
+					add_to_array = { CountryInfo_folder_country_102 = 5 }
+
+					add_to_array = { CountryInfo_array_main = 103 }
+					add_to_array = { CountryInfo_array_main = 6 }
+					add_to_array = { CountryInfo_array_main = 7 }
+					add_to_array = { CountryInfo_folder_country_103 = 6 }
+					add_to_array = { CountryInfo_folder_country_103 = 7 }
+					
+					add_to_array = { CountryInfo_array_main = 104 }
+					add_to_array = { CountryInfo_array_main = 8 }
+					add_to_array = { CountryInfo_array_main = 9 }
+					add_to_array = { CountryInfo_array_main = 10 }
+					add_to_array = { CountryInfo_folder_country_104 = 8 }
+					add_to_array = { CountryInfo_folder_country_104 = 9 }
+					add_to_array = { CountryInfo_folder_country_104 = 10 }
+				}
+
+				else_if = {
+					limit = {
+						original_tag = CHI
+					}
+
+					add_to_array = { CountryInfo_array_main = 101 }
+					add_to_array = { CountryInfo_array_main = 1 }
+					add_to_array = { CountryInfo_array_main = 2 }
+					add_to_array = { CountryInfo_folder_country_101 = 1 }
+					add_to_array = { CountryInfo_folder_country_101 = 2 }
+					
+					add_to_array = { CountryInfo_array_main = 102 }
+					add_to_array = { CountryInfo_array_main = 3 }
+					add_to_array = { CountryInfo_array_main = 4 }
+					add_to_array = { CountryInfo_folder_country_102 = 3 }
+					add_to_array = { CountryInfo_folder_country_102 = 4 }
+				}
+
+				else_if = {
+					limit = {
+						original_tag = YUN
+					}
+
+					add_to_array = { CountryInfo_array_main = 101 }
+					add_to_array = { CountryInfo_array_main = 1 }
+					add_to_array = { CountryInfo_array_main = 2 }
+					add_to_array = { CountryInfo_array_main = 3 }
+					add_to_array = { CountryInfo_folder_country_101 = 1 }
+					add_to_array = { CountryInfo_folder_country_101 = 2 }
+					add_to_array = { CountryInfo_folder_country_101 = 3 }
+					
+					add_to_array = { CountryInfo_array_main = 102 }
+					add_to_array = { CountryInfo_array_main = 4 }
+					add_to_array = { CountryInfo_array_main = 5 }
+					add_to_array = { CountryInfo_array_main = 6 }
+					add_to_array = { CountryInfo_array_main = 7 }
+					add_to_array = { CountryInfo_array_main = 8 }
+					add_to_array = { CountryInfo_folder_country_102 = 4 }
+					add_to_array = { CountryInfo_folder_country_102 = 5 }
+					add_to_array = { CountryInfo_folder_country_102 = 6 }
+					add_to_array = { CountryInfo_folder_country_102 = 7 }
+					add_to_array = { CountryInfo_folder_country_102 = 8 }
+				}
+
+				## Ignore parts after this ##
+				if = {
+					limit = {
+						check_variable = { CountryInfo_array_main^num > 0 }
+					}
+					for_each_loop = {
+						array = CountryInfo_array_main
+						add_to_array = { CountryInfo_storage_array = v }
+					}
+				}
+				
+				set_country_flag = TNO_Country_Info_Screen_Visible
+			}
+		}
+	}
+}

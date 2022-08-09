@@ -1,0 +1,275 @@
+shared_focus = {
+	id = MAR_our_time_has_come
+	icon = GFX_MAR_The_end_no
+	cost = 1
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	x = 6
+	y = 0
+	completion_reward = {
+		country_event = { id = berez_bomb.11 days = 0 }
+		hidden_effect = {
+			country_event = { id = berez_bomb.12 days = 0 }
+		}
+	}
+}
+
+shared_focus = {
+	id = MAR_emrace_workers
+	icon = GFX_MAR_voodushivit_rabochih
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = MAR_our_time_has_come
+	}
+	x = 3
+	y = 1
+	completion_reward = {
+		country_event = { id = berez_bomb.3 days = 0 }
+	}
+}
+
+shared_focus = {
+	id = MAR_all_for_front
+	icon = GFX_MAR_berezpower
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = MAR_get_the_factories
+	}
+    mutually_exclusive = {
+        focus = MAR_kosygin_plan
+    }
+	x = 5
+	y = 3
+	completion_reward = {
+		country_event = { id = berez_bomb.4 days = 0 }
+	}
+}
+
+shared_focus = {
+	id = MAR_kosygin_plan
+	icon = GFX_MAR_berezpower
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = MAR_get_the_factories
+	}
+    mutually_exclusive = {
+        focus = MAR_all_for_front
+    }
+	x = 3
+	y = 3
+	completion_reward = {
+		#country_event = { id = berez_bomb.4 days = 0 }
+	}
+}
+
+
+
+
+shared_focus = {
+	id = MAR_get_the_factories
+	icon = GFX_MAR_Venesti_zavod
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = MAR_emrace_workers
+	}
+	x = 4
+	y = 2
+	completion_reward = {
+		country_event = { id = berez_bomb.2 days = 0 }
+		398 = {
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+}
+
+
+shared_focus = {
+	id = MAR_secure_party_stability
+	icon = GFX_MAR_Stabilnos_partit
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = MAR_our_time_has_come
+    }
+	x = 5
+	y = 1
+	completion_reward = {
+		country_event = { id = berez_bomb.5 days = 0 }
+	}
+}
+
+shared_focus = {
+	id = MAR_new_faces_in_party
+	icon = GFX_MAR_Berez_novie_lica
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = MAR_our_time_has_come
+	}
+	x = 7
+	y = 1
+	completion_reward = {
+		country_event = { id = berez_bomb.7 days = 0 }
+	}
+}
+
+shared_focus = {
+	id = MAR_endspiel
+	icon = GFX_MAR_peshki
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = MAR_secure_party_stability
+	}
+    prerequisite = {
+		focus = MAR_new_faces_in_party
+	}
+	x = 6
+	y = 2
+	completion_reward = {
+		country_event = { id = berez_bomb.6 days = 0 }
+	}
+}
+
+shared_focus = {
+	id = MAR_berezniki_awakens
+	icon = GFX_MAR_Za_Stalina
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = MAR_our_time_has_come
+	}
+	x = 9
+	y = 1
+	completion_reward = {
+		country_event = { id = berez_bomb.10 days = 0 }
+	}
+}
+
+shared_focus = {
+	id = MAR_mass_trainings
+	icon = GFX_MAR_mass_trenning
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = MAR_berezniki_awakens
+	}
+	x = 8
+	y = 2
+	completion_reward = {
+		hidden_effect = {
+			country_event = { id = berez_news.6 days = 35 }
+		}	
+		country_event = { id = berez_bomb.8 days = 0 }
+	}
+}
+
+shared_focus = {
+	id = MAR_tore_everything_apart
+	icon = GFX_MAR_Vse_Vverh_Dnom
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = MAR_mass_trainings
+	}
+    mutually_exclusive = {
+        focus = MAR_everyone_for_front
+    }
+	x = 9
+	y = 3
+	completion_reward = {
+		country_event = { id = berez_bomb.9 days = 0 }
+	}
+}
+
+shared_focus = {
+	id = MAR_everyone_for_front
+	icon = GFX_MAR_Vse_Vverh_Dnom
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = MAR_mass_trainings
+	}
+    mutually_exclusive = {
+        focus = MAR_tore_everything_apart
+    }
+	x = 7
+	y = 3
+	completion_reward = {
+		#country_event = { id = berez_bomb.9 days = 0 }
+	}
+}
+
+shared_focus = {
+	id = MAR_alea_iacta_est
+	icon = GFX_MAR_zhrebi_broshen
+	cost = 1
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+    prerequisite = {
+        focus = MAR_kosygin_plan
+        focus = MAR_all_for_front
+    }
+    prerequisite = {
+        focus = MAR_endspiel
+    }
+    prerequisite = {
+        focus = MAR_everyone_for_front
+        focus = MAR_tore_everything_apart
+    }
+	x = 6
+	y = 4
+	completion_reward = {
+        RUS_Smuta_Enable = yes
+	    TNO_improve_admin_efficiency_med = yes
+		hidden_effect = {
+			country_event = { id = berez_news.7 days = 30 }
+		}	
+		country_event = { id = berez_bomb.1 days = 0 }
+	}
+}

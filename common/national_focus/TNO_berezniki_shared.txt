@@ -1530,7 +1530,7 @@ shared_focus = {
 	available = {
 		KOM = {	
 			OR = {
-				has_government = authoritarian_democracy
+				has_government = paternalism
 				has_government = social_democrat
 				has_government = social_liberal
 			}	
@@ -1594,7 +1594,7 @@ shared_focus = {
 		KOM = {
 			NOT = {
 				OR = {
-					has_government = authoritarian_democracy
+					has_government = paternalism
 					has_government = social_democrat
 					has_government = social_liberal
 				}
@@ -1726,7 +1726,7 @@ shared_focus = {
 				}
 			}
 			else_if = {
-				limit = { has_goverment = authoritarian_democracy }	
+				limit = { has_goverment = paternalism }	
 				country_event = {
 					id = berez_voina.41
 					days = 0

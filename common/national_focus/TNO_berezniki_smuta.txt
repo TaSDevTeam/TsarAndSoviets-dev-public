@@ -1,0 +1,531 @@
+shared_focus = {
+	id = MAR_return_to_antipin
+	icon = GFX_MAR_For_your_faith
+	cost = 1
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	
+	x = 9
+	y = 0
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = MAR_ordens_corps
+	icon = GFX_MAR_Those_who_took_the_sword
+	cost = 1
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_return_to_antipin
+    }
+	x = 8
+	y = 1
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = MAR_expand_cooperation
+	icon = x
+	cost = 1
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_return_to_antipin
+    }
+	x = 10
+	y = 1
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = MAR_mladorossi_manifesto
+	icon = x
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_ordens_corps
+    }
+    prerequisite = {
+        focus = MAR_expand_cooperation
+    }
+	x = 9
+	y = 2
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = MAR_struggle_for_the_russian_spirit
+	icon = x
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_mladorossi_manifesto
+    }
+
+	x = 7
+	y = 3
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = MAR_fire_that_will_forge_nation
+	icon = x
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+    mutually_exclusive = {
+        focus = MAR_evolution_before_revolution
+    }
+	prerequisite = {
+        focus = MAR_struggle_for_the_russian_spirit
+    }
+
+	x = 6
+	y = 4
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = MAR_evolution_before_revolution
+	icon = x
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+    mutually_exclusive = {
+        focus = MAR_fire_that_will_forge_nation
+    }
+	prerequisite = {
+        focus = MAR_struggle_for_the_russian_spirit
+    }
+
+	x = 8
+	y = 4
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = MAR_idea_of_tsar_and_soviets
+	icon = x
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+    prerequisite = {
+        focus = MAR_evolution_before_revolution
+        focus = MAR_fire_that_will_forge_nation
+    }
+	x = 7
+	y = 5
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = MAR_enemies_by_situation
+	icon = x
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_mladorossi_manifesto
+    }
+
+	x = 11
+	y = 3
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = MAR_virtue_of_mercy
+	icon = x
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_enemies_by_situation
+    }
+    mutually_exclusive = {
+        focus = MAR_obstacle_is_obstacle
+    }
+	x = 10
+	y = 4
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = MAR_obstacle_is_obstacle
+	icon = x
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_enemies_by_situation
+    }
+    mutually_exclusive = {
+        focus = MAR_virtue_of_mercy
+    }
+	x = 12
+	y = 4
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = MAR_our_cause_is_right
+	icon = x
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_virtue_of_mercy
+        focus = MAR_obstacle_is_obstacle
+    }
+	x = 11
+	y = 5
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = MAR_call_to_the_base
+	icon = x
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_mladorossi_manifesto
+    }
+	x = 9
+	y = 3
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = MAR_prepare_to_zemsky_sobor
+	icon = x
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_call_to_the_base
+    }
+	x = 9
+	y = 5
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = MAR_zemsky_candidates
+	icon = GFX_MAR_kandidati
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_idea_of_tsar_and_soviets
+    }
+    prerequisite = {
+        focus = MAR_prepare_to_zemsky_sobor
+    }
+    prerequisite = {
+        focus = MAR_our_cause_is_right
+    }
+	x = 8
+	y = 6
+	completion_reward = {
+		
+	}
+}
+shared_focus = {
+	id = MAR_zemsky_voters
+	icon = GFX_MAR_izbirateli
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_idea_of_tsar_and_soviets
+    }
+    prerequisite = {
+        focus = MAR_prepare_to_zemsky_sobor
+    }
+    prerequisite = {
+        focus = MAR_our_cause_is_right
+    }
+	x = 10
+	y = 6
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = MAR_every_man_is_a_tsar
+	icon = GFX_MAR_as_Tsar
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_zemsky_candidates
+    }
+    prerequisite = {
+        focus = MAR_zemsky_voters
+    }
+	x = 7
+	y = 7
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = MAR_technologies_of_future
+	icon = GFX_MAR_Technologies_of_the_future
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_every_man_is_a_tsar
+    }
+
+	x = 7
+	y = 8
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = MAR_people_for_peoples_tsar
+	icon = GFX_MAR_Char_ot_naroda
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_technologies_of_future
+    }
+
+	x = 7
+	y = 9
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = MAR_meeting_with_bourgeoisie
+	icon = MAR_vstrecha_s_daunami
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_zemsky_candidates
+    }
+    prerequisite = {
+        focus = MAR_zemsky_voters
+    }
+	x = 9
+	y = 7
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = MAR_donations_to_poor
+	icon = MAR_help_bednim
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_meeting_with_bourgeoisie
+    }
+
+	x = 9
+	y = 8
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = MAR_party_for_tsarina_and_regent
+	icon = GFX_MAR_Char_and_Regent
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_donations_to_poor
+    }
+
+	x = 9
+	y = 9
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = MAR_ancestors_blessing
+	icon = GFX_MAR_Our_Ancestors
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_zemsky_candidates
+    }
+    prerequisite = {
+        focus = MAR_zemsky_voters
+    }
+	x = 11
+	y = 7
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = MAR_connection_with_the_past
+	icon = GFX_MAR_Past_Connections
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_ancestors_blessing
+    }
+	x = 11
+	y = 8
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = MAR_army_for_tsar_general
+	icon = GFX_MAR_Tsarist_Army
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_connection_with_the_past
+    }
+	x = 11
+	y = 9
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = MAR_sobor_is_voting_now
+	icon = GFX_MAR_Elections_funny_shit
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_people_for_peoples_tsar
+        focus = MAR_party_for_tsarina_and_regent
+        focus = MAR_army_for_tsar_general
+    }
+	x = 9
+	y = 10
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = MAR_mladorossi_dream
+	icon = GFX_MAR_Voina_20
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_sobor_is_voting_now
+    }
+	x = 9
+	y = 11
+	completion_reward = {
+		
+	}
+}
+

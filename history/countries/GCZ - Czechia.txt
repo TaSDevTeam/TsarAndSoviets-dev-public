@@ -15,19 +15,19 @@ set_variable = {
 	TNO_economy_subtype = 10
 }
 set_politics = {
-	ruling_party = ultranationalism
+	ruling_party = ultramilitarism
 	elections_allowed = no
 	last_election = "1935.12.17"
 	election_frequency = 48
 }
 set_popularities = {
 	communist = 3
-	ultranationalism = 55
+	ultramilitarism = 55
 	socialist = 0
-	social_democracy = 0
-	liberal_democracy = 0
-	conservative_democracy = 0
-	authoritarian_democracy = 0
+	progressivism = 0
+	liberalism = 0
+	conservatism = 0
+	paternalism = 0
 	despotism = 22
 	fascism = 0
 	national_socialism = 20
@@ -48,9 +48,14 @@ set_party_name = {
 	long_name = Post_WRW2_KPG_party
 	name = Post_WRW2_KPG_party
 }
+set_party_name = { 
+	ideology = ultramilitarism 
+	long_name = CZE_POSTWRW2_ultramilitarism_party
+	name = CZE_POSTWRW2_ultramilitarism_party
+}
 # Leaders
 recruit_character = GCZ_Alois_Grebenicek
-recruit_character = GCZ_Antonin_Novotny
+
 add_ideas = {
 	### Standard ###
 	TaS_Post2WRW_fast_denazification

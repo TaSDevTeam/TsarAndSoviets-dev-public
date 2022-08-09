@@ -10,7 +10,7 @@ bookmarks = {
 		desc = "THENEWORDER_DESC"
 		date = 1962.1.1.1
 		picture = "GFX_select_date_1939"
-		default_country = "MAR"
+		default_country = "GER"
 		default = yes
 
 		effect = {
@@ -21,7 +21,7 @@ bookmarks = {
 		#### MAJORS ####
 		"USA" = {
 			history = "USA_THENEWORDER_DESC"
-			ideology = liberal_democracy
+			ideology = conservatism
 			ideas = {
 				USA_last_bastion_of_liberty
 				USA_the_american_depression_4
@@ -49,8 +49,34 @@ bookmarks = {
 			}
 		}
 
-		"ZZZ" = { history = "" }
-		"ZZZ" = { history = "" }
+			"MAR" = {
+						history = "MAR_THENEWORDER_DESC"
+						ideology = despotism
+						ideas = {
+							MAR_regent_without_tsar_1
+							MAR_forced_syncretisism
+							MAR_oldfashion_army
+						}
+						focuses = {
+							MAR_Char_and_Regent
+							MAR_char_general
+							MAR_Char_ot_naroda
+						}
+					}
+			"MAR" = {
+						history = "MAR_THENEWORDER_DESC"
+						ideology = despotism
+						ideas = {
+							MAR_regent_without_tsar_1
+							MAR_forced_syncretisism
+							MAR_oldfashion_army
+						}
+						focuses = {
+							MAR_Char_and_Regent
+							MAR_char_general
+							MAR_Char_ot_naroda
+						}
+					}
 
 		"JAP" = {
 			history = "JAP_THENEWORDER_DESC"
@@ -81,34 +107,6 @@ bookmarks = {
 				ita_road_to_order
 			}
 		}
-			"MAR" = {
-						history = "MAR_THENEWORDER_DESC"
-						ideology = despotism
-						ideas = {
-							MAR_regent_without_tsar_1
-							MAR_forced_syncretisism
-							MAR_oldfashion_army
-						}
-						focuses = {
-							MAR_Char_and_Regent
-							MAR_char_general
-							MAR_Char_ot_naroda
-						}
-					}
-			"MAR" = {
-						history = "MAR_THENEWORDER_DESC"
-						ideology = despotism
-						ideas = {
-							MAR_regent_without_tsar_1
-							MAR_forced_syncretisism
-							MAR_oldfashion_army
-						}
-						focuses = {
-							MAR_Char_and_Regent
-							MAR_char_general
-							MAR_Char_ot_naroda
-						}
-					}
 		#### MAJORS ####
 
 		#### MINORS ####
@@ -120,7 +118,7 @@ bookmarks = {
 		"SCO" = {
 			minor = yes
 			history = "SCO_THENEWORDER_DESC"
-			ideology = liberal_democracy
+			ideology = liberalism
 			ideas = {
 				SCO_The_lonely_Ilse
 				SCO_Itchy_Trigger
@@ -136,7 +134,7 @@ bookmarks = {
 		"BRA" = {
 			minor = yes
 			history = "BRA_THENEWORDER_DESC"
-			ideology = liberal_democracy
+			ideology = liberalism
 			ideas = {
 				BRA_idea_rampant_corruption
 				BRA_idea_industrialisation_crisis_campaign
@@ -152,7 +150,7 @@ bookmarks = {
 		"SAF" = {
 			minor = yes
 			history = "SAF_THENEWORDER_DESC"
-			ideology = conservative_democracy
+			ideology = conservatism
 			ideas = {
 				SAF_The_Empty_Throne
 				SAF_Desperate_Neutrality
@@ -172,7 +170,7 @@ bookmarks = {
 		"ENG" = {
 			minor = yes
 			history = "ENG_THENEWORDER_DESC"
-			ideology = authoritarian_democracy
+			ideology = paternalism
 			ideas = {
 				ENG_HMMLR
 				ENG_Own_Peoples_Hate
@@ -188,7 +186,7 @@ bookmarks = {
 		"IRE" = {
 			minor = yes
 			history = "IRE_THENEWORDER_DESC"
-			ideology = authoritarian_democracy
+			ideology = paternalism
 			ideas = {
 				IRE_there_will_be_blood
 				IRE_humiliation_of_a_giant
@@ -270,7 +268,7 @@ bookmarks = {
 		"KOM" = {
 			minor = yes
 			history = "KOM_THENEWORDER_DESC"
-			ideology = social_democracy
+			ideology = progressivism
 			ideas = {
 				KOM_syvtyvkartsi
 				KOM_clash_of_shadows_c_1
@@ -302,7 +300,7 @@ bookmarks = {
 		"OMS" = {
 			minor = yes
 			history = "OMS_THENEWORDER_DESC"
-			ideology = ultranationalism
+			ideology = ultramilitarism
 			ideas = {
 				OMS_fueled_by_revenge
 				OMS_nothing_left_to_lose
@@ -317,6 +315,8 @@ bookmarks = {
 		## RUSSIA ##
 
 		## CPS ##
+		"ZZZ" = { minor = yes history = "" }
+		
 		"CHI" = {
 			minor = yes
 			history = "CHI_THENEWORDER_DESC"
@@ -332,38 +332,8 @@ bookmarks = {
 				CHI_Industrialization
 			}
 		}
-
-		"INS" = {
-			minor = yes
-			history = "INS_THENEWORDER_DESC"
-			ideology = fascism
-			ideas = {
-				INS_Romusha
-				INS_Shinkyoutei
-				INS_Pembela_Tanah_Air
-			}
-			focuses = {
-				INS_decree_0162
-				INS_Presidential_decree_321_65
-				INS_A_change_of_plan
-			}
-		}
-
-		"YUN" = {
-			minor = yes
-			history = "YUN_THENEWORDER_DESC"
-			ideology = despotism
-			ideas = {
-				#YUN_bandit_holdouts
-				YUN_hidden_potential_0
-				YUN_army_of_the_southwest
-			}
-			focuses = {
-				YUN_evict_he_yingqin
-				YUN_xinan_insurgency
-				YUN_we_are_not_enemies
-			}
-		}
+		
+		"ZZZ" = { minor = yes history = "" }
 		## CPS ##
 
 		## TRIUM ##
@@ -374,7 +344,7 @@ bookmarks = {
 			history = "IBR_THENEWORDER_DESC"
 			ideology = despotism
 			ideas = {
-				The_Gibraltar_Dam
+				Betray_Old_Guard
 				Iberian_Economic_Nightmare
 				Crippled_Sovereignty
 			}
@@ -468,21 +438,6 @@ bookmarks = {
 		## PAKT ##
 
 		## RUSSIA ##
-		"SVR" = {
-			minor = yes
-			history = "SVR_THENEWORDER_DESC"
-			ideology = authoritarian_democracy
-			ideas = {
-				SVR_notso_redarmy
-				SVR_black_league_influence_tier_1
-				SVR_revisionist_influence_tier_2
-			}
-			focuses = {
-				SVR_a_bastion_of_freedom
-				SVR_trust_the_marshal
-				SVR_cast_them_down
-			}
-		}
 
 		"KEM" = {
 			minor = yes
@@ -503,7 +458,7 @@ bookmarks = {
 		"TOM" = {
 			minor = yes
 			history = "TOM_THENEWORDER_DESC"
-			ideology = conservative_democracy
+			ideology = conservatism
 			ideas = {
 				TOM_formation_of_the_salons
 				TOM_warlord_of_the_city
@@ -562,12 +517,42 @@ bookmarks = {
 				BRY_that_burns_the_tyrant_down
 			}
 		}
+		
+		"NOV" = {
+			minor = yes
+			history = "NOV_THENEWORDER_DESC"
+			ideology = paternalism
+			ideas = {
+				NOV_Disproportionate_Population
+				NOV_The_All_Siberian_Army
+				RUS_novosibirsk_aircraft_plant
+			}
+			focuses = {
+				NOV_land_of_the_strong
+				NOV_the_champions_of_industry
+				NOV_the_soldiers_soviet
+			}
+		}
 		## RUSSIA ##
 
 		## CPS ##
 		"ZZZ" = { minor = yes history = "" }
 
-		"ZZZ" = { minor = yes history = "" }
+		"YUN" = {
+			minor = yes
+			history = "YUN_THENEWORDER_DESC"
+			ideology = despotism
+			ideas = {
+				#YUN_bandit_holdouts
+				YUN_hidden_potential_0
+				YUN_army_of_the_southwest
+			}
+			focuses = {
+				YUN_evict_he_yingqin
+				YUN_xinan_insurgency
+				YUN_we_are_not_enemies
+			}
+		}
 
 		"ZZZ" = { minor = yes history = "" }
 		## CPS ##
@@ -606,21 +591,7 @@ bookmarks = {
 		## PAKT ##
 
 		## RUSSIA ##
-		"NOV" = {
-			minor = yes
-			history = "NOV_THENEWORDER_DESC"
-			ideology = authoritarian_democracy
-			ideas = {
-				NOV_Disproportionate_Population
-				NOV_The_All_Siberian_Army
-				RUS_novosibirsk_aircraft_plant
-			}
-			focuses = {
-				NOV_land_of_the_strong
-				NOV_the_champions_of_industry
-				NOV_the_soldiers_soviet
-			}
-		}
+		"ZZZ" = { minor = yes history = "" }
 
 		"CHT" = {
 			minor = yes
@@ -686,21 +657,6 @@ bookmarks = {
 			}
 		}
 
-		"PRC" = {
-			minor = yes
-			history = "PRC_THENEWORDER_DESC"
-			ideology = communist
-			ideas = {
-				PRC_factionalism
-				PRC_red_army_exile
-				PRC_democratic_military
-			}
-			focuses = {
-				PRC_The_Eastern_Conflict
-				PRC_Legacy_of_the_Siberian_Red_Army
-				PRC_War_with_Menjiang
-			}
-		}
 		## RUSSIA ##
 
 		## CPS ##

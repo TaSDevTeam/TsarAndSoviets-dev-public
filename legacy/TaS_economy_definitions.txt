@@ -1,0 +1,30 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			MAR = {
+				set_variable = { GDP = 0.219 } #in billions #already converted to billion.
+				set_variable = { GDP_growth = 1.9 }
+				set_variable = { income_tax_rate = 0.25 }
+				set_variable = { business_tax_rate = 0.35 }
+				set_variable = { poverty_rate = 65.3 }
+				set_variable = { poverty_monthly_change = 0 }
+				set_variable = { money_reserves = 0 } #in billions #already converted to billion
+				set_variable = { national_debt = 0 }#Exodus 22:25
+				set_variable = { misc_income = 0.5 }#already converted to billion
+				set_variable = { misc_costs = 0.00 } #already converted to billion
+				set_variable = { base_inflation_rate = 1.04 }
+				### Credit Rating 
+				set_temp_variable = { temp_credit_rating = 3 }
+				set_temp_variable = { temp_credit_rating_min = 2 }
+				set_temp_variable = { temp_credit_rating_max = 5 }
+				econ_initialize_credit_rating_system = yes
+				
+				initiate_display_vars = yes
+
+				# State values in MILLIONS. Make sure they add up to GDP in BILLIONS
+				865 = { set_variable = { defined_state_value = 13.01 } } # Dobryanka
+				398 = { set_variable = { defined_state_value = 106.01 } } # Berezniki
+			}
+		}
+	}
+}

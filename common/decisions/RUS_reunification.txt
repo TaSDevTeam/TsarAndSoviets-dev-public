@@ -1,37 +1,411 @@
-RUS_reunification_category = {
-
-	RUS_reunification_finish_Berezniki = {
-		icon = GFX_decision_forced_labor
-		allowed = {
-			is_central_russian_nation = yes
-			NOT = {
-				original_tag = MAR
+RUS_murmansk_crisis_category = {
+	WSR_intervention_timer = {
+		icon = GFX_decision_generic_decision
+		visible = {
+		}
+		available = {
+			custom_trigger_tooltip = {
+				check_variable = { MPRInterventionProgress > 99 }
+				tooltip = WSR_MPR_sufficient_readiness
+			}
+		}
+		cost = 0
+		fire_only_once = yes
+		days_remove = 7
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision WSR_intervention_timer"
+		}
+		remove_effect = {
+			declare_war_on = {
+				target = ONG
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = FIN
+				type = annex_everything
+			}
+			hidden_effect = {
+				FIN = {
+					country_event = {
+						id = murmansk.4
+						days = 0
+					}
+				}
 			}
 		}
 		ai_will_do = {
 			factor = 200
 		}
-		available = {
-			OR = {
-				AND = {
-					is_ai = no
-					date > 1964.05.05
-				}
-				hidden_trigger = {
-					TaS_is_alone_with_Berezniki = yes
-				}
+	}
+
+	WSR_dispatch_volunteer_brigade = {
+		icon = GFX_decision_generic_decision
+		visible = {
+			MPR = {
+				exists = yes
+				has_war_with = FIN
 			}
-			country_exists = MAR
+			NOT = {
+				has_war_with = FIN
+			}
 		}
-		fire_only_once = yes
-		days_remove = 20
-		remove_effect = {
-			declare_war_on = {
-				target = MAR
-				type = annex_everything
+		available = {
+			MPR = {
+				exists = yes
+				has_war_with = FIN
 			}
+		}
+		cost = 25
+		fire_only_once = yes
+		days_remove = 15
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision WSR_dispatch_volunteer_brigade"
+			hidden_effect = {
+				load_oob = MPR_russian_volunteers
+			}
+			hidden_effect = {
+				MPR = {
+					load_oob = MPR_russian_volunteers
+				}
+			}
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					WSR = {
+						tag = WRS
+					}
+				}
+				1359 = {
+					create_unit = {
+						division = "name = \"'Krasnaya Zvezda' Dobrovolnogo Brigada\" division_template = \"MNR Dobrovolnogo Brigada\" start_experience_factor = 0.3 start_equipment_factor = 0.9 start_manpower_factor = 0.9"
+						owner = MPR
+					}
+					create_unit = {
+						division = "name = \"'Nikitin' Dobrovolnogo Brigada\" division_template = \"MNR Dobrovolnogo Brigada\" start_experience_factor = 0.3 start_equipment_factor = 0.9 start_manpower_factor = 0.9"
+						owner = MPR
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					WSR = {
+						tag = KOM
+					}
+				}
+				1359 = {
+					create_unit = {
+						division = "name = \"'Sysola' Dobrovolnogo Brigada\" division_template = \"MNR Dobrovolnogo Brigada\" start_experience_factor = 0.3 start_equipment_factor = 0.9 start_manpower_factor = 0.9"
+						owner = MPR
+					}
+					create_unit = {
+						division = "name = \"'Pesec' Dobrovolnogo Brigada\" division_template = \"MNR Dobrovolnogo Brigada\" start_experience_factor = 0.3 start_equipment_factor = 0.9 start_manpower_factor = 0.9"
+						owner = MPR
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					WSR = {
+						tag = VYT
+					}
+				}
+				1359 = {
+					create_unit = {
+						division = "name = \"'Ekaterina Velikaja' Dobrovolnogo Brigada\" division_template = \"MNR Dobrovolnogo Brigada\" start_experience_factor = 0.3 start_equipment_factor = 0.9 start_manpower_factor = 0.9"
+						owner = MPR
+					}
+					create_unit = {
+						division = "name = \"'Denikin' Dobrovolnogo Brigada\" division_template = \"MNR Dobrovolnogo Brigada\" start_experience_factor = 0.3 start_equipment_factor = 0.9 start_manpower_factor = 0.9"
+						owner = MPR
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					WSR = {
+						tag = SAM
+					}
+				}
+				1359 = {
+					create_unit = {
+						division = "name = \"'Mirotvorec' Dobrovolnogo Brigada\" division_template = \"MNR Dobrovolnogo Brigada\" start_experience_factor = 0.3 start_equipment_factor = 0.9 start_manpower_factor = 0.9"
+						owner = MPR
+					}
+					create_unit = {
+						division = "name = \"'Beloe Morea' Dobrovolnogo Brigada\" division_template = \"MNR Dobrovolnogo Brigada\" start_experience_factor = 0.3 start_equipment_factor = 0.9 start_manpower_factor = 0.9"
+						owner = MPR
+					}
+				}
+			}
+			else = {
+				1359 = {
+					create_unit = {
+						division = "name = \"1ya Brigada Dobrovolnogo\" division_template = \"MNR Dobrovolnogo Brigada\" start_experience_factor = 0.3 start_equipment_factor = 0.9 start_manpower_factor = 0.9"
+						owner = MPR
+					}
+					create_unit = {
+						division = "name = \"2ya Brigada Dobrovolnogo\" division_template = \"MNR Dobrovolnogo Brigada\" start_experience_factor = 0.3 start_equipment_factor = 0.9 start_manpower_factor = 0.9"
+						owner = MPR
+					}
+				}
+				
+			}
+		}
+		ai_will_do = {
+			factor = 200
 		}
 	}
+	WSR_permit_covert_assistance = {
+		icon = GFX_decision_generic_decision
+		visible = {
+			MPR = {
+				exists = yes
+				has_war_with = FIN
+			}
+			NOT = {
+				has_war_with = FIN
+			}
+		}
+		available = {
+			MPR = {
+				exists = yes
+				has_war_with = FIN
+			}
+		}
+		cost = 25
+		fire_only_once = yes
+		days_remove = 15
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision WSR_permit_covert_assistance"
+		}
+		remove_effect = {
+			MPR = {
+				add_ideas = MPR_Russian_Assistance
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	WSR_send_military_advisors = {
+		icon = GFX_decision_generic_decision
+		visible = {
+			MPR = {
+				exists = yes
+				has_war_with = FIN
+			}
+			NOT = {
+				has_war_with = FIN
+			}
+		}
+		available = {
+			MPR = {
+				exists = yes
+				has_war_with = FIN
+			}
+		}
+		custom_cost_trigger = { command_power > 19.99 }
+		custom_cost_text = decision_cost_20_cp
+		fire_only_once = yes
+		days_remove = 15
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision WSR_send_military_advisors"
+			hidden_effect = { add_command_power = -20 }
+		}
+		remove_effect = {
+			MPR = {
+				add_ideas = MPR_Russian_Advisors
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	WSR_send_weapons_shipment = {
+		icon = GFX_decision_generic_decision
+		visible = {
+			MPR = {
+				exists = yes
+				has_war_with = FIN
+			}
+		}
+		available = {
+			MPR = {
+				exists = yes
+				has_war_with = FIN
+			}
+		}
+		custom_cost_trigger = {
+			has_equipment = {
+				infantry_equipment > 499
+			}
+		}
+		custom_cost_text = decision_cost_500_inf
+		fire_only_once = no
+		days_re_enable = 30
+		days_remove = 15
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision WSR_send_weapons_shipment"
+		}
+		remove_effect = {
+			send_equipment = {
+				equipment = infantry_equipment
+				amount = 500
+				target = MPR
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	WSR_prepare_military_infrastructure = {
+		icon = GFX_decision_generic_decision
+		visible = {
+			MPR = {
+				exists = yes
+				has_war_with = FIN
+			}
+			NOT = {
+				has_war_with = FIN
+			}
+		}
+		available = {
+			MPR = {
+				exists = yes
+				has_war_with = FIN
+			}
+		}
+		cost = 30
+		fire_only_once = yes
+		days_remove = 30
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision WSR_prepare_military_infrastructure"
+		}
+		remove_effect = {
+			#Increase preparedness for the war and add a supply depot near Onega.
+			add_to_variable = { MPRInterventionProgress = 25 }
+			custom_effect_tooltip = WSR_prepare_military_infrastructure_tt
+			214 = {
+				add_building_construction = {
+					type = supply_node
+					level = 1
+					instant_build = yes
+					province = 3168
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	WSR_expand_arkhangelsk = {
+		icon = GFX_decision_generic_decision
+		visible = {
+			MPR = {
+				exists = yes
+				has_war_with = FIN
+			}
+			NOT = {
+				has_war_with = FIN
+			}
+		}
+		available = {
+			MPR = {
+				exists = yes
+				has_war_with = FIN
+			}
+		}
+		custom_cost_trigger = { command_power > 19.99 }
+		custom_cost_text = decision_cost_20_cp
+		fire_only_once = yes
+		days_remove = 30
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision WSR_expand_arkhangelsk"
+			hidden_effect = { add_command_power = -20 }
+		}
+		remove_effect = {
+			#Increase level of Arkhangelsk port, increases preparedness
+			custom_effect_tooltip = WSR_expand_arkhangelsk_tt
+			214 = {
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					instant_build = yes
+					province = 3338
+				}
+			}
+			add_to_variable = { MPRInterventionProgress = 15 }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	WSR_arm_karelian_partisans = {
+		icon = GFX_decision_generic_decision
+		visible = {
+			MPR = {
+				exists = yes
+				has_war_with = FIN
+			}
+			NOT = {
+				has_war_with = FIN
+			}
+		}
+		available = {
+			MPR = {
+				exists = yes
+				has_war_with = FIN
+			}
+		}
+		custom_cost_trigger = {
+			has_political_power > 34.99
+			has_equipment = { infantry_equipment > 499 }
+		}
+		custom_cost_text = decision_cost_15_cp_35_pp_500_inf_eq
+		fire_only_once = yes
+		days_remove = 14
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision WSR_arm_karelian_partisans"
+			hidden_effect = { add_command_power = -15 }
+			hidden_effect = { add_political_power = -35 }
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -500
+				producer = ROOT
+			}
+		}
+		remove_effect = {
+			#Subtract guns, damage Finnish railway in Karelia, add preparedness.
+			custom_effect_tooltip = WSR_arm_karelian_partisans_tt
+			hidden_effect = {
+				add_to_variable = { MPRInterventionProgress = 10 }
+				215 = {
+					damage_building = {
+						type = rail_way
+						damage = 10
+						province = 3189
+					}
+					damage_building = {
+						type = supply_node
+						damage = 10
+						province = 3189
+					}
+					damage_building = {
+						type = rail_way
+						damage = 5
+						province = 3008
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 150
+		}
+	}
+}
+
+RUS_reunification_category = {
 
 	kazakhstan_reunification = {
 		icon = GFX_decision_generic_kazakhstan
@@ -57,6 +431,15 @@ RUS_reunification_category = {
 			custom_effect_tooltip = RUS_end_warlord_tt
 			hidden_effect = {
 				country_event = { id = RUS.3 days = 30 } #caffine flow
+				if = {
+					limit = {
+						has_idea = tno_income_taxation_not_applicable
+					}
+					swap_ideas = {
+						remove_idea = tno_income_taxation_not_applicable
+						add_idea = tno_income_taxation_flat_taxes
+					}
+				}
 			}
 			RUS_select_kazakh_cosmetic_tag = yes
 			RUS_select_kazakh_news_event = yes
@@ -145,6 +528,17 @@ RUS_reunification_category = {
 			add_research_slot = 1
 			hidden_effect = {
 				add_manpower = 500000
+				if = { #Kills North Siberian Anarchy if AI sucks
+					limit = { country_exists = NRL }
+					annex_country = {
+						target = NRL
+						transfer_troops = no
+					}
+					every_state = {
+						limit = { is_core_of = NRL }
+						remove_core_of = NRL
+					}
+				}
 				for_each_scope_loop = {
 					array = global.russian_warlords
 					if = {
@@ -176,10 +570,13 @@ RUS_reunification_category = {
 								ruling_only = yes
 							}
 							original_tag = SBA 
-							AND = { #ponies get better credit rating, thank you very much
+							AND = { #ponies get better credit rating, thank you very much, this time for real
 								original_tag = OMO
 								NOT = { 
-									has_cosmetic_tag = OMO_Harmonious_State
+									has_country_leader = {
+										character = OMO_2022_Nikolai_Buckharin
+										ruling_only = yes
+									}
 								}
 							}
 							original_tag = AMR 
@@ -281,28 +678,11 @@ RUS_reunification_category = {
 			}
 			if = {
 				limit = {
-					original_tag = MAR
-				}
-				set_country_flag = MAR_WRW2_enable_Warplans
-				TaS_WRW2_Calculate_Diplomatic_Pressure = yes
-				if = {###Start Belozerskiy epilogue
-					limit = {
-						has_government = despotism
-					}
-					hidden_effect = {
-						country_event = {
-							id = MAR_epilogue.1
-						}
-					}
-				}
-			}
-			if = {
-				limit = {
 					original_tag = SAM
 				}
 				if = {
 					limit = {
-						has_government = authoritarian_democracy
+						has_government = paternalism
 					}
 					hidden_effect = {
 						country_event = { id = SAM_zykov.9 days = 4 random = 48 }
@@ -329,21 +709,8 @@ RUS_reunification_category = {
 				limit = {
 					original_tag = SVR
 				}
-				if = {
-					limit = {
-						has_government = authoritarian_democracy
-					}
-					hidden_effect = {
-						country_event = { id = batov.11 days = 4 random = 48 }
-					}
-				}
-				if = {
-					limit = {
-						has_government = conservative_democracy
-					}
-					hidden_effect = {
-
-					}
+				hidden_effect = {
+					country_event = { id = batov.11 days = 4 random = 48 }
 				}
 			}
 			if = {
@@ -395,7 +762,7 @@ RUS_reunification_category = {
 				}
 				if = {
 					limit = {
-						has_government = authoritarian_democracy
+						has_government = paternalism
 					}
 					hidden_effect = {
 						country_event = { id = NOV_superregional.16 days = 4 random = 48 }
@@ -403,7 +770,7 @@ RUS_reunification_category = {
 				}
 				else_if = {
 					limit = {
-						has_government = conservative_democracy
+						has_government = conservatism
 					}
 					hidden_effect = {
 						country_event = { id = NOV_superregional.17 days = 4 random = 48 }
@@ -485,7 +852,7 @@ RUS_reunification_category = {
 				}
 				if = {
 					limit = {
-						has_government = authoritarian_democracy
+						has_government = paternalism
 						NOT = {
 							has_country_leader = {
 								character = MAG_Mitchell_Werbell
@@ -615,9 +982,9 @@ RUS_reunification_category = {
 				limit = {
 					original_tag = KOM
 					OR = {	
-						has_government = social_democracy
-						has_government = authoritarian_democracy
-						has_government = liberal_democracy
+						has_government = progressivism
+						has_government = paternalism
+						has_government = liberalism
 					}
 				}
 				hidden_effect = {
@@ -682,13 +1049,6 @@ RUS_reunification_category = {
 				tooltip = can_form_far_east_tt
 				can_form_far_east = yes
 			}
-			if = {
-				limit = {
-					original_tag = OMO
-					OMO_2022_aprilfools_gamerule_active = no
-				}
-				has_country_flag = OMO_didnt_evade_the_judgement_of_the_LORD
-			}
 		}
 
 		visible = {
@@ -713,6 +1073,17 @@ RUS_reunification_category = {
 			hidden_effect = {
 				add_manpower = 250000
 				country_event = { id = RUS_wonder.0 days = 7 }
+				if = { #Kills North Siberian Anarchy if AI sucks
+					limit = { country_exists = NRL }
+					annex_country = {
+						target = NRL
+						transfer_troops = no
+					}
+					every_state = {
+						limit = { is_core_of = NRL }
+						remove_core_of = NRL
+					}
+				}
 			}
 			if = {
 				limit = {
@@ -734,23 +1105,27 @@ RUS_reunification_category = {
 					set_temp_variable = { SIB_plan_country = TOM }
 				}
 				SIB_plan_transfer = yes
-				if = {
-					limit = { 
-						NOT = {
-							OR = {
-								original_tag = SBA
-								AND = { #ponies get better credit rating, thank you very much
-									original_tag = OMO
-									NOT = { 
-										has_cosmetic_tag = OMO_Harmonious_State
+			}
+			
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							original_tag = SBA
+							AND = { #ponies get better credit rating, thank you very much, this time for real
+								original_tag = OMO
+								NOT = { 
+									has_country_leader = {
+										character = OMO_2022_Nikolai_Buckharin
+										ruling_only = yes
 									}
 								}
-								original_tag = AMR
 							}
+							original_tag = AMR
 						}
-					}		
-					econ_raise_max_credit_rating = yes
+					}
 				}
+				econ_raise_max_credit_rating = yes
 			}
 
 			SIB_plan_reduce_effects = yes
@@ -826,7 +1201,8 @@ RUS_reunification_category = {
 			if = {
 				limit = { tag = MAR }
 				has_country_flag = MAR_POLITICS_RESOLVED
-			}
+			}	
+			has_country_flag = RUS_Smuta_Ended
 		}
 		allowed = {
 			is_central_russian_nation = yes
@@ -837,6 +1213,14 @@ RUS_reunification_category = {
 		}
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision west_russia_reunification"
+			hidden_effect = {
+				FIN = {
+					country_event = {
+						id = murmansk.1
+						days = 7
+					}
+				}
+			}
 			set_global_flag = RUS_West_Russian_unification
 			save_global_event_target_as = RUS_western_unifier
 			RUS_calculate_prestige_value = yes
@@ -853,14 +1237,22 @@ RUS_reunification_category = {
 				country_event = { id = RUS.2 days = 30 } #Sports Rivalry
 				country_event = { id = RUS.3 days = 60 } #Caffine Flow
 				add_manpower = 150000
-				remove_ideas = {
-					tno_income_taxation_not_applicable
+				if = {
+					limit = {
+						has_idea = tno_income_taxation_not_applicable
+					}
+					swap_ideas = {
+						remove_idea = tno_income_taxation_not_applicable
+						add_idea = tno_income_taxation_flat_taxes
+					}
 				}
-				add_ideas = {
-					#construction_level_5
-					tno_income_taxation_flat_taxes
-					RUS_regional_manpower
-					RUS_regional_econ
+				swap_ideas = {
+					remove_idea = RUS_warlord_manpower
+					add_idea = RUS_regional_manpower
+				}
+				swap_ideas = {
+					remove_idea = RUS_warlord_econ
+					add_idea = RUS_regional_econ
 				}
 			}
 
@@ -939,9 +1331,9 @@ RUS_reunification_category = {
 				limit = {
 					original_tag = KOM
 					OR = {
-						has_government = liberal_democracy
-						has_government = authoritarian_democracy
-						has_government = social_democracy
+						has_government = liberalism
+						has_government = paternalism
+						has_government = progressivism
 					}
 				}
 				country_event = {
@@ -960,7 +1352,7 @@ RUS_reunification_category = {
 				econ_lower_max_credit_rating = yes
 				set_capital = { state = 400 remember_old_capital = no }
 				country_event = {
-					id = KOM.420
+					id = komi_burgsys.420
 					days = 5
 				}
 			}
@@ -984,102 +1376,6 @@ RUS_reunification_category = {
 			}
 			clear_variable = loot_amount
 			set_country_flag = W_RUSSIA_UNIFIED
-		}
-	}
-
-	WSR_diplomacy_with_onega = {
-		icon = GFX_decision_generic_onega
-		allowed = {
-			AND = {
-				is_central_russian_nation = yes
-				is_russian_unifier = yes
-			}
-		}
-		visible = {
-			country_exists = ONG
-			has_country_flag = RUS_regional_stage
-		}
-		available = {
-			has_country_flag = RUS_regional_stage
-			if = {
-				limit = { tag = KOM }
-				has_country_flag = KOM_POLITICS_RESOLVED
-			}
-			has_war = no
-			custom_trigger_tooltip = {
-				tooltip = WSR_diplomacy_with_onega_tt
-				RUS_can_diplomatize_with_finland_or_whatever = yes
-			}
-			NOT = {
-				has_country_flag = RUS_chose_finnish_approach
-			}
-		}
-		cost = 10
-
-		ai_will_do = {
-			factor = 100
-		}
-
-		days_remove = 14
-
-		fire_only_once = yes
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision WSR_diplomacy_with_onega"
-			set_country_flag = RUS_chose_finnish_approach
-		}
-		remove_effect = {
-			FIN = {
-				country_event = {
-					id = russiadiplo.1
-					days = 1
-				}
-			}
-		}
-	}
-
-	WSR_invade_onega = {
-		icon = GFX_decision_generic_onega
-		allowed = {
-			AND = {
-				is_central_russian_nation = yes
-				is_russian_unifier = yes
-			}
-		}
-		visible = {
-			country_exists = ONG
-			has_country_flag = RUS_regional_stage
-		}
-		available = {
-			has_country_flag = RUS_regional_stage
-			if = {
-				limit = { tag = KOM }
-				has_country_flag = KOM_POLITICS_RESOLVED
-			}
-			has_war = no
-			command_power > 24.99
-			NOT = {
-				has_country_flag = RUS_chose_finnish_approach
-			}
-		}
-		custom_cost_trigger = { command_power > 24.99 }
-		custom_cost_text = decision_cost_25_cp
-
-		ai_will_do = {
-			factor = 100
-		}
-
-		days_remove = 14
-
-		fire_only_once = yes
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision WSR_invade_onega"
-			set_country_flag = RUS_chose_finnish_approach
-		}
-		remove_effect = {
-			declare_war_on = {
-				target = ONG
-				type = annex_everything
-			}
 		}
 	}
 
@@ -1222,11 +1518,19 @@ RUS_reunification_category = {
 			NOT = {
 				has_country_flag = RUS_superregional_stage
 			}
+			NOT = {
+				has_country_flag = WSR_war_decisions
+			}
 			can_form_west_siberia = no
 		}
 
 		ai_will_do = {
 			factor = 100
+			modifier = {
+			    factor = 0
+			    has_game_rule = { rule = WSR_WSB_war_or_peace option = WSR_WSB_WAR_OR_PEACE_PEACE }
+			    WSR_WSB_is_compatible = yes
+			}
 		}
 
 		fire_only_once = yes
@@ -1302,6 +1606,10 @@ RUS_reunification_category = {
 
 		ai_will_do = {
 			factor = 200
+			modifier = {
+			    factor = 0
+			    has_game_rule = { rule = WSR_WSB_war_or_peace option = WSR_WSB_WAR_OR_PEACE_WAR }
+			}
 		}
 
 		fire_only_once = yes
@@ -1321,6 +1629,8 @@ RUS_reunification_category = {
 		available = {
 			can_form_west_siberia = yes
 			has_war = no
+			NOT = { has_country_flag = RUS_Smuta_Enabled }
+			has_country_flag = RUS_Smuta_Ended
 		}
 		allowed = {
 			is_west_siberian_nation = yes
@@ -1344,9 +1654,23 @@ RUS_reunification_category = {
 			hidden_effect = {
 				country_event = { id = RUS.3 days = 30 } #caffine flow
 				add_manpower = 150000
-				add_ideas = tno_income_taxation_flat_taxes
-				add_ideas = RUS_regional_manpower
-				add_ideas = RUS_regional_econ
+				if = {
+					limit = {
+						has_idea = tno_income_taxation_not_applicable
+					}
+					swap_ideas = {
+						remove_idea = tno_income_taxation_not_applicable
+						add_idea = tno_income_taxation_flat_taxes
+					}
+				}
+				swap_ideas = {
+					remove_idea = RUS_warlord_manpower
+					add_idea = RUS_regional_manpower
+				}
+				swap_ideas = {
+					remove_idea = RUS_warlord_econ
+					add_idea = RUS_regional_econ
+				}
 			}
 			
 			RUS_select_regional_cosmetic_tag = yes
@@ -1392,6 +1716,15 @@ RUS_reunification_category = {
 					is_locked = no
 				}
 			}
+
+			if = {
+				limit = {
+					original_tag = SVR
+				}
+				hidden_effect = {
+					country_event = { id = SVR.100 days = 4 random = 48 }
+				}
+			}
 			hidden_effect = {
 				for_each_scope_loop = {
 					array = global.russian_warlords
@@ -1415,7 +1748,7 @@ RUS_reunification_category = {
 	}
 
 	west_siberia_launch_race_to_urals = {
-
+		icon = GFX_decision_generic_ural_four
 		allowed = {
 			is_west_siberian_nation = yes
 		}
@@ -1457,6 +1790,15 @@ RUS_reunification_category = {
 			NOT = {
 				has_country_flag = WSB_peace_decisions
 			}
+			if = {
+				limit = {
+					tag = OMS
+				}
+				custom_trigger_tooltip = {
+					tooltip = OMS_batov_insurgency_trigger
+					NOT = { has_country_flag = OMS_batov_insurgency_active }
+				}
+			}
 		}
 
 		visible = {
@@ -1464,11 +1806,19 @@ RUS_reunification_category = {
 			NOT = {
 				has_country_flag = RUS_superregional_stage
 			}
+			NOT = {
+				has_country_flag = WSB_war_decisions
+			}
 			can_form_west_russia = no
 		}
 
 		ai_will_do = {
 			factor = 100
+			modifier = {
+			    factor = 0
+			    has_game_rule = { rule = WSR_WSB_war_or_peace option = WSR_WSB_WAR_OR_PEACE_PEACE }
+			    WSR_WSB_is_compatible = yes
+			}
 		}
 
 		fire_only_once = yes
@@ -1544,6 +1894,10 @@ RUS_reunification_category = {
 
 		ai_will_do = {
 			factor = 200
+			modifier = {
+			    factor = 0
+			    has_game_rule = { rule = WSR_WSB_war_or_peace option = WSR_WSB_WAR_OR_PEACE_WAR }
+			}
 		}
 
 		fire_only_once = yes
@@ -1563,6 +1917,7 @@ RUS_reunification_category = {
 		available = {
 			can_form_central_siberia = yes
 			has_war = no
+			has_country_flag = RUS_Smuta_Ended
 		}
 		allowed = {
 			is_central_siberian_nation = yes
@@ -1594,9 +1949,23 @@ RUS_reunification_category = {
 			hidden_effect = {
 				country_event = { id = RUS.3 days = 30 } #caffine flow
 				add_manpower = 150000
-				add_ideas = tno_income_taxation_flat_taxes
-				add_ideas = RUS_regional_manpower
-				add_ideas = RUS_regional_econ
+				if = {
+					limit = {
+						has_idea = tno_income_taxation_not_applicable
+					}
+					swap_ideas = {
+						remove_idea = tno_income_taxation_not_applicable
+						add_idea = tno_income_taxation_flat_taxes
+					}
+				}
+				swap_ideas = {
+					remove_idea = RUS_warlord_manpower
+					add_idea = RUS_regional_manpower
+				}
+				swap_ideas = {
+					remove_idea = RUS_warlord_econ
+					add_idea = RUS_regional_econ
+				}
 			}
 			
 			RUS_select_regional_cosmetic_tag = yes
@@ -1674,11 +2043,19 @@ RUS_reunification_category = {
 			NOT = {
 				has_country_flag = RUS_superregional_stage
 			}
+			NOT = {
+				has_country_flag = CSB_war_decisions
+			}
 			can_form_far_east = no
 		}
 
 		ai_will_do = {
 			factor = 100
+			modifier = {
+			    factor = 0
+			    has_game_rule = { rule = CSB_FST_war_or_peace option = CSB_FST_WAR_OR_PEACE_PEACE }
+			    CSB_FST_is_compatible = yes
+			}
 		}
 
 		fire_only_once = yes
@@ -1752,6 +2129,10 @@ RUS_reunification_category = {
 
 		ai_will_do = {
 			factor = 200
+			modifier = {
+			    factor = 0
+			    has_game_rule = { rule = CSB_FST_war_or_peace option = CSB_FST_WAR_OR_PEACE_WAR }
+			}
 		}
 
 		fire_only_once = yes
@@ -1783,6 +2164,7 @@ RUS_reunification_category = {
 					}
 				}
 			}
+			has_country_flag = RUS_Smuta_Ended
 		}
 		allowed = {
 			is_far_eastern_nation = yes
@@ -1810,8 +2192,23 @@ RUS_reunification_category = {
 			hidden_effect = {
 				country_event = { id = RUS.3 days = 30 } #caffine flow
 				add_manpower = 150000
-				add_ideas = RUS_regional_manpower
-				add_ideas = RUS_regional_econ
+				if = {
+					limit = {
+						has_idea = tno_income_taxation_not_applicable
+					}
+					swap_ideas = {
+						remove_idea = tno_income_taxation_not_applicable
+						add_idea = tno_income_taxation_flat_taxes
+					}
+				}
+				swap_ideas = {
+					remove_idea = RUS_warlord_manpower
+					add_idea = RUS_regional_manpower
+				}
+				swap_ideas = {
+					remove_idea = RUS_warlord_econ
+					add_idea = RUS_regional_econ
+				}
 				remove_ideas = RUS_IRK_repop_program_1
 				remove_ideas = RUS_AMR_repop_program_1
 				set_variable = {RUS_FE_repop_monthly_pop = 0.05}
@@ -1953,11 +2350,19 @@ RUS_reunification_category = {
 			NOT = {
 				has_country_flag = RUS_superregional_stage
 			}
+			NOT = {
+				has_country_flag = FST_war_decisions
+			}
 			can_form_central_siberia = no
 		}
 
 		ai_will_do = {
 			factor = 100
+			modifier = {
+			    factor = 0
+			    has_game_rule = { rule = CSB_FST_war_or_peace option = CSB_FST_WAR_OR_PEACE_PEACE }
+			    CSB_FST_is_compatible = yes
+			}
 		}
 
 		fire_only_once = yes
@@ -2031,6 +2436,10 @@ RUS_reunification_category = {
 
 		ai_will_do = {
 			factor = 200
+			modifier = {
+			    factor = 0
+			    has_game_rule = { rule = CSB_FST_war_or_peace option = CSB_FST_WAR_OR_PEACE_WAR }
+			}
 		}
 
 		fire_only_once = yes
@@ -2064,6 +2473,9 @@ RUS_reunification_category = {
 			has_country_flag = RUS_superregional_stage
 			NOT = {
 				has_global_flag = RUS_national_unification
+			}
+			NOT = {
+				has_country_flag = RWS_war_decisions
 			}
 			OR = {
 				can_form_central_siberia = no
@@ -2185,6 +2597,9 @@ RUS_reunification_category = {
 			has_country_flag = RUS_superregional_stage
 			NOT = {
 				has_global_flag = RUS_national_unification
+			}
+			NOT = {
+				has_country_flag = SIB_war_decisions
 			}
 			OR = {
 				can_form_west_russia = no
@@ -2369,6 +2784,991 @@ RUS_reunification_category = {
 			}
 		}
 	}
+	WSR_supply_insurgents = {
+		icon = GFX_decision_generic_prepare_civil_war
+		allowed = { is_central_russian_nation = yes }
+		visible = {
+			OMS = {
+				exists = yes
+				has_country_flag = OMS_batov_insurgency_active
+				has_country_flag = RUS_regional_stage
+			}
+			has_country_flag = RUS_regional_stage
+			NOT = {
+				has_country_flag = WSR_decision_batov_i_disabled
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = OMS_not_doing_decision_other
+				NOT = {
+					has_country_flag = WSR_decision_batov_doing_one
+				}
+			}
+		}
+		ai_will_do = { factor = 10 }
+		days_re_enable = 120
+		days_remove = 35
+		custom_cost_trigger = {
+			set_temp_variable = { m = 500 }
+			set_temp_variable = { n = 25 }
+			OMS_more_inf_eq_cp_than_m_n = yes
+		}
+		custom_cost_text = OMS_more_inf_eq_cp_than_m_n_cost
+		complete_effect = {
+			set_country_flag = WSR_decision_batov_doing_one
+			hidden_effect = {
+				add_command_power = -25
+				WSB = {
+					activate_mission = WSR_supply_insurgents_batov
+				}
+				set_variable = { WSR_took_decision_batov_i = 1 }
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -500
+				producer = WSR
+			}
+			custom_effect_tooltip = OMS_unresponsive_tt
+			effect_tooltip = {
+				WSB = {
+					random_owned_controlled_state = { # Good looking tooltip
+						prioritize = { 573 }
+						limit = { check_variable = { insurgency_strength > 0.1 } }
+						custom_effect_tooltip = OMS_erase_their_legacy_up_tt
+						add_to_variable = { insurgency_strength = 0.05 }
+					}
+					random_owned_controlled_state = { # Good looking tooltip
+						prioritize = { 871 }
+						limit = { check_variable = { insurgency_strength > 0.1 } }
+						custom_effect_tooltip = OMS_erase_their_legacy_up_tt
+						add_to_variable = { insurgency_strength = 0.05 }
+					}
+					random_owned_controlled_state = { # Good looking tooltip
+						prioritize = { 756 }
+						limit = { check_variable = { insurgency_strength > 0.1 } }
+						custom_effect_tooltip = OMS_erase_their_legacy_up_tt
+						add_to_variable = { insurgency_strength = 0.05 }
+					}
+					random_owned_controlled_state = { # Good looking tooltip
+						prioritize = { 863 }
+						limit = { check_variable = { insurgency_strength > 0.1 } }
+						custom_effect_tooltip = OMS_erase_their_legacy_up_tt
+						add_to_variable = { insurgency_strength = 0.05 }
+					}
+				}
+				WSR = {
+					if = {
+						limit = {
+							WSR = {
+								original_tag = WRS
+								has_country_leader = {
+									character = WRS_Georgy_Zhukov
+									ruling_only = yes
+								}
+							}
+						}
+						WRS_zhukovregional_increase_akhromeyev_influence_low = yes
+						WRRFTangle_calcXY = yes
+					}
+					else_if = {
+						limit = {
+							WSR = {
+								original_tag = KOM
+								has_country_leader = {
+									character = KOM_Svetlana_Stalina
+									ruling_only = yes
+								}
+								has_government = paternalism
+							}
+						}
+						KOM_PSD_empower_right_low = yes
+					}
+					else_if = {
+						limit = {
+							WSR = {
+								original_tag = KOM
+								has_country_leader = {
+									character = KOM_Ivan_Serov
+									ruling_only = yes
+								}
+							}
+						}
+						KOM_Ordosocialist_Increase_Left = yes
+					}
+					if = {
+						limit = {
+							WSR = {
+								OR = {
+									original_tag = KOM
+									original_tag = VYT
+								}
+								OR = {
+									has_government = progressivism
+									has_government = liberalism
+									has_government = conservatism
+									has_government = paternalism
+								}
+							}
+						}	
+						every_owned_state = {
+							limit = {
+								state = 262
+								state = 869
+								state = 866
+								state = 398
+								state = 753
+							}
+							RUS_authdem_campaign_effects = yes
+						}
+						if = {
+							limit = {
+								original_tag = KOM
+							}
+								custom_effect_tooltip = KOM_omsk_border_tt
+						}
+						else_if = {
+							limit = {
+								original_tag = VYT
+								}
+							custom_effect_tooltip = VYT_omsk_border_tt
+						}
+					}
+				}
+			}	
+		}
+		remove_effect = {
+			set_country_flag = WSR_decision_batov_doing_one
+			if = {
+				limit = {
+					NOT = {
+						WSB = {
+							has_active_mission = WSR_supply_insurgents_batov
+						}
+					}
+					check_variable = { WSR.WSB_mission_didnt_respond = 1 }
+				}
+				set_variable = { WSR_took_decision_batov_i = 0 }
+				set_variable = { WSR.WSB_mission_didnt_respond = 0 }
+				effect_tooltip = {
+					WSB = {
+						random_owned_controlled_state = { # Good looking tooltip
+							prioritize = { 573 }
+							limit = { check_variable = { insurgency_strength > 0.1 } }
+							custom_effect_tooltip = OMS_erase_their_legacy_up_tt
+							add_to_variable = { insurgency_strength = 0.05 }
+						}
+						random_owned_controlled_state = { # Good looking tooltip
+							prioritize = { 871 }
+							limit = { check_variable = { insurgency_strength > 0.1 } }
+							custom_effect_tooltip = OMS_erase_their_legacy_up_tt
+							add_to_variable = { insurgency_strength = 0.05 }
+						}
+						random_owned_controlled_state = { # Good looking tooltip
+							prioritize = { 756 }
+							limit = { check_variable = { insurgency_strength > 0.1 } }
+							custom_effect_tooltip = OMS_erase_their_legacy_up_tt
+							add_to_variable = { insurgency_strength = 0.05 }
+						}
+						random_owned_controlled_state = { # Good looking tooltip
+							prioritize = { 863 }
+							limit = { check_variable = { insurgency_strength > 0.1 } }
+							custom_effect_tooltip = OMS_erase_their_legacy_up_tt
+							add_to_variable = { insurgency_strength = 0.05 }
+						}
+					}
+				}
+				WSR = {
+					if = {
+						limit = {
+							WSR = {
+								original_tag = WRS
+								has_country_leader = {
+									character = WRS_Georgy_Zhukov
+									ruling_only = yes
+								}
+							}
+						}
+						WRS_zhukovregional_increase_akhromeyev_influence_low = yes
+						WRRFTangle_calcXY = yes
+					}
+					else_if = {
+						limit = {
+							WSR = {
+								original_tag = KOM
+								has_country_leader = {
+									character = KOM_Svetlana_Stalina
+									ruling_only = yes
+								}
+								has_government = paternalism
+							}
+						}
+						KOM_PSD_empower_right_low = yes
+					}
+					else_if = {
+						limit = {
+							WSR = {
+								original_tag = KOM
+								has_country_leader = {
+									character = KOM_Ivan_Serov
+									ruling_only = yes
+								}
+							}
+						}
+						KOM_Ordosocialist_Increase_Left = yes
+					}
+					if = {
+						limit = {
+							WSR = {
+								OR = {
+									original_tag = KOM
+									original_tag = VYT
+								}
+								OR = {
+									has_government = progressivism
+									has_government = liberalism
+									has_government = conservatism
+									has_government = paternalism
+								}
+							}
+						}	
+						every_owned_state = {
+							limit = {
+								state = 262
+								state = 869
+								state = 866
+								state = 398
+								state = 753
+							}
+							RUS_authdem_campaign_effects = yes
+						}
+						if = {
+							limit = {
+								original_tag = KOM
+							}
+							custom_effect_tooltip = KOM_omsk_border_tt
+						}
+						else_if = {
+							limit = {
+								original_tag = VYT
+							}
+							custom_effect_tooltip = VYT_omsk_border_tt
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						WSB = {
+							has_active_mission = WSR_supply_insurgents_batov
+						}
+					}
+					check_variable = { WSR.WSB_mission_didnt_respond = 0 }
+					check_variable = { WSR_took_decision_batov_i = 1 }
+				}
+				set_variable = { WSR_took_decision_batov_i = 0 }
+				custom_effect_tooltip = OMS_responded_tt
+				add_political_power = -25
+				add_stability = -0.025
+			}
+		}
+	}
+
+	WSR_border_clashes = {
+		icon = GFX_decision_generic_border_war
+		allowed = { is_central_russian_nation = yes }
+		visible = {
+			OMS = {
+				exists = yes
+				has_country_flag = OMS_batov_insurgency_active
+				has_country_flag = RUS_regional_stage
+			}
+			OR = {
+				573 = {
+					check_variable = { THIS.base_status = 2 }
+				}
+				871 = {
+					check_variable = { THIS.base_status = 2 }
+				}
+				756 = {
+					check_variable = { THIS.base_status = 2 }
+				}
+				863 = {
+					check_variable = { THIS.base_status = 2 }
+				}
+			}
+			has_country_flag = RUS_regional_stage
+			NOT = {
+				has_country_flag = WSR_decision_batov_ii_disabled
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = OMS_not_doing_decision_other
+				NOT = {
+					has_country_flag = WSR_decision_batov_doing_one
+				}
+			}
+		}
+		ai_will_do = { factor = 10 }
+		days_re_enable = 120
+		days_remove = 35
+		custom_cost_trigger = {
+			set_temp_variable = { m = 75 }
+			set_temp_variable = { n = 30 }
+			OMS_more_art_eq_cp_than_m_n = yes
+		}
+		custom_cost_text = OMS_more_art_eq_cp_than_m_n_cost
+		complete_effect = {
+			set_country_flag = WSR_decision_batov_doing_one
+			hidden_effect = {
+				add_command_power = -30
+				WSB = {
+					activate_mission = WSR_border_clashes_batov
+				}
+				set_variable = { WSR_took_decision_batov_ii = 1 }
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = -75
+				producer = WSR
+			}
+			custom_effect_tooltip = OMS_unresponsive_tt
+			effect_tooltip = {
+				WSB = {
+					every_owned_state = {
+						limit = {
+							OR = {
+								state = 573
+								state = 871
+								state = 756
+								state = 863
+							}
+							check_variable = { THIS.base_status = 2 }
+						}
+						set_variable = { THIS.base_status = 1 }
+						custom_effect_tooltip = OMS_destroy_base_up_tt
+					}
+				}
+				WSR = {
+					if = {
+						limit = {
+							WSR = {
+								original_tag = WRS
+								has_country_leader = {
+									character = WRS_Georgy_Zhukov
+									ruling_only = yes
+								}
+							}
+						}
+						WRS_zhukovregional_increase_akhromeyev_influence_low = yes
+						WRRFTangle_calcXY = yes
+					}
+					else_if = {
+						limit = {
+							WSR = {
+								original_tag = KOM
+								has_country_leader = {
+									character = KOM_Svetlana_Stalina
+									ruling_only = yes
+								}
+								has_government = paternalism
+							}
+						}
+						KOM_PSD_empower_right_low = yes
+					}
+					else_if = {
+						limit = {
+							WSR = {
+								original_tag = KOM
+								has_country_leader = {
+									character = KOM_Ivan_Serov
+									ruling_only = yes
+								}
+							}
+						}
+						KOM_Ordosocialist_Increase_Left = yes
+					}
+					if = {
+						limit = {
+							WSR = {
+								OR = {
+									original_tag = KOM
+									original_tag = VYT
+								}
+								OR = {
+									has_government = progressivism
+									has_government = liberalism
+									has_government = conservatism
+									has_government = paternalism
+								}
+							}
+						}	
+						every_owned_state = {
+							limit = {
+								state = 262
+								state = 869
+								state = 866
+								state = 398
+								state = 753
+							}
+							RUS_authdem_campaign_effects = yes
+						}
+						if = {
+							limit = {
+								original_tag = KOM
+							}
+								custom_effect_tooltip = KOM_omsk_border_tt
+						}
+						else_if = {
+							limit = {
+								original_tag = VYT
+							}
+							custom_effect_tooltip = VYT_omsk_border_tt
+						}
+					}
+				}
+			}	
+		}
+		remove_effect = {
+			clr_country_flag = WSR_decision_batov_doing_one
+			if = {
+				limit = {
+					NOT = {
+						WSB = {
+							has_active_mission = WSR_border_clashes_batov
+						}
+					}
+					check_variable = { WSR.WSB_mission_didnt_respond = 1 }
+				}
+				set_variable = { WSR_took_decision_batov_ii = 0 }
+				set_variable = { WSR.WSB_mission_didnt_respond = 0 }
+				effect_tooltip = {
+					WSB = {
+						every_owned_state = {
+							limit = {
+								OR = {
+									state = 573
+									state = 871
+									state = 756
+									state = 863
+								}
+								check_variable = { THIS.base_status = 2 }
+							}
+							set_variable = { THIS.base_status = 1 }
+							custom_effect_tooltip = OMS_destroy_base_up_tt
+						}
+					}
+				}
+				WSR = {
+					if = {
+						limit = {
+							WSR = {
+								original_tag = WRS
+								has_country_leader = {
+									character = WRS_Georgy_Zhukov
+									ruling_only = yes
+								}
+							}
+						}
+						WRS_zhukovregional_increase_akhromeyev_influence_low = yes
+						WRRFTangle_calcXY = yes
+					}
+					else_if = {
+						limit = {
+							WSR = {
+								original_tag = KOM
+								has_country_leader = {
+									character = KOM_Svetlana_Stalina
+									ruling_only = yes
+								}
+								has_government = paternalism
+							}
+						}
+						KOM_PSD_empower_right_low = yes
+					}
+					else_if = {
+						limit = {
+							WSR = {
+								original_tag = KOM
+								has_country_leader = {
+									character = KOM_Ivan_Serov
+									ruling_only = yes
+								}
+							}
+						}
+						KOM_Ordosocialist_Increase_Left = yes
+					}
+					if = {
+						limit = {
+							WSR = {
+								OR = {
+									original_tag = KOM
+									original_tag = VYT
+								}
+								OR = {
+									has_government = progressivism
+									has_government = liberalism
+									has_government = conservatism
+									has_government = paternalism
+								}
+							}
+						}	
+						every_owned_state = {
+							limit = {
+								state = 262
+								state = 869
+								state = 866
+								state = 398
+								state = 753
+							}
+							RUS_authdem_campaign_effects = yes
+						}
+						if = {
+							limit = {
+								original_tag = KOM
+							}
+							custom_effect_tooltip = KOM_omsk_border_tt
+						}
+						else_if = {
+							limit = {
+								original_tag = VYT
+							}
+							custom_effect_tooltip = VYT_omsk_border_tt
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						WSB = {
+							has_active_mission = WSR_border_clashes_batov
+						}
+					}
+					check_variable = { WSR.WSB_mission_didnt_respond = 0 }
+					check_variable = { WSR_took_decision_batov_ii = 1 }
+				}
+				set_variable = { WSR_took_decision_batov_ii = 0 }
+				custom_effect_tooltip = OMS_responded_tt
+				add_political_power = -50
+				add_stability = -0.05
+				add_manpower = -500
+			}
+		}
+	}
+
+	WSR_weaken_counter_insurgency = {
+		icon = GFX_decision_generic_ignite_civil_war
+		allowed = { is_central_russian_nation = yes }
+		visible = {
+			OMS = {
+				exists = yes
+				has_country_flag = OMS_batov_insurgency_active
+				has_country_flag = RUS_regional_stage
+			}
+			has_country_flag = RUS_regional_stage
+			NOT = {
+				has_country_flag = WSR_decision_batov_iii_disabled
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = OMS_not_doing_decision_other
+				NOT = {
+					has_country_flag = WSR_decision_batov_doing_one
+				}
+			}
+		}
+		ai_will_do = { factor = 10 }
+		days_re_enable = 120
+		days_remove = 35
+		cost = 35
+		complete_effect = {
+			set_country_flag = WSR_decision_batov_doing_one
+			hidden_effect = {
+				WSB = {
+					if = {
+						limit = { # Combination 1 - 2
+							has_completed_focus = OMS_spetsgruppa_v
+							NOT = {
+								AND = {
+									has_completed_focus = OMS_aid_for_the_reconstruction
+									OR = {
+										check_variable = { OMS_USA_recognition = 1 }
+										check_variable = { OMS_JAP_recognition = 1 }
+									}
+								}
+							}
+						}
+						random_list = {
+							1 = {
+								activate_mission = WSR_weaken_counterinsurgency_i_batov
+							}
+							1 = {
+								activate_mission = WSR_weaken_counterinsurgency_ii_batov
+							}
+						}
+					}
+					else_if = {
+						limit = { # Combination 1 - 3
+							AND = {
+								has_completed_focus = OMS_aid_for_the_reconstruction
+								OR = {
+									check_variable = { OMS_USA_recognition = 1 }
+									check_variable = { OMS_JAP_recognition = 1 }
+								}
+							}
+							NOT = {
+								has_completed_focus = OMS_spetsgruppa_v
+							}
+						}
+						random_list = {
+							1 = {
+								activate_mission = WSR_weaken_counterinsurgency_i_batov
+							}
+							1 = {
+								activate_mission = WSR_weaken_counterinsurgency_iii_batov
+							}
+						}
+					}
+					else_if = {
+						limit = { # Combination 1 - 2 - 3
+							AND = {
+								has_completed_focus = OMS_aid_for_the_reconstruction
+								OR = {
+									check_variable = { OMS_USA_recognition = 1 }
+									check_variable = { OMS_JAP_recognition = 1 }
+								}
+							}
+							has_completed_focus = OMS_spetsgruppa_v
+						}
+						random_list = {
+							1 = {
+								activate_mission = WSR_weaken_counterinsurgency_i_batov
+							}
+							1 = {
+								activate_mission = WSR_weaken_counterinsurgency_ii_batov
+							}
+							1 = {
+								activate_mission = WSR_weaken_counterinsurgency_iii_batov
+							}
+						}
+					}
+					else = { # Combination 1
+						random_list = {
+							1 = {
+								activate_mission = WSR_weaken_counterinsurgency_i_batov
+							}
+						}
+					}
+				}
+				set_variable = { WSR_took_decision_batov_iii = 1 }
+			}
+			custom_effect_tooltip = OMS_unresponsive_tt
+			effect_tooltip = {
+				WSB = {
+					if = {
+						limit = { # Combination 1 - 2
+							has_completed_focus = OMS_spetsgruppa_v
+							NOT = {
+								AND = {
+									has_completed_focus = OMS_aid_for_the_reconstruction
+									OR = {
+										check_variable = { OMS_USA_recognition = 1 }
+										check_variable = { OMS_JAP_recognition = 1 }
+									}
+								}
+							}
+						}
+						random_list = {
+							1 = {
+								custom_effect_tooltip = OMS_increase_insurgent_activity
+							}
+							1 = {
+								custom_effect_tooltip = OMS_spetsgruppa_v_extend_batov
+							}
+						}
+					}
+					else_if = {
+						limit = { # Combination 1 - 3
+							AND = {
+								has_completed_focus = OMS_aid_for_the_reconstruction
+								OR = {
+									check_variable = { OMS_USA_recognition = 1 }
+									check_variable = { OMS_JAP_recognition = 1 }
+								}
+							}
+							NOT = {
+								has_completed_focus = OMS_spetsgruppa_v
+							}
+						}
+						random_list = {
+							1 = {
+								custom_effect_tooltip = OMS_increase_insurgent_activity
+							}
+							1 = {
+								custom_effect_tooltip = OMS_delay_foreign_aid
+							}
+						}
+					}
+					else_if = {
+						limit = { # Combination 1 - 2 - 3
+							AND = {
+								has_completed_focus = OMS_aid_for_the_reconstruction
+								OR = {
+									check_variable = { OMS_USA_recognition = 1 }
+									check_variable = { OMS_JAP_recognition = 1 }
+								}
+							}
+							has_completed_focus = OMS_spetsgruppa_v
+						}
+						random_list = {
+							1 = {
+								custom_effect_tooltip = OMS_increase_insurgent_activity
+							}
+							1 = {
+								custom_effect_tooltip = OMS_spetsgruppa_v_extend_batov
+							}
+							1 = {
+								custom_effect_tooltip = OMS_delay_foreign_aid
+							}
+						}
+					}
+					else = { # Combination 1
+						random_list = {
+							1 = {
+								custom_effect_tooltip = OMS_increase_insurgent_activity
+							}
+						}
+					}
+				}
+				WSR = {
+					if = {
+						limit = {
+							WSR = {
+								original_tag = WRS
+								has_country_leader = {
+									character = WRS_Georgy_Zhukov
+									ruling_only = yes
+								}
+							}
+						}
+						WRS_zhukovregional_increase_akhromeyev_influence_low = yes
+						WRRFTangle_calcXY = yes
+					}
+					else_if = {
+						limit = {
+							WSR = {
+								original_tag = KOM
+								has_country_leader = {
+									character = KOM_Svetlana_Stalina
+									ruling_only = yes
+								}
+								has_government = paternalism
+							}
+						}
+						KOM_PSD_empower_right_low = yes
+					}
+					else_if = {
+						limit = {
+							WSR = {
+								original_tag = KOM
+								has_country_leader = {
+									character = KOM_Ivan_Serov
+									ruling_only = yes
+								}
+							}
+						}
+						KOM_Ordosocialist_Increase_Left = yes
+					}
+					if = {
+						limit = {
+							WSR = {
+								OR = {
+									original_tag = KOM
+									original_tag = VYT
+								}
+								OR = {
+									has_government = progressivism
+									has_government = liberalism
+									has_government = conservatism
+									has_government = paternalism
+								}
+							}
+						}	
+						every_owned_state = {
+							limit = {
+								state = 262
+								state = 869
+								state = 866
+								state = 398
+								state = 753
+							}
+							RUS_authdem_campaign_effects = yes
+						}
+						if = {
+							limit = {
+								original_tag = KOM
+							}
+								custom_effect_tooltip = KOM_omsk_border_tt
+						}
+						else_if = {
+							limit = {
+								original_tag = VYT
+							}
+							custom_effect_tooltip = VYT_omsk_border_tt
+						}
+					}
+				}
+			}	
+		}
+		remove_effect = {
+			clr_country_flag = WSR_decision_batov_doing_one
+			if = {
+				limit = {
+					NOT = {
+						WSB = {
+							OR = {
+								has_active_mission = WSR_weaken_counterinsurgency_i_batov
+								has_active_mission = WSR_weaken_counterinsurgency_ii_batov
+								has_active_mission = WSR_weaken_counterinsurgency_iii_batov
+							}
+						}
+					}
+					check_variable = { WSR.WSB_mission_didnt_respond = 1 }
+				}
+				set_variable = { WSR_took_decision_batov_iii = 0 }
+				set_variable = { WSR.WSB_mission_didnt_respond = 0 }
+				effect_tooltip = {
+					WSB = {
+						if = {
+							limit = {
+								check_variable = {
+									WSR.WSB_mission_weaken_coin = 1
+								}
+							}
+							custom_effect_tooltip = OMS_increase_insurgent_activity
+						}
+						else_if = {
+							limit = {
+								check_variable = {
+									WSR.WSB_mission_weaken_coin = 2
+								}
+							}
+							custom_effect_tooltip = OMS_spetsgruppa_v_extend_batov
+						}
+						else_if = {
+							limit = {
+								check_variable = {
+									WSR.WSB_mission_weaken_coin = 3
+								}
+							}
+							custom_effect_tooltip = OMS_delay_foreign_aid
+						}
+					}
+				}
+				set_variable = { WSR.WSB_mission_weaken_coin = 0 }
+				WSR = {
+					if = {
+						limit = {
+							WSR = {
+								original_tag = WRS
+								has_country_leader = {
+									character = WRS_Georgy_Zhukov
+									ruling_only = yes
+								}
+							}
+						}
+						WRS_zhukovregional_increase_akhromeyev_influence_low = yes
+						WRRFTangle_calcXY = yes
+					}
+					else_if = {
+						limit = {
+							WSR = {
+								original_tag = KOM
+								has_country_leader = {
+									character = KOM_Svetlana_Stalina
+									ruling_only = yes
+								}
+								has_government = paternalism
+							}
+						}
+						KOM_PSD_empower_right_low = yes
+					}
+					else_if = {
+						limit = {
+							WSR = {
+								original_tag = KOM
+								has_country_leader = {
+									character = KOM_Ivan_Serov
+									ruling_only = yes
+								}
+							}
+						}
+						KOM_Ordosocialist_Increase_Left = yes
+					}
+					if = {
+						limit = {
+							WSR = {
+								OR = {
+									original_tag = KOM
+									original_tag = VYT
+								}
+								OR = {
+									has_government = progressivism
+									has_government = liberalism
+									has_government = conservatism
+									has_government = paternalism
+								}
+							}
+						}	
+						every_owned_state = {
+							limit = {
+								state = 262
+								state = 869
+								state = 866
+								state = 398
+								state = 753
+							}
+							RUS_authdem_campaign_effects = yes
+						}
+						if = {
+							limit = {
+								original_tag = KOM
+							}
+							custom_effect_tooltip = KOM_omsk_border_tt
+						}
+						else_if = {
+							limit = {
+								original_tag = VYT
+							}
+							custom_effect_tooltip = VYT_omsk_border_tt
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						WSB = {
+							OR = {
+								has_active_mission = WSR_weaken_counterinsurgency_i_batov
+								has_active_mission = WSR_weaken_counterinsurgency_ii_batov
+								has_active_mission = WSR_weaken_counterinsurgency_iii_batov
+							}
+						}
+					}
+					check_variable = { WSR.WSB_mission_didnt_respond = 0 }
+					check_variable = { WSR_took_decision_batov_iii = 1 }
+				}
+				set_variable = { WSR_took_decision_batov_iii = 0 }
+				custom_effect_tooltip = OMS_responded_tt
+				add_political_power = -50
+			}
+		}
+	}
 }
 
 ###WAR AND PEACE
@@ -2413,6 +3813,57 @@ WSR_war_category = {
 		remove_effect = {
 			hidden_effect = {
 				if = { limit = { USA = { NOT = { has_country_flag = USA_CIA_RUS_WSRvsWSB } } } USA = { country_event = USA_CIA_RUS.12 set_country_flag = USA_CIA_RUS_WSRvsWSB } }
+				if = { # Batov defects to West Russia if compatible
+					limit = {
+						OR = {
+							WSR = {
+								original_tag = KOM
+								OR = {
+									has_government = progressivism
+									has_government = liberalism
+									has_government = conservatism
+									has_government = paternalism
+									AND = {
+										has_government = despotism
+										has_country_leader = {
+											character = KOM_Svetlana_Stalina
+											ruling_only = yes
+										}
+									}
+								}
+							}
+							WSR = {
+								original_tag = KOM
+								OR = {
+									has_government = communist
+								}
+							}
+							WSR = {
+								original_tag = KOM
+								OR = {
+									has_government = socialist
+								}
+							}
+							WSR = {
+								original_tag = SAM
+								has_government = paternalism
+							}
+							WSR = {
+								original_tag = WRS
+								has_country_leader = {
+									character = WRS_Georgy_Zhukov
+									ruling_only = yes
+								}
+							}
+						}
+						WSB = {
+							has_country_flag = OMS_batov_insurgency_active
+						}
+					}
+					WSB = {
+						country_event = { id = omskbatov.23 days = 1 }
+					}
+				}
 			}
 			declare_war_on = {
 				target = WSB

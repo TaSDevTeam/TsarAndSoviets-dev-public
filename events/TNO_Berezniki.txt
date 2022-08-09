@@ -834,7 +834,7 @@ country_event = { #NikakihZavodovVPodvalah!
 		name = berez_bomb.2.a
 		398 = {
 			add_building_construction = {
-				type = thermoelectric_plant
+				type = arms_factory
 				level = 1
 				instant_build = yes
 			}
@@ -915,7 +915,7 @@ country_event = { #PeshkiVlada?
 		ai_chance = { factor = 1 }	
 		add_political_power = 25
 		add_popularity = {
-			ideology = authoritarian_democracy
+			ideology = paternalism
     		popularity = -0.10
 		}
 	}
@@ -1282,7 +1282,7 @@ country_event = { #SudibaGainov
 			value = 0
 		}
 		set_variable = {
-			var = MAR_ord_required_garrison_factor
+			var = MAR_ord_occupation_cost
 			value = 0
 		}
 		set_variable = {
@@ -1298,7 +1298,7 @@ country_event = { #SudibaGainov
 			value = 0
 		}
 		set_variable = {
-			var = MAR_ord_taxable_population_modifier
+			var = MAR_ord_GDP_effect_on_poverty_modifier
 			value = 0
 		}
 		set_variable = {
@@ -2520,10 +2520,10 @@ country_event = { # MAR_final_vibori MARIA WIN
 		name = berez_zemsob.23.a
 		ai_chance = { factor = 1 }
 		set_politics = {
-			ruling_party = authoritarian_democracy
+			ruling_party = paternalism
 		}
 		add_popularity = {
-			ideology = authoritarian_democracy
+			ideology = paternalism
 			popularity = 0.4
 		}
 		set_country_flag = MAR_POLITICS_RESOLVED		
@@ -5079,7 +5079,7 @@ country_event = { #Kurds 1
 	fire_only_once = yes
 	is_triggered_only = yes
 	picture = GFX_event_MAR_dobr17
-	option = { #Zhirik
+	option = { Zhirik
 		name = berez_dobrovoltsy.17.a
 		hidden_effect = {
 		MAR = {
@@ -5091,7 +5091,7 @@ country_event = { #Kurds 1
 		}
 		custom_effect_tooltip = MAR_KUR_invade
 	}
-	option = { #Saddam
+	option = { Saddam
 		name = berez_dobrovoltsy.17.b
 		set_temp_variable = { debt_temp = 0.035 }
 		econ_national_debt_change = yes
@@ -5251,8 +5251,8 @@ country_event = { #Iran 1
 country_event = { #Spain
 	id = berez_dobrovoltsy.25
 	immediate = {log = "[GetDateText]: [Root.GetName]: berez_dobrovoltsy.25"}
-	title = berez_dobrovoltsy.25.t
-	desc = berez_dobrovoltsy.25.d
+	title = berez_dobrovoltsy.24.t
+	desc = berez_dobrovoltsy.24.d
 	fire_only_once = yes
 	is_triggered_only = yes
 	picture = GFX_event_MAR_dobr25

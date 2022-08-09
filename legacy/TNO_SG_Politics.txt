@@ -9,19 +9,19 @@ defined_text = {
 		localization_key = "[GetSubIdeologyLocSocialist]"
 	}
 	text = {
-		trigger = { has_government = social_democracy }
+		trigger = { has_government = progressivism }
 		localization_key = "[GetSubIdeologyLocSocialDemocracy]"
 	}
 	text = {
-		trigger = { has_government = liberal_democracy }
+		trigger = { has_government = liberalism }
 		localization_key = "[GetSubIdeologyLocLiberalDemocracy]"
 	}
 	text = {
-		trigger = { has_government = conservative_democracy }
+		trigger = { has_government = conservatism }
 		localization_key = "[GetSubIdeologyLocConservativeDemocracy]"
 	}
 	text = {
-		trigger = { has_government = authoritarian_democracy }
+		trigger = { has_government = paternalism }
 		localization_key = "[GetSubIdeologyLocAuthoritarianDemocracy]"
 	}
 	text = {
@@ -29,8 +29,8 @@ defined_text = {
 		localization_key = "[GetSubIdeologyLocDespotism]"
 	}
 	text = {
-		trigger = { has_government = ultranationalism }
-		localization_key = "[GetSubIdeologyLocUltranationalism]"
+		trigger = { has_government = ultramilitarism }
+		localization_key = "[GetSubIdeologyLocultramilitarism]"
 	}
 	text = {
 		trigger = { has_government = fascism }
@@ -164,34 +164,34 @@ defined_text = {
 	name = GetSubIdeologyLocSocialDemocracy
 	text = {
 		trigger = { hasDemocraticSocialismLeader = yes }
-		localization_key = social_democracy_democratic_socialism_subtype
+		localization_key = progressivism_democratic_socialism_subtype
 	}
 	text = {
 		trigger = { hasProgressivismLeader = yes }
-		localization_key = social_democracy_progressivism_subtype
+		localization_key = progressivism_progressivism_subtype
 	}
 	text = {
 		trigger = { hasLeftWingPopulismLeader = yes }
-		localization_key = social_democracy_left_wing_populism_subtype
+		localization_key = progressivism_left_wing_populism_subtype
 	}
 	text = {
 		trigger = { hasLeftKemalismLeader = yes }
-		localization_key = social_democracy_left_kemalism_subtype
+		localization_key = progressivism_left_kemalism_subtype
 	}
 	text = {
 		trigger = { hasLaborZionismLeader = yes }
-		localization_key = social_democracy_labor_zionism_subtype
+		localization_key = progressivism_labor_zionism_subtype
 	}
 	text = {
 		trigger = { hasPopularFrontLeader = yes }
-		localization_key = social_democracy_popular_front_subtype
+		localization_key = progressivism_popular_front_subtype
 	}
 	text = {
 		trigger = { hasSocialRadicalismLeader = yes }
-		localization_key = social_democracy_social_radicalism_subtype
+		localization_key = progressivism_social_radicalism_subtype
 	}
 	text = {
-		localization_key = social_democracy
+		localization_key = progressivism
 	}
 }
 
@@ -199,22 +199,22 @@ defined_text = {
 	name = GetSubIdeologyLocLiberalDemocracy
 	text = {
 		trigger = { hasNationalLiberalLeader = yes }
-		localization_key = liberal_democracy_national_liberal_subtype
+		localization_key = liberalism_national_liberal_subtype
 	}
 	text = {
 		trigger = { hasChristianProgressivismLeader = yes }
-		localization_key = liberal_democracy_christian_progressivism_subtype
+		localization_key = liberalism_christian_progressivism_subtype
 	}
 	text = {
 		trigger = { hasLiberalRadicalismLeader = yes }
-		localization_key = liberal_democracy_liberal_radicalism_subtype
+		localization_key = liberalism_liberal_radicalism_subtype
 	}
 	text = {
 		trigger = { hasRevisionistZionismLeader = yes }
-		localization_key = liberal_democracy_revisionist_zionism_subtype
+		localization_key = liberalism_revisionist_zionism_subtype
 	}
 	text = {
-		localization_key = liberal_democracy
+		localization_key = liberalism
 	}
 }
 
@@ -222,34 +222,34 @@ defined_text = {
 	name = GetSubIdeologyLocConservativeDemocracy
 	text = {
 		trigger = { hasAgrarianismLeader = yes }
-		localization_key = conservative_democracy_agrarianism_subtype
+		localization_key = conservatism_agrarianism_subtype
 	}
 	text = {
 		trigger = { hasPaternalisticConservatismLeader = yes }
-		localization_key = conservative_democracy_paternalistic_conservatism_subtype
+		localization_key = conservatism_paternalistic_conservatism_subtype
 	}
 	text = {
 		trigger = { hasLiberalConservatismLeader = yes }
-		localization_key = conservative_democracy_liberal_conservatism_subtype
+		localization_key = conservatism_liberal_conservatism_subtype
 	}
 	text = {
 		trigger = { hasChristianDemocracyLeader = yes }
-		localization_key = conservative_democracy_christian_democracy_subtype
+		localization_key = conservatism_christian_democracy_subtype
 	}
 	text = {
 		trigger = { hasIslamicDemocracyLeader = yes }
-		localization_key = conservative_democracy_islamic_democracy_subtype
+		localization_key = conservatism_islamic_democracy_subtype
 	}
 	text = {
 		trigger = { hasPopulistConservatismLeader = yes }
-		localization_key = conservative_democracy_populist_conservatism_subtype
+		localization_key = conservatism_populist_conservatism_subtype
 	}
 	text = {
 		trigger = { hasRevisionistZionismLeader = yes }
-		localization_key = conservative_democracy_revisionist_zionism_subtype
+		localization_key = conservatism_revisionist_zionism_subtype
 	}
 	text = {
-		localization_key = conservative_democracy
+		localization_key = conservatism
 	}
 }
 
@@ -257,82 +257,82 @@ defined_text = {
 	name = GetSubIdeologyLocAuthoritarianDemocracy
 	text = {
 		trigger = { hasNationalConservatismLeader = yes }
-		localization_key = authoritarian_democracy_national_conservatism_subtype
+		localization_key = paternalism_national_conservatism_subtype
 	}
 	text = {
 		trigger = { hasSocialNationalismLeader = yes }
-		localization_key = authoritarian_democracy_social_nationalism_subtype
+		localization_key = paternalism_social_nationalism_subtype
 	}
 	text = {
 		trigger = { hasControlledDemocracyLeader = yes }
-		localization_key = authoritarian_democracy_controlled_democracy_subtype
+		localization_key = paternalism_controlled_democracy_subtype
 	}
 	text = {
 		trigger = { hasStratocracyLeader = yes }
-		localization_key = authoritarian_democracy_stratocracy_subtype
+		localization_key = paternalism_stratocracy_subtype
 	}
 	text = {
 		trigger = { hasOligarchyLeader = yes }
-		localization_key = authoritarian_democracy_oligarchy_subtype
+		localization_key = paternalism_oligarchy_subtype
 	}
 	text = {
 		trigger = { hasSolidarismLeader = yes }
-		localization_key = authoritarian_democracy_solidarism_subtype
+		localization_key = paternalism_solidarism_subtype
 	}
 	text = {
 		trigger = { hasMilitaryMandateLeader = yes }
-		localization_key = authoritarian_democracy_military_mandate_subtype
+		localization_key = paternalism_military_mandate_subtype
 	}
 	text = {
 		trigger = { hasNeoconservatismLeader = yes }
-		localization_key = authoritarian_democracy_neoconservatism_subtype
+		localization_key = paternalism_neoconservatism_subtype
 	}
 	text = {
 		trigger = { hasDixiecratLeader = yes }
-		localization_key = authoritarian_democracy_dixiecrat_subtype
+		localization_key = paternalism_dixiecrat_subtype
 	}
 	text = {
 		trigger = { hasSocialCreditLeader = yes }
-		localization_key = authoritarian_democracy_social_credit_subtype
+		localization_key = paternalism_social_credit_subtype
 	}
 	text = {
 		trigger = { hasCorporatePaternalismLeader = yes }
-		localization_key = authoritarian_democracy_corporate_paternalism_subtype
+		localization_key = paternalism_corporate_paternalism_subtype
 	}
 	text = {
 		trigger = { hasSemiConstitutionalMonarchyLeader = yes }
-		localization_key = authoritarian_democracy_semi_constitutional_monarchy_subtype
+		localization_key = paternalism_semi_constitutional_monarchy_subtype
 	}
 	text = {
 		trigger = { hasDominantPartyDemocracyLeader = yes }
-		localization_key = authoritarian_democracy_dominant_party_democracy_subtype
+		localization_key = paternalism_dominant_party_democracy_subtype
 	}
 	text = {
 		trigger = { hasPeronismLeader = yes }
-		localization_key = authoritarian_democracy_peronism_subtype
+		localization_key = paternalism_peronism_subtype
 	}
 	text = {
 		trigger = { hasKemalismLeader = yes }
-		localization_key = authoritarian_democracy_kemalism_subtype
+		localization_key = paternalism_kemalism_subtype
 	}
 	text = {
 		trigger = { hasProvisionalGovernmentLeader = yes }
-		localization_key = authoritarian_democracy_provisional_government_subtype
+		localization_key = paternalism_provisional_government_subtype
 	}
 	text = {
 		trigger = { hasRightWingPopulismLeader = yes }
-		localization_key = authoritarian_democracy_right_wing_populism_subtype
+		localization_key = paternalism_right_wing_populism_subtype
 	}
 	text = {
 		trigger = { hasXunZhengLeader = yes }
-		localization_key = authoritarian_democracy_xunzheng_subtype
+		localization_key = paternalism_xunzheng_subtype
 	}
 	text = {
 		trigger = { hasMladorossLeader = yes }
-		localization_key = authoritarian_democracy_mladorossi_idea_subtype
+		localization_key = paternalism_mladorossi_idea_subtype
 	}
 	text = {
-		localization_key = authoritarian_democracy
+		localization_key = paternalism
 	}
 }
 
@@ -455,29 +455,29 @@ defined_text = {
 }
 
 defined_text = {
-	name = GetSubIdeologyLocUltranationalism
+	name = GetSubIdeologyLocultramilitarism
 	text = {
 		trigger = { hasSlavoAryanismLeader = yes }
-		localization_key = ultranationalism_slavo_aryanism_subtype
+		localization_key = ultramilitarism_slavo_aryanism_subtype
 	}
 	text = {
 		trigger = { hasEurasianismLeader = yes }
-		localization_key = ultranationalism_eurasianism_subtype
+		localization_key = ultramilitarism_eurasianism_subtype
 	}
 	text = {
 		trigger = { hasUltramilitarismLeader = yes }
-		localization_key = ultranationalism_ultramilitarism_subtype
+		localization_key = ultramilitarism_ultramilitarism_subtype
 	}
 	text = {
 		trigger = { hasFundamentalismLeader = yes }
-		localization_key = ultranationalism_fundamentalism_subtype
+		localization_key = ultramilitarism_fundamentalism_subtype
 	}
 	text = {
 		trigger = { hasStratocraticNazismUltranatLeader = yes }
-		localization_key = ultranationalism_stratocratic_nazism_subtype
+		localization_key = ultramilitarism_stratocratic_nazism_subtype
 	}
 	text = {
-		localization_key = ultranationalism
+		localization_key = ultramilitarism
 	}
 }
 
