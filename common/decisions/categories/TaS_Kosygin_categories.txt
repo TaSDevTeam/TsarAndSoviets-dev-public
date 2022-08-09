@@ -1,0 +1,9 @@
+MAR_category_prestol_terrorists = {
+	icon = GFX_decision_category_assault
+	scripted_gui = MAR_Prestol_GUI
+	allowed = { original_tag = MAR }
+	visible = { has_country_flag = MAR_fighting_prestol }
+	visible_when_empty = yes
+	priority = { base = 5 }
+}
+
