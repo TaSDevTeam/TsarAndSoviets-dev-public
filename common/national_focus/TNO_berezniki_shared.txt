@@ -1807,6 +1807,9 @@ shared_focus = {
 	id = MAR_Char_and_Regent
 	icon = GFX_MAR_Char_and_Regent
 	cost = 3
+	available = {
+		NOT = { has_country_flag = TaS_MARIA_NOT_DONE }
+	}
 	prerequisite = {
 		focus = MAR_kandidati
 	}
@@ -1920,6 +1923,9 @@ shared_focus = {
 	id = MAR_Char_ot_naroda
 	icon = GFX_MAR_Char_ot_naroda
 	cost = 3
+	available = {
+		NOT = { has_country_flag = TaS_KOSYGIN_NOT_DONE }
+	}
 	prerequisite = {
 		focus = MAR_kandidati
 	}
