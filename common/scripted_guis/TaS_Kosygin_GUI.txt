@@ -4,4 +4,37 @@ scripted_gui = {
 		window_name = "MAR_Prestol_GUI"
 		visible = { always = yes }
 	}
+	effects = {
+		MAR_KOSYGINGUI_pick_Onega_Operation = {
+			set_variable = {MAR_KOSYGINGUI_selected = 1}
+		}
+		MAR_KOSYGINGUI_pick_Komi_Operation = {
+			set_variable = {MAR_KOSYGINGUI_selected = 2}
+		}
+		MAR_KOSYGINGUI_pick_Perm_Operation = {
+			set_variable = {MAR_KOSYGINGUI_selected = 3}
+		}
+		MAR_KOSYGINGUI_pick_Gorkiy_Operation = {
+			set_variable = {MAR_KOSYGINGUI_selected = 4}
+		}
+		MAR_KOSYGINGUI_pick_Samara_Operation = {
+			set_variable = {MAR_KOSYGINGUI_selected = 5}
+		}
+		MAR_KOSYGINGUI_pick_Ukhta_Operation = {
+			set_variable = {MAR_KOSYGINGUI_selected = 6}
+		}
+		MAR_KOSYGINGUI_pick_Antiterrorism = {
+			set_variable = {MAR_KOSYGINGUI_selected = 7}
+		}
+		MAR_KOSYGINGUI_pick_Special_Operations = {
+			set_variable = {MAR_KOSYGINGUI_selected = 0}
+		}
+	}
+	properties = {
+		MAR_KOSYGINGUI_prp_Onega_state = {
+			image = "[GET_MAR_KOSYGINGUI_prp_Onega_state]"
+			x = 0
+			y = 0
+		}
+	}
 }

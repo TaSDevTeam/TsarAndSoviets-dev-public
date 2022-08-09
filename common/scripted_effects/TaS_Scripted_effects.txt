@@ -77,6 +77,7 @@ MAR_Solzh_Vyatka_takeover = {
 MAR_enable_prestol = {
 	set_country_flag = MAR_fighting_prestol
 	mark_focus_tree_layout_dirty = yes
+	set_variable = {MAR_KOSYGINGUI_selected = 7}
 	#TODO
 }
 
