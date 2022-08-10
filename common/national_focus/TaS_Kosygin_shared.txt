@@ -99,7 +99,7 @@ shared_focus = {
 ###Regional Politics###
 shared_focus = {
 	id = MAR_kospol_bloody_day
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kospol_red_day
 	cost = 10
 	allow_branch = {
 		has_country_flag = MAR_fighting_prestol
@@ -110,7 +110,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kospol_KGB
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kospol_kgb
 	cost = 10
 	prerequisite = {
 		focus = MAR_kospol_bloody_day
@@ -121,7 +121,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kospol_army_streets
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kospol_army_na_ulice
 	cost = 10
 	prerequisite = {
 		focus = MAR_kospol_bloody_day
@@ -132,7 +132,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kospol_who_are_against_us
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kospol_kto_ne_s_namy
 	cost = 10
 	prerequisite = {
 		focus = MAR_kospol_bloody_day
@@ -143,7 +143,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kospol_motherland_and_tsar
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kospol_kabynet_cherezvichainogo_polozhenia
 	cost = 10
 	prerequisite = {
 		focus = MAR_kospol_bloody_day
@@ -154,7 +154,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kospol_security_comeete
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kospol_souz_zashity
 	cost = 10
 	prerequisite = {
 		focus = MAR_kospol_bloody_day
@@ -165,7 +165,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kospol_universal_good
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kospol_vyshee_blago
 	cost = 10
 	prerequisite = {
 		focus = MAR_kospol_KGB
@@ -188,7 +188,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kospol_nation_of_soviets
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kospol_strana_sovietov
 	cost = 10
 	prerequisite = {
 		focus = MAR_kospol_universal_good
@@ -199,7 +199,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kospol_Soviet_Empire
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kospol_soviet_empire
 	cost = 10
 	prerequisite = {
 		focus = MAR_kospol_universal_good
@@ -210,7 +210,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kospol_nex_siezd
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kospol_new_sezd
 	cost = 10
 	prerequisite = {
 		focus = MAR_kospol_nation_of_soviets
@@ -225,7 +225,7 @@ shared_focus = {
 ###Regional Economy###
 shared_focus = {
 	id = MAR_koseco_new_gosplan
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosecon_gos_plan
 	cost = 10
 	x = 17
 	y = 0
@@ -233,7 +233,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_koseco_red_capitalism
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosecon_soviet_capitalism
 	cost = 10
 	prerequisite = {
 		focus = MAR_koseco_new_gosplan
@@ -244,7 +244,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_koseco_national_sector
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosecon_gos_sektor
 	cost = 10
 	prerequisite = {
 		focus = MAR_koseco_red_capitalism
@@ -255,7 +255,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_koseco_rebuild_infr
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosecon_infrastructura
 	cost = 10
 	prerequisite = {
 		focus = MAR_koseco_national_sector
@@ -266,7 +266,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_koseco_foreign_specs
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosecon_specialisty
 	cost = 10
 	prerequisite = {
 		focus = MAR_koseco_national_sector
@@ -277,7 +277,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_koseco_double_factories
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosecon_zavody_dvoinogo_naznachenia
 	cost = 10
 	prerequisite = {
 		focus = MAR_koseco_rebuild_infr
@@ -291,7 +291,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_koseco_Glushkov_project
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosecon_glushkov_project
 	cost = 10
 	prerequisite = {
 		focus = MAR_koseco_double_factories
@@ -302,7 +302,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_koseco_privats
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosecon_chastniky
 	cost = 10
 	prerequisite = {
 		focus = MAR_koseco_red_capitalism
@@ -313,7 +313,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_koseco_support_kulaks
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosecon_kulaki
 	cost = 10
 	prerequisite = {
 		focus = MAR_koseco_privats
@@ -324,7 +324,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_koseco_jap_partners
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosecon_japan_partners
 	cost = 10
 	prerequisite = {
 		focus = MAR_koseco_support_kulaks
@@ -335,7 +335,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_koseco_usa_friends
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosecon_american_friends
 	cost = 10
 	prerequisite = {
 		focus = MAR_koseco_support_kulaks
@@ -346,7 +346,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_koseco_Technospy
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosecon_technology_spy
 	cost = 10
 	prerequisite = {
 		focus = MAR_koseco_jap_partners
@@ -360,7 +360,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_koseco_faster_than_future
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosecon_operation_future
 	cost = 10
 	prerequisite = {
 		focus = MAR_koseco_Glushkov_project
@@ -374,7 +374,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_koseco_DCP
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosecon_evm
 	cost = 10
 	prerequisite = {
 		focus = MAR_koseco_new_gosplan
@@ -385,7 +385,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_koseco_future_technologies
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosecon_technology_future
 	cost = 10
 	prerequisite = {
 		focus = MAR_koseco_new_gosplan
@@ -396,7 +396,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_koseco_Best_education
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosecon_obrazovanie
 	cost = 10
 	prerequisite = {
 		focus = MAR_koseco_DCP
@@ -504,7 +504,7 @@ shared_focus = {
 ###Regional Foreign Policy###
 shared_focus = {
 	id = MAR_kosfor_red_eagle
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosfopo_orel_nad_nebom
 	cost = 10
 	x = 36
 	y = 0
@@ -512,7 +512,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kosfor_two_polars
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosfopo_dwa_polusa
 	cost = 10
 	prerequisite = {
 		focus = MAR_kosfor_red_eagle
@@ -523,7 +523,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kosfor_birthplace_of_democracy
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosfopo_liberty_country
 	cost = 10
 	prerequisite = {
 		focus = MAR_kosfor_two_polars
@@ -537,7 +537,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kosfor_from_America_with_love
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosfopo_from_usa__with_love
 	cost = 10
 	prerequisite = {
 		focus = MAR_kosfor_birthplace_of_democracy
@@ -548,7 +548,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kosfor_pearl_of_Asia
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosfopo_asian_zhemchuzhina
 	cost = 10
 	prerequisite = {
 		focus = MAR_kosfor_two_polars
@@ -562,7 +562,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kosfor_tokyo_embassy
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosfopo_japan_posolstva
 	cost = 10
 	prerequisite = {
 		focus = MAR_kosfor_pearl_of_Asia
@@ -573,7 +573,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kosfor_Delhi_travel
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosfopo_india
 	cost = 10
 	prerequisite = {
 		focus = MAR_kosfor_from_America_with_love
@@ -585,7 +585,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kosfor_Transural_amogus
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosfopo_proniknovenie_v_ural
 	cost = 10
 	prerequisite = {
 		focus = MAR_kosfor_red_eagle
@@ -596,7 +596,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kosfor_Tsar_legion
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosfopo_red_legion
 	cost = 10
 	prerequisite = {
 		focus = MAR_kosfor_Transural_amogus
@@ -607,7 +607,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kosfor_third_world
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosfopo_africa
 	cost = 10
 	prerequisite = {
 		focus = MAR_kosfor_Tsar_legion
@@ -618,7 +618,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kosfor_global_Russia
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosfopo_global_ohvat
 	cost = 10
 	prerequisite = {
 		focus = MAR_kosfor_third_world
@@ -633,7 +633,7 @@ shared_focus = {
 ###Superregional###
 shared_focus = {
 	id = MAR_kossup_porog
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kossreg_perestupiv_porog
 	cost = 10
 	x = 5
 	y = 0
@@ -641,7 +641,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kossup_ural_archives
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kossreg_archives
 	cost = 10
 	prerequisite = {
 		focus = MAR_kossup_porog
@@ -652,7 +652,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kossup_curdes_old_house
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kossreg_proklyatii_dom
 	cost = 10
 	prerequisite = {
 		focus = MAR_kossup_ural_archives
@@ -663,7 +663,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kossup_make_lenin_leave
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kossreg_ulyanov_na_vihod
 	cost = 10
 	prerequisite = {
 		focus = MAR_kossup_ural_archives
@@ -674,7 +674,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kossup_topor
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kossreg_topor_voiny
 	cost = 10
 	prerequisite = {
 		focus = MAR_kossup_make_lenin_leave
@@ -688,7 +688,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kossup_red_midday
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kossreg_red_polden
 	cost = 10
 	prerequisite = {
 		focus = MAR_kossup_porog
@@ -699,7 +699,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kossup_thaw
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kossreg_ubrat_ogranichenia
 	cost = 10
 	prerequisite = {
 		focus = MAR_kossup_red_midday
@@ -710,7 +710,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kossup_kosyginki
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kossreg_kosyginky
 	cost = 10
 	prerequisite = {
 		focus = MAR_kossup_red_midday
@@ -721,7 +721,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kossup_red_and_white
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kossreg_red_and_white
 	cost = 10
 	prerequisite = {
 		focus = MAR_kossup_thaw
@@ -735,7 +735,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kossup_look_to_the_east
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kossreg_vsor_na_vostok
 	cost = 10
 	prerequisite = {
 		focus = MAR_kossup_red_midday
@@ -746,7 +746,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kossup_meet_Gil
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kossreg_vstrecha_s_gilem
 	cost = 10
 	prerequisite = {
 		focus = MAR_kossup_look_to_the_east
@@ -919,7 +919,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kossup_scarlet_etud
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kossreg_etud
 	cost = 10
 	prerequisite = {
 		focus = MAR_kossup_red_and_white
