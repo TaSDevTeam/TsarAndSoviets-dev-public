@@ -63,7 +63,17 @@ TaS_WRW2_central_asia_invasion = {
 	MAR_fate_of_turkestan_effigy = {
 		icon = GFX_decision_generic_assault
 		visible = {
-			has_country_flag = MAR_has_turkestan
+			OR = {
+				has_country_flag = MAR_has_turkestan
+				AND = {
+					UZB = { exists = no }
+					KRK = { exists = no }
+					UTL = { exists = no }
+					TAJ = { exists = no }
+					KYR = { exists = no }
+					TRK = { exists = no }
+				}
+			}
 		}
 		available = {
 			always = no
@@ -76,7 +86,17 @@ TaS_WRW2_central_asia_invasion = {
 	MAR_fate_of_turkestan_govern = {
 		icon = GFX_decision_generic_assault
 		visible = {
-			has_country_flag = MAR_has_turkestan
+			OR = {
+				has_country_flag = MAR_has_turkestan
+				AND = {
+					UZB = { exists = no }
+					KRK = { exists = no }
+					UTL = { exists = no }
+					TAJ = { exists = no }
+					KYR = { exists = no }
+					TRK = { exists = no }
+				}
+			}
 		}
 		available = {
 		}
@@ -86,6 +106,7 @@ TaS_WRW2_central_asia_invasion = {
 			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_fate_of_turkestan_govern"
 			clr_country_flag = MAR_has_turkestan
 			set_country_flag = MAR_Turkestan_govern_stayed
+			MAR_Turkestan_govern = yes
 		}
 	} 
 	#MAR_fate_of_turkestan_autonomy = { #Temporarly Discounted
