@@ -125,48 +125,6 @@ MAR_debug_category = {
 			load_focus_tree = MAR_Kosygin_Superregional
 		}
 	}
-	TaS_WRW2_End_the_germany_decision = {
-		icon = GFX_decision_generic_decision
-
-		allowed = {
-			original_tag = MAR
-		}
-
-		fire_only_once = no
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: TaS_WRW2_End_the_germany_decision"
-			TaS_WRW2_peace_Central_European_Restauration = yes
-		}
-	}
-	TaS_WRW2_postpeace_Central_European_Revolts = {
-		icon = GFX_decision_generic_decision
-
-		allowed = {
-			original_tag = MAR
-		}
-
-		fire_only_once = no
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: TaS_WRW2_postpeace_Central_European_Revolts"
-			TaS_WRW2_postpeace_Central_European_Revolts = yes
-		}
-	}
-	TaS_WRW2_postpeace_REAL_MODE = {
-		icon = GFX_decision_generic_decision
-
-		allowed = {
-			original_tag = MAR
-		}
-
-		fire_only_once = no
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: TaS_WRW2_postpeace_REAL_MODE"
-			TaS_WRW2_postpeace_REAL_MODE = yes
-		}
-	}
 	TaS_Iraq_Zhirinosky_xd = {
 		icon = GFX_decision_generic_decision
 		
