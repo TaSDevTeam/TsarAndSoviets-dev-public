@@ -229,7 +229,12 @@ shared_focus = {
 	cost = 10
 	x = 17
 	y = 0
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.15
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_koseco_red_capitalism
@@ -240,6 +245,12 @@ shared_focus = {
 	}
 	x = 13
 	y = 1
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.16
+			days = 0
+		}
+	}
 
 }
 shared_focus = {
@@ -251,6 +262,10 @@ shared_focus = {
 	}
 	x = 11
 	y = 2
+	completion_reward = {
+		set_temp_variable = { pus_temp = 6 }
+		econ_pus_change = yes
+	}
 
 }
 shared_focus = {
@@ -262,7 +277,107 @@ shared_focus = {
 	}
 	x = 10
 	y = 3
-
+	completion_reward = {
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = offices
+				level = 1
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+			add_state_modifier = {
+				modifier = {
+					state_GDP_growth_factor_modifier = 0.1
+				}
+			}
+		}
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = schools
+				level = 1
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+			add_state_modifier = {
+				modifier = {
+					state_GDP_growth_factor_modifier = 0.1
+				}
+			}
+		}
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = offices
+				level = 1
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+			add_state_modifier = {
+				modifier = {
+					state_GDP_growth_factor_modifier = 0.1
+				}
+			}
+		}
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = schools
+				level = 1
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+			add_state_modifier = {
+				modifier = {
+					state_GDP_growth_factor_modifier = 0.1
+				}
+			}
+		}
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = hospitals
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = prisons
+				level = 1
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+			add_state_modifier = {
+				modifier = {
+					state_GDP_growth_factor_modifier = 0.1
+				}
+			}
+		}
+		set_temp_variable = { temp_econ_spending_amount = 0.5 }
+        econ_spend_money_once_effect_raw_money = yes
+		set_temp_variable = { inflation_temp = 0.03 }
+		econ_inflation_change = yes
+	}
 }
 shared_focus = {
 	id = MAR_koseco_foreign_specs
@@ -273,7 +388,12 @@ shared_focus = {
 	}
 	x = 12
 	y = 3
-
+	completion_reward = { 
+		country_event = {
+			id = MAR_Kosygin.17
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_koseco_double_factories
@@ -287,7 +407,12 @@ shared_focus = {
 	}
 	x = 11
 	y = 4
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.18
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_koseco_Glushkov_project
@@ -298,7 +423,12 @@ shared_focus = {
 	}
 	x = 12
 	y = 5
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.19
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_koseco_privats
@@ -309,7 +439,15 @@ shared_focus = {
 	}
 	x = 14
 	y = 2
-
+	completion_reward = {
+		set_temp_variable = { gdp_growth_temp = 0.4 }
+		econ_gdp_growth_change = yes
+		set_temp_variable = { inflation_temp = -0.2 }
+		econ_inflation_change = yes
+		TNO_improve_poverty_med = yes
+		set_temp_variable = { business_tax_temp = 0.2 }
+		econ_business_tax_rate_change = yes
+	}
 }
 shared_focus = {
 	id = MAR_koseco_support_kulaks
@@ -320,7 +458,12 @@ shared_focus = {
 	}
 	x = 14
 	y = 3
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.20
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_koseco_jap_partners
@@ -331,7 +474,12 @@ shared_focus = {
 	}
 	x = 13
 	y = 4
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.21
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_koseco_usa_friends
@@ -342,7 +490,12 @@ shared_focus = {
 	}
 	x = 15
 	y = 4
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.22
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_koseco_Technospy
@@ -356,7 +509,14 @@ shared_focus = {
 	}
 	x = 14
 	y = 5
-
+	completion_reward = {
+		TNO_improve_research_facilities_med = yes
+		add_tech_bonus = {
+			bonus = 1.0
+			uses = 2
+			category = industry
+		}
+	}
 }
 shared_focus = {
 	id = MAR_koseco_faster_than_future
@@ -370,7 +530,12 @@ shared_focus = {
 	}
 	x = 13
 	y = 6
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.24
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_koseco_DCP
@@ -381,7 +546,14 @@ shared_focus = {
 	}
 	x = 19
 	y = 1
-
+	completion_reward = {
+		TNO_improve_research_facilities_low = yes
+		add_tech_bonus = {
+			bonus = 1.0
+			uses = 2
+			category = computing_tech
+		}
+	}
 }
 shared_focus = {
 	id = MAR_koseco_future_technologies
@@ -392,7 +564,12 @@ shared_focus = {
 	}
 	x = 21
 	y = 1
-
+	completion_reward = {
+		TNO_improve_research_facilities_high = yes
+		research_funding_maximal_increase_high = yes
+		set_temp_variable = { gdp_growth_temp = 0.2 }
+		econ_gdp_growth_change = yes
+	}
 }
 shared_focus = {
 	id = MAR_koseco_Best_education
@@ -406,7 +583,12 @@ shared_focus = {
 	}
 	x = 20
 	y = 2
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.23
+			days = 0
+		}
+	}
 }
 ###Regional Military###
 shared_focus = {
@@ -415,7 +597,12 @@ shared_focus = {
 	cost = 10
 	x = 27
 	y = 0
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.25
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_kosmil_reorganise_minwar
@@ -426,7 +613,10 @@ shared_focus = {
 	}
 	x = 25
 	y = 1
-
+	completion_reward = {
+		add_political_power = -50
+		TNO_improve_army_professionalism_med = yes
+	}
 }
 shared_focus = {
 	id = MAR_kosmil_expand_Archangelsk_ports
@@ -437,10 +627,35 @@ shared_focus = {
 	}
 	x = 24
 	y = 2
-
+	completion_reward = {
+		214 = {
+			add_building_construction = {
+				type = dockyard
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+					type = naval_base
+					level = 3
+					instant_build = yes
+					province = 3338 
+				}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_state_modifier = {
+				modifier = {
+					state_GDP_growth_factor_modifier = 0.1
+				}
+			}
+		}
+	}
 }
 shared_focus = {
-	id = MAR_kosmil_weapon)modernisation
+	id = MAR_kosmil_weapon_modernisation
 	icon = GFX_goal_unknown
 	cost = 10
 	prerequisite = {
@@ -448,18 +663,43 @@ shared_focus = {
 	}
 	x = 27
 	y = 1
-
+	completion_reward = {
+		TNO_improve_research_facilities_low = yes
+		add_tech_bonus = {
+			bonus = 1.0
+			uses = 3
+			category = infantry_weapons
+		}
+	}
 }
 shared_focus = {
 	id = MAR_kosmil_new_avia
 	icon = GFX_goal_unknown
 	cost = 10
 	prerequisite = {
-		focus = MAR_kosmil_weapon)modernisation
+		focus = MAR_kosmil_weapon_modernisation
 	}
 	x = 27
 	y = 2
-
+	completion_reward = {
+		add_tech_bonus = {
+			bonus = 1.0
+			uses = 2
+			category = jet_fighter
+		}
+		add_tech_bonus = {
+			bonus = 1.0
+			uses = 2
+			category = interceptor
+		}
+		capital_scope = {
+			add_building_construction = {
+				type = air_base
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
 }
 shared_focus = {
 	id = MAR_kosmil_new_training_methods
@@ -470,7 +710,12 @@ shared_focus = {
 	}
 	x = 29
 	y = 1
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.26
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_kosmil_tank_squads
@@ -481,7 +726,35 @@ shared_focus = {
 	}
 	x = 30
 	y = 2
-
+	completion_reward = {
+		if = { 
+			limit = { 
+				has_dlc = "No Step Back"
+			}
+			add_equipment_to_stockpile = {
+				type = MBT_chassis_2
+				amount = 150
+				producer = MAR
+			}
+		}
+		else = {
+			add_equipment_to_stockpile = {
+				type = MBT_equipment_2
+				amount = 150
+				producer = MAR
+			}
+		}
+		add_tech_bonus = {
+			bonus = 1.0
+			uses = 2
+			category = MBT
+		}
+		add_tech_bonus = {
+			bonus = 1.0
+			uses = 2
+			category = IFV
+		}
+	}
 }
 shared_focus = {
 	id = MAR_kosmil_military_academies
@@ -498,7 +771,12 @@ shared_focus = {
 	}
 	x = 27
 	y = 3
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.27
+			days = 0
+		}
+	}
 }
 
 ###Regional Foreign Policy###
@@ -508,7 +786,12 @@ shared_focus = {
 	cost = 10
 	x = 36
 	y = 0
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.28
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_kosfor_two_polars
@@ -519,7 +802,12 @@ shared_focus = {
 	}
 	x = 34
 	y = 1
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.29
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_kosfor_birthplace_of_democracy
@@ -533,7 +821,12 @@ shared_focus = {
 	}
 	x = 33
 	y = 2
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.30
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_kosfor_from_America_with_love
@@ -544,7 +837,12 @@ shared_focus = {
 	}
 	x = 33
 	y = 3
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.31
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_kosfor_pearl_of_Asia
@@ -558,7 +856,10 @@ shared_focus = {
 	}
 	x = 35
 	y = 2
-
+	country_event = {
+			id = MAR_Kosygin.32
+			days = 0
+		}
 }
 shared_focus = {
 	id = MAR_kosfor_tokyo_embassy
@@ -569,7 +870,10 @@ shared_focus = {
 	}
 	x = 35
 	y = 3
-
+	country_event = {
+			id = MAR_Kosygin.33
+			days = 0
+		}
 }
 shared_focus = {
 	id = MAR_kosfor_Delhi_travel
@@ -581,7 +885,10 @@ shared_focus = {
 	}
 	x = 34
 	y = 4
-
+	country_event = {
+			id = MAR_Kosygin.34
+			days = 0
+		}
 }
 shared_focus = {
 	id = MAR_kosfor_Transural_amogus
@@ -592,7 +899,10 @@ shared_focus = {
 	}
 	x = 37
 	y = 1
-
+	country_event = {
+			id = MAR_Kosygin.35
+			days = 0
+		}
 }
 shared_focus = {
 	id = MAR_kosfor_Tsar_legion
@@ -603,7 +913,10 @@ shared_focus = {
 	}
 	x = 37
 	y = 2
-
+	country_event = {
+			id = MAR_Kosygin.36
+			days = 0
+		}
 }
 shared_focus = {
 	id = MAR_kosfor_third_world
@@ -614,7 +927,10 @@ shared_focus = {
 	}
 	x = 37
 	y = 3
-
+	country_event = {
+			id = MAR_Kosygin.37
+			days = 0
+		}
 }
 shared_focus = {
 	id = MAR_kosfor_global_Russia
@@ -628,7 +944,10 @@ shared_focus = {
 	}
 	x = 36
 	y = 5
-
+	country_event = {
+			id = MAR_Kosygin.38
+			days = 0
+		}
 }
 ###Superregional###
 shared_focus = {
