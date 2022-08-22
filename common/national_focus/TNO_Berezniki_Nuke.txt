@@ -82,15 +82,15 @@ shared_focus = {
 			add_to_variable = { RUSNukesTheoryProgress = 15 }
 		}
 		add_to_variable = { RUSNukesMonthlyProgress = 3 }
-		hidden_effect = {
-			if = {
-				limit = {
-					tag = SAM
-					has_government = fascism
-				}
-				country_event = { id = SAM_oktan.4 days = 7 random = 48 }
-			}
-		}
+		#hidden_effect = { #как это вообще тут появилось блять#
+		#	if = {
+		#		limit = {
+		#			tag = SAM
+		#			has_government = fascism
+		#		}
+		#		country_event = { id = SAM_oktan.4 days = 7 random = 48 }
+		#	}
+		#}
 	}
 }
 shared_focus = {
