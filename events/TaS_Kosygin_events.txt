@@ -223,6 +223,7 @@ country_event = {#Shock
 			}
 		}
 		add_manpower = -502
+		
 	}
 }
 
@@ -237,6 +238,18 @@ country_event = {#Aftermaths
 		name = MAR_Kosygin.14.a
 		ai_chance = { factor = 1 }	
 		MAR_enable_prestol = yes
+		hidden_effect = {
+			add_country_leader_role = {
+				character = MAR_advisor_Kosygin
+				promote_leader = yes
+				country_leader = {
+					desc = "POLITICS_KOSYGIN_POSTBOMB_DESC"
+					ideology = socialist_social_monarchist_but_worse_subtype
+					expire = "1999.1.1"
+					traits = { }
+				}
+			}
+		}
 	}
 }
 
@@ -906,5 +919,19 @@ country_event = {#akmola celebration
 		name = MAR_Kosygin.56.a
 		ai_chance = { factor = 1 }	
 		add_ideas = { MAR_kaz_legions }
+	}
+}
+
+country_event = {#valley of peace
+	id = MAR_Kosygin.100
+	title = MAR_Kosygin.100.t
+	desc = MAR_Kosygin.100.d
+	picture = GFX_event_MAR_Kosygin_100
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_Kosygin.100.a
+		ai_chance = { factor = 1 }	
+		add_stability = 0.05
 	}
 }

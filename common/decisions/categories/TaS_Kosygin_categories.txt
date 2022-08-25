@@ -6,4 +6,19 @@ MAR_category_prestol_terrorists = {
 	visible_when_empty = yes
 	priority = { base = 5 }
 }
-
+MAR_dolina_primirenya_category = {
+	icon = GFX_decision_category_dolina_primir_icon
+	picture = GFX_decision_category_dolina_primir_pic
+	allowed = {
+		tag = MAR
+	}
+	visible = {
+		has_country_flag = MAR_dolina_primireniya
+	}
+	
+	visible_when_empty = yes
+	
+	priority = {
+		base = 20
+	}
+}

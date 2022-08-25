@@ -2015,3 +2015,25 @@ MAR_Order_category = {
 		}
 	}
 }
+MAR_dolina_primirenya_category = {
+	MAR_build_the_dolina = {
+		icon = GFX_decision_generic_shake_hands
+		fire_only_once = yes
+		visible = {
+			has_country_flag = MAR_dolina_primireniya
+		}
+		days_remove = 120
+		cost = 100
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_build_the_dolina"
+			set_temp_variable = { temp_econ_spending_amount = 0.005 }
+			econ_spend_money_once_effect_raw_money = yes
+		}
+		remove_effect = {
+			country_event = {
+				id = MAR_Kosygin.100 days = 0
+			}
+			RUS_integration_cost_days_decrease = yes
+		}
+	}
+}

@@ -97,10 +97,6 @@ defined_text = {
 		localization_key = communist_workerism_subtype
 	}
 	text = {
-        trigger = { has_country_leader_ideology = socialist_social_monarchist_subtype }
-        localization_key = socialist_social_monarchist_subtype
-    }
-	text = {
 		localization_key = communist
 	}
 }
@@ -155,6 +151,14 @@ defined_text = {
 		trigger = { has_country_leader_ideology = socialist_nasserism_subtype }
 		localization_key = socialist_nasserism_subtype
 	}
+	text = {
+        trigger = { has_country_leader_ideology = socialist_social_monarchist_subtype }
+        localization_key = socialist_social_monarchist_subtype
+    }
+	text = {
+        trigger = { has_country_leader_ideology = socialist_social_monarchist_but_worse_subtype }
+        localization_key = socialist_social_monarchist_but_worse_subtype
+    }
 	text = {
 		localization_key = socialist
 	}

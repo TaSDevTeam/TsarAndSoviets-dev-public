@@ -6669,6 +6669,15 @@ RUS_select_superregional_cosmetic_tag = {
 					}
 					set_cosmetic_tag = MAR_ser_bel_RUS
 				}
+				if = {
+					limit = {
+						has_country_leader = {
+							character = MAR_advisor_Kosygin
+							ruling_only = yes
+						}
+					}
+					set_cosmetic_tag = MAR_Kosygin_superreg
+				}
 			}
 	}
 }
@@ -7136,6 +7145,15 @@ RUS_select_superregional_focus_tree = {
 						}
 					}
 					load_focus_tree = { tree = MAR_Belozerski_Super_reg keep_completed = no }
+				}
+				if = {
+					limit = {
+						has_country_leader = {
+							character = MAR_advisor_Kosygin
+							ruling_only = yes
+						}
+					}
+					load_focus_tree = { tree = MAR_Kosygin_Suppergional keep_completed = no }
 				}
 			}
 	}
