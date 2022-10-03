@@ -1,0 +1,21 @@
+scripted_gui = {
+	MAR_OGAS_GUI = {
+		context_type = decision_category
+		window_name = "MAR_OGAS_gui_window_container"
+		#dirty = TNO_legacy_sibplan_dirty
+		triggers = {
+			#OGAS_stage_two_lock_visible = { has_country_flag = MAR_OGAS_stage_two_not_started }
+			#SIB_ring_construction_negative_visible = { check_variable = { SIB_construction_frame < 0.1 } }
+			#SIB_ring_factory_output_positive_visible = { check_variable = { SIB_output_frame > 0 } }
+			#SIB_ring_factory_output_negative_visible = { check_variable = { SIB_output_frame < 0.1 } }
+			#SIB_ring_resource_efficiency_positive_visible = { check_variable = { SIB_resource_frame > 0 } }
+		}
+		properties = {
+			#OGAS_stage_two_lock = { frame = MAR_OGAS_prepstage_frame }
+			#SIB_ring_construction_negative = { frame = SIB_construction_negative }
+			#SIB_ring_factory_output_positive = { frame = SIB_output_frame }
+			#SIB_ring_factory_output_negative = { frame = SIB_output_negative }
+			#SIB_ring_resource_efficiency_positive = { frame = SIB_resource_frame }
+		}
+	}
+}

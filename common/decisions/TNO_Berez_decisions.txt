@@ -113,6 +113,72 @@ MAR_debug_category = {
 			MAR_enable_prestol = yes
 		}
 	}
+	MAR_ogas_debug = {
+		icon = GFX_decision_generic_decision
+
+		allowed = {
+			original_tag = MAR
+		}
+		
+		fire_only_once = no
+
+		complete_effect = {
+			set_country_flag = MAR_ogas_dev_started
+			set_country_flag = OGAS_first_stage
+			set_variable = { MAR_ogas_gain = 2 }
+			set_variable = { MAR_ogas_chone_gain = 1 }
+			set_variable = { MAR_ogas_chtwo_gain = 1 }
+			set_variable = { MAR_ogas_chthree_gain = 1 }
+			#set_country_flag = MAR_OGAS_stage_two_not_started
+		}
+	}
+	MAR_ogas_debug_add_progress = {
+		icon = GFX_decision_generic_decision
+
+		allowed = {
+			original_tag = MAR
+		}
+		
+		fire_only_once = no
+
+		complete_effect = {
+			MAR_OGAS_progress_growth_small = yes  
+		}
+	}
+	MAR_ogas_debug_add_all = {
+		icon = GFX_decision_generic_decision
+
+		allowed = {
+			original_tag = MAR
+		}  
+		
+		fire_only_once = no
+
+		complete_effect = { 
+			add_to_variable = { MAR_OGAS_ONE = 5 }
+			add_to_variable = { MAR_OGAS_TWO = 5 } 
+			add_to_variable = { MAR_OGAS_THREE = 5 }
+			add_to_variable = { MAR_OGAS_FOUR = 5 }
+			add_to_variable = { MAR_OGAS_FIVE = 5 } 
+			add_to_variable = { MAR_OGAS_SIX = 5 }
+			add_to_variable = { MAR_OGAS_CHAR_ONE = 5 }
+			add_to_variable = { MAR_OGAS_CHAR_TWO = 5 }  
+			add_to_variable = { MAR_OGAS_CHAR_THREE = 5 } 
+		}
+	}
+	#MAR_ogas_clear_locks = {
+	#	icon = GFX_decision_generic_decision
+	#
+	#	allowed = {
+	#		original_tag = MAR
+	#	}
+	#	
+	#	fire_only_once = no
+	#
+	#	complete_effect = {
+	#		clr_country_flag = MAR_OGAS_stage_two_not_started
+	#	}
+	#}
 	MAR_load_Kosygin_superregional = {
 		icon = GFX_decision_generic_decision
 
@@ -209,8 +275,8 @@ MAR_debug_category = {
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: TaS_Turkestan_gov"
 			add_to_variable = { RUS_devastation = 20 }
-			add_to_variable = { GER_devastation = 20 }		
-		}
+			add_to_variable = { GER_devastation = 20 }	
+		}  
 	}
 	TaS_2WRW_activate_germancw = {
 		icon = GFX_decision_generic_decision
@@ -414,7 +480,8 @@ MAR_experiments_category = {
 		complete_effect = {
 			clr_country_flag = MAR_EXP_FL_TE_NOT_STARTED
 			set_country_flag = MAR_EXP_FL_TE_STARTED
-			add_to_variable = { national_debt = 0.5 }
+			set_temp_variable = { temp_econ_spending_amount = 0.5 }
+			econ_spend_money_once_effect_raw_money = yes
 			add_to_variable = { MAR_exp_counter = 1 }
 			custom_effect_tooltip = MAR_EXP_TT_EXPENCIVE
 		}
@@ -474,7 +541,8 @@ MAR_experiments_category = {
 		complete_effect = {
 			clr_country_flag = MAR_EXP_FL_FC_NOT_STARTED
 			set_country_flag = MAR_EXP_FL_FC_STARTED
-			add_to_variable = { national_debt = 1 }
+			set_temp_variable = { temp_econ_spending_amount = 1 }
+			econ_spend_money_once_effect_raw_money = yes
 			add_to_variable = { MAR_exp_counter = 1 }
 			custom_effect_tooltip = MAR_EXP_TT_EXPENCIVE
 		}
@@ -529,7 +597,8 @@ MAR_experiments_category = {
 		complete_effect = {
 			clr_country_flag = MAR_EXP_FL_LS_NOT_STARTED
 			set_country_flag = MAR_EXP_FL_LS_STARTED
-			add_to_variable = { national_debt = 0.5 }
+			set_temp_variable = { temp_econ_spending_amount = 0.5 }
+			econ_spend_money_once_effect_raw_money = yes
 			add_to_variable = { MAR_exp_counter = 1 }
 			custom_effect_tooltip = MAR_EXP_TT_EXPENCIVE
 		}
@@ -584,7 +653,8 @@ MAR_experiments_category = {
 		complete_effect = {
 			clr_country_flag = MAR_EXP_FL_TF_NOT_STARTED
 			set_country_flag = MAR_EXP_FL_TF_STARTED
-			add_to_variable = { national_debt = 2 }
+			set_temp_variable = { temp_econ_spending_amount = 2 }
+			econ_spend_money_once_effect_raw_money = yes
 			add_to_variable = { MAR_exp_counter = 1 }
 			custom_effect_tooltip = MAR_EXP_TT_EXPENCIVE
 		}
@@ -644,7 +714,8 @@ MAR_experiments_category = {
 		complete_effect = {
 			clr_country_flag = MAR_EXP_FL_ED_NOT_STARTED
 			set_country_flag = MAR_EXP_FL_ED_STARTED
-			add_to_variable = { national_debt = 1.5 }
+			set_temp_variable = { temp_econ_spending_amount = 1.5 }
+			econ_spend_money_once_effect_raw_money = yes
 			add_to_variable = { MAR_exp_counter = 1 }
 			custom_effect_tooltip = MAR_EXP_TT_EXPENCIVE
 		}
@@ -704,7 +775,8 @@ MAR_experiments_category = {
 		complete_effect = {
 			clr_country_flag = MAR_EXP_FL_NL_NOT_STARTED
 			set_country_flag = MAR_EXP_FL_NL_STARTED
-			add_to_variable = { national_debt = 0.5 }
+			set_temp_variable = { temp_econ_spending_amount = 0.5 }
+			econ_spend_money_once_effect_raw_money = yes
 			add_to_variable = { MAR_exp_counter = 1 }
 			custom_effect_tooltip = MAR_EXP_TT_EXPENCIVE
 		}
@@ -2014,6 +2086,575 @@ MAR_Order_category = {
 			RUS_integration_cost_days_decrease = yes
 		}
 	}
+}
+#ogas
+MAR_ogas_deccat = {
+	#first stage
+	MAR_ogas_first_stage_effigy = {
+		icon = GFX_decision_research_generic
+		visible = {
+			has_country_flag = OGAS_first_stage
+		}
+		fire_only_once = yes
+		available = {
+			always = no
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_ogas_first_stage_effigy"
+		}
+	}
+	
+	MAR_ogas_first_spying_for_superpowers = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			has_country_flag = OGAS_first_stage
+		}
+		cost = 25
+		days_remove = 90
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: MAR_ogas_first_spying_for_superpowers"
+			custom_effect_tooltip = MAR_ogas_first_stage_spies_tt
+			#add_timed_idea = { idea = RUS_nukes_theory_develop_physics_institutes_misc_costs days = 90 }
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_first_spying_for_superpowers"
+			random_list = {
+			15 = {
+				custom_effect_tooltip = MAR_OGAS_beeg_growth_spy_tt
+				add_to_variable = { MAR_OGAS_ONE = 10 }
+				add_to_variable = { MAR_OGAS_CHAR_ONE = 10 }
+				add_to_variable = { MAR_OGAS_CHAR_TWO = 10 }
+				add_to_variable = { MAR_OGAS_CHAR_THREE = 5 }
+			}
+			45 = {
+				MAR_OGAS_progress_growth_med = yes
+				custom_effect_tooltip = MAR_OGAS_mid_spy_tt
+				add_to_variable = { MAR_OGAS_CHAR_TWO = 5 }
+			}
+			25 = {
+				MAR_OGAS_progress_growth_small = yes
+			}
+			15 = {
+			
+			}
+		}
+			
+		}
+	}
+	
+	MAR_ogas_first_trip_to_guandong = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			has_country_flag = OGAS_first_stage
+		}
+		cost = 25
+		days_remove = 90
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: MAR_ogas_first_trip_to_guandong"
+			set_temp_variable = { temp_econ_spending_amount = 0.002 }
+			econ_spend_money_once_effect_raw_money = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_first_trip_to_guandong"
+			custom_effect_tooltip = MAR_OGAS_eff_growth_tt
+			add_to_variable = { MAR_OGAS_CHAR_TWO = 5 }
+			MAR_OGAS_progress_growth_med = yes
+		}
+	}
+	
+	MAR_ogas_first_imperial_academy = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			has_country_flag = OGAS_first_stage
+		}
+		cost = 25
+		days_remove = 90
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: MAR_ogas_first_imperial_academy"
+			set_temp_variable = { temp_econ_spending_amount = 0.3 }  
+			econ_spend_money_once_effect_raw_money = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_first_imperial_academy"
+
+		}
+	}  
+	 
+	MAR_ogas_first_our_previous_ideas = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			has_country_flag = OGAS_first_stage
+		} 
+		cost = 25
+		days_remove = 3
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: MAR_ogas_first_our_previous_ideas"
+			set_temp_variable = { temp_econ_spending_amount = 0.2 }
+			econ_spend_money_once_effect_raw_money = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_first_our_previous_ideas"
+			
+			set_temp_variable = { temp_char_gained_one = 5 } 
+			ogas_characteristics_change_safety = yes
+			
+			set_temp_variable = { temp_char_gained_two = 5 } 
+			ogas_characteristics_change_efficency = yes 
+			
+			set_temp_variable = { temp_char_gained_three = 5 } 
+			ogas_characteristics_change_complexity = yes
+		}
+	}
+	
+	MAR_ogas_first_sort_the_designs = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			has_country_flag = OGAS_first_stage
+		}
+		cost = 25
+		days_remove = 3
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: MAR_ogas_first_sort_the_designs"
+			set_temp_variable = { temp_econ_spending_amount = 0.1 } 
+			econ_spend_money_once_effect_raw_money = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_first_sort_the_designs"
+			set_temp_variable = { temp_char_gained_one = 6 } 
+			ogas_characteristics_change_safety = yes
+			
+			set_temp_variable = { temp_char_gained_two = 8 } 
+			ogas_characteristics_change_efficency = yes
+			
+			set_temp_variable = { temp_char_gained_three = -2 } 
+			ogas_characteristics_change_complexity = yes
+		}
+	}
+	###second stage
+	MAR_ogas_second_stage_effigy = {
+		icon = GFX_decision_research_generic
+		visible = {
+			has_country_flag = OGAS_second_stage
+		}
+		fire_only_once = yes
+		available = {
+			always = no
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_ogas_first_stage_effigy"
+		}
+	}
+	
+	MAR_ogas_second_talk_with_ibm = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			has_country_flag = OGAS_second_stage
+		}
+		cost = 25
+		days_remove = 90
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: MAR_ogas_second_talk_with_ibm"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_second_talk_with_ibm"
+			
+		}
+	}
+	
+	MAR_ogas_second_get_all_the_nerds_in_the_one_place = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			has_country_flag = OGAS_second_stage
+		}
+		cost = 25
+		days_remove = 90
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: MAR_ogas_second_get_all_the_nerds_in_the_one_place"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_second_get_all_the_nerds_in_the_one_place"
+		}
+	}
+	
+	MAR_ogas_second_math_analyze = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			has_country_flag = OGAS_second_stage
+		}
+		cost = 25
+		days_remove = 90
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: MAR_ogas_second_math_analyze"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_second_math_analyze"
+		}
+	}
+	
+	MAR_ogas_second_cybernetics_cult = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			has_country_flag = OGAS_second_stage
+		}
+		cost = 25
+		days_remove = 90
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: MAR_ogas_second_cybernetics_cult"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_second_cybernetics_cult"
+		}
+	}
+	
+	MAR_ogas_second_glushkovs_seminars = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			has_country_flag = OGAS_second_stage
+		}
+		cost = 25
+		days_remove = 90
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: MAR_ogas_second_glushkovs_seminars"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_second_glushkovs_seminars"
+		}
+	}
+	
+	###third
+	MAR_ogas_third_stage_effigy = {
+		icon = GFX_decision_research_generic
+		visible = {
+			has_country_flag = OGAS_third_stage
+		}
+		fire_only_once = yes
+		available = {
+			always = no
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_ogas_first_stage_effigy"
+		}
+	}
+	
+	MAR_ogas_third_cybergrad_kazan = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			has_country_flag = OGAS_third_stage	
+		}
+		cost = 25
+		days_remove = 90
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: MAR_ogas_third_cybergrad_kazan"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_third_cybergrad_kazan"
+		}
+	}
+	
+	MAR_ogas_third_tsars_financing = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			has_country_flag = OGAS_third_stage	
+		}
+		cost = 25
+		days_remove = 90
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: MAR_ogas_third_cybergrad_kazan"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_third_cybergrad_kazan"
+		}
+	}
+	
+	MAR_ogas_third_kibersin = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			has_country_flag = OGAS_third_stage	
+		}
+		cost = 25
+		days_remove = 90
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: MAR_ogas_third_kibersin"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_third_kibersin"
+		}
+	}
+	
+	MAR_ogas_third_expand_the_institutions = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			has_country_flag = OGAS_third_stage	
+		}
+		cost = 25
+		days_remove = 90
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: MAR_ogas_third_expand_the_institutions"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_third_expand_the_institutions"
+		}
+	}
+	
+	MAR_ogas_third_prepare_the_places = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			has_country_flag = OGAS_third_stage	
+		}
+		cost = 25
+		days_remove = 90
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: MAR_ogas_third_prepare_the_places"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_third_prepare_the_places"
+		}
+	}
+	
+	###fourth
+	MAR_ogas_fourth_stage_effigy = {
+		icon = GFX_decision_research_generic
+		visible = {
+			has_country_flag = OGAS_fourth_stage
+		}
+		fire_only_once = yes
+		available = {
+			always = no
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_ogas_first_stage_effigy"
+		}
+	}
+	
+	MAR_ogas_foutrh_stress_test_kazan = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			has_country_flag = OGAS_fourth_stage
+		}
+		cost = 25
+		days_remove = 90
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: MAR_ogas_foutrh_stress_test_kazan"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_foutrh_stress_test_kazan"
+		}
+	}
+	
+	MAR_ogas_foutrh_test_the_factory = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			has_country_flag = OGAS_fourth_stage
+		}
+		cost = 25
+		days_remove = 90
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: MAR_ogas_foutrh_test_the_factory"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_foutrh_test_the_factory"
+		}
+	}
+	
+	MAR_ogas_foutrh_develop_army_verison = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			has_country_flag = OGAS_fourth_stage
+		}
+		cost = 25
+		days_remove = 90
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: MAR_ogas_foutrh_develop_army_verison"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_foutrh_develop_army_verison"
+		}
+	}
+	
+	MAR_ogas_foutrh_test_it_in_sgvuz = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			has_country_flag = OGAS_fourth_stage
+		}
+		cost = 25
+		days_remove = 90
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: MAR_ogas_foutrh_stress_test_kazan"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_foutrh_stress_test_kazan"
+		}
+	}
+	
+	MAR_ogas_foutrh_do_the_debug = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			has_country_flag = OGAS_fourth_stage
+		}
+		cost = 25
+		days_remove = 90
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: MAR_ogas_foutrh_stress_test_kazan"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_foutrh_stress_test_kazan"
+		}
+	}
+	###fifth
+	MAR_ogas_fifth_stage_effigy = {
+		icon = GFX_decision_research_generic
+		visible = {
+			has_country_flag = OGAS_fifth_stage
+		}
+		fire_only_once = yes
+		available = {
+			always = no
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_ogas_first_stage_effigy"
+		}
+	}
+	
+	MAR_ogas_intergrate_into_civil_economics = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			has_country_flag = OGAS_fifth_stage
+		}
+		cost = 25
+		days_remove = 90
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: MAR_ogas_intergrate_into_civil_economics"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_intergrate_into_civil_economics"
+		}
+	}
+	
+	MAR_ogas_intergrate_into_millitary_economics = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			has_country_flag = OGAS_fifth_stage
+		}
+		cost = 25
+		days_remove = 90
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: MAR_ogas_intergrate_into_millitary_economics"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_intergrate_into_millitary_economics"
+		}
+	}
+	
+	MAR_ogas_intergrate_into_army = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			has_country_flag = OGAS_fifth_stage
+		}
+		cost = 25
+		days_remove = 90
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: MAR_ogas_intergrate_into_army"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_intergrate_into_army"
+		}
+	}
+	
+	MAR_ogas_fifth_integrate_into_education = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			has_country_flag = OGAS_fifth_stage
+		}
+		cost = 25
+		days_remove = 90
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: MAR_ogas_fifth_integrate_into_education"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_fifth_integrate_into_education"
+		}
+	}
+	
+	MAR_ogas_fifth_semiconductor_valley = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			has_country_flag = OGAS_fifth_stage
+		}
+		cost = 25
+		days_remove = 90
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: MAR_ogas_fifth_semiconductor_valley"
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_fifth_semiconductor_valley"
+		}
+	}
+	###rip sixth
+	MAR_ogas_tick = {
+    	available = {
+			NOT = {
+				MAR = { has_country_flag = MAR_ogas_dev_started }
+			}
+    	}
+	
+    	activation = {
+    		has_country_flag = MAR_ogas_dev_started
+    	}
+		
+    	is_good = yes
+	
+    	days_mission_timeout = 30
+	
+		timeout_effect = { 
+    		log = "[GetDateText]: [Root.GetName]: MAR_ogas_tick mission timer elapsed" 
+			MAR_OGAS_increase_progress = yes
+			MAR_OGAS_increase_stats = yes
+			MAR_OGAS_do_the_check = yes
+			hidden_effect = {
+    			if = {
+    				limit = {
+    					has_country_flag = MAR_ogas_dev_started
+    				}
+    				activate_mission = MAR_ogas_tick
+    			}
+    		}
+    	}
+	
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Mission MAR_ogas_tick Completed (Should never happen for this mission, please report if you see this in the log.)"
+    	}
+  	}
+	
 }
 MAR_dolina_primirenya_category = {
 	MAR_build_the_dolina = {

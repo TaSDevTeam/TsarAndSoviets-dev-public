@@ -2353,7 +2353,7 @@
  MAR_fate_of_turkestan_autonomy:0 "Установить Туркестанскую Автономию"
  
  #forgor#
- MAR_KUR_russian_frontier:0 "Русский Фронтир"
+ MAR_KUR_russian_frontier:0 "Русский Фронтир"   
  MAR_KUR_fuck_bandits:0 "Борьба с бандитами"
  MAR_KUR_pearl_of_middleeast:0 "Жемчужина Ближнего востока"
  MAR_KUR_resolved_iraqikurd_problem:0 "Решенная Ирако-курдская проблема"
@@ -2362,3 +2362,77 @@
 
  MAR_dobrovoltsy_modifier:0 "Опыт добровольцев"
  MAR_Moscowien_trolling:0 "Прорванный тыл"
+ 
+ #oooo gas
+ MAR_ogas_deccat:0 "ОГАС"
+ MAR_ogas_deccat_desc:0 "§RПовестка №13912367§! \n\nНа основании закона РФ §G"О воинской обязанности и военной службе"§! §Yвы§! обязаны 3 октября 2022 г. к 9:00 часам явится в объединённый §Rвоенный коммисариат§!"
+ ###gui
+ MAR_OGAS_progress_title_txt:0 "ПРОГРЕСС ОГАС"
+ 
+ MAR_OGAS_designstage_upper_txt:0 "ЭТАП 1: \nПРОЕКТИРОВАНИЕ"
+ MAR_OGAS_designstage_progress_txt:0 "§Y[?MAR_OGAS_ONE]%§!" 
+ 
+ MAR_OGAS_prepstage_upper_txt:0 "ЭТАП 2: \nПОДГОТОВКА"
+ MAR_OGAS_prepstage_progress_txt:0 "§Y[?MAR_OGAS_TWO]%§!"
+ 
+ MAR_OGAS_devstage_upper_txt:0 "ЭТАП 3: \nРАЗРАБОТКА"
+ MAR_OGAS_devstage_progress_txt:0 "§Y[?MAR_OGAS_THREE]%§!"
+ 
+ MAR_OGAS_teststage_upper_txt:0 "ЭТАП 4: \nТЕСТИРОВАНИЕ"
+ MAR_OGAS_teststage_progress_txt:0 "§Y[?MAR_OGAS_FOUR]%§!"
+ 
+ MAR_OGAS_intstage_upper_txt:0 "ЭТАП 5: \nВНЕДРЕНИЕ"
+ MAR_OGAS_intstage_progress_txt:0 "§Y[?MAR_OGAS_FIVE]%§!"
+
+ MAR_OGAS_char_title_txt:0 "ТЕКУЩИЕ ХАРАКТЕРИСТИКИ"
+ 
+ MAR_OGAS_safetychar_upper_txt:0 "БЕЗОПАСНОСТЬ"
+ MAR_OGAS_safetychar_progress_txt:0 "§Y[?MAR_OGAS_CHAR_ONE]/100§!"
+ 
+ MAR_OGAS_effchar_upper_txt:0 "ЭФФЕКТИВНОСТЬ"
+ MAR_OGAS_effchar_progress_txt:0 "§Y[?MAR_OGAS_CHAR_TWO]/100§!"
+ 
+ MAR_OGAS_compchar_upper_txt:0 "СЛОЖНОСТЬ"
+ MAR_OGAS_compchar_progress_txt:0 "§Y[?MAR_OGAS_CHAR_THREE]/100§!"
+ 
+ ###dec
+ MAR_ogas_first_stage_effigy:0 "§YЭТАП 1:§! §GПРОЕКТИРОВАНИЕ§!"
+ MAR_ogas_first_spying_for_superpowers:0 ""Подсмотреть" у сверхдержав"
+ MAR_ogas_first_spying_for_superpowers_desc:0 "описание будет, я обещаю"
+ MAR_ogas_first_trip_to_guandong:0 "Поездка в Гуандун"
+ MAR_ogas_first_trip_to_guandong_desc:0 "описание будет, я обещаю"
+ MAR_ogas_first_imperial_academy:0 "Сформироовать Имперскую Академию Кибернетики"
+ MAR_ogas_first_imperial_academy_desc:0 "описание будет, я обещаю"
+ MAR_ogas_first_our_previous_ideas:0 "Наши прошлые идеи"
+ MAR_ogas_first_our_previous_ideas_desc:0 "описание будет, я обещаю"
+ MAR_ogas_first_sort_the_designs:0 "Конкретизировать наши доработки"
+ MAR_ogas_first_sort_the_designs_desc:0 "описание будет, я обещаю"
+  
+ MAR_ogas_second_stage_effigy:0 "§YЭТАП 2:§! §GПОДГОТОВКА§!"
+ MAR_ogas_third_stage_effigy:0 "§YЭТАП 3:§! §GРАЗРАБОТКА§!"
+ MAR_ogas_fourth_stage_effigy:0 "§YЭТАП 4:§! §GТЕСТИРОВАНИЕ§!"
+ MAR_ogas_fifth_stage_effigy:0 "§YЭТАП 5:§! §GВНЕДРЕНЕИЕ§!"
+
+ ###tooltips
+ OGAS_progress_increase_random_small_tt:0 "§GЭто увеличит прогресс в этапе на случайное небольшое количество§!"
+ OGAS_progress_increase_random_med_tt:0 "§GЭто увеличит прогресс в этапе на случайное количество§!"
+ OGAS_progress_increase_random_big_tt:0 "§GЭто увеличит прогресс в этапе на случайное большое количество§!"
+ 
+ MAR_OGAS_increase_progress_tt:0 "§GПрогресс§! в §Yтекущем этапе§! будет увеличен на §Y[?MAR_ogas_gain]§! \n\n"
+ MAR_OGAS_increase_stats_tt:0 "Характеристики будут увеличены на: \n\n§BБезопасность:§! §Y[?MAR_ogas_chone_gain]§! \n\n§BЭффективность:§! §Y[?MAR_ogas_chtwo_gain]§! \n\n§BСложность:§! §Y[?MAR_ogas_chthree_gain]§! \n\n"
+ MAR_OGAS_do_the_check_tt:0 "Если прогресс в текущем этапе достигнет 100%, то произойдет переход на §Gследующий этап§!"
+ 
+ MAR_ogas_first_stage_spies_tt:0 "Мы проведём несколько шпионских операций в сверхдержавах, надеемся это даст хоть какой-то эффект"
+ MAR_OGAS_beeg_growth_spy_tt:0 "Это даст нам огромный скачок в прогрессе"
+ MAR_OGAS_mid_spy_tt:0 "Это даст нам небольшой скачок в эффективности"
+ 
+ MAR_OGAS_eff_growth_tt: "Это §Gувеличит§! §mэффективнсть ОГАСа§! на §G[?temp_char_gained_two_txt]%§!.\n"
+ MAR_OGAS_eff_decrease_tt: "Это §Rуменьшит§! §mэффективнсть ОГАСа§! на §G[?temp_char_gained_two_txt]%§!.\n"
+ 
+ MAR_OGAS_saf_growth_tt:0 "Это §Gувеличит§! §mбезопасность ОГАСа§! на §G[?temp_char_gained_one_txt]%§!.\n"
+ MAR_OGAS_saf_decrease_tt:0 "Это §Rуменьшит§! §mэбезопасность ОГАСа§! на §G[?temp_char_gained_one_txt]%§!.\n" 
+ 
+ MAR_OGAS_comp_growth_tt:0 "Это §Rувеличит§! §mсложность ОГАСа§! на §G[?temp_char_gained_three_txt]%§!.\n"
+ MAR_OGAS_comp_decrease_tt:0 "Это §Gуменьшит§! §mсложность ОГАСа§! на §G[?temp_char_gained_three_txt]%§!.\n"
+ 
+ #MAR_OGAS_eff_growth_legacy_tt: "Это §Gувеличит§! §mэффективнсть ОГАСа§! на §G[?temp_char_gained]%§!, становясь §Y[?charone_temp]§!.\n"

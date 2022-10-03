@@ -21,4 +21,14 @@ MAR_dolina_primirenya_category = {
 	priority = {
 		base = 20
 	}
+} 
+
+MAR_ogas_deccat = {
+	icon = GFX_decision_category_ogas_icon
+	picture = GFX_decision_category_ogas_pic
+	scripted_gui = MAR_OGAS_GUI
+	allowed = { tag = MAR }
+	visible = { has_country_flag = MAR_ogas_dev_started }
+	visible_when_empty = yes
+	priority = { base = 20 }
 }

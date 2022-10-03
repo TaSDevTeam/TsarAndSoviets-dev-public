@@ -1,0 +1,344 @@
+MAR_OGAS_progress_growth_small = { 
+	set_temp_variable = { OGASAdditionProgressVar = 1 }
+	randomize_temp_variable = {
+		var = OGASAdditionProgressVar
+		distribution = uniform
+		min = 1
+		max = 3
+	}
+	round_temp_variable = OGASAdditionProgressVar
+	if = {
+		limit = { has_country_flag = OGAS_first_stage }
+		add_to_variable = { MAR_OGAS_ONE = OGASAdditionProgressVar }  
+		clamp_variable = {
+			var = MAR_OGAS_ONE
+			min = 0
+			max = 100
+		}
+	}
+	if = {
+		limit = { has_country_flag = OGAS_second_stage }
+		add_to_variable = { MAR_OGAS_TWO = OGASAdditionProgressVar }
+		clamp_variable = {
+			var = MAR_OGAS_TWO
+			min = 0
+			max = 100
+		}
+	}
+	if = {
+		limit = { has_country_flag = OGAS_third_stage }
+		add_to_variable = { MAR_OGAS_THREE = OGASAdditionProgressVar }
+		clamp_variable = {
+			var = MAR_OGAS_THREE
+			min = 0
+			max = 100
+		}
+	}
+	if = {
+		limit = { has_country_flag = OGAS_fourth_stage }
+		add_to_variable = { MAR_OGAS_FOUR = OGASAdditionProgressVar }
+		clamp_variable = {
+			var = MAR_OGAS_FOUR
+			min = 0
+			max = 100
+		}
+	}
+	if = {
+		limit = { has_country_flag = OGAS_fifth_stage }
+		add_to_variable = { MAR_OGAS_FIVE = OGASAdditionProgressVar }
+		clamp_variable = {
+			var = MAR_OGAS_FIVE
+			min = 0
+			max = 100
+		}
+	}
+	custom_effect_tooltip = OGAS_progress_increase_random_small_tt
+}
+
+MAR_OGAS_progress_growth_med = { 
+	set_temp_variable = { OGASAdditionProgressVar = 1 }
+	randomize_temp_variable = {
+		var = OGASAdditionProgressVar
+		distribution = uniform
+		min = 3
+		max = 5
+	}
+	round_temp_variable = OGASAdditionProgressVar
+	if = {
+		limit = { has_country_flag = OGAS_first_stage }
+		add_to_variable = { MAR_OGAS_ONE = OGASAdditionProgressVar }
+		clamp_variable = {
+			var = MAR_OGAS_ONE
+			min = 0
+			max = 100
+		}
+	}
+	if = {
+		limit = { has_country_flag = OGAS_second_stage }
+		add_to_variable = { MAR_OGAS_TWO = OGASAdditionProgressVar }
+		clamp_variable = {
+			var = MAR_OGAS_TWO
+			min = 0
+			max = 100
+		}
+	}
+	if = {
+		limit = { has_country_flag = OGAS_third_stage }
+		add_to_variable = { MAR_OGAS_THREE = OGASAdditionProgressVar }
+		clamp_variable = {
+			var = MAR_OGAS_THREE
+			min = 0
+			max = 100
+		}
+	}
+	if = {
+		limit = { has_country_flag = OGAS_fourth_stage }
+		add_to_variable = { MAR_OGAS_FOUR = OGASAdditionProgressVar }
+		clamp_variable = {
+			var = MAR_OGAS_FOUR
+			min = 0
+			max = 100
+		}
+	}
+	if = {
+		limit = { has_country_flag = OGAS_fifth_stage }
+		add_to_variable = { MAR_OGAS_FIVE = OGASAdditionProgressVar }
+		clamp_variable = {
+			var = MAR_OGAS_FIVE
+			min = 0
+			max = 100
+		}
+	}
+	custom_effect_tooltip = OGAS_progress_increase_random_med_tt
+}
+
+MAR_OGAS_progress_growth_big = { 
+	set_temp_variable = { OGASAdditionProgressVar = 1 }
+	randomize_temp_variable = {
+		var = OGASAdditionProgressVar
+		distribution = uniform
+		min = 5
+		max = 7	
+	}
+	round_temp_variable = OGASAdditionProgressVar
+	if = {
+		limit = { has_country_flag = OGAS_first_stage }
+		add_to_variable = { MAR_OGAS_ONE = OGASAdditionProgressVar }
+		clamp_variable = {
+			var = MAR_OGAS_ONE
+			min = 0
+			max = 100
+		}
+	}
+	if = {
+		limit = { has_country_flag = OGAS_second_stage }
+		add_to_variable = { MAR_OGAS_TWO = OGASAdditionProgressVar }
+		clamp_variable = {
+			var = MAR_OGAS_TWO
+			min = 0
+			max = 100
+		}
+	}
+	if = {
+		limit = { has_country_flag = OGAS_third_stage }
+		add_to_variable = { MAR_OGAS_THREE = OGASAdditionProgressVar }
+		clamp_variable = {
+			var = MAR_OGAS_THREE
+			min = 0
+			max = 100
+		}
+	}
+	if = {
+		limit = { has_country_flag = OGAS_fourth_stage }
+		add_to_variable = { MAR_OGAS_FOUR = OGASAdditionProgressVar }
+		clamp_variable = {
+			var = MAR_OGAS_FOUR
+			min = 0
+			max = 100
+		}
+	}
+	if = {
+		limit = { has_country_flag = OGAS_fifth_stage }
+		add_to_variable = { MAR_OGAS_FIVE = OGASAdditionProgressVar }
+		clamp_variable = {
+			var = MAR_OGAS_FIVE
+			min = 0
+			max = 100
+		}
+	}
+	custom_effect_tooltip = OGAS_progress_increase_random_big_tt
+}
+
+MAR_OGAS_increase_progress = {
+	custom_effect_tooltip = MAR_OGAS_increase_progress_tt
+	if = {
+		limit = { has_country_flag = OGAS_first_stage }
+		add_to_variable = {
+			MAR_OGAS_ONE = MAR_ogas_gain
+		}
+		clamp_variable = {
+			var = MAR_OGAS_ONE
+			min = 0
+			max = 100
+		}
+	}
+	if = {
+		limit = { has_country_flag = OGAS_second_stage }
+		add_to_variable = {
+			MAR_OGAS_TWO = MAR_ogas_gain
+		}
+		clamp_variable = {
+			var = MAR_OGAS_TWO
+			min = 0
+			max = 100
+		}
+	}
+	if = {
+		limit = { has_country_flag = OGAS_third_stage }
+		add_to_variable = {
+			MAR_OGAS_THREE = MAR_ogas_gain
+		}
+		clamp_variable = {
+			var = MAR_OGAS_THREE
+			min = 0
+			max = 100
+		}
+	}
+	if = {
+		limit = { has_country_flag = OGAS_fourth_stage }
+		add_to_variable = {
+			MAR_OGAS_FOUR = MAR_ogas_gain
+		}
+		clamp_variable = {
+			var = MAR_OGAS_FOUR
+			min = 0
+			max = 100
+		}
+	}
+	if = {
+		limit = { has_country_flag = OGAS_fifth_stage }
+		add_to_variable = {
+			MAR_OGAS_FIVE = MAR_ogas_gain
+		}
+		clamp_variable = {
+			var = MAR_OGAS_FIVE
+			min = 0
+			max = 100
+		}
+	}
+}
+MAR_OGAS_increase_stats = {
+	custom_effect_tooltip = MAR_OGAS_increase_stats_tt
+	add_to_variable = {
+		MAR_OGAS_CHAR_ONE = MAR_ogas_chone_gain
+	}
+	add_to_variable = {
+		MAR_OGAS_CHAR_TWO = MAR_ogas_chtwo_gain
+	}
+	add_to_variable = {
+		MAR_OGAS_CHAR_THREE = MAR_ogas_chthree_gain
+	}
+	clamp_variable = {
+		var = MAR_OGAS_CHAR_ONE 
+		min = 0
+		max = 100
+	}
+	clamp_variable = {
+		var = MAR_OGAS_CHAR_TWO
+		min = 0
+		max = 100
+	}
+	clamp_variable = {
+		var = MAR_OGAS_CHAR_THREE
+		min = 0
+		max = 100
+	}
+}
+MAR_OGAS_do_the_check = {
+	custom_effect_tooltip = MAR_OGAS_do_the_check_tt
+	if = {
+		limit = { check_variable = { MAR_OGAS_ONE = 100 } }
+		clr_country_flag = OGAS_first_stage
+		set_country_flag = OGAS_second_stage
+	}
+	if = {
+		limit = { check_variable = { MAR_OGAS_TWO = 100 } }
+		clr_country_flag = OGAS_second_stage
+		set_country_flag = OGAS_third_stage
+	}
+	if = {
+		limit = { check_variable = { MAR_OGAS_THREE = 100 } }
+		clr_country_flag = OGAS_third_stage
+		set_country_flag = OGAS_fourth_stage
+	}
+	if = {
+		limit = { check_variable = { MAR_OGAS_FOUR = 100 } }
+		clr_country_flag = OGAS_fourth_stage
+		set_country_flag = OGAS_fifth_stage
+	}
+	if = {
+		limit = { check_variable = { MAR_OGAS_FIVE = 100 } }
+		clr_country_flag = MAR_ogas_dev_started
+	}
+}
+
+ogas_characteristics_change_safety = { # temp_char_gained_one parameter
+	set_temp_variable = { temp_char_gained_one_txt = temp_char_gained_one }
+	#add_to_variable = { charone_temp = MAR_OGAS_CHAR_ONE }
+	#set_temp_variable = { charone_temp = temp_gdp_gained_mr }
+	add_to_variable = { MAR_OGAS_CHAR_ONE = temp_char_gained_one }
+	
+	clamp_variable = {
+		var = MAR_OGAS_CHAR_ONE 
+		min = 0
+		max = 100
+	}
+	if = {
+		limit = { check_variable = { temp_char_gained_one < 0 } }
+		multiply_temp_variable = { temp_char_gained_one_txt = -1 }
+		custom_effect_tooltip = MAR_OGAS_saf_decrease_tt
+	}
+	else = {
+		custom_effect_tooltip = MAR_OGAS_saf_growth_tt
+	}
+}
+
+ogas_characteristics_change_efficency = { # temp_char_gained_two parameter
+	set_temp_variable = { temp_char_gained_two_txt = temp_char_gained_two }
+	add_to_variable = { MAR_OGAS_CHAR_TWO = temp_char_gained_two }
+	
+	clamp_variable = {
+		var = MAR_OGAS_CHAR_TWO
+		min = 0
+		max = 100
+	}
+	if = {
+		limit = { check_variable = { temp_char_gained_two < 0 } }
+		multiply_temp_variable = { temp_char_gained_two_txt = -1 }
+		custom_effect_tooltip = MAR_OGAS_eff_decrease_tt
+	}
+	else = {
+		custom_effect_tooltip = MAR_OGAS_eff_growth_tt
+	}
+}
+
+ogas_characteristics_change_complexity = { # temp_char_gained_three parameter
+	set_temp_variable = { temp_char_gained_three_txt = temp_char_gained_three }
+	add_to_variable = { MAR_OGAS_CHAR_THREE = temp_char_gained_three }
+	
+	clamp_variable = {
+		var = MAR_OGAS_CHAR_THREE
+		min = 0
+		max = 100
+	}
+	if = {
+		limit = { check_variable = { temp_char_gained_three < 0 } }
+		multiply_temp_variable = { temp_char_gained_three_txt = -1 }
+		custom_effect_tooltip = MAR_OGAS_comp_decrease_tt
+	}
+	else = {
+		custom_effect_tooltip = MAR_OGAS_comp_growth_tt
+	}
+}
+
+
