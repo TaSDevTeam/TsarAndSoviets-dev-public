@@ -166,6 +166,20 @@ MAR_debug_category = {
 			add_to_variable = { MAR_OGAS_CHAR_THREE = 5 } 
 		}
 	}
+	MAR_ogas_peak_hoi4_moding = {
+		icon = GFX_decision_generic_decision
+		
+		allowed = {
+			original_tag = MAR
+		}
+		
+		fire_only_once = no
+	
+		complete_effect = { 
+			ogas_turn_chars_into_mod_now = yes
+		}
+	}
+	
 	#MAR_ogas_clear_locks = {
 	#	icon = GFX_decision_generic_decision
 	#

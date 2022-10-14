@@ -13,6 +13,7 @@ MAR_experiments_modifier = {
 	air_superiority_efficiency = MAR_exp_destroyer_flight
 	supply_consumption_factor = MAR_exp_consumption
 }
+
 MAR_dobrovoltsy_modifier = {
 	icon = GFX_dynamic_modifier_MAR_Dobrovoltsy
 	enable = {
@@ -25,6 +26,7 @@ MAR_dobrovoltsy_modifier = {
 	org_loss_when_moving = MAR_dobr_vertibird_attack
 	supply_consumption_factor = MAR_dobr_consumption
 }
+
 MAR_military_order_modifier = {
 	icon = GFX_dynamic_modifier_MAR_Order_of_Saint_George
 	enable = {
@@ -42,4 +44,29 @@ MAR_military_order_modifier = {
 	production_speed_buildings_factor = MAR_ord_production_speed_buildings_factor
 	taxable_population_modifier = MAR_ord_taxable_population_modifier
 	recruitable_population_factor = MAR_ord_recruitable_population_factor
+}	
+
+MAR_ogas_modifier = {
+	icon = GFX_dynamic_modifier_MAR_Order_of_Saint_George
+	enable = {
+		tag = MAR
+	}
+	
+	#safety
+	research_speed_factor =  MAR_OGAS_rs
+	political_power_factor = MAR_OGAS_pp
+	personnel_cost_modifier = MAR_OGAS_pc
+	#efficency
+	gdp_growth_modifier = MAR_OGAS_gdp
+	inflation_rate_modifier = MAR_OGAS_inf
+	industrial_capacity_factory = MAR_OGAS_ic
+	social_program_cost_factor = MAR_OGAS_soc
+	admin_program_cost_factor = MAR_OGAS_ap
+	production_factory_max_efficiency_factor = MAR_OGAS_mxe
+	poverty_monthly_rate = MAR_OGAS_pm
+	production_units_to_GDP_ratio_modifier = MAR_OGAS_pu
+	production_speed_buildings_factor = MAR_OGAS_const
+	#complexity
+	stability_factor = MAR_OGAS_stab
+	misc_costs_percent_of_GDP_modifier = MAR_OGAS_costs
 }	

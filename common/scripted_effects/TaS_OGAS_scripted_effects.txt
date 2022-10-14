@@ -341,4 +341,62 @@ ogas_characteristics_change_complexity = { # temp_char_gained_three parameter
 	}
 }
 
+ogas_turn_chars_into_mod_now = { 
+	add_dynamic_modifier = { modifier = MAR_ogas_modifier } 
+	
+	set_temp_variable = { MAR_CHAR_ONE_TEMP = MAR_OGAS_CHAR_ONE }
+	divide_temp_variable = { MAR_CHAR_ONE_TEMP = 10 }
+	round_temp_variable = MAR_CHAR_ONE_TEMP
+	
+	set_variable = { MAR_OGAS_rs = 0.03 }
+	multiply_variable = { MAR_OGAS_rs = MAR_CHAR_ONE_TEMP }
+	
+	set_variable = { MAR_OGAS_pp = 0.02 }
+	multiply_variable = { MAR_OGAS_pp = MAR_CHAR_ONE_TEMP }
+	
+	set_variable = { MAR_OGAS_pc = -0.02 }
+	multiply_variable = { MAR_OGAS_pc = MAR_CHAR_ONE_TEMP }
+	
+	set_temp_variable = { MAR_CHAR_TWO_TEMP = MAR_OGAS_CHAR_TWO }
+	divide_temp_variable = { MAR_CHAR_TWO_TEMP = 10 }
+	round_temp_variable = MAR_CHAR_TWO_TEMP
+	
+	set_variable = { MAR_OGAS_gdp = 0.01 }
+	multiply_variable = { MAR_OGAS_gdp = MAR_CHAR_TWO_TEMP }
+	
+	set_variable = { MAR_OGAS_inf = -0.4 }
+	multiply_variable = { MAR_OGAS_inf = MAR_CHAR_TWO_TEMP }
+	
+	set_variable = { MAR_OGAS_ic = 0.4 }
+	multiply_variable = { MAR_OGAS_ic = MAR_CHAR_TWO_TEMP }
+	
+	set_variable = { MAR_OGAS_soc = -0.03 }
+	multiply_variable = { MAR_OGAS_soc = MAR_CHAR_TWO_TEMP }
+	
+	set_variable = { MAR_OGAS_ap = -0.03 }
+	multiply_variable = { MAR_OGAS_ap = MAR_CHAR_TWO_TEMP }
+	
+	set_variable = { MAR_OGAS_mxe = 0.04 }
+	multiply_variable = { MAR_OGAS_mxe = MAR_CHAR_TWO_TEMP }
+	
+	set_variable = { MAR_OGAS_pm = 0.01 }
+	multiply_variable = { MAR_OGAS_pm = MAR_CHAR_TWO_TEMP }
+
+	set_variable = { MAR_OGAS_pu = 0.02 }
+	multiply_variable = { MAR_OGAS_pu = MAR_CHAR_TWO_TEMP }
+	
+	set_variable = { MAR_OGAS_const = 0.05 }
+	multiply_variable = { MAR_OGAS_const = MAR_CHAR_TWO_TEMP }
+	
+	set_temp_variable = { MAR_CHAR_THREE_TEMP = MAR_OGAS_CHAR_THREE }
+	divide_temp_variable = { MAR_CHAR_THREE_TEMP = 10 }
+	round_temp_variable = MAR_CHAR_THREE_TEMP
+	
+	set_variable = { MAR_OGAS_stab = -0.02 }
+	multiply_variable = { MAR_OGAS_stab = MAR_CHAR_THREE_TEMP }
+	
+	set_variable = { MAR_OGAS_costs = 0.015 }
+	multiply_variable = { MAR_OGAS_costs = MAR_CHAR_THREE_TEMP }
+	
+}
 
