@@ -1,0 +1,761 @@
+shared_focus = {
+	id = MAR_return_to_antipin
+	icon = GFX_MAR_For_your_faith
+	cost = 1
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	
+	x = 9
+	y = 0
+	completion_reward = {
+		MAR = {
+			annex_country = {
+				target = GAY
+				transfer_troops = yes
+			}
+		}
+		country_event = {
+				id = berez_voina.3
+				days = 1
+			}
+	}
+}
+
+shared_focus = {
+	id = MAR_ordens_corps
+	icon = GFX_MAR_Those_who_took_the_sword
+	cost = 1
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_return_to_antipin
+    }
+	x = 8
+	y = 1
+	completion_reward = {
+		country_event = {
+				id = berez_voina.4
+				days = 1
+			}
+		hidden_effect = {
+			MAR = {
+				division_template = {
+					name = "Svyatye Voyny"
+					priority = 2
+					regiments = {
+						light_infantry = { x = 0 y = 0 }
+						light_infantry = { x = 0 y = 1 }
+						light_infantry = { x = 0 y = 2 }
+						light_infantry = { x = 1 y = 0 }
+						light_infantry = { x = 1 y = 1 }
+					}
+					support = {
+						recon = { x = 0 y = 0 }
+					}
+				}
+			}
+		}
+		MAR = {
+			random_owned_controlled_state = {
+				create_unit = {
+					division = "division_template = \"Svyatye Voyny\" start_experience_factor = 0.3 start_equipment_factor = 0.8"
+					owner = MAR
+				}
+				create_unit = {
+					division = "division_template = \"Svyatye Voyny\" start_experience_factor = 0.3 start_equipment_factor = 0.8"
+					owner = MAR
+				}
+				create_unit = {
+					division = "division_template = \"Svyatye Voyny\" start_experience_factor = 0.3 start_equipment_factor = 0.8"
+					owner = MAR
+				}
+			}
+			add_manpower = 3000
+		}
+	}
+}
+
+shared_focus = {
+	id = MAR_expand_cooperation
+	icon = GFX_MAR_old_Friends
+	cost = 1
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_return_to_antipin
+    }
+	x = 10
+	y = 1
+	completion_reward = {
+		set_temp_variable = { Y = 0.15 }
+		RUS_Smuta_Supplies_Add_Y = yes
+		set_temp_variable = { Y = -5 }
+		RUS_Smuta_Chaos_Mission_Cost_Add_Y = yes
+	}
+}
+
+shared_focus = {
+	id = MAR_mladorossi_manifesto
+	icon = GFX_MAR_new_revolution
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_ordens_corps
+    }
+    prerequisite = {
+        focus = MAR_expand_cooperation
+    }
+	x = 9
+	y = 2
+	completion_reward = {
+		set_temp_variable = { Y = -30 }
+		RUS_Smuta_Chaos_Add_Y = yes
+		random_list = {
+			50 = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 1000
+				}
+				add_equipment_to_stockpile = { 
+					type = artillery_equipment
+					amount = 100
+				}
+			}
+			50 = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 500
+				}
+				add_equipment_to_stockpile = { 
+					type = artillery_equipment
+					amount = 300
+				}
+			}
+		}
+	}
+}
+
+shared_focus = {
+	id = MAR_struggle_for_the_russian_spirit
+	icon = GFX_MAR_Tank_miracle
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_mladorossi_manifesto
+    }
+
+	x = 7
+	y = 3
+	completion_reward = {
+		set_temp_variable = { Y = -15 }
+		RUS_Smuta_Chaos_Add_Y = yes
+	}
+}
+
+shared_focus = {
+	id = MAR_fire_that_will_forge_nation
+	icon = GFX_MAR_Light_of_salvation
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+    mutually_exclusive = {
+        focus = MAR_evolution_before_revolution
+    }
+	prerequisite = {
+        focus = MAR_struggle_for_the_russian_spirit
+    }
+
+	x = 6
+	y = 4
+	completion_reward = {
+		set_temp_variable = { Y = 25 }
+		RUS_Smuta_Chaos_Add_Y = yes
+		set_temp_variable = { Y = 0.8 }
+		RUS_Smuta_Smuta_CoringCost_MultiplyBy_Y = yes
+	}
+}
+
+shared_focus = {
+	id = MAR_evolution_before_revolution
+	icon = GFX_MAR_save_the_south
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+    mutually_exclusive = {
+        focus = MAR_fire_that_will_forge_nation
+    }
+	prerequisite = {
+        focus = MAR_struggle_for_the_russian_spirit
+    }
+
+	x = 8
+	y = 4
+	completion_reward = {
+		set_temp_variable = { Y = -25 }
+		RUS_Smuta_Chaos_Add_Y = yes
+		set_temp_variable = { Y = 1.25 }
+		RUS_Smuta_Smuta_CoringCost_MultiplyBy_Y = yes
+	}
+}
+
+shared_focus = {
+	id = MAR_idea_of_tsar_and_soviets
+	icon = GFX_MAR_letter_of_will
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+    prerequisite = {
+        focus = MAR_evolution_before_revolution
+        focus = MAR_fire_that_will_forge_nation
+    }
+	x = 7
+	y = 5
+	completion_reward = {
+		add_stability = 0.05
+		add_political_power = 50
+	}
+}
+
+shared_focus = {
+	id = MAR_enemies_by_situation
+	icon = GFX_MAR_northern
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_mladorossi_manifesto
+    }
+
+	x = 11
+	y = 3
+	completion_reward = {
+		WRS = {
+			add_ideas = {
+				MAR_WRS_mladorossi_propoganda
+			}
+		}
+		country_event = {
+				id = berez_voina.38
+				days = 1
+			}
+	}
+}
+
+shared_focus = {
+	id = MAR_virtue_of_mercy
+	icon = GFX_MAR_Voina_18
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_enemies_by_situation
+    }
+    mutually_exclusive = {
+        focus = MAR_obstacle_is_obstacle
+    }
+	x = 10
+	y = 4
+	completion_reward = {
+		set_temp_variable = { Y = 30 }
+		RUS_Smuta_Chaos_Add_Y = yes
+		add_popularity = {
+				ideology = despotism
+				popularity = -0.05
+			}
+		add_manpower = 7500
+		set_temp_variable = { Y = 0.3 }
+		RUS_Smuta_Supplies_Add_Y = yes
+		country_event = {
+				id = berez_voina.39
+				days = 1
+			}
+	}
+}
+
+shared_focus = {
+	id = MAR_obstacle_is_obstacle
+	icon = GFX_MAR_Border_1
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_enemies_by_situation
+    }
+    mutually_exclusive = {
+        focus = MAR_virtue_of_mercy
+    }
+	x = 12
+	y = 4
+	completion_reward = {
+		set_temp_variable = { Y = -30 }
+		RUS_Smuta_Chaos_Add_Y = yes
+		set_temp_variable = { Y = -5 }
+		RUS_Smuta_Chaos_Mission_Cost_Add_Y = yes
+		TNO_improve_security_policy_effectiveness_high = yes
+	}
+}
+
+shared_focus = {
+	id = MAR_our_cause_is_right
+	icon = GFX_MAR_Judge_Traitors
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_virtue_of_mercy
+        focus = MAR_obstacle_is_obstacle
+    }
+	x = 11
+	y = 5
+	completion_reward = {
+		add_war_support = 0.1
+		TNO_improve_army_professionalism_med = yes
+	}
+}
+
+shared_focus = {
+	id = MAR_call_to_the_base
+	icon = GFX_MAR_Allign_burocrats
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_mladorossi_manifesto
+    }
+	x = 9
+	y = 3
+	completion_reward = {
+		army_experience = 50
+		TNO_improve_training_policy_effectiveness_med = yes
+		TNO_improve_army_professionalism_med = yes
+		set_temp_variable = { Y = 0.04 }
+		RUS_Smuta_SuppliesWeeklyGain_Add_Y = yes
+	}
+}
+
+shared_focus = {
+	id = MAR_prepare_to_zemsky_sobor
+	icon = GFX_MAR_new_managers
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		set_temp_variable = { Y = 175 }
+		RUS_Smuta_ScriptedTrigger_Chaos_LessThanY = yes
+	}
+	prerequisite = {
+        focus = MAR_call_to_the_base
+    }
+	x = 9
+	y = 5
+	completion_reward = {
+		add_political_power = 50
+		set_temp_variable = { Y = -5 }
+		RUS_Smuta_Chaos_Mission_Cost_Add_Y = yes
+	}
+}
+
+shared_focus = {
+	id = MAR_zemsky_candidates
+	icon = GFX_MAR_kandidati
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_idea_of_tsar_and_soviets
+    }
+    prerequisite = {
+        focus = MAR_prepare_to_zemsky_sobor
+    }
+    prerequisite = {
+        focus = MAR_our_cause_is_right
+    }
+	x = 8
+	y = 6
+	completion_reward = {
+		add_stability = 0.05
+		set_temp_variable = { Y = -10 }
+		RUS_Smuta_Chaos_Add_Y = yes
+	}
+}
+shared_focus = {
+	id = MAR_zemsky_voters
+	icon = GFX_MAR_izbirateli
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_idea_of_tsar_and_soviets
+    }
+    prerequisite = {
+        focus = MAR_prepare_to_zemsky_sobor
+    }
+    prerequisite = {
+        focus = MAR_our_cause_is_right
+    }
+	x = 10
+	y = 6
+	completion_reward = {
+		tno_vote_franchise_improve = yes
+		country_event = {
+			id = berez_zemsob.3
+			days = 1
+		}
+	}
+}
+
+shared_focus = {
+	id = MAR_every_man_is_a_tsar
+	icon = GFX_MAR_as_Tsar
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_zemsky_candidates
+    }
+    prerequisite = {
+        focus = MAR_zemsky_voters
+    }
+	x = 7
+	y = 7
+	completion_reward = {
+		hidden_effect = {
+			if = {
+				limit = { NOT = { check_variable = { MAR_tsar_path > 0 } } }
+				set_variable = { MAR_tsar_path = 1 }
+			}
+		}
+		set_temp_variable = { gdp_growth_temp = 0.2 }
+		econ_gdp_growth_change = yes
+		TNO_improve_poverty_med = yes
+		set_temp_variable = { Y = -10 }
+		RUS_Smuta_Chaos_Add_Y = yes
+		country_event = {
+			id = berez_zemsob.19
+			days = 1
+		}
+	}
+}
+
+shared_focus = {
+	id = MAR_technologies_of_future
+	icon = GFX_MAR_Technologies_of_the_future
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_every_man_is_a_tsar
+    }
+
+	x = 7
+	y = 8
+	completion_reward = {
+		TNO_improve_academic_base_med = yes
+		country_event = {
+			id = berez_zemsob.20
+			days = 1
+		}
+	}
+}
+
+shared_focus = {
+	id = MAR_people_for_peoples_tsar
+	icon = GFX_MAR_Char_ot_naroda
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_technologies_of_future
+    }
+
+	x = 7
+	y = 9
+	completion_reward = {
+		set_temp_variable = { Y = -10 }
+		RUS_Smuta_Chaos_Add_Y = yes
+		add_stability = 0.05
+		country_event = {
+			id = berez_zemsob.17
+			days = 1
+		}
+	}
+}
+
+shared_focus = {
+	id = MAR_meeting_with_bourgeoisie
+	icon = GFX_MAR_vstrecha_s_daunami
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_zemsky_candidates
+    }
+    prerequisite = {
+        focus = MAR_zemsky_voters
+    }
+	x = 9
+	y = 7
+	completion_reward = {
+		hidden_effect = {
+			if = {
+				limit = { NOT = { check_variable = { MAR_tsar_path > 0 } } }
+				set_variable = { MAR_tsar_path = 2 }
+			}
+		}
+		set_temp_variable = { gdp_growth_temp = 0.2 }
+		econ_gdp_growth_change = yes
+		set_temp_variable = { pus_temp = 1 }
+		econ_pus_change = yes
+		set_temp_variable = { Y = 0.02 }
+		RUS_Smuta_SuppliesWeeklyGain_Add_Y = yes
+		country_event = {
+			id = berez_zemsob.11
+			days = 1
+		}
+	}
+}
+
+shared_focus = {
+	id = MAR_donations_to_poor
+	icon = GFX_MAR_help_bednim
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_meeting_with_bourgeoisie
+    }
+
+	x = 9
+	y = 8
+	completion_reward = {
+		add_political_power = 50
+		TNO_improve_poverty_low = yes
+		country_event = {
+			id = berez_zemsob.10
+			days = 1
+		}
+	}
+}
+
+shared_focus = {
+	id = MAR_party_for_tsarina_and_regent
+	icon = GFX_MAR_Char_and_Regent
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_donations_to_poor
+    }
+
+	x = 9
+	y = 9
+	completion_reward = {
+		add_stability = 0.05
+		add_popularity = {
+			ideology = paternalism
+			amount = 0.15
+		}
+		TNO_improve_admin_efficiency_med = yes
+		country_event = {
+			id = berez_zemsob.12
+			days = 1
+		}
+	}
+}
+
+shared_focus = {
+	id = MAR_ancestors_blessing
+	icon = GFX_MAR_Our_Ancestors
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_zemsky_candidates
+    }
+    prerequisite = {
+        focus = MAR_zemsky_voters
+    }
+	x = 11
+	y = 7
+	completion_reward = {
+		if = {
+			limit = { NOT = { check_variable = { MAR_tsar_path > 0 } } }
+			set_variable = { MAR_tsar_path = 3 }
+		}
+		add_stability = 0.1
+		set_temp_variable = { Y = -10 }
+		RUS_Smuta_Chaos_Add_Y = yes		
+		country_event = {
+			id = berez_zemsob.14
+			days = 1
+		}
+	}
+}
+
+shared_focus = {
+	id = MAR_connection_with_the_past
+	icon = GFX_MAR_Past_Connections
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_ancestors_blessing
+    }
+	x = 11
+	y = 8
+	completion_reward = {
+		set_temp_variable = { Y = -5 }
+		RUS_Smuta_Chaos_Mission_Cost_Add_Y = yes
+		set_temp_variable = { Y = 0.8 }
+		RUS_Smuta_Smuta_CoringCost_MultiplyBy_Y = yes
+		country_event = {
+			id = berez_zemsob.15
+			days = 1
+		}
+	}
+}
+
+shared_focus = {
+	id = MAR_army_for_tsar_general
+	icon = GFX_MAR_Tsarist_Army
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_connection_with_the_past
+    }
+	x = 11
+	y = 9
+	completion_reward = {
+		add_war_support = 0.1
+		army_experience = 50
+		TNO_improve_army_professionalism_med = yes
+		country_event = {
+			id = berez_zemsob.16
+			days = 1
+		}
+	}
+}
+
+shared_focus = {
+	id = MAR_sobor_is_voting_now
+	icon = GFX_MAR_Elections_funny_shit
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {	
+		factor = 1
+	}
+	available = {
+			RUS_Smuta_ScriptedTrigger_OnlyOneContenderLeft = yes
+		}
+	prerequisite = {
+        focus = MAR_people_for_peoples_tsar
+        focus = MAR_party_for_tsarina_and_regent
+        focus = MAR_army_for_tsar_general
+    }
+	x = 9
+	y = 10
+	completion_reward = {
+		if = {
+			limit = {
+				check_variable = { MAR_tsar_path = 1 }
+			}
+			country_event = {
+				id = berez_zemsob.24
+				days = 1
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { MAR_tsar_path = 2 }
+			}
+			country_event = {
+				id = berez_zemsob.23
+				days = 1
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { MAR_tsar_path = 3 }
+			}
+			country_event = {
+				id = berez_zemsob.22
+				days = 1
+			}
+		}
+	}
+}
+
+shared_focus = {
+	id = MAR_mladorossi_dream
+	icon = GFX_MAR_Voina_20
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+        focus = MAR_sobor_is_voting_now
+    }
+	x = 9
+	y = 11
+	completion_reward = {
+		RUS_Smuta_Disable = yes
+		country_event = {
+				id = berez_voina.40
+				days = 1
+			}
+	}
+}

@@ -103,6 +103,7 @@ country_event = { #Dawa opposition breaks off
 			}
 		}
 		SNI = {
+			add_state_core = 291
 			add_state_core = 1333
 			add_state_core = 916
 			add_state_core = 924
@@ -110,6 +111,7 @@ country_event = { #Dawa opposition breaks off
 			add_state_core = 676
 			add_state_core = 781
 			add_state_core = 1334
+			add_state_core = 656
 			transfer_state = 1333
 			transfer_state = 916
 			add_ideas = OIL_surrender_modifier_weak
@@ -154,6 +156,7 @@ country_event = { #Ba'ath opposition breaks off
 			}
 		}
 		BIR = {
+			add_state_core = 291
 			add_state_core = 1333
 			add_state_core = 916
 			add_state_core = 924
@@ -161,6 +164,7 @@ country_event = { #Ba'ath opposition breaks off
 			add_state_core = 676
 			add_state_core = 781
 			add_state_core = 1334
+			add_state_core = 656
 			transfer_state = 924
 			transfer_state = 675
 			load_oob = BIR_oil_crisis
@@ -211,6 +215,7 @@ country_event = { #Democratic opposition breaks off
 			}
 		}
 		IRP = {
+			add_state_core = 291
 			add_state_core = 1333
 			add_state_core = 916
 			add_state_core = 924
@@ -218,6 +223,7 @@ country_event = { #Democratic opposition breaks off
 			add_state_core = 676
 			add_state_core = 781
 			add_state_core = 1334
+			add_state_core = 656
 			transfer_state = 676
 			add_ideas = OIL_surrender_modifier_weak
 			load_oob = IRP_oil_crisis
@@ -249,25 +255,17 @@ country_event = { #War
 		add_to_array = { global.IRQ_contenders = BIR }
 		add_to_array = { global.IRQ_contenders = SNI }
 		IRP = {
-			declare_war_on = { target = IRQ type = annex_everything }
-			declare_war_on = { target = BIR type = annex_everything }
-			declare_war_on = { target = SNI type = annex_everything }
+			declare_war_on = { target = IRQ type = civil_war }
+			declare_war_on = { target = BIR type = civil_war }
+			declare_war_on = { target = SNI type = civil_war }
 		}
 		IRQ = {
-			declare_war_on = { target = IRP type = annex_everything }
-			declare_war_on = { target = BIR type = annex_everything }
-			declare_war_on = { target = SNI type = annex_everything }
+			declare_war_on = { target = BIR type = civil_war }
+			declare_war_on = { target = SNI type = civil_war }
 			load_oob = IRQ_oil_crisis
 		}
 		BIR = {
-			declare_war_on = { target = IRQ type = annex_everything }
-			declare_war_on = { target = IRP type = annex_everything }
-			declare_war_on = { target = SNI type = annex_everything }
-		}
-		SNI = {
-			declare_war_on = { target = IRQ type = annex_everything }
-			declare_war_on = { target = BIR type = annex_everything }
-			declare_war_on = { target = IRP type = annex_everything }
+			declare_war_on = { target = SNI type = civil_war }
 		}
 		if = {
 			limit = {
@@ -328,10 +326,10 @@ country_event = { #IraqCW End- Italian Victory
 			set_popularities = {
 				communist = 9
 				socialist = 5
-				social_democracy = 12
-				liberal_democracy = 3
-				conservative_democracy = 2
-				authoritarian_democracy = 12
+				progressivism = 12
+				liberalism = 3
+				conservatism = 2
+				paternalism = 12
 				despotism = 57
 				fascism = 0
 				national_socialism = 0
@@ -405,6 +403,7 @@ country_event = { #IraqCW End- Shi'ite Victory
 		news_event = { id = WORLD.18019 days = 1 }
 	}
 }
+
 country_event = { #IraqCW End- Kurdish Victory (Real)
 	id = IraqCW.13
 	immediate = {log = "[GetDateText]: [Root.GetName]: event IraqCW.13"}

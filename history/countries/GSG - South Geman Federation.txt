@@ -13,7 +13,7 @@ load_focus_tree = shattered_ambitions
 set_variable = { TNO_economy_type = 1 }
 set_variable = { TNO_economy_subtype = 0 }
 set_politics = {
-	ruling_party = authoritarian_democracy
+	ruling_party = paternalism
 	elections_allowed = no
 	last_election = "1935.12.17"
 	election_frequency = 48
@@ -22,10 +22,10 @@ set_popularities = {
 	communist = 13
 	ultranationalism = 0
 	socialist = 11
-	social_democracy = 17
-	liberal_democracy = 16
-	conservative_democracy = 11
-	authoritarian_democracy = 30
+	progressivism = 17
+	liberalism = 16
+	conservatism = 11
+	paternalism = 30
 	despotism = 2
 	fascism = 0
 	national_socialism = 0
@@ -47,9 +47,9 @@ set_party_name = {
 	name = Post_WRW2_KPG_party
 }
 set_party_name = { 
-	ideology = authoritarian_democracy 
-	long_name = GSG_authoritarian_democracy_party
-	name = GSG_authoritarian_democracy_party
+	ideology = paternalism 
+	long_name = GSG_paternalism_party
+	name = GSG_paternalism_party
 }
 # Leaders
 recruit_character = GSG_Rudi_Dutschke

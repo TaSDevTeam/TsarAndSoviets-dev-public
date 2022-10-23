@@ -428,10 +428,10 @@ defined_text = {
 		trigger = {
 			check_variable = { deficit_to_GDP_ratio > 0 }
 		}
-		localization_key = "surplus"
+		localization_key = "econ_surplus"
 	}
 	text = {
-		localization_key = "deficit"
+		localization_key = "econ_deficit"
 	}
 }
 
@@ -627,6 +627,20 @@ defined_text = {
 	}
 	text = {
 		localization_key = gdp_growth_multiplier_modifier_info
+	}
+}
+
+
+defined_text = {
+	name = GetTotalPowerPlantEffectExists
+	text = {
+		trigger = {
+			check_variable = { total_state_power_plant_effect = 0 }
+		}
+		localization_key = ""
+	}
+	text = {
+		localization_key = gdp_growth_multiplier_total_power_plant_info
 	}
 }
 
@@ -1104,565 +1118,6 @@ defined_text = {
 		localization_key = misc_income_billion_topbar
 	}
 }
-
-defined_text = {
-	name = Get_income_tax
-	text = {
-		trigger = {
-			has_idea = tno_income_taxation_elite_tax_exemptions
-		}
-		localization_key = tno_income_taxation_elite_tax_exemptions_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_income_taxation_tax_havens
-		}
-		localization_key = tno_income_taxation_tax_havens_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_income_taxation_low_income_weighted
-		}
-		localization_key = tno_income_taxation_low_income_weighted_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_income_taxation_flat_taxes
-		}
-		localization_key = tno_income_taxation_flat_taxes_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_income_taxation_high_income_weighted
-		}
-		localization_key = tno_income_taxation_high_income_weighted_gui
-	}
-}
-
-## Civilian
-
-defined_text = {
-	name = Get_health_care
-	text = {
-		trigger = {
-			has_idea = tno_health_care_support_for_emergencies
-		}
-		localization_key = tno_health_care_support_for_emergencies_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_health_care_low_income_protections
-		}
-		localization_key = tno_health_care_low_income_protections_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_health_care_universal_health_care
-		}
-		localization_key = tno_health_care_universal_health_care_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_health_care_free_universal_care
-		}
-		localization_key = tno_health_care_free_universal_care_gui
-	}
-}
-
-defined_text = {
-	name = Get_education
-	text = {
-		trigger = {
-			has_idea = tno_education_elite_only
-		}
-		localization_key = tno_education_elite_only_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_education_public_education
-		}
-		localization_key = tno_education_public_education_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_education_subsidised_higher_education
-		}
-		localization_key = tno_education_subsidised_higher_education_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_education_public_higher_education
-		}
-		localization_key = tno_education_public_higher_education_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_education_free_education
-		}
-		localization_key = tno_education_free_education_gui
-	}
-}
-
-defined_text = {
-	name = Get_security_service
-	text = {
-		trigger = {
-			has_idea = tno_security_anarchic
-		}
-		localization_key = tno_security_anarchic_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_security_police
-		}
-		localization_key = tno_security_police_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_security_security_service
-		}
-		localization_key = tno_security_security_service_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_security_data_cohesion
-		}
-		localization_key = tno_security_data_cohesion_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_security_wire_tapping
-		}
-		localization_key = tno_security_wire_tapping_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_security_preemptive_security
-		}
-		localization_key = tno_security_preemptive_security_gui
-	}
-}
-
-defined_text = {
-	name = Get_pensions
-	text = {
-		trigger = {
-			has_idea = tno_pensions_no_pensions
-		}
-		localization_key = tno_pensions_no_pensions_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_pensions_trinket_pensions
-		}
-		localization_key = tno_pensions_trinket_pensions_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_pensions_low_pensions
-		}
-		localization_key = tno_pensions_low_pensions_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_pensions_acceptable_pensions
-		}
-		localization_key = tno_pensions_acceptable_pensions_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_pensions_good_pensions
-		}
-		localization_key = tno_pensions_good_pensions_gui
-	}
-}
-
-defined_text = {
-	name = Get_unemployment
-	text = {
-		trigger = {
-			has_idea = tno_unemployment_no_subsidies
-		}
-		localization_key = tno_unemployment_no_subsidies_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_unemployment_trinket_subsidies
-		}
-		localization_key = tno_unemployment_trinket_subsidies_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_unemployment_low_subsidies
-		}
-		localization_key = tno_unemployment_low_subsidies_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_unemployment_generous_subsidies
-		}
-		localization_key = tno_unemployment_generous_subsidies_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_unemployment_basic_income
-		}
-		localization_key = tno_unemployment_basic_income_gui
-	}
-}
-
-## Military
-
-defined_text = {
-	name = Get_training
-	text = {
-		trigger = {
-			has_idea = tno_training_none
-		}
-		localization_key = tno_training_none_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_training_minimal_training
-		}
-		localization_key = tno_training_minimal_training_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_training_basic_training
-		}
-		localization_key = tno_training_basic_training_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_training_combat_schooling
-		}
-		localization_key = tno_training_combat_schooling_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_training_advanced_training_methods
-		}
-		localization_key = tno_training_advanced_training_methods_gui
-	}
-}
-
-defined_text = {
-	name = Get_military_supervision
-	text = {
-		trigger = {
-			has_idea = tno_military_supervision_kill_em_all
-		}
-		localization_key = tno_military_supervision_kill_em_all_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_military_supervision_no_supervision
-		}
-		localization_key = tno_military_supervision_no_supervision_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_military_supervision_military_policing
-		}
-		localization_key = tno_military_supervision_military_policing_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_military_supervision_rules_of_engagement
-		}
-		localization_key = tno_military_supervision_rules_of_engagement_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_military_supervision_watchdog_groups
-		}
-		localization_key = tno_military_supervision_watchdog_groups_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_military_supervision_total_supervision
-		}
-		localization_key = tno_military_supervision_total_supervision_gui
-	}
-}
-
-#Oil Crisis
-defined_text = {
-	name = Get_oilcrisis_military
-	text = {
-		trigger = { has_idea = TNO_Oil_Crisis }
-		localization_key = tno_oil_crisis_military_expenditure
-	}
-}
-
-defined_text = {
-	name = Get_industrial_expertise
-	text = {
-		trigger = {
-			has_idea = tno_industrial_expertise_pre_industrial
-		}
-		localization_key = tno_industrial_expertise_pre_industrial_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_industrial_expertise_incompetent
-		}
-		localization_key = tno_industrial_expertise_incompetent_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_industrial_expertise_nascent
-		}
-		localization_key = tno_industrial_expertise_nascent_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_industrial_expertise_experienced
-		}
-		localization_key = tno_industrial_expertise_experienced_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_industrial_expertise_innovative
-		}
-		localization_key = tno_industrial_expertise_innovative_gui
-	}
-}
-
-defined_text = {
-	name = Get_industrial_equipment
-	text = {
-		trigger = {
-			has_idea = tno_industrial_equipment_hand_tools
-		}
-		localization_key = tno_industrial_equipment_hand_tools_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_industrial_equipment_power_tools
-		}
-		localization_key = tno_industrial_equipment_power_tools_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_industrial_equipment_manufacturing_lines
-		}
-		localization_key = tno_industrial_equipment_manufacturing_lines_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_industrial_equipment_factory_complexes
-		}
-		localization_key = tno_industrial_equipment_factory_complexes_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_industrial_equipment_modern
-		}
-		localization_key = tno_industrial_equipment_modern_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_industrial_equipment_cutting_edge
-		}
-		localization_key = tno_industrial_equipment_cutting_edge_gui
-	}
-}
-
-
-defined_text = {
-	name = Get_safety
-	text = {
-		trigger = {
-			has_idea = tno_safety_no_regulations
-		}
-		localization_key = tno_safety_no_regulations_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_safety_minimal_regulations
-		}
-		localization_key = tno_safety_minimal_regulations_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_safety_limited_regulations
-		}
-		localization_key = tno_safety_limited_regulations_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_safety_acceptable_regulations
-		}
-		localization_key = tno_safety_acceptable_regulations_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_safety_excellent_regulations
-		}
-		localization_key = tno_safety_excellent_regulations_gui
-	}
-}
-
-defined_text = {
-	name = Get_pollution
-	text = {
-		trigger = {
-			has_idea = tno_pollution_no_controls
-		}
-		localization_key = tno_pollution_no_controls_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_pollution_few_regulations
-		}
-		localization_key = tno_pollution_few_regulations_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_pollution_some_regulations
-		}
-		localization_key = tno_pollution_some_regulations_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_pollution_good_regulations
-		}
-		localization_key = tno_pollution_good_regulations_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_pollution_strict_regulations
-		}
-		localization_key = tno_pollution_strict_regulations_gui
-	}
-}
-
-defined_text = {
-	name = Get_penal_system
-	text = {
-		trigger = {
-			has_idea = tno_penal_system_penal_slavery
-		}
-		localization_key = tno_penal_system_penal_slavery_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_penal_system_capital_punishment
-		}
-		localization_key = tno_penal_system_capital_punishment_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_penal_system_penal_labor
-		}
-		localization_key = tno_penal_system_penal_labor_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_penal_system_incarceration
-		}
-		localization_key = tno_penal_system_incarceration_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_penal_system_rehabilitation
-		}
-		localization_key = tno_penal_system_rehabilitation_gui
-	}
-}
-
-defined_text = {
-	name = Get_minimum_wage
-	text = {
-		trigger = {
-			has_idea = tno_minimum_wage_no_minimum_wage
-		}
-		localization_key = tno_minimum_wage_no_minimum_wage_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_minimum_wage_trinket_minimum_wage
-		}
-		localization_key = tno_minimum_wage_trinket_minimum_wage_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_minimum_wage_low_minimum_wage
-		}
-		localization_key = tno_minimum_wage_low_minimum_wage_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_minimum_wage_acceptable_minimum
-		}
-		localization_key = tno_minimum_wage_acceptable_minimum_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_minimum_wage_good_minimum_wage
-		}
-		localization_key = tno_minimum_wage_good_minimum_wage_gui
-	}
-}
-
-defined_text = {
-	name = Get_max_workhours
-	text = {
-		trigger = {
-			has_idea = tno_max_workhours_unlimited_work_day
-		}
-		localization_key = tno_max_workhours_unlimited_work_day_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_max_workhours_14_hour_work_day
-		}
-		localization_key = tno_max_workhours_14_hour_work_day_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_max_workhours_12_hour_work_day
-		}
-		localization_key = tno_max_workhours_12_hour_work_day_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_max_workhours_10_hour_work_day
-		}
-		localization_key = tno_max_workhours_10_hour_work_day_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_max_workhours_8_hour_work_day
-		}
-		localization_key = tno_max_workhours_8_hour_work_day_gui
-	}
-}
-
-defined_text = {
-	name = Get_child_labor
-	text = {
-		trigger = {
-			has_idea = tno_child_labor_legal
-		}
-		localization_key = tno_child_labor_legal_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_child_labor_restricted
-		}
-		localization_key = tno_child_labor_restricted_gui
-	}
-	text = {
-		trigger = {
-			has_idea = tno_child_labor_illegal
-		}
-		localization_key = tno_child_labor_illegal_gui
-	}
-}
-
 
 #tempoarary modifiers#
 
@@ -2333,40 +1788,56 @@ defined_text = {
 	name = econ_poverty_rate_change_tu_number_sl
 	text = {
 		trigger = {
-			set_temp_variable = { poverty_tu_display = tno_trade_unions_policy_poverty_monthly_rate }
+			set_temp_variable = { poverty_tu_display = tno_trade_unions_poverty_monthly_rate }
 			multiply_temp_variable = { poverty_tu_display = -1 }
-			NOT = { check_variable = { poverty_tu_display = 0 } }
+			check_variable = { poverty_tu_display > 0 }
 		}
-		localization_key = econ_poverty_rate_change_tu_number_tt
+		localization_key = econ_poverty_rate_change_tu_number_tt_neg
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { poverty_tu_display = tno_trade_unions_poverty_monthly_rate }
+			multiply_temp_variable = { poverty_tu_display = -1 }
+			check_variable = { poverty_tu_display < 0 }
+		}
+		localization_key = econ_poverty_rate_change_tu_number_tt_pos
 	}
 }
 defined_text = {
 	name = econ_poverty_rate_change_sl_number_sl
 	text = {
 		trigger = {
-			set_temp_variable = { poverty_sl_display = tno_slavery_policy_poverty_monthly_rate }
+			set_temp_variable = { poverty_sl_display = tno_slavery_poverty_monthly_rate }
 			multiply_temp_variable = { poverty_sl_display = -1 }
-			NOT = { check_variable = { poverty_sl_display = 0 } }
+			check_variable = { poverty_sl_display > 0 }
 		}
-		localization_key = econ_poverty_rate_change_sl_number_tt
+		localization_key = econ_poverty_rate_change_sl_number_tt_neg
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { poverty_sl_display = tno_slavery_poverty_monthly_rate }
+			multiply_temp_variable = { poverty_sl_display = -1 }
+			check_variable = { poverty_sl_display < 0 }
+		}
+		localization_key = econ_poverty_rate_change_sl_number_tt_pos
 	}
 }
 defined_text = {
-	name = econ_poverty_rate_change_rf_number_sl
+	name = econ_poverty_rate_change_im_number_sl
 	text = {
 		trigger = {
-			set_temp_variable = { poverty_rf_display = tno_refugees_policy_poverty_monthly_rate }
-			multiply_temp_variable = { poverty_rf_display = -1 }
-			NOT = { check_variable = { poverty_rf_display = 0 } }
+			set_temp_variable = { poverty_im_display = tno_immigration_poverty_monthly_rate }
+			multiply_temp_variable = { poverty_im_display = -1 }
+			NOT = { check_variable = { poverty_im_display = 0 } }
 		}
-		localization_key = econ_poverty_rate_change_rf_number_tt
+		localization_key = econ_poverty_rate_change_im_number_tt
 	}
 }
 defined_text = {
 	name = econ_poverty_rate_change_hc_number_sl
 	text = {
 		trigger = {
-			set_temp_variable = { poverty_hc_display = tno_health_care_policy_poverty_rate_factor }
+			set_temp_variable = { poverty_hc_display = tno_health_care_poverty_monthly_rate }
 			multiply_temp_variable = { poverty_hc_display = -1 }
 			check_variable = { poverty_hc_display > 0 }
 		}
@@ -2374,7 +1845,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			set_temp_variable = { poverty_hc_display = tno_health_care_policy_poverty_rate_factor }
+			set_temp_variable = { poverty_hc_display = tno_health_care_poverty_monthly_rate }
 			multiply_temp_variable = { poverty_hc_display = -1 }
 			check_variable = { poverty_hc_display < 0 }
 		}
@@ -2385,7 +1856,7 @@ defined_text = {
 	name = econ_poverty_rate_change_ed_number_sl
 	text = {
 		trigger = {
-			set_temp_variable = { poverty_ed_display = tno_education_policy_poverty_rate_factor }
+			set_temp_variable = { poverty_ed_display = tno_education_poverty_monthly_rate }
 			multiply_temp_variable = { poverty_ed_display = -1 }
 			check_variable = { poverty_ed_display > 0 }
 		}
@@ -2393,11 +1864,30 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			set_temp_variable = { poverty_ed_display = tno_education_policy_poverty_rate_factor }
+			set_temp_variable = { poverty_ed_display = tno_education_poverty_monthly_rate }
 			multiply_temp_variable = { poverty_ed_display = -1 }
 			check_variable = { poverty_ed_display < 0 }
 		}
 		localization_key = econ_poverty_rate_change_ed_number_tt_pos
+	}
+}
+defined_text = {
+	name = econ_poverty_rate_change_ps_number_sl
+	text = {
+		trigger = {
+			set_temp_variable = { poverty_ps_display = tno_penal_system_poverty_monthly_rate }
+			multiply_temp_variable = { poverty_ps_display = -1 }
+			check_variable = { poverty_ps_display > 0 }
+		}
+		localization_key = econ_poverty_rate_change_ps_number_tt_neg
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { poverty_ps_display = tno_penal_system_poverty_monthly_rate }
+			multiply_temp_variable = { poverty_ps_display = -1 }
+			check_variable = { poverty_ps_display < 0 }
+		}
+		localization_key = econ_poverty_rate_change_ps_number_tt_pos
 	}
 }
 defined_text = {
@@ -2455,6 +1945,48 @@ defined_text = {
 			check_variable = { poverty_un_display < 0 }
 		}
 		localization_key = econ_poverty_rate_change_un_number_tt_pos
+	}
+}
+defined_text = {
+	name = econ_poverty_rate_change_ab_number_sl
+	text = {
+		trigger = {
+			has_idea = tno_academic_base_mass_illiteracy
+		}
+		localization_key =  econ_poverty_rate_change_ab_number_tt_mass_illiteracy
+	}
+	text = {
+		trigger = {
+			has_idea = tno_academic_base_basic_literacy
+		}
+		localization_key = econ_poverty_rate_change_un_number_tt_basic_literacy
+	}
+}
+defined_text = {
+	name = econ_poverty_rate_change_hq_number_sl
+	text = {
+		trigger = {
+			has_idea = tno_healthcare_makeshift
+		}
+		localization_key =  econ_poverty_rate_change_hq_number_tt_makeshift
+	}
+	text = {
+		trigger = {
+			has_idea = tno_healthcare_rudimentary
+		}
+		localization_key =  econ_poverty_rate_change_hq_number_tt_rudimentary
+	}
+	text = {
+		trigger = {
+			has_idea = tno_healthcare_advanced
+		}
+		localization_key =  econ_poverty_rate_change_hq_number_tt_advanced
+	}
+	text = {
+		trigger = {
+			has_idea = tno_healthcare_world_class
+		}
+		localization_key =  econ_poverty_rate_change_hq_number_tt_world_class
 	}
 }
 defined_text = {
@@ -2562,13 +2094,6 @@ defined_text = {
 	text = {
 		trigger = { has_idea = endsieg }
 		localization_key = econ_poverty_rate_change_endsieg_tt
-	}
-}
-defined_text = {
-	name = econ_poverty_rate_change_UKR_shroud_of_generalplan_ost_sl
-	text = {
-		trigger = { has_idea = UKR_shroud_of_generalplan_ost }
-		localization_key = econ_poverty_rate_change_UKR_shroud_of_generalplan_ost_tt
 	}
 }
 
@@ -4662,7 +4187,7 @@ defined_text = {
 	text = {
 		trigger = {
 			set_temp_variable = { temp_debt_ceiling_adjusted = debt_ceiling }
-			subtract_from_temp_variable = { temp_debt_ceiling_adjusted = .25 }
+			multiply_temp_variable = { temp_debt_ceiling_adjusted = .75 }
 			check_variable = { debt_to_GDP_ratio > temp_debt_ceiling_adjusted }
 		}
 		localization_key = credit_rating_debt_level_bad
@@ -4728,35 +4253,6 @@ defined_text = {
 
 }
 
-defined_text = { 
-	name = GetB
-	text = {
-		localization_key = capitalB
-	}
-}
-
-defined_text = {
-	name = increaseGDP
-	text = {
-		localization_key = increaseGDP
-	}
-}
-
-defined_text = {
-	name = decreaseGDP
-	text = {
-		localization_key = decreaseGDP
-	}
-}
-
-defined_text = {
-	name = closecolor
-	text = {
-		localization_key = closecolor
-	}
-}
-
-
 defined_text = {
 	name = GetJoinSphereTooltip
 	text = {
@@ -4764,7 +4260,15 @@ defined_text = {
 		localization_key = econ_sphere_name_WOL
 	}
 	text = {
-		trigger = { check_variable = { ECON_SPHERE_LEADER = FFR } }
+		trigger = {
+			OR = {
+				check_variable = { ECON_SPHERE_LEADER = FFR }
+				AND = {
+					check_variable = { ECON_SPHERE_LEADER = FRA }
+					has_global_flag = FFR_reclamation_successful
+				}
+			}
+		}
 		localization_key = econ_sphere_name_FFR
 	}
 	text = {
@@ -4787,11 +4291,8 @@ defined_text = {
 	text = {
 		trigger = {
 			check_variable = { ECON_SPHERE_LEADER = GER }
-			NOT = {
-				has_global_flag = german_civil_war_speervic
-			}
+			NOT = { has_global_flag = german_civil_war_speervic }
 		}
-
 		localization_key = econ_sphere_name_GER
 	}
 	text = {
@@ -4799,7 +4300,6 @@ defined_text = {
 			check_variable = { ECON_SPHERE_LEADER = GER }
 			has_global_flag = german_civil_war_speervic
 		}
-
 		localization_key = econ_sphere_name_ZV
 	}
 	text = {
@@ -4835,7 +4335,15 @@ defined_text = {
 		localization_key = econ_sphere_name_WOL
 	}
 	text = {
-		trigger = { check_variable = { ECON_SPHERE_LEADER = FFR } }
+		trigger = {
+			OR = {
+				check_variable = { ECON_SPHERE_LEADER = FFR }
+				AND = {
+					check_variable = { ECON_SPHERE_LEADER = FRA }
+					has_global_flag = FFR_reclamation_successful
+				}
+			}
+		}
 		localization_key = econ_sphere_name_FFR
 	}
 	text = {
@@ -4867,6 +4375,95 @@ defined_text = {
 			}
 		}
 		localization_key = econ_sphere_name_CME
+	}
+	text = { localization_key = "No Sphere" }
+}
+
+defined_text = {
+	name = GetSphereNameLong
+	text = {
+		trigger = {
+			check_variable = { ECON_SPHERE_LEADER = GER }
+			NOT = { has_global_flag = german_civil_war_speervic }
+		}
+		localization_key = econ_sphere_name_long_GER
+	}
+	text = {
+		trigger = {
+			check_variable = { ECON_SPHERE_LEADER = GER }
+			has_global_flag = german_civil_war_speervic
+		}
+		localization_key = econ_sphere_name_long_ZV
+	}
+	text = {
+		trigger = { check_variable = { ECON_SPHERE_LEADER = JAP } }
+		localization_key = econ_sphere_name_long_JAP
+	}
+	text = {
+		trigger = { check_variable = { ECON_SPHERE_LEADER = ITA } }
+		localization_key = econ_sphere_name_long_ITA
+	}
+	text = {
+		trigger = { check_variable = { ECON_SPHERE_LEADER = IBR } }
+		localization_key = econ_sphere_name_long_IBR
+	}
+	text = {
+		trigger = { check_variable = { ECON_SPHERE_LEADER = ARG } }
+		localization_key = econ_sphere_name_long_ARG
+	}
+	text = {
+		trigger = { check_variable = { ECON_SPHERE_LEADER = BRA } }
+		localization_key = econ_sphere_name_long_BRA
+	}
+	text = {
+		trigger = { check_variable = { ECON_SPHERE_LEADER = MEX } }
+		localization_key = econ_sphere_name_long_MEX
+	}
+	text = {
+		trigger = { check_variable = { ECON_SPHERE_LEADER = USA } }
+		localization_key = econ_sphere_name_long_USA
+	}
+	text = {
+		trigger = { check_variable = { ECON_SPHERE_LEADER = WOL } }
+		localization_key = econ_sphere_name_long_WOL
+	}
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { ECON_SPHERE_LEADER = FFR }
+				AND = {
+					check_variable = { ECON_SPHERE_LEADER = FRA }
+					has_global_flag = FFR_reclamation_successful
+				}
+			}
+		}
+		localization_key = econ_sphere_name_long_FFR
+	}
+	text = {
+		trigger = { check_variable = { ECON_SPHERE_LEADER = CAO } }
+		localization_key = econ_sphere_name_long_CAO
+	}
+	text = {
+		trigger = { check_variable = { ECON_SPHERE_LEADER = ENG } }
+		localization_key = econ_sphere_name_long_ENG
+	}
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { ECON_SPHERE_LEADER = ADN }
+				tag = ADN
+			}
+		}
+		localization_key = econ_sphere_name_long_ADN
+	}
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { ECON_SPHERE_LEADER = CME }
+				tag = CME
+			}
+		}
+		localization_key = econ_sphere_name_long_CME
 	}
 	text = { localization_key = "No Sphere" }
 }
@@ -5074,7 +4671,13 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			check_variable = { ECON_SPHERE_LEADER = FFR }
+			OR = {
+				check_variable = { ECON_SPHERE_LEADER = FFR }
+				AND = {
+					check_variable = { ECON_SPHERE_LEADER = FRA }
+					has_global_flag = FFR_reclamation_successful
+				}
+			}
 		}
 		localization_key = "GFX_econ_sphere_icon_FFR"
 	}
@@ -5499,21 +5102,32 @@ defined_text = {
 }
 
 defined_text = {
+	name = get_econ_social_unemployment_slider_tt
+	text = {
+		trigger = { check_variable = { tno_unemployment_law_has_price = 0 } }
+		localization_key = econ_social_unemployment_slider_yes_tt
+	}
+	text = {
+		localization_key = econ_social_unemployment_slider_no_tt
+	}
+}
+
+defined_text = {
 	name = GetConsumerGoodsProductionModiferGoodBadNeutral
 	text = {
 		trigger = {
 			check_variable = { modifier@consumer_goods_production_factor < 0 }
 		}
-		localization_key = econ_consumer_goods_production_modifier_bad
+		localization_key = econ_consumer_goods_production_factor_bad
 	}
 	text = {
 		trigger = { 
 			check_variable = { modifier@consumer_goods_production_factor > 0 }
 		}
-		localization_key = econ_consumer_goods_production_modifier_good
+		localization_key = econ_consumer_goods_production_factor_good
 	}
 	text = {
-		localization_key = econ_consumer_goods_production_modifier_neutral
+		localization_key = econ_consumer_goods_production_factor_neutral
 	}
 }
 
@@ -5722,7 +5336,27 @@ defined_text = {
 		trigger = { check_variable = { TNO_economy_subtype = 19 } } 
 		localization_key = econ_subtype_yagoda_title
 	}
-	
+	text = {	
+		trigger = { 
+			check_variable = { TNO_economy_subtype = 20 }
+			check_variable = { TNO_economy_type = 1 }
+		}
+		localization_key = econ_subtype_colonial_economy_free_market_title
+	}
+	text = {	
+		trigger = { 
+			check_variable = { TNO_economy_subtype = 20 }
+			check_variable = { TNO_economy_type = 3 }
+		}
+		localization_key = econ_subtype_colonial_economy_planned_economy_title
+	}
+	text = {	
+		trigger = { 
+			check_variable = { TNO_economy_subtype = 20 }
+			check_variable = { TNO_economy_type = 2 }
+		}
+		localization_key = econ_subtype_colonial_economy_corporatism_title
+	}
 	text = {
 		trigger = { 
 			check_variable = { TNO_economy_type = 1 }
@@ -5825,6 +5459,27 @@ defined_text = {
 		trigger = { check_variable = { TNO_economy_subtype = 19} } 
 		localization_key = "GFX_econ_type_yagoda"
 	}
+	text = {	
+		trigger = { 
+			check_variable = { TNO_economy_subtype = 20 }
+			check_variable = { TNO_economy_type = 1 }
+		}
+		localization_key = "GFX_econ_type_free_market_colonial_economy"
+	}
+	text = {	
+		trigger = { 
+			check_variable = { TNO_economy_subtype = 20 }
+			check_variable = { TNO_economy_type = 3 }
+		}
+		localization_key = "GFX_econ_type_state_planned_colonial_economy"
+	}
+	text = {	
+		trigger = { 
+			check_variable = { TNO_economy_subtype = 20 }
+			check_variable = { TNO_economy_type = 2 }
+		}
+		localization_key = "GFX_econ_type_corporatism_colonial_economy"
+	}
 	text = {
 		trigger = { 
 			check_variable = { TNO_economy_type = 1 }
@@ -5865,7 +5520,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {check_variable = { TNO_economy_subtype = 4 }} 
-		localization_key = "econ_type_anarchism_tt"
+		localization_key = econ_type_anarchism_tt
 	}
 	text = {
 		trigger = { check_variable = { TNO_economy_subtype = 5 } }
@@ -5915,11 +5570,11 @@ defined_text = {
 		trigger = { check_variable = { TNO_economy_subtype = 16 } }
 		localization_key = econ_subtype_social_market_tt
 	}
-		text = {
+	text = {
 		trigger = { check_variable = { TNO_economy_subtype = 17 } }
 		localization_key = econ_subtype_agrarian_spartanism_tt
 	}
-    	text = {
+    text = {
 		trigger = { check_variable = { TNO_economy_subtype = 18 } }
 		localization_key = econ_subtype_futurist_corporatism_tt
 	}
@@ -5927,27 +5582,48 @@ defined_text = {
 		trigger = { check_variable = { TNO_economy_subtype = 19 } }
 		localization_key = econ_subtype_yagoda_tt
 	}
+	text = {	
+		trigger = { 
+			check_variable = { TNO_economy_subtype = 20 }
+			check_variable = { TNO_economy_type = 1 }
+		}
+		localization_key = econ_subtype_colonial_economy_free_market_tt
+	}
+	text = {	
+		trigger = { 
+			check_variable = { TNO_economy_subtype = 20 }
+			check_variable = { TNO_economy_type = 3 }
+		}
+		localization_key = econ_subtype_colonial_economy_planned_economy_tt
+	}
+	text = {	
+		trigger = { 
+			check_variable = { TNO_economy_subtype = 20 }
+			check_variable = { TNO_economy_type = 2 }
+		}
+		localization_key = econ_subtype_colonial_economy_corporatism_tt
+	}
 
 	text = {
 		trigger = { 
 			check_variable = { TNO_economy_type = 1 }
 			check_variable = { TNO_economy_subtype = 0 }
 		} 
-		localization_key = "econ_type_capitalism_tt"
+		localization_key = econ_type_capitalism_tt
 	}
 	text = {
 		trigger = { 
 			check_variable = { TNO_economy_type = 2 }
 			check_variable = { TNO_economy_subtype = 0 }
 		} 
-		localization_key = "econ_type_corporatism_tt"
+		localization_key = econ_type_corporatism_tt
 	}
 	text = {
 		trigger = { 
 			check_variable = { TNO_economy_type = 3 }
 			check_variable = { TNO_economy_subtype = 0 }
 		} 
-		localization_key = "econ_type_planned_tt"
+		localization_key = econ_type_planned_tt
 	}
 }
 
@@ -6044,7 +5720,7 @@ defined_text = {
 defined_text = {
 	name = econ_empty_racks_coverage
 	text = {
-		trigger = {NOT = {has_variable = state_without_racks}}
+		trigger = {check_variable = {barrack_in_best_empty_state=0}}
 		localization_key = ""
 	}
 	text = {
@@ -6055,7 +5731,7 @@ defined_text = {
 defined_text = {
 	name = econ_empty_prisons_coverage
 	text = {
-		trigger = {NOT = {has_variable = state_without_prisons}}
+		trigger = {check_variable = {prison_in_best_empty_state=0}}
 		localization_key = ""
 	}
 	text = {
@@ -6102,5 +5778,17 @@ defined_text = {
 	text = {
 		trigger = { check_variable = { TNO_economy_help_index = 3 } }
 		localization_key = econ_help_3_d
+	}
+}
+
+## Nuclear Research Trigger Loc
+defined_text = {
+	name = GetAbilitytoResearchNuclear
+	text = {
+		trigger = { has_country_flag = tno_can_research_nuclear_tech }
+		localization_key = TNO_ABLE_TO_RESEARCH_NUCLEAR
+	}
+	text = {
+		localization_key = TNO_UNABLE_TO_RESEARCH_NUCLEAR
 	}
 }

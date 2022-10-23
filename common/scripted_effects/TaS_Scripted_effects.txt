@@ -21,6 +21,11 @@ MAR_Maldorossi_epilogue = {
 	}
 }
 
+econ_join_sphere_MAR = {
+	set_temp_variable = { target = MAR }
+	econ_join_sphere_target = yes
+}
+
 MAR_lower_Vyatka_influence_small = {
 	subtract_from_variable = { MAR_var_Vyatka_influence = 3}
 	custom_effect_tooltip = MAR_lower_Vyatka_influence_small_tt
@@ -38,26 +43,26 @@ MAR_lower_Vyatka_influence_huge = {
 
 MAR_Solzh_Vyatka_takeover = {
 	add_popularity = {
-		ideology = authoritarian_democracy
+		ideology = paternalism
 		popularity = 0.2
 	}
 	create_country_leader = {
 		name = "Aleksandr Solzhenitsyn"
 		picture = "MAR_SOLZH.dds"
 		expire = "2000.1.1"
-		ideology = authoritarian_democracy_solidarism_subtype
+		ideology = paternalism_solidarism_subtype
 		traits = {
 			
 		}
 	}
 	set_politics = {
-		ruling_party = authoritarian_democracy
+		ruling_party = paternalism
 		elections_allowed = no
 		last_election = "1935.12.17"
 		election_frequency = 48
 	}
 	set_party_name = {
-		ideology = authoritarian_democracy
+		ideology = paternalism
 		long_name = MAR_under_Vyatka_long
 		name = MAR_under_Vyatka
 	}
@@ -113,7 +118,7 @@ MAR_Iraq_Kurdistan_zhirik = {
 		KUR = {
 			apply_party_popularities = yes
 			set_politics = {
-				ruling_party = liberal_democracy
+				ruling_party = liberalism
 			}
 			remove_ideas = {
 				MAR_KUR_zeroaproval
@@ -130,20 +135,20 @@ MAR_Iraq_Kurdistan_zhirik = {
 				promote_leader = yes
 				country_leader = {
 					desc = "POLITICS_VLADIMIR_ZHIRINOVSKY_DESC"
-					ideology = liberal_democracy_liberal_radicalism_subtype
+					ideology = liberalism_liberal_radicalism_subtype
 					expire = "1999.1.1"
 					traits = { }
 				}
 		}
 		set_popularities = {
-			liberal_democracy = 34
-			conservative_democracy = 23
+			liberalism = 34
+			conservatism = 23
 			despotism = 24
-			authoritarian_democracy = 17
+			paternalism = 17
 			esoteric_nazism = 2
 		}
 		set_party_name = {
-			ideology = liberal_democracy
+			ideology = liberalism
 			long_name = KUR_Vladimir_Zhirinovsky_party_long
 			name = KUR_Vladimir_Zhirinovsky_party
 		}
@@ -184,7 +189,7 @@ MAR_Iraq_Kurdistan_saddam = {
 		set_capital = 291
 		set_cosmetic_tag = KUR_Saddam
 		set_politics = {
-			ruling_party = social_democracy
+			ruling_party = progressivism
 			last_election = "1933.2.16"
 			election_frequency = 36
 			elections_allowed = no
@@ -195,17 +200,17 @@ MAR_Iraq_Kurdistan_saddam = {
 				promote_leader = yes
 				country_leader = {
 					desc = "POLITICS_SADDAM_HUSSEIN_DESC"
-					ideology = social_democracy_popular_front_subtype
+					ideology = progressivism_popular_front_subtype
 					expire = "1999.1.1"
 					traits = { }
 				}
 		}
 		set_popularities = {
-			social_democracy = 53
-			liberal_democracy = 18
+			progressivism = 53
+			liberalism = 18
 			socialist = 12
 			communist = 5
-			authoritarian_democracy = 12
+			paternalism = 12
 		}
 		econ_join_sphere_MAR = yes
 	}
@@ -275,10 +280,10 @@ MAR_Turkestan_govern = {
 		}
 		set_popularities = {
 			despotism = 53
-			liberal_democracy = 18
+			liberalism = 18
 			socialist = 12
 			communist = 5
-			authoritarian_democracy = 12
+			paternalism = 12
 		}
 		remove_ideas = {
 			UZB_Jadid

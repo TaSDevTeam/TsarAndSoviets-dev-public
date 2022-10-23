@@ -14,11 +14,11 @@ defined_text = {
 		trigger = { tag = KOM }
 		localization_key = TNO_OPENING_SCREEN_BUTTON_TEXT_KOM
 	}
-    text = {
+	 text = {
         trigger = { tag = MAR }
         localization_key = TNO_OPENING_SCREEN_BUTTON_TEXT_MAR
     }
-	
+
 	## West Siberia
 	text = {
 		trigger = { tag = SVR }
@@ -330,7 +330,7 @@ defined_text = {
 		trigger = { tag = ONG }
 		localization_key = COUNTRY_INFO_ONEGA
 	}
-    text = {
+	text = {
         trigger = { tag = MAR }
         localization_key = COUNTRY_INFO_BEREZNIKI
     }
@@ -788,221 +788,5 @@ defined_text = {
 	## Default
 	text = {
 		localization_key = "GFX_TNO_OpeningScreen_Region_EUROPE"
-	}
-}
-
-defined_text = {
-	name = GET_POSTER
-	#Iberia
-	text = {
-		trigger = { tag = IBR }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_Iberia"
-	}
-	## West Russia
-	text = {
-		trigger = { tag = VYT }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_Vyatka"
-	}
-	text = {
-		trigger = { tag = PRM }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_Aryan_Brotherhood"
-	}
-	text = {
-		trigger = { tag = ONG }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_Onega"
-	}
-	text = {
-		trigger = { tag = SAM }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_Samara"
-	}
-	text = {
-		trigger = { tag = WRS }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_WRRF"
-	}
-	text = {
-		trigger = { tag = KOM }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_Komi"
-	}
-    text = {
-        trigger = { tag = MAR }
-        localization_key = "GFX_TNO_OpeningScreen_Poster_Berezniki"
-    }    
-
-	## West Siberia
-	text = {
-		trigger = { tag = TYM }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_Tyumen"
-	}
-	text = {
-		trigger = { tag = SVR }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_Sverdlovsk"
-	}
-	text = {
-		trigger = { tag = OMS }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_Omsk"
-	}
-	text = {
-		trigger = { tag = ZLT }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_Zlatoust"
-	}
-
-	## Central Siberia
-	text = {
-		trigger = { tag = KEM }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_Kemerovo"
-	}
-	text = {
-		trigger = { tag = TOM }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_Tomsk"
-	}
-	text = {
-		trigger = { tag = SBA }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_SBA"
-	}
-	text = {
-		trigger = { tag = NOV }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_Novosibirsk"
-	}
-	text = {
-		trigger = { tag = PRC }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_PRC"
-	}
-
-	## The Far East
-	text = {
-		trigger = { tag = AMR }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_Amur"
-	}
-	text = {
-		trigger = { tag = MAG }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_Magadan"
-	}
-	text = {
-		trigger = { tag = CHT }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_Chita"
-	}
-	text = {
-		trigger = { tag = BRY }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_Buryatia"
-	}
-	text = {
-		trigger = { tag = IRK }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_Irkutsk"
-	}
-
-	## Ural Four
-	text = {
-		trigger = { tag = URL }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_UralGuard"
-	}
-	text = {
-		trigger = { tag = ORE }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_Orenburg"
-	}
-	text = {
-		trigger = { tag = MGN }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_Magnitogorsk"
-	}
-	text = {
-		trigger = { tag = DRL }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_Dirlewanger"
-	}
-
-	## South African Lads
-	text = {
-		trigger = { tag = SAF }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_SouthAfrica"
-	}
-	text = {
-		trigger = { tag = ANG }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_Sudwest"
-	}
-	text = {
-		trigger = { tag = COG }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_Zentral"
-	}
-	text = {
-		trigger = { tag = GRO }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_Ostafrika"
-	}
-	text = {
-		trigger = { tag = MAD }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_Madagaskar"
-	}
-	text = {
-		trigger = { tag = USA }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_USA"
-	}
-	##Britain
-	text = {
-		trigger = { tag = WAL }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_Wales"
-	}
-	text = {
-		trigger = { tag = SCO }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_Scotland"
-	}
-	text = {
-		trigger = { tag = ENG }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_England"
-	}
-	text = {
-		trigger = { tag = IRE }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_Ireland"
-	}
-	##Reich and Pakt
-	text = {
-		trigger = { tag = GER }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_Germany"
-	}
-	text = {
-		trigger = { tag = OST }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_Ostland"
-	}
-	text = {
-		trigger = { tag = BRG }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_Burgundy"
-	}
-	##Italy
-	text = {
-		trigger = { tag = ITA }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_Italy"
-	}
-	##Brittany
-	text = {
-		trigger = { tag = BRT }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_Brittany"
-	}
-	## Asia
-	text = {
-		trigger = { tag = YUN }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_Yunnan"
-	}
-	text = {
-		trigger = { tag = INS }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_Indonesia"
-	}
-	text = {
-		trigger = { tag = CHI }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_China"
-	}
-	##Japan
-	text = {
-		trigger = { tag = JAP }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_Japan"
-	}
-	## Norway
-	text = {
-		trigger = { tag = NOR }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_Norway"
-	}
-	#### CSS ####
-	text = {
-		trigger = { tag = BRA }
-		localization_key = "GFX_TNO_OpeningScreen_Poster_Brazil"
-	}
-	## Default
-	text = {
-		localization_key = "GFX_TNO_OpeningScreen_Poster_NoContent"
 	}
 }

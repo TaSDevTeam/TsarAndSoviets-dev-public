@@ -92,7 +92,7 @@ RUS_urals_set_receptiveness = {
 			RUS_urals_set_malenkov_receptiveness = yes
 		}
 		else_if = {
-			limit = { ORE = { has_government = authoritarian_democracy } }
+			limit = { ORE = { has_government = paternalism } }
 			RUS_urals_set_burba_receptiveness = yes
 		}
 	}
@@ -148,9 +148,9 @@ RUS_urals_set_malenkov_receptiveness = {
 			if = {
 				limit = {
 					OR = {
-						has_government = social_democracy
-						has_government = liberal_democracy
-						has_government = conservative_democracy
+						has_government = progressivism
+						has_government = liberalism
+						has_government = conservatism
 					}
 				}
 				set_variable = { RUS_urals_receptiveness^0 = 0.30 }
@@ -158,7 +158,7 @@ RUS_urals_set_malenkov_receptiveness = {
 			else_if = {
 				limit = {
 					OR = {
-						has_government = authoritarian_democracy
+						has_government = paternalism
 						has_government = despotism
 					}
 				}
@@ -236,7 +236,7 @@ RUS_urals_set_malenkov_receptiveness = {
 			}
 			if = {
 				limit = {
-					has_government = authoritarian_democracy
+					has_government = paternalism
 				}
 				set_variable = { RUS_urals_receptiveness^0 = 0.1 }
 			}
@@ -259,7 +259,7 @@ RUS_urals_set_malenkov_receptiveness = {
 			}
 			if = {
 				limit = {
-					has_government = authoritarian_democracy
+					has_government = paternalism
 					has_government = despotism
 				}
 				set_variable = { RUS_urals_receptiveness^0 = 0.1 }
@@ -267,9 +267,9 @@ RUS_urals_set_malenkov_receptiveness = {
 			else_if = {
 				limit = {
 					OR = {
-						has_government = conservative_democracy
-						has_government = liberal_democracy
-						has_government = social_democracy
+						has_government = conservatism
+						has_government = liberalism
+						has_government = progressivism
 					}
 				}
 				set_variable = { RUS_urals_receptiveness^0 = 0.3 }
@@ -313,16 +313,16 @@ RUS_urals_set_malenkov_receptiveness = {
 			}
 			if = {
 				limit = {
-					has_government = authoritarian_democracy
+					has_government = paternalism
 				}
 				set_variable = { RUS_urals_receptiveness^0 = 0.8 }
 			}
 			else_if = {
 				limit = {
 					OR = {
-						has_government = conservative_democracy
-						has_government = liberal_democracy
-						has_government = social_democracy
+						has_government = conservatism
+						has_government = liberalism
+						has_government = progressivism
 					}
 				}
 				set_variable = { RUS_urals_receptiveness^0 = 0.3 }
@@ -358,9 +358,9 @@ RUS_urals_set_burba_receptiveness = {
 			if = {
 				limit = {
 					OR = {
-						has_government = social_democracy
-						has_government = liberal_democracy
-						has_government = conservative_democracy
+						has_government = progressivism
+						has_government = liberalism
+						has_government = conservatism
 					}
 				}
 				set_variable = { RUS_urals_receptiveness^0 = 0.9 }
@@ -368,7 +368,7 @@ RUS_urals_set_burba_receptiveness = {
 			else_if = {
 				limit = {
 					OR = {
-						has_government = authoritarian_democracy
+						has_government = paternalism
 						has_government = despotism
 					}
 				}
@@ -443,7 +443,7 @@ RUS_urals_set_burba_receptiveness = {
 			}
 			if = {
 				limit = {
-					has_government = authoritarian_democracy
+					has_government = paternalism
 				}
 				set_variable = { RUS_urals_receptiveness^0 = 1 }
 			}
@@ -466,7 +466,7 @@ RUS_urals_set_burba_receptiveness = {
 			}
 			if = {
 				limit = {
-					has_government = authoritarian_democracy
+					has_government = paternalism
 					has_government = despotism
 				}
 				set_variable = { RUS_urals_receptiveness^0 = 0.9 }
@@ -474,9 +474,9 @@ RUS_urals_set_burba_receptiveness = {
 			else_if = {
 				limit = {
 					OR = {
-						has_government = conservative_democracy
-						has_government = liberal_democracy
-						has_government = social_democracy
+						has_government = conservatism
+						has_government = liberalism
+						has_government = progressivism
 					}
 				}
 				set_variable = { RUS_urals_receptiveness^0 = 1 }
@@ -520,16 +520,16 @@ RUS_urals_set_burba_receptiveness = {
 			}
 			if = {
 				limit = {
-					has_government = authoritarian_democracy
+					has_government = paternalism
 				}
 				set_variable = { RUS_urals_receptiveness^0 = 0.4 }
 			}
 			else_if = {
 				limit = {
 					OR = {
-						has_government = conservative_democracy
-						has_government = liberal_democracy
-						has_government = social_democracy
+						has_government = conservatism
+						has_government = liberalism
+						has_government = progressivism
 					}
 				}
 				set_variable = { RUS_urals_receptiveness^0 = 1 }
@@ -565,9 +565,9 @@ RUS_urals_set_council_receptiveness = {
 			if = {
 				limit = {
 					OR = {
-						has_government = social_democracy
-						has_government = liberal_democracy
-						has_government = conservative_democracy
+						has_government = progressivism
+						has_government = liberalism
+						has_government = conservatism
 					}
 				}
 				set_variable = { RUS_urals_receptiveness^0 = 0.2 }
@@ -575,7 +575,7 @@ RUS_urals_set_council_receptiveness = {
 			else_if = {
 				limit = {
 					OR = {
-						has_government = authoritarian_democracy
+						has_government = paternalism
 						has_government = despotism
 					}
 				}
@@ -653,7 +653,7 @@ RUS_urals_set_council_receptiveness = {
 			}
 			if = {
 				limit = {
-					has_government = authoritarian_democracy
+					has_government = paternalism
 				}
 				set_variable = { RUS_urals_receptiveness^0 = 0.05 }
 			}
@@ -676,7 +676,7 @@ RUS_urals_set_council_receptiveness = {
 			}
 			if = {
 				limit = {
-					has_government = authoritarian_democracy
+					has_government = paternalism
 					has_government = despotism
 				}
 				set_variable = { RUS_urals_receptiveness^0 = 0.05 }
@@ -684,9 +684,9 @@ RUS_urals_set_council_receptiveness = {
 			else_if = {
 				limit = {
 					OR = {
-						has_government = conservative_democracy
-						has_government = liberal_democracy
-						has_government = social_democracy
+						has_government = conservatism
+						has_government = liberalism
+						has_government = progressivism
 					}
 				}
 				set_variable = { RUS_urals_receptiveness^0 = 0.1 }
@@ -730,16 +730,16 @@ RUS_urals_set_council_receptiveness = {
 			}
 			if = {
 				limit = {
-					has_government = authoritarian_democracy
+					has_government = paternalism
 				}
 				set_variable = { RUS_urals_receptiveness^0 = 0.15 }
 			}
 			else_if = {
 				limit = {
 					OR = {
-						has_government = conservative_democracy
-						has_government = liberal_democracy
-						has_government = social_democracy
+						has_government = conservatism
+						has_government = liberalism
+						has_government = progressivism
 					}
 				}
 				set_variable = { RUS_urals_receptiveness^0 = 0.3 }
@@ -775,9 +775,9 @@ RUS_urals_set_league_receptiveness = {
 			if = {
 				limit = {
 					OR = {
-						has_government = social_democracy
-						has_government = liberal_democracy
-						has_government = conservative_democracy
+						has_government = progressivism
+						has_government = liberalism
+						has_government = conservatism
 					}
 				}
 				set_variable = { RUS_urals_receptiveness^1 = 0.85 }
@@ -785,7 +785,7 @@ RUS_urals_set_league_receptiveness = {
 			else_if = {
 				limit = {
 					OR = {
-						has_government = authoritarian_democracy
+						has_government = paternalism
 						has_government = despotism
 					}
 				}
@@ -870,7 +870,7 @@ RUS_urals_set_league_receptiveness = {
 			}
 			if = {
 				limit = {
-					has_government = authoritarian_democracy
+					has_government = paternalism
 				}
 				set_variable = { RUS_urals_receptiveness^1 = 0.80 }
 			}
@@ -893,7 +893,7 @@ RUS_urals_set_league_receptiveness = {
 			}
 			if = {
 				limit = {
-					has_government = authoritarian_democracy
+					has_government = paternalism
 					has_government = despotism
 				}
 				set_variable = { RUS_urals_receptiveness^1 = 0.75 }
@@ -901,9 +901,9 @@ RUS_urals_set_league_receptiveness = {
 			else_if = {
 				limit = {
 					OR = {
-						has_government = conservative_democracy
-						has_government = liberal_democracy
-						has_government = social_democracy
+						has_government = conservatism
+						has_government = liberalism
+						has_government = progressivism
 					}
 				}
 				set_variable = { RUS_urals_receptiveness^1 = 0.9 }
@@ -947,16 +947,16 @@ RUS_urals_set_league_receptiveness = {
 			}
 			if = {
 				limit = {
-					has_government = authoritarian_democracy
+					has_government = paternalism
 				}
 				set_variable = { RUS_urals_receptiveness^1 = 1 }
 			}
 			else_if = {
 				limit = {
 					OR = {
-						has_government = conservative_democracy
-						has_government = liberal_democracy
-						has_government = social_democracy
+						has_government = conservatism
+						has_government = liberalism
+						has_government = progressivism
 					}
 				}
 				set_variable = { RUS_urals_receptiveness^1 = 1 }
@@ -992,9 +992,9 @@ RUS_urals_set_lysenko_receptiveness = {
 			if = {
 				limit = {
 					OR = {
-						has_government = social_democracy
-						has_government = liberal_democracy
-						has_government = conservative_democracy
+						has_government = progressivism
+						has_government = liberalism
+						has_government = conservatism
 					}
 				}
 				set_variable = { RUS_urals_receptiveness^2 = 0.1 }
@@ -1002,7 +1002,7 @@ RUS_urals_set_lysenko_receptiveness = {
 			else_if = {
 				limit = {
 					OR = {
-						has_government = authoritarian_democracy
+						has_government = paternalism
 						has_government = despotism
 					}
 				}
@@ -1080,7 +1080,7 @@ RUS_urals_set_lysenko_receptiveness = {
 			}
 			if = {
 				limit = {
-					has_government = authoritarian_democracy
+					has_government = paternalism
 				}
 				set_variable = { RUS_urals_receptiveness^2 = 0.15 }
 			}
@@ -1103,7 +1103,7 @@ RUS_urals_set_lysenko_receptiveness = {
 			}
 			if = {
 				limit = {
-					has_government = authoritarian_democracy
+					has_government = paternalism
 					has_government = despotism
 				}
 				set_variable = { RUS_urals_receptiveness^2 = 0.05 }
@@ -1111,9 +1111,9 @@ RUS_urals_set_lysenko_receptiveness = {
 			else_if = {
 				limit = {
 					OR = {
-						has_government = conservative_democracy
-						has_government = liberal_democracy
-						has_government = social_democracy
+						has_government = conservatism
+						has_government = liberalism
+						has_government = progressivism
 					}
 				}
 				set_variable = { RUS_urals_receptiveness^2 = 0.1 }
@@ -1157,16 +1157,16 @@ RUS_urals_set_lysenko_receptiveness = {
 			}
 			if = {
 				limit = {
-					has_government = authoritarian_democracy
+					has_government = paternalism
 				}
 				set_variable = { RUS_urals_receptiveness^2 = 0.6 }
 			}
 			else_if = {
 				limit = {
 					OR = {
-						has_government = conservative_democracy
-						has_government = liberal_democracy
-						has_government = social_democracy
+						has_government = conservatism
+						has_government = liberalism
+						has_government = progressivism
 					}
 				}
 				set_variable = { RUS_urals_receptiveness^2 = 0.1 }
@@ -1202,9 +1202,9 @@ RUS_urals_set_nkvd_receptiveness = {
 			if = {
 				limit = {
 					OR = {
-						has_government = social_democracy
-						has_government = liberal_democracy
-						has_government = conservative_democracy
+						has_government = progressivism
+						has_government = liberalism
+						has_government = conservatism
 					}
 				}
 				set_variable = { RUS_urals_receptiveness^2 = 0.1 }
@@ -1212,7 +1212,7 @@ RUS_urals_set_nkvd_receptiveness = {
 			else_if = {
 				limit = {
 					OR = {
-						has_government = authoritarian_democracy
+						has_government = paternalism
 						has_government = despotism
 					}
 				}
@@ -1290,7 +1290,7 @@ RUS_urals_set_nkvd_receptiveness = {
 			}
 			if = {
 				limit = {
-					has_government = authoritarian_democracy
+					has_government = paternalism
 				}
 				set_variable = { RUS_urals_receptiveness^2 = 0.15 }
 			}
@@ -1313,7 +1313,7 @@ RUS_urals_set_nkvd_receptiveness = {
 			}
 			if = {
 				limit = {
-					has_government = authoritarian_democracy
+					has_government = paternalism
 					has_government = despotism
 				}
 				set_variable = { RUS_urals_receptiveness^2 = 0.01 }
@@ -1321,9 +1321,9 @@ RUS_urals_set_nkvd_receptiveness = {
 			else_if = {
 				limit = {
 					OR = {
-						has_government = conservative_democracy
-						has_government = liberal_democracy
-						has_government = social_democracy
+						has_government = conservatism
+						has_government = liberalism
+						has_government = progressivism
 					}
 				}
 				set_variable = { RUS_urals_receptiveness^2 = 0.05 }
@@ -1367,16 +1367,16 @@ RUS_urals_set_nkvd_receptiveness = {
 			}
 			if = {
 				limit = {
-					has_government = authoritarian_democracy
+					has_government = paternalism
 				}
 				set_variable = { RUS_urals_receptiveness^2 = 0.8 }
 			}
 			else_if = {
 				limit = {
 					OR = {
-						has_government = conservative_democracy
-						has_government = liberal_democracy
-						has_government = social_democracy
+						has_government = conservatism
+						has_government = liberalism
+						has_government = progressivism
 					}
 				}
 				set_variable = { RUS_urals_receptiveness^2 = 0.25 }
@@ -1843,25 +1843,25 @@ RUS_puppet_keep_ideology = { # remove "_placeholder" when files are finished
 		}
 		if = {
 			limit = {
-				has_government = social_democracy
+				has_government = progressivism
 			}
 			set_temp_variable = { rulinggamerparty = 3 }
 		}
 		if = {
 			limit = {
-				has_government = liberal_democracy
+				has_government = liberalism
 			}
 			set_temp_variable = { rulinggamerparty = 4 }
 		}
 		if = {
 			limit = {
-				has_government = conservative_democracy
+				has_government = conservatism
 			}
 			set_temp_variable = { rulinggamerparty = 6 }
 		}
 		if = {
 			limit = {
-				has_government = authoritarian_democracy
+				has_government = paternalism
 			}
 			set_temp_variable = { rulinggamerparty = 7 }
 		}
@@ -1949,10 +1949,10 @@ RUS_puppet_keep_ideology = { # remove "_placeholder" when files are finished
 					check_variable = { rulinggamerparty = 3 }
 				}
 				set_politics = {
-					ruling_party = social_democracy
+					ruling_party = progressivism
 				}
 				add_popularity = {
-					ideology = social_democracy
+					ideology = progressivism
 					popularity = 0.35
 				}
 				add_popularity = {
@@ -1969,10 +1969,10 @@ RUS_puppet_keep_ideology = { # remove "_placeholder" when files are finished
 					check_variable = { rulinggamerparty = 4 }
 				}
 				set_politics = {
-					ruling_party = liberal_democracy
+					ruling_party = liberalism
 				}
 				add_popularity = {
-					ideology = liberal_democracy
+					ideology = liberalism
 					popularity = 0.35
 				}
 				add_popularity = {
@@ -1989,10 +1989,10 @@ RUS_puppet_keep_ideology = { # remove "_placeholder" when files are finished
 					check_variable = { rulinggamerparty = 6 }
 				}
 				set_politics = {
-					ruling_party = conservative_democracy
+					ruling_party = conservatism
 				}
 				add_popularity = {
-					ideology = conservative_democracy
+					ideology = conservatism
 					popularity = 0.35
 				}
 				add_popularity = {
@@ -2009,10 +2009,10 @@ RUS_puppet_keep_ideology = { # remove "_placeholder" when files are finished
 					check_variable = { rulinggamerparty = 7 }
 				}
 				set_politics = {
-					ruling_party = authoritarian_democracy
+					ruling_party = paternalism
 				}
 				add_popularity = {
-					ideology = authoritarian_democracy
+					ideology = paternalism
 					popularity = 0.35
 				}
 				add_popularity = {

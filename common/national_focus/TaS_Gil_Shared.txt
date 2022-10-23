@@ -69,7 +69,7 @@ shared_focus = {
 		focus = MAR_Solzh_speech
 	}
 	available = {
-		has_government = authoritarian_democracy
+		has_government = paternalism
 	}
 	select_effect = {
 		hidden_effect = {
@@ -424,10 +424,10 @@ shared_focus = {
 				limit = {
 					OR = {
 						KOM = {
-							has_government = social_democracy
-							has_government = liberal_democracy
-							has_government = conservative_democracy
-							has_government = authoritarian_democracy
+							has_government = progressivism
+							has_government = liberalism
+							has_government = conservatism
+							has_government = paternalism
 						}
 					}
 				}

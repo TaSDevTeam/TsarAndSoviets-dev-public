@@ -35,11 +35,15 @@ recruit_character = MAG_Genrikh_Lyushkov
 recruit_character = MAG_Andrey_Vrastil
 recruit_character = MAG_Yuri_Vitvitsky
 recruit_character = MAG_Georgy_Shekherev
+recruit_character = MAG_Yakov_Malik
+recruit_character = MAG_Anatoly_Sobchak
+recruit_character = MAG_Nikolay_Kossov
 recruit_character = MAG_Alexander_Pavlov
 recruit_character = MAG_Konstantin_Kuznetsov
 recruit_character = MAG_Nikolai_Abramov
 
 recruit_character = MAR_Vladimir_Zhirinovsky
+
 #post men ministers
 recruit_character = MAG_Nahum_Eitingon
 recruit_character = MAG_Vasily_Bekkerov
@@ -63,7 +67,7 @@ add_manpower = 12500
 add_ideas = {
 	### Standard ###
 	RUS_warlord_manpower
-    RUS_warlord_econ
+	RUS_warlord_econ
 	RUS_heirs_of_harbin
 	MAG_fascist_splitters
 	MAG_gateway_into_russia
@@ -80,39 +84,42 @@ add_ideas = {
 	tno_religious_rights_state_religion
 	tno_trade_unions_state_controlled
 	tno_immigration_quota_immigration
-	tno_slavery_outlawed
+	tno_slavery_pow_only
 	tno_public_meetings_regulated
 	tno_press_rights_state_press_only
 	tno_vote_franchise_no_voting
-	tno_refugees_skilled
 
 	### Military ###
-	tno_conscription_four_year_draft
-	tno_women_banned
-	tno_military_supervision_military_policing
+	tno_conscription_extensive_conscription
+	tno_military_supervision_rules_of_engagement
 	tno_training_minimal_training
-	tno_racial_integration_segregated_regiments
 	tno_draft_exemptions_none
 
 	### Social ###
-	tno_safety_minimal_regulations
 	tno_health_care_support_for_emergencies
-	tno_pollution_no_controls
-	tno_education_elite_only
-	tno_penal_system_capital_punishment
-	tno_lgbt_rights_lgbt_outlawed
+	tno_education_stratified_education
+	tno_penal_system_harsh_penal_code
 	tno_gender_rights_traditional_roles
-	tno_minorities_segregation
-	tno_security_police
+	tno_security_regulated_police
+	tno_regulations_token_regulations
 
 	### Economic ###
 	tno_trade_laws_limited_exports
 	tno_income_taxation_elite_tax_exemptions
 	tno_minimum_wage_trinket_minimum_wage
 	tno_max_workhours_14_hour_work_day
-	tno_child_labor_illegal
 	tno_pensions_trinket_pensions
 	tno_unemployment_no_subsidies
+
+	### Misc ###
+	tno_pollution_no_controls
+	tno_safety_minimal_regulations
+	tno_minorities_segregation
+	tno_lgbt_rights_lgbt_outlawed
+	tno_child_labor_illegal
+	tno_refugees_skilled
+	tno_racial_integration_segregated_regiments
+	tno_women_banned
 
 	### Social Development ###
 	
@@ -120,11 +127,12 @@ add_ideas = {
 	tno_industrial_expertise_nascent
 	tno_industrial_equipment_power_tools
 	tno_agriculture_basic_mechanized
+	tno_healthcare_nascent
 	tno_research_facilities_outdated
 	tno_academic_base_basic_literacy
 }
 
-
+set_research_slots = 3
 
 set_country_flag = us_non_hostile
 
@@ -133,26 +141,32 @@ set_technology = {
 
 	##INFANTRY##
 	infantry_weapons_1 = 1
+	night_vision_1 = 1
+	
+	infantry_kit_1 = 1
 	infantry_weapons_2 = 1
-	infantry_weapons_improvements_1 = 1
-	infantry_weapons_improvements_2 = 1
-	infantry_weapons_improvements_3 = 1
-	infantry_weapons_improvements_4 = 1
+	night_vision_2 = 1
+	infantry_kit_2 = 1
+	infantry_weapons_improvements_mine_1 = 1
+	infantry_kit_3 = 1
+	infantry_weapons_improvements_ammo_1 = 1
+	infantry_weapons_improvements_grenade_1 = 1
+	#
 	basic_infantry_equipment = 1
 	support_weapons = 1
 	infantry_at = 1
-	infantry_at2 = 1
+	infantry_at_upgrade_1 = 1
 	motorized_infantry = 1
 	#infantry_aa = 1
 	#infantry_aa2 = 1
 	##SUPPORT##
 	tech_support = 1
 	tech_engineers = 1
-	tech_engineers_flamethrowers_1 = 1
+	assault_weapons_1 = 1
 	tech_recon = 1
 	tech_recon2 = 1
 	tech_military_police = 1
- 	tech_military_police2 = 1
+	tech_military_police2 = 1
 	##ARTY##
 
 	##ARMOR##
@@ -213,6 +227,11 @@ if = {
 
 		MBT_1950 = 1
 
+		Heavy_1945 = 1
+
+		AC_1945 = 1
+		AC_1950 = 1
+
 		artillery4 = 1
 		antiair5 = 1
 		antiair_1950 = 1
@@ -225,7 +244,7 @@ if = {
 	set_technology = {
 		NSB_APC_1945 = 1
 		NSB_APC_1950 = 1
-		NSB_APC_1950_basic_turret = 1
+		#
 
 		NSB_IFV_1945 = 1
 		NSB_IFV_1945_modules_1 = 1
@@ -236,6 +255,11 @@ if = {
 		NSB_MBT_1945_modules_1 = 1
 		NSB_MBT_1945_modules_2 = 1
 		NSB_MBT_1950 = 1
+
+		NSB_AC_1945 = 1
+		NSB_AC_1950 = 1
+
+		NSB_Heavy_1945 = 1
 
 		NSB_Armour_1 = 1
 		NSB_Engine_1 = 1
@@ -256,18 +280,14 @@ set_variable = { tno_trade_laws_effectiveness = 43 }
 set_variable = { tno_income_taxation_effectiveness = 36 }
 set_variable = { tno_minimum_wage_effectiveness = 12 }
 set_variable = { tno_max_workhours_effectiveness = 14 }
-set_variable = { tno_child_labor_effectiveness = 26 }
 set_variable = { tno_unemployment_effectiveness = 20 }
 set_variable = { tno_pensions_effectiveness = 27 }
+set_variable = { tno_regulations_effectiveness = 40 }
 
-set_variable = { tno_safety_effectiveness = 67 }
 set_variable = { tno_health_care_effectiveness = 70 }
-set_variable = { tno_pollution_effectiveness = 12 }
 set_variable = { tno_education_effectiveness = 81 }
 set_variable = { tno_penal_system_effectiveness = 90 }
-set_variable = { tno_lgbt_rights_effectiveness = 95 }
 set_variable = { tno_gender_rights_effectiveness = 71 }
-set_variable = { tno_minorities_effectiveness = 85 }
 set_variable = { tno_security_effectiveness = 62 }
 
 set_variable = { tno_political_parties_effectiveness = 89 }
@@ -278,13 +298,10 @@ set_variable = { tno_slavery_effectiveness = 100 }
 set_variable = { tno_public_meetings_effectiveness = 40 }
 set_variable = { tno_press_rights_effectiveness = 84 }
 set_variable = { tno_vote_franchise_effectiveness = 37 }
-set_variable = { tno_refugees_effectiveness = 90 }
 
 set_variable = { tno_conscription_effectiveness = 43 }
-set_variable = { tno_women_effectiveness = 71 }
 set_variable = { tno_military_supervision_effectiveness = 10 }
 set_variable = { tno_training_effectiveness = 71 }
-set_variable = { tno_racial_integration_effectiveness = 90 }
 set_variable = { tno_draft_exemptions_effectiveness = 93 }
 
 
@@ -401,11 +418,11 @@ set_popularities = {
 	ultranationalism = 0
 	national_socialism = 22
 	socialist = 0
-	social_democracy = 0
-	liberal_democracy = 0
+	progressivism = 0
+	liberalism = 0
 
-	conservative_democracy = 0
-	authoritarian_democracy = 6
+	conservatism = 0
+	paternalism = 6
 	despotism = 8
 	fascism = 64
 	
@@ -428,7 +445,7 @@ if = {
 			engine_type_slot = tank_diesel_engine
 			special_type_slot_1 = secondary_turret_hmg
 		}
-		icon = GFX_AMR_advanced_medium_tank_medium
+		icon = GFX_MAG_advanced_medium_tank_medium
 		upgrades = {
 			tank_nsb_engine_upgrade = 6
 			tank_nsb_armor_upgrade = 6
@@ -436,18 +453,18 @@ if = {
 	}
 
 	create_equipment_variant = {
-		name = "T-70"
+		name = "BT-7-2"
 		type = IFV_chassis_0
 		parent_version = 0
 		modules = {
-			main_armament_slot =IFV_cannon
+			main_armament_slot = IFV_cannon
 			turret_type_slot = IFV_one_man_tank_turret
 			suspension_type_slot = tank_torsion_bar_suspension
 			armor_type_slot = tank_welded_armor
 			engine_type_slot = tank_gasoline_engine
 		}
 		
-		icon = GFX_AMR_advanced_light_tank_medium
+		icon = GFX_MAG_advanced_light_tank_medium
 		upgrades = {
 			tank_nsb_engine_upgrade = 4
 			tank_nsb_armor_upgrade = 4
@@ -461,7 +478,7 @@ add_equipment_to_stockpile = { #from private sales in america
 	producer = USA
 }
 
-add_equipment_to_stockpile = { 
+add_equipment_to_stockpile = {
 	type = transport_plane_equipment_2
 	amount = 2
 	producer = USA

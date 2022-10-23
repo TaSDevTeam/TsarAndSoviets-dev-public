@@ -9,6 +9,7 @@ is_russian_unifier = {
 		original_tag = SAM
 		original_tag = KOM
 		original_tag = PRM
+		original_tag = MAR
 
 		original_tag = OMS
 		original_tag = TYM
@@ -17,16 +18,13 @@ is_russian_unifier = {
 		original_tag = TOM
 		original_tag = SBA
 		original_tag = NOV
-		original_tag = PRC
 		original_tag = KEM
 
 		original_tag = CHT
 		original_tag = AMR
 		original_tag = MAG
-		original_tag = OMO
 		original_tag = BRY
 		original_tag = IRK
-		original_tag = MAR
 	}
 }
 
@@ -44,10 +42,8 @@ is_kazakh_unifier = {
 is_central_russian_nation = {
 	OR = {
 		original_tag = WRS
-		original_tag = UKH
 		original_tag = ONG
 		original_tag = KOM
-		original_tag = PLS
 		original_tag = SAM
 		original_tag = GOR
 		original_tag = KST
@@ -58,7 +54,6 @@ is_central_russian_nation = {
 		original_tag = PRM
 		original_tag = GAY
 		original_tag = BKR
-		original_tag = MAR
 	}
 }
 
@@ -113,7 +108,7 @@ is_race_for_the_urals_player = {
 		original_tag = OMS
 		original_tag = TYM
 		original_tag = SVR
-	}	
+	}
 }
 
 is_wasteland = {
@@ -124,6 +119,10 @@ is_wasteland = {
 				NOT = {
 					has_country_leader = {
 						character = OMO_Alexander_Men
+						ruling_only = yes
+					}
+					has_country_leader = {
+						character = OMO_2022_Nikolai_Buckharin
 						ruling_only = yes
 					}
 				}
@@ -181,16 +180,26 @@ is_southern_urals_nation = {
 
 is_moskowien_splits = {
 	OR = {
-		tag = OKB
-		tag = RSB
+		tag = TVR
+		tag = LUF
+		tag = RZH
+		tag = NTI
+		tag = OZM
+		tag = SNP
+		tag = OZL
+		tag = VVV
 		tag = PSK
-		tag = MOS
-		tag = SMO
-		tag = ZLB
-		tag = FRP
-		tag = PEN
-		tag = RDC
-		tag = BBB
+		tag = PFT
+		tag = SHI
+		tag = OZT
+		tag = NTA
+		tag = ORL
+		tag = RFS
+		tag = OZO
+		tag = POV
+		tag = POP
+		tag = OZP
+		tag = OZA
 		tag = PAU
 	}
 }
@@ -245,6 +254,45 @@ can_form_west_russia = {
 	}
 }
 
+fully_cored_west_russia = {
+	AND = {
+		owns_state = 214
+		owns_state = 249
+		owns_state = 250
+		owns_state = 251
+		owns_state = 252
+		owns_state = 256
+		owns_state = 262
+		owns_state = 351
+		owns_state = 397
+		owns_state = 398
+		owns_state = 399
+		owns_state = 400
+		owns_state = 651
+		owns_state = 752
+		owns_state = 753
+		owns_state = 755
+		owns_state = 850
+		owns_state = 851
+		owns_state = 853
+		owns_state = 854
+		owns_state = 855
+		owns_state = 856
+		owns_state = 857
+		owns_state = 860
+		owns_state = 861
+		owns_state = 862
+		owns_state = 864
+		owns_state = 865
+		owns_state = 866
+		owns_state = 867
+		owns_state = 868
+		owns_state = 869
+		owns_state = 870
+		is_core_of = ROOT
+	}
+}
+
 can_form_west_siberia = {
 	AND = {
 		owns_state = 403
@@ -281,9 +329,23 @@ can_form_far_east = {
 		owns_state = 561
 		owns_state = 562
 		owns_state = 563
-		owns_state = 564
-		owns_state = 565
-		owns_state = 566
+		if = {
+			limit = {
+				original_tag = OMO
+				OMO_2022_aprilfools_gamerule_active = yes
+				BRY = {
+					is_subject_of = OMO
+				}
+			}
+			BRY = {
+				is_subject_of = OMO
+			}
+		}
+		else = {
+			owns_state = 564
+			owns_state = 565
+			owns_state = 566
+		}
 		owns_state = 574
 		owns_state = 637
 		owns_state = 644
@@ -457,10 +519,10 @@ WSR_WSB_is_compatible = {
 				WSR = {
 					original_tag = KOM
 					OR = {
-						has_government = social_democracy
-						has_government = liberal_democracy
-						has_government = conservative_democracy
-						has_government = authoritarian_democracy
+						has_government = progressivism
+						has_government = liberalism
+						has_government = conservatism
+						has_government = liberal_conservatism
 						AND = {
 							has_government = despotism
 							has_country_leader = {
@@ -484,7 +546,7 @@ WSR_WSB_is_compatible = {
 				OR = {
 					WSB = {
 						original_tag = SVR
-						has_government = authoritarian_democracy
+						has_government = paternalism
 					}
 					WSB = {
 						original_tag = TYM
@@ -501,7 +563,7 @@ WSR_WSB_is_compatible = {
 				OR = {
 					WSB = {
 						original_tag = SVR
-						has_government = authoritarian_democracy
+						has_government = paternalism
 					}
 					WSB = {
 						original_tag = TYM
@@ -511,7 +573,7 @@ WSR_WSB_is_compatible = {
 			AND = {
 				WSR = {
 					original_tag = SAM
-					has_government = authoritarian_democracy
+					has_government = paternalism
 				}
 				WSB = {
 					original_tag = SVR
@@ -532,7 +594,7 @@ WSR_WSB_is_compatible = {
 					WSB = {
 						AND = {
 							original_tag = SVR
-							has_government = authoritarian_democracy
+							has_government = paternalism
 						}
 					}
 				}
@@ -544,7 +606,7 @@ WSR_WSB_is_compatible = {
 				}
 				WSB = {
 					original_tag = SVR
-					has_government = authoritarian_democracy
+					has_government = paternalism
 				}
 			}
 		}
@@ -567,7 +629,7 @@ CSB_FST_is_compatible = {
 				}
 				FST = {
 					original_tag = MAG
-					has_government = authoritarian_democracy
+					has_government = paternalism
 				}
 			}
 			AND = {
@@ -590,6 +652,7 @@ CSB_FST_is_compatible = {
 				FST = {
 					original_tag = OMO
 				}
+				OMO_2022_aprilfools_gamerule_active = no
 			}
 			AND = {
 				CSB = {
@@ -701,13 +764,9 @@ RWS_SIB_is_compatible = {
 				}
 			}
 			AND = {
-				RWS = {
+				RWS = { #Now for Bukharina and Suslov
 					original_tag = KOM
 					has_government = communist
-					has_country_leader = {
-						character = KOM_Mikhail_Suslov
-						ruling_only = yes
-					}
 				}
 				OR = {
 					SIB = {
@@ -725,9 +784,9 @@ RWS_SIB_is_compatible = {
 				RWS = {
 					original_tag = KOM
 					OR = {
-						has_government = liberal_democracy
-						has_government = social_democracy
-						has_government = authoritarian_democracy
+						has_government = liberalism
+						has_government = progressivism
+						has_government = paternalism
 					}
 				}
 				OR = {
@@ -742,7 +801,7 @@ RWS_SIB_is_compatible = {
 					}
 					SIB = {
 						original_tag = KEM
-						has_government = authoritarian_democracy
+						has_government = paternalism
 					}
 					SIB = {
 						original_tag = MAG
@@ -792,7 +851,7 @@ RWS_SIB_is_compatible = {
 			AND = {
 				RWS = {
 					original_tag = SAM
-					has_government = authoritarian_democracy
+					has_government = paternalism
 				}
 				OR = {
 					SIB = {
@@ -823,17 +882,19 @@ RWS_SIB_is_compatible = {
 					original_tag = SAM
 					has_government = despotism
 				}
-				SIB = {
-					original_tag = MAG
-				}
-				SIB = {
-					original_tag = CHT
-				}
-				SIB = {
-					original_tag = NOV
-				}
-				SIB = {
-					original_tag = KRS
+				OR = {
+					SIB = {
+						original_tag = MAG
+					}
+					SIB = {
+						original_tag = CHT
+					}
+					SIB = {
+						original_tag = NOV
+					}
+					SIB = {
+						original_tag = KRS
+					}
 				}
 			}
 			AND = {
@@ -849,7 +910,7 @@ RWS_SIB_is_compatible = {
 					}
 					SIB = {
 						original_tag = KEM
-						has_government = authoritarian_democracy
+						has_government = paternalism
 					}
 					SIB = {
 						original_tag = MAG
@@ -870,34 +931,9 @@ RWS_SIB_is_compatible = {
 				}
 			}
 			AND = {
-                RWS = {
-                    original_tag = MAR
-                    has_government = despotism
-                }
-                OR = {
-                    SIB = {
-                        original_tag = CHT
-                    }
-                    SIB = {
-                        original_tag = MAG
-                        has_government = despotism
-                    }
-                    SIB = {
-                        original_tag = NOV
-                        has_government = authoritarian_democracy
-                    }
-                    SIB = {
-                        original_tag = OMO
-                    }
-                    SIB = {
-                        original_tag = KEM
-                    }
-                }
-            }
-			AND = {
 				RWS = {
 					original_tag = SVR
-					has_government = authoritarian_democracy
+					has_government = paternalism
 				}
 				OR = {
 					SIB = {
@@ -933,7 +969,7 @@ RWS_SIB_is_compatible = {
 			AND = {
 				RWS = {
 					original_tag = SVR
-					has_government = conservative_democracy
+					has_government = conservatism
 				}
 				OR = {
 					SIB = {
@@ -947,7 +983,7 @@ RWS_SIB_is_compatible = {
 					}
 					SIB = {
 						original_tag = KEM
-						has_government = authoritarian_democracy
+						has_government = paternalism
 					}
 					SIB = {
 						original_tag = KRS
@@ -1013,6 +1049,31 @@ RWS_SIB_is_compatible = {
 					}
 				}
 			}
+			AND = {
+                RWS = {
+                    original_tag = MAR
+                    has_government = despotism
+                }
+                OR = {
+                    SIB = {
+                        original_tag = CHT
+                    }
+                    SIB = {
+                        original_tag = MAG
+                        has_government = despotism
+                    }
+                    SIB = {
+                        original_tag = NOV
+                        has_government = paternalism
+                    }
+                    SIB = {
+                        original_tag = OMO
+                    }
+                    SIB = {
+                        original_tag = KEM
+                    }
+                }
+            }
 		}
 	}
 	else = { always = no }
@@ -1024,10 +1085,10 @@ RUS_KAZ_is_compatible = {
 		if = {
 			limit = {
 				OR = {
-					has_government = social_democracy
-					has_government = liberal_democracy
-					has_government = conservative_democracy
-					has_government = authoritarian_democracy
+					has_government = progressivism
+					has_government = liberalism
+					has_government = conservatism
+					has_government = paternalism
 				}
 			}
 			OR = {
@@ -1167,7 +1228,7 @@ KOM_has_right_government = {
 		has_government = fascism
 		has_government = national_socialism
 		has_government = ultranationalism
-		has_government = conservative_democracy
+		has_government = conservatism
 		AND = {
 			has_government = despotism
 			has_country_leader = {
@@ -1180,9 +1241,9 @@ KOM_has_right_government = {
 
 KOM_has_center_government = {
 	OR = {
-		has_government = social_democracy
-		has_government = liberal_democracy
-		has_government = authoritarian_democracy
+		has_government = progressivism
+		has_government = liberalism
+		has_government = liberal_conservatism
 		AND = {
 			has_government = despotism
 			has_country_leader = {
@@ -1196,9 +1257,9 @@ KOM_has_center_government = {
 KOM_zhdanov_favors_enabled = {
 	NOT = {
 		OR = {
-			has_country_flag = KOM_Zhdanov_Dead
-			has_country_flag = KOM_Zhdanov_Retired
-			has_country_flag = KOM_Zhdanov_Arrested
+			check_variable = { KOM_leader_status^1 = 0 }
+			check_variable = { KOM_leader_status^1 = 2 }
+			check_variable = { KOM_leader_status^1 = 1 }
 			has_country_flag = KOM_VOZNESENSKY_CUT_TIES
 		}
 	}
@@ -1234,7 +1295,7 @@ RUS_is_CIA_sponsored = { #sanity check for CIA ops
 		}
 	}
 	else_if = { # Siberian
-		limit = { OR = {  is_west_siberian_nation = yes is_central_siberian_nation = yes } }
+		limit = { OR = { is_west_siberian_nation = yes is_central_siberian_nation = yes } }
 		NOT = { original_tag = SBA }
 	}
 	else_if = { # Far Eastern
@@ -1308,10 +1369,10 @@ RUS_can_diplomatize_with_finland_or_whatever = {
 		AND = {
 			original_tag = KOM
 			OR = {
-				has_government = conservative_democracy
-				has_government = authoritarian_democracy
-				has_government = liberal_democracy
-				has_government = social_democracy
+				has_government = conservatism
+				has_government = paternalism
+				has_government = liberalism
+				has_government = progressivism
 				has_government = socialist
 				has_government = communist
 				has_government = despotism
@@ -1322,7 +1383,7 @@ RUS_can_diplomatize_with_finland_or_whatever = {
 		AND = {
 			original_tag = SAM
 			OR = {
-				has_government = authoritarian_democracy
+				has_government = paternalism
 				has_government = despotism
 			}
 		}
@@ -1343,16 +1404,12 @@ RUS_consider_communist_regime = {
 			}
 		}
 		has_country_leader = {
-			character = GOR_Nikolai_Averin
-			ruling_only = yes
-		}
-		has_country_leader = {
 			character = KOM_Ivan_Serov
 			ruling_only = yes
 		}
 		AND = {
 			tag = SVR
-			has_government = authoritarian_democracy
+			has_government = paternalism
 		}
 	}
 }
@@ -1380,16 +1437,5 @@ RUS_consider_aryan_regime = {
 			character = PRM_Velimir
 			ruling_only = yes
 		}
-	}
-}
-
-PRC_can_assign_status = {
-	check_variable = { THIS.PRC_Owner = 0 }
-	OR = {
-		AND = {
-			NOT = { is_core_of = PRC }
-			PRC = { has_country_flag = PRC_can_give_non_cores }
-		}
-		is_core_of = PRC
 	}
 }

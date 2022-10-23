@@ -341,7 +341,7 @@ country_event = { #Turkestan breaks free
 			end_puppet = MAR
 			econ_leave_sphere = yes
 			set_politics = {
-						ruling_party = authoritarian_democracy 
+						ruling_party = paternalism 
 						last_election = "1933.2.16"
 						election_frequency = 36
 						elections_allowed = no
@@ -351,7 +351,7 @@ country_event = { #Turkestan breaks free
 						promote_leader = yes
 						country_leader = {
 							desc = "POLITICS_RUTSKOJ_COLLAPSE_DESC"
-							ideology = authoritarian_democracy_stratocracy_subtype
+							ideology = paternalism_stratocracy_subtype
 							expire = "1999.1.1"
 							traits = { }
 									
@@ -405,7 +405,7 @@ country_event = { #-kazakhstan
 			transfer_state = 652
 			remove_ideas = PAV_idealistic_revolutionaries 
 			set_politics = {
-						ruling_party = authoritarian_democracy
+						ruling_party = paternalism
 						last_election = "1933.2.16"
 						election_frequency = 36
 						elections_allowed = no
@@ -415,14 +415,14 @@ country_event = { #-kazakhstan
 						promote_leader = yes
 						country_leader = {
 							desc = "POLITICS_MUKHA_COLLAPSE_DESC"
-							ideology = authoritarian_democracy_social_nationalism_subtype
+							ideology = paternalism_social_nationalism_subtype
 							expire = "1999.1.1"
 							traits = { }
 									
 					}
 			}	
 			set_party_name = {
-				ideology = authoritarian_democracy
+				ideology = paternalism
 				long_name = PAV_MAR_collapse_party_long
 				name = PAV_MAR_collapse_party
 			}			
@@ -435,11 +435,11 @@ country_event = { #-kazakhstan
 			transfer_state = 407
 			MAR_Wojciech_Jaruzelski = {
 				promote_character = {
-					ideology = authoritarian_democracy_social_nationalism_subtype
+					ideology = paternalism_social_nationalism_subtype
 				}
 			}			
 			set_politics = {
-						ruling_party = authoritarian_democracy
+						ruling_party = paternalism
 						last_election = "1933.2.16"
 						election_frequency = 36
 						elections_allowed = no
@@ -449,14 +449,14 @@ country_event = { #-kazakhstan
 						promote_leader = yes
 						country_leader = {
 							desc = "POLITICS_JARUZELSKI_COLLAPSE_DESC"
-							ideology = authoritarian_democracy_social_nationalism_subtype
+							ideology = paternalism_social_nationalism_subtype
 							expire = "1999.1.1"
 							traits = { }
 									
 					}
 			}	
 			set_party_name = {
-				ideology = authoritarian_democracy
+				ideology = paternalism
 				long_name = NPL_MAR_collapse_party_long
 				name = NPL_MAR_collapse_party
 			}			
@@ -662,13 +662,13 @@ country_event = { #F dv 1
 			set_country_flag = RUS_cancel_all_ideas
 			econ_join_sphere_USA = yes 			
 			set_politics = {
-						ruling_party = liberal_democracy
+						ruling_party = liberalism
 						last_election = "1933.2.16"
 						election_frequency = 36
 						elections_allowed = no
 			}
 			add_popularity = {
-				ideology = liberal_democracy
+				ideology = liberalism
 				popularity = 0.45
 			}
 			load_focus_tree = shattered_ambitions
@@ -677,13 +677,13 @@ country_event = { #F dv 1
 				promote_leader = yes
 				country_leader = {
 					desc = "POLITICS_ZHIRIK_COLLAPSE_DESC"
-					ideology = liberal_democracy_liberal_radicalism_subtype
+					ideology = liberalism_liberal_radicalism_subtype
 					expire = "1999.1.1"
 					traits = { }
 				}
 			}
 			set_party_name = {
-				ideology = liberal_democracy
+				ideology = liberalism
 				long_name = MAG_MAR_collapse_party_long
 				name = MAG_MAR_collapse_party
 			}
@@ -720,13 +720,13 @@ country_event = { #F dv 2
 			add_state_core = 890
 			transfer_state = 890
 			set_politics = {
-						ruling_party = liberal_democracy
+						ruling_party = liberalism
 						last_election = "1933.2.16"
 						election_frequency = 36
 						elections_allowed = no
 			}
 			add_popularity = {
-				ideology = liberal_democracy
+				ideology = liberalism
 				popularity = 0.45
 			}
 			set_country_flag = RUS_cancel_all_ideas
@@ -742,13 +742,13 @@ country_event = { #F dv 2
 				promote_leader = yes
 				country_leader = {
 					desc = "POLITICS_NIKOLAYEV_COLLAPSE_DESC"
-					ideology = liberal_democracy_national_liberal_subtype
+					ideology = liberalism_national_liberal_subtype
 					expire = "1999.1.1"
 					traits = { }
 				}
 			}
 			set_party_name = {
-				ideology = liberal_democracy
+				ideology = liberalism
 				long_name = YAK_MAR_collapse_party_long
 				name = YAK_MAR_collapse_party
 			}
@@ -993,18 +993,18 @@ country_event = { #F Ural
 			transfer_state = 571
 
 			set_politics = {
-						ruling_party = authoritarian_democracy
+						ruling_party = paternalism
 						last_election = "1933.2.16"
 						election_frequency = 36
 						elections_allowed = no
 			}
 			MAR_Evgeny_Primakov = {
 				promote_character = {
-					ideology = authoritarian_democracy_controlled_democracy_subtype
+					ideology = paternalism_controlled_democracy_subtype
 				}
 			}
 			add_popularity = {
-				ideology = authoritarian_democracy
+				ideology = paternalism
 				popularity = 0.45
 			}
 			load_focus_tree = shattered_ambitions
@@ -1013,13 +1013,13 @@ country_event = { #F Ural
 				promote_leader = yes
 				country_leader = {
 					desc = "POLITICS_PRIMAKOV_COLLAPSE_DESC"
-					ideology = authoritarian_democracy_controlled_democracy_subtype
+					ideology = paternalism_controlled_democracy_subtype
 					expire = "1999.1.1"
 					traits = { }
 				}
 			}
 			set_party_name = {
-				ideology = authoritarian_democracy
+				ideology = paternalism
 				long_name = SVR_MAR_collapse_party_long
 				name = SVR_MAR_collapse_party
 			}
@@ -1107,7 +1107,7 @@ country_event = { #Total f
 			add_state_core = 854
 			transfer_state = 854
 			set_politics = {
-						ruling_party = authoritarian_democracy
+						ruling_party = paternalism
 						last_election = "1933.2.16"
 						election_frequency = 36
 						elections_allowed = no
@@ -1117,18 +1117,18 @@ country_event = { #Total f
 				promote_leader = yes
 				country_leader = {
 					desc = "POLITICS_SHAYMIEV_COLLAPSE_DESC"
-					ideology = authoritarian_democracy_controlled_democracy_subtype
+					ideology = paternalism_controlled_democracy_subtype
 					expire = "1999.1.1"
 					traits = { }
 				}
 			}
 			set_party_name = {
-				ideology = authoritarian_democracy
+				ideology = paternalism
 				long_name = TAR_MAR_collapse_party_long
 				name = TAR_MAR_collapse_party
 			}
 			add_popularity = {
-				ideology = authoritarian_democracy
+				ideology = paternalism
 				popularity = 0.45
 			}
 		}
@@ -1315,7 +1315,7 @@ country_event = { #Technical stuff no loc
 		ai_chance = { factor = 1 }
 		MAN = {
 			set_politics = {
-				ruling_party = liberal_democracy
+				ruling_party = liberalism
 				last_election = "1933.2.16"
 				election_frequency = 36
 				elections_allowed = no

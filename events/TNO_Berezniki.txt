@@ -915,7 +915,7 @@ country_event = { #PeshkiVlada?
 		ai_chance = { factor = 1 }	
 		add_political_power = 25
 		add_popularity = {
-			ideology = authoritarian_democracy
+			ideology = paternalism
     		popularity = -0.10
 		}
 	}
@@ -1018,10 +1018,10 @@ country_event = { #ZaRusYaUsrus
 	option = {
 		name = berez_bomb.11.a
 		ai_chance = { factor = 1 }
-		declare_war_on = {
-   			target = PRM
-    		type = annex_everything
-		}			
+		#declare_war_on = {
+   		#	target = PRM
+    	#	type = annex_everything
+		#}			
 		add_timed_idea = {
 		    idea = MAR_attack_only_aria
 		    days = 90
@@ -1030,10 +1030,10 @@ country_event = { #ZaRusYaUsrus
 	option = {
 		name = berez_bomb.11.b
 		ai_chance = { factor = 1 }
-		declare_war_on = {
-   			target = PRM
-    		type = annex_everything
-		}			
+		#declare_war_on = {
+   		#	target = PRM
+    	#	type = annex_everything
+		#}			
 		add_timed_idea = {
 	    	idea = MAR_defence_only_aria
 	    	days = 90
@@ -1042,10 +1042,10 @@ country_event = { #ZaRusYaUsrus
 	option = {
 		name = berez_bomb.11.c
 		ai_chance = { factor = 1 }
-		declare_war_on = {
-   			target = PRM
-    		type = annex_everything
-		}			
+		#declare_war_on = {
+   		#	target = PRM
+    	#	type = annex_everything
+		#}			
 		add_timed_idea = {
 	    	idea = MAR_def_and_attack
 	    	days = 90
@@ -1067,8 +1067,9 @@ country_event = { #NovoeDrevo
 		name = berez_bomb.12.a
 		ai_chance = { factor = 1 }
 		hidden_effect = {
+			RUS_Smuta_Enable = yes
 			load_focus_tree = {
-				tree = MAR_voina
+				tree = MAR_smuta
 				keep_completed = no
 			}	
 		}			
@@ -1242,10 +1243,6 @@ country_event = { #BesedaSbatuskoi
 	option = {
 		name = berez_voina.3.a
 		ai_chance = { factor = 1 }	
-		annex_country = {
-			target = GAY
-			transfer_troops = yes
-		}
 	}
 }
 
@@ -1322,10 +1319,10 @@ country_event = { #MAR_new_rev
 	option = {
 		name = berez_voina.5.a
 		ai_chance = { factor = 1 }
-		declare_war_on = {
-   			target = VYT
-    		type = annex_everything
-		}
+		#declare_war_on = {
+   		#	target = VYT
+    	#	type = annex_everything
+		#}
 		add_war_support = 0.05
 	}
 }
@@ -2013,7 +2010,7 @@ country_event = { # MAR_Amnistia
 	option = {
 		name = berez_voina.39.a
 		ai_chance = { factor = 1 }
-		add_manpower = 10000
+		add_manpower = 2000
 		add_war_support = 0.05
 	}
 }
@@ -2131,7 +2128,7 @@ country_event = { # MAR_kandidati BELOZERSKI
 		tag = MAR
 		NOT = { has_completed_focus = MAR_kandidati }
 		focus_progress = {
-			focus = MAR_kandidati
+			focus = MAR_zemsky_candidates
 			progress > 0.16
 		}
 	}
@@ -2143,7 +2140,7 @@ country_event = { # MAR_kandidati BELOZERSKI
 		ai_chance = { factor = 1 }
 		hidden_effect = {
 			country_event = {
-				id = berez_zemsob.5 days = 5
+				id = berez_zemsob.5 days = 3
 			}
 		}
 	}
@@ -2163,7 +2160,7 @@ country_event = { # MAR_kandidati Maria Romovaya BABA JABA
 		ai_chance = { factor = 1 }
 		hidden_effect = {
 			country_event = {
-				id = berez_zemsob.6 days = 5
+				id = berez_zemsob.6 days = 3
 			}
 		}
 	}
@@ -2183,7 +2180,7 @@ country_event = { # MAR_kandidati KAKAYA TO HUETA
 		ai_chance = { factor = 1 }
 		hidden_effect = {
 			country_event = {
-				id = berez_zemsob.7 days = 5
+				id = berez_zemsob.7 days = 3
 			}
 		}
 	}
@@ -2266,11 +2263,11 @@ country_event = { # MAR_vstrecha_s_daunami
 		name = berez_zemsob.11.a
 		ai_chance = { factor = 1 }
 		random_owned_controlled_state = {
-			add_building_construction = {
-				type = industrial_complex
-				level = 2
-				instant_build = yes
-			}
+			#add_building_construction = {
+			#	type = industrial_complex
+			#	level = 2
+			#	instant_build = yes
+			#}
 		}
 		
 	}
@@ -2352,11 +2349,12 @@ country_event = { # MAR_Char_army
 	option = {
 		name = berez_zemsob.16.a
 		ai_chance = { factor = 1 }
-		add_tech_bonus = {
-			bonus = 1
-			uses = 1
-			category = land_doctrine
-		}
+		add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
 	}
 }
 
@@ -2431,9 +2429,9 @@ country_event = { # MAR_final_vibori
 	picture = GFX_report_event_zemsob_21
 	trigger = {
 		tag = MAR
-		NOT = { has_completed_focus = MAR_final_vibori }
+		NOT = { has_completed_focus = MAR_sobor_is_voting_now }
 		focus_progress = {
-			focus = MAR_final_vibori
+			focus = MAR_sobor_is_voting_now
 			progress > 0.5
 		}
 	}
@@ -2520,10 +2518,10 @@ country_event = { # MAR_final_vibori MARIA WIN
 		name = berez_zemsob.23.a
 		ai_chance = { factor = 1 }
 		set_politics = {
-			ruling_party = authoritarian_democracy
+			ruling_party = paternalism
 		}
 		add_popularity = {
-			ideology = authoritarian_democracy
+			ideology = paternalism
 			popularity = 0.4
 		}
 		set_country_flag = MAR_POLITICS_RESOLVED		
