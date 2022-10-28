@@ -1409,10 +1409,7 @@ country_event = { #MAR_pismo_sovesti
 	
 	option = {
 		name = berez_voina.9.a
-		ai_chance = { factor = 1 }
-		BKR = {
-			country_event = { id = berez_voina.10 days = 1 }
-		}		
+		ai_chance = { factor = 1 }		
 	}
 }
 
@@ -1673,9 +1670,6 @@ country_event = { #MAR_sladenikoe_predloj otrpavka
 	option = {
 		name = berez_voina.22.a
 		ai_chance = { factor = 1 }
-		VOL = {
-			country_event = { id = berez_voina.23 days = 1 }
-		}
 	}
 }
 
@@ -1778,10 +1772,7 @@ country_event = { #MAR_prizma_jopi
 	
 	option = {
 		name = berez_voina.27.a
-		ai_chance = { factor = 1 }
-		KOM = {
-			country_event = { id = berez_voina.28 days = 1 }
-		}			
+		ai_chance = { factor = 1 }		
 	}
 }
 

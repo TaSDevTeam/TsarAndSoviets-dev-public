@@ -2034,14 +2034,14 @@
 
  MAR_dobrovoltsy_modifier:0 "Опыт добровольцев"
  MAR_Moscowien_trolling:0 "Прорванный тыл"
- 
+    
  
  #смута
  
 
 MAR_return_to_antipin: "Вернутся к Антипину"
 MAR_ordens_corps: "Войска Ордена"
-MAR_expand_cooperation: "Расширить кооперациюn"
+MAR_expand_cooperation: "Расширить кооперацию"
 MAR_mladorossi_manifesto: "Манифест Младороссов"
 MAR_struggle_for_the_russian_spirit: "Бой за Русский дух"
 MAR_fire_that_will_forge_nation: "Огонь, что скуёт нацию"
@@ -2052,7 +2052,7 @@ MAR_virtue_of_mercy: "Добродетель пощады"
 MAR_obstacle_is_obstacle: "Препятствие есть препятствие"
 MAR_our_cause_is_right: "Наше дело - правое!"
 MAR_call_to_the_base: "Звонок на базу"
-MAR_prepare_to_zemsky_sobor: "Подготовится к Земскому собору"
+MAR_prepare_to_zemsky_sobor: "Подготовиться к Земскому собору"
 MAR_zemsky_candidates: "Кандидаты"
 MAR_zemsky_voters: "Выборщики"
 MAR_every_man_is_a_tsar: "Каждый человек - царь"
@@ -2067,8 +2067,8 @@ MAR_army_for_tsar_general: "Армия за Царя-генерала"
 MAR_sobor_is_voting_now: "Земский собор [GetYear]"
 MAR_mladorossi_dream: "Младоросская мечта"
 
-MAR_return_to_antipin_desc: ""
-MAR_ordens_corps_desc: ""
+MAR_return_to_antipin_desc: "Орден Святого Георгия является поистине уникальным образованием на просторах разрушенной России. Военно-монашеский православный орден с бывшим пулеметчиком в качестве лидера. Тем не менее война с орденом Святого Георгия кажется нам абсолютно бессмысленным конфликтом. Возможно нам удастся уговорить монахов присоединиться мирно."
+MAR_ordens_corps_desc: "Уникальность Гайнов уже стала причиной проблем в нашей администрации. После присоединения остро встал вопрос как об интеграции, так и непосредственно о судьбе ордена. Данную проблему необходимо срочно решить пока не стало слишком поздно."
 MAR_expand_cooperation_desc: ""
 MAR_mladorossi_manifesto_desc: ""
 MAR_struggle_for_the_russian_spirit_desc: ""
@@ -2094,3 +2094,14 @@ MAR_connection_with_the_past_desc: ""
 MAR_army_for_tsar_general_desc: ""
 MAR_sobor_is_voting_now_desc: ""
 MAR_mladorossi_dream_desc: ""
+
+RUS_Decision_Smuta_Expansion_MAR_Generic: "Атаковать [MAR.GetFlag] §R[MAR.GetName]§!"
+RUS_Decision_Smuta_Expansion_MAR_Generic_desc: "$RUS_Decision_Smuta_Expansion_UnifiedDesc$"
+
+RUS_Decision_Smuta_Expansion_BKR_MAR_Propose_Union: "Предложить §Wобъединение§! с[BKR.GetFlag] §W[BKR.GetName]§!"
+RUS_Decision_Smuta_Expansion_VOL_MAR_Propose_Union: "Предложить §Wобъединение§! с [VOL.GetFlag] §W[VOL.GetName]§!"
+RUS_Decision_Smuta_Expansion_KOM_MAR_Propose_Union: "Предложить §Wобъединение§! с [KOM.GetFlag] §W[KOM.GetName]§!"
+
+RUS_Decision_Smuta_Expansion_BKR_MAR_Propose_Union_desc: "Ахмет-Заки, по мнению Казем-бека, является умным мудрым и сильным по духу человеком. Он сражался за свой народ со всей отверженностью, ибо устал видеть то, как чиновники и СССР и Российской Империи относятся к башкирам. Поэтому Ахмета-заки крайне заинтересует план Казем-Бека."
+RUS_Decision_Smuta_Expansion_VOL_MAR_Propose_Union_desc: "Вологда управляется бежавшим генералом Василием Ивановым. Она является "нейтральной" страной, однако надо покончить с её "нейтральностью". Казем-бек сегодня собирает консилиум генералов, где они собираются решать судьбу Вологды."
+RUS_Decision_Smuta_Expansion_KOM_MAR_Propose_Union_desc: "В Коми демократы смогли удержать власть в своей стране и не дали угаснуть молодому цветку демократии. Наши отношения с ними довольно хороши. Многие люди в республике Коми хотят как и мы прекратить раздробленность России и вернуть ей былое величие. Зачем нам кровопролитная война, где брат убивает брата, если можно просто воспользоваться рычагами демократии?"
