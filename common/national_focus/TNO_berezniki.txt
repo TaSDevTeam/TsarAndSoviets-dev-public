@@ -1,4 +1,16 @@
 focus_tree = {
+	id = MAR_start_tree_new
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = MAR
+		}
+	}
+	default = no	
+	shared_focus = MAR_start_from_scratch
+}
+focus_tree = {
 	id = MAR_start_tree
 	country = {
 		factor = 0
@@ -10,7 +22,6 @@ focus_tree = {
 	default = no
 	shared_focus = MAR_kazembek_begining
 }
-
 focus_tree = {
 	id = MAR_bombing_ot_AB
 	country = {
@@ -19,7 +30,14 @@ focus_tree = {
 	default = no
 	shared_focus = MAR_bombing_zhrebi_broshen
 }
-
+focus_tree = {
+	id = MAR_postbomb_tree
+	country = {
+		factor = 0
+	}
+	default = no
+	shared_focus = MAR_our_time_has_come
+}
 focus_tree = {
 	id = MAR_voina
 	country = {
@@ -29,13 +47,16 @@ focus_tree = {
 	shared_focus = MAR_hope_freedom
 	shared_focus = MAR_pohod_the_end
 }
-
 focus_tree = {
-	id = MAR_smuta
+	id = MAR_smuta_tree
 	country = {
 		factor = 0
+		modifier = {
+			add = 10
+			tag = MAR
+		}
 	}
-	default = no
+	default = no	
 	shared_focus = MAR_return_to_antipin
 }
 

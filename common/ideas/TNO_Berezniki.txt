@@ -17,8 +17,9 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				industrial_capacity_factory = 0.1
-				stability_factor = 0.1
+				stability_factor = -0.05
+				industrial_capacity_factory = 0.05
+				line_change_production_efficiency_factor = -0.15
 			}
 		}
 	}
@@ -41,8 +42,8 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				political_power_gain = -0.35
-				stability_factor = -0.3
+				political_power_gain = -0.5
+				stability_factor = -0.15
 			}
 		}
 	}
@@ -65,8 +66,8 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				political_power_gain = -0.25
-				stability_factor = -0.25
+				political_power_gain = -0.35
+				stability_factor = -0.1
 			}
 		}
 	}
@@ -90,7 +91,7 @@ ideas = {
 			
 			modifier = {
 				political_power_gain = -0.15
-				stability_factor = -0.10
+				stability_factor = -0.05
 			}
 		}
 	}
@@ -114,13 +115,37 @@ ideas = {
 			
 			modifier = {
 				army_org_factor = -0.2
-				army_morale_factor = -0.2
-				army_attack_factor = -0.1
-				army_defence_factor = -0.1
+				army_attack_factor = -0.15
+				army_defence_factor = -0.15
 			}
 		}
 	}
+	
+	country = {
+		MAR_military_instructors_of_vyatka = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: MAR_oldfashion_army"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			available = {
+				always = yes
+			}
 
+			picture = VYT_Officer_Infighting
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_morale_factor = -0.2
+				experience_gain_army_unit_factor = -0.1
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+			}
+		}
+	}
 	country = {
 		MAR_renewed_army = {
 			on_add = {log = "[GetDateText]: [Root.GetName]: MAR_renewed_army"}
