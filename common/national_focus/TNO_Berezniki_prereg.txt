@@ -1,6 +1,14 @@
 #####################
 ### Starting Tree ###
 #####################
+
+###intro tree
+###tsar tree
+###econ tree
+###mil tree
+
+
+###intro tree
 shared_focus = {
 	id = MAR_start_from_scratch
 	icon = GFX_MAR_Kazem_Begining_Berezniki
@@ -13,10 +21,10 @@ shared_focus = {
 	x = 9
 	y = 0
 	completion_reward = {
-			country_event = { id = berez_eco.1 days = 2 }
-			hidden_effect = { 
-				country_event = { id = berez_news.1 months = 2 }
-			}
+			country_event = { id = MAR_initial.1 days = 2 }
+			#hidden_effect = { 
+				#country_event = { id = berez_news.1 months = 2 }
+			#}
 	}
 }
 
@@ -34,7 +42,7 @@ shared_focus = {
 	x = 9
 	y = 1
 	completion_reward = {
-		country_event = { id = berez_eco.2 days = 5 }
+		country_event = { id = MAR_initial.2 days = 5 }
 	}
 }
 
@@ -52,9 +60,9 @@ shared_focus = {
 	x = 8
 	y = 2
 	completion_reward = {
-		custom_effect_tooltip = MAR_hes_future_no_vyatka
+		custom_effect_tooltip = MAR_fuck_vlad_tt
 		hidden_effect = { 
-			country_event = { id = berez_eco.3 days = 00 }
+			country_event = { id = MAR_initial.7 days = 0 }
 		}
 	}
 }
@@ -73,13 +81,14 @@ shared_focus = {
 	x = 10
 	y = 2
 	completion_reward = {
-		#custom_effect_tooltip = MAR_hes_future_no_vyatka
-		#hidden_effect = { 
-		#	country_event = { id = berez_eco.3 days = 00 }
-		#}
+		custom_effect_tooltip = MAR_antipin_dont_be_stupid_tt
+		hidden_effect = { 
+			country_event = { id = MAR_initial.8 days = 1 }
+		}
 	}
 }
 
+###econ tree
 shared_focus = {
 	id = MAR_road_to_prosperity
 	icon = GFX_MAR_Prozvetanie
@@ -98,10 +107,9 @@ shared_focus = {
 	y = 3
 	completion_reward = {
 		country_event = { id = berez_eco.4 days = 0 }
-		custom_effect_tooltip = MAR_doings_aganist_peoples
+		custom_effect_tooltip = MAR_doings_aganist_peoples_tt
 		hidden_effect = {
-			country_event = { id = berez_eco.13 days = 30 }
-			country_event = { id = berez_news.2 days = 33 }
+			country_event = { id = MAR_initial.21 days = 30 }
 		}
         set_temp_variable = { gdp_growth_temp = 0.10 }
         econ_gdp_growth_change = yes
@@ -122,9 +130,9 @@ shared_focus = {
 	x = 0
 	y = 4
 	completion_reward = {
-		country_event = { id = berez_eco.5 days = 0 }
+		country_event = { id = MAR_initial.22 days = 0 }
 		add_political_power = -15
-		add_manpower = -500
+		add_manpower = -576
 		add_resource = {
 			type = steel
 			amount = 5
@@ -139,6 +147,7 @@ shared_focus = {
 		econ_inflation_change = yes
 		set_temp_variable = { pus_temp = 1 }
 		econ_pus_change = yes
+		tno_max_workhours_worsen = yes
 		hidden_effect = {
 				country_event = { id = berez_eco.12 days = 60 }
 		}
@@ -158,16 +167,17 @@ shared_focus = {
 	x = 4
 	y = 4
 	completion_reward = {
-		country_event = { id = berez_eco.6 days = 0 }
-		add_stability = -0.05
+		country_event = { id = MAR_initial.23 days = 0 }
+		add_stability = -0.10
 		add_political_power = -15
 		set_temp_variable = { inflation_temp = 0.05 }
 		econ_inflation_change = yes
 		set_temp_variable = { pus_temp = 1 }
 		econ_pus_change = yes
-		hidden_effect = {
-			country_event = { id = berez_eco.14 days = 90 }
-		}
+		TNO_improve_agriculture_med = yes
+		#hidden_effect = {
+		#	country_event = { id = berez_eco.14 days = 90 }
+		#}
 	}	
 }
 
@@ -186,15 +196,21 @@ shared_focus = {
 	y = 4
 	completion_reward = {
 		country_event = { id = berez_eco.7 days = 4 }
-		custom_effect_tooltip = MAR_vyatka_is_how_angry
-		VYT = {
-			add_opinion_modifier = {
-				target = ROOT
-				modifier = MAR_resource_withdraw
+		custom_effect_tooltip = MAR_check_vyatka_vibe_tt
+		hidden_effect = {
+			if = { 
+				limit = { }
+				country_event = { id = MAR_initial.24 days = 3 }
+			}
+			if = { 
+				limit = { }
+				country_event = { id = MAR_initial.25 days = 4 }
+			}
+			if = { 
+				limit = { }
+				country_event = { id = MAR_initial.27 days = 6 }
 			}
 		}
-		set_temp_variable = { gdp_growth_temp = 0.10 }
-        econ_gdp_growth_change = yes
 	}
 }
 
@@ -218,9 +234,10 @@ shared_focus = {
 	x = 4
 	y = 5
 	completion_reward = {
-		country_event = { id = berez_eco.14 days = 0 }
-		add_stability = 0.07
 		TNO_improve_poverty_low = yes
+		add_stability = -0.05
+		add_political_power = 15
+		country_event = { id = MAR_initial.33 days = 0 }
 	}
 }
 shared_focus = {
@@ -240,7 +257,7 @@ shared_focus = {
 		country_event = { id = berez_eco.15 days = 2 } 
 		TNO_improve_industrial_equipment_med = yes
 		TNO_improve_industrial_expertise_low = yes
-		set_temp_variable = { money_reserves_temp = 0.015 } 
+		set_temp_variable = { money_reserves_temp = -0.045 } 
 		econ_money_reserves_change_raw_money = yes
 	}
 }
@@ -259,9 +276,9 @@ shared_focus = {
 	x = 5
 	y = 6
 	completion_reward = {
-		country_event = { id = berez_eco.16 days = 0 }
+		country_event = { id = MAR_initial.36 days = 0 }
 		TNO_improve_academic_base_med = yes
-		TNO_improve_research_facilities_low = yes
+		TNO_improve_industrial_expertise_low = yes
 	}
 }
 
@@ -285,7 +302,7 @@ shared_focus = {
 	x = 0
 	y = 5
 	completion_reward = {
-		country_event = { id = berez_eco.9 days = 0 }
+		country_event = { id = MAR_initial.28 days = 0 }
 		TNO_improve_poverty_low = yes
 	}
 }
@@ -304,7 +321,7 @@ shared_focus = {
 	x = -1
 	y = 6
 	completion_reward = {
-		country_event = { id = berez_eco.10 days = 0 } 
+		country_event = { id = MAR_initial.29 days = 0 } 
 		tno_education_improve = yes
 	}
 }
@@ -323,7 +340,7 @@ shared_focus = {
 	x = 1
 	y = 6
 	completion_reward = {
-		country_event = { id = berez_eco.11 days = 0 }
+		country_event = { id = MAR_initial.31 days = 2 }
 		tno_gender_rights_improve = yes
 		tno_women_improve = yes
 	}
@@ -351,10 +368,30 @@ shared_focus = {
 	x = 2
 	y = 7
 	completion_reward = {
-		country_event = { id = berez_eco.34 days = 0 }
+		set_temp_variable = { gdp_growth_temp = 0.10 }
+        econ_gdp_growth_change = yes
+		if = {
+			limit = { has_completed_focus = MAR_peoples_love }
+			swap_ideas = {
+				add_idea = MAR_peoples_syncretisism
+				remove_idea = MAR_forced_syncretisism
+			}
+		}
+		else_if = {
+			limit = { has_completed_focus = MAR_we_and_the_proletariat }
+			swap_ideas = {
+				add_idea = MAR_prole_syncretisism
+				remove_idea = MAR_forced_syncretisism
+			}
+		}
+		else = {
+			custom_effect_tooltip = MAR_path_differ_end_tt
+		}
+		country_event = { id = MAR_initial.38 days = 3 }
 	}
 }
 
+###tsar tree
 shared_focus = {
 	id = MAR_searches_of_best_candidate
 	icon = GFX_MAR_Two_Storoni
@@ -372,8 +409,12 @@ shared_focus = {
 	x = 9
 	y = 3
 	completion_reward = {
-		country_event = { id = berez_eco.17 days = 0 }
-		custom_effect_tooltip = MAR_vibori_vibori
+		country_event = { id = MAR_initial.9 days = 3 }
+		custom_effect_tooltip = MAR_vibori_vibori_tt
+		swap_ideas = {
+			add_idea = MAR_regent_without_tsar_2
+			remove_idea = MAR_regent_without_tsar_1
+		}
 	}
 }
 
@@ -391,8 +432,8 @@ shared_focus = {
 	x = 7
 	y = 4
 	completion_reward = {
-		country_event = { id = berez_eco.18 days = 0 }
-		add_political_power = 50
+		country_event = { id = MAR_initial.10 days = 0 }
+		add_political_power = 25
 	}
 }
 shared_focus = {
@@ -409,8 +450,8 @@ shared_focus = {
 	x = 7
 	y = 5
 	completion_reward = {
-		#country_event = { id = berez_eco.18 days = 0 }
-		add_political_power = 50
+		country_event = { id = MAR_initial.12 days = 0 }
+		add_command_power = 20
 	}
 }
 shared_focus = {
@@ -427,8 +468,11 @@ shared_focus = {
 	x = 9
 	y = 4
 	completion_reward = {
-		country_event = { id = berez_eco.19 days = 0 }
-		add_political_power = 50
+		#remove some vyt influence
+		hidden_effect = {
+			country_event = { id = MAR_initial.13 days = 3 }
+		}
+		add_political_power = -15
 	}
 }
 shared_focus = {
@@ -445,8 +489,7 @@ shared_focus = {
 	x = 9
 	y = 5
 	completion_reward = {
-		#country_event = { id = berez_eco.19 days = 0 }
-		add_political_power = 50
+		country_event = { id = MAR_initial.14 days = 0 }
 	}
 }
 
@@ -458,13 +501,34 @@ shared_focus = {
 	ai_will_do = {
 		factor = 1
 	}
+	available = {
+		OR = {
+			has_completed_focus = MAR_we_and_the_proletariat
+			has_completed_focus = MAR_peoples_love
+		}
+	}
 	prerequisite = {
 		focus = MAR_searches_of_best_candidate
 	}
 	x = 11
 	y = 4
 	completion_reward = {
-		#country_event = { id = berez_eco.20 days = 0 }
+		if = {
+			limit = { has_completed_focus = MAR_peoples_love }
+			set_temp_variable = { econ_centralization_temp = -10 }
+			econ_centralization_change = yes
+		}
+		else_if = {
+			limit = { has_completed_focus = MAR_we_and_the_proletariat }
+			set_temp_variable = { econ_centralization_temp = 10 }
+			econ_centralization_change = yes
+		}
+		else = {
+			custom_effect_tooltip = MAR_path_differ_kosyin_tt
+		}
+		set_temp_variable = { inflation_temp = -0.05 }
+		econ_inflation_change = yes
+		country_event = { id = MAR_initial.15 days = 3 }
 	}
 }
 
@@ -482,7 +546,7 @@ shared_focus = {
 	x = 11
 	y = 5
 	completion_reward = {
-		country_event = { id = berez_eco.20 days = 0 }
+		country_event = { id = MAR_initial.16 days = 3 }
 	}
 }
 
@@ -506,7 +570,7 @@ shared_focus = {
 	x = 9
 	y = 6
 	completion_reward = {
-		country_event = { id = berez_eco.23 days = 2 }
+		country_event = { id = MAR_initial.18 days = 2 }
 	}
 }
 
@@ -524,8 +588,12 @@ shared_focus = {
 	x = 7
 	y = 7
 	completion_reward = {
-		country_event = { id = berez_eco.21 days = 2 }
-		MAR_lower_Vyatka_influence_huge = yes
+		country_event = { id = MAR_initial.19 days = 2 }
+		#MAR_lower_Vyatka_influence_huge = yes
+		add_popularity = {
+			ideology = paternalism
+			popularity = -0.06
+		}
 	}
 }
 
@@ -543,7 +611,7 @@ shared_focus = {
 	x = 11
 	y = 7
 	completion_reward = {
-		country_event = { id = berez_eco.22 days = 2 }
+		country_event = { id = MAR_initial.20 days = 2 }
 		custom_effect_tooltip = MAR_defend_aganist_ariev
 		hidden_effect = { 
 			398 = {
@@ -591,11 +659,8 @@ shared_focus = {
 	x = 16
 	y = 3
 	completion_reward = {
-		hidden_effect = { 
-			country_event = { id = berez_news.4 days = 45 }
-		}	
-		country_event = { id = berez_eco.24 days = 2 }
-		custom_effect_tooltip = MAR_army_upgrade
+		country_event = { id = MAR_initial.39 days = 2 }
+		custom_effect_tooltip = MAR_army_upgrade_tt
 	}
 }
 
@@ -616,7 +681,21 @@ shared_focus = {
 	x = 14
 	y = 4
 	completion_reward = {
-		country_event = { id = berez_eco.29 days = 3 }
+		swap_ideas = {
+			remove_idea = MAR_oldfashion_army_1
+			add_idea = MAR_oldfashion_army_2
+		}
+		add_opinion_modifier = {
+			target = USA
+			modifier = MAR_old_svyazi
+		}
+		USA = {
+			add_opinion_modifier = {
+				target = MAR
+				modifier = MAR_old_svyazi
+			}
+		}
+		country_event = { id = MAR_initial.40 days = 3 }
 		add_political_power = 30
 	}
 }
@@ -635,7 +714,7 @@ shared_focus = {
 	x = 14
 	y = 5
 	completion_reward = {
-		country_event = { id = berez_eco.30 days = 7 }
+		country_event = { id = MAR_initial.41 days = 7 }
 	}
 }
 
@@ -653,7 +732,7 @@ shared_focus = {
 	x = 13
 	y = 6
 	completion_reward = {
-		country_event = { id = berez_eco.31 days = 0 }
+		country_event = { id = MAR_initial.42 days = 0 }
 	}
 }
 
@@ -671,7 +750,10 @@ shared_focus = {
 	x = 15
 	y = 6
 	completion_reward = {
-		country_event = { id = berez_eco.32 days = 0 }
+		country_event = { id = MAR_initial.43 days = 0 }
+		tno_training_improve = yes
+		set_variable = { tno_training_effectiveness = 39 } 
+		TNO_update_policy_effectiveness = yes
 		add_tech_bonus = {
 			bonus = 0.5
 			uses = 2
@@ -697,12 +779,17 @@ shared_focus = {
 	x = 18
 	y = 4
 	completion_reward = {
-		country_event = { id = berez_eco.25 days = 0 }
-		add_tech_bonus = {
-			bonus = 1
-			uses = 1
-			category = land_doctrine
+		country_event = { id = MAR_initial.44 days = 0 }
+		swap_ideas = {
+			remove_idea = MAR_oldfashion_army_1
+			add_idea = MAR_oldfashion_army_2
 		}
+		add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.6
+				uses = 1
+				category = land_doctrine
+			}
 	}
 }
 
@@ -720,11 +807,10 @@ shared_focus = {
 	x = 18
 	y = 5
 	completion_reward = {
-		country_event = { id = berez_eco.26 days = 0 }
+		country_event = { id = MAR_initial.45 days = 0 }
 		add_political_power = 5
-		create_corps_commander = {
-			name = "Anatoliy Pepelyayev"
-			picture = "Portrait_Berezniki_Anatoliy_Pepelyayev.dds"
+		add_corps_commander_role = {
+			character = MAR_Anatoliy_Pepelyayev
 			traits = { old_guard }
 			skill = 4
 			attack_skill = 4
@@ -749,7 +835,7 @@ shared_focus = {
 	x = 17
 	y = 6
 	completion_reward = {
-		country_event = { id = berez_eco.27 days = 0 }
+		country_event = { id = MAR_initial.47 days = 0 }
 		add_ideas = {
 			MAR_komissars_in_army
 		}
@@ -770,13 +856,8 @@ shared_focus = {
 	x = 19
 	y = 6
 	completion_reward = {
-		country_event = { id = berez_eco.28 days = 0 }
+		country_event = { id = MAR_initial.46 days = 0 }
 		army_experience = 5
-		add_tech_bonus = {
-			bonus = 1.0
-			uses = 1
-			category = land_doctrine
-		}
 	}
 }
 
@@ -823,7 +904,7 @@ shared_focus = {
 	x = 16
 	y = 7
 	completion_reward = {
-		country_event = { id = berez_eco.33 days = 0 }
+		country_event = { id = MAR_initial.51 days = 0 }
 	}	
 }
 

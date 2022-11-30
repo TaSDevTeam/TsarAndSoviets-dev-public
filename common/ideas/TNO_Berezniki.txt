@@ -23,7 +23,56 @@ ideas = {
 			}
 		}
 	}
+	
+	country = {
+		MAR_peoples_syncretisism = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAR_forced_syncretisism"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			available = {
+				always = yes
+			}
 
+			picture = MAR_Forced_Syncretism
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.1
+				industrial_capacity_factory = 0.1
+				line_change_production_efficiency_factor = -0.05
+			}
+		}
+	}
+	
+	country = {
+		MAR_prole_syncretisism = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAR_forced_syncretisism"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			available = {
+				always = yes
+			}
+
+			picture = MAR_Forced_Syncretism
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.05
+				industrial_capacity_factory = 0.1
+				line_change_production_efficiency_factor = 0.15	
+			}
+		}
+	}
 	country = {
 		MAR_regent_without_tsar_1 = {
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAR_regent_without_tsar_1"}
@@ -97,7 +146,7 @@ ideas = {
 	}
 
 	country = {
-		MAR_oldfashion_army = {
+		MAR_oldfashion_army_1 = {
 			on_add = {log = "[GetDateText]: [Root.GetName]: MAR_oldfashion_army"}
 			allowed = {
 				always = no
@@ -120,7 +169,30 @@ ideas = {
 			}
 		}
 	}
-	
+	country = {
+		MAR_oldfashion_army_2 = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: MAR_oldfashion_army"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			available = {
+				always = yes
+			}
+
+			picture = MAR_dohlaya_armia
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_org_factor = -0.15
+				army_attack_factor = -0.10
+				army_defence_factor = -0.10
+			}
+		}
+	}
 	country = {
 		MAR_military_instructors_of_vyatka = {
 			on_add = {log = "[GetDateText]: [Root.GetName]: MAR_oldfashion_army"}
