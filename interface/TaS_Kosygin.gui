@@ -1,0 +1,17 @@
+guiTypes = {
+	containerWindowType = {
+		name = "MAR_Prestol_GUI"
+		size = { width = 482 height = 700 }
+		position = { x = 0 y = 0 }
+		containerWindowType = {
+			name = "map"
+			size = { width = 368 height = 445 }
+			position = { x = 35 y = 65 }
+			iconType = {
+				name = "map_bg"
+				position = { x = 0 y = 0 }
+				spriteType = "GFX_MAR_Kosygin_prestol_map_background"
+			}
+		}
+	}
+}

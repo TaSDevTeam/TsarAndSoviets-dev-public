@@ -82,6 +82,7 @@ MAR_Solzh_Vyatka_takeover = {
 MAR_enable_prestol = {
 	set_country_flag = MAR_fighting_prestol
 	mark_focus_tree_layout_dirty = yes
+	set_variable = {MAR_KOSYGINGUI_selected = 7}
 	#TODO
 }
 
@@ -105,7 +106,7 @@ MAR_Iraq_Kurdistan_zhirik = {
 		transfer_state = 924
 		add_state_core = 656
 		transfer_state = 656
-		set_capital = 291
+		set_capital = { state = 291 }
 		set_cosmetic_tag = KUR_Zhirik
 		set_country_flag = MAR_has_iraq
 		MAR = {
@@ -186,7 +187,7 @@ MAR_Iraq_Kurdistan_saddam = {
 			MAR_KUR_pearl_of_middleeast
 			MAR_KUR_resolved_iraqikurd_problem
 		}
-		set_capital = 291
+		set_capital = { state = 291 }
 		set_cosmetic_tag = KUR_Saddam
 		set_politics = {
 			ruling_party = progressivism
@@ -238,7 +239,7 @@ MAR_Turkestan_govern = {
 		transfer_state = 1468
 		add_state_core = 584
 		transfer_state = 584
-		set_capital = 1467
+		set_capital = { state = 1467 }
 		set_cosmetic_tag = UZB_MAR_govern
 		set_politics = {
 			ruling_party = despotism

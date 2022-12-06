@@ -530,7 +530,7 @@ TaS_WRW2_second_manchu_cw = {
 			clr_country_flag = MARFE_doing_stuff
 		}
 	}
-	TaS_WRW2_send_rebels_equipment_small = {
+	TaS_WRW2_send_manchu_equipment_small = {
 		icon = GFX_decision_generic_arms_crate
 		visible = {
 			has_country_flag = TaS_WRW2_intervene_second_cw
@@ -543,7 +543,7 @@ TaS_WRW2_second_manchu_cw = {
 		cost = 25
 		days_remove = 21
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout TaS_WRW2_send_rebels_equipment_small"
+			log = "[GetDateText]: [Root.GetName]: Decision timeout TaS_WRW2_send_manchu_equipment_small"
 			set_country_flag = MARFE_doing_stuff
 			set_temp_variable = { debt_temp = 0.015 }
 			econ_national_debt_change = yes
@@ -873,7 +873,6 @@ TaS_WRW2_prepare_for_final_battle = {
 					province = 468
 				}
 			}
-		}
 		406 = {
 				add_building_construction = {
 					type = bunker
@@ -895,6 +894,7 @@ TaS_WRW2_prepare_for_final_battle = {
 				}
 			}
 		}
+	}
 	TaS_WRW2_establish_northborders_fortifications = {
 		icon = GFX_decision_generic_destroy_fort
 		visible = {
@@ -1866,7 +1866,7 @@ TaS_WRW2_the_final_battle = {
 					producer = MAR
 				}
 				add_equipment_to_stockpile = {
-					type = jet_fighter_equipment
+					type = jet_fighter_equipment_2
 					amount = 200
 					producer = MAR
 				}
@@ -2085,7 +2085,7 @@ TaS_WRW2_the_final_battle = {
 					producer = MAR
 				}
 				add_equipment_to_stockpile = {
-					type = artillery_equipment_0
+					type = artillery_equipment
 					amount = 5000
 					producer = MAR
 				}
@@ -2253,49 +2253,6 @@ TaS_WRW2_the_final_battle_GER = {
 			log = "[GetDateText]: [Root.GetName]: Mission TaS_WRW2_devastation_tick Completed (Should never happen for this mission, please report if you see this in the log.)"
     	}
   	}
-	TaS_WRW2_offer_status_quo = {
-		icon = GFX_decision_generic_military_parade
-		visible = {
-		}
-		available = {
-			OR = {
-				casualties > 100000
-				MCW = {
-					surrender_progress > 0.1
-				}
-				RUS = {
-					casualties > 100000
-				}
-			}
-			NOT = {
-				MCW = {
-					surrender_progress > 0.65
-				}
-			}
-			OR = {
-				check_variable = { RUS.GER_devastation > 50 }
-				check_variable = { RUS_devastation > 50 }
-			}
-		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
-		fire_only_once = yes
-		days_remove = 14
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision 	TaS_WRW2_offer_status_quo"
-			hidden_effect = {
-				add_command_power = -20
-			}
-		}
-		remove_effect = {
-			MAR = {
-				country_event = { id = MAR_2WRW.1 }
-			}
-		}
-		ai_will_do = {
-			factor = 20
-		}
-	}
 	TaS_WRW2_offer_status_quo = {
 		icon = GFX_decision_generic_military_parade
 		visible = {
@@ -2994,9 +2951,6 @@ TaS_WRW2_europe_ultimatums = {
 					attacker = {
 						state = 216
 						num_provinces = 4
-						on_win = x
-						on_lose = x
-						on_cancel = x
 					}
 								
 					defender = {
@@ -3004,7 +2958,6 @@ TaS_WRW2_europe_ultimatums = {
 						num_provinces = 4
 						on_win = MAR_ultimatums.2
 						on_lose = MAR_ultimatums.1
-						on_cancel = x
 					}
 				}
 			}
@@ -3014,9 +2967,6 @@ TaS_WRW2_europe_ultimatums = {
 					attacker = {
 						state = 859
 						num_provinces = 4
-						on_win = x
-						on_lose = x
-						on_cancel = x
 					}
 								
 					defender = {
@@ -3024,7 +2974,6 @@ TaS_WRW2_europe_ultimatums = {
 						num_provinces = 4
 						on_win = MAR_ultimatums.2
 						on_lose = MAR_ultimatums.1
-						on_cancel = x
 					}
 				}
 			}
@@ -3048,9 +2997,6 @@ TaS_WRW2_europe_ultimatums = {
 				attacker = {
 					state = 197
 					num_provinces = 4
-					on_win = x
-					on_lose = x
-					on_cancel = x
 				}
 								
 				defender = {
@@ -3058,7 +3004,6 @@ TaS_WRW2_europe_ultimatums = {
 					num_provinces = 4
 					on_win = MAR_ultimatums.2 
 					on_lose = MAR_ultimatums.1
-					on_cancel = x
 				}
 			}			
 		}
@@ -3081,9 +3026,6 @@ TaS_WRW2_europe_ultimatums = {
 				attacker = {
 					state = 231
 					num_provinces = 2
-					on_win = x
-					on_lose = x
-					on_cancel = x
 				}
 								
 				defender = {
@@ -3091,7 +3033,6 @@ TaS_WRW2_europe_ultimatums = {
 					num_provinces = 2
 					on_win = MAR_ultimatums.2
 					on_lose = MAR_ultimatums.1
-					on_cancel = x
 				}
 			}
 		}

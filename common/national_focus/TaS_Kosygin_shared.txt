@@ -99,7 +99,7 @@ shared_focus = {
 ###Regional Politics###
 shared_focus = {
 	id = MAR_kospol_bloody_day
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kospol_red_day
 	cost = 10
 	allow_branch = {
 		has_country_flag = MAR_fighting_prestol
@@ -110,7 +110,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kospol_KGB
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kospol_kgb
 	cost = 10
 	prerequisite = {
 		focus = MAR_kospol_bloody_day
@@ -121,7 +121,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kospol_army_streets
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kospol_army_na_ulice
 	cost = 10
 	prerequisite = {
 		focus = MAR_kospol_bloody_day
@@ -132,7 +132,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kospol_who_are_against_us
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kospol_kto_ne_s_namy
 	cost = 10
 	prerequisite = {
 		focus = MAR_kospol_bloody_day
@@ -143,7 +143,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kospol_motherland_and_tsar
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kospol_kabynet_cherezvichainogo_polozhenia
 	cost = 10
 	prerequisite = {
 		focus = MAR_kospol_bloody_day
@@ -154,7 +154,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kospol_security_comeete
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kospol_souz_zashity
 	cost = 10
 	prerequisite = {
 		focus = MAR_kospol_bloody_day
@@ -165,7 +165,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kospol_universal_good
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kospol_vyshee_blago
 	cost = 10
 	prerequisite = {
 		focus = MAR_kospol_KGB
@@ -188,7 +188,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kospol_nation_of_soviets
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kospol_strana_sovietov
 	cost = 10
 	prerequisite = {
 		focus = MAR_kospol_universal_good
@@ -199,7 +199,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kospol_Soviet_Empire
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kospol_soviet_empire
 	cost = 10
 	prerequisite = {
 		focus = MAR_kospol_universal_good
@@ -210,7 +210,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kospol_nex_siezd
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kospol_new_sezd
 	cost = 10
 	prerequisite = {
 		focus = MAR_kospol_nation_of_soviets
@@ -225,59 +225,179 @@ shared_focus = {
 ###Regional Economy###
 shared_focus = {
 	id = MAR_koseco_new_gosplan
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosecon_gos_plan
 	cost = 10
 	x = 17
 	y = 0
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.15
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_koseco_red_capitalism
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosecon_soviet_capitalism
 	cost = 10
 	prerequisite = {
 		focus = MAR_koseco_new_gosplan
 	}
 	x = 13
 	y = 1
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.16
+			days = 0
+		}
+	}
 
 }
 shared_focus = {
 	id = MAR_koseco_national_sector
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosecon_gos_sektor
 	cost = 10
 	prerequisite = {
 		focus = MAR_koseco_red_capitalism
 	}
 	x = 11
 	y = 2
+	completion_reward = {
+		set_temp_variable = { pus_temp = 6 }
+		econ_pus_change = yes
+	}
 
 }
 shared_focus = {
 	id = MAR_koseco_rebuild_infr
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosecon_infrastructura
 	cost = 10
 	prerequisite = {
 		focus = MAR_koseco_national_sector
 	}
 	x = 10
 	y = 3
-
+	completion_reward = {
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = offices
+				level = 1
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+			add_state_modifier = {
+				modifier = {
+					state_GDP_growth_factor_modifier = 0.1
+				}
+			}
+		}
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = schools
+				level = 1
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+			add_state_modifier = {
+				modifier = {
+					state_GDP_growth_factor_modifier = 0.1
+				}
+			}
+		}
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = offices
+				level = 1
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+			add_state_modifier = {
+				modifier = {
+					state_GDP_growth_factor_modifier = 0.1
+				}
+			}
+		}
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = schools
+				level = 1
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+			add_state_modifier = {
+				modifier = {
+					state_GDP_growth_factor_modifier = 0.1
+				}
+			}
+		}
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = hospitals
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = prisons
+				level = 1
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+			add_state_modifier = {
+				modifier = {
+					state_GDP_growth_factor_modifier = 0.1
+				}
+			}
+		}
+		set_temp_variable = { temp_econ_spending_amount = 0.5 }
+        econ_spend_money_once_effect_raw_money = yes
+		set_temp_variable = { inflation_temp = 0.03 }
+		econ_inflation_change = yes
+	}
 }
 shared_focus = {
 	id = MAR_koseco_foreign_specs
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosecon_specialisty
 	cost = 10
 	prerequisite = {
 		focus = MAR_koseco_national_sector
 	}
 	x = 12
 	y = 3
-
+	completion_reward = { 
+		country_event = {
+			id = MAR_Kosygin.17
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_koseco_double_factories
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosecon_zavody_dvoinogo_naznachenia
 	cost = 10
 	prerequisite = {
 		focus = MAR_koseco_rebuild_infr
@@ -287,66 +407,99 @@ shared_focus = {
 	}
 	x = 11
 	y = 4
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.18
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_koseco_Glushkov_project
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosecon_glushkov_project
 	cost = 10
 	prerequisite = {
 		focus = MAR_koseco_double_factories
 	}
 	x = 12
 	y = 5
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.19
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_koseco_privats
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosecon_chastniky
 	cost = 10
 	prerequisite = {
 		focus = MAR_koseco_red_capitalism
 	}
 	x = 14
 	y = 2
-
+	completion_reward = {
+		set_temp_variable = { gdp_growth_temp = 0.4 }
+		econ_gdp_growth_change = yes
+		set_temp_variable = { inflation_temp = -0.2 }
+		econ_inflation_change = yes
+		TNO_improve_poverty_med = yes
+		set_temp_variable = { business_tax_temp = 0.2 }
+		econ_business_tax_rate_change = yes
+	}
 }
 shared_focus = {
 	id = MAR_koseco_support_kulaks
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosecon_kulaki
 	cost = 10
 	prerequisite = {
 		focus = MAR_koseco_privats
 	}
 	x = 14
 	y = 3
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.20
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_koseco_jap_partners
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosecon_japan_partners
 	cost = 10
 	prerequisite = {
 		focus = MAR_koseco_support_kulaks
 	}
 	x = 13
 	y = 4
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.21
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_koseco_usa_friends
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosecon_american_friends
 	cost = 10
 	prerequisite = {
 		focus = MAR_koseco_support_kulaks
 	}
 	x = 15
 	y = 4
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.22
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_koseco_Technospy
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosecon_technology_spy
 	cost = 10
 	prerequisite = {
 		focus = MAR_koseco_jap_partners
@@ -356,11 +509,18 @@ shared_focus = {
 	}
 	x = 14
 	y = 5
-
+	completion_reward = {
+		TNO_improve_research_facilities_med = yes
+		add_tech_bonus = {
+			bonus = 1.0
+			uses = 2
+			category = industry
+		}
+	}
 }
 shared_focus = {
 	id = MAR_koseco_faster_than_future
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosecon_operation_future
 	cost = 10
 	prerequisite = {
 		focus = MAR_koseco_Glushkov_project
@@ -370,33 +530,50 @@ shared_focus = {
 	}
 	x = 13
 	y = 6
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.24
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_koseco_DCP
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosecon_evm
 	cost = 10
 	prerequisite = {
 		focus = MAR_koseco_new_gosplan
 	}
 	x = 19
 	y = 1
-
+	completion_reward = {
+		TNO_improve_research_facilities_low = yes
+		add_tech_bonus = {
+			bonus = 1.0
+			uses = 2
+			category = computing_tech
+		}
+	}
 }
 shared_focus = {
 	id = MAR_koseco_future_technologies
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosecon_technology_future
 	cost = 10
 	prerequisite = {
 		focus = MAR_koseco_new_gosplan
 	}
 	x = 21
 	y = 1
-
+	completion_reward = {
+		TNO_improve_research_facilities_high = yes
+		research_funding_maximal_increase_high = yes
+		set_temp_variable = { gdp_growth_temp = 0.2 }
+		econ_gdp_growth_change = yes
+	}
 }
 shared_focus = {
 	id = MAR_koseco_Best_education
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosecon_obrazovanie
 	cost = 10
 	prerequisite = {
 		focus = MAR_koseco_DCP
@@ -406,7 +583,12 @@ shared_focus = {
 	}
 	x = 20
 	y = 2
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.23
+			days = 0
+		}
+	}
 }
 ###Regional Military###
 shared_focus = {
@@ -415,7 +597,12 @@ shared_focus = {
 	cost = 10
 	x = 27
 	y = 0
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.25
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_kosmil_reorganise_minwar
@@ -426,7 +613,10 @@ shared_focus = {
 	}
 	x = 25
 	y = 1
-
+	completion_reward = {
+		add_political_power = -50
+		TNO_improve_army_professionalism_med = yes
+	}
 }
 shared_focus = {
 	id = MAR_kosmil_expand_Archangelsk_ports
@@ -437,10 +627,35 @@ shared_focus = {
 	}
 	x = 24
 	y = 2
-
+	completion_reward = {
+		214 = {
+			add_building_construction = {
+				type = dockyard
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+					type = naval_base
+					level = 3
+					instant_build = yes
+					province = 3338 
+				}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_state_modifier = {
+				modifier = {
+					state_GDP_growth_factor_modifier = 0.1
+				}
+			}
+		}
+	}
 }
 shared_focus = {
-	id = MAR_kosmil_weapon)modernisation
+	id = MAR_kosmil_weapon_modernisation
 	icon = GFX_goal_unknown
 	cost = 10
 	prerequisite = {
@@ -448,18 +663,43 @@ shared_focus = {
 	}
 	x = 27
 	y = 1
-
+	completion_reward = {
+		TNO_improve_research_facilities_low = yes
+		add_tech_bonus = {
+			bonus = 1.0
+			uses = 3
+			category = infantry_weapons
+		}
+	}
 }
 shared_focus = {
 	id = MAR_kosmil_new_avia
 	icon = GFX_goal_unknown
 	cost = 10
 	prerequisite = {
-		focus = MAR_kosmil_weapon)modernisation
+		focus = MAR_kosmil_weapon_modernisation
 	}
 	x = 27
 	y = 2
-
+	completion_reward = {
+		add_tech_bonus = {
+			bonus = 1.0
+			uses = 2
+			category = jet_fighter
+		}
+		add_tech_bonus = {
+			bonus = 1.0
+			uses = 2
+			category = interceptor
+		}
+		capital_scope = {
+			add_building_construction = {
+				type = air_base
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
 }
 shared_focus = {
 	id = MAR_kosmil_new_training_methods
@@ -470,7 +710,12 @@ shared_focus = {
 	}
 	x = 29
 	y = 1
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.26
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_kosmil_tank_squads
@@ -481,7 +726,35 @@ shared_focus = {
 	}
 	x = 30
 	y = 2
-
+	completion_reward = {
+		if = { 
+			limit = { 
+				has_dlc = "No Step Back"
+			}
+			add_equipment_to_stockpile = {
+				type = MBT_chassis_2
+				amount = 150
+				producer = MAR
+			}
+		}
+		else = {
+			add_equipment_to_stockpile = {
+				type = MBT_equipment_2
+				amount = 150
+				producer = MAR
+			}
+		}
+		add_tech_bonus = {
+			bonus = 1.0
+			uses = 2
+			category = MBT
+		}
+		add_tech_bonus = {
+			bonus = 1.0
+			uses = 2
+			category = IFV
+		}
+	}
 }
 shared_focus = {
 	id = MAR_kosmil_military_academies
@@ -498,32 +771,47 @@ shared_focus = {
 	}
 	x = 27
 	y = 3
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.27
+			days = 0
+		}
+	}
 }
 
 ###Regional Foreign Policy###
 shared_focus = {
 	id = MAR_kosfor_red_eagle
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosfopo_orel_nad_nebom
 	cost = 10
 	x = 36
 	y = 0
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.28
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_kosfor_two_polars
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosfopo_dwa_polusa
 	cost = 10
 	prerequisite = {
 		focus = MAR_kosfor_red_eagle
 	}
 	x = 34
 	y = 1
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.29
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_kosfor_birthplace_of_democracy
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosfopo_liberty_country
 	cost = 10
 	prerequisite = {
 		focus = MAR_kosfor_two_polars
@@ -533,22 +821,32 @@ shared_focus = {
 	}
 	x = 33
 	y = 2
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.30
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_kosfor_from_America_with_love
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosfopo_from_usa__with_love
 	cost = 10
 	prerequisite = {
 		focus = MAR_kosfor_birthplace_of_democracy
 	}
 	x = 33
 	y = 3
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.31
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_kosfor_pearl_of_Asia
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosfopo_asian_zhemchuzhina
 	cost = 10
 	prerequisite = {
 		focus = MAR_kosfor_two_polars
@@ -558,22 +856,32 @@ shared_focus = {
 	}
 	x = 35
 	y = 2
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.32
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_kosfor_tokyo_embassy
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosfopo_japan_posolstva
 	cost = 10
 	prerequisite = {
 		focus = MAR_kosfor_pearl_of_Asia
 	}
 	x = 35
 	y = 3
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.33
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_kosfor_Delhi_travel
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosfopo_india
 	cost = 10
 	prerequisite = {
 		focus = MAR_kosfor_from_America_with_love
@@ -581,44 +889,64 @@ shared_focus = {
 	}
 	x = 34
 	y = 4
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.34
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_kosfor_Transural_amogus
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosfopo_proniknovenie_v_ural
 	cost = 10
 	prerequisite = {
 		focus = MAR_kosfor_red_eagle
 	}
 	x = 37
 	y = 1
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.35
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_kosfor_Tsar_legion
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosfopo_red_legion
 	cost = 10
 	prerequisite = {
 		focus = MAR_kosfor_Transural_amogus
 	}
 	x = 37
 	y = 2
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.36
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_kosfor_third_world
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosfopo_africa
 	cost = 10
 	prerequisite = {
 		focus = MAR_kosfor_Tsar_legion
 	}
 	x = 37
 	y = 3
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.37
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_kosfor_global_Russia
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosfopo_global_ohvat
 	cost = 10
 	prerequisite = {
 		focus = MAR_kosfor_third_world
@@ -628,53 +956,78 @@ shared_focus = {
 	}
 	x = 36
 	y = 5
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.38
+			days = 0
+		}
+	}
 }
 ###Superregional###
 shared_focus = {
 	id = MAR_kossup_porog
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kossreg_perestupiv_porog
 	cost = 10
 	x = 5
 	y = 0
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.39
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_kossup_ural_archives
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kossreg_archives
 	cost = 10
 	prerequisite = {
 		focus = MAR_kossup_porog
 	}
 	x = 2
 	y = 1
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.40
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_kossup_curdes_old_house
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kossreg_proklyatii_dom
 	cost = 10
 	prerequisite = {
 		focus = MAR_kossup_ural_archives
 	}
 	x = 1
 	y = 2
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.41
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_kossup_make_lenin_leave
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kossreg_ulyanov_na_vihod
 	cost = 10
 	prerequisite = {
 		focus = MAR_kossup_ural_archives
 	}
 	x = 3
 	y = 2
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.42
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_kossup_topor
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kossreg_topor_voiny
 	cost = 10
 	prerequisite = {
 		focus = MAR_kossup_make_lenin_leave
@@ -684,44 +1037,65 @@ shared_focus = {
 	}
 	x = 2
 	y = 3
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.43
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_kossup_red_midday
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kossreg_red_polden
 	cost = 10
 	prerequisite = {
 		focus = MAR_kossup_porog
 	}
 	x = 7
 	y = 1
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.44
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_kossup_thaw
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kossreg_ubrat_ogranichenia
 	cost = 10
 	prerequisite = {
 		focus = MAR_kossup_red_midday
 	}
 	x = 6
 	y = 2
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.45
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_kossup_kosyginki
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kossreg_kosyginky
 	cost = 10
 	prerequisite = {
 		focus = MAR_kossup_red_midday
 	}
 	x = 8
 	y = 2
-
+	completion_reward = {
+		TNO_improve_poverty_med = yes
+		set_temp_variable = { temp_econ_spending_amount = 0.15 }
+        econ_spend_money_once_effect_raw_money = yes
+		set_temp_variable = { inflation_temp = 0.02 }
+		econ_inflation_change = yes
+	}
 }
 shared_focus = {
 	id = MAR_kossup_red_and_white
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kossreg_red_and_white
 	cost = 10
 	prerequisite = {
 		focus = MAR_kossup_thaw
@@ -731,30 +1105,67 @@ shared_focus = {
 	}
 	x = 7
 	y = 3
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.46
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_kossup_look_to_the_east
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kossreg_vsor_na_vostok
 	cost = 10
 	prerequisite = {
 		focus = MAR_kossup_red_midday
 	}
 	x = 10
 	y = 2
-
+	completion_reward = {
+		tno_conscription_worsen = yes
+		TNO_improve_conscription_policy_effectiveness_med = yes
+		tno_trade_laws_improve = yes
+	}
 }
 shared_focus = {
 	id = MAR_kossup_meet_Gil
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kossreg_vstrecha_s_gilem
 	cost = 10
 	prerequisite = {
 		focus = MAR_kossup_look_to_the_east
 	}
 	x = 9
 	y = 3
-
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.47
+			days = 0
+		}
+	}
 }
+shared_focus = {
+	id = MAR_kossup_scarlet_etud
+	icon = GFX_MAR_kossreg_etud
+	cost = 10
+	prerequisite = {
+		focus = MAR_kossup_red_and_white
+	}
+	prerequisite = {
+		focus = MAR_kossup_meet_Gil
+	}
+	prerequisite = {
+		focus = MAR_kossup_topor
+	}
+	x = 5
+	y = 4
+	completion_reward = {
+		country_event = {
+			id = MAR_Kosygin.48
+			days = 0
+		}
+	}
+}
+
 ###Nuke Tree###
 shared_focus = {
 	id = MAR_kosnuk_Weapon_of_Prometeus
@@ -762,7 +1173,15 @@ shared_focus = {
 	cost = 10
 	x = 15
 	y = 0
-
+	completion_reward = {
+	    #country_event = { 
+		#	id = berez_nuke_belo.1
+		#	days = 0
+		#}
+		custom_effect_tooltip = RUS_RWS_nukes_into_the_atomic_age_tt
+		add_timed_idea = { idea = RUS_RWS_nukes_into_the_atomic_age_misc_costs days = 90 }
+		RUS_init_nuke_system = yes
+	}
 }
 shared_focus = {
 	id = MAR_kosnuk_mythical_inspirations
@@ -773,7 +1192,29 @@ shared_focus = {
 	}
 	x = 13
 	y = 1
-
+	completion_reward = {
+		set_temp_variable = { temp_econ_spending_amount = 0.35 }
+		econ_spend_money_once_effect_raw_money = yes
+		custom_effect_tooltip = RUS_RWS_nukes_establish_closed_facilities_tt
+		random_owned_controlled_state = {
+			limit = {
+				has_state_category = city
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = RUS_nuclear_program_phase_1
+			}
+			add_to_variable = { RUSNukesTheoryProgress = 5 }
+		}
+		add_to_variable = { RUSNukesMonthlyProgress = 1 }
+	}
 }
 shared_focus = {
 	id = MAR_kosnuk_Kurchatov_genius
@@ -784,7 +1225,19 @@ shared_focus = {
 	}
 	x = 13
 	y = 2
-
+	completion_reward = {
+		set_temp_variable = { temp_econ_spending_amount = 0.3 }
+		econ_spend_money_once_effect_raw_money = yes
+		custom_effect_tooltip = RUS_RWS_nukes_a_foundation_for_research_tt
+		TNO_improve_research_facilities_med = yes
+		if = {
+			limit = {
+				has_country_flag = RUS_nuclear_program_phase_1
+			}
+			add_to_variable = { RUSNukesTheoryProgress = 15 }
+		}
+		add_to_variable = { RUSNukesMonthlyProgress = 3 }
+	}
 }
 shared_focus = {
 	id = MAR_kosnuk_new_kind_of_weapon
@@ -795,7 +1248,36 @@ shared_focus = {
 	}
 	x = 15
 	y = 1
-
+	completion_reward = {
+		#country_event = { 
+		#	id = berez_nuke_belo.2
+		#	days = 0
+		#}
+		custom_effect_tooltip = RUS_RWS_nukes_expand_the_dalur_mines_tt
+		572 = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+			add_resource = {
+				 type = uranium
+				 amount = 8
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = RUS_nuclear_program_phase_2
+					has_country_flag = RUS_nuclear_program_phase_1
+				}
+			}
+			add_to_variable = { RUSNukesMatsProgress = 10 }
+		}
+		add_to_variable = { RUSNukesMonthlyProgress = 1 }
+		add_to_variable = { national_debt = 0.35 } #already converted to billion
+	}
 }
 shared_focus = {
 	id = MAR_kosnuk_kurgan_mines
@@ -806,7 +1288,21 @@ shared_focus = {
 	}
 	x = 17
 	y = 1
-
+	completion_reward = {
+		custom_effect_tooltip = RUS_RWS_nukes_source_foreign_materials_tt
+		add_stability = -0.03
+		add_political_power = -25
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = RUS_nuclear_program_phase_2
+					has_country_flag = RUS_nuclear_program_phase_1
+				}
+			}
+			add_to_variable = { RUSNukesMatsProgress = 10 }
+		}
+		add_to_variable = { national_debt = 0.1 } #already converted to billion
+	}
 }
 shared_focus = {
 	id = MAR_kosnuk_third_world_uranium
@@ -820,7 +1316,20 @@ shared_focus = {
 	}
 	x = 17
 	y = 2
-
+	completion_reward = {
+		custom_effect_tooltip = RUS_RWS_nukes_address_the_uranium_problem_tt
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = RUS_nuclear_program_phase_2
+					has_country_flag = RUS_nuclear_program_phase_1
+				}
+			}
+			add_to_variable = { RUSNukesMatsProgress = 5 }
+		}
+		add_to_variable = { RUSNukesMonthlyProgress = 2 }
+		add_to_variable = { national_debt = 0.15 } #already converted to billion
+	}
 }
 shared_focus = {
 	id = MAR_kosnuk_tame_the_fire
@@ -834,7 +1343,16 @@ shared_focus = {
 	}
 	x = 15
 	y = 3
-
+	completion_reward = {
+		#country_event = { 
+		#	id = berez_nuke_belo.3
+		#	days = 0
+		#}
+		custom_effect_tooltip = RUS_RWS_nukes_chasing_the_sun_tt
+		add_timed_idea = { idea = RUS_RWS_nukes_chasing_the_sun_misc_costs days = 90 }
+		add_to_variable = { RUSNukesMonthlyProgress = 3 }
+		TNO_improve_industrial_expertise_med = yes
+	}
 }
 ###Kazakhstan###
 shared_focus = {
@@ -843,40 +1361,164 @@ shared_focus = {
 	cost = 10
 	x = 22
 	y = 0
-
+	completion_reward = {
+		declare_war_on = {
+			target = NPL
+			type = annex_everything
+		}
+		declare_war_on = {
+			target = ARL
+			type = annex_everything
+		}
+		declare_war_on = {
+			target = DER
+			type = annex_everything
+		}
+		declare_war_on = {
+			target = KAZ
+			type = annex_everything
+		}
+		declare_war_on = {
+			target = KOK
+			type = annex_everything
+		}
+		declare_war_on = {
+			target = PAV
+			type = annex_everything
+		}
+	}
 }
 shared_focus = {
 	id = MAR_koskaz_red_imams
 	icon = GFX_goal_unknown
 	cost = 10
+	available = { 
+		406 = { 
+			is_owned_and_controlled_by = MAR
+		}
+	}
 	prerequisite = {
 		focus = MAR_koskaz_red_sun_over_steppe
 	}
 	x = 20
 	y = 1
-
+	completion_reward = { 
+		add_political_power = 50
+		add_popularity = {
+			ideology = socialist
+			popularity = 0.05
+		}
+		country_event = {
+			id = MAR_Kosygin.52
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_koskaz_liquidate_other_ideas
 	icon = GFX_goal_unknown
 	cost = 10
+	available = { 
+		406 = { 
+			is_owned_and_controlled_by = MAR
+		}
+	}
 	prerequisite = {
 		focus = MAR_koskaz_red_sun_over_steppe
 	}
 	x = 22
 	y = 1
-
+	completion_reward = { 
+		RUS_integration_cost_days_decrease = yes
+		TNO_improve_admin_efficiency_med = yes	
+		country_event = {
+			id = MAR_Kosygin.53
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_koskaz_kazakh_autobahn
 	icon = GFX_goal_unknown
 	cost = 10
+	available = { 
+		406 = { 
+			is_owned_and_controlled_by = MAR
+		}
+	}
 	prerequisite = {
 		focus = MAR_koskaz_red_sun_over_steppe
 	}
 	x = 24
 	y = 1
-
+	completion_reward = {
+		hidden_effect = {
+			406 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			407 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			402 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			587 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			583 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			404 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			589 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			588 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			509 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		custom_effect_tooltip = MAR_Belozerskiy_add_2_inf_in_Kazakhstan
+	}
 }
 shared_focus = {
 	id = MAR_koskaz_arbeit_macht_frei
@@ -893,7 +1535,24 @@ shared_focus = {
 	}
 	x = 22
 	y = 2
-
+	completion_reward = {
+		every_owned_state = {
+			limit = { is_kazakh_state = yes }
+			add_extra_state_shared_building_slots = 2
+			add_resource = {
+				 type = chromium
+				 amount = 12
+			}
+			add_resource = {
+				 type = oil
+				 amount = 12
+			}
+		}	
+		country_event = {
+			id = MAR_Kosygin.54
+			days = 0
+		}
+	}
 }
 shared_focus = {
 	id = MAR_koskaz_zhuz_aesteisc
@@ -904,7 +1563,47 @@ shared_focus = {
 	}
 	x = 21
 	y = 3
-
+	completion_reward = {
+		406 = {
+			add_building_construction = {
+				type = offices
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = schools
+				level = 1
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 2
+		}
+		587 = {
+			add_building_construction = {
+				type = schools
+				instant_build = yes
+				level = 2
+			}
+			add_building_construction = {
+				type = thermoelectric_plant
+				level = 1
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 3
+		}
+		583 = {
+			add_building_construction = {
+				type = barracks
+				instant_build = yes
+				level = 2
+			}
+			add_building_construction = {
+				type = offices
+				level = 2
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 3
+		}
+	}
 }
 shared_focus = {
 	id = MAR_koskaz_return_northern_kazakhstan
@@ -915,24 +1614,13 @@ shared_focus = {
 	}
 	x = 23
 	y = 3
-
-}
-shared_focus = {
-	id = MAR_kossup_scarlet_etud
-	icon = GFX_goal_unknown
-	cost = 10
-	prerequisite = {
-		focus = MAR_kossup_red_and_white
+	completion_reward = {
+		add_political_power = 100
+		country_event = {
+			id = MAR_Kosygin.55
+			days = 0
+		}
 	}
-	prerequisite = {
-		focus = MAR_kossup_meet_Gil
-	}
-	prerequisite = {
-		focus = MAR_kossup_topor
-	}
-	x = 5
-	y = 4
-
 }
 shared_focus = {
 	id = MAR_koskaz_islamic_monbol
@@ -946,5 +1634,11 @@ shared_focus = {
 	}
 	x = 22
 	y = 4
-
+	completion_reward = {
+		add_war_support = 0.05
+		country_event = {
+			id = MAR_Kosygin.56
+			days = 0
+		}
+	}
 }

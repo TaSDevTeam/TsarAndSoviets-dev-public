@@ -323,7 +323,7 @@ MAR_debug_category = {
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: TaS_WRW2_End_the_germany_decision"
-			TaS_2WRW_Russian_integrated = yes
+			#TaS_2WRW_Russian_integrated = yes
 		}
 	}
 	TaS_WRW2_rus_ultimatums_enable = {
@@ -482,8 +482,8 @@ MAR_experiments_category = {
 							id = berez_exper.6 days = 0
 						}
 					}
-					add_to_variable = { MAR_exp_counter = -1 }
 				}
+				add_to_variable = { MAR_exp_counter = -1 }
 			}
 			custom_effect_tooltip = MAR_EXP_RESULTS_IN_TT
 		}
@@ -1303,7 +1303,7 @@ MAR_volunteer_category = {
 		icon = GFX_decision_black_market_arms_trade_increase
 		visible = {
 			KUR = { exists = yes }
-			MAR_iraqi_civil_war_active = yes
+			MAG_WA_iraqi_civil_war_active = yes
 			NOT = { has_global_flag = KUR_Iraq_fixed }
 		}
 		fire_only_once = yes
@@ -1838,7 +1838,6 @@ MAR_Order_category = {
 				character = MAR_Sergey_Belozerskiy
 				ruling_only = yes
 			}
-			RUS_integration_cost_days_decrease = yes
 			has_country_flag = W_RUSSIA_UNIFIED
 		}
 		cost = 125
@@ -1850,6 +1849,7 @@ MAR_Order_category = {
 				var = MAR_ord_required_garrison_factor
 				value = -0.15
 			}
+			RUS_integration_cost_days_decrease = yes
 			custom_effect_tooltip = MAR_Order_Military_Squads_tt
 		}
 	}

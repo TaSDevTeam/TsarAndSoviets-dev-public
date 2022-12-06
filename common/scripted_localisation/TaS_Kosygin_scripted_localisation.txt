@@ -1,0 +1,10 @@
+defined_text = {
+	name = GET_MAR_KOSYGINGUI_prp_Onega_state
+	
+	text = {
+		trigger = {
+			check_variable = {MAR_KOSYGINGUI_selected = 7}
+		}
+		localisation_key = MAR_ONEGA_ANTITERROR
+	}
+}
