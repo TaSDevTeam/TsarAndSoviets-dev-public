@@ -77,11 +77,11 @@ country_event = { #Future
 		name = berez_eco.3.a
 		ai_chance = { factor = 1 }
 		set_country_flag = MAR_started_fighting_Vyatka
-		swap_ideas = {
-			add_idea = tno_security_security_service
-			remove_idea = tno_security_police
-		}
-		TNO_improve_security_policy_effectiveness_med
+		#swap_ideas = {
+		#	add_idea = tno_security_security_service
+		#	remove_idea = tno_security_police
+		#}
+		#TNO_improve_security_policy_effectiveness_med
 		custom_effect_tooltip = MAR_Start_fighting_Vyatka_tt
 	}
 }

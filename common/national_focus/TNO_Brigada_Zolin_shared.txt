@@ -1,7 +1,7 @@
 shared_focus = {
 		id = Cherni_nadel
 		icon = GFX_ZLB_Cherni_nadel
-		cost = 2,00
+		cost = 2.00
 		x = 8
 		y = 0
 		completion_reward = {
@@ -14,17 +14,17 @@ shared_focus = {
 shared_focus = {
 		id = Vselay_strax
 		icon = GFX_ZLB_Vselay_strax
-		cost = 2,00
+		cost = 2.00
 		prerequisite = {
 			focus = Cherni_nadel
 		}
 		x = 6
 		y = 1
 		completion_reward = {
-		RDC = {
-		    add_war_support = -0.2
-			add_stability = -0.2
-		}
+		#RDC = {
+		#    add_war_support = -0.2
+		#	add_stability = -0.2
+		#}
 		country_event = {
 			id = ZLB_Zolin.2 days = 0
 		}
@@ -61,24 +61,24 @@ shared_focus = {
 		country_event = {
 			id = ZLB_Zolin.4 days = 0
 		}
-        BBB = {
-			add_war_support = -0.2
-		}
-		FRP = {
-			add_war_support = -0.2
-		}
-		MOS = {
-			add_war_support = -0.2
-		}
-		OKB = {
-			add_war_support = -0.2
-		}
-		PAU = {
-			add_war_support = -0.2
-		}
-		LAK = {
-			add_war_support = -0.2
-		}
+        #BBB = {
+		#	add_war_support = -0.2
+		#}
+		#FRP = {
+		#	add_war_support = -0.2
+		#}
+		#MOS = {
+		#	add_war_support = -0.2
+		#}
+		#OKB = {
+		#	add_war_support = -0.2
+		#}
+		#PAU = {
+		#	add_war_support = -0.2
+		#}
+		#LAK = {
+		#	add_war_support = -0.2
+		#}
 	}
 }
 shared_focus = {
@@ -191,24 +191,24 @@ shared_focus = {
 		country_event = {
 			id = ZLB_Zolin.10 days = 0
 		}
-		BBB = {
-			add_ideas = ZLB_shed_zeml
-		}
-		FRP = {
-			add_ideas = ZLB_shed_zeml
-		}
-		MOS = {
-			add_ideas = ZLB_shed_zeml
-		}
-		OKB = {
-			add_ideas = ZLB_shed_zeml
-		}
-		PAU = {
-			add_ideas = ZLB_shed_zeml
-		}
-		LAK = {
-			add_ideas = ZLB_shed_zeml
-		}
+		#BBB = {
+		#	add_ideas = ZLB_shed_zeml
+		#}
+		#FRP = {
+		#	add_ideas = ZLB_shed_zeml
+		#}
+		#MOS = {
+		#	add_ideas = ZLB_shed_zeml
+		#}
+		#OKB = {
+		#	add_ideas = ZLB_shed_zeml
+		#}
+		#PAU = {
+		#	add_ideas = ZLB_shed_zeml
+		#}
+		#LAK = {
+		#	add_ideas = ZLB_shed_zeml
+		#}
 	}
 }
 shared_focus = {

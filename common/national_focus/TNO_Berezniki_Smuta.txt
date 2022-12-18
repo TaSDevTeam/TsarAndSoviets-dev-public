@@ -123,21 +123,21 @@ shared_focus = {
 			50 = {
 				add_equipment_to_stockpile = {
 					type = infantry_equipment
-					amount = 1000
+					amount  = 1000
 				}
 				add_equipment_to_stockpile = { 
 					type = artillery_equipment
-					amount = 100
+					amount  = 100
 				}
 			}
 			50 = {
 				add_equipment_to_stockpile = {
 					type = infantry_equipment
-					amount = 500
+					amount  = 500
 				}
 				add_equipment_to_stockpile = { 
 					type = artillery_equipment
-					amount = 300
+					amount  = 300
 				}
 			}
 		}
@@ -599,7 +599,7 @@ shared_focus = {
 		add_stability = 0.05
 		add_popularity = {
 			ideology = paternalism
-			amount = 0.15
+			popularity = 0.15
 		}
 		TNO_improve_admin_efficiency_med = yes
 		country_event = {

@@ -11,41 +11,12 @@ focus_tree = {
 	shared_focus = MAR_start_from_scratch
 }
 focus_tree = {
-	id = MAR_start_tree
-	country = {
-		factor = 0
-		modifier = {
-			add = 10
-			tag = MAR
-		}
-	}
-	default = no
-	shared_focus = MAR_kazembek_begining
-}
-focus_tree = {
-	id = MAR_bombing_ot_AB
-	country = {
-		factor = 0
-	}
-	default = no
-	shared_focus = MAR_bombing_zhrebi_broshen
-}
-focus_tree = {
 	id = MAR_postbomb_tree
 	country = {
 		factor = 0
 	}
 	default = no
 	shared_focus = MAR_our_time_has_come
-}
-focus_tree = {
-	id = MAR_voina
-	country = {
-		factor = 0
-	}
-	default = no
-	shared_focus = MAR_hope_freedom
-	shared_focus = MAR_pohod_the_end
 }
 focus_tree = {
 	id = MAR_smuta_tree
@@ -128,14 +99,7 @@ focus_tree = {
 	shared_focus = MAR_koskaz_red_sun_over_steppe
 }
 
-focus_tree = {
-	id = MAR_Solzh_tree
-	country = {
-		factor = 0
-	}
-	default = no
-	shared_focus = MAR_Solzh_Meet_the_new_boss
-}
+
 
 focus_tree = {
 	id = MAR_Gil_Conquest
