@@ -21,7 +21,7 @@ country_event = { #Novgorod Theatry
 	option = {
 		name = MAR_Collapse.1941.a
 		every_country = {
-			limit = { at_war_with = MAR }
+			limit = { has_war_with = MAR }
 			white_peace = MAR
 		}
 		MCW = {
@@ -337,6 +337,14 @@ country_event = { #Turkestan breaks free
 		name = MAR_Collapse.7.a
 		ai_chance = { factor = 1 }
 		add_stability = -0.05
+		XYZ = {
+			UZB_Alexander_Rutskoj = {
+				set_portraits = {
+					civilian = { large = "gfx/leaders/UZB/Portrait_Uzbekistan_Alexander_Rutskoy_ALT.dds" }
+				}
+				set_nationality = UZB
+			} 
+		}
 		UZB = {
 			end_puppet = MAR
 			econ_leave_sphere = yes
@@ -357,14 +365,8 @@ country_event = { #Turkestan breaks free
 									
 						}
 			}
-		UZB_Alexander_Rutskoj = {
-			set_portraits = {
-				civilian = { large = "gfx/leaders/UZB/Portrait_Uzbekistan_Alexander_Rutskoy_ALT.dds" }
-			
 		}
-	} 
-}
-}	
+	}	
 }
 country_event = { #-kazakhstan
 	id = MAR_Collapse.8 
@@ -382,6 +384,11 @@ country_event = { #-kazakhstan
 		retire_character = MAR_Cheslav_Kischak
 		MAR_Wojciech_Jaruzelski = {
 				set_nationality = NPL
+		}
+		XYZ = {
+			MAR_Vitaliy_Mukha = {
+				set_nationality = PAV
+			}
 		}
 		PAV = {
 			set_cosmetic_tag = PAV_MAR_collapse
@@ -642,6 +649,11 @@ country_event = { #F dv 1
 		name = MAR_Collapse.13.a
 		ai_chance = { factor = 1 }
 		add_stability = -0.05
+		XYZ = {
+			MAR_Vladimir_Zhirinovsky = {
+				set_nationality = MAG
+			}
+		}
 		MAG = {
 			set_cosmetic_tag = MAG_MAR_collapse
 			add_state_core = 637
@@ -707,6 +719,64 @@ country_event = { #F dv 2
 		name = MAR_Collapse.14.a
 		ai_chance = { factor = 1 }
 		add_stability = -0.05
+		XYZ = {
+			MAR_Mikhail_Nikolayev = {
+				set_nationality = YAK
+			}
+		}
+		XYZ = {
+			MAR_Susanna_Pechuro = {	
+				set_nationality = IRK
+			}
+		}
+		IRK = {
+			retire_country_leader = yes
+			set_country_flag = RUS_cancel_all_ideas
+			set_cosmetic_tag = BRY_MAR_collapse
+			add_state_core = 760
+			transfer_state = 760
+			add_state_core = 565
+			transfer_state = 565
+			add_state_core = 564
+			transfer_state = 564
+			set_politics = {
+						ruling_party = socialist
+						last_election = "1933.2.16"
+						election_frequency = 36
+						elections_allowed = no
+			}
+			load_focus_tree = shattered_ambitions
+			MAG = {
+				IRK = { save_party_popularities = yes }
+				set_autonomy = {
+					target = IRK
+					autonomy_state = autonomy_military_government
+				}
+			}				
+			set_politics = {
+				ruling_party = socialist
+			}
+			add_popularity = {
+				ideology = socialist
+				popularity = 0.65
+			}
+			add_country_leader_role = {
+				character = MAR_Susanna_Pechuro
+				promote_leader = yes
+				country_leader = {
+					desc = "POLITICS_PECHURO_COLLAPSE_DESC"
+					ideology = socialist_utopian_socialism_subtype
+					expire = "1999.1.1"
+					traits = { }
+				}
+			}
+			set_party_name = {
+				ideology = socialist
+				long_name = BRY_MAR_collapse_party_long
+				name = BRY_MAR_collapse_party
+			}
+			apply_party_popularities = yes
+		}
 		YAK = {
 			set_cosmetic_tag = YAK_MAR_collapse
 			add_state_core = 574
@@ -756,53 +826,7 @@ country_event = { #F dv 2
 			apply_party_popularities = yes
 
 		}
-		BRY = {
-			set_country_flag = RUS_cancel_all_ideas
-			set_cosmetic_tag = BRY_MAR_collapse
-			add_state_core = 760
-			transfer_state = 760
-			add_state_core = 565
-			transfer_state = 565
-			add_state_core = 564
-			transfer_state = 564
-			set_politics = {
-						ruling_party = socialist
-						last_election = "1933.2.16"
-						election_frequency = 36
-						elections_allowed = no
-			}
-			load_focus_tree = shattered_ambitions
-			apply_party_popularities = yes
-			MAG = {
-				BRY = { save_party_popularities = yes }
-				set_autonomy = {
-					target = BRY
-					autonomy_state = autonomy_military_government
-				}
-			}				
-			set_politics = {
-				ruling_party = socialist
-			}
-			add_popularity = {
-				ideology = socialist
-				popularity = 0.65
-			}
-			add_country_leader_role = {
-				character = MAR_Susanna_Pechuro
-				promote_leader = yes
-				country_leader = {
-					desc = "POLITICS_PECHURO_COLLAPSE_DESC"
-					ideology = socialist_utopian_socialism_subtype
-					expire = "1999.1.1"
-					traits = { }
-				}
-			}
-			set_party_name = {
-				ideology = socialist
-				long_name = BRY_MAR_collapse_party_long
-				name = BRY_MAR_collapse_party
-			}
-		}
+		
 		hidden_effect = {
 			country_event ={
 				id = MAR_Collapse.15 days = 6
@@ -928,6 +952,11 @@ country_event = { #F Ural
 		MAR_Vladimir_Gil = {
 				set_nationality = OMS
 		}
+		XYZ = {
+			MAR_Evgeny_Primakov = {
+				set_nationality = TYM
+			}
+		}
  		OMS = {
 			set_country_flag = RUS_cancel_all_ideas
 			set_cosmetic_tag = OMS_MAR_collapse
@@ -980,7 +1009,7 @@ country_event = { #F Ural
 				name = OMS_MAR_collapse_party
 			}
 		}
-		SVR = {
+		TYM = {
 			set_country_flag = RUS_cancel_all_ideas
 			set_cosmetic_tag = SVR_MAR_collapse
 			add_state_core = 572
@@ -998,11 +1027,6 @@ country_event = { #F Ural
 						election_frequency = 36
 						elections_allowed = no
 			}
-			MAR_Evgeny_Primakov = {
-				promote_character = {
-					ideology = paternalism_controlled_democracy_subtype
-				}
-			}
 			add_popularity = {
 				ideology = paternalism
 				popularity = 0.45
@@ -1018,6 +1042,9 @@ country_event = { #F Ural
 					traits = { }
 				}
 			}
+			MAR_Evgeny_Primakov = {
+				promote_character = paternalism_controlled_democracy_subtype
+			}
 			set_party_name = {
 				ideology = paternalism
 				long_name = SVR_MAR_collapse_party_long
@@ -1026,7 +1053,7 @@ country_event = { #F Ural
 		}
 		OMS = {
 			declare_war_on = {
-				target = SVR
+				target = TYM
 				type = annex_everything
 			}
 		}
@@ -1049,6 +1076,14 @@ country_event = { #Total f
 		name = MAR_Collapse.17.a
 		ai_chance = { factor = 1 }
 		add_stability = -0.05
+		XYZ = {
+			MAR_Dmitry_Vasilyev = {
+				set_nationality = KOM
+			}
+			MAR_Mintimer_Shaymiev = {
+				set_nationality = TAR
+			}
+		}
 		KOM = {
 			set_country_flag = RUS_cancel_all_ideas
 			set_cosmetic_tag = KOM_MAR_collapse
@@ -1288,7 +1323,7 @@ country_event = { #Technical stuff no loc
 	option = {
 		name = MAR_Japan.1.a
 		ai_chance = { factor = 1 }
-		KOR = {
+		MJP = {
 			set_cosmetic_tag = KOR_Second_CW
 			transfer_state = 328
 			add_state_core = 328
@@ -1313,6 +1348,11 @@ country_event = { #Technical stuff no loc
 	option = {
 		name = MAR_Japan.2.a
 		ai_chance = { factor = 1 }
+		XYZ = {
+			MAN_Kuan_Chung = {
+				set_nationality = MAN
+			}
+		}
 		MAN = {
 			set_politics = {
 				ruling_party = liberalism
@@ -1394,7 +1434,7 @@ country_event = { #Technical stuff no loc
 			transfer_state = 610
 			add_state_core = 610
 		}
-		KOR = {
+		MJP = {
 			transfer_state = 716
 			add_state_core = 716
 			transfer_state = 717
@@ -1410,7 +1450,7 @@ country_event = { #Technical stuff no loc
 				type = annex_everything
 			}
 		}
-		KOR = {
+		MJP = {
 			declare_war_on = {
 				target = MAN
 				type = annex_everything

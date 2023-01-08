@@ -1,0 +1,54 @@
+JAP_foreign_policy_fe_category = {
+	icon = GFX_JAP_decision_category_gaimusho
+
+	allowed = {
+		original_tag = JAP
+	}
+
+	visible = {
+		check_variable = { TNO_active_conflicts^num = 49 }
+	}
+	visible_when_empty = yes
+	scripted_gui = TNO_fopo_container
+	priority = 100010
+
+}
+MAR_foreign_policy_category = {
+	icon = GFX_JAP_decision_category_gaimusho
+
+	allowed = {
+		original_tag = MAR
+	}
+
+	visible = {
+		check_variable = { TNO_active_conflicts^num > 0 }
+	}
+	visible_when_empty = yes
+	scripted_gui = TNO_fopo_container
+	priority = 100010
+
+	on_map_area = {
+		target_array = IRQ.controlled_states
+		target_array = SNI.controlled_states
+		target_array = EGY.controlled_states
+		target_array = EGQ.controlled_states
+		target_array = SDF.controlled_states
+		target_array = YEM.controlled_states
+		target_array = OMA.controlled_states
+		target_array = OMI.controlled_states
+		target_trigger = {
+			TNO_fopo_baathism_support_selected = yes
+			FROM = {
+				owner = {
+					has_war = yes
+					is_in_array = {
+						array = global.OIL_supported_by_JAP
+						value = THIS
+					}
+				}
+			}
+		}
+		name = MAR_oil_crisis_support_category_map_category_name
+		zoom = 250
+	}
+}

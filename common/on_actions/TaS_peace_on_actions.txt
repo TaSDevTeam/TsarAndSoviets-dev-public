@@ -77,7 +77,7 @@ on_actions = {
 							original_tag = PFF
 						}
 						ROOT = { 
-							original_tag = KOR
+							original_tag = MJP
 						}
 					}
 					FROM = {
@@ -110,7 +110,7 @@ on_actions = {
 			else_if = {
 					limit = {
 						FROM = {
-							original_tag = KOR
+							original_tag = MJP
 						}
 						ROOT = { 
 							original_tag = PFF
@@ -154,7 +154,7 @@ on_actions = {
 						}
 						ROOT = { 
 							OR = {
-								original_tag = KOR
+								original_tag = MJP
 								original_tag = HAN
 							}
 						}

@@ -1,13 +1,25 @@
+TaS_fopo_add_far_eastern_revolt_tab = {
+	set_temp_variable = { conflict_id = 49 }
+	TNO_add_fopo_conflict_tab = yes
+}
+TaS_fopo_remove_far_eastern_revolt_tab = {
+	set_temp_variable = { conflict_id = 49 }
+	TNO_remove_fopo_conflict_tab = yes
+}
+
 TaS_2WRW_manchuria_start_rebelion = {
 		custom_effect_tooltip = TaS_2WRW_manchuria_start_rebelion_tt
 		PFF = {
-			set_cosmetic_tag = AMR_RUSrevolt
 			load_focus_tree = shattered_ambitions
 			set_country_flag = RUS_cancel_all_ideas
 			transfer_state = 1364
 			add_state_core = 1364
 			transfer_state = 657
 			add_state_core = 657
+			transfer_state = 1646
+			add_state_core = 1646
+			transfer_state = 1647
+			add_state_core = 1647
 			transfer_state = 409
 			add_state_core = 409
 			inherit_technology = MAR
@@ -51,37 +63,18 @@ TaS_2WRW_manchuria_start_rebelion = {
 				}
 			}
 		}
-		KOR = {
-			set_politics = {
-				ruling_party = despotism
-				elections_allowed = no
-				last_election = "1935.12.17"
-				election_frequency = 48
-			}
+		MJP = {
 			promote_character = KOR_Hiromichi_Yahara
-			transfer_state = 714
-			add_state_core = 714
-			transfer_state = 715
-			add_state_core = 715
-			transfer_state = 717
-			add_state_core = 717
-			transfer_state = 716
-			add_state_core = 716
-			transfer_state = 610
-			add_state_core = 610
+			transfer_state = 1645
+			add_state_core = 1645
+			transfer_state = 1644
+			add_state_core = 1644
 			transfer_state = 408
 			add_state_core = 408
 			transfer_state = 809
 			add_state_core = 809
-			set_cosmetic_tag = KOR_RUSrevolt
 			inherit_technology = JAP
-			load_oob = KOR_Revolt
-			set_politics = {
-				ruling_party = despotism
-				elections_allowed = no
-				last_election = "1935.12.17"
-				election_frequency = 48
-			}
+			load_oob = MJP_Revolt
 			if = {
 				limit = {
 					check_variable = { MAR.MAR_FErebels_addpartisans > 0 }
@@ -91,19 +84,19 @@ TaS_2WRW_manchuria_start_rebelion = {
 				}
 			}
 		}
-		KOR = {
-			declare_war_on = {
-				target = PFF
-				type = annex_everything
-			}
-		}
+		#MJP = {
+		#	declare_war_on = {
+		#		target = PFF
+		#		type = annex_everything
+		#	}
+		#}
 		MAR = {
 				set_temp_variable = { target = PFF}
 				TNO_increase_volunteer_cap_3 = yes
 		}
 }
 TaS_2WRW_spawn_divs_second_cw = {
-				KOR = {
+				MJP = {
 					division_template = {
 						name = "Infantry"
 						priority = 2
@@ -138,67 +131,67 @@ TaS_2WRW_spawn_divs_second_cw = {
 					random_owned_controlled_state = {
 						create_unit = {
 							division = "division_template = \"Infantry\" start_experience_factor = 0.6 start_equipment_factor = 0.5"
-							owner = KOR
+							owner = MJP
 						}
 						create_unit = {
 							division = "division_template = \"Infantry\" start_experience_factor = 0.6 start_equipment_factor = 0.5"
-							owner = KOR
+							owner = MJP
 						}
 						create_unit = {
 							division = "division_template = \"Infantry\" start_experience_factor = 0.6 start_equipment_factor = 0.5"
-							owner = KOR
+							owner = MJP
 						}
 						create_unit = {
 							division = "division_template = \"Infantry\" start_experience_factor = 0.6 start_equipment_factor = 0.5"
-							owner = KOR
+							owner = MJP
 						}
 						create_unit = {
 							division = "division_template = \"Infantry\" start_experience_factor = 0.6 start_equipment_factor = 0.5"
-							owner = KOR
+							owner = MJP
 						}
 						create_unit = {
 							division = "division_template = \"Infantry\" start_experience_factor = 0.6 start_equipment_factor = 0.5"
-							owner = KOR
+							owner = MJP
 						}
 						create_unit = {
 							division = "division_template = \"Infantry\" start_experience_factor = 0.6 start_equipment_factor = 0.5"
-							owner = KOR
+							owner = MJP
 						}
 						create_unit = {
 							division = "division_template = \"Infantry\" start_experience_factor = 0.6 start_equipment_factor = 0.5"
-							owner = KOR
+							owner = MJP
 						}
 						create_unit = {
 							division = "division_template = \"Infantry\" start_experience_factor = 0.6 start_equipment_factor = 0.5"
-							owner = KOR
+							owner = MJP
 						}
 						create_unit = {
 							division = "division_template = \"Infantry\" start_experience_factor = 0.6 start_equipment_factor = 0.5"
-							owner = KOR
+							owner = MJP
 						}
 						create_unit = {
 							division = "division_template = \"Milita\" start_experience_factor = 0.6 start_equipment_factor = 0.5"
-							owner = KOR
+							owner = MJP
 						}
 						create_unit = {
 							division = "division_template = \"Milita\" start_experience_factor = 0.6 start_equipment_factor = 0.5"
-							owner = KOR
+							owner = MJP
 						}
 						create_unit = {
 							division = "division_template = \"Milita\" start_experience_factor = 0.6 start_equipment_factor = 0.5"
-							owner = KOR
+							owner = MJP
 						}
 						create_unit = {
 							division = "division_template = \"Milita\" start_experience_factor = 0.6 start_equipment_factor = 0.5"
-							owner = KOR
+							owner = MJP
 						}
 						create_unit = {
 							division = "division_template = \"Milita\" start_experience_factor = 0.6 start_equipment_factor = 0.5"
-							owner = KOR
+							owner = MJP
 						}
 						create_unit = {
 							division = "division_template = \"Milita\" start_experience_factor = 0.6 start_equipment_factor = 0.5"
-							owner = KOR
+							owner = MJP
 						}
 					}
 				}

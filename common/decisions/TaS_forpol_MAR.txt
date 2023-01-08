@@ -1,0 +1,34 @@
+MAR_foreign_policy_category = {
+	MAR_FE_increase_commitment = {
+		icon = GFX_decision_generic_prepare_civil_war
+		visible = {
+			tag = MAR
+			TNO_fopo_far_eastern_revolt_selected = yes
+			TNO_volunteer_cap_less_5 = yes
+			check_variable = {
+				MAR_FE_volunteer_sent < 3
+			}
+		}
+
+		cost = 50
+		days_re_enable = 21
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision JAP_FE_increase_commitment"
+				add_command_power = 25
+				MAR = {
+					set_temp_variable = { target = PFF }
+					TNO_increase_volunteer_cap_1 = yes
+				}
+
+			add_to_variable = {
+				PFF_FE_volunteer_sent = 1
+			}
+
+			custom_effect_tooltip = OIL_USA_increase_volunteers_1 #reusing the usa tooltip
+		}
+			ai_will_do = {
+				factor = 20
+			}
+	}
+}
