@@ -4,46 +4,6 @@ on_actions = {
 				if = {
 					limit = {
 						FROM.FROM = {
-							state = 809
-						}
-					}
-					ROOT = {
-						if = {
-							limit = {
-								original_tag = PFF
-							}
-							white_peace = {
-								tag = MJP
-								message = MAR_Fareastwar_PFF_victory
-							}
-							transfer_state = 408
-							transfer_state = 809
-							MAR = {
-								country_event = {
-									id = MAR_Japan.6 days = 0
-								}
-							}
-							MAN = {
-								transfer_state = 714
-								add_state_core = 714
-								transfer_state = 715
-								add_state_core = 715
-								transfer_state = 717
-								add_state_core = 717
-								transfer_state = 716
-								add_state_core = 716
-								transfer_state = 610
-								add_state_core = 610				
-								country_event = {
-									id = MAR_Japan.1 days = 10
-								}
-							}
-						}
-					}
-				}
-				if = {
-					limit = {
-						FROM.FROM = {
 							state = 1442
 						}
 					}

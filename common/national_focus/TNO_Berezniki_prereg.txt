@@ -111,7 +111,7 @@ shared_focus = {
 		hidden_effect = {
 			country_event = { id = MAR_initial.21 days = 30 }
 		}
-        set_temp_variable = { gdp_growth_temp = 0.10 }
+        set_temp_variable = { gdp_growth_temp = 1.50 }
         econ_gdp_growth_change = yes
 	}
 }
@@ -143,8 +143,10 @@ shared_focus = {
 		  amount = 6
 		  state = 398
 		}
-		set_temp_variable = { inflation_temp = 0.05 }
+		set_temp_variable = { inflation_temp = 0.25 }
 		econ_inflation_change = yes
+		set_temp_variable = { gdp_growth_temp = 1.20 }
+        econ_gdp_growth_change = yes
 		set_temp_variable = { pus_temp = 1 }
 		econ_pus_change = yes
 		tno_max_workhours_worsen = yes
@@ -170,9 +172,9 @@ shared_focus = {
 		country_event = { id = MAR_initial.23 days = 0 }
 		add_stability = -0.10
 		add_political_power = -15
-		set_temp_variable = { inflation_temp = 0.05 }
+		set_temp_variable = { inflation_temp = 0.25 }
 		econ_inflation_change = yes
-		set_temp_variable = { pus_temp = 1 }
+		set_temp_variable = { pus_temp = 2 }
 		econ_pus_change = yes
 		TNO_improve_agriculture_med = yes
 		#hidden_effect = {
@@ -195,19 +197,18 @@ shared_focus = {
 	x = 2
 	y = 4
 	completion_reward = {
-		country_event = { id = berez_eco.7 days = 4 }
 		custom_effect_tooltip = MAR_check_vyatka_vibe_tt
 		hidden_effect = {
 			if = { 
-				limit = { }
+				limit = { check_variable = { MAR_Okhranka_power < 25 } }
 				country_event = { id = MAR_initial.24 days = 3 }
 			}
 			if = { 
-				limit = { }
+				limit = { check_variable = { MAR_Okhranka_power < 75 } }
 				country_event = { id = MAR_initial.25 days = 4 }
 			}
 			if = { 
-				limit = { }
+				limit = { check_variable = { MAR_Okhranka_power > 75 } }
 				country_event = { id = MAR_initial.27 days = 6 }
 			}
 		}
@@ -254,7 +255,7 @@ shared_focus = {
 	x = 3
 	y = 6
 	completion_reward = {
-		country_event = { id = berez_eco.15 days = 2 } 
+		country_event = { id = MAR_initial.34 days = 2 } 
 		TNO_improve_industrial_equipment_med = yes
 		TNO_improve_industrial_expertise_low = yes
 		set_temp_variable = { money_reserves_temp = -0.045 } 
@@ -368,7 +369,7 @@ shared_focus = {
 	x = 2
 	y = 7
 	completion_reward = {
-		set_temp_variable = { gdp_growth_temp = 0.10 }
+		set_temp_variable = { gdp_growth_temp = 2.50 }
         econ_gdp_growth_change = yes
 		if = {
 			limit = { has_completed_focus = MAR_peoples_love }
@@ -468,7 +469,8 @@ shared_focus = {
 	x = 9
 	y = 4
 	completion_reward = {
-		#remove some vyt influence
+		set_temp_variable = { temp_connections_gained = -3 }
+		MAR_Okhranka_connections_change = yes
 		hidden_effect = {
 			country_event = { id = MAR_initial.13 days = 3 }
 		}
@@ -526,7 +528,7 @@ shared_focus = {
 		else = {
 			custom_effect_tooltip = MAR_path_differ_kosyin_tt
 		}
-		set_temp_variable = { inflation_temp = -0.05 }
+		set_temp_variable = { inflation_temp = -0.35 }
 		econ_inflation_change = yes
 		country_event = { id = MAR_initial.15 days = 3 }
 	}
@@ -589,7 +591,10 @@ shared_focus = {
 	y = 7
 	completion_reward = {
 		country_event = { id = MAR_initial.19 days = 2 }
-		#MAR_lower_Vyatka_influence_huge = yes
+		set_temp_variable = { temp_connections_gained = -7 }
+		MAR_Okhranka_connections_change = yes
+		set_temp_variable = { temp_agents_gained = -70 }
+		MAR_Okhranka_agents_change = yes
 		add_popularity = {
 			ideology = paternalism
 			popularity = -0.06
@@ -875,11 +880,21 @@ shared_focus = {
 	x = 16
 	y = 5
 	completion_reward = {
-		#hidden_effect = { 
-		#	country_event = { id = berez_news.4 days = 45 }
-		#}	
-		#country_event = { id = berez_eco.24 days = 2 }
-		#custom_effect_tooltip = MAR_army_upgrade
+		custom_effect_tooltip = MAR_check_vyatka_vibe_tt
+		hidden_effect = {
+			if = { 
+				limit = { check_variable = { MAR_Okhranka_power < 25 } }
+				country_event = { id = MAR_initial.48 days = 3 }
+			}
+			if = { 
+				limit = { check_variable = { MAR_Okhranka_power < 75 } }
+				country_event = { id = MAR_initial.49 days = 4 }
+			}
+			if = { 
+				limit = { check_variable = { MAR_Okhranka_power > 75 } }
+				country_event = { id = MAR_initial.50 days = 6 }
+			}
+		}
 	}
 }
 shared_focus = {
@@ -931,33 +946,36 @@ shared_focus = {
 	x = 9
 	y = 8
 	completion_reward = {
-#		hidden_effect = {
-#			country_event = { id = berez_eco.36 days = 2 }
-#		}
-		IF = {
-			limit = {
-				check_variable = { MAR_var_Vyatka_influence < 16 }
-			}		
-			country_event = { id = berez_eco.35 days = 00 }
-			VYT = {
-				end_puppet = MAR
-				hidden_effect = {
-					VYT = {
-						remove_resource_rights = 398
-					}
-				}
+		if = {
+			limit = { check_variable = { MAR_MGB_vyatka_angry = 2 } }
+			if = {
+				limit = { check_variable = { MAR_Okhranka_power < 15 } }
+				country_event = { id = MAR_initial.52 days = 2 }
 			}
-			remove_ideas = MAR_idea_destroyed_souvernity
-		}
-		ELSE = {
-			custom_effect_tooltip = MAR_tt_Vyatka_will_fuck_you
-			hidden_effect = {
-				country_event = {
-					id = berez_eco.38 days = 1
-				}
+			else = {
+				country_event = { id = MAR_initial.53 days = 2 }
 			}
 		}
-		set_country_flag = MAR_ended_fighting_Vyatka
+		if = {
+			limit = { check_variable = { MAR_MGB_vyatka_angry = 1 } }
+			if = {
+				limit = { check_variable = { MAR_Okhranka_power < 35 } }
+				country_event = { id = MAR_initial.52 days = 2 }
+			}
+			else = {
+				country_event = { id = MAR_initial.53 days = 2 }
+			}
+		}
+		if = {
+			limit = { check_variable = { MAR_MGB_vyatka_angry = 0 } }
+			if = {
+				limit = { check_variable = { MAR_Okhranka_power < 60 } }
+				country_event = { id = MAR_initial.52 days = 2 }
+			}
+			else = {
+				country_event = { id = MAR_initial.53 days = 2 }
+			}
+		}
 	}
 }
 

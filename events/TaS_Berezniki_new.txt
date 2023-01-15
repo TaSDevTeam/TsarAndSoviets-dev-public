@@ -86,7 +86,7 @@ country_event = { #welcome to berezniki
 		}
 		set_temp_variable = { temp_econ_GDP_boost_percentage = 0.02 }
 		econ_GDP_boost_once_percentage = yes
-		#add some vyatka inf here
+		#add some vyatka inf here # Ne vyidet -_-
 	}
 }
 
@@ -146,13 +146,13 @@ country_event = { #Fuck Vladimir All my homies hate Vladimir
 	option = { #
 		name = MAR_initial.7.a
 		ai_chance = { factor = 1 }
+		custom_effect_tooltip = MAR_fuck_vyt_tt
 		add_political_power = 20
 		hidden_effect = {
 			custom_effect_tooltip = MAR_mgb_activate_tt
 			set_country_flag = MAR_MGB_available
 		}
-		#scripted effect for MGB mech
-		
+		MAR_MGB_setup_the_variables = yes
 	}
 }
 
@@ -252,7 +252,7 @@ country_event = { #serge serge changes occupation
 		name = MAR_initial.12.a
 		ai_chance = { factor = 1 }
 		add_political_power = 15
-		#add army xp here
+		army_experience = 15
 	}
 }
 
@@ -532,7 +532,22 @@ country_event = { #vyatka is agry
 			ideology = paternalism
 			popularity = 0.05
 		}
-		#yo fucked up ones more
+		add_to_variable = { MAR_MGB_vyatka_angry  = 1}
+		clamp_variable = {
+			var = MAR_MGB_vyatka_angry
+			min = 0
+			max = 2
+		}
+		if = {
+			limit = { has_idea = MAR_souverinity_fail_1 }
+			swap_ideas = {
+				remove_idea = MAR_souverinity_fail_1
+				add_idea = MAR_souverinity_fail_2
+			}
+		}
+		else = {
+			add_ideas = MAR_souverinity_fail_1
+		}
 	}
 }
 
@@ -553,8 +568,26 @@ country_event = { #okhranka trap
 			ideology = paternalism
 			popularity = 0.1
 		}
-		#yo fucked up ones more
-		#okhranka growth effect
+		set_temp_variable = { temp_connections_gained = 10 }
+		set_temp_variable = { temp_agents_gained = 60 }
+		MAR_Okhranka_connections_change = yes
+		MAR_Okhranka_agents_change = yes
+		add_to_variable = { MAR_MGB_vyatka_angry = 1}
+		clamp_variable = {
+			var = MAR_MGB_vyatka_angry
+			min = 0
+			max = 2
+		}
+		if = {
+			limit = { has_idea = MAR_souverinity_fail_1 }
+			swap_ideas = {
+				remove_idea = MAR_souverinity_fail_1
+				add_idea = MAR_souverinity_fail_2
+			}
+		}
+		else = {
+			add_ideas = MAR_souverinity_fail_1
+		}
 	}
 }
 
@@ -966,11 +999,11 @@ country_event = { #tsarskiy politruk
 	option = { #
 		name = MAR_initial.47.a
 		ai_chance = { factor = 1 }
-		
+		add_ideas = { MAR_komissars_in_army }
 	}
 }
 
-country_event = { #chornyi lebed 1
+country_event = { #chornyi lebed 1 - win
 	id = MAR_initial.48
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_initial.48" }
 	title = MAR_initial.48.t
@@ -983,11 +1016,19 @@ country_event = { #chornyi lebed 1
 	option = { #
 		name = MAR_initial.48.a
 		ai_chance = { factor = 1 }
-		
+		VYT = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = MAR_resource_withdraw
+			}
+		}
+		remove_ideas = { MAR_military_instructors_of_vyatka }
+		set_temp_variable = { temp_connections_gained = -5 }
+		MAR_Okhranka_connections_change = yes
 	}
 }
 
-country_event = { #chornyi lebed 2
+country_event = { #chornyi lebed 2 - win/lose
 	id = MAR_initial.49
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_initial.49" }
 	title = MAR_initial.49.t
@@ -997,14 +1038,46 @@ country_event = { #chornyi lebed 2
 	is_triggered_only = yes
 	fire_only_once = yes
 	
-	option = { #
+	option = { #lol get rekt
 		name = MAR_initial.49.a
 		ai_chance = { factor = 1 }
-		
+		VYT = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = MAR_resource_withdraw
+			}
+		}
+		remove_ideas = { MAR_military_instructors_of_vyatka }
+		set_temp_variable = { temp_connections_gained = -3 }
+		MAR_Okhranka_connections_change = yes
+	}
+	option = { #sorry
+		name = MAR_initial.49.b
+		ai_chance = { factor = 1 }
+		add_popularity = {
+			ideology = paternalism
+			popularity = 0.05
+		}
+		add_to_variable = { MAR_MGB_vyatka_angry  = 1}
+		clamp_variable = {
+			var = MAR_MGB_vyatka_angry
+			min = 0
+			max = 2
+		}
+		if = {
+			limit = { has_idea = MAR_souverinity_fail_1 }
+			swap_ideas = {
+				remove_idea = MAR_souverinity_fail_1
+				add_idea = MAR_souverinity_fail_2
+			}
+		}
+		else = {
+			add_ideas = MAR_souverinity_fail_1
+		}
 	}
 }
 
-country_event = { #chornyi lebed 3
+country_event = { #chornyi lebed 3 - fail
 	id = MAR_initial.50
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_initial.50" }
 	title = MAR_initial.50.t
@@ -1017,7 +1090,34 @@ country_event = { #chornyi lebed 3
 	option = { #
 		name = MAR_initial.50.a
 		ai_chance = { factor = 1 }
-		
+		add_popularity = {
+			ideology = paternalism
+			popularity = 0.1
+		}
+		set_temp_variable = { temp_connections_gained = 10 }
+		set_temp_variable = { temp_agents_gained = 60 }
+		MAR_Okhranka_connections_change = yes
+		MAR_Okhranka_agents_change = yes
+		add_to_variable = { MAR_MGB_vyatka_angry = 1}
+		clamp_variable = {
+			var = MAR_MGB_vyatka_angry
+			min = 0
+			max = 2
+		}
+		swap_ideas = {
+			add_idea = MAR_direct_influence_of_vyatka
+			remove_idea = MAR_military_instructors_of_vyatka
+		}
+		if = {
+			limit = { has_idea = MAR_souverinity_fail_1 }
+			swap_ideas = {
+				remove_idea = MAR_souverinity_fail_1
+				add_idea = MAR_souverinity_fail_2
+			}
+		}
+		else = {
+			add_ideas = MAR_souverinity_fail_1
+		}
 	}
 }
 
@@ -1041,7 +1141,7 @@ country_event = { #new armee
 	}
 }
 
-country_event = { #
+country_event = { #fuck you vlad
 	id = MAR_initial.52
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_initial.52" }
 	title = MAR_initial.52.t
@@ -1054,11 +1154,24 @@ country_event = { #
 	option = { #
 		name = MAR_initial.52.a
 		ai_chance = { factor = 1 }
-		
+		VYT = {
+				end_puppet = MAR
+				hidden_effect = {
+					VYT = {
+						remove_resource_rights = 398
+					}
+				}
+			}
+		set_variable = { MAR_MGB_vyatka_angry = 0 } 
+		remove_ideas = MAR_souverinity_fail_1
+		remove_ideas = MAR_souverinity_fail_2
+		remove_ideas = MAR_military_instructors_of_vyatka
+		remove_ideas = MAR_direct_influence_of_vyatka
+		load_focus_tree = MAR_postbomb_tree
 	}
 }
 
-country_event = { #
+country_event = { #fuck me vlad
 	id = MAR_initial.53
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_initial.53" }
 	title = MAR_initial.53.t
@@ -1068,14 +1181,14 @@ country_event = { #
 	is_triggered_only = yes
 	fire_only_once = yes
 	
-	option = { #
+	option = { #rip bozo
 		name = MAR_initial.53.a
 		ai_chance = { factor = 1 }
-		
+		MAR_Solzh_Vyatka_takeover = yes
 	}
 }
 
-country_event = { #
+country_event = { #free space
 	id = MAR_initial.54
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_initial.54" }
 	title = MAR_initial.54.t
@@ -1092,7 +1205,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #free space
 	id = MAR_initial.55
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_initial.55" }
 	title = MAR_initial.55.t

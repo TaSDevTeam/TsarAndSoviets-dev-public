@@ -26,6 +26,119 @@ econ_join_sphere_MAR = {
 	econ_join_sphere_target = yes
 }
 
+MAR_debug_gimme_teh_variables = {
+	add_political_power = 1
+	log = "[GetDateText]: [Root.GetName]: MAR_Okhranka_connections = [?MAR.MAR_Okhranka_connections] MAR_agents_limit = [?MAR.MAR_agents_limit] MAR_Okhranka_agents = [?MAR.MAR_Okhranka_agents] MAR_decision_cost_one = [?MAR.MAR_decision_cost_one]"
+	log = "MAR_decision_cost_two = [?MAR.MAR_decision_cost_two] MAR_decision_cost_three = [?MAR.MAR_decision_cost_three] [?MAR.MAR_agents_start_temp_min] [?MAR.MAR_agents_limit]"
+}
+MAR_MGB_setup_the_variables = { 
+	#setting the connection value
+	set_temp_variable = { MAR_connections_start_temp = 1 }
+	randomize_temp_variable = {
+		var = MAR_connections_start_temp
+		distribution = uniform
+		min = 70
+		max = 85
+	}
+	round_temp_variable = MAR_connections_start_temp
+	set_variable = { MAR_Okhranka_connections = MAR_connections_start_temp }
+	
+	#setting the agents limit
+	set_temp_variable = { MAR_agents_limit_temp = 10 }
+	multiply_temp_variable = { MAR_agents_limit_temp = MAR_connections_start_temp }
+	set_variable = { MAR_agents_limit = MAR_agents_limit_temp }
+	
+	#setting the min setup
+	set_variable = { MAR_agents_start_temp_min = MAR_agents_limit }
+	add_to_variable = { MAR_agents_start_temp_min = -100 }
+	
+	#setting the start agents
+	set_temp_variable = { MAR_agents_start_temp = 1 }
+	randomize_temp_variable = {
+		var = MAR_agents_start_temp
+		distribution = uniform
+		min = MAR_agents_start_temp_min
+		max = MAR_agents_limit
+	}
+	round_temp_variable = MAR_agents_start_temp
+	set_variable = { MAR_Okhranka_agents = MAR_agents_start_temp }
+	
+	#setting up the okranka power	
+	set_temp_variable = { MAR_power_temp = MAR_Okhranka_agents }
+	divide_temp_variable = { MAR_power_temp = 10 }
+	set_variable = { MAR_Okhranka_power = MAR_power_temp }
+	round_variable = MAR_Okhranka_power
+	MAR_decision_cost_recount = yes
+}
+
+MAR_Okhranka_connections_change = { 
+	set_temp_variable = { temp_connections_gained_txt = temp_connections_gained }
+	add_to_variable = { MAR_Okhranka_connections = temp_connections_gained }
+	
+	clamp_variable = {
+		var = MAR_Okhranka_connections
+		min = 0
+		max = 100
+	}
+	if = {
+		limit = { check_variable = { temp_connections_gained < 0 } }
+		multiply_temp_variable = { temp_connections_gained_txt = -1 }
+		custom_effect_tooltip = MAR_MGB_connections_decrease_tt
+	}
+	else = {
+		custom_effect_tooltip = MAR_MGB_connections_growth_tt	 
+	}
+	MAR_Okhranka_recount = yes
+	MAR_decision_cost_recount = yes
+}
+
+MAR_Okhranka_agents_change = { 
+	set_temp_variable = { temp_agents_gained_txt = temp_agents_gained }
+	add_to_variable = { MAR_Okhranka_agents = temp_agents_gained }
+	
+	clamp_variable = {
+		var = MAR_Okhranka_agents
+		min = 0
+		max = MAR_agents_limit
+	}
+	if = {
+		limit = { check_variable = { temp_agents_gained < 0 } }
+		multiply_temp_variable = { temp_agents_gained_txt = -1 }
+		custom_effect_tooltip = MAR_MGB_agents_decrease_tt
+	}
+	else = {
+		custom_effect_tooltip = MAR_MGB_agents_growth_tt
+	}
+	MAR_Okhranka_recount = yes
+}
+
+MAR_Okhranka_recount = { 
+	#recountring power
+	set_temp_variable = { MAR_agents_temp_agents = MAR_Okhranka_agents }
+	divide_temp_variable = { MAR_agents_temp_agents = 100 }
+	
+	set_temp_variable = { MAR_power_temp = MAR_agents_temp_agents }
+	multiply_temp_variable = { MAR_power_temp = 10 }
+	set_variable = { MAR_Okhranka_power = MAR_power_temp }
+	round_variable = MAR_Okhranka_power
+	
+	#recountring max agents
+	set_temp_variable = { MAR_agents_limit_temp = 10 }
+	multiply_temp_variable = { MAR_agents_limit_temp = MAR_connections_start_temp }
+	set_variable = { MAR_agents_limit = MAR_agents_limit_temp }
+}
+
+MAR_decision_cost_recount = { 
+	set_variable = { MAR_decision_cost_one = 10 }
+	set_variable = { MAR_decision_cost_two = 20 }
+	set_variable = { MAR_decision_cost_three = 30 }
+	set_temp_variable = { MAR_decision_cost_uppercost = MAR_Okhranka_connections }
+	divide_temp_variable = { MAR_decision_cost_uppercost = 2 }
+	add_to_variable = { MAR_decision_cost_one = MAR_decision_cost_uppercost }
+	add_to_variable = { MAR_decision_cost_two = MAR_decision_cost_uppercost }
+	add_to_variable = { MAR_decision_cost_three = MAR_decision_cost_uppercost }
+}
+
 MAR_lower_Vyatka_influence_small = {
 	subtract_from_variable = { MAR_var_Vyatka_influence = 3}
 	custom_effect_tooltip = MAR_lower_Vyatka_influence_small_tt
@@ -308,6 +421,86 @@ MAR_Turkestan_govern = {
 		add_ideas = {
 			MAR_UZB_coloniallike_govt 
 			MAR_UZB_national_conflicts
+		}
+	}
+}
+MAR_Turkestan_autonomy = {
+	XYZ = {
+		UZB_Nuritdin_Mukhitdinov = {
+			set_nationality = UZB
+		}
+	}
+	UZB = {
+		add_state_core = 750
+		transfer_state = 750
+		add_state_core = 585
+		transfer_state = 585
+		add_state_core = 405
+		transfer_state = 405
+		add_state_core = 1466
+		transfer_state = 1466
+		add_state_core = 1467
+		transfer_state = 1467
+		add_state_core = 586
+		transfer_state = 586
+		add_state_core = 732
+		transfer_state = 732
+		add_state_core = 742
+		transfer_state = 742
+		add_state_core = 1468
+		transfer_state = 1468
+		add_state_core = 584
+		transfer_state = 584
+		set_capital = { state = 1467 }
+		set_cosmetic_tag = UZB_MAR_autonomy
+		set_politics = {
+			ruling_party = progressivism
+			last_election = "1933.2.16"
+			election_frequency = 36
+			elections_allowed = no
+		}
+		every_owned_state = {
+			remove_core_of = KRK
+			remove_core_of = TRK
+			remove_core_of = KYR
+			remove_core_of = TAJ
+			remove_core_of = UTL
+		}		 
+		add_country_leader_role = {
+				character = UZB_Nuritdin_Mukhitdinov
+				promote_leader = yes
+				country_leader = {
+					desc = "UZB_Nuritdin_Mukhitdinov_desc"
+					ideology = progressivism_left_wing_agrarianism_subtype
+					expire = "1999.1.1"
+					traits = { }
+				}
+		}
+		set_party_name = {
+			ideology = progressivism
+			long_name = UZB_autonomy_party_long
+			name = UZB_autonomy_party
+		}
+		
+		econ_join_sphere_MAR = yes
+		MAR = {
+			set_country_flag = MAR_has_turkestan
+		}
+		set_popularities = {
+			despotism = 13
+			liberalism = 26
+			socialist = 18
+			communist = 6
+			paternalism = 11
+			progressivism = 26
+		}
+		remove_ideas = {
+			UZB_Jadid
+			UZB_Rise_of_Discontent
+		}
+		add_ideas = {
+			#MAR_UZB_coloniallike_govt 
+			#MAR_UZB_national_conflicts
 		}
 	}
 }

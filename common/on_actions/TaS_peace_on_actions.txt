@@ -40,6 +40,9 @@ on_actions = {
 					FROM = {
 						MAR_Turkestan_govern = yes
 						set_country_flag = MAR_has_central_asia
+						country_event = {
+							id = MAR_Japan.10 days = 17
+						}
 					}
 					set_global_flag = skip_default_capitulation
 				}
@@ -82,28 +85,27 @@ on_actions = {
 					}
 					FROM = {
 					white_peace = ROOT
-					transfer_state = 408
-					transfer_state = 809
+						annex_country = {
+							target = ROOT
+							transfer_troops = no
+						}
+					}
+					MAN = {			
+						country_event = {
+							id = MAR_Japan.1 days = 10
+						}
+					}
+					JAP = {
+						set_temp_variable = { Victory_ID = 49 }
+						set_temp_variable = { Victory_Outcome = 1 }
+						set_temp_variable = { Victory_Points = -100 }
+						Cold_War_GUI_ManipulateVictory = yes
+						TaS_fopo_remove_far_eastern_revolt_tab = yes
 					}
 					MAR = {
 						country_event = {
 							id = MAR_Japan.6 days = 2
 						}
-					}
-					MAN = {
-						transfer_state = 714
-						add_state_core = 714
-						transfer_state = 715
-						add_state_core = 715
-						transfer_state = 717
-						add_state_core = 717
-						transfer_state = 716
-						add_state_core = 716
-						transfer_state = 610
-						add_state_core = 610				
-						#country_event = {
-						#	id = MAR_Japan.1 days = 10
-						#}
 					}
 					set_global_flag = skip_default_capitulation
 			}
@@ -117,33 +119,24 @@ on_actions = {
 						}
 					}
 					FROM = {
-					white_peace = ROOT
+						white_peace = ROOT
+						annex_country = {
+							target = ROOT
+							transfer_troops = no
+						}
 					}
 					MAR = {
 						transfer_state = 1364
 						set_country_flag = MAR_has_primorie
 					}
-					MAN = {
-						transfer_state = 714
-						add_state_core = 714
-						transfer_state = 715
-						add_state_core = 715
-						transfer_state = 717
-						add_state_core = 717
-						transfer_state = 716
-						add_state_core = 716
-						transfer_state = 610
-						add_state_core = 610
-						transfer_state = 408
-						add_state_core = 408
-						transfer_state = 409
-						add_state_core = 409
-						transfer_state = 657
-						add_state_core = 657
-					}
 					JAP = {
 						transfer_state = 809
 						add_state_core = 809
+						set_temp_variable = { Victory_ID = 49 }
+						set_temp_variable = { Victory_Outcome = 5 }
+						set_temp_variable = { Victory_Points = 50 }
+						Cold_War_GUI_ManipulateVictory = yes
+						TaS_fopo_remove_far_eastern_revolt_tab = yes
 					}
 					set_global_flag = skip_default_capitulation
 			}

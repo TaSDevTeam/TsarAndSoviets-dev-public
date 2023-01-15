@@ -415,38 +415,43 @@
  
  #2зрв
  #Япония
- MAR_foreign_policy_category:0 "Глобальные конфликты"
- fopo_name_tab_49:0 "Дальневосточное восстание"
- MAR_far_eastern_revolt_category_desc:0 "Бам-бам-бам, мы стреляем по х... япошкам?"
- JAP_far_eastern_revolt_category_desc:0 "Ставьте лайк, если русня заебала качать права в Урадзио"
+ TNO_Cold_War_Victory_ID_49: "ДАЛЬНЕВОСТОЧНОЕ ВОССТАНИЕ"
+ WAR_NAME_MJP_PFF:0 "Дальневосточное восстание"
+ WAR_NAME_PFF_MJP:0 "Дальневосточное восстание"
+ 
+ AMR_Sergei_Zaikin:0 "Сергей Зайкин"
  MJP:0 "Японский Военный Корпус"
  PFF:0 "Дальневосточный Свободный Фронт"
- AMR_Sergei_Zaikin:0 "Сергей Зайкин"
  
- KOR_RUSrevolt_DEF:0 "Японский Военный Корпус"
- AMR_RUSrevolt_DEF:0 "Дальневосточный Свободный Фронт"
+ MJP_DEF:0 "Японский Военный Корпус"
+ PFF_DEF:0 "Дальневосточный Свободный Фронт"
  
- KOR_RUSrevolt_ADJ:0 "Японск."
- AMR_RUSrevolt_ADJ:0 "Русск."
- 
- TaS_WRW2_far_east_proxies:0 "Взор на Дальний Восток"
- TaS_WRW2_far_east_proxies_desc:0 "Мы должны найти способ вернуть себе Приморье."
- TaS_WRW2_seek_oportunities_fe:0 "Искать возможности"
- MAR_support_rebels_effigy:0 "Поддержка повстанцев"
- MAR_send_guns_rebels:0 "Отправить оружие"
- MAR_send_propoganda_rebels:0 "Отправить добровольцев"
- MAR_send_partisans_rebels:0 "Отправить диверсантов в Японский тыл"
- MAR_send_advisors_rebels:0 "Отправить советников"
+ MJP_ADJ:0 "Японск."
+ PFF_ADJ:0 "Русск."
+ #Решение русов
  MAR_FErebels_mission:0 "§RНачало восстания!§!"
+ MAR_FE_Boli_planned_attack:0 "Штурм Хабаровска"
+ MAR_FE_Japs_storming_boli_tt:0 "§RЯпонцы§! начнут штурм §GХабаровска§!"
+
+ MAR_prepare_support_rebels_effigy:0 "Изначальная подготовка"
+ MAR_send_guns_rebels:0 "Отправить оружие"
+ MAR_send_motorized_rebels:0 "Отправить тяжелую технику"
+ MAR_send_volunteer_corps_rebels:0 "Подготовить местные дивизии"
+ MAR_send_partisans_rebels:0 "Отправить диверсантов в Японский тыл"
  
- TaS_WRW2_manchu_crisis:0 "Маньчжурский кризис"
- TaS_WRW2_manchu_crisis_desc:0 "Восстание началось. Нам надо действовать"
- TaS_WRW2_expand_operations:0 "Расширить присутствие"
- TaS_WRW2_authorize_bombing_runs:0 "Бомбардировки японских позиций"
- TaS_WRW2_send_rebels_equipment_small:0 "Отправить немного вооружения"
- TaS_WRW2_send_rebels_equipment_medium:0 "Отправить достаточно вооружения"
- TaS_WRW2_send_rebels_equipment_big:0 "Отправить много вооружения"
+ MAR_FE_increase_commitment: "Повысить вовлечённость в конфликт"
+ MAR_FE_bombing_runs: "Японские бомбардировки"
+ MAR_FE_bomb_someone: "Воздушная поддержка для [PFF.GetNameDef]"
+ MAR_FE_send_army_instructors: "Послать советников в армию"
+ MAR_FE_send_industrial_support: "Экономическая поддержка для [FROM.GetNameDef]"
+ MAR_FE_cold_of_the_taiga: "Адаптация РА в конфликте"
  
+ ##Вкладочка
+ MAR_foreign_policy_category:0 "Глобальные конфликты"
+ fopo_name_tab_49:0 "Дальневосточное восстание"
+ MAR_far_eastern_revolt_category_desc:0 "Объединение России нашими силами всколыхнуло весь мир, на мировой арене снова появилось давно забытое имя. \n\nПотерявшие надежду партизаны вновь активизировались на оккупированных землях нашей необъятной Родины. С нами связалась группа дальневосточных партизан под руководством Сергея Заикина, на протяжении многих лет они оказывали сопротивление имперским силам оккупации, но не имели возможности открыто выступить против врага, не имея ресурсов для этого. Теперь же, имея единое легитимное правительство к которому они готовы примкнуть, партизаны решились на активное сопротивление захватчикам. \n\nНашей главной задачей является оказание всевозможной поддержки бойцам сопротивления, начиная от поставок оружия и заканчивая защитой на внешнеполитической арене. \n\nЗа дело."
+ JAP_far_eastern_revolt_category_desc:0 "Ставьте лайк, если русня заебала качать права в Урадзио"
+  
  MAN_Second_CW:0 "Свободная Маньчжурия"
  KOR_Second_CW:0 "Маньчжурское Военное Положение"
  SCC_Second_CW:0 "Ханьский Фронт"

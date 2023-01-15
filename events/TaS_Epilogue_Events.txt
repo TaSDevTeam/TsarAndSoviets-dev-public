@@ -618,7 +618,7 @@ country_event = {#Czechia nation
 		name = TaS_GEREpilogue.8.a
 		ai_chance = { factor = 1 }	
 		custom_effect_tooltip = TaS_cznation_tt
-		9 = { add_manpower = -15000 }
+		9 = { add_manpower = -17912 }
 		hidden_effect = {		
 			country_event = { id = TaS_GEREpilogue.9 days = 7}
 			9 = { set_variable = { nationality = 500 } }
@@ -639,10 +639,10 @@ country_event = {#Czechia night
 		name = TaS_GEREpilogue.9.a
 		ai_chance = { factor = 1 }	
 		custom_effect_tooltip = TaS_cznight_tt
-		75 = { add_manpower = -15000 }
-		9 = { add_manpower = -10000 }
-		74 = { add_manpower = -7500 }
-		69 = { add_manpower = -3000 }
+		75 = { add_manpower = -15312 }
+		9 = { add_manpower = -11232 }
+		74 = { add_manpower = -7874 }
+		69 = { add_manpower = -3663 }
 		hidden_effect = {		
 			country_event = { id = TaS_GEREpilogue.10 days = 7}
 			75 = { set_variable = { nationality = 500 } }
@@ -662,7 +662,7 @@ country_event = {#Czechia anti-munich
 		name = TaS_GEREpilogue.10.a
 		ai_chance = { factor = 1 }	
 		custom_effect_tooltip = TaS_czmunich_tt
-		69 = { add_manpower = -6000 }
+		69 = { add_manpower = -6476 }
 		hidden_effect = {
 			country_event = { id = TaS_GEREpilogue.11 days = 7}
 			69 = { set_demilitarized_zone = yes	}
@@ -682,7 +682,7 @@ country_event = {#Czechia guot call
 		name = TaS_GEREpilogue.11.a
 		ai_chance = { factor = 1 }	
 		custom_effect_tooltip = TaS_czguot_tt
-		69 = { add_manpower = -14000 }
+		69 = { add_manpower = -14854 }
 		hidden_effect = {	
 			add_to_variable = { global.postgervisits = 1 }		
 			74 = { set_demilitarized_zone = yes	}

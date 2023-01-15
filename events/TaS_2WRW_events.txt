@@ -1,6 +1,7 @@
 add_namespace = MAR_2WRW
 add_namespace = MAR_Japan
 add_namespace = MAR_Collapse
+add_namespace = MAR_territorial_fate
 add_namespace = MAR_AFG
 add_namespace = MAR_ultimatums
 add_namespace = MAR_2WRW_world_news
@@ -1506,6 +1507,140 @@ country_event = { #Technical stuff no loc
 	}
 }
 
+country_event = { #FE partisans
+	id = MAR_Japan.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.10"}
+	title = MAR_Japan.10.t
+	desc = MAR_Japan.10.d
+	picture = GFX_report_event_peace_deal
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = MAR_Japan.10.a
+		ai_chance = { factor = 1 }
+		657 = { set_demilitarized_zone = yes }
+		1649 = { set_demilitarized_zone = yes }
+		1646 = { set_demilitarized_zone = yes }
+		1645 = { set_demilitarized_zone = yes }
+		country_event = {
+			id = MAR_Japan.11 days = 14
+		}
+	}
+}
+
+country_event = { #Report nubma 1231413112 - start of the proxy
+	id = MAR_Japan.11
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.11"}
+	title = MAR_Japan.11.t
+	desc = MAR_Japan.11.d
+	picture = GFX_report_event_peace_deal
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = MAR_Japan.11.a
+		ai_chance = { factor = 1 }
+		MAR = {
+			TaS_fopo_add_far_eastern_revolt_tab = yes
+		}
+		JAP = {
+			TaS_fopo_add_far_eastern_revolt_tab = yes
+			set_temp_variable = { Victory_ID = 49 }
+			set_temp_variable = { Victory_Outcome = 0 }
+			set_temp_variable = { Victory_Points = 0 }
+			Cold_War_GUI_ManipulateVictory = yes
+		}
+		hidden_effect = {
+				every_country  = {
+					news_event = {
+						id = MAR_2WRW_world_news.30
+					}
+				}
+			}
+		set_global_flag = MAR_fareast_proxy
+		TaS_2WRW_manchuria_spawn_states = yes
+	}
+}
+country_event = { #Battle of Khabarovsk: victory #techinal
+	id = MAR_Japan.12
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.12"}
+	title = MAR_Japan.12.t
+	desc = MAR_Japan.12.d
+	picture = GFX_report_event_peace_deal
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = MAR_Japan.12.a
+		ai_chance = { factor = 1 }
+		MAR = {
+			country_event = {
+				id = MAR_Japan.14 days = 1
+			}
+		}
+	}
+}
+country_event = { #Battle of Khabarovsk: lose #techinal
+	id = MAR_Japan.13
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.13"}
+	title = MAR_Japan.13.t
+	desc = MAR_Japan.13.d
+	picture = GFX_report_event_peace_deal
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = MAR_Japan.13.a
+		ai_chance = { factor = 1 }
+		MAR = {
+			country_event = {
+				id = MAR_Japan.15 days = 1
+			}
+		}
+	}
+}
+country_event = { #Battle of Khabarovsk: victory 
+	id = MAR_Japan.14
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.14"}
+	title = MAR_Japan.14.t
+	desc = MAR_Japan.14.d
+	picture = GFX_report_event_peace_deal
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = MAR_Japan.14.a
+		ai_chance = { factor = 1 }
+		MJP = {
+			add_stability = -0.03
+			add_timed_idea = {
+				idea = MJP_Boli_blocade_broke
+				days = 90
+			}
+		}
+	}
+}
+country_event = { #Battle of Khabarovsk: lose
+	id = MAR_Japan.15
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.14"}
+	title = MAR_Japan.15.t
+	desc = MAR_Japan.14.d
+	picture = GFX_report_event_peace_deal
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = MAR_Japan.15.a
+		ai_chance = { factor = 1 }
+		PFF = {
+			add_stability = -0.1
+		}
+		MJP = {
+			transfer_state = 409
+		}
+	}
+}
 ##Germaney
 
 country_event = { #Offer status quo
@@ -1868,6 +2003,298 @@ country_event = { #lose
 			}
 		}
 }
+
+##MAR_territorial_fate
+country_event = { #Turkestan
+	id = MAR_territorial_fate.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_territorial_fate.1" }
+	title = MAR_territorial_fate.1.t
+	desc = MAR_territorial_fate.1.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #governship
+		name = MAR_territorial_fate.1.a
+		ai_chance = { factor = 1 }
+	}
+	option = { #autonomy
+		name = MAR_territorial_fate.1.b
+		ai_chance = { factor = 1 }
+		MAR_Turkestan_autonomy = yes
+	}
+	option = { #direct_rule
+		name = MAR_territorial_fate.1.a
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = TaS_2WRW_you_cant_core_it
+		annex_country = {
+			target = UZB
+			transfer_troops = yes
+		}
+	}
+}
+
+country_event = { #Primorie
+	id = MAR_territorial_fate.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_territorial_fate.2" }
+	title = MAR_territorial_fate.2.t
+	desc = MAR_territorial_fate.2.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #japonese can stay
+		name = MAR_territorial_fate.2.a
+		ai_chance = { factor = 1 }
+		add_political_power = 50
+		add_stability = -0.03
+	}
+	option = { #fuck 'em
+		name = MAR_territorial_fate.2.b
+		ai_chance = { factor = 1 }
+		add_political_power = -50
+		409 = {
+			add_manpower = -62391
+			set_variable = { nationality = 151 }
+		}
+		408 = {
+			add_manpower = -127543
+			set_variable = { nationality = 151 }
+		}
+		809 = {
+			add_manpower = -179190
+			set_variable = { nationality = 151 }
+		}
+		516 = {
+			add_manpower = 12339
+		}
+		576 = {
+			add_manpower = 5192
+		}
+		575 = {
+			add_manpower = 4954
+		}
+		761 = {
+			add_manpower = 5713
+		}
+		890 = {
+			add_manpower = 6341
+		}
+		886 = {
+			add_manpower = 15675
+		}
+		JAP = {
+			add_manpower = 72602
+		}
+		MAN = {
+			add_manpower = 40569
+		}			
+		CHI = {
+			add_manpower = 92536	
+		}
+	}
+}
+
+country_event = { #Moscowien
+	id = MAR_territorial_fate.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_territorial_fate.3" }
+	title = MAR_territorial_fate.3.t
+	desc = MAR_territorial_fate.3.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_territorial_fate.3.a
+		ai_chance = { factor = 1 }
+		
+	}
+	option = { #
+		name = MAR_territorial_fate.3.b
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Estonia
+	id = MAR_territorial_fate.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_territorial_fate.4" }
+	title = MAR_territorial_fate.4.t
+	desc = MAR_territorial_fate.4.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_territorial_fate.4.a
+		ai_chance = { factor = 1 }
+		
+	}
+	option = { #
+		name = MAR_territorial_fate.4.b
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Latvia
+	id = MAR_territorial_fate.5
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_territorial_fate.5" }
+	title = MAR_territorial_fate.5.t
+	desc = MAR_territorial_fate.5.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_territorial_fate.5.a
+		ai_chance = { factor = 1 }
+		
+	}
+	option = { #
+		name = MAR_territorial_fate.5.b
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Lithuania
+	id = MAR_territorial_fate.6
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_territorial_fate.6" }
+	title = MAR_territorial_fate.6.t
+	desc = MAR_territorial_fate.6.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_territorial_fate.6.a
+		ai_chance = { factor = 1 }
+		
+	}
+	option = { #
+		name = MAR_territorial_fate.6.b
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Belarus
+	id = MAR_territorial_fate.7
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_territorial_fate.7" }
+	title = MAR_territorial_fate.7.t
+	desc = MAR_territorial_fate.7.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_territorial_fate.7.a
+		ai_chance = { factor = 1 }
+		
+	}
+	option = { #
+		name = MAR_territorial_fate.7.b
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Ukraine
+	id = MAR_territorial_fate.8
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_territorial_fate.8" }
+	title = MAR_territorial_fate.8.t
+	desc = MAR_territorial_fate.8.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_territorial_fate.8.a
+		ai_chance = { factor = 1 }
+		
+	}
+	option = { #
+		name = MAR_territorial_fate.8.b
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Crimnea
+	id = MAR_territorial_fate.9
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_territorial_fate.9" }
+	title = MAR_territorial_fate.9.t
+	desc = MAR_territorial_fate.9.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_territorial_fate.9.a
+		ai_chance = { factor = 1 }
+		
+	}
+	option = { #
+		name = MAR_territorial_fate.9.b
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #North Caucasus
+	id = MAR_territorial_fate.10
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_territorial_fate.10" }
+	title = MAR_territorial_fate.10.t
+	desc = MAR_territorial_fate.10.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_territorial_fate.10.a
+		ai_chance = { factor = 1 }
+		
+	}
+	option = { #
+		name = MAR_territorial_fate.10.b
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #South Caucasus
+	id = MAR_territorial_fate.11
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_territorial_fate.11" }
+	title = MAR_territorial_fate.11.t
+	desc = MAR_territorial_fate.11.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_territorial_fate.11.a
+		ai_chance = { factor = 1 }
+		
+	}
+	option = { #
+		name = MAR_territorial_fate.11.b
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
 ##MAR_2WRW_world_news
 news_event = { 
 	id = MAR_2WRW_world_news.1
@@ -2160,5 +2587,128 @@ news_event = {
 	
 	option = {
 		name = MAR_2WRW_world_news.13.a
+	}
+}
+
+news_event = { #Martial law in Outer Manchuria
+	id = MAR_2WRW_world_news.30
+	title = MAR_2WRW_world_news.30.t
+	desc = MAR_2WRW_world_news.30.d
+	picture = GFX_MAR_2WRW_world_news_030
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_2WRW_world_news.30.a
+	}
+}
+
+news_event = { #Russian Revolt victory in Outer Manchuria
+	id = MAR_2WRW_world_news.31
+	title = MAR_2WRW_world_news.31.t
+	desc = MAR_2WRW_world_news.31.d
+	picture = GFX_MAR_2WRW_world_news_031
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_2WRW_world_news.31.a
+	}
+}
+
+news_event = { #Japanese corps victory in Outer Manchuria
+	id = MAR_2WRW_world_news.32
+	title = MAR_2WRW_world_news.32.t
+	desc = MAR_2WRW_world_news.32.d
+	picture = GFX_MAR_2WRW_world_news_032
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_2WRW_world_news.32.a
+	}
+}
+news_event = { #Direct rule regime in Manchuria
+	id = MAR_2WRW_world_news.33
+	title = MAR_2WRW_world_news.33.t
+	desc = MAR_2WRW_world_news.33.d
+	picture = GFX_MAR_2WRW_world_news_033
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_2WRW_world_news.33.a
+	}
+}
+news_event = { #Manchurian Catastrophe
+	id = MAR_2WRW_world_news.34
+	title = MAR_2WRW_world_news.34.t
+	desc = MAR_2WRW_world_news.34.d
+	picture = GFX_MAR_2WRW_world_news_034
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_2WRW_world_news.34.a
+	}
+}
+news_event = { #Civil war in Manchuria
+	id = MAR_2WRW_world_news.35
+	title = MAR_2WRW_world_news.35.t
+	desc = MAR_2WRW_world_news.35.d
+	picture = GFX_MAR_2WRW_world_news_035
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_2WRW_world_news.35.a
+	}
+}
+news_event = { #Civil war in Manchuria: Souverinist victory
+	id = MAR_2WRW_world_news.36
+	title = MAR_2WRW_world_news.36.t
+	desc = MAR_2WRW_world_news.36.d
+	picture = GFX_MAR_2WRW_world_news_036
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_2WRW_world_news.36.a
+	}
+}
+news_event = { #Civil war in Manchuria: Liberal-Corporativist victory
+	id = MAR_2WRW_world_news.37
+	title = MAR_2WRW_world_news.37.t
+	desc = MAR_2WRW_world_news.37.d
+	picture = GFX_MAR_2WRW_world_news_037
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_2WRW_world_news.37.a
+	}
+}
+news_event = { #Civil war in Manchuria: Kwantung Victory
+	id = MAR_2WRW_world_news.38
+	title = MAR_2WRW_world_news.38.t
+	desc = MAR_2WRW_world_news.38.d
+	picture = GFX_MAR_2WRW_world_news_038
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_2WRW_world_news.38.a
+	}
+}
+news_event = { #Civil war in Manchuria: Partisan Victory
+	id = MAR_2WRW_world_news.39
+	title = MAR_2WRW_world_news.39.t
+	desc = MAR_2WRW_world_news.39.d
+	picture = GFX_MAR_2WRW_world_news_039
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_2WRW_world_news.39.a
 	}
 }

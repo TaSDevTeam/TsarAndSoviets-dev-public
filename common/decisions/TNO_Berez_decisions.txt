@@ -777,9 +777,40 @@ MAR_experiments_category = {
 		}
 	}
 }
-
-MAR_MGB_Category = {
-	MAR_MGB_fight_influence_small = {
+MAR_MGB_Okhranka_category = { 
+	MAR_MGB_Mission_monthly_agents_rotation = {
+		icon = GFX_decision_generic_assault
+		activation = { has_country_flag = MAR_MGB_available }
+		available = { hidden_trigger = { always = no } }
+		is_good = no
+		days_mission_timeout = 28
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Mission Timeout MAR_MGB_Mission_monthly_agents_rotation"
+			custom_effect_tooltip = MAR_rotation_random_tt
+			hidden_effect = { 
+				set_temp_variable = { temp_connections_gained = 1 }
+				randomize_temp_variable = {
+					var = temp_connections_gained
+					distribution = uniform
+					min = 3
+					max = 7
+				}
+				round_temp_variable = temp_connections_gained
+				MAR_Okhranka_connections_change = yes
+				set_temp_variable = { temp_agents_gained = 1 }
+				randomize_temp_variable = {
+					var = temp_agents_gained
+					distribution = uniform
+					min = 30
+					max = 70
+				}
+				round_temp_variable = temp_agents_gained
+				MAR_Okhranka_agents_change = yes
+			}
+		}
+		cancel_trigger = { hidden_trigger = { NOT = { country_exists = VYT } } }
+	}
+	MAR_MGB_fight_agents_small = {
 		icon = GFX_decision_generic_decision
 		
 		available = {
@@ -794,14 +825,16 @@ MAR_MGB_Category = {
 			factor = 50
 		}
 		days_re_enable = 20
-		cost = 10
+		cost = var:MAR_decision_cost_one	
 		
 		complete_effect = {
-			MAR_lower_Vyatka_influence_small = yes
+			set_temp_variable = { temp_agents_gained = -35 }
+			set_temp_variable = { temp_connections_gained = 1 }
+			MAR_Okhranka_agents_change = yes
+			MAR_Okhranka_connections_change = yes
 		}
 	}
-	
-	MAR_MGB_fight_influence_medium = {
+	MAR_MGB_fight_agents_medium = {
 		icon = GFX_decision_generic_decision
 		
 		available = {
@@ -816,14 +849,17 @@ MAR_MGB_Category = {
 			factor = 50
 		}
 		days_re_enable = 35
-		cost = 20
+		cost = var:MAR_decision_cost_two	
 		
 		complete_effect = {
-			MAR_lower_Vyatka_influence_medium = yes
+			set_temp_variable = { temp_agents_gained = -75 }
+			set_temp_variable = { temp_connections_gained = 3 }
+			MAR_Okhranka_agents_change = yes
+			MAR_Okhranka_connections_change = yes
 		}
 	}
 	
-	MAR_MGB_fight_influence_huge = {
+	MAR_MGB_fight_agents_huge = {
 		icon = GFX_decision_generic_decision
 		
 		available = {
@@ -838,13 +874,90 @@ MAR_MGB_Category = {
 			factor = 50
 		}
 		days_re_enable = 100
-		cost = 60
+		cost = var:MAR_decision_cost_three	
 		
 		complete_effect = {
-			MAR_lower_Vyatka_influence_huge = yes
+			set_temp_variable = { temp_agents_gained = -120 }
+			set_temp_variable = { temp_connections_gained = 5 }
+			MAR_Okhranka_agents_change = yes
+			MAR_Okhranka_connections_change = yes
 		}
 	}
-}
+	MAR_MGB_fight_connections_small = {
+		icon = GFX_decision_generic_decision
+		
+		available = {
+			has_country_flag = MAR_started_fighting_Vyatka
+		}
+		
+		visible = {
+			always = yes
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+		days_re_enable = 20
+		cost = var:MAR_decision_cost_one	
+		
+		complete_effect = {
+			set_temp_variable = { temp_agents_gained = 15 }
+			set_temp_variable = { temp_connections_gained = -3 }
+			MAR_Okhranka_agents_change = yes
+			MAR_Okhranka_connections_change = yes
+		}
+	}
+	MAR_MGB_fight_connections_medium = {
+		icon = GFX_decision_generic_decision
+		
+		available = {
+			has_country_flag = MAR_started_fighting_Vyatka
+		}
+		
+		visible = {
+			always = yes
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+		days_re_enable = 35
+		cost = var:MAR_decision_cost_two	
+		
+		complete_effect = {
+			set_temp_variable = { temp_agents_gained = 30 }
+			set_temp_variable = { temp_connections_gained = -5 }
+			MAR_Okhranka_agents_change = yes
+			MAR_Okhranka_connections_change = yes
+		}
+	}
+	
+	MAR_MGB_fight_connections_huge = {
+		icon = GFX_decision_generic_decision
+		
+		available = {
+			has_country_flag = MAR_started_fighting_Vyatka
+		}
+		
+		visible = {
+			always = yes
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+		days_re_enable = 100
+		cost = var:MAR_decision_cost_three	
+		
+		complete_effect = {
+			set_temp_variable = { temp_agents_gained = 50 }
+			set_temp_variable = { temp_connections_gained = -10 }
+			MAR_Okhranka_agents_change = yes
+			MAR_Okhranka_connections_change = yes
+		}
+	}
+} 
+
 MAR_volunteer_category = {
 	MAR_yemeni_civil_war_effigy = {
 		icon = GFX_decision_generic_assault

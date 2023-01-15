@@ -1,31 +1,14 @@
 capital = 809
 
 # Vacant
-recruit_character = GAN_Generic_Vacant
+recruit_character = MJP_Generic_Vacant
 fill_empty_minister_nochecks = yes # Please remove if you're adding ministers.
 
 set_war_support = 0.75
 set_stability = 1.00
 add_manpower = 60000
 
-if = {
-	limit = {
-		NOT = {
-			has_dlc = "No Step Back"
-		}
-	}
-	set_oob = "KOR_Revolt"
-}
-if = {
-	limit = {
-		has_dlc = "No Step Back"
-	}
-	set_oob = "KOR_Revolt"
-}
-
 recruit_character = KOR_Hiromichi_Yahara
-
-set_variable = { chi_influence = 0 }
 
 set_technology = {
 	basic_train = 1
@@ -256,46 +239,6 @@ add_ideas = {
 	tno_admin_efficiency_deficient_administrative_systems
 }
 
-add_equipment_to_stockpile = {
-	type = infantry_equipment_2
-	amount = 300
-	producer = JAP
-}
-
-add_equipment_to_stockpile = {
-	type = anti_tank_equipment_1
-	amount = 80
-	producer = JAP
-}
-
-add_equipment_to_stockpile = {
-	type = motorized_equipment_1
-	amount = 80
-	producer = JAP
-}
-
-add_equipment_to_stockpile = {
-	type = support_equipment_1
-	amount = 80
-	producer = JAP
-}
-
-add_equipment_to_stockpile = {
-	type = artillery_equipment_3
-	amount = 80
-	producer = JAP
-}
-add_equipment_to_stockpile = {
-	type = transport_helicopter_equipment_1
-	amount = 50
-	producer = MAN
-}
-add_equipment_to_stockpile = {
-	type = attack_helicopter_equipment_1
-	amount = 50
-	producer = MAN
-}
-
 # NSB #
 if = {
 	limit = {
@@ -340,34 +283,7 @@ if = {
 			tank_nsb_armor_upgrade = 2
 		}
 	}
-	add_equipment_to_stockpile = {
-		type = MBT_chassis_1
-		amount = 100
-		producer = JAP
-		variant_name = "Type 14 Chi-Wo"
-	}
-	add_equipment_to_stockpile = {
-		type = APC_chassis_2
-		amount = 200
-		producer = MAN
-		variant_name = "Type 20"
-	}
+	
 }
 
-if = {
-	limit = {
-		NOT = {
-			has_dlc = "No Step Back"
-		}
-	}
-	add_equipment_to_stockpile = {
-		type = MBT_equipment_1
-		amount = 100
-		producer = JAP
-	}
-	add_equipment_to_stockpile = {
-		type = APC_equipment_2
-		amount = 200
-		producer = MAN
-	}
-}
+
