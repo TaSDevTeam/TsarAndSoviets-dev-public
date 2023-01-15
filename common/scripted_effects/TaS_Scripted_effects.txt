@@ -124,7 +124,7 @@ MAR_Okhranka_recount = {
 	
 	#recountring max agents
 	set_temp_variable = { MAR_agents_limit_temp = 10 }
-	multiply_temp_variable = { MAR_agents_limit_temp = MAR_connections_start_temp }
+	multiply_temp_variable = { MAR_agents_limit_temp = MAR_Okhranka_connections }
 	set_variable = { MAR_agents_limit = MAR_agents_limit_temp }
 }
 
@@ -139,20 +139,6 @@ MAR_decision_cost_recount = {
 	add_to_variable = { MAR_decision_cost_three = MAR_decision_cost_uppercost }
 }
 
-MAR_lower_Vyatka_influence_small = {
-	subtract_from_variable = { MAR_var_Vyatka_influence = 3}
-	custom_effect_tooltip = MAR_lower_Vyatka_influence_small_tt
-}
-
-MAR_lower_Vyatka_influence_medium = {
-	subtract_from_variable = { MAR_var_Vyatka_influence = 6}
-	custom_effect_tooltip = MAR_lower_Vyatka_influence_medium_tt
-}
-
-MAR_lower_Vyatka_influence_huge = {
-	subtract_from_variable = { MAR_var_Vyatka_influence = 20}
-	custom_effect_tooltip = MAR_lower_Vyatka_influence_huge_tt
-}
 
 MAR_Solzh_Vyatka_takeover = {
 	add_popularity = {

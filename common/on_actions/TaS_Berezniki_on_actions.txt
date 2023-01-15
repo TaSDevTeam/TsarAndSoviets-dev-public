@@ -13,4 +13,37 @@ on_actions = {
 			}
 		}
 	}
+	on_declare_war = {
+		effect = {
+			if = {#PRM vs MAR
+				limit = {
+					OR = {
+						AND = {
+							ROOT = { tag = PRM }
+							FROM = { tag = MAR }
+						}
+						AND = {
+							FROM = { tag = PRM }
+							ROOT = { tag = MAR }
+						}
+					}
+
+				}
+				MAR = {
+					if = {
+						limit = { has_country_flag = MAR_ab_plan_one }
+						add_ideas = MAR_attack_only_aria
+					}
+					if = {
+						limit = { has_country_flag = MAR_ab_plan_two }
+						add_ideas = MAR_defence_only_aria
+					}
+					if = {
+						limit = { has_country_flag = MAR_ab_plan_three }
+						add_ideas = MAR_def_and_attack
+					}
+				}
+			}
+		}
+	}
 }

@@ -3157,11 +3157,11 @@ RUS_DecisionCategory_Smuta = {
 		cost = 25
 		complete_effect = {
 			set_country_flag = INVASION_VOL_DISALLOWED
-			MAR = { country_event = berez_voina.22 }
+			MAR = { country_event = MAR_smuta.22 }
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Complete RUS_Decision_Smuta_Expansion_WRS_MAR_Propose_Union"
-			VOL = { country_event = berez_voina.23 }
+			VOL = { country_event = MAR_smuta.23 }
 		}
 
 		ai_will_do = { factor = 1000 }
@@ -3197,11 +3197,11 @@ RUS_DecisionCategory_Smuta = {
 		cost = 25
 		complete_effect = {
 			set_country_flag = INVASION_KOM_DISALLOWED
-			MAR = { country_event = berez_voina.27 }
+			MAR = { country_event = MAR_smuta.27 }
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Complete RUS_Decision_Smuta_Expansion_WRS_MAR_Propose_Union"
-			KOM = { country_event = berez_voina.28 }
+			KOM = { country_event = MAR_smuta.28 }
 		}
 
 		ai_will_do = { factor = 1000 }
@@ -3231,11 +3231,11 @@ RUS_DecisionCategory_Smuta = {
 		cost = 25
 		complete_effect = {
 			set_country_flag = INVASION_BKR_DISALLOWED
-			MAR = { country_event = berez_voina.9 }
+			MAR = { country_event = MAR_smuta.9 }
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Complete RUS_Decision_Smuta_Expansion_WRS_KOM_Propose_Union"
-			BKR = { country_event = berez_voina.10 }
+			BKR = { country_event = MAR_smuta.10 }
 		}
 
 		ai_will_do = { factor = 1000 }

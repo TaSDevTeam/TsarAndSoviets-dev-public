@@ -602,6 +602,24 @@ RUS_Smuta_Occupation_Unique_WRS = {
 			RUS_Smuta_Smuta_CoringCost_MultiplyBy_Y = yes
 		}
 	}
+	if = {
+		limit = { tag = MAR }
+		add_political_power = -25
+		add_popularity = {
+			ideology = communist
+			popularity = 0.05
+		}
+		set_temp_variable = { Y = 0.9 }
+		RUS_Smuta_Smuta_CoringCost_MultiplyBy_Y = yes
+		set_temp_variable = { gdp_growth_temp = 1.0 }
+		econ_gdp_growth_change = yes
+		set_temp_variable = { inflation_temp = 0.3 }
+		econ_inflation_change = yes
+		set_temp_variable = { money_reserves_temp = 0.3 }
+		econ_money_reserves_change_raw_money = yes
+		set_temp_variable = { econ_centralization_temp = -5 }
+		econ_centralization_change = yes
+	}
 }
 
 RUS_Smuta_Occupation_Unique_KOM = {
@@ -674,10 +692,33 @@ RUS_Smuta_Occupation_Unique_KOM = {
 			}
 		}
 	}
+	if = {
+		limit = { tag = MAR }
+		TNO_improve_security_policy_effectiveness_high = yes
+		TNO_improve_political_parties_policy_effectiveness_med = yes
+		if = {
+			limit = { has_country_flag = MAR_KOM_leftie }
+			country_event = { id = MAR_smuta_occupation.10 }
+		}
+		if = {
+			limit = { has_country_flag = MAR_KOM_rightie }
+			country_event = { id = MAR_smuta_occupation.11 }
+		}
+		else = {
+			country_event = { id = MAR_smuta_occupation.9 }	
+		}
+	}
 }
 
 RUS_Smuta_Occupation_Unique_SAM = {
-	# FILLME
+	if = {
+		limit = { tag = MAR }
+		set_temp_variable = { money_reserves_temp = 0.25 }
+		econ_money_reserves_change_raw_money = yes
+		set_temp_variable = { gdp_growth_temp = 1.5 }
+		econ_gdp_growth_change = yes
+		country_event = { id = MAR_smuta_occupation.7 }
+	}
 }
 
 RUS_Smuta_Occupation_Unique_GOR = {
@@ -801,6 +842,44 @@ RUS_Smuta_Occupation_Unique_GOR = {
 			}
 		}
 	}
+	if = {
+		limit = { tag = MAR }
+		random_owned_controlled_state = {
+			limit = {
+				state = 252
+			}
+			set_temp_variable = { temp_state_value_addition = 0.55 }
+			econ_state_value_change_addition = yes
+		}
+		if = { 
+			limit = { 
+				has_dlc = "No Step Back"
+			}
+			add_equipment_to_stockpile = {
+				type = APC_chassis_1
+				amount = 200
+				producer = GOR
+			}
+			add_equipment_to_stockpile = {
+				type = IFV_chassis_1
+				amount = 200
+				producer = GOR
+			}
+		}
+		else = {
+			add_equipment_to_stockpile = {
+				type = APC_equipment_1
+				amount = 250
+				producer = GOR
+			}
+			add_equipment_to_stockpile = {
+				type = IFV_equipment_1
+				amount = 200
+				producer = GOR
+			}
+		}
+		country_event = { id = MAR_smuta_occupation.6 }
+	}
 }
 
 RUS_Smuta_Occupation_Unique_VOL = {
@@ -845,6 +924,18 @@ RUS_Smuta_Occupation_Unique_VOL = {
 			}
 		}
 	}
+	if = {
+		limit = { tag = MAR	}
+		add_timed_idea = { idea = SAM_The_Trade_of_Kostroma days = 365 }
+		TNO_improve_press_rights_policy_effectiveness_low = yes
+		TNO_improve_public_meetings_policy_effectiveness_low = yes
+		TNO_improve_political_parties_policy_effectiveness_low = yes
+		TNO_improve_vote_franchise_policy_effectiveness_low = yes
+		set_temp_variable = { Y = 0.9 }
+		RUS_Smuta_Smuta_CoringCost_MultiplyBy_Y = yes
+		country_event = { id = MAR_smuta_occupation.8 }
+	}
+	
 }
 
 RUS_Smuta_Occupation_Unique_VYT = {
@@ -907,6 +998,13 @@ RUS_Smuta_Occupation_Unique_VYT = {
 			}
 		}
 	}
+	if = {
+		limit = { tag = MAR }
+		TNO_improve_army_professionalism_med = yes
+		TNO_improve_training_policy_effectiveness_monthly_low = yes
+		add_timed_idea = { idea = SAM_The_Kirov_Distillery days = 720 }
+		country_event = { id = MAR_smuta_occupation.2 }
+	}
 }
 
 RUS_Smuta_Occupation_Unique_TAR = {
@@ -959,6 +1057,15 @@ RUS_Smuta_Occupation_Unique_TAR = {
 				add_idea = tno_minorities_oppression
 			}
 		}
+	}
+	if = {
+		limit = { tag = MAR }
+		TNO_improve_immigration_policy_effectiveness_low = yes
+		set_temp_variable = { gdp_growth_temp = 0.5 }
+		econ_gdp_growth_change = yes
+		set_temp_variable = { inflation_temp = 0.2 }
+		econ_inflation_change = yes
+		country_event = { id = MAR_smuta.13 }
 	}
 }
 
@@ -1026,6 +1133,16 @@ RUS_Smuta_Occupation_Unique_PRM = {
 			add_war_support = 0.05
 		}
 	}
+	if = {
+		limit = { tag = MAR }
+		add_stability = 0.1
+		add_war_support = 0.05
+		add_popularity = {
+				ideology = national_socialism
+				popularity = -0.05
+			}
+		country_event = { id = MAR_smuta_occupation.1 }
+	}
 }
 
 RUS_Smuta_Occupation_Unique_GAY = {
@@ -1084,6 +1201,12 @@ RUS_Smuta_Occupation_Unique_BKR = {
 			add_stability = 0.05
 			TNO_worsen_religious_rights_policy_effectiveness_high = yes
 		}
+	}
+	if = {
+		limit = { tag = MAR }
+		army_experience = 15
+		TNO_improve_religious_rights_policy_effectiveness_med = yes
+		country_event = { id = MAR_smuta_occupation.5 }
 	}
 }
 

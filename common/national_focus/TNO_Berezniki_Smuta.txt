@@ -10,14 +10,8 @@ shared_focus = {
 	x = 9
 	y = 0
 	completion_reward = {
-		MAR = {
-			annex_country = {
-				target = GAY
-				transfer_troops = yes
-			}
-		}
 		country_event = {
-				id = berez_voina.3
+				id = MAR_smuta.1
 				days = 1
 			}
 	}
@@ -38,7 +32,7 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		country_event = {
-				id = berez_voina.4
+				id = MAR_smuta.2
 				days = 1
 			}
 		hidden_effect = {
@@ -141,6 +135,10 @@ shared_focus = {
 				}
 			}
 		}
+		country_event = {
+				id = MAR_smuta.3
+				days = 1
+			}
 	}
 }
 
@@ -161,6 +159,10 @@ shared_focus = {
 	completion_reward = {
 		set_temp_variable = { Y = -15 }
 		RUS_Smuta_Chaos_Add_Y = yes
+		country_event = {
+				id = MAR_smuta.4
+				days = 1
+			}
 	}
 }
 
@@ -255,7 +257,7 @@ shared_focus = {
 			}
 		}
 		country_event = {
-				id = berez_voina.38
+				id = MAR_smuta.6
 				days = 1
 			}
 	}
@@ -288,7 +290,7 @@ shared_focus = {
 		set_temp_variable = { Y = 0.3 }
 		RUS_Smuta_Supplies_Add_Y = yes
 		country_event = {
-				id = berez_voina.39
+				id = MAR_smuta.7
 				days = 1
 			}
 	}
@@ -358,6 +360,12 @@ shared_focus = {
 		TNO_improve_army_professionalism_med = yes
 		set_temp_variable = { Y = 0.04 }
 		RUS_Smuta_SuppliesWeeklyGain_Add_Y = yes
+		set_temp_variable = { gdp_growth_temp = 0.5 }
+		econ_gdp_growth_change = yes
+		country_event = {
+				id = MAR_smuta.5
+				days = 1
+			}
 	}
 }
 
@@ -432,7 +440,7 @@ shared_focus = {
 	completion_reward = {
 		tno_vote_franchise_improve = yes
 		country_event = {
-			id = berez_zemsob.3
+			id = MAR_zemsky_sobor.3
 			days = 1
 		}
 	}
@@ -446,6 +454,10 @@ shared_focus = {
 	ai_will_do = {
 		factor = 1
 	}
+	mutually_exclusive = {
+        focus = MAR_meeting_with_bourgeoisie
+		focus = MAR_ancestors_blessing
+    }
 	prerequisite = {
         focus = MAR_zemsky_candidates
     }
@@ -467,7 +479,7 @@ shared_focus = {
 		set_temp_variable = { Y = -10 }
 		RUS_Smuta_Chaos_Add_Y = yes
 		country_event = {
-			id = berez_zemsob.19
+			id = MAR_zemsky_sobor.19
 			days = 1
 		}
 	}
@@ -490,7 +502,7 @@ shared_focus = {
 	completion_reward = {
 		TNO_improve_academic_base_med = yes
 		country_event = {
-			id = berez_zemsob.20
+			id = MAR_zemsky_sobor.20
 			days = 1
 		}
 	}
@@ -515,7 +527,7 @@ shared_focus = {
 		RUS_Smuta_Chaos_Add_Y = yes
 		add_stability = 0.05
 		country_event = {
-			id = berez_zemsob.17
+			id = MAR_zemsky_sobor.17
 			days = 1
 		}
 	}
@@ -529,6 +541,10 @@ shared_focus = {
 	ai_will_do = {
 		factor = 1
 	}
+	mutually_exclusive = {
+        focus = MAR_every_man_is_a_tsar
+		focus = MAR_ancestors_blessing
+    }
 	prerequisite = {
         focus = MAR_zemsky_candidates
     }
@@ -551,7 +567,7 @@ shared_focus = {
 		set_temp_variable = { Y = 0.02 }
 		RUS_Smuta_SuppliesWeeklyGain_Add_Y = yes
 		country_event = {
-			id = berez_zemsob.11
+			id = MAR_zemsky_sobor.11
 			days = 1
 		}
 	}
@@ -575,7 +591,7 @@ shared_focus = {
 		add_political_power = 50
 		TNO_improve_poverty_low = yes
 		country_event = {
-			id = berez_zemsob.10
+			id = MAR_zemsky_sobor.10
 			days = 1
 		}
 	}
@@ -603,7 +619,7 @@ shared_focus = {
 		}
 		TNO_improve_admin_efficiency_med = yes
 		country_event = {
-			id = berez_zemsob.12
+			id = MAR_zemsky_sobor.12
 			days = 1
 		}
 	}
@@ -617,6 +633,10 @@ shared_focus = {
 	ai_will_do = {
 		factor = 1
 	}
+	mutually_exclusive = {
+        focus = MAR_every_man_is_a_tsar
+		focus = MAR_meeting_with_bourgeoisie
+    }
 	prerequisite = {
         focus = MAR_zemsky_candidates
     }
@@ -634,7 +654,7 @@ shared_focus = {
 		set_temp_variable = { Y = -10 }
 		RUS_Smuta_Chaos_Add_Y = yes		
 		country_event = {
-			id = berez_zemsob.14
+			id = MAR_zemsky_sobor.14
 			days = 1
 		}
 	}
@@ -659,7 +679,7 @@ shared_focus = {
 		set_temp_variable = { Y = 0.8 }
 		RUS_Smuta_Smuta_CoringCost_MultiplyBy_Y = yes
 		country_event = {
-			id = berez_zemsob.15
+			id = MAR_zemsky_sobor.15
 			days = 1
 		}
 	}
@@ -683,7 +703,7 @@ shared_focus = {
 		army_experience = 50
 		TNO_improve_army_professionalism_med = yes
 		country_event = {
-			id = berez_zemsob.16
+			id = MAR_zemsky_sobor.16
 			days = 1
 		}
 	}
@@ -713,7 +733,7 @@ shared_focus = {
 				check_variable = { MAR_tsar_path = 1 }
 			}
 			country_event = {
-				id = berez_zemsob.24
+				id = MAR_zemsky_sobor.24
 				days = 1
 			}
 		}
@@ -722,7 +742,7 @@ shared_focus = {
 				check_variable = { MAR_tsar_path = 2 }
 			}
 			country_event = {
-				id = berez_zemsob.23
+				id = MAR_zemsky_sobor.23
 				days = 1
 			}
 		}
@@ -731,7 +751,7 @@ shared_focus = {
 				check_variable = { MAR_tsar_path = 3 }
 			}
 			country_event = {
-				id = berez_zemsob.22
+				id = MAR_zemsky_sobor.22
 				days = 1
 			}
 		}
@@ -754,7 +774,7 @@ shared_focus = {
 	completion_reward = {
 		RUS_Smuta_Disable = yes
 		country_event = {
-				id = berez_voina.40
+				id = MAR_smuta.9
 				days = 1
 			}
 	}
