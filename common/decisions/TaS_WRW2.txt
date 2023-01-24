@@ -92,141 +92,7 @@ TaS_WRW2_central_asia_invasion = {
 	}
 }
 
-TaS_WRW2_second_manchu_cw = {
-	TaS_WRW2_use_the_opportunity = {
-		icon = decision_generic_military_hat
-		visible = {
-		}
-		available = {
-		}
-		cost = 25
-		days_remove = 14
-		fire_only_once = yes
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_send_propoganda_rebels"
-		}
-		remove_effect = {
-			set_country_flag = TaS_WRW2_intervene_second_cw
-		}
-	}
-	TaS_WRW2_send_volunteers_man = {
-		icon = decision_generic_military_hat
-		visible = {
-			has_country_flag = TaS_WRW2_intervene_second_cw
-		}
-		available = {
-		}
-		cost = 25
-		days_remove = 14
-		fire_only_once = yes
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_send_propoganda_rebels"
-		}
-		remove_effect = {
-			set_temp_variable = { target = MAN}
-			TNO_increase_volunteer_cap_3 = yes
-		}
-	}
-	TaS_WRW2_authorize_bombing_runs_scw = {
-		icon = GFX_decision_generic_bombing
-		visible = {
-			has_country_flag = TaS_WRW2_intervene_second_cw
-		}		
-		available = {
-			NOT = {
-				has_country_flag = MARFE_doing_stuff
-			}
-			
-		}
-		cost = 25
-		days_remove = 21
-		fire_only_once = yes
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout TaS_WRW2_authorize_bombing_runs"
-			set_country_flag = MARFE_doing_stuff
-		}
-		remove_effect = {
-			add_equipment_to_stockpile = {
-				type = tac_bomber_equipment
-				amount = -40
-			}
-			MJP = {
-				add_ideas = { MAR_KOR_Bombing_runs }	
-			}
-			HAN = {
-				add_ideas = { MAR_KOR_Bombing_runs }	
-			}
-			clr_country_flag = MARFE_doing_stuff
-		}
-	}
-	TaS_WRW2_send_manchu_equipment_small = {
-		icon = GFX_decision_generic_arms_crate
-		visible = {
-			has_country_flag = TaS_WRW2_intervene_second_cw
-		}		
-		available = {
-			NOT = {
-				has_country_flag = MARFE_doing_stuff
-			}
-		}
-		cost = 25
-		days_remove = 21
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout TaS_WRW2_send_manchu_equipment_small"
-			set_country_flag = MARFE_doing_stuff
-			set_temp_variable = { debt_temp = 0.015 }
-			econ_national_debt_change = yes
-		}
-		remove_effect = {
-			MAN = {
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = 500
-					producer = MAR
-				}
-				add_equipment_to_stockpile = {
-					type = anti_tank_equipment
-					amount = 100
-					producer = MAR
-				}
-				add_equipment_to_stockpile = {
-					type = support_equipment
-					amount = 100
-					producer = MAR
-				}
-				add_equipment_to_stockpile = {
-					type = artillery_equipment
-					amount = 15
-					producer = MAR
-				}
-			}
-			clr_country_flag = MARFE_doing_stuff
-		}
-	}
-	TaS_WRW2_attack_menjiang = {
-		visible = {
-			has_country_flag = TaS_WRW2_intervene_second_cw
-		}	
-		icon = GFX_decision_generic_decision
-		fire_only_once = yes
-		custom_cost_trigger = { command_power > 24.99 }
-		custom_cost_text = decision_cost_25_cp
-		fire_only_once = yes
-		complete_effect = {
-			add_war_support = 0.03
-			hidden_effect = {
-				add_command_power = -25
-			}
-		}
-		days_remove = 30
-		remove_effect = {
-			declare_war_on = {
-				target = MEN
-				type = annex_everything
-			}
-		}
-	}
-}
+
 TaS_WRW2_prepare_for_final_battle = {
 	TaS_WRW2_launch_attack_on_germany = {
 		icon = GFX_decision_generic_assault
@@ -293,7 +159,7 @@ TaS_WRW2_prepare_for_final_battle = {
 		}
 		remove_effect = {
 			add_to_variable = { RUS2WRWWarPreparedness = 20 }
-			custom_effect_tooltip = TaS_WRW2_establish_eastern_fortifications_tt
+			custom_effect_tooltip = TaS_WRW2_establish_southern_fortifications_tt
 			755 = {
 				add_building_construction = {
 					type = bunker
@@ -544,7 +410,7 @@ TaS_WRW2_prepare_for_final_battle = {
 		}
 		remove_effect = {
 			add_to_variable = { RUS2WRWWarPreparedness = 10 }
-			custom_effect_tooltip = TaS_WRW2_fortify_fallback_lines_tt
+			custom_effect_tooltip = TaS_WRW2_establish_northern_fortifications_tt
 			if = {
 				limit = {
 					owns_state = 216
@@ -802,7 +668,7 @@ TaS_WRW2_prepare_for_final_battle = {
 			factor = 20
 		}
 	}
-	TaS_WRW2_send_partisans = {
+	TaS_WRW2_send_partisans = {	
 		icon = GFX_decision_factory_generic_blue
 		visible = {
 		}
@@ -820,59 +686,11 @@ TaS_WRW2_prepare_for_final_battle = {
 			}
 		}
 		remove_effect = {
+			custom_effect_tooltip = TaS_WRW2_send_partisans_tt
+			add_to_variable = { RUS2WRWWarPreparedness = 10 }
 			MCW = {
 				add_ideas = TaS_war_partisans 
 			}
-		}
-		ai_will_do = {
-			factor = 20
-		}
-	}
-	TaS_WRW2_cryptology_efforts = {
-		icon = GFX_decision_generic_ger_espionage
-		visible = {
-		}
-		available = {
-			has_war = no
-		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
-		fire_only_once = yes
-		days_remove = 90
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_prepare_industrial_centers"
-			hidden_effect = {
-				add_command_power = -20
-			}
-		}
-		remove_effect = {
-			upgrade_intelligence_agency = upgrade_modernize_department
-			upgrade_intelligence_agency = upgrade_cryptographic_engineering
-			upgrade_intelligence_agency = upgrade_cryptographic_engineering
-			upgrade_intelligence_agency = upgrade_cryptographic_engineering
-		}
-		ai_will_do = {
-			factor = 20
-		}
-	}
-	TaS_WRW2_send_diversantos = {
-		icon = GFX_decision_factory_generic_blue
-		visible = {
-		}
-		available = {
-			has_war = no
-		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
-		fire_only_once = yes
-		days_remove = 60
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_prepare_industrial_centers"
-			hidden_effect = {
-				add_command_power = -20
-			}
-		}
-		remove_effect = {
 			add_to_variable = { MAR_Sended_diversants = 1 }
 		}
 		ai_will_do = {
@@ -987,448 +805,17 @@ TaS_WRW2_prepare_for_final_battle = {
 		remove_effect = {
 			add_to_variable = { RUS2WRWWarPreparedness = 15 }
 			custom_effect_tooltip = TaS_WRW2_raise_additional_reserves_tt
-			add_manpower = 450000
+			add_manpower = 550000
+			tno_conscription_worsen = yes
+			TNO_improve_conscription_policy_effectiveness_high = yes
 		}
 		ai_will_do = {
 			factor = 20
 		}
 	}
 }
-TaS_WRW2_the_final_battle = {
-	TaS_WRW2_devastation_tick = {
-    	available = {
-			NOT = {	
-				MAR = { has_war_with = GER }
-			}
-    	}
+TaS_WRW2_the_final_battle_legacy = {
 	
-    	activation = {
-    		has_global_flag = TaS_2WRW_started
-    	}
-	
-    	is_good = no
-	
-    	days_mission_timeout = 14
-	
-		timeout_effect = {
-    		log = "[GetDateText]: [Root.GetName]: TaS_WRW2_devastation_tick mission timer elapsed" 
-	
-    		add_to_variable = {
-    		    RUS_devastation = RUS_devastation_gain
-    		}
-
-			#YUN_update_devastation_effects = yes
-	
-    		hidden_effect = {
-    			if = {
-    				limit = {
-    					has_war_with = GER 
-    				}
-    				activate_mission = TaS_WRW2_devastation_tick
-    			}
-    			if = {
-    				limit = {
-    					surrender_progress > 0.10
-    				}
-    			}
-    		}
-    	}
-	
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Mission TaS_WRW2_devastation_tick Completed (Should never happen for this mission, please report if you see this in the log.)"
-    	}
-  	}
-	TaS_WRW2_show_war_plans = {
-		icon = GFX_decision_generic_decision
-		visible = {
-			NOT = {
-				has_country_flag = TaS_2WRW_show_warplans
-			}
-		}
-		available = {
-			has_war = yes
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_show_war_plans"
-			set_country_flag = TaS_2WRW_show_warplans	
-		}
-	}
-	TaS_WRW2_hide_war_plans = {
-		icon = GFX_decision_generic_decision
-		visible = {
-			has_country_flag = TaS_2WRW_show_warplans
-		}
-		available = {
-			has_war = yes
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_show_war_plans"
-			clr_country_flag = TaS_2WRW_show_warplans	
-		}
-	}
-	TaS_WRW2_activate_plan_spb = {
-		icon = GFX_decision_diplo_moskowien
-		visible = {
-			has_country_flag = TaS_2WRW_show_warplans
-		}
-		available = {
-			has_war = yes
-		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
-		fire_only_once = yes
-		days_remove = 14
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_activate_plan_spb "
-			hidden_effect = {
-				add_command_power = -20
-			}
-		}
-		remove_effect = {
-			set_country_flag = MAR_started_spb_offensive
-			add_timed_idea = {
-				idea = MAR_go_oper
-				days = 90
-			}
-		}
-		ai_will_do = {
-			factor = 20
-		}
-	}
-	TaS_WRW2_activate_plan_spb_mission = {
-		icon = GFX_decision_generic_assault
-		allowed = {
-			tag = MAR
-		}
-		available = {
-			always = no
-		}
-		activation = {
-			has_country_flag = MAR_started_spb_offensive
-		}
-		cancel_trigger = {
-			OR = {
-				has_war = no
-				controls_state = 195
-			}
-		}
-
-		cancel_effect = {
-			clr_country_flag = MAR_started_spb_offensive
-			Tas_WRW2_decrease_depression = yes
-		}
-		days_mission_timeout = 90
-		is_good = no
-
-		timeout_effect = {
-			clr_country_flag = MAR_started_spb_offensive
-			Tas_WRW2_increase_depression = yes
-			add_to_variable = { RUS_devastation_gain = 0.5 }
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	TaS_WRW2_activate_plan_msk = {
-		icon = GFX_decision_diplo_moskowien
-		visible = {
-			has_country_flag = TaS_2WRW_show_warplans
-		}
-		available = {
-			has_war = yes
-		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
-		fire_only_once = yes
-		days_remove = 14
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_activate_plan_spb "
-			hidden_effect = {
-				add_command_power = -20
-			}
-		}
-		remove_effect = {
-			set_country_flag = MAR_started_MSK_offensive
-			add_timed_idea = {
-				idea = MAR_go_oper
-				days = 90
-			}
-		}
-		ai_will_do = {
-			factor = 20
-		}
-	}
-	TaS_WRW2_activate_plan_msk_mission = {
-		icon = GFX_decision_generic_assault
-		allowed = {
-			tag = MAR
-		}
-		available = {
-			always = no
-		}
-		activation = {
-			has_country_flag = MAR_started_MSK_offensive
-		}
-		cancel_trigger = {
-			OR = {
-				has_war = no
-				controls_state = 1442
-			}
-		}
-
-		cancel_effect = {
-			clr_country_flag = MAR_started_MSK_offensive
-			Tas_WRW2_decrease_depression = yes
-		}
-		days_mission_timeout = 90
-		is_good = no
-
-		timeout_effect = {
-			clr_country_flag = MAR_started_MSK_offensive
-			Tas_WRW2_increase_depression = yes
-			add_to_variable = { RUS_devastation_gain = 0.5 }
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	TaS_WRW2_activate_plan_volga = {
-		icon = GFX_decision_diplo_kaukasien
-		visible = {
-			has_country_flag = TaS_2WRW_show_warplans
-		}
-		available = {
-			has_war = yes
-		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
-		fire_only_once = yes
-		days_remove = 14
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_activate_plan_spb "
-			hidden_effect = {
-				add_command_power = -20
-			}
-		}
-		remove_effect = {
-			set_country_flag = MAR_started_CAU_offensive
-			add_timed_idea = {
-				idea = MAR_go_oper
-				days = 90
-			}
-		}
-		ai_will_do = {
-			factor = 20
-		}
-	}
-	TaS_WRW2_activate_plan_volga_mission = {
-		icon = GFX_decision_generic_assault
-		allowed = {
-			tag = MAR
-		}
-		available = {
-			always = no
-		}
-		activation = {
-			has_country_flag = MAR_started_CAU_offensive
-		}
-		cancel_trigger = {
-			OR = {
-				has_war = no
-				controls_state = 243
-			}
-		}
-
-		cancel_effect = {
-			clr_country_flag = MAR_started_CAU_offensive
-			Tas_WRW2_decrease_depression = yes
-		}
-		days_mission_timeout = 90
-		is_good = no
-
-		timeout_effect = {
-			clr_country_flag = MAR_started_CAU_offensive
-			Tas_WRW2_increase_depression = yes
-			add_to_variable = { RUS_devastation_gain = 0.5 }
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	TaS_WRW2_activate_plan_kyiv = {
-		icon = GFX_decision_diplo_ukraine
-		visible = {
-			has_country_flag = TaS_2WRW_show_warplans
-		}
-		available = {
-			has_war = yes
-		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
-		fire_only_once = yes
-		days_remove = 14
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_activate_plan_spb "
-			hidden_effect = {
-				add_command_power = -20
-			}
-		}
-		remove_effect = {
-			set_country_flag = MAR_started_UKR_offensive
-			add_timed_idea = {
-				idea = MAR_go_oper
-				days = 90
-			}
-		}
-		ai_will_do = {
-			factor = 20
-		}
-	}
-	TaS_WRW2_activate_plan_kyiv_mission = {
-		icon = GFX_decision_generic_assault
-		allowed = {
-			tag = MAR
-		}
-		available = {
-			always = no
-		}
-		activation = {
-			has_country_flag = MAR_started_UKR_offensive
-		}
-		cancel_trigger = {
-			OR = {
-				has_war = no
-				controls_state = 1428
-			}
-		}
-
-		cancel_effect = {
-			clr_country_flag = MAR_started_UKR_offensive
-			Tas_WRW2_decrease_depression = yes
-		}
-		days_mission_timeout = 90
-		is_good = no
-
-		timeout_effect = {
-			clr_country_flag = MAR_started_UKR_offensive
-			Tas_WRW2_increase_depression = yes
-			add_to_variable = { RUS_devastation_gain = 0.5 }
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	TaS_WRW2_activate_plan_riga = {
-		icon = GFX_decision_diplo_ostland
-		visible = {
-			has_country_flag = TaS_2WRW_show_warplans
-		}
-		available = {
-			has_war = yes
-		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
-		fire_only_once = yes
-		days_remove = 14
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_activate_plan_riga "
-			hidden_effect = {
-				add_command_power = -20
-			}
-		}
-		remove_effect = {
-			set_country_flag = MAR_started_OST_offensive
-			add_timed_idea = {
-				idea = MAR_go_oper
-				days = 90
-			}
-		}
-		ai_will_do = {
-			factor = 20
-		}
-	}
-	TaS_WRW2_activate_plan_riga_mission = {
-		icon = GFX_decision_generic_assault
-		allowed = {
-			tag = MAR
-		}
-		available = {
-			always = no
-		}
-		activation = {
-			has_country_flag = MAR_started_OST_offensive
-		}
-		cancel_trigger = {
-			OR = {
-				has_war = no
-				controls_state = 1397
-			}
-		}
-
-		cancel_effect = {
-			clr_country_flag = MAR_started_OST_offensive
-			Tas_WRW2_decrease_depression = yes
-		}
-		days_mission_timeout = 90
-		is_good = no
-
-		timeout_effect = {
-			clr_country_flag = MAR_started_OST_offensive
-			Tas_WRW2_increase_depression = yes
-			add_to_variable = { RUS_devastation_gain = 0.5 }
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	TaS_WRW2_show_war_decisions = {
-		icon = GFX_decision_generic_decision
-		visible = {
-			NOT = {
-				has_country_flag = TaS_2WRW_show_wardecisions
-			}
-		}
-		available = {
-			has_war = yes
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_show_war_plans"
-			set_country_flag = TaS_2WRW_show_wardecisions
-		}
-	}
-	TaS_WRW2_hide_war_decisions = {
-		icon = GFX_decision_generic_decision
-		visible = {
-			has_country_flag = TaS_2WRW_show_wardecisions
-		}
-		available = {
-			has_war = yes
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_show_war_plans"
-			clr_country_flag = TaS_2WRW_show_wardecisions
-		}
-	}
-	TaS_WRW2_activate_partisans = {
-		icon = GFX_decision_generic_assault
-		visible = {
-			has_country_flag = TaS_2WRW_show_wardecisions
-			check_variable = { MAR_Sended_diversants > 1 }
-		}
-		available = {
-			has_war = yes
-		}
-		cost = 50
-		days_remove = 14
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_show_war_plans"
-			load_oob = MAR_diversants
-		}
-	}
 	TaS_WRW2_expand_industries = {
 		icon = GFX_decision_generic_heavy_industry
 		visible = {
@@ -1449,7 +836,8 @@ TaS_WRW2_the_final_battle = {
 		remove_effect = {
 			set_temp_variable = { pus_temp = 6 }
 			econ_pus_change = yes
-			add_to_variable = { RUS_devastation_gain = 0.5 }
+			set_temp_variable = { temp_devastation_gain_gained = 0.25 }
+			TaS_WRW2_change_devastation_gain = yes
 		}
 	}
 	TaS_WRW2_expand_war_bonds = {
@@ -1464,7 +852,8 @@ TaS_WRW2_the_final_battle = {
 		days_remove = 120
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_show_war_plans"
-			add_to_variable = { RUS_devastation = 10 }
+			set_temp_variable = { temp_devastation_gained = 5 }
+			TaS_WRW2_change_devastation = yes
 			set_temp_variable = { debt_temp = 0.2 }
 			econ_national_debt_change = yes
 		}
@@ -1530,8 +919,10 @@ TaS_WRW2_the_final_battle = {
 		days_remove = 35
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_show_war_plans"
-			subtract_from_variable = { RUS_devastation = 15 }
-			add_to_variable = { RUS_devastation_gain = 0.1 }
+			set_temp_variable = { temp_devastation_gain_gained = -0.25 }
+			TaS_WRW2_change_devastation_gain = yes
+			set_temp_variable = { temp_devastation_gained = 5 }
+			TaS_WRW2_change_devastation = yes
 		}
 	}
 	TaS_WRW2_promise_victory = {
@@ -1546,28 +937,10 @@ TaS_WRW2_the_final_battle = {
 		days_remove = 40
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_show_war_plans"
-			subtract_from_variable = { RUS_devastation_gain = 0.15 }
-			add_to_variable = { RUS_devastation = 10 }
-		}
-	}
-	TaS_WRW2_ask_for_ofn_help = {
-		icon = GFX_decision_SAF_ask_OFN_stationing
-		visible = {
-			has_country_flag = TaS_2WRW_show_wardecisions
-		}
-		available = {
-			has_war = yes
-		}
-		cost = 100
-		days_remove = 60
-		fire_only_once = yes
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_show_war_plans"
-			GER = { add_ideas = { TaS_2WRW_sanctions } }
-			add_ideas = { TaS_2WRW_ofn_advisors }
-		}
-		remove_effect = {
-			TaS_2WRW_spawn_volunteers = yes
+			set_temp_variable = { temp_devastation_gain_gained = 0.25 }
+			TaS_WRW2_change_devastation_gain = yes
+			set_temp_variable = { temp_devastation_gained = -5 }
+			TaS_WRW2_change_devastation = yes
 		}
 	}
 	TaS_WRW2_get_rid_of_traitors = {
@@ -1586,8 +959,10 @@ TaS_WRW2_the_final_battle = {
 			add_stability = -0.05
 		}
 		remove_effect = {
-			subtract_from_variable = { RUS_devastation_gain = 0.15 }
-			subtract_from_variable = { RUS_devastation = 10 }
+			set_temp_variable = { temp_devastation_gain_gained = -0.1 }
+			TaS_WRW2_change_devastation_gain = yes
+			set_temp_variable = { temp_devastation_gained = -5 }
+			TaS_WRW2_change_devastation = yes
 		}
 	}
 	TaS_WRW2_economic_mobilization = {
@@ -1805,34 +1180,7 @@ TaS_WRW2_the_final_battle = {
 			country_event = { id = nuclearwar.1 }
 		}
 	}		
-	TaS_WRW2_offer_total_capitulation = {
-		icon = GFX_decision_generic_military_parade
-		visible = {
-		}
-		available = {
-			has_war = yes
-			controls_state = 1397
-			controls_state = 1428
-			check_variable = { RUS.GER_devastation > 100 }
-			
-		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
-		fire_only_once = yes
-		days_remove = 14
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_activate_plan_riga "
-			hidden_effect = {
-				add_command_power = -20
-			}
-		}
-		remove_effect = {
-			country_event = { id = MAR_2WRW.5 }
-		}
-		ai_will_do = {
-			factor = 20
-		}
-	}
+	
 
 }
 TaS_WRW2_the_final_battle_GER = {
@@ -1845,17 +1193,18 @@ TaS_WRW2_the_final_battle_GER = {
 	
     	activation = {
     		has_global_flag = TaS_2WRW_started
+			tag = GER
     	}
 	
     	is_good = no
 	
-    	days_mission_timeout = 7
+    	days_mission_timeout = 14
 	
 		timeout_effect = {
     		log = "[GetDateText]: [Root.GetName]: TaS_WRW2_devastation_tick mission timer elapsed" 
 			GER = {
 				add_to_variable = {
-					RUS.GER_devastation = RUS.GER_devastation_gain
+					GER.WRW2_devastation = GER.WRW2_devastation_gain
 				}
 			}
 
@@ -1877,308 +1226,6 @@ TaS_WRW2_the_final_battle_GER = {
     			}
     		}
     	}
-	
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Mission TaS_WRW2_devastation_tick Completed (Should never happen for this mission, please report if you see this in the log.)"
-    	}
-  	}
-	TaS_WRW2_offer_status_quo = {
-		icon = GFX_decision_generic_military_parade
-		visible = {
-		}
-		available = {
-			OR = {
-				casualties > 100000
-				MCW = {
-					surrender_progress > 0.1
-				}
-				RUS = {
-					casualties > 100000
-				}
-			}
-			NOT = {
-				MCW = {
-					surrender_progress > 0.65
-				}
-			}
-			OR = {
-				check_variable = { RUS.GER_devastation > 50 }
-				check_variable = { RUS_devastation > 50 }
-			}
-		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
-		fire_only_once = yes
-		days_remove = 14
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision 	TaS_WRW2_offer_status_quo"
-			hidden_effect = {
-				add_command_power = -20
-			}
-		}
-		remove_effect = {
-			MAR = {
-				country_event = { id = MAR_2WRW.1 }
-			}
-		}
-		ai_will_do = {
-			factor = 20
-		}
-	}
-	TaS_WRW2_offer_muscowy = {
-		icon = GFX_decision_generic_military_parade
-		visible = {
-		}
-		available = {
-			OR = {
-				AND = {
-					casualties > 300000
-					MCW = {
-						surrender_progress > 0.65
-					}
-					RUS = {
-						casualties > 100000
-					}
-				}
-			}
-			NOT = {
-				MCW = {
-					exists = no
-				}
-			}
-			OR = {
-				check_variable = { RUS.GER_devastation > 125 }
-			}
-		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
-		fire_only_once = yes
-		days_remove = 14
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision 	TaS_WRW2_offer_muscowy"
-			hidden_effect = {
-				add_command_power = -20
-			}
-		}
-		remove_effect = {
-			MAR = {
-				country_event = { id = MAR_2WRW.2 }
-			}
-		}
-		ai_will_do = {
-			factor = 20
-		}
-	}
-	TaS_WRW2_offer_muscowy_caucasus = {
-		icon = GFX_decision_generic_military_parade
-		visible = {
-		}
-		available = {
-			AND = {
-				casualties > 300000
-				MCW = {
-					exists = no
-				}
-				RUS = {
-					casualties > 100000
-				}
-				check_variable = { RUS.GER_devastation > 75 }
-			}
-			NOT = {
-				CAU = {
-					exists = no
-				}
-			}
-		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
-		fire_only_once = yes
-		days_remove = 14
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision 	TaS_WRW2_offer_muscowy"
-			hidden_effect = {
-				add_command_power = -20
-			}
-		}
-		remove_effect = {
-			MAR = {
-				country_event = { id = MAR_2WRW.3 }
-			}
-		}
-		ai_will_do = {
-			factor = 20
-		}
-	}
-	TaS_WRW2_offer_muscowy_caucasus_dnepr = {
-		icon = GFX_decision_generic_military_parade
-		visible = {
-		}
-		available = {
-			OR = {
-				AND = {
-					casualties > 300000
-					MCW = {
-						exists = no
-					}
-					CAU = {
-						exists = no
-					}
-					RUS = {
-						casualties > 100000
-					}
-					check_variable = { RUS.GER_devastation > 125 }
-				}
-			}
-			NOT = {
-				UKR = {
-					exists = no
-				}
-			}
-			OR = {
-				AND = {
-					casualties > 1500000
-					check_variable = { RUS.GER_devastation > 100 }
-				}
-			}
-		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
-		fire_only_once = yes
-		days_remove = 14
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision 	TaS_WRW2_offer_muscowy"
-			hidden_effect = {
-				add_command_power = -20
-			}
-		}
-		remove_effect = {
-			MAR = {
-				country_event = { id = MAR_2WRW.4 }
-			}
-		}
-		ai_will_do = {
-			factor = 20
-		}
-	}
-	TaS_WRW2_offer_total_cap = {
-		icon = GFX_decision_generic_military_parade
-		visible = {
-		}
-		available = {
-			OR = {
-				GER = {
-					surrender_progress > 0.05
-				}
-			}
-			NOT = {
-				GER = {
-					surrender_progress > 0.25
-				}
-			}
-			OR = {
-				AND = {
-					check_variable = { RUS.GER_devastation > 175 }
-					OST = {
-						exists = no
-					}
-					UKR = {
-						exists = no
-					}
-				}
-			}
-		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
-		fire_only_once = yes
-		days_remove = 14
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision 	TaS_WRW2_offer_status_quo"
-			hidden_effect = {
-				add_command_power = -20
-			}
-		}
-		remove_effect = {
-			MAR = {
-				country_event = { id = MAR_2WRW.5 }
-			}
-		}
-		ai_will_do = {
-			factor = 20
-		}
-	}
-	TaS_WRW2_offer_russian_cap = {
-		icon = GFX_decision_generic_military_parade
-		visible = {
-		}
-		available = {
-			OR = {
-				RUS = {
-					surrender_progress > 0.1
-				}
-			}
-			OR = {
-				AND = {
-					check_variable = { RUS_devastation > 135 }
-					RUS = {
-						surrender_progress > 0.01
-					}
-				}
-			}
-		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
-		fire_only_once = yes
-		days_remove = 14
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision 	TaS_WRW2_offer_status_quo"
-			hidden_effect = {
-				add_command_power = -20
-			}
-		}
-		remove_effect = {
-			MAR = {
-				country_event = { id = MAR_Collapse.1941 }
-			}
-		}
-		ai_will_do = {
-			factor = 20
-		}
-	}
-	TaS_WRW2_collapse_timer = {
-    	available = {
-			NOT = {	
-				MAR = { has_war_with = GER }
-			}
-    	}
-	
-    	activation = {
-			OR = {
-				AND = {
-					check_variable = { RUS.GER_devastation > 175 }
-					surrender_progress > 0.1
-				}
-			}
-			OR = {
-				AND = {
-					check_variable = { RUS.GER_devastation > 145 }
-					surrender_progress > 0.25
-				}
-			}
-			OR = {
-				surrender_progress > 0.3
-			}			
-    	}
-	
-    	is_good = no
-	
-    	days_mission_timeout = 7
-	
-		timeout_effect = {
-    		log = "[GetDateText]: [Root.GetName]: TaS_WRW2_devastation_tick mission timer elapsed" 
-			GER = {
-				country_event = { id = TaS_GERcollapse.1 }
-			}
-	   	}
 	
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Mission TaS_WRW2_devastation_tick Completed (Should never happen for this mission, please report if you see this in the log.)"

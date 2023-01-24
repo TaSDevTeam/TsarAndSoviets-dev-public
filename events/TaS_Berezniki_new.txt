@@ -2527,7 +2527,9 @@ country_event = { # MAR_final_vibori MARIA WIN
 		else_if = {
 			limit = { has_idea = MAR_regent_without_tsar_3 }
 			remove_ideas = MAR_regent_without_tsar_3
-		}							
+		}		
+		set_country_flag = MAR_Path_not_done
+		TNO_Country_Closing_Screen_Show = yes
 	}
 }
 
@@ -2571,6 +2573,8 @@ country_event = { # MAR_final_vibori ROMANOV WIN
 		else_if = {
 			limit = { has_idea = MAR_regent_without_tsar_3 }
 			remove_ideas = MAR_regent_without_tsar_3
-		}								
+		}	
+		set_country_flag = MAR_Path_not_done
+		TNO_Country_Closing_Screen_Show = yes
 	}
 }

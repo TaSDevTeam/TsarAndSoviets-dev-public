@@ -80,6 +80,12 @@ defined_text = {
 		}
 		localization_key = "GFX_Paskhalka"
 	}
+	text = {
+		trigger = {
+			TNO_anarchy_Manchurian_Catastrophe = yes
+		}
+		localization_key = "GFX_MAN_Catastrophe"
+	}
 }
 
 defined_text = {
@@ -162,6 +168,12 @@ defined_text = {
 		}
 		localization_key = TNO_Paskhalka_tt
 	}
+	text = {
+		trigger = {
+			TNO_anarchy_Manchurian_Catastrophe = yes
+		}
+		localization_key = TNO_anarchy_MAN_tt
+	}
 }
 
 defined_text = {
@@ -243,5 +255,11 @@ defined_text = {
 			TNO_paskhalka_dev = yes
 		}
 		localization_key = TNO_Paskhalka_tt_delayed
+	}
+	text = {
+		trigger = {
+			TNO_anarchy_Manchurian_Catastrophe = yes
+		}
+		localization_key = TNO_anarchy_MAN_tt_delayed
 	}
 }

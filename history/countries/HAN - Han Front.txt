@@ -5,7 +5,7 @@ recruit_character = HAN_Generic_Vacant
 fill_empty_minister_nochecks = yes # Please remove if you're adding ministers.
 set_cosmetic_tag = SCC_Second_CW
 recruit_character = SCC_Wang_Enmao
-
+recruit_character = HAN_Pujie
 add_ideas = {
 		
 	##POLITICAL LAWS##
@@ -62,21 +62,6 @@ set_popularities = {
 	fascism = 0
 	national_socialism = 17
 	esoteric_nazism = 0
-}
-set_party_name = { 
-	ideology = ultranationalism
-	long_name = HAN_ultranationalism_party_Long
-	name = HAN_ultranationalism_party
-}
-set_party_name = { 
-	ideology = despotism 
-	long_name = HAN_desportism_party_long
-	name = HAN_desportism_party
-}
-set_party_name = { 
-	ideology = national_socialism 
-	long_name = HAN_national_socialism_party_long
-	name = HAN_national_socialism_party_long
 }
 
 set_variable = { TNO_economy_type = 3 }

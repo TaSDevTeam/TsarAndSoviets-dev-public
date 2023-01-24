@@ -13,6 +13,7 @@ TNO_is_anarchy_visible = {
 		TNO_paskhalka_dev = yes
 		TNO_anarchy_ZLB_antikhrist = yes
 		TNO_anarchy_ZZZ_remer = yes
+		TNO_anarchy_Manchurian_Catastrophe = yes
 	}
 }
 
@@ -98,4 +99,8 @@ TNO_anarchy_ZZZ_remer = {
 		ruling_only = yes
 	}
 	NOT = { has_global_flag = TNO_my_world_is_on_fire_how_about_yours }
+}
+TNO_anarchy_Manchurian_Catastrophe = {
+	original_tag = HAN
+	has_cosmetic_tag = MAN_katastrophe
 }

@@ -2449,13 +2449,13 @@ country_event = { # MAR_final_vibori WIN SEREGA BELII
 		add_country_leader_role = {
 			character = MAR_Sergey_Belozerskiy
 			promote_leader = yes
-			country_leader = {
-			desc = "POLITICS_SERGEY_BELOZERSKI_DESC"
-			expire = "1999.1.1"
-			ideology = despotism_mladorossi_autocracy_subtype
-			traits = {
-				char_general
-			}
+				country_leader = {
+				desc = "POLITICS_SERGEY_BELOZERSKI_DESC"
+				expire = "1999.1.1"
+				ideology = despotism_mladorossi_autocracy_subtype
+				traits = {
+					char_general
+				}
 			}
 		}
 		MAR_Sergey_Belozerskiy = {

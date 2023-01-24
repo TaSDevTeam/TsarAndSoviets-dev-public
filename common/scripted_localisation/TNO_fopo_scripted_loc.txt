@@ -217,6 +217,10 @@ defined_text = {
 		localization_key = fopo_name_tab_49
 	}
 	text = {
+		trigger = { check_variable = { conflict_id = 50 } }
+		localization_key = fopo_name_tab_50
+	}
+	text = {
 		localization_key = "YOU FORGOT YOUR SCRIPTED LOC SILLY"
 	}
 }
@@ -682,6 +686,27 @@ defined_text = {
 		localization_key = MAR_far_eastern_revolt_category_desc
 	}
 	text = {
+		trigger = { 
+			check_variable = { selected_conflict_id = 50 }
+			tag = JAP
+		}
+		localization_key = JAP_manchurian_civil_war_category_desc
+	}
+	text = {
+		trigger = { 
+			check_variable = { selected_conflict_id = 50 }
+			tag = MAR
+		}
+		localization_key = MAR_manchurian_civil_war_category_desc
+	}
+	text = {
+		trigger = { 
+			check_variable = { selected_conflict_id = 50 }
+			tag = USA
+		}
+		localization_key = USA_manchurian_civil_war_category_desc
+	}
+	text = {
 		localization_key = ""
 	}
 }
@@ -840,6 +865,10 @@ defined_text = {
 	}
 	text = { 
 		trigger = { check_variable = { selected_conflict_id = 49 } }
+		localization_key = "GFX_fopo_far_eastern_revolt_sidebar"
+	}
+	text = { 
+		trigger = { check_variable = { selected_conflict_id = 50 } }
 		localization_key = "GFX_fopo_far_eastern_revolt_sidebar"
 	}
 	text = {
@@ -1447,6 +1476,18 @@ defined_text = {
 	text = { # Far Eastern Revolt, JAP
 		trigger = { check_variable = { conflict_id = 49 } tag = JAP }
 		localization_key = "GFX_fopo_far_eastern_revolt_icon_jap"
+	}
+	text = { # Far Eastern Revolt, RUS
+		trigger = { check_variable = { conflict_id = 50 } tag = MAR }
+		localization_key = "GFX_fopo_manchurian_civil_war_icon_rus"
+	}
+	text = { # Far Eastern Revolt, JAP
+		trigger = { check_variable = { conflict_id = 50 } tag = JAP }
+		localization_key = "GFX_fopo_manchurian_civil_war_icon_jap"
+	}
+	text = { # Far Eastern Revolt, USA
+		trigger = { check_variable = { conflict_id = 50 } tag = USA }
+		localization_key = "GFX_fopo_manchurian_civil_war_icon_usa"
 	}
 	text = {
 		localization_key = "GFX_fopo_blank_icon"

@@ -2,13 +2,7 @@
  TaS_newsheader_Iskra: "\n£custom_header_MAR_Iskra\n\n\n\n"
  TaS_newsheader_Bodrost: "\n£custom_header_MAR_Courage\n\n\n\n"
  TaS_newsheader_K_Rosii: "\n£custom_header_MAR_To_Young_Russia\n\n\n\n"
-###Warplans###
- TaS_WRW2_warplan_categories:0 "Военные планы"
- TaS_WRW2_warplan_categories_desc:0 "Наш текущий дипломатический вес: §B[?TaS_WRW2_DiploW]§!"
- TaS_WRW2_WARPLAN_ALPHA:0 "Военный план §Y\"АЛЬФА\"§!"
- TaS_WRW2_WARPLAN_GAMMA:0 "Военный план §Y\"ГАММА\"§!"
- TaS_WRW2_WARPLAN_OMEGA:0 "Военный план §Y\"ОМЕГА\"§!"
- 
+
  #Spermoevents
  BE_WRW2START_title:0 "НАЧАЛО 2ЗРВ"
  BE_WRW2START_Flavour:0 "\"Иду на вы.\"\n-  Святослав I Игоревич"
@@ -452,35 +446,102 @@
  MAR_far_eastern_revolt_category_desc:0 "Объединение России нашими силами всколыхнуло весь мир, на мировой арене снова появилось давно забытое имя. \n\nПотерявшие надежду партизаны вновь активизировались на оккупированных землях нашей необъятной Родины. С нами связалась группа дальневосточных партизан под руководством Сергея Заикина, на протяжении многих лет они оказывали сопротивление имперским силам оккупации, но не имели возможности открыто выступить против врага, не имея ресурсов для этого. Теперь же, имея единое легитимное правительство к которому они готовы примкнуть, партизаны решились на активное сопротивление захватчикам. \n\nНашей главной задачей является оказание всевозможной поддержки бойцам сопротивления, начиная от поставок оружия и заканчивая защитой на внешнеполитической арене. \n\nЗа дело."
  JAP_far_eastern_revolt_category_desc:0 "Ставьте лайк, если русня заебала качать права в Урадзио"
   
- MAN_Second_CW:0 "Свободная Маньчжурия"
- KOR_Second_CW:0 "Маньчжурское Военное Положение"
- SCC_Second_CW:0 "Ханьский Фронт"
+ #гарнизон
+ MJP_JAP_autonomy:0 "Японский Гарнзон в Маньчжурии"
+ MJP_JAP_autonomy_DEF:0 "Японский Гарнзон в Маньчжурии"
+ MJP_JAP_autonomy_ADJ:0 "Японск."
+ 
+ MAN_katastrophe:0 ""
+ MAN_katastrophe_DEF:0 ""
+ MAN_katastrophe_ADJ:0 ""
+ 
+ TNO_anarchy_MAN_tt:0 "Маньчжурская Анарихия"
+ TNO_anarchy_MAN_tt_delayed:0 "Русня вот что вы добились суки"
+ 
+ ##Вторая ГВ
+ ###вкладочка
+ fopo_name_tab_50:0 "Маньчжурская Гражданская Война"
+ JAP_manchurian_civil_war_category_desc:0 "ААА РУСНЯ ЗАЕБАЛА"
+ MAR_manchurian_civil_war_category_desc:0 "троллинг жапонезе рент фри 24/7"
+ USA_manchurian_civil_war_category_desc:0 "Чо мы тут забыли"
+ 
+ TNO_Cold_War_Victory_ID_50: "МАНЬЧЖУРСКАЯ ГРАЖДАНСКАЯ ВОЙНА"
+ WAR_NAME_MJP_HAN:0 "Маньчжурская Гражданская Война"
+ WAR_NAME_HAN_MJP:0 "Маньчжурская Гражданская Война"
+ WAR_NAME_MAN_HAN:0 "Маньчжурская Гражданская Война"
+ WAR_NAME_HAN_MAN:0 "Маньчжурская Гражданская Война"
+ WAR_NAME_MJP_MAN:0 "Маньчжурская Гражданская Война"
+ WAR_NAME_MAN_MJP:0 "Маньчжурская Гражданская Война"
+ WAR_NAME_PFF_HAN:0 "Маньчжурская Гражданская Война"
+ WAR_NAME_HAN_PFF:0 "Маньчжурская Гражданская Война"
+ WAR_NAME_MAN_PFF:0 "Маньчжурская Гражданская Война"
+ WAR_NAME_PFF_MAN:0 "Маньчжурская Гражданская Война"
+ 
+ ##страны
+ MAN_Second_CW:0 "Маньчжурская Республика"
+ MAN_Second_CW_DEF:0 "Маньчжурская Республика"
+ MAN_Second_CW_ADJ:0 "Маньчжурск."
+ 
+ MJP_Second_CW:0 "Квантунская Армия"
+ MJP_Second_CW_DEF:0 "Квантунская Армия"
+ MJP_Second_CW_ADJ:0 "Маньчжурск."
+ 
+ PFF_Second_CW:0 "С.А.Я.О.А"
+ MJP_Second_CW_DEF:0 "Северная Анти-Японская Объединённая Армия"
+ MJP_Second_CW_ADJ:0 "Анти-Японск."
+ 
+ HAN_Second_CW:0 "Суверенный Фронт"
+ MJP_Second_CW_DEF:0 "Суверенный Фронт"
+ MJP_Second_CW_ADJ:0 "Маньчжурск."
  
  MAN_Kuan_Chung:0 "Куан Чун"
- KOR_Hiromichi_Yahara:0 "Хиромичи Яхара"
- SCC_Wang_Enmao:0 "Ван Энмао"
+ HAN_Pujie:0 "Айсингьоро Пуцзе"
+ MJP_Katakura_Tadashi:0 "Катакура Тадаши"
+ PFF_Kim_Il_Sung:0 "Ким Ир Сен"
+ 
  #Дойчланд
  TaS_WRW2_prepare_for_final_battle:0 "Подготовка к решающей битве"
  TaS_WRW2_prepare_for_final_battle_desc:0 "Наш уровень готовности - [?RUS2WRWWarPreparedness]/100"
  
  TaS_WRW2_launch_attack_on_germany:0 "Вернуть то, что нам принадлежит"
  TaS_WRW2_establish_southborders_fortifications:0 "Южная линия обороны"
+ TaS_WRW2_establish_southern_fortifications_tt:0 "Мы организуем на юге систему фортификаций, что даст нам 20 готовности к войне"
  TaS_WRW2_establish_northborders_fortifications:0 "Северная линия обороны"
+ TaS_WRW2_establish_northern_fortifications_tt:0 "Мы организуем на севере систему фортификаций, что даст нам 10 готовности к войне"
  TaS_WRW2_mobilize_airmobile_units:0 "Развернуть аэродромы у границы"
+ TaS_WRW2_mobilize_airmobile_units_tt:0 "Мы развернём сеть аэродромов у границы, что даст нам 10 готовности к войне"
  TaS_WRW2_prepare_industrial_centers:0 "Подготовить центры промышленности"
- TaS_WRW2_send_partisans:0 "Поддержать партизан"
- TaS_WRW2_cryptology_efforts:0 "Расшифровать немецкие шифры"
- TaS_WRW2_send_diversantos:0 "Заслать диверсантов"
+ TaS_WRW2_prepare_industrial_centers_tt:0 "Мы создадим новые индустриальные центры, что даст нам 15 готовности к войне"
+ TaS_WRW2_send_partisans:0 "Создать партизанско-диверсионную сеть"
+ TaS_WRW2_send_partisans_tt:0 "Мы получим возможность поднять небольшую армию партизан, как только они услышат наш зов. Это даст нам 10 готовности к войне"
  TaS_WRW2_develop_front_railways:0 "Расширить прифронтовую инфраструктуру"
+ TaS_WRW2_develop_siberian_railways_tt:0 "Развернув широкую инфраструктурную сети на границе, мы обеспечим достойное снабжение на линии фронта. Это даст нам 20 готовности к войне"
  TaS_WRW2_raise_additional_reserves:0 "Призвать резервы"
+ TaS_WRW2_raise_additional_reserves_tt:0 "Это даст нам 15 готовности к войне"
  
  TaS_WRW2_the_final_battle:0 "Финальная битва"
- TaS_WRW2_the_final_battle_desc:0 "Наш уровень истощения - [?RUS_devastation]/150([GetRusDevastation]) \n\n\Уровень истощение фрицев - [?GER_devastation]/200([GetGerDevastation])"
+ TaS_WRW2_the_final_battle_desc:0 "Наш уровень истощения - [?RUS.WRW2_devastation]/100([GetRusDevastation]) \n\n\Уровень истощение фрицев - [?GER.WRW2_devastation]/100([GetGerDevastation])"
  RUS_Devastation_Low:0 "Низкий"
  RUS_Devastation_Medium:0 "Средний"
  RUS_Devastation_High:0 "Выскокий"
  
+ TaS_WRW2_devastation_growth_tt: "Это §Rувеличит§! §eистощение§! §Yв войне§! на §R[?temp_devastation_gained_txt]§!.\n"
+ TaS_WRW2_devastation_decrease_tt: "Это §Gуменьшит§! §eистощение§! §Yв войне§! на §G[?temp_devastation_gained_txt]§!.\n"
+ 
+ TaS_WRW2_devastation_gain_growth_tt: "Это §Rувеличит§! §eрост истощения§! §Yв войне§! на §R[?temp_devastation_gain_gained_txt]§!.\n"
+ TaS_WRW2_devastation_gain_decrease_tt: "Это §Gуменьшит§! §eрост истощение§! §Yв войне§! на §G[?temp_devastation_gain_gained_txt]§!.\n"
+ 
  TaS_WRW2_devastation_tick:0 "Рост истощения!"
+ TaS_WRW2_devastation_tick_tt:0 "§eИстощение§! §Rувеличится§! на §R[?RUS.WRW2_devastation_gain]§!.\n"
+ 
+ Tas_WRW2_increase_depression_tt:0 "§YЭто§! §eухудшит§! §Yсостояние общества§!"
+ Tas_WRW2_decrease_depression_tt:0 "§YЭто§! §Gулучшит§! §Yсостояние общества§!"
+ 
+ TAS_WRW2_ScriptedTrigger_GER_Devastation_MoreThanY_Tt: "§eИстощение§! фрицев больше, чем [?Y|Y0]"
+ TAS_WRW2_ScriptedTrigger_GER_Devastation_LessThanY_Tt: "§eИстощение§! фрицев меньше, чем [?Y|Y0]"
+ 
+ TAS_WRW2_ScriptedTrigger_MAR_Devastation_MoreThanY_Tt: "§eИстощение§! русских больше, чем [?Y|Y0]"
+ TAS_WRW2_ScriptedTrigger_MAR_Devastation_LessThanY_Tt: "§eИстощение§! русских меньше, чем [?Y|Y0]"
  
  TaS_WRW2_show_war_plans:0 "Отобразить список военных операций"
  TaS_WRW2_hide_war_plans:0 "Скрыть список военных операций"
@@ -528,6 +589,10 @@
  TaS_WRW2_romania_ultimatum:0 "Претензии на Одессу"
  TaS_WRW2_turkey_ultimatum:0 "Претензии на Армению"
  
+ #эпилог Березников
+ MAR_the_throne:0 "Безцарствие"
+ POLITICS_THE_RUSSIAN_THRONE_DESC:0 "Пук срень"
+ undecided_future:0 "Неопределённое будущее"
  #коллапс
  char_projebavshij:0 "Разбитый царь"
  goverment_of_misery:0 "Правительство утраты"
@@ -975,3 +1040,4 @@
  MAR_Japan.6.t:0 "Победа в Приморье"
  MAR_Japan.6.d:0 "Белоозерский приехал во Владивосток. Там он вместе с воставшими подписал договор о вступлении Приморья в РНЦ. (placeholder)"
  MAR_Japan.6.a:0 "Добро пожаловать домой"
+ 

@@ -7,6 +7,15 @@ TaS_fopo_remove_far_eastern_revolt_tab = {
 	TNO_remove_fopo_conflict_tab = yes
 }
 
+TaS_fopo_add_manchurian_civil_war_tab = {
+	set_temp_variable = { conflict_id = 50 }
+	TNO_add_fopo_conflict_tab = yes
+}
+TaS_fopo_remove_manchurian_civil_war_tab = {
+	set_temp_variable = { conflict_id = 50 }
+	TNO_remove_fopo_conflict_tab = yes
+}
+
 TaS_2WRW_manchuria_spawn_states = {
 		custom_effect_tooltip = TaS_2WRW_manchuria_spawn_states_tt
 		PFF = {
@@ -434,6 +443,43 @@ TaS_2WRW_spawn_divs_second_cw = {
 					}
 				}
 }
+TaS_WRW2_change_devastation = { 
+	set_temp_variable = { temp_devastation_gained_txt = temp_devastation_gained }
+	add_to_variable = { WRW2_devastation = temp_devastation_gained }
+	
+	clamp_variable = {
+		var = WRW2_devastation
+		min = 0
+		max = 100
+	}
+	if = {
+		limit = { check_variable = { temp_devastation_gained < 0 } }
+		multiply_temp_variable = { temp_devastation_gained_txt = -1 }
+		custom_effect_tooltip = TaS_WRW2_devastation_decrease_tt
+	}
+	else = {
+		custom_effect_tooltip = TaS_WRW2_devastation_growth_tt
+	}
+}
+
+TaS_WRW2_change_devastation_gain = { 
+	set_temp_variable = { temp_devastation_gain_gained_txt = temp_devastation_gain_gained }
+	add_to_variable = { WRW2_devastation_gain = temp_devastation_gain_gained }
+	
+	clamp_variable = {
+		var = WRW2_devastation_gain
+		min = 0
+		max = 100
+	}
+	if = {
+		limit = { check_variable = { temp_devastation_gain_gained < 0 } }
+		multiply_temp_variable = { temp_devastation_gain_gained_txt = -1 }
+		custom_effect_tooltip = TaS_WRW2_devastation_gain_decrease_tt
+	}
+	else = {
+		custom_effect_tooltip = TaS_WRW2_devastation_gain_growth_tt
+	}
+}
 Tas_WRW2_decrease_depression = {
 	custom_effect_tooltip = Tas_WRW2_decrease_depression_tt
 			if = {
@@ -603,37 +649,6 @@ TaS_WRW2_total_capitulation = {
 						transfer_state = 137
 						transfer_state = 1532
 						transfer_state = 196
-						every_state = {
-							limit = {
-								is_core_of = MCW
-							}
-							add_core_of = RUS
-							hidden_effect = { remove_core_of = MCW }
-						}
-						every_state = {
-							limit = {
-								is_core_of = CAU
-							}
-							add_core_of = RUS
-							hidden_effect = { remove_core_of = CAU }
-						}
-						every_state = {
-							limit = {
-								is_core_of = OST
-							}
-							add_core_of = RUS
-							hidden_effect = { remove_core_of = OST }
-						}
-						every_state = {
-							limit = {
-								is_core_of = UKR
-							}
-							add_core_of = RUS
-							hidden_effect = { remove_core_of = UKR }
-						}
-						add_state_core = 137
-						add_state_core = 1532
-						add_state_core = 97
 					}
 }
 

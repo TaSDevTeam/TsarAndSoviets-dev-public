@@ -1178,6 +1178,8 @@ country_event = { #Total f
 		clear_global_event_target = RUS_siberian_unifier
 		clear_global_event_target = RUS_total_unifier
 		clr_global_flag = RUS_national_unification
+		TNO_Country_Closing_Screen_Show = yes
+		set_country_flag = MAR_Bad_Ending
 		hidden_effect = {
 			every_country  = {
 				news_event = {
@@ -1325,15 +1327,19 @@ country_event = { #Technical stuff no loc
 		name = MAR_Japan.1.a
 		ai_chance = { factor = 1 }
 		MJP = {
-			set_cosmetic_tag = KOR_Second_CW
-			transfer_state = 328
-			add_state_core = 328
+			set_cosmetic_tag = MJP_Second_CW
+			transfer_state = 810
+			add_state_core = 810
+			MJP_Katakura_Tadashi = {
+				promote_character = yes
+			}
 		}
 		MAN = {
-			set_capital = { state = 801 }
+			set_capital = { state = 328 }
+			remove_ideas = MAN_Kwantung_Army
 		}
 		country_event = {
-			id = MAR_Japan.2 days = 7
+			id = MAR_Japan.2 days = 17
 		}
 	}
 }
@@ -1356,15 +1362,19 @@ country_event = { #Technical stuff no loc
 		}
 		MAN = {
 			set_politics = {
-				ruling_party = liberalism
+				ruling_party = paternalism
 				last_election = "1933.2.16"
 				election_frequency = 36
 				elections_allowed = no
 			}
+			add_popularity = {
+				ideology = paternalism
+				popularity = 0.33
+			}
 			promote_character = MAN_Kuan_Chung	
 		}
 		country_event = {
-			id = MAR_Japan.3 days = 7
+			id = MAR_Japan.3 days = 11
 		}
 	}
 } 
@@ -1381,12 +1391,43 @@ country_event = { #Technical stuff no loc
 		name = MAR_Japan.3.a
 		ai_chance = { factor = 1 }
 		HAN = {
-			set_cosmetic_tag = SCC_Second_CW
-			transfer_state = 1265
-			add_state_core = 1265
+			set_cosmetic_tag = HAN_Second_CW
+			transfer_state = 801
+			add_state_core = 801
+			set_politics = {
+				ruling_party = despotism
+				last_election = "1933.2.16"
+				election_frequency = 36
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = despotism
+				popularity = 0.29
+			}
+			HAN_Pujie = {
+				promote_character = yes
+			}
+		}
+		PFF = {
+			set_cosmetic_tag = PFF_Second_CW
+			transfer_state = 1643
+			add_state_core = 1643
+			set_politics = {
+				ruling_party = communist
+				last_election = "1933.2.16"
+				election_frequency = 36
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = communist
+				popularity = 0.47
+			}
+			PFF_Kim_Il_Sung = {
+				promote_character = yes
+			}
 		}
 		country_event = {
-			id = MAR_Japan.4 days = 7
+			id = MAR_Japan.4 days = 11
 		}
 	}
 }
@@ -1405,6 +1446,9 @@ country_event = { #Technical stuff no loc
 		MAN = {
 			set_cosmetic_tag = MAN_Second_CW
 			leave_faction = yes
+			econ_leave_sphere = yes
+			remove_ideas = Sphere_Fully_Dependent
+			remove_ideas = MAN_Chained_To_Rising_Sun
 		}
 		every_state = {
 				limit = {
@@ -1413,7 +1457,7 @@ country_event = { #Technical stuff no loc
 				set_demilitarized_zone = yes
 		}			
 		country_event = {
-			id = MAR_Japan.5 days = 7
+			id = MAR_Japan.5 days = 9
 		}
 	}
 }
@@ -1429,17 +1473,27 @@ country_event = { #Technical stuff no loc
 	option = {
 		name = MAR_Japan.5.a
 		ai_chance = { factor = 1 }
-		TaS_2WRW_spawn_divs_second_cw = yes
+		#TaS_2WRW_spawn_divs_second_cw = yes
 		set_global_flag = TaS_MAN_second_cw
 		HAN = {
-			transfer_state = 610
-			add_state_core = 610
+			transfer_state = 1639
+			add_state_core = 1639
+			transfer_state = 1638
+			add_state_core = 1638
+			transfer_state = 1637
+			add_state_core = 1637
 		}
 		MJP = {
+			transfer_state = 1265
+			add_state_core = 1265
 			transfer_state = 716
 			add_state_core = 716
-			transfer_state = 717
-			add_state_core = 717
+			transfer_state = 1636
+			add_state_core = 1636
+		}
+		PFF = {
+			transfer_state = 715
+			add_state_core = 715
 		}
 		HAN = {
 			declare_war_on = {
@@ -1447,7 +1501,11 @@ country_event = { #Technical stuff no loc
 				type = annex_everything
 			}
 			declare_war_on = {
-				target = KOR
+				target = MJP
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = PFF
 				type = annex_everything
 			}
 		}
@@ -1457,33 +1515,50 @@ country_event = { #Technical stuff no loc
 				type = annex_everything
 			}
 			declare_war_on = {
-				target = SCC
+				target = HAN
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = PFF
 				type = annex_everything
 			}
 		}
 		MAN = {
 			declare_war_on = {
-				target = SCC
+				target = HAN
 				type = annex_everything
 			}
 			declare_war_on = {
-				target = KOR
+				target = PFF
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = MJP
 				type = annex_everything
 			}
 		}
 		CHI = { end_puppet = MEN }
 		MEN = { leave_faction = yes }
 		hidden_effect = {
-				every_country  = {
-					news_event = {
-						id = MAR_2WRW_world_news.5
-					}
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.5
 				}
 			}
+		}
+		USA = {
+			country_event = { id = MAR_Japan.9 days = 3 }
+		}
+		JAP = {
+			country_event = { id = MAR_Japan.9 days = 3 }
+		}
+		MAR = {
+			country_event = { id = MAR_Japan.9 days = 3 }
+		}
 	}
 }
 
-country_event = { #Technical stuff no loc
+country_event = { #victory in FE
 	id = MAR_Japan.6
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.6"}
 	title = MAR_Japan.6.t
@@ -1499,11 +1574,123 @@ country_event = { #Technical stuff no loc
 			target = PFF
 			transfer_troops = yes
 		}
-		add_state_core = 657
-		add_state_core = 409
-		add_state_core = 408
-		add_state_core = 809
 		set_country_flag = MAR_has_primorie
+	}
+}
+country_event = { #Technical stuff no loc
+	id = MAR_Japan.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.7"}
+	title = MAR_Japan.7.t
+	desc = MAR_Japan.7.d
+	picture = GFX_report_event_peace_deal
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = MAR_Japan.7.a
+		ai_chance = { factor = 1 }
+		MJP = {
+			annex_country = {
+				target = MAN
+				transfer_troops = yes
+			}
+			set_cosmetic_tag = MJP_JAP_autonomy
+			econ_join_sphere_JAP = yes
+			add_ideas = Sphere_Imp_Protectorate
+			add_ideas = MAN_Kwantung_Army
+		}
+		JAP = {
+			add_to_faction = MJP
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.33
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Technical stuff no loc
+	id = MAR_Japan.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.8"}
+	title = MAR_Japan.8.t
+	desc = MAR_Japan.8.d
+	picture = GFX_report_event_peace_deal
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = MAR_Japan.8.a
+		ai_chance = { factor = 1 }
+		HAN = {
+			annex_country = {
+				target = MAN
+				transfer_troops = no
+			}
+			create_country_leader = {
+				name = "Anarchy"
+				desc = "POLITICS_ANARCHY_DESC"
+				picture = "Portrait_ZZZ_Anarchy.dds"
+				expire = "3000.1.1"
+				ideology = socialist_subtype
+				traits = {
+				}
+			}
+			set_variable = { TNO_economy_type = 3 }
+			set_variable = { TNO_economy_subtype = 4 }
+			set_country_flag = TNO_eliminate_building_demand
+			set_country_flag = can_not_use_econ_system
+			set_country_flag = MAN_katastrophe
+			set_politics = {
+				ruling_party = socialist
+				last_election = "1961.1.20"
+				election_frequency = 48
+				elections_allowed = yes
+
+			}
+			set_popularities = {
+				socialist = 100
+			}
+			add_ideas = ZZZ_anarchy
+			set_cosmetic_tag = MAN_katastrophe
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.34
+				}
+			}
+		}
+	}
+}
+
+country_event = { #MANCHU CW STARTS GET UP GUYS
+	id = MAR_Japan.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.9"}
+	title = MAR_Japan.9.t
+	desc = MAR_Japan.9.d
+	picture = GFX_report_event_peace_deal
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = MAR_Japan.9.a
+		ai_chance = { factor = 1 }
+		TaS_fopo_add_manchurian_civil_war_tab = yes
+		USA = {
+			set_temp_variable = { Victory_ID = 50 }
+			set_temp_variable = { Victory_Outcome = 0 }
+			set_temp_variable = { Victory_Points = 0}
+			Cold_War_GUI_ManipulateVictory = yes
+		}
+		JAP = {
+			set_temp_variable = { Victory_ID = 50 }
+			set_temp_variable = { Victory_Outcome = 0 }
+			set_temp_variable = { Victory_Points = 0}
+			Cold_War_GUI_ManipulateVictory = yes
+		}
 	}
 }
 
@@ -1872,7 +2059,42 @@ country_event = { #Offer surrender
 	}
 }
 
+country_event = { #RIP SWEET TSAR
+	id = MAR_2WRW.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_2WRW.6"}
+	title = MAR_2WRW.6.t
+	desc = MAR_2WRW.6.d
+	picture = GFX_report_event_peace_deal
 
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #yes
+		name = MAR_2WRW.6.a
+			retire_character = MAR_Sergey_Belozerskiy
+			TNO_Country_Closing_Screen_Show = yes
+			set_country_flag = MAR_Good_Ending
+			add_country_leader_role = {
+				character = MAR_the_throne
+				promote_leader = yes
+					country_leader = {
+					desc = "POLITICS_THE_RUSSIAN_THRONE_DESC"
+					expire = "1999.1.1"
+					ideology = despotism_interim_government_subtype
+					traits = {
+						undecided_future
+					}
+				}
+			}
+			hidden_effect = {
+				every_country  = {
+					news_event = {
+						id = MAR_2WRW_world_news.40
+					}
+				}
+			}
+		}
+}
 ### ultimatums
 
 country_event = { #win
@@ -2652,7 +2874,7 @@ news_event = { #Manchurian Catastrophe
 		name = MAR_2WRW_world_news.34.a
 	}
 }
-news_event = { #Civil war in Manchuria
+news_event = { #Russian SMO in Menjiang
 	id = MAR_2WRW_world_news.35
 	title = MAR_2WRW_world_news.35.t
 	desc = MAR_2WRW_world_news.35.d
@@ -2705,6 +2927,18 @@ news_event = { #Civil war in Manchuria: Partisan Victory
 	title = MAR_2WRW_world_news.39.t
 	desc = MAR_2WRW_world_news.39.d
 	picture = GFX_MAR_2WRW_world_news_039
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_2WRW_world_news.39.a
+	}
+}
+news_event = { #Rip the Tsar
+	id = MAR_2WRW_world_news.40
+	title = MAR_2WRW_world_news.40.t
+	desc = MAR_2WRW_world_news.40.d
+	picture = GFX_MAR_2WRW_world_news_040
 	
 	is_triggered_only = yes
 	

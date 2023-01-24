@@ -227,8 +227,9 @@ MAR_debug_category = {
 				type = annex_everything
 			}
 			add_ideas = { MAR_oper_zero }
-			set_variable = { RUS_devastation_gain = 4 }
-			set_variable = { RUS.GER_devastation_gain = 2 }
+			set_variable = { RUS.WRW2_devastation_gain = 1.5 }
+			set_variable = { GER.WRW2_devastation_gain = 1 }
+			set_country_flag = RUS_2WRW_ongoing
 			set_global_flag = TaS_2WRW_started
 			GER = { add_ideas = { TaS_2WRW_north_sea_problems } }
 			hidden_effect = {

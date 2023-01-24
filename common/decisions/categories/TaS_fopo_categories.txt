@@ -1,20 +1,5 @@
-JAP_foreign_policy_fe_category = {
-	icon = GFX_JAP_decision_category_gaimusho
-
-	allowed = {
-		original_tag = JAP
-	}
-
-	visible = {
-		check_variable = { TNO_active_conflicts^num = 49 }
-	}
-	visible_when_empty = yes
-	scripted_gui = TNO_fopo_container
-	priority = 100010
-
-}
 MAR_foreign_policy_category = {
-	icon = GFX_JAP_decision_category_gaimusho
+	icon = GFX_MAR_MGB_decision_category 
 
 	allowed = {
 		original_tag = MAR

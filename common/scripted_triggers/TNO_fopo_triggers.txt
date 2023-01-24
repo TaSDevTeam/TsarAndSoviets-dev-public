@@ -371,6 +371,17 @@ TNO_fopo_far_eastern_revolt_selected = {
 		}
 	}
 }
+
+TNO_fopo_manchurian_civil_war_selected = {
+	OR = {
+		check_variable = { selected_conflict_id = 50 }
+		AND = {
+			is_in_array = { TNO_active_conflicts = 50 }
+			is_ai = yes
+		}
+	}
+}
+
 TNO_fopo_saw_withdrawal_selected_bormann = {
 	TNO_fopo_saw_withdrawal_selected = yes
 	has_global_flag = german_civil_war_bormannvic

@@ -34,24 +34,6 @@ TaS_WRW2_fate_and_coring_of_territories = {
 		base = 40
 	}
 }
-TaS_WRW2_second_manchu_cw = {
-	icon = GFX_decision_category_generic_political_actions
-	picture = GFX_MAR_WARPLAN_GAMMA_category
-	
-	allowed = {
-		tag = MAR
-	}
-	
-	visible = {
-		has_global_flag = TaS_MAN_second_cw
-	}
-	
-	visible_when_empty = yes
-	
-	priority = {
-		base = 40
-	}
-}
 TaS_WRW2_prepare_for_final_battle = {
 	icon = GFX_decision_category_generic_political_actions
 	picture = GFX_MAR_PREPARE_TO_WAR_category
@@ -71,18 +53,22 @@ TaS_WRW2_prepare_for_final_battle = {
 		base = 40
 	}
 }
+
 TaS_WRW2_the_final_battle = {
 	icon = GFX_decision_generic_ignite_civil_war
 	picture = GFX_MAR_FINAL_BATTLE_category
 	
 	allowed = {
-		tag = MAR
+		OR = {
+			tag = MAR
+			tag = GER
+		}
 	}
 	
 	visible = {
 		MAR = { has_war_with = GER }
 	}
-	
+	scripted_gui = war_overview 
 	visible_when_empty = yes
 	
 	priority = {

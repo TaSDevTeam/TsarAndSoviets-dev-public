@@ -26,21 +26,7 @@ characters = {
 			expire = "1999.1.1.1"
 			id = -1
 		}
-	}	
-	MAN_Kuan_Chung = {
-		name = "MAN_Kuan_Chung"
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/MAN/MAN_Kuan_Chung.dds"
-			}
-		}
-		country_leader = {
-			desc = "POLITICS_KUAN_CHUNG_DESC"
-			ideology = liberalism_national_liberal_subtype
-			expire = "1999.1.1.1"
-			id = -1
-		}
-	}	
+	}
 	SCC_Wang_Enmao = {
 		name = "SCC_Wang_Enmao"
 		portraits = {
@@ -51,6 +37,62 @@ characters = {
 		country_leader = {
 			desc = "POLITICS_WANG_ENMAO_DESC"
 			ideology = ultranationalism_subtype
+			expire = "1999.1.1.1"
+			id = -1
+		}
+	}	
+	MJP_Katakura_Tadashi = {
+		name = "MJP_Katakura_Tadashi"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/MAN/MJP_Katakura_Tadashi.dds"
+			}
+		}
+		country_leader = {
+			desc = "POLITICS_KATAKURA_TADASHI_DESC"
+			ideology = ultranationalism_reactionary_nationalism_subtype
+			expire = "1999.1.1.1"
+			id = -1
+		}
+	}
+	HAN_Pujie = {
+		name = "HAN_Pujie"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/MAN/HAN_Pujie.dds"
+			}
+		}
+		country_leader = {
+			desc = "POLITICS_PUJIE_DESC"
+			ideology = despotism_aristocratic_conservatism_subtype
+			expire = "1999.1.1.1"
+			id = -1
+		}
+	}
+	MAN_Kuan_Chung = {
+		name = "MAN_Kuan_Chung"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/MAN/MAN_Kuan_Chung.dds"
+			}
+		}
+		country_leader = {
+			desc = "POLITICS_KUAN_CHUNG_DESC"
+			ideology = paternalism_oligarchy_subtype
+			expire = "1999.1.1.1"
+			id = -1
+		}
+	}	
+	PFF_Kim_Il_Sung = {
+		name = "PFF_Kim_Il_Sung"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/MAN/PFF_Kim_Il_Sung.dds"
+			}
+		}
+		country_leader = {
+			desc = "POLITICS_KIM_IL_SUNG_DESC"
+			ideology = communist_autarkic_marxism_subtype
 			expire = "1999.1.1.1"
 			id = -1
 		}
