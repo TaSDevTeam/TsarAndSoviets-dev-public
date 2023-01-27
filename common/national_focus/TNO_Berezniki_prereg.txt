@@ -106,7 +106,7 @@ shared_focus = {
 	x = 2
 	y = 3
 	completion_reward = {
-		country_event = { id = berez_eco.4 days = 0 }
+		#country_event = { id = berez_eco.4 days = 0 }
 		custom_effect_tooltip = MAR_doings_aganist_peoples_tt
 		hidden_effect = {
 			country_event = { id = MAR_initial.21 days = 30 }
@@ -150,9 +150,9 @@ shared_focus = {
 		set_temp_variable = { pus_temp = 1 }
 		econ_pus_change = yes
 		tno_max_workhours_worsen = yes
-		hidden_effect = {
-				country_event = { id = berez_eco.12 days = 60 }
-		}
+		#hidden_effect = {
+		#		country_event = { id = berez_eco.12 days = 60 }
+		#}
     }
 }
 shared_focus = {
@@ -386,7 +386,7 @@ shared_focus = {
 			}
 		}
 		else = {
-			custom_effect_tooltip = MAR_path_differ_end_tt
+			custom_effect_tooltip = MAR_path_differ_kosyin_tt
 		}
 		country_event = { id = MAR_initial.38 days = 3 }
 	}

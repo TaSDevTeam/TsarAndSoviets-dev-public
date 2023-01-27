@@ -472,6 +472,10 @@ defined_text = {
         localization_key = paternalism_mladorossi_idea_subtype
     }
 	text = {
+		trigger = { has_country_leader_ideology = paternalism_authoritarian_developmentalism_subtype }
+		localization_key = paternalism_authoritarian_developmentalism_subtype
+	}
+	text = {
 		localization_key = paternalism
 	}
 }
@@ -664,6 +668,10 @@ defined_text = {
 defined_text = {
 	name = GetSubIdeologyLocNationalSocialism
 	text = {
+		trigger = { has_country_leader_ideology = national_socialism_ariocriollismo_subtype }
+		localization_key = national_socialism_ariocriollismo_subtype
+	}
+	text = {
 		trigger = { has_country_leader_ideology = national_socialism_idiosyncratic_nazism_subtype }
 		localization_key = national_socialism_idiosyncratic_nazism_subtype
 	}
@@ -674,10 +682,6 @@ defined_text = {
 	text = {
 		trigger = { has_country_leader_ideology = national_socialism_stratocratic_nazism_subtype }
 		localization_key = national_socialism_stratocratic_nazism_subtype
-	}
-	text = {
-		trigger = { has_country_leader_ideology = fascism_ordosocialism_subtype }
-		localization_key = fascism_ordosocialism_subtype
 	}
 	text = {
 		trigger = { has_country_leader_ideology = national_socialism_technocratic_nazism_subtype }

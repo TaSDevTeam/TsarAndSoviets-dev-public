@@ -2116,6 +2116,7 @@ TaS_WRW2_the_final_battle = {
 	TaS_WRW2_offer_total_capitulation = {
 		icon = GFX_decision_generic_military_parade
 		visible = {
+			check_variable = { WRW_deccat = 3 }
 		}
 		available = {
 			has_war = yes
@@ -2157,14 +2158,101 @@ TaS_WRW2_the_final_battle = {
 		fire_only_once = yes
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_show_war_plans"
+			#GER = { add_ideas = TaS_2WRW_sanctions }
+		
+		}
+		remove_effect = {
+			TaS_2WRW_spawn_volunteers = yes
+			add_ideas = TaS_2WRW_ofn_advisors
+		}
+	}
+	TaS_WRW2_form_the_internation_legion = {
+		icon = GFX_decision_SAF_ask_OFN_stationing
+		visible = {
+			is_russian_nation = yes
+			check_variable = { WRW_deccat = 3 }
+			NOT = { has_country_flag = legion_fully_formed }
+		}
+		available = {
+			has_war = yes
+		}
+		cost = 100
+		days_remove = 60
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_show_war_plans"
 			#GER = { add_ideas = { TaS_2WRW_sanctions } }
 			#add_ideas = { TaS_2WRW_ofn_advisors }
 		}
 		remove_effect = {
-			TaS_2WRW_spawn_volunteers = yes
+			random_list = {
+				25 = { #big legion
+					every_country = {
+						limit = { is_in_faction_with = USA }
+						set_temp_variable = { target = MAR }
+						TNO_increase_volunteer_cap_2 = yes
+					}
+					USA = {
+						set_temp_variable = { target = ROOT }
+						TNO_increase_volunteer_cap_4 = yes
+					}
+					GER = {
+						set_temp_variable = { temp_devastation_gained = 3 }
+						TaS_WRW2_change_devastation = yes
+					}
+					set_country_flag = legion_fully_formed
+				}
+				50 = { #small legion
+					custom_effect_tooltip = "Ty pochti proebalsya."
+					every_country = {
+						limit = { is_in_faction_with = USA }
+						set_temp_variable = { target = MAR }
+						TNO_increase_volunteer_cap_1 = yes
+					}
+					USA = {
+						set_temp_variable = { target = ROOT }
+						TNO_increase_volunteer_cap_3 = yes
+					}
+					GER = {
+						set_temp_variable = { temp_devastation_gained = 2 }
+						TaS_WRW2_change_devastation = yes
+					}
+					set_country_flag = legion_fully_formed
+				}
+				25 = {
+					custom_effect_tooltip = "Ty proebalsya."
+					set_temp_variable = { temp_devastation_gained = 2 }
+					TaS_WRW2_change_devastation = yes
+				}
+			}
 		}
 	}
 	
+	TaS_WRW2_ask_for_german_isolation = {
+		icon = GFX_decision_SAF_ask_OFN_stationing
+		visible = {
+			is_russian_nation = yes
+			check_variable = { WRW_deccat = 3 }
+		}
+		available = {
+			has_war = yes
+		}
+		cost = 100
+		days_remove = 28
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_show_war_plans"
+		}
+		remove_effect = {
+			random_list = {
+				75 = {
+					GER = { add_ideas = TaS_2WRW_sanctions }
+				}
+				25 = {
+				}
+			}
+		}
+	}
 	RUS_spread_anti_war_propaganda = {
 		priority = 60
 		icon = GFX_decision_generic_propaganda
@@ -2184,9 +2272,11 @@ TaS_WRW2_the_final_battle = {
 					}
 				}
 				33 = {
-					custom_effect_tooltip = "Our Operation Failing."
-					set_temp_variable = { temp_devastation_gained = -5 }
-					TaS_WRW2_change_devastation = yes
+					custom_effect_tooltip = "Ty proebalsya."
+					GER = {
+						set_temp_variable = { temp_devastation_gained = -5 }
+						TaS_WRW2_change_devastation = yes
+					}
 				}
 			}
 		}
