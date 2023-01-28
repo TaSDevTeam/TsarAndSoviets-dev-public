@@ -70,24 +70,6 @@ MAR_volunteer_category = {
 		base = 40
 	}
 }
-MAR_MGB_Category = {
-	icon = GFX_MAR_MGB_decision_category 
-	picture = GFX_MAR_MGB_category
-	
-	allowed = {
-		tag = MAR
-	}
-	visible_when_empty = yes
-	
-	visible = {
-		NOT = {
-			has_country_flag = MAR_ended_fighting_Vyatka
-		}
-	}
-	priority = {
-		base = 40
-	}
-}
 
 MAR_MGB_Okhranka_category = {
 	icon = GFX_MAR_MGB_decision_category 
