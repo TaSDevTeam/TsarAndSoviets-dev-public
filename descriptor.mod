@@ -6,8 +6,8 @@ tags={
 	"Alternative History"
 }
 dependencies={
-	"The New Order: The Last Days Of Russia"
 	"The New Order: Last Days of Europe"
+	"The New Order: The Last Days Of Russia"
 }
 name="Tsar and Soviets: TNO Berezniki Submod"
 supported_version="1.12.*"

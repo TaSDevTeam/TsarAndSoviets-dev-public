@@ -678,7 +678,7 @@ country_event = {#Funny Warhammer reference, laugh immediatly
 	title = berez_belozerski.43.t
 	desc = berez_belozerski.43.d
 	is_triggered_only = yes
-	picture = GFX_report_event_Novii_ruskii_soldat
+	picture = GFX_event_berez_belozerski_43
 
 	option = {
 		name = berez_belozerski.43.a
@@ -701,10 +701,10 @@ country_event = {#Here Comes The Guards
 	title = berez_belozerski.44.t
 	desc = berez_belozerski.44.d
 	is_triggered_only = yes
-	picture = GFX_report_event_Novii_ruskii_soldat
+	picture = GFX_event_berez_belozerski_44
 
 	option = {
-		name = berez_belozerski.43.a
+		name = berez_belozerski.44.a
 		add_to_variable = {
 			var = MAR_ord_army_org_factor
 			value = 0.05

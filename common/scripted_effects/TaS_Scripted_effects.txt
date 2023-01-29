@@ -129,11 +129,11 @@ MAR_Okhranka_recount = {
 }
 
 MAR_decision_cost_recount = { 
-	set_variable = { MAR_decision_cost_one = 10 }
-	set_variable = { MAR_decision_cost_two = 20 }
-	set_variable = { MAR_decision_cost_three = 30 }
+	set_variable = { MAR_decision_cost_one = 5 }
+	set_variable = { MAR_decision_cost_two = 10 }
+	set_variable = { MAR_decision_cost_three = 15 }
 	set_temp_variable = { MAR_decision_cost_uppercost = MAR_Okhranka_connections }
-	divide_temp_variable = { MAR_decision_cost_uppercost = 2 }
+	divide_temp_variable = { MAR_decision_cost_uppercost = 2.5 }
 	add_to_variable = { MAR_decision_cost_one = MAR_decision_cost_uppercost }
 	add_to_variable = { MAR_decision_cost_two = MAR_decision_cost_uppercost }
 	add_to_variable = { MAR_decision_cost_three = MAR_decision_cost_uppercost }
@@ -169,12 +169,7 @@ MAR_Solzh_Vyatka_takeover = {
 	load_focus_tree = MAR_Solzh_tree
 	hidden_effect = {
 		remove_all_ministers = yes
-		add_ideas = {
-			AM_Empty_hog
-			AM_Empty_for
-			AM_Empty_eco
-			AM_Empty_sec
-		}
+		fill_empty_minister_nochecks = yes 
 	}
 }
 

@@ -1,4 +1,4 @@
-#####################
+ #####################
 ### Starting Tree ###
 #####################
 
@@ -422,7 +422,7 @@ shared_focus = {
 shared_focus = {
 	id = MAR_the_star_general
 	icon = GFX_MAR_Beloozero_Rurika
-	cost = 4
+	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1
@@ -440,7 +440,7 @@ shared_focus = {
 shared_focus = {
 	id = MAR_and_his_blue_blood
 	icon = GFX_MAR_Belooz_blue_blood
-	cost = 4
+	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1
@@ -458,7 +458,7 @@ shared_focus = {
 shared_focus = {
 	id = MAR_fathers_sins
 	icon = GFX_MAR_Tsarist_Doch
-	cost = 4
+	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1
@@ -480,7 +480,7 @@ shared_focus = {
 shared_focus = {
 	id = MAR_children_can_redempt
 	icon = GFX_MAR_Maria_can_redempt
-	cost = 4
+	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1
@@ -498,7 +498,7 @@ shared_focus = {
 shared_focus = {
 	id = MAR_wiseness_of_kosygin
 	icon = GFX_MAR_Kosygin_tsar
-	cost = 4
+	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1
@@ -537,7 +537,7 @@ shared_focus = {
 shared_focus = {
 	id = MAR_and_gossips_around_him
 	icon = GFX_MAR_Weird_Novost
-	cost = 4
+	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1
@@ -555,7 +555,7 @@ shared_focus = {
 shared_focus = {
 	id = MAR_call_the_council
 	icon = GFX_MAR_Stranni_Razgovor
-	cost = 4
+	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1
@@ -591,9 +591,9 @@ shared_focus = {
 	y = 7
 	completion_reward = {
 		country_event = { id = MAR_initial.19 days = 2 }
-		set_temp_variable = { temp_connections_gained = -7 }
+		set_temp_variable = { temp_connections_gained = -12 }
 		MAR_Okhranka_connections_change = yes
-		set_temp_variable = { temp_agents_gained = -70 }
+		set_temp_variable = { temp_agents_gained = -120 }
 		MAR_Okhranka_agents_change = yes
 		add_popularity = {
 			ideology = paternalism
@@ -869,7 +869,7 @@ shared_focus = {
 shared_focus = {
 	id = MAR_arest_vyatkatard_instructors
 	icon = GFX_MAR_arrest_vyt_intructors
-	cost = 4
+	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1

@@ -784,7 +784,7 @@ MAR_MGB_Okhranka_category = {
 		activation = { has_country_flag = MAR_MGB_available }
 		available = { hidden_trigger = { always = no } }
 		is_good = no
-		days_mission_timeout = 28
+		days_mission_timeout = 42
 		timeout_effect = {
 			log = "[GetDateText]: [Root.GetName]: Mission Timeout MAR_MGB_Mission_monthly_agents_rotation"
 			custom_effect_tooltip = MAR_rotation_random_tt
@@ -793,8 +793,8 @@ MAR_MGB_Okhranka_category = {
 				randomize_temp_variable = {
 					var = temp_connections_gained
 					distribution = uniform
-					min = 3
-					max = 7
+					min = 2
+					max = 6
 				}
 				round_temp_variable = temp_connections_gained
 				MAR_Okhranka_connections_change = yes
@@ -802,8 +802,8 @@ MAR_MGB_Okhranka_category = {
 				randomize_temp_variable = {
 					var = temp_agents_gained
 					distribution = uniform
-					min = 30
-					max = 70
+					min = 20
+					max = 60
 				}
 				round_temp_variable = temp_agents_gained
 				MAR_Okhranka_agents_change = yes

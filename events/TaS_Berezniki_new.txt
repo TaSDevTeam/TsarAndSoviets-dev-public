@@ -162,7 +162,7 @@ country_event = { #straha net traha tozhe
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_initial.8" }
 	title = MAR_initial.8.t
 	desc = MAR_initial.8.d	
-	picture = GFX_event_voina_3
+	picture = GFX_report_event_Voina_3
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -214,7 +214,7 @@ country_event = { #three plans
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_initial.11" }
 	title = MAR_initial.11.t
 	desc = MAR_initial.11.d
-	picture = GFX_event_voina_12 
+	picture = GFX_report_event_voina_12 
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -356,16 +356,21 @@ country_event = { #fate of russia
 	
 	option = { #kosygin
 		name = MAR_initial.18.a
+		add_political_power = 50
+		add_stability = 0.03
 		ai_chance = { factor = 1 }
 		
 	}
 	option = { #romanova
 		name = MAR_initial.18.b
+		add_political_power = 75
 		ai_chance = { factor = 1 }
 		
 	}
 	option = { #belozersky
 		name = MAR_initial.18.c
+		add_political_power = 50
+		add_war_support = 0.03
 		ai_chance = { factor = 1 }
 		
 	}
@@ -393,7 +398,7 @@ country_event = { #s miru po nitke
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_initial.20" }
 	title = MAR_initial.20.t
 	desc = MAR_initial.20.d
-	picture = GFX_event_voina_26
+	picture = GFX_event_MAR_Initial_20 
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -636,7 +641,7 @@ country_event = { #the test
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_initial.30" }
 	title = MAR_initial.30.t
 	desc = MAR_initial.30.d
-	#picture = 
+	picture = GFX_event_MAR_Initial_30
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -723,7 +728,7 @@ country_event = { #incident
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_initial.35" }
 	title = MAR_initial.35.t
 	desc = MAR_initial.35.d
-	picture = GFX_GNG_generic_factory_2
+	picture = GFX_report_event_GNG_generic_factory_2
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -776,7 +781,7 @@ country_event = { #retrospective
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_initial.38" }
 	title = MAR_initial.38.t
 	desc = MAR_initial.38.d
-	picture = GFX_repor_event_CAU_factory
+	picture = GFX_report_event_CAU_factory
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -1392,7 +1397,7 @@ country_event = { #das lettre
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_postbomb.9" }
 	title = MAR_postbomb.9.t
 	desc = MAR_postbomb.9.d
-	picture = GFX_USA_letter_burnt
+	picture = GFX_report_event_USA_letter_burnt
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -1479,7 +1484,7 @@ country_event = { #SudibaGainov
 			var = MAR_ord_recruitable_population_factor
 			value = 0
 		}
-		add_dynamic_modifier = {modifier = MAR_military_order_modifier}
+		add_dynamic_modifier = { modifier = MAR_military_order_modifier }
 		set_country_flag = MAR_order_decisions_available
 		custom_effect_tooltip = MAR_gayny_mechanic_tt
 	}
@@ -1491,7 +1496,7 @@ country_event = { # MAR manifesto
 	title = MAR_smuta.3.t
 	desc = MAR_smuta.3.d
 	fire_only_once = yes
-	picture = GFX_report_event_Voina_38
+	picture = GFX_event_MAR_smuta_3
 	is_triggered_only = yes
 
 	option = {
@@ -1506,7 +1511,7 @@ country_event = { # MAR russian spirit
 	title = MAR_smuta.4.t
 	desc = MAR_smuta.4.d
 	fire_only_once = yes
-	picture = GFX_report_event_Voina_38
+	picture = GFX_event_MAR_smuta_4
 	is_triggered_only = yes
 
 	option = {
@@ -1521,7 +1526,7 @@ country_event = { # MAR talk with cia
 	title = MAR_smuta.5.t
 	desc = MAR_smuta.5.d
 	fire_only_once = yes
-	picture = GFX_report_event_Voina_38
+	picture = GFX_event_MAR_smuta_5
 	is_triggered_only = yes
 
 	option = {
@@ -1568,14 +1573,17 @@ country_event = { # MAR_Mladorosskay_mechta
 	title = MAR_smuta.9.t
 	desc = MAR_smuta.9.d
 	fire_only_once = yes
-	picture = GFX_report_event_Voina_40
+	picture = GFX_event_MAR_smuta_9
 	is_triggered_only = yes
 
 	option = {
 		name = MAR_smuta.9.a
 		ai_chance = { factor = 1 }
 		add_stability = 0.05
-		load_focus_tree = MAR_Belozerski_tree
+		if = {
+			limit = { has_government = despotism }
+			load_focus_tree = MAR_Belozerski_tree
+		}
 	}
 }
 
