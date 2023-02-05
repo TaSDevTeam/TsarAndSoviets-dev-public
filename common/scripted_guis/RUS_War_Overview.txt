@@ -20,13 +20,13 @@ scripted_gui = {
 				frame = GER.WRW2_devastation
 			}
 			exhaustion_main_bar_russia = {
-				frame = RUS.WRW2_devastation
+				frame = MAR.WRW2_devastation
 			}
 		}
 		
 		triggers = {
 			exhaustion_main_bar_russia_visible = {
-				check_variable = { RUS.WRW2_devastation > 0.9 }
+				check_variable = { MAR.WRW2_devastation > 0.9 }
 			}
 			exhaustion_main_bar_germany_visible = {
 				check_variable = { GER.WRW2_devastation > 0.9 }

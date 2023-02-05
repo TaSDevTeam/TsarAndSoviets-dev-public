@@ -51,7 +51,7 @@ characters = {
 				small = "GFX_idea_MAR_minister_Sergey_Belozersky"
 			}
 			army = {
-				large = "gfx/leaders/MAR/Portrait_Sergey_Belozerski.dds"
+				large = "gfx/leaders/MAR/Portrait_Sergey_General_Belozerski.dds"
 			}
 		}
 		advisor = {
@@ -69,7 +69,7 @@ characters = {
 			cost = -1
 			removal_cost = -1
 		}
-		corps_commander = {
+		field_marshal = {
 			skill = 3
 			attack_skill = 3
 			defense_skill = 2
@@ -348,6 +348,18 @@ characters = {
 			defense_skill = 2
 			planning_skill = 1
 			logistics_skill = 1
+		}
+	}
+	MAR_Semen_Gitler = {
+		name = "MAR_Semen_Gitler"
+		portraits = {
+			army = { large = "gfx/leaders/MAR/Portrait_Berezniki_Semen_Gitler.dds" } 
+		}
+	}
+	MAR_Timur_Frunze = {
+		name = "MAR_Timur_Frunze"
+		portraits = {
+			army = { large = "gfx/leaders/MAR/Portrait_Berezniki_Timur_Frunze.dds" } 
 		}
 	}
 	MAR_Wojciech_Jaruzelski = {

@@ -354,23 +354,9 @@ country_event = { #fate of russia
 	is_triggered_only = yes
 	fire_only_once = yes
 	
-	option = { #kosygin
+	option = { #idk
 		name = MAR_initial.18.a
 		add_political_power = 50
-		add_stability = 0.03
-		ai_chance = { factor = 1 }
-		
-	}
-	option = { #romanova
-		name = MAR_initial.18.b
-		add_political_power = 75
-		ai_chance = { factor = 1 }
-		
-	}
-	option = { #belozersky
-		name = MAR_initial.18.c
-		add_political_power = 50
-		add_war_support = 0.03
 		ai_chance = { factor = 1 }
 		
 	}
@@ -800,6 +786,11 @@ country_event = { #retrospective
 				level = 1
 				instant_build = yes
 			}
+			add_building_construction = {
+				type = air_base
+				level = 1
+				instant_build = yes
+			}
 			set_state_category = town
 		}
 		add_victory_points = {
@@ -1006,6 +997,16 @@ country_event = { #tsarskiy politruk
 		name = MAR_initial.47.a
 		ai_chance = { factor = 1 }
 		add_ideas = { MAR_komissars_in_army }
+		MAR_Timur_Frunze = {
+			add_corps_commander_role = {
+				traits = { infantry_officer }
+				skill = 1
+				attack_skill = 1
+				defense_skill = 2
+				planning_skill = 2
+				logistics_skill = 1
+			}
+		}
 	}
 }
 
@@ -1143,6 +1144,16 @@ country_event = { #new armee
 		swap_ideas = {
 			add_idea = MAR_renewed_army
 			remove_idea = MAR_oldfashion_army_2
+		}
+		MAR_Semen_Gitler = {
+			add_corps_commander_role = {
+				traits = { trait_engineer }
+				skill = 1
+				attack_skill = 1
+				defense_skill = 2
+				planning_skill = 2
+				logistics_skill = 1
+			}
 		}
 	}
 }

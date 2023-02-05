@@ -321,13 +321,35 @@ MAR_Iraq_Kurdistan_saddam = {
 	}
 	set_global_flag = KUR_Iraq_fixed
 }
-MAR_Turkestan_govern = {
+MAR_install_mil_turkestan = {
 	XYZ = {
-		UZB_Alexander_Rutskoj = {
-			set_nationality = UZB
+		MTR_Military_Administration = {
+			set_nationality = MTR
 		}
 	}
-	UZB = {
+	MTR = {
+		TaS_2WRW_set_zone_laws = yes
+		set_politics = {
+			ruling_party = despotism
+			last_election = "1933.2.16"
+			election_frequency = 36
+			elections_allowed = no
+		}
+		set_party_name = { 
+			ideology = despotism 
+			long_name = Post_WRW2_Russian_Army_party
+			name = Post_WRW2_Russian_Army_party
+		}
+		set_popularities = {
+			despotism = 53
+			liberalism = 18
+			socialist = 12
+			communist = 5
+			paternalism = 12
+		}
+		MTR_Military_Administration = {
+			promote_character = yes
+		}
 		add_state_core = 750
 		transfer_state = 750
 		add_state_core = 585
@@ -349,6 +371,16 @@ MAR_Turkestan_govern = {
 		add_state_core = 584
 		transfer_state = 584
 		set_capital = { state = 1467 }
+	}
+}
+MAR_Turkestan_govern = {
+	XYZ = {
+		UZB_Alexander_Rutskoj = {
+			set_nationality = MTR
+		}
+	}
+	MTR = {
+		remove_ideas = { MAR_military_administration }
 		set_cosmetic_tag = UZB_MAR_govern
 		set_politics = {
 			ruling_party = despotism
@@ -362,6 +394,7 @@ MAR_Turkestan_govern = {
 			remove_core_of = KYR
 			remove_core_of = TAJ
 			remove_core_of = UTL
+			remove_core_of = UZB
 		}		 
 		add_country_leader_role = {
 				character = UZB_Alexander_Rutskoj
@@ -382,9 +415,9 @@ MAR_Turkestan_govern = {
 		econ_join_sphere_MAR = yes
 		MAR = {
 			set_country_flag = MAR_has_turkestan
-			UZB = { save_party_popularities = yes }
+			MTR = { save_party_popularities = yes }
 			set_autonomy = {
-				target = UZB
+				target = MTR
 				autonomy_state = autonomy_military_government
 			}
 		}
@@ -395,10 +428,6 @@ MAR_Turkestan_govern = {
 			communist = 5
 			paternalism = 12
 		}
-		remove_ideas = {
-			UZB_Jadid
-			UZB_Rise_of_Discontent
-		}
 		add_ideas = {
 			MAR_UZB_coloniallike_govt 
 			MAR_UZB_national_conflicts
@@ -408,31 +437,11 @@ MAR_Turkestan_govern = {
 MAR_Turkestan_autonomy = {
 	XYZ = {
 		UZB_Nuritdin_Mukhitdinov = {
-			set_nationality = UZB
+			set_nationality = MTR
 		}
 	}
-	UZB = {
-		add_state_core = 750
-		transfer_state = 750
-		add_state_core = 585
-		transfer_state = 585
-		add_state_core = 405
-		transfer_state = 405
-		add_state_core = 1466
-		transfer_state = 1466
-		add_state_core = 1467
-		transfer_state = 1467
-		add_state_core = 586
-		transfer_state = 586
-		add_state_core = 732
-		transfer_state = 732
-		add_state_core = 742
-		transfer_state = 742
-		add_state_core = 1468
-		transfer_state = 1468
-		add_state_core = 584
-		transfer_state = 584
-		set_capital = { state = 1467 }
+	MTR = {
+		remove_ideas = { MAR_military_administration }
 		set_cosmetic_tag = UZB_MAR_autonomy
 		set_politics = {
 			ruling_party = progressivism
@@ -446,6 +455,7 @@ MAR_Turkestan_autonomy = {
 			remove_core_of = KYR
 			remove_core_of = TAJ
 			remove_core_of = UTL
+			remove_core_of = UZB
 		}		 
 		add_country_leader_role = {
 				character = UZB_Nuritdin_Mukhitdinov
@@ -474,10 +484,6 @@ MAR_Turkestan_autonomy = {
 			communist = 6
 			paternalism = 11
 			progressivism = 26
-		}
-		remove_ideas = {
-			UZB_Jadid
-			UZB_Rise_of_Discontent
 		}
 		add_ideas = {
 			#MAR_UZB_coloniallike_govt 

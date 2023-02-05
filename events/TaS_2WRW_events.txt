@@ -77,7 +77,7 @@ country_event = { #Novgorod Theatry
 		name = MAR_Collapse.1941.b
 		trigger = {
 			NOT = {
-				surrender_progress > 0.2
+				surrender_progress > 0.3
 			}
 		}
 
@@ -343,10 +343,10 @@ country_event = { #Turkestan breaks free
 				set_portraits = {
 					civilian = { large = "gfx/leaders/UZB/Portrait_Uzbekistan_Alexander_Rutskoy_ALT.dds" }
 				}
-				set_nationality = UZB
+				set_nationality = MTR
 			} 
 		}
-		UZB = {
+		MTR = {
 			end_puppet = MAR
 			econ_leave_sphere = yes
 			set_politics = {
@@ -366,6 +366,7 @@ country_event = { #Turkestan breaks free
 									
 						}
 			}
+			add_ideas = TaS_RUS_shattered_ambitions
 		}
 	}	
 }
@@ -412,6 +413,7 @@ country_event = { #-kazakhstan
 			add_state_core = 652
 			transfer_state = 652
 			remove_ideas = PAV_idealistic_revolutionaries 
+			add_ideas = TaS_RUS_shattered_ambitions
 			set_politics = {
 						ruling_party = paternalism
 						last_election = "1933.2.16"
@@ -467,9 +469,10 @@ country_event = { #-kazakhstan
 				ideology = paternalism
 				long_name = NPL_MAR_collapse_party_long
 				name = NPL_MAR_collapse_party
-			}			
+			}
+			add_ideas = TaS_RUS_shattered_ambitions			
 		}
-		UZB = {
+		MTR = {
 			declare_war_on = {
 				target = PAV
 				type = annex_everything
@@ -626,10 +629,10 @@ country_event = { #F tuva and zeya
 			 transfer_state = 814
 			 transfer_state = 329
 			 }
-			 MAN = {
-			 transfer_state = 1364
-			 transfer_state = 657
-			 }
+			 #MAN = {
+			 #transfer_state = 1364
+			 #transfer_state = 657
+			 #}
 		}
 		hidden_effect = {
 			country_event ={
@@ -1085,6 +1088,10 @@ country_event = { #Total f
 				set_nationality = TAR
 			}
 		}
+		every_country = {
+			limit = { is_russian_nation = yes }
+			add_ideas = TaS_RUS_shattered_ambitions
+		}
 		KOM = {
 			set_country_flag = RUS_cancel_all_ideas
 			set_cosmetic_tag = KOM_MAR_collapse
@@ -1236,17 +1243,14 @@ country_event = { #conditional surrender
 			RUS = {
 				white_peace = AFG
 			}
-			UZB = {
-				transfer_state = 1471
-				add_state_core = 1471
-				transfer_state = 1470
-				add_state_core = 1470
+			MTR = {
+				transfer_state = 1885
 				transfer_state = 1465
-				add_state_core = 1465
 			}
 			AFG = {
+					1470 = { set_demilitarized_zone = yes }
+					1884 = { set_demilitarized_zone = yes }
 					1469 = { set_demilitarized_zone = yes }
-					267 = {	set_demilitarized_zone = yes }
 			}
 			hidden_effect = {
 				every_country  = {
@@ -1275,15 +1279,11 @@ country_event = { #unconditional surrender
 			RUS = {
 				white_peace = AFG
 			}
-			UZB = {
-				transfer_state = 1471
-				add_state_core = 1471
+			MTR = {
+				transfer_state = 1468
+				transfer_state = 1885
 				transfer_state = 1470
-				add_state_core = 1470
-				transfer_state = 1465
-				add_state_core = 1465
-				transfer_state = 1469
-				add_state_core = 1469
+				transfer_state = 1471
 			}
 			AFG = {
 				econ_join_sphere_MAR = yes
@@ -1330,14 +1330,32 @@ country_event = { #Technical stuff no loc
 			set_cosmetic_tag = MJP_Second_CW
 			transfer_state = 810
 			add_state_core = 810
+			set_politics = {
+				ruling_party = national_socialism
+				last_election = "1933.2.16"
+				election_frequency = 36
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = national_socialism
+				popularity = 0.33
+			}
 			MJP_Katakura_Tadashi = {
 				promote_character = yes
+			}
+			set_party_name = { 
+				ideology = national_socialism
+				long_name = MJP_national_socialism_party_long
+				name = MJP_national_socialism_party
 			}
 		}
 		MAN = {
 			set_capital = { state = 328 }
 			remove_ideas = MAN_Kwantung_Army
+			retire_character = MAN_katakura_tadashi 
+			
 		}
+		
 		country_event = {
 			id = MAR_Japan.2 days = 17
 		}
@@ -1370,6 +1388,11 @@ country_event = { #Technical stuff no loc
 			add_popularity = {
 				ideology = paternalism
 				popularity = 0.33
+			}
+			set_party_name = { 
+				ideology = paternalism
+				long_name = MAN_cw_paternalism_party_long
+				name = MAN_cw_paternalism_party
 			}
 			promote_character = MAN_Kuan_Chung	
 		}
@@ -1407,6 +1430,11 @@ country_event = { #Technical stuff no loc
 			HAN_Pujie = {
 				promote_character = yes
 			}
+			set_party_name = { 
+				ideology = despotism
+				long_name = HAN_despotism_party_long
+				name = HAN_despotism_party
+			}
 		}
 		PFF = {
 			set_cosmetic_tag = PFF_Second_CW
@@ -1425,6 +1453,11 @@ country_event = { #Technical stuff no loc
 			PFF_Kim_Il_Sung = {
 				promote_character = yes
 			}
+			set_party_name = { 
+					ideology = communist
+					long_name = PFF_communist_party_long
+					name = PFF_communist_party
+				}
 		}
 		country_event = {
 			id = MAR_Japan.4 days = 11
@@ -1440,7 +1473,7 @@ country_event = { #Technical stuff no loc
 	is_triggered_only = yes
 	fire_only_once = yes
 	
-	option = {
+	option = {	
 		name = MAR_Japan.4.a
 		ai_chance = { factor = 1 }
 		MAN = {
@@ -1449,6 +1482,72 @@ country_event = { #Technical stuff no loc
 			econ_leave_sphere = yes
 			remove_ideas = Sphere_Fully_Dependent
 			remove_ideas = MAN_Chained_To_Rising_Sun
+		}
+		MAN = {
+			delete_unit = {
+				state = 1643
+				disband = no
+			}
+			delete_unit = {
+				state = 715
+				disband = no
+			}
+			delete_unit = {
+				state = 714
+				disband = no
+			}
+			delete_unit = {
+				state = 1638
+				disband = no
+			}
+			delete_unit = {
+				state = 1639
+				disband = no
+			}
+			delete_unit = {
+				state = 1637
+				disband = no
+			}
+			delete_unit = {
+				state = 717
+				disband = no
+			}
+			delete_unit = {
+				state = 801
+				disband = no
+			}
+			delete_unit = {
+				state = 328
+				disband = no
+			}
+			delete_unit = {
+				state = 1642
+				disband = no
+			}
+			delete_unit = {
+				state = 1641
+				disband = no
+			}
+			delete_unit = {
+				state = 1640
+				disband = no
+			}
+			delete_unit = {
+				state = 610
+				disband = no
+			}
+			delete_unit = {
+				state = 1265
+				disband = no
+			}
+			delete_unit = {
+				state = 716
+				disband = no
+			}
+			delete_unit = {
+				state = 1636
+				disband = no
+			}
 		}
 		every_state = {
 				limit = {
@@ -1482,6 +1581,7 @@ country_event = { #Technical stuff no loc
 			add_state_core = 1638
 			transfer_state = 1637
 			add_state_core = 1637
+			load_oob = HAN_second_cw
 		}
 		MJP = {
 			transfer_state = 1265
@@ -1490,10 +1590,12 @@ country_event = { #Technical stuff no loc
 			add_state_core = 716
 			transfer_state = 1636
 			add_state_core = 1636
+			load_oob = MJP_second_cw
 		}
 		PFF = {
 			transfer_state = 715
 			add_state_core = 715
+			load_oob = PFF_second_cw
 		}
 		HAN = {
 			declare_war_on = {
@@ -1536,6 +1638,7 @@ country_event = { #Technical stuff no loc
 				target = MJP
 				type = annex_everything
 			}
+			load_oob = MAN_second_cw
 		}
 		CHI = { end_puppet = MEN }
 		MEN = { leave_faction = yes }
@@ -1684,12 +1787,14 @@ country_event = { #MANCHU CW STARTS GET UP GUYS
 			set_temp_variable = { Victory_Outcome = 0 }
 			set_temp_variable = { Victory_Points = 0}
 			Cold_War_GUI_ManipulateVictory = yes
+			TaS_fopo_add_manchurian_civil_war_tab = yes
 		}
 		JAP = {
 			set_temp_variable = { Victory_ID = 50 }
 			set_temp_variable = { Victory_Outcome = 0 }
 			set_temp_variable = { Victory_Points = 0}
 			Cold_War_GUI_ManipulateVictory = yes
+			TaS_fopo_add_manchurian_civil_war_tab = yes
 		}
 	}
 }
@@ -1812,7 +1917,7 @@ country_event = { #Battle of Khabarovsk: lose
 	id = MAR_Japan.15
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.14"}
 	title = MAR_Japan.15.t
-	desc = MAR_Japan.14.d
+	desc = MAR_Japan.15.d
 	picture = GFX_report_event_peace_deal
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -1842,8 +1947,12 @@ country_event = { #Offer status quo
 
 	option = { #yes
 		name = MAR_2WRW.1.a
-			RUS = {
+			MAR = {
 				white_peace = GER
+			}
+			every_country = {
+				limit = { in_faction_with = GER }
+				white_peace = MAR
 			}
 			hidden_effect = {
 				every_country  = {
@@ -1869,10 +1978,14 @@ country_event = { #Offer muscowy
 
 	option = { #yes
 		name = MAR_2WRW.2.a
-			RUS = {
+			MAR = {
 				white_peace = GER
 			}
-			RUS = {
+			every_country = {
+				limit = { in_faction_with = GER }
+				white_peace = MAR
+			}
+			MAR = {
 				annex_country = {
 					target = MCW
 					transfer_troops = no
@@ -1881,8 +1994,15 @@ country_event = { #Offer muscowy
 					limit = {
 						is_core_of = MCW
 					}
-					add_core_of = RUS
+					#add_core_of = RUS
 					hidden_effect = { remove_core_of = MCW }
+				}
+			}
+			hidden_effect = {
+				every_country  = {
+					news_event = {
+						id = MAR_2WRW_world_news.9
+					}
 				}
 			}			
 		}
@@ -1902,10 +2022,14 @@ country_event = { #Offer muscowy and caucasus
 
 	option = { #yes
 		name = MAR_2WRW.3.a
-			RUS = {
+			MAR = {
 				white_peace = GER
 			}
-			RUS = {
+			every_country = {
+				limit = { in_faction_with = GER }
+				white_peace = MAR
+			}
+			MAR = {
 				annex_country = {
 					target = MCW
 					transfer_troops = no
@@ -1918,14 +2042,14 @@ country_event = { #Offer muscowy and caucasus
 					limit = {
 						is_core_of = MCW
 					}
-					add_core_of = RUS
+					#add_core_of = RUS
 					hidden_effect = { remove_core_of = MCW }
 				}
 				every_state = {
 					limit = {
 						is_core_of = CAU
 					}
-					add_core_of = RUS
+					#add_core_of = RUS
 					hidden_effect = { remove_core_of = CAU }
 				}
 			}
@@ -1935,6 +2059,7 @@ country_event = { #Offer muscowy and caucasus
 						id = MAR_2WRW_world_news.9
 					}
 				}
+				TaS_2WRW_form_ost_zones = yes
 			}			
 		}
 	option = { #nope lol
@@ -1953,10 +2078,15 @@ country_event = { #Offer muscowy and caucasus and belarus and half of ukraine
 
 	option = { #yes
 		name = MAR_2WRW.4.a
-			RUS = {
+			MAR = {
 				white_peace = GER
 			}
-			RUS = {
+			every_country = {
+				limit = { in_faction_with = GER }
+				white_peace = MAR
+			}
+			
+			MAR = {
 				annex_country = {
 					target = MCW
 					transfer_troops = no
@@ -1969,14 +2099,14 @@ country_event = { #Offer muscowy and caucasus and belarus and half of ukraine
 					limit = {
 						is_core_of = MCW
 					}
-					add_core_of = RUS
+					#add_core_of = RUS
 					hidden_effect = { remove_core_of = MCW }
 				}
 				every_state = {
 					limit = {
 						is_core_of = CAU
 					}
-					add_core_of = RUS
+					#add_core_of = RUS
 					hidden_effect = { remove_core_of = CAU }
 				}
 				transfer_state = 218 
@@ -2007,14 +2137,14 @@ country_event = { #Offer muscowy and caucasus and belarus and half of ukraine
 					limit = {
 						is_core_of = UKR
 					}
-					add_core_of = RUS
+					#add_core_of = RUS
 					hidden_effect = { remove_core_of = UKR }
 				}
 				every_owned_state = {
 					limit = {
 						is_core_of = OST
 					}
-					add_core_of = RUS
+					#add_core_of = RUS
 					hidden_effect = { remove_core_of = OST }
 				}
 			}
@@ -2024,6 +2154,7 @@ country_event = { #Offer muscowy and caucasus and belarus and half of ukraine
 						id = MAR_2WRW_world_news.9
 					}
 				}
+				TaS_2WRW_form_ost_zones = yes
 			}			
 		}
 	option = { #nope lol
@@ -2042,10 +2173,15 @@ country_event = { #Offer surrender
 
 	option = { #yes
 		name = MAR_2WRW.5.a
-			RUS = {
+			MAR = {
 				white_peace = GER
 			}
+			every_country = {
+				limit = { in_faction_with = GER }
+				white_peace = MAR
+			}
 			TaS_WRW2_total_capitulation = yes
+			TaS_2WRW_form_ost_zones = yes
 			hidden_effect = {
 				every_country  = {
 					news_event = {
@@ -2097,89 +2233,47 @@ country_event = { #RIP SWEET TSAR
 }
 ### ultimatums
 
-country_event = { #win
+country_event = { #fin 1
 	id = MAR_ultimatums.1
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.1"}
 	title = MAR_ultimatums.1.t
-	desc = MAR_ultimatums.1.d
+	desc = MAR_ultimatums.1.desc
 	picture = GFX_report_event_peace_deal
 
 	is_triggered_only = yes
 
-	option = { #nice
+	option = { #kys lol
 		name = MAR_ultimatums.1.a 
-			if = {
-				limit = {
-					original_tag = FIN
-					MAR = {
-						owns_state = 1359
-					}
-				}
-				MAR = {
-					transfer_state = 146 
-					transfer_state = 147
-					transfer_state = 722
-				}
-				FIN = {
-					econ_join_sphere_MAR = yes
-				}
-			}
-			if = {
-				limit = { original_tag = ROM }
-				MAR = {
-					transfer_state = 198
-					transfer_state = 192
-					transfer_state = 1285
-				}
-				ROM = {
-					econ_join_sphere_MAR = yes
-				}
-			}
-			if = {
-				limit = { original_tag = TUR }
-				MAR = {
-					transfer_state = 783
-					transfer_state = 1565
-					transfer_state = 230
-					transfer_state = 1568
-					transfer_state = 1567
-				}
-				TUR = {
-					econ_join_sphere_MAR = yes
-				}
-			}
-			if = {
-				limit = {
-					original_tag = FIN
-					FIN = {
-						owns_state = 1359
-					}
-				}
-				MAR = {
-					transfer_state = 215
-					transfer_state = 216
-					transfer_state = 213
-					transfer_state = 1359
-				}
-				FIN = {
-					econ_join_sphere_MAR = yes
-				}
-			}
-			if = {
-				limit = {
-					original_tag = KRL
-				}
-				MAR = {
-					transfer_state = 215
-					transfer_state = 216
-				}
-				FIN = {
-					econ_join_sphere_MAR = yes
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 100
+				ROOT = {
+					has_dictatorship_government = yes
 				}
 			}
 		}
+		MAR = {
+			country_event = { id = MAR_ultimatums.2 days = 2 }
+		}
+	}
+	option = { #ok
+		name = MAR_ultimatums.1.a 
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 100
+				ROOT = {
+					has_democratic_government = yes
+				}
+			}
+		}
+		MAR = {
+			country_event = { id = MAR_ultimatums.3 days = 2 }
+		}
+	}
 }
-country_event = { #lose
+country_event = { #refused
 	id = MAR_ultimatums.2
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.2"}
 	title = MAR_ultimatums.2.t
@@ -2188,44 +2282,563 @@ country_event = { #lose
 
 	is_triggered_only = yes
 
-	option = { #fuck
-		name = MAR_ultimatums.2.a 
+	option = { #their will
+		name = MAR_ultimatums.2.a
+		add_political_power = -50
+		add_stability = 0.02
+	}
+	option = { #their problems
+		name = MAR_ultimatums.2.b
+		declare_war_on = {
+			target = PREV
+			type = annex_everything
+		}
+		PREV = {
+			leave_faction = yes
+		}
+	}
+}
+country_event = { #karelia agreed
+	id = MAR_ultimatums.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.3"}
+	title = MAR_ultimatums.3.t
+	desc = MAR_ultimatums.3.d
+	picture = GFX_report_event_peace_deal
+
+	is_triggered_only = yes
+
+	option = { #nice
+		name = MAR_ultimatums.3.a
+		MAR = {
+			transfer_state = 216
+			transfer_state = 215
+			transfer_state = 1724
 			if = {
-				limit = { original_tag = FIN }
-				FIN = {
-					set_temp_variable = { gdp_growth_temp = 0.45 }
-					econ_gdp_growth_change = yes
-				}
-				MAR = { 
-					set_temp_variable = { temp_econ_spending_amount = 0.950 } 
-					econ_spend_money_once_effect_raw_money = yes
-				}
+				limit = { MAR = { NOT = { owns_state = 1359 } } }
+				transfer_state = 1359
+				transfer_state = 213
 			}
-			if = {
-				limit = { original_tag = ROM }
-				ROM = {
-					give_resource_rights = { receiver = ROM state = 226	 }
-					give_resource_rights = { receiver = ROM state = 1426 }
-					give_resource_rights = { receiver = ROM state = 202 }
-					set_temp_variable = { gdp_growth_temp = 0.15 }
-					econ_gdp_growth_change = yes
-				}
-				MAR = {
-					set_temp_variable = { temp_econ_spending_amount = 0.515 } 
-					econ_spend_money_once_effect_raw_money = yes
-				}
+		}
+	}
+}
+
+country_event = { #batumi agreed
+	id = MAR_ultimatums.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.4"}
+	title = MAR_ultimatums.4.t
+	desc = MAR_ultimatums.4.d
+	picture = GFX_report_event_peace_deal
+
+	is_triggered_only = yes
+
+	option = { #nice
+		name = MAR_ultimatums.4.a
+		if = {
+			limit = { MAR = { owns_state = 231 } }
+			MAR = {
+				transfer_state = 1565
+				add_state_core = 1565
 			}
-			if = {
-				limit = { original_tag = TUR }
-				TUR = {
-					transfer_state = 231
-					give_resource_rights = { receiver = TUR state = 1553 }
-					give_resource_rights = { receiver = TUR state = 1554 }
+		}
+		if = {
+			limit = { MCS = { owns_state = 231 } }
+			MCS = {
+				transfer_state = 1565
+				add_state_core = 1565
+			}
+		}
+		if = {
+			limit = { GEO = { owns_state = 231 } }
+			GEO = {
+				transfer_state = 1565
+				add_state_core = 1565
+			}
+		}
+	}
+}
+country_event = { #armenia agreed
+	id = MAR_ultimatums.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.5"}
+	title = MAR_ultimatums.5.t
+	desc = MAR_ultimatums.5.d
+	picture = GFX_report_event_peace_deal
+
+	is_triggered_only = yes
+
+	option = { #nice
+		name = MAR_ultimatums.5.a
+		if = {
+			limit = { MAR = { owns_state = 231 } }
+			MAR = {
+				transfer_state = 230
+				add_state_core = 230
+				transfer_state = 1568
+				add_state_core = 1568
+				transfer_state = 1567
+				add_state_core = 1567
+			}
+		}
+		if = {
+			limit = { MCS = { owns_state = 231 } }
+			MCS = {
+				transfer_state = 230
+				add_state_core = 230
+				transfer_state = 1568
+				add_state_core = 1568
+				transfer_state = 1567
+				add_state_core = 1567
+			}
+		}
+		if = {
+			limit = { GEO = { owns_state = 231 } }
+			ARM = {
+				econ_join_sphere_MAR = yes
+				transfer_state = 1554
+				add_state_core = 1554
+			}
+			AZR = {
+				transfer_state = 1567
+				add_state_core = 1567
+			}
+		}
+	}
+}
+country_event = { #odesa agreed
+	id = MAR_ultimatums.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.6"}
+	title = MAR_ultimatums.6.t
+	desc = MAR_ultimatums.6.d
+	picture = GFX_report_event_peace_deal
+
+	is_triggered_only = yes
+
+	option = { #nice
+		name = MAR_ultimatums.6.a
+		if = {
+			limit = { MAR = { owns_state = 197 } }
+			MAR = {
+				transfer_state = 198
+				add_state_core = 189
+				transfer_state = 1282
+				add_state_core = 1282
+				transfer_state = 192
+				add_state_core = 192
+			}
+		}
+		if = {
+			limit = { MUK = { owns_state = 197 } }
+			MUK = {
+				transfer_state = 198
+				add_state_core = 189
+				transfer_state = 1282
+				add_state_core = 1282
+				transfer_state = 192
+				add_state_core = 192
+			}
+		}
+	}
+}
+country_event = { #Vyborg agreed
+	id = MAR_ultimatums.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.7"}
+	title = MAR_ultimatums.7.t
+	desc = MAR_ultimatums.7.d
+	picture = GFX_report_event_peace_deal
+
+	is_triggered_only = yes
+
+	option = { #nice
+		name = MAR_ultimatums.7.a
+		MAR = {
+			transfer_state = 146
+			transfer_state = 1712
+			transfer_state = 147
+			transfer_state = 722
+		}
+	}
+}
+
+country_event = { #armenia agreed
+	id = MAR_ultimatums.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.8"}
+	title = MAR_ultimatums.8.t
+	desc = MAR_ultimatums.8.d
+	picture = GFX_report_event_peace_deal
+
+	is_triggered_only = yes
+
+	option = { #nice
+		name = MAR_ultimatums.8.a
+		if = {
+			limit = { MAR = { owns_state = 231 } }
+			MAR = {
+				transfer_state = 230
+				transfer_state = 1568
+				transfer_state = 1567
+			}
+		}
+		if = {
+			limit = { MAR = { owns_state = 231 } }
+			MCS = {
+				transfer_state = 230
+				transfer_state = 1568
+				transfer_state = 1567
+				add_state_core = 1567
+				add_state_core = 1568
+				add_state_core = 230
+			}
+		}
+		if = {
+			limit = { GEO = { owns_state = 231 } }
+			AZR = {
+				transfer_state = 1567
+				add_state_core = 1567
+			}
+			ARM = {
+				transfer_state = 1554
+				add_state_core = 1554
+				transfer_state = 1568
+				add_state_core = 1568
+				transfer_state = 230
+				add_state_core = 230
+			}
+		}
+	}
+}
+country_event = { #moldova agreed
+	id = MAR_ultimatums.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.9"}
+	title = MAR_ultimatums.9.t
+	desc = MAR_ultimatums.9.d
+	picture = GFX_report_event_peace_deal
+
+	is_triggered_only = yes
+
+	option = { #nice
+		name = MAR_ultimatums.9.a
+		if = {
+			limit = { MAR = { owns_state = 1428 } }
+			MAR = {
+				transfer_state = 1285
+				transfer_state = 78
+				transfer_state = 1286
+			}
+		}
+		else = {
+			MUK = {
+				transfer_state = 1285
+				transfer_state = 78
+				transfer_state = 1286
+				add_state_core = 1285
+				add_state_core = 78
+				add_state_core = 1286
+			}
+		}
+	}
+}
+country_event = { #galicia
+	id = MAR_ultimatums.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.10"}
+	title = MAR_ultimatums.10.t
+	desc = MAR_ultimatums.10.d
+	picture = GFX_report_event_peace_deal
+
+	is_triggered_only = yes
+
+	option = { #nice
+		name = MAR_ultimatums.10.a
+		if = {
+			limit = { MAR = { owns_state = 1428 } }
+			MAR = {
+				transfer_state = 91
+				transfer_state = 89
+				transfer_state = 1394
+				transfer_state = 1393
+				transfer_state = 1392
+				transfer_state = 1391
+				transfer_state = 1390
+				transfer_state = 1389
+				transfer_state = 1388
+				transfer_state = 1387
+			}
+		}
+		else = {
+			MUK = {
+				transfer_state = 91
+				transfer_state = 89
+				transfer_state = 1394
+				transfer_state = 1393
+				transfer_state = 1392
+				transfer_state = 1391
+				transfer_state = 1390
+				transfer_state = 1389
+				transfer_state = 1388
+				transfer_state = 1387
+				
+				add_state_core = 91
+				add_state_core = 89
+				add_state_core = 1394
+				add_state_core = 1393
+				add_state_core = 1392
+				add_state_core = 1391
+				add_state_core = 1390
+				add_state_core = 1389
+				add_state_core = 1388
+				add_state_core = 1387
+			}
+		}
+	}
+}
+country_event = { #fin 2
+	id = MAR_ultimatums.11
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.11"}
+	title = MAR_ultimatums.11.t
+	desc = MAR_ultimatums.11.desc
+	picture = GFX_report_event_peace_deal
+
+	is_triggered_only = yes
+
+	option = { #kys lol
+		name = MAR_ultimatums.12.a 
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 100
+				ROOT = {
+					has_dictatorship_government = yes
 				}
 			}
 		}
+		MAR = {
+			country_event = { id = MAR_ultimatums.2 days = 2 }
+		}
+	}
+	option = { #ok
+		name = MAR_ultimatums.12.b 
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 50
+				ROOT = {
+					has_democratic_government = yes
+				}
+			}
+		}
+		MAR = {
+			country_event = { id = MAR_ultimatums.7 days = 2 }
+		}
+	}
 }
+country_event = { #tur
+	id = MAR_ultimatums.12
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.12"}
+	title = MAR_ultimatums.12.t
+	desc = MAR_ultimatums.12.desc
+	picture = GFX_report_event_peace_deal
 
+	is_triggered_only = yes
+
+		option = { #kys lol
+		name = MAR_ultimatums.12.a 
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 100
+				ROOT = {
+					has_dictatorship_government = yes
+				}
+			}
+		}
+		MAR = {
+			country_event = { id = MAR_ultimatums.2 days = 2 }
+		}
+	}
+	option = { #ok
+		name = MAR_ultimatums.12.a 
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 100
+				ROOT = {
+					has_democratic_government = yes
+				}
+			}
+		}
+		MAR = {
+			country_event = { id = MAR_ultimatums.4 days = 2 }
+		}
+	}
+}
+country_event = { #tur 2
+	id = MAR_ultimatums.13
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.13"}
+	title = MAR_ultimatums.13.t
+	desc = MAR_ultimatums.13.desc
+	picture = GFX_report_event_peace_deal
+
+	is_triggered_only = yes
+
+	option = { #kys lol
+		name = MAR_ultimatums.13.a 
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 100
+				ROOT = {
+					has_dictatorship_government = yes
+				}
+			}
+		}
+		MAR = {
+			country_event = { id = MAR_ultimatums.2 days = 2 }
+		}
+	}
+	option = { #ok
+		name = MAR_ultimatums.13.b 
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 50
+				ROOT = {
+					has_democratic_government = yes
+				}
+			}
+		}
+		MAR = {
+			country_event = { id = MAR_ultimatums.8 days = 2 }
+		}
+	}
+}
+country_event = { #rom
+	id = MAR_ultimatums.14
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.142"}
+	title = MAR_ultimatums.14.t
+	desc = MAR_ultimatums.14.desc
+	picture = GFX_report_event_peace_deal
+
+	is_triggered_only = yes
+
+		option = { #kys lol
+		name = MAR_ultimatums.14.a 
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 100
+				ROOT = {
+					has_dictatorship_government = yes
+				}
+			}
+		}
+		MAR = {
+			country_event = { id = MAR_ultimatums.2 days = 2 }
+		}
+	}
+	option = { #ok
+		name = MAR_ultimatums.12.a 
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 100
+				ROOT = {
+					has_democratic_government = yes
+				}
+			}
+		}
+		MAR = {
+			country_event = { id = MAR_ultimatums.9 days = 2 }
+		}
+	}
+}
+country_event = { #rom 2
+	id = MAR_ultimatums.15
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.15"}
+	title = MAR_ultimatums.15.t
+	desc = MAR_ultimatums.15.desc
+	picture = GFX_report_event_peace_deal
+
+	is_triggered_only = yes
+
+	option = { #kys lol
+		name = MAR_ultimatums.15.a 
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 100
+				ROOT = {
+					has_dictatorship_government = yes
+				}
+			}
+		}
+		MAR = {
+			country_event = { id = MAR_ultimatums.2 days = 2 }
+		}
+	}
+	option = { #ok
+		name = MAR_ultimatums.15.b 
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 50
+				ROOT = {
+					has_democratic_government = yes
+				}
+			}
+		}
+		MAR = {
+			country_event = { id = MAR_ultimatums.8 days = 2 }
+		}
+	}
+}
+country_event = { #armenia
+	id = MAR_ultimatums.16
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.16"}
+	title = MAR_ultimatums.16.t
+	desc = MAR_ultimatums.16.desc
+	picture = GFX_report_event_peace_deal
+
+	is_triggered_only = yes
+
+	option = { #ok
+		name = MAR_ultimatums.16.a
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 50
+				ROOT = {
+					has_democratic_government = yes
+				}
+			}
+		}
+		MAR = {
+			country_event = { id = MAR_ultimatums.5 days = 2 }
+		}
+	}
+}
+country_event = { #poland
+	id = MAR_ultimatums.17
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.16"}
+	title = MAR_ultimatums.17.t
+	desc = MAR_ultimatums.17.desc
+	picture = GFX_report_event_peace_deal
+
+	is_triggered_only = yes
+
+	option = { #ok
+		name = MAR_ultimatums.17.a
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 50
+				ROOT = {
+					has_democratic_government = yes
+				}
+			}
+		}
+		MAR = {
+			country_event = { id = MAR_ultimatums.10 days = 2 }
+		}
+	}
+}
 ##MAR_territorial_fate
 country_event = { #Turkestan
 	id = MAR_territorial_fate.1
@@ -2240,19 +2853,28 @@ country_event = { #Turkestan
 	option = { #governship
 		name = MAR_territorial_fate.1.a
 		ai_chance = { factor = 1 }
+		custom_effect_tooltip = MAR_annex_em_all_tt
+		hidden_effect = {
+			MAR_Turkestan_govern = yes
+		}
 	}
 	option = { #autonomy
 		name = MAR_territorial_fate.1.b
 		ai_chance = { factor = 1 }
-		MAR_Turkestan_autonomy = yes
+		custom_effect_tooltip = MAR_autonomy_create_tt
+		hidden_effect = {
+			MAR_Turkestan_autonomy = yes
+		}
 	}
 	option = { #direct_rule
 		name = MAR_territorial_fate.1.a
 		ai_chance = { factor = 1 }
-		custom_effect_tooltip = TaS_2WRW_you_cant_core_it
-		annex_country = {
-			target = UZB
-			transfer_troops = yes
+		custom_effect_tooltip = MAR_annex_em_all_tt
+		hidden_effect = {
+			annex_country = {
+				target = MTR
+				transfer_troops = yes
+			}
 		}
 	}
 }
@@ -2270,12 +2892,14 @@ country_event = { #Primorie
 	option = { #japonese can stay
 		name = MAR_territorial_fate.2.a
 		ai_chance = { factor = 1 }
+		set_country_flag = Primorie_fate_is_done
 		add_political_power = 50
 		add_stability = -0.03
 	}
 	option = { #fuck 'em
 		name = MAR_territorial_fate.2.b
 		ai_chance = { factor = 1 }
+		set_country_flag = Primorie_fate_is_done
 		add_political_power = -50
 		409 = {
 			add_manpower = -62391
@@ -2329,19 +2953,72 @@ country_event = { #Moscowien
 	is_triggered_only = yes
 	fire_only_once = yes
 	
-	option = { #
+	option = { #they can stay
 		name = MAR_territorial_fate.3.a
 		ai_chance = { factor = 1 }
-		
+		set_country_flag = MCW_fate_is_done
+		add_political_power = 50
+		add_stability = -0.03
 	}
-	option = { #
+	option = { #fuck germans
 		name = MAR_territorial_fate.3.b
 		ai_chance = { factor = 1 }
-		
+		set_country_flag = MCW_fate_is_done
+		195 = {
+			add_manpower = -343970
+			set_variable = { nationality = 151 }
+		}
+		209 = {
+			add_manpower = -156090
+			set_variable = { nationality = 151 }
+		}
+		1442 = {
+			add_manpower = -623490
+			set_variable = { nationality = 151 }
+		}
+		1443 = {
+			add_manpower = -97800
+			set_variable = { nationality = 151 }
+		}
+		1441 = {
+			add_manpower = -365590
+			set_variable = { nationality = 151 }
+		}
+		210 = {
+			add_manpower = -599120
+			set_variable = { nationality = 151 }
+		}
+		243 = {
+			add_manpower = -431220
+			set_variable = { nationality = 151 }
+		}
+		244 = {
+			add_manpower = -179380
+			set_variable = { nationality = 151 }
+		}
+		239 = {
+			add_manpower = -943340
+			set_variable = { nationality = 151 }
+		}
+		5 = {
+			add_manpower = 345320
+		}
+		63 = {
+			add_manpower = 478000
+		}
+		776 = {
+			add_manpower = 436450
+		}
+		60 = {
+			add_manpower = 278920
+		}
+		85 = {
+			add_manpower = 312349
+		}
 	}
 }
 
-country_event = { #Estonia
+country_event = { #Baltics
 	id = MAR_territorial_fate.4
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_territorial_fate.4" }
 	title = MAR_territorial_fate.4.t
@@ -2351,59 +3028,124 @@ country_event = { #Estonia
 	is_triggered_only = yes
 	fire_only_once = yes
 	
-	option = { #
+	option = { #Freedom
 		name = MAR_territorial_fate.4.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = MAR_freedom_for_everyone_tt
+		hidden_effect = {
+			TaS_2WRW_free_baltics = yes
+		}
 	}
-	option = { #
+	option = { #Joint autonomy
 		name = MAR_territorial_fate.4.b
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = MAR_autonomy_create_tt
+		hidden_effect = {
+			XYZ = {
+				MBP_Aleksandrs_Drizulis = {
+					set_nationality = MBP
+				}
+			}
+			MBP = {
+				every_owned_state = {
+						MBP = {
+							add_state_core = PREV
+						}
+					}
+				TaS_2WRW_set_autonomy_laws = yes
+				#add_ideas = { MAR_military_administration }
+				set_popularities = {
+					communist = 0
+					socialist = 0
+					progressivism = 0
+					liberalism = 2
+					conservatism = 7
+					liberal_conservatism = 9
+					paternalism = 17
+					despotism = 57
+					fascism = 8
+					national_socialism = 0
+					ultranationalism = 0
+					esoteric_nazism = 0
+				}
+				set_party_name = { 
+					ideology = despotism
+					long_name = MBP_autonomy_party_long
+					name = MBP_autonomy_party
+				}
+				retire_country_leader = yes
+				MBP_Aleksandrs_Drizulis = {
+					promote_character = yes
+				}
+				set_cosmetic_tag = MBP_autonomy
+			}
+		}
+		1396 = {
+			add_manpower = -90870
+			set_variable = { nationality = 168 }
+		}
+		13 = {
+			add_manpower = -109860
+			set_variable = { nationality = 168 }
+		}
+		1397 = {
+			add_manpower = -156450
+			set_variable = { nationality = 169 }
+		}
+		190 = {
+			add_manpower = -67890
+			set_variable = { nationality = 169 }
+		}
+		1399 = {
+			add_manpower = -34330
+			set_variable = { nationality = 169 }
+		}
+		1402 = {
+			add_manpower = -78980
+			set_variable = { nationality = 169 }
+		}
+		1401 = {
+			add_manpower = -89760
+			set_variable = { nationality = 268 }
+		}
+		209 = {
+			add_manpower = 78120
+		}
 	}
-}
-
-country_event = { #Latvia
-	id = MAR_territorial_fate.5
-	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_territorial_fate.5" }
-	title = MAR_territorial_fate.5.t
-	desc = MAR_territorial_fate.5.d
-	#picture = 
-	
-	is_triggered_only = yes
-	fire_only_once = yes
-	
-	option = { #
-		name = MAR_territorial_fate.5.a
+	option = { #annexation
+		name = MAR_territorial_fate.4.c
 		ai_chance = { factor = 1 }
-		
-	}
-	option = { #
-		name = MAR_territorial_fate.5.b
-		ai_chance = { factor = 1 }
-		
-	}
-}
-
-country_event = { #Lithuania
-	id = MAR_territorial_fate.6
-	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_territorial_fate.6" }
-	title = MAR_territorial_fate.6.t
-	desc = MAR_territorial_fate.6.d
-	#picture = 
-	
-	is_triggered_only = yes
-	fire_only_once = yes
-	
-	option = { #
-		name = MAR_territorial_fate.6.a
-		ai_chance = { factor = 1 }
-		
-	}
-	option = { #
-		name = MAR_territorial_fate.6.b
-		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = MAR_annex_em_all_tt
+		hidden_effect = {
+			annex_country = {
+				target = MBP
+				transfer_troops = yes
+			}
+		}
+		1396 = {
+			add_manpower = -90870
+			set_variable = { nationality = 168 }
+		}
+		13 = {
+			add_manpower = -109860
+			set_variable = { nationality = 168 }
+		}
+		1397 = {
+			add_manpower = -156450
+			set_variable = { nationality = 169 }
+		}
+		190 = {
+			add_manpower = -67890
+			set_variable = { nationality = 169 }
+		}
+		1399 = {
+			add_manpower = -34330
+			set_variable = { nationality = 169 }
+		}
+		1401 = {
+			add_manpower = -89760
+			set_variable = { nationality = 268 }
+		}
 	}
 }
 
@@ -2417,15 +3159,96 @@ country_event = { #Belarus
 	is_triggered_only = yes
 	fire_only_once = yes
 	
-	option = { #
+	option = { #Vilna Kraina
 		name = MAR_territorial_fate.7.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = MAR_freedom_for_everyone_tt
+			hidden_effect = {
+			XYZ = {
+				BLR_Zianon_Pazniak = {
+					set_nationality = MBL
+				}
+			}
+			MBL = {
+				every_owned_state = {
+						MBL = {
+							add_state_core = PREV
+						}
+					}
+				TaS_2WRW_set_free_laws = yes
+				#add_ideas = { MAR_military_administration }
+				remove_ideas = { MAR_military_administration }
+				set_politics = {
+					ruling_party = paternalism
+				}
+				set_popularities = {
+					communist = 0
+					socialist = 0
+					progressivism = 0
+					liberalism = 3
+					conservatism = 17
+					liberal_conservatism = 9
+					paternalism = 64
+					despotism = 7
+					fascism = 0
+					national_socialism = 0
+					ultranationalism = 0
+					esoteric_nazism = 0
+				}
+				set_party_name = { 
+					ideology = paternalism 
+					long_name = BLR_free_party_long
+					name = BLR_free_party
+				}
+				BLR_Zianon_Pazniak = {
+					promote_character = yes
+				}
+				set_cosmetic_tag = BLR_freedom
+			}
+		}
 	}
-	option = { #
+	option = { #Avtonomna Kraina
 		name = MAR_territorial_fate.7.b
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = MAR_autonomy_create_tt
+		hidden_effect = {
+			XYZ = {
+				MBL_Tikhon_Kiselyov = {
+					set_nationality = MBL
+				}
+			}
+			MBL = {
+				every_owned_state = {
+						MBL = {
+							add_state_core = PREV
+						}
+					}
+				TaS_2WRW_set_autonomy_laws = yes
+				#add_ideas = { MAR_military_administration }
+				remove_ideas = { MAR_military_administration }
+				set_party_name = { 
+					ideology = despotism 
+					long_name = MBL_autonomy_party_long
+					name = MBL_autonomy_party
+				}
+				retire_country_leader = yes
+				MBL_Tikhon_Kiselyov = {
+					promote_character = yes
+				}
+				set_cosmetic_tag = MBL_autonomy
+			}
+		}
+	}
+	option = { #soyuznoye gosudarstvo
+		name = MAR_territorial_fate.7.c
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = MAR_annex_em_all_tt
+		hidden_effect = {
+			annex_country = {
+				target = MBL
+				transfer_troops = yes
+			}
+		}
 	}
 }
 
@@ -2439,15 +3262,127 @@ country_event = { #Ukraine
 	is_triggered_only = yes
 	fire_only_once = yes
 	
-	option = { #
+	option = { #Vilna Kraina
 		name = MAR_territorial_fate.8.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = MAR_freedom_for_everyone_tt
+		hidden_effect = {
+			XYZ = {
+				UKR_Viacheslav_Chornovil = {
+					set_nationality = MUK
+				}
+			}
+			MUK = {
+				every_owned_state = {
+						MUK = {
+							add_state_core = PREV
+						}
+					}
+				TaS_2WRW_set_free_laws = yes
+				#add_ideas = { MAR_military_administration }
+				remove_ideas = { MAR_military_administration }
+				set_politics = {
+					ruling_party = liberal_conservatism
+				}
+				set_popularities = {
+					communist = 0
+					socialist = 0
+					progressivism = 0
+					liberalism = 7
+					conservatism = 14
+					liberal_conservatism = 46
+					paternalism = 22
+					despotism = 11
+					fascism = 0
+					national_socialism = 0
+					ultranationalism = 0
+					esoteric_nazism = 0
+				}
+				set_party_name = { 
+					ideology = liberal_conservatism 
+					long_name = UKR_free_party_long
+					name = UKR_free_party
+				}
+				UKR_Viacheslav_Chornovil = {
+					promote_character = yes
+				}
+				set_cosmetic_tag = MUK_freedom
+			}
+			1428 = {
+				add_manpower = -98990
+				set_variable = { nationality = 164 }
+			}
+			1430 = {
+				add_manpower = -143340
+				set_variable = { nationality = 164 }
+			}
+		}
 	}
-	option = { #
+	option = { #Avtonomna Kraina
 		name = MAR_territorial_fate.8.b
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = MAR_autonomy_create_tt
+		hidden_effect = {
+			XYZ = {
+				MUK_Oleksandr_Moroz = {
+					set_nationality = MUK
+				}
+			}
+			MUK = {
+				every_owned_state = {
+						MUK = {
+							add_state_core = PREV
+						}
+					}
+				TaS_2WRW_set_autonomy_laws = yes
+				#add_ideas = { MAR_military_administration }
+				remove_ideas = { MAR_military_administration }
+				set_politics = {
+					ruling_party = paternalism
+				}
+				set_party_name = { 
+					ideology = paternalism 
+					long_name = MUK_autonomy_party_long
+					name = MUK_autonomy_party
+				}
+				add_popularity = {
+					ideology = paternalism
+					popularity = 0.45
+				}
+				retire_country_leader = yes
+				MUK_Oleksandr_Moroz = {
+					promote_character = yes
+				}
+				set_cosmetic_tag = MUK_autonomy
+			}
+			1428 = {
+				add_manpower = -98990
+				set_variable = { nationality = 164 }
+			}
+			1430 = {
+				add_manpower = -143340
+				set_variable = { nationality = 164 }
+			}
+		}
+	}
+	option = { #SLOVNO HUY DROCHENNY V ZHOPY PIDORA
+		name = MAR_territorial_fate.8.c
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = MAR_annex_em_all_tt
+		hidden_effect = {
+			annex_country = {
+				target = MUK
+				transfer_troops = yes
+			}
+		}
+		1428 = {
+			add_manpower = -98990
+			set_variable = { nationality = 164 }
+		}
+		1430 = {
+			add_manpower = -143340
+			set_variable = { nationality = 164 }
+		}
 	}
 }
 
@@ -2461,19 +3396,74 @@ country_event = { #Crimnea
 	is_triggered_only = yes
 	fire_only_once = yes
 	
-	option = { #
+	option = { #deutsche autonomien ew
 		name = MAR_territorial_fate.9.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = MAR_autonomy_create_tt
+		hidden_effect = {
+			XYZ = {
+				MTV_Bruno_Reiter = {
+					set_nationality = MTV
+				}
+			}
+			MTV = {
+				every_owned_state = {
+						MTV = {
+							add_state_core = PREV
+						}
+					}
+				TaS_2WRW_set_autonomy_laws = yes
+				#add_ideas = { MAR_military_administration }
+				set_politics = {
+					ruling_party = paternalism
+				}
+				set_party_name = { 
+					ideology = paternalism 
+					long_name = MTV_autonomy_party_long
+					name = MTV_autonomy_party
+				}
+				add_popularity = {
+					ideology = paternalism
+					popularity = 0.45
+				}
+				retire_country_leader = yes
+				MTV_Bruno_Reiter = {
+					promote_character = yes
+				}
+				set_cosmetic_tag = MTV_autonomy
+			}
+		}
 	}
-	option = { #
+	option = { #0 people in crimea left
 		name = MAR_territorial_fate.9.b
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = MAR_annex_em_all_tt
+		hidden_effect = {
+			annex_country = {
+				target = MTV
+				transfer_troops = yes
+			}
+		}
+		196 = {
+			add_manpower = -434560
+			set_variable = { nationality = 432 }
+		}
+		137 = {
+			add_manpower = -276900
+			set_variable = { nationality = 151 }
+		}
+		1532 = {
+			add_manpower = -103920
+			set_variable = { nationality = 151 }
+		}
+		200 = {
+			add_manpower = -143940
+			set_variable = { nationality = 432 }
+		}
 	}
 }
 
-country_event = { #North Caucasus
+country_event = { #Caucasus
 	id = MAR_territorial_fate.10
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_territorial_fate.10" }
 	title = MAR_territorial_fate.10.t
@@ -2483,37 +3473,102 @@ country_event = { #North Caucasus
 	is_triggered_only = yes
 	fire_only_once = yes
 	
-	option = { #
+	option = { #all autonomy
 		name = MAR_territorial_fate.10.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = MAR_autonomy_create_tt
+		hidden_effect = {
+			XYZ = {
+				MCS_Dzhokhar_Dudayev = {
+					set_nationality = MCS
+				}
+			}
+			MCS = {
+				every_owned_state = {
+						MCS = {
+							add_state_core = PREV
+						}
+					}
+				#add_ideas = { MAR_military_administration }
+				set_politics = {
+					ruling_party = ultranationalism
+				}
+				set_party_name = { 
+					ideology = ultranationalism 
+					long_name = MCS_autonomy_party_long
+					name = MCS_autonomy_party
+				}
+				add_popularity = {
+					ideology = ultranationalism
+					popularity = 0.45
+				}
+				retire_country_leader = yes
+				MCS_Dzhokhar_Dudayev = {
+					promote_character = yes
+				}
+				set_cosmetic_tag = MCS_south_autonomy
+			}
+		}
 	}
-	option = { #
+	option = { #south autonomy
 		name = MAR_territorial_fate.10.b
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = MAR_autonomy_create_tt
+		hidden_effect = {
+			transfer_state = 235
+			transfer_state = 1564
+			transfer_state = 232
+			transfer_state = 1561
+			transfer_state = 1560
+			transfer_state = 1559
+			transfer_state = 1558
+			XYZ = {
+				AZR_Heydar_Aliyev = {
+					set_nationality = MCS
+				}
+			}
+			MCS = {
+				every_owned_state = {
+						MCS = {
+							add_state_core = PREV
+						}
+					}
+				#add_ideas = { MAR_military_administration }
+				set_party_name = { 
+					ideology = despotism 
+					long_name = MCS_autonomy_party_long
+					name = MCS_autonomy_party
+				}
+				add_popularity = {
+					ideology = despotism
+					popularity = 0.45
+				}
+				retire_country_leader = yes
+				AZR_Heydar_Aliyev = {
+					promote_character = yes
+				}
+				set_cosmetic_tag = MCS_south_autonomy
+			}
+		}
 	}
-}
-
-country_event = { #South Caucasus
-	id = MAR_territorial_fate.11
-	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_territorial_fate.11" }
-	title = MAR_territorial_fate.11.t
-	desc = MAR_territorial_fate.11.d
-	#picture = 
-	
-	is_triggered_only = yes
-	fire_only_once = yes
-	
-	option = { #
-		name = MAR_territorial_fate.11.a
+	option = { #the clusterfuck
+		name = MAR_territorial_fate.10.c
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = MAR_freedom_for_everyone_tt
+		hidden_effect = {
+			TaS_2WRW_free_caucasus = yes
+		}
 	}
-	option = { #
-		name = MAR_territorial_fate.11.b
+	option = { #direct rule
+		name = MAR_territorial_fate.10.e
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = MAR_annex_em_all_tt
+		hidden_effect = {
+			annex_country = {
+				target = MCS
+				transfer_troops = yes
+			}
+		}
 	}
 }
 
@@ -2607,8 +3662,8 @@ news_event = {
 		trigger = {
 			NOT = {
 				OR = {
-					tag = MAR
-					tag = GER
+					original_tag = MAR
+					original_tag = GER
 				}
 			}
 		}
@@ -2617,14 +3672,14 @@ news_event = {
 	option = {
 		name = MAR_2WRW_world_news.6.b
 			trigger = {
-				tag = GER
+				original_tag = GER
 			}
 		set_country_flag = TaS_2WRW_BELOOZ_STARTED_BE_fl
 	}
 	option = {
 		name = MAR_2WRW_world_news.6.c
 			trigger = {
-				tag = MAR
+				original_tag = MAR
 			}
 		set_country_flag = TaS_2WRW_BELOOZ_STARTED_BE_fl
 	}

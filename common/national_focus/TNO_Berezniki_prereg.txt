@@ -976,6 +976,7 @@ shared_focus = {
 				country_event = { id = MAR_initial.53 days = 2 }
 			}
 		}
+		clr_country_flag = MAR_MGB_available
 	}
 }
 
@@ -1039,6 +1040,9 @@ shared_focus = {
 	icon = GFX_MAR_berezpower
 	cost = 2
 	available_if_capitulated = no
+	available = {
+		NOT = { has_completed_focus = MAR_everyone_for_front }
+	}
 	ai_will_do = {
 		factor = 1
 	}

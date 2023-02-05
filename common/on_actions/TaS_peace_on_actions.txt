@@ -38,7 +38,7 @@ on_actions = {
 						}
 					}
 					FROM = {
-						MAR_Turkestan_govern = yes
+						MAR_install_mil_turkestan = yes
 						set_country_flag = MAR_has_central_asia
 						country_event = {
 							id = MAR_Japan.10 days = 17
@@ -271,6 +271,9 @@ on_actions = {
 				MAR = {
 					TaS_fopo_remove_manchurian_civil_war_tab = yes
 				}
+				HAN = {
+					set_capital = { state = 328 }
+				}
 				set_global_flag = skip_default_capitulation
 			}
 			else_if = {
@@ -328,6 +331,9 @@ on_actions = {
 				MAR = {
 					TaS_fopo_remove_manchurian_civil_war_tab = yes
 				}
+				MJP = {
+					set_capital = { state = 328 }
+				}
 				set_global_flag = skip_default_capitulation
 			}
 			else_if = {
@@ -377,6 +383,9 @@ on_actions = {
 				}
 				MAR = {
 					TaS_fopo_remove_manchurian_civil_war_tab = yes
+				}
+				PFF = {
+					set_capital = { state = 328 }
 				}
 
 				set_global_flag = skip_default_capitulation
@@ -471,6 +480,135 @@ on_actions = {
 						}
 					}
 					
+					set_global_flag = skip_default_capitulation
+			}
+			else_if = {
+					limit = {
+						FROM = {
+							original_tag = MAR
+							MAR = { has_global_flag = TaS_WRW2_Russian_victory }
+						}
+						ROOT = { 
+							original_tag = FIN
+						}
+					}
+					FROM = {
+						white_peace = ROOT
+					}
+					MAR = {
+						transfer_state = 146
+						transfer_state = 1712
+						transfer_state = 147
+						transfer_state = 722
+						transfer_state = 216
+						transfer_state = 215
+						transfer_state = 1724
+						transfer_state = 1359
+						transfer_state = 213
+					}
+					FIN = {
+						econ_join_sphere_MAR = yes
+					}
+					set_global_flag = skip_default_capitulation
+			}
+			else_if = {
+					limit = {
+						FROM = {
+							original_tag = MAR
+							MAR = { has_global_flag = TaS_WRW2_Russian_victory }
+						}
+						ROOT = { 
+							original_tag = ROM
+						}
+					}
+					FROM = {
+						white_peace = ROOT
+					}
+					if = {
+						limit = { MAR = { owns_state = 1428 } }
+						MAR = {
+							transfer_state = 198
+							transfer_state = 1282
+							transfer_state = 192
+							transfer_state = 1285
+							transfer_state = 78
+							transfer_state = 128
+							transfer_state = 80
+						}
+					}
+					else = {
+						MUK = {
+							transfer_state = 198
+							transfer_state = 1282
+							transfer_state = 192
+							transfer_state = 1285
+							transfer_state = 78
+							transfer_state = 1286
+							transfer_state = 80
+						}
+					}
+					ROM = {
+						econ_join_sphere_MAR = yes
+					}
+					set_global_flag = skip_default_capitulation
+			}
+			else_if = {
+					limit = {
+						FROM = {
+							original_tag = MAR
+							MAR = { has_global_flag = TaS_WRW2_Russian_victory }
+						}
+						ROOT = { 
+							original_tag = TUR
+						}
+					}
+					FROM = {
+						white_peace = ROOT
+					}
+					if = {
+						limit = { MAR = { owns_state = 231 } }
+						MAR = {
+							transfer_state = 1565
+							transfer_state = 230
+							transfer_state = 1568
+							transfer_state = 1567
+							transfer_state = 1448
+						}
+					}
+					if = {
+						limit = { MCS = { owns_state = 231 } }
+						MCS = {
+							transfer_state = 1565
+							transfer_state = 230
+							transfer_state = 1568
+							transfer_state = 1567
+							transfer_state = 1448
+						}
+					}
+					if = {
+						limit = { GEO = { owns_state = 231 } }
+						GEO = {
+							transfer_state = 1565
+							add_state_core = 1565
+						}
+						AZR = {
+							transfer_state = 1567
+							add_state_core = 1567
+						}
+						ARM = {
+							transfer_state = 1554
+							add_state_core = 1554
+							transfer_state = 1568
+							add_state_core = 1568
+							transfer_state = 230
+							add_state_core = 230
+							transfer_state = 1448
+							add_state_core = 1448
+						}
+					}
+					TUR = {
+						econ_join_sphere_MAR = yes
+					}
 					set_global_flag = skip_default_capitulation
 			}
 		}
