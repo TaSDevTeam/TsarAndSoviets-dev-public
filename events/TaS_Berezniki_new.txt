@@ -214,7 +214,7 @@ country_event = { #three plans
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_initial.11" }
 	title = MAR_initial.11.t
 	desc = MAR_initial.11.d
-	picture = GFX_report_event_voina_12 
+	picture = GFX_report_event_Voina_12 
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -1184,6 +1184,7 @@ country_event = { #fuck you vlad
 		remove_ideas = MAR_souverinity_fail_2
 		remove_ideas = MAR_military_instructors_of_vyatka
 		remove_ideas = MAR_direct_influence_of_vyatka
+		clr_country_flag = MAR_MGB_available
 		load_focus_tree = MAR_postbomb_tree
 		set_country_flag = MAR_freed_from_VYT
 		add_ideas = MAR_okhranka_leftovers
@@ -1999,7 +2000,7 @@ country_event = { #SAM
 	desc = MAR_smuta_occupation.7.d
 	fire_only_once = yes
 	is_triggered_only = yes	
-	picture = GFX_report_event_Voina_19
+	picture = GFX_event_MAR_smuta_occupation_7
 	
 	option = {
 		name = MAR_smuta_occupation.7.a
@@ -2460,7 +2461,7 @@ country_event = { # MAR_final_vibori WIN SEREGA BELII
 	title = MAR_zemsky_sobor.22.t
 	desc = MAR_zemsky_sobor.22.d
 	fire_only_once = yes
-	picture = GFX_report_event_zemsob_22
+	picture = GFX_event_MAR_zemsky_sobor_22
 	is_triggered_only = yes
 
 	option = {

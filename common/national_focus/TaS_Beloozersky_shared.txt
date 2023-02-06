@@ -322,8 +322,8 @@ shared_focus = {
 		x = 28
 		y = 1
 		completion_reward = {
-		add_to_variable = { national_debt = 0.2 }
-		custom_effect_tooltip = econ_increase_debt
+		set_temp_variable = { temp_econ_spending_amount = 0.2 }
+		econ_spend_money_once_effect_raw_money = yes
 		TNO_improve_academic_base_med = yes
 		TNO_improve_research_facilities_med = yes
 		research_funding_maximal_increase_high = yes
@@ -1267,7 +1267,8 @@ shared_focus = {
 		x = 16
 		y = 2
 		completion_reward = {
-		add_to_variable = { national_debt = 2 }
+		set_temp_variable = { temp_econ_spending_amount = 2 }
+		econ_spend_money_once_effect_raw_money = yes
 		214 = {
         add_building_construction = {
 			type = infrastructure
@@ -1806,7 +1807,8 @@ shared_focus = {
 			add_to_variable = { RUSNukesMatsProgress = 5 }
 		}
 		add_to_variable = { RUSNukesMonthlyProgress = 2 }
-		add_to_variable = { national_debt = 0.15 } #already converted to billion
+		set_temp_variable = { temp_econ_spending_amount = 0.15 }
+		econ_spend_money_once_effect_raw_money = yes #already converted to billion
 	}
 }
 shared_focus = {
@@ -1846,7 +1848,8 @@ shared_focus = {
 			add_to_variable = { RUSNukesMatsProgress = 10 }
 		}
 		add_to_variable = { RUSNukesMonthlyProgress = 1 }
-		add_to_variable = { national_debt = 0.35 } #already converted to billion
+		set_temp_variable = { temp_econ_spending_amount = 0.35 }
+		econ_spend_money_once_effect_raw_money = yes #already converted to billion
 	}
 }
 shared_focus = {
@@ -1871,7 +1874,8 @@ shared_focus = {
 			}
 			add_to_variable = { RUSNukesMatsProgress = 10 }
 		}
-		add_to_variable = { national_debt = 0.1 } #already converted to billion
+		set_temp_variable = { temp_econ_spending_amount = 0.1 }
+		econ_spend_money_once_effect_raw_money = yes #already converted to billion
 	}
 }
 shared_focus = {

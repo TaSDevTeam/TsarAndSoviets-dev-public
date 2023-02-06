@@ -200,14 +200,20 @@ shared_focus = {
 		custom_effect_tooltip = MAR_check_vyatka_vibe_tt
 		hidden_effect = {
 			if = { 
+				custom_effect_tooltip = MAR_vyt_oper_total_w_tt
 				limit = { check_variable = { MAR_Okhranka_power < 25 } }
 				country_event = { id = MAR_initial.24 days = 3 }
 			}
 			if = { 
-				limit = { check_variable = { MAR_Okhranka_power < 75 } }
+				custom_effect_tooltip = MAR_vyt_oper_small_w_tt
+				limit = {
+					check_variable = { MAR_Okhranka_power < 75 }
+					NOT = { check_variable = { MAR_Okhranka_power < 25 } }
+				}
 				country_event = { id = MAR_initial.25 days = 4 }
 			}
 			if = { 
+				custom_effect_tooltip = MAR_vyt_oper_fail_tt
 				limit = { check_variable = { MAR_Okhranka_power > 75 } }
 				country_event = { id = MAR_initial.27 days = 6 }
 			}
@@ -350,7 +356,7 @@ shared_focus = {
 shared_focus = {
 	id = MAR_into_light_future
 	icon = GFX_MAR_Vsvetloe_Budushee
-	cost = 4
+	cost = 3
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1
@@ -605,7 +611,7 @@ shared_focus = {
 shared_focus = {
 	id = MAR_defend_the_populace
 	icon = GFX_MAR_Linia_Ot_Ab
-	cost = 4
+	cost = 3
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1
@@ -883,14 +889,20 @@ shared_focus = {
 		custom_effect_tooltip = MAR_check_vyatka_vibe_tt
 		hidden_effect = {
 			if = { 
+				custom_effect_tooltip = MAR_vyt_oper_total_w_tt
 				limit = { check_variable = { MAR_Okhranka_power < 25 } }
 				country_event = { id = MAR_initial.48 days = 3 }
 			}
 			if = { 
-				limit = { check_variable = { MAR_Okhranka_power < 75 } }
+				custom_effect_tooltip = MAR_vyt_oper_small_w_tt
+				limit = {
+					check_variable = { MAR_Okhranka_power < 75 } 
+					NOT = { check_variable = { MAR_Okhranka_power < 25 } } 
+				}
 				country_event = { id = MAR_initial.49 days = 4 }
 			}
 			if = { 
+				custom_effect_tooltip = MAR_vyt_oper_fail_tt
 				limit = { check_variable = { MAR_Okhranka_power > 75 } }
 				country_event = { id = MAR_initial.50 days = 6 }
 			}
@@ -900,7 +912,7 @@ shared_focus = {
 shared_focus = {
 	id = MAR_new_model_army
 	icon = GFX_MAR_Novya_Armia
-	cost = 4
+	cost = 3
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1
@@ -926,7 +938,7 @@ shared_focus = {
 shared_focus = {
 	id = MAR_clear_sky
 	icon = GFX_MAR_Chistoe_Nebo
-	cost = 2
+	cost = 1
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1
@@ -1038,7 +1050,7 @@ shared_focus = {
 shared_focus = {
 	id = MAR_all_for_front
 	icon = GFX_MAR_berezpower
-	cost = 2
+	cost = 1
 	available_if_capitulated = no
 	available = {
 		NOT = { has_completed_focus = MAR_everyone_for_front }
@@ -1065,7 +1077,7 @@ shared_focus = {
 shared_focus = {
 	id = MAR_kosygin_plan
 	icon = GFX_MAR_berezpower
-	cost = 2
+	cost = 1
 	available_if_capitulated = no
 	available = {
 		NOT = { has_completed_focus = MAR_tore_everything_apart }
@@ -1189,7 +1201,7 @@ shared_focus = {
 shared_focus = {
 	id = MAR_tore_everything_apart
 	icon = GFX_MAR_Vse_Vverh_Dnom
-	cost = 2
+	cost = 1
 	available_if_capitulated = no
 	available = {
 		NOT = { has_completed_focus = MAR_kosygin_plan }
@@ -1232,7 +1244,7 @@ shared_focus = {
 shared_focus = {
 	id = MAR_everyone_for_front
 	icon = GFX_MAR_Vse_Vverh_Dnom
-	cost = 2
+	cost = 1
 	available_if_capitulated = no
 	available = {
 		NOT = { has_completed_focus = MAR_all_for_front }
