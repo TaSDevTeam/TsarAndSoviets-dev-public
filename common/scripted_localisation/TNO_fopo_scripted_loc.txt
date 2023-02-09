@@ -1,177 +1,60 @@
 
 defined_text = {
 	name = Get_fopo_tab_name
-	text = {
-		trigger = { check_variable = { conflict_id = 1 } }
-		localization_key = fopo_name_tab_1
-	}
-	text = {
-		trigger = { check_variable = { conflict_id = 2 } }
-		localization_key = fopo_name_tab_2
-	}
-	text = {
-		trigger = { check_variable = { conflict_id = 3 } }
-		localization_key = fopo_name_tab_3
-	}
-	text = {
-		trigger = { check_variable = { conflict_id = 4 } }
-		localization_key = fopo_name_tab_4
-	}
-	text = {
-		trigger = { check_variable = { conflict_id = 5 } }
-		localization_key = fopo_name_tab_5
-	}
-	text = {
-		trigger = { check_variable = { conflict_id = 6 } }
-		localization_key = fopo_name_tab_6
-	}
-	text = {
-		trigger = { check_variable = { conflict_id = 7 } }
-		localization_key = fopo_name_tab_7
-	}
-	text = {
-		trigger = { check_variable = { conflict_id = 8 } }
-		localization_key = fopo_name_tab_8
-	}
-	text = {
-		trigger = { check_variable = { conflict_id = 9 } }
-		localization_key = fopo_name_tab_9
-	}
+
+	### DYNAMIC TITLES ###
 	text = { # Oil Crisis, only Yemen
-		trigger = { 
-			check_variable = { conflict_id = 10 } 
+		trigger = {
+			check_variable = { conflict_id = token:GC_OilCrisis }
 			NOT = {
-				OR = {
-					has_global_flag = OC_Oman_CW
-					has_global_flag = OC_Iraq_CW
-					has_global_flag = OC_Egypt_CW
-				}
+				has_global_flag = OC_Oman_CW
+				has_global_flag = OC_Iraq_CW
+				has_global_flag = OC_Egypt_CW
 			}
 		}
-		localization_key = fopo_name_tab_10_just_yemen
+		localization_key = GC_OilCrisis_just_yemen
 	}
 	text = { # Oil Crisis, only Yemen, Oman
-		trigger = { 
-			check_variable = { conflict_id = 10 } 
+		trigger = {
+			check_variable = { conflict_id = token:GC_OilCrisis }
 			NOT = {
-				OR = {
-					has_global_flag = OC_Iraq_CW
-					has_global_flag = OC_Egypt_CW
-				}
+				has_global_flag = OC_Iraq_CW
+				has_global_flag = OC_Egypt_CW
 			}
 		}
-		localization_key = fopo_name_tab_10_arabian_peninsula
+		localization_key = GC_OilCrisis_arabian_peninsula
 	}
-	text = { # Oil Crisis, all
-		trigger = { check_variable = { conflict_id = 10 } }
-		localization_key = fopo_name_tab_10
-	}
-	text = {
-		trigger = { check_variable = { conflict_id = 11 } }
-		localization_key = fopo_name_tab_11
-	}
-	text = { # Trinidad BPR
-		trigger = { check_variable = { conflict_id = 13 } }
-		localization_key = fopo_name_tab_13
-	}
-	text = { 
-		trigger = { check_variable = { conflict_id = 14 } }
-		localization_key = fopo_name_tab_14
-	}
-	text = { 
-		trigger = { check_variable = { conflict_id = 15 } }
-		localization_key = fopo_name_tab_15
-	}
-	text = { 
-		trigger = { check_variable = { conflict_id = 16 } }
-		localization_key = fopo_name_tab_16
-	}
-	text = {
-		trigger = { check_variable = { conflict_id = 17 } tag = JAP }
-		localization_key = fopo_name_tab_17_JAP
-	}
-	text = { 
-		trigger = { check_variable = { conflict_id = 18 } }
-		localization_key = fopo_name_tab_18
-	}
-	text = { 
-		trigger = { check_variable = { conflict_id = 19 } }
-		localization_key = fopo_name_tab_19
-	}
-	text = { 
-		trigger = { check_variable = { conflict_id = 20 } tag = USA }
-		localization_key = fopo_name_tab_20
-	}
-	text = { 
-		trigger = { check_variable = { conflict_id = 20 } tag = GER }
-		localization_key = fopo_name_tab_20
-	}
-	text = { 
-		trigger = { check_variable = { conflict_id = 21 } tag = USA }
-		localization_key = fopo_name_tab_21
-	}
-	text = { 
-		trigger = { check_variable = { conflict_id = 21 } tag = GER }
-		localization_key = fopo_name_tab_21
-	}
-	text = { 
-		trigger = { check_variable = { conflict_id = 21 } tag = JAP }
-		localization_key = fopo_name_tab_21
-	}
-	text = {
-		trigger = { check_variable = { conflict_id = 22 } }
-		localization_key = fopo_name_tab_22
-	}
-	text = {
-		trigger = { check_variable = { conflict_id = 23 } }
-		localization_key = fopo_name_tab_23
-	}
-	text = {
-		trigger = { 
-			check_variable = { conflict_id = 24 }
-			NOT = {
-				has_global_flag = orungu_conflict_CAF
-			}
-		}
-		localization_key = fopo_name_tab_24_orungu
-	}
-	text = {
-		trigger = { 
-			check_variable = { conflict_id = 24 }
+
+	text = { # Orungu Conflict
+		trigger = {
+			check_variable = { conflict_id = token:GC_Orungu }
 			has_global_flag = orungu_conflict_CAF
 		}
-		localization_key = fopo_name_tab_24_CAF
+		localization_key = GC_Orungu_CAF
 	}
-	text = {
-		trigger = { check_variable = { conflict_id = 25 } }
-		localization_key = fopo_name_tab_25
-	}
-	text = {
-		trigger = { check_variable = { conflict_id = 26 } }
-		localization_key = fopo_name_tab_26
-	}
-	text = {
+
+	text = { # Puerto Plata Invasion, USA
 		trigger = {
-			check_variable = { conflict_id = 27 }
+			check_variable = { conflict_id = token:GC_PuertoPlata }
 			NOT = { has_global_flag = PPI_landing_ongoing }
 			tag = USA
 		}
-		localization_key = fopo_name_tab_27_USA
+		localization_key = GC_PuertoPlata_USA
 	}
-	text = {
+	text = { # Puerto Plata Invasion, everyone else
 		trigger = {
-			check_variable = { conflict_id = 27 }
+			check_variable = { conflict_id = token:GC_PuertoPlata }
 			NOT = { has_global_flag = PPI_landing_ongoing }
 			OR = {
 				tag = GER
 				tag = IBR
 			}
 		}
-		localization_key = fopo_name_tab_27_else
+		localization_key = GC_PuertoPlata_else
 	}
-	text = {
+	text = { # Puerto Plata Invasion, invasion
 		trigger = {
-			check_variable = { conflict_id = 27 }
+			check_variable = { conflict_id = token:GC_PuertoPlata }
 			has_global_flag = PPI_landing_ongoing
 			OR = {
 				tag = USA
@@ -179,49 +62,29 @@ defined_text = {
 				tag = IBR
 			}
 		}
-		localization_key = fopo_name_tab_27_landing
+		localization_key = GC_PuertoPlata_landing
 	}
-	text = {
+
+	text = { # French Civil War, Reclamation of France (USA)
 		trigger = {
-			check_variable = { conflict_id = 28 }
+			check_variable = { conflict_id = token:GC_FranceCW }
 			has_global_flag = FFR_reclamation_happening
 			tag = USA
 		}
-		localization_key = fopo_name_tab_28_ffr
+		localization_key = GC_FranceCW_ffr
 	}
-	text = {
+	text = { # French Civil War, Reclamation of France (GER)
 		trigger = {
-			check_variable = { conflict_id = 28 }
+			check_variable = { conflict_id = token:GC_FranceCW }
 			has_global_flag = FFR_reclamation_happening
 			tag = GER
 		}
-		localization_key = fopo_name_tab_28_ffr_ger
+		localization_key = GC_FranceCW_ffr_ger
 	}
+
+	### NORMAL TITLES ###
 	text = {
-		trigger = {
-			check_variable = { conflict_id = 28 }
-			has_global_flag = FFR_reclamation_civil_war_happening
-		}
-		localization_key = fopo_name_tab_28
-	}
-	text = {
-		trigger = { check_variable = { conflict_id = 29 } }
-		localization_key = fopo_name_tab_29
-	}
-	text = {
-		trigger = { check_variable = { conflict_id = 37 } }
-		localization_key = fopo_name_tab_37
-	}
-	text = {
-		trigger = { check_variable = { conflict_id = 49 } }
-		localization_key = fopo_name_tab_49
-	}
-	text = {
-		trigger = { check_variable = { conflict_id = 50 } }
-		localization_key = fopo_name_tab_50
-	}
-	text = {
-		localization_key = "YOU FORGOT YOUR SCRIPTED LOC SILLY"
+		localization_key = "[?conflict_id.GetTokenLocalizedKey]"
 	}
 }
 
@@ -229,83 +92,83 @@ defined_text = {
 defined_text = {
 	name = Get_TNO_fopo_conflict_guis
 	text = {
-		trigger = { 
+		trigger = {
 			OR = {
-				check_variable = { selected_conflict_id = 8 } 
-				check_variable = { selected_conflict_id = 1 } 
+				check_variable = { selected_conflict_id = token:GC_WAC }
+				check_variable = { selected_conflict_id = token:GC_SAW }
 			}
 			tag = USA
 		}
 		localization_key = "TNO_fopo_generic_conflict_topbar"
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 2 } }
+		trigger = { check_variable = { selected_conflict_id = token:GC_IndonesiaCW } }
 		localization_key = "TNO_Indonesian_Civil_War_GUI"
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 3 } }
+		trigger = { check_variable = { selected_conflict_id = token:GC_JamaicanReferendum } }
 		localization_key = "TNO_Jamaican_Referendum_GUI"
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 4 } }
+		trigger = { check_variable = { selected_conflict_id = token:GC_JamaicanCrisis } }
 		localization_key = "TNO_Jamaican_Crisis_GUI"
 	}
+	# text = {
+	# 	trigger = { check_variable = { selected_conflict_id = token: } }
+	# 	localization_key = "TNO_SriLanka_Crisis_GUI"
+	# }
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 12 } }
-		localization_key = "TNO_SriLanka_Crisis_GUI"
-	}
-	text = {
-		trigger = { check_variable = { selected_conflict_id = 13 } }
+		trigger = { check_variable = { selected_conflict_id = token:GC_TrinidadRev } }
 		localization_key = "TNO_Trinidad_BPR_GUI"
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 14 } }
+		trigger = { check_variable = { selected_conflict_id = token:GC_Turkestan } }
 		localization_key = "TNO_CA_Conference_Unification_1_GUI"
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 17 } }
+		trigger = { check_variable = { selected_conflict_id = token:GC_MalayanReconsturction } }
 		localization_key = "TNO_Malayan_Reconstruction_GUI"
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 18 } tag = JAP } 
+		trigger = { check_variable = { selected_conflict_id = token:GC_PhilippinesWar } tag = JAP }
 		localization_key = "TNO_Philippines_Prep_GUI"
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 20 } tag = USA }
+		trigger = { check_variable = { selected_conflict_id = token:GC_SAWReconstruction } tag = USA }
 		localization_key = "TNO_SAF_US_Reconstruction_GUI"
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 22 } }
+		trigger = { check_variable = { selected_conflict_id = token:GC_PhilippinesReconstruction } }
 		localization_key = "TNO_Philippines_Reconstruction_GUI"
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 25 } }
+		trigger = { check_variable = { selected_conflict_id = token:GC_SAWWithdrawal } }
 		localization_key = "TNO_SAW_Withdrawal_GUI"
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 26 } }
+		trigger = { check_variable = { selected_conflict_id = token:GC_WACReconstruction } }
 		localization_key = "TNO_Free_France_Reconstruction_GUI"
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 27 } tag = USA }
+		trigger = { check_variable = { selected_conflict_id = token:GC_PuertoPlata } tag = USA }
 		localization_key = "TNO_Puerto_Plata_Invasion_GUI_USA"
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 27 } tag = IBR }
+		trigger = { check_variable = { selected_conflict_id = token:GC_PuertoPlata } tag = IBR }
 		localization_key = "TNO_Puerto_Plata_Invasion_GUI_IBR"
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 27 } tag = GER }
+		trigger = { check_variable = { selected_conflict_id = token:GC_PuertoPlata } tag = GER }
 		localization_key = "TNO_Puerto_Plata_Invasion_GUI_GER"
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 28 } }
+		trigger = { check_variable = { selected_conflict_id = token:GC_FranceCW } }
 		localization_key = "TNO_FrenchReclamation_DecisionGUI"
 	}
-	text = {
-		trigger = { check_variable = { selected_conflict_id = 37 } }
-		localization_key = ""
-	}
+	# text = {
+	# 	trigger = { check_variable = { selected_conflict_id = token: } }
+	# 	localization_key = ""
+	# }
 	text = {
 		localization_key = "TNO_fopo_generic_conflict"
 	}
@@ -315,231 +178,231 @@ defined_text = {
 defined_text = {
 	name = Get_fopo_desc
 	text = {
-		trigger = { 
-			check_variable = { selected_conflict_id = 1 }
+		trigger = {
+			check_variable = { selected_conflict_id = token:GC_SAW }
 			tag = BRA
 		}
 		localization_key = BRA_SAW_weapons_category_desc
 	}
 	text = {
-		trigger = { 
+		trigger = {
 			check_variable = { TNO_fopo_selected_front = 1 }
-			check_variable = { selected_conflict_id = 1 }
+			check_variable = { selected_conflict_id = token:GC_SAW }
 			tag = USA
 		}
 		localization_key = USA_south_african_war_category_desc
 	}
 	text = {
-		trigger = { 
+		trigger = {
 			check_variable = { TNO_fopo_selected_front = 2 }
-			check_variable = { selected_conflict_id = 1 }
+			check_variable = { selected_conflict_id = token:GC_SAW }
 			tag = USA
 		}
 		localization_key = USA_south_african_war_domestic_category_desc
 	}
 	text = {
-		trigger = { 
-			check_variable = { selected_conflict_id = 1 }
+		trigger = {
+			check_variable = { selected_conflict_id = token:GC_SAW }
 			has_global_flag = german_civil_war_bormannvic
 			tag = GER
 		}
 		localization_key = GER_Bormann_SAF_War_category_desc
 	}
 	text = {
-		trigger = { 
-			check_variable = { selected_conflict_id = 1 }
+		trigger = {
+			check_variable = { selected_conflict_id = token:GC_SAW }
 			has_global_flag = german_civil_war_goeringvic
 			tag = GER
 		}
 		localization_key = GER_Goring_SAF_War_category_desc
 	}
 	text = {
-		trigger = { 
-			check_variable = { selected_conflict_id = 1 }
+		trigger = {
+			check_variable = { selected_conflict_id = token:GC_SAW }
 			has_global_flag = german_civil_war_speervic
 			tag = GER
 		}
 		localization_key = SGR_South_African_War_category_desc
 	}
 	text = {
-		trigger = { 
-			check_variable = { selected_conflict_id = 2 }
-			tag = USA 
+		trigger = {
+			check_variable = { selected_conflict_id = token:GC_IndonesiaCW }
+			tag = USA
 		}
 		localization_key = USA_ICW_desc
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 2 }
+		trigger = { check_variable = { selected_conflict_id = token:GC_IndonesiaCW }
 		tag = JAP }
 		localization_key = JAP_ICW_desc
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 2 } tag = GER }
+		trigger = { check_variable = { selected_conflict_id = token:GC_IndonesiaCW } tag = GER }
 		localization_key = SGR_pacific_war_desc
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 5 } tag = USA }
+		trigger = { check_variable = { selected_conflict_id = token:GC_IranCW } tag = USA }
 		localization_key = USA_IRCW_aid_iran_category_desc
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 5 } tag = GER }
+		trigger = { check_variable = { selected_conflict_id = token:GC_IranCW } tag = GER }
 		localization_key = SGR_ircw_category_desc
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 5 } tag = JAP }
+		trigger = { check_variable = { selected_conflict_id = token:GC_IranCW } tag = JAP }
 		localization_key = JAP_ircw_category_desc
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 6 } tag = USA }
+		trigger = { check_variable = { selected_conflict_id = token:GC_MalayanCW } tag = USA }
 		localization_key = USA_MLY_aid_category_desc
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 6 } tag = JAP }
+		trigger = { check_variable = { selected_conflict_id = token:GC_MalayanCW } tag = JAP }
 		localization_key = JAP_SHO_aid_category_desc
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 7 } tag = USA NOT = { has_global_flag = congo_mandate_collapsed } }
+		trigger = { check_variable = { selected_conflict_id = token:GC_CongoCW } tag = USA NOT = { has_global_flag = congo_mandate_collapsed } }
 		localization_key = USA_congo_civil_war_desc
 	}
 	text = { # COG, USA with mandate collapse
-		trigger = { check_variable = { conflict_id = 7 } tag = USA has_global_flag = congo_mandate_collapsed }
+		trigger = { check_variable = { conflict_id = token:GC_CongoCW } tag = USA has_global_flag = congo_mandate_collapsed }
 		localization_key = OFN_congo_civil_war_desc
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 7 } tag = JAP }
+		trigger = { check_variable = { selected_conflict_id = token:GC_CongoCW } tag = JAP }
 		localization_key = JAP_congo_civil_war_desc
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 7 } tag = GER }
+		trigger = { check_variable = { selected_conflict_id = token:GC_CongoCW } tag = GER }
 		localization_key = GER_congo_civil_war_desc
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 8 } tag = USA check_variable = { TNO_fopo_selected_front = 2 } }
+		trigger = { check_variable = { selected_conflict_id = token:GC_WAC } tag = USA check_variable = { TNO_fopo_selected_front = 2 } }
 		localization_key = USA_wac_desc_homefront
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 8 } tag = USA OR = { has_global_flag = WAC_scenario_1 has_global_flag = WAC_scenario_3 } }
+		trigger = { check_variable = { selected_conflict_id = token:GC_WAC } tag = USA OR = { has_global_flag = WAC_scenario_1 has_global_flag = WAC_scenario_3 } }
 		localization_key = USA_wac_desc_1
 	}
 	 text = {
-		trigger = { check_variable = { selected_conflict_id = 8 } tag = USA has_global_flag = WAC_scenario_2 }
+		trigger = { check_variable = { selected_conflict_id = token:GC_WAC } tag = USA has_global_flag = WAC_scenario_2 }
 		localization_key = USA_wac_desc_2
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 8 } tag = JAP }
+		trigger = { check_variable = { selected_conflict_id = token:GC_WAC } tag = JAP }
 		localization_key = JAP_wac_desc
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 9 } tag = USA }
+		trigger = { check_variable = { selected_conflict_id = token:GC_AngolaCW } tag = USA }
 		localization_key = USA_angola_civil_war_desc
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 9 } tag = JAP }
+		trigger = { check_variable = { selected_conflict_id = token:GC_AngolaCW } tag = JAP }
 		localization_key = JAP_angola_civil_war_desc
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 10 } tag = GER }
+		trigger = { check_variable = { selected_conflict_id = token:GC_OilCrisis } tag = GER }
 		localization_key = GER_Bormann_oil_crisis_support_category_desc
 	}
 	 text = {
-		trigger = { check_variable = { selected_conflict_id = 10 } tag = USA }
+		trigger = { check_variable = { selected_conflict_id = token:GC_OilCrisis } tag = USA }
 		localization_key = USA_oil_crisis_support_category_desc
 	}
 	 text = {
-		trigger = { check_variable = { selected_conflict_id = 10 } tag = JAP }
+		trigger = { check_variable = { selected_conflict_id = token:GC_OilCrisis } tag = JAP }
 		localization_key = JAP_oil_crisis_support_category_desc
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 11 } tag = GER }
+		trigger = { check_variable = { selected_conflict_id = token:GC_IberianWars } tag = GER }
 		localization_key = GER_IBW_PW_desc
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 11 } tag = USA }
+		trigger = { check_variable = { selected_conflict_id = token:GC_IberianWars } tag = USA }
 		localization_key = USA_IBW_PW_desc
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 11 } tag = JAP }
+		trigger = { check_variable = { selected_conflict_id = token:GC_IberianWars } tag = JAP }
 		localization_key = JAP_IBW_PW_desc
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 15 } tag = USA USA = { has_country_flag = US_aid_gazaland_mondlane } }
+		trigger = { check_variable = { selected_conflict_id = token:GC_MozambiqueCW } tag = USA USA = { has_country_flag = US_aid_gazaland_mondlane } }
 		localization_key = USA_GZCW_PW_desc_mondlane
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 15 } tag = USA USA = { has_country_flag = US_aid_gazaland_simango } }
+		trigger = { check_variable = { selected_conflict_id = token:GC_MozambiqueCW } tag = USA USA = { has_country_flag = US_aid_gazaland_simango } }
 		localization_key = USA_GZCW_PW_desc_simango
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 15 } tag = JAP }
+		trigger = { check_variable = { selected_conflict_id = token:GC_MozambiqueCW } tag = JAP }
 		localization_key = JAP_GZCW_PW_desc
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 16 } tag = USA }
+		trigger = { check_variable = { selected_conflict_id = token:GC_BalintawakBlitz } tag = USA }
 		localization_key = USA_PHI_PW_1_desc
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 16 } tag = JAP }
+		trigger = { check_variable = { selected_conflict_id = token:GC_BalintawakBlitz } tag = JAP }
 		localization_key = JAP_PHI_PW_1_desc
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 17 } tag = USA }
+		trigger = { check_variable = { selected_conflict_id = token:GC_MalayanReconsturction } tag = USA }
 		localization_key = "Placeholder"
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 17 } tag = JAP }
+		trigger = { check_variable = { selected_conflict_id = token:GC_MalayanReconsturction } tag = JAP }
 		localization_key = "Placeholder"
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 18 } has_global_flag = PHI_proxy_war_preparation tag = JAP }
+		trigger = { check_variable = { selected_conflict_id = token:GC_PhilippinesWar } has_global_flag = PHI_proxy_war_preparation tag = JAP }
 		localization_key = JAP_PHI_PW_2_desc
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 18 } has_global_flag = PHI_landing_ongoing tag = JAP }
+		trigger = { check_variable = { selected_conflict_id = token:GC_PhilippinesWar } has_global_flag = PHI_landing_ongoing tag = JAP }
 		localization_key = JAP_PHI_PW_3_desc
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 18 } tag = USA }
+		trigger = { check_variable = { selected_conflict_id = token:GC_PhilippinesWar } tag = USA }
 		localization_key = USA_PHI_PW_2_desc
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 19 } tag = JAP }
+		trigger = { check_variable = { selected_conflict_id = token:GC_Mengjiang } tag = JAP }
 		localization_key = JAP_mengjiang_conflict_desc
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 20 } tag = USA }
+		trigger = { check_variable = { selected_conflict_id = token:GC_SAWReconstruction } tag = USA }
 		localization_key = USA_saf_aftermath
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 20 } tag = GER }
+		trigger = { check_variable = { selected_conflict_id = token:GC_SAWReconstruction } tag = GER }
 		localization_key = GER_saf_aftermath
 	}
 
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 21 } tag = JAP }
+		trigger = { check_variable = { selected_conflict_id = token:GC_MalagasyCW } tag = JAP }
 		localization_key = JAP_madagascar_conflict
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 21 } tag = USA }
+		trigger = { check_variable = { selected_conflict_id = token:GC_MalagasyCW } tag = USA }
 		localization_key = USA_madagascar_conflict
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 21 } tag = GER }
+		trigger = { check_variable = { selected_conflict_id = token:GC_MalagasyCW } tag = GER }
 		localization_key = GER_madagascar_conflict
 	}
 
 	# free space
 
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 23 } tag = USA }
+		trigger = { check_variable = { selected_conflict_id = token:GC_ManoCamapign } tag = USA }
 		localization_key = USA_mano_campaign_desc
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 23 } tag = JAP }
+		trigger = { check_variable = { selected_conflict_id = token:GC_ManoCamapign } tag = JAP }
 		localization_key = JAP_mano_campaign_desc
 	}
 	text = {
-		trigger = { 
-			check_variable = { selected_conflict_id = 24 }
+		trigger = {
+			check_variable = { selected_conflict_id = token:GC_Orungu }
 			tag = USA
 			NOT = {
 				has_global_flag = orungu_conflict_CAF
@@ -548,16 +411,16 @@ defined_text = {
 		localization_key = USA_orungu_alone_desc
 	}
 	text = {
-		trigger = { 
-			check_variable = { selected_conflict_id = 24 }
+		trigger = {
+			check_variable = { selected_conflict_id = token:GC_Orungu }
 			tag = USA
 			has_global_flag = orungu_conflict_CAF
 		}
 		localization_key = USA_orungu_CAF_desc
 	}
 	text = {
-		trigger = { 
-			check_variable = { selected_conflict_id = 24 }
+		trigger = {
+			check_variable = { selected_conflict_id = token:GC_Orungu }
 			tag = USA
 			NOT = {
 				has_global_flag = orungu_conflict_CAF
@@ -566,46 +429,46 @@ defined_text = {
 		localization_key = JAP_orungu_alone_desc
 	}
 	text = {
-		trigger = { 
-			check_variable = { selected_conflict_id = 24 }
+		trigger = {
+			check_variable = { selected_conflict_id = token:GC_Orungu }
 			tag = USA
 			has_global_flag = orungu_conflict_CAF
 		}
 		localization_key = JAP_orungu_CAF_desc
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 25 } tag = GER }
+		trigger = { check_variable = { selected_conflict_id = token:GC_SAWWithdrawal } tag = GER }
 		localization_key = GER_saf_withdrawal_desc
 	}
 	text = { # should actually be japan
-		trigger = { check_variable = { selected_conflict_id = 26 } tag = GER }
+		trigger = { check_variable = { selected_conflict_id = token:GC_WACReconstruction } tag = GER }
 		localization_key = GER_wafr_reconstruction_desc
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 26 } tag = USA }
+		trigger = { check_variable = { selected_conflict_id = token:GC_WACReconstruction } tag = USA }
 		localization_key = USA_wafr_reconstruction_desc
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 27 } tag = USA }
+		trigger = { check_variable = { selected_conflict_id = token:GC_PuertoPlata } tag = USA }
 		localization_key = USA_puerto_plata_desc
 	}
 	text = {
 		trigger = {
-			check_variable = { selected_conflict_id = 27 }
+			check_variable = { selected_conflict_id = token:GC_PuertoPlata }
 			tag = IBR
 		}
 		localization_key = IBR_puerto_plata_desc
 	}
 	text = {
 		trigger = {
-			check_variable = { selected_conflict_id = 27 }
+			check_variable = { selected_conflict_id = token:GC_PuertoPlata }
 			tag = GER
 		}
 		localization_key = GER_puerto_plata_desc
 	}
 	text = {
 		trigger = {
-			check_variable = { selected_conflict_id = 28 }
+			check_variable = { selected_conflict_id = token:GC_FranceCW }
 			has_global_flag = FFR_reclamation_happening
 			tag = USA
 		}
@@ -613,7 +476,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			check_variable = { selected_conflict_id = 28 }
+			check_variable = { selected_conflict_id = token:GC_FranceCW }
 			has_global_flag = FFR_reclamation_happening
 			tag = GER
 		}
@@ -621,7 +484,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			check_variable = { selected_conflict_id = 28 }
+			check_variable = { selected_conflict_id = token:GC_FranceCW }
 			has_global_flag = FFR_reclamation_happening
 			tag = IBR
 		}
@@ -629,7 +492,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			check_variable = { selected_conflict_id = 28 }
+			check_variable = { selected_conflict_id = token:GC_FranceCW }
 			has_global_flag = FFR_reclamation_civil_war_happening
 			tag = USA
 		}
@@ -637,7 +500,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			check_variable = { selected_conflict_id = 28 }
+			check_variable = { selected_conflict_id = token:GC_FranceCW }
 			has_global_flag = FFR_reclamation_civil_war_happening
 			tag = GER
 		}
@@ -645,66 +508,55 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			check_variable = { selected_conflict_id = 28 }
+			check_variable = { selected_conflict_id = token:GC_FranceCW }
 			has_global_flag = FFR_reclamation_civil_war_happening
 			tag = IBR
 		}
 		localization_key = IBR_french_civil_war_desc
 	}
 	text = {
-		trigger = { check_variable = { conflict_id = 29 } tag = USA }
+		trigger = { check_variable = { conflict_id = token:GC_ColombiaCW } tag = USA }
 		localization_key = USA_CCW_desc
 	}
 	text = {
-		trigger = { check_variable = { conflict_id = 29 } tag = JAP }
+		trigger = { check_variable = { conflict_id = token:GC_ColombiaCW } tag = JAP }
 		localization_key = JAP_CCW_desc
 	}
 	text = {
-		trigger = { check_variable = { conflict_id = 29 } tag = IBR }
+		trigger = { check_variable = { conflict_id = token:GC_ColombiaCW } tag = IBR }
 		localization_key = IBR_CCW_desc
 	}
 	text = {
-		trigger = { check_variable = { conflict_id = 29 } tag = GER }
+		trigger = { check_variable = { conflict_id = token:GC_ColombiaCW } tag = GER }
 		localization_key = GER_CCW_desc
 	}
 	text = {
-		trigger = { check_variable = { conflict_id = 29 } tag = BRA }
+		trigger = { check_variable = { conflict_id = token:GC_ColombiaCW } tag = BRA }
 		localization_key = BRA_CCW_desc
 	}
 	text = {
-		trigger = { 
-			check_variable = { selected_conflict_id = 49 }
-			tag = JAP
-		}
-		localization_key = JAP_far_eastern_revolt_category_desc
-	}
-	text = {
-		trigger = { 
-			check_variable = { selected_conflict_id = 49 }
-			tag = MAR
-		}
+		trigger = { check_variable = { conflict_id = token:GC_FarEasternRevolt } tag = MAR }
 		localization_key = MAR_far_eastern_revolt_category_desc
 	}
 	text = {
-		trigger = { 
-			check_variable = { selected_conflict_id = 50 }
-			tag = JAP
-		}
-		localization_key = JAP_manchurian_civil_war_category_desc
+		trigger = { check_variable = { conflict_id = token:GC_FarEasternRevolt } tag = JAP }
+		localization_key = JAP_far_eastern_revolt_category_desc
 	}
 	text = {
-		trigger = { 
-			check_variable = { selected_conflict_id = 50 }
-			tag = MAR
-		}
+		trigger = { check_variable = { conflict_id = token:GC_ManchurianCivilWar } tag = MAR }
 		localization_key = MAR_manchurian_civil_war_category_desc
 	}
 	text = {
-		trigger = { 
-			check_variable = { selected_conflict_id = 50 }
-			tag = USA
-		}
+		trigger = { check_variable = { conflict_id = token:GC_ManchurianCivilWar } tag = JAP }
+		localization_key = JAP_manchurian_civil_war_category_desc
+	}
+	text = {
+		trigger = { check_variable = { conflict_id = token:GC_ManchurianCivilWar } tag = USA }
 		localization_key = USA_manchurian_civil_war_category_desc
+	}
+	text = {
+		trigger = { check_variable = { conflict_id = token:GC_ReichsstaatCabal } }
+		localization_key = GER_RAC_desc
 	}
 	text = {
 		localization_key = ""
@@ -714,162 +566,162 @@ defined_text = {
 defined_text = {
 	name = Get_fopo_sidebar
 	text = { # SAW
-		trigger = { check_variable = { selected_conflict_id = 1 } tag = BRA }
+		trigger = { check_variable = { selected_conflict_id = token:GC_SAW } tag = BRA }
 		localization_key = "GFX_fopo_south_africa_brazil_sidebar"
 	}
 	text = { # SAW
-		trigger = { check_variable = { selected_conflict_id = 1 } }
+		trigger = { check_variable = { selected_conflict_id = token:GC_SAW } }
 		localization_key = "GFX_fopo_south_africa_sidebar"
 	}
 	text = { # Indonesian Civil War
-		trigger = { check_variable = { selected_conflict_id = 2 } }
+		trigger = { check_variable = { selected_conflict_id = token:GC_IndonesiaCW } }
 		localization_key = "GFX_fopo_indonesia_sidebar"
 	}
 	text = { # Iran Civil War
-		trigger = { check_variable = { selected_conflict_id = 5 } }
+		trigger = { check_variable = { selected_conflict_id = token:GC_IranCW } }
 		localization_key = "GFX_fopo_iran_sidebar"
 	}
 	text = { # Malayan Civil War
-		trigger = { check_variable = { selected_conflict_id = 6 } }
+		trigger = { check_variable = { selected_conflict_id = token:GC_MalayanCW } }
 		localization_key = "GFX_fopo_malaysia_sidebar"
 	}
-	text = { # Congolese Civil War 
-		trigger = { check_variable = { selected_conflict_id = 7 } }
+	text = { # Congolese Civil War
+		trigger = { check_variable = { selected_conflict_id = token:GC_CongoCW } }
 		localization_key = "GFX_fopo_congo_sidebar"
 	}
 	text = { # WAC
-		trigger = { check_variable = { selected_conflict_id = 8 } }
+		trigger = { check_variable = { selected_conflict_id = token:GC_WAC } }
 		localization_key = "GFX_fopo_wac_sidebar"
 	}
-	text = { # Angola Civil War 
-		trigger = { check_variable = { selected_conflict_id = 9 } }
+	text = { # Angola Civil War
+		trigger = { check_variable = { selected_conflict_id = token:GC_AngolaCW } }
 		localization_key = "GFX_fopo_angola_sidebar"
 	}
 	text = { # Oil Crisis, Yemen
 		trigger = {
-			check_variable = { selected_conflict_id = 10 }
+			check_variable = { selected_conflict_id = token:GC_OilCrisis }
 			NOT = {
-				OR = {
-					has_global_flag = OC_Oman_CW
-					has_global_flag = OC_Iraq_CW
-					has_global_flag = OC_Egypt_CW
-				}
+				has_global_flag = OC_Oman_CW
+				has_global_flag = OC_Iraq_CW
+				has_global_flag = OC_Egypt_CW
 			}
 		}
 		localization_key = "GFX_fopo_yemen_sidebar"
 	}
 	text = { # Oil Crisis, Oman
 		trigger = {
-			check_variable = { selected_conflict_id = 10 }
+			check_variable = { selected_conflict_id = token:GC_OilCrisis }
 			NOT = {
-				OR = {
-					has_global_flag = OC_Iraq_CW
-					has_global_flag = OC_Egypt_CW
-				}
+				has_global_flag = OC_Iraq_CW
+				has_global_flag = OC_Egypt_CW
 			}
 		}
 		localization_key = "GFX_fopo_oman_sidebar"
 	}
 	text = { # Oil Crisis, other
 		trigger = {
-			check_variable = { selected_conflict_id = 10 }
+			check_variable = { selected_conflict_id = token:GC_OilCrisis }
 		}
 		localization_key = "GFX_fopo_iraq_sidebar"
 	}
 	text = { # Turkes Kenes
 		trigger = {
-			check_variable = { selected_conflict_id = 14 }
+			check_variable = { selected_conflict_id = token:GC_Turkestan }
 		}
 		localization_key = "GFX_fopo_turkes_kenes_sidebar"
 	}
 	text = { # Gazaland Civil War
 		trigger = {
-			check_variable = { selected_conflict_id = 15 }
+			check_variable = { selected_conflict_id = token:GC_MozambiqueCW }
 		}
 		localization_key = ""
 	}
 	text = { # Iberian Wars, Japan
 		trigger = {
-			check_variable = { selected_conflict_id = 11 }
+			check_variable = { selected_conflict_id = token:GC_IberianWars }
 			AND = {
 				has_country_flag = JAP_IBW_1
 			}
 		}
 		localization_key = "GFX_fopo_IBW_jap"
 	}
-	
+
 	text = { # Philippines, Balintawak Blitz
 		trigger = {
-			check_variable = { selected_conflict_id = 16 }
+			check_variable = { selected_conflict_id = token:GC_BalintawakBlitz }
 		}
 		localization_key = "GFX_fopo_philippines_blitz_sidebar"
 	}
 
 	text = { # Philippines, Pre-Invasion
 		trigger = {
-			check_variable = { selected_conflict_id = 18 }
+			check_variable = { selected_conflict_id = token:GC_PhilippinesWar }
 		}
 		localization_key = "GFX_fopo_philippines_landing_sidebar"
 	}
 	text = { # Mengjiang Conflict
 		trigger = {
-			check_variable = { selected_conflict_id = 19 }
+			check_variable = { selected_conflict_id = token:GC_Mengjiang }
 		}
 		localization_key = "GFX_fopo_mengjiang_conflict_sidebar"
 	}
 	text = { # South African War Aftermath
-		trigger = { check_variable = { selected_conflict_id = 20 } }
+		trigger = { check_variable = { selected_conflict_id = token:GC_SAWReconstruction } }
 		localization_key = "GFX_fopo_congo_sidebar"
 	}
 	text = { # Madagascar
-		trigger = { check_variable = { selected_conflict_id = 21 } }
+		trigger = { check_variable = { selected_conflict_id = token:GC_MalagasyCW } }
 		localization_key = "GFX_fopo_congo_sidebar"
 	}
 	text = { # Mano Campaign
-		trigger = { check_variable = { selected_conflict_id = 23 } }
+		trigger = { check_variable = { selected_conflict_id = token:GC_ManoCamapign } }
 		localization_key = "GFX_fopo_mano_campaign_conflict_sidebar"
 	}
 	text = { # Orungu Campaign
-		trigger = { check_variable = { selected_conflict_id = 24 } }
+		trigger = { check_variable = { selected_conflict_id = token:GC_Orungu } }
 		localization_key = "GFX_fopo_orungu_conflict_sidebar"
 	}
 	text = { # SAW Withdrawal
-		trigger = { check_variable = { selected_conflict_id = 25 } }
+		trigger = { check_variable = { selected_conflict_id = token:GC_SAWWithdrawal } }
 		localization_key = "GFX_fopo_saw_withdrawal_sidebar"
 	}
 	text = { # West Africa Reconstruction
-		trigger = { check_variable = { selected_conflict_id = 26 } }
+		trigger = { check_variable = { selected_conflict_id = token:GC_WACReconstruction } }
 		localization_key = "GFX_fopo_wafr_reconstruction_sidebar"
 	}
 	text = { # Puerto Plata
-		trigger = { check_variable = { selected_conflict_id = 27 } }
+		trigger = { check_variable = { selected_conflict_id = token:GC_PuertoPlata } }
 		localization_key = "GFX_fopo_puerto_plata_sidebar"
 	}
 	text = { # French Reclamation
 		trigger = {
-			check_variable = { selected_conflict_id = 28 }
+			check_variable = { selected_conflict_id = token:GC_FranceCW }
 			has_global_flag = FFR_reclamation_happening
 		}
 		localization_key = "GFX_fopo_french_reclamation_sidebar"
 	}
 	text = { # French Civil War
 		trigger = {
-			check_variable = { selected_conflict_id = 28 }
+			check_variable = { selected_conflict_id = token:GC_FranceCW }
 			has_global_flag = FFR_reclamation_civil_war_happening
 		}
 		localization_key = "GFX_fopo_french_civil_war_sidebar"
 	}
 	text = { # Colombia Civil War
-		trigger = { check_variable = { selected_conflict_id = 29 } }
+		trigger = { check_variable = { selected_conflict_id = token:GC_ColombiaCW } }
 		localization_key = "GFX_fopo_colombian_civil_war_sidebar"
 	}
-	text = { 
-		trigger = { check_variable = { selected_conflict_id = 49 } }
+	text = { # Reichsstaat African Cabal
+		trigger = { check_variable = { selected_conflict_id = token:GC_ReichsstaatCabal } }
+		localization_key = "GFX_fopo_reichstaat_african_cabal_sidebar"
+	}
+	text = {
+		trigger = { check_variable = { conflict_id = token:GC_FarEasternRevolt } }
 		localization_key = "GFX_fopo_far_eastern_revolt_sidebar"
 	}
-	text = { 
-		trigger = { check_variable = { selected_conflict_id = 50 } }
-		localization_key = "GFX_fopo_far_eastern_revolt_sidebar"
+	text = {
+		trigger = { check_variable = { conflict_id = token:GC_ManchurianCivilWar } }
+		localization_key = "GFX_fopo_manchurian_civil_war_sidebar"
 	}
 	text = {
 		localization_key = ""
@@ -879,11 +731,11 @@ defined_text = {
 defined_text = {
 	name = Get_fopo_topbar
 	text = { # SAW for the USA
-		trigger = { check_variable = { selected_conflict_id = 1 } tag = USA	}
+		trigger = { check_variable = { selected_conflict_id = token:GC_SAW } tag = USA }
 		localization_key = "GFX_fopo_south_africa_topbar"
 	}
 	text = { # WAC for the USA
-		trigger = { check_variable = { selected_conflict_id = 8 } tag = USA	}
+		trigger = { check_variable = { selected_conflict_id = token:GC_WAC } tag = USA }
 		localization_key = "GFX_fopo_wac_topbar_USA"
 	}
 }
@@ -891,85 +743,85 @@ defined_text = {
 defined_text = {
 	name = Get_fopo_icon
 	text = { # Malayan Civil War, USA
-		trigger = { check_variable = { conflict_id = 6 } tag = USA }
+		trigger = { check_variable = { conflict_id = token:GC_MalayanCW } tag = USA }
 		localization_key = "GFX_fopo_malaysia_civil_war_icon_us"
 	}
 	text = { # Malayan Civil War, Japan
-		trigger = { check_variable = { conflict_id = 6 } tag = JAP }
+		trigger = { check_variable = { conflict_id = token:GC_MalayanCW } tag = JAP }
 		localization_key = "GFX_fopo_malaysia_civil_war_icon_jap"
 	}
 	text = { # Iran Civil War, USA post-coalition collapse
-		trigger = { check_variable = { conflict_id = 5 } tag = USA has_global_flag = TNO_IRA_collapsed_coalition }
-		localization_key = "GFX_fopo_iran_civil_war_icon_us" 
+		trigger = { check_variable = { conflict_id = token:GC_IranCW } tag = USA has_global_flag = TNO_IRA_collapsed_coalition }
+		localization_key = "GFX_fopo_iran_civil_war_icon_us"
 	}
 	text = { # Iran Civil War, USA pre-coalition collapse
-		trigger = { check_variable = { conflict_id = 5 } tag = USA }
+		trigger = { check_variable = { conflict_id = token:GC_IranCW } tag = USA }
 		localization_key = "GFX_fopo_iran_civil_war_icon_us_early"
 	}
 	text = { # Iran Civil War, Germany
-		trigger = { check_variable = { conflict_id = 5 } tag = GER }
+		trigger = { check_variable = { conflict_id = token:GC_IranCW } tag = GER }
 		localization_key = "GFX_fopo_iran_civil_war_icon_ger"
 	}
 	text = { # Iran Civil War, Japan
-		trigger = { check_variable = { conflict_id = 5 } tag = JAP }
+		trigger = { check_variable = { conflict_id = token:GC_IranCW } tag = JAP }
 		localization_key = "GFX_fopo_iran_civil_war_icon_jap"
 	}
 	text = { # Jamaica Referendum
-		trigger = { check_variable = { conflict_id = 3 } }
+		trigger = { check_variable = { conflict_id = token:GC_JamaicanReferendum } }
 		localization_key = "GFX_fopo_jamaica_icon"
 	}
 	text = { # Jamaican Crisis
-		trigger = { check_variable = { conflict_id = 4 } }
+		trigger = { check_variable = { conflict_id = token:GC_JamaicanCrisis } }
 		localization_key = "GFX_fopo_jamaica_crisis_icon"
 	}
 	text = { # Indonesian Civil War, USA
-		trigger = { check_variable = { conflict_id = 2 } tag = USA }
+		trigger = { check_variable = { conflict_id = token:GC_IndonesiaCW } tag = USA }
 		localization_key = "GFX_fopo_indonesia_icon_us"
 	}
 	text = { # Indonesian Civil War, USA
-	trigger = { check_variable = { conflict_id = 2 } tag = GER }
+	trigger = { check_variable = { conflict_id = token:GC_IndonesiaCW } tag = GER }
 	localization_key = "GFX_fopo_indonesia_icon_us"
 	}
 	text = { # Indonesian Civil War, Japan
-		trigger = { check_variable = { conflict_id = 2 } tag = JAP }
+		trigger = { check_variable = { conflict_id = token:GC_IndonesiaCW } tag = JAP }
 		localization_key = "GFX_fopo_indonesia_icon_jap"
 	}
 	text = { # SAW, USA
-		trigger = { check_variable = { conflict_id = 1 } tag = USA }
+		trigger = { check_variable = { conflict_id = token:GC_SAW } tag = USA }
 		localization_key = "GFX_fopo_saw_icon_us"
 	}
 	text = { # SAW, Germany
-		trigger = { check_variable = { conflict_id = 1 } tag = GER }
+		trigger = { check_variable = { conflict_id = token:GC_SAW } tag = GER }
 		localization_key = "GFX_fopo_saw_icon_ger"
 	}
 	text = { # SAW, BRA
-		trigger = { check_variable = { conflict_id = 1 } tag = BRA }
+		trigger = { check_variable = { conflict_id = token:GC_SAW } tag = BRA }
 		localization_key = "GFX_fopo_saw_icon_us"
 	}
 	text = { # COG, USA with mandate collapse
-		trigger = { check_variable = { conflict_id = 7 } tag = USA has_global_flag = congo_mandate_collapsed NOT = { has_global_flag = congo_PW_CAF_joined } }
+		trigger = { check_variable = { conflict_id = token:GC_CongoCW } tag = USA has_global_flag = congo_mandate_collapsed NOT = { has_global_flag = congo_PW_CAF_joined } }
 		localization_key = "GFX_fopo_congo_icon_us_mzb"
 	}
 	text = { # COG, USA without mandate collapse
-		trigger = { check_variable = { conflict_id = 7 } tag = USA NOT = { has_global_flag = congo_PW_CAF_joined } }
+		trigger = { check_variable = { conflict_id = token:GC_CongoCW } tag = USA NOT = { has_global_flag = congo_PW_CAF_joined } }
 		localization_key = "GFX_fopo_congo_icon_us"
 	}
 	text = { # COG, JAP with mandate collapse
-		trigger = { check_variable = { conflict_id = 7 } tag = JAP has_global_flag = congo_mandate_collapsed NOT = { has_global_flag = congo_PW_CAF_joined } }
+		trigger = { check_variable = { conflict_id = token:GC_CongoCW } tag = JAP has_global_flag = congo_mandate_collapsed NOT = { has_global_flag = congo_PW_CAF_joined } }
 		localization_key = "GFX_fopo_congo_icon_jap_mzb"
 	}
 	text = { # COG, JAP without mandate collapse
-		trigger = { check_variable = { conflict_id = 7 } tag = JAP NOT = { has_global_flag = congo_PW_CAF_joined } }
+		trigger = { check_variable = { conflict_id = token:GC_CongoCW } tag = JAP NOT = { has_global_flag = congo_PW_CAF_joined } }
 		localization_key = "GFX_fopo_congo_icon_jap"
 	}
 	text = { # COG, GER
-		trigger = { check_variable = { conflict_id = 7 } tag = GER NOT = { has_global_flag = congo_PW_CAF_joined } }
+		trigger = { check_variable = { conflict_id = token:GC_CongoCW } tag = GER NOT = { has_global_flag = congo_PW_CAF_joined } }
 		localization_key = "GFX_fopo_congo_icon_ger"
 	}
 	text = { # COG, USA with mandate collapse and CAF
-		trigger = { check_variable = { conflict_id = 7 } tag = USA
+		trigger = { check_variable = { conflict_id = token:GC_CongoCW } tag = USA
 			AND = {
-				has_global_flag = congo_mandate_collapsed 
+				has_global_flag = congo_mandate_collapsed
 				has_global_flag = congo_PW_CAF_joined
 			}
 		}
@@ -977,68 +829,66 @@ defined_text = {
 	}
 	## COG with CAF
 	text = { # COG, USA without mandate collapse and CAF
-		trigger = { check_variable = { conflict_id = 7 } tag = USA has_global_flag = congo_PW_CAF_joined }
+		trigger = { check_variable = { conflict_id = token:GC_CongoCW } tag = USA has_global_flag = congo_PW_CAF_joined }
 		localization_key = "GFX_fopo_congo_icon_us_CAF"
 	}
 	text = { # COG, JAP with mandate collapse and CAF
-		trigger = { check_variable = { conflict_id = 7 } tag = JAP 
+		trigger = { check_variable = { conflict_id = token:GC_CongoCW } tag = JAP
 			AND = {
-				has_global_flag = congo_mandate_collapsed 
+				has_global_flag = congo_mandate_collapsed
 				has_global_flag = congo_PW_CAF_joined
 			}
 		}
 		localization_key = "GFX_fopo_congo_icon_jap_mzb_CAF"
 	}
 	text = { # COG, JAP without mandate collapse and CAF
-		trigger = { check_variable = { conflict_id = 7 } tag = JAP has_global_flag = congo_PW_CAF_joined }
+		trigger = { check_variable = { conflict_id = token:GC_CongoCW } tag = JAP has_global_flag = congo_PW_CAF_joined }
 		localization_key = "GFX_fopo_congo_icon_jap_CAF"
 	}
 	text = { # COG, GER and CAF
-		trigger = { check_variable = { conflict_id = 7 } tag = GER has_global_flag = congo_PW_CAF_joined }
+		trigger = { check_variable = { conflict_id = token:GC_CongoCW } tag = GER has_global_flag = congo_PW_CAF_joined }
 		localization_key = "GFX_fopo_congo_icon_ger_CAF"
 	}
 	text = { # WAC Scenario 1, USA
-		trigger = { check_variable = { conflict_id = 8 } tag = USA has_global_flag = WAC_scenario_1 }
+		trigger = { check_variable = { conflict_id = token:GC_WAC } tag = USA has_global_flag = WAC_scenario_1 }
 		localization_key = "GFX_fopo_wac_icon_us_1"
 	}
 	text = { # WAC Scenario 1, JAP
-		trigger = { check_variable = { conflict_id = 8 } tag = JAP has_global_flag = WAC_scenario_1 }
+		trigger = { check_variable = { conflict_id = token:GC_WAC } tag = JAP has_global_flag = WAC_scenario_1 }
 		localization_key = "GFX_fopo_wac_icon_jap_1"
 	}
 	text = { # WAC Scenario 2, USA
-		trigger = { check_variable = { conflict_id = 8 } tag = USA has_global_flag = WAC_scenario_2 }
+		trigger = { check_variable = { conflict_id = token:GC_WAC } tag = USA has_global_flag = WAC_scenario_2 }
 		localization_key = "GFX_fopo_wac_icon_us_2"
 	}
 	text = { # WAC Scenario 2, JAP
-		trigger = { check_variable = { conflict_id = 8 } tag = JAP has_global_flag = WAC_scenario_2 }
+		trigger = { check_variable = { conflict_id = token:GC_WAC } tag = JAP has_global_flag = WAC_scenario_2 }
 		localization_key = "GFX_fopo_wac_icon_jap_2"
 	}
 	text = { # WAC Scenario 3, USA
-		trigger = { check_variable = { conflict_id = 8 } tag = USA has_global_flag = WAC_scenario_3 }
+		trigger = { check_variable = { conflict_id = token:GC_WAC } tag = USA has_global_flag = WAC_scenario_3 }
 		localization_key = "GFX_fopo_wac_icon_us_3"
 	}
 	text = { # WAC Scenario 3, JAP
-		trigger = { check_variable = { conflict_id = 8 } tag = JAP has_global_flag = WAC_scenario_3 }
+		trigger = { check_variable = { conflict_id = token:GC_WAC } tag = JAP has_global_flag = WAC_scenario_3 }
 		localization_key = "GFX_fopo_wac_icon_jap_3"
 	}
 	text = { # Angola Civil War, USA
-		trigger = { check_variable = { conflict_id = 9 } tag = USA }
+		trigger = { check_variable = { conflict_id = token:GC_AngolaCW } tag = USA }
 		localization_key = "GFX_fopo_angola_civil_war_icon_us"
 	}
 	text = { # Angola Civil War, Japan
-		trigger = { check_variable = { conflict_id = 9 } tag = JAP }
+		trigger = { check_variable = { conflict_id = token:GC_AngolaCW } tag = JAP }
 		localization_key = "GFX_fopo_angola_civil_war_icon_jap"
 	}
-	
+
 	text = { # Oil Crisis, supporting Italy, only Yemen
-		trigger = { 
-			check_variable = { conflict_id = 10 } 
+		trigger = {
+			check_variable = { conflict_id = token:GC_OilCrisis }
 			NOT = {
-				OR = {
-					has_global_flag = OC_Oman_CW
-					has_global_flag = OC_Iraq_CW
-					has_global_flag = OC_Egypt_CW
-				}
+				has_global_flag = OC_Oman_CW
+				has_global_flag = OC_Iraq_CW
+				has_global_flag = OC_Egypt_CW
 			}
 			is_in_faction_with = ITA
 			OR = {
@@ -1049,13 +899,11 @@ defined_text = {
 		localization_key = GFX_fopo_oc_icon_proitaly_yemen
 	}
 	text = { # Oil Crisis, supporting Italy, Yemen and Oman
-		trigger = { 
-			check_variable = { conflict_id = 10 } 
+		trigger = {
+			check_variable = { conflict_id = token:GC_OilCrisis }
 			NOT = {
-				OR = {
-					has_global_flag = OC_Iraq_CW
-					has_global_flag = OC_Egypt_CW
-				}
+				has_global_flag = OC_Iraq_CW
+				has_global_flag = OC_Egypt_CW
 			}
 			is_in_faction_with = ITA
 			OR = {
@@ -1066,8 +914,8 @@ defined_text = {
 		localization_key = GFX_fopo_oc_icon_proitaly_yemen_oman
 	}
 	text = { # Oil Crisis, supporting Italy, no Egypt
-		trigger = { 
-			check_variable = { conflict_id = 10 } 
+		trigger = {
+			check_variable = { conflict_id = token:GC_OilCrisis }
 			NOT = {
 				has_global_flag = OC_Egypt_CW
 			}
@@ -1080,8 +928,8 @@ defined_text = {
 		localization_key = GFX_fopo_oc_icon_proitaly_no_egypt
 	}
 	text = { # Oil Crisis, supporting Italy, everything
-		trigger = { 
-			check_variable = { conflict_id = 10 } 
+		trigger = {
+			check_variable = { conflict_id = token:GC_OilCrisis }
 			is_in_faction_with = ITA
 			OR = {
 				tag = USA
@@ -1091,89 +939,77 @@ defined_text = {
 		localization_key = GFX_fopo_oc_icon_proitaly_all
 	}
 	text = { # Oil Crisis, GER, only Yemen
-		trigger = { 
-			check_variable = { conflict_id = 10 } 
+		trigger = {
+			check_variable = { conflict_id = token:GC_OilCrisis }
 			NOT = {
-				OR = {
-					has_global_flag = OC_Oman_CW
-					has_global_flag = OC_Iraq_CW
-					has_global_flag = OC_Egypt_CW
-				}
+				has_global_flag = OC_Oman_CW
+				has_global_flag = OC_Iraq_CW
+				has_global_flag = OC_Egypt_CW
 			}
 			tag = GER
 		}
 		localization_key = GFX_fopo_oc_icon_ger_only_yemen
 	}
 	text = { # Oil Crisis, JAP, only Yemen
-		trigger = { 
-			check_variable = { conflict_id = 10 } 
+		trigger = {
+			check_variable = { conflict_id = token:GC_OilCrisis }
 			NOT = {
-				OR = {
-					has_global_flag = OC_Oman_CW
-					has_global_flag = OC_Iraq_CW
-					has_global_flag = OC_Egypt_CW
-				}
+				has_global_flag = OC_Oman_CW
+				has_global_flag = OC_Iraq_CW
+				has_global_flag = OC_Egypt_CW
 			}
 			tag = JAP
 		}
 		localization_key = GFX_fopo_oc_icon_jap_only_yemen
 	}
 	text = { # Oil Crisis, JAP, only Yemen
-		trigger = { 
-			check_variable = { conflict_id = 10 } 
+		trigger = {
+			check_variable = { conflict_id = token:GC_OilCrisis }
 			NOT = {
-				OR = {
-					has_global_flag = OC_Oman_CW
-					has_global_flag = OC_Iraq_CW
-					has_global_flag = OC_Egypt_CW
-				}
+				has_global_flag = OC_Oman_CW
+				has_global_flag = OC_Iraq_CW
+				has_global_flag = OC_Egypt_CW
 			}
 			tag = USA
 		}
 		localization_key = GFX_fopo_oc_icon_usa_yemen
 	}
 	text = { # Oil Crisis, GER, only Yemen Oman
-		trigger = { 
-			check_variable = { conflict_id = 10 } 
+		trigger = {
+			check_variable = { conflict_id = token:GC_OilCrisis }
 			NOT = {
-				OR = {
-					has_global_flag = OC_Iraq_CW
-					has_global_flag = OC_Egypt_CW
-				}
+				has_global_flag = OC_Iraq_CW
+				has_global_flag = OC_Egypt_CW
 			}
 			tag = GER
 		}
 		localization_key = GFX_fopo_oc_icon_ger_yemen_oman
 	}
 	text = { # Oil Crisis, JAP, only Yemen Oman
-		trigger = { 
-			check_variable = { conflict_id = 10 } 
+		trigger = {
+			check_variable = { conflict_id = token:GC_OilCrisis }
 			NOT = {
-				OR = {
-					has_global_flag = OC_Iraq_CW
-					has_global_flag = OC_Egypt_CW
-				}
+				has_global_flag = OC_Iraq_CW
+				has_global_flag = OC_Egypt_CW
 			}
 			tag = JAP
 		}
 		localization_key = GFX_fopo_oc_icon_jap_yemen_oman
 	}
 	text = { # Oil Crisis, USA, only Yemen Oman
-		trigger = { 
-			check_variable = { conflict_id = 10 } 
+		trigger = {
+			check_variable = { conflict_id = token:GC_OilCrisis }
 			NOT = {
-				OR = {
-					has_global_flag = OC_Iraq_CW
-					has_global_flag = OC_Egypt_CW
-				}
+				has_global_flag = OC_Iraq_CW
+				has_global_flag = OC_Egypt_CW
 			}
 			tag = USA
 		}
 		localization_key = GFX_fopo_oc_icon_usa_yemen_oman
 	}
 	text = { # Oil Crisis, GER, no Egypt
-		trigger = { 
-			check_variable = { conflict_id = 10 } 
+		trigger = {
+			check_variable = { conflict_id = token:GC_OilCrisis }
 			NOT = {
 				has_global_flag = OC_Egypt_CW
 			}
@@ -1182,8 +1018,8 @@ defined_text = {
 		localization_key = GFX_fopo_oc_icon_ger_no_egypt
 	}
 	text = { # Oil Crisis, JAP, no Egypt
-		trigger = { 
-			check_variable = { conflict_id = 10 } 
+		trigger = {
+			check_variable = { conflict_id = token:GC_OilCrisis }
 			NOT = {
 				has_global_flag = OC_Egypt_CW
 			}
@@ -1192,8 +1028,8 @@ defined_text = {
 		localization_key = GFX_fopo_oc_icon_jap_no_egypt
 	}
 	text = { # Oil Crisis, USA, no Egypt
-		trigger = { 
-			check_variable = { conflict_id = 10 } 
+		trigger = {
+			check_variable = { conflict_id = token:GC_OilCrisis }
 			NOT = {
 				has_global_flag = OC_Egypt_CW
 			}
@@ -1202,150 +1038,167 @@ defined_text = {
 		localization_key = GFX_fopo_oc_icon_usa_no_egypt
 	}
 	text = { # Oil Crisis, GER, no Egypt
-		trigger = { 
-			check_variable = { conflict_id = 10 } 
+		trigger = {
+			check_variable = { conflict_id = token:GC_OilCrisis }
 			tag = GER
 		}
 		localization_key = GFX_fopo_oc_icon_ger
 	}
 	text = { # Oil Crisis, JAP, no Egypt
-		trigger = { 
-			check_variable = { conflict_id = 10 } 
+		trigger = {
+			check_variable = { conflict_id = token:GC_OilCrisis }
 			tag = JAP
 		}
 		localization_key = GFX_fopo_oc_icon_jap
 	}
 	text = { # Oil Crisis, USA, no Egypt
-		trigger = { 
-			check_variable = { conflict_id = 10 } 
+		trigger = {
+			check_variable = { conflict_id = token:GC_OilCrisis }
 			tag = USA
 		}
 		localization_key = GFX_fopo_oc_icon_usa
 	}
 	text = { # IBW, Germany
-		trigger = { check_variable = { conflict_id = 11 } tag = GER }
+		trigger = { check_variable = { conflict_id = token:GC_IberianWars } tag = GER }
 		localization_key = "GFX_fopo_IBW_ger_1_icon"
 	}
 	text = { # IBW, America
-		trigger = { check_variable = { conflict_id = 11 } tag = USA }
+		trigger = { check_variable = { conflict_id = token:GC_IberianWars } tag = USA }
 		localization_key = "GFX_fopo_IBW_usa_1_icon"
 	}
 	text = { # IBW, Japan
-		trigger = { check_variable = { conflict_id = 11 } tag = JAP }
+		trigger = { check_variable = { conflict_id = token:GC_IberianWars } tag = JAP }
 		localization_key = "GFX_fopo_IBW_jap_1_icon"
 	}
 	text = { # Trinidad BPR
-		trigger = { check_variable = { conflict_id = 13 } }
+		trigger = { check_variable = { conflict_id = token:GC_TrinidadRev } }
 		localization_key = "GFX_fopo_trinidad_icon"
 	}
-	
+
 	text = { # C.A Unification DC
-		trigger = { check_variable = { conflict_id = 14 } tag = USA }
+		trigger = { check_variable = { conflict_id = token:GC_Turkestan } tag = USA }
 		localization_key = "GFX_fopo_turkes_kenes_icon_USA"
 	}
 	text = { # C.A Unification DC
-		trigger = { check_variable = { conflict_id = 14 } tag = GER }
+		trigger = { check_variable = { conflict_id = token:GC_Turkestan } tag = GER }
 		localization_key = "GFX_fopo_turkes_kenes_icon_GER"
 	}
 	text = { # C.A Unification DC
-		trigger = { check_variable = { conflict_id = 14 } tag = JAP }
+		trigger = { check_variable = { conflict_id = token:GC_Turkestan } tag = JAP }
 		localization_key = "GFX_fopo_turkes_kenes_icon_JAP"
 	}
-	
+
+	text = {
+		trigger = { check_variable = { conflict_id = token:GC_MozambiqueCW } tag = USA USA = { has_country_flag = US_aid_gazaland_simango } }
+		localization_key = GFX_fopo_mozambique_3_way_icon_USA
+	}
+	text = {
+		trigger = { check_variable = { conflict_id = token:GC_MozambiqueCW } tag = USA }
+		localization_key = GFX_fopo_mozambique_2_way_icon_USA
+	}
+	text = {
+		trigger = { check_variable = { conflict_id = token:GC_MozambiqueCW } tag = JAP USA = { has_country_flag = US_aid_gazaland_simango } }
+		localization_key = GFX_fopo_mozambique_3_way_icon_JAP
+	}
+	text = {
+		trigger = { check_variable = { conflict_id = token:GC_MozambiqueCW } tag = JAP }
+		localization_key = GFX_fopo_mozambique_2_way_icon_JAP
+	}
+
 	text = { # Balintawak Blitz USA
-		trigger = { check_variable = { conflict_id = 16 } tag = USA }
+		trigger = { check_variable = { conflict_id = token:GC_BalintawakBlitz } tag = USA }
 		localization_key = "GFX_fopo_philippines_blitz_icon_us"
 	}
-	
+
 	text = { # Balintawak Blitz JAP
-		trigger = { check_variable = { conflict_id = 16 } tag = JAP }
+		trigger = { check_variable = { conflict_id = token:GC_BalintawakBlitz } tag = JAP }
 		localization_key = "GFX_fopo_philippines_blitz_icon_jap"
 	}
 	text = { # Malayan Reconstruction - Operation Domino
-		trigger = { check_variable = { conflict_id = 17 } tag = USA }
+		trigger = { check_variable = { conflict_id = token:GC_MalayanReconsturction } tag = USA }
 		localization_key = "GFX_fopo_malaysia_civil_war_icon_us"
 	}
 	text = { # Malayan Reconstruction - Strengthening the Sphere
-		trigger = { check_variable = { conflict_id = 17 } tag = JAP }
+		trigger = { check_variable = { conflict_id = token:GC_MalayanReconsturction } tag = JAP }
 		localization_key = "GFX_fopo_malayan_reconstruction_icon_jap"
 	}
 	text = { # The War for the Philippines - USA
-		trigger = { check_variable = { conflict_id = 18 } tag = USA }
+		trigger = { check_variable = { conflict_id = token:GC_PhilippinesWar } tag = USA }
 		localization_key = "GFX_fopo_philippines_prep_us"
 	}
 	text = { # The War for the Philippines - JAP
-		trigger = { check_variable = { conflict_id = 18 } tag = JAP }
+		trigger = { check_variable = { conflict_id = token:GC_PhilippinesWar } tag = JAP }
 		localization_key = "GFX_fopo_philippines_prep_jap"
 	}
-	
+
 	text = { # The War for the Philippines - Landing - Huks friendly - USA
-		trigger = { check_variable = { conflict_id = 18 } tag = USA has_global_flag = PHI_landing_ongoing USA = { NOT = { has_country_flag = PHI_negotiations_failed } } }
+		trigger = { check_variable = { conflict_id = token:GC_PhilippinesWar } tag = USA has_global_flag = PHI_landing_ongoing USA = { NOT = { has_country_flag = PHI_negotiations_failed } } }
 		localization_key = "GFX_fopo_philippines_landing_us_1"
 	}
-	
+
 	text = { # The War for the Philippines - Landing - Huks unfriendly - USA
-		trigger = { check_variable = { conflict_id = 18 } tag = USA has_global_flag = PHI_landing_ongoing USA = { has_country_flag = PHI_negotiations_failed } }
+		trigger = { check_variable = { conflict_id = token:GC_PhilippinesWar } tag = USA has_global_flag = PHI_landing_ongoing USA = { has_country_flag = PHI_negotiations_failed } }
 		localization_key = "GFX_fopo_philippines_landing_us_2"
 	}
-	
-	
+
+
 	text = { # The War for the Philippines - Landing -  JAP
-		trigger = { check_variable = { conflict_id = 18 } tag = JAP has_global_flag = PHI_landing_ongoing }
+		trigger = { check_variable = { conflict_id = token:GC_PhilippinesWar } tag = JAP has_global_flag = PHI_landing_ongoing }
 		localization_key = "GFX_philippines_landing_jap"
 	}
 
 	text = {
-		trigger = { check_variable = { conflict_id = 19 } tag = JAP }
+		trigger = { check_variable = { conflict_id = token:GC_Mengjiang } tag = JAP }
 		localization_key = "GFX_fopo_mengjiang_conflict"
 	}
 
 	text = {
-		trigger = { check_variable = { conflict_id = 19 } tag = USA }
+		trigger = { check_variable = { conflict_id = token:GC_Mengjiang } tag = USA }
 		localization_key = "GFX_fopo_mengjiang_conflict"
 	}
 	text = {
-		trigger = { check_variable = { conflict_id = 19 } tag = GER }
+		trigger = { check_variable = { conflict_id = token:GC_Mengjiang } tag = GER }
 		localization_key = "GFX_fopo_mengjiang_conflict"
 	}
 	text = {
-		trigger = { check_variable = { conflict_id = 19 } tag = JAP }
+		trigger = { check_variable = { conflict_id = token:GC_Mengjiang } tag = JAP }
 		localization_key = "GFX_fopo_mengjiang_conflict"
 	}
 	text = {
-		trigger = { check_variable = { conflict_id = 20 } tag = USA }
+		trigger = { check_variable = { conflict_id = token:GC_SAWReconstruction } tag = USA }
 		localization_key = "GFX_fopo_mandates_icon"
 	}
 	text = {
-		trigger = { check_variable = { conflict_id = 20 } tag = GER }
+		trigger = { check_variable = { conflict_id = token:GC_SAWReconstruction } tag = GER }
 		localization_key = "GFX_fopo_mandates_icon"
 	}
 	text = {
-		trigger = { check_variable = { conflict_id = 20 } tag = JAP }
+		trigger = { check_variable = { conflict_id = token:GC_SAWReconstruction } tag = JAP }
 		localization_key = "GFX_fopo_mandates_icon"
 	}
 	text = {
-		trigger = { check_variable = { conflict_id = 21 } tag = JAP }
+		trigger = { check_variable = { conflict_id = token:GC_MalagasyCW } tag = JAP }
 		localization_key = "GFX_fopo_madagascar_icon_JAP"
 	}
 	text = {
-		trigger = { check_variable = { conflict_id = 21 } tag = USA }
+		trigger = { check_variable = { conflict_id = token:GC_MalagasyCW } tag = USA }
 		localization_key = "GFX_fopo_madagascar_icon_USA"
 	}
 	text = {
-		trigger = { check_variable = { conflict_id = 21 } tag = GER }
+		trigger = { check_variable = { conflict_id = token:GC_MalagasyCW } tag = GER }
 		localization_key = "GFX_fopo_madagascar_icon_GER"
 	}
 	text = {
-		trigger = { check_variable = { conflict_id = 22 } }
+		trigger = { check_variable = { conflict_id = token:GC_PhilippinesReconstruction } }
 		localization_key = "GFX_fopo_philippines_reconstruction"
 	}
 	#text = {
-	#	trigger = { check_variable = { conflict_id = 23 } }
+	#	trigger = { check_variable = { conflict_id = token:GC_ManoCamapign } }
 	#	localization_key = "GFX_fopo_mano_campaign_icon"
 	#}
 	text = {
-		trigger = { 
-			check_variable = { conflict_id = 24 } 
+		trigger = {
+			check_variable = { conflict_id = token:GC_Orungu }
 			tag = USA
 			NOT = {
 				has_global_flag = orungu_conflict_CAF
@@ -1354,16 +1207,16 @@ defined_text = {
 		localization_key = "GFX_fopo_orungu_icon_USA"
 	}
 	text = {
-		trigger = { 
-			check_variable = { conflict_id = 24 } 
+		trigger = {
+			check_variable = { conflict_id = token:GC_Orungu }
 			tag = USA
 			has_global_flag = orungu_conflict_CAF
 		}
 		localization_key = "GFX_fopo_orungu_CAF_icon_USA"
 	}
 	text = {
-		trigger = { 
-			check_variable = { conflict_id = 24 } 
+		trigger = {
+			check_variable = { conflict_id = token:GC_Orungu }
 			tag = USA
 			NOT = {
 				has_global_flag = orungu_conflict_CAF
@@ -1372,24 +1225,24 @@ defined_text = {
 		localization_key = "GFX_fopo_orungu_icon_JAP"
 	}
 	text = {
-		trigger = { 
-			check_variable = { conflict_id = 24 } 
+		trigger = {
+			check_variable = { conflict_id = token:GC_Orungu }
 			tag = USA
 			has_global_flag = orungu_conflict_CAF
 		}
 		localization_key = "GFX_fopo_orungu_CAF_icon_JAP"
 	}
 	text = {
-		trigger = { check_variable = { conflict_id = 25 } tag = GER }
+		trigger = { check_variable = { conflict_id = token:GC_SAWWithdrawal } tag = GER }
 		localization_key = "GFX_fopo_saw_withdrawal"
 	}
 	text = {
-		trigger = { check_variable = { conflict_id = 26 } }
+		trigger = { check_variable = { conflict_id = token:GC_WACReconstruction } }
 		localization_key = "GFX_fopo_wafr_reconstruction_icon"
 	}
 	text = {
-		trigger = { 
-			check_variable = { conflict_id = 27 } 
+		trigger = {
+			check_variable = { conflict_id = token:GC_PuertoPlata }
 			OR = {
 				tag = USA
 				tag = MEX
@@ -1398,8 +1251,8 @@ defined_text = {
 		localization_key = "GFX_fopo_puerto_plata_icon_USA"
 	}
 	text = {
-		trigger = { 
-			check_variable = { conflict_id = 27 } 
+		trigger = {
+			check_variable = { conflict_id = token:GC_PuertoPlata }
 			OR = {
 				tag = IBR
 				tag = GER
@@ -1409,7 +1262,7 @@ defined_text = {
 	}
 	text = { # French Reclamation
 		trigger = {
-			check_variable = { conflict_id = 28 }
+			check_variable = { conflict_id = token:GC_FranceCW }
 			OR = {
 				has_global_flag = FFR_reclamation_happening
 				has_global_flag = FFR_reclamation_civil_war_happening
@@ -1423,7 +1276,7 @@ defined_text = {
 	}
 	text = { # French Reclamation
 		trigger = {
-			check_variable = { conflict_id = 28 }
+			check_variable = { conflict_id = token:GC_FranceCW }
 			OR = {
 				has_global_flag = FFR_reclamation_happening
 				has_global_flag = FFR_reclamation_civil_war_happening
@@ -1436,57 +1289,64 @@ defined_text = {
 	}
 	text = { # French Civil War
 		trigger = {
-			check_variable = { conflict_id = 28 }
+			check_variable = { conflict_id = token:GC_FranceCW }
 		}
 		localization_key = "GFX_fopo_french_civil_war_icon"
 	}
 	text = { # Colombia Civil War - COL
 		trigger = {
-			check_variable = { conflict_id = 29 }
+			check_variable = { conflict_id = token:GC_ColombiaCW }
 			check_variable = { COL_faction_support = COL.id }
 		}
 		localization_key = "GFX_fopo_colombian_civil_war_icon_COL"
 	}
 	text = { # Colombia Civil War - CLL
 		trigger = {
-			check_variable = { conflict_id = 29 }
+			check_variable = { conflict_id = token:GC_ColombiaCW }
 			check_variable = { COL_faction_support = CLL.id }
 		}
 		localization_key = "GFX_fopo_colombian_civil_war_icon_CLL"
 	}
 	text = { # Colombia Civil War - CLC
 		trigger = {
-			check_variable = { conflict_id = 29 }
+			check_variable = { conflict_id = token:GC_ColombiaCW }
 			check_variable = { COL_faction_support = CLC.id }
 		}
 		localization_key = "GFX_fopo_colombian_civil_war_icon_CLC"
 	}
-	text = {
-		trigger = { check_variable = { conflict_id = 37 } tag = BRA }
-		localization_key = "GFX_fopo_south_american_cold_war_bra"
+	text = { # Colombia Civil War - CLD
+		trigger = {
+			check_variable = { conflict_id = token:GC_ColombiaCW }
+			check_variable = { COL_faction_support = CLD.id }
+		}
+		localization_key = "GFX_fopo_colombian_civil_war_icon_CLD"
 	}
+	# text = {
+	# 	trigger = { check_variable = { conflict_id = token: } tag = BRA }
+	# 	localization_key = "GFX_fopo_south_american_cold_war_bra"
+	# }
+	# text = {
+	# 	trigger = { check_variable = { conflict_id = token: } tag = ARG }
+	# 	localization_key = "GFX_fopo_south_american_cold_war_arg"
+	# }
 	text = {
-		trigger = { check_variable = { conflict_id = 37 } tag = ARG }
-		localization_key = "GFX_fopo_south_american_cold_war_arg"
-	}
-	text = { # Far Eastern Revolt, RUS
-		trigger = { check_variable = { conflict_id = 49 } tag = MAR }
+		trigger = { check_variable = { conflict_id = token:GC_FarEasternRevolt } tag = MAR }
 		localization_key = "GFX_fopo_far_eastern_revolt_icon_rus"
 	}
-	text = { # Far Eastern Revolt, JAP
-		trigger = { check_variable = { conflict_id = 49 } tag = JAP }
+	text = {
+		trigger = { check_variable = { conflict_id = token:GC_FarEasternRevolt } tag = JAP }
 		localization_key = "GFX_fopo_far_eastern_revolt_icon_jap"
 	}
-	text = { # Far Eastern Revolt, RUS
-		trigger = { check_variable = { conflict_id = 50 } tag = MAR }
+	text = {
+		trigger = { check_variable = { conflict_id = token:GC_ManchurianCivilWar } tag = MAR }
 		localization_key = "GFX_fopo_manchurian_civil_war_icon_rus"
 	}
-	text = { # Far Eastern Revolt, JAP
-		trigger = { check_variable = { conflict_id = 50 } tag = JAP }
+	text = {
+		trigger = { check_variable = { conflict_id = token:GC_ManchurianCivilWar } tag = JAP }
 		localization_key = "GFX_fopo_manchurian_civil_war_icon_jap"
 	}
-	text = { # Far Eastern Revolt, USA
-		trigger = { check_variable = { conflict_id = 50 } tag = USA }
+	text = {
+		trigger = { check_variable = { conflict_id = token:GC_ManchurianCivilWar } tag = USA }
 		localization_key = "GFX_fopo_manchurian_civil_war_icon_usa"
 	}
 	text = {
@@ -1497,11 +1357,11 @@ defined_text = {
 defined_text = {
 	name = Get_fopo_header
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 1 } }
+		trigger = { check_variable = { selected_conflict_id = token:GC_SAW } }
 		localization_key = "GFX_SAF_decision_category_war"
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = 2 } }
+		trigger = { check_variable = { selected_conflict_id = token:GC_IndonesiaCW } }
 		localization_key = ""
 	}
 	text = {
@@ -1546,7 +1406,7 @@ defined_text = {
 	text = {
 		trigger = {
 			tag = USA
-			check_variable = { selected_conflict_id = 8 }
+			check_variable = { selected_conflict_id = token:GC_WAC }
 		}
 		localization_key = "USA_WAC_info_tooltip"
 	}
@@ -1687,9 +1547,26 @@ defined_text = {
 	}
 }
 
+# Mozambique US Supported Faction
+defined_text = {
+	name = GetUSAMozambiqueSupportFlag
+	text = {
+		trigger = {
+			has_country_flag = US_aid_gazaland_simango
+		}
+		localization_key = "[GZS.GetFlag]"
+	}
+	text = {
+		trigger = {
+			has_country_flag = US_aid_gazaland_mondlane
+		}
+		localization_key = "[GZO.GetFlag]"
+	}
+}
+
 # USA Homefront Effects
 defined_text = {
-	name = GetTrustLevel 
+	name = GetTrustLevel
 	text = {
 		trigger = {
 			check_variable = { tempTrust_tt < 5 }
@@ -1707,7 +1584,7 @@ defined_text = {
 	}
 }
 defined_text = {
-	name = GetOpticsLevel 
+	name = GetOpticsLevel
 	text = {
 		trigger = {
 			check_variable = { tempOptics_tt < 5 }
@@ -1725,7 +1602,7 @@ defined_text = {
 	}
 }
 defined_text = {
-	name = GetHawkishnessLevel 
+	name = GetHawkishnessLevel
 	text = {
 		trigger = {
 			check_variable = { tempHawkishness_tt < 7 }

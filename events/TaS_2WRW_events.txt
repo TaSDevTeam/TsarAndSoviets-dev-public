@@ -56,6 +56,8 @@ country_event = { #Novgorod Theatry
 				add = char_projebavshij
 				ideology = despotism_mladorossi_autocracy_subtype
 			}
+		}
+		MAR = { 
 			set_country_leader_description = {
 				desc = "POLITICS_SERGEY_BELOZERSKI_F_DESC"
 			}
@@ -1666,7 +1668,7 @@ country_event = { #victory in FE
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.6"}
 	title = MAR_Japan.6.t
 	desc = MAR_Japan.6.d
-	picture = GFX_report_event_peace_deal
+	picture = GFX_event_MAR_japan_6
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -1701,6 +1703,11 @@ country_event = { #Technical stuff no loc
 			econ_join_sphere_JAP = yes
 			add_ideas = Sphere_Imp_Protectorate
 			add_ideas = MAN_Kwantung_Army
+			every_owned_state = {
+				MJP = {
+					add_state_core = PREV
+				}
+			}
 		}
 		JAP = {
 			add_to_faction = MJP
@@ -1774,7 +1781,7 @@ country_event = { #MANCHU CW STARTS GET UP GUYS
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.9"}
 	title = MAR_Japan.9.t
 	desc = MAR_Japan.9.d
-	picture = GFX_report_event_peace_deal
+	picture = GFX_event_MAR_japan_9
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -1804,7 +1811,7 @@ country_event = { #FE partisans
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.10"}
 	title = MAR_Japan.10.t
 	desc = MAR_Japan.10.d
-	picture = GFX_report_event_peace_deal
+	picture = GFX_event_MAR_japan_10
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -1826,7 +1833,7 @@ country_event = { #Report nubma 1231413112 - start of the proxy
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.11"}
 	title = MAR_Japan.11.t
 	desc = MAR_Japan.11.d
-	picture = GFX_report_event_peace_deal
+	picture = GFX_event_MAR_japan_11
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -1897,7 +1904,7 @@ country_event = { #Battle of Khabarovsk: victory
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.14"}
 	title = MAR_Japan.14.t
 	desc = MAR_Japan.14.d
-	picture = GFX_report_event_peace_deal
+	picture = GFX_event_MAR_japan_14
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -1918,7 +1925,7 @@ country_event = { #Battle of Khabarovsk: lose
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.14"}
 	title = MAR_Japan.15.t
 	desc = MAR_Japan.15.d
-	picture = GFX_report_event_peace_deal
+	picture = GFX_event_MAR_japan_15
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -1951,7 +1958,7 @@ country_event = { #Offer status quo
 				white_peace = GER
 			}
 			every_country = {
-				limit = { in_faction_with = GER }
+				limit = { is_in_faction_with = GER }
 				white_peace = MAR
 			}
 			hidden_effect = {
@@ -1982,7 +1989,7 @@ country_event = { #Offer muscowy
 				white_peace = GER
 			}
 			every_country = {
-				limit = { in_faction_with = GER }
+				limit = { is_in_faction_with = GER }
 				white_peace = MAR
 			}
 			MAR = {
@@ -2026,7 +2033,7 @@ country_event = { #Offer muscowy and caucasus
 				white_peace = GER
 			}
 			every_country = {
-				limit = { in_faction_with = GER }
+				limit = { is_in_faction_with = GER }
 				white_peace = MAR
 			}
 			MAR = {
@@ -2082,7 +2089,7 @@ country_event = { #Offer muscowy and caucasus and belarus and half of ukraine
 				white_peace = GER
 			}
 			every_country = {
-				limit = { in_faction_with = GER }
+				limit = { is_in_faction_with = GER }
 				white_peace = MAR
 			}
 			
@@ -2177,11 +2184,10 @@ country_event = { #Offer surrender
 				white_peace = GER
 			}
 			every_country = {
-				limit = { in_faction_with = GER }
+				limit = { is_in_faction_with = GER }
 				white_peace = MAR
 			}
 			TaS_WRW2_total_capitulation = yes
-			TaS_2WRW_form_ost_zones = yes
 			hidden_effect = {
 				every_country  = {
 					news_event = {
@@ -2195,18 +2201,42 @@ country_event = { #Offer surrender
 	}
 }
 
-country_event = { #RIP SWEET TSAR
+country_event = { #TOTALEN surrender
 	id = MAR_2WRW.6
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_2WRW.6"}
 	title = MAR_2WRW.6.t
 	desc = MAR_2WRW.6.d
+	picture = GFX_event_MAR_WRW2_6
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #yes
+	name = MAR_2WRW.6.a
+		TaS_WRW2_total_capitulation = yes
+		TaS_WRW2_peace_Central_European_Restauration_new = yes
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = berez_world_news.5
+				}
+			}
+		}
+	}
+}
+
+country_event = { #RIP SWEET TSAR
+	id = MAR_2WRW.1978
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_2WRW.1978"}
+	title = MAR_2WRW.1978.t
+	desc = MAR_2WRW.1978.d
 	picture = GFX_report_event_peace_deal
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
 	option = { #yes
-		name = MAR_2WRW.6.a
+		name = MAR_2WRW.1978.a
 			retire_character = MAR_Sergey_Belozerskiy
 			TNO_Country_Closing_Screen_Show = yes
 			set_country_flag = MAR_Good_Ending
@@ -2845,7 +2875,7 @@ country_event = { #Turkestan
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_territorial_fate.1" }
 	title = MAR_territorial_fate.1.t
 	desc = MAR_territorial_fate.1.d
-	#picture = 
+	picture = GFX_event_MAR_territorial_fate_1 
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -2867,7 +2897,7 @@ country_event = { #Turkestan
 		}
 	}
 	option = { #direct_rule
-		name = MAR_territorial_fate.1.a
+		name = MAR_territorial_fate.1.c
 		ai_chance = { factor = 1 }
 		custom_effect_tooltip = MAR_annex_em_all_tt
 		hidden_effect = {
@@ -2884,7 +2914,7 @@ country_event = { #Primorie
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_territorial_fate.2" }
 	title = MAR_territorial_fate.2.t
 	desc = MAR_territorial_fate.2.d
-	#picture = 
+	picture = GFX_event_MAR_territorial_fate_2 
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -2948,7 +2978,7 @@ country_event = { #Moscowien
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_territorial_fate.3" }
 	title = MAR_territorial_fate.3.t
 	desc = MAR_territorial_fate.3.d
-	#picture = 
+	picture = GFX_event_MAR_territorial_fate_3 
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -3023,7 +3053,7 @@ country_event = { #Baltics
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_territorial_fate.4" }
 	title = MAR_territorial_fate.4.t
 	desc = MAR_territorial_fate.4.d
-	#picture = 
+	picture = GFX_event_MAR_territorial_fate_4 
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -3154,7 +3184,7 @@ country_event = { #Belarus
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_territorial_fate.7" }
 	title = MAR_territorial_fate.7.t
 	desc = MAR_territorial_fate.7.d
-	#picture = 
+	picture = GFX_event_MAR_territorial_fate_7 
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -3257,7 +3287,7 @@ country_event = { #Ukraine
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_territorial_fate.8" }
 	title = MAR_territorial_fate.8.t
 	desc = MAR_territorial_fate.8.d
-	#picture = 
+	picture = GFX_event_MAR_territorial_fate_8 
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -3391,7 +3421,7 @@ country_event = { #Crimnea
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_territorial_fate.9" }
 	title = MAR_territorial_fate.9.t
 	desc = MAR_territorial_fate.9.d
-	#picture = 
+	picture = GFX_event_MAR_territorial_fate_9 
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -3468,7 +3498,7 @@ country_event = { #Caucasus
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_territorial_fate.10" }
 	title = MAR_territorial_fate.10.t
 	desc = MAR_territorial_fate.10.d
-	#picture = 
+	picture = GFX_event_MAR_territorial_fate_10
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -3506,7 +3536,7 @@ country_event = { #Caucasus
 				MCS_Dzhokhar_Dudayev = {
 					promote_character = yes
 				}
-				set_cosmetic_tag = MCS_south_autonomy
+				set_cosmetic_tag = MCS_autonomy
 			}
 		}
 	}

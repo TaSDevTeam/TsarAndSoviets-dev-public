@@ -7,41 +7,43 @@ recruit_character = AMR_Sergei_Zaikin
 recruit_character = PFF_Kim_Il_Sung
 recruit_character = SCC_Wang_Enmao
 add_ideas = {
-	#political#
+	#POLITICAL
 	tno_political_parties_multiparty_system
 	tno_religious_rights_pluralism
-	tno_trade_unions_all_allowed
-	tno_immigration_quota_immigration
-	tno_slavery_outlawed
-	tno_public_meetings_allowed
-	tno_press_rights_free_press
-	tno_vote_franchise_universal
-	tno_refugees_skilled
-	#military#
-	tno_conscription_service_by_requirement
-	tno_women_military_assistance
-	tno_military_supervision_military_policing
+	tno_trade_unions_nonsocialist_allowed
+	tno_immigration_closed_borders
+	tno_slavery_penal_labor
+	tno_public_meetings_regulated
+	tno_press_rights_censored_press
+	tno_vote_franchise_registered_voting
+	#MILITARY
+	tno_conscription_limited_conscription
+	tno_military_supervision_rules_of_engagement
 	tno_training_basic_training
-	tno_racial_integration_integrated_military
-	tno_draft_exemptions_none
-	#economic#
-	tno_trade_laws_export_focus
-	tno_income_taxation_high_income_weighted
-	tno_minimum_wage_acceptable_minimum
-	tno_max_workhours_10_hour_work_day
-	tno_child_labor_illegal
-	tno_pensions_acceptable_pensions
-	tno_unemployment_generous_subsidies
-	#social#
-	tno_safety_acceptable_regulations
-	tno_health_care_low_income_protections
-	tno_pollution_some_regulations
-	tno_education_public_education
-	tno_penal_system_incarceration
-	tno_lgbt_rights_lgbt_outlawed
+	tno_draft_exemptions_educational_deferment
+	#SOCIAL
+	tno_health_care_service_for_care
+	tno_education_stratified_education
+	tno_penal_system_harsh_penal_code
 	tno_gender_rights_women_in_the_workplace
-	tno_minorities_equal_rights
-	tno_security_regulated_police 
+	tno_security_community_police
+	tno_regulations_token_regulations
+	#ECONOMIC
+	tno_trade_laws_free_trade
+	tno_income_taxation_high_income_weighted
+	tno_minimum_wage_no_minimum_wage
+	tno_max_workhours_14_hour_work_day
+	tno_pensions_no_pensions
+	tno_unemployment_no_subsidies
+	#MISC
+	tno_refugees_skilled
+	tno_women_military_assistance
+	tno_racial_integration_integrated_military
+	tno_safety_limited_regulations
+	tno_pollution_few_regulations
+	tno_lgbt_rights_lgbt_outlawed
+	tno_minorities_institutional_discrimination
+	tno_child_labor_restricted
 	#social development 
 	
 	tno_army_professionalism_political_interference

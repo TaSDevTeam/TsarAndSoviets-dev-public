@@ -548,7 +548,7 @@ country_event = {#For Some reason there was shitty n-word joke. Literally RU-TNO
 		add_opinion_modifier = {
 			target = USA
 			modifier = MAR_old_svyazi
-		}
+		} 
 	}
 }
 
@@ -2699,17 +2699,17 @@ country_event = { #test sphere
 	option = {
 		name = berez_eco.1612.a
 		hidden_effect = {
-		MAR = {
+			MAR = {
+				set_country_flag = HAS_ECON_SPHERE
 				econ_join_sphere_MAR = yes
 			}
-			set_country_flag = HAS_ECON_SPHERE
 			for_each_scope_loop = {
 				array = MAR.subjects
-				set_variable = { ECON_SPHERE_LEADER = MAR }
+				econ_join_sphere_MAR = yes
 			}
 			MAR = { set_variable = { SPHERE_INSULARITY = 5 } }
 		}
-		custom_effect_tooltip = ENG_create_econ_sphere
+		custom_effect_tooltip = MAR_create_econ_sphere
 
 	}
 }

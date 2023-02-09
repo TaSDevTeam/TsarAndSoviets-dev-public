@@ -1648,6 +1648,7 @@ TaS_WRW2_the_final_battle = {
 		}
 		allowed = {
 			tag = MAR
+			NOT = { has_idea = MAR_go_oper }
 		}
 		custom_cost_trigger = { command_power > 19.99 }
 		custom_cost_text = decision_cost_20_cp
@@ -1714,6 +1715,7 @@ TaS_WRW2_the_final_battle = {
 		}
 		available = {
 			has_war = yes
+			NOT = { has_idea = MAR_go_oper }
 		}
 		allowed = {
 			tag = MAR
@@ -1783,6 +1785,7 @@ TaS_WRW2_the_final_battle = {
 		}
 		available = {
 			has_war = yes
+			NOT = { has_idea = MAR_go_oper }
 		}
 		allowed = {
 			tag = MAR
@@ -1852,6 +1855,7 @@ TaS_WRW2_the_final_battle = {
 		}
 		available = {
 			has_war = yes
+			NOT = { has_idea = MAR_go_oper }
 		}
 		allowed = {
 			tag = MAR
@@ -1921,6 +1925,7 @@ TaS_WRW2_the_final_battle = {
 		}
 		allowed = {
 			tag = MAR
+			NOT = { has_idea = MAR_go_oper }
 		}
 		available = {
 			has_war = yes

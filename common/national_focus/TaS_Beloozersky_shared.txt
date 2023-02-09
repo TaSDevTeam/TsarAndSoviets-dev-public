@@ -308,7 +308,7 @@ shared_focus = {
 			id = berez_belozerski.15
 			days = 0
 		}
-        set_temp_variable = { gdp_growth_temp = 0.15 }
+        set_temp_variable = { gdp_growth_temp = 1.55 }
         econ_gdp_growth_change = yes
 	}	
 }
@@ -405,7 +405,7 @@ shared_focus = {
 		y = 1
 		completion_reward = {
 			add_political_power = 50
-			set_temp_variable = { gdp_growth_temp = 0.20 }
+			set_temp_variable = { gdp_growth_temp = 1.20 }
             econ_gdp_growth_change = yes
 		}
 }	
@@ -423,7 +423,7 @@ shared_focus = {
 		    remove_idea = tno_trade_laws_limited_exports
 		    add_idea = tno_trade_laws_export_focus
 		}	
-        set_temp_variable = { gdp_growth_temp = 0.45 }
+        set_temp_variable = { gdp_growth_temp = 1.25 }
         econ_gdp_growth_change = yes
 		add_to_variable = { MAR_misc_income_modifier = 0.2 }
 	}
@@ -447,7 +447,7 @@ shared_focus = {
 		}
 		set_temp_variable = { pus_temp = 3 }
 		econ_pus_change = yes
-		set_temp_variable = { gdp_growth_temp = 0.05 }
+		set_temp_variable = { gdp_growth_temp = 2.5 }
         econ_gdp_growth_change = yes
 	}
 }	
@@ -464,7 +464,7 @@ shared_focus = {
 		TNO_improve_agriculture_high = yes
         set_temp_variable = { temp_econ_spending_amount = 0.20 }
         econ_spend_money_once_effect_raw_money = yes
-		set_temp_variable = { inflation_temp = 0.15 }
+		set_temp_variable = { inflation_temp = 0.55 }
 		econ_inflation_change = yes
 		custom_effect_tooltip = econ_increase_debt
 		hidden_effect = {
@@ -486,7 +486,7 @@ shared_focus = {
 		y = 4
 		completion_reward = {
 		TNO_improve_poverty_med = yes
-		set_temp_variable = { gdp_growth_temp = 0.25 }
+		set_temp_variable = { gdp_growth_temp = 1.15 }
         econ_gdp_growth_change = yes
 		hidden_effect = {
 			country_event = {
@@ -511,7 +511,7 @@ shared_focus = {
 		}
 		set_temp_variable = { pus_temp = 4 }
 		econ_pus_change = yes
-		set_temp_variable = { inflation_temp = 0.10 }
+		set_temp_variable = { inflation_temp = 0.40 }
 		econ_inflation_change = yes
 		TNO_improve_industrial_equipment_med = yes
         set_temp_variable = { temp_econ_spending_amount = 0.25 }
@@ -664,7 +664,7 @@ shared_focus = {
 		y = 5
 		completion_reward = {
 		TNO_improve_poverty_low = yes
-		set_temp_variable = { inflation_temp = -0.15 }
+		set_temp_variable = { inflation_temp = -0.35 }
 		econ_inflation_change = yes
 		add_stability = 0.10		
 	}
@@ -726,7 +726,7 @@ shared_focus = {
 			days = 0 
 		}
 		TNO_improve_poverty_med = yes
-        set_temp_variable = { gdp_growth_temp = 0.15 }
+        set_temp_variable = { gdp_growth_temp = 1.25 }
         econ_gdp_growth_change = yes
         give_resource_rights = { 
         	receiver = USA 
@@ -1251,6 +1251,8 @@ shared_focus = {
             relation = non_aggression_pact
             active = yes
         }
+		set_temp_variable = { gdp_growth_temp = 0.35 }
+        econ_gdp_growth_change = yes
 		country_event = { 
 			id = berez_belozerski.37
 			days = 0
@@ -1368,6 +1370,8 @@ shared_focus = {
 		x = 16
 		y = 4
 		completion_reward = {
+		set_temp_variable = { gdp_growth_temp = 1.0 }
+        econ_gdp_growth_change = yes
 		add_resource = {
 			type = oil
 			amount = 30
@@ -1576,12 +1580,22 @@ shared_focus = {
 					level = 2
 					instant_build = yes
 				}
+				add_state_modifier = {
+					modifier = {
+						state_GDP_growth_factor_modifier = 0.05
+					}
+				}
 			}
 			407 = {
 				add_building_construction = {
 					type = infrastructure
 					level = 2
 					instant_build = yes
+				}
+				add_state_modifier = {
+					modifier = {
+						state_GDP_growth_factor_modifier = 0.05
+					}
 				}
 			}
 			402 = {
@@ -1590,12 +1604,22 @@ shared_focus = {
 					level = 2
 					instant_build = yes
 				}
+				add_state_modifier = {
+					modifier = {
+						state_GDP_growth_factor_modifier = 0.05
+					}
+				}
 			}
 			587 = {
 				add_building_construction = {
 					type = infrastructure
 					level = 2
 					instant_build = yes
+				}
+				add_state_modifier = {
+					modifier = {
+						state_GDP_growth_factor_modifier = 0.05
+					}
 				}
 			}
 			583 = {
@@ -1604,12 +1628,22 @@ shared_focus = {
 					level = 2
 					instant_build = yes
 				}
+				add_state_modifier = {
+					modifier = {
+						state_GDP_growth_factor_modifier = 0.05
+					}
+				}
 			}
 			404 = {
 				add_building_construction = {
 					type = infrastructure
 					level = 2
 					instant_build = yes
+				}
+				add_state_modifier = {
+					modifier = {
+						state_GDP_growth_factor_modifier = 0.05
+					}
 				}
 			}
 			589 = {
@@ -1618,6 +1652,11 @@ shared_focus = {
 					level = 2
 					instant_build = yes
 				}
+				add_state_modifier = {
+					modifier = {
+						state_GDP_growth_factor_modifier = 0.05
+					}
+				}
 			}
 			588 = {
 				add_building_construction = {
@@ -1625,12 +1664,94 @@ shared_focus = {
 					level = 2
 					instant_build = yes
 				}
+				add_state_modifier = {
+					modifier = {
+						state_GDP_growth_factor_modifier = 0.05
+					}
+				}
 			}
-			509 = {
+			1802 = {
 				add_building_construction = {
 					type = infrastructure
 					level = 2
 					instant_build = yes
+				}
+				add_state_modifier = {
+					modifier = {
+						state_GDP_growth_factor_modifier = 0.05
+					}
+				}
+			}
+			1803 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_state_modifier = {
+					modifier = {
+						state_GDP_growth_factor_modifier = 0.05
+					}
+				}
+			}
+			1804 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_state_modifier = {
+					modifier = {
+						state_GDP_growth_factor_modifier = 0.05
+					}
+				}
+			}
+			1805 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_state_modifier = {
+					modifier = {
+						state_GDP_growth_factor_modifier = 0.05
+					}
+				}
+			}
+			1806 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_state_modifier = {
+					modifier = {
+						state_GDP_growth_factor_modifier = 0.05
+					}
+				}
+			}
+			1807 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_state_modifier = {
+					modifier = {
+						state_GDP_growth_factor_modifier = 0.05
+					}
+				}
+			}
+			1808 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_state_modifier = {
+					modifier = {
+						state_GDP_growth_factor_modifier = 0.05
+					}
 				}
 			}
 		}

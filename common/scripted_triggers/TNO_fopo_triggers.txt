@@ -3,8 +3,8 @@ TNO_fopo_should_display_homefront = {
 		AND = {
 			tag = USA
 			OR = {
-				check_variable = { selected_conflict_id = 1 } # SAW
-				check_variable = { selected_conflict_id = 8 } # WAC
+				check_variable = { selected_conflict_id = token:GC_SAW }
+				check_variable = { selected_conflict_id = token:GC_WAC }
 			}
 		}
 		AND = {
@@ -22,36 +22,36 @@ TNO_fopo_show_info_tab = {
 	OR = {
 		AND = {
 			tag = USA
-			check_variable = { selected_conflict_id = 8 } # WAC
+			check_variable = { selected_conflict_id = token:GC_WAC }
 		}
 	}
 }
 
 TNO_fopo_wac_selected = {
 	OR = {
-		check_variable = { selected_conflict_id = 8 }
+		check_variable = { selected_conflict_id = token:GC_WAC }
 		AND = {
-			is_in_array = { TNO_active_conflicts = 8 }
+			is_in_array = { TNO_active_conflicts = token:GC_WAC }
 			is_ai = yes
 		}
 	}
 }
 
 TNO_fopo_wac_frontlines_selected = {
-	check_variable = { selected_conflict_id = 8 }
+	check_variable = { selected_conflict_id = token:GC_WAC }
 	check_variable = { TNO_fopo_selected_front = 1 }
 }
 
 TNO_fopo_wac_homefront_selected = {
-	check_variable = { selected_conflict_id = 8 }
+	check_variable = { selected_conflict_id = token:GC_WAC }
 	check_variable = { TNO_fopo_selected_front = 2 }
 }
 
 TNO_fopo_indonesia_selected = {
 	OR = {
-		check_variable = { selected_conflict_id = 2 }
+		check_variable = { selected_conflict_id = token:GC_IndonesiaCW }
 		AND = {
-			is_in_array = { TNO_active_conflicts = 2 }
+			is_in_array = { TNO_active_conflicts = token:GC_IndonesiaCW }
 			is_ai = yes
 		}
 	}
@@ -63,9 +63,9 @@ TNO_fopo_indonesia_selected_speer = {
 
 TNO_fopo_malaysia_selected = {
 	OR = {
-		check_variable = { selected_conflict_id = 6 }
+		check_variable = { selected_conflict_id = token:GC_MalayanCW }
 		AND = {
-			is_in_array = { TNO_active_conflicts = 6 }
+			is_in_array = { TNO_active_conflicts = token:GC_MalayanCW }
 			is_ai = yes
 		}
 	}
@@ -74,9 +74,9 @@ TNO_fopo_malaysia_selected = {
 
 TNO_fopo_iran_selected = {
 	OR = {
-		check_variable = { selected_conflict_id = 5 }
+		check_variable = { selected_conflict_id = token:GC_IranCW }
 		AND = {
-			is_in_array = { TNO_active_conflicts = 5 }
+			is_in_array = { TNO_active_conflicts = token:GC_IranCW }
 			is_ai = yes
 		}
 	}
@@ -93,9 +93,9 @@ TNO_fopo_indonesia_frontlines_selected = {
 
 TNO_fopo_saw_selected = {
 	OR = {
-		check_variable = { selected_conflict_id = 1 }
+		check_variable = { selected_conflict_id = token:GC_SAW }
 		AND = {
-			is_in_array = { TNO_active_conflicts = 1 }
+			is_in_array = { TNO_active_conflicts = token:GC_SAW }
 			is_ai = yes
 		}
 	}
@@ -123,9 +123,9 @@ TNO_fopo_saw_frontlines_selected = {
 
 TNO_fopo_jamaican_referendum_selected = {
 	OR = {
-		check_variable = { selected_conflict_id = 3 }
+		check_variable = { selected_conflict_id = token:GC_JamaicanReferendum }
 		AND = {
-			is_in_array = { TNO_active_conflicts = 3 }
+			is_in_array = { TNO_active_conflicts = token:GC_JamaicanReferendum }
 			is_ai = yes
 		}
 	}
@@ -133,9 +133,9 @@ TNO_fopo_jamaican_referendum_selected = {
 
 TNO_fopo_jamaican_crisis_selected = {
 	OR = {
-		check_variable = { selected_conflict_id = 4 }
+		check_variable = { selected_conflict_id = token:GC_JamaicanCrisis }
 		AND = {
-			is_in_array = { TNO_active_conflicts = 4 }
+			is_in_array = { TNO_active_conflicts = token:GC_JamaicanCrisis }
 			is_ai = yes
 		}
 	}
@@ -144,9 +144,9 @@ TNO_fopo_jamaican_crisis_selected = {
 
 TNO_fopo_congo_civil_war_selected = {
 	OR = {
-		check_variable = { selected_conflict_id = 7 }
+		check_variable = { selected_conflict_id = token:GC_CongoCW }
 		AND = {
-			is_in_array = { TNO_active_conflicts = 7 }
+			is_in_array = { TNO_active_conflicts = token:GC_CongoCW }
 			is_ai = yes
 		}
 	}
@@ -154,9 +154,9 @@ TNO_fopo_congo_civil_war_selected = {
 
 TNO_fopo_IBW_selected = {
 	OR = {
-		check_variable = { selected_conflict_id = 11 }
+		check_variable = { selected_conflict_id = token:GC_IberianWars }
 		AND = {
-			is_in_array = { TNO_active_conflicts = 11 }
+			is_in_array = { TNO_active_conflicts = token:GC_IberianWars }
 			is_ai = yes
 		}
 	}
@@ -164,9 +164,9 @@ TNO_fopo_IBW_selected = {
 
 TNO_fopo_angola_selected = {
 	OR = {
-		check_variable = { selected_conflict_id = 9 }
+		check_variable = { selected_conflict_id = token:GC_AngolaCW }
 		AND = {
-			is_in_array = { TNO_active_conflicts = 9 }
+			is_in_array = { TNO_active_conflicts = token:GC_AngolaCW }
 			is_ai = yes
 		}
 	}
@@ -174,29 +174,30 @@ TNO_fopo_angola_selected = {
 
 TNO_fopo_baathism_support_selected = {
 	OR = {
-		check_variable = { selected_conflict_id = 10 }
+		check_variable = { selected_conflict_id = token:GC_OilCrisis }
 		AND = {
-			is_in_array = { TNO_active_conflicts = 10 }
+			is_in_array = { TNO_active_conflicts = token:GC_OilCrisis }
 			is_ai = yes
 		}
 	}
 }
 
 TNO_fopo_srilanka_selected = {
-	OR = {
-		check_variable = { selected_conflict_id = 12 }
-		AND = {
-			is_in_array = { TNO_active_conflicts = 12 }
-			is_ai = yes
-		}
-	}
+	always = no
+	# OR = {
+	# 	check_variable = { selected_conflict_id = token: }
+	# 	AND = {
+	# 		is_in_array = { TNO_active_conflicts = token: }
+	# 		is_ai = yes
+	# 	}
+	# }
 }
-		
+
 TNO_fopo_trinidad_bpr_selected = {
 	OR = {
-		check_variable = { selected_conflict_id = 13 }
+		check_variable = { selected_conflict_id = token:GC_TrinidadRev }
 		AND = {
-			is_in_array = { TNO_active_conflicts = 13 }
+			is_in_array = { TNO_active_conflicts = token:GC_TrinidadRev }
 			is_ai = yes
 		}
 	}
@@ -204,9 +205,9 @@ TNO_fopo_trinidad_bpr_selected = {
 
 TNO_fopo_turkes_kenes_selected = {
 	OR = {
-		check_variable = { selected_conflict_id = 14 }
+		check_variable = { selected_conflict_id = token:GC_Turkestan }
 		AND = {
-			is_in_array = { TNO_active_conflicts = 14 }
+			is_in_array = { TNO_active_conflicts = token:GC_Turkestan }
 			is_ai = yes
 		}
 	}
@@ -214,9 +215,9 @@ TNO_fopo_turkes_kenes_selected = {
 
 TNO_fopo_gazaland_selected = {
 	OR = {
-		check_variable = { selected_conflict_id = 15 }
+		check_variable = { selected_conflict_id = token:GC_MozambiqueCW }
 		AND = {
-			is_in_array = { TNO_active_conflicts = 15 }
+			is_in_array = { TNO_active_conflicts = token:GC_MozambiqueCW }
 			is_ai = yes
 		}
 	}
@@ -224,9 +225,9 @@ TNO_fopo_gazaland_selected = {
 
 TNO_fopo_philippines_selected = {
 	OR = {
-		check_variable = { selected_conflict_id = 16 }
+		check_variable = { selected_conflict_id = token:GC_BalintawakBlitz }
 		AND = {
-			is_in_array = { TNO_active_conflicts = 16 }
+			is_in_array = { TNO_active_conflicts = token:GC_BalintawakBlitz }
 			is_ai = yes
 		}
 	}
@@ -234,9 +235,9 @@ TNO_fopo_philippines_selected = {
 
 TNO_fopo_malayan_reconstruction_selected = {
 	OR = {
-		check_variable = { selected_conflict_id = 17 }
+		check_variable = { selected_conflict_id = token:GC_MalayanReconsturction }
 		AND = {
-			is_in_array = { TNO_active_conflicts = 17 }
+			is_in_array = { TNO_active_conflicts = token:GC_MalayanReconsturction }
 			is_ai = yes
 		}
 	}
@@ -244,9 +245,9 @@ TNO_fopo_malayan_reconstruction_selected = {
 
 TNO_fopo_philippines_war_selected = {
 	OR = {
-		check_variable = { selected_conflict_id = 18 }
+		check_variable = { selected_conflict_id = token:GC_PhilippinesWar }
 		AND = {
-			is_in_array = { TNO_active_conflicts = 18 }
+			is_in_array = { TNO_active_conflicts = token:GC_PhilippinesWar }
 			is_ai = yes
 		}
 	}
@@ -254,9 +255,9 @@ TNO_fopo_philippines_war_selected = {
 
 TNO_fopo_mengjiang_conflict_selected = {
 	OR = {
-		check_variable = { selected_conflict_id = 19 }
+		check_variable = { selected_conflict_id = token:GC_Mengjiang }
 		AND = {
-			is_in_array = { TNO_active_conflicts = 19 }
+			is_in_array = { TNO_active_conflicts = token:GC_Mengjiang }
 			is_ai = yes
 		}
 	}
@@ -264,9 +265,9 @@ TNO_fopo_mengjiang_conflict_selected = {
 
 TNO_fopo_saf_reconstruction_selected = {
 	OR = {
-		check_variable = { selected_conflict_id = 20 }
+		check_variable = { selected_conflict_id = token:GC_SAWReconstruction }
 		AND = {
-			is_in_array = { TNO_active_conflicts = 20 }
+			is_in_array = { TNO_active_conflicts = token:GC_SAWReconstruction }
 			is_ai = yes
 		}
 	}
@@ -274,9 +275,9 @@ TNO_fopo_saf_reconstruction_selected = {
 
 TNO_fopo_madagascar_selected = {
 	OR = {
-		check_variable = { selected_conflict_id = 21 }
+		check_variable = { selected_conflict_id = token:GC_MalagasyCW }
 		AND = {
-			is_in_array = { TNO_active_conflicts = 21 }
+			is_in_array = { TNO_active_conflicts = token:GC_MalagasyCW }
 			is_ai = yes
 		}
 	}
@@ -284,9 +285,9 @@ TNO_fopo_madagascar_selected = {
 
 TNO_fopo_philippines_reconstruction_selected = {
 	OR = {
-		check_variable = { selected_conflict_id = 22 }
+		check_variable = { selected_conflict_id = token:GC_PhilippinesReconstruction }
 		AND = {
-			is_in_array = { TNO_active_conflicts = 22 }
+			is_in_array = { TNO_active_conflicts = token:GC_PhilippinesReconstruction }
 			is_ai = yes
 		}
 	}
@@ -294,9 +295,9 @@ TNO_fopo_philippines_reconstruction_selected = {
 
 TNO_fopo_mano_campaign_selected = {
 	OR = {
-		check_variable = { selected_conflict_id = 23 }
+		check_variable = { selected_conflict_id = token:GC_ManoCamapign }
 		AND = {
-			is_in_array = { TNO_active_conflicts = 23 }
+			is_in_array = { TNO_active_conflicts = token:GC_ManoCamapign }
 			is_ai = yes
 		}
 	}
@@ -304,9 +305,9 @@ TNO_fopo_mano_campaign_selected = {
 
 TNO_fopo_orungu_campaign_selected = {
 	OR = {
-		check_variable = { selected_conflict_id = 24 }
+		check_variable = { selected_conflict_id = token:GC_Orungu }
 		AND = {
-			is_in_array = { TNO_active_conflicts = 24 }
+			is_in_array = { TNO_active_conflicts = token:GC_Orungu }
 			is_ai = yes
 		}
 	}
@@ -314,9 +315,9 @@ TNO_fopo_orungu_campaign_selected = {
 
 TNO_fopo_saw_withdrawal_selected = {
 	OR = {
-		check_variable = { selected_conflict_id = 25 }
+		check_variable = { selected_conflict_id = token:GC_SAWWithdrawal }
 		AND = {
-			is_in_array = { TNO_active_conflicts = 25 }
+			is_in_array = { TNO_active_conflicts = token:GC_SAWWithdrawal }
 			is_ai = yes
 		}
 	}
@@ -324,9 +325,9 @@ TNO_fopo_saw_withdrawal_selected = {
 
 TNO_fopo_wafr_reconstruction_selected = {
 	OR = {
-		check_variable = { selected_conflict_id = 26 }
+		check_variable = { selected_conflict_id = token:GC_WACReconstruction }
 		AND = {
-			is_in_array = { TNO_active_conflicts = 26 }
+			is_in_array = { TNO_active_conflicts = token:GC_WACReconstruction }
 			is_ai = yes
 		}
 	}
@@ -334,9 +335,9 @@ TNO_fopo_wafr_reconstruction_selected = {
 
 TNO_fopo_puerto_plata_selected = {
 	OR = {
-		check_variable = { selected_conflict_id = 27 }
+		check_variable = { selected_conflict_id = token:GC_PuertoPlata }
 		AND = {
-			is_in_array = { TNO_active_conflicts = 27 }
+			is_in_array = { TNO_active_conflicts = token:GC_PuertoPlata }
 			is_ai = yes
 		}
 	}
@@ -344,9 +345,9 @@ TNO_fopo_puerto_plata_selected = {
 
 TNO_fopo_french_civil_war_selected = {
 	OR = {
-		check_variable = { selected_conflict_id = 28 }
+		check_variable = { selected_conflict_id = token:GC_FranceCW }
 		AND = {
-			is_in_array = { TNO_active_conflicts = 28 }
+			is_in_array = { TNO_active_conflicts = token:GC_FranceCW }
 			is_ai = yes
 		}
 	}
@@ -354,9 +355,19 @@ TNO_fopo_french_civil_war_selected = {
 
 TNO_fopo_colombian_civil_war_selected = {
 	OR = {
-		check_variable = { selected_conflict_id = 29 }
+		check_variable = { selected_conflict_id = token:GC_ColombiaCW }
 		AND = {
-			is_in_array = { TNO_active_conflicts = 29 }
+			is_in_array = { TNO_active_conflicts = token:GC_ColombiaCW }
+			is_ai = yes
+		}
+	}
+}
+
+TNO_fopo_reichsstaat_african_cabal_selected = {
+	OR = {
+		check_variable = { selected_conflict_id = token:GC_ReichsstaatCabal }
+		AND = {
+			is_in_array = { TNO_active_conflicts = token:GC_ReichsstaatCabal }
 			is_ai = yes
 		}
 	}
@@ -364,9 +375,9 @@ TNO_fopo_colombian_civil_war_selected = {
 
 TNO_fopo_far_eastern_revolt_selected = {
 	OR = {
-		check_variable = { selected_conflict_id = 49 }
+		check_variable = { selected_conflict_id = token:GC_FarEasternRevolt }
 		AND = {
-			is_in_array = { TNO_active_conflicts = 49 }
+			is_in_array = { TNO_active_conflicts = token:GC_FarEasternRevolt }
 			is_ai = yes
 		}
 	}
@@ -374,9 +385,9 @@ TNO_fopo_far_eastern_revolt_selected = {
 
 TNO_fopo_manchurian_civil_war_selected = {
 	OR = {
-		check_variable = { selected_conflict_id = 50 }
+		check_variable = { selected_conflict_id = token:GC_ManchurianCivilWar }
 		AND = {
-			is_in_array = { TNO_active_conflicts = 50 }
+			is_in_array = { TNO_active_conflicts = token:GC_ManchurianCivilWar }
 			is_ai = yes
 		}
 	}

@@ -42,6 +42,7 @@ TaS_WRW2_fate_and_coring_of_territories = {
 		custom_cost_text = decision_cost_10_cp
 		visible = {
 			controls_state = 1442
+			NOT = { has_war_with = GER }
 		}
 		available = {
 		
@@ -1992,10 +1993,12 @@ TaS_WRW2_prepare_for_final_battle = {
 				target = GER
 				type = annex_everything
 			}
+			set_global_flag = nukes_disabled
 			add_ideas = { MAR_oper_zero }
 			set_variable = { RUS_devastation_gain = 4 }
 			set_variable = { RUS.GER_devastation_gain = 2 }
 			set_global_flag = TaS_2WRW_started
+			set_country_flag = RUS_2WRW_ongoing
 			if = {
 				limit = { check_variable = { MAR_no_naval_invasions = 1 } }
 				GER = { add_ideas = { TaS_2WRW_north_sea_problems } }

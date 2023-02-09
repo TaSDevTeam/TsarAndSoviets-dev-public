@@ -1320,7 +1320,7 @@ country_event = { #cadre revolution
 		name = MAR_postbomb.4.a
 		ai_chance = { factor = 1 }
 		add_popularity = {
-			ideology = socialism
+			ideology = socialist
 			popularity = 0.04
 		}
 		add_popularity = {
@@ -1418,7 +1418,7 @@ country_event = { #das lettre
 		name = MAR_postbomb.9.a
 		ai_chance = { factor = 1 }
 		add_political_power = 20
-		command_power = 20
+		add_command_power = 20
 	}
 }
 
@@ -1792,7 +1792,7 @@ country_event = { #MAR_prizma_jopi komi
 	is_triggered_only = yes	
 	picture = GFX_report_event_Voina_28
 	timeout_days = 5
-	mean_time_to_happen = { days = 3 }
+	#mean_time_to_happen = { days = 3 }
 
 	option = {
 		name = MAR_smuta.19.a
@@ -1812,7 +1812,7 @@ country_event = { #MAR_prizma_jopi komi2
 	is_triggered_only = yes	
 	picture = GFX_report_event_Voina_29
 	timeout_days = 5
-	mean_time_to_happen = { days = 2 }
+	#mean_time_to_happen = { days = 2 }
 	option = {
 		name = MAR_smuta.20.a
 		ai_chance = { factor = 1 }
@@ -2137,7 +2137,7 @@ country_event = { # MAR_kandidati BELOZERSKI
 	title = MAR_zemsky_sobor.4.t
 	desc = MAR_zemsky_sobor.4.d
 	fire_only_once = yes
-	picture = GFX_event_Zemsobor_4
+	picture = GFX_event_MAR_zemsky_sobor_22
 	trigger = {
 		tag = MAR
 		NOT = { has_completed_focus = MAR_zemsky_candidates }
@@ -2166,7 +2166,7 @@ country_event = { # MAR_kandidati Maria Romovaya BABA JABA
 	title = MAR_zemsky_sobor.5.t
 	desc = MAR_zemsky_sobor.5.d
 	fire_only_once = yes
-	picture = GFX_report_event_zemsob_5
+	picture = GFX_event_MAR_zemsky_sobor_23
 	is_triggered_only = yes
 
 	option = {
@@ -2186,7 +2186,7 @@ country_event = { # MAR_kandidati KAKAYA TO HUETA
 	title = MAR_zemsky_sobor.6.t
 	desc = MAR_zemsky_sobor.6.d
 	fire_only_once = yes
-	picture = GFX_report_event_zemsob_6
+	picture = GFX_event_MAR_zemsky_sobor_6
 	is_triggered_only = yes
 
 	option = {
@@ -2206,7 +2206,7 @@ country_event = { # MAR_kandidati ROMANOV LEHA U ROMANOV LEHA E
 	title = MAR_zemsky_sobor.7.t
 	desc = MAR_zemsky_sobor.7.d
 	fire_only_once = yes
-	picture = GFX_report_event_zemsob_7
+	picture = GFX_event_MAR_zemsky_sobor_24
 	is_triggered_only = yes	
 	
 	option = {
@@ -2440,7 +2440,7 @@ country_event = { # MAR_final_vibori
 	title = MAR_zemsky_sobor.21.t
 	desc = MAR_zemsky_sobor.21.d
 	fire_only_once = yes
-	picture = GFX_report_event_zemsob_21
+	picture = GFX_event_MAR_zemsky_sobor_21
 	trigger = {
 		tag = MAR
 		NOT = { has_completed_focus = MAR_sobor_is_voting_now }
@@ -2506,7 +2506,7 @@ country_event = { # MAR_final_vibori WIN SEREGA BELII
     		add_ideas = MAR_Pyotr_Demichev_for		
 		if = {
 			limit = { has_idea = MAR_regent_without_tsar_1 }
-			remove_ideas = MAR_regent_without_tsar_1
+			remove_ideas = MAR_regent_without_tsar_1 
 		}
 		else_if = {
 			limit = { has_idea = MAR_regent_without_tsar_2 }
@@ -2525,7 +2525,7 @@ country_event = { # MAR_final_vibori MARIA WIN
 	title = MAR_zemsky_sobor.23.t
 	desc = MAR_zemsky_sobor.23.d
 	fire_only_once = yes
-	picture = GFX_report_event_zemsob_23
+	picture = GFX_event_MAR_zemsky_sobor_23
 	is_triggered_only = yes
 
 	option = {
@@ -2565,7 +2565,7 @@ country_event = { # MAR_final_vibori ROMANOV WIN
 	title = MAR_zemsky_sobor.24.t
 	desc = MAR_zemsky_sobor.24.d
 	fire_only_once = yes
-	picture = GFX_report_event_zemsob_24
+	picture = GFX_event_MAR_zemsky_sobor_24
 	is_triggered_only = yes
 
 	option = {

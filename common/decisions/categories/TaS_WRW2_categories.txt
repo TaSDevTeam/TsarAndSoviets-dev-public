@@ -180,3 +180,20 @@ TaS_WRW2_GER_epilogue = {
 		base = 40
 	}
 }
+TaS_WRW2_the_final_battle_legacy = {
+	icon = GFX_decision_category_generic_political_actions
+	picture = GFX_RUS_placeholder
+
+	allowed = {
+		tag = MAR
+	}
+	visible = {
+		is_debug = yes
+		is_ai = no
+	}
+
+	visible_when_empty = yes
+	priority = {
+		base = 150
+	}
+}

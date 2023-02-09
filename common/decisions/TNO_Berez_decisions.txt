@@ -1,5 +1,5 @@
 MAR_debug_category = {
-	MAR_load_starting_tree = {
+	MAR_load_Belozerski_post_unification_tree = {
 		icon = GFX_decision_generic_decision
 
 		allowed = {
@@ -10,7 +10,7 @@ MAR_debug_category = {
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision MAR_load_starting_tree"
-			load_focus_tree = {	tree = MAR_start_tree keep_completed = no }
+			load_focus_tree = {	tree = MAR_Belozerski_post_unification_tree keep_completed = no }
 		}
 	}
 	

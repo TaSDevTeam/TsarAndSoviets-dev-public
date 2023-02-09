@@ -1,6 +1,6 @@
 add_namespace = berez_dobrovoltsy
 add_namespace = berez_dobrovoltsy_world_news
-
+add_namespace =	KUR_CW
 ###dobrovoltsy zone
 
 country_event = { #any help? 
@@ -518,5 +518,201 @@ news_event = { #Russo-Iranian Oil Company
 			trigger = {
 				tag = GER
 			}
+	}
+}
+
+country_event = { #KUR_CW End- Kurdish Victory (Real)
+	id = KUR_CW.14
+	immediate = {log = "[GetDateText]: [Root.GetName]: event KUR_CW.14"}
+	title = KUR_CW.14.t
+	desc = KUR_CW.14.desc
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = KUR_CW.14.a
+		KUR = {
+			add_ideas = {
+				MAR_KUR_ihtamnet
+				MAR_KUR_zeroaproval
+			}
+		}
+		hidden_effect = {
+		KUR = {
+			country_event = {
+				id = KUR_CW.20 days = 5
+			}
+			country_event = {
+				id = KUR_CW.21 days = 12
+			}
+			country_event = {
+				id = KUR_CW.22 days = 19
+			}
+			country_event = {
+				id = KUR_CW.23 days = 27
+			}
+		}
+		MAR = {
+			country_event = {
+				id = berez_dobrovoltsy.17 days = 30
+			}
+		}
+		every_country = {
+			news_event = { id = berez_dobrovoltsy_world_news.10 days = 1 }
+		}
+	}
+}
+}
+country_event = { # oops 1
+	id = KUR_CW.20
+	immediate = {log = "[GetDateText]: [Root.GetName]: event KUR_CW.20"}
+	title = KUR_CW.20.t
+	desc = KUR_CW.20.desc
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = KUR_CW.20.a
+		KUR = {
+		291 = {
+		set_demilitarized_zone = yes
+		}
+		}
+	}
+}
+country_event = { # oops 2 
+	id = KUR_CW.21
+	immediate = {log = "[GetDateText]: [Root.GetName]: event KUR_CW.21"}
+	title = KUR_CW.21.t
+	desc = KUR_CW.21.desc
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = KUR_CW.21.a
+		KUR = {
+		random_owned_controlled_state = {
+			limit = {
+				NOT = {
+					is_demilitarized_zone = yes
+					state = 781
+					state = 1334
+				}
+			}
+			set_demilitarized_zone = yes
+		}
+		random_owned_controlled_state = {
+			limit = {
+				NOT = {
+					is_demilitarized_zone = yes
+					state = 781
+					state = 1334					
+				}
+			}
+			set_demilitarized_zone = yes
+		}
+		}
+	}
+}
+country_event = { # oops 3
+	id = KUR_CW.22
+	immediate = {log = "[GetDateText]: [Root.GetName]: event KUR_CW.22"}
+	title = KUR_CW.22.t
+	desc = KUR_CW.22.desc
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = KUR_CW.22.a
+		KUR = {
+		random_owned_controlled_state = {
+			limit = {
+				NOT = {
+					is_demilitarized_zone = yes
+					state = 781
+					state = 1334
+				}
+			}
+			set_demilitarized_zone = yes
+		}
+		random_owned_controlled_state = {
+			limit = {
+				NOT = {
+					is_demilitarized_zone = yes
+					state = 781
+					state = 1334					
+				}
+			}
+			set_demilitarized_zone = yes
+		}
+		random_owned_controlled_state = {
+			limit = {
+				NOT = {
+					is_demilitarized_zone = yes
+					state = 781
+					state = 1334
+				}
+			}
+			set_demilitarized_zone = yes
+		}
+		}
+	}
+}
+country_event = { # oops 3, government collapsed, asking for russian help
+	id = KUR_CW.23
+	immediate = {log = "[GetDateText]: [Root.GetName]: event KUR_CW.22"}
+	title = KUR_CW.23.t
+	desc = KUR_CW.23.desc
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = KUR_CW.23.a
+		KUR = {
+			create_country_leader = {
+			name = "Collapsed authority"
+			picture = "Portrait_Kurdistan_Collapsed_Authority.dds"
+			expire = "2000.1.1"
+			ideology = despotism_warlordism_subtype
+			traits = {
+				
+			}
+		}		
+		random_owned_controlled_state = {
+			limit = {
+				NOT = {
+					is_demilitarized_zone = yes
+					state = 781
+					state = 1334
+				}
+			}
+			set_demilitarized_zone = yes
+		}
+		random_owned_controlled_state = {
+			limit = {
+				NOT = {
+					is_demilitarized_zone = yes
+					state = 781
+					state = 1334
+				}
+			}
+			set_demilitarized_zone = yes
+		}
+		random_owned_controlled_state = {
+			limit = {
+				NOT = {
+					is_demilitarized_zone = yes
+					state = 781
+					state = 1334
+				}
+			}
+			set_demilitarized_zone = yes
+		}
+		}
 	}
 }

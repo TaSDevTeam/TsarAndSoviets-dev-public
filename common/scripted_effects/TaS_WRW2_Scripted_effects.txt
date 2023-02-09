@@ -1,18 +1,18 @@
 TaS_fopo_add_far_eastern_revolt_tab = {
-	set_temp_variable = { conflict_id = 49 }
+	set_temp_variable = { conflict_id = token:GC_FarEasternRevolt }
 	TNO_add_fopo_conflict_tab = yes
 }
 TaS_fopo_remove_far_eastern_revolt_tab = {
-	set_temp_variable = { conflict_id = 49 }
+	set_temp_variable = { conflict_id = token:GC_FarEasternRevolt }
 	TNO_remove_fopo_conflict_tab = yes
 }
 
 TaS_fopo_add_manchurian_civil_war_tab = {
-	set_temp_variable = { conflict_id = 50 }
+	set_temp_variable = { conflict_id = token:GC_ManchurianCivilWar }
 	TNO_add_fopo_conflict_tab = yes
 }
 TaS_fopo_remove_manchurian_civil_war_tab = {
-	set_temp_variable = { conflict_id = 50 }
+	set_temp_variable = { conflict_id = token:GC_ManchurianCivilWar }
 	TNO_remove_fopo_conflict_tab = yes
 }
 
@@ -451,6 +451,7 @@ TaS_WRW2_total_capitulation = {
 		transfer_state = 1532
 		transfer_state = 196
 	}
+	TaS_2WRW_form_ost_zones = yes
 }
 
 TaS_2WRW_spawn_volunteers = {
@@ -522,10 +523,6 @@ TaS_WRW2_peace_Central_European_Restauration_new = {
 	hidden_effect = {
 		set_global_flag = WRW2_german_collapse
 		every_country = {
-			news_event = {
-				id = berez_news.5
-				days = 0
-			}
 			set_country_flag = TaS_End_of_WRW2_Russia_Victory_BE_fl
 		}
 		GPL = {
@@ -620,6 +617,7 @@ TaS_WRW2_peace_Central_European_Restauration_new = {
 			transfer_state = 7
 			transfer_state = 35
 			transfer_state = 74
+			transfer_state = 309
 			every_owned_state = {
 				GHL = {
 					add_state_core = PREV
@@ -751,6 +749,12 @@ TaS_WRW2_peace_Central_European_Restauration_new = {
 		}
 		MAR = {
 			transfer_state = 97
+		}
+		GEX = {
+			annex_country = {
+				target = GER
+				transfer_troops = no
+			}
 		}
 	}
 }

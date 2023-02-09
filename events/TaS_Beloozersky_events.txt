@@ -170,8 +170,8 @@ country_event = { # MAR_posol_prikaz
 		hidden_effect = {
 		MAR = {
 				econ_join_sphere_MAR = yes
+				set_country_flag = HAS_ECON_SPHERE
 			}
-			set_country_flag = HAS_ECON_SPHERE
 			for_each_scope_loop = {
 				array = MAR.subjects
 				set_variable = { ECON_SPHERE_LEADER = MAR }
@@ -239,7 +239,7 @@ country_event = { # MAR_russkie_dobrovolchi
 
 	option = {
 		name = berez_belozerski.14.a
-		TNO_volunteer_cap_equal_3 = yes
+		#TNO_volunteer_cap_equal_3 = yes
 		ai_chance = { factor = 1 }	
 	}	
 }
@@ -683,7 +683,7 @@ country_event = {#Funny Warhammer reference, laugh immediatly
 	option = {
 		name = berez_belozerski.43.a
 		866 = {
-			state_category = large_town
+			set_state_category = large_town
 		}
 		set_victory_points = {
 			province = 12175
@@ -890,7 +890,8 @@ country_event = { # Poezd_2
 	desc = berez_kazahk.7.d
 	fire_only_once = yes
 	is_triggered_only = yes
-
+	picture = GFX_event_KAZ7
+	
 	option = {
 		name = berez_kazahk.7.a
 		country_event = {
@@ -908,7 +909,8 @@ country_event = { # Poezd_1
 	desc = berez_kazahk.8.d
 	fire_only_once = yes
 	is_triggered_only = yes
-
+	picture = GFX_event_KAZ8
+	
 	option = {
 		name = berez_kazahk.8.a
 		ai_chance = { factor = 1 }
@@ -1115,6 +1117,8 @@ country_event = { # Tsar Meeting
 				add = char_objedinitel
 				ideology = despotism_mladorossi_autocracy_subtype
 			}
+		}
+		MAR = {
 			set_country_leader_description = {
 				desc = "POLITICS_SERGEY_BELOZERSKI_70S_DESC"
 			}
