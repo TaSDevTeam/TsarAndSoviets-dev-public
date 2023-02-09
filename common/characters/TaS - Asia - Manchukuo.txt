@@ -5,12 +5,23 @@ characters = {
 			civilian = {
 				large = "gfx/leaders/MAN/MAN_Hiromichi_Yahara.dds"
 			}
+			army = {
+				large = "gfx/leaders/MAN/MAN_Hiromichi_Yahara.dds"
+			}
 		}
 		country_leader = {
 			desc = "POLITICS_HIROMICHI_YAHARA_DESC"
-			ideology = despotism_military_junta_subtype
+			ideology = ultranationalism_ultramilitarism_subtype
 			expire = "1999.1.1.1"
 			id = -1
+		}
+		field_marshal = {
+			traits = { old_guard }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 2
 		}
 	}
 	AMR_Sergei_Zaikin = {
@@ -26,7 +37,72 @@ characters = {
 			expire = "1999.1.1.1"
 			id = -1
 		}
+	}
+	SCC_Wang_Enmao = {
+		name = "SCC_Wang_Enmao"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/MAN/SCC_Wang_Enmao.dds"
+			}
+			army = {
+				large = "gfx/leaders/MAN/SCC_Wang_Enmao.dds"
+			}
+		}
+		country_leader = {
+			desc = "POLITICS_WANG_ENMAO_DESC"
+			ideology = ultranationalism_subtype
+			expire = "1999.1.1.1"
+			id = -1
+		}
+		corps_commander = {
+			traits = { infantry_leader }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 3
+		}
 	}	
+	MJP_Katakura_Tadashi = {
+		name = "MJP_Katakura_Tadashi"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/MAN/MJP_Katakura_Tadashi.dds"
+			}
+			army = {
+				large = "gfx/leaders/MAN/MJP_Katakura_Tadashi.dds"
+			}
+		}
+		country_leader = {
+			desc = "POLITICS_KATAKURA_TADASHI_DESC"
+			ideology = national_socialism_stratocratic_corporatism_subtype
+			expire = "1999.1.1.1"
+			id = -1
+		}
+		field_marshal = {
+			traits = { old_guard infantry_leader }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 3
+			legacy_id = 2202
+		}
+	}
+	HAN_Pujie = {
+		name = "HAN_Pujie"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/MAN/HAN_Pujie.dds"
+			}
+		}
+		country_leader = {
+			desc = "POLITICS_PUJIE_DESC"
+			ideology = despotism_aristocratic_conservatism_subtype
+			expire = "1999.1.1.1"
+			id = -1
+		}
+	}
 	MAN_Kuan_Chung = {
 		name = "MAN_Kuan_Chung"
 		portraits = {
@@ -36,23 +112,35 @@ characters = {
 		}
 		country_leader = {
 			desc = "POLITICS_KUAN_CHUNG_DESC"
-			ideology = liberal_democracy_national_liberal_subtype
+			ideology = paternalism_oligarchy_subtype
 			expire = "1999.1.1.1"
 			id = -1
 		}
 	}	
-	SCC_Wang_Enmao = {
-		name = "SCC_Wang_Enmao"
+	PFF_Kim_Il_Sung = {
+		name = "PFF_Kim_Il_Sung"
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/MAN/SCC_Wang_Enmao.dds"
+				large = "gfx/leaders/MAN/PFF_Kim_Il_Sung.dds"
+			}
+			army = {
+				large = "gfx/leaders/MAN/PFF_Kim_Il_Sung.dds"
 			}
 		}
 		country_leader = {
-			desc = "POLITICS_WANG_ENMAO_DESC"
-			ideology = ultranationalism_subtype
+			desc = "POLITICS_KIM_IL_SUNG_DESC"
+			ideology = communist_autarkic_marxism_subtype
 			expire = "1999.1.1.1"
 			id = -1
+		}
+		field_marshal = {
+			traits = { infantry_leader }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 3
+			legacy_id = 2202
 		}
 	}	
 }

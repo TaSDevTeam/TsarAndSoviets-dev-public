@@ -1,3 +1,1904 @@
+TaS_WRW2_fate_and_coring_of_territories = { 
+	MAR_fate_of_turkestan = {
+		icon = GFX_decision_generic_assault
+		fire_only_once = yes
+		custom_cost_trigger = { command_power > 9.99 }
+		custom_cost_text = decision_cost_10_cp
+		visible = {
+			MTR = { exists = yes }
+		}
+		available = {
+			NOT = { has_war_with = AFG }
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_fate_of_turkestan"
+			country_event = { id = MAR_territorial_fate.1 }
+			add_to_variable = { MAR_fates_done = 1 }
+		}
+	}
+	MAR_fate_of_primorie = {
+		icon = GFX_decision_generic_assault
+		fire_only_once = yes
+		custom_cost_trigger = { command_power > 9.99 }
+		custom_cost_text = decision_cost_10_cp
+		visible = {
+			controls_state = 809
+		}
+		available = {
+		
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_fate_of_turkestan"
+			country_event = { id = MAR_territorial_fate.2 }
+			add_to_variable = { MAR_fates_done = 1 }
+		}
+	}
+	MAR_fate_of_moskau = {
+		icon = GFX_decision_generic_assault
+		fire_only_once = yes
+		custom_cost_trigger = { command_power > 9.99 }
+		custom_cost_text = decision_cost_10_cp
+		visible = {
+			controls_state = 1442
+			NOT = { has_war_with = GER }
+		}
+		available = {
+		
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_fate_of_turkestan"
+			country_event = { id = MAR_territorial_fate.3 }
+			add_to_variable = { MAR_fates_done = 1 }
+		}
+	}
+	MAR_fate_of_baltics = {
+		icon = GFX_decision_generic_assault
+		fire_only_once = yes
+		custom_cost_trigger = { command_power > 9.99 }
+		custom_cost_text = decision_cost_10_cp
+		visible = {
+			MBP = { exists = yes }
+		}
+		available = {
+		
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_fate_of_turkestan"
+			country_event = { id = MAR_territorial_fate.4 }
+			add_to_variable = { MAR_fates_done = 1 }
+		}
+	}
+	MAR_fate_of_belarus = {
+		icon = GFX_decision_generic_assault
+		fire_only_once = yes
+		custom_cost_trigger = { command_power > 9.99 }
+		custom_cost_text = decision_cost_10_cp
+		visible = {
+			MBL = { exists = yes }
+		}
+		available = {
+		
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_fate_of_turkestan"
+			country_event = { id = MAR_territorial_fate.7 }
+			add_to_variable = { MAR_fates_done = 1 }
+		}
+	}
+	MAR_fate_of_ukraine = {
+		icon = GFX_decision_generic_assault
+		fire_only_once = yes
+		custom_cost_trigger = { command_power > 9.99 }
+		custom_cost_text = decision_cost_10_cp
+		visible = {
+			MUK = { exists = yes }
+		}
+		available = {
+		
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_fate_of_turkestan"
+			country_event = { id = MAR_territorial_fate.8 }
+			add_to_variable = { MAR_fates_done = 1 }
+		}
+	}
+	MAR_fate_of_taurida = {
+		icon = GFX_decision_generic_assault
+		fire_only_once = yes
+		custom_cost_trigger = { command_power > 9.99 }
+		custom_cost_text = decision_cost_10_cp
+		visible = {
+			MTV = { exists = yes }
+		}
+		available = {
+		
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_fate_of_turkestan"
+			country_event = { id = MAR_territorial_fate.9 }
+			add_to_variable = { MAR_fates_done = 1 }
+		}
+	}
+	MAR_fate_of_caucasus = {
+		icon = GFX_decision_generic_assault
+		fire_only_once = yes
+		custom_cost_trigger = { command_power > 9.99 }
+		custom_cost_text = decision_cost_10_cp
+		visible = {
+			MCS = { exists = yes }
+		}
+		available = {
+		
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_fate_of_turkestan"
+			country_event = { id = MAR_territorial_fate.10 }
+			add_to_variable = { MAR_fates_done = 1 }
+		}
+	}
+	MAR_coring_integrate_Uzbekistan = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 405
+		}
+
+		visible = {
+			
+			owns_state = 405
+			NOT = {
+				AND = {
+					750 = {
+						is_core_of = ROOT
+					}
+					585 = {
+						is_core_of = ROOT
+					}
+					1468 = {
+						is_core_of = ROOT
+					}
+					405 = {
+						is_core_of = ROOT
+					}
+					1466 = {
+						is_core_of = ROOT
+					}
+					1467 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		highlight_states = {
+			state = 405
+		}
+
+		# on_map_mode = map_only
+
+		modifier = {
+			stability_weekly = -0.0025
+			political_power_gain = -0.15
+			gdp_growth_modifier = -0.5
+		}
+
+		cost = 100
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 180
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
+			add_state_core = 750
+			add_state_core = 585
+			add_state_core = 1469
+			add_state_core = 405
+			add_state_core = 1466
+			add_state_core = 1467
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 0.01 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_really_low = yes
+		}
+	}
+	MAR_coring_integrate_Kyrgyzstan = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 586
+		}
+
+		visible = {
+			
+			owns_state = 586
+			NOT = {
+				AND = {
+					586 = {
+						is_core_of = ROOT
+					}
+					732 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		highlight_states = {
+			state = 586
+		}
+
+		# on_map_mode = map_only
+
+		modifier = {
+			stability_weekly = -0.0025
+			political_power_gain = -0.15
+			gdp_growth_modifier = -0.5
+		}
+
+		cost = 100
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 180
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
+			add_state_core = 586
+			add_state_core = 732
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 0.01 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_really_low = yes
+		}
+	}
+	MAR_coring_integrate_Turkmenistan = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 584
+		}
+
+		visible = {
+			
+			owns_state = 584
+			NOT = {
+				AND = {
+					584 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		highlight_states = {
+			state = 584
+		}
+
+		# on_map_mode = map_only
+
+		modifier = {
+			stability_weekly = -0.0025
+			political_power_gain = -0.15
+			gdp_growth_modifier = -0.5
+		}
+
+		cost = 100
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 180
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
+			add_state_core = 584
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 0.01 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_really_low = yes
+		}
+	}
+	MAR_coring_integrate_Tajikistan = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 742
+		}
+
+		visible = {
+			
+			owns_state = 742
+			NOT = {
+				AND = {
+					742 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		highlight_states = {
+			state = 742
+		}
+
+		# on_map_mode = map_only
+
+		modifier = {
+			stability_weekly = -0.0025
+			political_power_gain = -0.15
+			gdp_growth_modifier = -0.5
+		}
+
+		cost = 100
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 180
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
+			add_state_core = 742
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 0.01 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_really_low = yes
+		}
+	}
+	MAR_coring_integrate_Northern_Afghanistan = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 1885
+		}
+
+		visible = {
+			
+			owns_state = 1885
+			NOT = {
+				AND = {
+					1885 = {
+						is_core_of = ROOT
+					}
+					1465 = {
+						is_core_of = ROOT
+					}
+					1470 = {
+						is_core_of = ROOT
+					}
+					1471 = {
+						is_core_of = ROOT
+					}
+				}
+				
+			}
+		}
+
+		highlight_states = {
+			state = 1885
+		}
+
+		# on_map_mode = map_only
+
+		modifier = {
+			stability_weekly = -0.0025
+			political_power_gain = -0.15
+			gdp_growth_modifier = -0.5
+		}
+
+		cost = 100
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 180
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
+			add_state_core = 1465
+			add_state_core = 1885
+			if = {
+				limit = { owns_state = 1470 }
+				add_state_core = 1470
+				add_state_core = 1471
+			}
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 0.01 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_really_low = yes
+		}
+	}
+	MAR_coring_integrate_Primorie = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 809
+		}
+
+		visible = {
+			owns_state = 809
+			has_country_flag = Primorie_fate_is_done
+			NOT = {
+				AND = {
+					809 = {
+						is_core_of = ROOT
+					}
+					408 = {
+						is_core_of = ROOT
+					}
+					1664 = {
+						is_core_of = ROOT
+					}
+					409 = {
+						is_core_of = ROOT
+					}
+					1645 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		highlight_states = {
+			state = 809
+		}
+
+		# on_map_mode = map_only
+
+		modifier = {
+			stability_weekly = -0.0035
+			political_power_gain = -0.25
+			gdp_growth_modifier = -0.5
+		}
+
+		cost = 75
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = RUS_integration_cost_days?0
+
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
+			add_state_core = 809
+			add_state_core = 408
+			add_state_core = 1664
+			add_state_core = 409
+			add_state_core = 1645    
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 0.15 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_really_low = yes
+		}
+	}
+	MAR_coring_integrate_Northern_Moscowien = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 195
+		}
+
+		visible = {
+			owns_state = 195
+			has_country_flag = MCW_fate_is_done
+			NOT = {
+				AND = {
+					195 = {
+						is_core_of = ROOT
+					}
+					1421 = {
+						is_core_of = ROOT
+					}
+					208 = {
+						is_core_of = ROOT
+					}
+					264 = {
+						is_core_of = ROOT
+					}
+					209 = {
+						is_core_of = ROOT
+					}
+					1434 = {
+						is_core_of = ROOT
+					}
+					1477 = {
+						is_core_of = ROOT
+					}
+					220 = {
+						is_core_of = ROOT
+					}
+					1314 = {
+						is_core_of = ROOT
+					}
+					257 = {
+						is_core_of = ROOT
+					}
+					247 = {
+						is_core_of = ROOT
+					}
+					1475 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		highlight_states = {
+			state = 195
+		}
+
+		# on_map_mode = map_only
+
+		modifier = {
+			stability_weekly = -0.0035
+			political_power_gain = -0.25
+			gdp_growth_modifier = -0.5
+		}
+
+		cost = 150
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = RUS_integration_cost_days?0
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
+			add_state_core = 195
+			add_state_core = 1421
+			add_state_core = 208
+			add_state_core = 264
+			add_state_core = 209
+			add_state_core = 1434
+			add_state_core = 220
+			add_state_core = 1477
+			add_state_core = 1314
+			add_state_core = 257
+			add_state_core = 247
+			add_state_core = 1475
+			
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 1 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_low = yes
+		}
+	}
+	MAR_coring_integrate_Central_Moscowien = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 1442
+		}
+
+		visible = {
+			owns_state = 1442
+			has_country_flag = MCW_fate_is_done
+			NOT = {
+				AND = {
+					255 = {
+						is_core_of = ROOT
+					}
+					1478 = {
+						is_core_of = ROOT
+					}
+					246 = {
+						is_core_of = ROOT
+					}
+					238 = {
+						is_core_of = ROOT
+					}
+					253 = {
+						is_core_of = ROOT
+					}
+					248 = {
+						is_core_of = ROOT
+					}
+					254 = {
+						is_core_of = ROOT
+					}
+					1443 = {
+						is_core_of = ROOT
+					}
+					401 = {
+						is_core_of = ROOT
+					}
+					205 = {
+						is_core_of = ROOT
+					}
+					219 = {
+						is_core_of = ROOT
+					}
+					1442 = {
+						is_core_of = ROOT
+					}
+					1476 = {
+						is_core_of = ROOT
+					}
+					1444 = {
+						is_core_of = ROOT
+					}
+					242 = {
+						is_core_of = ROOT
+					}
+					223 = {
+						is_core_of = ROOT
+					}
+					241 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		highlight_states = {
+			state = 1442
+		}
+
+		# on_map_mode = map_only
+
+		modifier = {
+			stability_weekly = -0.0035
+			political_power_gain = -0.25
+			gdp_growth_modifier = -0.5
+		}
+
+		cost = 150
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = RUS_integration_cost_days?0
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
+			add_state_core = 255
+			add_state_core = 1478
+			add_state_core = 246
+			add_state_core = 238
+			add_state_core = 253
+			add_state_core = 248
+			add_state_core = 254
+			add_state_core = 1443
+			add_state_core = 401
+			add_state_core = 205
+			add_state_core = 219
+			add_state_core = 1442
+			add_state_core = 1476
+			add_state_core = 1444
+			add_state_core = 242
+			add_state_core = 223
+			add_state_core = 241
+			
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 1 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_low = yes
+		}
+	}
+	MAR_coring_integrate_Southern_Moscowien = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 210
+		}
+
+		visible = {
+			owns_state = 210
+			has_country_flag = MCW_fate_is_done
+			NOT = {
+				AND = {
+					210 = {
+						is_core_of = ROOT
+					}
+					258 = {
+						is_core_of = ROOT
+					}
+					222 = {
+						is_core_of = ROOT
+					}
+					1435 = {
+						is_core_of = ROOT
+					}
+					1441 = {
+						is_core_of = ROOT
+					}
+					1436 = {
+						is_core_of = ROOT
+					}
+					263 = {
+						is_core_of = ROOT
+					}
+					240 = {
+						is_core_of = ROOT
+					}
+					260 = {
+						is_core_of = ROOT
+					}
+					217 = {
+						is_core_of = ROOT
+					}
+					239 = {
+						is_core_of = ROOT
+					}
+					245 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		highlight_states = {
+			state = 210
+		}
+
+		# on_map_mode = map_only
+
+		modifier = {
+			stability_weekly = -0.0035
+			political_power_gain = -0.25
+			gdp_growth_modifier = -0.5
+		}
+
+		cost = 150
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = RUS_integration_cost_days?0
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
+			add_state_core = 210
+			add_state_core = 222
+			add_state_core = 1435
+			add_state_core = 1441
+			add_state_core = 1436
+			add_state_core = 263
+			add_state_core = 240
+			add_state_core = 260
+			add_state_core = 217
+			add_state_core = 239
+			add_state_core = 245
+			add_state_core = 258
+			
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 1 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_low = yes
+		}
+	}
+	MAR_coring_integrate_Volgodon = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 243
+		}
+
+		visible = {
+			owns_state = 243
+			has_country_flag = MCW_fate_is_done
+			NOT = {
+				AND = {
+					243 = {
+						is_core_of = ROOT
+					}
+					224 = {
+						is_core_of = ROOT
+					}
+					236 = {
+						is_core_of = ROOT
+					}
+					244 = {
+						is_core_of = ROOT
+					}
+					237 = {
+						is_core_of = ROOT
+					}
+					265 = {
+						is_core_of = ROOT
+					}
+					234 = {
+						is_core_of = ROOT
+					}
+					218 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		highlight_states = {
+			state = 243
+		}
+
+		# on_map_mode = map_only
+
+		modifier = {
+			stability_weekly = -0.0035
+			political_power_gain = -0.25
+			gdp_growth_modifier = -0.5
+		}
+
+		cost = 100
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = RUS_integration_cost_days?0
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
+			add_state_core = 243
+			add_state_core = 224
+			add_state_core = 236
+			add_state_core = 244
+			add_state_core = 237
+			add_state_core = 265
+			add_state_core = 234
+			add_state_core = 218
+			
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 1 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_low = yes
+		}
+	}
+	MAR_coring_integrate_Eastern_Ukraine = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 221
+		}
+
+		visible = {
+			owns_state = 221
+			has_country_flag = MCW_fate_is_done
+			NOT = {
+				AND = {
+					1427 = {
+						is_core_of = ROOT
+					}
+					225 = {
+						is_core_of = ROOT
+					}
+					259 = {
+						is_core_of = ROOT
+					}
+					226 = {
+						is_core_of = ROOT
+					}
+					1426 = {
+						is_core_of = ROOT
+					}
+					200 = {
+						is_core_of = ROOT
+					}
+					227 = {
+						is_core_of = ROOT
+					}
+					228 = {
+						is_core_of = ROOT
+					}
+					221 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		highlight_states = {
+			state = 221
+		}
+
+		# on_map_mode = map_only
+
+		modifier = {
+			stability_weekly = -0.0035
+			political_power_gain = -0.25
+			gdp_growth_modifier = -0.5
+		}
+
+		cost = 100
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = RUS_integration_cost_days?0
+
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
+			add_state_core = 1427
+			add_state_core = 225
+			add_state_core = 259
+			add_state_core = 226
+			add_state_core = 1426
+			add_state_core = 200
+			add_state_core = 227
+			add_state_core = 228
+			add_state_core = 221
+			
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 1 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_low = yes
+		}
+	}
+	MAR_coring_integrate_Western_Ukraine = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 1428
+		}
+
+		visible = {
+			owns_state = 1428
+			NOT = {
+				AND = {
+					1428 = {
+						is_core_of = ROOT
+					}
+					202 = {
+						is_core_of = ROOT
+					}
+					207 = {
+						is_core_of = ROOT
+					}
+					197 = {
+						is_core_of = ROOT
+					}
+					773 = {
+						is_core_of = ROOT
+					}
+					1430 = {
+						is_core_of = ROOT
+					}
+					201 = {
+						is_core_of = ROOT
+					}
+					1429 = {
+						is_core_of = ROOT
+					}
+					93 = {
+						is_core_of = ROOT
+					}
+					1431 = {
+						is_core_of = ROOT
+					}
+					199 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		highlight_states = {
+			state = 1428
+		}
+
+		# on_map_mode = map_only
+
+		modifier = {
+			stability_weekly = -0.0035
+			political_power_gain = -0.25
+			gdp_growth_modifier = -0.5
+		}
+
+		cost = 100
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 120
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
+			add_state_core = 1428
+			add_state_core = 202
+			add_state_core = 197
+			add_state_core = 773
+			add_state_core = 1430
+			add_state_core = 201
+			add_state_core = 1429
+			add_state_core = 93
+			add_state_core = 1431
+			add_state_core = 199
+
+			
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 0.5 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_low = yes
+		}
+	}
+	MAR_coring_integrate_Belarus = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 1404	
+		}
+
+		visible = {
+			owns_state = 1404
+			NOT = {
+				AND = {
+					1404 = {
+						is_core_of = ROOT
+					}
+					207 = {
+						is_core_of = ROOT
+					}
+					1405 = {
+						is_core_of = ROOT
+					}
+					206 = {
+						is_core_of = ROOT
+					}
+					204 = {
+						is_core_of = ROOT
+					}
+					1407 = {
+						is_core_of = ROOT
+					}
+					95 = {
+						is_core_of = ROOT
+					}
+					1406 = {
+						is_core_of = ROOT
+					}
+					1403 = {
+						is_core_of = ROOT
+					}
+					194 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		highlight_states = {
+			state = 1404
+		}
+
+		# on_map_mode = map_only
+
+		modifier = {
+			stability_weekly = -0.0035
+			political_power_gain = -0.25
+			gdp_growth_modifier = -0.5
+		}
+
+		cost = 100
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 90
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
+			add_state_core = 1404
+			add_state_core = 204
+			add_state_core = 1405
+			add_state_core = 206
+			add_state_core = 204
+			add_state_core = 1407
+			add_state_core = 95
+			add_state_core = 1406
+			add_state_core = 1403
+			add_state_core = 194
+			add_state_core = 207
+			
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 0.5 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_low = yes
+		}
+	}
+	MAR_coring_integrate_Estonia = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 13	
+		}
+
+		visible = {
+			owns_state = 13
+			NOT = {
+				AND = {
+					13 = {
+						is_core_of = ROOT
+					}
+					191 = {
+						is_core_of = ROOT
+					}
+					1396 = {
+						is_core_of = ROOT
+					}
+					1395 = {
+						is_core_of = ROOT
+					}
+					1440 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		highlight_states = {
+			state = 13
+		}
+
+		# on_map_mode = map_only
+
+		modifier = {
+			stability_weekly = -0.0035
+			political_power_gain = -0.25
+			gdp_growth_modifier = -0.5
+		}
+
+		cost = 75
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 120
+
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
+			add_state_core = 13
+			add_state_core = 191
+			add_state_core = 1396
+			add_state_core = 1395
+			add_state_core = 1440
+			
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 0.25 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_low = yes
+		}
+	}
+	MAR_coring_integrate_Latvia = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 1397	
+		}
+
+		visible = {
+			owns_state = 1397
+			NOT = {
+				AND = {
+					1397 = {
+						is_core_of = ROOT
+					}
+					12 = {
+						is_core_of = ROOT
+					}
+					1402 = {
+						is_core_of = ROOT
+					}
+					943 = {
+						is_core_of = ROOT
+					}
+					1398 = {
+						is_core_of = ROOT
+					}
+					190 = {
+						is_core_of = ROOT
+					}
+					1399 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		highlight_states = {
+			state = 1397
+		}
+
+		# on_map_mode = map_only
+
+		modifier = {
+			stability_weekly = -0.0035
+			political_power_gain = -0.25
+			gdp_growth_modifier = -0.5
+		}
+
+		cost = 75
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 120
+
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
+			add_state_core = 1397
+			add_state_core = 12
+			add_state_core = 1402
+			add_state_core = 943
+			add_state_core = 1398
+			add_state_core = 190
+			add_state_core = 1399
+			
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 0.25 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_low = yes
+		}
+	}
+	MAR_coring_integrate_Lithuania = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 96	
+		}
+
+		visible = {
+			owns_state = 96
+			NOT = {
+				AND = {
+					96 = {
+						is_core_of = ROOT
+					}
+					1401 = {
+						is_core_of = ROOT
+					}
+					11 = {
+						is_core_of = ROOT
+					}
+					1400 = {
+						is_core_of = ROOT
+					}
+					189 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		highlight_states = {
+			state = 96
+		}
+
+		# on_map_mode = map_only
+
+		modifier = {
+			stability_weekly = -0.0035
+			political_power_gain = -0.25
+			gdp_growth_modifier = -0.5
+		}
+
+		cost = 75
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 120
+
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
+			add_state_core = 96
+			add_state_core = 1401
+			add_state_core = 1400
+			add_state_core = 11
+			add_state_core = 189
+			
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 0.25 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_low = yes
+		}
+	}
+	MAR_coring_integrate_Crimea = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 1532
+		}
+
+		visible = {
+			owns_state = 1532
+			NOT = {
+				AND = {
+					1532 = {
+						is_core_of = ROOT
+					}
+					137 = {
+						is_core_of = ROOT
+					}
+					196 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		highlight_states = {
+			state = 1532
+		}
+
+		# on_map_mode = map_only
+
+		modifier = {
+			stability_weekly = -0.0035
+			political_power_gain = -0.25
+			gdp_growth_modifier = -0.5
+		}
+
+		cost = 50
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 120
+
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
+			add_state_core = 1532
+			add_state_core = 137
+			add_state_core = 196
+			
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 0.25 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_low = yes
+		}
+	}
+	MAR_coring_integrate_North_Caucasus = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 232
+		}
+
+		visible = {
+			owns_state = 232
+			NOT = {
+				AND = {
+					232 = {
+						is_core_of = ROOT
+					}
+					1564 = {
+						is_core_of = ROOT
+					}
+					1561 = {
+						is_core_of = ROOT
+					}
+					1560 = {
+						is_core_of = ROOT
+					}
+					1559 = {
+						is_core_of = ROOT
+					}
+					235 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		highlight_states = {
+			state = 232
+		}
+
+		# on_map_mode = map_only
+
+		modifier = {
+			stability_weekly = -0.0035
+			political_power_gain = -0.25
+			gdp_growth_modifier = -0.5
+		}
+
+		cost = 150
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		#days_remove = 120
+		days_remove = 1
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
+			add_state_core = 232
+			add_state_core = 1564
+			add_state_core = 1561
+			add_state_core = 1560
+			add_state_core = 1559
+			add_state_core = 235
+			
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 0.15 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_really_low = yes
+		}
+	}
+	MAR_coring_integrate_South_Caucasus = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 231
+		}
+
+		visible = {
+			owns_state = 231
+			NOT = {
+				AND = {
+					231 = {
+						is_core_of = ROOT
+					}
+					1558 = {
+						is_core_of = ROOT
+					}
+					1556 = {
+						is_core_of = ROOT
+					}
+					229 = {
+						is_core_of = ROOT
+					}
+					1554 = {
+						is_core_of = ROOT
+					}
+					1552 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		highlight_states = {
+			state = 231
+		}
+
+		# on_map_mode = map_only
+
+		modifier = {
+			stability_weekly = -0.0035
+			political_power_gain = -0.25
+			gdp_growth_modifier = -0.5
+		}
+
+		cost = 75
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 120
+
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
+			add_state_core = 231
+			add_state_core = 1558
+			add_state_core = 1556
+			add_state_core = 229
+			add_state_core = 1554
+			add_state_core = 1552
+			
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 0.15 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_really_low = yes
+		}
+	}
+	MAR_coring_integrate_Galicia = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 1391
+		}
+
+		visible = {
+			owns_state = 1391
+			NOT = {
+				AND = {
+					91 = {
+						is_core_of = ROOT
+					}
+					89 = {
+						is_core_of = ROOT
+					}
+					1394 = {
+						is_core_of = ROOT
+					}
+					1393 = {
+						is_core_of = ROOT
+					}
+					1392 = {
+						is_core_of = ROOT
+					}
+					1391 = {
+						is_core_of = ROOT
+					}
+					1390 = {
+						is_core_of = ROOT
+					}
+					1389 = {
+						is_core_of = ROOT
+					}
+					1388 = {
+						is_core_of = ROOT
+					}
+					1387 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		highlight_states = {
+			state = 1391
+		}
+
+		# on_map_mode = map_only
+
+		modifier = {
+			stability_weekly = -0.0035
+			political_power_gain = -0.25
+			gdp_growth_modifier = -0.5
+		}
+
+		cost = 75
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 120
+
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
+			add_state_core = 91
+			add_state_core = 89
+			add_state_core = 1394
+			add_state_core = 1393
+			add_state_core = 1392
+			add_state_core = 1391
+			add_state_core = 1390
+			add_state_core = 1389
+			add_state_core = 1388
+			add_state_core = 1387
+			
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 0.15 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_really_low = yes
+		}
+	}
+	MAR_coring_integrate_Odessa = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 192
+		}
+
+		visible = {
+			owns_state = 192
+			NOT = {
+				AND = {
+					192 = {
+						is_core_of = ROOT
+					}
+					1282 = {
+						is_core_of = ROOT
+					}
+					198 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		highlight_states = {
+			state = 192
+		}
+
+		# on_map_mode = map_only
+
+		modifier = {
+			stability_weekly = -0.0035
+			political_power_gain = -0.25
+			gdp_growth_modifier = -0.5
+		}
+
+		cost = 50
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 90
+
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
+			add_state_core = 192
+			add_state_core = 198
+			add_state_core = 1282
+			
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 0.05 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_really_low = yes
+		}
+	}
+	MAR_coring_integrate_Moldova = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 78
+		}
+
+		visible = {
+			owns_state = 78
+			NOT = {
+				AND = {
+					78 = {
+						is_core_of = ROOT
+					}
+					1285 = {
+						is_core_of = ROOT
+					}
+					1286 = {
+						is_core_of = ROOT
+					}
+					80 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		highlight_states = {
+			state = 78
+		}
+
+		# on_map_mode = map_only
+
+		modifier = {
+			stability_weekly = -0.0035
+			political_power_gain = -0.25
+			gdp_growth_modifier = -0.5
+		}
+
+		cost = 50
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 90
+
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
+			add_state_core = 78
+			add_state_core = 1285
+			add_state_core = 1286
+			if = { 
+				limit = { owns_state = 80 }
+				add_state_core = 80
+			}
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 0.05 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_really_low = yes
+		}
+	}
+	MAR_coring_integrate_Armenia = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 230
+		}
+
+		visible = {
+			owns_state = 230
+			NOT = {
+				AND = {
+					230 = {
+						is_core_of = ROOT
+					}
+					1568 = {
+						is_core_of = ROOT
+					}
+					1567 = {
+						is_core_of = ROOT
+					}
+					1448 = {
+						is_core_of = ROOT
+					}
+					1565 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		highlight_states = {
+			state = 230
+		}
+
+		# on_map_mode = map_only
+
+		modifier = {
+			stability_weekly = -0.0035
+			political_power_gain = -0.25
+			gdp_growth_modifier = -0.5
+		}
+
+		cost = 50
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 90
+
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
+			add_state_core = 230
+			add_state_core = 1568
+			add_state_core = 1567
+			add_state_core = 1565
+			if = { 
+				limit = { owns_state = 1448 }
+				add_state_core = 1448
+			}
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 0.05 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_really_low = yes
+		}
+	}
+	MAR_coring_integrate_Vyborg = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 1712
+		}
+
+		visible = {
+			owns_state = 1712
+			NOT = {
+				AND = {
+					1712 = {
+						is_core_of = ROOT
+					}
+					146 = {
+						is_core_of = ROOT
+					}
+					147 = {
+						is_core_of = ROOT
+					}
+					722 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		highlight_states = {
+			state = 1712
+		}
+
+		# on_map_mode = map_only
+
+		modifier = {
+			stability_weekly = -0.0035
+			political_power_gain = -0.25
+			gdp_growth_modifier = -0.5
+		}
+
+		cost = 50
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 90
+
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
+			add_state_core = 1712
+			add_state_core = 146
+			add_state_core = 147
+			add_state_core = 722
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 0.05 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_really_low = yes
+		}
+	}
+}
 TaS_WRW2_central_asia_invasion = {
 	TaS_WRW2_start_invasion = {
 		icon = GFX_decision_generic_decision
@@ -60,544 +1961,9 @@ TaS_WRW2_central_asia_invasion = {
 			}
 		}
 	}
-	MAR_fate_of_turkestan_effigy = {
-		icon = GFX_decision_generic_assault
-		visible = {
-			OR = {
-				has_country_flag = MAR_has_turkestan
-				AND = {
-					UZB = { exists = no }
-					KRK = { exists = no }
-					UTL = { exists = no }
-					TAJ = { exists = no }
-					KYR = { exists = no }
-					TRK = { exists = no }
-				}
-			}
-		}
-		available = {
-			always = no
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_fate_of_turkestan_effigy"
-		}
-	}
-	MAR_fate_of_turkestan_govern = {
-		icon = GFX_decision_generic_assault
-		visible = {
-			OR = {
-				has_country_flag = MAR_has_turkestan
-				AND = {
-					UZB = { exists = no }
-					KRK = { exists = no }
-					UTL = { exists = no }
-					TAJ = { exists = no }
-					KYR = { exists = no }
-					TRK = { exists = no }
-				}
-			}
-		}
-		available = {
-		}
-		cost = 25
-		fire_only_once = yes
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_fate_of_turkestan_govern"
-			clr_country_flag = MAR_has_turkestan
-			set_country_flag = MAR_Turkestan_govern_stayed
-			MAR_Turkestan_govern = yes
-		}
-	} 
-	#MAR_fate_of_turkestan_autonomy = { #Temporarly Discounted
-	#	icon = GFX_decision_generic_assault
-	#	visible = {
-	#		has_country_flag = MAR_has_turkestan
-	#	}
-	#	available = {
-	#	}
-	#	fire_only_once = yes
-	#	cost = 25
-	#	complete_effect = {
-	#		log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_fate_of_turkestan_autonomy"
-	#		clr_country_flag = MAR_has_turkestan
-	#		set_country_flag = MAR_Turkestan_autonomy
-	#		UZB = {
-	#			set_cosmetic_tag = UZB_MAR_autonomy
-	#			set_politics = {
-	#				ruling_party = authoritarian_democracy
-	#				last_election = "1933.2.16"
-	#				election_frequency = 36
-	#				elections_allowed = no
-	#			}	
-	#			add_country_leader_role = {
-	#				character = UZB_Islam_Karimov
-	#				promote_leader = yes
-	#				country_leader = {
-	#					ideology = authoritarian_democracy_controlled_democracy_subtype
-	#					expire = "1999.1.1"
-	#					traits = { }
-	#				}
-	#			}
-	#		}
-	#	}
-	#}
 }
-TaS_WRW2_far_east_proxies = {
-	TaS_WRW2_seek_oportunities_fe = {
-		icon = GFX_decision_generic_decision
-		fire_only_once = yes
-		cost = 25
-		complete_effect = {
-			add_war_support = 0.03
-		}
-		remove_effect = {
-			#country_event = {
-			#	id = MAR_JAP.1 
-			#}
-			hidden_effect = {
-			set_country_flag = MAR_fareast_proxy
-			}
-		}
-	}
-	MAR_support_rebels_effigy = {
-		icon = GFX_decision_generic_assault
-		visible = {
-			has_country_flag = MAR_fareast_proxy
-		}
-		available = {
-			always = no
-		}
 
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_support_rebels_effigy"
-		}
-	}
-	MAR_send_guns_rebels = {
-		icon = GFX_decision_black_market_arms_trade_increase
-		visible = {
-			has_country_flag = MAR_fareast_proxy
-		}
-		available = {
-			NOT = {
-				has_country_flag = MARFE_doing_stuff
-			}
-		}
-		cost = 25
-		days_remove = 14
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_send_guns_rebels"
-			set_country_flag = MARFE_doing_stuff
-		}
-		remove_effect = {
-			add_to_variable = { MAR_FErebels_infantry_weapons = 1000 }
-			clr_country_flag = MARFE_doing_stuff
-		}
-	}
-	MAR_send_propoganda_rebels = {
-		icon = decision_generic_military_hat
-		visible = {
-			has_country_flag = MAR_fareast_proxy
-		}
-		available = {
-			NOT = {
-				has_country_flag = MARFE_doing_stuff
-			}
-		}
-		cost = 25
-		days_remove = 14
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_send_propoganda_rebels"
-			set_country_flag = MARFE_doing_stuff
-		}
-		remove_effect = {
-			add_to_variable = { MAR_FErebels_adddivisions = 2 }
-			clr_country_flag = MARFE_doing_stuff
-		}
-	}
-	MAR_send_partisans_rebels = {
-		icon = GFX_decision_generic_assault
-		visible = {
-			has_country_flag = MAR_fareast_proxy
-		}
-		available = {
-			NOT = {
-				has_country_flag = MARFE_doing_stuff
-			}
-		}
-		fire_only_once = yes
-		cost = 25
-		days_remove = 28
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_send_partisans_rebels"
-			set_country_flag = MARFE_doing_stuff
-		}
-		remove_effect = {
-			add_to_variable = { MAR_FErebels_addpartisans = 1 }
-			clr_country_flag = MARFE_doing_stuff
-		}
-	}
-	MAR_send_advisors_rebels = {
-		icon = GFX_decision_generic_military_parade
-		visible = {
-			has_country_flag = MAR_fareast_proxy
-		}
-		available = {
-			NOT = {
-				has_country_flag = MARFE_doing_stuff
-			}
-		}
-		fire_only_once = yes
-		cost = 25
-		days_remove = 28
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_send_advisors_rebels"
-			set_country_flag = MARFE_doing_stuff
-		}
-		remove_effect = {
-			add_to_variable = { MAR_FErebels_advisors = 1 }	
-			clr_country_flag = MARFE_doing_stuff
-		}
-	}
-	MAR_FErebels_mission = {
-		icon = GFX_decision_generic_ignite_civil_war
-		allowed = {
-			tag = MAR
-		}
-		available = {
-			always = no
-		}
-		activation = {
-			has_country_flag = MAR_fareast_proxy
-		}
 
-		days_mission_timeout = 90
-		is_good = no
-
-		timeout_effect = {
-			clr_country_flag = MAR_fareast_proxy
-			hidden_effect = {
-			TaS_2WRW_manchuria_start_rebelion = yes
-			every_country  = {
-					news_event = {
-						id = MAR_2WRW_world_news.4
-					}
-				}
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-}
-TaS_WRW2_manchu_crisis = {
-	TaS_WRW2_expand_operations = {
-		icon = GFX_decision_generic_ignite_civil_war
-		available = {
-			NOT = {
-				has_country_flag = MARFE_doing_stuff
-			}
-		}
-		cost = 25
-		days_remove = 21
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout TaS_WRW2_expand_operations"
-			set_country_flag = MARFE_doing_stuff
-		}
-		remove_effect = {
-			MAR = {
-				set_temp_variable = { target = PFF}
-				TNO_increase_volunteer_cap_1 = yes
-			}
-			clr_country_flag = MARFE_doing_stuff
-		}
-	}
-	TaS_WRW2_authorize_bombing_runs = {
-		icon = GFX_decision_generic_bombing
-		available = {
-			NOT = {
-				has_country_flag = MARFE_doing_stuff
-			}
-			
-		}
-		cost = 25
-		days_remove = 21
-		fire_only_once = yes
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout TaS_WRW2_authorize_bombing_runs"
-			set_country_flag = MARFE_doing_stuff
-		}
-		remove_effect = {
-			add_equipment_to_stockpile = {
-				type = tac_bomber_equipment
-				amount = -40
-			}
-			KOR = {
-				add_ideas = { MAR_KOR_Bombing_runs }	
-			}
-			clr_country_flag = MARFE_doing_stuff
-		}
-	}
-	TaS_WRW2_send_rebels_equipment_small = {
-		icon = GFX_decision_generic_arms_crate
-		available = {
-			NOT = {
-				has_country_flag = MARFE_doing_stuff
-			}
-		}
-		cost = 25
-		days_remove = 14
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout TaS_WRW2_send_rebels_equipment_small"
-			set_country_flag = MARFE_doing_stuff
-			set_temp_variable = { debt_temp = 0.015 }
-			econ_national_debt_change = yes
-		}
-		remove_effect = {
-			PFF = {
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = 500
-					producer = MAR
-				}
-				add_equipment_to_stockpile = {
-					type = anti_tank_equipment
-					amount = 100
-					producer = MAR
-				}
-				add_equipment_to_stockpile = {
-					type = support_equipment
-					amount = 100
-					producer = MAR
-				}
-				add_equipment_to_stockpile = {
-					type = artillery_equipment
-					amount = 15
-					producer = MAR
-				}
-			}
-			clr_country_flag = MARFE_doing_stuff
-		}
-	}
-	TaS_WRW2_send_rebels_equipment_medium = {
-		icon = GFX_decision_generic_arms_crate
-		available = {
-			NOT = {
-				has_country_flag = MARFE_doing_stuff
-			}
-		}
-		cost = 50
-		days_remove = 21
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout TaS_WRW2_send_rebels_equipment_medium"
-			set_country_flag = MARFE_doing_stuff
-			set_temp_variable = { debt_temp = 0.035 }
-			econ_national_debt_change = yes
-		}
-		remove_effect = {
-			PFF = {
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = 1000
-					producer = MAR
-				}
-				add_equipment_to_stockpile = {
-					type = anti_tank_equipment
-					amount = 250
-					producer = MAR
-				}
-				add_equipment_to_stockpile = {
-					type = support_equipment
-					amount = 250
-					producer = MAR
-				}
-				add_equipment_to_stockpile = {
-					type = artillery_equipment
-					amount = 45
-					producer = MAR 
-				}
-			}
-			clr_country_flag = MARFE_doing_stuff
-		}
-	}
-	TaS_WRW2_send_rebels_equipment_big = {
-		icon = GFX_decision_generic_arms_crate
-		available = {
-			NOT = {
-				has_country_flag = MARFE_doing_stuff
-			}
-		}
-		cost = 100
-		days_remove = 28
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout TaS_WRW2_send_rebels_equipment_big"
-			set_country_flag = MARFE_doing_stuff
-			set_temp_variable = { debt_temp = 0.05 }
-			econ_national_debt_change = yes
-		}
-		remove_effect = {
-			PFF = {
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = 2000
-					producer = MAR
-				}
-				add_equipment_to_stockpile = {
-					type = anti_tank_equipment
-					amount = 500
-					producer = MAR
-				}
-				add_equipment_to_stockpile = {
-					type = support_equipment
-					amount = 500
-					producer = MAR
-				}
-				add_equipment_to_stockpile = {
-					type = artillery_equipment
-					amount = 100
-					producer = MAR
-				}
-			}
-			clr_country_flag = MARFE_doing_stuff
-		}
-	}
-}
-TaS_WRW2_second_manchu_cw = {
-	TaS_WRW2_use_the_opportunity = {
-		icon = decision_generic_military_hat
-		visible = {
-		}
-		available = {
-		}
-		cost = 25
-		days_remove = 14
-		fire_only_once = yes
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_send_propoganda_rebels"
-		}
-		remove_effect = {
-			set_country_flag = TaS_WRW2_intervene_second_cw
-		}
-	}
-	TaS_WRW2_send_volunteers_man = {
-		icon = decision_generic_military_hat
-		visible = {
-			has_country_flag = TaS_WRW2_intervene_second_cw
-		}
-		available = {
-		}
-		cost = 25
-		days_remove = 14
-		fire_only_once = yes
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_send_propoganda_rebels"
-		}
-		remove_effect = {
-			set_temp_variable = { target = MAN}
-			TNO_increase_volunteer_cap_3 = yes
-		}
-	}
-	TaS_WRW2_authorize_bombing_runs_scw = {
-		icon = GFX_decision_generic_bombing
-		visible = {
-			has_country_flag = TaS_WRW2_intervene_second_cw
-		}		
-		available = {
-			NOT = {
-				has_country_flag = MARFE_doing_stuff
-			}
-			
-		}
-		cost = 25
-		days_remove = 21
-		fire_only_once = yes
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout TaS_WRW2_authorize_bombing_runs"
-			set_country_flag = MARFE_doing_stuff
-		}
-		remove_effect = {
-			add_equipment_to_stockpile = {
-				type = tac_bomber_equipment
-				amount = -40
-			}
-			KOR = {
-				add_ideas = { MAR_KOR_Bombing_runs }	
-			}
-			HAN = {
-				add_ideas = { MAR_KOR_Bombing_runs }	
-			}
-			clr_country_flag = MARFE_doing_stuff
-		}
-	}
-	TaS_WRW2_send_rebels_equipment_small = {
-		icon = GFX_decision_generic_arms_crate
-		visible = {
-			has_country_flag = TaS_WRW2_intervene_second_cw
-		}		
-		available = {
-			NOT = {
-				has_country_flag = MARFE_doing_stuff
-			}
-		}
-		cost = 25
-		days_remove = 21
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout TaS_WRW2_send_rebels_equipment_small"
-			set_country_flag = MARFE_doing_stuff
-			set_temp_variable = { debt_temp = 0.015 }
-			econ_national_debt_change = yes
-		}
-		remove_effect = {
-			MAN = {
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = 500
-					producer = MAR
-				}
-				add_equipment_to_stockpile = {
-					type = anti_tank_equipment
-					amount = 100
-					producer = MAR
-				}
-				add_equipment_to_stockpile = {
-					type = support_equipment
-					amount = 100
-					producer = MAR
-				}
-				add_equipment_to_stockpile = {
-					type = artillery_equipment
-					amount = 15
-					producer = MAR
-				}
-			}
-			clr_country_flag = MARFE_doing_stuff
-		}
-	}
-	TaS_WRW2_attack_menjiang = {
-		visible = {
-			has_country_flag = TaS_WRW2_intervene_second_cw
-		}	
-		icon = GFX_decision_generic_decision
-		fire_only_once = yes
-		custom_cost_trigger = { command_power > 24.99 }
-		custom_cost_text = decision_cost_25_cp
-		fire_only_once = yes
-		complete_effect = {
-			add_war_support = 0.03
-			hidden_effect = {
-				add_command_power = -25
-			}
-		}
-		days_remove = 30
-		remove_effect = {
-			declare_war_on = {
-				target = MEN
-				type = annex_everything
-			}
-		}
-	}
-}
 TaS_WRW2_prepare_for_final_battle = {
 	TaS_WRW2_launch_attack_on_germany = {
 		icon = GFX_decision_generic_assault
@@ -627,11 +1993,16 @@ TaS_WRW2_prepare_for_final_battle = {
 				target = GER
 				type = annex_everything
 			}
+			set_global_flag = nukes_disabled
 			add_ideas = { MAR_oper_zero }
 			set_variable = { RUS_devastation_gain = 4 }
 			set_variable = { RUS.GER_devastation_gain = 2 }
 			set_global_flag = TaS_2WRW_started
-			GER = { add_ideas = { TaS_2WRW_north_sea_problems } }
+			set_country_flag = RUS_2WRW_ongoing
+			if = {
+				limit = { check_variable = { MAR_no_naval_invasions = 1 } }
+				GER = { add_ideas = { TaS_2WRW_north_sea_problems } }
+			}
 			hidden_effect = {
 				every_country  = {
 						news_event = {
@@ -664,7 +2035,7 @@ TaS_WRW2_prepare_for_final_battle = {
 		}
 		remove_effect = {
 			add_to_variable = { RUS2WRWWarPreparedness = 20 }
-			custom_effect_tooltip = TaS_WRW2_establish_eastern_fortifications_tt
+			custom_effect_tooltip = TaS_WRW2_establish_southern_fortifications_tt
 			755 = {
 				add_building_construction = {
 					type = bunker
@@ -873,7 +2244,6 @@ TaS_WRW2_prepare_for_final_battle = {
 					province = 468
 				}
 			}
-		}
 		406 = {
 				add_building_construction = {
 					type = bunker
@@ -895,6 +2265,7 @@ TaS_WRW2_prepare_for_final_battle = {
 				}
 			}
 		}
+	}
 	TaS_WRW2_establish_northborders_fortifications = {
 		icon = GFX_decision_generic_destroy_fort
 		visible = {
@@ -915,7 +2286,7 @@ TaS_WRW2_prepare_for_final_battle = {
 		}
 		remove_effect = {
 			add_to_variable = { RUS2WRWWarPreparedness = 10 }
-			custom_effect_tooltip = TaS_WRW2_fortify_fallback_lines_tt
+			custom_effect_tooltip = TaS_WRW2_establish_northern_fortifications_tt
 			if = {
 				limit = {
 					owns_state = 216
@@ -1173,7 +2544,7 @@ TaS_WRW2_prepare_for_final_battle = {
 			factor = 20
 		}
 	}
-	TaS_WRW2_send_partisans = {
+	TaS_WRW2_send_partisans = {	
 		icon = GFX_decision_factory_generic_blue
 		visible = {
 		}
@@ -1191,60 +2562,38 @@ TaS_WRW2_prepare_for_final_battle = {
 			}
 		}
 		remove_effect = {
+			custom_effect_tooltip = TaS_WRW2_send_partisans_tt
+			add_to_variable = { RUS2WRWWarPreparedness = 10 }
 			MCW = {
 				add_ideas = TaS_war_partisans 
 			}
-		}
-		ai_will_do = {
-			factor = 20
-		}
-	}
-	TaS_WRW2_cryptology_efforts = {
-		icon = GFX_decision_generic_ger_espionage
-		visible = {
-		}
-		available = {
-			has_war = no
-		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
-		fire_only_once = yes
-		days_remove = 90
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_prepare_industrial_centers"
-			hidden_effect = {
-				add_command_power = -20
-			}
-		}
-		remove_effect = {
-			upgrade_intelligence_agency = upgrade_modernize_department
-			upgrade_intelligence_agency = upgrade_cryptographic_engineering
-			upgrade_intelligence_agency = upgrade_cryptographic_engineering
-			upgrade_intelligence_agency = upgrade_cryptographic_engineering
-		}
-		ai_will_do = {
-			factor = 20
-		}
-	}
-	TaS_WRW2_send_diversantos = {
-		icon = GFX_decision_factory_generic_blue
-		visible = {
-		}
-		available = {
-			has_war = no
-		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
-		fire_only_once = yes
-		days_remove = 60
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_prepare_industrial_centers"
-			hidden_effect = {
-				add_command_power = -20
-			}
-		}
-		remove_effect = {
 			add_to_variable = { MAR_Sended_diversants = 1 }
+		}
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	TaS_WRW2_block_the_barentsevo_sea = {	
+		icon = GFX_decision_generic_landmines
+		visible = {
+		}
+		available = {
+			has_war = no
+		}
+		custom_cost_trigger = { command_power > 19.99 }
+		custom_cost_text = decision_cost_20_cp
+		fire_only_once = yes
+		days_remove = 45
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_prepare_industrial_centers"
+			hidden_effect = {
+				add_command_power = -20
+			}
+		}
+		remove_effect = {
+			custom_effect_tooltip = TaS_WRW2_no_naval_for_ger_tt
+			add_to_variable = { RUS2WRWWarPreparedness = 10 }
+			add_to_variable = { MAR_no_naval_invasions = 1 }
 		}
 		ai_will_do = {
 			factor = 20
@@ -1268,7 +2617,7 @@ TaS_WRW2_prepare_for_final_battle = {
 			}
 		}
 		remove_effect = {
-			add_to_variable = { RUS2WRWWarPreparedness = 20 }
+			add_to_variable = { RUS2WRWWarPreparedness = 10 }
 			custom_effect_tooltip = TaS_WRW2_develop_siberian_railways_tt
 			857 = {
 				add_building_construction = {
@@ -1358,448 +2707,17 @@ TaS_WRW2_prepare_for_final_battle = {
 		remove_effect = {
 			add_to_variable = { RUS2WRWWarPreparedness = 15 }
 			custom_effect_tooltip = TaS_WRW2_raise_additional_reserves_tt
-			add_manpower = 450000
+			add_manpower = 550000
+			tno_conscription_worsen = yes
+			TNO_improve_conscription_policy_effectiveness_high = yes
 		}
 		ai_will_do = {
 			factor = 20
 		}
 	}
 }
-TaS_WRW2_the_final_battle = {
-	TaS_WRW2_devastation_tick = {
-    	available = {
-			NOT = {	
-				MAR = { has_war_with = GER }
-			}
-    	}
+TaS_WRW2_the_final_battle_legacy = {
 	
-    	activation = {
-    		has_global_flag = TaS_2WRW_started
-    	}
-	
-    	is_good = no
-	
-    	days_mission_timeout = 14
-	
-		timeout_effect = {
-    		log = "[GetDateText]: [Root.GetName]: TaS_WRW2_devastation_tick mission timer elapsed" 
-	
-    		add_to_variable = {
-    		    RUS_devastation = RUS_devastation_gain
-    		}
-
-			#YUN_update_devastation_effects = yes
-	
-    		hidden_effect = {
-    			if = {
-    				limit = {
-    					has_war_with = GER 
-    				}
-    				activate_mission = TaS_WRW2_devastation_tick
-    			}
-    			if = {
-    				limit = {
-    					surrender_progress > 0.10
-    				}
-    			}
-    		}
-    	}
-	
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Mission TaS_WRW2_devastation_tick Completed (Should never happen for this mission, please report if you see this in the log.)"
-    	}
-  	}
-	TaS_WRW2_show_war_plans = {
-		icon = GFX_decision_generic_decision
-		visible = {
-			NOT = {
-				has_country_flag = TaS_2WRW_show_warplans
-			}
-		}
-		available = {
-			has_war = yes
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_show_war_plans"
-			set_country_flag = TaS_2WRW_show_warplans	
-		}
-	}
-	TaS_WRW2_hide_war_plans = {
-		icon = GFX_decision_generic_decision
-		visible = {
-			has_country_flag = TaS_2WRW_show_warplans
-		}
-		available = {
-			has_war = yes
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_show_war_plans"
-			clr_country_flag = TaS_2WRW_show_warplans	
-		}
-	}
-	TaS_WRW2_activate_plan_spb = {
-		icon = GFX_decision_diplo_moskowien
-		visible = {
-			has_country_flag = TaS_2WRW_show_warplans
-		}
-		available = {
-			has_war = yes
-		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
-		fire_only_once = yes
-		days_remove = 14
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_activate_plan_spb "
-			hidden_effect = {
-				add_command_power = -20
-			}
-		}
-		remove_effect = {
-			set_country_flag = MAR_started_spb_offensive
-			add_timed_idea = {
-				idea = MAR_go_oper
-				days = 90
-			}
-		}
-		ai_will_do = {
-			factor = 20
-		}
-	}
-	TaS_WRW2_activate_plan_spb_mission = {
-		icon = GFX_decision_generic_assault
-		allowed = {
-			tag = MAR
-		}
-		available = {
-			always = no
-		}
-		activation = {
-			has_country_flag = MAR_started_spb_offensive
-		}
-		cancel_trigger = {
-			OR = {
-				has_war = no
-				controls_state = 195
-			}
-		}
-
-		cancel_effect = {
-			clr_country_flag = MAR_started_spb_offensive
-			Tas_WRW2_decrease_depression = yes
-		}
-		days_mission_timeout = 90
-		is_good = no
-
-		timeout_effect = {
-			clr_country_flag = MAR_started_spb_offensive
-			Tas_WRW2_increase_depression = yes
-			add_to_variable = { RUS_devastation_gain = 0.5 }
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	TaS_WRW2_activate_plan_msk = {
-		icon = GFX_decision_diplo_moskowien
-		visible = {
-			has_country_flag = TaS_2WRW_show_warplans
-		}
-		available = {
-			has_war = yes
-		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
-		fire_only_once = yes
-		days_remove = 14
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_activate_plan_spb "
-			hidden_effect = {
-				add_command_power = -20
-			}
-		}
-		remove_effect = {
-			set_country_flag = MAR_started_MSK_offensive
-			add_timed_idea = {
-				idea = MAR_go_oper
-				days = 90
-			}
-		}
-		ai_will_do = {
-			factor = 20
-		}
-	}
-	TaS_WRW2_activate_plan_msk_mission = {
-		icon = GFX_decision_generic_assault
-		allowed = {
-			tag = MAR
-		}
-		available = {
-			always = no
-		}
-		activation = {
-			has_country_flag = MAR_started_MSK_offensive
-		}
-		cancel_trigger = {
-			OR = {
-				has_war = no
-				controls_state = 1442
-			}
-		}
-
-		cancel_effect = {
-			clr_country_flag = MAR_started_MSK_offensive
-			Tas_WRW2_decrease_depression = yes
-		}
-		days_mission_timeout = 90
-		is_good = no
-
-		timeout_effect = {
-			clr_country_flag = MAR_started_MSK_offensive
-			Tas_WRW2_increase_depression = yes
-			add_to_variable = { RUS_devastation_gain = 0.5 }
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	TaS_WRW2_activate_plan_volga = {
-		icon = GFX_decision_diplo_kaukasien
-		visible = {
-			has_country_flag = TaS_2WRW_show_warplans
-		}
-		available = {
-			has_war = yes
-		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
-		fire_only_once = yes
-		days_remove = 14
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_activate_plan_spb "
-			hidden_effect = {
-				add_command_power = -20
-			}
-		}
-		remove_effect = {
-			set_country_flag = MAR_started_CAU_offensive
-			add_timed_idea = {
-				idea = MAR_go_oper
-				days = 90
-			}
-		}
-		ai_will_do = {
-			factor = 20
-		}
-	}
-	TaS_WRW2_activate_plan_volga_mission = {
-		icon = GFX_decision_generic_assault
-		allowed = {
-			tag = MAR
-		}
-		available = {
-			always = no
-		}
-		activation = {
-			has_country_flag = MAR_started_CAU_offensive
-		}
-		cancel_trigger = {
-			OR = {
-				has_war = no
-				controls_state = 243
-			}
-		}
-
-		cancel_effect = {
-			clr_country_flag = MAR_started_CAU_offensive
-			Tas_WRW2_decrease_depression = yes
-		}
-		days_mission_timeout = 90
-		is_good = no
-
-		timeout_effect = {
-			clr_country_flag = MAR_started_CAU_offensive
-			Tas_WRW2_increase_depression = yes
-			add_to_variable = { RUS_devastation_gain = 0.5 }
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	TaS_WRW2_activate_plan_kyiv = {
-		icon = GFX_decision_diplo_ukraine
-		visible = {
-			has_country_flag = TaS_2WRW_show_warplans
-		}
-		available = {
-			has_war = yes
-		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
-		fire_only_once = yes
-		days_remove = 14
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_activate_plan_spb "
-			hidden_effect = {
-				add_command_power = -20
-			}
-		}
-		remove_effect = {
-			set_country_flag = MAR_started_UKR_offensive
-			add_timed_idea = {
-				idea = MAR_go_oper
-				days = 90
-			}
-		}
-		ai_will_do = {
-			factor = 20
-		}
-	}
-	TaS_WRW2_activate_plan_kyiv_mission = {
-		icon = GFX_decision_generic_assault
-		allowed = {
-			tag = MAR
-		}
-		available = {
-			always = no
-		}
-		activation = {
-			has_country_flag = MAR_started_UKR_offensive
-		}
-		cancel_trigger = {
-			OR = {
-				has_war = no
-				controls_state = 1428
-			}
-		}
-
-		cancel_effect = {
-			clr_country_flag = MAR_started_UKR_offensive
-			Tas_WRW2_decrease_depression = yes
-		}
-		days_mission_timeout = 90
-		is_good = no
-
-		timeout_effect = {
-			clr_country_flag = MAR_started_UKR_offensive
-			Tas_WRW2_increase_depression = yes
-			add_to_variable = { RUS_devastation_gain = 0.5 }
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	TaS_WRW2_activate_plan_riga = {
-		icon = GFX_decision_diplo_ostland
-		visible = {
-			has_country_flag = TaS_2WRW_show_warplans
-		}
-		available = {
-			has_war = yes
-		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
-		fire_only_once = yes
-		days_remove = 14
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_activate_plan_riga "
-			hidden_effect = {
-				add_command_power = -20
-			}
-		}
-		remove_effect = {
-			set_country_flag = MAR_started_OST_offensive
-			add_timed_idea = {
-				idea = MAR_go_oper
-				days = 90
-			}
-		}
-		ai_will_do = {
-			factor = 20
-		}
-	}
-	TaS_WRW2_activate_plan_riga_mission = {
-		icon = GFX_decision_generic_assault
-		allowed = {
-			tag = MAR
-		}
-		available = {
-			always = no
-		}
-		activation = {
-			has_country_flag = MAR_started_OST_offensive
-		}
-		cancel_trigger = {
-			OR = {
-				has_war = no
-				controls_state = 1397
-			}
-		}
-
-		cancel_effect = {
-			clr_country_flag = MAR_started_OST_offensive
-			Tas_WRW2_decrease_depression = yes
-		}
-		days_mission_timeout = 90
-		is_good = no
-
-		timeout_effect = {
-			clr_country_flag = MAR_started_OST_offensive
-			Tas_WRW2_increase_depression = yes
-			add_to_variable = { RUS_devastation_gain = 0.5 }
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	TaS_WRW2_show_war_decisions = {
-		icon = GFX_decision_generic_decision
-		visible = {
-			NOT = {
-				has_country_flag = TaS_2WRW_show_wardecisions
-			}
-		}
-		available = {
-			has_war = yes
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_show_war_plans"
-			set_country_flag = TaS_2WRW_show_wardecisions
-		}
-	}
-	TaS_WRW2_hide_war_decisions = {
-		icon = GFX_decision_generic_decision
-		visible = {
-			has_country_flag = TaS_2WRW_show_wardecisions
-		}
-		available = {
-			has_war = yes
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_show_war_plans"
-			clr_country_flag = TaS_2WRW_show_wardecisions
-		}
-	}
-	TaS_WRW2_activate_partisans = {
-		icon = GFX_decision_generic_assault
-		visible = {
-			has_country_flag = TaS_2WRW_show_wardecisions
-			check_variable = { MAR_Sended_diversants > 1 }
-		}
-		available = {
-			has_war = yes
-		}
-		cost = 50
-		days_remove = 14
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_show_war_plans"
-			load_oob = MAR_diversants
-		}
-	}
 	TaS_WRW2_expand_industries = {
 		icon = GFX_decision_generic_heavy_industry
 		visible = {
@@ -1820,75 +2738,11 @@ TaS_WRW2_the_final_battle = {
 		remove_effect = {
 			set_temp_variable = { pus_temp = 6 }
 			econ_pus_change = yes
-			add_to_variable = { RUS_devastation_gain = 0.5 }
+			set_temp_variable = { temp_devastation_gain_gained = 0.25 }
+			TaS_WRW2_change_devastation_gain = yes
 		}
 	}
-	TaS_WRW2_expand_war_bonds = {
-		icon = GFX_decision_black_market_infantry_purchase
-		visible = {
-			has_country_flag = TaS_2WRW_show_wardecisions
-		}
-		available = {
-			has_war = yes
-		}
-		cost = 150
-		days_remove = 120
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_show_war_plans"
-			add_to_variable = { RUS_devastation = 10 }
-			set_temp_variable = { debt_temp = 0.2 }
-			econ_national_debt_change = yes
-		}
-		remove_effect = {
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = 10000
-					producer = MAR
-				}
-				add_equipment_to_stockpile = {
-					type = anti_tank_equipment
-					amount = 4000
-					producer = MAR
-				}
-				add_equipment_to_stockpile = {
-					type = support_equipment
-					amount = 3000
-					producer = MAR
-				}
-				add_equipment_to_stockpile = {
-					type = artillery_equipment
-					amount = 2000
-					producer = MAR
-				}
-				add_equipment_to_stockpile = {
-					type = motorized_equipment
-					amount = 1000
-					producer = MAR
-				}
-				add_equipment_to_stockpile = {
-					type = jet_fighter_equipment
-					amount = 200
-					producer = MAR
-				}
-				if = { 
-					limit = { 
-						has_dlc = "No Step Back"
-					}
-					add_equipment_to_stockpile = {
-						type = MBT_chassis
-						amount = 500
-						producer = MAR
-					}
-				}
-				else = {
-					add_equipment_to_stockpile = {
-						type = MBT_equipment
-						amount = 500
-						producer = MAR
-					}
-				}
-		}
-	}
+	
 	TaS_WRW2_millitary_parade = {
 		icon = GFX_decision_generic_military_parade
 		visible = {
@@ -1901,8 +2755,10 @@ TaS_WRW2_the_final_battle = {
 		days_remove = 35
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_show_war_plans"
-			subtract_from_variable = { RUS_devastation = 15 }
-			add_to_variable = { RUS_devastation_gain = 0.1 }
+			set_temp_variable = { temp_devastation_gain_gained = -0.25 }
+			TaS_WRW2_change_devastation_gain = yes
+			set_temp_variable = { temp_devastation_gained = 5 }
+			TaS_WRW2_change_devastation = yes
 		}
 	}
 	TaS_WRW2_promise_victory = {
@@ -1917,50 +2773,13 @@ TaS_WRW2_the_final_battle = {
 		days_remove = 40
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_show_war_plans"
-			subtract_from_variable = { RUS_devastation_gain = 0.15 }
-			add_to_variable = { RUS_devastation = 10 }
+			set_temp_variable = { temp_devastation_gain_gained = 0.25 }
+			TaS_WRW2_change_devastation_gain = yes
+			set_temp_variable = { temp_devastation_gained = -5 }
+			TaS_WRW2_change_devastation = yes
 		}
 	}
-	TaS_WRW2_ask_for_ofn_help = {
-		icon = GFX_decision_SAF_ask_OFN_stationing
-		visible = {
-			has_country_flag = TaS_2WRW_show_wardecisions
-		}
-		available = {
-			has_war = yes
-		}
-		cost = 100
-		days_remove = 60
-		fire_only_once = yes
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_show_war_plans"
-			GER = { add_ideas = { TaS_2WRW_sanctions } }
-			add_ideas = { TaS_2WRW_ofn_advisors }
-		}
-		remove_effect = {
-			TaS_2WRW_spawn_volunteers = yes
-		}
-	}
-	TaS_WRW2_get_rid_of_traitors = {
-		icon = GFX_decision_generic_building_prisons
-		visible = {
-			has_country_flag = TaS_2WRW_show_wardecisions
-		}
-		available = {
-			has_war = yes
-		}
-		cost = 75
-		days_remove = 75
-		fire_only_once = yes
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_show_war_plans"
-			add_stability = -0.05
-		}
-		remove_effect = {
-			subtract_from_variable = { RUS_devastation_gain = 0.15 }
-			subtract_from_variable = { RUS_devastation = 10 }
-		}
-	}
+	
 	TaS_WRW2_economic_mobilization = {
 		icon = GFX_decision_generic_workers
 		visible = {
@@ -2085,7 +2904,7 @@ TaS_WRW2_the_final_battle = {
 					producer = MAR
 				}
 				add_equipment_to_stockpile = {
-					type = artillery_equipment_0
+					type = artillery_equipment
 					amount = 5000
 					producer = MAR
 				}
@@ -2176,428 +2995,8 @@ TaS_WRW2_the_final_battle = {
 			country_event = { id = nuclearwar.1 }
 		}
 	}		
-	TaS_WRW2_offer_total_capitulation = {
-		icon = GFX_decision_generic_military_parade
-		visible = {
-		}
-		available = {
-			has_war = yes
-			controls_state = 1397
-			controls_state = 1428
-			check_variable = { RUS.GER_devastation > 100 }
-			
-		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
-		fire_only_once = yes
-		days_remove = 14
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_activate_plan_riga "
-			hidden_effect = {
-				add_command_power = -20
-			}
-		}
-		remove_effect = {
-			country_event = { id = MAR_2WRW.5 }
-		}
-		ai_will_do = {
-			factor = 20
-		}
-	}
+	
 
-}
-TaS_WRW2_the_final_battle_GER = {
-	TaS_WRW2_devastation_tick_GER = {
-    	available = {
-			NOT = {	
-				MAR = { has_war_with = GER }
-			}
-    	}
-	
-    	activation = {
-    		has_global_flag = TaS_2WRW_started
-    	}
-	
-    	is_good = no
-	
-    	days_mission_timeout = 7
-	
-		timeout_effect = {
-    		log = "[GetDateText]: [Root.GetName]: TaS_WRW2_devastation_tick mission timer elapsed" 
-			GER = {
-				add_to_variable = {
-					RUS.GER_devastation = RUS.GER_devastation_gain
-				}
-			}
-
-			#YUN_update_devastation_effects = yes
-	
-    		hidden_effect = {
-    			if = {
-    				limit = {
-    					has_war_with = RUS
-    				}
-    				activate_mission = TaS_WRW2_devastation_tick_GER
-    			}
-    			if = {
-    				limit = {
-    					surrender_progress > 0.10
-    				}
-    				country_event = {
-    				}
-    			}
-    		}
-    	}
-	
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Mission TaS_WRW2_devastation_tick Completed (Should never happen for this mission, please report if you see this in the log.)"
-    	}
-  	}
-	TaS_WRW2_offer_status_quo = {
-		icon = GFX_decision_generic_military_parade
-		visible = {
-		}
-		available = {
-			OR = {
-				casualties > 100000
-				MCW = {
-					surrender_progress > 0.1
-				}
-				RUS = {
-					casualties > 100000
-				}
-			}
-			NOT = {
-				MCW = {
-					surrender_progress > 0.65
-				}
-			}
-			OR = {
-				check_variable = { RUS.GER_devastation > 50 }
-				check_variable = { RUS_devastation > 50 }
-			}
-		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
-		fire_only_once = yes
-		days_remove = 14
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision 	TaS_WRW2_offer_status_quo"
-			hidden_effect = {
-				add_command_power = -20
-			}
-		}
-		remove_effect = {
-			MAR = {
-				country_event = { id = MAR_2WRW.1 }
-			}
-		}
-		ai_will_do = {
-			factor = 20
-		}
-	}
-	TaS_WRW2_offer_status_quo = {
-		icon = GFX_decision_generic_military_parade
-		visible = {
-		}
-		available = {
-			OR = {
-				casualties > 100000
-				MCW = {
-					surrender_progress > 0.1
-				}
-				RUS = {
-					casualties > 100000
-				}
-			}
-			NOT = {
-				MCW = {
-					surrender_progress > 0.65
-				}
-			}
-			OR = {
-				check_variable = { RUS.GER_devastation > 50 }
-				check_variable = { RUS_devastation > 50 }
-			}
-		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
-		fire_only_once = yes
-		days_remove = 14
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision 	TaS_WRW2_offer_status_quo"
-			hidden_effect = {
-				add_command_power = -20
-			}
-		}
-		remove_effect = {
-			MAR = {
-				country_event = { id = MAR_2WRW.1 }
-			}
-		}
-		ai_will_do = {
-			factor = 20
-		}
-	}
-	TaS_WRW2_offer_muscowy = {
-		icon = GFX_decision_generic_military_parade
-		visible = {
-		}
-		available = {
-			OR = {
-				AND = {
-					casualties > 300000
-					MCW = {
-						surrender_progress > 0.65
-					}
-					RUS = {
-						casualties > 100000
-					}
-				}
-			}
-			NOT = {
-				MCW = {
-					exists = no
-				}
-			}
-			OR = {
-				check_variable = { RUS.GER_devastation > 125 }
-			}
-		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
-		fire_only_once = yes
-		days_remove = 14
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision 	TaS_WRW2_offer_muscowy"
-			hidden_effect = {
-				add_command_power = -20
-			}
-		}
-		remove_effect = {
-			MAR = {
-				country_event = { id = MAR_2WRW.2 }
-			}
-		}
-		ai_will_do = {
-			factor = 20
-		}
-	}
-	TaS_WRW2_offer_muscowy_caucasus = {
-		icon = GFX_decision_generic_military_parade
-		visible = {
-		}
-		available = {
-			AND = {
-				casualties > 300000
-				MCW = {
-					exists = no
-				}
-				RUS = {
-					casualties > 100000
-				}
-				check_variable = { RUS.GER_devastation > 75 }
-			}
-			NOT = {
-				CAU = {
-					exists = no
-				}
-			}
-		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
-		fire_only_once = yes
-		days_remove = 14
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision 	TaS_WRW2_offer_muscowy"
-			hidden_effect = {
-				add_command_power = -20
-			}
-		}
-		remove_effect = {
-			MAR = {
-				country_event = { id = MAR_2WRW.3 }
-			}
-		}
-		ai_will_do = {
-			factor = 20
-		}
-	}
-	TaS_WRW2_offer_muscowy_caucasus_dnepr = {
-		icon = GFX_decision_generic_military_parade
-		visible = {
-		}
-		available = {
-			OR = {
-				AND = {
-					casualties > 300000
-					MCW = {
-						exists = no
-					}
-					CAU = {
-						exists = no
-					}
-					RUS = {
-						casualties > 100000
-					}
-					check_variable = { RUS.GER_devastation > 125 }
-				}
-			}
-			NOT = {
-				UKR = {
-					exists = no
-				}
-			}
-			OR = {
-				AND = {
-					casualties > 1500000
-					check_variable = { RUS.GER_devastation > 100 }
-				}
-			}
-		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
-		fire_only_once = yes
-		days_remove = 14
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision 	TaS_WRW2_offer_muscowy"
-			hidden_effect = {
-				add_command_power = -20
-			}
-		}
-		remove_effect = {
-			MAR = {
-				country_event = { id = MAR_2WRW.4 }
-			}
-		}
-		ai_will_do = {
-			factor = 20
-		}
-	}
-	TaS_WRW2_offer_total_cap = {
-		icon = GFX_decision_generic_military_parade
-		visible = {
-		}
-		available = {
-			OR = {
-				GER = {
-					surrender_progress > 0.05
-				}
-			}
-			NOT = {
-				GER = {
-					surrender_progress > 0.25
-				}
-			}
-			OR = {
-				AND = {
-					check_variable = { RUS.GER_devastation > 175 }
-					OST = {
-						exists = no
-					}
-					UKR = {
-						exists = no
-					}
-				}
-			}
-		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
-		fire_only_once = yes
-		days_remove = 14
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision 	TaS_WRW2_offer_status_quo"
-			hidden_effect = {
-				add_command_power = -20
-			}
-		}
-		remove_effect = {
-			MAR = {
-				country_event = { id = MAR_2WRW.5 }
-			}
-		}
-		ai_will_do = {
-			factor = 20
-		}
-	}
-	TaS_WRW2_offer_russian_cap = {
-		icon = GFX_decision_generic_military_parade
-		visible = {
-		}
-		available = {
-			OR = {
-				RUS = {
-					surrender_progress > 0.1
-				}
-			}
-			OR = {
-				AND = {
-					check_variable = { RUS_devastation > 135 }
-					RUS = {
-						surrender_progress > 0.01
-					}
-				}
-			}
-		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
-		fire_only_once = yes
-		days_remove = 14
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision 	TaS_WRW2_offer_status_quo"
-			hidden_effect = {
-				add_command_power = -20
-			}
-		}
-		remove_effect = {
-			MAR = {
-				country_event = { id = MAR_Collapse.1941 }
-			}
-		}
-		ai_will_do = {
-			factor = 20
-		}
-	}
-	TaS_WRW2_collapse_timer = {
-    	available = {
-			NOT = {	
-				MAR = { has_war_with = GER }
-			}
-    	}
-	
-    	activation = {
-			OR = {
-				AND = {
-					check_variable = { RUS.GER_devastation > 175 }
-					surrender_progress > 0.1
-				}
-			}
-			OR = {
-				AND = {
-					check_variable = { RUS.GER_devastation > 145 }
-					surrender_progress > 0.25
-				}
-			}
-			OR = {
-				surrender_progress > 0.3
-			}			
-    	}
-	
-    	is_good = no
-	
-    	days_mission_timeout = 7
-	
-		timeout_effect = {
-    		log = "[GetDateText]: [Root.GetName]: TaS_WRW2_devastation_tick mission timer elapsed" 
-			GER = {
-				country_event = { id = TaS_GERcollapse.1 }
-			}
-	   	}
-	
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Mission TaS_WRW2_devastation_tick Completed (Should never happen for this mission, please report if you see this in the log.)"
-    	}
-  	}
 }
 TaS_WRW2_ost_territories_GER_braindead = {
 	TaS_WRW2_attack_moscowien = {
@@ -2974,8 +3373,19 @@ TaS_WRW2_ost_territories_GER_braindead = {
 	}
 }
 TaS_WRW2_europe_ultimatums = { 
-	TaS_WRW2_finland_ultimatum = {
+	TaS_WRW2_Karelia_demands = {
 		icon = GFX_finland_rus
+		visible = {
+			NOT = {
+				owns_state = 216
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAR_all_fates_decided_tt
+				check_variable = { MAR_fates_done = 8 }
+			}
+		}
 		fire_only_once = yes
 		custom_cost_trigger = { command_power > 24.99 }
 		custom_cost_text = decision_cost_25_cp
@@ -2987,51 +3397,136 @@ TaS_WRW2_europe_ultimatums = {
 		}
 		days_remove = 14
 		remove_effect = {
-			if = {
-				limit = { MAR = { owns_state = 1359 } }
-				start_border_war = {
-					change_state_after_war = no
-					attacker = {
-						state = 216
-						num_provinces = 4
-						on_win = x
-						on_lose = x
-						on_cancel = x
-					}
-								
-					defender = {
-						state = 146
-						num_provinces = 4
-						on_win = MAR_ultimatums.2
-						on_lose = MAR_ultimatums.1
-						on_cancel = x
-					}
-				}
-			}
-			else = { 
-				start_border_war = {
-					change_state_after_war = no
-					attacker = {
-						state = 859
-						num_provinces = 4
-						on_win = x
-						on_lose = x
-						on_cancel = x
-					}
-								
-					defender = {
-						state = 215
-						num_provinces = 4
-						on_win = MAR_ultimatums.2
-						on_lose = MAR_ultimatums.1
-						on_cancel = x
-					}
-				}
-			}
+			FIN = { country_event = { id = MAR_ultimatums.1 } }
 		}
 	}
-	TaS_WRW2_romania_ultimatum = {
+	TaS_WRW2_Vyborg_question = {
+		icon = GFX_finland_rus
+		visible = {
+			owns_state = 216
+			owns_state = 195
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAR_all_fates_decided_tt
+				check_variable = { MAR_fates_done = 8 }
+			}
+		}
+		fire_only_once = yes
+		custom_cost_trigger = { command_power > 24.99 }
+		custom_cost_text = decision_cost_25_cp
+		complete_effect = {
+			add_war_support = 0.03
+			hidden_effect = {
+				add_command_power = -25
+			}
+		}
+		days_remove = 14
+		remove_effect = {
+			FIN = { country_event = { id = MAR_ultimatums.11 } }
+		}
+	}
+	TaS_WRW2_Batumi_Issue = {
+		icon = GFX_turkey_rus
+		visible = {
+			OR = {
+				GEO = {
+					owns_state = 231
+				}
+				MCS = {
+					owns_state = 231
+				}
+				owns_state = 231
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAR_all_fates_decided_tt
+				check_variable = { MAR_fates_done = 8 }
+			}
+		}
+		fire_only_once = yes
+		custom_cost_trigger = { command_power > 24.99 }
+		custom_cost_text = decision_cost_25_cp
+		complete_effect = {
+			add_war_support = 0.03
+			hidden_effect = {
+				add_command_power = -25
+			}
+		}
+		days_remove = 14
+		remove_effect = {
+			TUR = { country_event = { id = MAR_ultimatums.13 } }
+		}
+	}
+	TaS_WRW2_Armenia_independent = {
+		icon = GFX_turkey_rus
+		visible = {
+			ARM = {
+				owns_state = 230
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAR_all_fates_decided_tt
+				check_variable = { MAR_fates_done = 8 }
+			}
+		}
+		fire_only_once = yes
+		custom_cost_trigger = { command_power > 24.99 }
+		custom_cost_text = decision_cost_25_cp
+		complete_effect = {
+			add_war_support = 0.03
+			hidden_effect = {
+				add_command_power = -25
+			}
+		}
+		days_remove = 14
+		remove_effect = {
+			ARM = { country_event = { id = MAR_ultimatums.16 } }
+		}
+	}
+	TaS_WRW2_Armenia_are_turkey = {
+		icon = GFX_turkey_rus
+		visible = {
+			TUR = {
+				owns_state = 230
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAR_all_fates_decided_tt
+				check_variable = { MAR_fates_done = 8 }
+			}
+		}
+		fire_only_once = yes
+		custom_cost_trigger = { command_power > 24.99 }
+		custom_cost_text = decision_cost_25_cp
+		complete_effect = {
+			add_war_support = 0.03
+			hidden_effect = {
+				add_command_power = -25
+			}
+		}
+		days_remove = 14
+		remove_effect = {
+			TUR = { country_event = { id = MAR_ultimatums.13 } }
+		}
+	}
+	TaS_WRW2_Odessa_demand  = {
 		icon = GFX_romania_rus
+		OR = {
+			MUK = {
+				owns_state = 197
+			}
+			owns_state = 197
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAR_all_fates_decided_tt
+				check_variable = { MAR_fates_done = 8 }
+			}
+		}
 		fire_only_once = yes
 		custom_cost_trigger = { command_power > 24.99 }
 		custom_cost_text = decision_cost_25_cp
@@ -3043,28 +3538,25 @@ TaS_WRW2_europe_ultimatums = {
 		}
 		days_remove = 14
 		remove_effect = {
-			start_border_war = {
-				change_state_after_war = no
-				attacker = {
-					state = 197
-					num_provinces = 4
-					on_win = x
-					on_lose = x
-					on_cancel = x
-				}
-								
-				defender = {
-					state = 192
-					num_provinces = 4
-					on_win = MAR_ultimatums.2 
-					on_lose = MAR_ultimatums.1
-					on_cancel = x
-				}
-			}			
+			TUR = { country_event = { id = MAR_ultimatums.14 } }
 		}
 	}
-	TaS_WRW2_turkey_ultimatum = {  
-		icon = GFX_turkey_rus  
+	TaS_WRW2_Bessarabia_demand = {
+		icon = GFX_romania_rus
+		visible = {
+			OR = {
+				MUK = {
+					owns_state = 192
+				}
+				owns_state = 192
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAR_all_fates_decided_tt
+				check_variable = { MAR_fates_done = 8 }
+			}
+		}
 		fire_only_once = yes
 		custom_cost_trigger = { command_power > 24.99 }
 		custom_cost_text = decision_cost_25_cp
@@ -3074,26 +3566,34 @@ TaS_WRW2_europe_ultimatums = {
 				add_command_power = -25
 			}
 		}
-		days_remove = 14  
+		days_remove = 14
 		remove_effect = {
-			start_border_war = {
-				change_state_after_war = no
-				attacker = {
-					state = 231
-					num_provinces = 2
-					on_win = x
-					on_lose = x
-					on_cancel = x
-				}
-								
-				defender = {
-					state = 1448
-					num_provinces = 2
-					on_win = MAR_ultimatums.2
-					on_lose = MAR_ultimatums.1
-					on_cancel = x
-				}
+			TUR = { country_event = { id = MAR_ultimatums.15 } }
+		}
+	}
+	TaS_WRW2_Galicia_issue = {
+		icon = GFX_romania_rus
+		visible = {
+			GPL = { exists = yes }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAR_all_fates_decided_tt
+				check_variable = { MAR_fates_done = 8 }
 			}
+		}
+		fire_only_once = yes
+		custom_cost_trigger = { command_power > 24.99 }
+		custom_cost_text = decision_cost_25_cp
+		complete_effect = {
+			add_war_support = 0.03
+			hidden_effect = {
+				add_command_power = -25
+			}
+		}
+		days_remove = 14
+		remove_effect = {
+			GPL = { country_event = { id = MAR_ultimatums.17 } }
 		}
 	}
 } 

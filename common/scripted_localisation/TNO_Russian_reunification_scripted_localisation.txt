@@ -41,8 +41,6 @@ defined_text = {
 		trigger = {
 			OR = {
 				original_tag = WRS
-				original_tag = PLS
-				original_tag = UKH
 			}
 		}
 		localization_key = RUS_WRS_west_russia
@@ -68,15 +66,15 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			original_tag = KIR
+			original_tag = VYT
 		}
-		localization_key = RUS_KIR_west_russia_desc
+		localization_key = RUS_VYT_west_russia_desc
 	}
 	text = {
 		trigger = {
-			original_tag = NIK
+			original_tag = KOM
 		}
-		localization_key = RUS_NIK_west_russia_desc
+		localization_key = RUS_KOM_west_russia_desc
 	}
 	text = {
 		trigger = {
@@ -100,8 +98,6 @@ defined_text = {
 		trigger = {
 			OR = {
 				original_tag = WRS
-				original_tag = MIR
-				original_tag = UKH
 			}
 		}
 		localization_key = RUS_WRS_west_russia_desc
@@ -121,113 +117,79 @@ defined_text = {
 	name = GetKomiIdeologyTitle
 	text = {
 		trigger = {
-			original_tag = NIK
+			original_tag = KOM
 			OR = {
-				has_government = social_conservative
-				has_government = social_democrat
-				has_government = social_liberal
-				has_government = authoritarian_democrat
+				has_government = conservatism
+				has_government = progressivism
+				has_government = liberalism
+				has_government = paternalism
+				has_government = liberal_conservatism
 			}
 		}
-		localization_key = NIK_regional_democratic
+		localization_key = KOM_regional_democratic
 	}
 	text = {
 		trigger = {
-			original_tag = NIK
-			OR = {
-				has_government = socialist
-			}
+			original_tag = KOM
 			has_country_leader = {
-				name = "Svetlana Bukharina"
+				character = KOM_Andrei_Zhdanov
 				ruling_only = yes
 			}
 		}
-		localization_key = NIK_regional_bukharina
+		localization_key = KOM_regional_zhdanov
 	}
 	text = {
 		trigger = {
-			original_tag = NIK
-			OR = {
-				has_government = socialist
-			}
-			has_country_leader = {
-				name = "Andrei Zhdanov"
-				ruling_only = yes
-			}
-		}
-		localization_key = NIK_regional_zhdanov
-	}
-	text = {
-		trigger = {
-			original_tag = NIK
+			original_tag = KOM
 			OR = {
 				has_government = communist
 			}
 		}
-		localization_key = NIK_regional_suslov
+		localization_key = KOM_regional_suslov
 	}
 	text = {
 		trigger = {
-			original_tag = NIK
+			original_tag = KOM
 			AND = {
 				has_government = despotism
 				has_country_leader = {
-					name = "Svetlana Stalina"
+					character = KOM_Svetlana_Stalina
 					ruling_only = yes
 				}
 			}
 
 		}
-		localization_key = NIK_regional_stalina
+		localization_key = KOM_regional_stalina
 	}
 	text = {
 		trigger = {
-			original_tag = NIK
-			AND = {
-				has_government = despotism
-				has_country_leader = {
-					name = "Sergey Taboritsky"
-					ruling_only = yes
-				}
+			original_tag = KOM
+			has_country_leader = {
+				character = KOM_Sergey_Taboritsky
+				ruling_only = yes
 			}
 		}
-		localization_key = NIK_regional_taboritsky
+		localization_key = KOM_regional_taboritsky
 	}
 	text = {
 		trigger = {
-			original_tag = NIK
-			OR = {
-				has_government = fascism
+			original_tag = KOM
+			has_country_leader = {
+				character = KOM_Ivan_Serov
+				ruling_only = yes
 			}
 		}
-		localization_key = NIK_regional_shafarevich
+		localization_key = KOM_regional_serov
 	}
 	text = {
 		trigger = {
-			original_tag = NIK
-			OR = {
-				has_government = national_socialism
+			original_tag = KOM
+			has_country_leader = {
+				character = KOM_Lev_Gumilyov
+				ruling_only = yes
 			}
 		}
-		localization_key = NIK_regional_serov
-	}
-	text = {
-		trigger = {
-			original_tag = NIK
-			OR = {
-				has_government = ultranational_socialism
-			}
-		}
-		localization_key = NIK_regional_gumilyov
-	}
-	text = {
-		trigger = {
-			original_tag = NIK
-			OR = {
-				has_government = burgundian_system
-			}
-		}
-		localization_key = NIK_regional_taboritsky
+		localization_key = KOM_regional_gumilyov
 	}
 }
 
@@ -236,9 +198,9 @@ defined_text = {
 	name = GetWestSiberianReunificationTitle
 	text = {
 		trigger = {
-			original_tag = ISH
+			original_tag = TYM
 		}
-		localization_key = RUS_ISH_west_siberia
+		localization_key = RUS_TYM_west_siberia
 	}
 	text = {
 		trigger = {
@@ -248,9 +210,9 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			original_tag = TOB
+			original_tag = SVR
 		}
-		localization_key = RUS_TOB_west_siberia
+		localization_key = RUS_SVR_west_siberia
 	}
 	text = {
 		localization_key = RUS_somethings_wrong
@@ -261,9 +223,9 @@ defined_text = {
 	name = GetWestSiberianReunificationDesc
 	text = {
 		trigger = {
-			original_tag = ISH
+			original_tag = TYM
 		}
-		localization_key = RUS_ISH_west_siberia_desc
+		localization_key = RUS_TYM_west_siberia_desc
 	}
 	text = {
 		trigger = {
@@ -273,9 +235,9 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			original_tag = TOB
+			original_tag = SVR
 		}
-		localization_key = RUS_TOB_west_siberia_desc
+		localization_key = RUS_SVR_west_siberia_desc
 	}
 	text = {
 		localization_key = RUS_somethings_wrong_desc
@@ -287,17 +249,17 @@ defined_text = {
 	name = GetCentralSiberianReunificationTitle
 	text = {
 		trigger = {
-			original_tag = ERS
-			NOT = { has_government = social_democrat }
+			original_tag = TOM
+			NOT = { has_government = progressivism }
 		}
-		localization_key = RUS_ERS_central_siberia
+		localization_key = RUS_TOM_central_siberia
 	}
 	text = {
 		trigger = {
-			original_tag = ERS
-			has_government = social_democrat
+			original_tag = TOM
+			has_government = progressivism
 		}
-		localization_key = RUS_ERS_HUM_central_siberia
+		localization_key = RUS_TOM_HUM_central_siberia
 	}
 	text = {
 		trigger = {
@@ -307,27 +269,27 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			original_tag = KHA
+			original_tag = SBA
 		}
-		localization_key = RUS_KHA_central_siberia
+		localization_key = RUS_SBA_central_siberia
 	}
 	text = {
 		trigger = {
-			original_tag = PAV
+			original_tag = NOV
 		}
-		localization_key = RUS_PAV_central_siberia
+		localization_key = RUS_NOV_central_siberia
 	}
 	text = {
 		trigger = {
-			original_tag = SAH
+			original_tag = KRS
 		}
-		localization_key = RUS_SAH_central_siberia
+		localization_key = RUS_KRS_central_siberia
 	}
 	text = {
 		trigger = {
-			original_tag = SVO
+			original_tag = PRC
 		}
-		localization_key = RUS_SVO_central_siberia
+		localization_key = RUS_PRC_central_siberia
 	}
 	text = {
 		localization_key = RUS_somethings_wrong
@@ -338,17 +300,17 @@ defined_text = {
 	name = GetCentralSiberianReunificationDesc
 	text = {
 		trigger = {
-			original_tag = ERS
-			NOT = { has_government = social_democrat }
+			original_tag = TOM
+			NOT = { has_government = progressivism }
 		}
-		localization_key = RUS_ERS_central_siberia_desc
+		localization_key = RUS_TOM_central_siberia_desc
 	}
 	text = {
 		trigger = {
-			original_tag = ERS
-			has_government = social_democrat
+			original_tag = TOM
+			has_government = progressivism
 		}
-		localization_key = RUS_ERS_HUM_central_siberia_desc
+		localization_key = RUS_TOM_HUM_central_siberia_desc
 	}
 	text = {
 		trigger = {
@@ -358,27 +320,27 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			original_tag = KHA
+			original_tag = SBA
 		}
-		localization_key = RUS_KHA_central_siberia_desc
+		localization_key = RUS_SBA_central_siberia_desc
 	}
 	text = {
 		trigger = {
-			original_tag = PAV
+			original_tag = NOV
 		}
-		localization_key = RUS_PAV_central_siberia_desc
+		localization_key = RUS_NOV_central_siberia_desc
 	}
 	text = {
 		trigger = {
-			original_tag = SAH
+			original_tag = KRS
 		}
-		localization_key = RUS_SAH_central_siberia_desc
+		localization_key = RUS_KRS_central_siberia_desc
 	}
 	text = {
 		trigger = {
-			original_tag = SVO
+			original_tag = PRC
 		}
-		localization_key = RUS_SVO_central_siberia_desc
+		localization_key = RUS_PRC_central_siberia_desc
 	}
 	text = {
 		localization_key = RUS_somethings_wrong_desc
@@ -424,19 +386,16 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			original_tag = WCH
+			original_tag = CHT
 		}
-		localization_key = RUS_WCH_far_east
+		localization_key = RUS_CHT_far_east
 	}
 	text = {
 		trigger = {
 			original_tag = OMO
-			has_government = despotism
+			OMO_2022_aprilfools_gamerule_active = yes
 		}
-		localization_key = RUS_OMO_far_east
-	}
-	text = {
-		localization_key = RUS_somethings_wrong
+		localization_key = RUS_OMO_2022_far_east
 	}
 }
 
@@ -478,9 +437,16 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			original_tag = WCH
+			original_tag = CHT
 		}
-		localization_key = RUS_WCH_far_east_desc
+		localization_key = RUS_CHT_far_east_desc
+	}
+	text = {
+		trigger = {
+			original_tag = OMO
+			OMO_2022_aprilfools_gamerule_active = yes
+		}
+		localization_key = RUS_OMO_2022_far_east_desc
 	}
 	text = {
 		localization_key = RUS_somethings_wrong_desc
@@ -510,9 +476,9 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			original_tag = DON
+			original_tag = NPL
 		}
-		localization_key = KAZ_DON_kazakhstan
+		localization_key = KAZ_NPL_kazakhstan
 	}
 	text = {
 		trigger = {
@@ -528,9 +494,9 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			original_tag = SEM
+			original_tag = PAV
 		}
-		localization_key = KAZ_SEM_kazakhstan
+		localization_key = KAZ_PAV_kazakhstan
 	}
 	text = {
 		localization_key = RUS_somethings_wrong
@@ -559,9 +525,9 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			original_tag = DON
+			original_tag = NPL
 		}
-		localization_key = KAZ_DON_kazakhstan_desc
+		localization_key = KAZ_NPL_kazakhstan_desc
 	}
 	text = {
 		trigger = {
@@ -577,9 +543,9 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			original_tag = SEM
+			original_tag = PAV
 		}
-		localization_key = KAZ_SEM_kazakhstan_desc
+		localization_key = KAZ_PAV_kazakhstan_desc
 	}
 	text = {
 		localization_key = RUS_somethings_wrong_desc

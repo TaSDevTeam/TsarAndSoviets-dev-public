@@ -1,0 +1,3073 @@
+TaS_WRW2_the_final_battle = {
+	#####  F R O N T L I N E S  #####
+	
+	#### MISSIONS #####
+	TaS_WRW2_devastation_tick = {
+		priority = 100
+    	available = {
+			NOT = {	
+				MAR = { has_war_with = GER }
+			} 
+    	}
+	
+    	activation = {
+    		has_global_flag = TaS_2WRW_started
+    	}
+	
+    	is_good = no
+	
+    	days_mission_timeout = 14
+	
+		timeout_effect = {
+    		log = "[GetDateText]: [Root.GetName]: TaS_WRW2_devastation_tick mission timer elapsed" 
+			custom_effect_tooltip = TaS_WRW2_devastation_tick_tt
+    		add_to_variable = {
+    		    RUS.WRW2_devastation = RUS.WRW2_devastation_gain
+    		}
+
+			#YUN_update_devastation_effects = yes
+	
+    		hidden_effect = {
+    			if = {
+    				limit = {
+    					has_war_with = GER 
+    				}
+    				activate_mission = TaS_WRW2_devastation_tick
+    			}
+    			#if = {
+    			#	limit = {
+    			#		surrender_progress > 0.10
+    			#	}
+    			#}
+    		}
+    	}
+	
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Mission TaS_WRW2_devastation_tick Completed (Should never happen for this mission, please report if you see this in the log.)"
+    	}
+  	}
+	
+	### taking RK Muscovy ###
+	
+	RUS_over_the_oka = {
+		icon = generic_assault
+		priority = 51
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+		}
+		available = {
+			controls_state = 253
+			controls_state = 254
+			controls_state = 248
+			controls_state = 246
+			controls_state = 238
+		}
+		activation = {
+			has_war_with = GER
+			has_country_flag = RUS_2WRW_ongoing
+			NOT = {
+				controls_state = 253
+				controls_state = 254
+				controls_state = 248
+				controls_state = 246
+				controls_state = 238	
+			}
+		}
+		days_mission_timeout = 150
+		cancel_if_not_visible = no
+		is_good = no
+		highlight_states = {
+			highlight_state_targets = {
+				state = 253
+				state = 254
+				state = 248
+				state = 246
+				state = 238
+			}
+		}
+		timeout_effect = {
+			set_temp_variable = { temp_devastation_gained = 4 } 
+			TaS_WRW2_change_devastation = yes
+		}
+		complete_effect = {
+			set_temp_variable = { temp_devastation_gained = -4 } 
+			TaS_WRW2_change_devastation = yes
+			GER = {
+				set_temp_variable = { temp_devastation_gained = 5 }
+				TaS_WRW2_change_devastation = yes
+			}
+			add_war_support = 0.02
+		}
+	}
+	RUS_take_tichwin = {
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+		}
+		icon = generic_assault
+		priority = 50
+		available = {
+			controls_state = 264
+			controls_state = 208
+			controls_state = 1475
+		}
+		activation = {
+			has_war_with = GER
+			has_country_flag = RUS_2WRW_ongoing
+			NOT = {
+				controls_state = 264
+				controls_state = 208
+				controls_state = 1475	
+			}
+		}
+		days_mission_timeout = 120
+		is_good = no
+		highlight_states = {
+			highlight_state_targets = {
+				state = 264
+				state = 208
+				state = 1475
+			}
+		}
+		timeout_effect = {
+			set_temp_variable = { temp_devastation_gained = 3 } 
+			TaS_WRW2_change_devastation = yes	
+		}
+		complete_effect = {
+			set_temp_variable = { temp_devastation_gained = -3 } 
+			TaS_WRW2_change_devastation = yes
+			GER = {
+				set_temp_variable = { temp_devastation_gained = 3 }
+				TaS_WRW2_change_devastation = yes
+			}
+			add_war_support = 0.015
+		}
+	}
+	RUS_push_to_paulusburg = {
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+		}
+		icon = generic_assault
+		priority = 49
+		available = {
+			controls_state = 236
+			controls_state = 237
+			controls_state = 243
+			controls_state = 244
+			controls_state = 265
+			controls_state = 217
+		}
+		activation = {
+			has_war_with = GER
+			has_country_flag = RUS_2WRW_ongoing
+			NOT = {
+				controls_state = 236
+				controls_state = 237
+				controls_state = 243
+				controls_state = 244
+				controls_state = 265
+				controls_state = 217
+			}
+		}
+		days_mission_timeout = 150
+		days_re_enable = 7
+		is_good = no
+		highlight_states = {
+			highlight_state_targets = {
+				state = 236
+				state = 237
+				state = 243
+				state = 244
+				state = 265
+				state = 217
+			}
+		}
+		timeout_effect = {
+			set_temp_variable = { temp_devastation_gained = 5 } 
+			TaS_WRW2_change_devastation = yes
+		}
+		complete_effect = {
+			set_temp_variable = { temp_devastation_gained = -5 }
+			TaS_WRW2_change_devastation = yes
+			GER = {
+				set_temp_variable = { temp_devastation_gained = 5 }
+				TaS_WRW2_change_devastation = yes
+			}
+		}
+	}
+	RUS_push_to_penza = {
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+		}
+		icon = generic_assault
+		priority = 48
+		available = {
+			controls_state = 1436
+			controls_state = 263
+			controls_state = 245
+			controls_state = 239
+		}
+		activation = {
+			has_war_with = GER
+			has_country_flag = RUS_2WRW_ongoing
+			NOT = {
+				controls_state = 1436
+				controls_state = 263
+				controls_state = 245
+				controls_state = 239
+			}
+		}
+		days_mission_timeout = 150
+		days_re_enable = 7
+		is_good = no
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1436
+				state = 263
+				state = 245
+				state = 239
+			}
+		}
+		timeout_effect = {
+			set_temp_variable = { temp_devastation_gained = 5 } 
+			TaS_WRW2_change_devastation = yes
+		}
+		complete_effect = {
+			set_temp_variable = { temp_devastation_gained = -5 } 
+			TaS_WRW2_change_devastation = yes
+			GER = {
+				set_temp_variable = { temp_devastation_gained = 5 }
+				TaS_WRW2_change_devastation = yes
+			}
+			add_war_support = 0.025
+		}
+	}
+	RUS_down_the_don = {
+		icon = generic_assault
+		priority = 47
+		available = {
+			controls_state = 224
+			controls_state = 260
+			controls_state = 240
+			controls_state = 210
+			controls_state = 1441
+		}
+		activation = {
+			has_war_with = GER
+			has_country_flag = RUS_2WRW_ongoing
+			controls_state = 265
+			controls_state = 243
+			controls_state = 217
+			controls_state = 245
+			controls_state = 1436
+			NOT = {
+				controls_state = 224
+				controls_state = 260
+				controls_state = 240
+				controls_state = 210
+				controls_state = 1441
+			}
+		}
+		days_mission_timeout = 150
+		days_re_enable = 7
+		is_good = no
+		highlight_states = {
+			highlight_state_targets = {
+				state = 224
+				state = 260
+				state = 240
+				state = 210
+				state = 1441
+			}
+		}
+		timeout_effect = {
+			set_temp_variable = { temp_devastation_gained = 5 } 
+			TaS_WRW2_change_devastation = yes
+		}
+		complete_effect = {
+			set_temp_variable = { temp_devastation_gained = -5 } 
+			TaS_WRW2_change_devastation = yes
+			GER = {
+				set_temp_variable = { temp_devastation_gained = 5 }
+				TaS_WRW2_change_devastation = yes
+			}
+			add_war_support = 0.025
+		}
+	}
+	RUS_march_over_moscow = {
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+		}
+		icon = generic_assault
+		priority = 46
+		available = {
+			controls_state = 247
+			controls_state = 1314
+			controls_state = 219
+		}
+		activation = {
+			has_war_with = GER
+			has_country_flag = RUS_2WRW_ongoing
+			controls_state = 253
+			controls_state = 254
+			controls_state = 248
+			NOT = {
+				controls_state = 247
+				controls_state = 1314
+				controls_state = 219
+			}
+		}
+		days_mission_timeout = 60
+		is_good = no
+		highlight_states = {
+			highlight_state_targets = {
+				state = 219
+				state = 1442
+				state = 1478
+			}
+		}
+		timeout_effect = {
+			set_temp_variable = { temp_devastation_gained = 5 } 
+			TaS_WRW2_change_devastation = yes
+		}
+		complete_effect = {
+			set_temp_variable = { temp_devastation_gained = -5 } 
+			TaS_WRW2_change_devastation = yes			
+			GER = {
+				set_temp_variable = { temp_devastation_gained = 5 }
+				TaS_WRW2_change_devastation = yes
+			}
+			add_war_support = 0.05
+		}
+	}
+	RUS_take_novgorod = {
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+		}
+		icon = generic_assault
+		priority = 45
+		available = {
+			controls_state = 247
+			controls_state = 1314
+			controls_state = 1477
+			controls_state = 1434
+			controls_state = 220
+		}
+		activation = {
+			has_war_with = GER
+			has_country_flag = RUS_2WRW_ongoing
+			controls_state = 208
+			controls_state = 264
+			controls_state = 1475
+			NOT = {
+				controls_state = 247
+				controls_state = 1314
+				controls_state = 1477
+				controls_state = 1434
+				controls_state = 220
+			}
+		}
+		days_mission_timeout = 80
+		is_good = no
+		highlight_states = {
+			highlight_state_targets = {
+				state = 247
+				state = 1314
+				state = 1477
+				state = 1434
+				state = 220
+			}
+		}
+		timeout_effect = {
+			set_temp_variable = { temp_devastation_gained = 4 } 
+			TaS_WRW2_change_devastation = yes			
+		}
+		complete_effect = {
+			set_temp_variable = { temp_devastation_gained = -4 } 
+			TaS_WRW2_change_devastation = yes		
+			GER = {
+				set_temp_variable = { temp_devastation_gained = 4 }
+				TaS_WRW2_change_devastation = yes
+			}	
+			add_war_support = 0.02
+		}
+	}
+	RUS_push_to_petrograd = {
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+		}
+		icon = generic_assault
+		priority = 45
+		available = {
+			controls_state = 209
+			controls_state = 195
+			controls_state = 1421
+		}
+		activation = {
+			has_war_with = GER
+			has_country_flag = RUS_2WRW_ongoing
+			count_triggers = {
+			amount = 2
+				controls_state = 208
+				controls_state = 1434
+				controls_state = 220
+			}
+			NOT = {
+				controls_state = 209
+				controls_state = 195
+				controls_state = 1421
+			}
+		}
+		days_mission_timeout = 70
+		is_good = no
+		highlight_states = {
+			highlight_state_targets = {
+				state = 209
+				state = 195
+				state = 1421
+			}
+		}
+		timeout_effect = {
+			set_temp_variable = { temp_devastation_gained = 4 } 
+			TaS_WRW2_change_devastation = yes			
+		}
+		complete_effect = {
+			set_temp_variable = { temp_devastation_gained = -4 } 
+			GER = {
+				set_temp_variable = { temp_devastation_gained = 5 }
+				TaS_WRW2_change_devastation = yes
+			}
+			TaS_WRW2_change_devastation = yes			
+			add_war_support = 0.02
+		}
+	}
+	RUS_storm_smolensk = {
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+		}
+		icon = generic_assault
+		priority = 45
+		available = {
+			controls_state = 257
+			controls_state = 255
+			controls_state = 242
+			controls_state = 1476
+		}
+		activation = {
+			has_war_with = GER
+			has_country_flag = RUS_2WRW_ongoing
+			count_triggers = {
+				amount = 3
+				controls_state = 209
+				controls_state = 1477
+				controls_state = 1314
+				controls_state = 1478
+				controls_state = 219
+				controls_state = 223
+				controls_state = 205
+				controls_state = 1444
+			}
+			NOT = {
+				controls_state = 257
+				controls_state = 255
+				controls_state = 242
+				controls_state = 1476
+			}
+		}
+		days_mission_timeout = 70
+		is_good = no
+		highlight_states = {
+			highlight_state_targets = {
+				state = 257
+				state = 255
+				state = 242
+				state = 1476
+			}
+		}
+		timeout_effect = {
+			set_temp_variable = { temp_devastation_gained = 3.5 } 
+			TaS_WRW2_change_devastation = yes			
+		}
+		complete_effect = {
+			set_temp_variable = { temp_devastation_gained = -3.5 } 
+			TaS_WRW2_change_devastation = yes
+			GER = {
+				set_temp_variable = { temp_devastation_gained = 5 }
+				TaS_WRW2_change_devastation = yes
+			}			
+			add_war_support = 0.017
+		}
+	}
+	RUS_onto_oryol = {
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+		}
+		icon = generic_assault
+		priority = 45
+		available = {
+			controls_state = 1435
+			controls_state = 222
+			controls_state = 258
+			controls_state = 401
+			controls_state = 1443
+			controls_state = 205
+		}
+		activation = {
+			has_war_with = GER
+			has_country_flag = RUS_2WRW_ongoing
+			count_triggers = {
+			amount = 3
+				controls_state = 1476
+				controls_state = 219
+				controls_state = 248
+				controls_state = 254
+				controls_state = 1441
+				controls_state = 210
+				controls_state = 240
+			}
+			NOT = {
+				controls_state = 1435
+				controls_state = 222
+				controls_state = 258
+				controls_state = 401
+				controls_state = 1443
+				controls_state = 205
+			}
+		}
+		days_mission_timeout = 80
+		is_good = no
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1435
+				state = 222
+				state = 258
+				state = 401
+				state = 1443
+				state = 205
+			}
+		}
+		timeout_effect = {
+			set_temp_variable = { temp_devastation_gained = 4 } 
+			TaS_WRW2_change_devastation = yes			
+		}
+		complete_effect = {
+			set_temp_variable = { temp_devastation_gained = -4 } 
+			TaS_WRW2_change_devastation = yes			
+			GER = {
+				set_temp_variable = { temp_devastation_gained = 5 }
+				TaS_WRW2_change_devastation = yes
+			}
+			add_war_support = 0.02
+		}
+	}
+	RUS_home_sweet_homel = {
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+		}
+		icon = generic_assault
+		priority = 45
+		available = {
+			controls_state = 241
+			controls_state = 223
+			controls_state = 1444
+		}
+		activation = {
+			has_war_with = GER
+			has_country_flag = RUS_2WRW_ongoing
+			count_triggers = {
+			amount = 2
+				controls_state = 242
+				controls_state = 1476
+				controls_state = 205
+				controls_state = 222
+				controls_state = 1435
+			}
+			NOT = {
+				controls_state = 241
+				controls_state = 223
+				controls_state = 1444
+			}
+		}
+		days_mission_timeout = 80
+		is_good = no
+		highlight_states = {
+			highlight_state_targets = {
+				state = 241
+				state = 223
+				state = 1444
+			}
+		}
+		timeout_effect = {
+			set_temp_variable = { temp_devastation_gained = 3 } 
+			TaS_WRW2_change_devastation = yes			
+		}
+		complete_effect = {
+			set_temp_variable = { temp_devastation_gained = -3 } 
+			TaS_WRW2_change_devastation = yes			
+			GER = {
+				set_temp_variable = { temp_devastation_gained = 5 }
+				TaS_WRW2_change_devastation = yes
+			}
+			add_war_support = 0.015
+		}
+	}
+	
+	## RK CAUCASIA ##
+	
+	RUS_charge_into_the_caucasus = {
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+		}
+		icon = generic_assault
+		priority = 44
+		available = {
+			controls_state = 232
+			controls_state = 234
+			controls_state = 235
+			controls_state = 1564
+			controls_state = 1561
+			controls_state = 1559
+			controls_state = 1560
+		}
+		activation = {
+			has_war_with = GER
+			has_country_flag = RUS_2WRW_ongoing
+			count_triggers = {
+				amount = 2
+				controls_state = 244
+				controls_state = 237
+				controls_state = 265
+				controls_state = 224
+				controls_state = 218
+			}
+			NOT = {
+				controls_state = 232
+				controls_state = 234
+				controls_state = 235
+				controls_state = 1564
+				controls_state = 1561
+				controls_state = 1559
+				controls_state = 1560
+			}
+		}
+		days_mission_timeout = 45
+		days_re_enable = 7
+		is_good = no
+		highlight_states = {
+			highlight_state_targets = {
+				state = 232
+				state = 234
+				state = 235
+				state = 1564
+				state = 1561
+				state = 1560
+				state = 1559
+			}
+		}
+		timeout_effect = {
+			set_temp_variable = { temp_devastation_gained = 3 } 
+			TaS_WRW2_change_devastation = yes			
+		}
+		complete_effect = {
+			set_temp_variable = { temp_devastation_gained = -3 } 
+			TaS_WRW2_change_devastation = yes			
+			GER = {
+				set_temp_variable = { temp_devastation_gained = 3 }
+				TaS_WRW2_change_devastation = yes
+			}
+			add_war_support = 0.015
+		}
+	}
+	
+	RUS_blitz_to_baku = {
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+		}
+		icon = generic_assault
+		priority = 44
+		available = {
+			controls_state = 232
+			controls_state = 234
+			controls_state = 235
+			controls_state = 1564
+			controls_state = 1561
+		}
+		activation = {
+			has_war_with = GER
+			has_country_flag = RUS_2WRW_ongoing
+			count_triggers = {
+				amount = 2
+				controls_state = 232
+				controls_state = 234
+				controls_state = 235
+				controls_state = 1564
+				controls_state = 1561
+			}
+			NOT = {
+				controls_state = 232
+				controls_state = 234
+				controls_state = 235
+				controls_state = 1564
+				controls_state = 1561
+			}
+		}
+		days_mission_timeout = 25
+		days_re_enable = 7
+		is_good = no
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1552
+				state = 229
+				state = 1554
+			}
+		}
+		timeout_effect = {
+			set_temp_variable = { temp_devastation_gained = 3 } 
+			TaS_WRW2_change_devastation = yes			
+		}
+		complete_effect = {
+			set_temp_variable = { temp_devastation_gained = -3 } 
+			TaS_WRW2_change_devastation = yes			
+			add_war_support = 0.015
+			GER = {
+				add_stability = -0.075
+				add_war_support = -0.05
+				add_fuel = -8000
+				set_temp_variable = { temp_devastation_gained = 5 }
+				TaS_WRW2_change_devastation = yes
+			}
+		}
+	}
+	
+	RUS_take_tbilisi = {
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+		}
+		icon = generic_assault
+		priority = 44
+		available = {
+			controls_state = 231
+			controls_state = 1556
+			controls_state = 1558
+		}
+		activation = {
+			has_war_with = GER
+			has_country_flag = RUS_2WRW_ongoing
+			count_triggers = {
+				amount = 2
+				controls_state = 232
+				controls_state = 234
+				controls_state = 235
+				controls_state = 1564
+				controls_state = 1561
+			}
+			NOT = {
+				controls_state = 231
+				controls_state = 1556
+				controls_state = 1558
+			}
+		}
+		days_mission_timeout = 20
+		days_re_enable = 7
+		is_good = no
+		highlight_states = {
+			highlight_state_targets = {
+				state = 231
+				state = 1556
+				state = 1558
+			}
+		}
+		timeout_effect = {
+			set_temp_variable = { temp_devastation_gained = 3 } 
+			TaS_WRW2_change_devastation = yes			
+		}
+		complete_effect = {
+			set_temp_variable = { temp_devastation_gained = -3 } 
+			TaS_WRW2_change_devastation = yes	
+			GER = {
+				set_temp_variable = { temp_devastation_gained = 3 }
+				TaS_WRW2_change_devastation = yes
+			}		
+			add_war_support = 0.015
+		}
+	}
+	
+	
+	## CRIMEA ##
+	
+	RUS_secure_sevastopol = {
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+		}
+		icon = generic_assault
+		priority = 43
+		available = {
+			controls_state = 137
+		}
+		activation = {
+			has_war_with = GER
+			has_country_flag = RUS_2WRW_ongoing
+			OR = {
+				controls_state = 196
+				controls_state = 234
+			}
+			NOT = {
+				controls_state = 137
+			}
+		}
+		days_mission_timeout = 100
+		days_re_enable = 7
+		is_good = no
+		highlight_states = {
+			highlight_state_targets = {
+				state = 137
+			}
+		}
+		timeout_effect = {
+			set_temp_variable = { temp_devastation_gained = 2.5 }
+			TaS_WRW2_change_devastation = yes			
+		}
+		complete_effect = {
+			set_temp_variable = { temp_devastation_gained = -2.5 }
+			TaS_WRW2_change_devastation = yes	
+			GER = {
+				set_temp_variable = { temp_devastation_gained = 2.5 }
+				TaS_WRW2_change_devastation = yes
+			}
+			add_war_support = 0.012
+		}
+	}
+	
+	### taking RK ukraine ###
+	
+	RUS_push_to_poltava = {
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+		}
+		icon = generic_assault
+		priority = 41
+		available = {
+			controls_state = 225
+			controls_state = 259
+			controls_state = 221
+			controls_state = 1426
+		}
+		activation = {
+			has_war_with = GER
+			has_country_flag = RUS_2WRW_ongoing
+			count_triggers = {
+				amount = 2
+				controls_state = 1444
+				controls_state = 1435
+				controls_state = 240
+			}
+			NOT = {
+				controls_state = 225
+				controls_state = 259
+				controls_state = 221
+				controls_state = 1426
+			}
+		}
+		days_mission_timeout = 60
+		days_re_enable = 7
+		is_good = no
+		highlight_states = {
+			highlight_state_targets = {
+				state = 225
+				state = 259
+				state = 221
+				state = 1426
+			}
+		}
+		timeout_effect = {
+			set_temp_variable = { temp_devastation_gained = 3 }
+			TaS_WRW2_change_devastation = yes		
+		}
+		complete_effect = {
+			set_temp_variable = { temp_devastation_gained = -3 }
+			TaS_WRW2_change_devastation = yes		
+			GER = {
+				set_temp_variable = { temp_devastation_gained = 3 }
+				TaS_WRW2_change_devastation = yes
+			}
+			add_war_support = 0.015
+		}
+	}
+	RUS_take_zaporizhia = {
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+		}
+		icon = generic_assault
+		priority = 41
+		available = {
+			controls_state = 196
+			controls_state = 200
+			controls_state = 227
+			controls_state = 218
+			controls_state = 228
+		}
+		activation = {
+			has_war_with = GER
+			has_country_flag = RUS_2WRW_ongoing
+			count_triggers = {
+				amount = 2
+				controls_state = 240
+				controls_state = 224
+				controls_state = 234
+				controls_state = 137
+			}
+			NOT = {
+				controls_state = 196
+				controls_state = 200
+				controls_state = 227
+				controls_state = 218
+				controls_state = 228
+			}
+		}
+		days_mission_timeout = 55
+		days_re_enable = 7
+		is_good = no
+		highlight_states = {
+			highlight_state_targets = {
+				state = 196
+				state = 200
+				state = 227
+				state = 218
+				state = 228
+			}
+		}
+		timeout_effect = {
+			set_temp_variable = { temp_devastation_gained = 3 }
+			TaS_WRW2_change_devastation = yes		
+		}
+		complete_effect = {
+			set_temp_variable = { temp_devastation_gained = -3 }
+			TaS_WRW2_change_devastation = yes		
+			GER = {
+				set_temp_variable = { temp_devastation_gained = 3 }
+				TaS_WRW2_change_devastation = yes
+			}
+			add_war_support = 0.015
+		}
+	}
+	RUS_liberate_kiev = {
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+		}
+		icon = generic_assault
+		priority = 41
+		available = {
+			controls_state = 1428
+			controls_state = 202
+			controls_state = 1427
+		}
+		activation = {
+			has_war_with = GER
+			has_country_flag = RUS_2WRW_ongoing
+			OR = {
+				controls_state = 241
+				controls_state = 1444
+				UKR = {
+					surrender_progress > 0.15
+				}
+			}
+			NOT = {
+				controls_state = 1428
+				controls_state = 202
+				controls_state = 1427
+			}
+		}
+		days_mission_timeout = 60
+		days_re_enable = 7
+		is_good = no
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1428
+				state = 202
+				state = 1427
+			}
+		}
+		timeout_effect = {
+			set_temp_variable = { temp_devastation_gained = 4 }
+			TaS_WRW2_change_devastation = yes		
+		}
+		complete_effect = {
+			set_temp_variable = { temp_devastation_gained = -4 }
+			TaS_WRW2_change_devastation = yes		
+			GER = {
+				set_temp_variable = { temp_devastation_gained = 4 }
+				TaS_WRW2_change_devastation = yes
+			}
+			add_war_support = 0.02
+		}
+	}
+	RUS_past_the_dniepr = {
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+		}
+		icon = generic_assault
+		priority = 40
+		available = {
+			controls_state = 197
+			controls_state = 226
+			controls_state = 773
+		}
+		activation = {
+			has_war_with = GER
+			has_country_flag = RUS_2WRW_ongoing
+			count_triggers = {
+				amount = 3
+				controls_state = 196
+				controls_state = 200
+				controls_state = 1426
+				controls_state = 259
+				controls_state = 202
+			}
+			NOT = {
+				controls_state = 197
+				controls_state = 226
+				controls_state = 773
+			}
+		}
+		days_mission_timeout = 40
+		days_re_enable = 7
+		is_good = no
+		highlight_states = {
+			highlight_state_targets = {
+				state = 197
+				state = 226
+				state = 773
+			}
+		}
+		timeout_effect = {
+			set_temp_variable = { temp_devastation_gained = 3 }
+			TaS_WRW2_change_devastation = yes		
+		}
+		complete_effect = {
+			set_temp_variable = { temp_devastation_gained = -3 }
+			TaS_WRW2_change_devastation = yes	
+			GER = {
+				set_temp_variable = { temp_devastation_gained = 3 }
+				TaS_WRW2_change_devastation = yes
+			}
+			add_war_support = 0.015
+		}
+	}
+	
+	RUS_into_volhynia = {
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+		}
+		icon = generic_assault
+		priority = 40
+		available = {
+			controls_state = 1431
+			controls_state = 93
+			controls_state = 199
+			controls_state = 1430
+			controls_state = 201
+			controls_state = 1429
+		}
+		activation = {
+			has_war_with = GER
+			has_country_flag = RUS_2WRW_ongoing
+			count_triggers = {
+				amount = 2
+				controls_state = 773
+				controls_state = 202
+				controls_state = 241
+				controls_state = 1427
+			}
+			NOT = {
+				controls_state = 1431
+				controls_state = 93
+				controls_state = 199
+				controls_state = 1430
+				controls_state = 201
+				controls_state = 1429
+			}
+		}
+		days_mission_timeout = 30
+		days_re_enable = 7
+		is_good = no
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1431
+				state = 1430
+				state = 93
+				state = 201
+				state = 199
+				state = 1429
+			}
+		}	
+		timeout_effect = {
+			set_temp_variable = { temp_devastation_gained = 3 }
+			TaS_WRW2_change_devastation = yes		
+		}
+		complete_effect = {
+			set_temp_variable = { temp_devastation_gained = 3 }
+			TaS_WRW2_change_devastation = yes	
+			GER = {
+				set_temp_variable = { temp_devastation_gained = 3 }
+				TaS_WRW2_change_devastation = yes
+			}
+			add_war_support = 0.015
+		}
+	}
+	
+	
+	### taking RK Ostland ###
+	
+	RUS_blitz_belarus = {
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+		}
+		icon = generic_assault
+		priority = 39
+		available = {
+			controls_state = 194
+			controls_state = 94
+			controls_state = 95
+			controls_state = 96
+			controls_state = 204
+			controls_state = 206
+			controls_state = 207
+			controls_state = 1407
+			controls_state = 1406
+			controls_state = 1405
+			controls_state = 1404
+			controls_state = 1403
+		}
+		activation = {
+			has_war_with = GER
+			has_country_flag = RUS_2WRW_ongoing
+			count_triggers = {
+				amount = 3
+				controls_state = 1431
+				controls_state = 1429
+				controls_state = 241
+				controls_state = 223
+				controls_state = 242
+				controls_state = 257
+			}
+			NOT = {
+				controls_state = 194
+				controls_state = 94
+				controls_state = 95
+				controls_state = 96
+				controls_state = 204
+				controls_state = 206
+				controls_state = 207
+				controls_state = 1407
+				controls_state = 1406
+				controls_state = 1405
+				controls_state = 1404
+				controls_state = 1403
+			}
+
+		}
+		days_mission_timeout = 40
+		days_re_enable = 7
+		is_good = no
+		highlight_states = {
+			highlight_state_targets = {
+				state = 194
+				state = 94
+				state = 95
+				state = 96
+				state = 204
+				state = 206
+				state = 207
+				state = 1407
+				state = 1406
+				state = 1405
+				state = 1404
+				state = 1403
+			}
+		}
+		timeout_effect = {
+			set_temp_variable = { temp_devastation_gained = 3 }
+			TaS_WRW2_change_devastation = yes	
+		}
+		complete_effect = {
+			set_temp_variable = { temp_devastation_gained = -3 }
+			TaS_WRW2_change_devastation = yes	
+			GER = {
+				set_temp_variable = { temp_devastation_gained = 3 }
+				TaS_WRW2_change_devastation = yes
+			}
+			add_war_support = 0.015
+		}
+	}
+	
+	RUS_race_to_riga = {
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+		}
+		icon = generic_assault
+		priority = 38
+		available = {
+			controls_state = 190
+			controls_state = 12
+			controls_state = 13
+			controls_state = 191
+			controls_state = 943
+			controls_state = 1399
+			controls_state = 1398
+			controls_state = 1397
+			controls_state = 1396
+			controls_state = 1395
+			controls_state = 1402
+		}
+		activation = {
+			has_war_with = GER
+			has_country_flag = RUS_2WRW_ongoing
+			OR = {
+				controls_state = 209
+				controls_state = 1421
+				controls_state = 257
+			}
+			NOT = {
+				controls_state = 190
+				controls_state = 12
+				controls_state = 13
+				controls_state = 191
+				controls_state = 943
+				controls_state = 1399
+				controls_state = 1398
+				controls_state = 1397
+				controls_state = 1396
+				controls_state = 1395
+				controls_state = 1402
+			}
+		}
+		days_mission_timeout = 40
+		days_re_enable = 7
+		is_good = no
+		highlight_states = {
+			highlight_state_targets = {
+				state = 190
+				state = 12
+				state = 13
+				state = 191
+				state = 943
+				state = 1399
+				state = 1398
+				state = 1397
+				state = 1396
+				state = 1395
+				state = 1402
+			}
+		}	
+		timeout_effect = {
+			set_temp_variable = { temp_devastation_gained = 3 }
+			TaS_WRW2_change_devastation = yes		
+		}
+		complete_effect = {
+			set_temp_variable = { temp_devastation_gained = -3 }
+			TaS_WRW2_change_devastation = yes	
+			GER = {
+				set_temp_variable = { temp_devastation_gained = 3 }
+				TaS_WRW2_change_devastation = yes
+			}
+			add_war_support = 0.015
+		}
+	}
+	
+	RUS_liberate_lithuania = {
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+		}
+		icon = generic_assault
+		priority = 38
+		available = {
+			controls_state = 189
+			controls_state = 11
+			controls_state = 1400
+			controls_state = 1401
+		}
+		activation = {
+			has_war_with = GER
+			has_country_flag = RUS_2WRW_ongoing
+			OR = {
+				controls_state = 190
+				controls_state = 1398
+				controls_state = 96
+			}
+			NOT = {
+				controls_state = 189
+				controls_state = 11
+				controls_state = 1400
+				controls_state = 1401
+			}
+		}
+		days_mission_timeout = 40
+		days_re_enable = 7
+		is_good = no
+		highlight_states = {
+			highlight_state_targets = {
+				state = 189
+				state = 11
+				state = 1400
+				state = 1401
+			}
+		}
+		timeout_effect = {
+			set_temp_variable = { temp_devastation_gained = 3 }
+			TaS_WRW2_change_devastation = yes		
+		}
+		complete_effect = {
+			set_temp_variable = { temp_devastation_gained = -3 }
+			TaS_WRW2_change_devastation = yes	
+			GER = {
+				set_temp_variable = { temp_devastation_gained = 3 }
+				TaS_WRW2_change_devastation = yes
+			}
+			add_war_support = 0.015
+		}
+	}
+	
+	### GERMAN missions ###
+	
+	RUS_march_on_galicia = {
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+		}
+		icon = generic_assault
+		priority = 38
+		available = {
+			controls_state = 1392
+			controls_state = 1393
+			controls_state = 91
+			controls_state = 1390
+			controls_state = 1391
+			controls_state = 1394
+			controls_state = 1386
+			controls_state = 1387
+			controls_state = 1388
+			controls_state = 89
+		}
+		activation = {
+			has_war_with = GER
+			has_country_flag = RUS_2WRW_ongoing
+			OR = {
+				controls_state = 93
+				controls_state = 199
+				controls_state = 1431
+			}
+			NOT = {
+				controls_state = 1392
+				controls_state = 1393
+				controls_state = 91
+				controls_state = 1390
+				controls_state = 1391
+				controls_state = 1394
+				controls_state = 1386
+				controls_state = 1387
+				controls_state = 1388
+				controls_state = 89
+			}
+		}
+		days_mission_timeout = 40
+		days_re_enable = 7
+		is_good = no
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1392
+				state = 1393
+				state = 91
+				state = 1390
+				state = 1391
+				state = 1394
+				state = 1386
+				state = 1387
+				state = 1388
+				state = 89
+			}
+		}
+		timeout_effect = {
+			set_temp_variable = { temp_devastation_gained = 3 }
+			TaS_WRW2_change_devastation = yes		
+		}
+		complete_effect = {
+			set_temp_variable = { temp_devastation_gained = -3 }
+			TaS_WRW2_change_devastation = yes	
+			GER = {
+				set_temp_variable = { temp_devastation_gained = 3 }
+				TaS_WRW2_change_devastation = yes
+			}
+			add_war_support = 0.015
+		}
+	}
+	
+	RUS_remember_1758 = {
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+		}
+		icon = generic_assault
+		priority = 38
+		available = {
+			controls_state = 5
+			controls_state = 97
+			controls_state = 85
+
+		}
+		activation = {
+			has_war_with = GER
+			has_country_flag = RUS_2WRW_ongoing
+			OR = {
+				controls_state = 189
+				controls_state = 1406
+				controls_state = 1400
+				controls_state = 1407
+			}
+			NOT = {
+				controls_state = 5
+				controls_state = 97
+				controls_state = 85
+			}
+		}
+		days_mission_timeout = 40
+		days_re_enable = 7
+		is_good = no
+		highlight_states = {
+			highlight_state_targets = {
+				state = 97
+				state = 5
+				state = 85
+			}
+		}
+		timeout_effect = {
+			set_temp_variable = { temp_devastation_gained = 3 }
+			TaS_WRW2_change_devastation = yes		
+		}
+		complete_effect = {
+			set_temp_variable = { temp_devastation_gained = -3 }
+			TaS_WRW2_change_devastation = yes	
+			GER = {
+				set_temp_variable = { temp_devastation_gained = 3 }
+				TaS_WRW2_change_devastation = yes
+			}
+			add_war_support = 0.015
+		}
+	}
+	
+	RUS_heart_of_poland = {
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+		}
+		icon = generic_assault
+		priority = 38
+		available = {
+			controls_state = 1389
+			controls_state = 1386
+			controls_state = 92
+			controls_state = 1384
+			controls_state = 1385
+			controls_state = 90
+			controls_state = 1383
+			controls_state = 1381
+			controls_state = 10
+			controls_state = 1380
+			controls_state = 88
+			controls_state = 92
+			controls_state = 1382
+		}
+		activation = {
+			has_war_with = GER
+			has_country_flag = RUS_2WRW_ongoing
+			OR = {
+				controls_state = 1431
+				controls_state = 93
+				controls_state = 1390
+				controls_state = 1387
+			}
+			NOT = {
+				controls_state = 1389
+				controls_state = 1386
+				controls_state = 92
+				controls_state = 1384
+				controls_state = 1385
+				controls_state = 90
+				controls_state = 1383
+				controls_state = 1381
+				controls_state = 10
+				controls_state = 1380
+				controls_state = 88
+				controls_state = 92
+				controls_state = 1382
+			}
+		}
+		days_mission_timeout = 40
+		days_re_enable = 7
+		is_good = no
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1389
+				state = 1386
+				state = 92
+				state = 1384
+				state = 1385
+				state = 90
+				state = 1383
+				state = 1381
+				state = 10
+				state = 1380
+				state = 88
+				state = 92
+				state = 1382
+			}
+		}
+		timeout_effect = {
+			set_temp_variable = { temp_devastation_gained = 3 }
+			TaS_WRW2_change_devastation = yes		
+		}
+		complete_effect = {
+			set_temp_variable = { temp_devastation_gained = -3 }
+			TaS_WRW2_change_devastation = yes	
+			GER = {
+				set_temp_variable = { temp_devastation_gained = 3 }
+				TaS_WRW2_change_devastation = yes
+			}
+			add_war_support = 0.015
+		}
+	}
+	
+	RUS_gate_of_berlin = {
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+		}
+		icon = generic_assault
+		priority = 38
+		available = {
+			controls_state = 67
+			controls_state = 66
+			controls_state = 87
+			controls_state = 63
+		}
+		activation = {
+			has_war_with = GER
+			has_country_flag = RUS_2WRW_ongoing
+			OR = {
+				controls_state = 65
+				controls_state = 10
+				controls_state = 1382
+				controls_state = 88
+			}
+			NOT = {
+				controls_state = 67
+				controls_state = 66
+				controls_state = 87
+				controls_state = 63
+			}
+		}
+		days_mission_timeout = 40
+		days_re_enable = 7
+		is_good = no
+		highlight_states = {
+			highlight_state_targets = {
+				state = 67
+				state = 66
+				state = 87
+				state = 63
+			}
+		}
+		timeout_effect = {
+			set_temp_variable = { temp_devastation_gained = 5 }
+			TaS_WRW2_change_devastation = yes		
+		}
+		complete_effect = {
+			set_temp_variable = { temp_devastation_gained = -5 }
+			TaS_WRW2_change_devastation = yes	
+			GER = {
+				set_temp_variable = { temp_devastation_gained = 5 }
+				TaS_WRW2_change_devastation = yes
+			}
+			add_war_support = 0.015
+		}
+	}
+	
+	RUS_battle_of_germania = {
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+		}
+		icon = generic_assault
+		priority = 38
+		available = {
+			controls_state = 776
+			controls_state = 64
+			controls_state = 61
+		}
+		activation = {
+			has_war_with = GER
+			has_country_flag = RUS_2WRW_ongoing
+			OR = {
+				controls_state = 63
+				controls_state = 87
+				controls_state = 66
+				controls_state = 69
+				controls_state = 65
+			}
+			NOT = {
+				controls_state = 776
+				controls_state = 64
+				controls_state = 61
+			}
+		}
+		days_mission_timeout = 40
+		days_re_enable = 7
+		is_good = no
+		highlight_states = {
+			highlight_state_targets = {
+				state = 776
+				state = 64
+				state = 61
+			}
+		}
+		timeout_effect = {
+			set_temp_variable = { temp_devastation_gained = 5 }
+			TaS_WRW2_change_devastation = yes		
+		}
+		complete_effect = {
+			set_temp_variable = { temp_devastation_gained = -10 }
+			TaS_WRW2_change_devastation = yes	
+			GER = {
+				set_temp_variable = { temp_devastation_gained = 10 }
+				TaS_WRW2_change_devastation = yes
+			}
+			add_war_support = 0.015
+		}
+	}
+	### Frontline plans
+	TaS_WRW2_activate_plan_spb = {
+		icon = GFX_decision_diplo_moskowien
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+		}
+		available = {
+			has_war = yes
+		}
+		allowed = {
+			tag = MAR
+			NOT = { has_idea = MAR_go_oper }
+		}
+		custom_cost_trigger = { command_power > 19.99 }
+		custom_cost_text = decision_cost_20_cp
+		fire_only_once = yes
+		days_remove = 14
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_activate_plan_spb "
+			hidden_effect = {
+				add_command_power = -20
+			}
+		}
+		remove_effect = {
+			set_country_flag = MAR_started_spb_offensive
+			add_timed_idea = {
+				idea = MAR_go_oper
+				days = 90
+			}
+			set_temp_variable = { temp_devastation_gain_gained = 0.25 }
+			TaS_WRW2_change_devastation_gain = yes
+		}
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	TaS_WRW2_activate_plan_spb_mission = {
+		icon = GFX_decision_generic_assault
+		allowed = {
+			tag = MAR
+		}
+		available = {
+			always = no
+		}
+		activation = {
+			has_country_flag = MAR_started_spb_offensive
+		}
+		cancel_trigger = {
+			OR = {
+				has_war = no
+				controls_state = 195
+			}
+		}
+
+		cancel_effect = {
+			clr_country_flag = MAR_started_spb_offensive
+			Tas_WRW2_decrease_depression = yes
+			set_temp_variable = { temp_devastation_gain_gained = -0.25 }
+			TaS_WRW2_change_devastation_gain = yes
+		}
+		days_mission_timeout = 90
+		is_good = no
+
+		timeout_effect = {
+			clr_country_flag = MAR_started_spb_offensive
+			Tas_WRW2_increase_depression = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	TaS_WRW2_activate_plan_msk = {
+		icon = GFX_decision_diplo_moskowien
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+		}
+		available = {
+			has_war = yes
+			NOT = { has_idea = MAR_go_oper }
+		}
+		allowed = {
+			tag = MAR
+		}
+		custom_cost_trigger = { command_power > 19.99 }
+		custom_cost_text = decision_cost_20_cp
+		fire_only_once = yes
+		days_remove = 14
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_activate_plan_spb "
+			hidden_effect = {
+				add_command_power = -20
+			}
+		}
+		remove_effect = {
+			set_country_flag = MAR_started_MSK_offensive
+			add_timed_idea = {
+				idea = MAR_go_oper
+				days = 90
+			}
+			set_temp_variable = { temp_devastation_gain_gained = 0.25 }
+			TaS_WRW2_change_devastation_gain = yes
+		}
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	TaS_WRW2_activate_plan_msk_mission = {
+		icon = GFX_decision_generic_assault
+		allowed = {
+			tag = MAR
+		}
+		available = {
+			always = no
+		}
+		activation = {
+			has_country_flag = MAR_started_MSK_offensive
+		}
+		cancel_trigger = {
+			OR = {
+				has_war = no
+				controls_state = 1442
+			}
+		}
+
+		cancel_effect = {
+			clr_country_flag = MAR_started_MSK_offensive
+			Tas_WRW2_decrease_depression = yes
+			set_temp_variable = { temp_devastation_gain_gained = -0.25 }
+			TaS_WRW2_change_devastation_gain = yes
+		}
+		days_mission_timeout = 90
+		is_good = no
+
+		timeout_effect = {
+			clr_country_flag = MAR_started_MSK_offensive
+			Tas_WRW2_increase_depression = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	TaS_WRW2_activate_plan_volga = {
+		icon = GFX_decision_diplo_kaukasien
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+		}
+		available = {
+			has_war = yes
+			NOT = { has_idea = MAR_go_oper }
+		}
+		allowed = {
+			tag = MAR
+		}
+		custom_cost_trigger = { command_power > 19.99 }
+		custom_cost_text = decision_cost_20_cp
+		fire_only_once = yes
+		days_remove = 14
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_activate_plan_spb "
+			hidden_effect = {
+				add_command_power = -20
+			}
+		}
+		remove_effect = {
+			set_country_flag = MAR_started_CAU_offensive
+			add_timed_idea = {
+				idea = MAR_go_oper
+				days = 90
+			}
+			set_temp_variable = { temp_devastation_gain_gained = 0.25 }
+			TaS_WRW2_change_devastation_gain = yes
+		}
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	TaS_WRW2_activate_plan_volga_mission = {
+		icon = GFX_decision_generic_assault
+		allowed = {
+			tag = MAR
+		}
+		available = {
+			always = no
+		}
+		activation = {
+			has_country_flag = MAR_started_CAU_offensive
+		}
+		cancel_trigger = {
+			OR = {
+				has_war = no
+				controls_state = 243
+			}
+		}
+
+		cancel_effect = {
+			clr_country_flag = MAR_started_CAU_offensive
+			Tas_WRW2_decrease_depression = yes
+			set_temp_variable = { temp_devastation_gain_gained = -0.25 }
+			TaS_WRW2_change_devastation_gain = yes
+		}
+		days_mission_timeout = 90
+		is_good = no
+
+		timeout_effect = {
+			clr_country_flag = MAR_started_CAU_offensive
+			Tas_WRW2_increase_depression = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	TaS_WRW2_activate_plan_kyiv = {
+		icon = GFX_decision_diplo_ukraine
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+		}
+		available = {
+			has_war = yes
+			NOT = { has_idea = MAR_go_oper }
+		}
+		allowed = {
+			tag = MAR
+		}
+		custom_cost_trigger = { command_power > 19.99 }
+		custom_cost_text = decision_cost_20_cp
+		fire_only_once = yes
+		days_remove = 14
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_activate_plan_spb "
+			hidden_effect = {
+				add_command_power = -20
+			}
+		}
+		remove_effect = {
+			set_country_flag = MAR_started_UKR_offensive
+			add_timed_idea = {
+				idea = MAR_go_oper
+				days = 90
+			}
+			set_temp_variable = { temp_devastation_gain_gained = 0.25 }
+			TaS_WRW2_change_devastation_gain = yes
+		}
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	TaS_WRW2_activate_plan_kyiv_mission = {
+		icon = GFX_decision_generic_assault
+		allowed = {
+			tag = MAR
+		}
+		available = {
+			always = no
+		}
+		activation = {
+			has_country_flag = MAR_started_UKR_offensive
+		}
+		cancel_trigger = {
+			OR = {
+				has_war = no
+				controls_state = 1428
+			}
+		}
+
+		cancel_effect = {
+			clr_country_flag = MAR_started_UKR_offensive
+			Tas_WRW2_decrease_depression = yes
+			set_temp_variable = { temp_devastation_gain_gained = -0.25 }
+			TaS_WRW2_change_devastation_gain = yes
+		}
+		days_mission_timeout = 90
+		is_good = no
+
+		timeout_effect = {
+			clr_country_flag = MAR_started_UKR_offensive
+			Tas_WRW2_increase_depression = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	TaS_WRW2_activate_plan_riga = {
+		icon = GFX_decision_diplo_ostland
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+		}
+		allowed = {
+			tag = MAR
+			NOT = { has_idea = MAR_go_oper }
+		}
+		available = {
+			has_war = yes
+		}
+		custom_cost_trigger = { command_power > 19.99 }
+		custom_cost_text = decision_cost_20_cp
+		fire_only_once = yes
+		days_remove = 14
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_activate_plan_riga "
+			hidden_effect = {
+				add_command_power = -20
+			}
+		}
+		remove_effect = {
+			set_country_flag = MAR_started_OST_offensive
+			add_timed_idea = {
+				idea = MAR_go_oper
+				days = 90
+			}
+			set_temp_variable = { temp_devastation_gain_gained = 0.25 }
+			TaS_WRW2_change_devastation_gain = yes
+		}
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	TaS_WRW2_activate_plan_riga_mission = {
+		icon = GFX_decision_generic_assault
+		allowed = {
+			tag = MAR
+		}
+		available = {
+			always = no
+		}
+		activation = {
+			has_country_flag = MAR_started_OST_offensive
+		}
+		cancel_trigger = {
+			OR = {
+				has_war = no
+				controls_state = 1397
+			}
+		}
+
+		cancel_effect = {
+			clr_country_flag = MAR_started_OST_offensive
+			Tas_WRW2_decrease_depression = yes
+			set_temp_variable = { temp_devastation_gain_gained = -0.25 }
+			TaS_WRW2_change_devastation_gain = yes
+		}
+		days_mission_timeout = 90
+		is_good = no
+
+		timeout_effect = {
+			clr_country_flag = MAR_started_OST_offensive
+			Tas_WRW2_increase_depression = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	TaS_WRW2_activate_partisans = {
+		icon = GFX_decision_generic_assault
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+			check_variable = { MAR_Sended_diversants = 1 }
+		}
+		available = {
+			has_war = yes
+		}
+		custom_cost_trigger = {
+			has_political_power > 25.99
+			command_power > 24.99
+		}
+		custom_cost_text = decision_cost_25_cp_25_pp
+		days_remove = 14
+		fire_only_once = yes
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -25
+				add_political_power = -25
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_show_war_plans"
+			load_oob = MAR_diversants
+		}
+	}
+	
+	TaS_WRW2_raid_in_the_germany = {
+		icon = GFX_decision_generic_bombing
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+			tag = MAR 
+		}
+		available = {
+			has_war = yes
+			has_equipment = {
+				jet_fighter_equipment_2 > 100
+			}
+			has_equipment = {
+				jet_tac_bomber_equipment_2 > 50
+			}
+		}
+		custom_cost_trigger = {
+			has_political_power > 49.99
+			command_power > 24.99
+		}
+		custom_cost_text = decision_cost_25_cp_50_pp
+		days_remove = 7
+		days_re_enable = 180
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -25
+				add_political_power = -50
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_raid_in_the_germany"
+			random_list = {
+				5 = { #very big damage
+					custom_effect_tooltip = MAR_WRW2_very_severe_damage
+					hidden_effect = {
+						776 = {
+							damage_building = {
+								type = infrastructure
+								damage = 4
+							}
+							damage_building = {
+								type = radar_station 
+								damage = 2
+							}
+							damage_building = {
+								type = supply_node  
+								damage = 2
+							}
+							damage_building = {
+								type = air_base  
+								damage = 2
+							}
+						}
+						5 = {
+							damage_building = {
+								type = infrastructure
+								damage = 4
+							}
+							damage_building = {
+								type = radar_station 
+								damage = 3
+							}
+							damage_building = {
+								type = supply_node  
+								damage = 3
+							}
+							damage_building = {
+								type = air_base  
+								damage = 2
+							}
+						}
+						85 = {
+							damage_building = {
+								type = naval_base
+								damage = 3
+							}
+							damage_building = {
+								type = dockyard
+								damage = 3
+							}
+							damage_building = {
+								type = infrastructure
+								damage = 3
+							}
+						}
+						64 = {
+							damage_building = {
+								type = infrastructure
+								damage = 3
+							}
+						}
+						66 = {
+							damage_building = {
+								type = infrastructure
+								damage = 2
+							}
+							damage_building = {
+								type = air_base  
+								damage = 1
+							}
+						}
+						58 = {
+							damage_building = {
+								type = naval_base
+								damage = 3
+							}
+							damage_building = {
+								type = dockyard
+								damage = 3
+							}
+							damage_building = {
+								type = infrastructure
+								damage = 3
+							}
+						}
+						775 = {
+							damage_building = {
+								type = naval_base
+								damage = 2
+							}
+							damage_building = {
+								type = dockyard
+								damage = 2
+							}
+							damage_building = {
+								type = infrastructure
+								damage = 2
+							}
+						}
+					}
+					GER = {
+						set_temp_variable = { temp_devastation_gained = 5 }
+						TaS_WRW2_change_devastation = yes
+					}
+				}
+				25 = { #big damage
+					custom_effect_tooltip = MAR_WRW2_big_damage
+					hidden_effect = {
+						776 = {
+							damage_building = {
+								type = infrastructure
+								damage = 2
+							}
+							damage_building = {
+								type = radar_station 
+								damage = 1
+							}
+							damage_building = {
+								type = supply_node  
+								damage = 1
+							}
+							damage_building = {
+								type = air_base  
+								damage = 1
+							}
+						}
+						5 = {
+							damage_building = {
+								type = infrastructure
+								damage = 3
+							}
+							damage_building = {
+								type = radar_station 
+								damage = 2
+							}
+							damage_building = {
+								type = supply_node  
+								damage = 1
+							}
+							damage_building = {
+								type = air_base  
+								damage = 1
+							}
+						}
+						85 = {
+							damage_building = {
+								type = naval_base
+								damage = 2
+							}
+							damage_building = {
+								type = dockyard
+								damage = 2
+							}
+							damage_building = {
+								type = infrastructure
+								damage = 2
+							}
+						}
+						64 = {
+							damage_building = {
+								type = infrastructure
+								damage = 1
+							}
+						}
+						66 = {
+							damage_building = {
+								type = infrastructure
+								damage = 1
+							}
+							damage_building = {
+								type = air_base  
+								damage = 1
+							}
+						}
+					}
+					GER = {
+						set_temp_variable = { temp_devastation_gained = 3 }
+						TaS_WRW2_change_devastation = yes
+					}
+				}
+				55 = { #small damage
+					custom_effect_tooltip = MAR_WRW2_mild_damage
+					hidden_effect = {
+						776 = {
+							damage_building = {
+								type = infrastructure
+								damage = 1
+							}
+						}
+						5 = {
+							damage_building = {
+								type = infrastructure
+								damage = 1
+							}
+						}
+						85 = {
+							damage_building = {
+								type = naval_base
+								damage = 1
+							}
+							damage_building = {
+								type = dockyard
+								damage = 1
+							}
+						}
+					}
+					GER = {
+						set_temp_variable = { temp_devastation_gained = 1 }
+						TaS_WRW2_change_devastation = yes
+					}
+				}
+				15 = {#fail
+					custom_effect_tooltip = TaS_2WRW_fail_tt
+					GER = {
+						set_temp_variable = { temp_devastation_gained = -3 }
+						TaS_WRW2_change_devastation = yes
+					}
+				}
+			}
+		}
+	}
+	
+	#####  DIPLOMACY  #####
+	## GERMANY PEACE OFFERS ##
+
+	TaS_WRW2_offer_status_quo = {
+		icon = GFX_decision_generic_military_parade
+		visible = {
+			tag = GER
+		}
+		available = {
+			OR = {
+				casualties > 100000
+				MCW = {
+					surrender_progress > 0.1
+				}
+				RUS = {
+					casualties > 100000
+				}
+			}
+			NOT = {
+				MCW = {
+					surrender_progress > 0.65
+				}
+			}
+			OR = {
+				set_temp_variable = { Y = 25 }
+				TAS_WRW2_ScriptedTrigger_GER_Devastation_MoreThanY = yes
+				set_temp_variable = { Y = 25 }
+				TAS_WRW2_ScriptedTrigger_MAR_Devastation_MoreThanY = yes
+			}
+		}
+		custom_cost_trigger = { command_power > 19.99 }
+		custom_cost_text = decision_cost_20_cp
+		fire_only_once = yes
+		days_remove = 14
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision 	TaS_WRW2_offer_status_quo"
+			hidden_effect = {
+				add_command_power = -20
+			}
+		}
+		remove_effect = {
+			MAR = {
+				country_event = { id = MAR_2WRW.1 }
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	TaS_WRW2_offer_muscowy = {
+		icon = GFX_decision_generic_military_parade
+		visible = {
+			tag = GER
+		}
+		available = {
+			OR = {
+				AND = {
+					casualties > 300000
+					MCW = {
+						surrender_progress > 0.65
+					}
+					RUS = {
+						casualties > 100000
+					}
+				}
+			}
+			NOT = {
+				MCW = {
+					exists = no
+				}
+			}
+			OR = {
+				set_temp_variable = { Y = 125 }
+				TAS_WRW2_ScriptedTrigger_GER_Devastation_MoreThanY = yes
+			}
+		}
+		custom_cost_trigger = { command_power > 19.99 }
+		custom_cost_text = decision_cost_20_cp
+		fire_only_once = yes
+		days_remove = 14
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision 	TaS_WRW2_offer_muscowy"
+			hidden_effect = {
+				add_command_power = -20
+			}
+		}
+		remove_effect = {
+			MAR = {
+				country_event = { id = MAR_2WRW.2 }
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	TaS_WRW2_offer_muscowy_caucasus = {
+		icon = GFX_decision_generic_military_parade
+		visible = {
+			tag = GER
+		}
+		available = {
+			AND = {
+				casualties > 300000
+				MCW = {
+					exists = no
+				}
+				RUS = {
+					casualties > 100000
+				}
+				set_temp_variable = { Y = 40 }
+				TAS_WRW2_ScriptedTrigger_GER_Devastation_MoreThanY = yes
+			}
+			NOT = {
+				CAU = {
+					exists = no
+				}
+			}
+		}
+		custom_cost_trigger = { command_power > 19.99 }
+		custom_cost_text = decision_cost_20_cp
+		fire_only_once = yes
+		days_remove = 14
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision 	TaS_WRW2_offer_muscowy"
+			hidden_effect = {
+				add_command_power = -20
+			}
+		}
+		remove_effect = {
+			MAR = {
+				country_event = { id = MAR_2WRW.3 }
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	TaS_WRW2_offer_muscowy_caucasus_dnepr = {
+		icon = GFX_decision_generic_military_parade
+		visible = {
+			tag = GER
+		}
+		available = {
+			OR = {
+				AND = {
+					casualties > 300000
+					MCW = {
+						exists = no
+					}
+					CAU = {
+						exists = no
+					}
+					RUS = {
+						casualties > 100000
+					}
+					set_temp_variable = { Y = 50}
+					TAS_WRW2_ScriptedTrigger_GER_Devastation_MoreThanY = yes
+				}
+				AND = {
+					casualties > 1500000
+					set_temp_variable = { Y = 90 }
+					TAS_WRW2_ScriptedTrigger_GER_Devastation_MoreThanY = yes
+				}
+				NOT = {
+					UKR = {
+						exists = no
+					}
+				}
+			}
+		}
+		custom_cost_trigger = { command_power > 19.99 }
+		custom_cost_text = decision_cost_20_cp
+		fire_only_once = yes
+		days_remove = 14
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision 	TaS_WRW2_offer_muscowy"
+			hidden_effect = {
+				add_command_power = -20
+			}
+		}
+		remove_effect = {
+			MAR = {
+				country_event = { id = MAR_2WRW.4 }
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	TaS_WRW2_offer_total_cap = {
+		icon = GFX_decision_generic_military_parade
+		visible = {
+			tag = GER
+		}
+		available = {
+			OR = {
+				GER = {
+					surrender_progress > 0.05
+				}
+				AND = {
+					set_temp_variable = { Y = 70 }
+					TAS_WRW2_ScriptedTrigger_GER_Devastation_MoreThanY = yes
+					OST = {
+						exists = no
+					}
+					UKR = {
+						exists = no
+					}
+				}
+				NOT = {
+					GER = {
+						surrender_progress > 0.25
+					}
+				}
+			}
+			
+		}
+		custom_cost_trigger = { command_power > 19.99 }
+		custom_cost_text = decision_cost_20_cp
+		fire_only_once = yes
+		days_remove = 14
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision 	TaS_WRW2_offer_status_quo"
+			hidden_effect = {
+				add_command_power = -20
+			}
+		}
+		remove_effect = {
+			MAR = {
+				country_event = { id = MAR_2WRW.5 }
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	TaS_WRW2_offer_russian_cap = {
+		icon = GFX_decision_generic_military_parade
+		visible = {
+			tag = GER
+		}
+		available = {
+			OR = {
+				RUS = {
+					surrender_progress > 0.1
+				}
+				AND = {
+					set_temp_variable = { Y = 60 }
+					TAS_WRW2_ScriptedTrigger_MAR_Devastation_MoreThanY = yes
+					RUS = {
+						surrender_progress > 0.01
+					}
+				}
+			}
+		}
+		custom_cost_trigger = { command_power > 19.99 }
+		custom_cost_text = decision_cost_20_cp
+		fire_only_once = yes
+		days_remove = 14
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision 	TaS_WRW2_offer_status_quo"
+			hidden_effect = {
+				add_command_power = -20
+			}
+		}
+		remove_effect = {
+			MAR = {
+				country_event = { id = MAR_Collapse.1941 }
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	TaS_WRW2_collapse_timer = {
+    	available = {
+			NOT = {	
+				MAR = { has_war_with = GER }
+			}
+    	}
+	
+    	activation = {
+			OR = {
+				AND = {
+					set_temp_variable = { Y = 95 }
+					TAS_WRW2_ScriptedTrigger_GER_Devastation_MoreThanY = yes
+					surrender_progress > 0.1
+				}
+				AND = {
+					set_temp_variable = { Y = 75 }
+					TAS_WRW2_ScriptedTrigger_GER_Devastation_MoreThanY = yes
+					surrender_progress > 0.25
+				}
+				surrender_progress > 0.3
+			}		
+    	}
+	
+    	is_good = no
+	
+    	days_mission_timeout = 7
+	
+		timeout_effect = {
+    		log = "[GetDateText]: [Root.GetName]: TaS_WRW2_devastation_tick mission timer elapsed" 
+			GER = {
+				country_event = { id = TaS_GERcollapse.1 }
+			}
+	   	}
+	
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Mission TaS_WRW2_devastation_tick Completed (Should never happen for this mission, please report if you see this in the log.)"
+    	}
+  	}
+	
+	## RUSSIAN PEACE OPTIONS ##
+	TaS_WRW2_offer_total_capitulation = {
+		icon = GFX_decision_generic_military_parade
+		visible = {
+			check_variable = { WRW_deccat = 3 }
+		}
+		available = {
+			has_war = yes
+			controls_state = 1397
+			controls_state = 1428
+			set_temp_variable = { Y = 80 }
+			TAS_WRW2_ScriptedTrigger_GER_Devastation_MoreThanY = yes
+			
+		}
+		custom_cost_trigger = { command_power > 19.99 }
+		custom_cost_text = decision_cost_20_cp
+		fire_only_once = yes
+		days_remove = 14
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_activate_plan_riga "
+			hidden_effect = {
+				add_command_power = -20
+			}
+		}
+		remove_effect = {
+			country_event = { id = MAR_2WRW.5 }
+		}
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	#Other diplomacy
+	TaS_WRW2_ask_for_ofn_help = {
+		icon = GFX_decision_SAF_ask_OFN_stationing
+		visible = {
+			is_russian_nation = yes
+			check_variable = { WRW_deccat = 3 }
+		}
+		available = {
+			has_war = yes
+		}
+		cost = 100
+		days_remove = 60
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_show_war_plans"
+			#GER = { add_ideas = TaS_2WRW_sanctions }
+		
+		}
+		remove_effect = {
+			TaS_2WRW_spawn_volunteers = yes
+			add_ideas = TaS_2WRW_ofn_advisors
+		}
+	}
+	TaS_WRW2_form_the_internation_legion = {
+		icon = GFX_decision_generic_building_army_base
+		visible = {
+			is_russian_nation = yes
+			check_variable = { WRW_deccat = 3 }
+			NOT = { has_country_flag = legion_fully_formed }
+		}
+		available = {
+			has_war = yes
+		}
+		cost = 100
+		days_remove = 60
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_show_war_plans"
+			#GER = { add_ideas = { TaS_2WRW_sanctions } }
+			#add_ideas = { TaS_2WRW_ofn_advisors }
+		}
+		remove_effect = {
+			random_list = {
+				25 = { #big legion
+					every_country = {
+						limit = { is_in_faction_with = USA }
+						set_temp_variable = { target = MAR }
+						TNO_increase_volunteer_cap_2 = yes
+					}
+					USA = {
+						set_temp_variable = { target = ROOT }
+						TNO_increase_volunteer_cap_4 = yes
+					}
+					GER = {
+						set_temp_variable = { temp_devastation_gained = 3 }
+						TaS_WRW2_change_devastation = yes
+					}
+					set_country_flag = legion_fully_formed
+				}
+				50 = { #small legion
+					custom_effect_tooltip = TaS_2WRW_small_w_tt
+					every_country = {
+						limit = { is_in_faction_with = USA }
+						set_temp_variable = { target = MAR }
+						TNO_increase_volunteer_cap_1 = yes
+					}
+					USA = {
+						set_temp_variable = { target = ROOT }
+						TNO_increase_volunteer_cap_3 = yes
+					}
+					GER = {
+						set_temp_variable = { temp_devastation_gained = 2 }
+						TaS_WRW2_change_devastation = yes
+					}
+					set_country_flag = legion_fully_formed
+				}
+				25 = {
+					custom_effect_tooltip = TaS_2WRW_fail_tt
+					set_temp_variable = { temp_devastation_gained = 2 }
+					TaS_WRW2_change_devastation = yes
+				}
+			}
+		}
+	}
+	
+	TaS_WRW2_ask_for_german_isolation = {
+		icon = GFX_decision_SAF_end_pakt_trade
+		visible = {
+			is_russian_nation = yes
+			check_variable = { WRW_deccat = 3 }
+		}
+		available = {
+			has_war = yes
+		}
+		cost = 100
+		days_remove = 28
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_show_war_plans"
+		}
+		remove_effect = {
+			random_list = {
+				75 = {
+					GER = { add_ideas = TaS_2WRW_sanctions }
+				}
+				25 = {
+				}
+			}
+		}
+	}
+	TaS_WRW2_spread_anti_war_propaganda = {
+		icon = GFX_decision_generic_propaganda
+		cost = 50
+		visible = {
+			is_russian_nation = yes
+			check_variable = { WRW_deccat = 3 }
+		}
+		days_remove = 28
+		days_re_enable = 140
+		remove_effect = {
+			random_list = {
+				67 = {
+					GER = {
+						set_temp_variable = { temp_devastation_gained = 4.0 }
+						TaS_WRW2_change_devastation = yes
+					}
+				}
+				33 = {
+					custom_effect_tooltip = TaS_2WRW_fail_tt
+					GER = {
+						set_temp_variable = { temp_devastation_gained = -5 }
+						TaS_WRW2_change_devastation = yes
+					}
+				}
+			}
+		}
+	}
+
+	#####  H O M E F R O N T   #####
+	
+	RUS_propaganda_campaign = {
+		priority = 80
+		icon = GFX_decision_generic_propaganda
+		cost = 50
+		visible = {
+			is_russian_nation = yes
+			check_variable = { WRW_deccat = 2 }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RUS_2WRW_ongoing_propaganda_campaign_tt
+				NOT = {
+					has_country_flag = RUS_2WRW_propaganda_campaign_running
+				}
+			}
+		}
+		complete_effect = {
+			set_country_flag = RUS_2WRW_propaganda_campaign_running
+		}
+		modifier = {
+			political_power_gain = -0.7
+			war_support_weekly = 0.01
+		}
+		days_remove = 28
+		days_re_enable = 20
+		remove_effect = {
+			clr_country_flag = RUS_2WRW_propaganda_campaign_running
+			
+			set_temp_variable = { temp_devastation_gained = -3 }
+			TaS_WRW2_change_devastation = yes
+		}
+	}
+	
+	RUS_reassure_populace = {
+		priority = 70
+		icon = GFX_decision_generic_political_action
+		cost = 50
+		visible = {
+			is_russian_nation = yes
+			check_variable = { WRW_deccat = 2 }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RUS_2WRW_ongoing_propaganda_campaign_tt
+				NOT = {
+					has_country_flag = RUS_2WRW_propaganda_campaign_running
+				}
+			}
+		}
+		complete_effect = {
+			set_country_flag = RUS_2WRW_propaganda_campaign_running
+		}
+		modifier = {
+			political_power_gain = -0.5
+			stability_weekly = 0.02
+		}
+		days_remove = 28
+		days_re_enable = 70
+		remove_effect = {
+			clr_country_flag = RUS_2WRW_propaganda_campaign_running
+		}
+	}
+	RUS_raise_war_taxes = {
+		priority = 70
+		icon = GFX_decision_raise_tax
+		cost = 50
+		visible = {
+			is_russian_nation = yes
+			check_variable = { WRW_deccat = 2 }
+		}
+		modifier = {
+			income_tax_rate_modifier_factor = 0.1
+			annual_gdp_growth_factor = -0.1
+			political_power_gain = -0.35
+		}
+		days_remove = 240
+		days_re_enable = 120
+	}
+	RUS_lease_private_arms_companies = {
+		priority = 70
+		icon = GFX_decision_factory_generic_blue
+		cost = 50
+		visible = {
+			is_russian_nation = yes
+			check_variable = { WRW_deccat = 2 }
+		}
+		complete_effect = {
+			set_temp_variable = { temp_month_income_spent = 3 }
+			econ_spend_money_once_effect_month_income = yes
+		}
+		modifier = {
+			free_production_units_modifier = 5
+		}
+		days_remove = 180
+		days_re_enable = 60
+	}
+	TaS_WRW2_expand_war_orders = {
+		priority = 70
+		icon = GFX_decision_black_market_infantry_purchase
+		visible = {
+			is_russian_nation = yes
+			check_variable = { WRW_deccat = 2 }
+		}
+		available = {
+			has_war = yes
+		}
+		cost = 150
+		days_remove = 120
+		days_re_enable = 30
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_show_war_plans"
+			set_temp_variable = { temp_devastation_gained = 1.5 }
+			TaS_WRW2_change_devastation = yes
+			set_temp_variable = { temp_econ_spending_amount = 0.5 }
+			econ_spend_money_once_effect_raw_money = yes
+		}
+		remove_effect = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 10000
+					producer = MAR
+				}
+				add_equipment_to_stockpile = {
+					type = anti_tank_equipment
+					amount = 4000
+					producer = MAR
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment
+					amount = 3000
+					producer = MAR
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment
+					amount = 2000
+					producer = MAR
+				}
+				add_equipment_to_stockpile = {
+					type = motorized_equipment
+					amount = 1000
+					producer = MAR
+				}
+				add_equipment_to_stockpile = {
+					type = jet_fighter_equipment_2
+					amount = 200
+					producer = MAR
+				}
+				if = { 
+					limit = { 
+						has_dlc = "No Step Back"
+					}
+					add_equipment_to_stockpile = {
+						type = MBT_chassis
+						amount = 500
+						producer = MAR
+					}
+				}
+				else = {
+					add_equipment_to_stockpile = {
+						type = MBT_equipment
+						amount = 500
+						producer = MAR
+					}
+				}
+		}
+	}
+	RUS_war_bonds = {
+		priority = 60
+		icon = GFX_decision_generic_money
+		cost = 50
+		visible = {
+			is_russian_nation = yes
+			check_variable = { WRW_deccat = 2 }
+		}
+		modifier = {
+			military_expenditures_factor = -0.15
+		}
+		days_remove = 180
+		days_re_enable = 90
+		remove_effect = {
+			set_temp_variable = { inflation_temp = 1.2 }
+			econ_inflation_change = yes
+		}
+	}
+	RUS_general_staff_meeting = {
+		priority = 60
+		icon = GFX_decision_generic_phone_call
+		cost = 75
+		visible = {
+			is_russian_nation = yes
+			check_variable = { WRW_deccat = 2 }
+		}
+		days_remove = 14
+		days_re_enable = 10
+		remove_effect = {
+			add_command_power = 40
+		}
+	}
+	TaS_WRW2_get_rid_of_traitors = {
+		priority = 60
+		icon = GFX_decision_generic_building_prisons
+		visible = {
+			is_russian_nation = yes
+			check_variable = { WRW_deccat = 2 }
+		}
+		available = {
+			has_war = yes
+		}
+		cost = 0
+		days_remove = 28
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_show_war_plans"
+			add_stability = -0.05
+		}
+		modifier = {
+			stability_weekly = -0.01
+			weekly_manpower = -200
+		}
+		remove_effect = {
+			set_temp_variable = { temp_devastation_gain_gained = -0.1 }
+			TaS_WRW2_change_devastation_gain = yes
+			set_temp_variable = { temp_devastation_gained = -5 }
+			TaS_WRW2_change_devastation = yes
+			add_political_power = 200
+			if = {
+				limit = {
+					has_government = despotism
+				}
+				add_popularity = {
+					ideology = despotism
+					popularity = -0.05
+				}
+				
+			}
+			else_if = {
+				limit = {
+					has_government = paternalism
+				}
+				add_popularity = {
+					ideology = paternalism
+					popularity = -0.05
+				}
+			}
+			else_if = {
+				limit = {
+					has_government = socialist
+				}
+				add_popularity = {
+					ideology = socialist
+					popularity = -0.05
+				}
+			}
+			else = {
+				add_popularity = {
+					ideology = fascism
+					popularity = -0.05
+				}
+			}
+		}
+	}
+	RUS_secure_emergency_powers = {
+		priority = 60
+		icon = GFX_decision_generic_political_action
+		cost = 0
+		visible = {
+			is_russian_nation = yes
+			check_variable = { WRW_deccat = 2 }
+			OR = {
+				has_government = paternalism
+				has_government = conservatism
+				has_government = liberalism
+				has_government = progressivism
+			}
+		}
+		modifier = {
+			stability_weekly = -0.025
+		}
+		days_remove = 28
+		fire_only_once = yes
+		remove_effect = {
+			add_political_power = 200
+			if = {
+				limit = {
+					has_government = conservatism
+				}
+				add_popularity = {
+					ideology = conservatism
+					popularity = -0.05
+				}
+				
+			}
+			else_if = {
+				limit = {
+					has_government = liberalism
+				}
+				add_popularity = {
+					ideology = liberalism
+					popularity = -0.05
+				}
+			}
+			else_if = {
+				limit = {
+					has_government = progressivism
+				}
+				add_popularity = {
+					ideology = progressivism
+					popularity = -0.05
+				}
+			}
+			else = {
+				add_popularity = {
+					ideology = paternalism
+					popularity = -0.05
+				}
+			}
+		}
+	}
+}

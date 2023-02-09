@@ -531,6 +531,11 @@ spriteTypes = {
 	}
 
 	SpriteType = {
+		name = "GFX_MAR_Talk_with_magistr"
+		texturefile = "gfx/interface/goals/MAR_talks_with_gayny.dds"
+	}
+	
+	SpriteType = {
 		name = "GFX_MAR_Two_Storoni"
 		texturefile = "gfx/interface/goals/MAR_Two_sides.dds"
 	}
@@ -544,12 +549,30 @@ spriteTypes = {
 		name = "GFX_MAR_Tsarist_Doch"
 		texturefile = "gfx/interface/goals/MAR_Tsars_dauther2.dds"
 	}
-
+	SpriteType = {
+		name = "GFX_MAR_Start_of_the_hunt" 
+		texturefile = "gfx/interface/goals/MAR_start_of_da_hunt.dds"
+	}
+	
 	SpriteType = {
 		name = "GFX_MAR_Weird_Novost"
 		texturefile = "gfx/interface/goals/MAR_Whispers.dds"
 	}
-
+	
+	SpriteType = {
+		name = "GFX_MAR_Kosygin_tsar"
+		texturefile = "gfx/interface/goals/MAR_tsar_kosyga.dds"
+	}
+	
+	SpriteType = {
+		name = "GFX_MAR_Belooz_blue_blood"
+		texturefile = "gfx/interface/goals/MAR_belooz_blood.dds"
+	}
+	SpriteType = { 
+		name = "GFX_MAR_Maria_can_redempt"
+		texturefile = "gfx/interface/goals/MAR_Maria_can_redempt.dds"
+	}
+	
 	SpriteType = {
 		name = "GFX_MAR_Shlezhka_Za"
 		texturefile = "gfx/interface/goals/MAR_Search1.dds"
@@ -615,6 +638,11 @@ spriteTypes = {
 		texturefile = "gfx/interface/goals/MAR_Art_of_war1.dds"
 	}
 
+	SpriteType = {
+		name = "GFX_MAR_arrest_vyt_intructors"
+		texturefile = "gfx/interface/goals/MAR_arrest_vyat_intructors.dds"
+	}
+	
 	SpriteType = {
 		name = "GFX_MAR_Prozvetanie"
 		texturefile = "gfx/interface/goals/MAR_Prosperity1.dds"
@@ -719,80 +747,8 @@ spriteTypes = {
 		texturefile = "gfx/interface/goals/MAR_vrema_nashe.dds"
 	}
 	SpriteType = {
-		name = "GFX_MAR_Voina_1"
-		texturefile = "gfx/interface/goals/MAR_Voina_1.dds"
-	}
-	SpriteType = {
-		name = "GFX_MAR_Voina_2"
-		texturefile = "gfx/interface/goals/MAR_Voina_2.dds"
-	}	
-	SpriteType = {
-		name = "GFX_MAR_Voina_3"
-		texturefile = "gfx/interface/goals/MAR_Voina_3.dds"
-	}	
-	SpriteType = {
-		name = "GFX_MAR_Voina_4"
-		texturefile = "gfx/interface/goals/MAR_Voina_4.dds"
-	}
-	SpriteType = {
-		name = "GFX_MAR_Voina_5"
-		texturefile = "gfx/interface/goals/MAR_Voina_5.dds"
-	}
-	SpriteType = {
-		name = "GFX_MAR_Voina_6"
-		texturefile = "gfx/interface/goals/MAR_Voina_6.dds"
-	}	
-	SpriteType = {
-		name = "GFX_MAR_Voina_7"
-		texturefile = "gfx/interface/goals/MAR_Voina_7.dds"
-	}
-	SpriteType = {
-		name = "GFX_MAR_Voina_8"
-		texturefile = "gfx/interface/goals/MAR_Voina_8.dds"
-	}
-	SpriteType = {
-		name = "GFX_MAR_Voina_9"
-		texturefile = "gfx/interface/goals/MAR_Voina_9.dds"
-	}
-	SpriteType = {
-		name = "GFX_MAR_Voina_10"
-		texturefile = "gfx/interface/goals/MAR_Voina_10.dds"
-	}
-	SpriteType = {
-		name = "GFX_MAR_Voina_11"
-		texturefile = "gfx/interface/goals/MAR_Voina_11.dds"
-	}
-	SpriteType = {
-		name = "GFX_MAR_Voina_12"
-		texturefile = "gfx/interface/goals/MAR_Voina_12.dds"
-	}
-	SpriteType = {
-		name = "GFX_MAR_Voina_13"
-		texturefile = "gfx/interface/goals/MAR_Voina_13.dds"
-	}
-	SpriteType = {
-		name = "GFX_MAR_Voina_14"
-		texturefile = "gfx/interface/goals/MAR_Voina_14.dds"
-	}
-	SpriteType = {
-		name = "GFX_MAR_Voina_15"
-		texturefile = "gfx/interface/goals/MAR_Voina_15.dds"
-	}
-	SpriteType = {
-		name = "GFX_MAR_Voina_16"
-		texturefile = "gfx/interface/goals/MAR_Voina_16.dds"
-	}
-	SpriteType = {
-		name = "GFX_MAR_Voina_17"
-		texturefile = "gfx/interface/goals/MAR_Voina_17.dds"
-	}
-	SpriteType = {
 		name = "GFX_MAR_Voina_18"
 		texturefile = "gfx/interface/goals/MAR_Voina_18.dds"
-	}	
-	SpriteType = {
-		name = "GFX_MAR_Voina_19"
-		texturefile = "gfx/interface/goals/MAR_Voina_19.dds"
 	}	
 	SpriteType = {
 		name = "GFX_MAR_Voina_20"
@@ -1325,5 +1281,35 @@ spriteTypes = {
 	SpriteType = {
 		name = "GFX_MAR_GILe_Sign_it_up"
 		texturefile = "gfx/interface/goals/MAR_GILe_Sign_it_up.dds"
+	}
+	
+	#post-unif belooz
+	SpriteType = {
+		name = "GFX_MAR_Congress_Of_Soviets"
+		texturefile = "gfx/interface/goals/MAR_Congress_Of_Soviets.dds"
+	}
+	SpriteType = {
+		name = "GFX_MAR_Edinaya_And_Nedilimaya"
+		texturefile = "gfx/interface/goals/MAR_Edinaya_And_Nedilimaya.dds"
+	}
+	SpriteType = {
+		name = "GFX_MAR_Partisan_Problem"
+		texturefile = "gfx/interface/goals/MAR_Partisan_Problem.dds"
+	}
+	SpriteType = {
+		name = "GFX_MAR_Diplomatic_Recognition"
+		texturefile = "gfx/interface/goals/MAR_Diplomatic_Recognition.dds"
+	}
+	SpriteType = {
+		name = "GFX_MAR_Amnistiya"
+		texturefile = "gfx/interface/goals/MAR_Amnistiya.dds"
+	}
+	SpriteType = {
+		name = "GFX_MAR_Kareta"
+		texturefile = "gfx/interface/goals/MAR_Kareta.dds"
+	}
+	SpriteType = {
+		name = "GFX_MAR_All_Russian_Mladorossi_Party"
+		texturefile = "gfx/interface/goals/MAR_All_Russian_Mladorossi_Party.dds"
 	}
 }

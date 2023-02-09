@@ -23,7 +23,7 @@ characters = {
 		}
 		country_leader = {
 			desc = "POSTWRW2_Juliana_DESC"
-			ideology = authoritarian_democracy_semi_constitutional_monarchy_subtype
+			ideology = paternalism_semi_constitutional_monarchy_subtype
 			traits = { }
 			expire = "2222.2.2"
 			id = -1
@@ -38,7 +38,7 @@ characters = {
 		}
 		country_leader = {
 			desc = "POSTWRW2_Knud_of_denmark_DESC"
-			ideology = social_democracy_popular_front_subtype
+			ideology = progressivism_popular_front_subtype
 			traits = { }
 			expire = "2222.2.2"
 			id = -1
@@ -53,7 +53,7 @@ characters = {
 		}
 		country_leader = {
 			desc = "POSTWRW2_Otto_von_Habsburg_DESC"
-			ideology = authoritarian_democracy_semi_constitutional_monarchy_subtype
+			ideology = paternalism_semi_constitutional_monarchy_subtype
 			traits = { }
 			expire = "2222.2.2"
 			id = -1
@@ -98,7 +98,7 @@ characters = {
 		}
 		country_leader = {
 			desc = "POSTWRW2_Waldemar_Schmidt_DESC"
-			ideology = conservative_democracy_populist_conservatism_subtype
+			ideology = conservatism_populist_conservatism_subtype
 			traits = { }
 			expire = "2222.2.2"
 			id = -1
@@ -113,7 +113,7 @@ characters = {
 		}
 		country_leader = {
 			desc = "POSTWRW2_Scheel_DESC"
-			ideology = liberal_democracy_national_liberal_subtype
+			ideology = liberalism_national_liberal_subtype
 			traits = { }
 			expire = "2222.2.2"
 			id = -1
@@ -128,7 +128,7 @@ characters = {
 		}
 		country_leader = {
 			desc = "POSTWRW2_Muzyczka_DESC"
-			ideology = authoritarian_democracy_provisional_government_subtype
+			ideology = paternalism_provisional_government_subtype
 			traits = { }
 			expire = "2222.2.2"
 			id = -1
@@ -173,7 +173,7 @@ characters = {
 		}
 		country_leader = {
 			desc = "POSTWRW2_Michal_Kovac_DESC"
-			ideology = conservative_democracy_christian_democracy_subtype
+			ideology = liberal_conservatism_christian_democracy_subtype
 			traits = { }
 			expire = "2222.2.2"
 			id = -1
@@ -263,7 +263,7 @@ characters = {
 		}
 		country_leader = {
 			desc = "POSTWRW2_Otto_Smidt_DESC"
-			ideology = liberal_democracy_national_liberal_subtype
+			ideology = liberalism_national_liberal_subtype
 			traits = { }
 			expire = "2222.2.2"
 			id = -1
@@ -293,7 +293,7 @@ characters = {
 		}
 		country_leader = {
 			desc = "POSTWRW2_Rudi_Dutschke_DESC"
-			ideology = authoritarian_democracy_provisional_government_subtype
+			ideology = paternalism_provisional_government_subtype
 			traits = { }
 			expire = "2222.2.2"
 			id = -1
@@ -353,7 +353,22 @@ characters = {
 		}
 		country_leader = {
 			desc = ""
-			ideology = communist_bukharinism_subtype
+			ideology = communist_bolshevism_subtype
+			traits = { }
+			expire = "2222.2.2"
+			id = -1
+		}
+	}
+	GEX_Arthur_Axmann = {
+		name = GEX_Arthur_Axmann
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/POSTWRW2/Portrait_Arthur_Axmann.dds"
+			}
+		}
+		country_leader = {
+			desc = "POSTWRW2_Arthur_Axmann_DESC"
+			ideology = national_socialism_subtype
 			traits = { }
 			expire = "2222.2.2"
 			id = -1

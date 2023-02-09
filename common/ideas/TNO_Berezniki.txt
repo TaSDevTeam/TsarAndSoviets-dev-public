@@ -17,12 +17,62 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				industrial_capacity_factory = 0.1
-				stability_factor = 0.1
+				stability_factor = -0.05
+				industrial_capacity_factory = 0.05
+				line_change_production_efficiency_factor = -0.15
 			}
 		}
 	}
+	
+	country = {
+		MAR_peoples_syncretisism = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAR_forced_syncretisism"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			available = {
+				always = yes
+			}
 
+			picture = MAR_Forced_Syncretism
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.1
+				industrial_capacity_factory = 0.1
+				line_change_production_efficiency_factor = -0.05
+			}
+		}
+	}
+	
+	country = {
+		MAR_prole_syncretisism = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAR_forced_syncretisism"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			available = {
+				always = yes
+			}
+
+			picture = MAR_Forced_Syncretism
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.05
+				industrial_capacity_factory = 0.1
+				line_change_production_efficiency_factor = 0.15	
+			}
+		}
+	}
 	country = {
 		MAR_regent_without_tsar_1 = {
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAR_regent_without_tsar_1"}
@@ -41,8 +91,8 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				political_power_gain = -0.35
-				stability_factor = -0.3
+				political_power_gain = -0.5
+				stability_factor = -0.15
 			}
 		}
 	}
@@ -65,8 +115,8 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				political_power_gain = -0.25
-				stability_factor = -0.25
+				political_power_gain = -0.35
+				stability_factor = -0.1
 			}
 		}
 	}
@@ -90,13 +140,13 @@ ideas = {
 			
 			modifier = {
 				political_power_gain = -0.15
-				stability_factor = -0.10
+				stability_factor = -0.05
 			}
 		}
 	}
 
 	country = {
-		MAR_oldfashion_army = {
+		MAR_oldfashion_army_1 = {
 			on_add = {log = "[GetDateText]: [Root.GetName]: MAR_oldfashion_army"}
 			allowed = {
 				always = no
@@ -114,13 +164,108 @@ ideas = {
 			
 			modifier = {
 				army_org_factor = -0.2
-				army_morale_factor = -0.2
-				army_attack_factor = -0.1
-				army_defence_factor = -0.1
+				army_attack_factor = -0.15
+				army_defence_factor = -0.15
 			}
 		}
 	}
+	country = {
+		MAR_oldfashion_army_2 = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: MAR_oldfashion_army"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			available = {
+				always = yes
+			}
 
+			picture = MAR_dohlaya_armia
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_org_factor = -0.15
+				army_attack_factor = -0.10
+				army_defence_factor = -0.10
+			}
+		}
+	}
+	country = {
+		MAR_military_instructors_of_vyatka = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: MAR_oldfashion_army"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			available = {
+				always = yes
+			}
+
+			picture = VYT_Officer_Infighting
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_morale_factor = -0.2
+				experience_gain_army_unit_factor = -0.1
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+			}
+		}
+	}
+	country = {
+		MAR_direct_influence_of_vyatka = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: MAR_oldfashion_army"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			available = {
+				always = yes
+			}
+
+			picture = VYT_Officer_Infighting
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_morale_factor = -0.25
+				experience_gain_army_unit_factor = -0.15
+				army_attack_factor = -0.05
+				army_defence_factor = -0.05
+			}
+		}
+	}
+	country = {
+		MAR_idea_destroyed_souvernity  = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAR_def_and_attack"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			available = {
+				always = yes
+			}
+
+			picture = MAR_kill_AB
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_gain = -0.15
+				stability_factor = -0.05
+			}
+		}
+	}
 	country = {
 		MAR_renewed_army = {
 			on_add = {log = "[GetDateText]: [Root.GetName]: MAR_renewed_army"}
@@ -194,7 +339,33 @@ ideas = {
 			}
 		}
 	}
+	
+	country = {
+		MAR_okhranka_leftovers = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAR_rabochie_ochen_vood "}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			available = {
+				always = yes
+			}
 
+			picture = KUR_down_with_bandits
+			
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.15
+				despotism_drift = -0.04
+				production_speed_buildings_factor = -0.05
+				training_time_army_factor = 0.05
+			}
+		}
+	}
+	
 	country = {
 		MAR_rabochie_ochen_vood = {
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAR_rabochie_ochen_vood "}
@@ -213,7 +384,54 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				industrial_capacity_factory = 0.1
+				industrial_capacity_factory = 0.15
+			}
+		}
+	}
+	country = {
+		MAR_civil_economy = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAR_rabochie_ochen_vood "}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			available = {
+				always = yes
+			}
+
+			picture = MAR_help_workers
+			
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_use_modifier = -0.25
+				misc_income_modifier = 0.5
+			}
+		}
+	}
+	country = {
+		MAR_war_economy = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAR_rabochie_ochen_vood "}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			available = {
+				always = yes
+			}
+
+			picture = MAR_help_workers
+			
+			removal_cost = -1
+			
+			modifier = {
+				industrial_capacity_factory = 0.20
+				stability_weekly = -0.005
+				recruitable_population = -0.07
 			}
 		}
 	}
@@ -237,6 +455,56 @@ ideas = {
 			modifier = {
 				stability_factor = -0.1
 				consumer_goods_factor = -0.1
+			}
+		}
+	}
+	country = {
+		MAR_souverinity_fail_1 = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: MAR_souverinity_fail_1"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			available = {
+				always = yes
+			}
+
+			picture = MAR_Gil_Collapsed_dream
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_morale_factor = -0.1
+				experience_gain_army_unit_factor = -0.1
+				army_attack_factor = -0.05
+				army_defence_factor = -0.05
+			}
+		}
+	}
+	country = {
+		MAR_souverinity_fail_2 = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: MAR_souverinity_fail_1"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			available = {
+				always = yes
+			}
+
+			picture = MAR_Gil_Collapsed_dream
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_morale_factor = -0.2
+				experience_gain_army_unit_factor = -0.1
+				army_attack_factor = -0.1
+				army_defence_factor = -0.1
 			}
 		}
 	}
@@ -355,7 +623,7 @@ ideas = {
 		}
 	}			
 	country = {
-	MAR_volunteer_mladojopa_for = {
+		MAR_volunteer_mladojopa_for = {
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAR_volunteer_mladojopa"}
 			allowed = {
 				always = no
@@ -553,31 +821,6 @@ ideas = {
 		}
 	}	
 	country = {
-		MAR_idea_destroyed_souvernity = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAR_idea_destroyed_souvernity"}
-			allowed = {
-				always = no
-			}
-			allowed_civil_war = {
-				always = no
-			}
-			available = {
-				always = yes
-			}
-
-			picture = MAR_Forced_Syncretism
-			
-			removal_cost = -1
-			
-			modifier = {
-				political_power_gain = -0.05
-				stability_factor = -0.05
-				authoritarian_democracy_drift = 0.05
-			}
-		}
-	}
-	
-	country = {
 		MAR_Moscowien_trolling = {
 			on_add = {log = "[GetDateText]: [Root.GetName]: MAR_oldfashion_army"}
 			allowed = {
@@ -645,7 +888,7 @@ ideas = {
 			
 			modifier = {
 				political_power_gain = -1
-				ideology_drift_defence = -0.3
+				stability_factor = -0.2
 			}
 		}
 	}
@@ -995,61 +1238,6 @@ ideas = {
 		}
 	}
 	country = {
-		MAR_KOR_Bombing_runs = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAR_KOR_Bombing_runs"}
-			allowed = {
-				always = no
-			}
-			allowed_civil_war = {
-				always = yes
-			}
-			removal_cost = -1
-			picture = RUS_luftwaffe_bombings
-			modifier = {
-				stability_factor = -0.3
-				army_attack_factor = -0.1
-				army_defence_factor = -0.1
-				
-			}
-		}
-	}
-	country = {
-		TaS_war_partisans = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAR_MCW_partisans"}
-			allowed = {
-				always = no
-			}
-			allowed_civil_war = {
-				always = yes
-			}
-			removal_cost = -1
-			picture = SRT_Partisan_Alliance
-			modifier = {
-				stability_factor = -0.3
-				army_attack_factor = -0.15
-				army_defence_factor = -0.15
-				
-			}
-		}
-	}
-	country = {
-		TaS_KOR_advisors = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea TaS_2WRW_ofn_advisors"}
-			allowed = {
-				always = no
-			}
-			allowed_civil_war = {
-				always = yes
-			}
-			removal_cost = -1
-			picture = GBE_militia_based_army
-			modifier = {
-				army_attack_factor = 0.07
-				army_defence_factor = 0.07
-			}
-		}
-	}
-	country = {
 		MAR_go_oper = {
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAR_MCW_partisans"}
 			allowed = {
@@ -1301,8 +1489,8 @@ ideas = {
 			picture = generic_economic_meltdown 
 			modifier = {
 				stability_factor = -0.1
-				production_units_to_GDP_ratio_modifier = 0.15
-				industrial_capacity_factory -0.1
+				production_units_to_GDP_ratio_modifier = -0.2
+				industrial_capacity_factory -0.2
 			}
 		}
 	}
@@ -1359,27 +1547,32 @@ ideas = {
 		}
 	}
 	country = {
-		TaS_WSB_kgb_agents = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAR_MCW_partisans"}
+		MAR_WRS_mladorossi_propoganda = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: MAR_WRS_mladorossi_propoganda"}
 			allowed = {
 				always = no
 			}
 			allowed_civil_war = {
+				always = no
+			}
+			available = {
 				always = yes
 			}
-			removal_cost = -1
+
 			picture = MAR_dohlaya_armia
+			
+			removal_cost = -1
+			
 			modifier = {
-				stability_factor = -0.1
-				war_support_factor = -0.1
-				army_morale_factor = -0.05
+				army_morale_factor = -0.1
+				army_attack_factor = -0.05
 				army_defence_factor = -0.05
 			}
 		}
 	}
 	country = {
-		MAR_global_coverage = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAR_global_coverage"}
+		MAR_military_administration = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAR_military_administration"}
 			allowed = {
 				always = no
 			}
@@ -1387,27 +1580,31 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAR_dohlaya_armia
+			picture = MAR_military_administration
 			modifier = {
-				political_power_gain = 0.3
-				war_support_factor = 0.1
+				stability_factor = -0.05
+				political_power_gain = -0.25
+				despotism_drift = 0.01
 			}
 		}
 	}
 	country = {
-		MAR_kaz_legions = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAR_kaz_legions"}
+		TaS_RUS_shattered_ambitions = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea RUS_shattered_ambitions"}
 			allowed = {
 				always = no
 			}
+			#cancel = { has_country_flag = RUS_cancel_all_ideas }
 			allowed_civil_war = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAR_kaz_legions
+			picture = MLY_Dismal_Infrastructure
 			modifier = {
-				army_attack_factor = 0.05
-				conscription = -0.02
+				conscription_factor = -0.4
+				army_org_factor = -0.25
+				political_power_factor = -0.3
+				stability_factor = -0.35
 			}
 		}
 	}

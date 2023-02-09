@@ -69,7 +69,7 @@ shared_focus = {
 		focus = MAR_Solzh_speech
 	}
 	available = {
-		has_government = authoritarian_democracy
+		has_government = paternalism
 	}
 	select_effect = {
 		hidden_effect = {
@@ -89,7 +89,7 @@ shared_focus = {
 	id = MAR_GILc_back_in_saddle
 	icon = GFX_MAR_GILc_back_in_saddle
 	available = {
-		always = false
+		always = no
 	}
 	cost = 10
 	x = 4
@@ -424,10 +424,10 @@ shared_focus = {
 				limit = {
 					OR = {
 						KOM = {
-							has_government = social_democracy
-							has_government = liberal_democracy
-							has_government = conservative_democracy
-							has_government = authoritarian_democracy
+							has_government = progressivism
+							has_government = liberalism
+							has_government = conservatism
+							has_government = paternalism
 						}
 					}
 				}
@@ -1924,7 +1924,7 @@ shared_focus = {
 
 }
 shared_focus = {
-	id = MAR_GILS_Russia_is everythigh
+	id = MAR_GILS_Russia_is_everythigh
 	icon = GFX_goal_unknown
 	cost = 10
 	prerequisite = {
@@ -1946,7 +1946,7 @@ shared_focus = {
 	icon = GFX_goal_unknown
 	cost = 10
 	prerequisite = {
-		focus = MAR_GILS_Russia_is everythigh
+		focus = MAR_GILS_Russia_is_everythigh
 	}
 	x = 10
 	y = 5
@@ -1957,7 +1957,7 @@ shared_focus = {
 	icon = GFX_goal_unknown
 	cost = 10
 	prerequisite = {
-		focus = MAR_GILS_Russia_is everythigh
+		focus = MAR_GILS_Russia_is_everythigh
 	}
 	x = 2
 	y = 5
@@ -2001,7 +2001,7 @@ shared_focus = {
 	icon = GFX_goal_unknown
 	cost = 10
 	prerequisite = {
-		focus = MAR_GILS_Russia_is everythigh
+		focus = MAR_GILS_Russia_is_everythigh
 	}
 	x = 6
 	y = 5

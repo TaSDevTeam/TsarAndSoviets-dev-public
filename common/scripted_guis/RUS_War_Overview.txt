@@ -1,0 +1,48 @@
+scripted_gui = {
+	war_overview = {
+		context_type = decision_category
+		parent_window_token = decisions_category
+		window_name = "war_overview"
+		
+		ai_enabled = {
+			has_global_flag = TaS_2WRW_started
+		}
+		
+		visible = {
+			OR = {
+				is_debug = yes
+				has_global_flag = TaS_2WRW_started
+			}
+		}
+		
+		properties = {
+			exhaustion_main_bar_germany = {
+				frame = GER.WRW2_devastation
+			}
+			exhaustion_main_bar_russia = {
+				frame = MAR.WRW2_devastation
+			}
+		}
+		
+		triggers = {
+			exhaustion_main_bar_russia_visible = {
+				check_variable = { MAR.WRW2_devastation > 0.9 }
+			}
+			exhaustion_main_bar_germany_visible = {
+				check_variable = { GER.WRW2_devastation > 0.9 }
+			}
+		}
+		
+		effects = {
+			frontlines_button_click = {
+				set_variable = { WRW_deccat = 1 }
+			}
+			homefront_button_click = {
+				set_variable = { WRW_deccat = 2 }
+			}
+			diplomacy_button_click = {
+				set_variable = { WRW_deccat = 3 }
+			}
+		}
+	}
+}

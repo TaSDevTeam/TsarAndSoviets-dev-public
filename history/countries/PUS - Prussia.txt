@@ -10,40 +10,43 @@ add_ideas = {
 	TaS_Post2WRW_avg_denazification
 	TaS_Post2WRW_PUS_russian_colony
 	TaS_Post2WRW_PUS_ethnic_problems
-	##POLITICAL LAWS##
-	tno_political_parties_controlled_opposition
-	tno_religious_rights_pluralism
-	tno_trade_unions_state_controlled
+	#economic#
+	tno_trade_laws_limited_exports
+	tno_income_taxation_high_income_weighted
+	tno_minimum_wage_acceptable_minimum
+	tno_max_workhours_10_hour_work_day
+	tno_pensions_low_pensions
+	tno_unemployment_low_subsidies
+	#social#
+	tno_health_care_low_income_protections
+	tno_education_public_education
+	tno_penal_system_harsh_penal_code
+	tno_gender_rights_traditional_roles
+	tno_security_regulated_police
+	tno_regulations_token_regulations
+	#political#
+	tno_political_parties_one_party_state
+	tno_religious_rights_state_religion
+	tno_trade_unions_illegal
 	tno_immigration_quota_immigration
-	tno_slavery_outlawed
+	tno_slavery_penal_labor
 	tno_public_meetings_regulated
 	tno_press_rights_censored_press
 	tno_vote_franchise_elite_voting
-	tno_refugees_skilled
-	##MILITARY LAWS###
-	tno_conscription_one_year_draft
-	tno_women_noncombat_only
-	tno_military_supervision_military_policing
+	#military#
+	tno_conscription_broadened_conscription
+	tno_military_supervision_rules_of_engagement
 	tno_training_basic_training
-	tno_racial_integration_none
-	tno_draft_exemptions_educational_deferment
-	##SOCIAL LAWS##
-	tno_safety_minimal_regulations
-	tno_health_care_support_for_emergencies
-	tno_pollution_no_controls
-	tno_education_public_education
-	tno_penal_system_penal_slavery
+	tno_draft_exemptions_none
+	#misc#
+	tno_child_labor_illegal
+	tno_safety_limited_regulations
+	tno_pollution_few_regulations
 	tno_lgbt_rights_lgbt_outlawed
 	tno_minorities_institutional_discrimination
-	tno_security_police
-	##ECONOMIC LAWS##
-	tno_trade_laws_limited_exports
-	tno_income_taxation_flat_taxes
-	tno_minimum_wage_trinket_minimum_wage
-	tno_max_workhours_12_hour_work_day
-	tno_child_labor_illegal
-	tno_pensions_trinket_pensions
-	tno_unemployment_no_subsidies 
+	tno_refugees_skilled
+	tno_women_banned
+	tno_racial_integration_integrated_military
 	##SOCIETAL DEVELOPMENT##
 	tno_academic_base_primary_schooling
 	tno_research_facilities_modern
@@ -55,7 +58,7 @@ add_ideas = {
 }
 
 set_politics = {
-	ruling_party = liberal_democracy
+	ruling_party = liberalism
 	elections_allowed = no
 	last_election = "1935.12.17"
 	election_frequency = 48
@@ -64,19 +67,19 @@ set_popularities = {
 	communist = 0
 	ultranationalism = 0
 	socialist = 0
-	social_democracy = 0
-	liberal_democracy = 50
-	conservative_democracy = 0
-	authoritarian_democracy = 0
+	progressivism = 0
+	liberalism = 50
+	conservatism = 0
+	paternalism = 0
 	despotism = 5
 	fascism = 0
 	national_socialism = 45
 	esoteric_nazism = 0
 }
 set_party_name = { 
-	ideology = liberal_democracy 
-	long_name = PUS_liberal_democracy_party_Long
-	name = PUS_liberal_democracy_party
+	ideology = liberalism 
+	long_name = PUS_liberalism_party_Long
+	name = PUS_liberalism_party
 }
 set_party_name = { 
 	ideology = despotism 

@@ -1,7 +1,7 @@
 shared_focus = {
 		id = Cherni_nadel
 		icon = GFX_ZLB_Cherni_nadel
-		cost = 2,00
+		cost = 2.00
 		x = 8
 		y = 0
 		completion_reward = {
@@ -14,17 +14,17 @@ shared_focus = {
 shared_focus = {
 		id = Vselay_strax
 		icon = GFX_ZLB_Vselay_strax
-		cost = 2,00
+		cost = 2.00
 		prerequisite = {
 			focus = Cherni_nadel
 		}
 		x = 6
 		y = 1
 		completion_reward = {
-		RDC = {
-		    add_war_support = -0.2
-			add_stability = -0.2
-		}
+		#RDC = {
+		#    add_war_support = -0.2
+		#	add_stability = -0.2
+		#}
 		country_event = {
 			id = ZLB_Zolin.2 days = 0
 		}
@@ -33,7 +33,7 @@ shared_focus = {
 shared_focus = {
 		id = Terror_naselenia
 		icon = GFX_ZLB_Terror_naselenia
-		cost = 2,00
+		cost = 2.00
 		prerequisite = {
 			focus = Vselay_strax
 		}
@@ -51,7 +51,7 @@ shared_focus = {
 shared_focus = {
 		id = Crovavie_rityal
 		icon = GFX_ZLB_Crovavie_rityal
-		cost = 2,00
+		cost = 2.00
 		prerequisite = {
 			focus = Vselay_strax
 		}
@@ -61,30 +61,30 @@ shared_focus = {
 		country_event = {
 			id = ZLB_Zolin.4 days = 0
 		}
-        BBB = {
-			add_war_support = -0.2
-		}
-		FRP = {
-			add_war_support = -0.2
-		}
-		MOS = {
-			add_war_support = -0.2
-		}
-		OKB = {
-			add_war_support = -0.2
-		}
-		PAU = {
-			add_war_support = -0.2
-		}
-		LAK = {
-			add_war_support = -0.2
-		}
+        #BBB = {
+		#	add_war_support = -0.2
+		#}
+		#FRP = {
+		#	add_war_support = -0.2
+		#}
+		#MOS = {
+		#	add_war_support = -0.2
+		#}
+		#OKB = {
+		#	add_war_support = -0.2
+		#}
+		#PAU = {
+		#	add_war_support = -0.2
+		#}
+		#LAK = {
+		#	add_war_support = -0.2
+		#}
 	}
 }
 shared_focus = {
 		id = Oformit_cult
 		icon = GFX_ZLB_Oformit_cult
-		cost = 2,00
+		cost = 2.00
 		prerequisite = {
 			focus = Terror_naselenia
 		}
@@ -105,7 +105,7 @@ shared_focus = {
 shared_focus = {
 		id = Slyshat_molitva
 		icon = GFX_ZLB_Slyshat_molitva
-		cost = 2,00
+		cost = 2.00
 		prerequisite = {
 			focus = Terror_naselenia
 		}
@@ -123,7 +123,7 @@ shared_focus = {
 shared_focus = {
 		id = Temie_crewenia
 		icon = GFX_ZLB_Temie_crewenia
-		cost = 2,00
+		cost = 2.00
 		prerequisite = {
 			focus = Oformit_cult
 		}
@@ -142,7 +142,7 @@ shared_focus = {
 shared_focus = {
 		id = Stoit_molitsa
 		icon = GFX_ZLB_Stoit_molitsa
-		cost = 2,00
+		cost = 2.00
 		prerequisite = {
 			focus = Slyshat_molitva
 		}
@@ -157,7 +157,7 @@ shared_focus = {
 shared_focus = {
 		id = Zov_antihrista
 		icon = GFX_ZLB_Zov_antihrista
-		cost = 2,00
+		cost = 2.00
 		prerequisite = {
 			focus = Temie_crewenia
 		}
@@ -181,7 +181,7 @@ shared_focus = {
 shared_focus = {
 		id = Shech_zemla
 		icon = GFX_ZLB_Shech_zemla
-		cost = 2,00
+		cost = 2.00
 		prerequisite = {
 			focus = Zov_antihrista
 		}
@@ -191,30 +191,30 @@ shared_focus = {
 		country_event = {
 			id = ZLB_Zolin.10 days = 0
 		}
-		BBB = {
-			add_ideas = ZLB_shed_zeml
-		}
-		FRP = {
-			add_ideas = ZLB_shed_zeml
-		}
-		MOS = {
-			add_ideas = ZLB_shed_zeml
-		}
-		OKB = {
-			add_ideas = ZLB_shed_zeml
-		}
-		PAU = {
-			add_ideas = ZLB_shed_zeml
-		}
-		LAK = {
-			add_ideas = ZLB_shed_zeml
-		}
+		#BBB = {
+		#	add_ideas = ZLB_shed_zeml
+		#}
+		#FRP = {
+		#	add_ideas = ZLB_shed_zeml
+		#}
+		#MOS = {
+		#	add_ideas = ZLB_shed_zeml
+		#}
+		#OKB = {
+		#	add_ideas = ZLB_shed_zeml
+		#}
+		#PAU = {
+		#	add_ideas = ZLB_shed_zeml
+		#}
+		#LAK = {
+		#	add_ideas = ZLB_shed_zeml
+		#}
 	}
 }
 shared_focus = {
 		id = Shssterni_voini
 		icon = GFX_ZLB_Shssterni_voini
-		cost = 2,00
+		cost = 2.00
 		prerequisite = {
 			focus = Zov_antihrista
 		}
@@ -232,7 +232,7 @@ shared_focus = {
 shared_focus = {
 		id = Crovavie_reki
 		icon = GFX_goal_unknown
-		cost = 2,00
+		cost = 2.00
 		prerequisite = {
 			focus = Shssterni_voini
 		}
@@ -247,7 +247,7 @@ shared_focus = {
 shared_focus = {
 		id = Radi_bogadtvva
 		icon = GFX_ZLB_radi_bogadtvva
-		cost = 2,00
+		cost = 2.00
 		prerequisite = {
 			focus = Cherni_nadel
 		}
@@ -262,7 +262,7 @@ shared_focus = {
 shared_focus = {
 		id = Grabit_monastiri
 		icon = GFX_ZLB_Grabit_monastiri
-		cost = 2,00
+		cost = 2.00
 		prerequisite = {
 			focus = Radi_bogadtvva
 		}
@@ -289,7 +289,7 @@ shared_focus = {
 shared_focus = {
 		id = Desanita_cervka
 		icon = GFX_ZLB_Desanita_cervka
-		cost = 10,00
+		cost = 10.00
 		prerequisite = {
 			focus = Radi_bogadtvva
 		}
@@ -304,7 +304,7 @@ shared_focus = {
 shared_focus = {
 		id = Rasprava_nasoglasnix
 		icon = GFX_ZLB_Rasprava_nasoglasnix
-		cost = 10,00
+		cost = 10.00
 		prerequisite = {
 			focus = Grabit_monastiri
 		}
@@ -324,7 +324,7 @@ shared_focus = {
 shared_focus = {
 		id = Porabotit_plennix
 		icon = GFX_ZLB_Porabotit_plennix
-		cost = 10,00
+		cost = 10.00
 		prerequisite = {
 			focus = Rasprava_nasoglasnix
 		}
@@ -340,7 +340,7 @@ shared_focus = {
 shared_focus = {
 		id = Kvoti_zarno
 		icon = GFX_ZLB_Kvoti_zarno
-		cost = 10,00
+		cost = 10.00
 		prerequisite = {
 			focus = Grabit_monastiri
 		}
@@ -354,7 +354,7 @@ shared_focus = {
 shared_focus = {
 		id = Rekvizirovat_oregie
 		icon = GFX_ZLB_Rekvizirovat_oregie
-		cost = 10,00
+		cost = 10.00
 		prerequisite = {
 			focus = Kvoti_zarno
 		}
@@ -365,7 +365,7 @@ shared_focus = {
 shared_focus = {
 		id = Mesto_evropi
 		icon = GFX_goal_unknown
-		cost = 10,00
+		cost = 10.00
 		prerequisite = {
 			focus = Porabotit_plennix
 		}
@@ -382,7 +382,7 @@ shared_focus = {
 shared_focus = {
 		id = Oregie_armaggedona
 		icon = GFX_goal_unknown
-		cost = 10,00
+		cost = 10.00
 		prerequisite = {
 			focus = Shech_zemla
 		}
@@ -393,7 +393,7 @@ shared_focus = {
 shared_focus = {
 		id = Ono_grydet
 		icon = GFX_goal_unknown
-		cost = 10,00
+		cost = 10.00
 		prerequisite = {
 			focus = Oregie_armaggedona
 		}
@@ -407,7 +407,7 @@ shared_focus = {
 shared_focus = {
 		id = Vestnok_roka
 		icon = GFX_goal_unknown
-		cost = 10,00
+		cost = 10.00
 		prerequisite = {
 			focus = Ono_grydet
 		}
@@ -418,7 +418,7 @@ shared_focus = {
 shared_focus = {
 		id = Absolut_podchinenit
 		icon = GFX_goal_unknown
-		cost = 10,00
+		cost = 10.00
 		prerequisite = {
 			focus = Vestnok_roka
 		}
@@ -429,7 +429,7 @@ shared_focus = {
 shared_focus = {
 		id = Ebit_bezboleznix
 		icon = GFX_goal_unknown
-		cost = 10,00
+		cost = 10.00
 		prerequisite = {
 			focus = Ono_grydet
 		}
@@ -440,7 +440,7 @@ shared_focus = {
 shared_focus = {
 		id = Net_grazdanskix
 		icon = GFX_goal_unknown
-		cost = 10,00
+		cost = 10.00
 		prerequisite = {
 			focus = Ebit_bezboleznix
 		}
@@ -451,7 +451,7 @@ shared_focus = {
 shared_focus = {
 		id = Mir
 		icon = GFX_ZLB_Mir
-		cost = 10,00
+		cost = 10.00
 		prerequisite = {
 			focus = Mesto_evropi
 		}
@@ -462,7 +462,7 @@ shared_focus = {
 shared_focus = {
 		id = Oslab_hvatku
 		icon = GFX_ZLB_Oslab_hvatku
-		cost = 10,00
+		cost = 10.00
 		prerequisite = {
 			focus = Mesto_evropi
 		}
@@ -473,7 +473,7 @@ shared_focus = {
 shared_focus = {
 		id = Sssora
 		icon = GFX_ZLB_Sssora
-		cost = 10,00
+		cost = 10.00
 		prerequisite = {
 			focus = Mir
 		}
@@ -484,7 +484,7 @@ shared_focus = {
 shared_focus = {
 		id = Sbyzi
 		icon = GFX_ZLB_Sbyzi
-		cost = 10,00
+		cost = 10.00
 		prerequisite = {
 			focus = Oslab_hvatku
 		}
@@ -495,7 +495,7 @@ shared_focus = {
 shared_focus = {
 		id = Roskoz_hisn
 		icon = GFX_goal_unknown
-		cost = 10,00
+		cost = 10.00
 		prerequisite = {
 			focus = Sssora
 		}
@@ -509,7 +509,7 @@ shared_focus = {
 shared_focus = {
 		id = Nabrat_ludei
 		icon = GFX_goal_unknown
-		cost = 10,00
+		cost = 10.00
 		prerequisite = {
 			focus = Roskoz_hisn
 		}
@@ -520,7 +520,7 @@ shared_focus = {
 shared_focus = {
 		id = Dobit_cult
 		icon = GFX_goal_unknown
-		cost = 10,00
+		cost = 10.00
 		prerequisite = {
 			focus = Roskoz_hisn
 		}
@@ -531,7 +531,7 @@ shared_focus = {
 shared_focus = {
 		id = Sostavit_carty
 		icon = GFX_goal_unknown
-		cost = 10,00
+		cost = 10.00
 		prerequisite = {
 			focus = Nabrat_ludei
 		}
@@ -542,7 +542,7 @@ shared_focus = {
 shared_focus = {
 		id = Podgobit_pober
 		icon = GFX_goal_unknown
-		cost = 10,00
+		cost = 10.00
 		prerequisite = {
 			focus = Dobit_cult
 		}

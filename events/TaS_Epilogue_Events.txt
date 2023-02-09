@@ -88,7 +88,7 @@ country_event = { # first rebels
 			}
 			if = {
 				limit = { 
-					FRA = { in_faction_with = GER }
+					FRA = { is_in_faction_with = GER }
 				}
 				FRA = {
 					leave_faction = yes
@@ -98,7 +98,7 @@ country_event = { # first rebels
 			}
 			if = {
 				limit = { 
-					FRA = { in_faction_with = GER }
+					FRA = { is_in_faction_with = GER }
 					GLC = { exists = yes }
 				}
 				GLC = {
@@ -120,8 +120,8 @@ country_event = { # first rebels
 			if = {
 				limit = { 
 					OR = {
-					FRA = { in_faction_with = USA }
-					FRA = { in_faction_with = JAP }
+					FRA = { is_in_faction_with = USA }
+					FRA = { is_in_faction_with = JAP }
 					}
 					GLC = { exists = yes }
 				}
@@ -223,131 +223,15 @@ country_event = { # rip pro-german balkans and several colonies
 				transfer_state = 152
 				transfer_state = 54
 			}
-			if = {
-				limit = { NOR = { in_faction_with = GER } }
-				NOR = {
-					white_peace = MAR
-				}
-				GNR = {
-					annex_country = {
-						target = NOR
-						transfer_troops = yes
-					}
-				}
-			}
-			if = {
+			every_country = {
 				limit = {
-					BRT = {
-						is_in_faction_with = GER
-					}
+					is_in_faction_with = GER
+					NOT = { is_puppet_of = GER }
 				}
-				BRT = {
-					white_peace = MAR
-					leave_faction = yes
-					econ_leave_sphere = yes
-				}
-			}
-			if = {
-				limit = {
-					IRE = {
-						is_in_faction_with = GER
-					}
-				}
-				IRE = {
-					white_peace = MAR
-					leave_faction = yes
-					econ_leave_sphere = yes
-				}
-			}
-			if = {
-				limit = {
-					ULS = {
-						is_in_faction_with = GER
-					}
-				}
-				ULS = {
-					white_peace = MAR
-					leave_faction = yes
-					econ_leave_sphere = yes
-				}
-			}
-			if = {
-				limit = {
-					PER = {
-						is_in_faction_with = GER
-					}
-				}
-				PER = { 
-					white_peace = MAR
-					leave_faction = yes
-					econ_leave_sphere = yes
-				}
-			}
-			if = {
-				limit = {
-					HUN = {
-						is_in_faction_with = GER
-					}
-				}
-				HUN = {
-					white_peace = MAR
-					leave_faction = yes
-					econ_leave_sphere = yes
-				}
-				GSV = {
-					transfer_state = 73
-					transfer_state = 664
-				}
-			}
-			if = {
-				limit = {
-					ROM = {
-						is_in_faction_with = GER
-					}
-				}
-				ROM = {
-					white_peace = MAR
-					leave_faction = yes
-					econ_leave_sphere = yes
-				}
-				MAR = {
-					transfer_state = 198
-					transfer_state = 192
-					transfer_state = 1285
-					transfer_state = 78
-					transfer_state = 1286
-				}
-			}
-			if = {
-				limit = {
-					SER  = {
-						is_in_faction_with = GER
-					}
-				}
-				SER = {
-					white_peace = MAR
-					leave_faction = yes
-					econ_leave_sphere = yes
-				}
-			}
-			if = {
-				limit = {
-					BUL = {
-						is_in_faction_with = GER
-					}
-				}
-				BUL = {
-					white_peace = MAR
-					leave_faction = yes
-					econ_leave_sphere = yes
-				}
+				white_peace = MAR
+				leave_faction = yes
+				econ_leave_sphere = yes
 			}		
-			SWE = {
-				econ_leave_sphere = yes
-			}
-			FIN = {
-				econ_leave_sphere = yes
-			}
 			ZZZ = {
 				country_event = { id = TaS_GERcollapse.5 days = 2 }
 			}
@@ -391,6 +275,7 @@ country_event = { # rebbbelsus
 				}
 				transfer_state = 774
 			}
+			
 			ZZZ = {
 				country_event = { id = TaS_GERcollapse.6 days = 3 }
 			}
@@ -446,6 +331,13 @@ country_event = { # f
 		hidden_effect = {
 			TaS_WRW2_peace_Central_European_Restauration_new = yes
 			TaS_WRW2_total_capitulation = yes
+			hidden_effect = {
+				every_country  = {
+					news_event = {
+						id = berez_world_news.5
+					}
+				}
+			}
 		}
 	}
 }
@@ -468,6 +360,10 @@ country_event = {#GUOT New order
 		hidden_effect = {
 			add_political_power = 50
 			country_event = { id = TaS_GEREpilogue.2 days = 14}
+			swap_ideas = {
+				remove_idea = TaS_Post2WRW_BRL_nazi_heartland_1
+				add_idea = TaS_Post2WRW_BRL_nazi_heartland_2
+			}
 		}
 	}
 }
@@ -488,6 +384,10 @@ country_event = {#GUOT big building is kil
 		hidden_effect = {
 			country_event = { id = TaS_GEREpilogue.3 days = 7}
 			64 = { set_state_name = STATE_64_rus }
+			swap_ideas = {
+				remove_idea = TaS_Post2WRW_BRL_nazi_heartland_2
+				add_idea = TaS_Post2WRW_BRL_nazi_heartland_3
+			}
 			set_province_name = { id = 6521 name = VICTORY_POINTS_6521_rus }
 			#set_entity_position = {  #idk how it should work it crashes atm
 			#	name = "big_building_in_neu_berlin"
@@ -518,6 +418,10 @@ country_event = {#GUOT denazify forever
 					add_state_core = PREV
 				}
 				add_to_variable = { global.postgervisits = 1 }
+			}
+			swap_ideas = {
+				remove_idea = TaS_Post2WRW_BRL_nazi_heartland_3
+				add_idea = TaS_Post2WRW_BRL_nazi_heartland_4
 			}
 		}
 	}
@@ -618,7 +522,7 @@ country_event = {#Czechia nation
 		name = TaS_GEREpilogue.8.a
 		ai_chance = { factor = 1 }	
 		custom_effect_tooltip = TaS_cznation_tt
-		9 = { add_manpower = -15000 }
+		9 = { add_manpower = -17912 }
 		hidden_effect = {		
 			country_event = { id = TaS_GEREpilogue.9 days = 7}
 			9 = { set_variable = { nationality = 500 } }
@@ -639,10 +543,10 @@ country_event = {#Czechia night
 		name = TaS_GEREpilogue.9.a
 		ai_chance = { factor = 1 }	
 		custom_effect_tooltip = TaS_cznight_tt
-		75 = { add_manpower = -15000 }
-		9 = { add_manpower = -10000 }
-		74 = { add_manpower = -7500 }
-		69 = { add_manpower = -3000 }
+		75 = { add_manpower = -15312 }
+		9 = { add_manpower = -11232 }
+		74 = { add_manpower = -7874 }
+		69 = { add_manpower = -3663 }
 		hidden_effect = {		
 			country_event = { id = TaS_GEREpilogue.10 days = 7}
 			75 = { set_variable = { nationality = 500 } }
@@ -662,7 +566,7 @@ country_event = {#Czechia anti-munich
 		name = TaS_GEREpilogue.10.a
 		ai_chance = { factor = 1 }	
 		custom_effect_tooltip = TaS_czmunich_tt
-		69 = { add_manpower = -6000 }
+		69 = { add_manpower = -6476 }
 		hidden_effect = {
 			country_event = { id = TaS_GEREpilogue.11 days = 7}
 			69 = { set_demilitarized_zone = yes	}
@@ -682,7 +586,7 @@ country_event = {#Czechia guot call
 		name = TaS_GEREpilogue.11.a
 		ai_chance = { factor = 1 }	
 		custom_effect_tooltip = TaS_czguot_tt
-		69 = { add_manpower = -14000 }
+		69 = { add_manpower = -14854 }
 		hidden_effect = {	
 			add_to_variable = { global.postgervisits = 1 }		
 			74 = { set_demilitarized_zone = yes	}
@@ -1074,6 +978,7 @@ country_event = { #Rip germany
 		name = TaS_GEREpilogue.29.a
 		ai_chance = { factor = 1 }	
 		custom_effect_tooltip = TaS_germany_tt
+		TNO_Country_Closing_Screen_Show = yes
 		hidden_effect = {		
 			TaS_2WRW_kill_germany = yes
 		}

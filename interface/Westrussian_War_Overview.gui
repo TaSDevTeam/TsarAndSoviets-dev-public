@@ -1,0 +1,176 @@
+guiTypes = {
+	containerWindowType = {
+		name = "war_overview"
+		size = { width = 500 height = 345 }
+		position = { x = 0 y = 0 }
+		
+		iconType = {
+			name = "infoButton"
+			spriteType = "GFX_Kartenhaus_InfoButton"
+			position = { x = 434 y = 5 }
+			pdx_tooltip = TaS_2WRW_mechanics_tt
+		}
+		
+		instantTextboxType= {
+			name = "exhaustion_title"
+			position = { x = 0 y = 40 }
+			font = "aldrich_36_outline"
+			text = TaS_2WRW_exhaustion_title
+			maxWidth = 500
+			maxHeight = 100
+			format = center
+		}
+		
+		iconType = {
+			name = "exhaustion_bar_frame_germany"
+			spriteType = "GFX_exhaustion_bar_frame"
+			position = { x = 22 y = 110 }
+			alwaystransparent = yes
+		}
+		
+		iconType = {
+			name = "exhaustion_main_bar_germany"
+			spriteType = "GFX_GER_WRW_Exhaustion_bar"
+			position = { x = 22 y = 109 }
+			pdx_tooltip = "GER_war_exhaustion_info_tt"
+		}
+		
+		iconType = {
+			name = "exhaustion_bar_frame_russia"
+			spriteType = "GFX_exhaustion_bar_frame"
+			position = { x = 270 y = 110 }
+			alwaystransparent = yes
+		}
+		
+		iconType = {
+			name = "exhaustion_main_bar_russia"
+			spriteType = "GFX_RUS_WRW_Exhaustion_bar"
+			position = { x = 270 y = 109 }
+			pdx_tooltip = "RUS_war_exhaustion_info_tt"
+		}
+		
+		instantTextboxType= {
+			name = "germany_name"
+			position = { x = 27 y = 142 }
+			font = "aldrich_24_outline"
+			text = german_title_loc
+			maxWidth = 250
+			maxHeight = 250
+			format = left
+		}
+		
+		instantTextboxType= {
+			name = "german_exhaustion"
+			position = { x = 30 y = 200 }
+			font = "aldrich_24_outline"
+			text = "[?GER.WRW2_devastation]% ([GetWRW2DevastationGER])"
+			maxWidth = 150
+			maxHeight = 100
+			format = left
+		}
+		
+		instantTextboxType= {
+			name = "russia_title"
+			position = { x = 277 y = 142 }
+			font = "aldrich_24_outline"
+			text = russian_title_loc
+			maxWidth = 200
+			maxHeight = 150
+			format = right
+		}
+		
+		instantTextboxType= {
+			name = "russian_exhaustion"
+			position = { x = 326 y = 200 }
+			font = "aldrich_24_outline"
+			text = "[?MAR.WRW2_devastation]% ([GetWRW2DevastationMAR])"
+			maxWidth = 150
+			maxHeight = 100
+			format = right
+		}
+		
+		containerwindowtype = {
+			name = "TaS_frontline_button"
+			size = { width = 500 height = 48 }
+			position = { x = 11 y = 255 }
+			buttontype = {
+				name = "frontlines_button"
+				spritetype = "GFX_frontlines_button"
+				pdx_tooltip = frontlines_desc_tt
+				pdx_tooltip_anchor = { x = -5 y = 48 }
+			}
+			instantTextBoxType = {
+				name = "frontlines_button_name"
+				position = { x = 0 y = 10 }
+				text = "frontlines_button_name"
+				font = "aldrich_28_outline"
+				maxwidth = 156
+				maxheight = 48
+				format = center
+				alwaystransparent = yes
+				text_color_code = R
+			}
+		}
+		containerwindowtype = {
+			name = "TaS_homefront_button"
+			size = { width = 500 height = 48 }
+			position = { x = 174 y = 255 }
+			buttontype = {
+				name = "homefront_button"
+				spritetype = "GFX_homefront_button"
+				pdx_tooltip = homefront_desc_tt
+				pdx_tooltip_anchor = { x = -55 y = 48 }
+			}
+			instantTextBoxType = {
+				name = "homefront_button_name"
+				position = { x = 0 y = 10 }
+				text = "homefront_button_name"
+				font = "aldrich_28_outline"
+				maxwidth = 156
+				maxheight = 48
+				format = center
+				alwaystransparent = yes
+				text_color_code = G
+			}
+		}
+		containerwindowtype = {
+			name = "TaS_diplomacy_button"
+			size = { width = 500 height = 48 }
+			position = { x = 337 y = 255 }
+			buttontype = {
+				name = "diplomacy_button"
+				spritetype = "GFX_diplomacy_button"
+				pdx_tooltip = diplomacy_desc_tt
+				pdx_tooltip_anchor = { x = -197 y = 48 }
+			}
+			instantTextBoxType = {
+				name = "diplomacy_button_name"
+				position = { x = 0 y = 10 }
+				text = "diplomacy_button_name"
+				font = "aldrich_28_outline"
+				maxwidth = 156
+				maxheight = 48
+				format = center
+				alwaystransparent = yes
+				text_color_code = W
+			}
+		}
+		#buttonType = {
+		#	name = "frontlines_button"
+		#	spriteType = "GFX_frontlines_button"
+		#	position = { x = 11 y = 255 }
+		#}
+		
+		#buttonType = {
+		#	name = "homefront_button"
+		#	spriteType = "GFX_homefront_button"
+		#	position = { x = 174 y = 255 }
+		#}
+		
+		#buttonType = {
+		#	name = "diplomacy_button"
+		#	spriteType = "GFX_diplomacy_button"
+		#	position = { x = 337 y = 255 }
+		#}
+	}
+}

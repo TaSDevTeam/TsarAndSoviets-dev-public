@@ -4,6 +4,114 @@ on_actions = {
 			MAR = {
 				set_country_flag = TaS_KOSYGIN_NOT_DONE
 				set_country_flag = TaS_MARIA_NOT_DONE
+				set_variable = { RUS_integration_cost_days = 70 }
+				give_resource_rights = { receiver = VYT state = 398 }
+				
+				add_to_array = { CountryInfo_array_main = 101 }
+				add_to_array = { CountryInfo_array_main = 1 }
+				add_to_array = { CountryInfo_folder_country_101 = 1 }
+				add_to_array = { CountryInfo_array_main = 2 }
+				add_to_array = { CountryInfo_folder_country_101 = 2 }
+				add_to_array = { CountryInfo_array_main = 3 }
+				add_to_array = { CountryInfo_folder_country_101 = 3 }
+
+				add_to_array = { CountryInfo_array_main = 102 }
+				add_to_array = { CountryInfo_array_main = 4 }
+				add_to_array = { CountryInfo_folder_country_102 = 4 }
+				add_to_array = { CountryInfo_array_main = 5 }
+				add_to_array = { CountryInfo_folder_country_102 = 5 }
+				add_to_array = { CountryInfo_array_main = 6 }
+				add_to_array = { CountryInfo_folder_country_102 = 6 }
+			}
+		}
+	}
+	on_declare_war = {
+		effect = {
+			if = {#PRM vs MAR
+				limit = {
+					OR = {
+						AND = {
+							ROOT = { tag = PRM }
+							FROM = { tag = MAR }
+						}
+						AND = {
+							FROM = { tag = PRM }
+							ROOT = { tag = MAR }
+						}
+					}
+
+				}
+				MAR = {
+					if = {
+						limit = { has_country_flag = MAR_ab_plan_one }
+						add_ideas = MAR_attack_only_aria
+					}
+					if = {
+						limit = { has_country_flag = MAR_ab_plan_two }
+						add_ideas = MAR_defence_only_aria
+					}
+					if = {
+						limit = { has_country_flag = MAR_ab_plan_three }
+						add_ideas = MAR_def_and_attack
+					}
+				}
+			}
+		}
+	}
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						OR = {
+							original_tag = GER
+							is_puppet_of = GER
+						}
+					}
+				}
+				if = {
+					limit = {
+						FROM.FROM = {
+							state = 1442
+						}
+						
+					}
+					ROOT = {
+						if = {
+							limit = {
+								is_russian_nation = yes
+							}
+							hidden_effect = {
+								every_country  = {
+										news_event = {
+											id = MAR_2WRW_world_news.7
+										}
+								}
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						FROM.FROM = {
+							state = 64
+						}
+					}
+					ROOT = {
+						if = {
+							limit = {
+								is_russian_nation = yes
+							}
+							hidden_effect = {
+								every_country  = {
+										news_event = {
+											id = MAR_2WRW_world_news.8
+										}
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 	}
