@@ -1,4 +1,5 @@
 add_namespace = MAR_Kosygin
+add_namespace = MAR_Kosygin_prestol
 
 country_event = {#Dolzhnik
 	id = MAR_Kosygin.1
@@ -236,7 +237,9 @@ country_event = {#Aftermaths
 	
 	option = {
 		name = MAR_Kosygin.14.a
-		ai_chance = { factor = 1 }	
+		ai_chance = { factor = 1 }
+		retire_character = MAR_Kazem_Bek
+		retire_character = MAR_Sergey_Belozerskiy
 		MAR_enable_prestol = yes
 		hidden_effect = {
 			add_country_leader_role = {
@@ -612,7 +615,7 @@ country_event = {#agents ural
 		every_country = {
 			limit = { is_west_siberian_nation = yes }
 			add_ideas = {
-				TaS_WSB_kgb_agents
+				MAR_Kosygin_WSB_sabotage
 			}
 		}
 	}
@@ -919,6 +922,124 @@ country_event = {#akmola celebration
 		name = MAR_Kosygin.56.a
 		ai_chance = { factor = 1 }	
 		add_ideas = { MAR_kaz_legions }
+	}
+}
+
+country_event = {#future, forward!
+	id = MAR_Kosygin.57
+	title = MAR_Kosygin.57.t
+	desc = MAR_Kosygin.56.d
+	picture = GFX_event_MAR_Kosygin_57
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_Kosygin.57.a
+		ai_chance = { factor = 1 }	
+	}
+}
+
+country_event = {#apotheosis
+	id = MAR_Kosygin.58
+	title = MAR_Kosygin.58.t
+	desc = MAR_Kosygin.58.d
+	picture = GFX_event_MAR_Kosygin_58
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_Kosygin.58.a
+		ai_chance = { factor = 1 }	
+	}
+}
+
+country_event = {#Y (how the fuck i forgot about this tree)
+	id = MAR_Kosygin.59
+	title = MAR_Kosygin.59.t
+	desc = MAR_Kosygin.59.d
+	picture = GFX_event_MAR_Kosygin_59
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_Kosygin.59.a
+		ai_chance = { factor = 1 }	
+	}
+}
+
+
+country_event = {#KGB
+	id = MAR_Kosygin.60
+	title = MAR_Kosygin.60.t
+	desc = MAR_Kosygin.60.d
+	picture = GFX_event_MAR_Kosygin_60
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_Kosygin.60.a
+		ai_chance = { factor = 1 }	
+	}
+}
+
+country_event = {#checking the pulse
+	id = MAR_Kosygin.61
+	title = MAR_Kosygin.61.t
+	desc = MAR_Kosygin.61.d
+	picture = GFX_event_MAR_Kosygin_61
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_Kosygin.61.a
+		ai_chance = { factor = 1 }	
+	}
+}
+
+country_event = {#1984 
+	id = MAR_Kosygin.62
+	title = MAR_Kosygin.62.t
+	desc = MAR_Kosygin.62.d
+	picture = GFX_event_MAR_Kosygin_62
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_Kosygin.62.a
+		ai_chance = { factor = 1 }	
+	}
+}
+
+country_event = {#GKChP
+	id = MAR_Kosygin.63
+	title = MAR_Kosygin.63.t
+	desc = MAR_Kosygin.63.d
+	picture = GFX_event_MAR_Kosygin_63
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_Kosygin.63.a
+		ai_chance = { factor = 1 }	
+	}
+}
+
+country_event = {#work
+	id = MAR_Kosygin.64
+	title = MAR_Kosygin.64.t
+	desc = MAR_Kosygin.64.d
+	picture = GFX_event_MAR_Kosygin_64
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_Kosygin.64.a
+		ai_chance = { factor = 1 }	
+	}
+}
+
+country_event = {#new congress
+	id = MAR_Kosygin.65
+	title = MAR_Kosygin.65.t
+	desc = MAR_Kosygin.65.d
+	picture = GFX_event_MAR_Kosygin_65
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_Kosygin.65.a
+		ai_chance = { factor = 1 }	
 	}
 }
 
