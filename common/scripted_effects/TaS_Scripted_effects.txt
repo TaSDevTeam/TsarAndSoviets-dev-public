@@ -512,3 +512,172 @@ MAR_nuke = {
 		animation = "attack"
 	}
 }
+
+MAR_Prestol_start = {
+	custom_effect_tooltip = MAR_prestol_start_tt
+	set_country_flag = MAR_prestol_active
+	
+	set_variable = { insurgency_controller = 0 }
+	#set_variable = { OMS_available_new_bases = 3 }
+	#set_variable = { AVAILABLE_BASES = 2 }
+	#set_variable = { OMS_batov_base_effectiveness = 0.05 }
+	#set_variable = { OMS_our_base_effectiveness = -0.05 }
+	set_variable = { MAR_tabby_timeout = 360 }
+	hidden_effect = {
+		add_popularity = {
+			ideology = esoteric_nazism
+			popularity = 0.1
+		}
+		set_party_name = {
+			ideology = esoteric_nazism
+			long_name = MAR_esoteric_nazism_taboritsky_party_long
+			name = MAR_esoteric_nazism_taboritsky_party
+		}
+		tno_worsen_admin_efficiency = yes
+		promote_character = MAR_Taboritsky_dummy
+		activate_mission = MAR_put_down_taboritskys_bandits
+		activate_mission = MAR_biweekly_prestol_tick
+	}
+	
+	clear_array = MAR_map_grid_array
+	add_to_array = { MAR_map_grid_array = 850 }
+	add_to_array = { MAR_map_grid_array = 252 }
+	add_to_array = { MAR_map_grid_array = 249 }
+	add_to_array = { MAR_map_grid_array = 400 }
+	add_to_array = { MAR_map_grid_array = 752 }
+	add_to_array = { MAR_map_grid_array = 753 }
+	add_to_array = { MAR_map_grid_array = 853 }
+	add_to_array = { MAR_map_grid_array = 857 }
+	add_to_array = { MAR_map_grid_array = 854 }
+	add_to_array = { MAR_map_grid_array = 397 }
+	add_to_array = { MAR_map_grid_array = 262 }
+	add_to_array = { MAR_map_grid_array = 214 }
+	add_to_array = { MAR_map_grid_array = 398 }
+	# Statuses: 1 (pro-kosygin); 2 (midly anti-kosygin); 3 (fully anti-kosygin)
+	
+	850 = { set_variable = { kosygin_reception = 2 } }
+	252 = { set_variable = { kosygin_reception = 3 } }
+	249 = { set_variable = { kosygin_reception = 1 } }
+	400 = { set_variable = { kosygin_reception = 1 } }
+	752 = { set_variable = { kosygin_reception = 1 } }
+	753 = { set_variable = { kosygin_reception = 3 } }
+	853 = { set_variable = { kosygin_reception = 1 } }
+	857 = { set_variable = { kosygin_reception = 2 } }
+	854 = { set_variable = { kosygin_reception = 1 } }
+	397 = { set_variable = { kosygin_reception = 2 } }
+	262 = { set_variable = { kosygin_reception = 3 } }
+	214 = { set_variable = { kosygin_reception = 3 } }
+	398 = { set_variable = { kosygin_reception = 1 } }
+	
+	clear_array = MAR_map_x
+	clear_array = MAR_map_y
+	add_to_array = { MAR_map_x = 188 }
+	add_to_array = { MAR_map_x = 127 }
+	add_to_array = { MAR_map_x = 196 }
+	add_to_array = { MAR_map_x = 248 }
+	add_to_array = { MAR_map_x = 323 }
+	add_to_array = { MAR_map_x = 357 }
+	add_to_array = { MAR_map_x = 316 }
+	add_to_array = { MAR_map_x = 57 }
+	add_to_array = { MAR_map_x = 182 }
+	add_to_array = { MAR_map_x = 184 }
+	add_to_array = { MAR_map_x = 104 }
+	add_to_array = { MAR_map_x = 2 }
+	add_to_array = { MAR_map_x = 355 }
+	
+	add_to_array = { MAR_map_y = 409 }
+	add_to_array = { MAR_map_y = 339 }
+	add_to_array = { MAR_map_y = 359 }
+	add_to_array = { MAR_map_y = 296 }
+	add_to_array = { MAR_map_y = 264 }
+	add_to_array = { MAR_map_y = 322 }
+	add_to_array = { MAR_map_y = 392 }
+	add_to_array = { MAR_map_y = 253 }
+	add_to_array = { MAR_map_y = 299 }
+	add_to_array = { MAR_map_y = 128 }
+	add_to_array = { MAR_map_y = 3 }
+	add_to_array = { MAR_map_y = 101 }
+	add_to_array = { MAR_map_y = 214 }
+	for_each_loop = {
+		array = MAR_map_grid_array
+		if = {
+			limit = {
+				check_variable = { v:kosygin_reception = 1 }
+			}
+			var:v = {
+				set_variable = { insurgency_strength = 0.05 }
+				set_variable = { insurgency_strengthTrend = 0.03 }
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { v:kosygin_reception = 2 }
+			}
+			var:v = {
+				set_variable = { insurgency_strength = 0.45 }
+				set_variable = { insurgency_strengthTrend = 0.02 }
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { v:kosygin_reception = 3}
+			}
+			var:v = {
+				set_variable = { insurgency_strength = 0.85 }
+				set_variable = { insurgency_strengthTrend = 0.01 }
+			}
+		}
+	}
+
+	#hidden_effect = { country_event = { id = omsk.1999 days = 7 } }
+
+	MAR_prestol_calc_nationwide_strength = yes
+
+	set_variable = { insurgency_state_selected = 850 }
+}
+
+MAR_prestol_calc_nationwide_strength = {
+	hidden_effect = {
+		set_variable = { ROOT.insurgency_strength = 0 }
+		set_variable = { active_state = 0 }
+		for_each_loop = {
+			array = MAR_map_grid_array
+			if = {
+				limit = {
+					check_variable = { v:insurgency_strength > 0 }
+				}
+				add_to_variable = { ROOT.insurgency_strength = v:insurgency_strength }
+			}
+		}
+		log = "MAR_map_grid_array^num: [?MAR_map_grid_array^num]"
+
+		divide_variable = { ROOT.insurgency_strength = 13 }
+		multiply_variable = { ROOT.insurgency_strength = 100 }
+		
+		log = "[?ROOT.insurgency_strength]"
+		
+		add_to_variable = { insurgency_controller = 1 }
+	}
+}
+
+MAR_prestol_biweekly_update = { 
+	log = "[GetDateText]: [Root.GetName]: PRESTOL 2-WEEK UPDATE"
+	set_country_flag = MAR_prestol_pulse
+	MAR_prestol_calc_nationwide_strength = yes
+	MAR = {
+		clr_country_flag = MAR_Prestol_RecentAction
+		every_owned_state = {
+			add_to_variable = { insurgency_strength = insurgency_strengthTrend }
+			MAR_clamp_insurgency_strength = yes
+			set_variable = { MAR_Had_RecentAction = 0 }
+		}
+	}
+}
+
+MAR_clamp_insurgency_strength = {
+	clamp_variable = {
+		var = insurgency_strength
+		min = 0
+		max = 1
+	}
+}

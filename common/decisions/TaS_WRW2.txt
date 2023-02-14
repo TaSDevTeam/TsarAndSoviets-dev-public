@@ -484,7 +484,7 @@ TaS_WRW2_fate_and_coring_of_territories = {
 			factor = 100
 		}
 
-		days_remove = RUS_integration_cost_days?0
+		days_remove = 1
 
 		fire_only_once = yes
 
@@ -520,9 +520,9 @@ TaS_WRW2_fate_and_coring_of_territories = {
 					1421 = {
 						is_core_of = ROOT
 					}
-					208 = {
-						is_core_of = ROOT
-					}
+					#208 = {
+					#	is_core_of = ROOT
+					#}
 					264 = {
 						is_core_of = ROOT
 					}
@@ -532,24 +532,24 @@ TaS_WRW2_fate_and_coring_of_territories = {
 					1434 = {
 						is_core_of = ROOT
 					}
-					1477 = {
-						is_core_of = ROOT
-					}
-					220 = {
-						is_core_of = ROOT
-					}
-					1314 = {
-						is_core_of = ROOT
-					}
+					#1477 = {
+					#	is_core_of = ROOT
+					#}
+					#220 = {
+					#	is_core_of = ROOT
+					#}
+					#1314 = {
+					#	is_core_of = ROOT
+					#}
 					257 = {
 						is_core_of = ROOT
 					}
 					247 = {
 						is_core_of = ROOT
 					}
-					1475 = {
-						is_core_of = ROOT
-					}
+					#1475 = {
+					#	is_core_of = ROOT
+					#}
 				}
 			}
 		}
@@ -572,23 +572,23 @@ TaS_WRW2_fate_and_coring_of_territories = {
 			factor = 100
 		}
 
-		days_remove = RUS_integration_cost_days?0
+		days_remove = 1
 		fire_only_once = yes
 
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
 			add_state_core = 195
 			add_state_core = 1421
-			add_state_core = 208
+			#add_state_core = 208
 			add_state_core = 264
 			add_state_core = 209
 			add_state_core = 1434
-			add_state_core = 220
-			add_state_core = 1477
-			add_state_core = 1314
+			#add_state_core = 220
+			#add_state_core = 1477
+			#add_state_core = 1314
 			add_state_core = 257
 			add_state_core = 247
-			add_state_core = 1475
+			#add_state_core = 1475
 			
 			add_stability = 0.025
 			set_temp_variable = { gdp_growth_temp = 1 }
@@ -609,54 +609,54 @@ TaS_WRW2_fate_and_coring_of_territories = {
 			has_country_flag = MCW_fate_is_done
 			NOT = {
 				AND = {
-					255 = {
-						is_core_of = ROOT
-					}
-					1478 = {
-						is_core_of = ROOT
-					}
+					#255 = {
+					#	is_core_of = ROOT
+					#}
+					#1478 = {
+					#	is_core_of = ROOT
+					#}
 					246 = {
 						is_core_of = ROOT
 					}
 					238 = {
 						is_core_of = ROOT
 					}
-					253 = {
-						is_core_of = ROOT
-					}
-					248 = {
-						is_core_of = ROOT
-					}
-					254 = {
-						is_core_of = ROOT
-					}
+					#253 = {
+					#	is_core_of = ROOT
+					#}
+					#248 = {
+					#	is_core_of = ROOT
+					#}
+					#254 = {
+					#	is_core_of = ROOT
+					#}
 					1443 = {
 						is_core_of = ROOT
 					}
 					401 = {
 						is_core_of = ROOT
 					}
-					205 = {
-						is_core_of = ROOT
-					}
+					#205 = {
+					#	is_core_of = ROOT
+					#}
 					219 = {
 						is_core_of = ROOT
 					}
 					1442 = {
 						is_core_of = ROOT
 					}
-					1476 = {
-						is_core_of = ROOT
-					}
-					1444 = {
-						is_core_of = ROOT
-					}
+					#1476 = {
+					#	is_core_of = ROOT
+					#}
+					#1444 = {
+					#	is_core_of = ROOT
+					#}
 					242 = {
 						is_core_of = ROOT
 					}
-					223 = {
-						is_core_of = ROOT
-					}
+					#223 = {
+					#	is_core_of = ROOT
+					#}
 					241 = {
 						is_core_of = ROOT
 					}
@@ -682,27 +682,27 @@ TaS_WRW2_fate_and_coring_of_territories = {
 			factor = 100
 		}
 
-		days_remove = RUS_integration_cost_days?0
+		days_remove = 1
 		fire_only_once = yes
 
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
-			add_state_core = 255
-			add_state_core = 1478
+			#add_state_core = 255
+			#add_state_core = 1478
 			add_state_core = 246
 			add_state_core = 238
-			add_state_core = 253
-			add_state_core = 248
-			add_state_core = 254
+			#add_state_core = 253
+			#add_state_core = 248
+			#add_state_core = 254
 			add_state_core = 1443
 			add_state_core = 401
-			add_state_core = 205
+			#add_state_core = 205
 			add_state_core = 219
 			add_state_core = 1442
-			add_state_core = 1476
-			add_state_core = 1444
+			#add_state_core = 1476
+			#add_state_core = 1444
 			add_state_core = 242
-			add_state_core = 223
+			#add_state_core = 223
 			add_state_core = 241
 			
 			add_stability = 0.025
@@ -727,9 +727,9 @@ TaS_WRW2_fate_and_coring_of_territories = {
 					210 = {
 						is_core_of = ROOT
 					}
-					258 = {
-						is_core_of = ROOT
-					}
+					#258 = {
+					#	is_core_of = ROOT
+					#}
 					222 = {
 						is_core_of = ROOT
 					}
@@ -745,9 +745,9 @@ TaS_WRW2_fate_and_coring_of_territories = {
 					263 = {
 						is_core_of = ROOT
 					}
-					240 = {
-						is_core_of = ROOT
-					}
+					#240 = {
+					#	is_core_of = ROOT
+					#}
 					260 = {
 						is_core_of = ROOT
 					}
@@ -782,7 +782,7 @@ TaS_WRW2_fate_and_coring_of_territories = {
 			factor = 100
 		}
 
-		days_remove = RUS_integration_cost_days?0
+		days_remove = 1
 		fire_only_once = yes
 
 		remove_effect = {
@@ -793,12 +793,12 @@ TaS_WRW2_fate_and_coring_of_territories = {
 			add_state_core = 1441
 			add_state_core = 1436
 			add_state_core = 263
-			add_state_core = 240
+			#add_state_core = 240
 			add_state_core = 260
 			add_state_core = 217
 			add_state_core = 239
 			add_state_core = 245
-			add_state_core = 258
+			#add_state_core = 258
 			
 			add_stability = 0.025
 			set_temp_variable = { gdp_growth_temp = 1 }
@@ -825,18 +825,18 @@ TaS_WRW2_fate_and_coring_of_territories = {
 					224 = {
 						is_core_of = ROOT
 					}
-					236 = {
-						is_core_of = ROOT
-					}
+					#236 = {
+					#	is_core_of = ROOT
+					#}
 					244 = {
 						is_core_of = ROOT
 					}
 					237 = {
 						is_core_of = ROOT
 					}
-					265 = {
-						is_core_of = ROOT
-					}
+					#265 = {
+					#	is_core_of = ROOT
+					#}
 					234 = {
 						is_core_of = ROOT
 					}
@@ -865,17 +865,17 @@ TaS_WRW2_fate_and_coring_of_territories = {
 			factor = 100
 		}
 
-		days_remove = RUS_integration_cost_days?0
+		days_remove = 1
 		fire_only_once = yes
 
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
 			add_state_core = 243
 			add_state_core = 224
-			add_state_core = 236
+			#add_state_core = 236
 			add_state_core = 244
 			add_state_core = 237
-			add_state_core = 265
+			#add_state_core = 265
 			add_state_core = 234
 			add_state_core = 218
 			
@@ -947,7 +947,7 @@ TaS_WRW2_fate_and_coring_of_territories = {
 			factor = 100
 		}
 
-		days_remove = RUS_integration_cost_days?0
+		days_remove = 1
 
 		fire_only_once = yes
 
@@ -3122,7 +3122,7 @@ TaS_WRW2_ost_territories_GER_braindead = {
 			factor = 100
 		}
 
-		days_remove = RUS_integration_cost_days?0
+		days_remove = 1
 		remove_effect = {
 			every_state = {
 				limit = {
@@ -3200,7 +3200,7 @@ TaS_WRW2_ost_territories_GER_braindead = {
 			factor = 100
 		}
 
-		days_remove = RUS_integration_cost_days?0
+		days_remove = 1
 		remove_effect = {
 			every_state = {
 				limit = {
@@ -3278,7 +3278,7 @@ TaS_WRW2_ost_territories_GER_braindead = {
 			factor = 100
 		}
 
-		days_remove = RUS_integration_cost_days?0
+		days_remove = 1
 		remove_effect = {
 			every_state = {
 				limit = {
@@ -3360,7 +3360,7 @@ TaS_WRW2_ost_territories_GER_braindead = {
 			factor = 100
 		}
 
-		days_remove = RUS_integration_cost_days?0
+		days_remove = 1
 		remove_effect = {
 			every_state = {
 				limit = {

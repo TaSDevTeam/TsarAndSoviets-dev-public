@@ -108,6 +108,22 @@ characters = {
 			cost = -1
 			removal_cost = -1
 		}
+		advisor = {
+			slot = head_of_government
+			idea_token = MAR_Vladimir_Gil_hog
+			allowed = {
+				original_tag = MAR
+			}
+			traits = {
+				head_of_government
+				sec_secret_police_chief
+				hog_respected_war_hero
+				despotism
+			}
+			ledger = civilian
+			cost = -1
+			removal_cost = -1
+		}
 		corps_commander = {
 			skill = 3
 			attack_skill = 3
@@ -208,6 +224,29 @@ characters = {
 			removal_cost = -1
 		}
 	} 
+	MAR_Nikolai_Maslennikov = {
+		name = MAR_Nikolai_Maslennikov
+		portraits = {
+			civilian = {
+				small = "GFX_idea_MAR_minister_Nina_Krivosheina"
+			}
+		}
+		advisor = {
+			slot = economy_minister
+			idea_token = MAR_Nikolai_Maslennikov_eco
+			allowed = {
+				original_tag = MAR
+			}
+			traits = {
+				economy_minister
+				socialist
+				eco_mixed_economy
+			}
+			ledger = civilian
+			cost = -1
+			removal_cost = -1
+		}
+	} 
 	MAR_Igor_Shafarevich = {
 		name = TaS_leader_name_Igor_Shafarevich
 		portraits = {
@@ -297,6 +336,21 @@ characters = {
 			defense_skill = 3
 			planning_skill = 2
 			logistics_skill = 3
+		}
+		advisor = {
+			slot = security_minister
+			idea_token = MAR_Anatoly_Vavilov_sec
+			allowed = {
+				original_tag = MAR
+			}
+			traits = {
+				security_minister
+				hog_respected_war_hero
+				socialist
+			}
+			ledger = civilian
+			cost = -1
+			removal_cost = -1
 		}
 	}
 	MAR_Valentin_Ardashev = {
@@ -416,6 +470,16 @@ characters = {
 			civilian = {
 				large = "gfx/leaders/MAR/Portrait_Berezniki_Belozerskid_1978.dds"
 			}
+		}
+	}
+	MAR_Taboritsky_dummy = { # Dummy just for name
+		name = "MAR_Taboritsky_dummy"
+		portraits = { civilian = { large = "GFX_leader_unknown" } }
+		country_leader = {
+			expire = "1999.1.1"
+			ideology = esoteric_nazism_imperial_cult_subtype
+			traits = { utterly_abandoned }
+			id = -1
 		}
 	}
 }

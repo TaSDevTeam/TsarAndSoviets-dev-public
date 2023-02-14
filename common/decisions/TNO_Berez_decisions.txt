@@ -1,4 +1,5 @@
 MAR_debug_category = {
+	########## ######## ################################################№№№
 	MAR_load_Belozerski_post_unification_tree = {
 		icon = GFX_decision_generic_decision
 
@@ -8,7 +9,7 @@ MAR_debug_category = {
 
 		fire_only_once = no
 
-		complete_effect = {
+		complete_effect = { 
 			log = "[GetDateText]: [Root.GetName]: Decision MAR_load_starting_tree"
 			load_focus_tree = {	tree = MAR_Belozerski_post_unification_tree keep_completed = no }
 		}
@@ -44,7 +45,7 @@ MAR_debug_category = {
 		}
 	}
 	
-	MAR_load_postbomb = {
+	MAR_load_postbomb = { 
 		icon = GFX_decision_generic_decision
 
 		allowed = {
@@ -136,7 +137,7 @@ MAR_debug_category = {
 			original_tag = MAR
 		}
 		fire_only_once = no
-
+ 
 		complete_effect = {
 			load_focus_tree = MAR_Kosygin_Regional
 		}
@@ -153,7 +154,7 @@ MAR_debug_category = {
 		fire_only_once = no
 
 		complete_effect = {
-			MAR_enable_prestol = yes
+			MAR_Prestol_start = yes
 		}
 	}
 	MAR_ogas_debug = {
@@ -1025,7 +1026,7 @@ MAR_MGB_Okhranka_category = {
 		#available = {
 		#	has_country_flag = MAR_started_fighting_Vyatka
 		#}
-		
+		 
 		visible = {
 			always = yes
 		}
@@ -2258,6 +2259,66 @@ MAR_Order_category = {
 		}
 	}
 }
+#prestol
+MAR_category_prestol_terrorists = {
+	MAR_put_down_taboritskys_bandits = {
+		icon = GFX_decision_revolt
+		activation = { always = no }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAR_taboritskys_insurgency_trigger
+				NOT = {
+					has_country_flag = MAR_prestol_active
+				}
+			}
+		}
+		priority = 300
+		days_mission_timeout = MAR_tabby_timeout
+		is_good = no
+
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Timeout MAR_put_down_taboritskys_bandits"
+			custom_effect_tooltip = MAR_taboritskys_insurgency_failure_tt
+			#country_event = { id = omskbatov.4 days = 5 }
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_put_down_taboritskys_bandits"
+			custom_effect_tooltip = MAR_taboritskys_insurgency_success_tt
+			hidden_effect = {
+				#country_event = { id = omskbatov.3 days = 5 }
+			}
+		}
+	}
+	
+	MAR_biweekly_prestol_tick = {
+		icon = GFX_decision_generic_ignite_civil_war
+		activation = { always = no }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAR_taboritskys_insurgency_trigger
+				NOT = {
+					has_country_flag = MAR_prestol_active
+				}
+			}
+		}
+		priority = 500
+		selectable_mission = no
+		days_mission_timeout = 14
+		is_good = no
+
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Timeout MAR_biweekly_prestol_tick"
+			MAR_prestol_biweekly_update = yes
+			activate_mission = MAR_biweekly_prestol_tick
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_biweekly_prestol_tick"
+			#custom_effect_tooltip = OMS_total_destruction_cancel_tt_2
+			#set_variable = { OMS_army_deployed = 1 }
+		}
+	}
+
+}
 #ogas
 MAR_ogas_deccat = {
 	#first stage
@@ -2295,14 +2356,20 @@ MAR_ogas_deccat = {
 			15 = {
 				custom_effect_tooltip = MAR_OGAS_beeg_growth_spy_tt
 				add_to_variable = { MAR_OGAS_ONE = 10 }
-				add_to_variable = { MAR_OGAS_CHAR_ONE = 10 }
-				add_to_variable = { MAR_OGAS_CHAR_TWO = 10 }
-				add_to_variable = { MAR_OGAS_CHAR_THREE = 5 }
+				set_temp_variable = { temp_char_gained_one = 10 } 
+				ogas_characteristics_change_safety = yes
+			
+				set_temp_variable = { temp_char_gained_two = 10 } 
+				ogas_characteristics_change_efficency = yes
+				
+				set_temp_variable = { temp_char_gained_three = 5 } 
+				ogas_characteristics_change_complexity = yes
 			}
 			45 = {
 				MAR_OGAS_progress_growth_med = yes
 				custom_effect_tooltip = MAR_OGAS_mid_spy_tt
-				add_to_variable = { MAR_OGAS_CHAR_TWO = 5 }
+				set_temp_variable = { temp_char_gained_two = 5 } 
+				ogas_characteristics_change_efficency = yes
 			}
 			25 = {
 				MAR_OGAS_progress_growth_small = yes
@@ -2330,8 +2397,8 @@ MAR_ogas_deccat = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_first_trip_to_guandong"
-			custom_effect_tooltip = MAR_OGAS_eff_growth_tt
-			add_to_variable = { MAR_OGAS_CHAR_TWO = 5 }
+			set_temp_variable = { temp_char_gained_two = 5 } 
+			ogas_characteristics_change_efficency = yes
 			MAR_OGAS_progress_growth_med = yes
 		}
 	}

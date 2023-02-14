@@ -81,7 +81,6 @@ on_actions = {
 					}
 					set_global_flag = skip_default_capitulation
 				}
-			}
 			else_if = {
 					limit = {
 						FROM = {
@@ -623,4 +622,5 @@ on_actions = {
 					set_global_flag = skip_default_capitulation
 			}
 		}
+	}
 }

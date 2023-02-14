@@ -56,9 +56,9 @@ TaS_WRW2_the_final_battle = {
 			check_variable = { WRW_deccat = 1 }
 		}
 		available = {
-			controls_state = 253
-			controls_state = 254
-			controls_state = 248
+			#controls_state = 253
+			#controls_state = 254
+			#controls_state = 248
 			controls_state = 246
 			controls_state = 238
 		}
@@ -66,9 +66,9 @@ TaS_WRW2_the_final_battle = {
 			has_war_with = GER
 			has_country_flag = RUS_2WRW_ongoing
 			NOT = {
-				controls_state = 253
-				controls_state = 254
-				controls_state = 248
+				#controls_state = 253
+				#controls_state = 254
+				#controls_state = 248
 				controls_state = 246
 				controls_state = 238	
 			}
@@ -78,9 +78,9 @@ TaS_WRW2_the_final_battle = {
 		is_good = no
 		highlight_states = {
 			highlight_state_targets = {
-				state = 253
-				state = 254
-				state = 248
+				#state = 253
+				#state = 254
+				#state = 248
 				state = 246
 				state = 238
 			}
@@ -107,16 +107,16 @@ TaS_WRW2_the_final_battle = {
 		priority = 50
 		available = {
 			controls_state = 264
-			controls_state = 208
-			controls_state = 1475
+			#controls_state = 208
+			#controls_state = 1475
 		}
 		activation = {
 			has_war_with = GER
 			has_country_flag = RUS_2WRW_ongoing
 			NOT = {
 				controls_state = 264
-				controls_state = 208
-				controls_state = 1475	
+				#controls_state = 208
+				#controls_state = 1475	
 			}
 		}
 		days_mission_timeout = 120
@@ -125,7 +125,7 @@ TaS_WRW2_the_final_battle = {
 			highlight_state_targets = {
 				state = 264
 				state = 208
-				state = 1475
+				#state = 1475
 			}
 		}
 		timeout_effect = {
@@ -149,22 +149,22 @@ TaS_WRW2_the_final_battle = {
 		icon = generic_assault
 		priority = 49
 		available = {
-			controls_state = 236
+			#controls_state = 236
 			controls_state = 237
 			controls_state = 243
 			controls_state = 244
-			controls_state = 265
+			#controls_state = 265
 			controls_state = 217
 		}
 		activation = {
 			has_war_with = GER
 			has_country_flag = RUS_2WRW_ongoing
 			NOT = {
-				controls_state = 236
+				#controls_state = 236
 				controls_state = 237
 				controls_state = 243
 				controls_state = 244
-				controls_state = 265
+				#controls_state = 265
 				controls_state = 217
 			}
 		}
@@ -173,11 +173,11 @@ TaS_WRW2_the_final_battle = {
 		is_good = no
 		highlight_states = {
 			highlight_state_targets = {
-				state = 236
+				#state = 236
 				state = 237
 				state = 243
 				state = 244
-				state = 265
+				#state = 265
 				state = 217
 			}
 		}
@@ -247,14 +247,14 @@ TaS_WRW2_the_final_battle = {
 		available = {
 			controls_state = 224
 			controls_state = 260
-			controls_state = 240
+			#controls_state = 240
 			controls_state = 210
 			controls_state = 1441
 		}
 		activation = {
 			has_war_with = GER
 			has_country_flag = RUS_2WRW_ongoing
-			controls_state = 265
+			#controls_state = 265
 			controls_state = 243
 			controls_state = 217
 			controls_state = 245
@@ -262,7 +262,7 @@ TaS_WRW2_the_final_battle = {
 			NOT = {
 				controls_state = 224
 				controls_state = 260
-				controls_state = 240
+				#controls_state = 240
 				controls_state = 210
 				controls_state = 1441
 			}
@@ -274,7 +274,7 @@ TaS_WRW2_the_final_battle = {
 			highlight_state_targets = {
 				state = 224
 				state = 260
-				state = 240
+				#state = 240
 				state = 210
 				state = 1441
 			}
@@ -301,18 +301,18 @@ TaS_WRW2_the_final_battle = {
 		priority = 46
 		available = {
 			controls_state = 247
-			controls_state = 1314
+			#controls_state = 1314
 			controls_state = 219
 		}
 		activation = {
 			has_war_with = GER
 			has_country_flag = RUS_2WRW_ongoing
-			controls_state = 253
-			controls_state = 254
-			controls_state = 248
+			#controls_state = 253
+			#controls_state = 254
+			controls_state = 238
 			NOT = {
 				controls_state = 247
-				controls_state = 1314
+				#controls_state = 1314
 				controls_state = 219
 			}
 		}
@@ -322,7 +322,7 @@ TaS_WRW2_the_final_battle = {
 			highlight_state_targets = {
 				state = 219
 				state = 1442
-				state = 1478
+				#state = 1478
 			}
 		}
 		timeout_effect = {
@@ -347,23 +347,23 @@ TaS_WRW2_the_final_battle = {
 		priority = 45
 		available = {
 			controls_state = 247
-			controls_state = 1314
-			controls_state = 1477
+			#controls_state = 1314
+			#controls_state = 1477
 			controls_state = 1434
-			controls_state = 220
+			#controls_state = 220
 		}
 		activation = {
 			has_war_with = GER
 			has_country_flag = RUS_2WRW_ongoing
-			controls_state = 208
+			#controls_state = 208
 			controls_state = 264
-			controls_state = 1475
+			#controls_state = 1475
 			NOT = {
 				controls_state = 247
-				controls_state = 1314
-				controls_state = 1477
+				#controls_state = 1314
+				#controls_state = 1477
 				controls_state = 1434
-				controls_state = 220
+				#controls_state = 220
 			}
 		}
 		days_mission_timeout = 80
@@ -371,10 +371,10 @@ TaS_WRW2_the_final_battle = {
 		highlight_states = {
 			highlight_state_targets = {
 				state = 247
-				state = 1314
-				state = 1477
+				#state = 1314
+				#state = 1477
 				state = 1434
-				state = 220
+				#state = 220
 			}
 		}
 		timeout_effect = {
@@ -407,9 +407,9 @@ TaS_WRW2_the_final_battle = {
 			has_country_flag = RUS_2WRW_ongoing
 			count_triggers = {
 			amount = 2
-				controls_state = 208
+				#controls_state = 208
 				controls_state = 1434
-				controls_state = 220
+				#controls_state = 220
 			}
 			NOT = {
 				controls_state = 209
@@ -448,9 +448,9 @@ TaS_WRW2_the_final_battle = {
 		priority = 45
 		available = {
 			controls_state = 257
-			controls_state = 255
+			#controls_state = 255
 			controls_state = 242
-			controls_state = 1476
+			#controls_state = 1476
 		}
 		activation = {
 			has_war_with = GER
@@ -458,19 +458,19 @@ TaS_WRW2_the_final_battle = {
 			count_triggers = {
 				amount = 3
 				controls_state = 209
-				controls_state = 1477
-				controls_state = 1314
-				controls_state = 1478
+				#controls_state = 1477
+				#controls_state = 1314
+				#controls_state = 1478
 				controls_state = 219
-				controls_state = 223
-				controls_state = 205
-				controls_state = 1444
+				#controls_state = 223
+				#controls_state = 205
+				#controls_state = 1444
 			}
 			NOT = {
 				controls_state = 257
-				controls_state = 255
+				#controls_state = 255
 				controls_state = 242
-				controls_state = 1476
+				#controls_state = 1476
 			}
 		}
 		days_mission_timeout = 70
@@ -478,9 +478,9 @@ TaS_WRW2_the_final_battle = {
 		highlight_states = {
 			highlight_state_targets = {
 				state = 257
-				state = 255
+				#state = 255
 				state = 242
-				state = 1476
+				#state = 1476
 			}
 		}
 		timeout_effect = {
@@ -506,31 +506,31 @@ TaS_WRW2_the_final_battle = {
 		available = {
 			controls_state = 1435
 			controls_state = 222
-			controls_state = 258
+			#controls_state = 258
 			controls_state = 401
 			controls_state = 1443
-			controls_state = 205
+			#controls_state = 205
 		}
 		activation = {
 			has_war_with = GER
 			has_country_flag = RUS_2WRW_ongoing
 			count_triggers = {
 			amount = 3
-				controls_state = 1476
+				#controls_state = 1476
 				controls_state = 219
-				controls_state = 248
-				controls_state = 254
+				#controls_state = 248
+				#controls_state = 254
 				controls_state = 1441
 				controls_state = 210
-				controls_state = 240
+				#controls_state = 240
 			}
 			NOT = {
 				controls_state = 1435
 				controls_state = 222
-				controls_state = 258
+				#controls_state = 258
 				controls_state = 401
 				controls_state = 1443
-				controls_state = 205
+				#controls_state = 205
 			}
 		}
 		days_mission_timeout = 80
@@ -539,10 +539,10 @@ TaS_WRW2_the_final_battle = {
 			highlight_state_targets = {
 				state = 1435
 				state = 222
-				state = 258
+				#state = 258
 				state = 401
 				state = 1443
-				state = 205
+				#state = 205
 			}
 		}
 		timeout_effect = {
@@ -567,8 +567,8 @@ TaS_WRW2_the_final_battle = {
 		priority = 45
 		available = {
 			controls_state = 241
-			controls_state = 223
-			controls_state = 1444
+			#controls_state = 223
+			#controls_state = 1444
 		}
 		activation = {
 			has_war_with = GER
@@ -576,15 +576,15 @@ TaS_WRW2_the_final_battle = {
 			count_triggers = {
 			amount = 2
 				controls_state = 242
-				controls_state = 1476
-				controls_state = 205
+				#controls_state = 1476
+				#controls_state = 205
 				controls_state = 222
 				controls_state = 1435
 			}
 			NOT = {
 				controls_state = 241
-				controls_state = 223
-				controls_state = 1444
+				#controls_state = 223
+				#controls_state = 1444
 			}
 		}
 		days_mission_timeout = 80
@@ -592,8 +592,8 @@ TaS_WRW2_the_final_battle = {
 		highlight_states = {
 			highlight_state_targets = {
 				state = 241
-				state = 223
-				state = 1444
+				#state = 223
+				#state = 1444
 			}
 		}
 		timeout_effect = {
@@ -635,7 +635,7 @@ TaS_WRW2_the_final_battle = {
 				amount = 2
 				controls_state = 244
 				controls_state = 237
-				controls_state = 265
+				#controls_state = 265
 				controls_state = 224
 				controls_state = 218
 			}
@@ -856,9 +856,9 @@ TaS_WRW2_the_final_battle = {
 			has_country_flag = RUS_2WRW_ongoing
 			count_triggers = {
 				amount = 2
-				controls_state = 1444
+				#controls_state = 1444
 				controls_state = 1435
-				controls_state = 240
+				#controls_state = 240
 			}
 			NOT = {
 				controls_state = 225
@@ -910,7 +910,7 @@ TaS_WRW2_the_final_battle = {
 			has_country_flag = RUS_2WRW_ongoing
 			count_triggers = {
 				amount = 2
-				controls_state = 240
+				#controls_state = 240
 				controls_state = 224
 				controls_state = 234
 				controls_state = 137
@@ -965,7 +965,7 @@ TaS_WRW2_the_final_battle = {
 			has_country_flag = RUS_2WRW_ongoing
 			OR = {
 				controls_state = 241
-				controls_state = 1444
+				#controls_state = 1444
 				UKR = {
 					surrender_progress > 0.15
 				}
@@ -1145,7 +1145,7 @@ TaS_WRW2_the_final_battle = {
 				controls_state = 1431
 				controls_state = 1429
 				controls_state = 241
-				controls_state = 223
+				#controls_state = 223
 				controls_state = 242
 				controls_state = 257
 			}

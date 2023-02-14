@@ -2,39 +2,134 @@ scripted_gui = {
 	MAR_Prestol_GUI = {
 		context_type = decision_category
 		window_name = "MAR_Prestol_GUI"
+		dirty = MAR_insurgency_controller
 		visible = { always = yes }
+		dynamic_lists = {
+			prestol_map_gridbox = {
+				array = MAR_map_grid_array
+				index = idx
+				value = MAR_map_value
+				entry_container = "OMS_map_entry"
+			}
+		}
+		properties = {
+			map_state = {
+				image = "GFX_MAR_insurgency_map_state_[?MAR_map_grid_array^idx]"
+				frame = MAR_map_value:kosygin_reception
+				x = MAR_map_x^idx
+				y = MAR_map_y^idx
+			}
+			top_bar_strength_bar = { frame = insurgency_strength }
+		}
+		triggers = {
+			map_state_850_selected_visible = { check_variable = { insurgency_state_selected = 850 } }
+			map_state_252_selected_visible = { check_variable = { insurgency_state_selected = 252 } }
+			map_state_249_selected_visible = { check_variable = { insurgency_state_selected = 249 } }
+			map_state_853_selected_visible = { check_variable = { insurgency_state_selected = 853 } }
+			map_state_854_selected_visible = { check_variable = { insurgency_state_selected = 854 } }
+			map_state_753_selected_visible = { check_variable = { insurgency_state_selected = 753 } }
+			map_state_400_selected_visible = { check_variable = { insurgency_state_selected = 400 } }
+			map_state_752_selected_visible = { check_variable = { insurgency_state_selected = 752 } }
+			map_state_398_selected_visible = { check_variable = { insurgency_state_selected = 398 } }
+			map_state_397_selected_visible = { check_variable = { insurgency_state_selected = 397 } }
+			map_state_857_selected_visible = { check_variable = { insurgency_state_selected = 857 } }
+			map_state_262_selected_visible = { check_variable = { insurgency_state_selected = 262 } }
+			map_state_214_selected_visible = { check_variable = { insurgency_state_selected = 214 } }
+			map_state_214_onega_lock_visible = { MAR = { NOT = { owns_state = 859 } } }
+			map_backgroundhelper_visible = { is_debug = yes }
+		}
+		effects = {
+			map_state_click = {
+				set_variable = { insurgency_state_selected = MAR_map_grid_array^idx }
+				set_variable = { insurgency_state_selected_i = idx }
+				
+				add_to_variable = { MAR_insurgency_controller = 1 }
+				
+				if = {
+					limit = { has_country_flag = MAR_state_interaction_open }
+					clr_country_flag = MAR_state_interaction_open
+				}
+				else = { set_country_flag = MAR_state_interaction_open }
+				
+				log = "[?insurgency_state_selected]"
+			}
+		}
 	}
-	effects = {
-		MAR_KOSYGINGUI_pick_Onega_Operation = {
-			set_variable = {MAR_KOSYGINGUI_selected = 1}
+	MAR_Prestol_GUI_state_interaction = {
+		context_type = player_context
+		window_name = "MAR_Prestol_regional_interaction_menu"
+
+		visible = {
+			tag = MAR
+			NOT = {
+				has_global_flag = AFTER_MIDNIGHT_COMMENCED
+			}
+			has_country_flag = MAR_state_interaction_open
 		}
-		MAR_KOSYGINGUI_pick_Komi_Operation = {
-			set_variable = {MAR_KOSYGINGUI_selected = 2}
+		triggers = {
+			MAR_antiprestol_decision_one_click_enabled = {
+				var:insurgency_state_selected = {
+					check_variable = { MAR_Had_RecentAction = 0 }
+				}
+				has_political_power > 24.99
+			}
+			MAR_antiprestol_decision_two_click_enabled = {
+				var:insurgency_state_selected = {
+					check_variable = { MAR_Had_RecentAction = 0 }
+				}
+				has_political_power > 24.99
+			}
+			MAR_antiprestol_decision_three_click_enabled = {
+				var:insurgency_state_selected = {
+					check_variable = { MAR_Had_RecentAction = 0 }
+				}
+				has_political_power > 24.99
+			}
+			MAR_antiprestol_decision_operation_one_visible = { var:insurgency_state_selected = { check_variable = { operation_available = 0 } } }
+			MAR_antiprestol_decision_operation_two_visible = { var:insurgency_state_selected = { check_variable = { operation_available = 1 } } }
 		}
-		MAR_KOSYGINGUI_pick_Perm_Operation = {
-			set_variable = {MAR_KOSYGINGUI_selected = 3}
+		effects = {
+			close_button_click = {
+				if = {
+					limit = { has_country_flag = MAR_state_interaction_open }
+					clr_country_flag = MAR_state_interaction_open
+				}
+				else = { set_country_flag = MAR_state_interaction_open }
+			}
+			MAR_antiprestol_decision_one_click = {
+				var:insurgency_state_selected = {
+					add_to_variable = { insurgency_strength = -0.05 }
+					add_to_variable = { insurgency_strengthTrend = 0.001 }
+					add_to_variable = { MAR_Had_RecentAction = 1 }
+				}
+				add_political_power = -25
+			}
+			MAR_antiprestol_decision_two_click = {
+				var:insurgency_state_selected = {
+					add_to_variable = { insurgency_strengthTrend = -0.005 }
+					add_to_variable = { insurgency_strength = 0.01 }
+					add_to_variable = { MAR_Had_RecentAction = 1 }
+				}
+				add_political_power = -25
+			}
+			MAR_antiprestol_decision_three_click = {
+				var:insurgency_state_selected = {
+					add_to_variable = { insurgency_strengthTrend = -0.003 }
+					add_to_variable = { insurgency_strength = -0.03 }
+					add_to_variable = { MAR_Had_RecentAction = 1 }
+				}
+				add_political_power = -25
+			}
 		}
-		MAR_KOSYGINGUI_pick_Gorkiy_Operation = {
-			set_variable = {MAR_KOSYGINGUI_selected = 4}
+		properties = {
+			MAR_enemies_flag_image = {
+				image = "[MAR_PRESTOL_GET_ENEMY_FLAG]"
+			}
 		}
-		MAR_KOSYGINGUI_pick_Samara_Operation = {
-			set_variable = {MAR_KOSYGINGUI_selected = 5}
-		}
-		MAR_KOSYGINGUI_pick_Ukhta_Operation = {
-			set_variable = {MAR_KOSYGINGUI_selected = 6}
-		}
-		MAR_KOSYGINGUI_pick_Antiterrorism = {
-			set_variable = {MAR_KOSYGINGUI_selected = 7}
-		}
-		MAR_KOSYGINGUI_pick_Special_Operations = {
-			set_variable = {MAR_KOSYGINGUI_selected = 0}
-		}
-	}
-	properties = {
-		MAR_KOSYGINGUI_prp_Onega_state = {
-			image = "[GET_MAR_KOSYGINGUI_prp_Onega_state]"
-			x = 0
-			y = 0
+		properties = {
+			MAR_enemies_leader_image = {
+				image = "[MAR_PRESTOL_GET_ENEMY_LEADER]"
+			}
 		}
 	}
 }

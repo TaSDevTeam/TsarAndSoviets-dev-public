@@ -1,10 +1,394 @@
 defined_text = {
-	name = GET_MAR_KOSYGINGUI_prp_Onega_state
-	
+	name = MAR_PRESTOL_GET_ENEMY_FACTION
 	text = {
 		trigger = {
-			check_variable = {MAR_KOSYGINGUI_selected = 7}
+			check_variable = { insurgency_state_selected = 262 }
+			262 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = MAR_NARIENMAR_ENEMIES
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 214 }
+			214 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = MAR_ARKHANGELSK_ENEMIES
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 397 }
+			397 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = MAR_SYKTYVKAR_ENEMIES
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 252 }
+			252 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = MAR_GORKY_ENEMIES
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 753 }
+			753 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = MAR_PERM_ENEMIES
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 850 }
+			850 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = MAR_SAMARA_ENEMIES
+	}
+	
+	text = {
+		localization_key = MAR_ENEMIES_NONE 
+	}
+}
+
+defined_text = {
+	name = MAR_PRESTOL_GET_ENEMY_SLOGAN
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 262 }
+			262 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = MAR_NARIENMAR_SLOGAN
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 214 }
+			214 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = MAR_ARKHANGELSK_SLOGAN
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 397 }
+			397 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = MAR_SYKTYVKAR_SLOGAN
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 252 }
+			252 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = MAR_GORKY_SLOGAN
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 753 }
+			753 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = MAR_PERM_SLOGAN
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 850 }
+			850 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = MAR_SAMARA_SLOGAN
+	}
+	
+	text = {
+		localization_key = MAR_SLOGAN_NONE 
+	}
+}
+
+defined_text = {
+	name = MAR_PRESTOL_GET_ENEMY_FLAG
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 262 }
+			262 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = "GFX_flag_narienmar"
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 214 }
+			214 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = "GFX_flag_arkhangelsk"
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 397 }
+			397 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = "GFX_flag_syktyvkar"
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 252 }
+			252 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = "GFX_flag_gorky"
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 753 }
+			753 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = "GFX_flag_perm"
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 850 }
+			850 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = "GFX_flag_samara"
+	}
+	
+	text = {
+		localization_key = "GFX_flag_none"
+	}
+}
+
+defined_text = {
+	name = MAR_PRESTOL_GET_ENEMY_LEADER
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 262 }
+			262 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = "GFX_leader_narienmar"
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 214 }
+			214 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = "GFX_leader_narienmar"
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 397 }
+			397 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = "GFX_leader_syktyvkar"
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 252 }
+			252 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = "GFX_leader_narienmar"
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 753 }
+			753 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = "GFX_leader_perm"
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 850 }
+			850 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = "GFX_leader_samara"	
+	}
+	
+	text = {
+		localization_key = "GFX_leader_narienmar"
+	}
+}
+	
+defined_text = {
+	name = MAR_PRESTOL_GET_ENEMY_LEADER_NAME
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 262 }
+			262 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = MAR_NARIENMAR_LEADER
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 214 }
+			214 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = MAR_ARKHANGELSK_LEADER
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 397 }
+			397 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = MAR_SYKTYVKAR_LEADER
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 252 }
+			252 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = MAR_GORKY_LEADER
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 753 }
+			753 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = MAR_PERM_LEADER
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 850 }
+			850 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = MAR_SAMARA_LEADER
+	}
+	
+	text = {
+		localization_key = MAR_LEADER_NONE 
+	}
+}
+
+defined_text = {
+	name = MAR_PRESTOL_GET_ENEMY_DOSSIER
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 262 }
+			262 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = MAR_NARIENMAR_DOSSIER
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 214 }
+			214 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = MAR_ARKHANGELSK_DOSSIER
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 397 }
+			397 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = MAR_SYKTYVKAR_DOSSIER
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 252 }
+			252 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = MAR_GORKY_DOSSIER
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 753 }
+			753 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = MAR_PERM_DOSSIER
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 850 }
+			850 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = MAR_SAMARA_DOSSIER
+	}
+	
+	text = {
+		localization_key = MAR_DOSSIER_NONE 
+	}
+}
+
+defined_text = {
+	name = MAR_GET_OPERATION_NAME
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 262 }
+			262 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = MAR_NARIENMAR_OPERATION
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 214 }
+			214 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = MAR_ARKHANGELSK_OPERATION
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 397 }
+			397 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = MAR_SYKTYVKAR_OPERATION
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 252 }
+			252 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = MAR_GORKY_OPERATION
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 753 }
+			753 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = MAR_PERM_OPERATION
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 850 }
+			850 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = MAR_SAMARA_OPERATION
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 400 }
+			850 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = MAR_VYATKA_OPERATION
+	}
+	
+	text = {
+		localization_key = MAR_OPERATION_NONE
+	}
+}
+
+defined_text = {
+	name = GetMARPrestolColorTXT
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected:insurgency_strength > 0.5}
 		}
-		localisation_key = MAR_ONEGA_ANTITERROR
+		localization_key = OMS_color_red
+	}
+	text ={
+		trigger = {
+			check_variable = { insurgency_state_selected:insurgency_strength > 0.25}
+		}
+		localization_key = OMS_color_yellow
+	}
+	text = {
+		localization_key = OMS_color_green
+	}
+}
+
+defined_text = {
+	name = GetMARPrestolColorTrendTXT
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected:insurgency_strengthTrend > 0.05}
+		}
+		localization_key = OMS_color_red
+	}
+	text ={
+		trigger = {
+			check_variable = { insurgency_state_selected:insurgency_strength > 0.01}
+		}
+		localization_key = OMS_color_yellow
+	}
+	text = {
+		localization_key = OMS_color_green
 	}
 }
