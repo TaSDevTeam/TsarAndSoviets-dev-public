@@ -1,6 +1,6 @@
 add_namespace = MAR_Kosygin
 add_namespace = MAR_Kosygin_Prestol
-
+add_namespace = MAR_Kosygin_OGAS
 country_event = {#Dolzhnik
 	id = MAR_Kosygin.1
 	title = MAR_Kosygin.1.t
@@ -1028,7 +1028,11 @@ country_event = { #262 event 1
 	option = { #
 		name = MAR_Kosygin_Prestol.1.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = MAR_oper_avaiable_tt
+		add_stability = 0.02
+		262 = {
+			set_variable = { operation_available = 1 }
+		}
 	}
 }
 
@@ -1045,7 +1049,14 @@ country_event = { #262 event 2
 	option = { #
 		name = MAR_Kosygin_Prestol.2.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = MAR_purge_narienmar_tt
+		262 = {
+			add_to_variable = { insurgency_strengthTrend = -0.02 }
+			add_to_variable = { insurgency_strength = -0.2 }
+			set_variable = { kosygin_reception = 1 }
+			MAR_clamp_insurgency_strength = yes
+		}
+		MAR_prestol_calc_nationwide_strength = yes
 	}
 }
 
@@ -1062,7 +1073,11 @@ country_event = { #214 event 1
 	option = { #
 		name = MAR_Kosygin_Prestol.3.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = MAR_oper_avaiable_tt
+		add_stability = 0.02
+		214 = {
+			set_variable = { operation_available = 1 }
+		}
 	}
 }
 
@@ -1079,7 +1094,14 @@ country_event = { #214 event 2
 	option = { #
 		name = MAR_Kosygin_Prestol.4.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = MAR_purge_arkhangelsk_tt
+		214 = {
+			add_to_variable = { insurgency_strengthTrend = -0.02 }
+			add_to_variable = { insurgency_strength = -0.2 }
+			set_variable = { kosygin_reception = 1 }
+			MAR_clamp_insurgency_strength = yes
+		}
+		MAR_prestol_calc_nationwide_strength = yes
 	}
 }
 
@@ -1096,7 +1118,11 @@ country_event = { #397 event 1
 	option = { #
 		name = MAR_Kosygin_Prestol.5.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = MAR_oper_avaiable_tt
+		add_stability = 0.02
+		397 = {
+			set_variable = { operation_available = 1 }
+		}
 	}
 }
 
@@ -1113,7 +1139,26 @@ country_event = { #397 event 2
 	option = { #
 		name = MAR_Kosygin_Prestol.6.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = MAR_purge_syktyvkar_tt
+		397 = {
+			add_to_variable = { insurgency_strengthTrend = -0.02 }
+			add_to_variable = { insurgency_strength = -0.2 }
+			set_variable = { kosygin_reception = 1 }
+			MAR_clamp_insurgency_strength = yes
+		}
+		hidden_effect = {
+			set_temp_variable = { tempRandom = 50 }
+			randomize_temp_variable = {
+				var = tempRandom
+				distribution = uniform
+				min = 20
+				max = 100
+			}
+			multiply_temp_variable = { tempRandom = -1 }
+			round_temp_variable = tempRandom
+		}
+		add_manpower = var:tempRandom
+		MAR_prestol_calc_nationwide_strength = yes
 	}
 }
 
@@ -1130,7 +1175,11 @@ country_event = { #252 event 1
 	option = { #
 		name = MAR_Kosygin_Prestol.7.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = MAR_oper_avaiable_tt
+		add_stability = 0.02
+		252 = {
+			set_variable = { operation_available = 1 }
+		}
 	}
 }
 
@@ -1147,7 +1196,15 @@ country_event = { #252 event 2
 	option = { #
 		name = MAR_Kosygin_Prestol.8.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = MAR_purge_gorky_tt
+		252 = {
+			add_to_variable = { insurgency_strengthTrend = -0.02 }
+			add_to_variable = { insurgency_strength = -0.2 }
+			set_variable = { kosygin_reception = 1 }
+			MAR_clamp_insurgency_strength = yes
+		}
+		TNO_improve_poverty_low = yes
+		MAR_prestol_calc_nationwide_strength = yes
 	}
 }
 
@@ -1164,7 +1221,11 @@ country_event = { #753 event 1
 	option = { #
 		name = MAR_Kosygin_Prestol.9.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = MAR_oper_avaiable_tt
+		add_stability = 0.02
+		753 = {
+			set_variable = { operation_available = 1 }
+		}
 	}
 }
 
@@ -1181,7 +1242,26 @@ country_event = { #753 event 2
 	option = { #
 		name = MAR_Kosygin_Prestol.10.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = MAR_purge_perm_tt
+		753 = {
+			add_to_variable = { insurgency_strengthTrend = -0.02 }
+			add_to_variable = { insurgency_strength = -0.2 }
+			set_variable = { kosygin_reception = 1 }
+			MAR_clamp_insurgency_strength = yes
+		}
+		hidden_effect = {
+			set_temp_variable = { tempRandom = 100 }
+			randomize_temp_variable = {
+				var = tempRandom
+				distribution = uniform
+				min = 80
+				max = 200
+			}
+			multiply_temp_variable = { tempRandom = -1 }
+			round_temp_variable = tempRandom
+		}
+		add_manpower = var:tempRandom
+		MAR_prestol_calc_nationwide_strength = yes
 	}
 }
 
@@ -1198,7 +1278,11 @@ country_event = { #850 event 1
 	option = { #
 		name = MAR_Kosygin_Prestol.11.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = MAR_oper_avaiable_tt
+		add_stability = 0.02
+		850 = {
+			set_variable = { operation_available = 1 }
+		}
 	}
 }
 
@@ -1215,7 +1299,41 @@ country_event = { #850 event 2
 	option = { #
 		name = MAR_Kosygin_Prestol.12.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = MAR_purge_samara_tt
+		850 = {
+			add_to_variable = { insurgency_strengthTrend = -0.02 }
+			add_to_variable = { insurgency_strength = -0.2 }
+			set_variable = { kosygin_reception = 1 }
+			MAR_clamp_insurgency_strength = yes
+		}
+		hidden_effect = {
+			set_temp_variable = { tempRandom = 50 }
+			randomize_temp_variable = {
+				var = tempRandom
+				distribution = uniform
+				min = 20
+				max = 100
+			}
+			multiply_temp_variable = { tempRandom = -1 }
+			round_temp_variable = tempRandom
+		}
+		add_manpower = var:tempRandom
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 160
+			producer = GER
+		}
+		add_equipment_to_stockpile = {
+			type = anti_tank_equipment
+			amount = 5
+			producer = GER
+		}
+		add_equipment_to_stockpile = {
+			type = motorized_equipment
+			amount = 12
+			producer = SAM
+		}
+		MAR_prestol_calc_nationwide_strength = yes
 	}
 }
 
@@ -1232,6 +1350,19 @@ country_event = { #400 event 1
 	option = { #
 		name = MAR_Kosygin_Prestol.13.a
 		ai_chance = { factor = 1 }
+		hidden_effect = {
+			set_temp_variable = { tempRandom = 20 }
+			randomize_temp_variable = {
+				var = tempRandom
+				distribution = uniform
+				min = 10
+				max = 40
+			}
+			multiply_temp_variable = { tempRandom = -1 }
+			round_temp_variable = tempRandom
+		}
+		add_manpower = var:tempRandom
+		army_experience = 5
 		
 	}
 }
@@ -1249,7 +1380,7 @@ country_event = { #400 event 2
 	option = { #
 		name = MAR_Kosygin_Prestol.14.a
 		ai_chance = { factor = 1 }
-		
+		add_manpower = -1
 	}
 }
 
@@ -1266,7 +1397,10 @@ country_event = { #success
 	option = { #
 		name = MAR_Kosygin_Prestol.15.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = MAR_prestol_end_tt
+		add_stability = 0.05
+		remove_ideas = MAR_prestol_dynmod_dummy
+		clr_country_flag = MAR_prestol_active
 	}
 }
 
@@ -1283,7 +1417,12 @@ country_event = { #fail 1
 	option = { #
 		name = MAR_Kosygin_Prestol.16.a
 		ai_chance = { factor = 1 }
-		
+		add_stability = -0.3
+		add_war_support = -0.3
+		custom_effect_tooltip = MAR_Kosygin_die_tt
+		hidden_effect = {
+			retire_character = MAR_advisor_Kosygin
+		}
 	}
 }
 
@@ -1317,7 +1456,7 @@ country_event = { #flavour 1
 	option = { #
 		name = MAR_Kosygin_Prestol.18.a
 		ai_chance = { factor = 1 }
-		
+		add_manpower = -2
 	}
 }
 
@@ -1351,7 +1490,17 @@ country_event = { #flavour 3
 	option = { #
 		name = MAR_Kosygin_Prestol.20.a
 		ai_chance = { factor = 1 }
-		
+		hidden_effect = {
+			set_temp_variable = { tempRandom = 20 }
+			randomize_temp_variable = {
+				var = tempRandom
+				distribution = uniform
+				min = 10
+				max = 40
+			}
+			multiply_temp_variable = { tempRandom = -1 }
+			round_temp_variable = tempRandom
+		}
 	}
 }
 
@@ -1423,7 +1572,7 @@ country_event = { #flavour 7
 	}
 }
 
-country_event = { #attacks 1
+country_event = { #attacks 1 - civilian
 	id = MAR_Kosygin_Prestol.25
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin_Prestol.25" }
 	title = MAR_Kosygin_Prestol.25.t
@@ -1436,11 +1585,27 @@ country_event = { #attacks 1
 	option = { #
 		name = MAR_Kosygin_Prestol.25.a
 		ai_chance = { factor = 1 }
-		
+		hidden_effect = {
+			set_temp_variable = { tempRandom = 50 }
+			randomize_temp_variable = {
+				var = tempRandom
+				distribution = uniform
+				min = 20
+				max = 100
+			}
+			multiply_temp_variable = { tempRandom = -1 }
+			round_temp_variable = tempRandom
+		}
+		add_manpower = var:tempRandom
+		add_stability = -0.03
+		random_owned_controlled_state = { 
+			limit = { check_variable = { insurgency_strength > 0.1 } }
+			damage_building = { type = schools damage = 0.9 }
+		}
 	}
 }
 
-country_event = { #attacks 2
+country_event = { #attacks 2 - millitary
 	id = MAR_Kosygin_Prestol.26
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin_Prestol.26" }
 	title = MAR_Kosygin_Prestol.26.t
@@ -1453,11 +1618,38 @@ country_event = { #attacks 2
 	option = { #
 		name = MAR_Kosygin_Prestol.26.a
 		ai_chance = { factor = 1 }
+		hidden_effect = {
+			set_temp_variable = { tempRandom = 20 }
+			randomize_temp_variable = {
+				var = tempRandom
+				distribution = uniform
+				min = 10
+				max = 40
+			}
+			multiply_temp_variable = { tempRandom = -1 }
+			round_temp_variable = tempRandom
+		}
+		add_manpower = var:tempRandom
 		
+		random_owned_controlled_state = { 
+			limit = { check_variable = { insurgency_strength > 0.1 } }
+			damage_building = { type = infrastructure damage = 0.9 }
+			damage_building = { type = barracks damage = 0.8 }
+		}
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = -150
+			producer = MAR
+		}
+		add_equipment_to_stockpile = {
+			type = anti_tank_equipment
+			amount = -10
+			producer = MAR
+		}
 	}
 }
 
-country_event = { #attacks 3
+country_event = { #attacks 3 - governmnent
 	id = MAR_Kosygin_Prestol.27
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin_Prestol.27" }
 	title = MAR_Kosygin_Prestol.27.t
@@ -1470,7 +1662,22 @@ country_event = { #attacks 3
 	option = { #
 		name = MAR_Kosygin_Prestol.27.a
 		ai_chance = { factor = 1 }
-		
+		random_owned_controlled_state = { 
+			limit = { check_variable = { insurgency_strength > 0.1 } }
+			damage_building = { type = offices damage = 0.9 }
+		}
+		hidden_effect = {
+			set_temp_variable = { tempRandom = 5 }
+			randomize_temp_variable = {
+				var = tempRandom
+				distribution = uniform
+				min = 1
+				max = 10
+			}
+			multiply_temp_variable = { tempRandom = -1 }
+			round_temp_variable = tempRandom
+		}
+		add_manpower = var:tempRandom
 	}
 }
 
@@ -1520,6 +1727,176 @@ country_event = { #debug
 	
 	option = { #
 		name = MAR_Kosygin_Prestol.30.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = MAR_Kosygin_OGAS.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin_OGAS.1" }
+	title = MAR_Kosygin_OGAS.1.t
+	desc = MAR_Kosygin_OGAS.1.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin_OGAS.1.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = MAR_Kosygin_OGAS.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin_OGAS.2" }
+	title = MAR_Kosygin_OGAS.2.t
+	desc = MAR_Kosygin_OGAS.2.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin_OGAS.2.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = MAR_Kosygin_OGAS.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin_OGAS.3" }
+	title = MAR_Kosygin_OGAS.3.t
+	desc = MAR_Kosygin_OGAS.3.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin_OGAS.3.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = MAR_Kosygin_OGAS.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin_OGAS.4" }
+	title = MAR_Kosygin_OGAS.4.t
+	desc = MAR_Kosygin_OGAS.4.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin_OGAS.4.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = MAR_Kosygin_OGAS.5
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin_OGAS.5" }
+	title = MAR_Kosygin_OGAS.5.t
+	desc = MAR_Kosygin_OGAS.5.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin_OGAS.5.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = MAR_Kosygin_OGAS.6
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin_OGAS.6" }
+	title = MAR_Kosygin_OGAS.6.t
+	desc = MAR_Kosygin_OGAS.6.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin_OGAS.6.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = MAR_Kosygin_OGAS.7
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin_OGAS.7" }
+	title = MAR_Kosygin_OGAS.7.t
+	desc = MAR_Kosygin_OGAS.7.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin_OGAS.7.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = MAR_Kosygin_OGAS.8
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin_OGAS.8" }
+	title = MAR_Kosygin_OGAS.8.t
+	desc = MAR_Kosygin_OGAS.8.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin_OGAS.8.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = MAR_Kosygin_OGAS.9
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin_OGAS.9" }
+	title = MAR_Kosygin_OGAS.9.t
+	desc = MAR_Kosygin_OGAS.9.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin_OGAS.9.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = MAR_Kosygin_OGAS.10
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin_OGAS.10" }
+	title = MAR_Kosygin_OGAS.10.t
+	desc = MAR_Kosygin_OGAS.10.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin_OGAS.10.a
 		ai_chance = { factor = 1 }
 		
 	}

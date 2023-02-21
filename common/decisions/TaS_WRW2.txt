@@ -3515,11 +3515,13 @@ TaS_WRW2_europe_ultimatums = {
 	}
 	TaS_WRW2_Odessa_demand  = {
 		icon = GFX_romania_rus
-		OR = {
-			MUK = {
+		visible = {
+			OR = {
+				MUK = {
+					owns_state = 197
+				}
 				owns_state = 197
 			}
-			owns_state = 197
 		}
 		available = {
 			custom_trigger_tooltip = {

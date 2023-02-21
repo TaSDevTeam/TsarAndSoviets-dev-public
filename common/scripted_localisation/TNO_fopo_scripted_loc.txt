@@ -543,6 +543,14 @@ defined_text = {
 		localization_key = JAP_far_eastern_revolt_category_desc
 	}
 	text = {
+		trigger = {
+				check_variable = { conflict_id = token:GC_ManchurianCivilWar }
+				tag = MAR
+				has_government = socialist
+			}
+		localization_key = MAR_Kosygin_manchurian_civil_war_category_desc
+	}
+	text = {
 		trigger = { check_variable = { conflict_id = token:GC_ManchurianCivilWar } tag = MAR }
 		localization_key = MAR_manchurian_civil_war_category_desc
 	}
@@ -1338,8 +1346,20 @@ defined_text = {
 		localization_key = "GFX_fopo_far_eastern_revolt_icon_jap"
 	}
 	text = {
-		trigger = { check_variable = { conflict_id = token:GC_ManchurianCivilWar } tag = MAR }
+		trigger = {
+			check_variable = { conflict_id = token:GC_ManchurianCivilWar }
+			tag = MAR
+			NOT = { has_government = socialist }
+		}
 		localization_key = "GFX_fopo_manchurian_civil_war_icon_rus"
+	}
+	text = {
+		trigger = {
+				check_variable = { conflict_id = token:GC_ManchurianCivilWar }
+				tag = MAR
+				has_government = socialist
+			}
+		localization_key = "GFX_fopo_manchurian_civil_war_icon_kosygin"
 	}
 	text = {
 		trigger = { check_variable = { conflict_id = token:GC_ManchurianCivilWar } tag = JAP }

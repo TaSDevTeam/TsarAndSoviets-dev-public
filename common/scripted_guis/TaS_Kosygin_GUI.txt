@@ -2,23 +2,23 @@ scripted_gui = {
 	MAR_Prestol_GUI = {
 		context_type = decision_category
 		window_name = "MAR_Prestol_GUI"
-		dirty = MAR_insurgency_controller
+		#dirty = MAR_insurgency_controller
 		visible = { always = yes }
 		dynamic_lists = {
 			prestol_map_gridbox = {
 				array = MAR_map_grid_array
 				index = idx
 				value = MAR_map_value
-				entry_container = "OMS_map_entry"
+				entry_container = "MAR_map_entry"
 			}
 		}
 		properties = {
-			map_state = {
+			prestol_map_state = {
 				image = "GFX_MAR_insurgency_map_state_[?MAR_map_grid_array^idx]"
 				frame = MAR_map_value:kosygin_reception
 				x = MAR_map_x^idx
 				y = MAR_map_y^idx
-			}
+			} 
 			top_bar_strength_bar = { frame = insurgency_strength }
 		}
 		triggers = {
@@ -39,7 +39,7 @@ scripted_gui = {
 			map_backgroundhelper_visible = { is_debug = yes }
 		}
 		effects = {
-			map_state_click = {
+			prestol_map_state_click = {
 				set_variable = { insurgency_state_selected = MAR_map_grid_array^idx }
 				set_variable = { insurgency_state_selected_i = idx }
 				
@@ -68,22 +68,67 @@ scripted_gui = {
 		}
 		triggers = {
 			MAR_antiprestol_decision_one_click_enabled = {
-				var:insurgency_state_selected = {
-					check_variable = { MAR_Had_RecentAction = 0 }
+				custom_trigger_tooltip = {
+					tooltip = recent_action_prestol_tt
+					var:insurgency_state_selected = {
+						check_variable = { MAR_Had_RecentAction = 0 }
+					}
 				}
 				has_political_power > 24.99
 			}
 			MAR_antiprestol_decision_two_click_enabled = {
-				var:insurgency_state_selected = {
-					check_variable = { MAR_Had_RecentAction = 0 }
+				custom_trigger_tooltip = {
+					tooltip = recent_action_prestol_tt
+					var:insurgency_state_selected = {
+						check_variable = { MAR_Had_RecentAction = 0 }
+					}
 				}
 				has_political_power > 24.99
 			}
 			MAR_antiprestol_decision_three_click_enabled = {
-				var:insurgency_state_selected = {
-					check_variable = { MAR_Had_RecentAction = 0 }
+				custom_trigger_tooltip = {
+					tooltip = recent_action_prestol_tt
+					var:insurgency_state_selected = {
+						check_variable = { MAR_Had_RecentAction = 0 }
+					}
 				}
 				has_political_power > 24.99
+			}
+			MAR_antiprestol_decision_operation_one_click_enabled = {
+				custom_trigger_tooltip = {
+					tooltip = recent_action_prestol_tt
+					var:insurgency_state_selected = {
+						check_variable = { MAR_Had_RecentAction = 0 }
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = power_check_prestol_tt
+					var:insurgency_state_selected = {
+						check_variable = { insurgency_strength < 0.15 }
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = we_can_search_here_prestol_tt
+					var:insurgency_state_selected = {
+						check_variable = { kosygin_reception > 1 }
+					}
+				}
+				command_power > 24.9
+			}
+			MAR_antiprestol_decision_operation_two_visible_click_enabled = {
+				custom_trigger_tooltip = {
+					tooltip = recent_action_prestol_tt
+					var:insurgency_state_selected = {
+						check_variable = { MAR_Had_RecentAction = 0 }
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = power_check_prestol_tt
+					var:insurgency_state_selected = {
+						check_variable = { insurgency_strength < 0.15 }
+					}
+				}
+				command_power > 24.9
 			}
 			MAR_antiprestol_decision_operation_one_visible = { var:insurgency_state_selected = { check_variable = { operation_available = 0 } } }
 			MAR_antiprestol_decision_operation_two_visible = { var:insurgency_state_selected = { check_variable = { operation_available = 1 } } }
@@ -101,6 +146,7 @@ scripted_gui = {
 					add_to_variable = { insurgency_strength = -0.05 }
 					add_to_variable = { insurgency_strengthTrend = 0.001 }
 					add_to_variable = { MAR_Had_RecentAction = 1 }
+					MAR_clamp_insurgency_strength = yes
 				}
 				add_political_power = -25
 			}
@@ -109,6 +155,7 @@ scripted_gui = {
 					add_to_variable = { insurgency_strengthTrend = -0.005 }
 					add_to_variable = { insurgency_strength = 0.01 }
 					add_to_variable = { MAR_Had_RecentAction = 1 }
+					MAR_clamp_insurgency_strength = yes
 				}
 				add_political_power = -25
 			}
@@ -117,16 +164,23 @@ scripted_gui = {
 					add_to_variable = { insurgency_strengthTrend = -0.003 }
 					add_to_variable = { insurgency_strength = -0.03 }
 					add_to_variable = { MAR_Had_RecentAction = 1 }
+					MAR_clamp_insurgency_strength = yes
 				}
 				add_political_power = -25
+			}
+			MAR_antiprestol_decision_operation_one_click = {
+				MAR_Prestol_set_the_event = yes
+				add_command_power = -25
+			}
+			MAR_antiprestol_decision_operation_two_click = {
+				MAR_Prestol_set_the_event = yes
+				add_command_power = -25
 			}
 		}
 		properties = {
 			MAR_enemies_flag_image = {
 				image = "[MAR_PRESTOL_GET_ENEMY_FLAG]"
 			}
-		}
-		properties = {
 			MAR_enemies_leader_image = {
 				image = "[MAR_PRESTOL_GET_ENEMY_LEADER]"
 			}

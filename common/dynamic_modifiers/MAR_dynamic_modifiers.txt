@@ -46,6 +46,20 @@ MAR_military_order_modifier = {
 	recruitable_population_factor = MAR_ord_recruitable_population_factor
 }	
 
+MAR_prestol_insurgency_dynomod = {
+	#icon = GFX_idea_unknown
+	enable = { always = yes }
+	#|=====================================|#
+
+	resistance_damage_to_garrison = MAR_prestol_dynomod_array^0
+	supply_consumption_factor = MAR_prestol_dynomod_array^1
+	local_resources_factor = MAR_prestol_dynomod_array^2
+	stability_factor = MAR_prestol_dynomod_array^3
+	gdp_growth_modifier = MAR_prestol_dynomod_array^4
+	military_costs_misc = MAR_prestol_dynomod_array^5
+}
+
+
 MAR_ogas_modifier = {
 	icon = GFX_dynamic_modifier_MAR_Order_of_Saint_George
 	enable = {
@@ -53,22 +67,22 @@ MAR_ogas_modifier = {
 	}
 	
 	#safety
-	research_speed_factor =  MAR_OGAS_rs
-	political_power_factor = MAR_OGAS_pp
-	personnel_cost_modifier = MAR_OGAS_pc
+	research_speed_factor =  MAR_ogas_dynomod_array_one^0
+	political_power_factor = MAR_ogas_dynomod_array_one^1
+	personnel_cost_modifier = MAR_ogas_dynomod_array_one^2
 	#efficency
-	gdp_growth_modifier = MAR_OGAS_gdp
-	inflation_rate_modifier = MAR_OGAS_inf
-	industrial_capacity_factory = MAR_OGAS_ic
-	social_program_cost_factor = MAR_OGAS_soc
-	admin_program_cost_factor = MAR_OGAS_ap
-	production_factory_max_efficiency_factor = MAR_OGAS_mxe
-	poverty_monthly_rate = MAR_OGAS_pm
-	production_units_to_GDP_ratio_modifier = MAR_OGAS_pu
-	production_speed_buildings_factor = MAR_OGAS_const
+	gdp_growth_modifier = MAR_ogas_dynomod_array_two^0
+	inflation_rate_modifier = MAR_ogas_dynomod_array_two^1
+	industrial_capacity_factory = MAR_ogas_dynomod_array_two^2
+	social_program_cost_factor = MAR_ogas_dynomod_array_two^3
+	admin_program_cost_factor = MAR_ogas_dynomod_array_two^4
+	production_factory_max_efficiency_factor = MAR_ogas_dynomod_array_two^5
+	poverty_monthly_rate = MAR_ogas_dynomod_array_two^6
+	production_units_to_GDP_ratio_modifier = MAR_ogas_dynomod_array_two^7
+	production_speed_buildings_factor = MAR_ogas_dynomod_array_two^8
 	#complexity
-	stability_factor = MAR_OGAS_stab
-	misc_costs_percent_of_GDP_modifier = MAR_OGAS_costs
+	stability_factor = MAR_ogas_dynomod_array_two^1
+	misc_costs_percent_of_GDP_modifier = MAR_ogas_dynomod_array_two^0
 }
 TaS_WRW2_exhausion_modifier = {
 	icon = GFX_dynamic_modifier_WRW2_exhausion

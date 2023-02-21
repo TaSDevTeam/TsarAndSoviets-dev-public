@@ -1,7 +1,7 @@
 guiTypes = {
 	containerWindowType = {
 		name = "MAR_Prestol_GUI"
-		size = { width = 482 height = 900 }
+		size = { width = 482 height = 700 }
 		position = { x = 0 y = 0 }
 		containerWindowType = {
 			name = "top_bar"
@@ -25,6 +25,26 @@ guiTypes = {
 				position = { x = 0 y = 37 }
 				spriteType = "GFX_OMS_insurgency_top_bar_strength_bar"
 				pdx_tooltip = MAR_insurgency_top_bar_strength_bar
+			}
+			instantTextBoxType = {
+				name = "top_bar_terror_ttl"
+				position = { x = 343 y = 8 }
+				maxWidth = 139
+				maxHeight = 40
+				format = center
+				font = "aldrich_24_outline"
+				text = MAR_prestol_top_bar_terror_ttl
+				pdx_tooltip = MAR_prestol_top_bar_terror_bar
+			}
+			instantTextBoxType = {
+				name = "top_bar_terror_show"
+				position = { x = 343 y = 40 }
+				maxWidth = 139
+				maxHeight = 50
+				format = center
+				font = "aldrich_36_outline"
+				text = "[?prestol_terror_risk]%"
+				pdx_tooltip = MAR_prestol_top_bar_terror_bar
 			}
 		}
 		containerWindowType = {
@@ -275,7 +295,7 @@ guiTypes = {
 			font = "aldrich_24_outline"
 			text = "MAR_antiprestol_decision_operation_one"
 			format = center
-			pdx_tooltip = "MAR_antiprestol_decision_operation_tt"
+			pdx_tooltip = "MAR_antiprestol_decision_operation_one_tt"
 		}
 		
 		buttonType = {
@@ -286,7 +306,7 @@ guiTypes = {
 			font = "aldrich_24_outline"
 			text = "MAR_antiprestol_decision_operation_two"
 			format = center
-			pdx_tooltip = "MAR_antiprestol_decision_operation_tt"
+			pdx_tooltip = "MAR_antiprestol_decision_operation_two_tt"
 		}
 	}
 	containerWindowType = {

@@ -1849,5 +1849,27 @@ ideas = {
 			}
 		}
 	}
+	country = {
+		MAR_prestol_dynmod_dummy = {
+			allowed = {
+				always = no
+			}
+			on_remove = { remove_dynamic_modifier = { modifier = MAR_prestol_insurgency_dynomod } }
+			cancel = { has_country_flag = RUS_cancel_all_ideas }
+			removal_cost = -1
+			picture = CZE_mysterious_insurgency
+		}
+	}
+	country = {
+		MAR_prestol_ogas_dummy = {
+			allowed = {
+				always = no
+			}
+			on_remove = { remove_dynamic_modifier = { modifier = MAR_ogas_modifier } }
+			cancel = { has_country_flag = RUS_cancel_all_ideas }
+			removal_cost = -1
+			picture = CZE_mysterious_insurgency
+		}
+	}
 }	
 #

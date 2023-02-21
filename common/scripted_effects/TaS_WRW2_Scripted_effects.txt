@@ -618,6 +618,7 @@ TaS_WRW2_peace_Central_European_Restauration_new = {
 			transfer_state = 35
 			transfer_state = 74
 			transfer_state = 309
+			transfer_state = 1886
 			every_owned_state = {
 				GHL = {
 					add_state_core = PREV
@@ -959,6 +960,26 @@ TaS_2WRW_form_ost_zones = {
 				promote_character = yes
 			}
 			econ_join_sphere_MAR = yes
+		}
+	}
+	if = {
+		limit = { 
+			MAR = { has_government = socialist }
+		}
+		MBP = {
+			set_cosmetic_tag = MilZones_Kosygin
+		}
+		MBL = {
+			set_cosmetic_tag = MilZones_Kosygin
+		}
+		MUK = {
+			set_cosmetic_tag = MilZones_Kosygin
+		}
+		MTV = {
+			set_cosmetic_tag = MilZones_Kosygin
+		}
+		MCS = {
+			set_cosmetic_tag = MilZones_Kosygin
 		}
 	}
 }
