@@ -26,25 +26,25 @@ country_event = { #Novgorod Theatry
 			white_peace = MAR
 		}
 		MCW = {
-		transfer_state = 858
-		transfer_state = 859
-		transfer_state = 214
-		transfer_state = 861
-		transfer_state = 860
-		transfer_state = 857
-		transfer_state = 351
-		transfer_state = 856
-		transfer_state = 855
-		transfer_state = 252
-		transfer_state = 256
-		transfer_state = 250
-		transfer_state = 755
+		    transfer_state = 858
+		    transfer_state = 859
+		    transfer_state = 214
+		    transfer_state = 861
+		    transfer_state = 860
+		    transfer_state = 857
+		    transfer_state = 351
+		    transfer_state = 856
+		    transfer_state = 855
+		    transfer_state = 252
+		    transfer_state = 256
+		    transfer_state = 250
+		    transfer_state = 755
 		}
 		FIN = { 
-		transfer_state = 213
-		transfer_state = 1359
-		transfer_state = 215
-		transfer_state = 216
+		    transfer_state = 213
+		    transfer_state = 1359
+		    transfer_state = 215
+		    transfer_state = 216
 		}
 		ai_chance = { factor = 1 }
 		MAR_Sergey_Belozerskiy = {
@@ -497,15 +497,15 @@ country_event = { #bek won, but at what cost
 		ai_chance = { factor = 1 }
 		add_stability = -0.05
 		set_party_name = {
-				ideology = fascism
-				long_name = MAR_MAR_collapse_party_long
-				name = MAR_MAR_collapse_party
+			ideology = fascism
+			long_name = MAR_MAR_collapse_party_long
+			name = MAR_MAR_collapse_party
 		}
 		set_politics = {
-					ruling_party = fascism
-					last_election = "1933.2.16"
-					election_frequency = 36
-					elections_allowed = no
+			ruling_party = fascism
+			last_election = "1933.2.16"
+			election_frequency = 36
+			elections_allowed = no
 		}
 		add_country_leader_role = {
 			character = MAR_Kazem_Bek
@@ -565,17 +565,17 @@ country_event = { #F sphere
 		add_stability = -0.05
 		hidden_effect = {
 			EGQ = {
-			econ_leave_sphere = yes
-			econ_join_sphere_JAP = yes
+			    econ_leave_sphere = yes
+			    econ_join_sphere_JAP = yes
 			}
 			KUR = {
-			econ_leave_sphere = yes
+			    econ_leave_sphere = yes
 			}
 			IRC = {
-			econ_leave_sphere = yes
+			    econ_leave_sphere = yes
 			}
 			MAR = {
-			econ_leave_sphere = yes
+			    econ_leave_sphere = yes
 			}
 		}
 		hidden_effect = {
@@ -624,14 +624,14 @@ country_event = { #F tuva and zeya
 		ai_chance = { factor = 1 }
 		add_stability = -0.05
 		hidden_effect = {
-			 MEN = {
-			 transfer_state = 814
-			 transfer_state = 329
-			 }
-			 #MAN = {
-			 #transfer_state = 1364
-			 #transfer_state = 657
-			 #}
+			MEN = {
+			    transfer_state = 814
+			    transfer_state = 329
+			}
+			#MAN = {
+			#transfer_state = 1364
+			#transfer_state = 657
+			#}
 		}
 		hidden_effect = {
 			country_event ={
