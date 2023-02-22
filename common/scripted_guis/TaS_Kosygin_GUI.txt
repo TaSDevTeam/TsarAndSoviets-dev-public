@@ -143,8 +143,15 @@ scripted_gui = {
 			}
 			MAR_antiprestol_decision_one_click = {
 				var:insurgency_state_selected = {
-					add_to_variable = { insurgency_strength = -0.05 }
-					add_to_variable = { insurgency_strengthTrend = 0.001 }
+					set_temp_variable = { change_strenghth_temp = -0.05 }
+					set_temp_variable = { change_strenghth_trend_temp = 0.001 }
+					
+					add_to_variable = { insurgency_strengthTrend = change_strenghth_trend_temp }
+					add_to_variable = { insurgency_strength = change_strenghth_temp }
+					
+					custom_effect_tooltip = MAR_prestol_power_change
+					custom_effect_tooltip = MAR_prestol_power_trend_change
+					
 					add_to_variable = { MAR_Had_RecentAction = 1 }
 					MAR_clamp_insurgency_strength = yes
 				}
@@ -152,17 +159,30 @@ scripted_gui = {
 			}
 			MAR_antiprestol_decision_two_click = {
 				var:insurgency_state_selected = {
-					add_to_variable = { insurgency_strengthTrend = -0.005 }
-					add_to_variable = { insurgency_strength = 0.01 }
+					set_temp_variable = { change_strenghth_temp = 0.01 }
+					set_temp_variable = { change_strenghth_trend_temp = -0.005 }
+					
+					add_to_variable = { insurgency_strengthTrend = change_strenghth_trend_temp }
+					add_to_variable = { insurgency_strength = change_strenghth_temp }
 					add_to_variable = { MAR_Had_RecentAction = 1 }
+					
+					custom_effect_tooltip = MAR_prestol_power_change
+					custom_effect_tooltip = MAR_prestol_power_trend_change
 					MAR_clamp_insurgency_strength = yes
 				}
 				add_political_power = -25
 			}
 			MAR_antiprestol_decision_three_click = {
+				custom_effect_tooltip =  
 				var:insurgency_state_selected = {
-					add_to_variable = { insurgency_strengthTrend = -0.003 }
-					add_to_variable = { insurgency_strength = -0.03 }
+					set_temp_variable = { change_strenghth_temp = -0.03 }
+					set_temp_variable = { change_strenghth_trend_temp = -0.003 }
+					
+					add_to_variable = { insurgency_strengthTrend = change_strenghth_trend_temp }
+					add_to_variable = { insurgency_strength = change_strenghth_temp }
+					
+					custom_effect_tooltip = MAR_prestol_power_change
+					custom_effect_tooltip = MAR_prestol_power_trend_change
 					add_to_variable = { MAR_Had_RecentAction = 1 }
 					MAR_clamp_insurgency_strength = yes
 				}
