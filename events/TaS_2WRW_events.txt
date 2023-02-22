@@ -67,10 +67,10 @@ country_event = { #Novgorod Theatry
 				id = MAR_Collapse.1 days = 14
 			}
 			every_country  = {
-						news_event = {
-							id = MAR_2WRW_world_news.12
-						}
-					}
+				news_event = {
+					id = MAR_2WRW_world_news.12
+				}
+			}
 		}
 		add_political_power = -500
 		add_stability = -0.25
@@ -352,21 +352,20 @@ country_event = { #Turkestan breaks free
 			end_puppet = MAR
 			econ_leave_sphere = yes
 			set_politics = {
-						ruling_party = paternalism 
-						last_election = "1933.2.16"
-						election_frequency = 36
-						elections_allowed = no
+				ruling_party = paternalism 
+				last_election = "1933.2.16"
+				election_frequency = 36
+				elections_allowed = no
 			}
 			add_country_leader_role = {
-						character = UZB_Alexander_Rutskoj
-						promote_leader = yes
-						country_leader = {
-							desc = "POLITICS_RUTSKOJ_COLLAPSE_DESC"
-							ideology = paternalism_stratocracy_subtype
-							expire = "1999.1.1"
-							traits = { }
-									
-						}
+				character = UZB_Alexander_Rutskoj
+				promote_leader = yes
+				country_leader = {
+				   desc = "POLITICS_RUTSKOJ_COLLAPSE_DESC"
+					ideology = paternalism_stratocracy_subtype
+					expire = "1999.1.1"
+					traits = { }	
+				}
 			}
 			add_ideas = TaS_RUS_shattered_ambitions
 		}
@@ -387,7 +386,7 @@ country_event = { #-kazakhstan
 		retire_character = MAR_Wojciech_Jaruzelski
 		retire_character = MAR_Cheslav_Kischak
 		MAR_Wojciech_Jaruzelski = {
-				set_nationality = NPL
+			set_nationality = NPL
 		}
 		XYZ = {
 			MAR_Vitaliy_Mukha = {
@@ -417,21 +416,20 @@ country_event = { #-kazakhstan
 			remove_ideas = PAV_idealistic_revolutionaries 
 			add_ideas = TaS_RUS_shattered_ambitions
 			set_politics = {
-						ruling_party = paternalism
-						last_election = "1933.2.16"
-						election_frequency = 36
-						elections_allowed = no
+				ruling_party = paternalism
+				last_election = "1933.2.16"
+				election_frequency = 36
+				elections_allowed = no
 			}
 			add_country_leader_role = {
-						character = MAR_Vitaliy_Mukha 
-						promote_leader = yes
-						country_leader = {
-							desc = "POLITICS_MUKHA_COLLAPSE_DESC"
-							ideology = paternalism_social_nationalism_subtype
-							expire = "1999.1.1"
-							traits = { }
-									
-					}
+				character = MAR_Vitaliy_Mukha 
+				promote_leader = yes
+				country_leader = {
+					desc = "POLITICS_MUKHA_COLLAPSE_DESC"
+					ideology = paternalism_social_nationalism_subtype
+					expire = "1999.1.1"
+					traits = { }		
+				}
 			}	
 			set_party_name = {
 				ideology = paternalism
@@ -451,21 +449,20 @@ country_event = { #-kazakhstan
 				}
 			}			
 			set_politics = {
-						ruling_party = paternalism
-						last_election = "1933.2.16"
-						election_frequency = 36
-						elections_allowed = no
+			    ruling_party = paternalism
+				last_election = "1933.2.16"
+				election_frequency = 36
+				elections_allowed = no
 			} 
 			add_country_leader_role = {
-						character = MAR_Wojciech_Jaruzelski
-						promote_leader = yes
-						country_leader = {
-							desc = "POLITICS_JARUZELSKI_COLLAPSE_DESC"
-							ideology = paternalism_social_nationalism_subtype
-							expire = "1999.1.1"
-							traits = { }
-									
-					}
+				character = MAR_Wojciech_Jaruzelski
+				promote_leader = yes
+				country_leader = {
+					desc = "POLITICS_JARUZELSKI_COLLAPSE_DESC"
+					ideology = paternalism_social_nationalism_subtype
+					expire = "1999.1.1"
+					traits = { }
+				}
 			}	
 			set_party_name = {
 				ideology = paternalism
@@ -680,10 +677,10 @@ country_event = { #F dv 1
 			set_country_flag = RUS_cancel_all_ideas
 			econ_join_sphere_USA = yes 			
 			set_politics = {
-						ruling_party = liberalism
-						last_election = "1933.2.16"
-						election_frequency = 36
-						elections_allowed = no
+				ruling_party = liberalism
+				last_election = "1933.2.16"
+				election_frequency = 36
+				elections_allowed = no
 			}
 			add_popularity = {
 				ideology = liberalism
@@ -705,11 +702,11 @@ country_event = { #F dv 1
 				long_name = MAG_MAR_collapse_party_long
 				name = MAG_MAR_collapse_party
 			}
+		}	
 		hidden_effect = {
 			country_event ={
 				id = MAR_Collapse.14 days = 2
 			}
-		}
 		}
 	}
 }
@@ -746,10 +743,10 @@ country_event = { #F dv 2
 			add_state_core = 564
 			transfer_state = 564
 			set_politics = {
-						ruling_party = socialist
-						last_election = "1933.2.16"
-						election_frequency = 36
-						elections_allowed = no
+				ruling_party = socialist
+				last_election = "1933.2.16"
+				election_frequency = 36
+				elections_allowed = no
 			}
 			load_focus_tree = shattered_ambitions
 			MAG = {
@@ -796,10 +793,10 @@ country_event = { #F dv 2
 			add_state_core = 890
 			transfer_state = 890
 			set_politics = {
-						ruling_party = liberalism
-						last_election = "1933.2.16"
-						election_frequency = 36
-						elections_allowed = no
+				ruling_party = liberalism
+				last_election = "1933.2.16"
+				election_frequency = 36
+				elections_allowed = no
 			}
 			add_popularity = {
 				ideology = liberalism
@@ -857,7 +854,7 @@ country_event = { #F sibir
 		retire_character = MAR_Valentin_Ardashev
 		retire_character = MAR_Vladimir_Gil
 		MAR_Joseph_Beyrle = {
-				set_nationality = NOV
+			set_nationality = NOV
 		}
 		NOV = {
 			set_country_flag = RUS_cancel_all_ideas
@@ -898,10 +895,10 @@ country_event = { #F sibir
 			transfer_state = 575
 	
 			set_politics = { 
-						ruling_party = despotism
-						last_election = "1933.2.16"
-						election_frequency = 36
-						elections_allowed = no
+				ruling_party = despotism
+				last_election = "1933.2.16"
+				election_frequency = 36
+				elections_allowed = no
 			}
 			MAR_Joseph_Beyrle = {
 				promote_character = {
@@ -956,7 +953,7 @@ country_event = { #F Ural
 		ai_chance = { factor = 1 }
 		add_stability = -0.05
 		MAR_Vladimir_Gil = {
-				set_nationality = OMS
+			set_nationality = OMS
 		}
 		XYZ = {
 			MAR_Evgeny_Primakov = {
@@ -984,10 +981,10 @@ country_event = { #F Ural
 			add_state_core = 754
 
 			set_politics = {
-						ruling_party = fascism
-						last_election = "1933.2.16"
-						election_frequency = 36
-						elections_allowed = no
+				ruling_party = fascism
+				last_election = "1933.2.16"
+				election_frequency = 36
+				elections_allowed = no
 			}
 			MAR_Vladimir_Gil = {
 				promote_character = {
@@ -1028,10 +1025,10 @@ country_event = { #F Ural
 			transfer_state = 571
 
 			set_politics = {
-						ruling_party = paternalism
-						last_election = "1933.2.16"
-						election_frequency = 36
-						elections_allowed = no
+				ruling_party = paternalism
+				last_election = "1933.2.16"
+				election_frequency = 36
+				elections_allowed = no
 			}
 			add_popularity = {
 				ideology = paternalism
@@ -1118,10 +1115,10 @@ country_event = { #Total f
 			transfer_state = 867
 
 			set_politics = {
-						ruling_party = national_socialism
-						last_election = "1933.2.16"
-						election_frequency = 36
-						elections_allowed = no
+				ruling_party = national_socialism
+				last_election = "1933.2.16"
+				election_frequency = 36
+				elections_allowed = no
 			}
 			add_popularity = {
 				ideology = national_socialism
@@ -1152,10 +1149,10 @@ country_event = { #Total f
 			add_state_core = 854
 			transfer_state = 854
 			set_politics = {
-						ruling_party = paternalism
-						last_election = "1933.2.16"
-						election_frequency = 36
-						elections_allowed = no
+				ruling_party = paternalism
+				last_election = "1933.2.16"
+				election_frequency = 36
+				elections_allowed = no
 			}
 			add_country_leader_role = {
 				character = MAR_Mintimer_Shaymiev
@@ -1211,24 +1208,24 @@ country_event = { #Offer ceasefire - yes
 
 	option = {
 		name = MAR_AFG.1.a
-			RUS = {
-				white_peace = AFG
-			}
-			RUS = {
-					1468 = { set_demilitarized_zone = yes }
-					742 = {	set_demilitarized_zone = yes }
-			}
-			hidden_effect = {
-				every_country  = {
-					news_event = {
-						id = MAR_2WRW_world_news.2
-					}
+		RUS = {
+			white_peace = AFG
+		}
+		RUS = {
+			1468 = { set_demilitarized_zone = yes }
+			742 = {	set_demilitarized_zone = yes }
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.2
 				}
 			}
 		}
+	}	
 	option = {
 		name = MAR_AFG.1.b
-		}
+	}
 }
 country_event = { #conditional surrender
 	id = MAR_AFG.2
@@ -1242,29 +1239,29 @@ country_event = { #conditional surrender
 
 	option = {
 		name = MAR_AFG.2.a
-			RUS = {
-				white_peace = AFG
-			}
-			MTR = {
-				transfer_state = 1885
-				transfer_state = 1465
-			}
-			AFG = {
-					1470 = { set_demilitarized_zone = yes }
-					1884 = { set_demilitarized_zone = yes }
-					1469 = { set_demilitarized_zone = yes }
-			}
-			hidden_effect = {
-				every_country  = {
-					news_event = {
-						id = MAR_2WRW_world_news.2
-					}
+		RUS = {
+			white_peace = AFG
+		}
+		MTR = {
+			transfer_state = 1885
+			transfer_state = 1465
+		}
+		AFG = {
+			1470 = { set_demilitarized_zone = yes }
+			1884 = { set_demilitarized_zone = yes }
+			1469 = { set_demilitarized_zone = yes }
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.2
 				}
 			}
 		}
+	}
 	option = {
 		name = MAR_AFG.2.b
-		}
+	}
 }
 country_event = { #unconditional surrender
 	id = MAR_AFG.3
@@ -1278,42 +1275,42 @@ country_event = { #unconditional surrender
 
 	option = {
 		name = MAR_AFG.3.a
-			RUS = {
-				white_peace = AFG
-			}
-			MTR = {
-				transfer_state = 1468
-				transfer_state = 1885
-				transfer_state = 1470
-				transfer_state = 1471
-			}
-			AFG = {
-				econ_join_sphere_MAR = yes
-				transfer_state = 442
-				add_state_core = 442
-			}
-			PAK = {
-				econ_join_sphere_MAR = yes
-				transfer_state = 1533
-				add_state_core = 1533
-				transfer_state = 929
-				add_state_core = 929
-				transfer_state = 445
-				add_state_core = 445
-				transfer_state = 1534
-				add_state_core = 1534				
-				transfer_state = 444
-				add_state_core = 444
-				transfer_state = 749
-				add_state_core = 749
-			}
-			hidden_effect = {
-				every_country  = {
-					news_event = {
-						id = MAR_2WRW_world_news.3
-					}
+		RUS = {
+			white_peace = AFG
+		}
+		MTR = {
+			transfer_state = 1468
+			transfer_state = 1885
+			transfer_state = 1470
+			transfer_state = 1471
+		}
+		AFG = {
+			econ_join_sphere_MAR = yes
+			transfer_state = 442
+			add_state_core = 442
+		}
+		PAK = {
+			econ_join_sphere_MAR = yes
+			transfer_state = 1533
+			add_state_core = 1533
+			transfer_state = 929
+			add_state_core = 929
+			transfer_state = 445
+			add_state_core = 445
+			transfer_state = 1534
+			add_state_core = 1534				
+			transfer_state = 444
+			add_state_core = 444
+			transfer_state = 749
+			add_state_core = 749
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.3
 				}
 			}
+		}
 	}
 }
 country_event = { #Technical stuff no loc
