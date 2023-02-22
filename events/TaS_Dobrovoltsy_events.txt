@@ -17,21 +17,21 @@ country_event = { #any help?
 			add_ideas = MAR_volunteer_mladojopa_for
 		}
 		MAR = {
-				set_temp_variable = { target = ROOT }
-				TNO_increase_volunteer_cap_3 = yes
-				country_event = {
-					id = berez_dobrovoltsy.2
-					days = 3
-				}
+			set_temp_variable = { target = ROOT }
+			TNO_increase_volunteer_cap_3 = yes
+			country_event = {
+				id = berez_dobrovoltsy.2
+				days = 3
+			}
 		}
 	}
 	option = { #no 
 		name = berez_dobrovoltsy.1.b
 		ai_chance = { factor = 1 }
 		MAR = {
-				country_event = {
-					id = berez_dobrovoltsy.3
-					days = 3
+			country_event = {
+				id = berez_dobrovoltsy.3
+				days = 3
 			}
 		}		
 	}
@@ -70,9 +70,9 @@ country_event = { #Yemen 1
 	option = { #very cool
 		name = berez_dobrovoltsy.11.a
 		YEM = {
-				econ_join_sphere_MAR = yes
-				set_temp_variable = { gdp_growth_temp = 0.1 }
-				econ_gdp_growth_change = yes
+			econ_join_sphere_MAR = yes
+			set_temp_variable = { gdp_growth_temp = 0.1 }
+			econ_gdp_growth_change = yes
 		}
 		MAR = {
 			set_temp_variable = { gdp_growth_temp = 0.02 }
@@ -111,9 +111,9 @@ country_event = { #Oman 1
 	option = { #very cool
 		name = berez_dobrovoltsy.13.a
 		OMA = {
-				econ_join_sphere_MAR = yes
-				set_temp_variable = { gdp_growth_temp = 0.1 }
-				econ_gdp_growth_change = yes
+			econ_join_sphere_MAR = yes
+			set_temp_variable = { gdp_growth_temp = 0.1 }
+			econ_gdp_growth_change = yes
 		}
 		MAR = {
 			set_temp_variable = { gdp_growth_temp = 0.02 }
@@ -193,7 +193,7 @@ country_event = { #Kurds 1
 	option = { #Zhirik
 		name = berez_dobrovoltsy.17.a
 		hidden_effect = {
-		MAR = {
+		    MAR = {
 				country_event = {
 					id = berez_dobrovoltsy.18
 					days = 7
@@ -207,7 +207,7 @@ country_event = { #Kurds 1
 		set_temp_variable = { debt_temp = 0.035 }
 		econ_national_debt_change = yes
 		hidden_effect = {
-		MAR = {
+		    MAR = {
 				country_event = {
 					id = berez_dobrovoltsy.19
 					days = 35
@@ -228,7 +228,7 @@ country_event = { #Kurds 2
 	option = { 
 		name = berez_dobrovoltsy.18.a
 		hidden_effect = {
-		MAR_Iraq_Kurdistan_zhirik = yes
+		    MAR_Iraq_Kurdistan_zhirik = yes
 		}
 		custom_effect_tooltip = MAR_KUR_Zhirik
 		news_event = { id =  berez_dobrovoltsy_world_news.11 days = 1 }
@@ -245,7 +245,7 @@ country_event = { #Kurds 3
 	option = { 
 		name = berez_dobrovoltsy.19.a
 		hidden_effect = {
-		MAR_Iraq_Kurdistan_saddam = yes
+		    MAR_Iraq_Kurdistan_saddam = yes
 		}
 		custom_effect_tooltip = MAR_KUR_Saddam
 		news_event = { id =  berez_dobrovoltsy_world_news.12 days = 1 }
@@ -263,9 +263,9 @@ country_event = { #Sudan 1
 	option = { #very cool
 		name = berez_dobrovoltsy.20.a
 		SDF = {
-				econ_join_sphere_MAR = yes
-				set_temp_variable = { gdp_growth_temp = 0.1 }
-				econ_gdp_growth_change = yes
+			econ_join_sphere_MAR = yes
+			set_temp_variable = { gdp_growth_temp = 0.1 }
+			econ_gdp_growth_change = yes
 		}
 		MAR = {
 			set_temp_variable = { gdp_growth_temp = 0.04 }
@@ -304,9 +304,9 @@ country_event = { #SSudan 1
 	option = { #very cool
 		name = berez_dobrovoltsy.22.a
 		AZA = {
-				econ_join_sphere_MAR = yes
-				set_temp_variable = { gdp_growth_temp = 0.1 }
-				econ_gdp_growth_change = yes
+			econ_join_sphere_MAR = yes
+			set_temp_variable = { gdp_growth_temp = 0.1 }
+			econ_gdp_growth_change = yes
 		}
 		MAR = {
 			set_temp_variable = { gdp_growth_temp = 0.02 }
@@ -325,9 +325,9 @@ country_event = { #Congo 1
 	option = { #very cool
 		name = berez_dobrovoltsy.23.a
 		AZD = {
-				econ_join_sphere_MAR = yes
-				set_temp_variable = { gdp_growth_temp = 0.15 }
-				econ_gdp_growth_change = yes
+			econ_join_sphere_MAR = yes
+			set_temp_variable = { gdp_growth_temp = 0.15 }
+			econ_gdp_growth_change = yes
 		}
 		MAR = {
 			set_temp_variable = { gdp_growth_temp = 0.04 }
@@ -346,9 +346,9 @@ country_event = { #Iran 1
 	option = { #very cool
 		name = berez_dobrovoltsy.23.a
 		IRC = {
-				econ_join_sphere_MAR = yes
-				set_temp_variable = { gdp_growth_temp = 0.10 }
-				econ_gdp_growth_change = yes
+			econ_join_sphere_MAR = yes
+			set_temp_variable = { gdp_growth_temp = 0.10 }
+			econ_gdp_growth_change = yes
 		}
 		MAR = {
 			set_temp_variable = { gdp_growth_temp = 0.05 }
@@ -410,9 +410,9 @@ news_event = { #Kurdistan win with god's help(russian)
 	
 	option = {
 		name = berez_dobrovoltsy_world_news.10.a
-			trigger = {
-				tag = MAR
-			}
+		trigger = {
+			tag = MAR
+		}
 	}
 	option = {
 		name = berez_dobrovoltsy_world_news.10.b
@@ -425,9 +425,9 @@ news_event = { #Kurdistan win with god's help(russian)
 	}
 	option = {
 		name = berez_dobrovoltsy_world_news.10.c
-			trigger = {
-				tag = GER
-			}
+		trigger = {
+			tag = GER
+		}
 	}
 }
 news_event = { #Russian colony in Iraq
@@ -440,9 +440,9 @@ news_event = { #Russian colony in Iraq
 	
 	option = {
 		name = berez_dobrovoltsy_world_news.11.a
-			trigger = {
-				tag = MAR
-			}
+		trigger = {
+			tag = MAR
+		}
 	}
 	option = {
 		name = berez_dobrovoltsy_world_news.11.b
@@ -455,9 +455,9 @@ news_event = { #Russian colony in Iraq
 	}
 	option = {
 		name = berez_dobrovoltsy_world_news.11.c
-			trigger = {
-				tag = GER
-			}
+		trigger = {
+			tag = GER
+		}
 	}
 }
 news_event = { #Saddam in Kurdistan
@@ -470,9 +470,9 @@ news_event = { #Saddam in Kurdistan
 	
 	option = {
 		name = berez_dobrovoltsy_world_news.12.a
-			trigger = {
-				tag = MAR
-			}
+		trigger = {
+			tag = MAR
+		}
 	}
 	option = {
 		name = berez_dobrovoltsy_world_news.12.b
@@ -485,9 +485,9 @@ news_event = { #Saddam in Kurdistan
 	}
 	option = {
 		name = berez_dobrovoltsy_world_news.12.c
-			trigger = {
-				tag = GER
-			}
+		trigger = {
+			tag = GER
+		}
 	}
 }
 news_event = { #Russo-Iranian Oil Company
@@ -500,9 +500,9 @@ news_event = { #Russo-Iranian Oil Company
 	
 	option = {
 		name = berez_dobrovoltsy_world_news.12.a
-			trigger = {
-				tag = MAR
-			}
+		trigger = {
+			tag = MAR
+		}
 	}
 	option = {
 		name = berez_dobrovoltsy_world_news.12.b
@@ -515,9 +515,9 @@ news_event = { #Russo-Iranian Oil Company
 	}
 	option = {
 		name = berez_dobrovoltsy_world_news.12.c
-			trigger = {
-				tag = GER
-			}
+		trigger = {
+			tag = GER
+		}
 	}
 }
 
@@ -539,19 +539,20 @@ country_event = { #KUR_CW End- Kurdish Victory (Real)
 			}
 		}
 		hidden_effect = {
-		KUR = {
-			country_event = {
-				id = KUR_CW.20 days = 5
-			}
-			country_event = {
-				id = KUR_CW.21 days = 12
-			}
-			country_event = {
-				id = KUR_CW.22 days = 19
-			}
-			country_event = {
-				id = KUR_CW.23 days = 27
-			}
+		    KUR = {
+			    country_event = {
+				    id = KUR_CW.20 days = 5
+			    }
+			    country_event = {
+				    id = KUR_CW.21 days = 12
+			    }
+			    country_event = {
+				    id = KUR_CW.22 days = 19
+			    }
+			    country_event = {
+				    id = KUR_CW.23 days = 27
+			    }
+			}			
 		}
 		MAR = {
 			country_event = {
@@ -562,7 +563,6 @@ country_event = { #KUR_CW End- Kurdish Victory (Real)
 			news_event = { id = berez_dobrovoltsy_world_news.10 days = 1 }
 		}
 	}
-}
 }
 country_event = { # oops 1
 	id = KUR_CW.20
@@ -576,9 +576,9 @@ country_event = { # oops 1
 	option = {
 		name = KUR_CW.20.a
 		KUR = {
-		291 = {
-		set_demilitarized_zone = yes
-		}
+		    291 = {
+	 	        set_demilitarized_zone = yes
+		    }
 		}
 	}
 }
@@ -594,26 +594,26 @@ country_event = { # oops 2
 	option = {
 		name = KUR_CW.21.a
 		KUR = {
-		random_owned_controlled_state = {
-			limit = {
-				NOT = {
-					is_demilitarized_zone = yes
-					state = 781
-					state = 1334
-				}
-			}
+		    random_owned_controlled_state = {
+			    limit = {
+				    NOT = {
+					    is_demilitarized_zone = yes
+					    state = 781
+					    state = 1334
+				    }
+			    }
+			}	
 			set_demilitarized_zone = yes
-		}
-		random_owned_controlled_state = {
-			limit = {
-				NOT = {
-					is_demilitarized_zone = yes
-					state = 781
-					state = 1334					
+		    random_owned_controlled_state = {
+			    limit = {
+				    NOT = {
+					    is_demilitarized_zone = yes
+					    state = 781
+					    state = 1334	
+					}		
 				}
-			}
+			}		
 			set_demilitarized_zone = yes
-		}
 		}
 	}
 }
