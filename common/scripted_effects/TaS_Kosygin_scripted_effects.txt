@@ -104,10 +104,14 @@ MAR_OGAS_switch_to_the_next_stage = {
 	if = {
 		limit = { check_variable = { MAR_ogas_stages_status_array^MAR_ogas_current_stage = 1 } }
 		add_to_variable = { MAR_ogas_current_stage = 1 }
-	}	
+		if = {
+			limit = { check_variable = { MAR_ogas_current_stage = 5 } }
+			country_event = { id = MAR_Kosygin_OGAS.10 }
+		}
+	}
 }
 
-MAR_calculate_dynmod_effects = {
+MAR_calculate_ogas_dynmod_effects = {
 	add_ideas = MAR_ogas_dynmod_dummy
 		
 	add_dynamic_modifier = {
