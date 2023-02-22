@@ -562,6 +562,7 @@ country_event = {#We Do a little mladosoc
 	
 	option = {
 		name = MAR_Gil.7.a
+		ai_chance = { factor = 1 }
 		custom_effect_tooltip = MAR_Mladosocialism_Rise
 		set_party_name = {
 			ideology = fascism
@@ -591,8 +592,7 @@ country_event = {#We Do a little mladosoc
 			ideology = fascism
 			popularity = 0.27
 		}
-	set_country_flag = MAR_Gil_went_mladosoc
-	ai_chance = { factor = 1 }
+	    set_country_flag = MAR_Gil_went_mladosoc
 	}
 }
 
@@ -606,11 +606,11 @@ country_event = {#We Do a little mladosoc
 	
 	option = {
 		name = MAR_Gil.7.a
+		ai_chance = { factor = 1 }
 		custom_effect_tooltip = MAR_Mladosocialism_Rise
 		hidden_effect = {
 			set_cosmetic_tag = MAR_Gil_reg
 		}
-	set_country_flag = MAR_Gil_went_mladosoc
-	ai_chance = { factor = 1 }
+	    set_country_flag = MAR_Gil_went_mladosoc
 	}
 }
