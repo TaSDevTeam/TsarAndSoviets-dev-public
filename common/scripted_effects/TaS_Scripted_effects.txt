@@ -150,9 +150,7 @@ MAR_Solzh_Vyatka_takeover = {
 		picture = "MAR_SOLZH.dds"
 		expire = "2000.1.1"
 		ideology = paternalism_solidarism_subtype
-		traits = {
-			
-		}
+		traits = { }
 	}
 	set_politics = {
 		ruling_party = paternalism
@@ -234,14 +232,14 @@ MAR_Iraq_Kurdistan_zhirik = {
 			}
 		}
 		add_country_leader_role = {
-				character = KUR_Vladimir_Zhirinovsky
-				promote_leader = yes
-				country_leader = {
-					desc = "POLITICS_VLADIMIR_ZHIRINOVSKY_DESC"
-					ideology = liberalism_liberal_radicalism_subtype
-					expire = "1999.1.1"
-					traits = { }
-				}
+			character = KUR_Vladimir_Zhirinovsky
+			promote_leader = yes
+			country_leader = {
+				desc = "POLITICS_VLADIMIR_ZHIRINOVSKY_DESC"
+				ideology = liberalism_liberal_radicalism_subtype
+				expire = "1999.1.1"
+				traits = { }
+			}
 		}
 		set_popularities = {
 			liberalism = 34
@@ -307,13 +305,13 @@ MAR_Iraq_Kurdistan_saddam = {
 		}
 
 		add_country_leader_role = {
-				character = KUR_Saddam_Hussein
-				country_leader = {
-					desc = "POLITICS_SADDAM_HUSSEIN_DESC"
-					ideology = progressivism_popular_front_subtype
-					expire = "1999.1.1"
-					traits = { }
-				}
+			character = KUR_Saddam_Hussein
+			country_leader = {
+				desc = "POLITICS_SADDAM_HUSSEIN_DESC"
+				ideology = progressivism_popular_front_subtype
+				expire = "1999.1.1"
+				traits = { }
+			}
 		}
 		KUR_Saddam_Hussein = {
 			promote_character = yes

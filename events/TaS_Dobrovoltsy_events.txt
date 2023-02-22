@@ -629,36 +629,39 @@ country_event = { # oops 3
 	option = {
 		name = KUR_CW.22.a
 		KUR = {
-		random_owned_controlled_state = {
-			limit = {
-				NOT = {
-					is_demilitarized_zone = yes
-					state = 781
-					state = 1334
+		    random_owned_controlled_state = {
+			    limit = {
+				    NOT = {
+					    is_demilitarized_zone = yes
+					    state = 781
+					    state = 1334
+					}	
 				}
 			}
 			set_demilitarized_zone = yes
-		}
-		random_owned_controlled_state = {
-			limit = {
-				NOT = {
-					is_demilitarized_zone = yes
-					state = 781
-					state = 1334					
+		
+		    random_owned_controlled_state = {
+			    limit = {
+				    NOT = {
+					    is_demilitarized_zone = yes
+					    state = 781
+					    state = 1334	
+					}	
 				}
 			}
 			set_demilitarized_zone = yes
-		}
-		random_owned_controlled_state = {
-			limit = {
-				NOT = {
-					is_demilitarized_zone = yes
-					state = 781
-					state = 1334
+		
+		    random_owned_controlled_state = {
+			    limit = {
+				    NOT = {
+					    is_demilitarized_zone = yes
+					    state = 781
+					    state = 1334
+					}	
 				}
 			}
 			set_demilitarized_zone = yes
-		}
+		
 		}
 	}
 }
@@ -673,15 +676,24 @@ country_event = { # oops 3, government collapsed, asking for russian help
 
 	option = {
 		name = KUR_CW.23.a
+		XYZ = {
+		    KUR_Collapsed_Authority = {
+			    set_nationality = KUR
+			}	
+		}
 		KUR = {
-			create_country_leader = {
-			name = "Collapsed authority"
-			picture = "Portrait_Kurdistan_Collapsed_Authority.dds"
-			expire = "2000.1.1"
-			ideology = despotism_warlordism_subtype
-			traits = {
-				
+            add_country_leader_role = {
+			    character = KUR_Saddam_Hussein
+			    country_leader = {
+				    #desc = "POLITICS_SADDAM_HUSSEIN_DESC"
+				    ideology = despotism_warlordism_subtype
+				    expire = "1999.1.1"
+				    traits = { }
+				}	
 			}
+		}
+		KUR_Saddam_Hussein = {
+			promote_character = yes
 		}		
 		random_owned_controlled_state = {
 			limit = {
@@ -712,7 +724,6 @@ country_event = { # oops 3, government collapsed, asking for russian help
 				}
 			}
 			set_demilitarized_zone = yes
-		}
 		}
 	}
 }
