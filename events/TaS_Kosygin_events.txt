@@ -1898,7 +1898,8 @@ country_event = { #
 	option = { #
 		name = MAR_Kosygin_OGAS.10.a
 		ai_chance = { factor = 1 }
-		
+		MAR_calculate_ogas_dynmod_effects = yes
+		clr_country_flag = MAR_ogas_dev_started
 	}
 }
 
