@@ -1453,10 +1453,10 @@ country_event = { #Technical stuff no loc
 				promote_character = yes
 			}
 			set_party_name = { 
-					ideology = communist
-					long_name = PFF_communist_party_long
-					name = PFF_communist_party
-				}
+				ideology = communist
+				long_name = PFF_communist_party_long
+				name = PFF_communist_party
+			}
 		}
 		country_event = {
 			id = MAR_Japan.4 days = 11
@@ -1549,10 +1549,10 @@ country_event = { #Technical stuff no loc
 			}
 		}
 		every_state = {
-				limit = {
-					is_owned_by = MAN
-				}
-				set_demilitarized_zone = yes
+			limit = {
+				is_owned_by = MAN
+			}
+			set_demilitarized_zone = yes
 		}			
 		country_event = {
 			id = MAR_Japan.5 days = 9
@@ -1742,8 +1742,7 @@ country_event = { #Technical stuff no loc
 				picture = "Portrait_ZZZ_Anarchy.dds"
 				expire = "3000.1.1"
 				ideology = socialist_subtype
-				traits = {
-				}
+				traits = { }
 			}
 			set_variable = { TNO_economy_type = 3 }
 			set_variable = { TNO_economy_subtype = 4 }
@@ -1848,12 +1847,12 @@ country_event = { #Report nubma 1231413112 - start of the proxy
 			Cold_War_GUI_ManipulateVictory = yes
 		}
 		hidden_effect = {
-				every_country  = {
-					news_event = {
-						id = MAR_2WRW_world_news.30
-					}
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.30
 				}
 			}
+		}
 		set_global_flag = MAR_fareast_proxy
 		TaS_2WRW_manchuria_spawn_states = yes
 	}
@@ -1951,21 +1950,21 @@ country_event = { #Offer status quo
 
 	option = { #yes
 		name = MAR_2WRW.1.a
-			MAR = {
-				white_peace = GER
-			}
-			every_country = {
-				limit = { is_in_faction_with = GER }
-				white_peace = MAR
-			}
-			hidden_effect = {
-				every_country  = {
-					news_event = {
-						id = MAR_2WRW_world_news.9
-					}
+		MAR = {
+			white_peace = GER
+		}
+		every_country = {
+			limit = { is_in_faction_with = GER }
+			white_peace = MAR
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.9
 				}
 			}
 		}
+	}
 	option = { #nope lol
 		name = MAR_2WRW.1.b
 	}
@@ -1982,34 +1981,34 @@ country_event = { #Offer muscowy
 
 	option = { #yes
 		name = MAR_2WRW.2.a
-			MAR = {
-				white_peace = GER
-			}
-			every_country = {
-				limit = { is_in_faction_with = GER }
-				white_peace = MAR
-			}
-			MAR = {
-				annex_country = {
-					target = MCW
-					transfer_troops = no
-				}
-				every_state = {
-					limit = {
-						is_core_of = MCW
-					}
-					#add_core_of = RUS
-					hidden_effect = { remove_core_of = MCW }
-				}
-			}
-			hidden_effect = {
-				every_country  = {
-					news_event = {
-						id = MAR_2WRW_world_news.9
-					}
-				}
-			}			
+		MAR = {
+			white_peace = GER
 		}
+		every_country = {
+			limit = { is_in_faction_with = GER }
+			white_peace = MAR
+		}
+		MAR = {
+			annex_country = {
+				target = MCW
+				transfer_troops = no
+			}
+			every_state = {
+				limit = {
+					is_core_of = MCW
+				}
+				#add_core_of = RUS
+				hidden_effect = { remove_core_of = MCW }
+			}
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.9
+				}
+			}
+		}			
+	}
 	option = { #nope lol
 		name = MAR_2WRW.2.b
 	}
@@ -2152,15 +2151,15 @@ country_event = { #Offer muscowy and caucasus and belarus and half of ukraine
 					hidden_effect = { remove_core_of = OST }
 				}
 			}
-			hidden_effect = {
-				every_country  = {
-					news_event = {
-						id = MAR_2WRW_world_news.9
-					}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.9
 				}
-				TaS_2WRW_form_ost_zones = yes
-			}			
-		}
+			}
+			TaS_2WRW_form_ost_zones = yes
+		}			
+	}
 	option = { #nope lol
 		name = MAR_2WRW.4.b
 	}
@@ -2240,7 +2239,7 @@ country_event = { #RIP SWEET TSAR
 			add_country_leader_role = {
 				character = MAR_the_throne
 				promote_leader = yes
-					country_leader = {
+				country_leader = {
 					desc = "POLITICS_THE_RUSSIAN_THRONE_DESC"
 					expire = "1999.1.1"
 					ideology = despotism_interim_government_subtype
@@ -3075,10 +3074,10 @@ country_event = { #Baltics
 			}
 			MBP = {
 				every_owned_state = {
-						MBP = {
-							add_state_core = PREV
-						}
+					MBP = {
+						add_state_core = PREV
 					}
+				}
 				TaS_2WRW_set_autonomy_laws = yes
 				#add_ideas = { MAR_military_administration }
 				set_popularities = {
@@ -3198,10 +3197,10 @@ country_event = { #Belarus
 			}
 			MBL = {
 				every_owned_state = {
-						MBL = {
-							add_state_core = PREV
-						}
+					MBL = {
+						add_state_core = PREV
 					}
+				}
 				TaS_2WRW_set_free_laws = yes
 				#add_ideas = { MAR_military_administration }
 				remove_ideas = { MAR_military_administration }
@@ -3246,10 +3245,10 @@ country_event = { #Belarus
 			}
 			MBL = {
 				every_owned_state = {
-						MBL = {
-							add_state_core = PREV
-						}
+					MBL = {
+						add_state_core = PREV
 					}
+				}
 				TaS_2WRW_set_autonomy_laws = yes
 				#add_ideas = { MAR_military_administration }
 				remove_ideas = { MAR_military_administration }
@@ -3301,10 +3300,10 @@ country_event = { #Ukraine
 			}
 			MUK = {
 				every_owned_state = {
-						MUK = {
-							add_state_core = PREV
-						}
+					MUK = {
+						add_state_core = PREV
 					}
+				}
 				TaS_2WRW_set_free_laws = yes
 				#add_ideas = { MAR_military_administration }
 				remove_ideas = { MAR_military_administration }
@@ -3357,10 +3356,10 @@ country_event = { #Ukraine
 			}
 			MUK = {
 				every_owned_state = {
-						MUK = {
-							add_state_core = PREV
-						}
+					MUK = {
+						add_state_core = PREV
 					}
+				}
 				TaS_2WRW_set_autonomy_laws = yes
 				#add_ideas = { MAR_military_administration }
 				remove_ideas = { MAR_military_administration }
@@ -3435,10 +3434,10 @@ country_event = { #Crimnea
 			}
 			MTV = {
 				every_owned_state = {
-						MTV = {
-							add_state_core = PREV
-						}
+					MTV = {
+						add_state_core = PREV
 					}
+				}
 				TaS_2WRW_set_autonomy_laws = yes
 				#add_ideas = { MAR_military_administration }
 				set_politics = {
@@ -3512,10 +3511,10 @@ country_event = { #Caucasus
 			}
 			MCS = {
 				every_owned_state = {
-						MCS = {
-							add_state_core = PREV
-						}
+					MCS = {
+						add_state_core = PREV
 					}
+				}
 				#add_ideas = { MAR_military_administration }
 				set_politics = {
 					ruling_party = ultranationalism
@@ -3556,10 +3555,10 @@ country_event = { #Caucasus
 			}
 			MCS = {
 				every_owned_state = {
-						MCS = {
-							add_state_core = PREV
-						}
+					MCS = {
+						add_state_core = PREV
 					}
+				}
 				#add_ideas = { MAR_military_administration }
 				set_party_name = { 
 					ideology = despotism 
@@ -3610,9 +3609,9 @@ news_event = {
 	
 	option = {
 		name = MAR_2WRW_world_news.1.a
-			trigger = {
-				tag = MAR
-			}
+		trigger = {
+			tag = MAR
+		}
 	}
 	option = {
 		name = MAR_2WRW_world_news.1.b
@@ -3698,16 +3697,16 @@ news_event = {
 	}
 	option = {
 		name = MAR_2WRW_world_news.6.b
-			trigger = {
-				original_tag = GER
-			}
+		trigger = {
+			original_tag = GER
+		}
 		set_country_flag = TaS_2WRW_BELOOZ_STARTED_BE_fl
 	}
 	option = {
 		name = MAR_2WRW_world_news.6.c
-			trigger = {
-				original_tag = MAR
-			}
+		trigger = {
+			original_tag = MAR
+		}
 		set_country_flag = TaS_2WRW_BELOOZ_STARTED_BE_fl
 	}
 }
@@ -3733,15 +3732,15 @@ news_event = {
 	}
 	option = {
 		name = MAR_2WRW_world_news.7.b
-			trigger = {
-				tag = GER
-			}
+		trigger = {
+			tag = GER
+		}
 	}
 	option = {
 		name = MAR_2WRW_world_news.7.c
-			trigger = {
-				tag = MAR
-			}
+		trigger = {
+			tag = MAR
+		}
 	}
 }
 
@@ -3766,15 +3765,15 @@ news_event = {
 	}
 	option = {
 		name = MAR_2WRW_world_news.8.b
-			trigger = {
-				tag = GER
-			}
+		trigger = {
+			tag = GER
+		}
 	}
 	option = {
 		name = MAR_2WRW_world_news.8.c
-			trigger = {
-				tag = MAR
-			}
+		trigger = {
+			tag = MAR
+		}
 	}
 }
 
