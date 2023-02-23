@@ -1596,6 +1596,10 @@ country_event = { # MAR_Mladorosskay_mechta
 			limit = { has_government = despotism }
 			load_focus_tree = MAR_Belozerski_tree
 		}
+		if = {
+			limit = { has_government = socialist }
+			load_focus_tree = MAR_Kosygin_Regional
+		}
 	}
 }
 
@@ -2588,6 +2592,9 @@ country_event = { # MAR_final_vibori ROMANOV WIN
 		}
 		remove_ideas = MAR_Cyril_Yelita_Vilchkovsky_hog
     	add_ideas = MAR_Alexander_Kazembek_hog
+		
+		remove_ideas = MAR_Alexey_Kosygin_eco
+		add_ideas = MAR_Nikolai_Maslennikov_eco
 		if = {
 			limit = { has_idea = MAR_regent_without_tsar_1 }
 			remove_ideas = MAR_regent_without_tsar_1
@@ -2599,8 +2606,6 @@ country_event = { # MAR_final_vibori ROMANOV WIN
 		else_if = {
 			limit = { has_idea = MAR_regent_without_tsar_3 }
 			remove_ideas = MAR_regent_without_tsar_3
-		}	
-		set_country_flag = MAR_Path_not_done
-		TNO_Country_Closing_Screen_Show = yes
+		}
 	}
 }

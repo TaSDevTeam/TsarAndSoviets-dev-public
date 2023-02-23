@@ -130,7 +130,12 @@ scripted_gui = {
 				}
 				command_power > 24.9
 			}
-			MAR_antiprestol_decision_operation_one_visible = { var:insurgency_state_selected = { check_variable = { operation_available = 0 } } }
+			MAR_antiprestol_decision_operation_one_visible = {
+				var:insurgency_state_selected = {
+					check_variable = { operation_available = 0 }
+					check_variable = { kosygin_reception > 1 }
+				}
+			}
 			MAR_antiprestol_decision_operation_two_visible = { var:insurgency_state_selected = { check_variable = { operation_available = 1 } } }
 		}
 		effects = {
@@ -180,10 +185,10 @@ scripted_gui = {
 					
 					add_to_variable = { insurgency_strengthTrend = change_strenghth_trend_temp }
 					add_to_variable = { insurgency_strength = change_strenghth_temp }
+					add_to_variable = { MAR_Had_RecentAction = 1 }
 					
 					custom_effect_tooltip = MAR_prestol_power_change
 					custom_effect_tooltip = MAR_prestol_power_trend_change
-					add_to_variable = { MAR_Had_RecentAction = 1 }
 					MAR_clamp_insurgency_strength = yes
 				}
 				add_political_power = -25

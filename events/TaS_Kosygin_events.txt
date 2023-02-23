@@ -241,8 +241,8 @@ country_event = {#Aftermaths
 		retire_character = MAR_Kazem_Bek
 		retire_character = MAR_Sergey_Belozerskiy
 		add_ideas = MAR_Generic_Vacant_hog
-		MAR_enable_prestol = yes
-		add_ideas = MAR_Kosygin_Taboritsky_gang_1
+		add_ideas = MAR_Generic_Vacant_sec
+		MAR_Prestol_start = yes
 		
 		hidden_effect = {
 			add_country_leader_role = {
@@ -912,7 +912,7 @@ country_event = {#Y (how the fuck i forgot about this tree)
 	id = MAR_Kosygin.59
 	title = MAR_Kosygin.59.t
 	desc = MAR_Kosygin.59.d
-	picture = GFX_event_MAR_Kosygin_59
+	picture = GFX_event_MAR_Kosygin_59	
 	is_triggered_only = yes
 	
 	option = {
@@ -1598,7 +1598,7 @@ country_event = { #attacks 1 - civilian
 		}
 		add_manpower = var:tempRandom
 		add_stability = -0.03
-		random_owned_controlled_state = { 
+		random_owned_controlled_state = {
 			limit = { check_variable = { insurgency_strength > 0.1 } }
 			damage_building = { type = schools damage = 0.9 }
 		}
