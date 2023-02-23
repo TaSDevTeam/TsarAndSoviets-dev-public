@@ -2388,12 +2388,6 @@ RUS_DecisionCategory_Smuta = {
 					}
 				}
 			}
-			if = {
-				limit = {
-					original_tag = MAR
-				}
-				country_event = { id = berez_bomb.11 }
-			}
 			set_temp_variable = { TargetTag = PRM }
 			RUS_Smuta_Expansion_TargetTag_Generic_Complete = yes
 		}
@@ -3231,11 +3225,11 @@ RUS_DecisionCategory_Smuta = {
 		cost = 25
 		complete_effect = {
 			set_country_flag = INVASION_BKR_DISALLOWED
-			MAR = { country_event = MAR_smuta.9 }
+			MAR = { country_event = MAR_smuta.10 }
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Complete RUS_Decision_Smuta_Expansion_WRS_KOM_Propose_Union"
-			BKR = { country_event = MAR_smuta.10 }
+			BKR = { country_event = MAR_smuta.11 }
 		}
 
 		ai_will_do = { factor = 1000 }
