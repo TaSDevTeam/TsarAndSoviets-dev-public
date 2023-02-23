@@ -335,66 +335,57 @@ MAR_clamp_insurgency_strength = {
 	}
 }
 
-MAR_Prestol_set_the_event = {
+MAR_Prestol_set_the_event_one = {
 	if = {
 		limit = { check_variable = { insurgency_state_selected = 262 } }
-		if = {
-			limit = { check_variable = { operation_available = 0 } }
-			country_event = { id = MAR_Kosygin_Prestol.1 days = 3 }
-		}
-		else = {
-			country_event = { id = MAR_Kosygin_Prestol.2 days = 3 }
-		}
+		country_event = { id = MAR_Kosygin_Prestol.1 days = 3 }
 	}
 	if = {
 		limit = { check_variable = { insurgency_state_selected = 214 } }
-		if = {
-			limit = { check_variable = { operation_available = 0 } }
-			country_event = { id = MAR_Kosygin_Prestol.3 days = 3 }
-		}
-		else = {
-			country_event = { id = MAR_Kosygin_Prestol.4 days = 3 }
-		}
+		country_event = { id = MAR_Kosygin_Prestol.3 days = 3 }
 	}
 	if = {
 		limit = { check_variable = { insurgency_state_selected = 397 } }
-		if = {
-			limit = { check_variable = { operation_available = 0 } }
-			country_event = { id = MAR_Kosygin_Prestol.5 days = 3 }
-		}
-		else = {
-			country_event = { id = MAR_Kosygin_Prestol.6 days = 3 }
-		}
+		country_event = { id = MAR_Kosygin_Prestol.5 days = 3 }
 	}
 	if = {
 		limit = { check_variable = { insurgency_state_selected = 252 } }
-		if = {
-			limit = { check_variable = { operation_available = 0 } }
-			country_event = { id = MAR_Kosygin_Prestol.7 days = 3 }
-		}
-		else = {
-			country_event = { id = MAR_Kosygin_Prestol.8 days = 3 }
-		}
+		country_event = { id = MAR_Kosygin_Prestol.7 days = 3 }
 	}
 	if = {
 		limit = { check_variable = { insurgency_state_selected = 753 } }
-		if = {
-			limit = { check_variable = { operation_available = 0 } }
-			country_event = { id = MAR_Kosygin_Prestol.9 days = 3 }
-		}
-		else = {
-			country_event = { id = MAR_Kosygin_Prestol.10 days = 3 }
-		}
+		country_event = { id = MAR_Kosygin_Prestol.9 days = 3 }
 	}
 	if = {
 		limit = { check_variable = { insurgency_state_selected = 850 } }
-		if = {
-			limit = { check_variable = { operation_available = 0 } }
-			country_event = { id = MAR_Kosygin_Prestol.11 days = 3 }
-		}
-		else = {
-			country_event = { id = MAR_Kosygin_Prestol.12 days = 3 }
-		}
+		country_event = { id = MAR_Kosygin_Prestol.11 days = 3 }
+	}
+}
+
+MAR_Prestol_set_the_event_two = {
+	if = {
+		limit = { check_variable = { insurgency_state_selected = 262 } }
+		country_event = { id = MAR_Kosygin_Prestol.2 days = 3 }
+	}
+	if = {
+		limit = { check_variable = { insurgency_state_selected = 214 } }
+		country_event = { id = MAR_Kosygin_Prestol.4 days = 3 }
+	}
+	if = {
+		limit = { check_variable = { insurgency_state_selected = 397 } }
+		country_event = { id = MAR_Kosygin_Prestol.6 days = 3 }
+	}
+	if = {
+		limit = { check_variable = { insurgency_state_selected = 252 } }
+		country_event = { id = MAR_Kosygin_Prestol.8 days = 3 }
+	}
+	if = {
+		limit = { check_variable = { insurgency_state_selected = 753 } }
+		country_event = { id = MAR_Kosygin_Prestol.10 days = 3 }
+	}
+	if = {
+		limit = { check_variable = { insurgency_state_selected = 850 } }
+		country_event = { id = MAR_Kosygin_Prestol.12 days = 3 }
 	}
 	if = {
 		limit = { check_variable = { insurgency_state_selected = 398 } }
