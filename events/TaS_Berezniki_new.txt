@@ -2595,6 +2595,9 @@ country_event = { # MAR_final_vibori ROMANOV WIN
 		
 		remove_ideas = MAR_Alexey_Kosygin_eco
 		add_ideas = MAR_Nikolai_Maslennikov_eco
+
+		remove_ideas = MAR_Dmitri_Alexandrovich_for
+		add_ideas = MAR_Pyotr_Demichev_for
 		if = {
 			limit = { has_idea = MAR_regent_without_tsar_1 }
 			remove_ideas = MAR_regent_without_tsar_1
