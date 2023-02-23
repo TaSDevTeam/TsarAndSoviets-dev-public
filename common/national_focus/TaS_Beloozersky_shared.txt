@@ -313,15 +313,15 @@ shared_focus = {
 	}	
 }
 shared_focus = {
-		id = MAR_vost_nayki
-		icon = GFX_MAR_vostanovlenie_nayki
-		cost = 3.00
-		prerequisite = {
-			focus = MAR_reanim_eco
-		}
-		x = 28
-		y = 1
-		completion_reward = {
+	id = MAR_vost_nayki
+	icon = GFX_MAR_vostanovlenie_nayki
+	cost = 3.00
+	prerequisite = {
+		focus = MAR_reanim_eco
+	}
+	x = 28
+	y = 1
+	completion_reward = {
 		set_temp_variable = { temp_econ_spending_amount = 0.2 }
 		econ_spend_money_once_effect_raw_money = yes
 		TNO_improve_academic_base_med = yes
@@ -337,15 +337,15 @@ shared_focus = {
 	}
 }
 shared_focus = {
-		id = MAR_razvi_otrasle
-		icon = GFX_MAR_Developing_otrasli_nayki
-		cost = 3.00
-		prerequisite = {
-			focus = MAR_vost_nayki
-		}
-		x = 26
-		y = 2
-		completion_reward = {
+	id = MAR_razvi_otrasle
+	icon = GFX_MAR_Developing_otrasli_nayki
+	cost = 3.00
+	prerequisite = {
+		focus = MAR_vost_nayki
+	}
+	x = 26
+	y = 2
+	completion_reward = {
 			add_tech_bonus = {
 			bonus = 0.50
 			uses = 2
@@ -354,15 +354,15 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-		id = MAR_sistema_obr
-		icon = GFX_MAR_Vost_system_obraz
-		cost = 3.00
-		prerequisite = {
-			focus = MAR_vost_nayki
-		}
-		x = 30
-		y = 2
-		completion_reward = {
+	id = MAR_sistema_obr
+	icon = GFX_MAR_Vost_system_obraz
+	cost = 3.00
+	prerequisite = {
+		focus = MAR_vost_nayki
+	}
+	x = 30
+	y = 2
+	completion_reward = {
 		country_event = { 
 			id = berez_belozerski.16
 			days = 0
@@ -371,18 +371,18 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-		id = MAR_naykogradi
-		icon = GFX_MAR_Building_of_Naukograds
-		cost = 3.00
-		prerequisite = {
-			focus = MAR_razvi_otrasle
-		}
-		prerequisite = {
-			focus = MAR_sistema_obr
-		}
-		x = 28
-		y = 3
-		completion_reward = {
+	id = MAR_naykogradi
+	icon = GFX_MAR_Building_of_Naukograds
+	cost = 3.00
+	prerequisite = {
+		focus = MAR_razvi_otrasle
+	}
+	prerequisite = {
+		focus = MAR_sistema_obr
+	}
+	x = 28
+	y = 3
+	completion_reward = {
 		country_event = { 
 			id = berez_belozerski.17
 			days = 0
@@ -395,30 +395,30 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-		id = MAR_econom_prikaz
-		icon = GFX_MAR_economic_prikaz
-		cost = 3.00
-		prerequisite = {
-			focus = MAR_reanim_eco
-		}
-		x = 21
-		y = 1
-		completion_reward = {
-			add_political_power = 50
-			set_temp_variable = { gdp_growth_temp = 1.20 }
-            econ_gdp_growth_change = yes
-		}
+	id = MAR_econom_prikaz
+	icon = GFX_MAR_economic_prikaz
+	cost = 3.00
+	prerequisite = {
+		focus = MAR_reanim_eco
+	}
+	x = 21
+	y = 1
+	completion_reward = {
+		add_political_power = 50
+		set_temp_variable = { gdp_growth_temp = 1.20 }
+        econ_gdp_growth_change = yes
+	}
 }	
 shared_focus = {
-		id = MAR_dveri
-		icon = GFX_MAR_Berez_open_door
-		cost = 3.00
-		prerequisite = {
-			focus = MAR_econom_prikaz
-		}
-		x = 21
-		y = 2
-		completion_reward = {
+	id = MAR_dveri
+	icon = GFX_MAR_Berez_open_door
+	cost = 3.00
+	prerequisite = {
+		focus = MAR_econom_prikaz
+	}
+	x = 21
+	y = 2
+	completion_reward = {
 		swap_ideas = {
 		    remove_idea = tno_trade_laws_limited_exports
 		    add_idea = tno_trade_laws_export_focus
@@ -429,15 +429,15 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-		id = MAR_priv_invest
-		icon = GFX_MAR_Berez_invest
-		cost = 3.00
-		prerequisite = {
-			focus = MAR_dveri
-		}
-		x = 18
-		y = 3
-		completion_reward = {
+	id = MAR_priv_invest
+	icon = GFX_MAR_Berez_invest
+	cost = 3.00
+	prerequisite = {
+		focus = MAR_dveri
+	}
+	x = 18
+	y = 3
+	completion_reward = {
 		country_event = { 
 			id = berez_belozerski.19
 			days = 0
@@ -452,15 +452,15 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-		id = MAR_mts
-		icon = GFX_MAR_Berez_mts
-		cost = 3.00
-		prerequisite = {
-			focus = MAR_dveri
-		}
-		x = 21
-		y = 3
-		completion_reward = {
+	id = MAR_mts
+	icon = GFX_MAR_Berez_mts
+	cost = 3.00
+	prerequisite = {
+		focus = MAR_dveri
+	}
+	x = 21
+	y = 3
+	completion_reward = {
 		TNO_improve_agriculture_high = yes
         set_temp_variable = { temp_econ_spending_amount = 0.20 }
         econ_spend_money_once_effect_raw_money = yes
@@ -476,15 +476,15 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-		id = MAR_mali_biznes
-		icon = GFX_MAR_Berez_small_biz
-		cost = 3.00
-		prerequisite = {
-			focus = MAR_mts
-		}
-		x = 21
-		y = 4
-		completion_reward = {
+	id = MAR_mali_biznes
+	icon = GFX_MAR_Berez_small_biz
+	cost = 3.00
+	prerequisite = {
+		focus = MAR_mts
+	}
+	x = 21
+	y = 4
+	completion_reward = {
 		TNO_improve_poverty_med = yes
 		set_temp_variable = { gdp_growth_temp = 1.15 }
         econ_gdp_growth_change = yes
@@ -497,15 +497,15 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-		id = MAR_taz_prom
-		icon = GFX_MAR_Tyg_prom
-		cost = 3.00
-		prerequisite = {
+	id = MAR_taz_prom
+	icon = GFX_MAR_Tyg_prom
+	cost = 3.00
+	prerequisite = {
 			focus = MAR_dveri
-		}
-		x = 24
-		y = 3
-		completion_reward = {
+	}
+	x = 24
+	y = 3
+	completion_reward = {
 		random_owned_state = {
 			add_extra_state_shared_building_slots = 4
 		}
@@ -519,15 +519,15 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-		id = MAR_stroim_infry
-		icon = GFX_MAR_Berez_roads
-		cost = 3.00
-		prerequisite = {
-			focus = MAR_taz_prom
-		}
-		x = 24
-		y = 4
-		completion_reward = {
+	id = MAR_stroim_infry
+	icon = GFX_MAR_Berez_roads
+	cost = 3.00
+	prerequisite = {
+		focus = MAR_taz_prom
+	}
+	x = 24
+	y = 4
+	completion_reward = {
 		country_event = { 
 			id = berez_belozerski.20
 			days = 0
@@ -633,15 +633,15 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-		id = MAR_ih_znania
-		icon = GFX_MAR_Berez_their_znania
-		cost = 3.00
-		prerequisite = {
-			focus = MAR_priv_invest
-		}
-		x = 18
-		y = 4
-		completion_reward = {
+	id = MAR_ih_znania
+	icon = GFX_MAR_Berez_their_znania
+	cost = 3.00
+	prerequisite = {
+		focus = MAR_priv_invest
+	}
+	x = 18
+	y = 4
+	completion_reward = {
 		country_event = { 
 			id = berez_belozerski.22
 			days = 0
@@ -651,18 +651,18 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-		id = MAR_stab_rubl
-		icon = GFX_MAR_Berez_rouble
-		cost = 3.00
-		prerequisite = {
-			focus = MAR_ih_znania
-		}
-		prerequisite = {
-			focus = MAR_mali_biznes
-		}
-		x = 20
-		y = 5
-		completion_reward = {
+	id = MAR_stab_rubl
+	icon = GFX_MAR_Berez_rouble
+	cost = 3.00
+	prerequisite = {
+		focus = MAR_ih_znania
+	}
+	prerequisite = {
+		focus = MAR_mali_biznes
+	}
+	x = 20
+	y = 5
+	completion_reward = {
 		TNO_improve_poverty_low = yes
 		set_temp_variable = { inflation_temp = -0.35 }
 		econ_inflation_change = yes
@@ -670,18 +670,18 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-		id = MAR_epoxa_prosveta
-		icon = GFX_MAR_Berez_prosperity
-		cost = 3.00
-		prerequisite = {
-			focus = MAR_stab_rubl
-		}
-		prerequisite = {
-			focus = MAR_prom_centr
-		}
-		x = 21
-		y = 6
-		completion_reward = {
+	id = MAR_epoxa_prosveta
+	icon = GFX_MAR_Berez_prosperity
+	cost = 3.00
+	prerequisite = {
+		focus = MAR_stab_rubl
+	}
+	prerequisite = {
+		focus = MAR_prom_centr
+	}
+	x = 21
+	y = 6
+	completion_reward = {
 		country_event = { 
 			id = berez_belozerski.23
 			days = 0
@@ -819,8 +819,7 @@ shared_focus = {
 		        on_win = berez_belozerski.40
 		        on_lose = berez_belozerski.41
 		        on_cancel = japan_border_conflict.4
-		    }
-						
+		    }	
 		    defender = {
 		        state = 263
 		        num_provinces = 4
@@ -865,12 +864,12 @@ shared_focus = {
 #############################################################
 
 shared_focus = {
-		id = MAR_voen_prikaz
-		icon = GFX_MAR_Voennie_prikaz
-		cost = 3.00
-		x = 38
-		y = 0
-		completion_reward = {
+	id = MAR_voen_prikaz
+	icon = GFX_MAR_Voennie_prikaz
+	cost = 3.00
+	x = 38
+	y = 0
+	completion_reward = {
 		army_experience = 25	
 		country_event = { 
 			id = berez_belozerski.24
@@ -935,15 +934,15 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-		id = MAR_sovr_voina
-		icon = GFX_MAR_sovr_metod_voini
-		cost = 3.00
-		prerequisite = {
-			focus = MAR_exper_KB
-		}
-		x = 34
-		y = 2
-		completion_reward = {
+	id = MAR_sovr_voina
+	icon = GFX_MAR_sovr_metod_voini
+	cost = 3.00
+	prerequisite = {
+		focus = MAR_exper_KB
+	}
+	x = 34
+	y = 2
+	completion_reward = {
 		add_tech_bonus = {
 			bonus = 1
 			uses = 1
@@ -953,15 +952,15 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-		id = MAR_tank_pred
-		icon = GFX_MAR_tank_predriatia
-		cost = 3.00
-		prerequisite = {
-			focus = MAR_sovr_voina
-		}
-		x = 35
-		y = 3
-		completion_reward = {
+	id = MAR_tank_pred
+	icon = GFX_MAR_tank_predriatia
+	cost = 3.00
+	prerequisite = {
+		focus = MAR_sovr_voina
+	}
+	x = 35
+	y = 3
+	completion_reward = {
 		add_tech_bonus = {
 			bonus = 1
 			uses = 3
@@ -970,15 +969,15 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-		id = MAR_razv_tren
-		icon = GFX_MAR_razvitie_metod_tren
-		cost = 3.00
-		prerequisite = {
-			focus = MAR_voen_prikaz
-		}
-		x = 38
-		y = 1
-		completion_reward = {
+	id = MAR_razv_tren
+	icon = GFX_MAR_razvitie_metod_tren
+	cost = 3.00
+	prerequisite = {
+		focus = MAR_voen_prikaz
+	}
+	x = 38
+	y = 1
+	completion_reward = {
 		country_event = { 
 			id = berez_belozerski.26
 			days = 0
@@ -987,15 +986,15 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-		id = MAR_rus_avia
-		icon = GFX_MAR_aviaprom
-		cost = 3.00
-		prerequisite = {
-			focus = MAR_razv_tren
-		}
-		x = 38
-		y = 2
-		completion_reward = {
+	id = MAR_rus_avia
+	icon = GFX_MAR_aviaprom
+	cost = 3.00
+	prerequisite = {
+		focus = MAR_razv_tren
+	}
+	x = 38
+	y = 2
+	completion_reward = {
 		air_experience = 25
 		add_tech_bonus = {
 			bonus = 1
@@ -1005,15 +1004,15 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-		id = MAR_standart_oryg
-		icon = GFX_MAR_standart_voor
-		cost = 3.00
-		prerequisite = {
-			focus = MAR_voen_prikaz
-		}
-		x = 42
-		y = 1
-		completion_reward = {
+	id = MAR_standart_oryg
+	icon = GFX_MAR_standart_voor
+	cost = 3.00
+	prerequisite = {
+		focus = MAR_voen_prikaz
+	}
+	x = 42
+	y = 1
+	completion_reward = {
 		add_tech_bonus = {
 			bonus = 1
 			uses = 2
@@ -1022,15 +1021,15 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-		id = MAR_tsar_gvardia
-		icon = GFX_MAR_tsar_grardia
-		cost = 3.00
-		prerequisite = {
-			focus = MAR_standart_oryg
-		}
-		x = 42
-		y = 2
-		completion_reward = {
+	id = MAR_tsar_gvardia
+	icon = GFX_MAR_tsar_grardia
+	cost = 3.00
+	prerequisite = {
+		focus = MAR_standart_oryg
+	}
+	x = 42
+	y = 2
+	completion_reward = {
 		add_tech_bonus = {
 			bonus = 0.5
 			uses = 2
@@ -1044,15 +1043,15 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-		id = MAR_yroki_urala
-		icon = GFX_MAR_Uroki_Urala
-		cost = 3.00
-		prerequisite = {
-			focus = MAR_tsar_gvardia
-		}
-		x = 41
-		y = 3
-		completion_reward = {
+	id = MAR_yroki_urala
+	icon = GFX_MAR_Uroki_Urala
+	cost = 3.00
+	prerequisite = {
+		focus = MAR_tsar_gvardia
+	}
+	x = 41
+	y = 3
+	completion_reward = {
 		country_event = { 
 			id = berez_belozerski.28
 			days = 0
@@ -1061,18 +1060,18 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-		id = MAR_rus_ybersoldat
-		icon = GFX_MAR_Novie_rus_soldat
-		cost = 3.00
-		prerequisite = {
-			focus = MAR_tank_pred
-		}
-		prerequisite = {
-			focus = MAR_yroki_urala
-		}
-		x = 38
-		y = 4
-		completion_reward = {
+	id = MAR_rus_ybersoldat
+	icon = GFX_MAR_Novie_rus_soldat
+	cost = 3.00
+	prerequisite = {
+		focus = MAR_tank_pred
+	}
+	prerequisite = {
+		focus = MAR_yroki_urala
+	}
+	x = 38
+	y = 4
+	completion_reward = {
 		add_war_support = 0.10
 		country_event = { 
 			id = berez_belozerski.29
@@ -1086,12 +1085,12 @@ shared_focus = {
 
 
 shared_focus = {
-		id = MAR_vne_sesd
-		icon = GFX_MAR_vnecherodnoi_sesd
-		cost = 3.00
-		x = 8
-		y = 1
-		completion_reward = {
+	id = MAR_vne_sesd
+	icon = GFX_MAR_vnecherodnoi_sesd
+	cost = 3.00
+	x = 8
+	y = 1
+	completion_reward = {
 		TNO_improve_admin_efficiency_med = yes	
 		add_political_power = 50
 		country_event = { 
@@ -1101,15 +1100,15 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-		id = MAR_sibir_prostor
-		icon = GFX_MAR_sibir_prostor
-		cost = 3.00
-		prerequisite = {
-			focus = MAR_vne_sesd
-		}
-		x = 5
-		y = 2
-		completion_reward = {
+	id = MAR_sibir_prostor
+	icon = GFX_MAR_sibir_prostor
+	cost = 3.00
+	prerequisite = {
+		focus = MAR_vne_sesd
+	}
+	x = 5
+	y = 2
+	completion_reward = {
 		RUS_integration_cost_days_decrease = yes	
 	}
 }	
@@ -1132,31 +1131,31 @@ shared_focus = {
 	}
 }
 shared_focus = {
-		id = MAR_integration_armii
-		icon = GFX_MAR_integracia_armii
-		cost = 3.00
-		prerequisite = {
-			focus = MAR_sibir_prostor
-		}
-		x = 7
-		y = 3
-		completion_reward = {
+	id = MAR_integration_armii
+	icon = GFX_MAR_integracia_armii
+	cost = 3.00
+	prerequisite = {
+		focus = MAR_sibir_prostor
+	}
+	x = 7
+	y = 3
+	completion_reward = {
 		add_manpower = 50000
 	}
 }	
 shared_focus = {
-		id = MAR_chelover
-		icon = GFX_MAR_chelovek_blagodaru
-		cost = 3.00
-		prerequisite = {
-			focus = MAR_omsk_problem
-		}
-		prerequisite = {
-			focus = MAR_integration_armii
-		}
-		x = 5
-		y = 4
-		completion_reward = {
+	id = MAR_chelover
+	icon = GFX_MAR_chelovek_blagodaru
+	cost = 3.00
+	prerequisite = {
+		focus = MAR_omsk_problem
+	}
+	prerequisite = {
+		focus = MAR_integration_armii
+	}
+	x = 5
+	y = 4
+	completion_reward = {
 		add_political_power = 25
 		country_event = { 
 			id = berez_belozerski.35
@@ -1165,15 +1164,15 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-		id = MAR_dragynov
-		icon = GFX_MAR_beseda_dragynov
-		cost = 3.00
-		prerequisite = {
-			focus = MAR_vne_sesd
-		}
-		x = 11
-		y = 2
-		completion_reward = {
+	id = MAR_dragynov
+	icon = GFX_MAR_beseda_dragynov
+	cost = 3.00
+	prerequisite = {
+		focus = MAR_vne_sesd
+	}
+	x = 11
+	y = 2
+	completion_reward = {
 		add_tech_bonus = {
 			bonus = 1
 			uses = 2
@@ -1186,15 +1185,15 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-		id = MAR_bogatsvo_zlatoysta
-		icon = GFX_MAR_bogatsvo_zlatoust
-		cost = 3.00
-		prerequisite = {
-			focus = MAR_vne_sesd
-		}
-		x = 14
-		y = 2
-		completion_reward = {
+	id = MAR_bogatsvo_zlatoysta
+	icon = GFX_MAR_bogatsvo_zlatoust
+	cost = 3.00
+	prerequisite = {
+		focus = MAR_vne_sesd
+	}
+	x = 14
+	y = 2
+	completion_reward = {
 		add_equipment_to_stockpile = {
 			type = infantry_equipment
 			amount = 7500
@@ -1208,11 +1207,11 @@ shared_focus = {
 			amount = 3000
 		}
 		871 = {
-        add_building_construction = {
-			type = infrastructure
-			level = 2
-			instant_build = yes
-        }
+            add_building_construction = {
+			    type = infrastructure
+			    level = 2
+			    instant_build = yes
+            }
 			add_state_modifier = {
 				modifier = {
 					state_GDP_growth_factor_modifier = 0.05
@@ -1220,11 +1219,11 @@ shared_focus = {
 			}
 		}
 		873 = {
-        add_building_construction = {
-			type = infrastructure
-			level = 2
-			instant_build = yes
-        }
+            add_building_construction = {
+			    type = infrastructure
+			    level = 2
+			    instant_build = yes
+            }   
 			add_state_modifier = {
 				modifier = {
 					state_GDP_growth_factor_modifier = 0.05
@@ -1234,18 +1233,18 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-		id = MAR_poezdka_amerika
-		icon = GFX_MAR_poezdka_USA
-		cost = 3.00
-		prerequisite = {
-			focus = MAR_dragynov
-		}
-		prerequisite = {
-			focus = MAR_bogatsvo_zlatoysta
-		}
-		x = 12
-		y = 3
-		completion_reward = {
+	id = MAR_poezdka_amerika
+	icon = GFX_MAR_poezdka_USA
+	cost = 3.00
+	prerequisite = {
+		focus = MAR_dragynov
+	}
+	prerequisite = {
+		focus = MAR_bogatsvo_zlatoysta
+	}
+	x = 12
+	y = 3
+	completion_reward = {
 		diplomatic_relation = {
             country = USA
             relation = non_aggression_pact
@@ -1257,7 +1256,7 @@ shared_focus = {
 			id = berez_belozerski.37
 			days = 0
 		}
-	}
+	}	
 }	
 shared_focus = {
 		id = MAR_zapolare
@@ -1272,11 +1271,11 @@ shared_focus = {
 		set_temp_variable = { temp_econ_spending_amount = 2 }
 		econ_spend_money_once_effect_raw_money = yes
 		214 = {
-        add_building_construction = {
-			type = infrastructure
-			level = 2
-			instant_build = yes
-        }
+            add_building_construction = {
+			    type = infrastructure
+			    level = 2
+			    instant_build = yes
+            }
 			add_state_modifier = {
 				modifier = {
 					state_GDP_growth_factor_modifier = 0.15
@@ -1284,11 +1283,11 @@ shared_focus = {
 			}
 		}
 		862 = {
-        add_building_construction = {
-			type = infrastructure
-			level = 2
-			instant_build = yes
-        }
+            add_building_construction = {
+			    type = infrastructure
+			    level = 2
+			    instant_build = yes
+            }
 			add_state_modifier = {
 				modifier = {
 					state_GDP_growth_factor_modifier = 0.15
@@ -1296,11 +1295,11 @@ shared_focus = {
 			}
 		}
 		262 = {
-        add_building_construction = {
-			type = infrastructure
-			level = 2
-			instant_build = yes
-        }
+            add_building_construction = {
+			    type = infrastructure
+			    level = 2
+			    instant_build = yes
+            }
 			add_state_modifier = {
 				modifier = {
 					state_GDP_growth_factor_modifier = 0.15
@@ -1308,11 +1307,11 @@ shared_focus = {
 			}
 		}
 		863 = {
-        add_building_construction = {
-			type = infrastructure
-			level = 3
-			instant_build = yes
-        }
+            add_building_construction = {
+			    type = infrastructure
+			    level = 3
+			    instant_build = yes
+            }
 			add_state_modifier = {
 				modifier = {
 					state_GDP_growth_factor_modifier = 0.15
@@ -1320,11 +1319,11 @@ shared_focus = {
 			}
 		}
 		844 = {
-        add_building_construction = {
-			type = infrastructure
-			level = 3
-			instant_build = yes
-        }
+            add_building_construction = {
+			    type = infrastructure
+			    level = 3
+			    instant_build = yes
+            }
 			add_state_modifier = {
 				modifier = {
 					state_GDP_growth_factor_modifier = 0.15
@@ -1332,11 +1331,11 @@ shared_focus = {
 			}
 		}
 		581 = {
-        add_building_construction = {
-			type = infrastructure
-			level = 3
-			instant_build = yes
-        }
+            add_building_construction = {
+			    type = infrastructure
+			    level = 3
+			    instant_build = yes
+            }
 			add_state_modifier = {
 				modifier = {
 					state_GDP_growth_factor_modifier = 0.15
@@ -1344,11 +1343,11 @@ shared_focus = {
 			}
 		}
 		579 = {
-        add_building_construction = {
-			type = infrastructure
-			level = 3
-			instant_build = yes
-        }
+            add_building_construction = {
+			    type = infrastructure
+			    level = 3
+			    instant_build = yes
+            }
 			add_state_modifier = {
 				modifier = {
 					state_GDP_growth_factor_modifier = 0.15
@@ -1358,18 +1357,18 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-		id = MAR_resyrsi
-		icon = GFX_MAR_dari_prirodi
-		cost = 3.00
-		prerequisite = {
+	id = MAR_resyrsi
+	icon = GFX_MAR_dari_prirodi
+	cost = 3.00
+	prerequisite = {
 			focus = MAR_zapolare
-		}
-		prerequisite = {
-			focus = MAR_poezdka_amerika
-		}
-		x = 16
-		y = 4
-		completion_reward = {
+	}
+	prerequisite = {
+		focus = MAR_poezdka_amerika
+	}
+	x = 16
+	y = 4
+	completion_reward = {
 		set_temp_variable = { gdp_growth_temp = 1.0 }
         econ_gdp_growth_change = yes
 		add_resource = {
@@ -1385,18 +1384,18 @@ shared_focus = {
 	}
 }
 shared_focus = {
-		id = MAR_edinaa_rus
-		icon = GFX_MAR_Za_Rossiu
-		cost = 3.00
-		prerequisite = {
-			focus = MAR_chelover
-		}
-		prerequisite = {
-			focus = MAR_resyrsi
-		}
-		x = 10
-		y = 5
-		completion_reward = {
+	id = MAR_edinaa_rus
+	icon = GFX_MAR_Za_Rossiu
+	cost = 3.00
+	prerequisite = {
+		focus = MAR_chelover
+	}
+	prerequisite = {
+		focus = MAR_resyrsi
+	}
+	x = 10
+	y = 5
+	completion_reward = {
 		country_event = { 
 			id = berez_belozerski.38
 			days = 0
@@ -1481,9 +1480,8 @@ shared_focus = {
 	x = 29
 	y = 2
 	completion_reward = {
-	add_manpower = 30000
 		MAR_Wojciech_Jaruzelski = {
-				add_corps_commander_role = {
+			add_corps_commander_role = {
 				traits = { desert_fox }
 				skill = 2
 				attack_skill = 2
@@ -1493,7 +1491,7 @@ shared_focus = {
 			}
 		}
 		MAR_Cheslav_Kischak = {
-				add_corps_commander_role = {
+			add_corps_commander_role = {
 				traits = { engineer }
 				skill = 2
 				attack_skill = 3
@@ -1502,6 +1500,7 @@ shared_focus = {
 				logistics_skill = 2
 			}
 		}
+		add_manpower = 30000
 		country_event = { 
 			id = berez_kazahk.2
 			days = 0
