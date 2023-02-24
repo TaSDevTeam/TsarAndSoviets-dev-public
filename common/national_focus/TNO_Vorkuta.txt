@@ -1,0 +1,13 @@
+focus_tree = {
+	id = VOR_start_tree
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = VOR
+		}
+	}
+	default = no
+	shared_focus = VOR_otchet
+}
+

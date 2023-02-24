@@ -1,0 +1,67 @@
+shared_focus = {
+		id = VOR_otchet
+		icon = GFX_VOR_otchet
+		cost = 3.00
+		x = 7
+		y = 1
+        completion_reward = {
+		country_event = {
+			id = vorkuta_start.1 days = 0
+	    }
+    }
+} 
+
+shared_focus = {
+		id = VOR_lager_capital
+		icon = GFX_VOR_lager_capital
+		cost = 3.00
+		prerequisite = {
+			focus = VOR_otchet
+		}
+		x = 5
+		y = 2
+		completion_reward = {
+		country_event = {
+		id = vorkuta_start.3 days = 0
+		}
+    }
+} 
+		
+
+shared_focus = {
+		id = VOR_povisit_normi
+		icon = GFX_VOR_povisit_normi
+		cost = 3.00
+		prerequisite = {
+			focus = VOR_otchet
+		}
+		x = 9
+		y = 2
+        completion_reward = {
+		country_event = {
+		id = vorkuta_start.5 days = 0
+		}
+    }
+} 
+	
+
+shared_focus= {
+		id = VOR_big_problem
+		icon = GFX_goal_unknown
+		cost = 3.00
+		prerequisite = {
+			focus = VOR_lager_capital
+		}
+		prerequisite = {
+			focus = VOR_povisit_normi
+		}
+		x = 7
+		y = 3
+		completion_reward = {
+		country_event = {
+		id = vorkuta_start.7 days = 0
+		}
+    }
+} 
+
+	
