@@ -53,7 +53,7 @@ country_event = { #Delai_dengi
 		country_event = {
 			id = vorkuta_start.4
 			days = 2
-		   }	
+		}	
 		set_temp_variable = { gdp_growth_temp = 0.2 }
 		econ_gdp_growth_change = yes
 		add_manpower = -113
@@ -220,15 +220,18 @@ country_event = { #Shag_Pytuui
 				desc = "VOR_Boris_Kamkov_DESC"
 				expire = "1994.2.2"
 				ideology = socialist_syndicalism_subtype
-				traits = {
-				}
-					id = -1
+				traits = { }
+				id = -1
 			}	
 		}
         set_party_name = {
 			ideology = socialist
 			long_name = VOR_Eser_socialist_long
 			name = VOR_Eser_socialist
+		}
+		remove_ideas = {
+			VOR_security_state
+			RUS_vorkuta_gulags
 		}
     }    	
 }		
