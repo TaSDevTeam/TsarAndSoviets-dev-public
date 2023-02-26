@@ -236,8 +236,50 @@ country_event = { #Shag_Pytuui
     }    	
 }		
 
+country_event = { #
+	id = vorkuta_start.12
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.12"}
+	title = vorkuta_start.12.t
+	desc = vorkuta_start.12.d
+	#picture = GFX_event_shag_pyat
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = vorkuta_start.12.a
+		ai_chance = { factor = 1 }
+    }    	
+}
 
+country_event = { #
+	id = vorkuta_start.13
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.13"}
+	title = vorkuta_start.13.t
+	desc = vorkuta_start.13.d
+	#picture = GFX_event_shag_pyat
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = vorkuta_start.13.a
+		ai_chance = { factor = 1 }
+    }    	
+}	
 
+country_event = { #
+	id = vorkuta_start.14
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.14"}
+	title = vorkuta_start.14.t
+	desc = vorkuta_start.14.d
+	#picture = GFX_event_shag_pyat
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = vorkuta_start.14.a
+		ai_chance = { factor = 1 }
+    }    	
+}		
 
 
 

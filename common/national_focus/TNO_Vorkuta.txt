@@ -11,3 +11,15 @@ focus_tree = {
 	shared_focus = VOR_otchet
 }
 
+focus_tree = {
+	id = VOR_SR_warlord
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = VOR
+		}
+	}
+	default = no
+	shared_focus = VOR_SR_warlord
+}
