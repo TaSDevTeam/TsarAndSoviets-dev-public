@@ -563,9 +563,19 @@ defined_text = {
 		localization_key = USA_manchurian_civil_war_category_desc
 	}
 	text = {
+		trigger = { check_variable = { conflict_id = token:GC_UAR_influence_battle } }
+		localization_key = UAR_IBC_desc
+	}
+	
+	text = {
 		trigger = { check_variable = { conflict_id = token:GC_ReichsstaatCabal } }
 		localization_key = GER_RAC_desc
 	}
+	text = {
+		trigger = { check_variable = { conflict_id = token:GC_EnglandInfluenceBattle } }
+		localization_key = ENG_IBC_desc
+	}
+	
 	text = {
 		localization_key = ""
 	}
@@ -723,6 +733,10 @@ defined_text = {
 		trigger = { check_variable = { selected_conflict_id = token:GC_ReichsstaatCabal } }
 		localization_key = "GFX_fopo_reichstaat_african_cabal_sidebar"
 	}
+	text = { # England Influence Battle
+		trigger = { check_variable = { selected_conflict_id = token:GC_EnglandInfluenceBattle } }
+		localization_key = "GFX_fopo_england_influence_battle_sidebar"
+	}
 	text = {
 		trigger = { check_variable = { conflict_id = token:GC_FarEasternRevolt } }
 		localization_key = "GFX_fopo_far_eastern_revolt_sidebar"
@@ -730,6 +744,10 @@ defined_text = {
 	text = {
 		trigger = { check_variable = { conflict_id = token:GC_ManchurianCivilWar } }
 		localization_key = "GFX_fopo_manchurian_civil_war_sidebar"
+	}
+	text = {
+		trigger = { check_variable = { conflict_id = token:GC_UAR_influence_battle } }
+		localization_key = "GFX_fopo_uar_influence_battle_sidebar"
 	}
 	text = {
 		localization_key = ""
@@ -805,6 +823,22 @@ defined_text = {
 	text = { # SAW, BRA
 		trigger = { check_variable = { conflict_id = token:GC_SAW } tag = BRA }
 		localization_key = "GFX_fopo_saw_icon_us"
+	}
+	text = { # RAC, GER
+		trigger = { check_variable = { conflict_id = token:GC_ReichsstaatCabal } tag = GER }
+		localization_key = "GFX_fopo_reichsstaat_african_cabal_icon_GRO"
+	}
+	text = { # EIB, ENG
+		trigger = { check_variable = { conflict_id = token:GC_EnglandInfluenceBattle } tag = ENG }
+		localization_key = "GFX_fopo_england_influence_battle_icon_ENG"
+	}
+	text = { # EIB, USA
+		trigger = { check_variable = { conflict_id = token:GC_EnglandInfluenceBattle } tag = USA }
+		localization_key = "GFX_fopo_england_influence_battle_icon_ENG"
+	}
+	text = { # EIB, GER
+		trigger = { check_variable = { conflict_id = token:GC_EnglandInfluenceBattle } tag = GER }
+		localization_key = "GFX_fopo_england_influence_battle_icon_ENG"
 	}
 	text = { # COG, USA with mandate collapse
 		trigger = { check_variable = { conflict_id = token:GC_CongoCW } tag = USA has_global_flag = congo_mandate_collapsed NOT = { has_global_flag = congo_PW_CAF_joined } }
@@ -1369,6 +1403,11 @@ defined_text = {
 		trigger = { check_variable = { conflict_id = token:GC_ManchurianCivilWar } tag = USA }
 		localization_key = "GFX_fopo_manchurian_civil_war_icon_usa"
 	}
+	text = {
+		trigger = { check_variable = { conflict_id = token:GC_UAR_influence_battle } }
+		localization_key = "GFX_fopo_uar_influence_battle_icon"
+	}
+	
 	text = {
 		localization_key = "GFX_fopo_blank_icon"
 	}

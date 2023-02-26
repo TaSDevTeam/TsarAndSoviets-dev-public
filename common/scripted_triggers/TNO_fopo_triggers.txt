@@ -393,6 +393,26 @@ TNO_fopo_manchurian_civil_war_selected = {
 	}
 }
 
+TNO_fopo_uar_influence_battle_selected = {
+	OR = {
+		check_variable = { selected_conflict_id = token:GC_UAR_influence_battle }
+		AND = {
+			is_in_array = { TNO_active_conflicts = token:GC_UAR_influence_battle }
+			is_ai = yes
+		}
+	}
+}
+
+TNO_fopo_england_influence_battle_selected = {
+	OR = {
+		check_variable = { selected_conflict_id = token:GC_EnglandInfluenceBattle }
+		AND = {
+			is_in_array = { TNO_active_conflicts = token:GC_EnglandInfluenceBattle }
+			is_ai = yes
+		}
+	}
+}
+
 TNO_fopo_saw_withdrawal_selected_bormann = {
 	TNO_fopo_saw_withdrawal_selected = yes
 	has_global_flag = german_civil_war_bormannvic

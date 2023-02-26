@@ -441,3 +441,241 @@ MAR_calculate_terror_risk = {
 	subtract_from_variable = { prestol_terror_anti_risk = prestol_terror_risk }
 	
 }
+
+
+### BATTLE FOR MIDDLE EAST ###
+TaS_fopo_add_uar_influence_battle_tab = {
+	set_temp_variable = { conflict_id = token:GC_UAR_influence_battle }
+	TNO_add_fopo_conflict_tab = yes
+}
+TaS_fopo_remove_uar_influence_battle_tab = {
+	set_temp_variable = { conflict_id = token:GC_UAR_influence_battle }
+	TNO_remove_fopo_conflict_tab = yes
+}
+
+UAR_initialize_Faction_Mechanic = {
+
+	set_global_flag = UAR_Faction_Start_Flag
+	TaS_fopo_add_uar_influence_battle_tab = yes
+	clear_array = UAR_faction_influence_array
+	add_to_array = { UAR_faction_influence_array = 30 } # indepentent 0
+	add_to_array = { UAR_faction_influence_array = 15 } # pro-russian 1
+	add_to_array = { UAR_faction_influence_array = 25 } # pro-pakt 2
+	
+	clear_array = UAR_faction_influence_gain_array
+	add_to_array = { UAR_faction_influence_gain_array = 2 } # indepentent 0
+	add_to_array = { UAR_faction_influence_gain_array = 1.5 } # pro-russian 1
+	add_to_array = { UAR_faction_influence_gain_array = 1 } # pro-pakt 2
+	
+	custom_effect_tooltip = ENG_faction_mechanic_starting_germany_GCW_over
+}
+
+	#for_each_loop = {
+	#			array = UAR_faction_influence_array
+	#			add_to_variable = { UAR_faction_influence_array^i = UAR_faction_influence_gain_array^i }
+	#		}
+
+
+UAR_Influence_Change = {
+	if = {
+		limit = { has_global_flag = UAR_Faction_Start_Flag }
+		
+		set_temp_variable = { InfluenceChangeTemp_txt = InfluenceChangeTemp }
+		add_to_variable = { UAR_faction_influence_array^InfluenceChangeFactionTemp = InfluenceChangeTemp }
+		
+		if = {
+			limit = {
+				check_variable = { InfluenceChangeFaction = 0 }
+			}
+			if = {
+				limit = {
+					check_variable = { InfluenceChangeTemp < 0 }
+				}
+				multiply_temp_variable = { InfluenceChangeTemp_txt = -1 }
+				custom_effect_tooltip = UAR_faction_influence_independent_decrease_tt
+			}
+			else = {
+				custom_effect_tooltip = UAR_faction_influence_independent_growth_tt
+			}
+		}
+		
+		if = {
+			limit = {
+				check_variable = { InfluenceChangeFaction = 1 }
+			}
+			if = {
+				limit = {
+					check_variable = { InfluenceChangeTemp < 0 }
+				}
+				multiply_temp_variable = { InfluenceChangeTemp_txt = -1 }
+				custom_effect_tooltip = UAR_faction_influence_russian_decrease_tt
+			}
+			else = {
+				custom_effect_tooltip = UAR_faction_influence_russian_growth_tt
+			}
+		}
+		
+		if = {
+			limit = {
+				check_variable = { InfluenceChangeFaction = 2 }
+			}
+			if = {
+				limit = {
+					check_variable = { InfluenceChangeTemp < 0 }
+				}
+				multiply_temp_variable = { InfluenceChangeTemp_txt = -1 }
+				custom_effect_tooltip = UAR_faction_influence_german_decrease_tt
+			}
+			else = {
+				custom_effect_tooltip = UAR_faction_influence_german_growth_tt
+			}
+		}
+
+		hidden_effect = {
+			UAR = {
+				UAR_Faction_Influence_Calc = yes
+			}
+		}
+	}
+}
+
+UAR_Influence_Increase_Change = {
+	if = {
+		limit = { has_global_flag = UAR_Faction_Start_Flag }
+		
+		set_temp_variable = { InfluenceIncreaseChangeTemp_txt = InfluenceIncreaseChangeTemp }
+		add_to_variable = { UAR_faction_influence_gain_array^InfluenceChangeFactionTemp = InfluenceIncreaseChangeTemp }
+		
+		if = {
+			limit = {
+				check_variable = { InfluenceChangeFaction = 0 }
+			}
+			if = {
+				limit = {
+					check_variable = { InfluenceIncreaseChangeTemp < 0 }
+				}
+				multiply_temp_variable = { InfluenceIncreaseChangeTemp_txt = -1 }
+				custom_effect_tooltip = UAR_faction_influence_increase_independent_decrease_tt
+			}
+			else = {
+				custom_effect_tooltip = UAR_faction_influence_increase_independent_growth_tt
+			}
+		}
+		
+		if = {
+			limit = {
+				check_variable = { InfluenceChangeFaction = 1 }
+			}
+			if = {
+				limit = {
+					check_variable = { InfluenceIncreaseChangeTemp < 0 }
+				}
+				multiply_temp_variable = { InfluenceIncreaseChangeTemp_txt = -1 }
+				custom_effect_tooltip = UAR_faction_influence_increase_russian_decrease_tt
+			}
+			else = {
+				custom_effect_tooltip = UAR_faction_influence_increase_russian_growth_tt
+			}
+		}
+		
+		if = {
+			limit = {
+				check_variable = { InfluenceChangeFaction = 2 }
+			}
+			if = {
+				limit = {
+					check_variable = { InfluenceIncreaseChangeTemp < 0 }
+				}
+				multiply_temp_variable = { InfluenceIncreaseChangeTemp_txt = -1 }
+				custom_effect_tooltip = UAR_faction_influence_increase_german_decrease_tt
+			}
+			else = {
+				custom_effect_tooltip = UAR_faction_influence_increase_german_growth_tt
+			}
+		}
+
+		hidden_effect = {
+			UAR = {
+				UAR_Faction_Influence_Calc = yes
+			}
+		}
+	}
+}
+
+UAR_Faction_Influence_Calc = { #Calculate who is in the lead and what happens accordingly
+	if = {
+		limit = {
+			NOT = {
+				has_global_flag = UAR_joined_faction
+			}
+		}
+		
+		for_each_loop = {
+			array = UAR_faction_influence_array
+			clamp_variable = {
+				var = UAR_faction_influence_array^i
+				min = 0
+			}
+		}
+		find_highest_in_array = {
+			array = UAR_faction_influence_array
+			value = uar_lead_val
+			index = uar_lead_idx
+		}
+		set_variable = { UAR_leading_faction = uar_lead_val }
+		if = { #neutral overpowers
+			limit = { 
+				AND = {
+					check_variable = { uar_lead_idx = 0 } 
+					check_variable = { uar_lead_val > 150 } 
+				}
+			}
+			#GER = {
+			#	activate_mission = GER_Faction_Join_Pakt_Mission
+			#}
+			#USA = {
+				activate_mission = USA_Faction_Join_Pakt_Mission
+				#country_event = { #Warning Event
+				#	id = ENG_International_Mechanic.5
+				#	hours = 20
+				#}
+			}
+		}
+		else_if = { #russkie wins
+			limit = { 
+				AND = {
+					check_variable = { uar_lead_idx = 1 } 
+					check_variable = { uar_lead_val > 150 } 
+				}
+			}
+			#GER = {
+			#	activate_mission = GER_Faction_Join_Pakt_Mission
+			#}
+			#USA = {
+				#activate_mission = USA_Faction_Join_Pakt_Mission
+				#country_event = { #Warning Event
+				#	id = ENG_International_Mechanic.5
+				#	hours = 20
+				#}
+			}
+		}
+		else_if = { #The Pakt overpowers 
+			limit = { 
+				AND = {
+					check_variable = { uar_lead_idx = 2 } 
+					check_variable = { uar_lead_val > 150 } 
+				}
+			}
+			#GER = {
+			#	activate_mission = GER_Faction_Join_Pakt_Mission
+			#}
+			#USA = {
+				#activate_mission = USA_Faction_Join_Pakt_Mission
+				#country_event = { #Warning Event
+				#	id = ENG_International_Mechanic.5
+				#	hours = 20
+				#}
+			}
+		}
+	}
+}
