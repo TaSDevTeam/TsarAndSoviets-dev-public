@@ -528,4 +528,23 @@ MAR_nuke = {
 		animation = "attack"
 	}
 }
-
+first_every_month_script_TaS = {
+	UAR = {
+		if = {
+			limit = {
+				has_global_flag = UAR_Faction_Start_Flag
+			}
+			set_temp_variable = { InfluenceChangeTemp = UAR_faction_influence_gain_array^0 }
+			set_temp_variable = { InfluenceChangeFactionTemp = 0 }
+			UAR_Influence_Change = yes
+			
+			set_temp_variable = { InfluenceChangeTemp = UAR_faction_influence_gain_array^1 }
+			set_temp_variable = { InfluenceChangeFactionTemp = 1 }
+			UAR_Influence_Change = yes
+			
+			set_temp_variable = { InfluenceChangeTemp = UAR_faction_influence_gain_array^2 }
+			set_temp_variable = { InfluenceChangeFactionTemp = 2 }
+			UAR_Influence_Change = yes
+		}
+	}
+}

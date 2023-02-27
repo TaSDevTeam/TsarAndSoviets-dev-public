@@ -5,7 +5,7 @@ shared_focus = {
 	cost = 1.5
 	allow_branch = {
 		NOT = {
-			has_country_flag = MAR_fighting_prestol
+			has_country_flag = MAR_prestol_active
 		}
 	}
 	x = 5
@@ -77,7 +77,7 @@ shared_focus = {
 		focus = MAR_kosprot_perspectives
 	}
 	bypass = {
-		has_country_flag = MAR_fighting_prestol
+		has_country_flag = MAR_prestol_active
 	}
 	select_effect = {
 		hidden_effect = {
@@ -102,10 +102,10 @@ shared_focus = {
 	icon = GFX_MAR_kospol_red_day
 	cost = 3
 	allow_branch = {
-		has_country_flag = MAR_fighting_prestol
+		has_country_flag = MAR_prestol_active
 	}
 	bypass = {
-		has_country_flag = MAR_fighting_prestol
+		has_country_flag = MAR_prestol_active
 	}
 	x = 5
 	y = 0

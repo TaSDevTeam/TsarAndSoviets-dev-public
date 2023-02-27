@@ -392,3 +392,28 @@ defined_text = {
 		localization_key = OMS_color_green
 	}
 }
+
+defined_text = {
+	name = GetFactionUARLeader
+	text = {
+		trigger = {
+			check_variable = { UAR_leading_faction_idx = 0 }
+		}
+		localization_key = UAR_independent_lead
+	}
+	text = {
+		trigger = {
+			check_variable = { UAR_leading_faction_idx = 1 }
+		}
+		localization_key = UAR_russia_lead
+	}
+	text = {
+		trigger = {
+			check_variable = { UAR_leading_faction_idx = 2 }
+		}
+		localization_key = UAR_germany_lead
+	}
+	text = {
+		localization_key = UAR_nobody_lead
+	}
+}
