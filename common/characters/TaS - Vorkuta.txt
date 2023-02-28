@@ -137,6 +137,89 @@ characters = {
 			legacy_id = 3527
 		}
 	}
+	VOR_Vladimir_Trutovskiy = {
+		name = VOR_Vladimir_Trutovskiy
+		portraits = {
+			civilian = {
+				small = "GFX_idea_VOR_minister_Vladimir_Trutovskiy"
+			}
+		}
+		advisor = {
+			slot = head_of_government
+			idea_token = VOR_Vladimir_Trutovskiy_hog
+			allowed = { original_tag = VOR }
+			traits = {
+				head_of_government
+			}
+			ledger = civilian
+			cost = -1
+			removal_cost = -1
+			ai_will_do = { factor = 0 }
+		}
+	}
+	VOR_Andrei_Kolegaev = {
+		name = VOR_Andrei_Kolegaev
+		portraits = {
+			civilian = {
+				small = "GFX_idea_VOR_minister_Andrei_Kolegaev"
+			}
+		}
+		advisor = {
+			slot = foreign_minister
+			idea_token = VOR_Andrei_Kolegaev_for
+			allowed = { original_tag = VOR }
+			traits = {
+				foreign_minister
+			}
+			ledger = civilian
+			cost = -1
+			removal_cost = -1
+			ai_will_do = { factor = 0 }
+		}
+	}
+	VOR_Vladimir_Karelin = {
+		name = VOR_Vladimir_Karelin
+		portraits = {
+			civilian = {
+				small = "GFX_idea_VOR_minister_Vladimir_Karelin"
+			}
+		}
+		advisor = {
+			slot = economy_minister
+			idea_token = VOR_Vladimir_Karelin_eco
+			allowed = { original_tag = VOR }
+			traits = {
+				economy_minister
+			}
+			ledger = civilian
+			cost = -1
+			removal_cost = -1
+			ai_will_do = { factor = 0 }
+		}
+	}
+	VOR_Roberts_Eidemanis = {
+		name = VOR_Roberts_Eidemanis
+		portraits = {
+			civilian = {
+				small = "GFX_idea_VOR_minister_Roberts_Eidemanis"
+			}
+			army = {
+				large = "gfx/leaders/VOR/Portrait_Vorkuta_Roberts_Eidemanis.dds"
+			}
+		}
+		advisor = {
+			slot = security_minister
+			idea_token = VOR_Roberts_Eidemanis_sec
+			allowed = { original_tag = VOR }
+			traits = {
+				security_minister
+			}
+			ledger = civilian
+			cost = -1
+			removal_cost = -1
+			ai_will_do = { factor = 0 }
+		}
+	}
 
 	# Generals #
 	VOR_Pyotr_Gladko = {
@@ -154,6 +237,14 @@ characters = {
 			planning_skill = 1
 			logistics_skill = 2
 			legacy_id = 3526
+		}
+	}
+	VOR_Makariy_Petrov = {
+		name = VOR_Makariy_Petrov
+		portraits = {
+			army = {
+				large = "gfx/leaders/VOR/Portrait_Vorkuta_Makariy_Petrov.dds"
+			}
 		}
 	}
 

@@ -229,9 +229,45 @@ country_event = { #Shag_Pytuui
 			long_name = VOR_Eser_socialist_long
 			name = VOR_Eser_socialist
 		}
-		remove_ideas = {
-			VOR_security_state
-			RUS_vorkuta_gulags
+		add_field_marshal_role = {
+			character = VOR_Roberts_Eidemanis
+			skill = 2
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+			traits = { ambusher	winter_expert mountaineer }
+			legacy_id = 9483
+		}
+		add_corps_commander_role = {
+			character = VOR_Makariy_Petrov
+			traits = { winter_expert }
+			skill = 2
+			id = 8483
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+		remove_unit_leader = 3528
+		remove_unit_leader = 3527
+		remove_unit_leader = 3526
+		hidden_effect = {
+			load_focus_tree = VOR_SR_warlord
+			remove_ideas = {
+			    VOR_security_state
+			    RUS_vorkuta_gulags
+			    VOR_Vasily_Blokhi_hog
+			    VOR_Boris_Trofimo_for
+			    VOR_Yevgeniy_Yudi_eco
+			    VOR_Stepan_Garani_sec
+		    }
+		    add_ideas = {
+			    VOR_Vladimir_Trutovskiy_hog
+			    VOR_Andrei_Kolegaev_for
+			    VOR_Vladimir_Karelin_eco
+			    VOR_Roberts_Eidemanis_sec
+		    }
 		}
     }    	
 }		

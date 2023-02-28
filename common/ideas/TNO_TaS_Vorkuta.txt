@@ -54,5 +54,22 @@ ideas = {
 				army_speed_factor = 0.25
 			}
 		}
+		VOR_council_of_war_and_defense = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea VOR_council_of_war_and_defense"}
+			allowed = {
+				always = no
+			}
+			cancel = { has_country_flag = RUS_cancel_all_ideas }
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			#picture = TNO_winter_soldier
+			modifier = {
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+				max_planning = 0.10
+			}
+		}
 	}
 }
