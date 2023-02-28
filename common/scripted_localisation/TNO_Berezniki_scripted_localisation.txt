@@ -684,6 +684,121 @@ defined_text = {
 		localization_key = MAR_volunteer_portugal
 	}
 }
+
+
+defined_text = { 
+	name = MAR_Iraq_Kosygin_string
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					BIR = { has_war = yes }
+				}
+				AND = {
+					MAR = { has_country_flag = MAR_iraq_cw }
+				}
+			}
+		}
+		localization_key = MAR_volunteer_kosygin_iraq
+	}
+}
+defined_text = { 
+	name = MAR_Egypt_Kosygin_string
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					EGB = { has_war = yes }
+				}
+				AND = {
+					MAR = { has_country_flag = MAR_egypt_cw }
+				}
+			}
+		}
+		localization_key = MAR_volunteer_kosygin_egypt
+	}
+}
+defined_text = { 
+	name = MAR_Oman_Kosygin_string
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					OMB = { has_war = yes }
+				}
+				AND = {
+					MAR = { has_country_flag = MAR_omani_cw }
+				}
+			}
+		}
+		localization_key = MAR_volunteer_kosygin_oman
+	}
+}
+defined_text = { 
+	name = MAR_Iran_Kosygin_string
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					IRA = { has_war = yes }
+				}
+				AND = {
+					MAR = { has_country_flag = MAR_iran_cw }
+				}
+			}
+		}
+		localization_key = MAR_volunteer_kosygin_iran
+	}
+}
+defined_text = { 
+	name = MAR_Yemen_Kosygin_string
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					NYM = { has_war = yes }
+				}
+				AND = {
+					MAR = { has_country_flag = MAR_yemeni_cw }
+				}
+			}
+		}
+		localization_key = MAR_volunteer_kosygin_yemen
+	}
+}
+defined_text = { 
+	name = MAR_Sudan_Kosygin_string
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					SDS = { has_war = yes }
+				}
+				AND = {
+					MAR = { has_country_flag = MAR_sudan_cw }
+				}
+			}
+		}
+		localization_key = MAR_volunteer_kosygin_sudan
+	}
+}
+defined_text = { 
+	name = MAR_Spain_Kosygin_string
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					SPR = { has_war = yes }
+				}
+				AND = {
+					MAR = { has_country_flag = MAR_spain_cw }
+				}
+			}
+		}
+		localization_key = MAR_volunteer_kosygin_spain
+	}
+}
+
 defined_text = {
 	name = MAR_FErebels_strength_var
 	text = {

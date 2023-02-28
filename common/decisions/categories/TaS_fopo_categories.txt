@@ -37,3 +37,18 @@ MAR_foreign_policy_category = {
 		zoom = 250
 	}
 }
+
+UAR_foreign_policy_category = {
+	icon = GFX_MAR_MGB_decision_category 
+
+	allowed = {
+		original_tag = UAR
+	}
+
+	visible = {
+		check_variable = { TNO_active_conflicts^num > 0 }
+	}
+	visible_when_empty = yes
+	scripted_gui = TNO_fopo_container
+	priority = 100010
+}

@@ -51,3 +51,23 @@ MAR_greater_good_category = {
 		base = 20
 	}
 } 
+
+MAR_Kosygin_volunteer_category = {
+	icon = GFX_decision_category_generic_political_actions
+	picture = GFX_MAR_RUSSIAN_VOLUNTEERS_category
+	
+	allowed = {
+		tag = MAR
+	}
+	
+	visible = {
+		has_country_flag = MAR_started_volunteer_sending
+		has_government = socialist
+	}
+	
+	visible_when_empty = yes
+	
+	priority = {
+		base = 40
+	}
+}

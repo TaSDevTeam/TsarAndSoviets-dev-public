@@ -116,3 +116,10 @@ TAS_WRW2_ScriptedTrigger_MAR_Devastation_LessThanY = {
 		check_variable = { RUS_devastation < Y }
 	}
 }
+
+UAR_faction_mech_no_other_decisions = {
+	custom_trigger_tooltip = {
+		tooltip = UAR_faction_mech_no_other_decisions
+		NOT = { has_country_flag = UAR_international_mech_decision }
+	}
+}
