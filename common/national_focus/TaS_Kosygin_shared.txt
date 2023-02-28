@@ -252,6 +252,9 @@ shared_focus = {
 	id = MAR_kospol_nation_of_soviets
 	icon = GFX_MAR_kospol_strana_sovietov
 	cost = 3
+	available = {
+		NOT = { has_country_flag = MAR_prestol_active }
+	}
 	prerequisite = {
 		focus = MAR_kospol_universal_good
 	}
@@ -265,6 +268,9 @@ shared_focus = {
 	id = MAR_kospol_Soviet_Empire
 	icon = GFX_MAR_kospol_soviet_empire
 	cost = 3
+	available = {
+		NOT = { has_country_flag = MAR_prestol_active }
+	}
 	prerequisite = {
 		focus = MAR_kospol_universal_good
 	}
@@ -309,7 +315,7 @@ shared_focus = {
 	x = 17
 	y = 0
 	available = {
-		has_completed_focus = MAR_kospol_nex_siezd
+		has_completed_focus = MAR_kospol_universal_good
 	}
 	completion_reward = {
 		add_ideas = { MAR_Nikolai_Maslennikov_eco } #потом заменю на того кого надо
@@ -719,7 +725,7 @@ shared_focus = {
 	x = 27
 	y = 0
 	available = {
-		has_completed_focus = MAR_kospol_nex_siezd
+		has_completed_focus = MAR_kospol_universal_good
 	}
 	completion_reward = {
 		tno_improve_army_professionalism = yes
@@ -920,7 +926,7 @@ shared_focus = {
 	x = 36
 	y = 0
 	available = {
-		has_completed_focus = MAR_kospol_nex_siezd
+		has_completed_focus = MAR_kospol_universal_good
 	}
 	completion_reward = {
 		country_event = {

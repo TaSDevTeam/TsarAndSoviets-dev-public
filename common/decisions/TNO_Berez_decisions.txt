@@ -2294,6 +2294,12 @@ MAR_category_prestol_terrorists = {
 					
 				}
 			}
+			if = {
+				limit = { check_variable = { ROOT.insurgency_strength < 15 } }
+				country_event = {
+					id = MAR_Kosygin_Prestol.29 days = 1
+				}
+			}
 		}
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision MAR_biweekly_prestol_tick"

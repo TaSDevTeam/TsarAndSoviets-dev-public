@@ -165,7 +165,7 @@ MAR_Prestol_start = {
 	#set_variable = { AVAILABLE_BASES = 2 }
 	#set_variable = { OMS_batov_base_effectiveness = 0.05 }
 	#set_variable = { OMS_our_base_effectiveness = -0.05 }
-	set_variable = { MAR_tabby_timeout = 360 }
+	set_variable = { MAR_tabby_timeout = 500 }
 	hidden_effect = {
 		add_popularity = {
 			ideology = esoteric_nazism
@@ -255,8 +255,8 @@ MAR_Prestol_start = {
 				check_variable = { v:kosygin_reception = 1 }
 			}
 			var:v = {
-				set_variable = { insurgency_strength = 0.05 }
-				set_variable = { insurgency_strengthTrend = 0.03 }
+				set_variable = { insurgency_strength = 0.15 }
+				set_variable = { insurgency_strengthTrend = 0.0 }
 			}
 		}
 		else_if = {
@@ -265,7 +265,7 @@ MAR_Prestol_start = {
 			}
 			var:v = {
 				set_variable = { insurgency_strength = 0.45 }
-				set_variable = { insurgency_strengthTrend = 0.02 }
+				set_variable = { insurgency_strengthTrend = 0.015 }
 			}
 		}
 		else_if = {
@@ -274,7 +274,7 @@ MAR_Prestol_start = {
 			}
 			var:v = {
 				set_variable = { insurgency_strength = 0.85 }
-				set_variable = { insurgency_strengthTrend = 0.01 }
+				set_variable = { insurgency_strengthTrend = 0.005 }
 			}
 		}
 	}

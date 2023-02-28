@@ -137,6 +137,12 @@ scripted_gui = {
 				}
 			}
 			MAR_antiprestol_decision_operation_two_visible = { var:insurgency_state_selected = { check_variable = { operation_available = 1 } } }
+			MAR_Prestol_KGB_Cover_visible = {
+				var:insurgency_state_selected = {
+					check_variable = { kosygin_reception = 1 }
+					#check_variable = { operation_available = 0 }
+				}
+			}
 		}
 		effects = {
 			close_button_click = {

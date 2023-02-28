@@ -344,7 +344,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			check_variable = { insurgency_state_selected = 400 }
+			check_variable = { insurgency_state_selected = 398 }
 			850 = { check_variable = { kosygin_reception > 1 } } 
 		} 
 		localization_key = MAR_VYATKA_OPERATION
@@ -355,6 +355,62 @@ defined_text = {
 	}
 }
 
+defined_text = {
+	name = MAR_GET_OPERATION_DESC
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 262 }
+			262 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = MAR_NARIENMAR_OPERATION_DESC
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 214 }
+			214 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = MAR_ARKHANGELSK_OPERATION_DESC
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 397 }
+			397 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = MAR_SYKTYVKAR_OPERATION_DESC
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 252 }
+			252 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = MAR_GORKY_OPERATION_DESC
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 753 }
+			753 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = MAR_PERM_OPERATION_DESC
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 850 }
+			850 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = MAR_SAMARA_OPERATION_DESC
+	}
+	text = {
+		trigger = {
+			check_variable = { insurgency_state_selected = 398 }
+			850 = { check_variable = { kosygin_reception > 1 } } 
+		} 
+		localization_key = MAR_VYATKA_OPERATION_DESC
+	}
+	
+	text = {
+		localization_key = MAR_OPERATION_NONE
+	}
+}
 defined_text = {
 	name = GetMARPrestolColorTXT
 	text = {
