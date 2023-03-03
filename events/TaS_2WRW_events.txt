@@ -3057,6 +3057,14 @@ country_event = { #Baltics
 	option = { #Freedom
 		name = MAR_territorial_fate.4.a
 		ai_chance = { factor = 1 }
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					character = MAR_advisor_Kosygin
+					ruling_only = yes
+				} 
+			}
+		}
 		custom_effect_tooltip = MAR_freedom_for_everyone_tt
 		hidden_effect = {
 			TaS_2WRW_free_baltics = yes
@@ -3080,30 +3088,63 @@ country_event = { #Baltics
 				}
 				TaS_2WRW_set_autonomy_laws = yes
 				#add_ideas = { MAR_military_administration }
-				set_popularities = {
-					communist = 0
-					socialist = 0
-					progressivism = 0
-					liberalism = 2
-					conservatism = 7
-					liberal_conservatism = 9
-					paternalism = 17
-					despotism = 57
-					fascism = 8
-					national_socialism = 0
-					ultranationalism = 0
-					esoteric_nazism = 0
+				if = {
+					limit = { MAR = { has_government = despotism } }
+					set_popularities = {
+						communist = 0
+						socialist = 0
+						progressivism = 0
+						liberalism = 2
+						conservatism = 7
+						liberal_conservatism = 9
+						paternalism = 17
+						despotism = 57
+						fascism = 8
+						national_socialism = 0
+						ultranationalism = 0
+						esoteric_nazism = 0
+					}
+					set_party_name = { 
+						ideology = despotism
+						long_name = MBP_autonomy_party_long
+						name = MBP_autonomy_party
+					}
+					retire_country_leader = yes
+					MBP_Aleksandrs_Drizulis = {
+						promote_character = yes
+					}
+					set_cosmetic_tag = MBP_autonomy
 				}
-				set_party_name = { 
-					ideology = despotism
-					long_name = MBP_autonomy_party_long
-					name = MBP_autonomy_party
+				if = {	
+					limit = { MAR = { has_government = socialist } }
+					set_politics = {
+						ruling_party = socialist
+					}
+					set_popularities = {
+						communist = 17
+						socialist = 64
+						progressivism = 0
+						liberalism = 0
+						conservatism = 0
+						liberal_conservatism = 0
+						paternalism = 0
+						despotism = 11
+						fascism = 0
+						national_socialism = 8
+						ultranationalism = 0
+						esoteric_nazism = 0
+					}
+					set_party_name = { 
+						ideology = socialist
+						long_name = MBP_autonomy_party_long
+						name = MBP_autonomy_party
+					}
+					retire_country_leader = yes
+					MBP_Aleksandrs_Drizulis = {
+						promote_character = yes
+					}
+					set_cosmetic_tag = MBP_autonomy_Kosygin
 				}
-				retire_country_leader = yes
-				MBP_Aleksandrs_Drizulis = {
-					promote_character = yes
-				}
-				set_cosmetic_tag = MBP_autonomy
 			}
 		}
 		1396 = {
@@ -3188,6 +3229,14 @@ country_event = { #Belarus
 	option = { #Vilna Kraina
 		name = MAR_territorial_fate.7.a
 		ai_chance = { factor = 1 }
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					character = MAR_advisor_Kosygin
+					ruling_only = yes
+				} 
+			}
+		}
 		custom_effect_tooltip = MAR_freedom_for_everyone_tt
 			hidden_effect = {
 			XYZ = {
@@ -3252,16 +3301,39 @@ country_event = { #Belarus
 				TaS_2WRW_set_autonomy_laws = yes
 				#add_ideas = { MAR_military_administration }
 				remove_ideas = { MAR_military_administration }
-				set_party_name = { 
-					ideology = despotism 
-					long_name = MBL_autonomy_party_long
-					name = MBL_autonomy_party
+				if = {
+					limit = { MAR = { has_government = despotism } }
+					set_party_name = { 
+						ideology = despotism 
+						long_name = MBL_autonomy_party_long
+						name = MBL_autonomy_party
+					}
+					retire_country_leader = yes
+					MBL_Tikhon_Kiselyov = {
+						promote_character = yes
+					}
+					set_cosmetic_tag = MBL_autonomy
 				}
-				retire_country_leader = yes
-				MBL_Tikhon_Kiselyov = {
-					promote_character = yes
+				if = {
+					limit = { MAR = { has_government = socialist } }
+					set_politics = {
+						ruling_party = communist
+					}
+					set_party_name = { 
+						ideology = communist 
+						long_name = MBL_autonomy_party_long
+						name = MBL_autonomy_party
+					}
+					add_popularity = {
+						ideology = communist
+						popularity = 0.45
+					}
+					retire_country_leader = yes
+					MBL_Tikhon_Kiselyov = {
+						promote_character = yes
+					}
+					set_cosmetic_tag = MBL_autonomy_Kosygin
 				}
-				set_cosmetic_tag = MBL_autonomy
 			}
 		}
 	}
@@ -3291,6 +3363,14 @@ country_event = { #Ukraine
 	option = { #Vilna Kraina
 		name = MAR_territorial_fate.8.a
 		ai_chance = { factor = 1 }
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					character = MAR_advisor_Kosygin
+					ruling_only = yes
+				} 
+			}
+		}
 		custom_effect_tooltip = MAR_freedom_for_everyone_tt
 		hidden_effect = {
 			XYZ = {
@@ -3363,23 +3443,46 @@ country_event = { #Ukraine
 				TaS_2WRW_set_autonomy_laws = yes
 				#add_ideas = { MAR_military_administration }
 				remove_ideas = { MAR_military_administration }
-				set_politics = {
-					ruling_party = paternalism
+				if = {
+					limit = { MAR = { has_government = despotism } }
+					set_politics = {
+						ruling_party = paternalism
+					}
+					set_party_name = { 
+						ideology = paternalism 
+						long_name = MUK_autonomy_party_long
+						name = MUK_autonomy_party
+					}
+					add_popularity = {
+						ideology = paternalism
+						popularity = 0.45
+					}
+					retire_country_leader = yes
+					MUK_Oleksandr_Moroz = {
+						promote_character = yes
+					}
+					set_cosmetic_tag = MUK_autonomy
 				}
-				set_party_name = { 
-					ideology = paternalism 
-					long_name = MUK_autonomy_party_long
-					name = MUK_autonomy_party
+				if = {
+					limit = { MAR = { has_government = socialist } }
+					set_politics = {
+						ruling_party = socialist
+					}
+					set_party_name = { 
+						ideology = socialist 
+						long_name = MUK_autonomy_party_long
+						name = MUK_autonomy_party
+					}
+					add_popularity = {
+						ideology = socialist
+						popularity = 0.55
+					}
+					retire_country_leader = yes
+					MUK_Oleksandr_Moroz = {
+						promote_character = yes
+					}
+					set_cosmetic_tag = MUK_autonomy_Kosygin
 				}
-				add_popularity = {
-					ideology = paternalism
-					popularity = 0.45
-				}
-				retire_country_leader = yes
-				MUK_Oleksandr_Moroz = {
-					promote_character = yes
-				}
-				set_cosmetic_tag = MUK_autonomy
 			}
 			1428 = {
 				add_manpower = -98990
@@ -3440,23 +3543,46 @@ country_event = { #Crimnea
 				}
 				TaS_2WRW_set_autonomy_laws = yes
 				#add_ideas = { MAR_military_administration }
-				set_politics = {
-					ruling_party = paternalism
+				if = {
+					limit = { MAR = { has_government = despotism } }
+					set_politics = {
+						ruling_party = paternalism
+					}
+					set_party_name = { 
+						ideology = paternalism 
+						long_name = MTV_autonomy_party_long
+						name = MTV_autonomy_party
+					}
+					add_popularity = {
+						ideology = paternalism
+						popularity = 0.45
+					}
+					retire_country_leader = yes
+					MTV_Bruno_Reiter = {
+						promote_character = yes
+					}
+					set_cosmetic_tag = MTV_autonomy
 				}
-				set_party_name = { 
-					ideology = paternalism 
-					long_name = MTV_autonomy_party_long
-					name = MTV_autonomy_party
+				if = {
+					limit = { MAR = { has_government = socialist } }
+					set_politics = {
+						ruling_party = socialist
+					}
+					set_party_name = { 
+						ideology = socialist 
+						long_name = MTV_autonomy_party_long
+						name = MTV_autonomy_party
+					}
+					add_popularity = {
+						ideology = socialist
+						popularity = 0.55
+					}
+					retire_country_leader = yes
+					MTV_Bruno_Reiter = {
+						promote_character = yes
+					}
+					set_cosmetic_tag = MTV_autonomy_Kosygin
 				}
-				add_popularity = {
-					ideology = paternalism
-					popularity = 0.45
-				}
-				retire_country_leader = yes
-				MTV_Bruno_Reiter = {
-					promote_character = yes
-				}
-				set_cosmetic_tag = MTV_autonomy
 			}
 		}
 	}
@@ -3509,6 +3635,11 @@ country_event = { #Caucasus
 					set_nationality = MCS
 				}
 			}
+			XYZ = {
+				GEO_Eduard_Shevardnadze = {
+					set_nationality = MCS
+				}
+			}
 			MCS = {
 				every_owned_state = {
 					MCS = {
@@ -3516,23 +3647,46 @@ country_event = { #Caucasus
 					}
 				}
 				#add_ideas = { MAR_military_administration }
-				set_politics = {
-					ruling_party = ultranationalism
+				if = {
+					limit = { MAR = { has_government = despotism } }
+					set_politics = {
+						ruling_party = ultranationalism
+					}
+					set_party_name = { 
+						ideology = ultranationalism 
+						long_name = MCS_autonomy_party_long
+						name = MCS_autonomy_party
+					}
+					add_popularity = {
+						ideology = ultranationalism
+						popularity = 0.45
+					}
+					retire_country_leader = yes
+					MCS_Dzhokhar_Dudayev = {
+						promote_character = yes
+					}
+					set_cosmetic_tag = MCS_autonomy
 				}
-				set_party_name = { 
-					ideology = ultranationalism 
-					long_name = MCS_autonomy_party_long
-					name = MCS_autonomy_party
+				if = {
+					limit = { MAR = { has_government = socialist } }
+					set_politics = {
+						ruling_party = communist
+					}
+					set_party_name = { 
+						ideology = communist 
+						long_name = MCS_autonomy_party_long
+						name = MCS_autonomy_party
+					}
+					add_popularity = {
+						ideology = communist
+						popularity = 0.55
+					}
+					retire_country_leader = yes
+					GEO_Eduard_Shevardnadze = {
+						promote_character = yes
+					}
+					set_cosmetic_tag = MCS_autonomy_Kosygin
 				}
-				add_popularity = {
-					ideology = ultranationalism
-					popularity = 0.45
-				}
-				retire_country_leader = yes
-				MCS_Dzhokhar_Dudayev = {
-					promote_character = yes
-				}
-				set_cosmetic_tag = MCS_autonomy
 			}
 		}
 	}
@@ -3540,6 +3694,14 @@ country_event = { #Caucasus
 		name = MAR_territorial_fate.10.b
 		ai_chance = { factor = 1 }
 		custom_effect_tooltip = MAR_autonomy_create_tt
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					character = MAR_advisor_Kosygin
+					ruling_only = yes
+				} 
+			}
+		}
 		hidden_effect = {
 			transfer_state = 235
 			transfer_state = 1564
@@ -3579,6 +3741,14 @@ country_event = { #Caucasus
 	}
 	option = { #the clusterfuck
 		name = MAR_territorial_fate.10.c
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					character = MAR_advisor_Kosygin
+					ruling_only = yes
+				} 
+			}
+		}
 		ai_chance = { factor = 1 }
 		custom_effect_tooltip = MAR_freedom_for_everyone_tt
 		hidden_effect = {

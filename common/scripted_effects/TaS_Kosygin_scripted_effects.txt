@@ -458,6 +458,7 @@ UAR_initialize_Faction_Mechanic = {
 	set_global_flag = UAR_Faction_Start_Flag
 	TaS_fopo_add_uar_influence_battle_tab = yes
 	UAR = {
+		TaS_fopo_add_uar_influence_battle_tab = yes
 		clear_array = UAR_faction_influence_array
 		add_to_array = { UAR_faction_influence_array = 30 } # indepentent 0
 		add_to_array = { UAR_faction_influence_array = 15 } # pro-russian 1
@@ -467,6 +468,12 @@ UAR_initialize_Faction_Mechanic = {
 		add_to_array = { UAR_faction_influence_gain_array = 2 } # indepentent 0
 		add_to_array = { UAR_faction_influence_gain_array = 1.5 } # pro-russian 1
 		add_to_array = { UAR_faction_influence_gain_array = 1 } # pro-pakt 2
+	}
+	GER = {
+		TaS_fopo_add_uar_influence_battle_tab = yes
+	}
+	every_country = {
+		news_event = { id = berez_dobrovoltsy_world_news.17 }
 	}
 }
 

@@ -611,6 +611,36 @@ news_event = { #INDEPENDENT UAR
 		}
 	}
 }
+news_event = { #start of shite
+	id = berez_dobrovoltsy_world_news.17
+	title = berez_dobrovoltsy_world_news.17.t
+	desc = berez_dobrovoltsy_world_news.17.d
+	picture = GFX_berez_dobrovoltsy_world_news_017
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = berez_dobrovoltsy_world_news.17.a
+		trigger = {
+			tag = MAR
+		}
+	}
+	option = {
+		name = berez_dobrovoltsy_world_news.17.b
+		trigger = {
+			NOT = {
+				tag = MAR
+				tag = GER
+			}
+		}
+	}
+	option = {
+		name = berez_dobrovoltsy_world_news.17.c
+		trigger = {
+			tag = GER
+		}
+	}
+}
 country_event = { #KUR_CW End- Kurdish Victory (Real)
 	id = KUR_CW.14
 	immediate = {log = "[GetDateText]: [Root.GetName]: event KUR_CW.14"}

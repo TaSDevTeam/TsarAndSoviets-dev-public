@@ -1889,7 +1889,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #р
 	id = MAR_Kosygin_OGAS.10
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin_OGAS.10" }
 	title = MAR_Kosygin_OGAS.10.t
@@ -1912,7 +1912,7 @@ country_event = { #start
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin_UAR.1" }
 	title = MAR_Kosygin_UAR.1.t
 	desc = MAR_Kosygin_UAR.1.d
-	#picture = 
+	picture = GFX_event_MAR_Kosygin_UAR_1
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -1921,9 +1921,6 @@ country_event = { #start
 		name = MAR_Kosygin_UAR.1.a
 		ai_chance = { factor = 1 }
 		UAR_initialize_Faction_Mechanic = yes
-		hidden_effect = {
-			GER = { TaS_fopo_add_uar_influence_battle_tab = yes }
-		}
 	}
 }
 country_event = { #Rus win
@@ -1952,8 +1949,6 @@ country_event = { #Rus win
 			TNO_improve_poverty_low = yes
 			TaS_fopo_remove_uar_influence_battle_tab = yes
 		}
-		news_event = { id =  berez_dobrovoltsy_world_news.14 days = 1 }
-		
 		GER = {
 			set_temp_variable = { gdp_growth_temp = -0.35 }
 			econ_gdp_growth_change = yes
@@ -1962,6 +1957,45 @@ country_event = { #Rus win
 			set_temp_variable = { Victory_Points = -100 }
 			Cold_War_GUI_ManipulateVictory = yes
 			TaS_fopo_remove_uar_influence_battle_tab = yes
+		}
+		hidden_effect = {
+			every_country = {
+				news_event = { id =  berez_dobrovoltsy_world_news.14 days = 1 }
+			}
+			XYZ = {
+				UAR_Salah_Jadid = {
+					set_nationality = UAR
+				}
+			}
+			UAR = {
+				set_politics = {
+					ruling_party = communist
+				}
+				add_popularity = {
+					ideology = communist
+					popularity = 0.45
+				}
+				retire_country_leader = yes
+				add_country_leader_role = {
+					character = UAR_Salah_Jadid
+					country_leader = {
+						desc = ""
+						ideology = communist_revolutionary_baathism_subtype 
+						expire = "1999.1.1"
+						traits = { }
+					}
+				}
+				UAR_Salah_Jadid = {
+					promote_character = yes
+				}
+				if = {
+					limit = { SYR = exists }
+					annex_country = {
+						target = SYR
+						transfer_troops = yes
+					}
+				}
+			}
 		}
 	}
 	option = { #ai option
@@ -1995,8 +2029,6 @@ country_event = { #Ger win
 			add_war_support = -0.05
 			TaS_fopo_remove_uar_influence_battle_tab = yes
 		}
-		news_event = { id =  berez_dobrovoltsy_world_news.15 days = 1 }
-		
 		GER = {
 			set_temp_variable = { gdp_growth_temp = 0.35 }
 			econ_gdp_growth_change = yes
@@ -2005,6 +2037,45 @@ country_event = { #Ger win
 			set_temp_variable = { Victory_Points = 100 }
 			Cold_War_GUI_ManipulateVictory = yes
 			TaS_fopo_remove_uar_influence_battle_tab = yes
+		}
+		hidden_effect = {
+			every_country = {
+				news_event = { id =  berez_dobrovoltsy_world_news.15 days = 1 }
+			}
+			XYZ = {
+				UAR_Ahmed_Hassan_al_Bakr = {
+					set_nationality = UAR
+				}
+			}
+			UAR = {
+				set_politics = {
+					ruling_party = socialist
+				}
+				add_popularity = {
+					ideology = socialist
+					popularity = 0.45
+				}
+				retire_country_leader = yes
+				add_country_leader_role = {
+					character = UAR_Ahmed_Hassan_al_Bakr
+					country_leader = {
+						desc = ""
+						ideology = socialist_baathism_subtype 
+						expire = "1999.1.1"
+						traits = { }
+					}
+				}
+				UAR_Ahmed_Hassan_al_Bakr = {
+					promote_character = yes
+				}
+				if = {
+					limit = { BIR = exists }
+					annex_country = {
+						target = BIR
+						transfer_troops = yes
+					}
+				}
+			}
 		}
 	}
 	option = { #ai option
@@ -2029,14 +2100,13 @@ country_event = { #no win
 		clr_global_flag = UAR_Faction_Start_Flag
 		UAR = {
 			TaS_fopo_remove_uar_influence_battle_tab = yes
+			econ_leave_sphere = yes
 		}
 		MAR = {
 			add_stability = -0.05
 			add_war_support = -0.05
 			TaS_fopo_remove_uar_influence_battle_tab = yes
 		}
-		news_event = { id =  berez_dobrovoltsy_world_news.16 days = 1 }
-		
 		GER = {
 			set_temp_variable = { gdp_growth_temp = -0.15 }
 			econ_gdp_growth_change = yes
@@ -2045,6 +2115,45 @@ country_event = { #no win
 			set_temp_variable = { Victory_Points = -100 }
 			Cold_War_GUI_ManipulateVictory = yes
 			TaS_fopo_remove_uar_influence_battle_tab = yes
+		}
+		hidden_effect = {
+			every_country = {
+				news_event = { id =  berez_dobrovoltsy_world_news.16 days = 1 }
+			}
+			XYZ = {
+				UAR_Hafez_al_Assad = {
+					set_nationality = UAR
+				}
+			}
+			UAR = {
+				set_politics = {
+					ruling_party = despotism
+				}
+				add_popularity = {
+					ideology = despotism
+					popularity = 0.45
+				}
+				retire_country_leader = yes
+				add_country_leader_role = {
+					character = UAR_Hafez_al_Assad
+					country_leader = {
+						desc = ""
+						ideology = despotism_neo_baathism_subtype 
+						expire = "1999.1.1"
+						traits = { }
+					}
+				}
+				UAR_Hafez_al_Assad = {
+					promote_character = yes
+				}
+				if = {
+					limit = { SYR = exists }
+					annex_country = {
+						target = SYR
+						transfer_troops = yes
+					}
+				}
+			}
 		}
 	}
 	option = { #ai option
