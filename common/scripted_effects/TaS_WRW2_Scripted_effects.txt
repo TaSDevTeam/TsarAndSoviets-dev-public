@@ -240,9 +240,9 @@ TaS_2WRW_manchuria_start_rebelion = {
 	}
 	MJP = {
 		declare_war_on = {
-				target = PFF
-				type = annex_everything
-			}
+			target = PFF
+			type = annex_everything
+		}
 	}
 }
 TaS_WRW2_change_devastation = { 
@@ -285,149 +285,149 @@ TaS_WRW2_change_devastation_gain = {
 }
 Tas_WRW2_decrease_depression = {
 	custom_effect_tooltip = Tas_WRW2_decrease_depression_tt
-			if = {
-				limit = { has_idea = MAR_oper_fail_5 }
-				swap_ideas = {
-					remove_idea = MAR_oper_fail_5
-					add_idea = MAR_oper_fail_4
-				}
-			}
-			else_if = {
-				limit = { has_idea = MAR_oper_fail_4 }
-				swap_ideas = {
-					remove_idea = MAR_oper_fail_4
-					add_idea = MAR_oper_fail_3
-				}
-			}
-			else_if = {
-				limit = { has_idea = MAR_oper_fail_3 }
-				swap_ideas = {
-					remove_idea = MAR_oper_fail_3
-					add_idea = MAR_oper_fail_2
-				}
-			}
-			else_if = {
-				limit = { has_idea = MAR_oper_fail_2 }
-				swap_ideas = {
-					remove_idea = MAR_oper_fail_2
-					add_idea = MAR_oper_fail_1
-				}
-			}
-			else_if = {
-				limit = { has_idea = MAR_oper_fail_1 }
-				swap_ideas = {
-					remove_idea = MAR_oper_fail_1
-					add_idea = MAR_oper_succ_1
-				}
-			}
-			else_if = {
-				limit = { has_idea = MAR_oper_succ_1 }
-				swap_ideas = {
-					remove_idea = MAR_oper_succ_1
-					add_idea = MAR_oper_succ_2
-				}
-			}
-			else_if = {
-				limit = { has_idea = MAR_oper_succ_2 }
-				swap_ideas = {
-					remove_idea = MAR_oper_succ_2
-					add_idea = MAR_oper_succ_3
-				}
-			}
-			else_if = {
-				limit = { has_idea = MAR_oper_succ_3 }
-				swap_ideas = {
-					remove_idea = MAR_oper_succ_3
-					add_idea = MAR_oper_succ_4
-				}
-			}
-			else_if = {
-				limit = { has_idea = MAR_oper_succ_4 }
-				swap_ideas = {
-					remove_idea = MAR_oper_succ_4
-					add_idea = MAR_oper_succ_5
-				}
-			}
-			else_if = {
-				limit = { has_idea = MAR_oper_zero }
-				swap_ideas = {
-					remove_idea = MAR_oper_zero
-					add_idea = MAR_oper_succ_1
-				}
-			}
+	if = {
+		limit = { has_idea = MAR_oper_fail_5 }
+		swap_ideas = {
+			remove_idea = MAR_oper_fail_5
+			add_idea = MAR_oper_fail_4
+		}
+	}
+	else_if = {
+		limit = { has_idea = MAR_oper_fail_4 }
+		swap_ideas = {
+			remove_idea = MAR_oper_fail_4
+			add_idea = MAR_oper_fail_3
+		}
+	}
+	else_if = {
+		limit = { has_idea = MAR_oper_fail_3 }
+		swap_ideas = {
+			remove_idea = MAR_oper_fail_3
+			add_idea = MAR_oper_fail_2
+		}
+	}
+	else_if = {
+		limit = { has_idea = MAR_oper_fail_2 }
+		swap_ideas = {
+			remove_idea = MAR_oper_fail_2
+			add_idea = MAR_oper_fail_1
+		}
+	}
+	else_if = {
+		limit = { has_idea = MAR_oper_fail_1 }
+		swap_ideas = {
+			remove_idea = MAR_oper_fail_1
+			add_idea = MAR_oper_succ_1
+		}	
+	}
+	else_if = {
+		limit = { has_idea = MAR_oper_succ_1 }
+		swap_ideas = {
+			remove_idea = MAR_oper_succ_1
+			add_idea = MAR_oper_succ_2
+		}
+	}
+	else_if = {
+		limit = { has_idea = MAR_oper_succ_2 }
+		swap_ideas = {
+			remove_idea = MAR_oper_succ_2
+			add_idea = MAR_oper_succ_3
+		}
+	}
+	else_if = {
+		limit = { has_idea = MAR_oper_succ_3 }
+		swap_ideas = {
+			remove_idea = MAR_oper_succ_3
+			add_idea = MAR_oper_succ_4
+		}
+	}
+	else_if = {
+		limit = { has_idea = MAR_oper_succ_4 }
+		swap_ideas = {
+			remove_idea = MAR_oper_succ_4
+			add_idea = MAR_oper_succ_5
+		}
+	}	
+	else_if = {
+		limit = { has_idea = MAR_oper_zero }
+		swap_ideas = {
+			remove_idea = MAR_oper_zero
+			add_idea = MAR_oper_succ_1
+		}
+	}
 } 
 Tas_WRW2_increase_depression = {
 	custom_effect_tooltip = Tas_WRW2_increase_depression_tt
-			if = {
-				limit = { has_idea = MAR_oper_succ_5 }
-				swap_ideas = {
-					remove_idea = MAR_oper_succ_5
-					add_idea = MAR_oper_succ_4
-				}
-			}
-			else_if = {
-				limit = { has_idea = MAR_oper_succ_4 }
-				swap_ideas = {
-					remove_idea = MAR_oper_succ_4
-					add_idea = MAR_oper_succ_3
-				}
-			}
-			else_if = {
-				limit = { has_idea = MAR_oper_succ_3 }
-				swap_ideas = {
-					remove_idea = MAR_oper_succ_3
-					add_idea = MAR_oper_succ_2
-				}
-			}
-			else_if = {
-				limit = { has_idea = MAR_oper_succ_2 }
-				swap_ideas = {
-					remove_idea = MAR_oper_succ_2
-					add_idea = MAR_oper_succ_1
-				}
-			}
-			else_if = {
-				limit = { has_idea = MAR_oper_succ_1 }
-				swap_ideas = {
-					remove_idea = MAR_oper_succ_1
-					add_idea = MAR_oper_fail_1
-				}
-			}
-			else_if = {
-				limit = { has_idea = MAR_oper_fail_1 }
-				swap_ideas = {
-					remove_idea = MAR_oper_fail_1
-					add_idea = MAR_oper_fail_2
-				}
-			}
-			else_if = {
-				limit = { has_idea = MAR_oper_fail_2 }
-				swap_ideas = {
-					remove_idea = MAR_oper_fail_2
-					add_idea = MAR_oper_fail_3
-				}
-			}
-			else_if = {
-				limit = { has_idea = MAR_oper_fail_3 }
-				swap_ideas = {
-					remove_idea = MAR_oper_fail_3
-					add_idea = MAR_oper_fail_4
-				}
-			}
-			else_if = {
-				limit = { has_idea = MAR_oper_fail_4 }
-				swap_ideas = {
-					remove_idea = MAR_oper_fail_4
-					add_idea = MAR_oper_fail_5
-				}
-			}
-			else_if = {
-				limit = { has_idea = MAR_oper_zero }
-				swap_ideas = {
-					remove_idea = MAR_oper_zero
-					add_idea = MAR_oper_fail_1
-				}
-			}
+	if = {
+		limit = { has_idea = MAR_oper_succ_5 }
+		swap_ideas = {
+			remove_idea = MAR_oper_succ_5
+			add_idea = MAR_oper_succ_4
+		}
+	}
+	else_if = {
+		limit = { has_idea = MAR_oper_succ_4 }
+		swap_ideas = {
+			remove_idea = MAR_oper_succ_4
+			add_idea = MAR_oper_succ_3
+		}
+	}
+	else_if = {
+		limit = { has_idea = MAR_oper_succ_3 }
+		swap_ideas = {
+			remove_idea = MAR_oper_succ_3
+			add_idea = MAR_oper_succ_2
+		}
+	}
+	else_if = {
+		limit = { has_idea = MAR_oper_succ_2 }
+		swap_ideas = {
+			remove_idea = MAR_oper_succ_2
+			add_idea = MAR_oper_succ_1
+		}
+	}
+	else_if = {
+		limit = { has_idea = MAR_oper_succ_1 }
+		swap_ideas = {
+			remove_idea = MAR_oper_succ_1
+		add_idea = MAR_oper_fail_1
+		}
+	}
+	else_if = {
+		limit = { has_idea = MAR_oper_fail_1 }
+		swap_ideas = {
+			remove_idea = MAR_oper_fail_1
+			add_idea = MAR_oper_fail_2
+		}
+	}
+	else_if = {
+		limit = { has_idea = MAR_oper_fail_2 }
+		swap_ideas = {
+			remove_idea = MAR_oper_fail_2
+			add_idea = MAR_oper_fail_3
+		}
+	}
+	else_if = {
+		limit = { has_idea = MAR_oper_fail_3 }
+		swap_ideas = {
+			remove_idea = MAR_oper_fail_3
+			add_idea = MAR_oper_fail_4
+		}
+	}
+	else_if = {
+		limit = { has_idea = MAR_oper_fail_4 }
+		swap_ideas = {
+			remove_idea = MAR_oper_fail_4
+			add_idea = MAR_oper_fail_5
+		}
+	}
+	else_if = {
+		limit = { has_idea = MAR_oper_zero }
+		swap_ideas = {
+			remove_idea = MAR_oper_zero
+			add_idea = MAR_oper_fail_1
+		}
+	}
 } 
 TaS_WRW2_total_capitulation = {
 	custom_effect_tooltip = TaS_WRW2_total_capitulation_tt
@@ -1610,10 +1610,10 @@ TaS_2WRW_free_baltics = {
 		transfer_state = 1397
 		transfer_state = 1399
 		every_owned_state = {
-				LAT = {
-					add_state_core = PREV
-				}
+			LAT = {
+				add_state_core = PREV
 			}
+		}
 		set_capital = { state = 1397 }
 		TaS_2WRW_set_free_laws = yes
 		#add_ideas = { MAR_military_administration }
@@ -1652,10 +1652,10 @@ TaS_2WRW_free_baltics = {
 		transfer_state = 1401
 		transfer_state = 11
 		every_owned_state = {
-				LIT = {
-					add_state_core = PREV
-				}
+			LIT = {
+				add_state_core = PREV
 			}
+		}
 		set_capital = { state = 96 }
 		TaS_2WRW_set_free_laws = yes
 		#add_ideas = { MAR_military_administration }
