@@ -631,16 +631,15 @@ UAR_Faction_Influence_Calc = { #Calculate who is in the lead and what happens ac
 					check_variable = { UAR_leading_faction > 150 } 
 				}
 			}
-			#GER = {
-			#	activate_mission = GER_Faction_Join_Pakt_Mission
-			#}
-			#USA = {
-				#activate_mission = USA_Faction_Join_Pakt_Mission
-				#country_event = { #Warning Event
-				#	id = ENG_International_Mechanic.5
-				#	hours = 20
-				#}
-			#}
+			GER = {
+				activate_mission = GER_UAR_Faction_Close_Faction_Mechanic_Mission
+			}
+			MAR = {
+				activate_mission = MAR_Faction_Close_Faction_Mechanic_Mission
+			}
+			UAR = {
+				activate_mission = UAR_Faction_Close_Faction_Mechanic_Mission
+			}
 		}
 		else_if = { #russkie wins
 			limit = { 
@@ -649,16 +648,15 @@ UAR_Faction_Influence_Calc = { #Calculate who is in the lead and what happens ac
 					check_variable = { UAR_leading_faction > 150 } 
 				}
 			}
-			#GER = {
-			#	activate_mission = GER_Faction_Join_Pakt_Mission
-			#}
-			#USA = {
-				#activate_mission = USA_Faction_Join_Pakt_Mission
-				#country_event = { #Warning Event
-				#	id = ENG_International_Mechanic.5
-				#	hours = 20
-				#}
-			#}
+			GER = {
+				activate_mission = GER_Faction_Join_RUS_Mission
+			}
+			MAR = {
+				activate_mission = MAR_Faction_Join_Rus_Mission
+			}
+			UAR = {
+				activate_mission = UAR_Faction_Join_Rus_Mission
+			}
 		}
 		else_if = { #The Pakt overpowers 
 			limit = { 
@@ -667,49 +665,15 @@ UAR_Faction_Influence_Calc = { #Calculate who is in the lead and what happens ac
 					check_variable = { UAR_leading_faction > 150 } 
 				}
 			}
-			#GER = {
-			#	activate_mission = GER_Faction_Join_Pakt_Mission
-			#}
-			#USA = {
-				#activate_mission = USA_Faction_Join_Pakt_Mission
-				#country_event = { #Warning Event
-				#	id = ENG_International_Mechanic.5
-				#	hours = 20
-				#}
-			#}
+			GER = {
+				activate_mission = GER_UAR_Faction_Join_Pakt_Mission
+			}
+			MAR = {
+				activate_mission = MAR_Faction_Join_Pakt_Mission
+			}
+			UAR = {
+				activate_mission = UAR_Faction_Join_Pakt_Mission
+			}
 		}
 	}
-}
-
-UAR_end_faction_mechanic = {
-	hidden_effect = {
-		remove_mission = ENG_Faction_Close_Faction_Mechanic_Mission
-		#hidden_effect = {
-		#	country_event = {
-		#		id = ENG_International_Mechanic.20
-		#		hours = 3
-		#	}
-		#}
-		#GER = {
-		#	remove_mission = GER_Faction_Close_Faction_Mechanic_Mission
-		#	hidden_effect = {
-		#		country_event = {
-		#			id = ENG_International_Mechanic.16
-		#			hours = 3
-		#		}
-		#	}
-		#}
-		#USA = {
-		#	remove_mission = USA_Faction_Close_Faction_Mechanic_Mission
-		#	hidden_effect = {
-		#		country_event = {
-		#			id = ENG_International_Mechanic.17
-		#			hours = 3
-		#		}
-		#	}
-		#}
-	}
-	set_country_flag = UAR_Ended_faction_Mechanic_Independent
-	clr_global_flag = UAR_Faction_Start_Flag
-	TaS_fopo_remove_uar_influence_battle_tab = yes
 }

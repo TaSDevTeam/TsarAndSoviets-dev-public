@@ -425,16 +425,27 @@ UAR_foreign_policy_category = {
 				NOT = { TNO_fopo_uar_influence_battle_selected  = yes }
 			}
 		}
+		cancel_trigger = {
+			NOT = { check_variable = { UAR_leading_faction_idx = 1 } }
+		}
 		is_good = no
 		days_mission_timeout = 60
 		allowed = {
 			tag = UAR
 		}
 		timeout_effect = {
-			#country_event = {
-			#	id = UAR_International_Mechanic.18
-			#	days = 1
-			#}
+			MAR = {
+				country_event = {
+					id = MAR_Kosygin_UAR.2
+					days = 1
+				}
+			}
+			GER = {
+				country_event = {
+					id = MAR_Kosygin_UAR.2
+					days = 1
+				}
+			}
 		}
 	}
 
@@ -448,16 +459,27 @@ UAR_foreign_policy_category = {
 				NOT = { TNO_fopo_uar_influence_battle_selected  = yes }
 			}
 		}
+		cancel_trigger = {
+			NOT = { check_variable = { UAR_leading_faction_idx = 2 } }
+		}
 		is_good = no
 		days_mission_timeout = 60
 		allowed = {
 			tag = UAR
 		}
 		timeout_effect = {
-			#country_event = {
-			#	id = UAR_International_Mechanic.19
-			#	days = 1
-			#}
+			MAR = {
+				country_event = {
+					id = MAR_Kosygin_UAR.3
+					days = 1
+				}
+			}
+			GER = {
+				country_event = {
+					id = MAR_Kosygin_UAR.3
+					days = 1
+				}
+			}
 		}
 	}
 
@@ -471,13 +493,27 @@ UAR_foreign_policy_category = {
 				NOT = { TNO_fopo_uar_influence_battle_selected  = yes }
 			}
 		}
+		cancel_trigger = {
+			NOT = { check_variable = { UAR_leading_faction_idx = 0 } }
+		}
 		is_good = yes
 		days_mission_timeout = 180
 		allowed = {
 			tag = UAR
 		}
 		timeout_effect = {
-			UAR_end_faction_mechanic = yes
+			MAR = {
+				country_event = {
+					id = MAR_Kosygin_UAR.4
+					days = 1
+				}
+			}
+			GER = {
+				country_event = {
+					id = MAR_Kosygin_UAR.4
+					days = 1
+				}
+			}
 			custom_effect_tooltip = UAR_Faction_Close_Mechanic_tt
 		}
 	}

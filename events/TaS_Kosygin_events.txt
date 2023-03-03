@@ -1424,6 +1424,7 @@ country_event = { #fail 1
 		hidden_effect = {
 			retire_character = MAR_advisor_Kosygin
 		}
+		
 	}
 }
 
@@ -1906,7 +1907,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #start
 	id = MAR_Kosygin_UAR.1
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin_UAR.1" }
 	title = MAR_Kosygin_UAR.1.t
@@ -1919,7 +1920,135 @@ country_event = { #
 	option = { #
 		name = MAR_Kosygin_UAR.1.a
 		ai_chance = { factor = 1 }
-		#MAR_calculate_ogas_dynmod_effects = yes
-		#clr_country_flag = MAR_ogas_dev_started
+		UAR_initialize_Faction_Mechanic = yes
+		hidden_effect = {
+			GER = { TaS_fopo_add_uar_influence_battle_tab = yes }
+		}
+	}
+}
+country_event = { #Rus win
+	id = MAR_Kosygin_UAR.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin_UAR.2" }
+	title = MAR_Kosygin_UAR.2.t
+	desc = MAR_Kosygin_UAR.2.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #yay
+		name = MAR_Kosygin_UAR.2.a
+		clr_global_flag = UAR_Faction_Start_Flag
+		trigger = { is_ai = no }
+		UAR = {
+			econ_join_sphere_MAR = yes
+			set_temp_variable = { gdp_growth_temp = 0.15 }
+			econ_gdp_growth_change = yes
+			TaS_fopo_remove_uar_influence_battle_tab = yes
+		}
+		MAR = {
+			set_temp_variable = { gdp_growth_temp = 0.45 }
+			econ_gdp_growth_change = yes
+			TNO_improve_poverty_low = yes
+			TaS_fopo_remove_uar_influence_battle_tab = yes
+		}
+		news_event = { id =  berez_dobrovoltsy_world_news.14 days = 1 }
+		
+		GER = {
+			set_temp_variable = { gdp_growth_temp = -0.35 }
+			econ_gdp_growth_change = yes
+			set_temp_variable = { Victory_ID = 51 }
+			set_temp_variable = { Victory_Outcome = 2 }
+			set_temp_variable = { Victory_Points = -100 }
+			Cold_War_GUI_ManipulateVictory = yes
+			TaS_fopo_remove_uar_influence_battle_tab = yes
+		}
+	}
+	option = { #ai option
+		name = MAR_Kosygin_UAR.2.b
+		trigger = { is_ai = yes }
+	}
+}
+
+country_event = { #Ger win
+	id = MAR_Kosygin_UAR.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin_UAR.3" }
+	title = MAR_Kosygin_UAR.3.t
+	desc = MAR_Kosygin_UAR.3.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #not yay
+		name = MAR_Kosygin_UAR.3.a
+		trigger = { is_ai = no }
+		clr_global_flag = UAR_Faction_Start_Flag
+		UAR = {
+			econ_join_sphere_GER = yes
+			set_temp_variable = { gdp_growth_temp = 0.15 }
+			econ_gdp_growth_change = yes
+			TaS_fopo_remove_uar_influence_battle_tab = yes
+		}
+		MAR = {
+			add_stability = -0.05
+			add_war_support = -0.05
+			TaS_fopo_remove_uar_influence_battle_tab = yes
+		}
+		news_event = { id =  berez_dobrovoltsy_world_news.15 days = 1 }
+		
+		GER = {
+			set_temp_variable = { gdp_growth_temp = 0.35 }
+			econ_gdp_growth_change = yes
+			set_temp_variable = { Victory_ID = 51 }
+			set_temp_variable = { Victory_Outcome = 4 }
+			set_temp_variable = { Victory_Points = 100 }
+			Cold_War_GUI_ManipulateVictory = yes
+			TaS_fopo_remove_uar_influence_battle_tab = yes
+		}
+	}
+	option = { #ai option
+		name = MAR_Kosygin_UAR.3.b
+		trigger = { is_ai = yes }
+	}
+}
+
+country_event = { #no win
+	id = MAR_Kosygin_UAR.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin_UAR.4" }
+	title = MAR_Kosygin_UAR.4.t
+	desc = MAR_Kosygin_UAR.4.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #not yay
+		name = MAR_Kosygin_UAR.4.a
+		trigger = { is_ai = no }
+		clr_global_flag = UAR_Faction_Start_Flag
+		UAR = {
+			TaS_fopo_remove_uar_influence_battle_tab = yes
+		}
+		MAR = {
+			add_stability = -0.05
+			add_war_support = -0.05
+			TaS_fopo_remove_uar_influence_battle_tab = yes
+		}
+		news_event = { id =  berez_dobrovoltsy_world_news.16 days = 1 }
+		
+		GER = {
+			set_temp_variable = { gdp_growth_temp = -0.15 }
+			econ_gdp_growth_change = yes
+			set_temp_variable = { Victory_ID = 51 }
+			set_temp_variable = { Victory_Outcome = 2 }
+			set_temp_variable = { Victory_Points = -100 }
+			Cold_War_GUI_ManipulateVictory = yes
+			TaS_fopo_remove_uar_influence_battle_tab = yes
+		}
+	}
+	option = { #ai option
+		name = MAR_Kosygin_UAR.4.b
+		trigger = { is_ai = yes }
 	}
 }

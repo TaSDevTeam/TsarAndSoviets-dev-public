@@ -2221,6 +2221,35 @@ MAR_Order_category = {
 }
 #prestol
 MAR_category_prestol_terrorists = {
+
+	MAR_debug_drop_to_fifteen = {
+		icon = GFX_decision_generic_shake_hands
+		visible = {
+			is_debug = yes
+		}
+		cost = 5
+		complete_effect = {
+			262 = {
+				add_to_variable = { insurgency_strength = -0.6 }
+			}
+			214 = {
+				add_to_variable = { insurgency_strength = -0.6 }
+			}
+			397 = {
+				add_to_variable = { insurgency_strength = -0.6 }
+			}
+			753 = {
+				add_to_variable = { insurgency_strength = -0.6 }
+			}
+			252 = {
+				add_to_variable = { insurgency_strength = -0.6 }
+			}
+			850 = {
+				add_to_variable = { insurgency_strength = -0.6 }
+			}
+			
+		}
+	}
 	MAR_put_down_taboritskys_bandits = {
 		icon = GFX_decision_revolt
 		activation = { always = no }

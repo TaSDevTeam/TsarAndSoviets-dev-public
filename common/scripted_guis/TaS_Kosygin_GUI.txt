@@ -102,9 +102,9 @@ scripted_gui = {
 					}
 				}
 				custom_trigger_tooltip = {
-					tooltip = power_check_prestol_tt
+					tooltip = power_check_prestol_one_tt
 					var:insurgency_state_selected = {
-						check_variable = { insurgency_strength < 0.15 }
+						check_variable = { insurgency_strength < 0.2 }
 					}
 				}
 				custom_trigger_tooltip = {
@@ -115,7 +115,7 @@ scripted_gui = {
 				}
 				command_power > 24.9
 			}
-			MAR_antiprestol_decision_operation_two_visible_click_enabled = {
+			MAR_antiprestol_decision_operation_two_click_enabled = {
 				custom_trigger_tooltip = {
 					tooltip = recent_action_prestol_tt
 					var:insurgency_state_selected = {
@@ -123,9 +123,16 @@ scripted_gui = {
 					}
 				}
 				custom_trigger_tooltip = {
-					tooltip = power_check_prestol_tt
+					tooltip = power_check_prestol_two_tt
 					var:insurgency_state_selected = {
 						check_variable = { insurgency_strength < 0.15 }
+					}
+				}
+				if = {
+					limit = { check_variable = { var:insurgency_state_selected = 214 } }
+					custom_trigger_tooltip = {
+						tooltip = onega_control_tt
+						controls_state = 859
 					}
 				}
 				command_power > 24.9
@@ -141,6 +148,12 @@ scripted_gui = {
 				var:insurgency_state_selected = {
 					check_variable = { kosygin_reception = 1 }
 					#check_variable = { operation_available = 0 }
+				}
+			}
+			MAR_Prestol_Taboritsky_Cover_visible = {
+				check_variable = { var:insurgency_state_selected = 398 }
+				var:insurgency_state_selected = {
+					check_variable = { operation_available = 1 }
 				}
 			}
 		}
@@ -184,7 +197,6 @@ scripted_gui = {
 				add_political_power = -25
 			}
 			MAR_antiprestol_decision_three_click = {
-				custom_effect_tooltip =  
 				var:insurgency_state_selected = {
 					set_temp_variable = { change_strenghth_temp = -0.03 }
 					set_temp_variable = { change_strenghth_trend_temp = -0.003 }

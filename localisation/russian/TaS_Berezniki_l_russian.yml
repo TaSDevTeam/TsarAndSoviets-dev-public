@@ -3032,9 +3032,11 @@
  MAR_SAMARA_DOSSIER:0 "§YПопытки правительства покойного Казем-Бека обезглавить гидру Русской Освободительной Армии в конечном итоге оказались тщетны. Теперь ранее разоружённые солдаты и рядовые во главе с Виктором Мальцевым вновь взялись за оружие. Мы можем лишь гадать какие именно связи с “Престольниками” имеют люди Мальцева и есть ли таковые связи вообще. \n\nКОНР на данный момент действует как полноценная военная сила, держащая под контролем несколько населённых пунктов в Поволжье, в частности город Балаково на границе с Рейхскоммисариатом Московиен, ставшим центром возобновившейся волны контрабанды, сравнимой лишь с деятельностью Михаила Октана при жизни Андрея Власова.§!"
  
  recent_action_prestol_tt:0 "§YВ последние две недели мы не принимали никаких мер§!"
- power_check_prestol_tt:0 "§YСила престола в этом регионе - ниже§! §R15%§!"
+ power_check_prestol_one_tt:0 "§YСила престола в этом регионе - ниже§! §R20%§!"
+ power_check_prestol_two_tt:0 "§YСила престола в этом регионе - ниже§! §R15%§!"
+ onega_control_tt:0 "§YНам необходимо контролировать Онегу, чтобы мы смогли уничтожить Престольников в данном регионе§!"
  we_can_search_here_prestol_tt:0 "§YНам есть что искать в этом регионе§!"
- MAR_antiprestol_decision_one:0 "Разгромить одну из баз Престольников\n£political_power_texticon  §Y25§!"
+ MAR_antiprestol_decision_one:0 "Разгромить базу Престольников\n£political_power_texticon  §Y25§!"
  MAR_antiprestol_decision_one_tt:0 "Мы устроим рейд на лагерь бандитов. Успешное проведение этой операции приведёт к уменьшению влияния "Престола" в этом регионе, но важно помнить, что слишком жестокие методы отпугнут людей.\n[!MAR_antiprestol_decision_one_click_enabled]\n[!MAR_antiprestol_decision_one_click]"
  MAR_antiprestol_decision_two:0 "Провести пропагандисткую кампанию против Престольников\n£political_power_texticon  §Y25§!"
  MAR_antiprestol_decision_two_tt:0 "Мы провёдем пропагандисткую кампанию в этом регионе по дискредитации "Престола". Это не приведёт к моментальному эффекту, но это снизит рост популярности "Престола".\n[!MAR_antiprestol_decision_two_click_enabled]\n[!MAR_antiprestol_decision_two_click]"
@@ -3304,6 +3306,7 @@
  UAR_faction_mech_no_other_decisions:0 "§YНикаких других решений относительно влияния в Объединённой Арабской Республике в настоящее время не принимается.§!"
 
  GC_UAR_influence_battle:0 "Ближневосточная Большая Игра"
+ TNO_Cold_War_Victory_ID_51:0 "БЛИЖНЕВОСТОЧНАЯ БОЛЬШАЯ ИГРА"
  UAR_IBC_desc:0 "Влияние [MAR.GetFlag]§m[MAR.GetNameDEF]§!: [?UAR.UAR_faction_influence_array^1]\n[MAR.GetFlag]§mИх влияние§! возврастает на §Y[?UAR.UAR_faction_influence_gain_array^1]§! каждый месяц.\n\nВлияние [GER.GetFlag]§q[GER.GetNameDEF]§!: [?UAR.UAR_faction_influence_array^2]\n[GER.GetFlag]§qИх влияние§! возврастает на §Y[?UAR.UAR_faction_influence_gain_array^2]§! каждый месяц.\n\nВлияние §V[UAR.GetFlag][UAR.GetNameDEF]§!: [?UAR.UAR_faction_influence_array^0]\n[UAR.GetFlag]§VИх влияние§!возврастает на §Y[?UAR.UAR_faction_influence_gain_array^0]§! каждый месяц.\n\nНа данный момент лидирует [GetFactionUARLeader].§!"
  
  UAR_faction_influence_german_decrease_tt:0 "Это §Rпонизит§! влияние §sПакта§! на §Y[?InfluenceChangeTemp_txt].§!\n"
