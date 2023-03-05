@@ -1108,6 +1108,9 @@ MAR_foreign_policy_category = {
 				NOT = { TNO_fopo_uar_influence_battle_selected = yes }
 			}
 		}
+		cancel_trigger = {
+			NOT = { check_variable = { UAR_leading_faction_idx = 1 } }
+		}
 		is_good = yes
 		days_mission_timeout = 60
 		allowed = {
@@ -1128,6 +1131,9 @@ MAR_foreign_policy_category = {
 				NOT = { TNO_fopo_uar_influence_battle_selected = yes }
 			}
 		}
+		cancel_trigger = {
+			NOT = { check_variable = { UAR_leading_faction_idx = 2 } }
+		}
 		is_good = no
 		days_mission_timeout = 60
 		allowed = {
@@ -1146,6 +1152,9 @@ MAR_foreign_policy_category = {
 			hidden_trigger = {
 				NOT = { TNO_fopo_uar_influence_battle_selected = yes }
 			}
+		}
+		cancel_trigger = {
+			NOT = { check_variable = { UAR_leading_faction_idx = 0 } }
 		}
 		is_good = no
 		days_mission_timeout = 180

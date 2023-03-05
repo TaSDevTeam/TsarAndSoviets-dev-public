@@ -2686,6 +2686,44 @@ news_event = { #WRW2 Total Ending
 	}
 }
 
+news_event = { # Kosygin Unifies Russia
+	id = berez_world_news.6
+	title = berez_world_news.6.t
+	desc = berez_world_news.6.d
+	picture = GFX_berez_world_news_006
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = berez_world_news.6.a
+			trigger = {
+				tag = MAR
+			}
+		if = {
+            limit = {
+                is_ai = no
+            }
+            set_country_flag = TaS_Kosygin_Russia_Reunification
+        }
+	}
+	
+	
+	option = {
+		name = berez_world_news.6.b
+		trigger = {
+			NOT = {
+				tag = MAR
+			}
+		}
+		if = {
+            limit = {
+                is_ai = no
+            }
+            set_country_flag = TaS_Kosygin_Russia_Reunification
+        }
+		
+	}
+}
 
 country_event = { #test sphere
 	id = berez_eco.1612

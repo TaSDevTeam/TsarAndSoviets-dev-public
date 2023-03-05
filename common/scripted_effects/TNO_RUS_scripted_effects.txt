@@ -7496,7 +7496,7 @@ RUS_select_superregional_focus_tree = {
 							ruling_only = yes
 						}
 					}
-					load_focus_tree = { tree = MAR_Kosygin_Suppergional keep_completed = no }
+					load_focus_tree = { tree = MAR_Kosygin_Superregional keep_completed = no }
 				}
 			}
 	}
@@ -8213,7 +8213,25 @@ RUS_select_final_news_event = {
 					}
 					every_country  = {
 						news_event = {
-						id = berez_world_news.4
+							id = berez_world_news.4
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_country_leader = {
+							character = MAR_advisor_Kosygin
+							ruling_only = yes
+						}
+					}
+					every_country  = {
+						news_event = {
+							id = berez_world_news.6
+						}
+					}
+					MAR = {
+						country_event = {
+							id = MAR_Kosygin.57 days = 7
 						}
 					}
 				}
@@ -8528,6 +8546,15 @@ RUS_select_final_cosmetic_tag = {
 						}
 					}
 					set_cosmetic_tag = MAR_ser_bel_RUS
+				}
+				if = {
+					limit = {
+						has_country_leader = {
+							character = MAR_advisor_Kosygin
+							ruling_only = yes
+						}
+					}
+					set_cosmetic_tag = MAR_Kosygin_RUS
 				}
 			}
 	}

@@ -500,13 +500,13 @@ news_event = { #Russo-Iranian Oil Company
 	is_triggered_only = yes
 	
 	option = {
-		name = berez_dobrovoltsy_world_news.12.a
+		name = berez_dobrovoltsy_world_news.13.a
 		trigger = {
 			tag = MAR
 		}
 	}
 	option = {
-		name = berez_dobrovoltsy_world_news.12.b
+		name = berez_dobrovoltsy_world_news.13.b
 		trigger = {
 			NOT = {
 				tag = MAR
@@ -515,13 +515,132 @@ news_event = { #Russo-Iranian Oil Company
 		}
 	}
 	option = {
-		name = berez_dobrovoltsy_world_news.12.c
+		name = berez_dobrovoltsy_world_news.13.c
 		trigger = {
 			tag = GER
 		}
 	}
 }
-
+news_event = { #prorus UAR
+	id = berez_dobrovoltsy_world_news.14
+	title = berez_dobrovoltsy_world_news.14.t
+	desc = berez_dobrovoltsy_world_news.14.d
+	picture = GFX_berez_dobrovoltsy_world_news_014
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = berez_dobrovoltsy_world_news.14.a
+		trigger = {
+			tag = MAR
+		}
+	}
+	option = {
+		name = berez_dobrovoltsy_world_news.14.b
+		trigger = {
+			NOT = {
+				tag = MAR
+				tag = GER
+			}
+		}
+	}
+	option = {
+		name = berez_dobrovoltsy_world_news.14.c
+		trigger = {
+			tag = GER
+		}
+	}
+}
+news_event = { #proger UAR
+	id = berez_dobrovoltsy_world_news.15
+	title = berez_dobrovoltsy_world_news.15.t
+	desc = berez_dobrovoltsy_world_news.15.d
+	picture = GFX_berez_dobrovoltsy_world_news_015
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = berez_dobrovoltsy_world_news.15.a
+		trigger = {
+			tag = MAR
+		}
+	}
+	option = {
+		name = berez_dobrovoltsy_world_news.15.b
+		trigger = {
+			NOT = {
+				tag = MAR
+				tag = GER
+			}
+		}
+	}
+	option = {
+		name = berez_dobrovoltsy_world_news.15.c
+		trigger = {
+			tag = GER
+		}
+	}
+}
+news_event = { #INDEPENDENT UAR
+	id = berez_dobrovoltsy_world_news.16
+	title = berez_dobrovoltsy_world_news.16.t
+	desc = berez_dobrovoltsy_world_news.16.d
+	picture = GFX_berez_dobrovoltsy_world_news_016
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = berez_dobrovoltsy_world_news.16.a
+		trigger = {
+			tag = MAR
+		}
+	}
+	option = {
+		name = berez_dobrovoltsy_world_news.16.b
+		trigger = {
+			NOT = {
+				tag = MAR
+				tag = GER
+			}
+		}
+	}
+	option = {
+		name = berez_dobrovoltsy_world_news.16.c
+		trigger = {
+			tag = GER
+		}
+	}
+}
+news_event = { #start of shite
+	id = berez_dobrovoltsy_world_news.17
+	title = berez_dobrovoltsy_world_news.17.t
+	desc = berez_dobrovoltsy_world_news.17.d
+	picture = GFX_berez_dobrovoltsy_world_news_017
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = berez_dobrovoltsy_world_news.17.a
+		trigger = {
+			tag = MAR
+		}
+	}
+	option = {
+		name = berez_dobrovoltsy_world_news.17.b
+		trigger = {
+			NOT = {
+				tag = MAR
+				tag = GER
+			}
+		}
+	}
+	option = {
+		name = berez_dobrovoltsy_world_news.17.c
+		trigger = {
+			tag = GER
+		}
+	}
+}
 country_event = { #KUR_CW End- Kurdish Victory (Real)
 	id = KUR_CW.14
 	immediate = {log = "[GetDateText]: [Root.GetName]: event KUR_CW.14"}

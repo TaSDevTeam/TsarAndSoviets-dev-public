@@ -240,6 +240,10 @@ defined_text = {
 		localization_key = "TNO_Cold_War_Victory_ID_50"
 	}
 	text = {
+		trigger = { check_variable = { Cold_War_GUI_Selected_Superpower.TNO_Cold_War_GUI_Victory_Entry_Display^TNO_Cold_War_GUI_Victories_i = 50 } }
+		localization_key = "TNO_Cold_War_Victory_ID_51"
+	}
+	text = {
 		localization_key = "ERROR - IND. NAME"
 	}
 }

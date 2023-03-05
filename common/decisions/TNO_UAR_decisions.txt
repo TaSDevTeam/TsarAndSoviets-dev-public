@@ -148,8 +148,10 @@ UAR_formation_category = {
 					UAR_chaotic_politics
 				}
 				if = {
-					limit = { MAR = { has_country_flag = mar_helped_uar } }
+					limit = { MAR = { has_government = socialist } }
 					GER = { clr_country_flag = uar_will_join_ger_econ_sphere } #no you don't
+					MAR = { country_event = { id = MAR_Kosygin_UAR.1 days = 3 }
+					econ_leave_sphere = yes #extra check
 				}
 				if = {
 					limit = { GER = { has_country_flag = uar_will_join_ger_econ_sphere } }
