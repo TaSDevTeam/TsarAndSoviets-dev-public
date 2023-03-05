@@ -150,7 +150,7 @@ UAR_formation_category = {
 				if = {
 					limit = { MAR = { has_government = socialist } }
 					GER = { clr_country_flag = uar_will_join_ger_econ_sphere } #no you don't
-					MAR = { country_event = { id = MAR_Kosygin_UAR.1 days = 3 }
+					MAR = { country_event = { id = MAR_Kosygin_UAR.1 days = 3 } }
 					econ_leave_sphere = yes #extra check
 				}
 				if = {

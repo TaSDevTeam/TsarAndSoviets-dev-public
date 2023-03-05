@@ -328,6 +328,7 @@ characters = {
 			army = { large = "gfx/leaders/MAR/Portrait_Berezniki_Anatoly_Vavilov.dds" } 
 			civilian = {
 				small = "GFX_idea_MAR_minister_Anatoly_Vavilov"
+				large = "gfx/leaders/MAR/Portrait_Berezniki_Anatoly_Vavilov.dds"
 			}
 		}
 		field_marshal = {
@@ -479,7 +480,7 @@ characters = {
 	}
 	MAR_Taboritsky_dummy = { # Dummy just for name
 		name = "MAR_Taboritsky_dummy"
-		portraits = { civilian = { large = "GFX_leader_unknown" } }
+		portraits = { civilian = { large = "gfx/leaders/MAR/KosyginCollapse/Portrait_Berezniki_Sergey_Taboritsky" } }
 		country_leader = {
 			expire = "1999.1.1"
 			ideology = esoteric_nazism_imperial_cult_subtype
