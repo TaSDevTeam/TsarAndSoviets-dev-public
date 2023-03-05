@@ -265,7 +265,7 @@ MAR_Prestol_start = {
 			}
 			var:v = {
 				set_variable = { insurgency_strength = 0.45 }
-				set_variable = { insurgency_strengthTrend = 0.015 }
+				set_variable = { insurgency_strengthTrend = 0.02 }
 			}
 		}
 		else_if = {
@@ -273,8 +273,8 @@ MAR_Prestol_start = {
 				check_variable = { v:kosygin_reception = 3}
 			}
 			var:v = {
-				set_variable = { insurgency_strength = 0.85 }
-				set_variable = { insurgency_strengthTrend = 0.005 }
+				set_variable = { insurgency_strength = 0.65 }
+				set_variable = { insurgency_strengthTrend = 0.01 }
 			}
 		}
 	}
@@ -318,10 +318,14 @@ MAR_prestol_biweekly_update = {
 	set_country_flag = MAR_prestol_pulse
 	MAR = {
 		clr_country_flag = MAR_Prestol_RecentAction
-		every_owned_state = {
-			add_to_variable = { insurgency_strength = insurgency_strengthTrend }
-			MAR_clamp_insurgency_strength = yes
-			set_variable = { MAR_Had_RecentAction = 0 }
+		for_each_loop = {
+			array = MAR_map_grid_array
+			var:v = {
+				set_temp_variable = { change_strenghth_temp = insurgency_strengthTrend }
+				add_to_variable = { insurgency_strength = change_strenghth_temp }
+				custom_effect_tooltip = MAR_prestol_power_change
+				set_variable = { MAR_Had_RecentAction = 0 }
+			}
 		}
 	}
 	MAR_prestol_calc_nationwide_strength = yes
@@ -442,7 +446,595 @@ MAR_calculate_terror_risk = {
 	
 }
 
-
+TaS_Kosygin_westrussian_collapse = {
+	MAR = {
+		if = {
+			limit = { has_war_with = FIN }
+			white_peace = FIN		
+		}
+		if = {
+			limit = { has_war_with = ONG }
+			white_peace = ONG		
+		}
+		if = {
+			limit = { has_war_with = ORE }
+			white_peace = ORE		
+		}
+		if = {
+			limit = { has_war_with = URL }
+			white_peace = URL
+		}
+		if = {
+			limit = { has_war_with = DRL }
+			white_peace = DRL		
+		}
+		if = {
+			limit = { has_war_with = MGN }
+			white_peace = MGN		
+		}
+	}
+	ONG = {
+		transfer_state = 1887
+		transfer_state = 859
+		transfer_state = 858
+		transfer_state = 214
+		transfer_state = 861
+		every_owned_state = {
+			ONG = {
+				add_state_core = PREV
+			}
+		} 
+		add_ideas = TaS_RUS_shattered_ambitions
+		load_focus_tree = shattered_ambitions
+		set_country_flag = RUS_cancel_all_ideas 
+		if = { 
+			limit = { 214 = { check_variable = { kosygin_reception = 1 } } }
+			MAR = {
+				MAR_Anatoly_Vavilov = {
+					set_nationality = ONG
+				}
+			}
+			add_popularity = {
+				ideology = paternalism
+				popularity = 0.25
+			}
+			set_politics = {
+				ruling_party = paternalism
+			}
+			add_country_leader_role = {
+				character = MAR_Anatoly_Vavilov
+				country_leader = {
+					desc = "POLITICS_ANATOLY_VAVILOV_DESC"
+					ideology = paternalism_stratocracy_subtype
+					expire = "1999.1.1"
+					traits = { }
+				}
+			}
+			set_cosmetic_tag = ONG_kosygin_collapse_cleanesed
+			set_party_name = {
+				ideology = paternalism
+				long_name = ONG_kosygin_collapse_paternalism_party_long
+				name = ONG_kosygin_collapse_paternalism_party
+			}
+			retire_country_leader = yes
+			MAR_Anatoly_Vavilov = {
+				promote_character = yes
+			}
+		}
+		else = {
+			set_cosmetic_tag = ONG_kosygin_collapse
+		}	
+	}
+	WRS = {
+		transfer_state = 862
+		transfer_state = 262
+		transfer_state = 870
+		transfer_state = 860
+		every_owned_state = {
+			WRS = {
+				add_state_core = PREV
+			}
+		} 
+		set_capital = { state = 262 remember_old_capital = no }
+		add_ideas = TaS_RUS_shattered_ambitions
+		load_focus_tree = shattered_ambitions
+		set_country_flag = RUS_cancel_all_ideas 
+		if = { 
+			limit = { 262 = { check_variable = { kosygin_reception = 1 } } }
+			XYZ = {
+				MAR_Zosima_Panev = {
+					set_nationality = WRS
+				}
+			}
+			add_popularity = {
+				ideology = socialist
+				popularity = 0.2
+			}
+			set_politics = {
+				ruling_party = socialist
+			}
+			set_party_name = {
+				ideology = socialist
+				long_name = WRS_kosygin_collapse_socialist_party_long
+				name = WRS_kosygin_collapse_socialist_party
+			}
+			retire_country_leader = yes
+			MAR_Zosima_Panev = {
+				promote_character = yes
+			}
+			set_cosmetic_tag = WRS_kosygin_collapse_cleanesed
+		}
+		else = {
+			XYZ = {
+				MAR_Ioann_Amozov = {
+					set_nationality = WRS
+				}
+			}
+			add_popularity = {
+				ideology = national_socialism
+				popularity = 0.35
+			}
+			set_politics = {
+				ruling_party = national_socialism
+			}
+			set_party_name = {
+				ideology = national_socialism
+				long_name = WRS_kosygin_collapse_national_socialism_party_long
+				name = WRS_kosygin_collapse_national_socialism_party
+			}
+			retire_country_leader = yes
+			MAR_Ioann_Amozov = {
+				promote_character = yes
+			}
+			set_cosmetic_tag = WRS_kosygin_collapse
+		}
+	}
+	VOL = {
+		transfer_state = 857
+		transfer_state = 351
+		transfer_state = 856
+		every_owned_state = {
+			VOL = {
+				add_state_core = PREV
+			}
+		} 
+		add_ideas = TaS_RUS_shattered_ambitions
+		load_focus_tree = shattered_ambitions
+		set_country_flag = RUS_cancel_all_ideas 
+		add_popularity = {
+			ideology = conservatism
+			popularity = 0.35
+		}
+		set_politics = {
+			ruling_party = conservatism
+		}
+		set_party_name = {
+			ideology = conservatism
+			long_name = VOL_kosygin_collapse_paternalism_party_long
+			name = VOL_kosygin_collapse_paternalism_party
+		}
+		retire_country_leader = yes
+		add_country_leader_role = {
+			character = VOL_Mikhail_Vlasov
+			country_leader = {
+				desc = "POLITICS_MIKHAIL_VLASOV_DESC"
+				ideology = conservatism_agrarianism_subtype
+				expire = "1999.1.1"
+				traits = { }
+			}
+		}
+		VOL_Mikhail_Vlasov = {
+			promote_character = yes
+		}
+		set_cosmetic_tag = VOL_kosygin_collapse
+	}
+	DGS = {
+		transfer_state = 868
+		transfer_state = 397
+		transfer_state = 869
+		transfer_state = 866
+		every_owned_state = {
+			DGS = {
+				add_state_core = PREV
+			}
+		} 
+		add_ideas = TaS_RUS_shattered_ambitions
+		load_focus_tree = shattered_ambitions
+		set_capital = { state = 397 remember_old_capital = no }
+		if = { 
+			limit = { 397 = { check_variable = { kosygin_reception = 1 } } }
+			XYZ = {
+				MAR_Ivan_Serov = {
+					set_nationality = DGS
+				}
+			}
+			set_popularities = {
+				despotism = 18
+				fascism = 47
+				ultranationalism = 13
+				national_socialism = 22
+			}
+			set_politics = {
+				ruling_party = fascism
+			}
+			set_party_name = {
+				ideology = fascism
+				long_name = KOM_kosygin_collapse_fascism_party_long
+				name = KOM_kosygin_collapse_fascism_party
+			}
+			retire_country_leader = yes
+			MAR_Ivan_Serov = {
+				promote_character = {
+					ideology = fascism_ordosocialism_subtype
+				}
+			}
+			set_cosmetic_tag = KOM_kosygin_collapse_cleanesed
+		}
+		else = {
+			XYZ = {
+				MAR_Andrei_Dikiy = {
+					set_nationality = DGS
+				}
+			}
+			set_popularities = {
+				despotism = 19
+				fascism = 29
+				ultranationalism = 52
+			}
+			set_politics = {
+				ruling_party = ultranationalism
+			}
+			set_party_name = {
+				ideology = ultranationalism
+				long_name = KOM_kosygin_collapse_ultranationalism_party_long
+				name = KOM_kosygin_collapse_ultranationalism_party
+			}
+			retire_country_leader = yes
+			MAR_Andrei_Dikiy = {
+				promote_character = {
+					ideology = ultranationalism_esoteric_despotism_subtype
+				}
+			}
+			set_cosmetic_tag = KOM_kosygin_collapse
+		}
+	}
+	CHY = {
+		transfer_state = 855
+		transfer_state = 252
+		every_owned_state = {
+			CHY = {
+				add_state_core = PREV
+			}
+		} 
+		add_ideas = TaS_RUS_shattered_ambitions
+		load_focus_tree = shattered_ambitions
+		set_capital = { state = 252 remember_old_capital = no }
+		if = { 
+			limit = { 252 = { check_variable = { kosygin_reception = 1 } } }
+			XYZ = {
+				MAR_Nikolai_Averin = {
+					set_nationality = CHY
+				}
+			}
+			set_popularities = {
+				despotism = 68
+				socialist = 17
+				communist = 15
+			}
+			set_politics = {
+				ruling_party = despotism
+			}
+			set_party_name = {
+				ideology = despotism
+				long_name = GOR_kosygin_collapse_despotism_party_long
+				name = GOR_kosygin_collapse_despotism_party
+			}
+			retire_country_leader = yes
+			MAR_Nikolai_Averin = {
+				promote_character = yes
+			}
+			set_cosmetic_tag = GOR_kosygin_collapse_cleanesed
+		}
+		else = {
+			XYZ = {
+				MAR_Pyotr_Laschenko = {
+					set_nationality = CHY
+				}
+			}
+			set_popularities = {
+				despotism = 16
+				socialist = 19
+				communist = 65
+			}
+			set_politics = {
+				ruling_party = communist
+			}
+			set_party_name = {
+				ideology = communist
+				long_name = GOR_kosygin_collapse_communist_party_long
+				name = GOR_kosygin_collapse_communist_party
+			}
+			retire_country_leader = yes
+			MAR_Pyotr_Laschenko = {
+				promote_character = yes
+			}
+			set_cosmetic_tag = GOR_kosygin_collapse
+		}
+	}
+	TMQ = {
+		transfer_state = 867
+		transfer_state = 854
+		every_owned_state = {
+			TMQ = {
+				add_state_core = PREV
+			}
+		} 
+		add_ideas = TaS_RUS_shattered_ambitions
+		load_focus_tree = shattered_ambitions
+		XYZ = {
+			MAR_Anatoly_Patrushev = {
+				set_nationality = TMQ
+			}
+		}
+		add_popularity = {
+			ideology = conservatism
+			popularity = 0.55
+		}
+		set_politics = {
+			ruling_party = conservatism
+		}
+		set_party_name = {
+			ideology = conservatism
+			long_name = TMQ_kosygin_collapse_conservatism_party_long
+			name = TMQ_kosygin_collapse_conservatism_party
+		}
+		retire_country_leader = yes
+		MAR_Anatoly_Patrushev = {
+			promote_character = yes
+		}
+		set_cosmetic_tag = TMQ_kosygin_collapse
+	}
+	TAR = {
+		transfer_state = 256
+		transfer_state = 249
+		every_owned_state = {
+			TMQ = {
+				add_state_core = PREV
+			}
+		} 
+		add_ideas = TaS_RUS_shattered_ambitions
+		load_focus_tree = shattered_ambitions
+		set_cosmetic_tag = TAR_kosygin_collapse
+	}
+	MAR = {
+		add_ideas = TaS_RUS_shattered_ambitions
+		load_focus_tree = shattered_ambitions
+		set_country_flag = RUS_cancel_all_ideas 
+		add_popularity = {
+			ideology = despotism
+			popularity = 0.25
+		}
+		set_politics = {
+			ruling_party = despotism
+		}
+		retire_country_leader = yes
+		add_country_leader_role = {
+			character = MAR_Vladimir_Gil
+			country_leader = {
+				desc = "POLITICS_VLADIMIR_GIL_COLLAPSE_DESC"
+				ideology = despotism_interim_government_subtype
+				expire = "1999.1.1"
+				traits = { }
+			}
+		}
+		MAR_Vladimir_Gil = {
+			promote_character = yes
+		}
+		set_country_flag = RUS_cancel_all_ideas 
+		set_cosmetic_tag = MAR_kosygin_collapse
+		set_country_flag = MAR_Bad_Ending
+		TNO_Country_Closing_Screen_Show = yes
+	}
+	GAY = {
+		transfer_state = 398
+		transfer_state = 865
+		transfer_state = 752
+		every_owned_state = {
+			GAY = {
+				add_state_core = PREV
+			}
+		} 
+		add_ideas = TaS_RUS_shattered_ambitions
+		load_focus_tree = shattered_ambitions
+		set_country_flag = RUS_cancel_all_ideas 
+		XYZ = {
+			MAR_Ludmilla_Kosygina = {
+				set_nationality = GAY
+			}
+		}
+		add_popularity = {
+			ideology = paternalism
+			popularity = 0.55
+		}
+		set_politics = {
+			ruling_party = paternalism
+		}
+		set_party_name = {
+			ideology = paternalism
+			long_name = GAY_kosygin_collapse_paternalism_party_long
+			name = GAY_kosygin_collapse_paternalism_party
+		}
+		retire_country_leader = yes
+		MAR_Ludmilla_Kosygina = {
+			promote_character = yes
+		}
+		set_cosmetic_tag = GAY_kosygin_collapse
+	}
+	PRM = {
+		transfer_state = 753
+		transfer_state = 864
+		every_owned_state = {
+			PRM = {
+				add_state_core = PREV
+			}
+		} 
+		add_ideas = TaS_RUS_shattered_ambitions
+		load_focus_tree = shattered_ambitions
+		set_country_flag = RUS_cancel_all_ideas 
+		if = { 
+			limit = { 753 = { check_variable = { kosygin_reception = 1 } } }
+			GAY = {
+				GAY_Mikhail_Antipin = {
+					set_nationality = PRM
+				}
+			}
+			add_popularity = {
+				ideology = despotism
+				popularity = 0.2
+			}
+			set_politics = {
+				ruling_party = despotism
+			}
+			set_party_name = {
+				ideology = despotism
+				long_name = PRM_kosygin_collapse_despotism_party_long
+				name = PRM_kosygin_collapse_despotism_party
+			}
+			retire_country_leader = yes
+			GAY_Mikhail_Antipin = {
+				promote_character = yes
+			}
+			set_cosmetic_tag = PRM_kosygin_collapse_cleanesed
+		}
+		else = {
+			add_country_leader_role = {
+				character = PRM_Baldur_Goltz
+				country_leader = {
+					desc = "POLITICS_BALDUR_GOLTZ_COLLAPSE_DESC"
+					ideology = national_socialism_subtype
+					expire = "1999.1.1"
+					traits = { }
+				}
+			}
+			retire_country_leader = yes
+			PRM_Baldur_Goltz  = {
+				promote_character = yes
+			}
+			#set_cosmetic_tag = PRM_kosygin_collapse
+		}
+	}
+	BKR = {
+		transfer_state = 651
+		transfer_state = 853
+		every_owned_state = {
+			BKR = {
+				add_state_core = PREV
+			}
+		} 
+		add_ideas = TaS_RUS_shattered_ambitions
+		load_focus_tree = shattered_ambitions
+		set_country_flag = RUS_cancel_all_ideas 
+		XYZ = {
+			MAR_Zainab_Biisheva = {
+				set_nationality = BKR
+			}
+		}
+		add_popularity = {
+			ideology = progressivism
+			popularity = 0.55
+		}
+		set_politics = {
+			ruling_party = progressivism
+		}
+		set_party_name = {
+			ideology = progressivism
+			long_name = BKR_kosygin_collapse_progressivism_party_long
+			name = BKR_kosygin_collapse_progressivism_party
+		}
+		#retire_country_leader = yes
+		MAR_Zainab_Biisheva = {
+			promote_character = yes
+		}
+		set_cosmetic_tag = BKR_kosygin_collapse
+	}
+	SAM = {
+		transfer_state = 250
+		transfer_state = 851
+		transfer_state = 850
+		transfer_state = 251
+		transfer_state = 755
+		every_owned_state = {
+			SAM = {
+				add_state_core = PREV
+			}
+		} 
+		add_ideas = TaS_RUS_shattered_ambitions
+		load_focus_tree = shattered_ambitions
+		set_country_flag = RUS_cancel_all_ideas 
+		if = { 
+			limit = { 850 = { check_variable = { kosygin_reception = 1 } } }
+			MAR = {
+				MAR_Semen_Gitler = {
+					set_nationality = SAM
+				}
+			}
+			add_popularity = {
+				ideology = despotism
+				popularity = 0.46
+			}
+			set_politics = {
+				ruling_party = despotism
+			}
+			set_party_name = {
+				ideology = despotism
+				long_name = SAM_kosygin_collapse_despotism_party_long
+				name = SAM_kosygin_collapse_despotism_party
+			}
+			add_country_leader_role = {
+				character = MAR_Semen_Gitler
+				country_leader = {
+					desc = "POLITICS_Semen_Gitler_COLLAPSE_DESC"
+					ideology = despotism_military_junta_subtype
+					expire = "1999.1.1"
+					traits = { }
+				}
+			}
+			retire_country_leader = yes
+			MAR_Semen_Gitler = {
+				promote_character = yes
+			}
+			set_cosmetic_tag = SAM_kosygin_collapse_cleanesed
+		}
+		else = {
+			add_country_leader_role = {
+				character = SAM_Viktor_Maltsev
+				country_leader = {
+					desc = "POLITICS_VIKTOR_MALTSEV_COLLAPSE_DESC"
+					ideology = fascism_proletarian_nationalism_subtype
+					expire = "1999.1.1"
+					traits = { }
+				}
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.26
+			}
+			set_politics = {
+				ruling_party = fascism
+			}
+			set_party_name = {
+				ideology = fascism
+				long_name = SAM_kosygin_collapse_fascism_party_long
+				name = SAM_kosygin_collapse_fascism_party
+			}
+			retire_country_leader = yes
+			SAM_Viktor_Maltsev = {
+				promote_character = yes
+			}
+			set_cosmetic_tag = SAM_kosygin_collapse
+		}
+	}
+}
 ### BATTLE FOR MIDDLE EAST ###
 TaS_fopo_add_uar_influence_battle_tab = {
 	set_temp_variable = { conflict_id = token:GC_UAR_influence_battle }

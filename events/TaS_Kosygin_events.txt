@@ -253,7 +253,7 @@ country_event = {#Aftermaths
 					desc = "POLITICS_KOSYGIN_POSTBOMB_DESC"
 					ideology = socialist_social_monarchist_but_worse_subtype
 					expire = "1999.1.1"
-					traits = { }
+					traits = { char_reformator }
 				}
 			}
 		}
@@ -893,6 +893,11 @@ country_event = {#future, forward!
 	option = {
 		name = MAR_Kosygin.57.a
 		ai_chance = { factor = 1 }	
+		MAR_advisor_Kosygin = {
+			set_portraits = {
+				civilian = { large = "gfx/leaders/MAR/Portrait_Berezniki_Kosygind_70s.dds" }
+			}
+		}
 	}
 }
 
@@ -1102,6 +1107,7 @@ country_event = { #214 event 2
 			set_variable = { kosygin_reception = 1 }
 			MAR_clamp_insurgency_strength = yes
 		}
+		add_political_power = 50
 		MAR_prestol_calc_nationwide_strength = yes
 	}
 }
@@ -1147,6 +1153,7 @@ country_event = { #397 event 2
 			set_variable = { kosygin_reception = 1 }
 			MAR_clamp_insurgency_strength = yes
 		}
+		add_political_power = 50
 		hidden_effect = {
 			set_temp_variable = { tempRandom = 50 }
 			randomize_temp_variable = {
@@ -1204,6 +1211,7 @@ country_event = { #252 event 2
 			set_variable = { kosygin_reception = 1 }
 			MAR_clamp_insurgency_strength = yes
 		}
+		add_political_power = 50
 		TNO_improve_poverty_low = yes
 		MAR_prestol_calc_nationwide_strength = yes
 	}
@@ -1250,6 +1258,7 @@ country_event = { #753 event 2
 			set_variable = { kosygin_reception = 1 }
 			MAR_clamp_insurgency_strength = yes
 		}
+		add_political_power = 50
 		hidden_effect = {
 			set_temp_variable = { tempRandom = 100 }
 			randomize_temp_variable = {
@@ -1307,6 +1316,7 @@ country_event = { #850 event 2
 			set_variable = { kosygin_reception = 1 }
 			MAR_clamp_insurgency_strength = yes
 		}
+		add_political_power = 50
 		hidden_effect = {
 			set_temp_variable = { tempRandom = 50 }
 			randomize_temp_variable = {
@@ -1424,7 +1434,9 @@ country_event = { #fail 1
 		hidden_effect = {
 			retire_character = MAR_advisor_Kosygin
 		}
-		
+		set_politics = {
+			ruling_party = esoteric_nazism
+		}
 	}
 }
 
@@ -1441,7 +1453,10 @@ country_event = { #fail 2
 	option = { #
 		name = MAR_Kosygin_Prestol.17.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = MAR_Westrussian_collapse_tt
+		hidden_effect = {
+			TaS_Kosygin_westrussian_collapse = yes
+		}	
 	}
 }
 

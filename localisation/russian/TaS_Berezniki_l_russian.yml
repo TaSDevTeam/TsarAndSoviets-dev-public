@@ -3078,6 +3078,7 @@
  MAR_prestol_end_tt: "§RСергей Таборицкий§! мёртв, а §eмятеж подавлен§!."
  
  MAR_Kosygin_die_tt:0 "§eАлексей Косыгин умрёт...§!"
+ MAR_Westrussian_collapse_tt:0 "§eЗападнорусская Народная Империя перестанет существовать как единое целое§!"
  
  MAR_taboritskys_insurgency_failure_tt:0 "§eПрестольникам в конце концов подвернётся шанс закончить начатое§!"
  MAR_taboritskys_insurgency_success_tt:0 "§GОстатки престольников будут успешно арестованы или уничтожены§!"
@@ -3207,7 +3208,123 @@
  MAR_Kosygin_Prestol.30.d: ""
  MAR_Kosygin_Prestol.30.a: ""
 
+ #КОЛЛАПСУС  
+ MAR_Ioann_Amozov:0 "Иоанн Амозов"
+ MAR_Zosima_Panev:0 "Зосима Панев"
+ MAR_Mikhail_Vlasov:0 "Михаил Власов"
+ MAR_Andrei_Dikiy:0 "Андрей Дикий"
+ MAR_Ivan_Serov:0 "Иван Серов"
+ MAR_Anatoly_Patrushev:0 "Анатолий Патрушев"
+ MAR_Pyotr_Laschenko:0 "Пётр Лащенко"
+ MAR_Nikolai_Averin:0 "Николай Аверин"
+ MAR_Ludmilla_Kosygina:0 "Людмила I"
+ MAR_Zainab_Biisheva:0 "Зайнаб Биишева"
 
+ ONG_kosygin_collapse_paternalism_party_long:0 "Штаб Русской Народной Императорской Армии в Онеге"
+ ONG_kosygin_collapse_paternalism_party:0 "ШРНИАвО"
+ 
+ ONG_kosygin_collapse_cleanesed:0 "2-ая Армия "Николай Романов""
+ ONG_kosygin_collapse_cleanesed_DEF:0 "2-ая Армия "Николай Романов""
+ ONG_kosygin_collapse_cleanesed_ADJ:0 "Онежск."
+ 
+ ONG_kosygin_collapse:0 "Конфедерация Северной России"
+ ONG_kosygin_collapse_DEF:0 "Конфедерация Северной России"
+ ONG_kosygin_collapse_ADJ:0 "Онежск."
+ 
+ WRS_kosygin_collapse_socialist_party_long:0 "Доръям Асьнымос"
+ WRS_kosygin_collapse_socialist_party:0 "Доръям Асьнымос"
+ 
+ WRS_kosygin_collapse_national_socialism_party_long:0 "Чёрная Сотня"
+ WRS_kosygin_collapse_national_socialism_party:0 "Чёрная Сотня"
+ 
+ WRS_kosygin_collapse_cleanesed:0 "Коми-Ненецкая Федерация"
+ WRS_kosygin_collapse_cleanesed_DEF:0 "Коми-Ненецкая Федерация"
+ WRS_kosygin_collapse_cleanesed_ADJ:0 "Коми-ненец."
+ 
+ WRS_kosygin_collapse:0 "Западный Святорусский Фронт"
+ WRS_kosygin_collapse_DEF:0 "Западный Святорусский Фронт"
+ WRS_kosygin_collapse_ADJ:0 "Северорусск."
+ 
+ VOL_kosygin_collapse_paternalism_party_long:0 "Армия Новой Вологды"
+ VOL_kosygin_collapse_paternalism_party:0 "АНВ"
+ 
+ VOL_kosygin_collapse:0 "Вологодское Губернаторство"
+ VOL_kosygin_collapse_DEF:0 "Вологодское Губернаторство"
+ VOL_kosygin_collapse_ADJ:0 "Вологодск."
+ 
+ KOM_kosygin_collapse_fascism_party_long:0 "Новая Ордосоциалистическая Партия"
+ KOM_kosygin_collapse_fascism_party:0 "НОП"
+ 
+ KOM_kosygin_collapse_ultranationalism_party_long:0 "Общество Восстановления Российской Империи"
+ KOM_kosygin_collapse_ultranationalism_party:0 "ОВРИ"
+ 
+ KOM_kosygin_collapse_cleanesed:0 "Сыктывкарская Республика Рабочих и Нации"
+ KOM_kosygin_collapse_cleanesed_DEF:0 "Сыктывкарская Республика Рабочих и Нации"
+ KOM_kosygin_collapse_cleanesed_ADJ:0 "Сыктывкарск."
+ 
+ KOM_kosygin_collapse:0 "Усть-Сысольское Первопрестольное Регенство"
+ KOM_kosygin_collapse_DEF:0 "Усть-Сысольское Первопрестольное Регенство"
+ KOM_kosygin_collapse_ADJ:0 "Усть-Сысольск."
+ 
+ GOR_kosygin_collapse_despotism_party_long:0 "Организация Востановления Порядка в Нижнем Новгороде"
+ GOR_kosygin_collapse_despotism_party:0 "ОВП"
+ 
+ GOR_kosygin_collapse_communist_party_long:0 "Истинная Красная Армия"
+ GOR_kosygin_collapse_communist_party:0 "ИКА"
+ 
+ GOR_kosygin_collapse_cleanesed:0 "Свободная Республика Нижний Новгород"
+ GOR_kosygin_collapse_cleanesed_DEF:0 "Свободная Республика Нижний Новгород"
+ GOR_kosygin_collapse_cleanesed_ADJ:0 "Новогородск."
+ 
+ GOR_kosygin_collapse:0 "Волжская Советская Республика"
+ GOR_kosygin_collapse_DEF:0 "Волжская Советская Республика"
+ GOR_kosygin_collapse_ADJ:0 "Горьковск."
+ 
+ TMQ_kosygin_collapse_conservatism_party_long:0 "Марий Ушем"
+ TMQ_kosygin_collapse_conservatism_party:0 "Марий Ушем"
+ 
+ TMQ_kosygin_collapse:0 "Марий Ушем"
+ TMQ_kosygin_collapse_DEF:0 "Марий Ушем"
+ TMQ_kosygin_collapse_ADJ:0 "Марий."
+ 
+ MAR_kosygin_collapse:0 "Западнорусское Царство"
+ MAR_kosygin_collapse_DEF:0 "Западнорусское Царство"
+ MAR_kosygin_collapse_ADJ:0 "Западнорусск."
+ 
+ GAY_kosygin_collapse_paternalism_party_long:0 "Организация Поддержки Трона"
+ GAY_kosygin_collapse_paternalism_party:0 "ОПТ"
+ 
+ GAY_kosygin_collapse:0 "Княжество Березники"
+ GAY_kosygin_collapse_DEF:0 "Княжество Березники"
+ GAY_kosygin_collapse_ADJ:0 "Березницк."
+ 
+ PRM_kosygin_collapse_despotism_party_long:0 "Орден Святого Георгия - Пермская Эпархия"
+ PRM_kosygin_collapse_despotism_party:0 "ОСГ - Пермская Эпархия"
+ 
+ PRM_kosygin_collapse_cleanesed:0 "Орден Святого Георгия"
+ PRM_kosygin_collapse_cleanesed_DEF:0 "Орден Святого Георгия Перми и Соликамска"
+ PRM_kosygin_collapse_cleanesed_ADJ:0 "Орденск."
+ 
+ BKR_kosygin_collapse_progressivism_party_long:0 "Башкортостанский Народный Курултай"
+ BKR_kosygin_collapse_progressivism_party:0 "БНК"
+ 
+ BKR_kosygin_collapse:0 "Башкортостанский Свободный Союз"
+ BKR_kosygin_collapse_DEF:0 "Башкортостанский Свободный Союз"
+ BKR_kosygin_collapse_ADJ:0 "Башкортостанск."
+ 
+ SAM_kosygin_collapse_despotism_party_long:0 "Штаб Русской Народной Императорской Армии в Самаре"
+ SAM_kosygin_collapse_despotism_party:0 "ШРНИАвС"
+ 
+ SAM_kosygin_collapse_fascism_party_long:0 "Народная Партия Самары"
+ SAM_kosygin_collapse_fascism_party:0 "НПС"
+ 
+ SAM_kosygin_collapse_cleanesed:0 "Волжский Военный Округ"
+ SAM_kosygin_collapse_cleanesed_DEF:0 "Волжский Военный Округ"
+ SAM_kosygin_collapse_cleanesed_ADJ:0 "Самарск."
+ 
+ SAM_kosygin_collapse:0 "Русская Освободительная Армия"
+ SAM_kosygin_collapse_DEF:0 "Русская Освободительная Армия"
+ SAM_kosygin_collapse_ADJ:0 "Самарск."
  #oooo gas
  MAR_ogas_deccat:0 "ОГАС"
  MAR_ogas_deccat_desc:0 "§RПовестка №13912367§! \n\nНа основании закона РФ §G"О воинской обязанности и военной службе"§! §Yвы§! обязаны 3 октября 2022 г. к 9:00 часам явится в объединённый §Rвоенный коммисариат§!"

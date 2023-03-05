@@ -105,7 +105,7 @@ shared_focus = {
 		has_country_flag = MAR_prestol_active
 	}
 	bypass = {
-		has_country_flag = MAR_prestol_active
+		always = yes
 	}
 	x = 5
 	y = 0
@@ -132,6 +132,30 @@ shared_focus = {
 				icon = "GFX_intelligence_agency_logo_sov"
 			}
 		}
+		#custom_effect_tooltip = MAR_prestol_all_states_drop_tt
+		for_each_loop = {
+			array = MAR_map_grid_array
+			if = {
+				limit = {
+					check_variable = { v:kosygin_reception = 1 }
+				}
+				var:v = {
+					set_temp_variable = { change_strenghth_temp = -0.02 }
+					add_to_variable = { insurgency_strength = change_strenghth_temp }
+					custom_effect_tooltip = MAR_prestol_power_change
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = { v:kosygin_reception > 1 }
+				}
+				var:v = {
+					set_temp_variable = { change_strenghth_temp = -0.05 }
+					add_to_variable = { insurgency_strength = change_strenghth_temp }
+					custom_effect_tooltip = MAR_prestol_power_change
+				}
+			}
+		}
 		country_event = {
 			id = MAR_Kosygin.60
 			days = 1
@@ -148,6 +172,29 @@ shared_focus = {
 	x = 4
 	y = 2
 	completion_reward = {
+		for_each_loop = {
+			array = MAR_map_grid_array
+			if = {
+				limit = {
+					check_variable = { v:kosygin_reception = 1 }
+				}
+				var:v = {
+					set_temp_variable = { change_strenghth_temp = -0.02 }
+					add_to_variable = { insurgency_strength = change_strenghth_temp }
+					custom_effect_tooltip = MAR_prestol_power_change
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = { v:kosygin_reception > 1 }
+				}
+				var:v = {
+					set_temp_variable = { change_strenghth_temp = -0.05 }
+					add_to_variable = { insurgency_strength = change_strenghth_temp }
+					custom_effect_tooltip = MAR_prestol_power_change
+				}
+			}
+		}
 		RUS_decrease_administrative_strain = yes
 		add_ideas = MAR_Kosygin_martial_law 
 		tno_penal_system_worsen = yes
@@ -168,6 +215,29 @@ shared_focus = {
 	x = 6
 	y = 2
 	completion_reward = {
+		for_each_loop = {
+			array = MAR_map_grid_array
+			if = {
+				limit = {
+					check_variable = { v:kosygin_reception = 1 }
+				}
+				var:v = {
+					set_temp_variable = { change_strenghth_temp = -0.02 }
+					add_to_variable = { insurgency_strength = change_strenghth_temp }
+					custom_effect_tooltip = MAR_prestol_power_change
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = { v:kosygin_reception > 1 }
+				}
+				var:v = {
+					set_temp_variable = { change_strenghth_temp = -0.05 }
+					add_to_variable = { insurgency_strength = change_strenghth_temp }
+					custom_effect_tooltip = MAR_prestol_power_change
+				}
+			}
+		}
 		RUS_decrease_administrative_strain = yes
 		tno_security_improve = yes
 		TNO_improve_security_policy_effectiveness_monthly_med = yes
@@ -190,6 +260,29 @@ shared_focus = {
 	x = 2
 	y = 1
 	completion_reward = {
+		for_each_loop = {
+			array = MAR_map_grid_array
+			if = {
+				limit = {
+					check_variable = { v:kosygin_reception = 1 }
+				}
+				var:v = {
+					set_temp_variable = { change_strenghth_temp = -0.02 }
+					add_to_variable = { insurgency_strength = change_strenghth_temp }
+					custom_effect_tooltip = MAR_prestol_power_change
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = { v:kosygin_reception > 1 }
+				}
+				var:v = {
+					set_temp_variable = { change_strenghth_temp = -0.05 }
+					add_to_variable = { insurgency_strength = change_strenghth_temp }
+					custom_effect_tooltip = MAR_prestol_power_change
+				}
+			}
+		}
 		add_ideas = MAR_Kosygin_peoples_milita
 		country_event = {
 			id = MAR_Kosygin.59
@@ -207,6 +300,29 @@ shared_focus = {
 	x = 8
 	y = 1
 	completion_reward = {
+		for_each_loop = {
+			array = MAR_map_grid_array
+			if = {
+				limit = {
+					check_variable = { v:kosygin_reception = 1 }
+				}
+				var:v = {
+					set_temp_variable = { change_strenghth_temp = -0.02 }
+					add_to_variable = { insurgency_strength = change_strenghth_temp }
+					custom_effect_tooltip = MAR_prestol_power_change
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = { v:kosygin_reception > 1 }
+				}
+				var:v = {
+					set_temp_variable = { change_strenghth_temp = -0.05 }
+					add_to_variable = { insurgency_strength = change_strenghth_temp }
+					custom_effect_tooltip = MAR_prestol_power_change
+				}
+			}
+		}
 		RUS_decrease_administrative_strain = yes
 		remove_ideas_with_trait = head_of_government
 		add_ideas = MAR_Vladimir_Gil_hog

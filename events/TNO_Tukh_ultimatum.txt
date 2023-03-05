@@ -92,8 +92,10 @@ country_event = { #Berezniki - accept white flag
 		name = tukha_ultimatum.31.a
 		add_manpower = 5000
 		WRS = {
-			annex_country = { target = MAR }
-			transfer_troops = no 
+			annex_country = {
+				target = MAR
+				transfer_troops = no 
+			}
 		}
 		WRS = {
 			change_tag_from = MAR
@@ -194,8 +196,10 @@ country_event = { #Berezniki - accept red flag
 	option = {
 		name = tukha_ultimatum.34.a
 		WRS = {
-			annex_country = { target = MAR }
-			transfer_troops = no 
+			annex_country = {
+				target = MAR
+				transfer_troops = no 
+			}
 		}
 		WRS = {
 			change_tag_from = MAR
