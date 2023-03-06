@@ -520,7 +520,7 @@ TaS_2WRW_spawn_volunteers = {
 		}
 	}	
 }
-TaS_WRW2_peace_Central_European_Restauration_new = {
+TaS_WRW2_German_Collapse_Beloozersky = {
 	custom_effect_tooltip = TaS_WRW2_PEACE_TOTAL_TOOLTIP
 	hidden_effect = {
 		set_global_flag = WRW2_german_collapse
@@ -747,6 +747,299 @@ TaS_WRW2_peace_Central_European_Restauration_new = {
 			econ_leave_sphere = yes
 		}
 		TaS_2WRW_post_germany_econ_setup = yes
+		GER = {
+			dismantle_faction = yes
+		}
+		MAR = {
+			transfer_state = 97
+		}
+		GEX = {
+			annex_country = {
+				target = GER
+				transfer_troops = no
+			}
+		}
+	}
+}
+TaS_WRW2_German_Collapse_Kosygin = {
+	custom_effect_tooltip = TaS_WRW2_PEACE_TOTAL_TOOLTIP
+	hidden_effect = {
+		set_global_flag = WRW2_german_collapse
+		every_country = {
+			set_country_flag = TaS_End_of_WRW2_Russia_Victory_BE_fl
+		}
+		every_country = {
+			limit = { is_in_faction_with = GER }
+			leave_faction = yes
+			econ_leave_sphere = yes
+		}	
+		every_country = {
+			limit = { check_variable = { ECON_SPHERE_LEADER = GER } }
+			econ_leave_sphere = yes
+		}
+		TaS_2WRW_post_germany_econ_setup = yes
+		ZNE = {
+			econ_join_sphere_MAR = yes
+			transfer_state = 1813
+			transfer_state = 1814
+			transfer_state = 97
+			transfer_state = 188
+			transfer_state = 60
+			transfer_state = 65
+			transfer_state = 776
+			transfer_state = 64
+			transfer_state = 63
+			transfer_state = 61
+			transfer_state = 775
+			transfer_state = 85
+			transfer_state = 5
+			transfer_state = 188
+			transfer_state = 66
+			set_politics = {
+				ruling_party = socialist
+			}
+			add_popularity = {
+				ideology = socialist
+				popularity = 0.45
+			}
+			every_owned_state = {
+				ZNE = {
+					add_state_core = PREV
+				}
+			}
+			remove_ideas = TaS_Post2WRW_BRL_ZNE_russian_army 
+			remove_ideas = TaS_Post2WRW_BRL_nazi_heartland_1
+			remove_ideas = TaS_Post2WRW_ZNE_exec_centre 	
+			set_cosmetic_tag = ZNE_Kosygin
+		}
+		GPL = {
+			econ_join_sphere_MAR = yes
+			transfer_state = 87
+			transfer_state = 67
+			transfer_state = 88
+			transfer_state = 1382
+			transfer_state = 10
+			transfer_state = 1380
+			transfer_state = 90
+			transfer_state = 1383
+			transfer_state = 1381
+			transfer_state = 1384
+			transfer_state = 92
+			transfer_state = 1385
+			transfer_state = 1386
+			transfer_state = 1389
+			transfer_state = 1392
+			
+			transfer_state = 1390
+			transfer_state = 1391
+			transfer_state = 1387
+			transfer_state = 1393
+			transfer_state = 1388
+			transfer_state = 1394
+			transfer_state = 89
+			transfer_state = 91
+			set_politics = {
+				ruling_party = liberalism
+			}
+			add_popularity = {
+				ideology = liberalism
+				popularity = 0.45
+			}
+			every_owned_state = {
+				GPL = {
+					add_state_core = PREV
+				}
+			}
+			remove_ideas = TaS_Post2WRW_commie_activity
+		}
+		GRH = {
+			econ_join_sphere_MAR = yes
+			transfer_state = 59
+			transfer_state = 56
+			transfer_state = 1373
+			transfer_state = 57
+			transfer_state = 1815
+			transfer_state = 1810
+			transfer_state = 1809
+			transfer_state = 51
+			transfer_state = 55
+			transfer_state = 42
+			
+			transfer_state = 1811
+			transfer_state = 28
+			transfer_state = 1812
+			set_politics = {
+				ruling_party = progressivism
+			}
+			add_popularity = {
+				ideology = progressivism
+				popularity = 0.45
+			}
+			every_owned_state = {
+				GRH = {
+					add_state_core = PREV
+				}
+			}
+			set_cosmetic_tag = GRH_Kosygin
+			remove_ideas = TaS_Post2WRW_commie_activity
+			remove_ideas = TaS_Post2WRW_GRH_lot_of_nazis
+			add_ideas = TaS_Post2WRW_GWS_volkswagen
+			add_ideas = TaS_Post2WRW_GWS_german_democracy
+		}
+		GBV = {
+			econ_join_sphere_MAR = yes
+			transfer_state = 72
+			transfer_state = 50
+			transfer_state = 54
+			transfer_state = 1026
+			transfer_state = 68
+			transfer_state = 52
+			transfer_state = 53
+			set_politics = {
+				ruling_party = communist
+			}
+			add_popularity = {
+				ideology = communist
+				popularity = 0.45
+			}
+			every_owned_state = {
+				GBV = {
+					add_state_core = PREV
+				}
+			}
+			set_cosmetic_tag = GBV_Kosygin
+			remove_ideas = TaS_Post2WRW_commie_activity
+			remove_ideas = TaS_Post2WRW_GBV_bavarian_identity
+			remove_ideas = TaS_Post2WRW_GBV_ingerman_segregation
+			add_ideas = TaS_Post2WRW_GRA_workers_and_peasant_army
+		}
+		GAU = {
+			econ_join_sphere_MAR = yes
+			transfer_state = 153
+			transfer_state = 86
+			transfer_state = 152
+			transfer_state = 1772
+			transfer_state = 62
+			transfer_state = 4
+			transfer_state = 1025
+			
+			transfer_state = 98
+			transfer_state = 770
+			
+			set_politics = {
+				ruling_party = progressivism
+			}
+			add_popularity = {
+				ideology = progressivism
+				popularity = 0.45
+			}
+			every_owned_state = {
+				GAU = {
+					add_state_core = PREV
+				}
+			}
+			remove_ideas = TaS_Post2WRW_commie_activity
+			remove_ideas = TaS_Post2WRW_GAU_habsburg_returns
+			remove_ideas = TaS_Post2WRW_GAU_dreams_of_germany
+		}
+		GCZ = {
+			econ_join_sphere_MAR = yes
+			transfer_state = 69
+			transfer_state = 9
+			transfer_state = 75
+			transfer_state = 70
+			transfer_state = 1762
+			transfer_state = 71
+			transfer_state = 1763
+			
+			#transfer_state = 664
+			#transfer_state = 73
+			
+			set_politics = {
+				ruling_party = socialist
+			}
+			add_popularity = {
+				ideology = socialist
+				popularity = 0.45
+			}
+			every_owned_state = {
+				GCZ = {
+					add_state_core = PREV
+				}
+			}
+			set_cosmetic_tag = GCZ_Kosygin
+			remove_ideas = TaS_Post2WRW_commie_activity
+			remove_ideas = TaS_Post2WRW_GCZ_big_brother
+			remove_ideas = TaS_Post2WRW_GCZ_czechia_revival
+			remove_ideas = TaS_Post2WRW_GCZ_sudetenland_genocide
+		}
+		GDN = {
+			econ_join_sphere_MAR = yes
+			transfer_state = 99
+			transfer_state = 774
+			transfer_state = 58
+			transfer_state = 37
+			
+			set_politics = {
+				ruling_party = progressivism
+			}
+			add_popularity = {
+				ideology = progressivism
+				popularity = 0.45
+			}
+			every_owned_state = {
+				GDN = {
+					add_state_core = PREV
+				}
+			}
+			remove_ideas = TaS_Post2WRW_GDN_antimonarch_protests
+		}
+		GNR = {
+			econ_join_sphere_MAR = yes
+			transfer_state = 897
+			transfer_state = 110
+			transfer_state = 142
+			transfer_state = 899
+			transfer_state = 898
+			transfer_state = 143
+			transfer_state = 144
+			transfer_state = 896
+			transfer_state = 94
+			every_owned_state = {
+				GNR = {
+					add_state_core = PREV
+				}
+			}
+		}
+		GHL = {
+			econ_join_sphere_MAR = yes
+			transfer_state = 36
+			transfer_state = 1886
+			transfer_state = 7
+			transfer_state = 35
+			transfer_state = 74
+			transfer_state = 8
+			if = {
+				limit = { BRG = { exists = no } }
+				transfer_state = 6
+				transfer_state = 1734
+				transfer_state = 34
+			}
+			set_politics = {
+				ruling_party = progressivism
+			}
+			add_popularity = {
+				ideology = progressivism
+				popularity = 0.45
+			}
+			every_owned_state = {
+				GHL = {
+					add_state_core = PREV
+				}
+			}
+			remove_ideas = TaS_Post2WRW_GHL_careless_monach
+			remove_ideas = TaS_Post2WRW_GHL_holland_identity
+		}
 		GER = {
 			dismantle_faction = yes
 		}

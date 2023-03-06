@@ -2210,7 +2210,10 @@ country_event = { #TOTALEN surrender
 	option = { #yes
 	name = MAR_2WRW.6.a
 		TaS_WRW2_total_capitulation = yes
-		TaS_WRW2_peace_Central_European_Restauration_new = yes
+		if = {
+			limit = { MAR = { has_government = despotism } }
+			TaS_WRW2_German_Collapse_Beloozersky = yes
+		}
 		hidden_effect = {
 			every_country  = {
 				news_event = {

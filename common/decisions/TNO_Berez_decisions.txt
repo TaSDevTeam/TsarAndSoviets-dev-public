@@ -312,7 +312,7 @@ MAR_debug_category = {
 			set_variable = { global.postgervisits = 11 }
 		}
 	}	
-	TaS_WRW2_End_the_germany_alt_decision = {
+	TaS_WRW2_End_the_germany_decision = {
 		icon = GFX_decision_generic_decision
 
 		allowed = {
@@ -323,7 +323,7 @@ MAR_debug_category = {
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: TaS_WRW2_End_the_germany_decision"
-			TaS_WRW2_peace_Central_European_Restauration_new = yes
+			TaS_WRW2_German_Collapse_Beloozersky = yes
 		}
 	}
 	TaS_WRW2_manchuria_start_rebelion_decision = {

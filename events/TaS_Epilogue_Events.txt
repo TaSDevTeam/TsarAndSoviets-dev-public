@@ -37,7 +37,10 @@ country_event = { # Gov't couped, eks dee
 				country_event = { id = TaS_GERcollapse.2 hours = 12 }
 			}
 			else = {
-				TaS_WRW2_peace_Central_European_Restauration_new = yes
+				if = {
+					limit = { MAR = { has_government = despotism } }
+					TaS_WRW2_German_Collapse_Beloozersky = yes
+				}
 				TaS_WRW2_total_capitulation = yes
 			}
 			#set_country_flag = TNO_closing_screen_show
@@ -329,7 +332,10 @@ country_event = { # f
 	option = {
 		name = TaS_GERcollapse.7.a
 		hidden_effect = {
-			TaS_WRW2_peace_Central_European_Restauration_new = yes
+			if = {
+				limit = { MAR = { has_government = despotism } }
+				TaS_WRW2_German_Collapse_Beloozersky = yes
+			}
 			TaS_WRW2_total_capitulation = yes
 			hidden_effect = {
 				every_country  = {

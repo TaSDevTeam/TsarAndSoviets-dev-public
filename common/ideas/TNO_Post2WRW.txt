@@ -441,7 +441,7 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = GWS_democracy
+			picture = GWS_volkswagen
 			modifier = {
 				industrial_capacity_factory = 0.1
 				misc_income_modifier = 0.05
@@ -460,7 +460,7 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = GWS_volkswagen
+			picture = GWS_democracy
 			modifier = {
 				stability_factor = 0.05
 				political_power_gain = -0.2
@@ -758,4 +758,70 @@ ideas = {
 			}
 		}
 	}
+	
+	country = {
+		TaS_Post2WRW_GHL_fragile_federation = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea TaS_Post2WRW_RUS_for_liberation"}
+			allowed = {
+				always = no	
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = GWF_nuclear_destruction 
+			modifier = {
+				stability_factor = -0.1
+			}
+		}
+	}
+	country = {
+		TaS_Post2WRW_GHL_francophone_minority = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea TaS_Post2WRW_RUS_for_liberation"}
+			allowed = {
+				always = no	
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = GWF_nuclear_destruction 
+			modifier = {
+				stability_factor = -0.1
+			}
+		}
+	}
+	country = {
+		TaS_Post2WRW_GHL_atleast_free = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea TaS_Post2WRW_RUS_for_liberation"}
+			allowed = {
+				always = no	
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = GWF_nuclear_destruction 
+			modifier = {
+				stability_factor = 0.1
+			}
+		}
+	}
+	country = {
+		TaS_Post2WRW_GBV_party_like_in_1918 = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea TaS_Post2WRW_RUS_for_liberation"}
+			allowed = {
+				always = no	
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = GWF_nuclear_destruction 
+			modifier = {
+				stability_factor = 0.1
+				communist_drift = 0.01
+			}
+		}
+	}	
 }

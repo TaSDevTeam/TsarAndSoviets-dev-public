@@ -25,7 +25,7 @@ TaS_WRW2_GER_epilogue = {
 	}
 	TaS_play_guot = {
 		icon = GFX_Postger_guot
-
+		visible = { BRL = { exists = yes }}
 		ai_will_do = {
 			factor = 0
 		}
@@ -57,7 +57,7 @@ TaS_WRW2_GER_epilogue = {
 	}
 	TaS_play_garnizon = {
 		icon = GFX_Postger_garnizon
-
+		visible = { ZNE = { exists = yes }}
 		ai_will_do = { 
 			factor = 0
 		}
@@ -89,7 +89,7 @@ TaS_WRW2_GER_epilogue = {
 	}
 	TaS_play_westphalia = {
 		icon = GFX_Postger_westphalia
-
+		visible = { GWS = { exists = yes }}
 		ai_will_do = { 
 			factor = 0
 		}
@@ -121,7 +121,7 @@ TaS_WRW2_GER_epilogue = {
 	}
 	TaS_play_rheinland = {
 		icon = GFX_Postger_rhein
-
+		visible = { GRH = { exists = yes }}
 		ai_will_do = { 
 			factor = 0
 		}
@@ -153,7 +153,7 @@ TaS_WRW2_GER_epilogue = {
 	}
 	TaS_play_baden = {
 		icon = GFX_Postger_baden
-
+		visible = { GBW = { exists = yes }}
 		ai_will_do = { 
 			factor = 0
 		}
@@ -185,7 +185,7 @@ TaS_WRW2_GER_epilogue = {
 	}
 	TaS_play_bavaria = {
 		icon = GFX_Postger_bavaria
-
+		visible = { GBV = { exists = yes }}
 		ai_will_do = { 
 			factor = 0
 		}
@@ -217,7 +217,7 @@ TaS_WRW2_GER_epilogue = {
 	}
 	TaS_play_austria = {
 		icon = GFX_Postger_austria
-
+		visible = { GAU = { exists = yes }}
 		ai_will_do = { 
 			factor = 0
 		}
@@ -249,7 +249,7 @@ TaS_WRW2_GER_epilogue = {
 	}
 	TaS_play_czechia = {
 		icon = GFX_Postger_czechia
-
+		visible = { GCZ = { exists = yes }}
 		ai_will_do = { 
 			factor = 0
 		}

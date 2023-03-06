@@ -13,7 +13,7 @@ load_focus_tree = shattered_ambitions
 set_variable = { TNO_economy_type = 1 }
 set_variable = { TNO_economy_subtype = 0 }
 set_politics = {
-	ruling_party = progressivism
+	ruling_party = liberal_conservatism
 	elections_allowed = no
 	last_election = "1935.12.17"
 	election_frequency = 48
@@ -22,9 +22,10 @@ set_popularities = {
 	communist = 0
 	ultranationalism = 0
 	socialist = 0
-	progressivism = 30
-	liberalism = 30
+	progressivism = 15
+	liberalism = 20
 	conservatism = 0
+	liberal_conservatism = 25
 	paternalism = 25
 	despotism = 0
 	fascism = 0
@@ -48,6 +49,7 @@ set_party_name = {
 }
 # Leaders
 recruit_character = GDN_Arveprins_Knud
+recruit_character = GDN_Anker_Jorgensen
 
 add_ideas = {
 	### Standard ###
