@@ -1,0 +1,136 @@
+shared_focus = {
+	id = return_of_empire
+	icon = GFX_MAR_rebirth_of_empire
+	cost = 4.00
+	x = 9
+	y = 1
+	
+	completion_reward = {
+	    add_political_power = 100
+	}
+
+}	
+
+shared_focus = {
+	id = new_coronation
+	icon = GFX_MAR_new_coronation
+	cost = 4.00
+	prerequisite = {
+		focus = return_of_empire
+	}
+	x = 9
+	y = 2
+	
+	completion_reward = {
+	    add_popularity = { ideology = socialist popularity = 0.1 }
+	}
+
+}
+
+shared_focus = {
+	id = expanding_ogas
+	icon = GFX_MAR_expanding_OGAS
+	cost = 4.00
+	prerequisite = {
+		focus = new_coronation
+	}
+	x = 6
+	y = 3
+	
+	completion_reward = {
+	}
+
+}
+
+shared_focus = {
+	id = cerberous_squad
+	icon = GFX_MAR_cerberuses_squad
+	cost = 4.00
+	prerequisite = {
+		focus = new_coronation
+	}
+	x = 9
+	y = 3
+	
+	completion_reward = {
+	}
+
+}
+
+shared_focus = {
+	id = rebuilding_pacific_portrs
+	icon = GFX_MAR_rebuilding_of_pacific_ports
+	cost = 4.00
+	prerequisite = {
+		focus = new_coronation
+	}
+	x = 12
+	y = 3
+	
+	completion_reward = {
+	}
+
+}
+
+shared_focus = {
+	id = sunny_america
+	icon = GFX_MAR_Sunny_America
+	cost = 4.00
+	prerequisite = {
+		focus = expanding_ogas
+	}
+	prerequisite = {
+		focus = cerberous_squad
+	}
+	prerequisite = {
+		focus = rebuilding_pacific_portrs
+	}
+	mutually_exclusive = {
+		focus = neon_sphere
+	}
+	x = 8
+	y = 4
+	
+	completion_reward = {
+	}
+
+}
+
+shared_focus = {
+	id = neon_sphere
+	icon = GFX_MAR_Neon_Sphere
+	cost = 4.00
+	prerequisite = {
+		focus = expanding_ogas
+	}
+	prerequisite = {
+		focus = cerberous_squad
+	}
+	prerequisite = {
+		focus = rebuilding_pacific_portrs
+	}
+	mutually_exclusive = {
+		focus = sunny_america
+	}
+	x = 10
+	y = 4
+	
+	completion_reward = {
+	}
+
+} 
+shared_focus = {
+	id = tsar_speech
+	icon = GFX_MAR_tsar_speech
+	cost = 4.00
+	prerequisite = {
+		focus = sunny_america
+		focus = neon_sphere
+	}
+	x = 9
+	y = 5
+	
+	completion_reward = {
+	    add_stability = 0.05
+	}
+}
