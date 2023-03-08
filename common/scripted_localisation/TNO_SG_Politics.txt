@@ -113,6 +113,10 @@ defined_text = {
 		localization_key = communist_autarkic_marxism_subtype
 	}
 	text = {
+		trigger = { has_country_leader_ideology = communist_esoteric_leninism_subtype }
+		localization_key = communist_esoteric_leninism_subtype
+	}
+	text = {
 		localization_key = communist
 	}
 }
@@ -192,6 +196,10 @@ defined_text = {
         localization_key = socialist_social_monarchist_but_worse_subtype
     }
 	text = {
+        trigger = { has_country_leader_ideology = socialist_neo_narodism_subtype }
+        localization_key = socialist_neo_narodism_subtype
+    }
+	text = {
 		localization_key = socialist
 	}
 }
@@ -249,6 +257,10 @@ defined_text = {
 	text = {
 		trigger = { has_country_leader_ideology = progressivism_western_progressivism_subtype }
 		localization_key = progressivism_western_progressivism_subtype
+	}
+	text = {
+		trigger = { has_country_leader_ideology = progressivism_progressive_theocracy_subtype }
+		localization_key = progressivism_progressive_theocracy_subtype
 	}
 	text = {
 		localization_key = progressivism
@@ -557,6 +569,10 @@ defined_text = {
 	text = {
         trigger = { has_country_leader_ideology = despotism_mladorossi_autocracy_subtype }
         localization_key = despotism_mladorossi_autocracy_subtype
+    }
+	text = {
+        trigger = { has_country_leader_ideology = despotism_securitocracy_subtype }
+        localization_key = despotism_securitocracy_subtype
     }
 	text = {
 		localization_key = despotism
