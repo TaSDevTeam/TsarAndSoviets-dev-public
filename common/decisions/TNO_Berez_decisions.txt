@@ -1004,6 +1004,43 @@ MAR_MGB_Okhranka_category = {
 			MAR_Okhranka_connections_change = yes
 		}
 	}
+	
+	MAR_MGB_yurla_operation = {
+		icon = GFX_decision_generic_assault
+		
+		#available = {
+		#	has_country_flag = MAR_started_fighting_Vyatka
+		#}
+		 
+		visible = {
+			always = yes
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+		fire_only_once = yes
+		cost = var:MAR_decision_cost_three	
+		days_remove = 1
+		
+		remove_effect = {
+			custom_effect_tooltip = MAR_MGB_yurla_operation_tt
+			random_list = {
+				1 = {
+					custom_effect_tooltip = MAR_MGB_yurla_operation_success_tt
+					transfer_state = 865
+					add_state_core = 865
+					set_temp_variable = { temp_econ_GDP_boost_flat = 0.015 }
+					econ_GDP_boost_once_flat = yes
+				}
+				2 = {
+					custom_effect_tooltip = MAR_MGB_yurla_operation_fail_tt
+					add_stability = -0.02
+					add_manpower = -231
+				}
+			}
+		}
+	}
 } 
 
 MAR_volunteer_category = {
@@ -2367,7 +2404,11 @@ MAR_ogas_deccat = {
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_first_spying_for_superpowers"
 			custom_effect_tooltip = MAR_ogas_first_stage_spies_tt
-			#add_timed_idea = { idea = RUS_nukes_theory_develop_physics_institutes_misc_costs days = 90 }
+			set_temp_variable = { temp_econ_spending_amount = 0.15 }
+			econ_spend_money_once_effect_raw_money = yes
+		}
+		modifier = {
+			research_speed_factor = -0.05
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_first_spying_for_superpowers"
@@ -2375,15 +2416,15 @@ MAR_ogas_deccat = {
 			15 = {
 				custom_effect_tooltip = MAR_OGAS_beeg_growth_spy_tt
 				set_temp_variable = { MAR_ogas_char_to_change = 1 } 
-				set_temp_variable = { temp_char_gained = 0.1 } 
+				set_temp_variable = { temp_char_gained = 0.07 } 
 				MAR_OGAS_char_change = yes
 			
 				set_temp_variable = { MAR_ogas_char_to_change = 2 } 
-				set_temp_variable = { temp_char_gained = 0.1 } 
+				set_temp_variable = { temp_char_gained = 0.07 } 
 				MAR_OGAS_char_change = yes
 				
 				set_temp_variable = { MAR_ogas_char_to_change = 3 } 
-				set_temp_variable = { temp_char_gained = 0.05 } 
+				set_temp_variable = { temp_char_gained = 0.06 } 
 				MAR_OGAS_char_change = yes
 				
 				set_temp_variable = { temp_progress_gained = 0.1 } 
@@ -2423,6 +2464,9 @@ MAR_ogas_deccat = {
 			set_temp_variable = { temp_econ_spending_amount = 0.002 }
 			econ_spend_money_once_effect_raw_money = yes
 		}
+		modifier = {
+			research_speed_factor = -0.05
+		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_first_trip_to_guandong"
 			set_temp_variable = { MAR_ogas_char_to_change = 2 } 
@@ -2447,18 +2491,27 @@ MAR_ogas_deccat = {
 			set_temp_variable = { temp_econ_spending_amount = 0.3 }  
 			econ_spend_money_once_effect_raw_money = yes
 		}
+		modifier = {
+			research_speed_factor = -0.05
+		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_first_imperial_academy"
 			set_temp_variable = { MAR_ogas_char_to_change = 1 } 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = 0.03 } 
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 2 } 
+			set_temp_variable = { temp_char_gained = 0.03 } 
+			MAR_OGAS_char_change = yes
+			
+			set_temp_variable = { MAR_ogas_char_to_change = 3 } 
 			set_temp_variable = { temp_char_gained = 0.05 } 
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { temp_progress_gained = 0.1 } 
 			MAR_OGAS_progress_change = yes
+			
+			add_to_variable = { MAR_ogas_gain = 0.01 }
 		}
 	}  
 	 
@@ -2475,9 +2528,12 @@ MAR_ogas_deccat = {
 			set_temp_variable = { temp_econ_spending_amount = 0.2 }
 			econ_spend_money_once_effect_raw_money = yes
 		}
+		modifier = {
+			research_speed_factor = -0.05
+		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_first_our_previous_ideas"
-			set_temp_variable = { temp_progress_gained = 0.05 } 
+			set_temp_variable = { temp_progress_gained = 0.06 } 
 			MAR_OGAS_progress_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 1 } 
@@ -2489,7 +2545,7 @@ MAR_ogas_deccat = {
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 3 } 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = 0.07 } 
 			MAR_OGAS_char_change = yes
 		}
 	}
@@ -2507,21 +2563,24 @@ MAR_ogas_deccat = {
 			set_temp_variable = { temp_econ_spending_amount = 0.1 } 
 			econ_spend_money_once_effect_raw_money = yes
 		}
+		modifier = {
+			research_speed_factor = -0.05
+		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_first_sort_the_designs"
-			set_temp_variable = { temp_progress_gained = 0.05 } 
+			set_temp_variable = { temp_progress_gained = 0.07 } 
 			MAR_OGAS_progress_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 1 } 
-			set_temp_variable = { temp_char_gained = 0.06 } 
+			set_temp_variable = { temp_char_gained = 0.04 } 
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 2} 
-			set_temp_variable = { temp_char_gained = 0.08 } 
+			set_temp_variable = { temp_char_gained = 0.03 } 
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 3 } 
-			set_temp_variable = { temp_char_gained = -0.03 } 
+			set_temp_variable = { temp_char_gained = 0.06 } 
 			MAR_OGAS_char_change = yes
 		}
 	}
@@ -2554,6 +2613,9 @@ MAR_ogas_deccat = {
 			set_temp_variable = { temp_econ_spending_amount = 0.15 } 
 			econ_spend_money_once_effect_raw_money = yes
 		}
+		modifier = {
+			research_speed_factor = -0.05
+		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_second_talk_with_ibm"
 			set_temp_variable = { temp_progress_gained = 0.1 } 
@@ -2564,7 +2626,7 @@ MAR_ogas_deccat = {
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 2} 
-			set_temp_variable = { temp_char_gained = 0.03 } 
+			set_temp_variable = { temp_char_gained = 0.02 } 
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 3 } 
@@ -2583,12 +2645,15 @@ MAR_ogas_deccat = {
 		fire_only_once = yes
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_second_get_all_the_nerds_in_the_one_place"
-			set_temp_variable = { temp_econ_spending_amount = 0.05 } 
+			set_temp_variable = { temp_econ_spending_amount = 0.1 } 
 			econ_spend_money_once_effect_raw_money = yes
+		}
+		modifier = {
+			research_speed_factor = -0.05
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_second_get_all_the_nerds_in_the_one_place"
-			set_temp_variable = { temp_progress_gained = 0.05 } 
+			set_temp_variable = { temp_progress_gained = 0.07 } 
 			MAR_OGAS_progress_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 1 } 
@@ -2615,16 +2680,23 @@ MAR_ogas_deccat = {
 		fire_only_once = yes
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_second_math_analyze"
-			set_temp_variable = { temp_econ_spending_amount = 0.01 } 
+			set_temp_variable = { temp_econ_spending_amount = 0.005 } 
 			econ_spend_money_once_effect_raw_money = yes
+		}
+		modifier = {
+			research_speed_factor = -0.05
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_second_math_analyze"
-			set_temp_variable = { temp_progress_gained = 0.05 } 
+			set_temp_variable = { temp_progress_gained = 0.08 } 
 			MAR_OGAS_progress_change = yes
 			
+			set_temp_variable = { MAR_ogas_char_to_change = 2 } 
+			set_temp_variable = { temp_char_gained = -0.03 } 
+			MAR_OGAS_char_change = yes
+			
 			set_temp_variable = { MAR_ogas_char_to_change = 3 } 
-			set_temp_variable = { temp_char_gained = -0.05 } 
+			set_temp_variable = { temp_char_gained = -0.02 } 
 			MAR_OGAS_char_change = yes
 		}
 	}
@@ -2639,12 +2711,15 @@ MAR_ogas_deccat = {
 		fire_only_once = yes
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_second_cybernetics_cult"
-			set_temp_variable = { temp_econ_spending_amount = 0.25 } 
+			set_temp_variable = { temp_econ_spending_amount = 0.175 } 
 			econ_spend_money_once_effect_raw_money = yes
+		}
+		modifier = {
+			research_speed_factor = -0.05
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_second_cybernetics_cult"
-			set_temp_variable = { temp_progress_gained = 0.05 } 
+			set_temp_variable = { temp_progress_gained = 0.1 } 
 			MAR_OGAS_progress_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 1 } 
@@ -2652,12 +2727,14 @@ MAR_ogas_deccat = {
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 2} 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = 0.04 } 
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 3 } 
-			set_temp_variable = { temp_char_gained = -0.03 } 
+			set_temp_variable = { temp_char_gained = 0.03 } 
 			MAR_OGAS_char_change = yes
+			
+			add_to_variable = { MAR_ogas_gain = 0.01 }
 		}
 	}
 	
@@ -2674,21 +2751,24 @@ MAR_ogas_deccat = {
 			set_temp_variable = { temp_econ_spending_amount = 0.01 } 
 			econ_spend_money_once_effect_raw_money = yes
 		}
+		modifier = {
+			research_speed_factor = -0.05
+		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_second_glushkovs_seminars"
 			set_temp_variable = { temp_progress_gained = 0.05 } 
 			MAR_OGAS_progress_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 1 } 
-			set_temp_variable = { temp_char_gained = -0.02 } 
+			set_temp_variable = { temp_char_gained = 0.01 } 
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 2} 
-			set_temp_variable = { temp_char_gained = 0.08 } 
+			set_temp_variable = { temp_char_gained = 0.04 } 
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 3 } 
-			set_temp_variable = { temp_char_gained = -0.03 } 
+			set_temp_variable = { temp_char_gained = 0.03 } 
 			MAR_OGAS_char_change = yes
 		}
 	}
@@ -2708,7 +2788,7 @@ MAR_ogas_deccat = {
 			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_ogas_first_stage_effigy"
 		}
 	}
-	
+		
 	MAR_ogas_third_cybergrad_kazan = {
 		icon = GFX_decision_generic_industry
 		visible = {
@@ -2722,26 +2802,31 @@ MAR_ogas_deccat = {
 			set_temp_variable = { temp_econ_spending_amount = 0.75 } 
 			econ_spend_money_once_effect_raw_money = yes
 		}
+		modifier = {
+			research_speed_factor = -0.05
+		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_third_cybergrad_kazan"
-			set_temp_variable = { temp_progress_gained = 0.05 } 
+			set_temp_variable = { temp_progress_gained = 0.15 } 
 			MAR_OGAS_progress_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 1 } 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = 0.07 } 
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 2} 
-			set_temp_variable = { temp_char_gained = 0.1 } 
+			set_temp_variable = { temp_char_gained = 0.08 } 
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 3 } 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = 0.07 } 
 			MAR_OGAS_char_change = yes
 			#add_victory_points = {
 			#	province = 12545
 			#	value = 1
 			#}
+			
+			add_to_variable = { MAR_ogas_gain = 0.01 }
 		}
 	}
 	
@@ -2758,21 +2843,24 @@ MAR_ogas_deccat = {
 			set_temp_variable = { temp_econ_spending_amount = 0.25 } 
 			econ_spend_money_once_effect_raw_money = yes
 		}
+		modifier = {
+			research_speed_factor = -0.05
+		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_third_cybergrad_kazan"
-			set_temp_variable = { temp_progress_gained = 0.05 } 
+			set_temp_variable = { temp_progress_gained = 0.07 } 
 			MAR_OGAS_progress_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 1 } 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = 0.02 } 
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 2} 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = 0.03 } 
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 3 } 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = -0.04 } 
 			MAR_OGAS_char_change = yes
 		}
 	}
@@ -2787,24 +2875,27 @@ MAR_ogas_deccat = {
 		fire_only_once = yes
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_third_kibersin"
-			set_temp_variable = { temp_econ_spending_amount = 0.25 } 
+			set_temp_variable = { temp_econ_spending_amount = 0.35 } 
 			econ_spend_money_once_effect_raw_money = yes
+		}
+		modifier = {
+			research_speed_factor = -0.05
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_third_kibersin"
-			set_temp_variable = { temp_progress_gained = 0.05 } 
+			set_temp_variable = { temp_progress_gained = 0.06 } 
 			MAR_OGAS_progress_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 1 } 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = 0.06 } 
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 2} 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = 0.04 } 
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 3 } 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = 0.03 } 
 			MAR_OGAS_char_change = yes
 		}
 	}
@@ -2822,21 +2913,24 @@ MAR_ogas_deccat = {
 			set_temp_variable = { temp_econ_spending_amount = 0.15 } 
 			econ_spend_money_once_effect_raw_money = yes
 		}
+		modifier = {
+			research_speed_factor = -0.05
+		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_third_expand_the_institutions"
-			set_temp_variable = { temp_progress_gained = 0.05 } 
+			set_temp_variable = { temp_progress_gained = 0.08 } 
 			MAR_OGAS_progress_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 1 } 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = 0.03 } 
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 2} 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = 0.04 } 
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 3 } 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = 0.02 } 
 			MAR_OGAS_char_change = yes
 		}
 	}
@@ -2850,25 +2944,24 @@ MAR_ogas_deccat = {
 		days_remove = 90
 		fire_only_once = yes
 		complete_effect = {
-			set_temp_variable = { temp_econ_spending_amount = 0.25 } 
+			set_temp_variable = { temp_econ_spending_amount = 0.275 } 
 			econ_spend_money_once_effect_raw_money = yes
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_third_prepare_the_places"
 		}
+		modifier = {
+			research_speed_factor = -0.05
+		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_third_prepare_the_places"
-			set_temp_variable = { temp_progress_gained = 0.05 } 
+			set_temp_variable = { temp_progress_gained = 0.06 } 
 			MAR_OGAS_progress_change = yes
-			
-			set_temp_variable = { MAR_ogas_char_to_change = 1 } 
-			set_temp_variable = { temp_char_gained = 0.05 } 
-			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 2} 
 			set_temp_variable = { temp_char_gained = 0.05 } 
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 3 } 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = -0.01 } 
 			MAR_OGAS_char_change = yes
 		}
 	}
@@ -2899,22 +2992,27 @@ MAR_ogas_deccat = {
 		fire_only_once = yes
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_foutrh_stress_test_kazan"
+			set_temp_variable = { temp_econ_spending_amount = 0.175 } 
+			econ_spend_money_once_effect_raw_money = yes
+		}
+		modifier = {
+			research_speed_factor = -0.05
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_foutrh_stress_test_kazan"
-			set_temp_variable = { temp_progress_gained = 0.05 } 
+			set_temp_variable = { temp_progress_gained = 0.1 } 
 			MAR_OGAS_progress_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 1 } 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = 0.04 } 
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 2} 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = 0.03 } 
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 3 } 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = 0.02 } 
 			MAR_OGAS_char_change = yes
 		}
 	}
@@ -2929,22 +3027,27 @@ MAR_ogas_deccat = {
 		fire_only_once = yes
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_foutrh_test_the_factory"
+			set_temp_variable = { temp_econ_spending_amount = 0.075 } 
+			econ_spend_money_once_effect_raw_money = yes
+		}
+		modifier = {
+			research_speed_factor = -0.05
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_foutrh_test_the_factory"
-			set_temp_variable = { temp_progress_gained = 0.05 } 
+			set_temp_variable = { temp_progress_gained = 0.07 } 
 			MAR_OGAS_progress_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 1 } 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = 0.02 } 
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 2} 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = 0.02 } 
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 3 } 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = 0.03 } 
 			MAR_OGAS_char_change = yes
 		}
 	}
@@ -2959,14 +3062,19 @@ MAR_ogas_deccat = {
 		fire_only_once = yes
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_foutrh_develop_army_verison"
+			set_temp_variable = { temp_econ_spending_amount = 0.375 } 
+			econ_spend_money_once_effect_raw_money = yes
+		}
+		modifier = {
+			research_speed_factor = -0.05
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_foutrh_develop_army_verison"
-			set_temp_variable = { temp_progress_gained = 0.05 } 
+			set_temp_variable = { temp_progress_gained = 0.07 } 
 			MAR_OGAS_progress_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 1 } 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = 0.1 } 
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 2} 
@@ -2974,7 +3082,7 @@ MAR_ogas_deccat = {
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 3 } 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = 0.04 } 
 			MAR_OGAS_char_change = yes
 		}
 	}
@@ -2989,23 +3097,30 @@ MAR_ogas_deccat = {
 		fire_only_once = yes
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_foutrh_stress_test_kazan"
+			set_temp_variable = { temp_econ_spending_amount = 0.035 } 
+			econ_spend_money_once_effect_raw_money = yes
+		}
+		modifier = {
+			research_speed_factor = -0.05
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_foutrh_stress_test_kazan"
-			set_temp_variable = { temp_progress_gained = 0.05 } 
+			set_temp_variable = { temp_progress_gained = 0.07 } 
 			MAR_OGAS_progress_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 1 } 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = 0.02 } 
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 2} 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = 0.01 } 
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 3 } 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = 0.03 } 
 			MAR_OGAS_char_change = yes
+			
+			add_to_variable = { MAR_ogas_gain = 0.01 }
 		}
 	}
 	
@@ -3019,6 +3134,11 @@ MAR_ogas_deccat = {
 		fire_only_once = yes
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_foutrh_stress_test_kazan"
+			set_temp_variable = { temp_econ_spending_amount = 0.1 } 
+			econ_spend_money_once_effect_raw_money = yes
+		}
+		modifier = {
+			research_speed_factor = -0.05
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_foutrh_stress_test_kazan"
@@ -3026,15 +3146,15 @@ MAR_ogas_deccat = {
 			MAR_OGAS_progress_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 1 } 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = 0.04 } 
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 2} 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = 0.04 } 
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 3 } 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = 0.07 } 
 			MAR_OGAS_char_change = yes
 		}
 	}
@@ -3064,22 +3184,27 @@ MAR_ogas_deccat = {
 		fire_only_once = yes
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_intergrate_into_civil_economics"
+			set_temp_variable = { temp_econ_spending_amount = 0.375 } 
+			econ_spend_money_once_effect_raw_money = yes
+		}
+		modifier = {
+			research_speed_factor = -0.05
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_intergrate_into_civil_economics"
-			set_temp_variable = { temp_progress_gained = 0.05 } 
+			set_temp_variable = { temp_progress_gained = 0.1 } 
 			MAR_OGAS_progress_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 1 } 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = -0.03 } 
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 2} 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = 0.06 } 
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 3 } 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = -0.02 } 
 			MAR_OGAS_char_change = yes
 		}
 	}
@@ -3094,22 +3219,23 @@ MAR_ogas_deccat = {
 		fire_only_once = yes
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_intergrate_into_millitary_economics"
+			set_temp_variable = { temp_econ_spending_amount = 0.25 } 
+			econ_spend_money_once_effect_raw_money = yes
+		}
+		modifier = {
+			research_speed_factor = -0.05
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_intergrate_into_millitary_economics"
-			set_temp_variable = { temp_progress_gained = 0.05 } 
+			set_temp_variable = { temp_progress_gained = 0.1 } 
 			MAR_OGAS_progress_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 1 } 
-			set_temp_variable = { temp_char_gained = 0.05 } 
-			MAR_OGAS_char_change = yes
-			
-			set_temp_variable = { MAR_ogas_char_to_change = 2} 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = 0.04 } 
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 3 } 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = -0.01 } 
 			MAR_OGAS_char_change = yes
 		}
 	}
@@ -3119,15 +3245,20 @@ MAR_ogas_deccat = {
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 5 }
 		}
+		modifier = {
+			research_speed_factor = -0.05
+		}
 		cost = 25
 		days_remove = 90
 		fire_only_once = yes
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_intergrate_into_army"
+			set_temp_variable = { temp_econ_spending_amount = 0.175 } 
+			econ_spend_money_once_effect_raw_money = yes
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_intergrate_into_army"
-			set_temp_variable = { temp_progress_gained = 0.05 } 
+			set_temp_variable = { temp_progress_gained = 0.1 } 
 			MAR_OGAS_progress_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 1 } 
@@ -3135,11 +3266,11 @@ MAR_ogas_deccat = {
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 2} 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = 0.03 } 
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 3 } 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = -0.03 } 
 			MAR_OGAS_char_change = yes
 		}
 	}
@@ -3154,22 +3285,27 @@ MAR_ogas_deccat = {
 		fire_only_once = yes
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_fifth_integrate_into_education"
+			set_temp_variable = { temp_econ_spending_amount = 0.075 } 
+			econ_spend_money_once_effect_raw_money = yes
+		}
+		modifier = {
+			research_speed_factor = -0.05
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_fifth_integrate_into_education"
-			set_temp_variable = { temp_progress_gained = 0.05 } 
+			set_temp_variable = { temp_progress_gained = 0.1 } 
 			MAR_OGAS_progress_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 1 } 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = 0.03 } 
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 2} 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = 0.04 } 
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 3 } 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = -0.02 } 
 			MAR_OGAS_char_change = yes
 		}
 	}
@@ -3184,14 +3320,19 @@ MAR_ogas_deccat = {
 		fire_only_once = yes
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_fifth_semiconductor_valley"
+			set_temp_variable = { temp_econ_spending_amount = 0.195 } 
+			econ_spend_money_once_effect_raw_money = yes
+		}
+		modifier = {
+			research_speed_factor = -0.05
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_fifth_semiconductor_valley"
-			set_temp_variable = { temp_progress_gained = 0.05 } 
+			set_temp_variable = { temp_progress_gained = 0.1 } 
 			MAR_OGAS_progress_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 1 } 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = 0.06 } 
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 2} 
@@ -3199,7 +3340,7 @@ MAR_ogas_deccat = {
 			MAR_OGAS_char_change = yes
 			
 			set_temp_variable = { MAR_ogas_char_to_change = 3 } 
-			set_temp_variable = { temp_char_gained = 0.05 } 
+			set_temp_variable = { temp_char_gained = -0.02 } 
 			MAR_OGAS_char_change = yes
 		}
 	}

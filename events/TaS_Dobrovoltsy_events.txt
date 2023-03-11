@@ -232,7 +232,11 @@ country_event = { #Kurds 2
 		    MAR_Iraq_Kurdistan_zhirik = yes
 		}
 		custom_effect_tooltip = MAR_KUR_Zhirik
-		news_event = { id =  berez_dobrovoltsy_world_news.11 days = 1 }
+		hidden_effect = {
+			every_country = {
+				news_event = { id = berez_dobrovoltsy_world_news.11 days = 1 }
+			}
+		}
 	}
 }
 country_event = { #Kurds 3
@@ -249,7 +253,11 @@ country_event = { #Kurds 3
 		    MAR_Iraq_Kurdistan_saddam = yes
 		}
 		custom_effect_tooltip = MAR_KUR_Saddam
-		news_event = { id =  berez_dobrovoltsy_world_news.12 days = 1 }
+		hidden_effect = {
+			every_country = {
+				news_event = { id = berez_dobrovoltsy_world_news.12 days = 1 }
+			}
+		}
 	}
 
 }
@@ -356,7 +364,11 @@ country_event = { #Iran 1
 			econ_gdp_growth_change = yes
 			TNO_improve_poverty_low = yes
 		}
-		news_event = { id =  berez_dobrovoltsy_world_news.13 days = 1 }
+		hidden_effect = {
+			every_country = {
+				news_event = { id = berez_dobrovoltsy_world_news.13 days = 1 }
+			}
+		}
 		give_resource_rights = { receiver = MAR state = 143 }
 	}
 }
@@ -378,6 +390,8 @@ country_event = { #Spain
 				uses = 2
 				category = MBT
 			}
+			set_temp_variable = { temp_econ_GDP_boost_flat = 0.15 }
+			econ_GDP_boost_once_flat = yes
 		}
 	}
 }
@@ -396,6 +410,8 @@ country_event = { #Portugal
 			econ_gdp_growth_change = yes
 			TNO_improve_poverty_low = yes
 			TNO_improve_industrial_equipment_med = yes
+			set_temp_variable = { temp_econ_GDP_boost_flat = 0.15 }
+			econ_GDP_boost_once_flat = yes
 		}
 	}
 }
@@ -672,15 +688,15 @@ country_event = { #KUR_CW End- Kurdish Victory (Real)
 			    country_event = {
 				    id = KUR_CW.23 days = 27
 			    }
-			}			
+			}	
+			every_country = {
+				news_event = { id = berez_dobrovoltsy_world_news.10 days = 1 }
+			}	
 		}
 		MAR = {
 			country_event = {
 				id = berez_dobrovoltsy.17 days = 30
 			}
-		}
-		every_country = {
-			news_event = { id = berez_dobrovoltsy_world_news.10 days = 1 }
 		}
 	}
 }

@@ -9,7 +9,7 @@ MAR_OGAS_setup = {
 	add_to_array = { MAR_ogas_stages_status_array = 0 } # 5
 
 	set_variable = { MAR_ogas_gain = 0.02 }
-	set_variable = { MAR_ogas_char_gain = 0.01 }
+	set_variable = { MAR_ogas_char_gain = 0.002 }
 	
 	set_variable = { MAR_ogas_current_stage = 1 }
 	
@@ -43,10 +43,13 @@ MAR_OGAS_char_change = {
 	set_temp_variable = { temp_char_gained_txt = temp_char_gained }
 	add_to_variable = { MAR_ogas_characteristics_array^MAR_ogas_char_to_change = temp_char_gained }
 	
-	clamp_variable = {
-		var = MAR_ogas_characteristics_array^MAR_ogas_char_to_change
-		min = 0
-		max = 1
+	for_each_loop = {
+		array = MAR_ogas_characteristics_array
+		clamp_variable = {
+			var = MAR_ogas_characteristics_array^i
+			min = 0
+			max = 1
+		}
 	}
 	
 	if = {

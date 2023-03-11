@@ -359,7 +359,10 @@ shared_focus = {
 	x = 5
 	y = 3
 	completion_reward = {
-		set_country_flag = MAR_higher_good
+		set_country_flag = {
+			flag = MAR_greater_good_program
+			days = 1465
+		}
 		add_political_power = 100
 	
 	}
