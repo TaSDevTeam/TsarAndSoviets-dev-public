@@ -3333,7 +3333,13 @@
  SAM_kosygin_collapse_ADJ:0 "Самарск."
  #oooo gas
  MAR_ogas_deccat:0 "ОГАС"
- MAR_ogas_deccat_desc:0 "§RПовестка №13912367§! \n\nНа основании закона РФ §G"О воинской обязанности и военной службе"§! §Yвы§! обязаны 3 октября 2022 г. к 9:00 часам явится в объединённый §Rвоенный коммисариат§!"
+ MAR_ogas_deccat_desc:0 "§RПовестка №13912367§! \n\nНа основании закона РФ §G"О воинской обязанности и военной службе"§! §Yвы§! обязаны 3 октября 2022 г. к 9:00 часам явится в объединённый §Rвоенный коммисариат§! \n\n[GetStageDescOGAS]"
+ MAR_ogas_stage_one:0 "Текущий этап: §YПроектирование§!\n\nописание будет, я обещаю"
+ MAR_ogas_stage_two:0 "Текущий этап: §YПодготовка§!\n\nописание будет, я обещаю"
+ MAR_ogas_stage_three:0 "Текущий этап: §YРазработка§!\n\nописание будет, я обещаю"
+ MAR_ogas_stage_four:0 "Текущий этап: §YТестирование§!\n\nописание будет, я обещаю"
+ MAR_ogas_stage_five:0 "Текущий этап: §YВнедрение§!\n\nописание будет, я обещаю"
+
  ###gui
  MAR_OGAS_progress_title_txt:0 "ПРОГРЕСС ОГАС"
  
@@ -3393,6 +3399,7 @@
  MAR_ogas_third_stage_effigy:0 "§YЭТАП 3:§! §GРАЗРАБОТКА§!"
  MAR_ogas_third_cybergrad_kazan:0 "Киберград-на-Волге"
  MAR_ogas_third_cybergrad_kazan_desc:0 "описание будет, я обещаю"
+ VICTORY_POINTS_11339:0 "Киберград-на-Волге"
  MAR_ogas_third_tsars_financing:0 "Увеличение финансирования"
  MAR_ogas_third_tsars_financing_desc:0 "описание будет, я обещаю"
  MAR_ogas_third_kibersin:0 "Корпорация международного взаимодействия"
@@ -3459,6 +3466,45 @@
  MAR_prestol_ogas_dummy:0 "ОГАС"
  MAR_prestol_ogas_dummy_desc:0 "тут должно быть описание"
  
+ MAR_Kosygin_OGAS.1.t: ""
+ MAR_Kosygin_OGAS.1.d: ""
+ MAR_Kosygin_OGAS.1.a: ""
+
+ MAR_Kosygin_OGAS.2.t: ""
+ MAR_Kosygin_OGAS.2.d: ""
+ MAR_Kosygin_OGAS.2.a: ""
+
+ MAR_Kosygin_OGAS.3.t: ""
+ MAR_Kosygin_OGAS.3.d: ""
+ MAR_Kosygin_OGAS.3.a: ""
+
+ MAR_Kosygin_OGAS.4.t: ""
+ MAR_Kosygin_OGAS.4.d: ""
+ MAR_Kosygin_OGAS.4.a: ""
+
+ MAR_Kosygin_OGAS.5.t: ""
+ MAR_Kosygin_OGAS.5.d: ""
+ MAR_Kosygin_OGAS.5.a: ""
+
+ MAR_Kosygin_OGAS.6.t: ""
+ MAR_Kosygin_OGAS.6.d: ""
+ MAR_Kosygin_OGAS.6.a: ""
+
+ MAR_Kosygin_OGAS.7.t: ""
+ MAR_Kosygin_OGAS.7.d: ""
+ MAR_Kosygin_OGAS.7.a: ""
+
+ MAR_Kosygin_OGAS.8.t: ""
+ MAR_Kosygin_OGAS.8.d: ""
+ MAR_Kosygin_OGAS.8.a: ""
+
+ MAR_Kosygin_OGAS.9.t: ""
+ MAR_Kosygin_OGAS.9.d: ""
+ MAR_Kosygin_OGAS.9.a: ""
+
+ MAR_Kosygin_OGAS.10.t: ""
+ MAR_Kosygin_OGAS.10.d: ""
+ MAR_Kosygin_OGAS.10.a: ""
  #MAR_OGAS_eff_growth_legacy_tt: "Это §Gувеличит§! §mэффективнсть ОГАСа§! на §G[?temp_char_gained]%§!, становясь §Y[?charone_temp]§!.\n"
  
  ##высшее благо
@@ -3567,6 +3613,12 @@
  UAR_Hafez_al_Assad:0 "Хафез Аль-Ассад"
  UAR_Ahmed_Hassan_al_Bakr:0 "Ахмед Хассан Аль-Бакр"
  UAR_Salah_Jadid:0 "Салах Джадид"
+ 
+ MAR_UAR_fail:0 "Разрыв дипломатический отношений"
+ MAR_UAR_victory:0 "Русско-Арабский договор о дружбе"
+ MAR_UAR_victory_other_commies:0 "Красная Сила"
+ 
+ MAR_GNG_ties:0 "Взаимовыгодные договоры"
  
  MAR_Kosygin_UAR.1.t:0 "Ближневосточное танго"
  MAR_Kosygin_UAR.1.d:0 "Этот вечер Министерство Иностранных Дел запомнит надолго, как и несколько тех, что предшествовали ему. Неприятности начались ещё когда оказалось, что русские добровольцы оказались на одной стороне с немцами в ближневосточных войнах. Это негативно сказалось на отношениях с нашими союзниками в Америке и Азии, так как кроме этого мы выступили и против их интересов. \n\nТеперь сердца всех в Министерстве замерли, ожидая депеши из недавно созданной Объединённой Арабской Республики с предложениями о взаимном сотрудничестве. Она не приходила. И неизвестно пришла ли она немцам, потому что бюрократы Берлина прекрасно играли в покер. \n\n-Хватит, пора брать инициативу в свои руки. Пока не поздно. Я выдвигаюсь в Дамаск сейчас же. - таким было решение изнемождённого от недосыпа Демичева. Несколько следующих часов прошли за телефоном и диктовкой телеграмм и писем. Уснул он только в самолёте."

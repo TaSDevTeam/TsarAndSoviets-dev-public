@@ -2011,6 +2011,25 @@ country_event = { #Rus win
 						transfer_troops = yes
 					}
 				}
+				add_opinion_modifier = {
+					target = MAR
+					modifier = MAR_UAR_victory
+				}
+				reverse_add_opinion_modifier = {
+					target = MAR
+					modifier = MAR_UAR_victory
+				}
+			}
+			every_country = {
+				limit = { has_socialist_government = yes }
+				add_opinion_modifier = {
+					target = MAR
+					modifier = MAR_UAR_victory_other_commies
+				}
+				reverse_add_opinion_modifier = {
+					target = MAR
+					modifier = MAR_UAR_victory_other_commies
+				}
 			}
 		}
 	}
@@ -2090,6 +2109,14 @@ country_event = { #Ger win
 						target = BIR
 						transfer_troops = yes
 					}
+				}
+				add_opinion_modifier = {
+					target = MAR
+					modifier = MAR_UAR_fail
+				}
+				reverse_add_opinion_modifier = {
+					target = MAR
+					modifier = MAR_UAR_fail
 				}
 			}
 		}

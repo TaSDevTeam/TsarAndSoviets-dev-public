@@ -472,3 +472,37 @@ defined_text = {
 		localization_key = UAR_nobody_lead
 	}
 }
+
+defined_text = {
+	name = GetStageDescOGAS
+	text = {
+		trigger = {
+			check_variable = { MAR_ogas_current_stage = 1 } 
+		} 
+		localization_key = MAR_ogas_stage_one
+	}
+	text = {
+		trigger = {
+			check_variable = { MAR_ogas_current_stage = 2 } 
+		} 
+		localization_key = MAR_ogas_stage_two
+	}
+	text = {
+		trigger = {
+			check_variable = { MAR_ogas_current_stage = 3 } 
+		} 
+		localization_key = MAR_ogas_stage_three
+	}
+	text = {
+		trigger = {
+			check_variable = { MAR_ogas_current_stage = 4 } 
+		} 
+		localization_key = MAR_ogas_stage_four
+	}
+	text = {
+		trigger = {
+			check_variable = { MAR_ogas_current_stage = 5 } 
+		} 
+		localization_key = MAR_ogas_stage_five
+	}
+}

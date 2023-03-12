@@ -2429,6 +2429,7 @@ MAR_ogas_deccat = {
 				
 				set_temp_variable = { temp_progress_gained = 0.1 } 
 				MAR_OGAS_progress_change = yes
+				add_political_power = 75
 			}
 			45 = {
 				custom_effect_tooltip = MAR_OGAS_mid_spy_tt
@@ -2438,10 +2439,12 @@ MAR_ogas_deccat = {
 				set_temp_variable = { MAR_ogas_char_to_change = 2 } 
 				set_temp_variable = { temp_char_gained = 0.05 } 
 				MAR_OGAS_char_change = yes
+				add_political_power = 50
 			}
 			25 = {
 				set_temp_variable = { temp_progress_gained = 0.05 } 
 				MAR_OGAS_progress_change = yes
+				add_political_power = 25
 			}
 			15 = {
 			
@@ -2475,6 +2478,17 @@ MAR_ogas_deccat = {
 			
 			set_temp_variable = { temp_progress_gained = 0.06 } 
 			MAR_OGAS_progress_change = yes
+			GNG = {
+				add_opinion_modifier = {
+					target = MAR
+					modifier = MAR_GNG_ties
+				}
+				reverse_add_opinion_modifier = {
+					target = MAR
+					modifier = MAR_GNG_ties	
+				}
+			}
+			country_event = { id = MAR_Kosygin_OGAS.1 days = 1 }
 		}
 	}
 	
@@ -2496,6 +2510,27 @@ MAR_ogas_deccat = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_first_imperial_academy"
+			TNO_improve_research_facilities_high = yes
+			capital_scope = {
+				add_building_construction = {
+					type = offices
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = schools
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				set_temp_variable = { state_value_multiplier_temp = 1.08 }
+				econ_state_value_change_multiply_specified_state = yes
+				add_state_modifier = {
+					modifier = {
+						state_GDP_growth_factor_modifier = 0.10
+					}
+				}
+			}
 			set_temp_variable = { MAR_ogas_char_to_change = 1 } 
 			set_temp_variable = { temp_char_gained = 0.03 } 
 			MAR_OGAS_char_change = yes
@@ -2512,6 +2547,7 @@ MAR_ogas_deccat = {
 			MAR_OGAS_progress_change = yes
 			
 			add_to_variable = { MAR_ogas_gain = 0.01 }
+			country_event = { id = MAR_Kosygin_OGAS.2 days = 1 }
 		}
 	}  
 	 
@@ -2533,6 +2569,7 @@ MAR_ogas_deccat = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_first_our_previous_ideas"
+			TNO_improve_research_facilities_med = yes
 			set_temp_variable = { temp_progress_gained = 0.06 } 
 			MAR_OGAS_progress_change = yes
 			
@@ -2568,6 +2605,7 @@ MAR_ogas_deccat = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_first_sort_the_designs"
+			TNO_improve_research_facilities_med = yes
 			set_temp_variable = { temp_progress_gained = 0.07 } 
 			MAR_OGAS_progress_change = yes
 			
@@ -2618,6 +2656,24 @@ MAR_ogas_deccat = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_second_talk_with_ibm"
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = offices
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				set_temp_variable = { state_value_multiplier_temp = 1.08 }
+				econ_state_value_change_multiply_specified_state = yes
+				add_state_modifier = {
+					modifier = {
+						state_GDP_growth_factor_modifier = 0.10
+					}
+				}
+			}
+			set_temp_variable = { pus_temp = 1 }
+			econ_pus_change = yes
+			TNO_improve_industrial_expertise_med = yes
 			set_temp_variable = { temp_progress_gained = 0.1 } 
 			MAR_OGAS_progress_change = yes
 			
@@ -2632,6 +2688,7 @@ MAR_ogas_deccat = {
 			set_temp_variable = { MAR_ogas_char_to_change = 3 } 
 			set_temp_variable = { temp_char_gained = 0.03 } 
 			MAR_OGAS_char_change = yes
+			country_event = { id = MAR_Kosygin_OGAS.3 days = 1 }
 		}
 	}
 	
@@ -2653,6 +2710,14 @@ MAR_ogas_deccat = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_second_get_all_the_nerds_in_the_one_place"
+			TNO_improve_research_facilities_high = yes
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = schools
+					level = 1
+					instant_build = yes
+				}
+			}
 			set_temp_variable = { temp_progress_gained = 0.07 } 
 			MAR_OGAS_progress_change = yes
 			
@@ -2688,6 +2753,7 @@ MAR_ogas_deccat = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_second_math_analyze"
+			add_political_power = 50
 			set_temp_variable = { temp_progress_gained = 0.08 } 
 			MAR_OGAS_progress_change = yes
 			
@@ -2719,6 +2785,9 @@ MAR_ogas_deccat = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_second_cybernetics_cult"
+			TNO_improve_education_policy_effectiveness_high = yes
+			TNO_improve_education_policy_effectiveness_monthly_high = yes
+			TNO_improve_academic_base_high = yes
 			set_temp_variable = { temp_progress_gained = 0.1 } 
 			MAR_OGAS_progress_change = yes
 			
@@ -2756,9 +2825,10 @@ MAR_ogas_deccat = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_second_glushkovs_seminars"
+			
 			set_temp_variable = { temp_progress_gained = 0.05 } 
 			MAR_OGAS_progress_change = yes
-			
+			TNO_improve_academic_base_high = yes
 			set_temp_variable = { MAR_ogas_char_to_change = 1 } 
 			set_temp_variable = { temp_char_gained = 0.01 } 
 			MAR_OGAS_char_change = yes
@@ -2821,12 +2891,38 @@ MAR_ogas_deccat = {
 			set_temp_variable = { MAR_ogas_char_to_change = 3 } 
 			set_temp_variable = { temp_char_gained = 0.07 } 
 			MAR_OGAS_char_change = yes
-			#add_victory_points = {
-			#	province = 12545
-			#	value = 1
-			#}
+			add_victory_points = {
+				province = 11339
+				value = 5
+			}
+			851 = {
+				add_building_construction = {
+					type = offices
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = schools
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = hospitals
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 4
+				set_temp_variable = { state_value_multiplier_temp = 1.15 }
+				econ_state_value_change_multiply_specified_state = yes
+				add_state_modifier = {
+					modifier = {
+						state_GDP_growth_factor_modifier = 0.18
+					}
+				}
+			}
 			
 			add_to_variable = { MAR_ogas_gain = 0.01 }
+			country_event = { id = MAR_Kosygin_OGAS.4 days = 1 }
 		}
 	}
 	
@@ -2848,6 +2944,14 @@ MAR_ogas_deccat = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_third_cybergrad_kazan"
+			TNO_improve_education_policy_effectiveness_high = yes
+			capital_scope = {
+				add_building_construction = {
+					type = schools
+					level = 1
+					instant_build = yes
+				}
+			}
 			set_temp_variable = { temp_progress_gained = 0.07 } 
 			MAR_OGAS_progress_change = yes
 			
@@ -2883,6 +2987,10 @@ MAR_ogas_deccat = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_third_kibersin"
+			set_temp_variable = { temp_econ_GDP_boost_flat = 0.15 }
+			econ_GDP_boost_once_flat = yes
+			set_temp_variable = { econ_centralization_temp = -5 }
+			econ_centralization_change = yes
 			set_temp_variable = { temp_progress_gained = 0.06 } 
 			MAR_OGAS_progress_change = yes
 			
@@ -2918,6 +3026,7 @@ MAR_ogas_deccat = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_third_expand_the_institutions"
+			TNO_improve_research_facilities_high = yes
 			set_temp_variable = { temp_progress_gained = 0.08 } 
 			MAR_OGAS_progress_change = yes
 			
@@ -2963,6 +3072,19 @@ MAR_ogas_deccat = {
 			set_temp_variable = { MAR_ogas_char_to_change = 3 } 
 			set_temp_variable = { temp_char_gained = -0.01 } 
 			MAR_OGAS_char_change = yes
+			every_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_state_modifier = {
+					modifier = {
+						state_GDP_growth_factor_modifier = 0.05
+					}
+				}
+			}
+			country_event = { id = MAR_Kosygin_OGAS.5 days = 1 }
 		}
 	}
 	
@@ -3014,6 +3136,21 @@ MAR_ogas_deccat = {
 			set_temp_variable = { MAR_ogas_char_to_change = 3 } 
 			set_temp_variable = { temp_char_gained = 0.02 } 
 			MAR_OGAS_char_change = yes
+			250 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_state_modifier = {
+					modifier = {
+						state_GDP_growth_factor_modifier = 0.15
+					}
+				}
+			}
+			set_temp_variable = { pus_temp = 1 }
+			econ_pus_change = yes
+			country_event = { id = MAR_Kosygin_OGAS.6 days = 1 }
 		}
 	}
 	
@@ -3035,6 +3172,8 @@ MAR_ogas_deccat = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_foutrh_test_the_factory"
+			set_temp_variable = { pus_temp = 2 }
+			econ_pus_change = yes
 			set_temp_variable = { temp_progress_gained = 0.07 } 
 			MAR_OGAS_progress_change = yes
 			
@@ -3049,6 +3188,8 @@ MAR_ogas_deccat = {
 			set_temp_variable = { MAR_ogas_char_to_change = 3 } 
 			set_temp_variable = { temp_char_gained = 0.03 } 
 			MAR_OGAS_char_change = yes
+			
+			country_event = { id = MAR_Kosygin_OGAS.7 days = 1 }
 		}
 	}
 	
@@ -3070,6 +3211,7 @@ MAR_ogas_deccat = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_foutrh_develop_army_verison"
+			TNO_improve_research_facilities_high = yes
 			set_temp_variable = { temp_progress_gained = 0.07 } 
 			MAR_OGAS_progress_change = yes
 			
@@ -3105,6 +3247,7 @@ MAR_ogas_deccat = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_foutrh_stress_test_kazan"
+			TNO_improve_research_facilities_high = yes
 			set_temp_variable = { temp_progress_gained = 0.07 } 
 			MAR_OGAS_progress_change = yes
 			
@@ -3121,6 +3264,7 @@ MAR_ogas_deccat = {
 			MAR_OGAS_char_change = yes
 			
 			add_to_variable = { MAR_ogas_gain = 0.01 }
+			country_event = { id = MAR_Kosygin_OGAS.8 days = 1 }
 		}
 	}
 	
@@ -3142,6 +3286,8 @@ MAR_ogas_deccat = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_foutrh_stress_test_kazan"
+			TNO_improve_research_facilities_high = yes
+			TNO_improve_research_facilities_high = yes
 			set_temp_variable = { temp_progress_gained = 0.05 } 
 			MAR_OGAS_progress_change = yes
 			
@@ -3192,6 +3338,8 @@ MAR_ogas_deccat = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_intergrate_into_civil_economics"
+			set_temp_variable = { pus_temp = 4 }
+			econ_pus_change = yes
 			set_temp_variable = { temp_progress_gained = 0.1 } 
 			MAR_OGAS_progress_change = yes
 			
@@ -3206,6 +3354,8 @@ MAR_ogas_deccat = {
 			set_temp_variable = { MAR_ogas_char_to_change = 3 } 
 			set_temp_variable = { temp_char_gained = -0.02 } 
 			MAR_OGAS_char_change = yes
+
+			country_event = { id = MAR_Kosygin_OGAS.9 days = 1 }
 		}
 	}
 	
@@ -3227,6 +3377,8 @@ MAR_ogas_deccat = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_intergrate_into_millitary_economics"
+			set_temp_variable = { temp_econ_GDP_boost_percentage = 0.04 }
+			econ_GDP_boost_once_percentage = yes
 			set_temp_variable = { temp_progress_gained = 0.1 } 
 			MAR_OGAS_progress_change = yes
 			
@@ -3258,6 +3410,8 @@ MAR_ogas_deccat = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_intergrate_into_army"
+			TNO_improve_army_professionalism_high = yes
+			army_experience	= 25
 			set_temp_variable = { temp_progress_gained = 0.1 } 
 			MAR_OGAS_progress_change = yes
 			
@@ -3293,6 +3447,8 @@ MAR_ogas_deccat = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_fifth_integrate_into_education"
+			TNO_improve_academic_base_high = yes
+			TNO_improve_academic_base_high = yes
 			set_temp_variable = { temp_progress_gained = 0.1 } 
 			MAR_OGAS_progress_change = yes
 			
@@ -3328,6 +3484,17 @@ MAR_ogas_deccat = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_fifth_semiconductor_valley"
+			add_victory_points = {
+				province = 11339
+				value = 5
+			}
+			851 = {
+				add_building_construction = {
+					type = offices
+					level = 1
+					instant_build = yes
+				}
+			}
 			set_temp_variable = { temp_progress_gained = 0.1 } 
 			MAR_OGAS_progress_change = yes
 			
