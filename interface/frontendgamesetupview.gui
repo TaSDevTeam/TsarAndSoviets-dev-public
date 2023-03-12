@@ -695,20 +695,27 @@ guiTypes = {
 				pdx_tooltip = "BOOKMARK_BEREZNIKI_INFO"
 				pdx_tooltip_delayed = "BOOKMARK_BEREZNIKI_INFO_DELAYED"
 			}
-			iconType = { # BEREZNIKI INFO 
-				name = "country_selection_info_berezniki_2"
-				position = { x = 627 y = 0 }
-				spriteType = "GFX_country_selection_alert_big_shine"
-				pdx_tooltip = "BOOKMARK_BEREZNIKI_INFO"
-				pdx_tooltip_delayed = "BOOKMARK_BEREZNIKI_INFO_DELAYED"
+			iconType = { # VORKUTA BLOCKED ENTRY
+				name = "countries_blocker_vorkuta_entry"
+				position = { x = 647 y = 20 }
+				spriteType = "GFX_country_selection_screen_blocker_big"
+				pdx_tooltip = "BOOKMARK_VORKUTA_BLOCKER"
+				pdx_tooltip_delayed = "BOOKMARK_VORKUTA_BLOCKER_DELAYED"
 			}
-			#iconType = { # VORKUTA BLOCKED ENTRY
-			#	name = "countries_blocker_vorkuta_entry"
-			#	position = { x = 647 y = 20 }
-			#	spriteType = "GFX_country_selection_screen_blocker_big"
-			#	pdx_tooltip = "BOOKMARK_VORKUTA_BLOCKER"
-			#	pdx_tooltip_delayed = "BOOKMARK_VORKUTA_BLOCKER_DELAYED"
-			#}
+			iconType = { # OYROTIA BLOCKED ENTRY
+				name = "countries_blocker_oyrotia_entry"
+				position = { x = 467 y = 90 }
+				spriteType = "GFX_country_selection_screen_blocker_big"
+				pdx_tooltip = "BOOKMARK_OYROTIA_BLOCKER"
+				pdx_tooltip_delayed = "BOOKMARK_OYROTIA_BLOCKER_DELAYED"
+			}
+			iconType = { # KAMCHATKA BLOCKED ENTRY
+				name = "countries_blocker_kamchatka_entry"
+				position = { x = 647 y = 90 }
+				spriteType = "GFX_country_selection_screen_blocker_big"
+				pdx_tooltip = "BOOKMARK_KAMCHATKA_BLOCKER"
+				pdx_tooltip_delayed = "BOOKMARK_KAMCHATKA_BLOCKER_DELAYED"
+			}
 			iconType = { # FRANCE BLOCKED ENTRY
 				name = "countries_blocker_big_pakt_3_entry"
 				position = { x = 287 y = 160 }

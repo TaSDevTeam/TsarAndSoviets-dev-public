@@ -609,6 +609,16 @@ WSR_WSB_is_compatible = {
 					has_government = paternalism
 				}
 			}
+			AND = {
+				WSR = {
+					original_tag = MAR
+					has_government = socialist
+				}
+				WSB = {
+					original_tag = SVR
+					has_government = paternalism
+				}
+			}
 		}
 	}
 	else = { always = no }
@@ -1071,6 +1081,22 @@ RWS_SIB_is_compatible = {
                     }
                     SIB = {
                         original_tag = KEM
+                    }
+                }
+            }
+			AND = {
+                RWS = {
+                    original_tag = MAR
+                    has_government = socialist
+                }
+                OR = {
+                    SIB = {
+                        original_tag = TOM
+						has_government = socialist
+                    }
+                    SIB = {
+                        original_tag = KEM
+						has_government = paternalism
                     }
                 }
             }
