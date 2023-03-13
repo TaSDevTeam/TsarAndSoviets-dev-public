@@ -2305,14 +2305,14 @@ MAR_category_prestol_terrorists = {
 		timeout_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Timeout MAR_put_down_taboritskys_bandits"
 			custom_effect_tooltip = MAR_taboritskys_insurgency_failure_tt
-			#country_event = { id = omskbatov.4 days = 5 }
+			country_event = { id = MAR_Kosygin_Prestol.16 days = 5 }
 		}
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision MAR_put_down_taboritskys_bandits"
 			custom_effect_tooltip = MAR_taboritskys_insurgency_success_tt
-			hidden_effect = {
-				#country_event = { id = omskbatov.3 days = 5 }
-			}
+			#hidden_effect = {
+			#	country_event = { id = MAR_Kosygin_Prestol.15 days = 5 }
+			#}
 		}
 	}
 	

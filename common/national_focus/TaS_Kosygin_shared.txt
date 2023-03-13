@@ -100,13 +100,13 @@ shared_focus = {
 shared_focus = {
 	id = MAR_kospol_bloody_day
 	icon = GFX_MAR_kospol_red_day
-	cost = 3
+	cost = 1
 	allow_branch = {
 		has_country_flag = MAR_prestol_active
 	}
-	bypass = {
-		always = yes
-	}
+	#bypass = {
+	#	always = yes
+	#}
 	x = 5
 	y = 0
 	completion_reward = {

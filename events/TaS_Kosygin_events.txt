@@ -1375,7 +1375,7 @@ country_event = { #400 event 1
 		}
 		add_manpower = var:tempRandom
 		army_experience = 5
-		
+		country_event = { id = MAR_Kosygin_Prestol.14 days = 3 }
 	}
 }
 
@@ -1393,6 +1393,7 @@ country_event = { #400 event 2
 		name = MAR_Kosygin_Prestol.14.a
 		ai_chance = { factor = 1 }
 		add_manpower = -1
+		country_event = { id = MAR_Kosygin_Prestol.14 days = 3 }
 	}
 }
 
@@ -1438,6 +1439,7 @@ country_event = { #fail 1
 		set_politics = {
 			ruling_party = esoteric_nazism
 		}
+		country_event = { id = MAR_Kosygin_Prestol.17 days = 10 }
 	}
 }
 

@@ -521,7 +521,10 @@ ideas = {
 			available = {
 				always = yes
 			}
-			cancel = { has_country_flag = RUS_cancel_all_ideas }
+			cancel = {
+				has_country_flag = RUS_cancel_all_ideas
+				NOT = { has_war_with = PRM }
+			}
 			picture = MAR_kill_AB
 			
 			removal_cost = -1
@@ -545,7 +548,10 @@ ideas = {
 			available = {
 				always = yes
 			}
-			cancel = { has_country_flag = RUS_cancel_all_ideas }
+			cancel = {
+				has_country_flag = RUS_cancel_all_ideas
+				NOT = { has_war_with = PRM }
+			}
 			picture = MAR_kill_AB
 			
 			removal_cost = -1
@@ -568,7 +574,10 @@ ideas = {
 			available = {
 				always = yes
 			}
-			cancel = { has_country_flag = RUS_cancel_all_ideas }
+			cancel = {
+				has_country_flag = RUS_cancel_all_ideas
+				NOT = { has_war_with = PRM }
+			}
 			picture = MAR_kill_AB
 			
 			removal_cost = -1
@@ -592,7 +601,10 @@ ideas = {
 			available = {
 				always = yes
 			}
-			cancel = { has_country_flag = RUS_cancel_all_ideas }
+			cancel = {
+				has_country_flag = RUS_cancel_all_ideas
+				NOT = { has_war_with = PRM }
+			}
 			picture = MAR_Armour_of_God
 			
 			removal_cost = -1

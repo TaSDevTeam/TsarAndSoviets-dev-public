@@ -2411,14 +2411,15 @@ country_event = { # MAR_final_vibori
 	desc = berez_zemsob.21.d
 	fire_only_once = yes
 	picture = GFX_report_event_zemsob_21
-	trigger = {
-		tag = MAR
-		NOT = { has_completed_focus = MAR_sobor_is_voting_now }
-		focus_progress = {
-			focus = MAR_sobor_is_voting_now
-			progress > 0.5
-		}
-	}
+	is_triggered_only = yes
+	#trigger = {
+	#	tag = MAR
+	#	NOT = { has_completed_focus = MAR_sobor_is_voting_now }
+	#	focus_progress = {
+	#		focus = MAR_sobor_is_voting_now
+	#		progress > 0.5
+	#	}
+	#}
 	option = {
 		name = berez_zemsob.21.a
 		ai_chance = { factor = 1 }
