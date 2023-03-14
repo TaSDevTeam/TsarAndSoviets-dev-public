@@ -1121,6 +1121,20 @@ TaS_2WRW_form_ost_zones = {
 			}
 			econ_join_sphere_MAR = yes
 		}
+		MBP = {
+			get_current_government_type = yes
+		    save_party_popularities = yes
+		}
+		RUS = {
+			set_autonomy = {
+				target = MBP
+				autonomy_state = autonomy_client_state
+			}	
+		}	
+		MBP = {
+			restore_previous_government_type = yes
+			apply_party_popularities = yes
+	    }
 	}
 	if = {
 		limit = { MAR = { owns_state = 1404 } }
@@ -1156,6 +1170,20 @@ TaS_2WRW_form_ost_zones = {
 			}
 			econ_join_sphere_MAR = yes
 		}
+		MBL = {
+			get_current_government_type = yes
+		    save_party_popularities = yes
+		}
+		RUS = {
+			set_autonomy = {
+				target = MBL
+				autonomy_state = autonomy_client_state
+			}	
+		}	
+		MBL = {
+			restore_previous_government_type = yes
+			apply_party_popularities = yes
+	    }
 	}
 	if = {
 		limit = { MAR = { owns_state = 1428 } }
@@ -1191,6 +1219,20 @@ TaS_2WRW_form_ost_zones = {
 			}
 			econ_join_sphere_MAR = yes
 		}
+		MUK = {
+			get_current_government_type = yes
+		    save_party_popularities = yes
+		}
+		MUK = {
+			set_autonomy = {
+				target = MUK
+				autonomy_state = autonomy_client_state
+			}	
+		}	
+		MUK = {
+			restore_previous_government_type = yes
+			apply_party_popularities = yes
+	    }
 	}
 	if = {
 		limit = { MAR = { owns_state = 1532 } }
@@ -1219,6 +1261,20 @@ TaS_2WRW_form_ost_zones = {
 			}
 			econ_join_sphere_MAR = yes
 		}
+		MTV = {
+			get_current_government_type = yes
+		    save_party_popularities = yes
+		}
+		RUS = {
+			set_autonomy = {
+				target = MTV
+				autonomy_state = autonomy_client_state
+			}	
+		}	
+		MTV = {
+			restore_previous_government_type = yes
+			apply_party_popularities = yes
+	    }
 	}
 	if = {
 		limit = { MAR = { owns_state = 231 } }
@@ -1256,6 +1312,20 @@ TaS_2WRW_form_ost_zones = {
 			}
 			econ_join_sphere_MAR = yes
 		}
+		MCS = {
+			get_current_government_type = yes
+		    save_party_popularities = yes
+		}
+		RUS = {
+			set_autonomy = {
+				target = MCS
+				autonomy_state = autonomy_client_state
+			}	
+		}	
+		MCS = {
+			restore_previous_government_type = yes
+			apply_party_popularities = yes
+	    }
 	}
 	if = {
 		limit = { 

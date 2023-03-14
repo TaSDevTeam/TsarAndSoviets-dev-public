@@ -382,6 +382,20 @@ MAR_install_mil_turkestan = {
 			set_cosmetic_tag = MilZones_Kosygin
 		}
 	}
+	MTR = {
+		get_current_government_type = yes
+		save_party_popularities = yes
+	}
+	RUS = {
+		set_autonomy = {
+			target = MTR
+			autonomy_state = autonomy_client_state
+		}	
+	}	
+	MTR = {
+		restore_previous_government_type = yes
+		apply_party_popularities = yes
+	}
 }
 MAR_Turkestan_govern = {
 	XYZ = {
