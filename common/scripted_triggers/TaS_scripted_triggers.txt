@@ -59,6 +59,16 @@ is_german_unifier = {
 		original_tag = GSU
 	}
 }
+
+is_european_major = {
+	OR = {
+		original_tag = ENG
+		original_tag = ITA
+		original_tag = FRA
+		original_tag = IBR
+		original_tag = FIT
+	}
+}
 is_russian_postger = {
 	OR = {
 		original_tag = BRL
