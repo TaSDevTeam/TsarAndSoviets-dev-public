@@ -1067,6 +1067,15 @@ UAR_initialize_Faction_Mechanic = {
 	GER = {
 		TaS_fopo_add_uar_influence_battle_tab = yes
 	}
+	GER = {
+		activate_mission = GER_Faction_timer_Mission
+	}
+	MAR = {
+		activate_mission = MAR_Faction_timer_Mission
+	}
+	UAR = {
+		activate_mission = UAR_Faction_timer_Mission
+	}
 	every_country = {
 		news_event = { id = berez_dobrovoltsy_world_news.17 }
 	}
@@ -1230,7 +1239,7 @@ UAR_Faction_Influence_Calc = { #Calculate who is in the lead and what happens ac
 			limit = { 
 				AND = {
 					check_variable = { UAR_leading_faction_idx = 0 } 
-					check_variable = { UAR_leading_faction > 150 } 
+					check_variable = { UAR_leading_faction > 100 } 
 				}
 			}
 			GER = {
@@ -1247,7 +1256,7 @@ UAR_Faction_Influence_Calc = { #Calculate who is in the lead and what happens ac
 			limit = { 
 				AND = {
 					check_variable = { UAR_leading_faction_idx = 1 } 
-					check_variable = { UAR_leading_faction > 150 } 
+					check_variable = { UAR_leading_faction > 100 } 
 				}
 			}
 			GER = {
@@ -1264,7 +1273,7 @@ UAR_Faction_Influence_Calc = { #Calculate who is in the lead and what happens ac
 			limit = { 
 				AND = {
 					check_variable = { UAR_leading_faction_idx = 2 } 
-					check_variable = { UAR_leading_faction > 150 } 
+					check_variable = { UAR_leading_faction > 100 } 
 				}
 			}
 			GER = {

@@ -1,4 +1,26 @@
 GER_foreign_policy_category = {
+	GER_Faction_timer_Mission = {
+		icon = GFX_decision_clock
+		activation = {
+			always = no
+		}
+		available = {
+			hidden_trigger = {
+				NOT = { TNO_fopo_uar_influence_battle_selected = yes }
+			}
+		}
+		cancel_trigger = {
+		}
+		is_good = no
+		days_mission_timeout = 365
+		allowed = {
+			tag = UAR
+		}
+		timeout_effect = {
+			custom_effect_tooltip = UAR_Faction_timer_tt
+		}
+	}
+	
 	GER_Faction_Join_RUS_Mission = {
 		icon = GFX_decision_document_cancel
 		activation = {
