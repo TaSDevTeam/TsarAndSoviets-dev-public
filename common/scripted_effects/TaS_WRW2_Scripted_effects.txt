@@ -16,6 +16,15 @@ TaS_fopo_remove_manchurian_civil_war_tab = {
 	TNO_remove_fopo_conflict_tab = yes
 }
 
+TaS_fopo_add_iranian_civil_war_tab = {
+	set_temp_variable = { conflict_id = token:GC_IranCW }
+	TNO_add_fopo_conflict_tab = yes
+}
+TaS_fopo_remove_iranian_civil_war_tab = {
+	set_temp_variable = { conflict_id = token:GC_IranCW }
+	TNO_remove_fopo_conflict_tab = yes
+}
+
 TaS_2WRW_manchuria_spawn_states = {
 	custom_effect_tooltip = TaS_2WRW_manchuria_spawn_states_tt
 	PFF = {

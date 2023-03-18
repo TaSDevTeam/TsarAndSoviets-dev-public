@@ -628,6 +628,197 @@ on_actions = {
 					}
 					set_global_flag = skip_default_capitulation
 			}
+			else_if = {
+					limit = {
+						FROM = {
+							OR = {
+								tag = PER
+								tag = IRL
+								tag = IRC
+								tag = IRB
+								tag = IRA
+								tag = IRI
+							}
+						}
+						ROOT = {
+							OR = {
+								tag = PER
+								tag = IRL
+								tag = IRC
+								tag = IRB
+								tag = IRA
+								tag = IRI
+							}
+						}
+					}
+					FROM = {
+						every_enemy_country = {
+							limit = {
+								OR = {
+									original_tag = ROOT
+									is_in_faction_with = ROOT
+								}
+							}
+							remove_from_array = { global.PER_contenders = THIS }
+							FROM = {
+								white_peace = PREV
+								annex_country = {
+									target = PREV
+									transfer_troops = no
+								}
+							}
+						}
+
+						if = {
+							limit = {
+								check_variable = { global.PER_contenders^num = 1 }
+							}
+							clear_array = global.PER_contenders
+
+							if = {
+								limit = { country_exists = PER }
+								news_event = { id = WORLD.18009 days = 1 }
+							}
+							else_if = {
+								limit = { country_exists = IRL }
+								news_event = { id = WORLD.18010 days = 1 }
+							}
+							else_if = {
+								limit = { country_exists = IRI }
+								news_event = { id = WORLD.18014 days = 1 }
+							}
+							else_if = {
+								limit = { country_exists = IRC }
+								news_event = { id = WORLD.18011 days = 1 }
+							}
+							else_if = {
+								limit = { country_exists = IRA }
+								news_event = { id = WORLD.18013 days = 1 }
+							}
+							else_if = {
+								limit = { country_exists = IRB }
+								news_event = { id = WORLD.18012 days = 1 }
+							}
+							every_owned_state = {
+								add_core_of = FROM
+							}
+							remove_ideas = PER_The_Iranian_Civil_War
+							FROM = {
+								set_capital = { state = 266 remember_old_capital = no }
+							}
+						}
+						else_if = {
+							limit = {
+								check_variable = { global.PER_contenders^num = 2 }
+								IRB = {
+									exists = yes
+									has_war = no
+								}
+								has_global_flag = TNO_IRA_collapsed_coalition
+							}
+							clear_array = global.PER_contenders
+
+							if = {
+								limit = { country_exists = IRL }
+								news_event = { id = WORLD.18010 days = 1 }
+							}
+							else_if = {
+								limit = { country_exists = IRC }
+								news_event = { id = WORLD.18011 days = 1 }
+							}
+							else_if = {
+								limit = { country_exists = IRA }
+								news_event = { id = WORLD.18013 days = 1 }
+							}
+							else_if = {
+								limit = { country_exists = IRI }
+								news_event = { id = WORLD.18014 days = 1 }
+							}
+							every_owned_state = {
+								add_core_of = FROM
+							}
+							remove_ideas = PER_The_Iranian_Civil_War
+							FROM = {
+								set_capital = { state = 266 remember_old_capital = no }
+							}
+						}
+					}
+					#Iranian Civil War (Walker added this so he could get a Burgundy thing working)
+					if = { # USA Loses
+						limit = { ROOT = { tag = IRL } }
+						USA = { country_event = USA_IR.6 }
+					}
+					else_if = { # USA Wins
+						limit = {
+							FROM = {
+								tag = IRL
+								has_war = no
+							}
+							has_global_flag = TNO_IRA_collapsed_coalition
+						}
+						USA = { country_event = USA_IR.7 }
+					}
+					#Iranian Civil War (Thanks walker for the code - zero)
+					if = { # JAP Loses
+						limit = { ROOT = { tag = IRI } }
+						JAP = { country_event = jap_fopo.2 }
+					}
+					else_if = { # JAP Wins
+						limit = {
+							FROM = {
+								tag = IRI
+								has_war = no
+							}
+							has_global_flag = TNO_IRA_collapsed_coalition
+						}
+						JAP = { country_event = jap_fopo.3 }
+					}
+
+					if = { # GER Loses
+						limit = { ROOT = { tag = PER } }
+						GER = { country_event = { id = reich_shared.21 days = 2 } }
+					}
+					else_if = { # GER Wins
+						limit = {
+							FROM = {
+								tag = PER
+								has_war = no
+							}
+						}
+						GER = { country_event = { id = reich_shared.20 days = 2 } }
+					}
+					
+					if = { # MAR(not kosygin) Loses
+						limit = { ROOT = { tag = IRC } MAR = { NOT = { has_government = socialist } } }
+						MAR = { country_event = { id = reich_shared.21 days = 2 } }
+					}
+					else_if = { # MAR(not kosygin) Wins
+						limit = {
+							FROM = {
+								tag = IRC
+								has_war = no
+							}
+							MAR = { NOT = { has_government = socialist } }
+						}
+						MAR = { country_event = { id = reich_shared.20 days = 2 } }
+					}
+					
+					if = { # MAR(not kosygin) Loses
+						limit = { ROOT = { tag = IRC } MAR = { has_government = socialist } } 
+						MAR = { country_event = { id = reich_shared.21 days = 2 } }
+					}
+					else_if = { # MAR(not kosygin) Wins
+						limit = {
+							FROM = {
+								tag = IRC
+								has_war = no
+							}
+							MAR = { has_government = socialist }
+						}
+						MAR = { country_event = { id = reich_shared.20 days = 2 } }
+					}
+					set_global_flag = skip_default_capitulation
+				}
 		}
 	}
 }

@@ -1,6 +1,7 @@
 add_namespace = berez_dobrovoltsy
 add_namespace = berez_dobrovoltsy_world_news
 add_namespace =	KUR_CW
+add_namespace = MAR_iranian_cw
 ###dobrovoltsy zone
 
 country_event = { #any help? 
@@ -369,7 +370,8 @@ country_event = { #Iran 1
 				news_event = { id = berez_dobrovoltsy_world_news.13 days = 1 }
 			}
 		}
-		give_resource_rights = { receiver = MAR state = 143 }
+		give_resource_rights = { receiver = MAR state = 411 resources = { oil aluminium rubber tungsten steel chromium uranium } }
+		give_resource_rights = { receiver = MAR state = 412 resources = { oil aluminium rubber tungsten steel chromium uranium } }
 	}
 }
 country_event = { #Spain
@@ -860,6 +862,134 @@ country_event = { # oops 3, government collapsed, asking for russian help
 				}
 			}
 			set_demilitarized_zone = yes
+		}
+	}
+}
+country_event = { #iran
+	id = MAR_iranian_cw.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: berez_dobrovoltsy.1"}
+	title = MAR_iranian_cw.1.t
+	desc = MAR_iranian_cw.1.d
+	trigger = {
+		tag = MAR
+		has_global_flag = Iranian_Civil_War
+	}
+	picture = GFX_event_MAR_dobr2
+	option = { #yes
+		name = MAR_iranian_cw.1.a
+		TaS_fopo_add_iranian_civil_war_tab = yes
+		set_country_flag = MAR_IR_CW_ACTIVE
+	}
+}
+
+country_event = { ### Iran victory
+	id = MAR_iranian_cw.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_iranian_cw.2"}
+	title = MAR_iranian_cw.2.t
+	desc = MAR_iranian_cw.2.desc
+	picture = GFX_report_event_germany_army_2
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = { PER = { has_war = no } }
+
+	option = {
+		name = MAR_iranian_cw.2.a
+		TNO_fopo_remove_iran_civil_war_tab = yes
+		add_political_power = 100
+		add_stability = 0.03
+		add_war_support = 0.03
+		clr_country_flag = MAR_IRCW_arming_IRC
+		clr_country_flag = MAR_IR_CW_ACTIVE
+		if = {
+			limit = { has_government = socialist }
+			add_popularity = { ideology = socialist popularity = 0.02 }
+			set_temp_variable = { target = IRA }
+			TNO_clear_num_volunteers = yes
+			IRA = {
+				econ_join_sphere_MAR = yes
+				give_resource_rights = { receiver = MAR state = 411 resources = { oil aluminium rubber tungsten steel chromium uranium } }
+				give_resource_rights = { receiver = MAR state = 412 resources = { oil aluminium rubber tungsten steel chromium uranium } }
+				TNO_improve_army_professionalism_low = yes
+			}
+		}
+		else_if = {
+			limit = { has_government = despotism }
+			add_popularity = { ideology = despotism popularity = 0.02 }
+			country_event = { id = berez_dobrovoltsy.24 }
+		}
+		add_to_variable = {
+			var = MAR_dobr_infantry_attack
+			value = 0.015
+		}
+		add_to_variable = {
+			var = MAR_dobr_infantry_defence
+			value = 0.01
+		}
+		add_to_variable = {
+			var = MAR_dobr_speed
+			value = 0.01
+		}
+		add_to_variable = {
+			var = MAR_dobr_vertibird_attack
+			value = -0.005
+		}
+		add_to_variable = {
+			var = MAR_dobr_consumption
+			value = -0.005
+		}
+	}
+}
+
+country_event = { ### Iran defeat
+	id = MAR_iranian_cw.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_iranian_cw.3"}
+	title = MAR_iranian_cw.3.t
+	desc = MAR_iranian_cw.3.desc
+	picture = GFX_report_event_germany_anarchy
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = MAR_iranian_cw.3.a
+		TNO_fopo_remove_iran_civil_war_tab = yes
+		add_political_power = -100
+		add_stability = -0.03
+		add_war_support = -0.03
+		clr_country_flag = MAR_IRCW_arming_IRC
+		clr_country_flag = MAR_IR_CW_ACTIVE
+		if = {
+			limit = { has_government = socialist }
+			add_popularity = { ideology = socialist popularity = -0.02 }
+			set_temp_variable = { target = IRA }
+			TNO_clear_num_volunteers = yes
+		}
+		else_if = {
+			limit = { has_government = despotism }
+			add_popularity = { ideology = despotism popularity = -0.02 }
+			set_temp_variable = { target = IRC }
+			TNO_clear_num_volunteers = yes
+		}
+		add_to_variable = {
+			var = MAR_dobr_infantry_attack
+			value = 0.005
+		}
+		add_to_variable = {
+			var = MAR_dobr_infantry_defence
+			value = 0.005
+		}
+		add_to_variable = {
+			var = MAR_dobr_speed
+			value = 0.005
+		}
+		add_to_variable = {
+			var = MAR_dobr_vertibird_attack
+			value = -0.002
+		}
+		add_to_variable = {
+			var = MAR_dobr_consumption
+			value = -0.002
 		}
 	}
 }
