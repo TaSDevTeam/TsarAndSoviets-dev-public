@@ -525,7 +525,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 	hidden_effect = {
 		set_global_flag = WRW2_german_collapse
 		every_country = {
-			set_country_flag = TaS_End_of_WRW2_Russia_Victory_BE_fl
+			news_event = { id = MAR_2WRW_world_news.11 hours = 6}
 		}
 		GPL = {
 			econ_join_sphere_MAR = yes
@@ -766,7 +766,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 	hidden_effect = {
 		set_global_flag = WRW2_german_collapse
 		every_country = {
-			set_country_flag = TaS_End_of_WRW2_Russia_Victory_BE_fl
+			news_event = { id = MAR_2WRW_world_news.11 hours = 6}
 		}
 		every_country = {
 			limit = { is_in_faction_with = GER }

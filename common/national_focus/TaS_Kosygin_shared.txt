@@ -1446,15 +1446,15 @@ shared_focus = {
 ###Nuke Tree###
 shared_focus = {
 	id = MAR_kosnuk_Weapon_of_Prometeus
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosnuk_oryzhie_prometeya
 	cost = 3
 	x = 15
 	y = 0
 	completion_reward = {
-	    #country_event = { 
-		#	id = berez_nuke_belo.1
-		#	days = 0
-		#}
+	    country_event = { 
+			id = MAR_Kosygin.49
+			days = 0
+		}
 		custom_effect_tooltip = RUS_RWS_nukes_into_the_atomic_age_tt
 		add_timed_idea = { idea = RUS_RWS_nukes_into_the_atomic_age_misc_costs days = 90 }
 		RUS_init_nuke_system = yes
@@ -1462,7 +1462,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kosnuk_mythical_inspirations
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosnuk_naychniye_vdohnoveniya
 	cost = 3
 	prerequisite = {
 		focus = MAR_kosnuk_Weapon_of_Prometeus
@@ -1495,7 +1495,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kosnuk_Kurchatov_genius
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosnuk_genii_proshlogo
 	cost = 3
 	prerequisite = {
 		focus = MAR_kosnuk_mythical_inspirations
@@ -1518,7 +1518,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kosnuk_new_kind_of_weapon
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosnuk_prirucheniye_ogna
 	cost = 3
 	prerequisite = {
 		focus = MAR_kosnuk_Weapon_of_Prometeus
@@ -1526,10 +1526,10 @@ shared_focus = {
 	x = 15
 	y = 1
 	completion_reward = {
-		#country_event = { 
-		#	id = berez_nuke_belo.2
-		#	days = 0
-		#}
+		country_event = { 
+			id = MAR_Kosygin.50
+			days = 0
+		}
 		custom_effect_tooltip = RUS_RWS_nukes_expand_the_dalur_mines_tt
 		572 = {
 			add_extra_state_shared_building_slots = 2
@@ -1558,7 +1558,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kosnuk_kurgan_mines
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosnuk_shahti_kurgana
 	cost = 3
 	prerequisite = {
 		focus = MAR_kosnuk_Weapon_of_Prometeus
@@ -1583,7 +1583,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kosnuk_third_world_uranium
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosnuk_uran_cetvertogo_mira
 	cost = 3
 	prerequisite = {
 		focus = MAR_kosnuk_kurgan_mines
@@ -1610,7 +1610,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_kosnuk_tame_the_fire
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_kosnuk_novoe_oruzhie
 	cost = 3
 	prerequisite = {
 		focus = MAR_kosnuk_third_world_uranium
@@ -1621,10 +1621,10 @@ shared_focus = {
 	x = 15
 	y = 3
 	completion_reward = {
-		#country_event = { 
-		#	id = berez_nuke_belo.3
-		#	days = 0
-		#}
+		country_event = { 
+			id = MAR_Kosygin.51
+			days = 0
+		}
 		custom_effect_tooltip = RUS_RWS_nukes_chasing_the_sun_tt
 		add_timed_idea = { idea = RUS_RWS_nukes_chasing_the_sun_misc_costs days = 90 }
 		add_to_variable = { RUSNukesMonthlyProgress = 3 }
@@ -1634,7 +1634,7 @@ shared_focus = {
 ###Kazakhstan###
 shared_focus = {
 	id = MAR_koskaz_red_sun_over_steppe
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_koskaz_red_sun_over_steppe
 	cost = 3
 	x = 22
 	y = 0
@@ -1667,7 +1667,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_koskaz_red_imams
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_koskaz_soviet_imams
 	cost = 3
 	available = { 
 		406 = { 
@@ -1693,7 +1693,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_koskaz_liquidate_other_ideas
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_koskaz_terminate_opposition
 	cost = 3
 	available = { 
 		406 = { 
@@ -1716,7 +1716,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_koskaz_kazakh_autobahn
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_koskaz_Kazakh_autobahn
 	cost = 3
 	available = { 
 		406 = { 
@@ -1730,63 +1730,8 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		hidden_effect = {
-			406 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-			}
-			407 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-			}
-			402 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-			}
-			587 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-			}
-			583 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-			}
-			404 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-			}
-			589 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-			}
-			588 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-			}
-			509 = {
+			every_owned_state = {
+				limit = { is_kazakh_state = yes }
 				add_building_construction = {
 					type = infrastructure
 					level = 2
@@ -1799,7 +1744,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_koskaz_arbeit_macht_frei
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_koskaz_arbeit_macht_frei
 	cost = 3
 	prerequisite = {
 		focus = MAR_koskaz_red_imams
@@ -1813,7 +1758,7 @@ shared_focus = {
 	x = 22
 	y = 2
 	completion_reward = {
-		every_owned_state = {
+		random_state = {
 			limit = { is_kazakh_state = yes }
 			add_extra_state_shared_building_slots = 2
 			add_resource = {
@@ -1825,6 +1770,18 @@ shared_focus = {
 				 amount = 12
 			}
 		}	
+		random_state = {
+			limit = { is_kazakh_state = yes }
+			add_extra_state_shared_building_slots = 2
+			add_resource = {
+				 type = chromium
+				 amount = 12
+			}
+			add_resource = {
+				 type = oil
+				 amount = 12
+			}
+		}
 		country_event = {
 			id = MAR_Kosygin.54
 			days = 0
@@ -1833,7 +1790,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_koskaz_zhuz_aesteisc
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_koskaz_shuz_specific
 	cost = 3
 	prerequisite = {
 		focus = MAR_koskaz_arbeit_macht_frei
@@ -1884,7 +1841,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_koskaz_return_northern_kazakhstan
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_koskaz_returnal_of_south_sibir
 	cost = 3
 	prerequisite = {
 		focus = MAR_koskaz_arbeit_macht_frei
@@ -1893,6 +1850,9 @@ shared_focus = {
 	y = 3
 	completion_reward = {
 		add_political_power = 100
+		583 = { set_variable = { nationality = 151 } }
+		588 = { set_variable = { nationality = 151 } }
+		590 = { set_variable = { nationality = 151 } }
 		country_event = {
 			id = MAR_Kosygin.55
 			days = 0
@@ -1901,7 +1861,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_koskaz_islamic_monbol
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_koskaz_monsoc_with_kazakh_style
 	cost = 3
 	prerequisite = {
 		focus = MAR_koskaz_zhuz_aesteisc

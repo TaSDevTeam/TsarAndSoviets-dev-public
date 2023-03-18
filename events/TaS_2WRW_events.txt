@@ -3866,21 +3866,48 @@ news_event = {
 				}
 			}
 		}
-		set_country_flag = TaS_2WRW_BELOOZ_STARTED_BE_fl
+		if = {
+			limit = { MAR = { has_government = despotism } }
+			set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_BEGINNING_BELOZERSKY }
+			TNO_fire_super_event = yes
+		}
+		else_if = {
+			limit = { MAR = { has_government = socialist } }
+			set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_BEGINNING_KOSYGIN }
+			TNO_fire_super_event = yes
+		}
 	}
 	option = {
 		name = MAR_2WRW_world_news.6.b
 		trigger = {
 			original_tag = GER
 		}
-		set_country_flag = TaS_2WRW_BELOOZ_STARTED_BE_fl
+		if = {
+			limit = { MAR = { has_government = despotism } }
+			set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_BEGINNING_BELOZERSKY }
+			TNO_fire_super_event = yes
+		}
+		else_if = {
+			limit = { MAR = { has_government = socialist } }
+			set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_BEGINNING_KOSYGIN }
+			TNO_fire_super_event = yes
+		}
 	}
 	option = {
 		name = MAR_2WRW_world_news.6.c
 		trigger = {
 			original_tag = MAR
 		}
-		set_country_flag = TaS_2WRW_BELOOZ_STARTED_BE_fl
+		if = {
+			limit = { MAR = { has_government = despotism } }
+			set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_BEGINNING_BELOZERSKY }
+			TNO_fire_super_event = yes
+		}
+		else_if = {
+			limit = { MAR = { has_government = socialist } }
+			set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_BEGINNING_KOSYGIN }
+			TNO_fire_super_event = yes
+		}
 	}
 }
 
@@ -4025,18 +4052,38 @@ news_event = {
 	is_triggered_only = yes
 	
 	option = {
-		name = MAR_2WRW_world_news.10.a
+		name = MAR_2WRW_world_news.11.a
 		trigger = {
 			NOT = {
 				tag = MAR
 			}
 		}
+		if = {
+			limit = { MAR = { has_government = despotism } }
+			set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_VICTORY_BELOZERSKY }
+			TNO_fire_super_event = yes
+		}
+		else_if = {
+			limit = { MAR = { has_government = socialist } }
+			set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_VICTORY_KOSYGIN }
+			TNO_fire_super_event = yes
+		}
 	}
 	option = {
-		name = MAR_2WRW_world_news.10.b
-			trigger = {
-				tag = MAR
-			}
+		name = MAR_2WRW_world_news.11.b
+		trigger = {
+			tag = MAR
+		}
+		if = {
+			limit = { MAR = { has_government = despotism } }
+			set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_VICTORY_BELOZERSKY }
+			TNO_fire_super_event = yes
+		}
+		else_if = {
+			limit = { MAR = { has_government = socialist } }
+			set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_VICTORY_KOSYGIN }
+			TNO_fire_super_event = yes
+		}
 	}
 }
 

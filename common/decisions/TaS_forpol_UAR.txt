@@ -429,7 +429,7 @@ UAR_foreign_policy_category = {
 			NOT = { check_variable = { UAR_leading_faction_idx = 1 } }
 		}
 		is_good = no
-		days_mission_timeout = 60
+		days_mission_timeout = 30
 		allowed = {
 			tag = UAR
 		}
@@ -463,7 +463,7 @@ UAR_foreign_policy_category = {
 			NOT = { check_variable = { UAR_leading_faction_idx = 2 } }
 		}
 		is_good = no
-		days_mission_timeout = 60
+		days_mission_timeout = 30
 		allowed = {
 			tag = UAR
 		}
@@ -497,7 +497,7 @@ UAR_foreign_policy_category = {
 			NOT = { check_variable = { UAR_leading_faction_idx = 0 } }
 		}
 		is_good = yes
-		days_mission_timeout = 180
+		days_mission_timeout = 60
 		allowed = {
 			tag = UAR
 		}
@@ -517,5 +517,89 @@ UAR_foreign_policy_category = {
 			custom_effect_tooltip = UAR_Faction_Close_Mechanic_tt
 		}
 	}
-
+	UAR_Faction_timer_Mission = {
+		icon = GFX_decision_clock
+		activation = {
+			always = no
+		}
+		available = {
+			hidden_trigger = {
+				NOT = { TNO_fopo_uar_influence_battle_selected  = yes }
+			}
+		}
+		cancel_trigger = {
+		}
+		is_good = no
+		days_mission_timeout = 365
+		allowed = {
+			tag = UAR
+		}
+		timeout_effect = {
+			find_highest_in_array = {
+				array = UAR_faction_influence_array
+				value = uar_lead_val
+				index = uar_lead_idx
+			}
+			set_variable = { UAR_leading_faction = uar_lead_val }
+			set_variable = { UAR_leading_faction_idx = uar_lead_idx }
+			if = { #neutral overpowers
+				limit = { 
+					AND = {
+						check_variable = { UAR_leading_faction_idx = 0 } 
+					}
+				}
+				MAR = {
+					country_event = {
+						id = MAR_Kosygin_UAR.4
+						days = 1
+					}
+				}
+				GER = {
+					country_event = {
+						id = MAR_Kosygin_UAR.4
+						days = 1
+					}
+				}
+			}
+			else_if = { #russkie wins
+				limit = { 
+					AND = {
+						check_variable = { UAR_leading_faction_idx = 1 }  
+					}
+				}
+				MAR = {
+					country_event = {
+						id = MAR_Kosygin_UAR.2
+						days = 1
+					}
+				}
+				GER = {
+					country_event = {
+						id = MAR_Kosygin_UAR.2
+						days = 1
+					}
+				}
+			}
+			else_if = { #The Pakt overpowers 
+				limit = { 
+					AND = {
+						check_variable = { UAR_leading_faction_idx = 2 } 
+					}
+				}
+				MAR = {
+					country_event = {
+						id = MAR_Kosygin_UAR.4
+						days = 1
+					}
+				}
+				GER = {
+					country_event = {
+						id = MAR_Kosygin_UAR.4
+						days = 1
+					}
+				}
+			}
+			custom_effect_tooltip = UAR_Faction_timer_tt
+		}
+	}
 }

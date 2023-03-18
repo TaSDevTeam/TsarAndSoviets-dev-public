@@ -2627,7 +2627,8 @@ news_event = { # Belozerskiy Unifies Russia
             limit = {
                 is_ai = no
             }
-            set_country_flag = TaS_Belozerskiy_Russia_Reunification
+            set_temp_variable = { TNO_temp_super_event = token:SE_BELOZERSKY_RUSSIAN_REUNIFICATION }
+			TNO_fire_super_event = yes
         }
 	}
 	
@@ -2643,7 +2644,8 @@ news_event = { # Belozerskiy Unifies Russia
             limit = {
                 is_ai = no
             }
-            set_country_flag = TaS_Belozerskiy_Russia_Reunification
+            set_temp_variable = { TNO_temp_super_event = token:SE_BELOZERSKY_RUSSIAN_REUNIFICATION }
+			TNO_fire_super_event = yes
         }
 		
 	}
@@ -2666,7 +2668,11 @@ news_event = { #WRW2 Total Ending
             limit = {
                 is_ai = no
             }
-            set_country_flag = TaS_End_of_WRW2_Russia_Victory_BE_fl
+            if = {
+				limit = { MAR = has_government = despotism }
+				set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_VICTORY_BELOZERSKY }
+				TNO_fire_super_event = yes
+			}
         }
 	}
 	
@@ -2682,7 +2688,11 @@ news_event = { #WRW2 Total Ending
             limit = {
                 is_ai = no
             }
-            set_country_flag = TaS_End_of_WRW2_Russia_Victory_BE_fl
+			if = {
+				limit = { MAR = has_government = despotism }
+				set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_VICTORY_BELOZERSKY }
+				TNO_fire_super_event = yes
+			}
         }
 	}
 }
@@ -2704,7 +2714,8 @@ news_event = { # Kosygin Unifies Russia
             limit = {
                 is_ai = no
             }
-            set_country_flag = TaS_Kosygin_Russia_Reunification
+            set_temp_variable = { TNO_temp_super_event = token:SE_KOSYGIN_RUSSIAN_REUNIFICATION }
+			TNO_fire_super_event = yes
         }
 	}
 	
@@ -2720,7 +2731,8 @@ news_event = { # Kosygin Unifies Russia
             limit = {
                 is_ai = no
             }
-            set_country_flag = TaS_Kosygin_Russia_Reunification
+            set_temp_variable = { TNO_temp_super_event = token:SE_RUSSIAN_REUNIFICATION_KOSYGIN }
+			TNO_fire_super_event = yes
         }
 		
 	}

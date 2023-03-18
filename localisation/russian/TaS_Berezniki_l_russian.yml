@@ -3537,7 +3537,7 @@
 
  GC_UAR_influence_battle:0 "Ближневосточная Большая Игра"
  TNO_Cold_War_Victory_ID_51:0 "БЛИЖНЕВОСТОЧНАЯ БОЛЬШАЯ ИГРА"
- UAR_IBC_desc:0 "Влияние [MAR.GetFlag]§m[MAR.GetNameDEF]§!: [?UAR.UAR_faction_influence_array^1]\n[MAR.GetFlag]§mИх влияние§! возврастает на §Y[?UAR.UAR_faction_influence_gain_array^1]§! каждый месяц.\n\nВлияние [GER.GetFlag]§q[GER.GetNameDEF]§!: [?UAR.UAR_faction_influence_array^2]\n[GER.GetFlag]§qИх влияние§! возврастает на §Y[?UAR.UAR_faction_influence_gain_array^2]§! каждый месяц.\n\nВлияние §V[UAR.GetFlag][UAR.GetNameDEF]§!: [?UAR.UAR_faction_influence_array^0]\n[UAR.GetFlag]§VИх влияние§!возврастает на §Y[?UAR.UAR_faction_influence_gain_array^0]§! каждый месяц.\n\nНа данный момент лидирует [GetFactionUARLeader].§!"
+ UAR_IBC_desc:0 "Влияние [MAR.GetFlag]§m[MAR.GetNameDEF]§!: [?UAR.UAR_faction_influence_array^1]\n[MAR.GetFlag]§mИх влияние§! возврастает на §Y[?UAR.UAR_faction_influence_gain_array^1]§! каждый месяц.\n\nВлияние [GER.GetFlag]§q[GER.GetNameDEF]§!: [?UAR.UAR_faction_influence_array^2]\n[GER.GetFlag]§qИх влияние§! возврастает на §Y[?UAR.UAR_faction_influence_gain_array^2]§! каждый месяц.\n\nВлияние §V[UAR.GetFlag][UAR.GetNameDEF]§!: [?UAR.UAR_faction_influence_array^0]\n[UAR.GetFlag]§VИх влияние§!возврастает на §Y[?UAR.UAR_faction_influence_gain_array^0]§! каждый месяц.\n\nНа данный момент лидирует [UAR.GetFactionUARLeader].§!"
  
  UAR_faction_influence_german_decrease_tt:0 "Это §Rпонизит§! влияние §sПакта§! на §Y[?InfluenceChangeTemp_txt].§!\n"
  UAR_faction_influence_german_growth_tt:0 "Это §Gповысит§! влияние §sПакта§! на §Y[?InfluenceChangeTemp_txt].§!\n"
@@ -3605,7 +3605,13 @@
  MAR_Faction_Join_Pakt_Mission_desc:0 "Наши дипломаты выразили озабоченность тем, что если дипломатическая ситуация продолжит идти тем же курсом, то Объединённая Арабская Республика присоединится [GER.GetFlag] к §sГермании§! в §sПакте Единства§! в конце этого дипломатического противоборства."
  MAR_Faction_Close_Faction_Mechanic_Mission:0 "§V[UAR.GetFlag]Объединённая Арабская Республика§! §Rостанется независимой!§!"
  MAR_Faction_Close_Faction_Mechanic_Mission_desc:0 "Наши дипломаты выразили озабоченность тем, что если дипломатическая ситуация продолжит идти тем же курсом, то Объединённая Арабская Республика решит §Vостаться на нейтральной позиции§! в Холодной войне."
-
+ 
+ MAR_Faction_timer_Mission:0 "§YФинальный выбор!§!"
+ GER_Faction_timer_Mission:0 "§YФинальный выбор!§!"
+ UAR_Faction_timer_Mission:0 "§YФинальный выбор!§!"
+ 
+ UAR_Faction_timer_tt:0 "§V[UAR.GetFlag]Объединённая Арабская Республика§! §Yсделает выбор, опираясь на ведущую фракцию в этой борьбе!§!"
+ 
  MAR_Faction_Join_OFN_Mission.tt:0 "§G[UAR.GetFlag]Объединённая Арабская Республика присоединится к §eРоссийской Сфере.§!§!"
  MAR_Faction_Join_Pakt_Mission.tt:0 "§R[UAR.GetFlag]Объединённая Арабская Республика присоединится к §sПакту Единства.§!§!"
  
