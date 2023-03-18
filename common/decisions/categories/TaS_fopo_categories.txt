@@ -8,8 +8,8 @@ MAR_foreign_policy_category = {
 	visible = {
 		check_variable = { TNO_active_conflicts^num > 0 }
 	}
-	visible_when_empty = yes
-	scripted_gui = TNO_fopo_container
+	#visible_when_empty = yes
+	#scripted_gui = TNO_fopo_container
 	priority = 100010
 
 	on_map_area = {
@@ -48,7 +48,7 @@ UAR_foreign_policy_category = {
 	visible = {
 		check_variable = { TNO_active_conflicts^num > 0 }
 	}
-	visible_when_empty = yes
-	scripted_gui = TNO_fopo_container
+	#visible_when_empty = yes
+	#scripted_gui = TNO_fopo_container
 	priority = 100010
 }

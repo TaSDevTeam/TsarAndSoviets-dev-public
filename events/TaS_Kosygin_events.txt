@@ -589,6 +589,7 @@ country_event = {#red legion
 	option = {
 		name = MAR_Kosygin.36.a
 		ai_chance = { factor = 1 }	
+		TaS_Global_Conflicts_Initalize = yes
 		set_country_flag = MAR_started_volunteer_sending
 		add_dynamic_modifier = { modifier = MAR_dobrovoltsy_modifier }
 		custom_effect_tooltip = MAR_tt_Volunteer_available
