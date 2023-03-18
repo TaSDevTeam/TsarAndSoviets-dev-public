@@ -1514,7 +1514,7 @@ MAR_foreign_policy_category = {
 
 MAR_foreign_policy_category = {
 
-	MAR_IRCW_send_the_volunteers = {
+	MAR_IRCW_send_the_volunteers_kosygin = {
 		available = {
 			has_country_flag = MAR_IR_CW_ACTIVE
 		}
@@ -1535,7 +1535,7 @@ MAR_foreign_policy_category = {
 		}
 	}
 
-	MAR_IRCW_increase_the_volunteers = {
+	MAR_IRCW_increase_the_volunteers_kosygin = {
 
 		available = {
 			has_country_flag = MAR_IR_CW_ACTIVE
@@ -1572,7 +1572,7 @@ MAR_foreign_policy_category = {
 		}
 	}
 
-	MAR_IRCW_max_volunteers = {
+	MAR_IRCW_max_volunteers_kosygin = {
 
 		available = {
 			has_country_flag = MAR_IR_CW_ACTIVE
@@ -1607,7 +1607,7 @@ MAR_foreign_policy_category = {
 		}
 	}
 	
-	MAR_IRCW_authorize_equipment_send = {
+	MAR_IRCW_authorize_equipment_send_kosygin = {
 	
 		available = {
 		}
@@ -1617,7 +1617,7 @@ MAR_foreign_policy_category = {
 
 		visible = {
 			TNO_fopo_iran_selected = yes
-			has_government = socialist
+			MAR = { has_government = socialist }
 		}
 
 		remove_effect = {
@@ -1626,7 +1626,7 @@ MAR_foreign_policy_category = {
 		}
 	}
 	
-	MAR_IRCW_authorize_equipment_sale = {
+	MAR_IRCW_authorize_equipment_sale_kosygin = { 
 	
 		available = {
 		}
@@ -1647,7 +1647,7 @@ MAR_foreign_policy_category = {
 		}
 	}
 	
-	MAR_IRCW_send_guns = {
+	MAR_IRCW_send_guns_kosygin = {
 
 		available = {
 			has_country_flag = MAR_IRCW_arming_IRA
@@ -1674,7 +1674,7 @@ MAR_foreign_policy_category = {
 		}
 	}
 
-	MAR_IRCW_send_infantry_at = {
+	MAR_IRCW_send_infantry_at_kosygin = {
 
 		available = {
 			has_country_flag = MAR_IRCW_arming_IRA
@@ -1702,7 +1702,7 @@ MAR_foreign_policy_category = {
 		}
 	}
 
-	MAR_IRCW_loans = {
+	MAR_IRCW_loans_kosygin = {
 
 		available = {
 			has_country_flag = MAR_IRCW_sending_loans
@@ -1726,7 +1726,7 @@ MAR_foreign_policy_category = {
 	}
 
 	### More Equipment ###
-	MAR_IRCW_support_equipment = {
+	MAR_IRCW_support_equipment_kosygin = {
 
 		available = {
 			has_country_flag = MAR_IRCW_arming_IRA
@@ -1754,7 +1754,7 @@ MAR_foreign_policy_category = {
 		}
 	}
 
-	MAR_IRCW_anti_air = {
+	MAR_IRCW_anti_air_kosygin = {
 
 		available = {
 			has_country_flag = MAR_IRCW_arming_IRA
@@ -1782,7 +1782,7 @@ MAR_foreign_policy_category = {
 		}
 	}
 
-	MAR_IRCW_artillery = {
+	MAR_IRCW_artillery_kosygin = {
 
 		available = {
 			has_country_flag = MAR_IRCW_arming_IRA
@@ -1810,7 +1810,7 @@ MAR_foreign_policy_category = {
 		}
 	}
 	
-	MAR_IRCW_loosening_regulations = {
+	MAR_IRCW_loosening_regulations_kosygin = {
 
 		available = {
 			has_country_flag = MAR_IRCW_arming_IRA

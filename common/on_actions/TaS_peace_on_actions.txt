@@ -790,7 +790,7 @@ on_actions = {
 					
 					if = { # MAR(not kosygin) Loses
 						limit = { ROOT = { tag = IRC } MAR = { NOT = { has_government = socialist } } }
-						MAR = { country_event = { id = reich_shared.21 days = 2 } }
+						MAR = { country_event = { id = MAR_iranian_cw.3 days = 2 } }
 					}
 					else_if = { # MAR(not kosygin) Wins
 						limit = {
@@ -800,12 +800,12 @@ on_actions = {
 							}
 							MAR = { NOT = { has_government = socialist } }
 						}
-						MAR = { country_event = { id = reich_shared.20 days = 2 } }
+						MAR = { country_event = { id = MAR_iranian_cw.2 days = 2 } }
 					}
 					
 					if = { # MAR(not kosygin) Loses
 						limit = { ROOT = { tag = IRC } MAR = { has_government = socialist } } 
-						MAR = { country_event = { id = reich_shared.21 days = 2 } }
+						MAR = { country_event = { id = MAR_iranian_cw.3 days = 2 } }
 					}
 					else_if = { # MAR(not kosygin) Wins
 						limit = {
@@ -815,7 +815,7 @@ on_actions = {
 							}
 							MAR = { has_government = socialist }
 						}
-						MAR = { country_event = { id = reich_shared.20 days = 2 } }
+						MAR = { country_event = { id = MAR_iranian_cw.2 days = 2 } }
 					}
 					set_global_flag = skip_default_capitulation
 				}

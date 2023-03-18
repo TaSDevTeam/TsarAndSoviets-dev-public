@@ -698,7 +698,11 @@ defined_text = {
 		localization_key = MAR_Kosygin_manchurian_civil_war_category_desc
 	}
 	text = {
-		trigger = { check_variable = { conflict_id = token:GC_ManchurianCivilWar } tag = MAR }
+		trigger = { 
+			check_variable = { conflict_id = token:GC_ManchurianCivilWar }
+			tag = MAR 
+			NOT = { has_government = socialist }
+		}
 		localization_key = MAR_manchurian_civil_war_category_desc
 	}
 	text = {
@@ -714,11 +718,19 @@ defined_text = {
 		localization_key = UAR_IBC_desc
 	}
 	text = {
-		trigger = { check_variable = { conflict_id = token:GC_IranCW } tag = MAR }
+		trigger = {
+			check_variable = { conflict_id = token:GC_IranCW } 
+			tag = MAR
+			NOT = { has_government = socialist }
+		}
 		localization_key = MAR_Iranian_Civil_War_category_desc
 	}
 	text = {
-		trigger = { check_variable = { conflict_id = token:GC_IranCW } tag = MAR MAR = { has_government = socialist } }
+		trigger = {
+			check_variable = { conflict_id = token:GC_IranCW }
+			tag = MAR
+			has_government = socialist
+		}
 		localization_key = MAR_Kosygin_Iranian_Civil_War_category_desc
 	}
 	text = {
@@ -1571,10 +1583,10 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-				check_variable = { conflict_id = token:GC_ManchurianCivilWar }
-				tag = MAR
-				has_government = socialist
-			}
+			check_variable = { conflict_id = token:GC_ManchurianCivilWar }
+			tag = MAR
+			has_government = socialist
+		}
 		localization_key = "GFX_fopo_manchurian_civil_war_icon_kosygin"
 	}
 	text = {
@@ -1590,11 +1602,19 @@ defined_text = {
 		localization_key = "GFX_fopo_uar_influence_battle_icon"
 	}
 	text = {
-		trigger = { check_variable = { conflict_id = token:GC_IranCW } tag = MAR }
+		trigger = { 
+			check_variable = { conflict_id = token:GC_IranCW }
+			tag = MAR
+			NOT = { has_government = socialist }
+		}
 		localization_key = "GFX_fopo_iranian_civil_war_icon_rus"
 	}
 	text = {
-		trigger = { check_variable = { conflict_id = token:GC_IranCW } tag MAR MAR = { has_government = socialist } }
+		trigger = { 
+			check_variable = { conflict_id = token:GC_IranCW }
+			tag = MAR
+			has_government = socialist
+		}
 		localization_key = "GFX_fopo_iranian_civil_war_icon_kosygin"
 	}
 	text = {
