@@ -1853,7 +1853,7 @@ OIL_KUR_win_iraq = {
 		}
 	}
 	GER = {
-		subtract_to_variable = { OC_GER_points = global.iraq_OC_points }
+		subtract_from_variable = { OC_GER_points = global.iraq_OC_points }
 	}
 	MAR = {
 		if = { 
