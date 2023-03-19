@@ -140,14 +140,28 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 		if = { #Sallal Arabian Republic
 			limit = { NYM = { owns_state = 919 } }
 			if = {
-				limit = { check_variable = { GER.BOR_OC_participation > 59 } }
-				NYM = {
+				limit = {
+					check_variable = { GER.BOR_OC_participation > 59 }
+					check_variable = { GER.BOR_OC_participation > MAR.MAR_OC_participation }
+				}
+				NYM = {	
 					if = {
 						limit = { has_global_flag = german_civil_war_speervic }
 						join_zollverein = yes
 					}
 					econ_join_sphere_GER = yes
 				}
+			}
+			else_if = {
+				limit = {
+					check_variable = { MAR.MAR_OC_participation > 49 }
+					check_variable = { GER.BOR_OC_participation < MAR.MAR_OC_participation }
+					is_in_array = {
+						array = global.OIL_supported_by_MAR
+						value = NYM
+					}
+				}
+				NYM = { econ_join_sphere_MAR = yes }
 			}
 		}
 		else_if = { #Saudis won the Yemeni-Saudi War
@@ -160,9 +174,29 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 				GUL = { econ_leave_sphere = yes }
 			}
 		}
-		# else = { #Yemen won its civil war
-		# 	#N/A. Remains in the Italian Sphere.
-		# }
+		else_if = { #Yemen won its civil war
+		 	limit = {
+				YEM = { exists = yes }
+				is_in_array = {
+					array = global.OIL_supported_by_MAR
+					value = OMA
+				}
+				check_variable = { MAR.MAR_OC_participation > 49 }
+			}
+			ITA = { end_puppet = YEM }
+			YEM = {
+				leave_faction = yes 
+				econ_join_sphere_MAR = yes
+				if = {
+					limit = { has_idea = Sphere_Economic_Dependent }
+					remove_ideas = Sphere_Economic_Dependent
+				}
+				else_if = {
+					limit = { has_idea = OFN_Independent_Member }
+					remove_ideas = OFN_Independent_Member
+				}
+			}
+		}
 
 		#Oman outcomes
 		if = { #Imamate
@@ -176,10 +210,30 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 			}
 			OMI = { econ_join_sphere_JAP = yes }
 		}
-		# else_if = { #Italians
-		# 	limit = { OMA = { exists = yes } }
-		# 	#Handled in the event OMA.6
-		# }
+		else_if = { #Italians
+			limit = {
+				OMA = { exists = yes }
+				is_in_array = {
+					array = global.OIL_supported_by_MAR
+					value = OMA
+				}
+				check_variable = { MAR.MAR_OC_participation > 49 }
+			}
+			ITA = { end_puppet = OMA }
+			OMA = {
+				leave_faction = yes 
+				econ_join_sphere_MAR = yes
+				if = {
+					limit = { has_idea = Sphere_Economic_Dependent }
+					remove_ideas = Sphere_Economic_Dependent
+				}
+				else_if = {
+					limit = { has_idea = OFN_Independent_Member }
+					remove_ideas = OFN_Independent_Member
+				}
+			}
+		 	#Handled in the event OMA.6 # да поебать мне
+		}
 		else_if = { #Dhofar victory
 			limit = { OMB = { exists = yes } }
 			if = {
@@ -351,20 +405,30 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 		}
 
 		#South Sudan outcomes
-		# if = { #Azania (authdem) victory
-		# 	limit = {
-		# 		AYA = { exists = no }
-		# 		AZA = { exists = yes }
-		# 	}
-		# 	#Maybe join US spheres.
-		# }
-		# else_if = { #Anyanya (despot) victory
-		# 	limit = {
-		# 		AYA = { exists = yes }
-		# 		AZA = { exists = no }
-		# 	}
-		# 	#Maybe join Japanese spheres.
-		# }
+		if = { #Azania (authdem) victory
+		 	limit = {
+		 		AYA = { exists = no }
+		 		AZA = { exists = yes }
+		 	}
+		 	if = {
+				limit = {
+					check_variable = { MAR.MAR_OC_participation > 49 }
+					is_in_array = {
+						array = global.OIL_supported_by_MAR
+						value = AZA
+					}
+				}
+				AZA = { econ_join_sphere_MAR = yes }
+				MAR = { country_event = { id = berez_dobrovoltsy.22 days = 3 } }
+			}
+		}
+		else_if = { #Anyanya (despot) victory
+		 	limit = {
+		 		AYA = { exists = yes }
+		 		AZA = { exists = no }
+			}
+			#Maybe join Japanese spheres.
+		}
 
 		#Iraq outcomes
 		if = { #Constitutionalist Victory
