@@ -73,7 +73,6 @@ country_event = { #Yemen 1
 	option = { #very cool
 		name = berez_dobrovoltsy.11.a
 		YEM = {
-			econ_join_sphere_MAR = yes
 			set_temp_variable = { gdp_growth_temp = 0.1 }
 			econ_gdp_growth_change = yes
 		}
@@ -114,7 +113,6 @@ country_event = { #Oman 1
 	option = { #very cool
 		name = berez_dobrovoltsy.13.a
 		OMA = {
-			econ_join_sphere_MAR = yes
 			set_temp_variable = { gdp_growth_temp = 0.1 }
 			econ_gdp_growth_change = yes
 		}
@@ -922,27 +920,7 @@ country_event = { ### Iran victory
 			add_popularity = { ideology = despotism popularity = 0.02 }
 			country_event = { id = berez_dobrovoltsy.24 }
 		}
-		add_to_variable = {
-			var = MAR_dobr_infantry_attack
-			value = 0.015
-		}
-		add_to_variable = {
-			var = MAR_dobr_infantry_defence
-			value = 0.01
-		}
-		add_to_variable = {
-			var = MAR_dobr_speed
-			value = 0.01
-		}
-		add_to_variable = {
-			var = MAR_dobr_vertibird_attack
-			value = -0.005
-		}
-		add_to_variable = {
-			var = MAR_dobr_consumption
-			value = -0.005
-		}
-	}
+		TaS_dobrovoltsy_dynmod_victory = yes
 }
 
 country_event = { ### Iran defeat
@@ -975,26 +953,7 @@ country_event = { ### Iran defeat
 			set_temp_variable = { target = IRC }
 			TNO_clear_num_volunteers = yes
 		}
-		add_to_variable = {
-			var = MAR_dobr_infantry_attack
-			value = 0.005
-		}
-		add_to_variable = {
-			var = MAR_dobr_infantry_defence
-			value = 0.005
-		}
-		add_to_variable = {
-			var = MAR_dobr_speed
-			value = 0.005
-		}
-		add_to_variable = {
-			var = MAR_dobr_vertibird_attack
-			value = -0.002
-		}
-		add_to_variable = {
-			var = MAR_dobr_consumption
-			value = -0.002
-		}
+		TaS_dobrovoltsy_dynmod_lose = yes
 	}
 }
 

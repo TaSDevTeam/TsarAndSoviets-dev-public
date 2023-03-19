@@ -566,3 +566,51 @@ first_every_month_script_TaS = {
 		}
 	}
 }
+TaS_dobrovoltsy_dynmod_victory = {
+	custom_effect_tooltip = TaS_dobrovoltsy_dynmod_victory_tt
+	add_to_variable = {
+			var = MAR_dobr_infantry_attack
+			value = 0.015
+		}
+		add_to_variable = {
+			var = MAR_dobr_infantry_defence
+			value = 0.01
+		}
+		add_to_variable = {
+			var = MAR_dobr_speed
+			value = 0.01
+		}
+		add_to_variable = {
+			var = MAR_dobr_vertibird_attack
+			value = -0.005
+		}
+		add_to_variable = {
+			var = MAR_dobr_consumption
+			value = -0.005
+		}
+	}
+}
+
+TaS_dobrovoltsy_dynmod_lose = {
+	custom_effect_tooltip = TaS_dobrovoltsy_dynmod_lose_tt
+	add_to_variable = {
+		var = MAR_dobr_infantry_attack
+		value = 0.005
+	}
+	add_to_variable = {
+		var = MAR_dobr_infantry_defence
+		value = 0.005
+	}
+	add_to_variable = {
+		var = MAR_dobr_speed
+		value = 0.005
+	}
+	add_to_variable = {
+		var = MAR_dobr_vertibird_attack
+		value = -0.002
+	}
+	add_to_variable = {
+		var = MAR_dobr_consumption
+		value = -0.002
+	}
+}

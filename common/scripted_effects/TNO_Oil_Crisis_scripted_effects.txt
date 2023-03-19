@@ -325,9 +325,10 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 		}
 		else = { #Baathist Victory
 			if = {
-				limit = { check_variable = { GER.BOR_OC_participation > 59 } }
-				#Since Ba'athist Sudan doesn't always join a formed UAR (or can exist without a formed UAR),
-				#It will join the German econ sphere with enough investment.
+				limit = {
+					check_variable = { GER.BOR_OC_participation > 59 }
+					check_variable = { GER.BOR_OC_participation > MAR.MAR_OC_participation }
+				}
 				SDS = {
 					if = {
 						limit = { has_global_flag = german_civil_war_speervic }
@@ -335,6 +336,17 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 					}
 					econ_join_sphere_GER = yes
 				}
+			}
+			else_if = {
+				limit = {
+					check_variable = { MAR.MAR_OC_participation > 49 }
+					check_variable = { GER.BOR_OC_participation < MAR.MAR_OC_participation }
+					is_in_array = {
+						array = global.OIL_supported_by_MAR
+						value = SDS
+					}
+				}
+				SDS = { econ_join_sphere_MAR = yes }
 			}
 		}
 
@@ -412,7 +424,10 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 		else_if = { #Ba'athist Victory
 			limit = { BIR = { exists = yes } }
 			if = {
-				limit = { check_variable = { GER.BOR_OC_participation > 39 } }
+				limit = {
+					check_variable = { GER.BOR_OC_participation > 39 }
+					check_variable = { GER.BOR_OC_participation > MAR.MAR_OC_participation }
+				}
 				BIR = {
 					if = {
 						limit = { has_global_flag = german_civil_war_speervic }
@@ -421,18 +436,44 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 					econ_join_sphere_GER = yes
 				}
 			}
+			else_if = {
+				limit = {
+					check_variable = { MAR.MAR_OC_participation > 29 }
+					check_variable = { GER.BOR_OC_participation < MAR.MAR_OC_participation }
+					is_in_array = {
+						array = global.OIL_supported_by_MAR
+						value = BIR
+					}
+				}
+				BIR = { econ_join_sphere_MAR = yes }
+			}
 		}
 		# else_if = { #Italian Victory
 		# 	limit = { IRQ = { exists = yes } }
 		# 	#Dealt with in IraqCW.10
 		# }
-		#Block for the kurds not included.
+		else_if = { #Kurdish Victory
+			limit = { KUR = { exists = yes } }
+			if = {
+				limit = {
+					check_variable = { MAR.MAR_OC_participation > 29 }
+					is_in_array = {
+						array = global.OIL_supported_by_MAR
+						value = KUR
+					}
+				}
+				KUR = { econ_join_sphere_MAR = yes }
+			}
+		}
 
 		#Syria Outcomes
 		if = {
 			limit = {
 				OR = {
-					check_variable = { GER.BOR_OC_participation > 79 }
+					AND = {
+						check_variable = { GER.BOR_OC_participation > 79 }
+						check_variable = { GER.BOR_OC_participation > MAR.MAR_OC_participation }
+					}
 					AND = {
 						NOT = { SYR = { has_government = communist } }
 						check_variable = { GER.BOR_OC_participation > 59 }
@@ -460,23 +501,53 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 				}
 			}
 		}
-
-		#UAR outcomes
-		if = {
-			limit = { check_variable = { GER.BOR_OC_participation > 79 } }
-			UAR = {
+		else_if = {
+			limit = {
+				check_variable = { MAR.MAR_OC_participation > 79 }
+				check_variable = { GER.BOR_OC_participation < MAR.MAR_OC_participation }
+			}
+			SYR = {
+				econ_join_sphere_MAR = yes
 				if = {
-					limit = { exists = yes }
-					econ_join_sphere_GER = yes
+					limit = { is_puppet_of = ITA }
+					econ_leave_sphere = yes 
+					econ_join_sphere_ITA = yes
 				}
-				if = {
-					limit = { has_global_flag = german_civil_war_speervic }
-					join_zollverein = yes
-				}
-				GER = { set_country_flag = uar_will_join_ger_econ_sphere }
 			}
 		}
-
+		#UAR outcomes
+		if = {
+			limit = {
+				check_variable = { GER.BOR_OC_participation > 79 }
+				check_variable = { GER.BOR_OC_participation > MAR.MAR_OC_participation }
+			}
+			UAR = {
+				GER = { set_country_flag = uar_will_join_ger_econ_sphere }
+				if = { 
+					limit = { exists = yes }
+					econ_join_sphere_GER = yes
+					add_to_variable = { UAR_faction_influence_array^2 = 20 }
+				}
+				else = {
+					set_country_flag = GER_leads_uar
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { MAR.MAR_OC_participation > 79 }
+				check_variable = { GER.BOR_OC_participation < MAR.MAR_OC_participation }
+			}
+			UAR = {
+				if = { 
+					limit = { exists = yes }
+					add_to_variable = { UAR_faction_influence_array^2 = 20 }
+				}
+				else = {
+					set_country_flag = MAR_leads_uar
+				}
+			}
+		}
 		#JAP.JAP_OC_participation
 		#USA.USA_OC_participation
 		#GER.BOR_OC_participation
@@ -583,6 +654,13 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 		for_each_scope_loop = {
 			array = global.OIL_supported_by_JAP
 			JAP = {
+				set_temp_variable = { target = PREV }
+				TNO_clear_num_volunteers = yes
+			}
+		}
+		for_each_scope_loop = {
+			array = global.OIL_supported_by_MAR
+			MAR = {
 				set_temp_variable = { target = PREV }
 				TNO_clear_num_volunteers = yes
 			}
@@ -697,6 +775,20 @@ OIL_NYM_win_yemen = {
 	GER = {
 		add_to_variable = { OC_GER_points = global.yemen_OC_points }
 	}
+	MAR = {
+		if = { 
+			limit = {
+				is_in_array = {
+					array = global.OIL_supported_by_MAR
+					value = NYM
+				}
+			} 
+			TaS_dobrovoltsy_dynmod_victory = yes
+		}
+		else = {
+			TaS_dobrovoltsy_dynmod_lose = yes
+		}
+	}
 	OIL_update_cold_war_points = yes
 	OIL_check_remove_forpol_tab = yes
 }
@@ -708,6 +800,31 @@ OIL_YEM_win_yemen = {
 	GER = {
 		subtract_from_variable = { OC_GER_points = global.yemen_OC_points }
 	}
+	MAR = {
+		if = { 
+			limit = {
+				is_in_array = {
+					array = global.OIL_supported_by_MAR
+					value = YEM
+				}
+			} 
+			TaS_dobrovoltsy_dynmod_victory = yes
+			if = {
+				limit = { check_variable = { MAR.MAR_OC_participation > 49 } }
+				country_event = {
+					id = berez_dobrovoltsy.11 days = 3
+				}
+			}
+			else = {
+				country_event = {
+					id = berez_dobrovoltsy.12 days = 3
+				}
+			}
+		}
+		else = {
+			TaS_dobrovoltsy_dynmod_lose = yes
+		}
+	}
 	OIL_update_cold_war_points = yes
 	OIL_check_remove_forpol_tab = yes
 }
@@ -716,6 +833,23 @@ OIL_SAU_win_yemen = {
 	#the saudis have no foreign backing, apparently
 	GER = {
 		subtract_from_variable = { OC_GER_points = global.yemen_OC_points }
+	}
+	MAR = {
+		if = { 
+			limit = {
+				is_in_array = {
+					array = global.OIL_supported_by_MAR
+					value = YEM
+				}
+			} 
+			TaS_dobrovoltsy_dynmod_victory = yes
+			country_event = {
+				id = berez_dobrovoltsy.16 days = 3
+			}
+		}
+		else = {
+			TaS_dobrovoltsy_dynmod_lose = yes
+		}
 	}
 	OIL_update_cold_war_points = yes
 	OIL_check_remove_forpol_tab = yes
@@ -754,6 +888,31 @@ OIL_OMA_win_oman = {
 		}
 		GER = {
 			subtract_from_variable = { OC_GER_points = global.oman_OC_points }
+		}
+	}
+	MAR = {
+		if = { 
+			limit = {
+				is_in_array = {
+					array = global.OIL_supported_by_MAR
+					value = OMA
+				}
+			} 
+			TaS_dobrovoltsy_dynmod_victory = yes
+			if = {
+				limit = { check_variable = { MAR.MAR_OC_participation > 49 } }
+				country_event = {
+					id = berez_dobrovoltsy.13 days = 3
+				}
+			}
+			else = {
+				country_event = {
+					id = berez_dobrovoltsy.14 days = 3
+				}
+			}
+		}
+		else = {
+			TaS_dobrovoltsy_dynmod_lose = yes
 		}
 	}
 	OIL_update_cold_war_points = yes
@@ -796,6 +955,20 @@ OIL_OMB_win_oman = {
 	}
 	GER = {
 		add_to_variable = { OC_GER_points = global.oman_OC_points }
+	}
+	MAR = {
+		if = { 
+			limit = {
+				is_in_array = {
+					array = global.OIL_supported_by_MAR
+					value = OMB
+				}
+			} 
+			TaS_dobrovoltsy_dynmod_victory = yes
+		}
+		else = {
+			TaS_dobrovoltsy_dynmod_lose = yes
+		}
 	}
 
 	OIL_update_cold_war_points = yes
@@ -849,7 +1022,20 @@ OIL_OMI_win_oman = {
 	GER = {
 		subtract_from_variable = { OC_GER_points = global.oman_OC_points }
 	}
-
+	MAR = {
+		if = { 
+			limit = {
+				is_in_array = {
+					array = global.OIL_supported_by_MAR
+					value = OMI
+				}
+			} 
+			TaS_dobrovoltsy_dynmod_victory = yes
+		}
+		else = {
+			TaS_dobrovoltsy_dynmod_lose = yes
+		}
+	}
 	OIL_update_cold_war_points = yes
 }
 
@@ -879,7 +1065,20 @@ OIL_SDS_win_sudan = {
 	GER = {
 		add_to_variable = { OC_GER_points = global.sudan_OC_points }
 	}
-
+	MAR = {
+		if = { 
+			limit = {
+				is_in_array = {
+					array = global.OIL_supported_by_MAR
+					value = SDS
+				}
+			} 
+			TaS_dobrovoltsy_dynmod_victory = yes
+		}
+		else = {
+			TaS_dobrovoltsy_dynmod_lose = yes
+		}
+	}
 	OIL_update_cold_war_points = yes
 }
 OIL_SDF_win_sudan = {
@@ -908,7 +1107,31 @@ OIL_SDF_win_sudan = {
 	GER = {
 		subtract_from_variable = { OC_GER_points = global.sudan_OC_points }
 	}
-
+	MAR = {
+		if = { 
+			limit = {
+				is_in_array = {
+					array = global.OIL_supported_by_MAR
+					value = SDS
+				}
+			} 
+			TaS_dobrovoltsy_dynmod_victory = yes
+			if = {
+				limit = { check_variable = { MAR.MAR_OC_participation > 49 } }
+				country_event = {
+					id = berez_dobrovoltsy.20 days = 3
+				}
+			}
+			else = {
+				country_event = {
+					id = berez_dobrovoltsy.21 days = 3
+				}
+			}
+		}
+		else = {
+			TaS_dobrovoltsy_dynmod_lose = yes
+		}
+	}
 	OIL_update_cold_war_points = yes
 }
 OIL_RPS_win_sudan = {
@@ -937,7 +1160,20 @@ OIL_RPS_win_sudan = {
 	GER = {
 		subtract_from_variable = { OC_GER_points = global.sudan_OC_points }
 	}
-
+	MAR = {
+		if = { 
+			limit = {
+				is_in_array = {
+					array = global.OIL_supported_by_MAR
+					value = RPS
+				}
+			} 
+			TaS_dobrovoltsy_dynmod_victory = yes
+		}
+		else = {
+			TaS_dobrovoltsy_dynmod_lose = yes
+		}
+	}
 	OIL_update_cold_war_points = yes
 }
 
@@ -990,7 +1226,20 @@ OIL_EGB_win_egypt = {
 	GER = {
 		add_to_variable = { OC_GER_points = global.egypt_OC_points }
 	}
-
+	MAR = {
+		if = { 
+			limit = {
+				is_in_array = {
+					array = global.OIL_supported_by_MAR
+					value = EGB
+				}
+			} 
+			TaS_dobrovoltsy_dynmod_victory = yes
+		}
+		else = {
+			TaS_dobrovoltsy_dynmod_lose = yes
+		}
+	}
 	OIL_update_cold_war_points = yes
 }
 OIL_EGQ_win_egypt = {
@@ -1041,7 +1290,23 @@ OIL_EGQ_win_egypt = {
 	GER = {
 		subtract_from_variable = { OC_GER_points = global.egypt_OC_points }
 	}
-
+	MAR = {
+		if = { 
+			limit = {
+				is_in_array = {
+					array = global.OIL_supported_by_MAR
+					value = EGQ
+				}
+			} 
+			TaS_dobrovoltsy_dynmod_victory = yes
+			country_event = {
+				id = berez_dobrovoltsy.15 days = 3
+			}
+		}
+		else = {
+			TaS_dobrovoltsy_dynmod_lose = yes
+		}
+	}
 	OIL_update_cold_war_points = yes
 }
 OIL_EGY_win_egypt = {
@@ -1092,7 +1357,20 @@ OIL_EGY_win_egypt = {
 	GER = {
 		subtract_from_variable = { OC_GER_points = global.egypt_OC_points }
 	}
-
+	MAR = {
+		if = { 
+			limit = {
+				is_in_array = {
+					array = global.OIL_supported_by_MAR
+					value = EGY
+				}
+			} 
+			TaS_dobrovoltsy_dynmod_victory = yes
+		}
+		else = {
+			TaS_dobrovoltsy_dynmod_lose = yes
+		}
+	}
 	OIL_update_cold_war_points = yes
 }
 
@@ -1165,6 +1443,20 @@ OIL_IRP_win_iraq = {
 	}
 	GER = {
 		subtract_from_variable = { OC_GER_points = global.iraq_OC_points }
+	}
+	MAR = {
+		if = { 
+			limit = {
+				is_in_array = {
+					array = global.OIL_supported_by_MAR
+					value = IRP
+				}
+			} 
+			TaS_dobrovoltsy_dynmod_victory = yes
+		}
+		else = {
+			TaS_dobrovoltsy_dynmod_lose = yes
+		}
 	}
 
 	OIL_update_cold_war_points = yes
@@ -1239,7 +1531,20 @@ OIL_IRQ_win_iraq = {
 	GER = {
 		subtract_from_variable = { OC_GER_points = global.iraq_OC_points }
 	}
-
+	MAR = {
+		if = { 
+			limit = {
+				is_in_array = {
+					array = global.OIL_supported_by_MAR
+					value = IRQ
+				}
+			} 
+			TaS_dobrovoltsy_dynmod_victory = yes
+		}
+		else = {
+			TaS_dobrovoltsy_dynmod_lose = yes
+		}
+	}
 	OIL_update_cold_war_points = yes
 }
 OIL_SNI_win_iraq = {
@@ -1312,7 +1617,20 @@ OIL_SNI_win_iraq = {
 	GER = {
 		subtract_from_variable = { OC_GER_points = global.iraq_OC_points }
 	}
-
+	MAR = {
+		if = { 
+			limit = {
+				is_in_array = {
+					array = global.OIL_supported_by_MAR
+					value = SNI
+				}
+			} 
+			TaS_dobrovoltsy_dynmod_victory = yes
+		}
+		else = {
+			TaS_dobrovoltsy_dynmod_lose = yes
+		}
+	}
 	OIL_update_cold_war_points = yes
 }
 OIL_BIR_win_iraq = {
@@ -1385,9 +1703,106 @@ OIL_BIR_win_iraq = {
 	GER = {
 		add_to_variable = { OC_GER_points = global.iraq_OC_points }
 	}
-
+	MAR = {
+		if = { 
+			limit = {
+				is_in_array = {
+					array = global.OIL_supported_by_MAR
+					value = BIR
+				}
+			} 
+			TaS_dobrovoltsy_dynmod_victory = yes
+		}
+		else = {
+			TaS_dobrovoltsy_dynmod_lose = yes
+		}
+	}
 	OIL_update_cold_war_points = yes
 }
 OIL_KUR_win_iraq = {
-	#based but nothing happens
+	if = {
+		limit = {
+			is_in_array = {
+				array = global.OIL_supported_by_JAP
+				value = IRQ
+			}
+		}
+		JAP = {
+			subtract_from_variable = { OC_JAP_points = global.iraq_OC_points }
+		}
+	}
+	else_if = {
+		limit = {
+			is_in_array = {
+				array = global.OIL_supported_by_JAP
+				value = IRP
+			}
+		}
+		JAP = {
+			subtract_from_variable = { OC_JAP_points = global.iraq_OC_points }
+		}
+	}
+	else_if = {
+		limit = {
+			is_in_array = {
+				array = global.OIL_supported_by_JAP
+				value = SNI
+			}
+		}
+		JAP = {
+			subtract_from_variable = { OC_JAP_points = global.iraq_OC_points }
+		}
+	}
+	if = {
+		limit = {
+			is_in_array = {
+				array = global.OIL_supported_by_USA
+				value = IRQ
+			}
+		}
+		USA = {
+			subtract_from_variable = { OC_USA_points = global.iraq_OC_points }
+		}
+	}
+	else_if = {
+		limit = {
+			is_in_array = {
+				array = global.OIL_supported_by_USA
+				value = IRP
+			}
+		}
+		USA = {
+			subtract_from_variable = { OC_USA_points = global.iraq_OC_points }
+		}
+	}
+	else_if = {
+		limit = {
+			is_in_array = {
+				array = global.OIL_supported_by_USA
+				value = SNI
+			}
+		}
+		USA = {
+			subtract_from_variable = { OC_USA_points = global.iraq_OC_points }
+		}
+	}
+	GER = {
+		subtract_to_variable = { OC_GER_points = global.iraq_OC_points }
+	}
+	MAR = {
+		if = { 
+			limit = {
+				is_in_array = {
+					array = global.OIL_supported_by_MAR
+					value = KUR
+				}
+			} 
+			TaS_dobrovoltsy_dynmod_victory = yes
+			KUR = { country_event = { id = KUR_CW.14 } }
+		}
+		else = {
+			TaS_dobrovoltsy_dynmod_lose = yes
+		}
+	}
+	OIL_update_cold_war_points = yes
 }
