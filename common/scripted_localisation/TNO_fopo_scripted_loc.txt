@@ -751,6 +751,23 @@ defined_text = {
 		localization_key = MAR_Kosygin_oil_crisis_support_category_desc
 	}
 	text = {
+		trigger = {
+			check_variable = { conflict_id = token:GC_CongoCW } 
+			tag = MAR
+			NOT = { has_government = socialist }
+		}
+		localization_key = MAR_congo_cw_category_desc
+	}
+	text = {
+		trigger = {
+			check_variable = { conflict_id = token:GC_CongoCW }
+			tag = MAR
+			has_government = socialist
+		}
+		localization_key = MAR_Kosygin_congo_cw_category_desc
+	}
+	
+	text = {
 		localization_key = ""
 	}
 }
@@ -1723,6 +1740,22 @@ defined_text = {
 			has_government = socialist
 		}
 		localization_key = "GFX_fopo_oc_icon_kosygin"
+	}
+	text = { # COG, MAR
+		trigger = { check_variable = { conflict_id = token:GC_CongoCW } tag = GER NOT = { has_global_flag = congo_PW_CAF_joined has_government = socialist } }
+		localization_key = "GFX_fopo_congo_civil_war_icon_rus"
+	}
+	text = { # COG, MAR and CAF
+		trigger = { check_variable = { conflict_id = token:GC_CongoCW } tag = USA has_global_flag = congo_PW_CAF_joined NOT = { has_government = socialist }  }
+		localization_key = "GFX_fopo_congo_civil_war_icon_rus_CAF"
+	}
+	text = { # COG, MAR kosygin
+		trigger = { check_variable = { conflict_id = token:GC_CongoCW } tag = GER NOT = { has_global_flag = congo_PW_CAF_joined } has_government = socialist  }
+		localization_key = "GFX_fopo_congo_civil_war_icon_kosygin"
+	}
+	text = { # COG, MAR kosygin and CAF
+		trigger = { check_variable = { conflict_id = token:GC_CongoCW } tag = USA has_global_flag = congo_PW_CAF_joined has_government = socialist }
+		localization_key = "GFX_fopo_congo_civil_war_icon_kosygin_CAF"
 	}
 	text = {
 		localization_key = "GFX_fopo_blank_icon"

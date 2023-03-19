@@ -3,6 +3,9 @@ add_namespace = berez_dobrovoltsy_world_news
 add_namespace =	KUR_CW
 add_namespace = MAR_iranian_cw
 add_namespace = MAR_oil_crisis
+add_namespace = MAR_iberian_wars
+add_namespace = MAR_congo_cw
+add_namespace = MAR_france_cw
 ###dobrovoltsy zone
 
 country_event = { #any help? 
@@ -873,6 +876,7 @@ country_event = { #iran
 	trigger = {
 		tag = MAR
 		has_global_flag = Iranian_Civil_War
+		has_country_flag = MAR_started_volunteer_sending
 	}
 	fire_only_once = yes
 	picture = GFX_event_MAR_dobr2
@@ -958,12 +962,13 @@ country_event = { ### Iran defeat
 
 country_event = { #oil crisis
 	id = MAR_oil_crisis.1
-	immediate = {log = "[GetDateText]: [Root.GetName]: berez_dobrovoltsy.1"}
+	immediate = {log = "[GetDateText]: [Root.GetName]: MAR_oil_crisis.1"}
 	title = MAR_oil_crisis.1.t
 	desc = MAR_oil_crisis.1.d
 	trigger = {
 		tag = MAR
 		has_global_flag = OC_Yemen_CW
+		has_country_flag = MAR_started_volunteer_sending
 	}
 	fire_only_once = yes
 	picture = GFX_event_MAR_dobr2
@@ -971,5 +976,35 @@ country_event = { #oil crisis
 		name = MAR_oil_crisis.1.a
 		TaS_fopo_add_oil_crisis_tab = yes
 		TaS_OIL_get_supported_factions = yes
+	}
+}
+
+country_event = { #congo cw
+	id = MAR_congo_cw.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: MAR_congo_cw.1"}
+	title = MAR_congo_cw.1.t
+	desc = MAR_congo_cw.1.d
+	trigger = {
+		tag = MAR
+		has_global_flag = CONGO_PW_HAPPENING
+		has_country_flag = MAR_started_volunteer_sending
+	}
+	fire_only_once = yes
+	picture = GFX_event_MAR_dobr2
+	option = { #yes
+		name = MAR_congo_cw.1.a
+		if = {
+			limit = { has_government = socialist }
+			set_country_flag = MAR_aid_CPR
+			set_temp_variable = { target = CPR }
+			TNO_increase_volunteer_cap_1 = yes
+		}
+		else_if = {
+			limit = { has_government = despotism }
+			set_country_flag = MAR_aid_KSI
+			set_temp_variable = { target = KSI }
+			TNO_increase_volunteer_cap_1 = yes
+		}
+		TaS_fopo_add_congo_cw_tab = yes
 	}
 }

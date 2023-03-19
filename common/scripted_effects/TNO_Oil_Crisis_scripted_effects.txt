@@ -421,6 +421,7 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 				AZA = { econ_join_sphere_MAR = yes }
 				MAR = { country_event = { id = berez_dobrovoltsy.22 days = 3 } }
 			}
+			TaS_dobrovoltsy_dynmod_victory = yes
 		}
 		else_if = { #Anyanya (despot) victory
 		 	limit = {
@@ -428,6 +429,7 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 		 		AZA = { exists = no }
 			}
 			#Maybe join Japanese spheres.
+			TaS_dobrovoltsy_dynmod_lose = yes
 		}
 
 		#Iraq outcomes

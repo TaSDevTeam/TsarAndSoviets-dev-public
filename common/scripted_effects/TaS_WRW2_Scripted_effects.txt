@@ -32,6 +32,15 @@ TaS_fopo_remove_oil_crisis_tab = {
 	set_temp_variable = { conflict_id = token:GC_OilCrisis }
 	TNO_remove_fopo_conflict_tab = yes
 }
+TaS_fopo_add_congo_cw_tab = {
+	set_temp_variable = { conflict_id = token:GC_CongoCW }
+	TNO_add_fopo_conflict_tab = yes
+}
+TaS_fopo_remove_congo_cw_tab = {
+	set_temp_variable = { conflict_id = token:GC_CongoCW }
+	TNO_remove_fopo_conflict_tab = yes
+}
+
 
 TaS_OIL_get_supported_factions = {
 	if = {
