@@ -681,6 +681,7 @@ defined_text = {
 		trigger = { check_variable = { conflict_id = token:GC_EnglandInfluenceBattle } }
 		localization_key = ENG_IBC_desc
 	}
+	#TaS stuff
 	text = {
 		trigger = { check_variable = { conflict_id = token:GC_FarEasternRevolt } tag = MAR }
 		localization_key = MAR_far_eastern_revolt_category_desc
@@ -732,6 +733,22 @@ defined_text = {
 			has_government = socialist
 		}
 		localization_key = MAR_Kosygin_Iranian_Civil_War_category_desc
+	}
+	text = {
+		trigger = {
+			check_variable = { conflict_id = token:GC_OilCrisis } 
+			tag = MAR
+			NOT = { has_government = socialist }
+		}
+		localization_key = MAR_oil_crisis_support_category_desc
+	}
+	text = {
+		trigger = {
+			check_variable = { conflict_id = token:GC_OilCrisis }
+			tag = MAR
+			has_government = socialist
+		}
+		localization_key = MAR_Kosygin_oil_crisis_support_category_desc
 	}
 	text = {
 		localization_key = ""
@@ -902,6 +919,7 @@ defined_text = {
 		trigger = { check_variable = { selected_conflict_id = token:GC_EnglandInfluenceBattle } }
 		localization_key = "GFX_fopo_england_influence_battle_sidebar"
 	}
+	#TaS stuff
 	text = {
 		trigger = { check_variable = { conflict_id = token:GC_FarEasternRevolt } }
 		localization_key = "GFX_fopo_far_eastern_revolt_sidebar"
@@ -1565,6 +1583,7 @@ defined_text = {
 		trigger = { check_variable = { conflict_id = token:GC_Haitian_Civil_War } tag = USA }
 		localization_key = "GFX_fopo_haitianwar_usa"
 	}
+	#TaS stuff
 	text = {
 		trigger = { check_variable = { conflict_id = token:GC_FarEasternRevolt } tag = MAR }
 		localization_key = "GFX_fopo_far_eastern_revolt_icon_rus"
@@ -1616,6 +1635,94 @@ defined_text = {
 			has_government = socialist
 		}
 		localization_key = "GFX_fopo_iranian_civil_war_icon_kosygin"
+	}
+	text = { # Oil Crisis, MAR, only Yemen
+		trigger = {
+			check_variable = { conflict_id = token:GC_OilCrisis }
+			NOT = {
+				has_global_flag = OC_Oman_CW
+				has_global_flag = OC_Iraq_CW
+				has_global_flag = OC_Egypt_CW
+			}
+			tag = MAR
+			NOT = { has_government = socialist }
+		}
+		localization_key = "GFX_fopo_oc_icon_rus_only_yemen"
+	}
+	text = { # Oil Crisis, MAR, only Yemen Oman
+		trigger = {
+			check_variable = { conflict_id = token:GC_OilCrisis }
+			NOT = {
+				has_global_flag = OC_Iraq_CW
+				has_global_flag = OC_Egypt_CW
+			}
+			tag = MAR
+			NOT = { has_government = socialist }
+		}
+		localization_key = "GFX_fopo_oc_icon_rus_yemen_oman"
+	}
+	text = { # Oil Crisis, MAR, no Egypt
+		trigger = {
+			check_variable = { conflict_id = token:GC_OilCrisis }
+			NOT = {
+				has_global_flag = OC_Egypt_CW
+			}
+			tag = MAR
+			NOT = { has_government = socialist }
+		}
+		localization_key = "GFX_fopo_oc_icon_rus_no_egypt"
+	}
+	text = { # Oil Crisis, MAR, everything
+		trigger = {
+			check_variable = { conflict_id = token:GC_OilCrisis }
+			tag = MAR
+			NOT = { has_government = socialist }
+		}
+		localization_key = "GFX_fopo_oc_icon_rus"
+	}
+	text = { # Oil Crisis, MAR, only Yemen
+		trigger = {
+			check_variable = { conflict_id = token:GC_OilCrisis }
+			NOT = {
+				has_global_flag = OC_Oman_CW
+				has_global_flag = OC_Iraq_CW
+				has_global_flag = OC_Egypt_CW
+			}
+			tag = MAR
+			has_government = socialist
+		}
+		localization_key = "GFX_fopo_oc_icon_kosygin_only_yemen"
+	}
+	text = { # Oil Crisis, MAR, only Yemen Oman
+		trigger = {
+			check_variable = { conflict_id = token:GC_OilCrisis }
+			NOT = {
+				has_global_flag = OC_Iraq_CW
+				has_global_flag = OC_Egypt_CW
+			}
+			tag = MAR
+			has_government = socialist
+		}
+		localization_key = "GFX_fopo_oc_icon_kosygin_yemen_oman"
+	}
+	text = { # Oil Crisis, MAR, no Egypt
+		trigger = {
+			check_variable = { conflict_id = token:GC_OilCrisis }
+			NOT = {
+				has_global_flag = OC_Egypt_CW
+			}
+			tag = MAR
+			has_government = socialist
+		}
+		localization_key = "GFX_fopo_oc_icon_kosygin_no_egypt"
+	}
+	text = { # Oil Crisis, MAR, everything
+		trigger = {
+			check_variable = { conflict_id = token:GC_OilCrisis }
+			tag = MAR
+			has_government = socialist
+		}
+		localization_key = "GFX_fopo_oc_icon_kosygin"
 	}
 	text = {
 		localization_key = "GFX_fopo_blank_icon"

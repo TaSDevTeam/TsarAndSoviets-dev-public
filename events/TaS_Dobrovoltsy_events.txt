@@ -2,6 +2,7 @@ add_namespace = berez_dobrovoltsy
 add_namespace = berez_dobrovoltsy_world_news
 add_namespace =	KUR_CW
 add_namespace = MAR_iranian_cw
+add_namespace = MAR_oil_crisis
 ###dobrovoltsy zone
 
 country_event = { #any help? 
@@ -740,8 +741,8 @@ country_event = { # oops 2
 					    state = 1334
 				    }
 			    }
+				set_demilitarized_zone = yes
 			}	
-			set_demilitarized_zone = yes
 		    random_owned_controlled_state = {
 			    limit = {
 				    NOT = {
@@ -750,8 +751,8 @@ country_event = { # oops 2
 					    state = 1334	
 					}		
 				}
-			}		
-			set_demilitarized_zone = yes
+				set_demilitarized_zone = yes
+			}				
 		}
 	}
 }
@@ -775,8 +776,9 @@ country_event = { # oops 3
 					    state = 1334
 					}	
 				}
+				set_demilitarized_zone = yes
 			}
-			set_demilitarized_zone = yes
+			
 		
 		    random_owned_controlled_state = {
 			    limit = {
@@ -786,8 +788,9 @@ country_event = { # oops 3
 					    state = 1334	
 					}	
 				}
+				set_demilitarized_zone = yes
 			}
-			set_demilitarized_zone = yes
+			
 		
 		    random_owned_controlled_state = {
 			    limit = {
@@ -797,8 +800,8 @@ country_event = { # oops 3
 					    state = 1334
 					}	
 				}
+				set_demilitarized_zone = yes
 			}
-			set_demilitarized_zone = yes
 		
 		}
 	}
@@ -874,6 +877,7 @@ country_event = { #iran
 		tag = MAR
 		has_global_flag = Iranian_Civil_War
 	}
+	fire_only_once = yes
 	picture = GFX_event_MAR_dobr2
 	option = { #yes
 		name = MAR_iranian_cw.1.a
@@ -991,5 +995,23 @@ country_event = { ### Iran defeat
 			var = MAR_dobr_consumption
 			value = -0.002
 		}
+	}
+}
+
+country_event = { #oil crisis
+	id = MAR_oil_crisis.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: berez_dobrovoltsy.1"}
+	title = MAR_oil_crisis.1.t
+	desc = MAR_oil_crisis.1.d
+	trigger = {
+		tag = MAR
+		has_global_flag = OC_Yemen_CW
+	}
+	fire_only_once = yes
+	picture = GFX_event_MAR_dobr2
+	option = { #yes
+		name = MAR_oil_crisis.1.a
+		TaS_fopo_add_oil_crisis_tab = yes
+		TaS_OIL_get_supported_factions = yes
 	}
 }
