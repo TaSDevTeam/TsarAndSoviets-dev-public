@@ -766,7 +766,10 @@ defined_text = {
 		}
 		localization_key = MAR_Kosygin_congo_cw_category_desc
 	}
-	
+	text = {
+		trigger = { check_variable = { conflict_id = token:GC_IberianWars } tag = MAR }
+		localization_key = MAR_IBW_PW_desc
+	}
 	text = {
 		localization_key = ""
 	}
@@ -1756,6 +1759,10 @@ defined_text = {
 	text = { # COG, MAR kosygin and CAF
 		trigger = { check_variable = { conflict_id = token:GC_CongoCW } tag = USA has_global_flag = congo_PW_CAF_joined has_government = socialist }
 		localization_key = "GFX_fopo_congo_civil_war_icon_kosygin_CAF"
+	}
+	text = {
+		trigger = { check_variable = { conflict_id = token:GC_IberianWars } tag = MAR }
+		localization_key = "GFX_fopo_IBR_RUS_STAGE_1"
 	}
 	text = {
 		localization_key = "GFX_fopo_blank_icon"
