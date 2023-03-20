@@ -3300,38 +3300,34 @@ MAR_foreign_policy_category = {
 			base = 10
 		}
 	}
-	# / Unique Decisions - MAR
-	MAR_FrenchReclamation_Decision_MAR_Show = {
-		icon = GFX_decision_generic_visibility
+	MAR_FrenchReclamation_Decision_SendTechnicalAid = {
+		icon = GFX_decision_generic_industry
 		visible = {
 			TNO_fopo_french_civil_war_selected = yes
-			NOT = { has_country_flag = FrenchReclamation_MARDecisions_Visible }
+			has_country_flag = FrenchReclamation_GenericDecisions_Visible
 		}
+		custom_cost_trigger = { command_power > 9.99 }
+		custom_cost_text = decision_cost_10_cp
 		complete_effect = {
-			set_country_flag = FrenchReclamation_MARDecisions_Visible
+			log = "[GetDateText]: [Root.GetName]: Decision Complete MAR_FrenchReclamation_Decision_SendMotorizedEquipmentShipments"
+			hidden_effect = {
+				add_command_power = -10
+			}
+		}
+		days_remove = 10
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_FrenchReclamation_Decision_SendMotorizedEquipmentShipments"
+			add_timed_idea = { idea = MAR_technician_aid days = 180 }
 		}
 		ai_will_do = {
-			base = 1000
-		}
-	}
-	MAR_FrenchReclamation_Decision_MAR_Hide = {
-		icon = GFX_decision_generic_visibility
-		visible = {
-			TNO_fopo_french_civil_war_selected = yes
-			has_country_flag = FrenchReclamation_MARDecisions_Visible
-		}
-		complete_effect = {
-			clr_country_flag = FrenchReclamation_MARDecisions_Visible
-		}
-		ai_will_do = {
-			base = 0
+			base = 10
 		}
 	}
 	MAR_FrenchReclamation_Decision_MAR_TacticalBombingRuns = {
 		icon = GFX_decision_generic_bombing
 		visible = {
 			TNO_fopo_french_civil_war_selected = yes
-			has_country_flag = FrenchReclamation_MARDecisions_Visible
+			has_country_flag = FrenchReclamation_GenericDecisions_Visible
 		}
 		custom_cost_trigger = { command_power > 19.99 }
 		custom_cost_text = decision_cost_20_cp
@@ -3360,7 +3356,7 @@ MAR_foreign_policy_category = {
 		icon = GFX_decision_generic_bombing
 		visible = {
 			TNO_fopo_french_civil_war_selected = yes
-			has_country_flag = FrenchReclamation_MARDecisions_Visible
+			has_country_flag = FrenchReclamation_GenericDecisions_Visible
 		}
 		custom_cost_trigger = { command_power > 19.99 }
 		custom_cost_text = decision_cost_20_cp
@@ -3380,75 +3376,6 @@ MAR_foreign_policy_category = {
 			tag = FRA
 			army_org_factor = -0.20
 			army_morale_factor = -0.20
-		}
-		ai_will_do = {
-			base = 10
-		}
-	}
-	MAR_FrenchReclamation_Decision_MAR_SabotageSupplies = {
-		icon = GFX_decision_generic_prepare_civil_war
-		visible = {
-			TNO_fopo_french_civil_war_selected = yes
-			has_country_flag = FrenchReclamation_MARDecisions_Visible
-		}
-		custom_cost_trigger = { command_power > 14.99 }
-		custom_cost_text = decision_cost_15_cp
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision Complete MAR_FrenchReclamation_Decision_MAR_SabotageSupplies"
-			FFR = {
-				set_temp_variable = { X = 0 }
-				set_temp_variable = { Y = -1 }
-				FFR_reclamation_aspect_X_add_focus_Y = yes
-			}
-			hidden_effect = {
-				add_command_power = -15
-			}
-		}
-		ai_will_do = {
-			base = 10
-		}
-	}
-	MAR_FrenchReclamation_Decision_MAR_StirUpTension = {
-		icon = GFX_decision_generic_prepare_civil_war
-		visible = {
-			TNO_fopo_french_civil_war_selected = yes
-			has_country_flag = FrenchReclamation_MARDecisions_Visible
-		}
-		custom_cost_trigger = { command_power > 14.99 }
-		custom_cost_text = decision_cost_15_cp
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision Complete MAR_FrenchReclamation_Decision_MAR_StirUpTension"
-			FFR = {
-				set_temp_variable = { X = 1 }
-				set_temp_variable = { Y = -1 }
-				FFR_reclamation_aspect_X_add_focus_Y = yes
-			}
-			hidden_effect = {
-				add_command_power = -15
-			}
-		}
-		ai_will_do = {
-			base = 10
-		}
-	}
-	MAR_FrenchReclamation_Decision_MAR_BreakConfidence = {
-		icon = GFX_decision_generic_prepare_civil_war
-		visible = {
-			TNO_fopo_french_civil_war_selected = yes
-			has_country_flag = FrenchReclamation_MARDecisions_Visible
-		}
-		custom_cost_trigger = { command_power > 14.99 }
-		custom_cost_text = decision_cost_15_cp
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision Complete MAR_FrenchReclamation_Decision_MAR_BreakConfidence"
-			FFR = {
-				set_temp_variable = { X = 2 }
-				set_temp_variable = { Y = -1 }
-				FFR_reclamation_aspect_X_add_focus_Y = yes
-			}
-			hidden_effect = {
-				add_command_power = -15
-			}
 		}
 		ai_will_do = {
 			base = 10

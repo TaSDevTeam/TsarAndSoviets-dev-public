@@ -229,7 +229,7 @@ defined_text = {
 		localization_key = "TNO_Puerto_Plata_Invasion_GUI_GER"
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = token:GC_FranceCW } }
+		trigger = { check_variable = { selected_conflict_id = token:GC_FranceCW } NOT = { tag = MAR } }
 		localization_key = "TNO_FrenchReclamation_DecisionGUI"
 	}
 	text = {
