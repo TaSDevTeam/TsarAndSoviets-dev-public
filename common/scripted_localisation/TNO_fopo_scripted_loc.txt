@@ -770,6 +770,42 @@ defined_text = {
 		trigger = { check_variable = { conflict_id = token:GC_IberianWars } tag = MAR }
 		localization_key = MAR_IBW_PW_desc
 	}
+	#text = {
+	#	trigger = {
+	#		check_variable = { selected_conflict_id = token:GC_FranceCW }
+	#		has_global_flag = FFR_reclamation_happening
+	#		tag = MAR
+	#		has_government = socialist
+	#	}
+	#	localization_key = MAR_Kosygin_ffr_reclamation_desc
+	#}
+	#text = {
+	#	trigger = {
+	#		check_variable = { selected_conflict_id = token:GC_FranceCW }
+	#		has_global_flag = FFR_reclamation_happening
+	#		tag = MAR
+	#		NOT = { has_government = socialist }
+	#	}
+	#	localization_key = MAR_ffr_reclamation_desc
+	#}
+	text = {
+		trigger = {
+			check_variable = { selected_conflict_id = token:GC_FranceCW }
+			has_global_flag = FFR_reclamation_civil_war_happening
+			tag = MAR
+			has_government = socialist
+		}
+		localization_key = MAR_Kosygin_french_civil_war_desc
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_conflict_id = token:GC_FranceCW }
+			has_global_flag = FFR_reclamation_civil_war_happening
+			tag = MAR
+			NOT = { has_government = socialist }
+		}
+		localization_key = MAR_french_civil_war_desc
+	}
 	text = {
 		localization_key = ""
 	}
