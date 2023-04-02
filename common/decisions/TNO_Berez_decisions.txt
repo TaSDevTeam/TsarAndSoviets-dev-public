@@ -1,27 +1,44 @@
 MAR_debug_category = {
-	########## ######## ################################################№№№##№####№##№#
-	MAR_load_Belozerski_post_unification_tree = {
-		icon = GFX_decision_generic_decision
+	#ya pokakal
+	MAR_load_initial_decisions = {
+		icon = GFX_decision_generic_visibility
 
 		allowed = {
 			original_tag = MAR
 		}
-
-		fire_only_once = no
+		visible = {
+			NOT = { check_variable = { MAR_debug_cat > 1 } }
+		}
+		fire_only_once = yes
 
 		complete_effect = { 
-			log = "[GetDateText]: [Root.GetName]: Decision MAR_load_starting_tree"
-			load_focus_tree = {	tree = MAR_Belozerski_post_unification_tree keep_completed = no }
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_load_initial_decisions"
+			set_variable = { MAR_debug_cat = 1 }
 		}
 	}
-	
-	MAR_load_starting_tree_new = {
-		icon = GFX_decision_generic_decision
+	MAR_initial_focus_tree_effigy = {
+		icon = GFX_decision_research_generic
+		visible = {
+			check_variable = { MAR_debug_cat = 1 }
+		}
+		fire_only_once = yes
+		available = {
+			always = no
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_initial_focus_tree_effigy"
+		}
+	}
+	MAR_initial_tree_load = {
+		icon = GFX_decision_generic_industry
 
 		allowed = {
 			original_tag = MAR
 		}
-
+		visible = {
+			check_variable = { MAR_debug_cat = 1 }
+		}
 		fire_only_once = no
 
 		complete_effect = {
@@ -30,13 +47,15 @@ MAR_debug_category = {
 		}
 	}
 
-	MAR_load_postbomb = { 
-		icon = GFX_decision_generic_decision
+	MAR_afterbomb_tree_load = { 
+		icon = GFX_decision_generic_industry
 
 		allowed = {
 			original_tag = MAR
 		}
-
+		visible = {
+			check_variable = { MAR_debug_cat = 1 }
+		}
 		fire_only_once = no
 
 		complete_effect = {
@@ -44,13 +63,15 @@ MAR_debug_category = {
 			load_focus_tree = {	tree = MAR_postbomb_tree keep_completed = no }
 		}
 	}
-	MAR_load_smuta = {
-		icon = GFX_decision_generic_decision
+	MAR_smuta_tree_load = {
+		icon = GFX_decision_generic_industry
 
 		allowed = {
 			original_tag = MAR
 		}
-
+		visible = {
+			check_variable = { MAR_debug_cat = 1 }
+		}
 		fire_only_once = no
 
 		complete_effect = {
@@ -58,11 +79,261 @@ MAR_debug_category = {
 			load_focus_tree = {	tree = MAR_smuta_tree keep_completed = no }
 		}
 	}
-	
-	
-	MAR_load_Belozerski_tree = {
-		icon = GFX_decision_generic_decision
+	MAR_initial_mgb_effigy = {
+		icon = GFX_decision_research_generic
+		visible = {
+			check_variable = { MAR_debug_cat = 1 }
+		}
+		fire_only_once = yes
+		available = {
+			always = no
+		}
 
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_initial_mgb_effigy"
+		}
+	}
+	MAR_mgb_reload = {
+		icon = GFX_decision_generic_industry
+
+		allowed = {
+			original_tag = MAR
+		}
+		visible = {
+			check_variable = { MAR_debug_cat = 1 }
+		}
+		fire_only_once = no
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: MAR_mgb_reload"
+			country_event = { id = MAR_initial.7 }
+		}
+	}
+	MAR_mgb_force_rotation = {
+		icon = GFX_decision_generic_industry
+
+		allowed = {
+			original_tag = MAR
+		}
+		visible = {
+			check_variable = { MAR_debug_cat = 1 }
+		}
+		fire_only_once = no
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: MAR_mgb_force_rotation"
+			custom_effect_tooltip = MAR_rotation_random_tt
+			hidden_effect = { 
+				set_temp_variable = { temp_connections_gained = 1 }
+				randomize_temp_variable = {
+					var = temp_connections_gained
+					distribution = uniform
+					min = 2
+					max = 6
+				}
+				round_temp_variable = temp_connections_gained
+				MAR_Okhranka_connections_change = yes
+				set_temp_variable = { temp_agents_gained = 1 }
+				randomize_temp_variable = {
+					var = temp_agents_gained
+					distribution = uniform
+					min = 20
+					max = 60
+				}
+				round_temp_variable = temp_agents_gained
+				MAR_Okhranka_agents_change = yes
+			}
+		}
+	}
+	MAR_mgb_decrease_influence = {
+		icon = GFX_decision_generic_industry
+		
+		allowed = {
+			original_tag = MAR
+		}
+		visible = {
+			check_variable = { MAR_debug_cat = 1 }
+		}
+		fire_only_once = no
+		
+		complete_effect = {
+			set_temp_variable = { temp_agents_gained = -120 }
+			set_temp_variable = { temp_connections_gained = -5 }
+			MAR_Okhranka_agents_change = yes
+			MAR_Okhranka_connections_change = yes
+		}
+	}
+	MAR_mgb_increase_influence = {
+		icon = GFX_decision_generic_industry
+		
+		allowed = {
+			original_tag = MAR
+		}
+		visible = {
+			check_variable = { MAR_debug_cat = 1 }
+		}
+		fire_only_once = no
+		
+		complete_effect = {
+			set_temp_variable = { temp_agents_gained = 120 }
+			set_temp_variable = { temp_connections_gained = 5 }
+			MAR_Okhranka_agents_change = yes
+			MAR_Okhranka_connections_change = yes
+		}
+	}
+	MAR_mgb_do_the_fuck_up = {
+		icon = GFX_decision_generic_industry
+		
+		allowed = {
+			original_tag = MAR
+		}
+		visible = {
+			check_variable = { MAR_debug_cat = 1 }
+		}
+		fire_only_once = no
+		
+		complete_effect = {
+			add_popularity = {
+				ideology = paternalism
+				popularity = 0.1
+			}
+			set_temp_variable = { temp_connections_gained = 10 }
+			set_temp_variable = { temp_agents_gained = 60 }
+			MAR_Okhranka_connections_change = yes
+			MAR_Okhranka_agents_change = yes
+			add_to_variable = { MAR_MGB_vyatka_angry = 1}
+			clamp_variable = {
+				var = MAR_MGB_vyatka_angry
+				min = 0
+				max = 2
+			}
+			swap_ideas = {
+				add_idea = MAR_direct_influence_of_vyatka
+				remove_idea = MAR_military_instructors_of_vyatka
+			}
+			if = {
+				limit = { has_idea = MAR_souverinity_fail_1 }
+				swap_ideas = {
+					remove_idea = MAR_souverinity_fail_1
+					add_idea = MAR_souverinity_fail_2
+				}
+			}
+			else = {
+				add_ideas = MAR_souverinity_fail_1
+			}
+		}
+	}
+	MAR_mgb_let_my_people_go = {
+		icon = GFX_decision_generic_industry
+		
+		allowed = {
+			original_tag = MAR
+		}
+		visible = {
+			check_variable = { MAR_debug_cat = 1 }
+		}
+		fire_only_once = no
+		
+		complete_effect = {
+			if = {
+				limit = { check_variable = { MAR_MGB_vyatka_angry = 2 } }
+				if = {
+					limit = { check_variable = { MAR_Okhranka_power < 15 } }
+					country_event = { id = MAR_initial.52 days = 2 }
+				}
+				else = {
+					country_event = { id = MAR_initial.53 days = 2 }
+				}
+			}
+			if = {
+				limit = { check_variable = { MAR_MGB_vyatka_angry = 1 } }
+				if = {
+					limit = { check_variable = { MAR_Okhranka_power < 35 } }
+					country_event = { id = MAR_initial.52 days = 2 }
+				}
+				else = {
+					country_event = { id = MAR_initial.53 days = 2 }
+				}
+			}
+			if = {
+				limit = { check_variable = { MAR_MGB_vyatka_angry = 0 } }
+				if = {
+					limit = { check_variable = { MAR_Okhranka_power < 60 } }
+					country_event = { id = MAR_initial.52 days = 2 }
+				}
+				else = {
+					country_event = { id = MAR_initial.53 days = 2 }
+				}
+			}
+			clr_country_flag = MAR_MGB_available
+		}
+	}
+	MAR_mgb_yurla = {
+		icon = GFX_decision_generic_industry
+		
+		allowed = {
+			original_tag = MAR
+		}
+		visible = {
+			check_variable = { MAR_debug_cat = 1 }
+		}
+		fire_only_once = no
+		
+		complete_effect = {
+			custom_effect_tooltip = MAR_MGB_yurla_operation_tt
+			random_list = {
+				1 = {
+					custom_effect_tooltip = MAR_MGB_yurla_operation_success_tt
+					transfer_state = 865
+					add_state_core = 865
+					set_temp_variable = { temp_econ_GDP_boost_flat = 0.015 }
+					econ_GDP_boost_once_flat = yes
+				}
+				2 = {
+					custom_effect_tooltip = MAR_MGB_yurla_operation_fail_tt
+					add_stability = -0.02
+					add_manpower = -231
+				}
+			}
+		}
+	}
+		
+	MAR_load_belozersky_decisions = {
+		icon = GFX_decision_generic_visibility
+	
+		allowed = {
+			original_tag = MAR
+		}
+		visible = {
+			NOT = { check_variable = { MAR_debug_cat > 2 } }
+		}
+		fire_only_once = yes
+
+		complete_effect = { 
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_load_initial_decisions"
+			set_variable = { MAR_debug_cat = 2 }
+			country_event = { id = MAR_zemsky_sobor.22 }
+		}
+	}
+	MAR_beloozersky_focus_tree_effigy = {
+		icon = GFX_decision_research_generic
+		visible = {
+			check_variable = { MAR_debug_cat = 2 }
+		}
+		fire_only_once = yes
+		available = {
+			always = no
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_initial_focus_tree_effigy"
+		}
+	}
+	MAR_load_Belozerski_tree = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			check_variable = { MAR_debug_cat = 2 }
+		}
 		allowed = {
 			original_tag = MAR
 		}
@@ -75,8 +346,10 @@ MAR_debug_category = {
 		}
 	}
 	MAR_load_Belozerski_supertree = {
-		icon = GFX_decision_generic_decision
-
+		icon = GFX_decision_generic_industry
+		visible = {
+			check_variable = { MAR_debug_cat = 2 }
+		}
 		allowed = {
 			original_tag = MAR
 		}
@@ -88,23 +361,70 @@ MAR_debug_category = {
 			load_focus_tree = {	tree = MAR_Belozerski_Super_reg keep_completed = no }
 		}
 	}
-	MAR_load_MAR_Kazembek = {
-		icon = GFX_decision_generic_decision
-
+	MAR_load_Belozerski_post_unification_tree = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			check_variable = { MAR_debug_cat = 2 }
+		}
 		allowed = {
 			original_tag = MAR
 		}
 
 		fire_only_once = no
 
+		complete_effect = { 
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_load_starting_tree"
+			load_focus_tree = {	tree = MAR_Belozerski_post_unification_tree keep_completed = no }
+		}
+	}
+	MAR_beloozersky_specific_mechs_effigy = {
+		icon = GFX_decision_research_generic
+		visible = {
+			check_variable = { MAR_debug_cat = 2 }
+		}
+		fire_only_once = yes
+		available = {
+			always = no
+		}
+
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: MAR_load_voina"
-			load_focus_tree = {	tree = MAR_Kazembek keep_completed = no }
+			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_initial_focus_tree_effigy"
+		}
+	}
+	MAR_load_kosygin_decisions = {
+		icon = GFX_decision_generic_visibility
+
+		allowed = {
+			original_tag = MAR
+		}
+
+		fire_only_once = yes
+
+		complete_effect = { 
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_load_kosygin_decisions"
+			set_variable = { MAR_debug_cat = 3 }
+			country_event = { id = MAR_zemsky_sobor.24 }
+		}
+	}
+	MAR_kosygin_focus_tree_effigy = {
+		icon = GFX_decision_research_generic
+		visible = {
+			check_variable = { MAR_debug_cat = 3 }
+		}
+		fire_only_once = yes
+		available = {
+			always = no
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_kosygin_focus_tree_effigy"
 		}
 	}
 	MAR_load_Kosygin_regional = {
-		icon = GFX_decision_generic_decision
-
+		icon = GFX_decision_generic_industry
+		visible = {
+			check_variable = { MAR_debug_cat = 3 }
+		}
 		allowed = {
 			original_tag = MAR
 		}
@@ -114,24 +434,69 @@ MAR_debug_category = {
 			load_focus_tree = MAR_Kosygin_Regional
 		}
 	}
-	MAR_enable_prestol_dec = {
-		icon = GFX_decision_generic_decision
-
+	MAR_load_Kosygin_superregional = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			check_variable = { MAR_debug_cat = 3 }
+		}
 		allowed = {
 			original_tag = MAR
-		}
-		visible = {
-			has_focus_tree = MAR_Kosygin_Regional
 		}
 		fire_only_once = no
 
 		complete_effect = {
-			MAR_Prestol_start = yes
+			load_focus_tree = MAR_Kosygin_Superregional
 		}
 	}
-	MAR_ogas_rewrite_debug = {
-		icon = GFX_decision_generic_decision
+	MAR_load_Kosygin_post_unification = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			check_variable = { MAR_debug_cat = 3 }
+		}
+		allowed = {
+			original_tag = MAR
+		}
 
+		fire_only_once = no
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: TaS_WRW2_End_the_germany_decision"
+			load_focus_tree = MAR_Kosygin_post_unification
+		}
+	}
+	MAR_kosygin_specific_mechs_effigy = {
+		icon = GFX_decision_research_generic
+		visible = {
+			check_variable = { MAR_debug_cat = 3 }
+		}
+		fire_only_once = yes
+		available = {
+			always = no
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_initial_focus_tree_effigy"
+		}
+	}
+	MAR_blew_up_kosygin = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			check_variable = { MAR_debug_cat = 3 }
+		}
+		allowed = {
+			original_tag = MAR
+		}
+		fire_only_once = no
+
+		complete_effect = {
+			country_event = { id = MAR_Kosygin.14 }
+		}
+	}
+	MAR_ogas_debug = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			check_variable = { MAR_debug_cat = 3 }
+		}
 		allowed = {
 			original_tag = MAR
 		}
@@ -143,9 +508,12 @@ MAR_debug_category = {
 			MAR_OGAS_setup = yes
 		}
 	}
-	MAR_ogas_rewrite_debug_add_all = {
-		icon = GFX_decision_generic_decision
-
+	MAR_ogas_debug_add_all = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			check_variable = { MAR_debug_cat = 3 }
+			has_country_flag = MAR_ogas_dev_started
+		}
 		allowed = {
 			original_tag = MAR
 		}
@@ -164,9 +532,12 @@ MAR_debug_category = {
 		}
 	}
 	
-	MAR_ogas_rewrite_debug_add_specifically = {
-		icon = GFX_decision_generic_decision
-
+	MAR_ogas_debug_add_specifically = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			check_variable = { MAR_debug_cat = 3 }
+			has_country_flag = MAR_ogas_dev_started
+		}
 		allowed = {
 			original_tag = MAR
 		}
@@ -184,80 +555,217 @@ MAR_debug_category = {
 		}
 	}
 	
-	#MAR_ogas_clear_locks = {
-	#	icon = GFX_decision_generic_decision
-	#
-	#	allowed = {
-	#		original_tag = MAR
-	#	}
-	#	
-	#	fire_only_once = no
-	#
-	#	complete_effect = {
-	#		clr_country_flag = MAR_OGAS_stage_two_not_started
-	#	}
-	#}
-	MAR_load_Kosygin_superregional = {
-		icon = GFX_decision_generic_decision
+	MAR_show_hide_forpol_debug_decisions = {
+		icon = {
+			key = GFX_decision_generic_visibility_closed
+			trigger = {
+				has_country_flag = MAR_debug_fopo
+			}
+		}
+		icon = {
+			key = GFX_decision_generic_visibility
+			trigger = {
+				NOT = { has_country_flag = MAR_debug_fopo }
+			}
+		}
+		days_re_enable = 0
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_show_hide_forpol_debug_decisions"
+			if = {
+				limit = { has_country_flag = MAR_debug_fopo }
+				clr_country_flag = MAR_debug_fopo
+				clr_country_flag = conflict_debug_decisions
+			}
+			else = {
+				set_country_flag = MAR_debug_fopo
+				set_country_flag = conflict_debug_decisions
+			}
+		}
+	}
+	
+	MAR_load_forpol_tab = {
+		icon = GFX_decision_generic_industry
 
 		allowed = {
 			original_tag = MAR
 		}
+		visible = {
+			has_country_flag = MAR_debug_fopo
+		}
+		fire_only_once = yes
+
+		complete_effect = { 
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_load_initial_decisions"
+			TaS_Global_Conflicts_Initalize = yes
+		}
+	}
+	MAR_load_all_proxies_wo_wars = {
+		icon = GFX_decision_generic_industry
+
+		allowed = {
+			original_tag = MAR
+		}
+		visible = {
+			has_country_flag = MAR_debug_fopo
+		}
 		fire_only_once = no
 
-		complete_effect = {
-			load_focus_tree = MAR_Kosygin_Superregional
+		complete_effect = { 
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_load_initial_decisions"
+			country_event = { id = MAR_forpol.1 }
+			country_event = { id = MAR_forpol.4 }
+			country_event = { id = MAR_forpol.5 }
+			country_event = { id = MAR_forpol.6 }
+			country_event = { id = MAR_forpol.7 }
 		}
 	}
-	TaS_Iraq_Zhirinosky_xd = {
-		icon = GFX_decision_generic_decision
-		
+	MAR_boost_OC_participation = {
+		icon = GFX_decision_generic_industry
+
 		allowed = {
 			original_tag = MAR
 		}
-		
+		visible = {
+			has_country_flag = MAR_debug_fopo
+			has_global_flag = OC_Oman_CW
+		}
 		fire_only_once = no
-	
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: TaS_Iraq_Zhirinosky_xd"
-			MAR_Iraq_Kurdistan_zhirik = yes
+
+		complete_effect = { 
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_load_initial_decisions"
+			set_variable = { MAR_OC_participation = 150 }
 		}
 	}
-	TaS_Iraq_Saddam_xd = {
-		icon = GFX_decision_generic_decision
-		
+	MAR_boost_supported_faction = {
+		icon = GFX_decision_generic_industry
+
 		allowed = {
 			original_tag = MAR
 		}
-		
-		fire_only_once = no
-	
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: TaS_Iraq_Saddam_xd "
-			MAR_Iraq_Kurdistan_saddam = yes
+		visible = {
+			has_country_flag = MAR_debug_fopo
 		}
-	}	
-	TaS_Turkestan_gov = {
-		icon = GFX_decision_generic_decision
-		
+		fire_only_once = no
+
+		complete_effect = { 
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_load_initial_decisions"
+			if = {
+				limit = { has_global_flag = OC_Oman_CW }
+				for_each_scope_loop = {
+					array = global.OIL_supported_by_MAR
+					FROM = {
+						add_timed_idea = { idea = MAR_cheat_boost_debug days = 180 }
+					}
+				}
+			}
+			else_if = {
+				limit = { has_global_flag = IBRWarbyDebug }
+				SPS = { add_timed_idea = { idea = MAR_cheat_boost_debug days = 180 } }
+				POR = { add_timed_idea = { idea = MAR_cheat_boost_debug days = 180 } }
+			}
+			else_if = {
+				limit = { has_global_flag = CONGO_PW_HAPPENING }
+				if = {
+					limit = { has_government = socialist }
+					CPR = { add_timed_idea = { idea = MAR_cheat_boost_debug days = 180 } }
+				}
+				else = {
+					KSI = { add_timed_idea = { idea = MAR_cheat_boost_debug days = 180 } }	
+				}
+			}
+			else_if = {
+				limit = { has_global_flag = IBW_CONFLICT }
+				if = {
+					limit = { has_government = socialist }
+					IRA = { add_timed_idea = { idea = MAR_cheat_boost_debug days = 180 } }
+				}
+				else = {
+					IRC = { add_timed_idea = { idea = MAR_cheat_boost_debug days = 180 } }	
+				}
+			}
+			else_if = {
+				limit = { has_global_flag = FFR_reclamation_civil_war_happening }
+				if = {
+					limit = { has_government = socialist }
+					FRV = { add_timed_idea = { idea = MAR_cheat_boost_debug days = 180 } }
+				}
+				else = {
+					FRM = { add_timed_idea = { idea = MAR_cheat_boost_debug days = 180 } }	
+				}
+			}
+		}
+	}
+	MAR_force_UAR_fight = {
+		icon = GFX_decision_generic_industry
+
 		allowed = {
 			original_tag = MAR
 		}
-		
-		fire_only_once = no
-	
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: TaS_Turkestan_gov"
-			MAR_Turkestan_govern = yes
+		visible = {
+			has_country_flag = MAR_debug_fopo
+		}
+		fire_only_once = yes
+
+		complete_effect = { 
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_load_initial_decisions"
+			country_event = { id = MAR_Kosygin_UAR.1 }
 		}
 	}
+	MAR_UAR_add_ru_score = {
+		icon = GFX_decision_generic_industry
+
+		allowed = {
+			original_tag = MAR
+		}
+		visible = {
+			has_country_flag = MAR_debug_fopo
+		}
+		fire_only_once = no
+
+		complete_effect = { 
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_load_initial_decisions"
+			set_temp_variable = { InfluenceChangeTemp = 100 }
+			set_temp_variable = { InfluenceChangeFactionTemp = 1 }
+			UAR_Influence_Change = yes
+		}
+	}
+	MAR_show_hide_2WRW_debug_decisions = {
+		icon = {
+			key = GFX_decision_generic_visibility_closed
+			trigger = {
+				has_country_flag = MAR_debug_2wrw
+			}
+		}
+		icon = {
+			key = GFX_decision_generic_visibility
+			trigger = {
+				NOT = { has_country_flag = MAR_debug_2wrw }
+			}
+		}
+		days_re_enable = 0
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision show_hide_debug_decisions"
+			if = {
+				limit = { has_country_flag = MAR_debug_2wrw }
+				clr_country_flag = MAR_debug_2wrw
+			}
+			else = {
+				set_country_flag = MAR_debug_2wrw
+			}
+		}
+	}
+	
+
+	
 	TaS_2WRW_activate_war = {
-		icon = GFX_decision_generic_decision
+		icon = GFX_decision_generic_industry
 		
 		allowed = {
 			original_tag = MAR
 		}
-		
+		visible = {
+			has_country_flag = MAR_debug_2wrw
+		}
 		fire_only_once = no
 	
 		complete_effect = {
@@ -275,20 +783,22 @@ MAR_debug_category = {
 			GER = { add_ideas = { TaS_2WRW_north_sea_problems } }
 			hidden_effect = {
 				every_country  = {
-						news_event = {
-							id = MAR_2WRW_world_news.6
-						}
+					news_event = {
+						id = MAR_2WRW_world_news.6
 					}
+				}
 			}
 		}
 	}
 	TaS_2WRW_devastatation_add = {
-		icon = GFX_decision_generic_decision
+		icon = GFX_decision_generic_industry
 		
 		allowed = {
 			original_tag = MAR
 		}
-		
+		visible = {
+			has_country_flag = MAR_debug_2wrw
+		}
 		fire_only_once = no
 	
 		complete_effect = {
@@ -298,12 +808,14 @@ MAR_debug_category = {
 		}  
 	}
 	TaS_2WRW_activate_germancw = {
-		icon = GFX_decision_generic_decision
+		icon = GFX_decision_generic_industry
 		
 		allowed = {
 			original_tag = MAR
 		}
-		
+		visible = {
+			has_country_flag = MAR_debug_2wrw
+		}
 		fire_only_once = no
 	
 		complete_effect = {
@@ -313,12 +825,14 @@ MAR_debug_category = {
 		}
 	}	
 	TaS_WRW2_End_the_germany_decision = {
-		icon = GFX_decision_generic_decision
+		icon = GFX_decision_generic_industry
 
 		allowed = {
 			original_tag = MAR
 		}
-
+		visible = {
+			has_country_flag = MAR_debug_2wrw
+		}
 		fire_only_once = no
 
 		complete_effect = {
@@ -327,12 +841,14 @@ MAR_debug_category = {
 		}
 	}
 	TaS_WRW2_manchuria_start_rebelion_decision = {
-		icon = GFX_decision_generic_decision
+		icon = GFX_decision_generic_industry
 
 		allowed = {
 			original_tag = MAR
 		}
-
+		visible = {
+			has_country_flag = MAR_debug_2wrw
+		}
 		fire_only_once = no
 
 		complete_effect = {
@@ -341,8 +857,10 @@ MAR_debug_category = {
 		}
 	}
 	TaS_WRW2_second_cw_guot_invastion = {
-		icon = GFX_decision_generic_decision
-
+		icon = GFX_decision_generic_industry
+		visible = {
+			has_country_flag = MAR_debug_2wrw
+		}
 		allowed = {
 			original_tag = MAR
 		}
@@ -354,23 +872,11 @@ MAR_debug_category = {
 			TaS_2WRW_start_guot_invasion = yes
 		}
 	}
-	TaS_WRW2_russify_ostterritories_decision = {
-		icon = GFX_decision_generic_decision
-
-		allowed = {
-			original_tag = MAR
-		}
-
-		fire_only_once = no
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: TaS_WRW2_End_the_germany_decision"
-			#TaS_2WRW_Russian_integrated = yes
-		}
-	}
 	TaS_WRW2_rus_ultimatums_enable = {
-		icon = GFX_decision_generic_decision
-
+		icon = GFX_decision_generic_industry
+		visible = {
+			has_country_flag = MAR_debug_2wrw
+		}
 		allowed = {
 			original_tag = MAR
 		}
@@ -383,8 +889,10 @@ MAR_debug_category = {
 		}
 	}
 	TaS_2WRW_remove_schnitzel_dec = {
-		icon = GFX_decision_generic_decision
-
+		icon = GFX_decision_generic_industry
+		visible = {
+			has_country_flag = MAR_debug_2wrw
+		}
 		allowed = {
 			original_tag = MAR
 		}
@@ -397,8 +905,10 @@ MAR_debug_category = {
 		}
 	}
 	TaS_2WRW_czech_ssr_dec = {
-		icon = GFX_decision_generic_decision
-
+		icon = GFX_decision_generic_industry
+		visible = {
+			has_country_flag = MAR_debug_2wrw
+		}
 		allowed = {
 			original_tag = MAR
 		}
@@ -410,18 +920,21 @@ MAR_debug_category = {
 			TaS_2WRW_czech_ssr = yes
 		}
 	}
-	MAR_load_Kosygin_post_unification = {
-		icon = GFX_decision_generic_decision
+	
+	MAR_load_MAR_Kazembek = {
+		icon = GFX_decision_generic_industry
 
 		allowed = {
 			original_tag = MAR
 		}
-
+		visible = {
+			check_variable = { MAR_debug_cat = 4 }
+		}
 		fire_only_once = no
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: TaS_WRW2_End_the_germany_decision"
-			load_focus_tree = MAR_Kosygin_post_unification
+			log = "[GetDateText]: [Root.GetName]: MAR_load_MAR_Kazembek"
+			load_focus_tree = {	tree = MAR_Kazembek keep_completed = no }
 		}
 	}
 }
@@ -1035,7 +1548,7 @@ MAR_MGB_Okhranka_category = {
 		}
 		fire_only_once = yes
 		cost = var:MAR_decision_cost_three	
-		days_remove = 1
+		days_remove = 60
 		
 		remove_effect = {
 			custom_effect_tooltip = MAR_MGB_yurla_operation_tt
