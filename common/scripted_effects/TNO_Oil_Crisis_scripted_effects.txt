@@ -376,6 +376,17 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 					add_ideas = Sphere_Observer
 				}
 			}
+			else_if = {
+				limit = {
+					check_variable = { MAR.MAR_OC_participation > 59 }
+					check_variable = { JAP.JAP_OC_participation < MAR.MAR_OC_participation }
+					is_in_array = {
+						array = global.OIL_supported_by_MAR
+						value = SDF
+					}
+				}
+				SDF = { econ_join_sphere_MAR = yes }
+			}
 		}
 		else = { #Baathist Victory
 			if = {

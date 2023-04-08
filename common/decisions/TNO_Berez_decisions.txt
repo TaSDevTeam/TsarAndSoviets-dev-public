@@ -575,10 +575,12 @@ MAR_debug_category = {
 				limit = { has_country_flag = MAR_debug_fopo }
 				clr_country_flag = MAR_debug_fopo
 				clr_country_flag = conflict_debug_decisions
+				clr_country_flag = MAR_started_volunteer_sending
 			}
 			else = {
 				set_country_flag = MAR_debug_fopo
 				set_country_flag = conflict_debug_decisions
+				set_country_flag = MAR_started_volunteer_sending
 			}
 		}
 	}
@@ -653,13 +655,11 @@ MAR_debug_category = {
 				limit = { has_global_flag = OC_Oman_CW }
 				for_each_scope_loop = {
 					array = global.OIL_supported_by_MAR
-					FROM = {
-						add_timed_idea = { idea = MAR_cheat_boost_debug days = 180 }
-					}
+					add_timed_idea = { idea = MAR_cheat_boost_debug days = 180 }
 				}
 			}
 			else_if = {
-				limit = { has_global_flag = IBRWarbyDebug }
+				limit = { has_global_flag = IBW_CONFLICT }
 				SPS = { add_timed_idea = { idea = MAR_cheat_boost_debug days = 180 } }
 				POR = { add_timed_idea = { idea = MAR_cheat_boost_debug days = 180 } }
 			}
@@ -674,7 +674,7 @@ MAR_debug_category = {
 				}
 			}
 			else_if = {
-				limit = { has_global_flag = IBW_CONFLICT }
+				limit = { has_global_flag = Iranian_Civil_War }
 				if = {
 					limit = { has_government = socialist }
 					IRA = { add_timed_idea = { idea = MAR_cheat_boost_debug days = 180 } }

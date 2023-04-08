@@ -223,7 +223,7 @@ MAR_Iraq_Kurdistan_zhirik = {
 		KUR = {
 			apply_party_popularities = yes
 			set_politics = {
-				ruling_party = liberalism
+				ruling_party = paternalism
 			}
 			remove_ideas = {
 				MAR_KUR_zeroaproval
@@ -240,20 +240,20 @@ MAR_Iraq_Kurdistan_zhirik = {
 			promote_leader = yes
 			country_leader = {
 				desc = "POLITICS_VLADIMIR_ZHIRINOVSKY_DESC"
-				ideology = liberalism_liberal_radicalism_subtype
+				ideology = paternalism_military_mandate_subtype
 				expire = "1999.1.1"
 				traits = { }
 			}
 		}
 		set_popularities = {
-			liberalism = 34
+			paternalism = 34
 			conservatism = 23
 			despotism = 24
-			paternalism = 17
+			liberalism = 17
 			esoteric_nazism = 2
 		}
 		set_party_name = {
-			ideology = liberalism
+			ideology = paternalism
 			long_name = KUR_Vladimir_Zhirinovsky_party_long
 			name = KUR_Vladimir_Zhirinovsky_party
 		}
@@ -307,7 +307,11 @@ MAR_Iraq_Kurdistan_saddam = {
 			election_frequency = 36
 			elections_allowed = no
 		}
-
+		set_party_name = {
+			ideology = progressivism
+			long_name = KUR_Saddam_Hussein_party_long
+			name = KUR_Saddam_Hussein_party
+		}
 		add_country_leader_role = {
 			character = KUR_Saddam_Hussein
 			country_leader = {
