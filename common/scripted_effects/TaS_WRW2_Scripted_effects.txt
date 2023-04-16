@@ -16,6 +16,57 @@ TaS_fopo_remove_manchurian_civil_war_tab = {
 	TNO_remove_fopo_conflict_tab = yes
 }
 
+TaS_fopo_add_iranian_civil_war_tab = {
+	set_temp_variable = { conflict_id = token:GC_IranCW }
+	TNO_add_fopo_conflict_tab = yes
+}
+TaS_fopo_remove_iranian_civil_war_tab = {
+	set_temp_variable = { conflict_id = token:GC_IranCW }
+	TNO_remove_fopo_conflict_tab = yes
+}
+TaS_fopo_add_oil_crisis_tab = {
+	set_temp_variable = { conflict_id = token:GC_OilCrisis }
+	TNO_add_fopo_conflict_tab = yes
+}
+TaS_fopo_remove_oil_crisis_tab = {
+	set_temp_variable = { conflict_id = token:GC_OilCrisis }
+	TNO_remove_fopo_conflict_tab = yes
+}
+TaS_fopo_add_congo_cw_tab = {
+	set_temp_variable = { conflict_id = token:GC_CongoCW }
+	TNO_add_fopo_conflict_tab = yes
+}
+TaS_fopo_remove_congo_cw_tab = {
+	set_temp_variable = { conflict_id = token:GC_CongoCW }
+	TNO_remove_fopo_conflict_tab = yes
+}
+TaS_fopo_add_iberian_wars_tab = {
+	set_temp_variable = { conflict_id = token:GC_IberianWars }
+	TNO_add_fopo_conflict_tab = yes
+}
+TaS_fopo_remove_iberian_wars_tab = {
+	set_temp_variable = { conflict_id = token:GC_IberianWars }
+	TNO_remove_fopo_conflict_tab = yes
+}
+
+TaS_OIL_get_supported_factions = {
+	if = {
+		limit = { MAR = { NOT = { has_government = socialist } } }
+		add_to_array = { global.OIL_supported_by_MAR = YEM }
+		add_to_array = { global.OIL_supported_by_MAR = OMA }
+		add_to_array = { global.OIL_supported_by_MAR = KUR }
+		add_to_array = { global.OIL_supported_by_MAR = EGQ }
+		add_to_array = { global.OIL_supported_by_MAR = SDF }
+		add_to_array = { global.OIL_supported_by_MAR = AZA }
+	}
+	else = {
+		add_to_array = { global.OIL_supported_by_MAR = NYM }
+		add_to_array = { global.OIL_supported_by_MAR = OMB }
+		add_to_array = { global.OIL_supported_by_MAR = BIR }
+		add_to_array = { global.OIL_supported_by_MAR = EGB }
+		add_to_array = { global.OIL_supported_by_MAR = SDS }
+	}
+}
 TaS_2WRW_manchuria_spawn_states = {
 	custom_effect_tooltip = TaS_2WRW_manchuria_spawn_states_tt
 	PFF = {

@@ -1063,6 +1063,15 @@ UAR_initialize_Faction_Mechanic = {
 		add_to_array = { UAR_faction_influence_gain_array = 2 } # indepentent 0
 		add_to_array = { UAR_faction_influence_gain_array = 1.5 } # pro-russian 1
 		add_to_array = { UAR_faction_influence_gain_array = 1 } # pro-pakt 2
+		
+		if = {
+			limit = { has_country_flag = MAR_leads_uar }
+			add_to_variable = { UAR_faction_influence_array^1 = 20 }
+		}
+		else_if = { 
+			limit = { has_country_flag = GER_leads_uar }
+			add_to_variable = { UAR_faction_influence_array^2 = 20 }
+		}
 	}
 	GER = {
 		TaS_fopo_add_uar_influence_battle_tab = yes

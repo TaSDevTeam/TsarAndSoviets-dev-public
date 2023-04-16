@@ -33,18 +33,29 @@ defined_text = {
 		localization_key = GC_Orungu_CAF
 	}
 
-	text = { # Puerto Plata Invasion, USA
+	text = { # Puerto Plata Invasion, USA/MEX
 		trigger = {
 			check_variable = { conflict_id = token:GC_PuertoPlata }
-			NOT = { has_global_flag = PPI_landing_ongoing }
-			tag = USA
+			NOT = {
+				has_global_flag = PPI_landing_ongoing
+				has_global_flag = PPI_ceasefire_happening
+				has_global_flag = PPI_civil_war_ongoing
+			}
+			OR = {
+				tag = USA
+				tag = MEX
+			}
 		}
 		localization_key = GC_PuertoPlata_USA
 	}
 	text = { # Puerto Plata Invasion, everyone else
 		trigger = {
 			check_variable = { conflict_id = token:GC_PuertoPlata }
-			NOT = { has_global_flag = PPI_landing_ongoing }
+			NOT = {
+				has_global_flag = PPI_landing_ongoing
+				has_global_flag = PPI_ceasefire_happening
+				has_global_flag = PPI_civil_war_ongoing
+			}
 			OR = {
 				tag = GER
 				tag = IBR
@@ -56,13 +67,54 @@ defined_text = {
 		trigger = {
 			check_variable = { conflict_id = token:GC_PuertoPlata }
 			has_global_flag = PPI_landing_ongoing
-			OR = {
-				tag = USA
-				tag = GER
-				tag = IBR
-			}
 		}
 		localization_key = GC_PuertoPlata_landing
+	}
+	text = { # Puerto Plata Invasion, ceasefire
+		trigger = {
+			check_variable = { conflict_id = token:GC_PuertoPlata }
+			has_global_flag = PPI_ceasefire_happening
+			OR = {
+				tag = USA
+				tag = IBR
+				tag = MEX
+			}
+		}
+		localization_key = GC_PuertoPlata_ceasefire
+	}
+	text = { # Puerto Plata Invasion, ceasefire GER
+		trigger = {
+			check_variable = { conflict_id = token:GC_PuertoPlata }
+			has_global_flag = PPI_ceasefire_happening
+			tag = GER
+		}
+		localization_key = GC_PuertoPlata_ceasefire_GER
+	}
+	text = { # Puerto Plata Invasion, ceasefire
+		trigger = {
+			check_variable = { conflict_id = token:GC_PuertoPlata }
+			has_global_flag = PPI_civil_war_ongoing
+		}
+		localization_key = GC_PuertoPlata_ceasefire_broken
+	}
+
+	text = { # Haitian Civil War
+		trigger = {
+			check_variable = { conflict_id = token:GC_Haitian_Civil_War }
+			has_global_flag = HAITI_just_civil_war
+			NOT = {
+				has_global_flag = HIS_trujillo_blitz_ongoing
+			}
+		}
+		localization_key = GC_Haitian_Civil_War
+	}
+
+	text = { # Haitian Blitz
+		trigger = {
+			check_variable = { conflict_id = token:GC_Haitian_Civil_War }
+			has_global_flag = HIS_trujillo_blitz_ongoing
+		}
+		localization_key = GC_Haitian_Blitz
 	}
 
 	text = { # French Civil War, Reclamation of France (USA)
@@ -88,6 +140,21 @@ defined_text = {
 	}
 }
 
+defined_text = {
+	name = Get_fopo_tab_name_title
+	text = {
+		trigger = {
+			check_variable = { selected_conflict_id = 0 }
+		}
+		localization_key = ""
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { conflict_id = selected_conflict_id }
+		}
+		localization_key = "[Get_fopo_tab_name]"
+	}
+}
 
 defined_text = {
 	name = Get_TNO_fopo_conflict_guis
@@ -162,8 +229,20 @@ defined_text = {
 		localization_key = "TNO_Puerto_Plata_Invasion_GUI_GER"
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = token:GC_FranceCW } }
+		trigger = { check_variable = { selected_conflict_id = token:GC_FranceCW } NOT = { tag = MAR } }
 		localization_key = "TNO_FrenchReclamation_DecisionGUI"
+	}
+	text = {
+		trigger = { check_variable = { selected_conflict_id = token:GC_IcelandElections } }
+		localization_key = "TNO_Iceland_Congress_Mechanic"
+	}
+	text = {
+		trigger = { check_variable = { selected_conflict_id = token:GC_Haitian_Civil_War } tag = USA }
+		localization_key = "TNO_Haitian_War_GUI_USA"
+	}
+	text = {
+		trigger = { check_variable = { selected_conflict_id = token:GC_MalagasyCW } }
+		localization_key = "TNO_Madagascar_GUI"
 	}
 	# text = {
 	# 	trigger = { check_variable = { selected_conflict_id = token: } }
@@ -174,6 +253,68 @@ defined_text = {
 	}
 }
 
+defined_text = {
+	name = GetBrandenburgerTooltip
+	text = {
+		trigger = { tag = GER }
+		localization_key = pp_brandenburger_meter_tooltip_GER
+	}
+}
+defined_text = {
+	name = GetBrandenburgerTooltipDelayed
+	text = {
+		trigger = { tag = GER }
+		localization_key = pp_brandenburger_meter_tooltip_delayed_GER
+	}
+}
+defined_text = {
+	name = GetPPCeasefireTension
+	text = {
+		trigger = { check_variable = { global.TNO_PPI_ceasefire_tension > 74.99 } }
+		localization_key = "TNO_PPI_ceasefire_tension_critical"
+	}
+	text = {
+		trigger = { check_variable = { global.TNO_PPI_ceasefire_tension > 49.99 } }
+		localization_key = "TNO_PPI_ceasefire_tension_tense"
+	}
+	text = {
+		trigger = { check_variable = { global.TNO_PPI_ceasefire_tension > 24.99 } }
+		localization_key = "TNO_PPI_ceasefire_tension_stable"
+	}
+	text = {
+		localization_key = "TNO_PPI_ceasefire_tension_relaxed"
+	}
+}
+defined_text =  {
+	name = GetPPInvasionUSADesc
+	text = {
+		trigger = { has_global_flag = PPI_ceasefire_happening }
+		localization_key = "USA_PP_ceasefire_desc"
+	}
+	text = {
+		localization_key = "USA_PP_invasion_desc"
+	}
+}
+defined_text =  {
+	name = GetPPInvasionIBRDesc
+	text = {
+		trigger = { has_global_flag = PPI_ceasefire_happening }
+		localization_key = "IBR_PP_ceasefire_desc"
+	}
+	text = {
+		localization_key = "IBR_PP_invasion_desc"
+	}
+}
+defined_text =  {
+	name = GetPPInvasionGERDesc
+	text = {
+		trigger = { has_global_flag = PPI_ceasefire_happening }
+		localization_key = "GER_PP_ceasefire_desc"
+	}
+	text = {
+		localization_key = "GER_PP_invasion_desc"
+	}
+}
 
 defined_text = {
 	name = Get_fopo_desc
@@ -377,19 +518,6 @@ defined_text = {
 		localization_key = GER_saf_aftermath
 	}
 
-	text = {
-		trigger = { check_variable = { selected_conflict_id = token:GC_MalagasyCW } tag = JAP }
-		localization_key = JAP_madagascar_conflict
-	}
-	text = {
-		trigger = { check_variable = { selected_conflict_id = token:GC_MalagasyCW } tag = USA }
-		localization_key = USA_madagascar_conflict
-	}
-	text = {
-		trigger = { check_variable = { selected_conflict_id = token:GC_MalagasyCW } tag = GER }
-		localization_key = GER_madagascar_conflict
-	}
-
 	# free space
 
 	text = {
@@ -449,7 +577,10 @@ defined_text = {
 		localization_key = USA_wafr_reconstruction_desc
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = token:GC_PuertoPlata } tag = USA }
+		trigger = {
+			check_variable = { selected_conflict_id = token:GC_PuertoPlata }
+			tag = USA
+		}
 		localization_key = USA_puerto_plata_desc
 	}
 	text = {
@@ -466,6 +597,14 @@ defined_text = {
 		}
 		localization_key = GER_puerto_plata_desc
 	}
+	text = {
+		trigger = {
+			check_variable = { selected_conflict_id = token:GC_Haitian_Civil_War }
+			tag = USA
+		}
+		localization_key = USA_haitian_civil_war_desc
+	}
+
 	text = {
 		trigger = {
 			check_variable = { selected_conflict_id = token:GC_FranceCW }
@@ -535,6 +674,15 @@ defined_text = {
 		localization_key = BRA_CCW_desc
 	}
 	text = {
+		trigger = { check_variable = { conflict_id = token:GC_ReichsstaatCabal } }
+		localization_key = GER_RAC_desc
+	}
+	text = {
+		trigger = { check_variable = { conflict_id = token:GC_EnglandInfluenceBattle } }
+		localization_key = ENG_IBC_desc
+	}
+	#TaS stuff
+	text = {
 		trigger = { check_variable = { conflict_id = token:GC_FarEasternRevolt } tag = MAR }
 		localization_key = MAR_far_eastern_revolt_category_desc
 	}
@@ -551,7 +699,11 @@ defined_text = {
 		localization_key = MAR_Kosygin_manchurian_civil_war_category_desc
 	}
 	text = {
-		trigger = { check_variable = { conflict_id = token:GC_ManchurianCivilWar } tag = MAR }
+		trigger = { 
+			check_variable = { conflict_id = token:GC_ManchurianCivilWar }
+			tag = MAR 
+			NOT = { has_government = socialist }
+		}
 		localization_key = MAR_manchurian_civil_war_category_desc
 	}
 	text = {
@@ -566,16 +718,94 @@ defined_text = {
 		trigger = { check_variable = { conflict_id = token:GC_UAR_influence_battle } }
 		localization_key = UAR_IBC_desc
 	}
-	
 	text = {
-		trigger = { check_variable = { conflict_id = token:GC_ReichsstaatCabal } }
-		localization_key = GER_RAC_desc
+		trigger = {
+			check_variable = { conflict_id = token:GC_IranCW } 
+			tag = MAR
+			NOT = { has_government = socialist }
+		}
+		localization_key = MAR_Iranian_Civil_War_category_desc
 	}
 	text = {
-		trigger = { check_variable = { conflict_id = token:GC_EnglandInfluenceBattle } }
-		localization_key = ENG_IBC_desc
+		trigger = {
+			check_variable = { conflict_id = token:GC_IranCW }
+			tag = MAR
+			has_government = socialist
+		}
+		localization_key = MAR_Kosygin_Iranian_Civil_War_category_desc
 	}
-	
+	text = {
+		trigger = {
+			check_variable = { conflict_id = token:GC_OilCrisis } 
+			tag = MAR
+			NOT = { has_government = socialist }
+		}
+		localization_key = MAR_oil_crisis_support_category_desc
+	}
+	text = {
+		trigger = {
+			check_variable = { conflict_id = token:GC_OilCrisis }
+			tag = MAR
+			has_government = socialist
+		}
+		localization_key = MAR_Kosygin_oil_crisis_support_category_desc
+	}
+	text = {
+		trigger = {
+			check_variable = { conflict_id = token:GC_CongoCW } 
+			tag = MAR
+			NOT = { has_government = socialist }
+		}
+		localization_key = MAR_congo_cw_category_desc
+	}
+	text = {
+		trigger = {
+			check_variable = { conflict_id = token:GC_CongoCW }
+			tag = MAR
+			has_government = socialist
+		}
+		localization_key = MAR_Kosygin_congo_cw_category_desc
+	}
+	text = {
+		trigger = { check_variable = { conflict_id = token:GC_IberianWars } tag = MAR }
+		localization_key = MAR_IBW_PW_desc
+	}
+	#text = {
+	#	trigger = {
+	#		check_variable = { selected_conflict_id = token:GC_FranceCW }
+	#		has_global_flag = FFR_reclamation_happening
+	#		tag = MAR
+	#		has_government = socialist
+	#	}
+	#	localization_key = MAR_Kosygin_ffr_reclamation_desc
+	#}
+	#text = {
+	#	trigger = {
+	#		check_variable = { selected_conflict_id = token:GC_FranceCW }
+	#		has_global_flag = FFR_reclamation_happening
+	#		tag = MAR
+	#		NOT = { has_government = socialist }
+	#	}
+	#	localization_key = MAR_ffr_reclamation_desc
+	#}
+	text = {
+		trigger = {
+			check_variable = { selected_conflict_id = token:GC_FranceCW }
+			has_global_flag = FFR_reclamation_civil_war_happening
+			tag = MAR
+			has_government = socialist
+		}
+		localization_key = MAR_Kosygin_french_civil_war_desc
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_conflict_id = token:GC_FranceCW }
+			has_global_flag = FFR_reclamation_civil_war_happening
+			tag = MAR
+			NOT = { has_government = socialist }
+		}
+		localization_key = MAR_french_civil_war_desc
+	}
 	text = {
 		localization_key = ""
 	}
@@ -707,6 +937,14 @@ defined_text = {
 		trigger = { check_variable = { selected_conflict_id = token:GC_WACReconstruction } }
 		localization_key = "GFX_fopo_wafr_reconstruction_sidebar"
 	}
+	text = { # Haitian Civil War
+		trigger = { check_variable = { selected_conflict_id = token:GC_Haitian_Civil_War } NOT = { has_global_flag = HIS_trujillo_blitz_ongoing } }
+		localization_key = "GFX_fopo_haitian_civil_war_sidebar"
+	}
+	text = { # Haitian Blitz
+		trigger = { check_variable = { selected_conflict_id = token:GC_Haitian_Civil_War } has_global_flag = HIS_trujillo_blitz_ongoing }
+		localization_key = "GFX_fopo_haitian_blitz_sidebar"
+	}
 	text = { # Puerto Plata
 		trigger = { check_variable = { selected_conflict_id = token:GC_PuertoPlata } }
 		localization_key = "GFX_fopo_puerto_plata_sidebar"
@@ -737,6 +975,7 @@ defined_text = {
 		trigger = { check_variable = { selected_conflict_id = token:GC_EnglandInfluenceBattle } }
 		localization_key = "GFX_fopo_england_influence_battle_sidebar"
 	}
+	#TaS stuff
 	text = {
 		trigger = { check_variable = { conflict_id = token:GC_FarEasternRevolt } }
 		localization_key = "GFX_fopo_far_eastern_revolt_sidebar"
@@ -804,9 +1043,9 @@ defined_text = {
 		trigger = { check_variable = { conflict_id = token:GC_IndonesiaCW } tag = USA }
 		localization_key = "GFX_fopo_indonesia_icon_us"
 	}
-	text = { # Indonesian Civil War, USA
-	trigger = { check_variable = { conflict_id = token:GC_IndonesiaCW } tag = GER }
-	localization_key = "GFX_fopo_indonesia_icon_us"
+	text = { # Indonesian Civil War, GER
+		trigger = { check_variable = { conflict_id = token:GC_IndonesiaCW } tag = GER }
+		localization_key = "GFX_fopo_indonesia_icon_us"
 	}
 	text = { # Indonesian Civil War, Japan
 		trigger = { check_variable = { conflict_id = token:GC_IndonesiaCW } tag = JAP }
@@ -1219,16 +1458,16 @@ defined_text = {
 		localization_key = "GFX_fopo_mandates_icon"
 	}
 	text = {
-		trigger = { check_variable = { conflict_id = token:GC_MalagasyCW } tag = JAP }
-		localization_key = "GFX_fopo_madagascar_icon_JAP"
-	}
-	text = {
 		trigger = { check_variable = { conflict_id = token:GC_MalagasyCW } tag = USA }
-		localization_key = "GFX_fopo_madagascar_icon_USA"
+		localization_key = "GFX_fopo_madagascar_icon"
 	}
 	text = {
 		trigger = { check_variable = { conflict_id = token:GC_MalagasyCW } tag = GER }
-		localization_key = "GFX_fopo_madagascar_icon_GER"
+		localization_key = "GFX_fopo_madagascar_icon_ger"
+	}
+	text = {
+		trigger = { check_variable = { conflict_id = token:GC_MalagasyCW } tag = JAP }
+		localization_key = "GFX_fopo_madagascar_icon"
 	}
 	text = {
 		trigger = { check_variable = { conflict_id = token:GC_PhilippinesReconstruction } }
@@ -1283,8 +1522,25 @@ defined_text = {
 		localization_key = "GFX_fopo_wafr_reconstruction_icon"
 	}
 	text = {
+		trigger = { 
+			check_variable = { conflict_id = token:GC_Haitian_Civil_War }
+			NOT = {
+				has_global_flag = HIS_trujillo_blitz_ongoing
+			}
+			tag = USA
+		}
+		localization_key = "GFX_fopo_haitian_civil_war_icon_USA"
+	}
+	text = { # Haitian Blitz
 		trigger = {
-			check_variable = { conflict_id = token:GC_PuertoPlata }
+			check_variable = { conflict_id = token:GC_Haitian_Civil_War }
+			has_global_flag = HIS_trujillo_blitz_ongoing
+		}
+		localization_key = "GFX_fopo_haitian_blitz_icon_USA"
+	}
+	text = {
+		trigger = { 
+			check_variable = { conflict_id = token:GC_PuertoPlata } 
 			OR = {
 				tag = USA
 				tag = MEX
@@ -1371,6 +1627,19 @@ defined_text = {
 	# 	trigger = { check_variable = { conflict_id = token: } tag = ARG }
 	# 	localization_key = "GFX_fopo_south_american_cold_war_arg"
 	# }
+	text = { # Iceland - USA
+		trigger = { check_variable = { conflict_id = token:GC_IcelandElections } tag = USA }
+		localization_key = "GFX_fopo_iceland_ref_us"
+	}
+	text = { # Iceland - GER
+		trigger = { check_variable = { conflict_id = token:GC_IcelandElections } tag = GER }
+		localization_key = "GFX_fopo_iceland_ref_ger"
+	}
+	text = { # Haiti - USA
+		trigger = { check_variable = { conflict_id = token:GC_Haitian_Civil_War } tag = USA }
+		localization_key = "GFX_fopo_haitianwar_usa"
+	}
+	#TaS stuff
 	text = {
 		trigger = { check_variable = { conflict_id = token:GC_FarEasternRevolt } tag = MAR }
 		localization_key = "GFX_fopo_far_eastern_revolt_icon_rus"
@@ -1389,10 +1658,10 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-				check_variable = { conflict_id = token:GC_ManchurianCivilWar }
-				tag = MAR
-				has_government = socialist
-			}
+			check_variable = { conflict_id = token:GC_ManchurianCivilWar }
+			tag = MAR
+			has_government = socialist
+		}
 		localization_key = "GFX_fopo_manchurian_civil_war_icon_kosygin"
 	}
 	text = {
@@ -1407,7 +1676,130 @@ defined_text = {
 		trigger = { check_variable = { conflict_id = token:GC_UAR_influence_battle } }
 		localization_key = "GFX_fopo_uar_influence_battle_icon"
 	}
-	
+	text = {
+		trigger = { 
+			check_variable = { conflict_id = token:GC_IranCW }
+			tag = MAR
+			NOT = { has_government = socialist }
+		}
+		localization_key = "GFX_fopo_iranian_civil_war_icon_rus"
+	}
+	text = {
+		trigger = { 
+			check_variable = { conflict_id = token:GC_IranCW }
+			tag = MAR
+			has_government = socialist
+		}
+		localization_key = "GFX_fopo_iranian_civil_war_icon_kosygin"
+	}
+	text = { # Oil Crisis, MAR, only Yemen
+		trigger = {
+			check_variable = { conflict_id = token:GC_OilCrisis }
+			NOT = {
+				has_global_flag = OC_Oman_CW
+				has_global_flag = OC_Iraq_CW
+				has_global_flag = OC_Egypt_CW
+			}
+			tag = MAR
+			NOT = { has_government = socialist }
+		}
+		localization_key = "GFX_fopo_oc_icon_rus_only_yemen"
+	}
+	text = { # Oil Crisis, MAR, only Yemen Oman
+		trigger = {
+			check_variable = { conflict_id = token:GC_OilCrisis }
+			NOT = {
+				has_global_flag = OC_Iraq_CW
+				has_global_flag = OC_Egypt_CW
+			}
+			tag = MAR
+			NOT = { has_government = socialist }
+		}
+		localization_key = "GFX_fopo_oc_icon_rus_yemen_oman"
+	}
+	text = { # Oil Crisis, MAR, no Egypt
+		trigger = {
+			check_variable = { conflict_id = token:GC_OilCrisis }
+			NOT = {
+				has_global_flag = OC_Egypt_CW
+			}
+			tag = MAR
+			NOT = { has_government = socialist }
+		}
+		localization_key = "GFX_fopo_oc_icon_rus_no_egypt"
+	}
+	text = { # Oil Crisis, MAR, everything
+		trigger = {
+			check_variable = { conflict_id = token:GC_OilCrisis }
+			tag = MAR
+			NOT = { has_government = socialist }
+		}
+		localization_key = "GFX_fopo_oc_icon_rus"
+	}
+	text = { # Oil Crisis, MAR, only Yemen
+		trigger = {
+			check_variable = { conflict_id = token:GC_OilCrisis }
+			NOT = {
+				has_global_flag = OC_Oman_CW
+				has_global_flag = OC_Iraq_CW
+				has_global_flag = OC_Egypt_CW
+			}
+			tag = MAR
+			has_government = socialist
+		}
+		localization_key = "GFX_fopo_oc_icon_kosygin_only_yemen"
+	}
+	text = { # Oil Crisis, MAR, only Yemen Oman
+		trigger = {
+			check_variable = { conflict_id = token:GC_OilCrisis }
+			NOT = {
+				has_global_flag = OC_Iraq_CW
+				has_global_flag = OC_Egypt_CW
+			}
+			tag = MAR
+			has_government = socialist
+		}
+		localization_key = "GFX_fopo_oc_icon_kosygin_yemen_oman"
+	}
+	text = { # Oil Crisis, MAR, no Egypt
+		trigger = {
+			check_variable = { conflict_id = token:GC_OilCrisis }
+			NOT = {
+				has_global_flag = OC_Egypt_CW
+			}
+			tag = MAR
+			has_government = socialist
+		}
+		localization_key = "GFX_fopo_oc_icon_kosygin_no_egypt"
+	}
+	text = { # Oil Crisis, MAR, everything
+		trigger = {
+			check_variable = { conflict_id = token:GC_OilCrisis }
+			tag = MAR
+			has_government = socialist
+		}
+		localization_key = "GFX_fopo_oc_icon_kosygin"
+	}
+	text = { # COG, MAR
+		trigger = { check_variable = { conflict_id = token:GC_CongoCW } tag = GER NOT = { has_global_flag = congo_PW_CAF_joined has_government = socialist } }
+		localization_key = "GFX_fopo_congo_civil_war_icon_rus"
+	}
+	text = { # COG, MAR and CAF
+		trigger = { check_variable = { conflict_id = token:GC_CongoCW } tag = USA has_global_flag = congo_PW_CAF_joined NOT = { has_government = socialist }  }
+		localization_key = "GFX_fopo_congo_civil_war_icon_rus_CAF"
+	}
+	text = { # COG, MAR kosygin
+		trigger = { check_variable = { conflict_id = token:GC_CongoCW } tag = GER NOT = { has_global_flag = congo_PW_CAF_joined } has_government = socialist  }
+		localization_key = "GFX_fopo_congo_civil_war_icon_kosygin"
+	}
+	text = { # COG, MAR kosygin and CAF
+		trigger = { check_variable = { conflict_id = token:GC_CongoCW } tag = USA has_global_flag = congo_PW_CAF_joined has_government = socialist }
+		localization_key = "GFX_fopo_congo_civil_war_icon_kosygin_CAF"
+	}
+	text = {
+		trigger = { check_variable = { conflict_id = token:GC_IberianWars } tag = MAR }
+		localization_key = "GFX_fopo_IBR_RUS_STAGE_1"
+	}
 	text = {
 		localization_key = "GFX_fopo_blank_icon"
 	}
@@ -1581,6 +1973,10 @@ defined_text = {
 		localization_key = USA_PP_ongoing_bottom
 	}
 	text = {
+		trigger = { has_global_flag = PPI_ceasefire_happening }
+		localization_key = USA_PP_ceasefire_tooltip
+	}
+	text = {
 		localization_key = USA_PP_preparations_bottom
 	}
 }
@@ -1676,5 +2072,222 @@ defined_text = {
 	}
 	text = {
 		localization_key = USA_homefront_medium
+	}
+}
+
+# Madagascar
+defined_text = {
+	name = Get_Madagascar_Desc
+	text = {
+		trigger = {
+			original_tag = USA
+		}
+		localization_key = USA_Madagascar_desc
+	}
+	text = {
+		trigger = {
+			original_tag = JAP
+		}
+		localization_key = JAP_Madagascar_desc
+	}
+	text = {
+		trigger = {
+			original_tag = GER
+		}
+		localization_key = GER_Madagascar_desc
+	}
+}
+
+defined_text = {
+	name = Get_Madagascar_Controller
+	text = {
+		trigger = {
+			var:mad_v = {
+				is_controlled_by = MDM
+			}
+		}
+		localization_key = Madagascar_state_controller_no_one_tt
+	}
+	text = {
+		localization_key = "[?mad_v:controller.GetNameWithFlag]"
+	}
+}
+
+defined_text = {
+	name = Get_Madagascar_button_text_color_factionalism
+	text = {
+		trigger = {
+			check_variable = { Madagascar_active_tab = 0 }
+		}
+		localization_key = Madagascar_W
+	}
+	text = {
+		localization_key = Madagascar_D
+	}
+}
+
+defined_text = {
+	name = Get_Madagascar_button_text_color_regions
+	text = {
+		trigger = {
+			check_variable = { Madagascar_active_tab = 0 }
+		}
+		localization_key = Madagascar_D
+	}
+	text = {
+		localization_key = Madagascar_W
+	}
+}
+
+defined_text = {
+	name = Get_Madagascar_node_desc
+	text = {
+		trigger = {
+			check_variable = { Madagascar_selected_city = 1857 }
+		}
+		localization_key = Madagascar_state_desc.1857
+	}
+	text = {
+		trigger = {
+			check_variable = { Madagascar_selected_city = 1969 }
+		}
+		localization_key = Madagascar_state_desc.1969
+	}
+	text = {
+		trigger = {
+			check_variable = { Madagascar_selected_city = 944 }
+		}
+		localization_key = Madagascar_state_desc.944
+	}
+	text = {
+		trigger = {
+			check_variable = { Madagascar_selected_city = 945 }
+		}
+		localization_key = Madagascar_state_desc.945
+	}
+	text = {
+		trigger = {
+			check_variable = { Madagascar_selected_city = 1970 }
+		}
+		localization_key = Madagascar_state_desc.1970
+	}
+	text = {
+		trigger = {
+			check_variable = { Madagascar_selected_city = 1974 }
+		}
+		localization_key = Madagascar_state_desc.1974
+	}
+	text = {
+		trigger = {
+			check_variable = { Madagascar_selected_city = 1975 }
+		}
+		localization_key = Madagascar_state_desc.1975
+	}
+	text = {
+		trigger = {
+			check_variable = { Madagascar_selected_city = 1860 }
+		}
+		localization_key = Madagascar_state_desc.1860
+	}
+	text = {
+		trigger = {
+			check_variable = { Madagascar_selected_city = 946 }
+		}
+		localization_key = Madagascar_state_desc.946
+	}
+}
+
+defined_text = {
+	name = GetHincheTitle
+	text = {
+		trigger = {
+			has_country_flag = HCW_signal_lost
+		}
+		localization_key = ""
+	}
+	text = {
+		trigger = {
+			DOM = {
+				owns_state = 1706
+				NOT = {
+					has_government = socialist
+					has_government = communist
+				}
+			}
+		}
+		localization_key = "TNO_HCW_Hinche_tt_occupation"
+	}
+	text = {
+		trigger = {
+			DOM = {
+				owns_state = 1706
+				OR = {
+					has_government = socialist
+					has_government = communist
+				}
+			}
+		}
+		localization_key = TNO_HCW_Hinche_tt_socialist
+	}
+	text = {
+		localization_key = TNO_HCW_Hinche_tt_haiti
+	}
+}
+
+defined_text = {
+	name = GetHCWHincheTooltip_delayed
+	text = {
+		trigger = {
+			has_country_flag = HCW_signal_lost
+		}
+		localization_key = ""
+	}
+	text = {
+		trigger = {
+			DOM = {
+				owns_state = 1706
+				has_government = fascism
+			}
+		}
+		localization_key = "TNO_HCW_Hinche_trujillo_delayed"
+	}
+	text = {
+		trigger = {
+			DOM = {
+				owns_state = 1706
+				OR = {
+					has_government = socialist
+					has_government = communist
+				}
+			}
+		}
+		localization_key = TNO_HCW_Hinche_socialist_delayed
+	}
+	text = {
+		trigger = { DOM = { owns_state = 1706 } }
+		localization_key = TNO_HCW_Hinche_democratic_delayed
+	}
+	text = {
+		localization_key = TNO_HCW_Hinche_hinche_delayed
+	}
+}
+
+defined_text = {
+	name = GetHCWPhase
+	text = {
+		trigger = { TNO_HCW_Phase_Base = yes }
+		localization_key = TNO_HCW_Phase_title_Base
+	}
+	text = {
+		trigger = { TNO_HCW_Phase_Buildup = yes }
+		localization_key = TNO_HCW_Phase_title_Buildup
+	}
+	text = {
+		trigger = { TNO_HCW_Phase_Interventionism = yes }
+		localization_key = TNO_HCW_Phase_title_Interventionism
+	}
+	text = {
+		trigger = { TNO_HCW_Phase_Disengagement = yes }
+		localization_key = TNO_HCW_Phase_title_Disengagement
 	}
 }

@@ -1,27 +1,44 @@
 MAR_debug_category = {
-	########## ######## ################################################№№№##№####№##№#
-	MAR_load_Belozerski_post_unification_tree = {
-		icon = GFX_decision_generic_decision
+	#ya pokakal
+	MAR_load_initial_decisions = {
+		icon = GFX_decision_generic_visibility
 
 		allowed = {
 			original_tag = MAR
 		}
-
-		fire_only_once = no
+		visible = {
+			NOT = { check_variable = { MAR_debug_cat > 1 } }
+		}
+		fire_only_once = yes
 
 		complete_effect = { 
-			log = "[GetDateText]: [Root.GetName]: Decision MAR_load_starting_tree"
-			load_focus_tree = {	tree = MAR_Belozerski_post_unification_tree keep_completed = no }
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_load_initial_decisions"
+			set_variable = { MAR_debug_cat = 1 }
 		}
 	}
-	
-	MAR_load_starting_tree_new = {
-		icon = GFX_decision_generic_decision
+	MAR_initial_focus_tree_effigy = {
+		icon = GFX_decision_research_generic
+		visible = {
+			check_variable = { MAR_debug_cat = 1 }
+		}
+		fire_only_once = yes
+		available = {
+			always = no
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_initial_focus_tree_effigy"
+		}
+	}
+	MAR_initial_tree_load = {
+		icon = GFX_decision_generic_industry
 
 		allowed = {
 			original_tag = MAR
 		}
-
+		visible = {
+			check_variable = { MAR_debug_cat = 1 }
+		}
 		fire_only_once = no
 
 		complete_effect = {
@@ -30,13 +47,15 @@ MAR_debug_category = {
 		}
 	}
 
-	MAR_load_postbomb = { 
-		icon = GFX_decision_generic_decision
+	MAR_afterbomb_tree_load = { 
+		icon = GFX_decision_generic_industry
 
 		allowed = {
 			original_tag = MAR
 		}
-
+		visible = {
+			check_variable = { MAR_debug_cat = 1 }
+		}
 		fire_only_once = no
 
 		complete_effect = {
@@ -44,13 +63,15 @@ MAR_debug_category = {
 			load_focus_tree = {	tree = MAR_postbomb_tree keep_completed = no }
 		}
 	}
-	MAR_load_smuta = {
-		icon = GFX_decision_generic_decision
+	MAR_smuta_tree_load = {
+		icon = GFX_decision_generic_industry
 
 		allowed = {
 			original_tag = MAR
 		}
-
+		visible = {
+			check_variable = { MAR_debug_cat = 1 }
+		}
 		fire_only_once = no
 
 		complete_effect = {
@@ -58,11 +79,261 @@ MAR_debug_category = {
 			load_focus_tree = {	tree = MAR_smuta_tree keep_completed = no }
 		}
 	}
-	
-	
-	MAR_load_Belozerski_tree = {
-		icon = GFX_decision_generic_decision
+	MAR_initial_mgb_effigy = {
+		icon = GFX_decision_research_generic
+		visible = {
+			check_variable = { MAR_debug_cat = 1 }
+		}
+		fire_only_once = yes
+		available = {
+			always = no
+		}
 
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_initial_mgb_effigy"
+		}
+	}
+	MAR_mgb_reload = {
+		icon = GFX_decision_generic_industry
+
+		allowed = {
+			original_tag = MAR
+		}
+		visible = {
+			check_variable = { MAR_debug_cat = 1 }
+		}
+		fire_only_once = no
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: MAR_mgb_reload"
+			country_event = { id = MAR_initial.7 }
+		}
+	}
+	MAR_mgb_force_rotation = {
+		icon = GFX_decision_generic_industry
+
+		allowed = {
+			original_tag = MAR
+		}
+		visible = {
+			check_variable = { MAR_debug_cat = 1 }
+		}
+		fire_only_once = no
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: MAR_mgb_force_rotation"
+			custom_effect_tooltip = MAR_rotation_random_tt
+			hidden_effect = { 
+				set_temp_variable = { temp_connections_gained = 1 }
+				randomize_temp_variable = {
+					var = temp_connections_gained
+					distribution = uniform
+					min = 2
+					max = 6
+				}
+				round_temp_variable = temp_connections_gained
+				MAR_Okhranka_connections_change = yes
+				set_temp_variable = { temp_agents_gained = 1 }
+				randomize_temp_variable = {
+					var = temp_agents_gained
+					distribution = uniform
+					min = 20
+					max = 60
+				}
+				round_temp_variable = temp_agents_gained
+				MAR_Okhranka_agents_change = yes
+			}
+		}
+	}
+	MAR_mgb_decrease_influence = {
+		icon = GFX_decision_generic_industry
+		
+		allowed = {
+			original_tag = MAR
+		}
+		visible = {
+			check_variable = { MAR_debug_cat = 1 }
+		}
+		fire_only_once = no
+		
+		complete_effect = {
+			set_temp_variable = { temp_agents_gained = -120 }
+			set_temp_variable = { temp_connections_gained = -5 }
+			MAR_Okhranka_agents_change = yes
+			MAR_Okhranka_connections_change = yes
+		}
+	}
+	MAR_mgb_increase_influence = {
+		icon = GFX_decision_generic_industry
+		
+		allowed = {
+			original_tag = MAR
+		}
+		visible = {
+			check_variable = { MAR_debug_cat = 1 }
+		}
+		fire_only_once = no
+		
+		complete_effect = {
+			set_temp_variable = { temp_agents_gained = 120 }
+			set_temp_variable = { temp_connections_gained = 5 }
+			MAR_Okhranka_agents_change = yes
+			MAR_Okhranka_connections_change = yes
+		}
+	}
+	MAR_mgb_do_the_fuck_up = {
+		icon = GFX_decision_generic_industry
+		
+		allowed = {
+			original_tag = MAR
+		}
+		visible = {
+			check_variable = { MAR_debug_cat = 1 }
+		}
+		fire_only_once = no
+		
+		complete_effect = {
+			add_popularity = {
+				ideology = paternalism
+				popularity = 0.1
+			}
+			set_temp_variable = { temp_connections_gained = 10 }
+			set_temp_variable = { temp_agents_gained = 60 }
+			MAR_Okhranka_connections_change = yes
+			MAR_Okhranka_agents_change = yes
+			add_to_variable = { MAR_MGB_vyatka_angry = 1}
+			clamp_variable = {
+				var = MAR_MGB_vyatka_angry
+				min = 0
+				max = 2
+			}
+			swap_ideas = {
+				add_idea = MAR_direct_influence_of_vyatka
+				remove_idea = MAR_military_instructors_of_vyatka
+			}
+			if = {
+				limit = { has_idea = MAR_souverinity_fail_1 }
+				swap_ideas = {
+					remove_idea = MAR_souverinity_fail_1
+					add_idea = MAR_souverinity_fail_2
+				}
+			}
+			else = {
+				add_ideas = MAR_souverinity_fail_1
+			}
+		}
+	}
+	MAR_mgb_let_my_people_go = {
+		icon = GFX_decision_generic_industry
+		
+		allowed = {
+			original_tag = MAR
+		}
+		visible = {
+			check_variable = { MAR_debug_cat = 1 }
+		}
+		fire_only_once = no
+		
+		complete_effect = {
+			if = {
+				limit = { check_variable = { MAR_MGB_vyatka_angry = 2 } }
+				if = {
+					limit = { check_variable = { MAR_Okhranka_power < 15 } }
+					country_event = { id = MAR_initial.52 days = 2 }
+				}
+				else = {
+					country_event = { id = MAR_initial.53 days = 2 }
+				}
+			}
+			if = {
+				limit = { check_variable = { MAR_MGB_vyatka_angry = 1 } }
+				if = {
+					limit = { check_variable = { MAR_Okhranka_power < 35 } }
+					country_event = { id = MAR_initial.52 days = 2 }
+				}
+				else = {
+					country_event = { id = MAR_initial.53 days = 2 }
+				}
+			}
+			if = {
+				limit = { check_variable = { MAR_MGB_vyatka_angry = 0 } }
+				if = {
+					limit = { check_variable = { MAR_Okhranka_power < 60 } }
+					country_event = { id = MAR_initial.52 days = 2 }
+				}
+				else = {
+					country_event = { id = MAR_initial.53 days = 2 }
+				}
+			}
+			clr_country_flag = MAR_MGB_available
+		}
+	}
+	MAR_mgb_yurla = {
+		icon = GFX_decision_generic_industry
+		
+		allowed = {
+			original_tag = MAR
+		}
+		visible = {
+			check_variable = { MAR_debug_cat = 1 }
+		}
+		fire_only_once = no
+		
+		complete_effect = {
+			custom_effect_tooltip = MAR_MGB_yurla_operation_tt
+			random_list = {
+				1 = {
+					custom_effect_tooltip = MAR_MGB_yurla_operation_success_tt
+					transfer_state = 865
+					add_state_core = 865
+					set_temp_variable = { temp_econ_GDP_boost_flat = 0.015 }
+					econ_GDP_boost_once_flat = yes
+				}
+				2 = {
+					custom_effect_tooltip = MAR_MGB_yurla_operation_fail_tt
+					add_stability = -0.02
+					add_manpower = -231
+				}
+			}
+		}
+	}
+		
+	MAR_load_belozersky_decisions = {
+		icon = GFX_decision_generic_visibility
+	
+		allowed = {
+			original_tag = MAR
+		}
+		visible = {
+			NOT = { check_variable = { MAR_debug_cat > 2 } }
+		}
+		fire_only_once = yes
+
+		complete_effect = { 
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_load_initial_decisions"
+			set_variable = { MAR_debug_cat = 2 }
+			country_event = { id = MAR_zemsky_sobor.22 }
+		}
+	}
+	MAR_beloozersky_focus_tree_effigy = {
+		icon = GFX_decision_research_generic
+		visible = {
+			check_variable = { MAR_debug_cat = 2 }
+		}
+		fire_only_once = yes
+		available = {
+			always = no
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_initial_focus_tree_effigy"
+		}
+	}
+	MAR_load_Belozerski_tree = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			check_variable = { MAR_debug_cat = 2 }
+		}
 		allowed = {
 			original_tag = MAR
 		}
@@ -75,8 +346,10 @@ MAR_debug_category = {
 		}
 	}
 	MAR_load_Belozerski_supertree = {
-		icon = GFX_decision_generic_decision
-
+		icon = GFX_decision_generic_industry
+		visible = {
+			check_variable = { MAR_debug_cat = 2 }
+		}
 		allowed = {
 			original_tag = MAR
 		}
@@ -88,23 +361,70 @@ MAR_debug_category = {
 			load_focus_tree = {	tree = MAR_Belozerski_Super_reg keep_completed = no }
 		}
 	}
-	MAR_load_MAR_Kazembek = {
-		icon = GFX_decision_generic_decision
-
+	MAR_load_Belozerski_post_unification_tree = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			check_variable = { MAR_debug_cat = 2 }
+		}
 		allowed = {
 			original_tag = MAR
 		}
 
 		fire_only_once = no
 
+		complete_effect = { 
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_load_starting_tree"
+			load_focus_tree = {	tree = MAR_Belozerski_post_unification_tree keep_completed = no }
+		}
+	}
+	MAR_beloozersky_specific_mechs_effigy = {
+		icon = GFX_decision_research_generic
+		visible = {
+			check_variable = { MAR_debug_cat = 2 }
+		}
+		fire_only_once = yes
+		available = {
+			always = no
+		}
+
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: MAR_load_voina"
-			load_focus_tree = {	tree = MAR_Kazembek keep_completed = no }
+			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_initial_focus_tree_effigy"
+		}
+	}
+	MAR_load_kosygin_decisions = {
+		icon = GFX_decision_generic_visibility
+
+		allowed = {
+			original_tag = MAR
+		}
+
+		fire_only_once = yes
+
+		complete_effect = { 
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_load_kosygin_decisions"
+			set_variable = { MAR_debug_cat = 3 }
+			country_event = { id = MAR_zemsky_sobor.24 }
+		}
+	}
+	MAR_kosygin_focus_tree_effigy = {
+		icon = GFX_decision_research_generic
+		visible = {
+			check_variable = { MAR_debug_cat = 3 }
+		}
+		fire_only_once = yes
+		available = {
+			always = no
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_kosygin_focus_tree_effigy"
 		}
 	}
 	MAR_load_Kosygin_regional = {
-		icon = GFX_decision_generic_decision
-
+		icon = GFX_decision_generic_industry
+		visible = {
+			check_variable = { MAR_debug_cat = 3 }
+		}
 		allowed = {
 			original_tag = MAR
 		}
@@ -114,24 +434,69 @@ MAR_debug_category = {
 			load_focus_tree = MAR_Kosygin_Regional
 		}
 	}
-	MAR_enable_prestol_dec = {
-		icon = GFX_decision_generic_decision
-
+	MAR_load_Kosygin_superregional = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			check_variable = { MAR_debug_cat = 3 }
+		}
 		allowed = {
 			original_tag = MAR
-		}
-		visible = {
-			has_focus_tree = MAR_Kosygin_Regional
 		}
 		fire_only_once = no
 
 		complete_effect = {
-			MAR_Prestol_start = yes
+			load_focus_tree = MAR_Kosygin_Superregional
 		}
 	}
-	MAR_ogas_rewrite_debug = {
-		icon = GFX_decision_generic_decision
+	MAR_load_Kosygin_post_unification = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			check_variable = { MAR_debug_cat = 3 }
+		}
+		allowed = {
+			original_tag = MAR
+		}
 
+		fire_only_once = no
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: TaS_WRW2_End_the_germany_decision"
+			load_focus_tree = MAR_Kosygin_post_unification
+		}
+	}
+	MAR_kosygin_specific_mechs_effigy = {
+		icon = GFX_decision_research_generic
+		visible = {
+			check_variable = { MAR_debug_cat = 3 }
+		}
+		fire_only_once = yes
+		available = {
+			always = no
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_initial_focus_tree_effigy"
+		}
+	}
+	MAR_blew_up_kosygin = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			check_variable = { MAR_debug_cat = 3 }
+		}
+		allowed = {
+			original_tag = MAR
+		}
+		fire_only_once = no
+
+		complete_effect = {
+			country_event = { id = MAR_Kosygin.14 }
+		}
+	}
+	MAR_ogas_debug = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			check_variable = { MAR_debug_cat = 3 }
+		}
 		allowed = {
 			original_tag = MAR
 		}
@@ -143,9 +508,12 @@ MAR_debug_category = {
 			MAR_OGAS_setup = yes
 		}
 	}
-	MAR_ogas_rewrite_debug_add_all = {
-		icon = GFX_decision_generic_decision
-
+	MAR_ogas_debug_add_all = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			check_variable = { MAR_debug_cat = 3 }
+			has_country_flag = MAR_ogas_dev_started
+		}
 		allowed = {
 			original_tag = MAR
 		}
@@ -164,9 +532,12 @@ MAR_debug_category = {
 		}
 	}
 	
-	MAR_ogas_rewrite_debug_add_specifically = {
-		icon = GFX_decision_generic_decision
-
+	MAR_ogas_debug_add_specifically = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			check_variable = { MAR_debug_cat = 3 }
+			has_country_flag = MAR_ogas_dev_started
+		}
 		allowed = {
 			original_tag = MAR
 		}
@@ -184,80 +555,217 @@ MAR_debug_category = {
 		}
 	}
 	
-	#MAR_ogas_clear_locks = {
-	#	icon = GFX_decision_generic_decision
-	#
-	#	allowed = {
-	#		original_tag = MAR
-	#	}
-	#	
-	#	fire_only_once = no
-	#
-	#	complete_effect = {
-	#		clr_country_flag = MAR_OGAS_stage_two_not_started
-	#	}
-	#}
-	MAR_load_Kosygin_superregional = {
-		icon = GFX_decision_generic_decision
+	MAR_show_hide_forpol_debug_decisions = {
+		icon = {
+			key = GFX_decision_generic_visibility_closed
+			trigger = {
+				has_country_flag = MAR_debug_fopo
+			}
+		}
+		icon = {
+			key = GFX_decision_generic_visibility
+			trigger = {
+				NOT = { has_country_flag = MAR_debug_fopo }
+			}
+		}
+		days_re_enable = 0
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_show_hide_forpol_debug_decisions"
+			if = {
+				limit = { has_country_flag = MAR_debug_fopo }
+				clr_country_flag = MAR_debug_fopo
+				clr_country_flag = conflict_debug_decisions
+				clr_country_flag = MAR_started_volunteer_sending
+			}
+			else = {
+				set_country_flag = MAR_debug_fopo
+				set_country_flag = conflict_debug_decisions
+				set_country_flag = MAR_started_volunteer_sending
+			}
+		}
+	}
+	
+	MAR_load_forpol_tab = {
+		icon = GFX_decision_generic_industry
 
 		allowed = {
 			original_tag = MAR
 		}
+		visible = {
+			has_country_flag = MAR_debug_fopo
+		}
+		fire_only_once = yes
+
+		complete_effect = { 
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_load_initial_decisions"
+			TaS_Global_Conflicts_Initalize = yes
+		}
+	}
+	MAR_load_all_proxies_wo_wars = {
+		icon = GFX_decision_generic_industry
+
+		allowed = {
+			original_tag = MAR
+		}
+		visible = {
+			has_country_flag = MAR_debug_fopo
+		}
 		fire_only_once = no
 
-		complete_effect = {
-			load_focus_tree = MAR_Kosygin_Superregional
+		complete_effect = { 
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_load_initial_decisions"
+			country_event = { id = MAR_forpol.1 }
+			country_event = { id = MAR_forpol.4 }
+			country_event = { id = MAR_forpol.5 }
+			country_event = { id = MAR_forpol.6 }
+			country_event = { id = MAR_forpol.7 }
 		}
 	}
-	TaS_Iraq_Zhirinosky_xd = {
-		icon = GFX_decision_generic_decision
-		
+	MAR_boost_OC_participation = {
+		icon = GFX_decision_generic_industry
+
 		allowed = {
 			original_tag = MAR
 		}
-		
+		visible = {
+			has_country_flag = MAR_debug_fopo
+			has_global_flag = OC_Oman_CW
+		}
 		fire_only_once = no
-	
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: TaS_Iraq_Zhirinosky_xd"
-			MAR_Iraq_Kurdistan_zhirik = yes
+
+		complete_effect = { 
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_load_initial_decisions"
+			set_variable = { MAR_OC_participation = 150 }
 		}
 	}
-	TaS_Iraq_Saddam_xd = {
-		icon = GFX_decision_generic_decision
-		
+	MAR_boost_supported_faction = {
+		icon = GFX_decision_generic_industry
+
 		allowed = {
 			original_tag = MAR
 		}
-		
-		fire_only_once = no
-	
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: TaS_Iraq_Saddam_xd "
-			MAR_Iraq_Kurdistan_saddam = yes
+		visible = {
+			has_country_flag = MAR_debug_fopo
 		}
-	}	
-	TaS_Turkestan_gov = {
-		icon = GFX_decision_generic_decision
-		
+		fire_only_once = no
+
+		complete_effect = { 
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_load_initial_decisions"
+			if = {
+				limit = { has_global_flag = OC_Oman_CW }
+				for_each_scope_loop = {
+					array = global.OIL_supported_by_MAR
+					add_timed_idea = { idea = MAR_cheat_boost_debug days = 180 }
+				}
+			}
+			else_if = {
+				limit = { has_global_flag = IBW_CONFLICT }
+				SPS = { add_timed_idea = { idea = MAR_cheat_boost_debug days = 180 } }
+				POR = { add_timed_idea = { idea = MAR_cheat_boost_debug days = 180 } }
+			}
+			else_if = {
+				limit = { has_global_flag = CONGO_PW_HAPPENING }
+				if = {
+					limit = { has_government = socialist }
+					CPR = { add_timed_idea = { idea = MAR_cheat_boost_debug days = 180 } }
+				}
+				else = {
+					KSI = { add_timed_idea = { idea = MAR_cheat_boost_debug days = 180 } }	
+				}
+			}
+			else_if = {
+				limit = { has_global_flag = Iranian_Civil_War }
+				if = {
+					limit = { has_government = socialist }
+					IRA = { add_timed_idea = { idea = MAR_cheat_boost_debug days = 180 } }
+				}
+				else = {
+					IRC = { add_timed_idea = { idea = MAR_cheat_boost_debug days = 180 } }	
+				}
+			}
+			else_if = {
+				limit = { has_global_flag = FFR_reclamation_civil_war_happening }
+				if = {
+					limit = { has_government = socialist }
+					FRV = { add_timed_idea = { idea = MAR_cheat_boost_debug days = 180 } }
+				}
+				else = {
+					FRM = { add_timed_idea = { idea = MAR_cheat_boost_debug days = 180 } }	
+				}
+			}
+		}
+	}
+	MAR_force_UAR_fight = {
+		icon = GFX_decision_generic_industry
+
 		allowed = {
 			original_tag = MAR
 		}
-		
-		fire_only_once = no
-	
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: TaS_Turkestan_gov"
-			MAR_Turkestan_govern = yes
+		visible = {
+			has_country_flag = MAR_debug_fopo
+		}
+		fire_only_once = yes
+
+		complete_effect = { 
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_load_initial_decisions"
+			country_event = { id = MAR_Kosygin_UAR.1 }
 		}
 	}
+	MAR_UAR_add_ru_score = {
+		icon = GFX_decision_generic_industry
+
+		allowed = {
+			original_tag = MAR
+		}
+		visible = {
+			has_country_flag = MAR_debug_fopo
+		}
+		fire_only_once = no
+
+		complete_effect = { 
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_load_initial_decisions"
+			set_temp_variable = { InfluenceChangeTemp = 100 }
+			set_temp_variable = { InfluenceChangeFactionTemp = 1 }
+			UAR_Influence_Change = yes
+		}
+	}
+	MAR_show_hide_2WRW_debug_decisions = {
+		icon = {
+			key = GFX_decision_generic_visibility_closed
+			trigger = {
+				has_country_flag = MAR_debug_2wrw
+			}
+		}
+		icon = {
+			key = GFX_decision_generic_visibility
+			trigger = {
+				NOT = { has_country_flag = MAR_debug_2wrw }
+			}
+		}
+		days_re_enable = 0
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision show_hide_debug_decisions"
+			if = {
+				limit = { has_country_flag = MAR_debug_2wrw }
+				clr_country_flag = MAR_debug_2wrw
+			}
+			else = {
+				set_country_flag = MAR_debug_2wrw
+			}
+		}
+	}
+	
+
+	
 	TaS_2WRW_activate_war = {
-		icon = GFX_decision_generic_decision
+		icon = GFX_decision_generic_industry
 		
 		allowed = {
 			original_tag = MAR
 		}
-		
+		visible = {
+			has_country_flag = MAR_debug_2wrw
+		}
 		fire_only_once = no
 	
 		complete_effect = {
@@ -275,20 +783,22 @@ MAR_debug_category = {
 			GER = { add_ideas = { TaS_2WRW_north_sea_problems } }
 			hidden_effect = {
 				every_country  = {
-						news_event = {
-							id = MAR_2WRW_world_news.6
-						}
+					news_event = {
+						id = MAR_2WRW_world_news.6
 					}
+				}
 			}
 		}
 	}
 	TaS_2WRW_devastatation_add = {
-		icon = GFX_decision_generic_decision
+		icon = GFX_decision_generic_industry
 		
 		allowed = {
 			original_tag = MAR
 		}
-		
+		visible = {
+			has_country_flag = MAR_debug_2wrw
+		}
 		fire_only_once = no
 	
 		complete_effect = {
@@ -298,12 +808,14 @@ MAR_debug_category = {
 		}  
 	}
 	TaS_2WRW_activate_germancw = {
-		icon = GFX_decision_generic_decision
+		icon = GFX_decision_generic_industry
 		
 		allowed = {
 			original_tag = MAR
 		}
-		
+		visible = {
+			has_country_flag = MAR_debug_2wrw
+		}
 		fire_only_once = no
 	
 		complete_effect = {
@@ -313,12 +825,14 @@ MAR_debug_category = {
 		}
 	}	
 	TaS_WRW2_End_the_germany_decision = {
-		icon = GFX_decision_generic_decision
+		icon = GFX_decision_generic_industry
 
 		allowed = {
 			original_tag = MAR
 		}
-
+		visible = {
+			has_country_flag = MAR_debug_2wrw
+		}
 		fire_only_once = no
 
 		complete_effect = {
@@ -327,12 +841,14 @@ MAR_debug_category = {
 		}
 	}
 	TaS_WRW2_manchuria_start_rebelion_decision = {
-		icon = GFX_decision_generic_decision
+		icon = GFX_decision_generic_industry
 
 		allowed = {
 			original_tag = MAR
 		}
-
+		visible = {
+			has_country_flag = MAR_debug_2wrw
+		}
 		fire_only_once = no
 
 		complete_effect = {
@@ -341,8 +857,10 @@ MAR_debug_category = {
 		}
 	}
 	TaS_WRW2_second_cw_guot_invastion = {
-		icon = GFX_decision_generic_decision
-
+		icon = GFX_decision_generic_industry
+		visible = {
+			has_country_flag = MAR_debug_2wrw
+		}
 		allowed = {
 			original_tag = MAR
 		}
@@ -354,23 +872,11 @@ MAR_debug_category = {
 			TaS_2WRW_start_guot_invasion = yes
 		}
 	}
-	TaS_WRW2_russify_ostterritories_decision = {
-		icon = GFX_decision_generic_decision
-
-		allowed = {
-			original_tag = MAR
-		}
-
-		fire_only_once = no
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: TaS_WRW2_End_the_germany_decision"
-			#TaS_2WRW_Russian_integrated = yes
-		}
-	}
 	TaS_WRW2_rus_ultimatums_enable = {
-		icon = GFX_decision_generic_decision
-
+		icon = GFX_decision_generic_industry
+		visible = {
+			has_country_flag = MAR_debug_2wrw
+		}
 		allowed = {
 			original_tag = MAR
 		}
@@ -383,8 +889,10 @@ MAR_debug_category = {
 		}
 	}
 	TaS_2WRW_remove_schnitzel_dec = {
-		icon = GFX_decision_generic_decision
-
+		icon = GFX_decision_generic_industry
+		visible = {
+			has_country_flag = MAR_debug_2wrw
+		}
 		allowed = {
 			original_tag = MAR
 		}
@@ -397,8 +905,10 @@ MAR_debug_category = {
 		}
 	}
 	TaS_2WRW_czech_ssr_dec = {
-		icon = GFX_decision_generic_decision
-
+		icon = GFX_decision_generic_industry
+		visible = {
+			has_country_flag = MAR_debug_2wrw
+		}
 		allowed = {
 			original_tag = MAR
 		}
@@ -408,6 +918,23 @@ MAR_debug_category = {
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: TaS_WRW2_End_the_germany_decision"
 			TaS_2WRW_czech_ssr = yes
+		}
+	}
+	
+	MAR_load_MAR_Kazembek = {
+		icon = GFX_decision_generic_industry
+
+		allowed = {
+			original_tag = MAR
+		}
+		visible = {
+			check_variable = { MAR_debug_cat = 4 }
+		}
+		fire_only_once = no
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: MAR_load_MAR_Kazembek"
+			load_focus_tree = {	tree = MAR_Kazembek keep_completed = no }
 		}
 	}
 }
@@ -1021,7 +1548,7 @@ MAR_MGB_Okhranka_category = {
 		}
 		fire_only_once = yes
 		cost = var:MAR_decision_cost_three	
-		days_remove = 1
+		days_remove = 60
 		
 		remove_effect = {
 			custom_effect_tooltip = MAR_MGB_yurla_operation_tt
@@ -1043,871 +1570,6 @@ MAR_MGB_Okhranka_category = {
 	}
 } 
 
-MAR_volunteer_category = {
-	MAR_yemeni_civil_war_effigy = {
-		icon = GFX_decision_generic_assault
-		visible = {
-			OR = {
-				AND = {
-					YEM = { has_war = yes }
-				}
-				AND = {
-					MAR = { has_country_flag = MAR_Yemen_cw }
-				}
-			}
-		}
-		available = {
-			always = no
-		}
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_yemeni_civil_war_effigy"
-		}
-	}
-	MAR_support_yemeni_monarchists = {
-		icon = GFX_decision_black_market_arms_trade_increase
-		visible = {
-			YEM = { exists = yes }
-			NYM = { has_war_with = YEM }
-		}
-		fire_only_once = yes
-		cost = 25
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_support_yemeni_monarchists"
-			YEM = {
-				country_event = { id = berez_dobrovoltsy.1 }
-			}
-			hidden_effect = {
-				MAR = { set_country_flag = MAR_Yemen_cw }
-			}
-		}
-	}
-	MAR_yemeni_monarchists_offer = {	
-		icon = GFX_decision_black_market_arms_trade_increase
-		visible = {
-			YEM = { exists = yes }
-			YEM = { has_war = no }
-			YEM = { has_idea = MAR_volunteer_mladojopa_for }
-		}
-		cost = 25
-		fire_only_once = yes
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_support_yemeni_monarchists"
-			hidden_effect = {
-				random_list = {
-					75 = {
-						country_event = {
-							id = berez_dobrovoltsy.11 days = 0
-						}
-					}
-					25 = {
-						country_event = {
-							id = berez_dobrovoltsy.12 days = 0
-						}
-					}	
-				}
-				MAR = { clr_country_flag = MAR_Yemen_cw }
-				add_to_variable = {
-					var = MAR_dobr_infantry_attack
-					value = 0.015
-				}
-				add_to_variable = {
-					var = MAR_dobr_infantry_defence
-					value = 0.01
-				}
-				add_to_variable = {
-					var = MAR_dobr_speed
-					value = 0.01
-				}
-				add_to_variable = {
-					var = MAR_dobr_vertibird_attack
-					value = -0.005
-				}
-				add_to_variable = {
-					var = MAR_dobr_consumption
-					value = -0.005
-				}
-			}
-			custom_effect_tooltip = MAR_Yemen_offer_TT
-		}
-	}
-	### Yemeni-Saudi War ###
-	MAR_yemeni_saudi_war_effigy = {
-		icon = GFX_decision_generic_assault
-		visible = {
-			OR = {
-				AND = {
-					SAU = { has_war = yes }
-				}
-				AND = {
-					MAR = { has_country_flag = MAR_Saudi_cw }
-				}
-			}
-		}
-		available = {
-			always = no
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_yemeni_saudi_war_effigy"
-		}
-	}
-	MAR_support_saudis = {
-		icon = GFX_decision_black_market_arms_trade_increase
-		visible = {
-			SAU = { exists = yes }
-			NYM = { has_war_with = SAU }
-		}
-		fire_only_once = yes
-		cost = 25
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_support_saudis"
-			SAU = {
-				country_event = { id = berez_dobrovoltsy.1 }
-			}
-			hidden_effect = {
-				MAR = { set_country_flag = MAR_Saudi_cw }
-			}
-		}
-	}
-	MAR_saudis_offer = {	
-		icon = GFX_decision_black_market_arms_trade_increase
-		visible = {
-			SAU = { exists = yes }
-			SAU = { has_war = no }
-			SAU = { has_idea = MAR_volunteer_mladojopa_for }
-		}
-		fire_only_once = yes
-		cost = 25
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_support_yemeni_monarchists"
-			hidden_effect = {
-				random_list = {
-					85 = {
-						country_event = {
-							id = berez_dobrovoltsy.16 days = 0
-						}
-					}
-					15 = {
-					}
-				}
-				MAR = { clr_country_flag = MAR_Yemen_cw }
-				add_to_variable = {
-					var = MAR_dobr_infantry_attack
-					value = 0.015
-				}
-				add_to_variable = {
-					var = MAR_dobr_infantry_defence
-					value = 0.01
-				}
-				add_to_variable = {
-					var = MAR_dobr_speed
-					value = 0.01
-				}
-				add_to_variable = {
-					var = MAR_dobr_vertibird_attack
-					value = -0.005
-				}
-				add_to_variable = {
-					var = MAR_dobr_consumption
-					value = -0.005
-				}
-			}
-			custom_effect_tooltip = MAR_Saudi_offer_TT
-		}
-	}
-	### Egyptian Civil War ###
-	MAR_egyptian_civil_war_effigy = {
-		icon = GFX_decision_generic_assault
-		visible = {
-			OR = {
-				AND = {
-					EGQ = { has_war = yes }
-				}
-				AND = {
-					MAR = { has_country_flag = MAR_Egypt_cw }
-				}
-			}
-		}
-		available = {
-			always = no
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_egyptian_civil_war_effigy"
-		}
-	}
-	MAR_support_egyptian_muslims = {
-		icon = GFX_decision_black_market_arms_trade_increase
-		visible = {
-			EGQ = { exists = yes }
-			MAG_WA_egyptian_civil_war_active = yes
-		}
-		fire_only_once = yes
-		cost = 25
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_support_egyptian_muslims"
-			EGQ = {
-				country_event = { id = berez_dobrovoltsy.1 }
-			}
-			hidden_effect = {
-				MAR = { set_country_flag = MAR_Egypt_cw }
-			}
-		}
-	}
-	MAR_eqyptian_muslims_offer = {	
-		icon = GFX_decision_black_market_arms_trade_increase
-		visible = {
-			EGQ = { exists = yes }
-			EGQ = { has_idea = MAR_volunteer_mladojopa_for }
-			MAG_WA_egyptian_civil_war_active = no
-		}
-		fire_only_once = yes
-		cost = 25
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_support_yemeni_monarchists"
-			hidden_effect = {
-				random_list = {
-					85 = {
-						country_event = {
-							id = berez_dobrovoltsy.15 days = 0
-						}
-					}
-					15 = {
-					}
-				}
-				MAR = { clr_country_flag = MAR_Egypt_cw }
-				add_to_variable = {
-					var = MAR_dobr_infantry_attack
-					value = 0.015
-				}
-				add_to_variable = {
-					var = MAR_dobr_infantry_defence
-					value = 0.01
-				}
-				add_to_variable = {
-					var = MAR_dobr_speed
-					value = 0.01
-				}
-				add_to_variable = {
-					var = MAR_dobr_vertibird_attack
-					value = -0.005
-				}
-				add_to_variable = {
-					var = MAR_dobr_consumption
-					value = -0.005
-				}
-			}
-			custom_effect_tooltip = MAR_Eqypt_offer_TT
-		}
-	}
-	### Sudanese Civil War ###
-	MAR_sudanese_civil_war_effigy = {
-		icon = GFX_decision_generic_assault
-		visible = {
-			OR = {
-				AND = {
-					MAG_WA_sudanese_civil_war_active = yes
-				}
-				AND = {
-					MAR = { has_country_flag = MAR_Sudan_cw }
-				}
-			}
-		}
-		fire_only_once = yes
-		available = {
-			always = no
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_sudanese_civil_war_effigy"
-		}
-	}
-	MAR_support_sudanese_junta = {
-		icon = GFX_decision_black_market_arms_trade_increase
-		visible = {
-			SDF = { exists = yes }
-			MAG_WA_sudanese_civil_war_active = yes
-		}
-		fire_only_once = yes
-		cost = 25
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_support_sudanese_junta"
-			SDF = {
-				country_event = { id = berez_dobrovoltsy.1 }
-			}
-			hidden_effect = {
-				MAR = { set_country_flag = MAR_Sudan_cw }
-			}
-		}
-	}
-	MAR_sudanese_junta_offer = {	
-		icon = GFX_decision_black_market_arms_trade_increase
-		visible = {
-			SDF = { exists = yes }
-			SDF = { has_idea = MAR_volunteer_mladojopa_for }
-			MAG_WA_sudanese_civil_war_active = no
-		}
-		fire_only_once = yes
-		cost = 25
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_support_yemeni_monarchists"
-			hidden_effect = {
-				random_list = {
-					85 = {
-						country_event = {
-							id = berez_dobrovoltsy.20 days = 0
-						}
-					}
-					15 = {
-						country_event = {
-							id = berez_dobrovoltsy.21 days = 0
-						}
-					}
-				}
-				MAR = { clr_country_flag = MAR_Sudan_cw }
-				add_to_variable = {
-					var = MAR_dobr_infantry_attack
-					value = 0.015
-				}
-				add_to_variable = {
-					var = MAR_dobr_infantry_defence
-					value = 0.01
-				}
-				add_to_variable = {
-					var = MAR_dobr_speed
-					value = 0.01
-				}
-				add_to_variable = {
-					var = MAR_dobr_vertibird_attack
-					value = -0.005
-				}
-				add_to_variable = {
-					var = MAR_dobr_consumption
-					value = -0.005
-				}
-			}
-			custom_effect_tooltip = MAR_Sudan_offer_TT
-		}
-	}
-	### South Sudanese Civil War ###
-	MAR_south_sudanese_civil_war_effigy = {
-		icon = GFX_decision_generic_assault
-		visible = {
-			OR = {
-				AND = {
-					AZA = { has_war = yes }
-				}
-				AND = {
-					MAR = { has_country_flag = MAR_SSudan_cw }
-				}
-			}
-		}
-		available = {
-			always = no
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_south_sudanese_civil_war_effigy"
-		}
-	}
-	MAR_support_azania = {
-		icon = GFX_decision_black_market_arms_trade_increase
-		visible = {
-			AZA = { exists = yes }
-			AZA = { has_war_with = AYA }
-		}
-		fire_only_once = yes
-		cost = 25
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_support_azania"
-			AZA = {
-				country_event = { id = berez_dobrovoltsy.1 }
-			}
-			hidden_effect = {
-				MAR = { set_country_flag = MAR_SSudan_cw }
-			}
-		}
-	}
-	MAR_azania_offer = {	
-		icon = GFX_decision_black_market_arms_trade_increase
-		visible = {
-			AZA = { has_war = no }
-			AZA = { has_idea = MAR_volunteer_mladojopa_for }
-			MAG_WA_sudanese_civil_war_active = no
-		}
-		fire_only_once = yes
-		cost = 25
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_support_yemeni_monarchists"
-			hidden_effect = {
-				random_list = {
-					85 = {
-						country_event = {
-							id = berez_dobrovoltsy.22 days = 0
-						}
-					}
-					15 = {
-					}
-				}
-				MAR = { clr_country_flag = MAR_SSudan_cw }
-				add_to_variable = {
-					var = MAR_dobr_infantry_attack
-					value = 0.015
-				}
-				add_to_variable = {
-					var = MAR_dobr_infantry_defence
-					value = 0.01
-				}
-				add_to_variable = {
-					var = MAR_dobr_speed
-					value = 0.01
-				}
-				add_to_variable = {
-					var = MAR_dobr_vertibird_attack
-					value = -0.005
-				}
-				add_to_variable = {
-					var = MAR_dobr_consumption
-					value = -0.005
-				}
-			}
-			custom_effect_tooltip = MAR_SSudan_offer_TT
-		}
-	}
-
-	### Iraqi Civil War ###
-	MAR_iraqi_civil_war_effigy = {
-		icon = GFX_decision_generic_assault
-		visible = {
-			OR = {
-				AND = {
-					MAG_WA_iraqi_civil_war_active = yes
-				}
-				AND = {
-					MAR = { has_country_flag = MAR_Iraq_cw }
-				}
-			}
-			NOT = { has_global_flag = KUR_Iraq_fixed }
-		}
-		available = {
-			always = no
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_iraqi_civil_war_effigy"
-		}
-	}
-	MAR_support_iraqi_kurds = {
-		icon = GFX_decision_black_market_arms_trade_increase
-		visible = {
-			KUR = { exists = yes }
-			MAG_WA_iraqi_civil_war_active = yes
-			NOT = { has_global_flag = KUR_Iraq_fixed }
-		}
-		fire_only_once = yes
-		cost = 25
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_support_iraqi_kurds"
-			KUR = {
-				country_event = { id = berez_dobrovoltsy.1 }
-			}
-			hidden_effect = {
-				MAR = { set_country_flag = MAR_Iraq_cw }
-			}
-		}
-	}
-
-
-	### Omani Civil War ###
-	MAR_omani_civil_war_effigy = {
-		icon = GFX_decision_generic_assault
-		visible = {
-			OR = {
-				AND = {
-					MAG_WA_omani_civil_war_active = yes
-				}
-				AND = {
-					MAR = { has_country_flag = MAR_Oman_cw }
-				}
-			}
-		}
-		fire_only_once = yes
-		available = {
-			always = no
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_omani_civil_war_effigy"
-		}
-	}
-	MAR_support_omani_sultanate = {
-		icon = GFX_decision_black_market_arms_trade_increase
-		visible = {
-			OMA = { exists = yes }
-			MAG_WA_omani_civil_war_active = yes
-		}
-		fire_only_once = yes
-		cost = 25
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_support_omani_sultanate"
-			OMA = {
-				country_event = { id = berez_dobrovoltsy.1 }
-			}
-			hidden_effect = {
-			MAR = { set_country_flag = MAR_Oman_cw }
-			}
-		}
-	}
-	MAR_omani_sultanate_offer = {	
-		icon = GFX_decision_black_market_arms_trade_increase
-		visible = {
-			OMA = { exists = yes }
-			OMA = { has_idea = MAR_volunteer_mladojopa_for }
-			MAG_WA_omani_civil_war_active = no
-		}
-		fire_only_once = yes
-		cost = 25
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_support_yemeni_monarchists"
-			hidden_effect = {
-				random_list = {
-					75 = {
-						country_event = {
-							id = berez_dobrovoltsy.13 days = 0
-						}
-					}
-					25 = {
-						country_event = {
-							id = berez_dobrovoltsy.14 days = 0
-						}
-					}
-				}
-				MAR = { clr_country_flag = MAR_Oman_cw }
-				add_to_variable = {
-					var = MAR_dobr_infantry_attack
-					value = 0.015
-				}
-				add_to_variable = {
-					var = MAR_dobr_infantry_defence
-					value = 0.01
-				}
-				add_to_variable = {
-					var = MAR_dobr_speed
-					value = 0.01
-				}
-				add_to_variable = {
-					var = MAR_dobr_vertibird_attack
-					value = -0.005
-				}
-				add_to_variable = {
-					var = MAR_dobr_consumption
-					value = -0.005
-				}
-			}
-			custom_effect_tooltip = MAR_Oman_offer_TT
-		}
-	}
-	### Iranian Civil War ###
-	MAR_iranian_civil_war_effigy = {
-		icon = GFX_decision_generic_assault
-		visible = {
-			OR = {
-				AND = {
-					MAG_WA_iranian_civil_war_active = yes
-				}
-				AND = {
-					MAR = { has_country_flag = MAR_Iran_cw }
-				}
-			}
-		}
-		available = {
-			always = no
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_iranian_civil_war_effigy"
-		}
-	}
-	MAR_support_iranian_constitutionalists = {
-		icon = GFX_decision_black_market_arms_trade_increase
-		visible = {
-			IRC = {	exists = yes }
-			MAG_WA_iranian_civil_war_active = yes
-		}
-		fire_only_once = yes
-		cost = 25
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_support_iranian_constitutionalists"
-			IRC = {
-				country_event = { id = berez_dobrovoltsy.1 }
-			}
-			hidden_effect = {
-			MAR = { set_country_flag = MAR_Iran_cw }
-			}
-		}
-	}
-	MAR_iranian_constitutionalists_offer = {	
-		icon = GFX_decision_black_market_arms_trade_increase
-		visible = {
-			IRC = { exists = yes }
-			IRC = { has_idea = MAR_volunteer_mladojopa_for }
-			MAG_WA_iranian_civil_war_active = no
-		}
-		fire_only_once = yes
-		cost = 25
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_support_yemeni_monarchists"
-			hidden_effect = {
-				random_list = {
-					90 = {
-						country_event = {
-							id = berez_dobrovoltsy.24 days = 0
-						}
-					}
-					10 = {
-					}
-				}
-				MAR = { clr_country_flag = MAR_Iran_cw }
-				add_to_variable = {
-					var = MAR_dobr_infantry_attack
-					value = 0.015
-				}
-				add_to_variable = {
-					var = MAR_dobr_infantry_defence
-					value = 0.01
-				}
-				add_to_variable = {
-					var = MAR_dobr_speed
-					value = 0.01
-				}
-				add_to_variable = {
-					var = MAR_dobr_vertibird_attack
-					value = -0.005
-				}
-				add_to_variable = {
-					var = MAR_dobr_consumption
-					value = -0.005
-				}
-			}
-			custom_effect_tooltip = MAR_Iran_offer_TT
-		}
-	}
-	### Iberian Wars ###
-	MAR_iberian_wars_effigy = {
-		icon = GFX_decision_generic_assault
-		visible = {
-			OR = {
-				AND = {
-					SPR = { has_war = yes }
-				}
-				AND = {
-					MAR = { has_country_flag = MAR_Spain_cw }
-				}
-			}
-		}
-		available = {
-			always = no
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_iberian_wars_effigy"
-		}
-	}
-	MAR_support_spanish_republicans = {
-		icon = GFX_decision_black_market_arms_trade_increase
-		visible = {
-			SPR = { exists = yes }
-			SPR = { has_war = yes }
-		}
-		fire_only_once = yes
-		cost = 25
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_support_spanish_republicans"
-			SPR = {
-				country_event = { id = berez_dobrovoltsy.1 }
-			}
-			hidden_effect = {
-				MAR = { set_country_flag = MAR_Spain_cw }
-			}
-		}
-	}
-	MAR_support_portuguese_salazarists = {
-		icon = GFX_decision_black_market_arms_trade_increase
-		visible = {
-			POR = { exists = yes }
-			POR = { has_war = yes }
-		}
-		fire_only_once = yes
-		cost = 25
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_support_portuguese_salazarists"
-			POR = {
-				country_event = { id = berez_dobrovoltsy.1 }
-			}
-			hidden_effect = {
-				MAR = { set_country_flag = MAR_Portugal_cw }
-			}
-		}
-	}
-	MAR_spanish_republicans_offer = {	
-		icon = GFX_decision_black_market_arms_trade_increase
-		visible = {
-			SPR = { exists = yes }
-			SPR = { has_idea = MAR_volunteer_mladojopa_for }
-			SPR = { has_war = no }
-		}
-		fire_only_once = yes
-		cost = 25
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_support_yemeni_monarchists"
-			hidden_effect = {
-				random_list = {
-					90 = {
-						country_event = {
-							id = berez_dobrovoltsy.25 days = 0
-						}
-					}
-					10 = {
-					}
-				}
-				MAR = { clr_country_flag = MAR_Spain_cw }
-				add_to_variable = {
-					var = MAR_dobr_infantry_attack
-					value = 0.015
-				}
-				add_to_variable = {
-					var = MAR_dobr_infantry_defence
-					value = 0.01
-				}
-				add_to_variable = {
-					var = MAR_dobr_speed
-					value = 0.01
-				}
-				add_to_variable = {
-					var = MAR_dobr_vertibird_attack
-					value = -0.005
-				}
-				add_to_variable = {
-					var = MAR_dobr_consumption
-					value = -0.005
-				}
-			}
-			custom_effect_tooltip = MAR_Spain_offer_TT
-		}
-	}
-	MAR_portuguese_salazarists_offer = {	
-		icon = GFX_decision_black_market_arms_trade_increase
-		visible = {
-			POR = { exists = yes }
-			POR = { has_idea = MAR_volunteer_mladojopa_for }
-			POR = { has_war = no }
-		}
-		fire_only_once = yes
-		cost = 25
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_support_yemeni_monarchists"
-			hidden_effect = {
-				random_list = {
-					90 = {
-						country_event = {
-							id = berez_dobrovoltsy.26 days = 0
-						}
-					}
-					10 = {
-					}
-				}
-				MAR = { clr_country_flag = MAR_Portugal_cw }
-				add_to_variable = {
-					var = MAR_dobr_infantry_attack
-					value = 0.015
-				}
-				add_to_variable = {
-					var = MAR_dobr_infantry_defence
-					value = 0.01
-				}
-				add_to_variable = {
-					var = MAR_dobr_speed
-					value = 0.01
-				}
-				add_to_variable = {
-					var = MAR_dobr_vertibird_attack
-					value = -0.005
-				}
-				add_to_variable = {
-					var = MAR_dobr_consumption
-					value = -0.005
-				}
-			}
-			custom_effect_tooltip = MAR_Portugal_offer_TT
-		}
-	}
-
-	###Congolese Civil War
-	MAR_congolese_civil_war_effigy = {
-		icon = GFX_decision_generic_assault
-		visible = {
-			OR = {
-				AND = {
-					AZD = { has_war = yes}
-				}
-				AND = {
-					MAR = { has_country_flag = MAR_Congo_cw }
-				}
-			}
-		}
-		available = {
-			always = no
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_congolese_civil_war_effigy"
-		}
-	}
-	MAR_support_congo_azandeland = {
-		icon = GFX_decision_black_market_arms_trade_increase
-		visible = {
-			AZD = { exists = yes }
-			has_global_flag = CONGO_PW_HAPPENING
-		}
-		cost = 25
-		fire_only_once = yes
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_support_omani_baathists"
-			AZD = {
-				country_event = { id = berez_dobrovoltsy.1 }
-			}
-			hidden_effect = {
-				MAR = { set_country_flag = MAR_Congo_cw }
-			}
-		}
-	}
-	MAR_congo_azandeland_offer = {	
-		icon = GFX_decision_black_market_arms_trade_increase
-		visible = {
-			AZD = { exists = yes }
-			AZD = { has_idea = MAR_volunteer_mladojopa_for }
-			AZD = { has_war = no }
-		}
-		cost = 25
-		fire_only_once = yes
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_support_yemeni_monarchists"
-			hidden_effect = {
-				random_list = {
-					90 = {
-						country_event = {
-							id = berez_dobrovoltsy.23 days = 0
-						}
-					}
-					10 = {
-					}
-				}
-				MAR = { clr_country_flag = MAR_Congo_cw }
-			}
-			custom_effect_tooltip = MAR_Congo_offer_TT
-		}
-	}	
-}
 MAR_Order_category = {
 	MAR_Order_Helping_Hand = {
 		icon = GFX_decision_generic_shake_hands
@@ -3936,442 +3598,6 @@ MAR_greater_good_category = {
 			TNO_improve_military_supervision_policy_effectiveness_high = yes
 			TNO_improve_conscription_policy_effectiveness_high = yes
 			TNO_improve_draft_exemptions_policy_effectiveness_high = yes
-		}
-	}
-}
-
-MAR_Kosygin_volunteer_category = {
-	#yemeni cw
-	MAR_support_yemeni_communists = {
-		icon = GFX_decision_black_market_arms_trade_increase
-		visible = {
-			NYM = { exists = yes }
-			NYM = { has_war = yes }
-		}
-		fire_only_once = yes
-		cost = 25
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_support_yemeni_communists"
-			NYM = {
-				country_event = { id = berez_dobrovoltsy.1 }
-			}
-			hidden_effect = {
-				MAR = { set_country_flag = MAR_Yemen_cw }
-			}
-		}
-	}
-	MAR_yemeni_communists_offer = {	
-		icon = GFX_decision_black_market_arms_trade_increase
-		visible = {
-			NYM = { exists = yes }
-			NYM = { has_war = no }
-			NYM = { has_idea = MAR_volunteer_mladojopa_for }
-		}
-		cost = 25
-		fire_only_once = yes
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_yemeni_communists_offer"
-			hidden_effect = {
-				remove_from_array = { supported_by_MAR = NYM }
-				MAR = { clr_country_flag = MAR_Yemen_cw }
-				
-				add_to_variable = {
-					var = MAR_dobr_infantry_attack
-					value = 0.015
-				}
-				add_to_variable = {
-					var = MAR_dobr_infantry_defence
-					value = 0.01
-				}
-				add_to_variable = {
-					var = MAR_dobr_speed
-					value = 0.01
-				}
-				add_to_variable = {
-					var = MAR_dobr_vertibird_attack
-					value = -0.005
-				}
-				add_to_variable = {
-					var = MAR_dobr_consumption
-					value = -0.005
-				}
-			}
-			custom_effect_tooltip = MAR_Yemen_kosygin_offer_TT
-		}
-	}
-	#omani cw
-	MAR_support_omani_communists = {
-		icon = GFX_decision_black_market_arms_trade_increase
-		visible = {
-			OMB = { exists = yes }
-			OMB = { has_war = yes }
-		}
-		fire_only_once = yes
-		cost = 25
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_support_omani_communists"
-			OMB = {
-				country_event = { id = berez_dobrovoltsy.1 }
-			}
-			hidden_effect = {
-				MAR = { set_country_flag = MAR_omani_cw }
-			}
-		}
-	}
-	MAR_omani_communists_offer = {	
-		icon = GFX_decision_black_market_arms_trade_increase
-		visible = {
-			OMB = { exists = yes }
-			OMB = { has_war = no }
-			OMB = { has_idea = MAR_volunteer_mladojopa_for }
-		}
-		cost = 25
-		fire_only_once = yes
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_omani_communists_offer"
-			hidden_effect = {
-				remove_from_array = { supported_by_MAR = OMB }
-				MAR = { clr_country_flag = MAR_Yemen_cw }
-				
-				add_to_variable = {
-					var = MAR_dobr_infantry_attack
-					value = 0.015
-				}
-				add_to_variable = {
-					var = MAR_dobr_infantry_defence
-					value = 0.01
-				}
-				add_to_variable = {
-					var = MAR_dobr_speed
-					value = 0.01
-				}
-				add_to_variable = {
-					var = MAR_dobr_vertibird_attack
-					value = -0.005
-				}
-				add_to_variable = {
-					var = MAR_dobr_consumption
-					value = -0.005
-				}
-			}
-			custom_effect_tooltip = MAR_Oman_kosygin_offer_TT
-		}
-	}
-	#sudan cw
-	MAR_support_sudan_communists = {
-		icon = GFX_decision_black_market_arms_trade_increase
-		visible = {
-			SDS = { exists = yes }
-			SDS = { has_war = yes }
-		}
-		fire_only_once = yes
-		cost = 25
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_support_sudan_communists"
-			SDS = {
-				country_event = { id = berez_dobrovoltsy.1 }
-			}
-			hidden_effect = {
-				SDS = { set_country_flag = MAR_sudan_cw }
-			}
-		}
-	}
-	MAR_sudan_communists_offer = {	
-		icon = GFX_decision_black_market_arms_trade_increase
-		visible = {
-			SDS = { exists = yes }
-			SDS = { has_war = no }
-			SDS = { has_idea = MAR_volunteer_mladojopa_for }
-		}
-		cost = 25
-		fire_only_once = yes
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_sudan_communists_offer"
-			hidden_effect = {
-				remove_from_array = { supported_by_MAR = SDS }
-				MAR = { clr_country_flag = MAR_sudan_cw }
-				
-				add_to_variable = {
-					var = MAR_dobr_infantry_attack
-					value = 0.015
-				}
-				add_to_variable = {
-					var = MAR_dobr_infantry_defence
-					value = 0.01
-				}
-				add_to_variable = {
-					var = MAR_dobr_speed
-					value = 0.01
-				}
-				add_to_variable = {
-					var = MAR_dobr_vertibird_attack
-					value = -0.005
-				}
-				add_to_variable = {
-					var = MAR_dobr_consumption
-					value = -0.005
-				}
-			}
-			custom_effect_tooltip = MAR_Sudan_kosygin_offer_TT
-		}
-	}
-	
-	#eqypt cw
-	MAR_support_eqypt_communists = {
-		icon = GFX_decision_black_market_arms_trade_increase
-		visible = {
-			EGB = { exists = yes }
-			EGB = { has_war = yes }
-		}
-		fire_only_once = yes
-		cost = 25
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_support_eqypt_communists"
-			EGB = {
-				country_event = { id = berez_dobrovoltsy.1 }
-			}
-			hidden_effect = {
-				MAR = { set_country_flag = MAR_egypt_cw }
-			}
-		}
-	}
-	MAR_egypt_communists_offer = {	
-		icon = GFX_decision_black_market_arms_trade_increase
-		visible = {
-			EGB = { exists = yes }
-			EGB = { has_war = no }
-			EGB = { has_idea = MAR_volunteer_mladojopa_for }
-		}
-		cost = 25
-		fire_only_once = yes
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_egypt_communists_offer"
-			hidden_effect = {
-				remove_from_array = { supported_by_MAR = EGB }
-				MAR = { clr_country_flag = MAR_egypt_cw }
-				
-				add_to_variable = {
-					var = MAR_dobr_infantry_attack
-					value = 0.015
-				}
-				add_to_variable = {
-					var = MAR_dobr_infantry_defence
-					value = 0.01
-				}
-				add_to_variable = {
-					var = MAR_dobr_speed
-					value = 0.01
-				}
-				add_to_variable = {
-					var = MAR_dobr_vertibird_attack
-					value = -0.005
-				}
-				add_to_variable = {
-					var = MAR_dobr_consumption
-					value = -0.005
-				}
-			}
-			custom_effect_tooltip = MAR_Egypt_kosygin_offer_TT
-		}
-	}
-	#iraq cw
-	MAR_support_iraq_communists = {
-		icon = GFX_decision_black_market_arms_trade_increase
-		visible = {
-			BIR = { exists = yes }
-			BIR = { has_war = yes }
-		}
-		fire_only_once = yes
-		cost = 25
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_support_iraq_communists"
-			BIR = {
-				country_event = { id = berez_dobrovoltsy.1 }
-			}
-			hidden_effect = {
-				MAR = { set_country_flag = MAR_iraq_cw }
-			}
-		}
-	}
-	MAR_iraq_communists_offer = {	
-		icon = GFX_decision_black_market_arms_trade_increase
-		visible = {
-			BIR = { exists = yes }
-			BIR = { has_war = no }
-			BIR = { has_idea = MAR_volunteer_mladojopa_for }
-		}
-		cost = 25
-		fire_only_once = yes
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_iraq_communists_offer"
-			hidden_effect = {
-				remove_from_array = { supported_by_MAR = BIR }
-				MAR = { clr_country_flag = MAR_iraq_cw }
-				
-				add_to_variable = {
-					var = MAR_dobr_infantry_attack
-					value = 0.015
-				}
-				add_to_variable = {
-					var = MAR_dobr_infantry_defence
-					value = 0.01
-				}
-				add_to_variable = {
-					var = MAR_dobr_speed
-					value = 0.01
-				}
-				add_to_variable = {
-					var = MAR_dobr_vertibird_attack
-					value = -0.005
-				}
-				add_to_variable = {
-					var = MAR_dobr_consumption
-					value = -0.005
-				}
-			}
-			custom_effect_tooltip = MAR_Iraq_kosygin_offer_TT
-		}
-	}
-	#iran cw
-	MAR_support_iran_communists = {
-		icon = GFX_decision_black_market_arms_trade_increase
-		visible = {
-			IRA = { exists = yes }
-			IRA = { has_war = yes }
-		}
-		fire_only_once = yes
-		cost = 25
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_support_iran_communists"
-			IRA = {
-				country_event = { id = berez_dobrovoltsy.1 }
-			}
-			hidden_effect = {
-				MAR = { set_country_flag = MAR_iran_cw }
-			}
-		}
-	}
-	MAR_iran_communists_offer = {	
-		icon = GFX_decision_black_market_arms_trade_increase
-		visible = {
-			IRA = { exists = yes }
-			IRA = { has_war = no }
-			IRA = { has_idea = MAR_volunteer_mladojopa_for }
-		}
-		cost = 25
-		fire_only_once = yes
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_iran_communists_offer"
-			hidden_effect = {
-				remove_from_array = { supported_by_MAR = IRA }
-				MAR = { clr_country_flag = MAR_iran_cw }
-				
-				add_to_variable = {
-					var = MAR_dobr_infantry_attack
-					value = 0.015
-				}
-				add_to_variable = {
-					var = MAR_dobr_infantry_defence
-					value = 0.01
-				}
-				add_to_variable = {
-					var = MAR_dobr_speed
-					value = 0.01
-				}
-				add_to_variable = {
-					var = MAR_dobr_vertibird_attack
-					value = -0.005
-				}
-				add_to_variable = {
-					var = MAR_dobr_consumption
-					value = -0.005
-				}
-			}
-			custom_effect_tooltip = MAR_iran_kosygin_offer_TT
-		}
-	}
-	#spain cw
-	MAR_support_spain_reps = {
-		icon = GFX_decision_black_market_arms_trade_increase
-		visible = {
-			SPR = { exists = yes }
-			SPR = { has_war = yes }
-		}
-		fire_only_once = yes
-		cost = 25
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_support_spain_reps"
-			SPR = {
-				country_event = { id = berez_dobrovoltsy.1 }
-			}
-			hidden_effect = {
-				MAR = { set_country_flag = MAR_iran_cw }
-			}
-		}
-	}
-	MAR_iran_communists_offer = {	
-		icon = GFX_decision_black_market_arms_trade_increase
-		visible = {
-			SPR = { exists = yes }
-			SPR = { has_war = no }
-			SPR = { has_idea = MAR_volunteer_mladojopa_for }
-		}
-		cost = 25
-		fire_only_once = yes
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_iran_communists_offer"
-			hidden_effect = {
-				remove_from_array = { supported_by_MAR = SPR }
-				MAR = { clr_country_flag = MAR_spain_cw }
-				
-				add_to_variable = {
-					var = MAR_dobr_infantry_attack
-					value = 0.015
-				}
-				add_to_variable = {
-					var = MAR_dobr_infantry_defence
-					value = 0.01
-				}
-				add_to_variable = {
-					var = MAR_dobr_speed
-					value = 0.01
-				}
-				add_to_variable = {
-					var = MAR_dobr_vertibird_attack
-					value = -0.005
-				}
-				add_to_variable = {
-					var = MAR_dobr_consumption
-					value = -0.005
-				}
-			}
-			custom_effect_tooltip = MAR_spain_kosygin_offer_TT
-		}
-	}
-	##generic
-	MAR_heat_of_the_desert = {
-		icon = GFX_decision_generic_assault
-
-		custom_cost_trigger = {
-			command_power > 9.99
-		}
-		custom_cost_text = decision_cost_25_m_10_cp
-		days_remove = 365
-		fire_only_once = yes
-
-		modifier = {
-			acclimatization_hot_climate_gain_factor = 0.2
-			heat_attrition_factor = -0.2
-			recon_factor = 0.1
-		}
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision MAR_heat_of_the_desert"
-			hidden_effect = { add_command_power = -10 }
-			set_temp_variable = { temp_econ_spending_amount = 0.025 }
-			econ_spend_money_once_effect_raw_money = yes
-		}
-		ai_will_do = {
-			factor = 20
 		}
 	}
 }

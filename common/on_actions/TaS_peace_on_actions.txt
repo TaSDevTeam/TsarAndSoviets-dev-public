@@ -76,7 +76,6 @@ on_actions = {
 						}
 					}
 					FROM = {
-						KUR = { country_event = { id = KUR_CW.14 } }
 						OIL_KUR_win_iraq = yes
 					}
 					set_global_flag = skip_default_capitulation
@@ -428,205 +427,772 @@ on_actions = {
 				}
 			}
 			else_if = {
-					limit = {
-						FROM = {
-							original_tag = MAR
-						}
-						ROOT = { 
-							original_tag = MEN
-						}
-					}
+				limit = {
 					FROM = {
-					white_peace = ROOT
+						original_tag = MAR
 					}
-					MON = {
-						transfer_state = 814
-						transfer_state = 330
-						transfer_state = 815
-						econ_join_sphere_MAR = yes
+					ROOT = { 
+						original_tag = MEN
 					}
-					MEN = {
-						transfer_state = 612
-						transfer_state = 621
-						transfer_state = 955
-					}
-					set_global_flag = skip_default_capitulation
+				}
+				FROM = {
+				white_peace = ROOT
+				}
+				MON = {
+					transfer_state = 814
+					transfer_state = 330
+					transfer_state = 815
+					econ_join_sphere_MAR = yes
+				}
+				MEN = {
+					transfer_state = 612
+					transfer_state = 621
+					transfer_state = 955
+				}
+				set_global_flag = skip_default_capitulation
 			}
 			else_if = {
-					limit = {
-						FROM = {
-							original_tag = GSU
-						}
-						ROOT = { 
-							original_tag = GCZ
-						}
-					}
+				limit = {
 					FROM = {
-					white_peace = ROOT
+						original_tag = GSU
 					}
-					GSU = {
-						transfer_state = 9
-						transfer_state = 74
-						declare_war_on = {
-							target = GRA
-							type = annex_everything
-						}
-						declare_war_on = {
-							target = GAU
-							type = annex_everything
-						}
-						declare_war_on = {
-							target = GBV
-							type = annex_everything
-						}
-						declare_war_on = {
-							target = GBW
-							type = annex_everything
-						}
-						declare_war_on = {
-							target = GWF
-							type = annex_everything
-						}
-						declare_war_on = {
-							target = GRH
-							type = annex_everything
-						}
-						declare_war_on = {
-							target = GWS
-							type = annex_everything
-						}
+					ROOT = { 
+						original_tag = GCZ
 					}
-					
-					set_global_flag = skip_default_capitulation
+				}
+				FROM = {
+				white_peace = ROOT
+				}
+				GSU = {
+					transfer_state = 9
+					transfer_state = 74
+					declare_war_on = {
+						target = GRA
+						type = annex_everything
+					}
+					declare_war_on = {
+						target = GAU
+						type = annex_everything
+					}
+					declare_war_on = {
+						target = GBV
+						type = annex_everything
+					}
+					declare_war_on = {
+						target = GBW
+						type = annex_everything
+					}
+					declare_war_on = {
+						target = GWF
+						type = annex_everything
+					}
+					declare_war_on = {
+						target = GRH
+						type = annex_everything
+					}
+					declare_war_on = {
+						target = GWS
+						type = annex_everything
+					}
+				}
+				
+				set_global_flag = skip_default_capitulation
 			}
 			else_if = {
-					limit = {
-						FROM = {
-							original_tag = MAR
-							MAR = { has_global_flag = TaS_WRW2_Russian_victory }
-						}
-						ROOT = { 
-							original_tag = FIN
+				limit = {
+					FROM = {
+						original_tag = MAR
+						MAR = { has_global_flag = TaS_WRW2_Russian_victory }
+					}
+					ROOT = { 
+						original_tag = FIN
+					}
+				}
+				FROM = {
+					white_peace = ROOT
+				}
+				MAR = {
+					transfer_state = 146
+					transfer_state = 1712
+					transfer_state = 147
+					transfer_state = 722
+					transfer_state = 216
+					transfer_state = 215
+					transfer_state = 1724
+					transfer_state = 1359
+					transfer_state = 213
+				}
+				FIN = {
+					econ_join_sphere_MAR = yes
+				}
+				set_global_flag = skip_default_capitulation
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = MAR
+						MAR = { has_global_flag = TaS_WRW2_Russian_victory }
+					}
+					ROOT = { 
+						original_tag = ROM
+					}
+				}
+				FROM = {
+					white_peace = ROOT
+				}
+				if = {
+					limit = { MAR = { owns_state = 1428 } }
+					MAR = {
+						transfer_state = 198
+						transfer_state = 1282
+						transfer_state = 192
+						transfer_state = 1285
+						transfer_state = 78
+						transfer_state = 128
+						transfer_state = 80
+					}
+				}
+				else = {
+					MUK = {
+						transfer_state = 198
+						transfer_state = 1282
+						transfer_state = 192
+						transfer_state = 1285
+						transfer_state = 78
+						transfer_state = 1286
+						transfer_state = 80
+					}
+				}
+				ROM = {
+					econ_join_sphere_MAR = yes
+				}
+				set_global_flag = skip_default_capitulation
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = MAR
+						MAR = { has_global_flag = TaS_WRW2_Russian_victory }
+					}
+					ROOT = { 
+						original_tag = TUR
+					}
+				}
+				FROM = {
+					white_peace = ROOT
+				}
+				if = {
+					limit = { MAR = { owns_state = 231 } }
+					MAR = {
+						transfer_state = 1565
+						transfer_state = 230
+						transfer_state = 1568
+						transfer_state = 1567
+						transfer_state = 1448
+					}
+				}
+				if = {
+					limit = { MCS = { owns_state = 231 } }
+					MCS = {
+						transfer_state = 1565
+						transfer_state = 230
+						transfer_state = 1568
+						transfer_state = 1567
+						transfer_state = 1448
+					}
+				}
+				if = {
+					limit = { GEO = { owns_state = 231 } }
+					GEO = {
+						transfer_state = 1565
+						add_state_core = 1565
+					}
+					AZR = {
+						transfer_state = 1567
+						add_state_core = 1567
+					}
+					ARM = {
+						transfer_state = 1554
+						add_state_core = 1554
+						transfer_state = 1568
+						add_state_core = 1568
+						transfer_state = 230
+						add_state_core = 230
+						transfer_state = 1448
+						add_state_core = 1448
+					}
+				}
+				TUR = {
+					econ_join_sphere_MAR = yes
+				}
+				set_global_flag = skip_default_capitulation
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						OR = {
+							tag = PER
+							tag = IRL
+							tag = IRC
+							tag = IRB
+							tag = IRA
+							tag = IRI
 						}
 					}
+					ROOT = {
+						OR = {
+							tag = PER
+							tag = IRL
+							tag = IRC
+							tag = IRB
+							tag = IRA
+							tag = IRI
+						}
+					}
+				}
+				FROM = {
+					every_enemy_country = {
+						limit = {
+							OR = {
+								original_tag = ROOT
+								is_in_faction_with = ROOT
+							}
+						}
+						remove_from_array = { global.PER_contenders = THIS }
+						FROM = {
+							white_peace = PREV
+							annex_country = {
+								target = PREV
+								transfer_troops = no
+							}
+						}
+					}
+
+					if = {
+						limit = {
+							check_variable = { global.PER_contenders^num = 1 }
+						}
+						clear_array = global.PER_contenders
+
+						if = {
+							limit = { country_exists = PER }
+							news_event = { id = WORLD.18009 days = 1 }
+						}
+						else_if = {
+							limit = { country_exists = IRL }
+							news_event = { id = WORLD.18010 days = 1 }
+						}
+						else_if = {
+							limit = { country_exists = IRI }
+							news_event = { id = WORLD.18014 days = 1 }
+						}
+						else_if = {
+							limit = { country_exists = IRC }
+							news_event = { id = WORLD.18011 days = 1 }
+						}
+						else_if = {
+							limit = { country_exists = IRA }
+							news_event = { id = WORLD.18013 days = 1 }
+						}
+						else_if = {
+							limit = { country_exists = IRB }
+							news_event = { id = WORLD.18012 days = 1 }
+						}
+						every_owned_state = {
+							add_core_of = FROM
+						}
+						remove_ideas = PER_The_Iranian_Civil_War
+						FROM = {
+							set_capital = { state = 266 remember_old_capital = no }
+						}
+					}
+					else_if = {
+						limit = {
+							check_variable = { global.PER_contenders^num = 2 }
+							IRB = {
+								exists = yes
+								has_war = no
+							}
+							has_global_flag = TNO_IRA_collapsed_coalition
+						}
+						clear_array = global.PER_contenders
+
+						if = {
+							limit = { country_exists = IRL }
+							news_event = { id = WORLD.18010 days = 1 }
+						}
+						else_if = {
+							limit = { country_exists = IRC }
+							news_event = { id = WORLD.18011 days = 1 }
+						}
+						else_if = {
+							limit = { country_exists = IRA }
+							news_event = { id = WORLD.18013 days = 1 }
+						}
+						else_if = {
+							limit = { country_exists = IRI }
+							news_event = { id = WORLD.18014 days = 1 }
+						}
+						every_owned_state = {
+							add_core_of = FROM
+						}
+						remove_ideas = PER_The_Iranian_Civil_War
+						FROM = {
+							set_capital = { state = 266 remember_old_capital = no }
+						}
+					}
+				}
+				#Iranian Civil War (Walker added this so he could get a Burgundy thing working)
+				if = { # USA Loses
+					limit = { ROOT = { tag = IRL } }
+					USA = { country_event = USA_IR.6 }
+				}
+				else_if = { # USA Wins
+					limit = {
+						FROM = {
+							tag = IRL
+							has_war = no
+						}
+						has_global_flag = TNO_IRA_collapsed_coalition
+					}
+					USA = { country_event = USA_IR.7 }
+				}
+				#Iranian Civil War (Thanks walker for the code - zero)
+				if = { # JAP Loses
+					limit = { ROOT = { tag = IRI } }
+					JAP = { country_event = jap_fopo.2 }
+				}
+				else_if = { # JAP Wins
+					limit = {
+						FROM = {
+							tag = IRI
+							has_war = no
+						}
+						has_global_flag = TNO_IRA_collapsed_coalition
+					}
+					JAP = { country_event = jap_fopo.3 }
+				}
+
+				if = { # GER Loses
+					limit = { ROOT = { tag = PER } }
+					GER = { country_event = { id = reich_shared.21 days = 2 } }
+				}
+				else_if = { # GER Wins
+					limit = {
+						FROM = {
+							tag = PER
+							has_war = no
+						}
+					}
+					GER = { country_event = { id = reich_shared.20 days = 2 } }
+				}
+				
+				if = { # MAR(not kosygin) Loses
+					limit = { ROOT = { tag = IRC } MAR = { NOT = { has_government = socialist } } }
+					MAR = { country_event = { id = MAR_forpol.3 days = 2 } }
+				}
+				else_if = { # MAR(not kosygin) Wins
+					limit = {
+						FROM = {
+							tag = IRC
+							has_war = no
+						}
+						MAR = { NOT = { has_government = socialist } }
+					}
+					MAR = { country_event = { id = MAR_iranian_cw.2 days = 2 } }
+				}
+				
+				if = { # MAR(not kosygin) Loses
+					limit = { ROOT = { tag = IRC } MAR = { has_government = socialist } } 
+					MAR = { country_event = { id = MAR_forpol.3 days = 2 } }
+				}
+				else_if = { # MAR(not kosygin) Wins
+					limit = {
+						FROM = {
+							tag = IRC
+							has_war = no
+						}
+						MAR = { has_government = socialist }
+					}
+					MAR = { country_event = { id = MAR_forpol.2 days = 2 } }
+				}
+				set_global_flag = skip_default_capitulation
+			}
+			##################### Congo PW Shenanigans ###########################
+			else_if = {
+				limit = {
+					has_global_flag = CONGO_PW_HAPPENING
 					FROM = {
-						white_peace = ROOT
+						OR = {
+							original_tag = CFS
+							original_tag = CPR
+							original_tag = AZD
+							original_tag = KTG
+							original_tag = GRO
+							original_tag = COG
+							original_tag = KSI
+						}
+					}
+					ROOT = {
+						OR = {
+							original_tag = CFS
+							original_tag = CPR
+							original_tag = AZD
+							original_tag = KTG
+							original_tag = GRO
+							original_tag = COG
+							original_tag = KSI
+						}
+					}
+				}
+				else_if = { # Congolese Popular Republic got the number one victory royale
+					limit = {
+						country_exists = CPR
+						NOT = {
+							country_exists = CFS
+							country_exists = KTG
+							country_exists = KSI
+							country_exists = AZD
+							AND = {
+								has_global_flag = COG_PW_GRO_or_COG_in
+								OR = {
+									country_exists = GRO
+									country_exists = COG
+								}
+							}
+						}
+					}
+					CPR = {
+						country_event = {
+							id = COG_PW.4
+							days = 5
+						}
+					}
+					USA = {
+						country_event = {
+							id = COG_PW.99
+							days = 5
+						}
 					}
 					MAR = {
-						transfer_state = 146
-						transfer_state = 1712
-						transfer_state = 147
-						transfer_state = 722
-						transfer_state = 216
-						transfer_state = 215
-						transfer_state = 1724
-						transfer_state = 1359
-						transfer_state = 213
+						if = {
+							limit = { has_government = socialist has_country_flag = MAR_aid_CPR }
+							TaS_dobrovoltsy_dynmod_victory = yes
+						}
+						else = {
+							TaS_dobrovoltsy_dynmod_lose = yes
+						}
 					}
-					FIN = {
-						econ_join_sphere_MAR = yes
-					}
-					set_global_flag = skip_default_capitulation
-			}
-			else_if = {
+				}
+				else_if = { # Kasai got the number one victory royale
 					limit = {
-						FROM = {
-							original_tag = MAR
-							MAR = { has_global_flag = TaS_WRW2_Russian_victory }
-						}
-						ROOT = { 
-							original_tag = ROM
+						country_exists = KSI
+						NOT = {
+							country_exists = CFS
+							country_exists = CPR
+							country_exists = KTG
+							country_exists = AZD
+							AND = {
+								has_global_flag = COG_PW_GRO_or_COG_in
+								OR = {
+									country_exists = GRO
+									country_exists = COG
+								}
+							}
 						}
 					}
+					KSI = {
+						country_event = {
+							id = COG_PW.8
+							days = 5
+						}
+					}
+					USA = {
+						country_event = {
+							id = COG_PW.99
+							days = 5
+						}
+					}
+					MAR = {
+						if = {
+							limit = { NOT = { has_government = socialist } has_country_flag = MAR_aid_KSI }
+							TaS_dobrovoltsy_dynmod_victory = yes
+							country_event = { id = berez_dobrovoltsy.23 days = 3 }
+						}
+						else = {
+							TaS_dobrovoltsy_dynmod_lose = yes
+						}
+					}
+				}
+			}
+			## French Civil War ##
+			else_if = {
+				limit = {
+					has_global_flag = FRA_civil_war_ongoing #should prevent trigger during non-CW Reclamation
 					FROM = {
-						white_peace = ROOT
+						OR = {
+							original_tag = FFR
+							original_tag = FRS
+							original_tag = FRD
+							original_tag = FRM
+							original_tag = FRV
+							original_tag = FMM
+							original_tag = FGR
+							original_tag = FIT
+						}
 					}
+					ROOT = {
+						OR = {
+							original_tag = FRS
+							original_tag = FRD
+							original_tag = FRM
+							original_tag = FRV
+							original_tag = FMM
+							original_tag = FGR
+							original_tag = FIT
+						}
+					}
+				}
+
+				every_country = {
+					limit = { has_war_with = ROOT }
+					white_peace = ROOT
+				}
+
+				if = { # Reclamation defeated
+					limit = {
+						has_global_flag = FFR_reclamation_civil_war_happening
+						ROOT = { original_tag = FRD }
+					}
+
+					set_global_flag = FFR_reclamation_defeated
+					FROM = { # Take Kerguelen
+						add_state_core = 713
+						transfer_state = 713
+					}
+					every_state = { # Transfer whatever states FFR gobbled up
+						limit = {
+							is_owned_by = FFR
+							is_core_of = FROM
+						}
+
+						FROM = { transfer_state = PREV }
+					}
+
+					FFR_reclamation_defeat = yes
+				}
+
+				every_state = {
+					limit = {
+						is_core_of = ROOT
+					}
+					remove_core_of = ROOT
+				}
+
+				FROM = {
 					if = {
-						limit = { MAR = { owns_state = 1428 } }
-						MAR = {
-							transfer_state = 198
-							transfer_state = 1282
-							transfer_state = 192
-							transfer_state = 1285
-							transfer_state = 78
-							transfer_state = 128
-							transfer_state = 80
+						limit = {
+							original_tag = FFR
+							country_exists = FRD
+						}
+						FRD = {
+							annex_country = {
+								target = ROOT
+								transfer_troops = no
+							}
 						}
 					}
 					else = {
-						MUK = {
-							transfer_state = 198
-							transfer_state = 1282
-							transfer_state = 192
-							transfer_state = 1285
-							transfer_state = 78
-							transfer_state = 1286
-							transfer_state = 80
+						annex_country = {
+							target = ROOT
+							transfer_troops = no
 						}
 					}
-					ROM = {
-						econ_join_sphere_MAR = yes
-					}
-					set_global_flag = skip_default_capitulation
-			}
-			else_if = {
-					limit = {
-						FROM = {
-							original_tag = MAR
-							MAR = { has_global_flag = TaS_WRW2_Russian_victory }
-						}
-						ROOT = { 
-							original_tag = TUR
-						}
-					}
-					FROM = {
-						white_peace = ROOT
-					}
+
 					if = {
-						limit = { MAR = { owns_state = 231 } }
-						MAR = {
-							transfer_state = 1565
-							transfer_state = 230
-							transfer_state = 1568
-							transfer_state = 1567
-							transfer_state = 1448
+						limit = {
+							NOT = {
+								count_triggers = {
+									amount = 2
+									country_exists = FRS
+									country_exists = FRD
+									country_exists = FRM
+									country_exists = FRV
+									country_exists = FMM
+									country_exists = FGR
+									country_exists = FIT
+								}
+							}
+						}
+
+						clr_global_flag = FRA_civil_war_sidos
+						clr_global_flag = FRA_civil_war_poujade
+						clr_global_flag = FRA_civil_war_ongoing
+						set_global_flag = FRA_civil_war_over
+						set_capital = { state = 19 remember_old_capital = no }
+
+						if = { # Reclamation victorious
+							limit = {
+								has_global_flag = FFR_reclamation_civil_war_happening
+								OR = {
+									original_tag = FFR
+									original_tag = FRD
+								}
+							}
+
+							set_global_flag = FFR_reclamation_successful
+							FFR_reclamation_victory = yes
+						}
+						else_if = {
+							limit = { has_country_flag = FRA_sidos_elected }
+
+							if = {
+								limit = { has_idea = FRA_mediterranean_brotherhood }
+								
+								ITA = { add_to_faction = FRA }
+							}
+							else_if = {
+								limit = {
+									FRA = {
+										check_variable = { ECON_SPHERE_LEADER = GER }
+									}
+								}
+								GER = { add_to_faction = FRA }
+							}
+
+							every_country = {
+								limit = { is_ai = no }
+								news_event = { id = WORLD.30101 days = 1 }
+							}
+						}
+						else_if = {
+							limit = { has_country_flag = FRA_poujade_elected }
+
+							if = {
+								limit = {
+									FRA = {
+										check_variable = { ECON_SPHERE_LEADER = GER }
+									}
+								}
+								GER = { add_to_faction = FRA }
+							}
+
+							every_country = {
+								limit = { is_ai = no }
+								news_event = { id = WORLD.30108 days = 1 }
+							}
+						}
+						else_if = {
+							limit = { country_exists = FRD }
+
+							set_cosmetic_tag = FRA_postCW
+							every_country = {
+								limit = { is_ai = no }
+								news_event = { id = WORLD.30102 days = 1 }
+							}
+						}
+						else_if = {
+							limit = { country_exists = FRV }
+							
+							set_cosmetic_tag = FRA_postCW
+							every_country = {
+								limit = { is_ai = no }
+								news_event = { id = WORLD.30103 days = 1 }
+							}
+							FRV = {
+								if = { 
+									limit = { has_country_flag = MAR_aid_FRV }
+									econ_join_sphere_MAR = yes
+								}
+							}
+						}
+						else_if = {
+							limit = { country_exists = FRM }
+							
+							set_cosmetic_tag = FRA_postCW
+							every_country = {
+								limit = { is_ai = no }
+								news_event = { id = WORLD.30104 days = 1 }
+							}
+							FRM = {
+								if = { 
+									limit = { has_country_flag = MAR_aid_FRM }
+									econ_join_sphere_MAR = yes
+								}
+							}
+						}
+						else_if = {
+							limit = { country_exists = FMM }
+							
+							set_cosmetic_tag = FRA_postCW
+							every_country = {
+								limit = { is_ai = no }
+								news_event = { id = WORLD.30105 days = 1 }
+							}
+						}
+						else_if = {
+							limit = { country_exists = FGR }
+							
+							set_cosmetic_tag = FRA_postCW
+							every_country = {
+								limit = { is_ai = no }
+								news_event = { id = WORLD.30106 days = 1 }
+							}
+
+							GER = {
+								add_to_faction = FGR
+								set_temp_variable = { SeaZone_ID = 3 } # 3; North Atlantic
+								Cold_War_GUI_PowerProjection_AddSeaZone = yes
+							}
+							FGR = {
+								add_ideas = Pakt_Bundnispartner
+							}
+							if = {
+								limit = { has_global_flag = german_civil_war_speervic }
+								join_zollverein = yes
+							}
+							else = {
+								econ_join_sphere_GER = yes
+							}
+						}
+						else_if = {
+							limit = { country_exists = FIT }
+							
+							set_cosmetic_tag = FRA_postCW
+							every_country = {
+								limit = { is_ai = no }
+								news_event = { id = WORLD.30107 days = 1 }
+							}
+
+							set_country_flag = FRA_Italy_Aligned
+
+							if = {
+								limit = {
+									USA = { is_faction_leader = yes }
+									ITA = { is_in_faction_with = USA }
+								}
+								USA = { add_to_faction = FIT }
+								add_ideas = OFN_Independent_Member
+							}
+							else_if = {
+								limit = {
+									JAP = { is_faction_leader = yes }
+									ITA = { is_in_faction_with = JAP }
+								}
+								JAP = { add_to_faction = FIT }
+								add_ideas = Sphere_Coequal
+							}
+							else_if = {
+								limit = {
+									ITA = { is_faction_leader = yes }
+								}
+								ITA = { add_to_faction = FIT }
+							}
+							econ_join_sphere_ITA = yes
 						}
 					}
-					if = {
-						limit = { MCS = { owns_state = 231 } }
-						MCS = {
-							transfer_state = 1565
-							transfer_state = 230
-							transfer_state = 1568
-							transfer_state = 1567
-							transfer_state = 1448
-						}
-					}
-					if = {
-						limit = { GEO = { owns_state = 231 } }
-						GEO = {
-							transfer_state = 1565
-							add_state_core = 1565
-						}
-						AZR = {
-							transfer_state = 1567
-							add_state_core = 1567
-						}
-						ARM = {
-							transfer_state = 1554
-							add_state_core = 1554
-							transfer_state = 1568
-							add_state_core = 1568
-							transfer_state = 230
-							add_state_core = 230
-							transfer_state = 1448
-							add_state_core = 1448
-						}
-					}
-					TUR = {
-						econ_join_sphere_MAR = yes
-					}
-					set_global_flag = skip_default_capitulation
+				}
+				set_global_flag = skip_default_capitulation
 			}
 		}
 	}
