@@ -971,7 +971,7 @@ country_event = { #oil crisis
 	title = MAR_forpol.4.t
 	desc = MAR_oil_crisis.1.d
 	trigger = {
-		tag = MAR
+		tag = ZZZ
 		has_global_flag = OC_Yemen_CW
 		has_country_flag = MAR_started_volunteer_sending
 	}
@@ -979,8 +979,10 @@ country_event = { #oil crisis
 	picture = GFX_event_MAR_dobr2
 	option = { #yes
 		name = MAR_forpol.4.a
-		TaS_fopo_add_oil_crisis_tab = yes
-		TaS_OIL_get_supported_factions = yes
+		MAR = {
+			TaS_fopo_add_oil_crisis_tab = yes
+			TaS_OIL_get_supported_factions = yes
+		}
 	}
 }
 
@@ -1020,7 +1022,7 @@ country_event = { #iberian wars
 	title = MAR_forpol.6.t
 	desc = MAR_forpol.6.d
 	trigger = {
-		tag = MAR
+		tag = ZZZ
 		has_global_flag = IBW_CONFLICT
 		has_country_flag = MAR_started_volunteer_sending
 	}
@@ -1028,7 +1030,9 @@ country_event = { #iberian wars
 	picture = GFX_event_MAR_dobr2
 	option = { #yes
 		name = MAR_forpol.6.a
-		TaS_fopo_add_iberian_wars_tab = yes
+		MAR = {
+			TaS_fopo_add_iberian_wars_tab = yes
+		}
 	}
 }
 
@@ -1038,7 +1042,7 @@ country_event = { #france CW
 	title = MAR_forpol.7.t
 	desc = MAR_forpol.7.d
 	trigger = {
-		tag = MAR
+		tag = ZZZ
 		has_global_flag = FFR_reclamation_civil_war_happening
 		has_country_flag = MAR_started_volunteer_sending
 	}
@@ -1046,20 +1050,22 @@ country_event = { #france CW
 	picture = GFX_event_MAR_dobr2
 	option = { #yes
 		name = MAR_forpol.7.a
-		TNO_fopo_add_french_reclamation_civil_war_tab = yes
-		if = {
-			limit = { has_government = socialist }
-			FRV  = { set_country_flag = MAR_aid_FRV }
-			set_temp_variable = { target = FRV }
-			set_temp_variable = { number = 4 }
-			TNO_set_num_volunteers = yes
-		}
-		else_if = {
-			limit = { has_government = despotism }
-			FRM  = { set_country_flag = MAR_aid_FRM }
-			set_temp_variable = { target = FRM }
-			set_temp_variable = { number = 4 }
-			TNO_set_num_volunteers = yes
+		MAR = {
+			TNO_fopo_add_french_reclamation_civil_war_tab = yes
+			if = {
+				limit = { has_government = socialist }
+				FRV  = { set_country_flag = MAR_aid_FRV }
+				set_temp_variable = { target = FRV }
+				set_temp_variable = { number = 4 }
+				TNO_set_num_volunteers = yes
+			}
+			else_if = {
+				limit = { has_government = despotism }
+				FRM  = { set_country_flag = MAR_aid_FRM }
+				set_temp_variable = { target = FRM }
+				set_temp_variable = { number = 4 }
+				TNO_set_num_volunteers = yes
+			}
 		}
 	}
 }
