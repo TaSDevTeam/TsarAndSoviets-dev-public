@@ -580,6 +580,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 	custom_effect_tooltip = TaS_WRW2_PEACE_TOTAL_TOOLTIP
 	hidden_effect = {
 		set_global_flag = WRW2_german_collapse
+		set_global_flag = PostGER_belooz_epilogue
 		every_country = {
 			news_event = { id = MAR_2WRW_world_news.11 hours = 6}
 		}
@@ -821,6 +822,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 	custom_effect_tooltip = TaS_WRW2_PEACE_TOTAL_TOOLTIP
 	hidden_effect = {
 		set_global_flag = WRW2_german_collapse
+		set_global_flag = PostGER_kosygin_epilogue
 		every_country = {
 			news_event = { id = MAR_2WRW_world_news.11 hours = 6}
 		}

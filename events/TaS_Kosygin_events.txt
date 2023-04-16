@@ -811,6 +811,11 @@ country_event = {#nuke event numbero tres
 	option = {
 		name = MAR_Kosygin.51.a
 		ai_chance = { factor = 1 }	
+		set_country_flag = mar_has_nukes
+		set_variable = { nuclear_stockpile = 4 }
+		set_variable = { nuclear_global_coverage = 0.35 }
+		add_to_variable = { nuclear_stockpile_change = 7 }
+		calculate_strike_capability = yes
 	}
 }
 

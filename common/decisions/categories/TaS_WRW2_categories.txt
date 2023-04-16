@@ -172,6 +172,7 @@ TaS_WRW2_GER_epilogue = {
 	
 	visible = {
 		has_global_flag = WRW2_german_collapse
+		NOT = { has_global_flag = PostGER_kosygin_epilogue }
 	}
 	
 	visible_when_empty = yes
@@ -195,5 +196,37 @@ TaS_WRW2_the_final_battle_legacy = {
 	visible_when_empty = yes
 	priority = {
 		base = 150
+	}
+}
+TaS_WRW2_RUS_post_collapse = {
+	icon = GFX_Postger_epilogue_category
+	picture = GFX_MAR_GER_EPILOGUE_category
+	
+	allowed = {
+		OR = {
+			tag = MAR
+			tag = WRS
+			tag = TAR
+			tag = SVR
+			tag = OMS
+			tag = KEM
+			tag = IRK
+			tag = MAG
+			tag = YAK
+			tag = NPL
+			tag = PAV
+			tag = UAB
+		}
+	}
+	
+	visible = {
+		#has_global_flag = WRW2_russian_collapse
+		is_debug = yes
+	}
+	
+	visible_when_empty = yes
+	
+	priority = {
+		base = 40
 	}
 }

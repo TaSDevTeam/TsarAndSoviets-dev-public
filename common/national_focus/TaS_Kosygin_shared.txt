@@ -1458,6 +1458,7 @@ shared_focus = {
 		custom_effect_tooltip = RUS_RWS_nukes_into_the_atomic_age_tt
 		add_timed_idea = { idea = RUS_RWS_nukes_into_the_atomic_age_misc_costs days = 90 }
 		RUS_init_nuke_system = yes
+		TNO_unlock_nuclear_tech = yes
 	}
 }
 shared_focus = {
@@ -1526,10 +1527,10 @@ shared_focus = {
 	x = 15
 	y = 1
 	completion_reward = {
-		country_event = { 
-			id = MAR_Kosygin.50
-			days = 0
-		}
+		#country_event = { 
+		#	id = MAR_Kosygin.50
+		#	days = 0
+		#}
 		custom_effect_tooltip = RUS_RWS_nukes_expand_the_dalur_mines_tt
 		572 = {
 			add_extra_state_shared_building_slots = 2

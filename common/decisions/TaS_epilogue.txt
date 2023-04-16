@@ -36,6 +36,7 @@ TaS_WRW2_GER_epilogue = {
 
 		visible = {
 			NOT = { has_global_flag = PostGER_second_cw }
+			#has_global_flag = PostGER_belooz_epilogue
 		}
 
 		complete_effect = {
@@ -49,14 +50,25 @@ TaS_WRW2_GER_epilogue = {
 						id = TaS_GEREpilogue.1
 						days = 1
 					}
-					clr_country_flag = TaS_End_of_WRW2_Russia_Victory_BE_fl
+					clr_country_flag = SE_WRW2_VICTORY_BELOZERSKY
 					TNO_clean_trees = yes
 				}
 			}
 		}
 	}
 	TaS_play_garnizon = {
-		icon = GFX_Postger_garnizon
+		icon = {
+			key = GFX_Postger_garnizon
+			trigger = {
+				has_global_flag = PostGER_belooz_epilogue
+			}
+		}
+		icon = {
+			key = GFX_Postger_prussia
+			trigger = {
+				has_global_flag = PostGER_kosygin_epilogue
+			}
+		}
 		visible = { ZNE = { exists = yes }}
 		ai_will_do = { 
 			factor = 0
@@ -68,6 +80,7 @@ TaS_WRW2_GER_epilogue = {
 
 		visible = {
 			NOT = { has_global_flag = PostGER_second_cw }
+			#has_global_flag = PostGER_belooz_epilogue
 		}
 
 		complete_effect = {
@@ -81,7 +94,7 @@ TaS_WRW2_GER_epilogue = {
 						id = TaS_GEREpilogue.4
 						days = 1
 					}
-					clr_country_flag = TaS_End_of_WRW2_Russia_Victory_BE_fl
+					clr_country_flag = SE_WRW2_VICTORY_BELOZERSKY
 					TNO_clean_trees = yes
 				}
 			}
@@ -100,6 +113,7 @@ TaS_WRW2_GER_epilogue = {
 
 		visible = {
 			NOT = { has_global_flag = PostGER_second_cw }
+			#has_global_flag = PostGER_belooz_epilogue
 		}
 
 		complete_effect = {
@@ -113,14 +127,25 @@ TaS_WRW2_GER_epilogue = {
 						id = TaS_GEREpilogue.12
 						days = 1
 					}
-					clr_country_flag = TaS_End_of_WRW2_Russia_Victory_BE_fl
+					clr_country_flag = SE_WRW2_VICTORY_BELOZERSKY
 					TNO_clean_trees = yes
 				}
 			}
 		}
 	}
 	TaS_play_rheinland = {
-		icon = GFX_Postger_rhein
+		icon = {
+			key = GFX_Postger_rhein
+			trigger = {
+				has_global_flag = PostGER_belooz_epilogue
+			}
+		}
+		icon = {
+			key = GFX_Postger_rheinfed
+			trigger = {
+				has_global_flag = PostGER_kosygin_epilogue
+			}
+		}
 		visible = { GRH = { exists = yes }}
 		ai_will_do = { 
 			factor = 0
@@ -132,6 +157,7 @@ TaS_WRW2_GER_epilogue = {
 
 		visible = {
 			NOT = { has_global_flag = PostGER_second_cw }
+			#has_global_flag = PostGER_belooz_epilogue
 		}
 
 		complete_effect = {
@@ -145,7 +171,7 @@ TaS_WRW2_GER_epilogue = {
 						id = TaS_GEREpilogue.18
 						days = 1
 					}
-					clr_country_flag = TaS_End_of_WRW2_Russia_Victory_BE_fl
+					clr_country_flag = SE_WRW2_VICTORY_BELOZERSKY
 					TNO_clean_trees = yes
 				}
 			}
@@ -164,6 +190,7 @@ TaS_WRW2_GER_epilogue = {
 
 		visible = {
 			NOT = { has_global_flag = PostGER_second_cw }
+			#has_global_flag = PostGER_belooz_epilogue
 		}
 
 		complete_effect = {
@@ -177,14 +204,25 @@ TaS_WRW2_GER_epilogue = {
 						id = TaS_GEREpilogue.15
 						days = 1
 					}
-					clr_country_flag = TaS_End_of_WRW2_Russia_Victory_BE_fl
+					clr_country_flag = SE_WRW2_VICTORY_BELOZERSKY
 					TNO_clean_trees = yes
 				}
 			}
 		}
 	}
 	TaS_play_bavaria = {
-		icon = GFX_Postger_bavaria
+		icon = {
+			key = GFX_Postger_bavaria
+			trigger = {
+				has_global_flag = PostGER_belooz_epilogue
+			}
+		}
+		icon = {
+			key = GFX_Postger_bavariasoviet
+			trigger = {
+				has_global_flag = PostGER_kosygin_epilogue
+			}
+		}
 		visible = { GBV = { exists = yes }}
 		ai_will_do = { 
 			factor = 0
@@ -196,6 +234,7 @@ TaS_WRW2_GER_epilogue = {
 
 		visible = {
 			NOT = { has_global_flag = PostGER_second_cw }
+			#has_global_flag = PostGER_belooz_epilogue
 		}
 
 		complete_effect = {
@@ -209,14 +248,25 @@ TaS_WRW2_GER_epilogue = {
 						id = TaS_GEREpilogue.21
 						days = 1
 					}
-					clr_country_flag = TaS_End_of_WRW2_Russia_Victory_BE_fl
+					clr_country_flag = SE_WRW2_VICTORY_BELOZERSKY
 					TNO_clean_trees = yes
 				}
 			}
 		}
 	}
 	TaS_play_austria = {
-		icon = GFX_Postger_austria
+		icon = {
+			key = GFX_Postger_austria
+			trigger = {
+				has_global_flag = PostGER_belooz_epilogue
+			}
+		}
+		icon = {
+			key = GFX_Postger_austriarep
+			trigger = {
+				has_global_flag = PostGER_kosygin_epilogue
+			}
+		}
 		visible = { GAU = { exists = yes }}
 		ai_will_do = { 
 			factor = 0
@@ -228,6 +278,7 @@ TaS_WRW2_GER_epilogue = {
 
 		visible = {
 			NOT = { has_global_flag = PostGER_second_cw }
+			#has_global_flag = PostGER_belooz_epilogue
 		}
 
 		complete_effect = {
@@ -241,7 +292,7 @@ TaS_WRW2_GER_epilogue = {
 						id = TaS_GEREpilogue.24
 						days = 1
 					}
-					clr_country_flag = TaS_End_of_WRW2_Russia_Victory_BE_fl
+					clr_country_flag = SE_WRW2_VICTORY_BELOZERSKY
 					TNO_clean_trees = yes
 				}
 			}
@@ -260,6 +311,7 @@ TaS_WRW2_GER_epilogue = {
 
 		visible = {
 			NOT = { has_global_flag = PostGER_second_cw }
+			#has_global_flag = PostGER_belooz_epilogue
 		}
 
 		complete_effect = {
@@ -273,7 +325,7 @@ TaS_WRW2_GER_epilogue = {
 						id = TaS_GEREpilogue.8
 						days = 1
 					}
-					clr_country_flag = TaS_End_of_WRW2_Russia_Victory_BE_fl
+					clr_country_flag = SE_WRW2_VICTORY_BELOZERSKY
 					TNO_clean_trees = yes
 				}
 			}
@@ -292,6 +344,7 @@ TaS_WRW2_GER_epilogue = {
 
 		visible = {
 			NOT = { has_global_flag = PostGER_second_cw }
+			#has_global_flag = PostGER_belooz_epilogue
 		}
 
 		complete_effect = {
@@ -305,7 +358,7 @@ TaS_WRW2_GER_epilogue = {
 						id = TaS_GEREpilogue.29
 						days = 1
 					}
-					clr_country_flag = TaS_End_of_WRW2_Russia_Victory_BE_fl
+					clr_country_flag = SE_WRW2_VICTORY_BELOZERSKY
 					TNO_clean_trees = yes
 				}
 			}
@@ -324,6 +377,7 @@ TaS_WRW2_GER_epilogue = {
 
 		visible = {
 			NOT = { has_global_flag = PostGER_second_cw }
+			#has_global_flag = PostGER_belooz_epilogue
 		}
 
 		complete_effect = {
@@ -337,7 +391,7 @@ TaS_WRW2_GER_epilogue = {
 						id = TaS_GEREpilogue.27
 						days = 1
 					}
-					clr_country_flag = TaS_End_of_WRW2_Russia_Victory_BE_fl
+					clr_country_flag = SE_WRW2_VICTORY_BELOZERSKY
 					TNO_clean_trees = yes
 				}
 			}
@@ -356,6 +410,7 @@ TaS_WRW2_GER_epilogue = {
 
 		visible = {
 			NOT = { has_global_flag = PostGER_second_cw }
+			#has_global_flag = PostGER_belooz_epilogue
 		}
 
 		complete_effect = {
@@ -369,7 +424,7 @@ TaS_WRW2_GER_epilogue = {
 						id = TaS_GEREpilogue.28
 						days = 1
 					}
-					clr_country_flag = TaS_End_of_WRW2_Russia_Victory_BE_fl
+					clr_country_flag = SE_WRW2_VICTORY_BELOZERSKY
 					TNO_clean_trees = yes
 				}
 			}
@@ -540,5 +595,5 @@ TaS_WRW2_GER_epilogue = {
 				}
 			}
 		}
-	} 
+	}
 }
