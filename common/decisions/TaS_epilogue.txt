@@ -597,3 +597,161 @@ TaS_WRW2_GER_epilogue = {
 		}
 	}
 }
+TaS_WRW2_RUS_post_collapse = {
+	RUS_post_collapse_show_hide_countries = {
+		icon = {
+			key = GFX_decision_generic_visibility_closed
+			trigger = {
+				has_country_flag = RUS_show_countries
+			}
+		}
+		icon = {
+			key = GFX_decision_generic_visibility
+			trigger = {
+				NOT = { has_country_flag = RUS_show_countries }
+			}
+		}
+		days_re_enable = 0
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_post_collapse_show_hide_countries"
+			if = {
+				limit = { has_country_flag = RUS_show_countries }
+				clr_country_flag = RUS_show_countries
+			}
+			else = {
+				set_country_flag = RUS_show_countries
+			}
+		}
+	}
+	RUS_post_collapse_play_someone = {
+		icon = GFX_decision_point
+		target_array = global.PostRus_collapse
+		target_trigger = {
+			FROM = {
+				exists = yes
+			}
+		}
+		visible = {
+			FROM = {
+				exists = yes
+			}
+			has_country_flag = RUS_show_countries
+		}
+
+		on_map_mode = map_and_decisions_view
+		highlight_states = {
+			highlight_states_trigger = {
+				is_controlled_by = FROM
+			}
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_OC_bomb_someone"
+			FROM = {
+				change_tag_from = ROOT
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	RUS_post_collapse_show_hide_wars = {
+		icon = {
+			key = GFX_decision_generic_visibility_closed
+			trigger = {
+				has_country_flag = RUS_show_wars
+			}
+		}
+		icon = {
+			key = GFX_decision_generic_visibility
+			trigger = {
+				NOT = { has_country_flag = RUS_show_wars }
+			}
+		}
+		days_re_enable = 0
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_post_collapse_show_hide_countries"
+			if = {
+				limit = { has_country_flag = RUS_show_wars }
+				clr_country_flag = RUS_show_wars
+			}
+			else = {
+				set_country_flag = RUS_show_wars
+			}
+		}
+	}
+	RUS_post_collapse_declare_war_someone = {
+		icon = GFX_decision_generic_bombing
+		target_array = global.PostRus_collapse
+		target_trigger = {
+			FROM = {
+				exists = yes
+			}
+		}
+		visible = {
+			FROM = {
+				exists = yes
+				is_neighbor_of = ROOT
+			}
+			has_country_flag = RUS_show_wars
+		}
+
+		on_map_mode = map_and_decisions_view
+		highlight_states = {
+			highlight_states_trigger = {
+				is_controlled_by = FROM
+			}
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_OC_bomb_someone"
+			declare_war_on = {
+				target = FROM
+				type = annex_everything
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	TaS_russian_re_reunification = {
+		icon = GFX_decision_category_generic_russia
+		available = {
+			is_subject = no
+			has_war = no
+			custom_trigger_tooltip = {
+				tooltip = can_form_west_siberia_tt
+				can_form_west_siberia = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = can_form_southern_urals_tt
+				can_form_southern_urals = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = can_form_central_siberia_tt
+				can_form_central_siberia = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = can_form_far_east_tt
+				can_form_far_east = yes
+			}
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 200
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision west_german_reunification"
+			set_global_flag = RUS_re_reunification
+			add_research_slot = 1
+			custom_effect_tooltip = GER_unification_tt
+			hidden_effect = {
+				add_manpower = 150000
+			}
+			RUS_select_re_reunified_cosmotag = yes
+			RUS_select_re_reunification_news_event = yes
+			RUS_do_re_reunification_effects = yes
+			TNO_Country_Closing_Screen_Show = yes
+		}
+	}
+}

@@ -1256,6 +1256,83 @@ news_event = { # GUOT inteventrion
 	}
 }
 
+country_event = { #Novgorod Theatry
+	id = MAR_Collapse.1941
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Collapse.1941"}
+	title = MAR_Collapse.1941.t
+	desc = MAR_Collapse.1941.d
+	picture = GFX_report_event_collapse1
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = MAR_Collapse.1941.a
+		every_country = {
+			limit = { has_war_with = MAR }
+			white_peace = MAR
+		}
+		MCW = {
+		    transfer_state = 858
+		    transfer_state = 859
+		    transfer_state = 214
+		    transfer_state = 861
+		    transfer_state = 860
+		    transfer_state = 857
+		    transfer_state = 351
+		    transfer_state = 856
+		    transfer_state = 855
+		    transfer_state = 252
+		    transfer_state = 256
+		    transfer_state = 250
+		    transfer_state = 755
+		}
+		FIN = { 
+		    transfer_state = 213
+		    transfer_state = 1359
+		    transfer_state = 215
+		    transfer_state = 216
+			transfer_state = 1887
+		}
+		ai_chance = { factor = 1 }
+		MAR_Sergey_Belozerskiy = {
+			set_portraits = {
+				civilian = { large = "gfx/leaders/MAR/Collapse/Portrait_Berezniki_Belozerskid_70S.dds" }
+			}
+			swap_country_leader_traits = {
+				remove = char_objedinitel
+				add = char_projebavshij
+				ideology = despotism_mladorossi_autocracy_subtype
+			}
+		}
+		MAR = { 
+			set_country_leader_description = {
+				desc = "POLITICS_SERGEY_BELOZERSKI_F_DESC"
+			}
+		}
+		hidden_effect = {
+			country_event ={
+				id = MAR_Collapse.1 days = 14
+			}
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.12
+				}
+			}
+		}
+		add_political_power = -500
+		add_stability = -0.25
+	}
+	option = {
+		name = MAR_Collapse.1941.b
+		trigger = {
+			NOT = {
+				surrender_progress > 0.3
+			}
+		}
+
+	}
+}	
+
 country_event = { #Beloozerski ded - Regent council called
 	id = MAR_Collapse.1
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Collapse.1"}
@@ -1351,9 +1428,9 @@ country_event = { #Flavour capital infightings
 		ai_chance = { factor = 1 }
 		add_stability = -0.05
 		hidden_effect = {
-			#country_event ={
-			#	id = MAR_Collapse.5 days = 3
-			#}
+			country_event ={
+				id = MAR_Collapse.5 days = 3
+			}
 		}
 	}
 }
@@ -1584,6 +1661,16 @@ country_event = { #-kazakhstan
 			transfer_state = 846
 			add_state_core = 652
 			transfer_state = 652
+			add_state_core = 1808
+			transfer_state = 1808
+			add_state_core = 1807
+			transfer_state = 1807
+			add_state_core = 1802
+			transfer_state = 1802
+			add_state_core = 1803
+			transfer_state = 1803
+			add_state_core = 1804
+			transfer_state = 1804
 			remove_ideas = PAV_idealistic_revolutionaries 
 			add_ideas = TaS_RUS_shattered_ambitions
 			set_politics = {
@@ -1797,7 +1884,7 @@ country_event = { #F tuva and zeya
 		hidden_effect = {
 			MEN = {
 			    transfer_state = 814
-			    transfer_state = 329
+			    transfer_state = 654
 			}
 			#MAN = {
 			#transfer_state = 1364
@@ -2046,8 +2133,8 @@ country_event = { #F sibir
 			transfer_state = 570
 			transfer_state = 40
 			add_state_core = 40
-			transfer_state = 654
-			add_state_core = 654
+			#transfer_state = 654
+			#add_state_core = 654
 			transfer_state = 569
 			add_state_core = 569
 			add_state_core = 757
@@ -2354,6 +2441,16 @@ country_event = { #Total f
 		clear_global_event_target = RUS_russian_unifier
 		clear_global_event_target = RUS_siberian_unifier
 		clear_global_event_target = RUS_total_unifier
+		clear_array = { global.PostRus_collapse }
+		add_to_array = { global.PostRus_collapse = KOM }
+		add_to_array = { global.PostRus_collapse = TAR }
+		add_to_array = { global.PostRus_collapse = MAR }
+		add_to_array = { global.PostRus_collapse = OMS }
+		add_to_array = { global.PostRus_collapse = TYM }
+		add_to_array = { global.PostRus_collapse = NOV }
+		add_to_array = { global.PostRus_collapse = IRK }
+		add_to_array = { global.PostRus_collapse = YAK }
+		add_to_array = { global.PostRus_collapse = MAG }
 		clr_global_flag = RUS_national_unification
 		TNO_Country_Closing_Screen_Show = yes
 		set_country_flag = MAR_Bad_Ending

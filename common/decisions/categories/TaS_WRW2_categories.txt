@@ -199,7 +199,7 @@ TaS_WRW2_the_final_battle_legacy = {
 	}
 }
 TaS_WRW2_RUS_post_collapse = {
-	icon = GFX_Postger_epilogue_category
+	icon = GFX_decision_category_generic_formable_nations
 	picture = GFX_MAR_GER_EPILOGUE_category
 	
 	allowed = {
@@ -220,8 +220,7 @@ TaS_WRW2_RUS_post_collapse = {
 	}
 	
 	visible = {
-		#has_global_flag = WRW2_russian_collapse
-		is_debug = yes
+		has_global_flag = WRW2_russian_collapse
 	}
 	
 	visible_when_empty = yes
