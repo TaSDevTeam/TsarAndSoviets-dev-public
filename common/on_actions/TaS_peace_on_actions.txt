@@ -1194,6 +1194,29 @@ on_actions = {
 				}
 				set_global_flag = skip_default_capitulation
 			}
+			else_if = {
+				limit = {
+					FROM = {
+						is_in_faction_with = JAP 
+					}
+					ROOT = { 
+						OR = {
+							original_tag = HAN
+							original_tag = MAN
+							original_tag = PFF
+						}
+					}
+					AND = {
+						country_exists = MJP
+					}
+				}
+				MJP = {
+					annex_country = {
+						target = ROOT
+						transfer_troops = no
+					}
+				}
+			}
 		}
 	}
 }

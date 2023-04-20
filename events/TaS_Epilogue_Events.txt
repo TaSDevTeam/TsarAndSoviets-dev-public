@@ -1308,6 +1308,7 @@ country_event = { #Novgorod Theatry
 			set_country_leader_description = {
 				desc = "POLITICS_SERGEY_BELOZERSKI_F_DESC"
 			}
+			add_ideas = TaS_Post2WRW_WSR_fourth_time_a_row
 		}
 		hidden_effect = {
 			country_event ={
@@ -1514,7 +1515,6 @@ country_event = { #capital infightings continue demil zones on far east and kaza
 			565 = {
 				set_demilitarized_zone = yes
 			}
-			
 		}
 	}
 	option = {
@@ -1615,7 +1615,6 @@ country_event = { #Turkestan breaks free
 					traits = { }	
 				}
 			}
-			add_ideas = TaS_RUS_shattered_ambitions
 		}
 	}	
 }
@@ -1672,7 +1671,6 @@ country_event = { #-kazakhstan
 			add_state_core = 1804
 			transfer_state = 1804
 			remove_ideas = PAV_idealistic_revolutionaries 
-			add_ideas = TaS_RUS_shattered_ambitions
 			set_politics = {
 				ruling_party = paternalism
 				last_election = "1933.2.16"
@@ -1688,7 +1686,10 @@ country_event = { #-kazakhstan
 					expire = "1999.1.1"
 					traits = { }		
 				}
-			}	
+			}
+			every_owned_state = {
+				set_demilitarized_zone = no
+			}			
 			set_party_name = {
 				ideology = paternalism
 				long_name = PAV_MAR_collapse_party_long
@@ -1727,13 +1728,16 @@ country_event = { #-kazakhstan
 				long_name = NPL_MAR_collapse_party_long
 				name = NPL_MAR_collapse_party
 			}
-			add_ideas = TaS_RUS_shattered_ambitions			
+			every_owned_state = {
+				set_demilitarized_zone = no
+			}	
 		}
 		MTR = {
 			declare_war_on = {
 				target = PAV
 				type = annex_everything
 			}
+			add_ideas = TaS_Post2WRW_MTR_march_north
 		}
 		hidden_effect = {
 			country_event ={
@@ -1886,10 +1890,59 @@ country_event = { #F tuva and zeya
 			    transfer_state = 814
 			    transfer_state = 654
 			}
-			#MAN = {
-			#transfer_state = 1364
-			#transfer_state = 657
-			#}
+			every_other_country = {
+				limit = { controls_state = 801 }
+				transfer_state = 1364
+				transfer_state = 657
+				transfer_state = 1646
+				transfer_state = 1647
+				transfer_state = 1645
+				transfer_state = 409
+				transfer_state = 1644
+				transfer_state = 408
+				
+			}
+			hidden_effect = {
+				if = {
+					limit = { MJP = { exists = no } }
+					MJP = {
+						transfer_state = 809
+						transfer_state = 810
+						set_cosmetic_tag = MJP_JAP_autonomy
+						econ_join_sphere_JAP = yes
+						add_ideas = Sphere_Imp_Protectorate
+						add_ideas = MAN_Kwantung_Army
+						every_owned_state = {
+							MJP = {
+								add_state_core = PREV
+							}
+						}
+						if = { 
+							limit = { PFF = { exists = yes } }
+							declare_war_on = {
+								target = PFF
+								type = annex_everything
+							}
+						}
+						else_if = { 
+							limit = { MAN = { exists = yes } }
+							declare_war_on = {
+								target = MAN
+								type = annex_everything
+							}
+						}
+						else = { 
+							declare_war_on = {
+								target = HAN
+								type = annex_everything
+							}
+						}
+					}
+					JAP = {
+						add_to_faction = MJP
+					}
+				}
+			}
 		}
 		hidden_effect = {
 			country_event ={
@@ -1931,6 +1984,7 @@ country_event = { #F dv 1
 			transfer_state = 563
 			add_ideas = {
 				OFN_Observer
+				TaS_Post2WRW_SIB_japanese_paranoia
 			}
 			set_country_flag = RUS_cancel_all_ideas
 			econ_join_sphere_USA = yes 			
@@ -1959,6 +2013,9 @@ country_event = { #F dv 1
 				ideology = liberalism
 				long_name = MAG_MAR_collapse_party_long
 				name = MAG_MAR_collapse_party
+			}
+			every_owned_state = {
+				set_demilitarized_zone = no
 			}
 		}	
 		hidden_effect = {
@@ -2036,7 +2093,16 @@ country_event = { #F dv 2
 				long_name = BRY_MAR_collapse_party_long
 				name = BRY_MAR_collapse_party
 			}
+			add_ideas = {
+				OFN_Observer
+				TaS_Post2WRW_SIB_japanese_paranoia
+				TaS_Post2WRW_IRK_red_light
+			}
+			econ_join_sphere_USA = yes
 			apply_party_popularities = yes
+			every_owned_state = {
+				set_demilitarized_zone = no
+			}
 		}
 		YAK = {
 			set_cosmetic_tag = YAK_MAR_collapse
@@ -2083,8 +2149,16 @@ country_event = { #F dv 2
 				long_name = YAK_MAR_collapse_party_long
 				name = YAK_MAR_collapse_party
 			}
+			add_ideas = {
+				OFN_Observer
+				TaS_Post2WRW_SIB_japanese_paranoia
+			}
+			econ_join_sphere_USA = yes 
 			load_focus_tree = shattered_ambitions
 			apply_party_popularities = yes
+			every_owned_state = {
+				set_demilitarized_zone = no
+			}
 
 		}
 		
@@ -2345,10 +2419,6 @@ country_event = { #Total f
 				set_nationality = TAR
 			}
 		}
-		every_country = {
-			limit = { is_russian_nation = yes }
-			add_ideas = TaS_RUS_shattered_ambitions
-		}
 		KOM = {
 			set_country_flag = RUS_cancel_all_ideas
 			set_cosmetic_tag = KOM_MAR_collapse
@@ -2398,6 +2468,7 @@ country_event = { #Total f
 				long_name = KOM_MAR_collapse_party_long
 				name = KOM_MAR_collapse_party
 			}
+			add_ideas = TaS_Post2WRW_WSR_fourth_time_a_row
 		}
 		TAR = {
 			set_country_flag = RUS_cancel_all_ideas
@@ -2431,6 +2502,7 @@ country_event = { #Total f
 				ideology = paternalism
 				popularity = 0.45
 			}
+			add_ideas = TaS_Post2WRW_WSR_fourth_time_a_row
 		}
 		clear_global_event_target = RUS_western_unifier
 		clear_global_event_target = RUS_west_siberia_unifier
@@ -2461,7 +2533,14 @@ country_event = { #Total f
 					id = MAR_2WRW_world_news.13
 				}
 			}
+			for_each_scope_loop = {
+				array = global.PostRus_collapse
+				FROM = {
+					add_ideas = TaS_Post2WRW_RUS_third_smuta
+				}
+			}
 		}
+		
 	}
 }
 
@@ -2475,6 +2554,17 @@ news_event = {
 	
 	option = {
 		name = TaS_RUSEpilogue_news.1.a
+		trigger = {
+			tag = MAR
+		}
+	}
+	option = {
+		name = TaS_RUSEpilogue_news.1.b
+		trigger = {
+			NOT = {
+				tag = MAR
+			}
+		}
 	}
 }
 
