@@ -308,3 +308,312 @@ defined_text = {
 		localization_key = MAR_FErebels_strength_low
 	}
 }
+#Oil Crisis
+defined_text = {
+	name = MAR_OC_Get_Participation
+	text = {
+		trigger = { check_variable = { MAR_OC_participation < 1 } }
+		localization_key = MAR_OC_participation_1
+	}
+	text = {
+		trigger = {
+			#check_variable = { MAR_OC_participation > 5 }
+			check_variable = { MAR_OC_participation < 20 }
+		}
+		localization_key = MAR_OC_participation_2
+	}
+	text = {
+		trigger = {
+			#check_variable = { MAR_OC_participation > 15 }
+			check_variable = { MAR_OC_participation < 40 }
+		}
+		localization_key = MAR_OC_participation_3
+	}
+	text = {
+		trigger = {
+			#check_variable = { MAR_OC_participation > 29 }
+			check_variable = { MAR_OC_participation < 60 }
+		}
+		localization_key = MAR_OC_participation_4
+	}
+	text = {
+		trigger = {
+			#check_variable = { MAR_OC_participation > 44 }
+			check_variable = { MAR_OC_participation < 80 }
+		}
+		localization_key = MAR_OC_participation_5
+	}
+	text = {
+		trigger = {
+			#check_variable = { MAR_OC_participation > 59 }
+			check_variable = { MAR_OC_participation < 100 }
+		}
+		localization_key = MAR_OC_participation_6
+	}
+	text = {
+		#trigger = { check_variable = { MAR_OC_participation > 79 } }
+		localization_key = MAR_OC_participation_7
+	}
+}
+
+defined_text = {
+	name = MAR_OC_Yemen_string
+	text = {
+		trigger = { has_global_flag = OC_Yemen_CW }
+		localization_key = MAR_oil_crisis_yemen
+	}
+}
+
+defined_text = {
+	name = MAR_OC_Oman_string
+	text = {
+		trigger = { has_global_flag = OC_Oman_CW }
+		localization_key = MAR_oil_crisis_oman
+	}
+}
+
+defined_text = {
+	name = MAR_OC_Iraq_string
+	text = {
+		trigger = { has_global_flag = OC_Iraq_CW }
+		localization_key = MAR_oil_crisis_iraq
+	}
+}
+
+defined_text = {
+	name = MAR_OC_Egypt_string
+	text = {
+		trigger = { has_global_flag = OC_Egypt_CW }
+		localization_key = MAR_oil_crisis_egypt
+	}
+}
+
+defined_text = {
+	name = MAR_OC_Sudan_string
+	text = {
+		trigger = { has_global_flag = OC_Sudan_CW }
+		localization_key = MAR_oil_crisis_sudan
+	}
+}
+
+defined_text = {
+	name = MAR_OC_Get_Country_Status_Yemen
+	text = {
+		trigger = {
+			OR = {
+				NOT = {
+					is_in_array = {
+						array = global.OIL_supported_by_MAR
+						value = YEM
+					}
+				}
+				NOT = {
+					is_in_array = {
+						array = global.OIL_supported_by_MAR
+						value = NYM
+					}
+				}
+			}
+		}
+		localization_key = BOR_OC_country_were_uninvolved
+	}
+	text = {
+		trigger = {
+			OR = {
+				YEM = { has_war = yes }
+				NYM = { has_war = yes }
+			}
+		}
+		localization_key = BOR_OC_country_still_at_war
+	}
+	text = {
+		trigger = {
+			OR = {
+				YEM = {
+					exists = yes
+					NOT = { is_puppet_of = SAU }
+				}
+				NYM = {
+					exists = yes
+					SAU = { exists = no }
+				}
+			}
+		}
+		localization_key = BOR_OC_country_victory
+	}
+	text = {
+		localization_key = BOR_OC_country_defeat
+	}
+}
+
+defined_text = {
+	name = MAR_OC_Get_Country_Status_Oman
+	text = {
+		trigger = {
+			NOT = {
+				is_in_array = {
+					array = global.OIL_supported_by_MAR
+					value = OMA
+				}
+			}
+			NOT = {
+				is_in_array = {
+					array = global.OIL_supported_by_MAR
+					value = OMB
+				}
+			}
+		}
+		localization_key = BOR_OC_country_were_uninvolved
+	}
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					is_in_array = {
+						array = global.OIL_supported_by_MAR
+						value = OMA
+					}
+					OMA = { exists = no }
+				}
+				AND = {
+					is_in_array = {
+						array = global.OIL_supported_by_MAR
+						value = OMB
+					}
+					OMB = { exists = no }
+				}
+			}
+		}
+		localization_key = BOR_OC_country_defeat
+	}
+	text = {
+		trigger = {
+			OR = {
+				OMA = { has_war = yes }
+				OMB = { has_war = yes }
+			}
+		}
+		localization_key = BOR_OC_country_still_at_war
+	}
+	text = {
+		localization_key = BOR_OC_country_victory
+	}
+}
+
+defined_text = {
+	name = MAR_OC_Get_Country_Status_Egypt
+	text = {
+		trigger = {
+			OR = {
+				NOT = {
+					is_in_array = {
+						array = global.OIL_supported_by_MAR
+						value = EGB
+					}
+				}
+				NOT = {
+					is_in_array = {
+						array = global.OIL_supported_by_MAR
+						value = EGQ
+					}
+				}
+			}
+		}
+		localization_key = BOR_OC_country_were_uninvolved
+	}
+	text = {
+		trigger = {
+			OR = {
+				EGQ = { has_war = yes }
+				EGB = { has_war = yes }
+			}
+		}
+		localization_key = BOR_OC_country_still_at_war
+	}
+	text = {
+		trigger = {
+			OR = {
+				EGQ = { exists = yes }
+				EGB = { exists = yes }
+			}
+		}
+		localization_key = BOR_OC_country_victory
+	}
+	text = {
+		localization_key = BOR_OC_country_defeat
+	}
+}
+
+defined_text = {
+	name = MAR_OC_Get_Country_Status_Sudan
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					is_in_array = {
+						array = global.OIL_supported_by_MAR
+						value = SDF
+					}
+					SDF = { has_war = yes }
+				}
+				AND = {
+					is_in_array = {
+						array = global.OIL_supported_by_MAR
+						value = SDS
+					}
+					SDS = { has_war = yes }
+				}
+			}
+		}
+		localization_key = BOR_OC_country_still_at_war
+	}
+	text = {
+		trigger = {
+			OR = {
+				SDS = { exists = yes }
+				SDF = { exists = yes }
+			}
+		}
+		localization_key = BOR_OC_country_victory
+	}
+	text = {
+		localization_key = BOR_OC_country_defeat
+	}
+}
+
+defined_text = {
+	name = MAR_OC_Get_Country_Status_Iraq
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					is_in_array = {
+						array = global.OIL_supported_by_MAR
+						value = KUR
+					}
+					KUR = { exists = no }
+				}
+				AND = {
+					is_in_array = {
+						array = global.OIL_supported_by_MAR
+						value = BIR
+					}
+					BIR = { exists = no }
+				}
+			}
+		}
+		localization_key = BOR_OC_country_defeat
+	}
+	text = {
+		trigger = {
+			OR = {
+				KUR = { has_war = yes }
+				BIR = { has_war = yes }
+			}
+		}
+		localization_key = BOR_OC_country_still_at_war
+	}
+	text = {
+		localization_key = BOR_OC_country_victory
+	}
+}
