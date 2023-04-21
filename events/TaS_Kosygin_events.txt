@@ -256,6 +256,7 @@ country_event = {#Aftermaths
 					traits = { char_reformator }
 				}
 			}
+			set_country_flag = MAR_prestol_focus_tree
 			mark_focus_tree_layout_dirty = yes
 		}
 	}
@@ -548,7 +549,7 @@ country_event = {#india trip
 	option = {
 		name = MAR_Kosygin.34.a
 		ai_chance = { factor = 1 }	
-		add_opinion_modifier = {
+		reverse_add_opinion_modifier = {
 			target = IND
 			modifier = RUS_recognition
 		}
@@ -1397,7 +1398,7 @@ country_event = { #400 event 2
 		name = MAR_Kosygin_Prestol.14.a
 		ai_chance = { factor = 1 }
 		add_manpower = -1
-		country_event = { id = MAR_Kosygin_Prestol.14 days = 3 }
+		country_event = { id = MAR_Kosygin_Prestol.15 days = 3 }
 	}
 }
 
@@ -1738,6 +1739,7 @@ country_event = { #tabby le found
 		custom_effect_tooltip = mar_prestol_check_berezniki_retard_tt
 		398 = {
 			set_variable = { operation_available = 1 }
+			set_variable = { kosygin_reception = 3 }
 		}
 	}
 }

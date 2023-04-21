@@ -579,6 +579,7 @@ shared_focus = {
 	y = 6
 	completion_reward = {
 		country_event = { id = MAR_initial.18 days = 2 }
+		TNO_improve_admin_efficiency_med = yes
 	}
 }
 
@@ -958,6 +959,7 @@ shared_focus = {
 	x = 9
 	y = 8
 	completion_reward = {
+		TNO_improve_admin_efficiency_low = yes
 		if = {
 			limit = { check_variable = { MAR_MGB_vyatka_angry = 2 } }
 			if = {

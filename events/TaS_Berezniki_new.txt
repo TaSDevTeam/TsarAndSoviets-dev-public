@@ -1255,7 +1255,10 @@ country_event = { #MAR_emraced_workers
 	option = { #
 		name = MAR_postbomb.1.a
 		ai_chance = { factor = 1 }
-		add_ideas = MAR_rabochie_ochen_vood
+		add_timed_idea = {
+			idea = MAR_rabochie_ochen_vood
+			days = 365
+		}
 	}
 }
 
@@ -1380,6 +1383,7 @@ country_event = { #general preparations
 		name = MAR_postbomb.7.a
 		ai_chance = { factor = 1 }
 		army_experience = 45
+		add_manpower = 15000
 	}
 }
 
@@ -2107,11 +2111,11 @@ country_event = { # MAR_pereezd
 	picture = GFX_event_Zemsobor_2
 	is_triggered_only = yes
 
-	option = {
-		name = MAR_zemsky_sobor.2.a
-		ai_chance = { factor = 1 }
-		set_capital = {state = 397}
-	}
+	#option = {
+	#	name = MAR_zemsky_sobor.2.a
+	#	ai_chance = { factor = 1 }
+	#	set_capital = {state = 397}
+	#}
 	option = {
 		name = MAR_zemsky_sobor.2.b
 		ai_chance = { factor = 1 }

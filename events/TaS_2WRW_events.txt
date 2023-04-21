@@ -1794,58 +1794,39 @@ country_event = { #Moscowien
 	is_triggered_only = yes
 	fire_only_once = yes
 	
-	option = { #they can stay
-		name = MAR_territorial_fate.3.a
-		ai_chance = { factor = 1 }
-		set_country_flag = MCW_fate_is_done
-		add_political_power = 50
-		add_stability = -0.03
-	}
 	option = { #fuck germans
-		name = MAR_territorial_fate.3.b
+		name = MAR_territorial_fate.3.a
 		ai_chance = { factor = 1 }
 		set_country_flag = MCW_fate_is_done
 		195 = {
 			add_manpower = -343970
 			set_variable = { nationality = 151 }
 		}
+		1421 = {
+			add_manpower = -741223
+			set_variable = { nationality = 151 }
+		}
 		209 = {
-			add_manpower = -156090
-			set_variable = { nationality = 151 }
-		}
-		1442 = {
-			add_manpower = -623490
-			set_variable = { nationality = 151 }
-		}
-		1443 = {
-			add_manpower = -97800
-			set_variable = { nationality = 151 }
-		}
-		1441 = {
-			add_manpower = -365590
-			set_variable = { nationality = 151 }
-		}
-		210 = {
-			add_manpower = -599120
+			add_manpower = -121532
 			set_variable = { nationality = 151 }
 		}
 		243 = {
-			add_manpower = -431220
-			set_variable = { nationality = 151 }
-		}
-		244 = {
-			add_manpower = -179380
+			add_manpower = -412245
 			set_variable = { nationality = 151 }
 		}
 		239 = {
-			add_manpower = -943340
+			add_manpower = -679680
+			set_variable = { nationality = 151 }
+		}
+		260 = {
+			add_manpower = -234519
 			set_variable = { nationality = 151 }
 		}
 		5 = {
 			add_manpower = 345320
 		}
 		63 = {
-			add_manpower = 478000
+			add_manpower = 521980
 		}
 		776 = {
 			add_manpower = 436450
@@ -1856,6 +1837,147 @@ country_event = { #Moscowien
 		85 = {
 			add_manpower = 312349
 		}
+		65 = {
+			add_manpower = 244412
+		}
+	}
+	option = { #do you know about siberia?
+		name = MAR_territorial_fate.3.b
+		ai_chance = { factor = 1 }
+		set_country_flag = MCW_fate_is_done
+		add_political_power = 250
+		add_stability = -0.15
+		if = {
+			limit = { ruling_party = despotism }
+			add_popularity = {
+				ideology = despotism
+				popularity = -0.15
+			}
+		}
+		else_if = {
+			limit = { ruling_party = socialist }
+			add_popularity = {
+				ideology = socialist
+				popularity = -0.15
+			}
+		}
+		195 = {
+			add_manpower = -283615
+			set_variable = { nationality = 151 }
+		}
+		1421 = {
+			add_manpower = -775238
+			set_variable = { nationality = 151 }
+		}
+		209 = {
+			add_manpower = -151173
+			set_variable = { nationality = 151 }
+		}
+		243 = {
+			add_manpower = -311412
+			set_variable = { nationality = 151 }
+		}
+		239 = {
+			add_manpower = -403687
+			set_variable = { nationality = 151 }
+		}
+		260 = {
+			add_manpower = -114755
+			set_variable = { nationality = 151 }
+		}
+		
+		862 = {
+			add_manpower = 10615
+		}
+		262 = {
+			add_manpower = 18338
+		}
+		863 = {
+			add_manpower = 44216
+		}
+		581 = {
+			add_manpower = 2326
+		}
+		756 = {
+			add_manpower = 29268
+		}
+		844 = {
+			add_manpower = 24539
+		}
+		579 = {
+			add_manpower = 19012
+		}
+		577 = {
+			add_manpower = 18246
+		}
+		516 = {
+			add_manpower = 34332
+		}
+		887 = {
+			add_manpower = 30958
+		}
+		888 = {
+			add_manpower = 40983
+		}
+		576 = {
+			add_manpower = 29509
+		}
+		575 = {
+			add_manpower = 34700
+		}
+		761 = {
+			add_manpower = 44880
+		}
+		890 = {
+			add_manpower = 49024
+		}
+		889 = {
+			add_manpower = 15115
+		}
+		759 = {
+			add_manpower = 19098
+		}
+		644 = {
+			add_manpower = 20972
+		}
+		891 = {
+			add_manpower = 40002
+		}
+		562 = {
+			add_manpower = 93233
+		}
+		637 = {
+			add_manpower = 38653
+		}
+		574 = {
+			add_manpower = 74541
+		}
+		1803 = {
+			add_manpower = 138960
+		}
+		404 = {
+			add_manpower = 159007
+		}
+		1804 = {
+			add_manpower = 226175
+		}
+		1805 = {
+			add_manpower = 81140
+		}
+		587 = {
+			add_manpower = 289495
+		}
+		571 = {
+			add_manpower = 120841
+		}
+	}
+	option = { #they can stay
+		name = MAR_territorial_fate.3.с
+		ai_chance = { factor = 1 }
+		set_country_flag = MCW_fate_is_done
+		add_political_power = 50
+		add_stability = -0.05
+		add_war_support = -0.05
 	}
 }
 

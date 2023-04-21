@@ -313,7 +313,12 @@ defined_text = {
 		trigger = { tag = BRA }
 		localization_key = TNO_COUNTRY_INFO_BUTTON_TEXT_BRA
 	}
-
+	## Guangdong
+	text = {
+		trigger = { tag = GNG }
+		localization_key = TNO_COUNTRY_INFO_BUTTON_TEXT_GNG
+	}
+	
 	## Default
 	text = {
 		localization_key = TNO_COUNTRY_INFO_BUTTON_TEXT_GEN
@@ -1834,6 +1839,12 @@ defined_text = {
 			original_tag = COG
 		}
 		localization_key = "[Get_ContentLoc_COG]"
+	}
+	text = {
+		trigger = {
+			original_tag = GNG
+		}
+		localization_key = "[Get_ContentLoc_GNG]"
 	}
 	text = {
 		trigger = {
@@ -3412,6 +3423,63 @@ defined_text = {
 			localization_key = COG_CountryInfo_Content.7
 		}
 	}
+	defined_text = {
+		name = Get_ContentLoc_GNG
+		text = {
+			trigger = {
+				check_variable = { f = 1 }
+			}
+			localization_key = GNG_CountryInfo_Content.1
+		}
+		text = {
+			trigger = {
+				check_variable = { f = 2 }
+			}
+			localization_key = GNG_CountryInfo_Content.2
+		}
+		text = {
+			trigger = {
+				check_variable = { f = 3 }
+			}
+			localization_key = GNG_CountryInfo_Content.3
+		}
+		text = {
+			trigger = {
+				check_variable = { f = 4 }
+			}
+			localization_key = GNG_CountryInfo_Content.4
+		}
+		text = {
+			trigger = {
+				check_variable = { f = 5 }
+			}
+			localization_key = GNG_CountryInfo_Content.5
+		}
+		text = {
+			trigger = {
+				check_variable = { f = 6 }
+			}
+			localization_key = GNG_CountryInfo_Content.6
+		}
+		text = {
+			trigger = {
+				check_variable = { f = 7 }
+			}
+			localization_key = GNG_CountryInfo_Content.7
+		}
+		text = {
+			trigger = {
+				check_variable = { f = 8 }
+			}
+			localization_key = GNG_CountryInfo_Content.8
+		}
+		text = {
+			trigger = {
+				check_variable = { f = 9 }
+			}
+			localization_key = GNG_CountryInfo_Content.9
+		}
+	}
 
 ##===============================##
 ### 5. Content_ScriptedLoc_desc ###
@@ -3701,6 +3769,12 @@ defined_text = {
 			original_tag = COG
 		}
 		localization_key = "[Get_ContentLoc_desc_COG]"
+	}
+	text = {
+		trigger = {
+			original_tag = GNG
+		}
+		localization_key = "[Get_ContentLoc_desc_GNG]"
 	}
 	text = {
 		trigger = {
@@ -5272,6 +5346,64 @@ defined_text = {
 			localization_key = COG_CountryInfo_Content_desc.7
 		}
 	}
+	## Content_ScriptedLoc_desc_GNG
+	defined_text = {
+		name = Get_ContentLoc_desc_GNG
+		text = {
+			trigger = {
+				check_variable = { f = 1 }
+			}
+			localization_key = GNG_CountryInfo_Content_desc.1
+		}
+		text = {
+			trigger = {
+				check_variable = { f = 2 }
+			}
+			localization_key = GNG_CountryInfo_Content_desc.2
+		}
+		text = {
+			trigger = {
+				check_variable = { f = 3 }
+			}
+			localization_key = GNG_CountryInfo_Content_desc.3
+		}
+		text = {
+			trigger = {
+				check_variable = { f = 4 }
+			}
+			localization_key = GNG_CountryInfo_Content_desc.4
+		}
+		text = {
+			trigger = {
+				check_variable = { f = 5 }
+			}
+			localization_key = GNG_CountryInfo_Content_desc.5
+		}
+		text = {
+			trigger = {
+				check_variable = { f = 6 }
+			}
+			localization_key = GNG_CountryInfo_Content_desc.6
+		}
+		text = {
+			trigger = {
+				check_variable = { f = 7 }
+			}
+			localization_key = GNG_CountryInfo_Content_desc.7
+		}
+		text = {
+			trigger = {
+				check_variable = { f = 8 }
+			}
+			localization_key = GNG_CountryInfo_Content_desc.8
+		}
+		text = {
+			trigger = {
+				check_variable = { f = 9 }
+			}
+			localization_key = GNG_CountryInfo_Content_desc.9
+		}
+	}
 
 # X. Functionality
 defined_text = {
@@ -5582,6 +5714,13 @@ defined_text = {
 			original_tag = SVR
 		}
 		localization_key = CountryInfo_Economic_Overview_SVR
+	}
+	## Guangdong
+	text = {
+		trigger = {
+			original_tag = GNG
+		}
+		localization_key = CountryInfo_Economic_Overview_GNG
 	}
 	text = {
 		trigger = {

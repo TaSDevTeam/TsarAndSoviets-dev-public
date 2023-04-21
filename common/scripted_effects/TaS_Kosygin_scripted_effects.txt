@@ -282,12 +282,18 @@ MAR_Prestol_start = {
 		}
 	}
 
-	#hidden_effect = { country_event = { id = omsk.1999 days = 7 } }
-
+	hidden_effect = {
+		country_event = { id = MAR_Kosygin_Prestol.18 days = 7 } 
+		country_event = { id = MAR_Kosygin_Prestol.19 days = 7 } 
+		country_event = { id = MAR_Kosygin_Prestol.20 days = 7 } 
+		country_event = { id = MAR_Kosygin_Prestol.21 days = 7 } 
+		country_event = { id = MAR_Kosygin_Prestol.22 days = 7 } 
+		country_event = { id = MAR_Kosygin_Prestol.23 days = 7 } 
+	}
 	MAR_prestol_calc_nationwide_strength = yes
 	MAR_calculate_dynmod_effects = yes
 	MAR_calculate_terror_risk = yes
-
+	
 	set_variable = { insurgency_state_selected = 850 }
 }
 

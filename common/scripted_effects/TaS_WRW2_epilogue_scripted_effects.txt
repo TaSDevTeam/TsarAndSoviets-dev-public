@@ -1120,3 +1120,225 @@ TaS_2WRW_remove_schnitzel = {
 		}
 	}	
 }
+
+
+RUS_select_re_reunified_cosmotag = {
+	if = {
+		limit = { NOT = { tag = MAR } }
+		hidden_effect = {
+			drop_cosmetic_tag = yes
+		}
+	}
+	if = {
+		limit = {
+			original_tag = PAV
+		}
+		set_cosmetic_tag = PAV_MAR_collapse_reunified
+	}
+	if = {
+		limit = {
+			original_tag = MTR
+		}
+		set_cosmetic_tag = MTR_MAR_collapse_reunified
+	}
+	if = {
+		limit = {
+			original_tag = MAG
+		}
+		set_cosmetic_tag = MAG_MAR_collapse_reunified
+	}
+	if = {
+		limit = {
+			original_tag = YAK
+		}
+		set_cosmetic_tag = YAK_MAR_collapse_reunified
+	}
+	if = {
+		limit = {
+			original_tag = BRY
+		}
+		set_cosmetic_tag = BRY_MAR_collapse_reunified
+	}
+	if = {
+		limit = {
+			original_tag = NOV
+		}
+		set_cosmetic_tag = NOV_MAR_collapse_reunified
+	}
+	if = {
+		limit = {
+			original_tag = TYM
+		}
+		set_cosmetic_tag = SVR_MAR_collapse_reunified
+	}
+	if = {
+		limit = {
+			original_tag = OMS
+		}
+		set_cosmetic_tag = OMS_MAR_collapse_reunified
+	}
+	if = {
+		limit = {
+			original_tag = KOM
+		}
+		set_cosmetic_tag = KOM_MAR_collapse_reunified
+	}
+	if = {
+		limit = {
+			original_tag = TAR
+		}
+		set_cosmetic_tag = TAR_MAR_collapse_reunified
+	}
+	if = {
+		limit = {
+			original_tag = NPL
+		}
+		set_cosmetic_tag = NPL_MAR_collapse_reunified
+	}
+}
+RUS_select_re_reunification_news_event = {
+	if = {
+		limit = {
+			original_tag = MAR
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = TaS_RUSEpilogue_news.1
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			original_tag = OMS
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = TaS_RUSEpilogue_news.2
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			original_tag = KOM
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = TaS_RUSEpilogue_news.3
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			original_tag = PAV
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = TaS_RUSEpilogue_news.4
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			original_tag = NOV
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = TaS_RUSEpilogue_news.5
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			original_tag = YAK
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = TaS_RUSEpilogue_news.6
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			original_tag = TAR
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = TaS_RUSEpilogue_news.7
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			original_tag = TYM
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = TaS_RUSEpilogue_news.8
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			original_tag = NPL
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = TaS_RUSEpilogue_news.9
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			original_tag = MAG
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = TaS_RUSEpilogue_news.10
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			original_tag = IRK
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = TaS_RUSEpilogue_news.11
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			original_tag = MTR
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = TaS_RUSEpilogue_news.12
+				}
+			}
+		}
+	}
+}
