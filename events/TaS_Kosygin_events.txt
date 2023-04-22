@@ -1010,6 +1010,56 @@ country_event = {#new congress
 		ai_chance = { factor = 1 }	
 	}
 }
+country_event = {#fate of order
+	id = MAR_Kosygin.66
+	title = MAR_Kosygin.66.t
+	desc = MAR_Kosygin.66.d
+	picture = GFX_event_MAR_Kosygin_66
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_Kosygin.66.a
+		ai_chance = { factor = 1 }	
+		country_event = { id = MAR_Kosygin.67 days = 4 }
+	}
+}
+country_event = {#the letter
+	id = MAR_Kosygin.67
+	title = MAR_Kosygin.67.t
+	desc = MAR_Kosygin.67.d
+	picture = GFX_event_MAR_Kosygin_67
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_Kosygin.67.a
+		ai_chance = { factor = 1 }	
+	}
+}
+country_event = {#
+	id = MAR_Kosygin.68
+	title = MAR_Kosygin.68.t
+	desc = MAR_Kosygin.68.d
+	picture = GFX_event_MAR_Kosygin_68
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_Kosygin.68.a
+		ai_chance = { factor = 1 }	
+	}
+}
+
+country_event = {#
+	id = MAR_Kosygin.69
+	title = MAR_Kosygin.69.t
+	desc = MAR_Kosygin.69.d
+	picture = GFX_event_MAR_Kosygin_69
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_Kosygin.69.a
+		ai_chance = { factor = 1 }	
+	}
+}
 
 country_event = {#valley of peace
 	id = MAR_Kosygin.100
