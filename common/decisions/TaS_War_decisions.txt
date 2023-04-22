@@ -2278,24 +2278,26 @@ TaS_WRW2_the_final_battle = {
 		}
 		available = {
 			OR = {
-				casualties > 100000
-				MCW = {
-					surrender_progress > 0.1
-				}
-				RUS = {
+				AND = {
 					casualties > 100000
+					MCW = {
+						surrender_progress > 0.1
+					}
+					RUS = {
+						casualties > 100000
+					}
+				}
+				AND = {
+					set_temp_variable = { Y = 25 }
+					TAS_WRW2_ScriptedTrigger_GER_Devastation_MoreThanY = yes
+					set_temp_variable = { Y = 25 }
+					TAS_WRW2_ScriptedTrigger_MAR_Devastation_MoreThanY = yes
 				}
 			}
 			NOT = {
 				MCW = {
 					surrender_progress > 0.65
 				}
-			}
-			OR = {
-				set_temp_variable = { Y = 25 }
-				TAS_WRW2_ScriptedTrigger_GER_Devastation_MoreThanY = yes
-				set_temp_variable = { Y = 25 }
-				TAS_WRW2_ScriptedTrigger_MAR_Devastation_MoreThanY = yes
 			}
 		}
 		custom_cost_trigger = { command_power > 19.99 }
@@ -2333,15 +2335,15 @@ TaS_WRW2_the_final_battle = {
 						casualties > 100000
 					}
 				}
-			}
-			NOT = {
-				MCW = {
-					exists = no
+				AND = {
+					set_temp_variable = { Y = 90 }
+					TAS_WRW2_ScriptedTrigger_GER_Devastation_MoreThanY = yes
 				}
 			}
-			OR = {
-				set_temp_variable = { Y = 125 }
-				TAS_WRW2_ScriptedTrigger_GER_Devastation_MoreThanY = yes
+		}
+		NOT = {
+			MCW = {
+				exists = no
 			}
 		}
 		custom_cost_trigger = { command_power > 19.99 }
@@ -2380,10 +2382,10 @@ TaS_WRW2_the_final_battle = {
 				set_temp_variable = { Y = 40 }
 				TAS_WRW2_ScriptedTrigger_GER_Devastation_MoreThanY = yes
 			}
-			NOT = {
-				CAU = {
-					exists = no
-				}
+		}
+		NOT = {
+			CAU = {
+				exists = no
 			}
 		}
 		custom_cost_trigger = { command_power > 19.99 }
@@ -2431,10 +2433,10 @@ TaS_WRW2_the_final_battle = {
 					set_temp_variable = { Y = 90 }
 					TAS_WRW2_ScriptedTrigger_GER_Devastation_MoreThanY = yes
 				}
-				NOT = {
-					UKR = {
-						exists = no
-					}
+			}
+			NOT = {
+				UKR = {
+					exists = no
 				}
 			}
 		}
@@ -2477,10 +2479,10 @@ TaS_WRW2_the_final_battle = {
 						exists = no
 					}
 				}
-				NOT = {
-					GER = {
-						surrender_progress > 0.25
-					}
+			}
+			NOT = {
+				GER = {
+					surrender_progress > 0.25
 				}
 			}
 			
