@@ -1755,14 +1755,14 @@ ideas = {
 		}
 	}
 	country = {
-		MAR_prestol_ogas_dummy = {
+		MAR_ogas_dynmod_dummy = {
 			allowed = {
 				always = no
 			}
 			on_remove = { remove_dynamic_modifier = { modifier = MAR_ogas_modifier } }
 			cancel = { has_country_flag = RUS_cancel_all_ideas }
 			removal_cost = -1
-			picture = GFX_idea_MAR_ogas
+			picture = MAR_ogas
 		}
 	}
 }	

@@ -884,14 +884,14 @@ country_event = {#akmola celebration
 	option = {
 		name = MAR_Kosygin.56.a
 		ai_chance = { factor = 1 }	
-		add_ideas = { MAR_kaz_legions }
+		add_ideas = MAR_kaz_legions
 	}
 }
 
 country_event = {#future, forward!
 	id = MAR_Kosygin.57
 	title = MAR_Kosygin.57.t
-	desc = MAR_Kosygin.56.d
+	desc = MAR_Kosygin.57.d
 	picture = GFX_event_MAR_Kosygin_57
 	is_triggered_only = yes
 	

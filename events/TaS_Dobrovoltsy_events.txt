@@ -908,24 +908,16 @@ country_event = { ### Iran victory
 		add_political_power = 100
 		add_stability = 0.03
 		add_war_support = 0.03
-		clr_country_flag = MAR_IRCW_arming_IRC
+		clr_country_flag = MAR_IRCW_arming_IRA
 		clr_country_flag = MAR_IR_CW_ACTIVE
-		if = {
-			limit = { has_government = socialist }
-			add_popularity = { ideology = socialist popularity = 0.02 }
-			set_temp_variable = { target = IRA }
-			TNO_clear_num_volunteers = yes
-			IRA = {
-				econ_join_sphere_MAR = yes
-				give_resource_rights = { receiver = MAR state = 411 resources = { oil aluminium rubber tungsten steel chromium uranium } }
-				give_resource_rights = { receiver = MAR state = 412 resources = { oil aluminium rubber tungsten steel chromium uranium } }
-				TNO_improve_army_professionalism_low = yes
-			}
-		}
-		else_if = {
-			limit = { has_government = despotism }
-			add_popularity = { ideology = despotism popularity = 0.02 }
-			country_event = { id = berez_dobrovoltsy.24 }
+		add_popularity = { ideology = socialist popularity = 0.02 }
+		set_temp_variable = { target = IRA }
+		TNO_clear_num_volunteers = yes
+		IRA = {
+			econ_join_sphere_MAR = yes
+			give_resource_rights = { receiver = MAR state = 411 resources = { oil aluminium rubber tungsten steel chromium uranium } }
+			give_resource_rights = { receiver = MAR state = 412 resources = { oil aluminium rubber tungsten steel chromium uranium } }
+			TNO_improve_army_professionalism_low = yes
 		}
 		TaS_dobrovoltsy_dynmod_victory = yes
 	}
@@ -947,20 +939,11 @@ country_event = { ### Iran defeat
 		add_political_power = -100
 		add_stability = -0.03
 		add_war_support = -0.03
-		clr_country_flag = MAR_IRCW_arming_IRC
+		clr_country_flag = MAR_IRCW_arming_IRA
 		clr_country_flag = MAR_IR_CW_ACTIVE
-		if = {
-			limit = { has_government = socialist }
-			add_popularity = { ideology = socialist popularity = -0.02 }
-			set_temp_variable = { target = IRA }
-			TNO_clear_num_volunteers = yes
-		}
-		else_if = {
-			limit = { has_government = despotism }
-			add_popularity = { ideology = despotism popularity = -0.02 }
-			set_temp_variable = { target = IRC }
-			TNO_clear_num_volunteers = yes
-		}
+		add_popularity = { ideology = socialist popularity = -0.02 }
+		set_temp_variable = { target = IRA }
+		TNO_clear_num_volunteers = yes
 		TaS_dobrovoltsy_dynmod_lose = yes
 	}
 }
@@ -1065,5 +1048,56 @@ country_event = { #france CW
 				TNO_set_num_volunteers = yes
 			}
 		}
+	}
+}
+
+country_event = { ### Iran victory
+	id = MAR_forpol.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_forpol.8"}
+	title = MAR_forpol.8.t
+	desc = MAR_forpol.8.d
+	picture = GFX_report_event_germany_army_2
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = { PER = { has_war = no } }
+
+	option = {
+		name = MAR_forpol.8.a
+		TNO_fopo_remove_iran_civil_war_tab = yes
+		add_political_power = 100
+		add_stability = 0.03
+		add_war_support = 0.03
+		clr_country_flag = MAR_IRCW_arming_IRC
+		clr_country_flag = MAR_IR_CW_ACTIVE
+		limit = { has_government = despotism }
+		add_popularity = { ideology = despotism popularity = 0.02 }
+		country_event = { id = berez_dobrovoltsy.24 }
+		TaS_dobrovoltsy_dynmod_victory = yes
+	}
+}
+
+country_event = { ### Iran defeat
+	id = MAR_forpol.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_forpol.9"}
+	title = MAR_forpol.9.t
+	desc = MAR_forpol.9.d
+	picture = GFX_report_event_germany_anarchy
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = MAR_forpol.9.a
+		TNO_fopo_remove_iran_civil_war_tab = yes
+		add_political_power = -100
+		add_stability = -0.03
+		add_war_support = -0.03
+		clr_country_flag = MAR_IRCW_arming_IRC
+		clr_country_flag = MAR_IR_CW_ACTIVE
+		add_popularity = { ideology = despotism popularity = -0.02 }
+		set_temp_variable = { target = IRC }
+		TNO_clear_num_volunteers = yes
+		TaS_dobrovoltsy_dynmod_lose = yes
 	}
 }

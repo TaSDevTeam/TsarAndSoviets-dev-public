@@ -2593,7 +2593,7 @@ TaS_WRW2_the_final_battle = {
 			has_war = yes
 			controls_state = 1397
 			controls_state = 1428
-			set_temp_variable = { Y = 80 }
+			set_temp_variable = { Y = 50 }
 			TAS_WRW2_ScriptedTrigger_GER_Devastation_MoreThanY = yes
 			
 		}
@@ -2609,6 +2609,43 @@ TaS_WRW2_the_final_battle = {
 		}
 		remove_effect = {
 			country_event = { id = MAR_2WRW.5 }
+		}
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	TaS_WRW2_offer_total_total_capitulation = {
+		icon = GFX_decision_generic_military_parade
+		visible = {
+			check_variable = { WRW_deccat = 3 }
+		}
+		available = {
+			has_war = yes
+			controls_state = 5
+			controls_state = 88
+			set_temp_variable = { Y = 45 }
+			TAS_WRW2_ScriptedTrigger_GER_Devastation_MoreThanY = yes
+			
+		}
+		custom_cost_trigger = { command_power > 19.99 }
+		custom_cost_text = decision_cost_20_cp
+		fire_only_once = yes
+		days_remove = 14
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_activate_plan_riga "
+			hidden_effect = {
+				add_command_power = -20
+			}
+		}
+		remove_effect = {
+			random_list = {
+				2 = {
+					country_event = { id = MAR_2WRW.6 }
+				}
+				1 = {
+				
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 20

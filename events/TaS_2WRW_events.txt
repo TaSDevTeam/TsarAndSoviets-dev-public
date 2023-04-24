@@ -591,7 +591,7 @@ country_event = { #MANCHU CW STARTS GET UP GUYS
 	desc = MAR_Japan.9.d
 	picture = GFX_event_MAR_japan_9
 	is_triggered_only = yes
-	fire_only_once = yes
+	fire_only_once = no
 	
 	option = {
 		name = MAR_Japan.9.a
@@ -1025,6 +1025,9 @@ country_event = { #TOTALEN surrender
 		if = {
 			limit = { MAR = { has_government = despotism } }
 			TaS_WRW2_German_Collapse_Beloozersky = yes
+		}
+		else = {
+			TaS_WRW2_German_Collapse_Kosygin = yes
 		}
 		hidden_effect = {
 			every_country  = {
@@ -1972,7 +1975,7 @@ country_event = { #Moscowien
 		}
 	}
 	option = { #they can stay
-		name = MAR_territorial_fate.3.с
+		name = MAR_territorial_fate.3.c
 		ai_chance = { factor = 1 }
 		set_country_flag = MCW_fate_is_done
 		add_political_power = 50
@@ -2181,6 +2184,7 @@ country_event = { #Belarus
 					set_nationality = MBL
 				}
 			}
+			RUS = { end_puppet = MBL } 
 			MBL = {
 				every_owned_state = {
 					MBL = {
@@ -2272,6 +2276,20 @@ country_event = { #Belarus
 					set_cosmetic_tag = MBL_autonomy_Kosygin
 				}
 			}
+			MBL = {
+				get_current_government_type = yes
+				save_party_popularities = yes
+			}
+			RUS = {
+				set_autonomy = {
+					target = MBL
+					autonomy_state = autonomy_satellite
+				}	
+			}	
+			MBL = {
+				restore_previous_government_type = yes
+				apply_party_popularities = yes
+			}
 		}
 	}
 	option = { #soyuznoye gosudarstvo
@@ -2315,6 +2333,7 @@ country_event = { #Ukraine
 					set_nationality = MUK
 				}
 			}
+			RUS = { end_puppet = MUK } 
 			MUK = {
 				every_owned_state = {
 					MUK = {
@@ -2421,6 +2440,20 @@ country_event = { #Ukraine
 					set_cosmetic_tag = MUK_autonomy_Kosygin
 				}
 			}
+			MUK = {
+				get_current_government_type = yes
+				save_party_popularities = yes
+			}
+			RUS = {
+				set_autonomy = {
+					target = MUK
+					autonomy_state = autonomy_satellite
+				}	
+			}	
+			MUK = {
+				restore_previous_government_type = yes
+				apply_party_popularities = yes
+			}
 			1428 = {
 				add_manpower = -98990
 				set_variable = { nationality = 164 }
@@ -2520,6 +2553,20 @@ country_event = { #Crimnea
 					}
 					set_cosmetic_tag = MTV_autonomy_Kosygin
 				}
+			}
+			MTV = {
+				get_current_government_type = yes
+				save_party_popularities = yes
+			}
+			RUS = {
+				set_autonomy = {
+					target = MTV
+					autonomy_state = autonomy_satellite
+				}	
+			}	
+			MTV = {
+				restore_previous_government_type = yes
+				apply_party_popularities = yes
 			}
 		}
 	}
@@ -2625,6 +2672,20 @@ country_event = { #Caucasus
 					set_cosmetic_tag = MCS_autonomy_Kosygin
 				}
 			}
+			MCS = {
+				get_current_government_type = yes
+				save_party_popularities = yes
+			}
+			RUS = {
+				set_autonomy = {
+					target = MCS
+					autonomy_state = autonomy_satellite
+				}	
+			}	
+			MCS = {
+				restore_previous_government_type = yes
+				apply_party_popularities = yes
+			}
 		}
 	}
 	option = { #south autonomy
@@ -2673,6 +2734,20 @@ country_event = { #Caucasus
 					promote_character = yes
 				}
 				set_cosmetic_tag = MCS_south_autonomy
+			}
+			MCS = {
+				get_current_government_type = yes
+				save_party_popularities = yes
+			}
+			RUS = {
+				set_autonomy = {
+					target = MCS
+					autonomy_state = autonomy_satellite
+				}	
+			}	
+			MCS = {
+				restore_previous_government_type = yes
+				apply_party_popularities = yes
 			}
 		}
 	}

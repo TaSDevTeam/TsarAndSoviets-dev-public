@@ -340,6 +340,9 @@ country_event = { # f
 				limit = { MAR = { has_government = despotism } }
 				TaS_WRW2_German_Collapse_Beloozersky = yes
 			}
+			else = {
+				TaS_WRW2_German_Collapse_Kosygin = yes
+			}
 			TaS_WRW2_total_capitulation = yes
 			hidden_effect = {
 				every_country  = {
@@ -1731,6 +1734,7 @@ country_event = { #-kazakhstan
 			every_owned_state = {
 				set_demilitarized_zone = no
 			}	
+			add_ideas = TaS_Post2WRW_NPL_last_bastion
 		}
 		MTR = {
 			declare_war_on = {
@@ -1985,6 +1989,7 @@ country_event = { #F dv 1
 			add_ideas = {
 				OFN_Observer
 				TaS_Post2WRW_SIB_japanese_paranoia
+				TaS_Post2WRW_MAG_other_side_of_ocean
 			}
 			set_country_flag = RUS_cancel_all_ideas
 			econ_join_sphere_USA = yes 			
@@ -2263,6 +2268,7 @@ country_event = { #F sibir
 				name = NOV_MAR_collapse_party
 			}
 			load_focus_tree = shattered_ambitions
+			add_ideas = TaS_Post2WRW_NOV_feet_of_clay
 		}
 		hidden_effect = {
 			country_event ={

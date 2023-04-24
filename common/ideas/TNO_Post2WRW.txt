@@ -915,4 +915,65 @@ ideas = {
 			}
 		}
 	}
+	country = {
+		TaS_Post2WRW_NPL_last_bastion = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea TaS_Post2WRW_RUS_for_liberation"}
+			allowed = {
+				always = no	
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = GBE_militia_based_army
+			modifier = {
+				army_core_attack_factor = 0.2
+				army_core_defence_factor = 0.2
+				army_morale_factor = 0.1
+			}
+		}
+	}
+	country = {
+		TaS_Post2WRW_NOV_feet_of_clay = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea TaS_Post2WRW_RUS_for_liberation"}
+			allowed = {
+				always = no	
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = GBE_militia_based_army
+			modifier = {
+				army_cost_modifier = -0.4
+				monthly_population = -0.3
+				annual_gdp_growth_factor = -0.3
+				taxable_population_modifier = -0.25
+				weekly_manpower = -20
+			}
+		}
+	}
+	country = {
+		TaS_Post2WRW_MAG_other_side_of_ocean = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea TaS_Post2WRW_RUS_for_liberation"}
+			allowed = {
+				always = no	
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = GBE_militia_based_army
+			modifier = {
+				stability_factor = 0.1
+				gdp_growth_modifier = 0.3
+				free_production_units_modifier = 2
+			}
+			targeted_modifier = {
+				tag = USA
+				extra_trade_to_target_factor = 0.25
+			}
+		}
+	}
+	
 }

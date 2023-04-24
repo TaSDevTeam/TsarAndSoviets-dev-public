@@ -61,10 +61,9 @@ MAR_prestol_insurgency_dynomod = {
 
 
 MAR_ogas_modifier = {
-	icon = GFX_dynamic_modifier_MAR_Order_of_Saint_George
-	enable = {
-		tag = MAR
-	}
+	#icon = GFX_idea_unknown
+	enable = { always = yes }
+	#|=====================================|#
 	
 	#safety
 	research_speed_factor =  MAR_ogas_dynomod_array_one^0
@@ -81,8 +80,8 @@ MAR_ogas_modifier = {
 	production_units_to_GDP_ratio_modifier = MAR_ogas_dynomod_array_two^7
 	production_speed_buildings_factor = MAR_ogas_dynomod_array_two^8
 	#complexity
-	stability_factor = MAR_ogas_dynomod_array_two^1
-	misc_costs_percent_of_GDP_modifier = MAR_ogas_dynomod_array_two^0
+	misc_costs_percent_of_GDP_modifier = MAR_ogas_misc_costs_modifier^0
+	stability_factor = MAR_ogas_stability^1
 }
 TaS_WRW2_exhausion_modifier = {
 	icon = GFX_dynamic_modifier_WRW2_exhausion

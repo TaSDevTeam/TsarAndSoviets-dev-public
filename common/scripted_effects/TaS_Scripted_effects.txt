@@ -217,7 +217,7 @@ MAR_Iraq_Kurdistan_zhirik = {
 			KUR = { save_party_popularities = yes }
 			set_autonomy = {
 				target = KUR
-				autonomy_state = autonomy_czech_integration_zone
+				autonomy_state = autonomy_military_government
 			}
 		}
 		KUR = {
@@ -397,7 +397,7 @@ MAR_install_mil_turkestan = {
 	RUS = {
 		set_autonomy = {
 			target = MTR
-			autonomy_state = autonomy_client_state
+			autonomy_state = autonomy_military_district
 		}	
 	}	
 	MTR = {
@@ -535,6 +535,20 @@ MAR_Turkestan_autonomy = {
 			limit = { MAR = { has_government = socialist } }
 			set_cosmetic_tag = MTR_Kosygin_autonomy
 		}
+	}
+	MTR = {
+		get_current_government_type = yes
+		save_party_popularities = yes
+	}
+	RUS = {
+		set_autonomy = {
+			target = MTR
+			autonomy_state = autonomy_satellite
+		}	
+	}	
+	MTR = {
+		restore_previous_government_type = yes
+		apply_party_popularities = yes
 	}
 }
 MAR_nuke = {

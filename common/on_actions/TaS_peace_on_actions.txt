@@ -789,7 +789,7 @@ on_actions = {
 				
 				if = { # MAR(not kosygin) Loses
 					limit = { ROOT = { tag = IRC } MAR = { NOT = { has_government = socialist } } }
-					MAR = { country_event = { id = MAR_forpol.3 days = 2 } }
+					MAR = { country_event = { id = MAR_forpol.9 days = 2 } }
 				}
 				else_if = { # MAR(not kosygin) Wins
 					limit = {
@@ -799,17 +799,17 @@ on_actions = {
 						}
 						MAR = { NOT = { has_government = socialist } }
 					}
-					MAR = { country_event = { id = MAR_iranian_cw.2 days = 2 } }
+					MAR = { country_event = { id = MAR_forpol.8 days = 2 } }
 				}
 				
 				if = { # MAR(not kosygin) Loses
-					limit = { ROOT = { tag = IRC } MAR = { has_government = socialist } } 
+					limit = { ROOT = { tag = IRA } MAR = { has_government = socialist } } 
 					MAR = { country_event = { id = MAR_forpol.3 days = 2 } }
 				}
 				else_if = { # MAR(not kosygin) Wins
 					limit = {
 						FROM = {
-							tag = IRC
+							tag = IRA
 							has_war = no
 						}
 						MAR = { has_government = socialist }
@@ -878,9 +878,12 @@ on_actions = {
 						if = {
 							limit = { has_government = socialist has_country_flag = MAR_aid_CPR }
 							TaS_dobrovoltsy_dynmod_victory = yes
+							CPR = { econ_join_sphere_MAR = yes }
+							TaS_fopo_remove_congo_cw_tab = yes
 						}
 						else = {
 							TaS_dobrovoltsy_dynmod_lose = yes
+							TaS_fopo_remove_congo_cw_tab = yes
 						}
 					}
 				}
@@ -918,9 +921,11 @@ on_actions = {
 							limit = { NOT = { has_government = socialist } has_country_flag = MAR_aid_KSI }
 							TaS_dobrovoltsy_dynmod_victory = yes
 							country_event = { id = berez_dobrovoltsy.23 days = 3 }
+							TaS_fopo_remove_congo_cw_tab = yes
 						}
 						else = {
 							TaS_dobrovoltsy_dynmod_lose = yes
+							TaS_fopo_remove_congo_cw_tab = yes
 						}
 					}
 				}

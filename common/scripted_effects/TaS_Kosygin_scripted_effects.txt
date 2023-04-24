@@ -127,8 +127,8 @@ MAR_calculate_ogas_dynmod_effects = {
 	add_to_array = { MAR_ogas_dynomod_array_one = 0.2 } # polital power gain
 	add_to_array = { MAR_ogas_dynomod_array_one = -0.2 } # personnel cost modifier
 	clear_array = MAR_ogas_dynomod_array_two
-	add_to_array = { MAR_ogas_dynomod_array_two = 0.1 } # gdp_growth_modifier 
-	add_to_array = { MAR_ogas_dynomod_array_two = -0.1 } # inflation_rate_modifier 
+	add_to_array = { MAR_ogas_dynomod_array_two = 7.5 } # gdp_growth_modifier 
+	add_to_array = { MAR_ogas_dynomod_array_two = -5 } # inflation_rate_modifier 
 	add_to_array = { MAR_ogas_dynomod_array_two = 0.4 } # industrial_capacity_factory 
 	add_to_array = { MAR_ogas_dynomod_array_two = -0.3 } # social_program_cost_factor 
 	add_to_array = { MAR_ogas_dynomod_array_two = -0.3 } # admin_program_cost_factor
@@ -149,13 +149,21 @@ MAR_calculate_ogas_dynmod_effects = {
 		multiply_variable = { MAR_ogas_dynomod_array_one^i = ogas_chars_temp_one }
 	}
 	for_each_loop = {
-		array = MAR_ogas_dynomod_array_one
-		multiply_variable = { MAR_ogas_dynomod_array_one^i = ogas_chars_temp_one }
+		array = MAR_ogas_dynomod_array_two
+		multiply_variable = { MAR_ogas_dynomod_array_two^i = ogas_chars_temp_two }
 	}
 	for_each_loop = {
-		array = MAR_ogas_dynomod_array_one
-		multiply_variable = { MAR_ogas_dynomod_array_one^i = ogas_chars_temp_one }
+		array = MAR_ogas_dynomod_array_three
+		multiply_variable = { MAR_ogas_dynomod_array_three^i = ogas_chars_temp_three }
 	}
+	##temp solution(костыль по русски)
+	set_variable = { MAR_ogas_misc_costs_modifier = 3 } # misc_costs_modifier
+	set_variable = { MAR_ogas_stability = -0.2 } # stability
+	multiply_variable = { MAR_ogas_misc_costs_modifier = ogas_chars_temp_three }
+	multiply_variable = { MAR_ogas_stability = ogas_chars_temp_three }
+	
+	log = "[GetDateText]: [Root.GetName]: огасня [?ogas_chars_temp_one] [?ogas_chars_temp_two] [?ogas_chars_temp_three]"
+	log = "[GetDateText]: [Root.GetName]: огасня [?MAR_ogas_dynomod_array_three^1] [?MAR_ogas_dynomod_array_three^0]"
 	force_update_dynamic_modifier = yes
 }
 ##prestol
