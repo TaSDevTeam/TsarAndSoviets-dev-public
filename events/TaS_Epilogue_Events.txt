@@ -2518,8 +2518,9 @@ country_event = { #Total f
 		clear_global_event_target = RUS_kazakhstan_unifier
 		clear_global_event_target = RUS_russian_unifier
 		clear_global_event_target = RUS_siberian_unifier
-		clear_global_event_target = RUS_total_unifier
-		clear_array = { global.PostRus_collapse }
+		clear_global_event_target = RUS_total_unifierэ
+	
+		clear_array = global.PostRus_collapse 
 		add_to_array = { global.PostRus_collapse = KOM }
 		add_to_array = { global.PostRus_collapse = TAR }
 		add_to_array = { global.PostRus_collapse = MAR }
@@ -2541,8 +2542,7 @@ country_event = { #Total f
 			}
 			for_each_scope_loop = {
 				array = global.PostRus_collapse
-				FROM = {
-					add_ideas = TaS_Post2WRW_RUS_third_smuta
+				add_ideas = TaS_Post2WRW_RUS_third_smuta
 				}
 			}
 		}

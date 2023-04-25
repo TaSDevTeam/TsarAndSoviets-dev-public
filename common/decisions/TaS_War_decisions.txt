@@ -1645,10 +1645,10 @@ TaS_WRW2_the_final_battle = {
 		}
 		available = {
 			has_war = yes
+			NOT = { has_idea = MAR_go_oper }
 		}
 		allowed = {
-			has_war = yes
-			NOT = { has_idea = MAR_go_oper }
+			tag = MAR
 		}
 		custom_cost_trigger = { command_power > 19.99 }
 		custom_cost_text = decision_cost_20_cp
@@ -1923,12 +1923,12 @@ TaS_WRW2_the_final_battle = {
 		visible = {
 			check_variable = { WRW_deccat = 1 }
 		}
-		allowed = {
+		available = {
 			has_war = yes
 			NOT = { has_idea = MAR_go_oper }
 		}
-		available = {
-			has_war = yes
+		allowed = {
+			tag = MAR
 		}
 		custom_cost_trigger = { command_power > 19.99 }
 		custom_cost_text = decision_cost_20_cp
