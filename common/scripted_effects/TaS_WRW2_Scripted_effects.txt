@@ -869,6 +869,10 @@ TaS_WRW2_German_Collapse_Kosygin = {
 			remove_ideas = TaS_Post2WRW_BRL_nazi_heartland_1
 			remove_ideas = TaS_Post2WRW_ZNE_exec_centre 	
 			set_cosmetic_tag = ZNE_Kosygin
+			set_variable = {
+				TNO_economy_type = token:Econ_Type_Planned
+				TNO_economy_subtype = token:Econ_Subtype_War_Communism
+			}
 		}
 		GPL = {
 			econ_join_sphere_MAR = yes
@@ -943,6 +947,10 @@ TaS_WRW2_German_Collapse_Kosygin = {
 			remove_ideas = TaS_Post2WRW_GRH_lot_of_nazis
 			add_ideas = TaS_Post2WRW_GWS_volkswagen
 			add_ideas = TaS_Post2WRW_GWS_german_democracy
+			set_variable = {
+				TNO_economy_type = token:Econ_Type_Planned
+				TNO_economy_subtype = token:Econ_Subtype_Worker_Directed
+			}
 		}
 		GBV = {
 			econ_join_sphere_MAR = yes
@@ -970,6 +978,10 @@ TaS_WRW2_German_Collapse_Kosygin = {
 			remove_ideas = TaS_Post2WRW_GBV_bavarian_identity
 			remove_ideas = TaS_Post2WRW_GBV_ingerman_segregation
 			add_ideas = TaS_Post2WRW_GRA_workers_and_peasant_army
+			set_variable = {
+				TNO_economy_type = token:Econ_Type_Planned
+				TNO_economy_subtype = token:Econ_Subtype_Worker_Directed
+			}
 		}
 		GAU = {
 			econ_join_sphere_MAR = yes
@@ -999,6 +1011,10 @@ TaS_WRW2_German_Collapse_Kosygin = {
 			remove_ideas = TaS_Post2WRW_commie_activity
 			remove_ideas = TaS_Post2WRW_GAU_habsburg_returns
 			remove_ideas = TaS_Post2WRW_GAU_dreams_of_germany
+			set_variable = {
+				TNO_economy_type = token:Econ_Type_Corporatism
+				TNO_economy_subtype = token:Econ_Subtype_Socialized_Economy
+			}
 		}
 		GCZ = {
 			econ_join_sphere_MAR = yes
@@ -1030,6 +1046,9 @@ TaS_WRW2_German_Collapse_Kosygin = {
 			remove_ideas = TaS_Post2WRW_GCZ_big_brother
 			remove_ideas = TaS_Post2WRW_GCZ_czechia_revival
 			remove_ideas = TaS_Post2WRW_GCZ_sudetenland_genocide
+			set_variable = {
+				TNO_economy_type = token:Econ_Type_Planned
+			}
 		}
 		GDN = {
 			econ_join_sphere_MAR = yes
@@ -1051,6 +1070,10 @@ TaS_WRW2_German_Collapse_Kosygin = {
 				}
 			}
 			remove_ideas = TaS_Post2WRW_GDN_antimonarch_protests
+			set_variable = {
+				TNO_economy_type = token:Econ_Type_Planned
+				TNO_economy_subtype = token:Econ_Subtype_Worker_Directed
+			}
 		}
 		GNR = {
 			econ_join_sphere_MAR = yes
@@ -1067,6 +1090,10 @@ TaS_WRW2_German_Collapse_Kosygin = {
 				GNR = {
 					add_state_core = PREV
 				}
+			}
+			set_variable = {
+				TNO_economy_type = token:Econ_Type_Planned
+				TNO_economy_subtype = token:Econ_Subtype_Worker_Directed
 			}
 		}
 		GHL = {
@@ -1097,6 +1124,10 @@ TaS_WRW2_German_Collapse_Kosygin = {
 			}
 			remove_ideas = TaS_Post2WRW_GHL_careless_monach
 			remove_ideas = TaS_Post2WRW_GHL_holland_identity
+			set_variable = {
+				TNO_economy_type = token:Econ_Type_Planned
+				TNO_economy_subtype = token:Econ_Subtype_Worker_Directed
+			}
 		}
 		GER = {
 			dismantle_faction = yes
@@ -1407,8 +1438,8 @@ TaS_2WRW_form_ost_zones = {
 	}
 }
 TaS_2WRW_set_zone_laws = {
-	set_variable = { TNO_economy_type = 3 }
-	set_variable = { TNO_economy_subtype = 6 }
+	set_variable = { TNO_economy_type = token:Econ_Type_Planned }
+	set_variable = { TNO_economy_subtype = token:Econ_Subtype_Military_Directed }
 	add_ideas = { MAR_military_administration }
 	set_politics = {
 		ruling_party = despotism
@@ -1512,8 +1543,8 @@ TaS_2WRW_set_zone_laws = {
 }
 
 TaS_2WRW_set_autonomy_laws = {
-	set_variable = { TNO_economy_type = 1 }
-	set_variable = { TNO_economy_subtype = 10 }
+	set_variable = { TNO_economy_type = token:Econ_Type_Corporatism }
+	set_variable = { TNO_economy_subtype = token:Econ_Subtype_Dirigisme }
 	
 	set_variable = { income_tax_rate = 0.30 }
 	set_variable = { business_tax_rate = 0.32 }
@@ -1591,8 +1622,8 @@ TaS_2WRW_set_autonomy_laws = {
 }
 
 TaS_2WRW_set_free_laws = {
-	set_variable = { TNO_economy_type = 2 }
-	set_variable = { TNO_economy_subtype = 10 }
+	set_variable = { TNO_economy_type = token:Econ_Type_Capitalism }
+	clear_variable = TNO_economy_subtype 
 	
 	set_variable = { income_tax_rate = 0.30 }
 	set_variable = { business_tax_rate = 0.32 }

@@ -1698,6 +1698,9 @@ country_event = { #-kazakhstan
 				long_name = PAV_MAR_collapse_party_long
 				name = PAV_MAR_collapse_party
 			}			
+			set_variable = {
+				TNO_economy_type = token:Econ_Type_Capitalism
+			}
 		}
 		NPL  = {
 			set_cosmetic_tag = NPL_MAR_collapse
@@ -1735,6 +1738,10 @@ country_event = { #-kazakhstan
 				set_demilitarized_zone = no
 			}	
 			add_ideas = TaS_Post2WRW_NPL_last_bastion
+			set_variable = {
+				TNO_economy_type = token:Econ_Type_Corporatism
+				TNO_economy_subtype = token:Econ_Subtype_Socialized_Economy
+			}
 		}
 		MTR = {
 			declare_war_on = {
@@ -2022,6 +2029,10 @@ country_event = { #F dv 1
 			every_owned_state = {
 				set_demilitarized_zone = no
 			}
+			set_variable = {
+				TNO_economy_type = token:Econ_Type_Capitalism
+				TNO_economy_subtype = token:Econ_Subtype_American_Capitalism
+			}
 		}	
 		hidden_effect = {
 			country_event ={
@@ -2108,6 +2119,10 @@ country_event = { #F dv 2
 			every_owned_state = {
 				set_demilitarized_zone = no
 			}
+			set_variable = {
+				TNO_economy_type = token:Econ_Type_Corporatism
+				TNO_economy_subtype = token:Econ_Subtype_Colonial_Economy_Corporatism
+			}
 		}
 		YAK = {
 			set_cosmetic_tag = YAK_MAR_collapse
@@ -2163,6 +2178,10 @@ country_event = { #F dv 2
 			apply_party_popularities = yes
 			every_owned_state = {
 				set_demilitarized_zone = no
+			}
+			set_variable = {
+				TNO_economy_type = token:Econ_Type_Corporatism
+				TNO_economy_subtype = token:Econ_Subtype_Colonial_Economy_Corporatism
 			}
 
 		}
@@ -2269,6 +2288,10 @@ country_event = { #F sibir
 			}
 			load_focus_tree = shattered_ambitions
 			add_ideas = TaS_Post2WRW_NOV_feet_of_clay
+			set_variable = {
+				TNO_economy_type = token:Econ_Type_Planned
+				TNO_economy_subtype = token:Econ_Subtype_Military_Directed
+			}
 		}
 		hidden_effect = {
 			country_event ={
@@ -2349,6 +2372,10 @@ country_event = { #F Ural
 				long_name = OMS_MAR_collapse_party_long
 				name = OMS_MAR_collapse_party
 			}
+			set_variable = {
+				TNO_economy_type = token:Econ_Type_Planned
+				TNO_economy_subtype = token:Econ_Subtype_Military_Directed
+			}
 		}
 		TYM = {
 			set_country_flag = RUS_cancel_all_ideas
@@ -2390,6 +2417,10 @@ country_event = { #F Ural
 				ideology = paternalism
 				long_name = SVR_MAR_collapse_party_long
 				name = SVR_MAR_collapse_party
+			}
+			set_variable = {
+				TNO_economy_type = token:Econ_Type_Capitalism
+				TNO_economy_subtype = token:Econ_Subtype_Corporate_Oligopoly
 			}
 		}
 		OMS = {
@@ -2475,6 +2506,10 @@ country_event = { #Total f
 				name = KOM_MAR_collapse_party
 			}
 			add_ideas = TaS_Post2WRW_WSR_fourth_time_a_row
+			set_variable = {
+				TNO_economy_type = token:Econ_Type_Corporatism
+				TNO_economy_subtype = token:Econ_Subtype_Dirigisme
+			}
 		}
 		TAR = {
 			set_country_flag = RUS_cancel_all_ideas
@@ -2509,6 +2544,9 @@ country_event = { #Total f
 				popularity = 0.45
 			}
 			add_ideas = TaS_Post2WRW_WSR_fourth_time_a_row
+			set_variable = {
+				TNO_economy_type = token:Econ_Type_Capitalism
+			}
 		}
 		clear_global_event_target = RUS_western_unifier
 		clear_global_event_target = RUS_west_siberia_unifier
@@ -2543,10 +2581,8 @@ country_event = { #Total f
 			for_each_scope_loop = {
 				array = global.PostRus_collapse
 				add_ideas = TaS_Post2WRW_RUS_third_smuta
-				}
 			}
 		}
-		
 	}
 }
 

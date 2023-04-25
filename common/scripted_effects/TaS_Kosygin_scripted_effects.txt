@@ -537,6 +537,10 @@ TaS_Kosygin_westrussian_collapse = {
 			MAR_Anatoly_Vavilov = {
 				promote_character = yes
 			}
+			set_variable = {
+				TNO_economy_type = token:Econ_Type_Planned
+				TNO_economy_subtype = token:Econ_Subtype_Military_Directed
+			}
 		}
 		else = {
 			set_cosmetic_tag = ONG_kosygin_collapse
@@ -580,6 +584,10 @@ TaS_Kosygin_westrussian_collapse = {
 				promote_character = yes
 			}
 			set_cosmetic_tag = WRS_kosygin_collapse_cleanesed
+			set_variable = {
+				TNO_economy_type = token:Econ_Type_Planned
+				TNO_economy_subtype = token:Econ_Subtype_Worker_Directed
+			}
 		}
 		else = {
 			XYZ = {
@@ -604,6 +612,10 @@ TaS_Kosygin_westrussian_collapse = {
 				promote_character = yes
 			}
 			set_cosmetic_tag = WRS_kosygin_collapse
+			set_variable = {
+				TNO_economy_type = token:Econ_Type_Planned
+				TNO_economy_subtype = token:Econ_Subtype_Banditry
+			}
 		}
 	}
 	VOL = {
@@ -644,6 +656,10 @@ TaS_Kosygin_westrussian_collapse = {
 			promote_character = yes
 		}
 		set_cosmetic_tag = VOL_kosygin_collapse
+		set_variable = {
+			TNO_economy_type = token:Econ_Type_Planned
+			TNO_economy_subtype = token:Econ_Subtype_Military_Directed
+		}
 	}
 	DGS = {
 		transfer_state = 868
@@ -686,6 +702,10 @@ TaS_Kosygin_westrussian_collapse = {
 				}
 			}
 			set_cosmetic_tag = KOM_kosygin_collapse_cleanesed
+			set_variable = {
+				TNO_economy_type = token:Econ_Type_Planned
+				TNO_economy_subtype = token:Econ_Subtype_War_Communism
+			}
 		}
 		else = {
 			XYZ = {
@@ -711,6 +731,10 @@ TaS_Kosygin_westrussian_collapse = {
 				promote_character = {
 					ideology = ultranationalism_esoteric_despotism_subtype
 				}
+			}
+			set_variable = {
+				TNO_economy_type = token:Econ_Type_Planned
+				TNO_economy_subtype = token:Econ_Subtype_Banditry
 			}
 			set_cosmetic_tag = KOM_kosygin_collapse
 		}
@@ -751,6 +775,10 @@ TaS_Kosygin_westrussian_collapse = {
 				promote_character = yes
 			}
 			set_cosmetic_tag = GOR_kosygin_collapse_cleanesed
+			set_variable = {
+				TNO_economy_type = token:Econ_Type_Planned
+				TNO_economy_subtype = token:Econ_Subtype_Military_Directed
+			}
 		}
 		else = {
 			XYZ = {
@@ -776,6 +804,10 @@ TaS_Kosygin_westrussian_collapse = {
 				promote_character = yes
 			}
 			set_cosmetic_tag = GOR_kosygin_collapse
+			set_variable = {
+				TNO_economy_type = token:Econ_Type_Planned
+				TNO_economy_subtype = token:Econ_Subtype_Banditry
+			}
 		}
 	}
 	TMQ = {
@@ -810,6 +842,10 @@ TaS_Kosygin_westrussian_collapse = {
 			promote_character = yes
 		}
 		set_cosmetic_tag = TMQ_kosygin_collapse
+		set_variable = {
+			TNO_economy_type = token:Econ_Type_Planned
+			TNO_economy_subtype = token:Econ_Subtype_Banditry
+		}
 	}
 	TAR = {
 		transfer_state = 256
@@ -886,6 +922,10 @@ TaS_Kosygin_westrussian_collapse = {
 			promote_character = yes
 		}
 		set_cosmetic_tag = GAY_kosygin_collapse
+		set_variable = {
+			TNO_economy_type = token:Econ_Type_Planned
+			TNO_economy_subtype = token:Econ_Subtype_Military_Directed
+		}
 	}
 	PRM = {
 		transfer_state = 753
@@ -922,6 +962,10 @@ TaS_Kosygin_westrussian_collapse = {
 				promote_character = yes
 			}
 			set_cosmetic_tag = PRM_kosygin_collapse_cleanesed
+			set_variable = {
+				TNO_economy_type = token:Econ_Type_Planned
+				TNO_economy_subtype = token:Econ_Subtype_Military_Directed
+			}
 		}
 		else = {
 			add_country_leader_role = {
@@ -1019,6 +1063,10 @@ TaS_Kosygin_westrussian_collapse = {
 			retire_country_leader = yes
 			MAR_Semen_Gitler = {
 				promote_character = yes
+			}
+			set_variable = {
+				TNO_economy_type = token:Econ_Type_Planned
+				TNO_economy_subtype = token:Econ_Subtype_Military_Directed
 			}
 			set_cosmetic_tag = SAM_kosygin_collapse_cleanesed
 		}

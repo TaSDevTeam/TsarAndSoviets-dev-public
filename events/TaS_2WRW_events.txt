@@ -556,8 +556,8 @@ country_event = { #Technical stuff no loc
 				ideology = socialist_subtype
 				traits = { }
 			}
-			set_variable = { TNO_economy_type = 3 }
-			set_variable = { TNO_economy_subtype = 4 }
+			set_variable = { TNO_economy_type = token:Econ_Type_Planned }
+			set_variable = { TNO_economy_subtype = token:Econ_Subtype_Anarchic }
 			set_country_flag = TNO_eliminate_building_demand
 			set_country_flag = can_not_use_econ_system
 			set_country_flag = MAN_katastrophe

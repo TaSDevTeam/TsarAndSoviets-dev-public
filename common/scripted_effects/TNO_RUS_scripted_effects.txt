@@ -1327,6 +1327,7 @@ WRS_west_russian_collapse = {
 			transfer_state = 870
 			transfer_state = 859
 			transfer_state = 858
+			transfer_state = 1887
 			country_event = { id = ONG.50 }
 			remove_ideas = RUS_the_izhevsk_arsenal
 		}
@@ -1343,7 +1344,7 @@ WRS_west_russian_collapse = {
 				popularity = 0.5
 			}
 			set_variable = { national_debt = 0 } # clear debt for successor
-			set_temp_variable = { TNO_economy_type_temp = 1 }
+			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
 			econ_type_change = yes
 			promote_character = BKR_ONG_Faizrakhman_Zagafuranov
 		}
@@ -1361,7 +1362,7 @@ WRS_west_russian_collapse = {
 				popularity = 0.5
 			}
 			set_variable = { national_debt = 0 } # clear debt for successor
-			set_temp_variable = { TNO_economy_type_temp = 1 }
+			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
 			econ_type_change = yes
 			remove_all_ministers = yes
 			add_ideas = RUS_shattered_ambitions
@@ -1418,7 +1419,7 @@ WRS_west_russian_collapse = {
 
 			}
 			set_variable = { national_debt = 0 } # clear debt for successor
-			set_temp_variable = { TNO_economy_type_temp = 1 }
+			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
 			econ_type_change = yes
 			add_ideas = RUS_shattered_ambitions
 			load_focus_tree = shattered_ambitions
@@ -1456,7 +1457,7 @@ WRS_west_russian_collapse = {
 				popularity = 0.25
 			}
 			set_variable = { national_debt = 0 } # clear debt for successor
-			set_temp_variable = { TNO_economy_type_temp = 1 }
+			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
 			econ_type_change = yes
 			add_ideas = RUS_shattered_ambitions
 			load_focus_tree = shattered_ambitions
@@ -1467,6 +1468,7 @@ WRS_west_russian_collapse = {
 			add_ideas = VYT_Georgey_Zagainov_sec
 			retire_country_leader = yes
 			promote_character = VYT_Boris_I
+			remove_ideas = RUS_the_izhevsk_arsenal
 			VYT = {
 				every_unit_leader = {
 					limit = {
@@ -1485,35 +1487,59 @@ WRS_west_russian_collapse = {
 				}
 			}
 		}
-		MAR = {
+		VOL = {
 			add_state_core = 854
 			transfer_state = 854
-			set_cosmetic_tag = MAR_ANARCHY
-			set_temp_variable = { TNO_economy_type_temp = 1 }
+			set_cosmetic_tag = VOL_ANARCHY
+			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
 			econ_type_change = yes
 			add_ideas = RUS_shattered_ambitions
 			load_focus_tree = shattered_ambitions
-
-			## Econ setup since Berezniki got yeeted. Kazembek still trolls us from beyond the grave
-			set_variable = { GDP_growth = 4.4 } #as a percentage
-			set_variable = { base_inflation_rate = 2.3 }
-			set_variable = { income_tax_rate = 0.15 }
-			set_variable = { business_tax_rate = 0.25 }
-			set_variable = { poverty_rate = 61.4 }
-			set_variable = { poverty_monthly_change = 0 }
-			set_variable = { money_reserves = 0.0 } #in billions
-			set_variable = { national_debt = 0 } #in billions
-			set_variable = { misc_income = 0.0 }
-			set_variable = { misc_costs = 0.0 }
-
-			set_variable = { economic_centralization = 38 }
-
-			set_temp_variable = { temp_credit_rating = 4 }
-			set_temp_variable = { temp_credit_rating_min = 0 }
-			set_temp_variable = { temp_credit_rating_max = 4 }
-			econ_initialize_credit_rating_system = yes
-
-			initiate_display_vars = yes
+			set_politics = {
+				ruling_party = liberal_conservatism
+			}
+			add_popularity = {
+				ideology = liberal_conservatism
+				popularity = 0.5
+			}
+			set_variable = { national_debt = 0 } # clear debt for successor
+			remove_all_ministers = yes
+			add_ideas = {
+				VOL_ONG_Olyk_Ipay_hog
+				VOL_ONG_Arkady_Krupnyakov_for
+				VOL_ONG_Vasily_Yuksern_eco
+				VOL_ONG_Mikhail_Loginov_sec
+			}
+			add_country_leader_role = {
+				character = VOL_ONG_Miklay_Kazakov
+				promote_leader = yes
+				country_leader = {
+					desc = "POLITICS_MIKLAY_KAZAKOV_DESC"
+					expire = "1999.1.1"
+					ideology = liberal_conservatism_subtype
+					traits = {
+					}
+					id = -1
+				}
+			}
+			VOL = {
+				every_unit_leader = {
+					retire = yes
+				}
+			}
+			add_corps_commander_role = {
+				character = VOL_ONG_Mikhail_Loginov
+				traits = {
+					infantry_officer
+					trait_engineer
+				}
+				skill = 2
+				attack_skill = 3
+				defense_skill = 2
+				planning_skill = 1
+				logistics_skill = 1
+				legacy_id = 15504
+			}
 		}
 		PRM = {
 			add_state_core = 753
@@ -1532,7 +1558,7 @@ WRS_west_russian_collapse = {
 			}
 
 			set_variable = { national_debt = 0 } # clear debt for successor
-			set_temp_variable = {TNO_economy_subtype_temp = 6 }
+			set_temp_variable = { TNO_economy_subtype_temp = token:Econ_Subtype_Military_Directed }
 			econ_subtype_change = yes
 
 			set_temp_variable = { temp_credit_rating_max = 4 }
@@ -1588,7 +1614,7 @@ WRS_west_russian_collapse = {
 				popularity = 0.5
 			}
 			set_variable = { national_debt = 0 } # clear debt for successor
-			set_temp_variable = { TNO_economy_type_temp = 1 }
+			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
 			econ_type_change = yes
 			add_ideas = RUS_shattered_ambitions
 			load_focus_tree = shattered_ambitions
@@ -1631,6 +1657,10 @@ WRS_west_russian_collapse = {
 			retire_country_leader = yes
 			promote_character = TAR_Ibragim_Mingazeyev
 		}
+		every_country = {
+			limit = { is_central_russian_nation = yes }
+			clr_country_flag = RUS_regional_stage
+		}
 	}
 }
 
@@ -1665,7 +1695,7 @@ WSB_ONG_west_siberia_collapse = {
 				ultranationalism = 0
 
 			}
-			set_temp_variable = { TNO_economy_type_temp = 1 }
+			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
 			econ_type_change = yes
 			add_ideas = RUS_shattered_ambitions
 			load_focus_tree = shattered_ambitions
@@ -1747,7 +1777,7 @@ WSB_ONG_west_siberia_collapse = {
 				ultranationalism = 0
 
 			}
-			set_temp_variable = { TNO_economy_type_temp = 1 }
+			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
 			econ_type_change = yes
 			promote_character = YGR_ZLT_Shatter_Ivan_Istomin
 			set_country_leader_description = {
@@ -1871,7 +1901,7 @@ WSB_ONG_west_siberia_collapse = {
 				ultranationalism = 0
 
 			}
-			set_temp_variable = { TNO_economy_type_temp = 1 }
+			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
 			econ_type_change = yes
 			add_ideas = RUS_shattered_ambitions
 			load_focus_tree = shattered_ambitions
@@ -1934,7 +1964,7 @@ WSB_add_collapse_administration = {
 				ultranationalism = 0
 
 			}
-			set_temp_variable = { TNO_economy_type_temp = 1 }
+			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
 			econ_type_change = yes
 			add_ideas = RUS_shattered_ambitions
 			load_focus_tree = shattered_ambitions
@@ -1951,58 +1981,11 @@ WSB_add_collapse_administration = {
 				}
 			}
 
-			add_advisor_role = {
-				character = TYM_Ivan_Fedyuninsky
-				advisor = {
-					slot = head_of_government
-					idea_token = TYM_Ivan_Fedyuninsky_hog
-					traits = { hog_respected_war_hero }
-					ledger = civilian
-					cost = -1
-					removal_cost = -1
-					ai_will_do = { factor = 0 }
-				}
-				activate = yes
-			}
-			add_advisor_role = {
-				character = TYM_Yelena_Karbysheva
-				advisor = {
-					slot = foreign_minister
-					idea_token = TYM_Yelena_Karbysheva_for
-					traits = { for_well_connected }
-					ledger = civilian
-					cost = -1
-					removal_cost = -1
-					ai_will_do = { factor = 0 }
-				}
-				activate = yes
-			}
-			add_advisor_role = {
-				character = TYM_Ernest_Voznesensky
-				advisor = {
-					slot = economy_minister
-					idea_token = TYM_Ernest_Voznesensky_eco
-					traits = { eco_industrialiser }
-					ledger = civilian
-					cost = -1
-					removal_cost = -1
-					ai_will_do = { factor = 0 }
-				}
-				activate = yes
-			}
-			add_advisor_role = {
-				character = TYM_Artyom_Sergeyev
-				advisor = {
-					slot = security_minister
-					idea_token = TYM_Artyom_Sergeyev_sec
-					traits = { sec_crime_fighter }
-					ledger = civilian
-					cost = -1
-					removal_cost = -1
-					ai_will_do = { factor = 0 }
-				}
-				activate = yes
-			}
+			add_ideas = TYM_Ivan_Fedyuninsky_hog
+			add_ideas = TYM_Yelena_Karbysheva_for
+			add_ideas = TYM_Ernest_Voznesensky_eco
+			add_ideas = TYM_Artyom_Sergeyev_sec
+
 			TYM = {
 				every_unit_leader = {
 					limit = {
@@ -2064,7 +2047,7 @@ WSB_add_collapse_administration = {
 				ultranationalism = 0
 
 			}
-			set_temp_variable = { TNO_economy_type_temp = 1 }
+			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
 			econ_type_change = yes
 			promote_character = YGR_ZLT_Shatter_Ivan_Istomin
 			set_country_leader_description = {
@@ -2190,7 +2173,7 @@ WSB_add_collapse_administration = {
 				ultranationalism = 0
 
 			}
-			set_temp_variable = { TNO_economy_type_temp = 1 }
+			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
 			econ_type_change = yes
 			add_ideas = RUS_shattered_ambitions
 			load_focus_tree = shattered_ambitions
@@ -2260,7 +2243,7 @@ KRS_reformed_siberian_socialist_workers_republic = {
 			transfer_state = 814
 			add_state_core = 814
 		}
-		set_temp_variable = {TNO_economy_subtype_temp = 2 }
+		set_temp_variable = { TNO_economy_subtype_temp = token:Econ_Subtype_Worker_Directed }
 		econ_subtype_change = yes
 		remove_all_ministers = yes
 		add_ideas = {
@@ -2312,7 +2295,7 @@ ALT_siberian_workers_and_peasants_union = {
 			ideology = socialist
 			popularity = 0.4
 		}
-		set_temp_variable = {TNO_economy_subtype_temp = 2 }
+		set_temp_variable = { TNO_economy_subtype_temp = token:Econ_Subtype_Worker_Directed }
 		econ_subtype_change = yes
 		set_cosmetic_tag = ALT_REVOLT
 		transfer_state = 654
@@ -2320,16 +2303,19 @@ ALT_siberian_workers_and_peasants_union = {
 		add_state_core = 654
 		add_state_core = 40
 		remove_all_ministers = yes
+		remove_advisor_role = {
+			character = ALT_Erkemen_Palkin
+			slot = foreign_minister
+		}
 		add_advisor_role = {
 			character = ALT_Erkemen_Palkin
 			advisor = {
 				slot = foreign_minister
 				idea_token = ALT_Erkemen_Palkin_SWPU_for
-				allowed = { has_government = socialist }
 				traits = { for_pacifist }
 				ledger = civilian
 				cost = -1
-				removal_cost = -1
+				can_be_fired = no
 				ai_will_do = { factor = 0 }
 			}
 		}
@@ -2412,8 +2398,8 @@ SBA_free_workers_republic_of_siberia = {
 			}
 		}
 		promote_character = SBA_Stepan_Valenteev
-		set_variable = {econ_centralization = 60}
-		set_temp_variable = {TNO_economy_subtype_temp = 2 }
+		set_variable = { econ_centralization = 60 }
+		set_temp_variable = { TNO_economy_subtype_temp = token:Econ_Subtype_Worker_Directed }
 		econ_subtype_change = yes
 		hidden_effect = {
 			load_focus_tree = shattered_ambitions
@@ -2496,19 +2482,18 @@ FST_far_east_collapse = {
 				socialist = 20
 				progressivism = 0
 				liberalism = 0
-
+				liberal_conservatism = 0
 				conservatism = 0
 				paternalism = 0
 				despotism = 70
+				ultranationalism = 0
 				fascism = 0
 				national_socialism = 0
-				ultranationalism = 0
-
 			}
 			set_party_name = {
 				ideology = despotism
-				long_name = "Brigady Ochirova"
-				name = "Brigady Ochirova"
+				long_name = BRY_men_collapse_depostism_party_long
+				name = BRY_men_collapse_depostism_party
 			}
 			BRY = {
 				every_unit_leader = {
@@ -2534,6 +2519,7 @@ FST_far_east_collapse = {
 			load_focus_tree = shattered_ambitions
 			set_cosmetic_tag = BRY_collapse
 			transfer_state = 565
+			add_state_core = 565
 			set_capital = { state = 565 }
 		}
 		#absolutely disgusting but I've ran out of idea on how it works
@@ -2549,43 +2535,26 @@ FST_far_east_collapse = {
 				socialist = 0
 				progressivism = 0
 				liberalism = 0
-
+				liberal_conservatism = 0
 				conservatism = 20
 				paternalism = 50
 				despotism = 30
+				ultranationalism = 0
 				fascism = 0
 				national_socialism = 0
-				ultranationalism = 0
-
 			}
 			set_party_name = {
 				ideology = paternalism
-				long_name = "Zabaykalsky Oboronitelnyy Soyuz"
-				name = "ZOS"
+				long_name = CHT_collapse_paternalism_party_long
+				name = CHT_collapse_paternalism_party
 			}
-			if = {
-				limit = { NOT = {has_character = CHT_Leonid_Chernykh}}
-				every_possible_country = {
-					limit = {
-						has_character = CHT_Leonid_Chernykh
-						not = {tag = CHT}
-					}
-					log = "[GetDateText]: [This.GetName]: has CHT_Leonid_Chernykh"
-					THIS = {
-						CHT_Leonid_Chernykh = {
-							set_nationality = CHT
-						}
-					}
-				}
-			}
-			#Doesn't work if he isn't already in Chita despite the thing above. For some ungodly reasons, if a character is moved out of a country, he is considered as permanently retired from said country.
 			add_country_leader_role = {
 				character = CHT_Leonid_Chernykh
 				country_leader = {
 					expire = "1999.1.1"
 					ideology = paternalism_controlled_democracy_subtype
 					traits = { }
-					desc=POLITICS_LEONID_CHERNYKH_COLLAPSE_DESC
+					desc = POLITICS_LEONID_CHERNYKH_COLLAPSE_DESC
 				}
 				promote_leader = yes
 			}
@@ -2599,6 +2568,7 @@ FST_far_east_collapse = {
 			load_focus_tree = shattered_ambitions
 			set_cosmetic_tag = CHT_collapse
 			transfer_state = 563
+			add_state_core = 563
 		}
 		IRK = {
 
@@ -2620,19 +2590,18 @@ FST_far_east_collapse = {
 				socialist = 30
 				progressivism = 0
 				liberalism = 0
-
+				liberal_conservatism = 0
 				conservatism = 0
 				paternalism = 0
 				despotism = 10
+				ultranationalism = 0
 				fascism = 0
 				national_socialism = 0
-				ultranationalism = 0
-
 			}
 			set_party_name = {
 				ideology = communist
-				long_name = "Sotsialisticheskaya Partiya Buryatii"
-				name = "SPB"
+				long_name = IRK_collapse_communist_party_long
+				name = IRK_collapse_communist_party
 			}
 			remove_ideas = {
 				IRK_bitter_remnant
@@ -2643,6 +2612,8 @@ FST_far_east_collapse = {
 			set_cosmetic_tag = IRK_collapse
 			transfer_state = 564
 			transfer_state = 566
+			add_state_core = 564
+			add_state_core = 566
 		}
 		KMC = {
 			add_country_leader_role = {
@@ -2663,8 +2634,8 @@ FST_far_east_collapse = {
 			}
 			set_party_name = {
 				ideology = despotism
-				long_name = "Klika Ivanovskaya"
-				name = "Klika Ivanovskaya"
+				long_name = KMC_collapse_despotism_party_long
+				name = KMC_collapse_despotism_party
 			}
 			remove_ideas = {
 				KMC_sailor_state
@@ -2673,6 +2644,7 @@ FST_far_east_collapse = {
 			load_focus_tree = shattered_ambitions
 			set_cosmetic_tag = KMC_collapse
 			transfer_state = 637
+			add_state_core = 637
 		}
 		MAG = {
 			set_politics = {
@@ -2683,26 +2655,29 @@ FST_far_east_collapse = {
 				socialist = 50
 				progressivism = 0
 				liberalism = 0
-
+				liberal_conservatism = 0
 				conservatism = 0
 				paternalism = 20
 				despotism = 30
+				ultranationalism = 0
 				fascism = 0
 				national_socialism = 0
-				ultranationalism = 0
-
 			}
 			set_party_name = {
 				ideology = paternalism
-				long_name = "Sibirskoye Vozrozhdeniye"
-				name = "Sibirskoye Vozrozhdeniye"
+				long_name = MAG_collapse_paternalism_party_long
+				name = MAG_collapse_paternalism_party
 			}
 			set_cosmetic_tag = MAG_collapse
 			transfer_state = 561
 			transfer_state = 562
 			transfer_state = 886
 			transfer_state = 1364
-			OMO = {OMO_Pavel_Sudoplatov = {set_nationality = MAG}}
+			add_state_core = 561
+			add_state_core = 562
+			add_state_core = 886
+			add_state_core = 1364
+			OMO = { OMO_Pavel_Sudoplatov = { set_nationality = MAG } }
 			add_country_leader_role = {
 				character = OMO_Pavel_Sudoplatov
 				country_leader = {
@@ -2717,14 +2692,10 @@ FST_far_east_collapse = {
 				advisor = {
 					slot = head_of_government
 					idea_token = OMO_Nahum_Eitingon_hog
-					allowed = {
-						original_tag = MAG
-						has_character = OMO_Pavel_Sudoplatov
-					}
 					traits = { hog_backroom_backstabber }
 					ledger = civilian
 					cost = -1
-					removal_cost = -1
+					can_be_fired = no
 					ai_will_do = { factor = 0 }
 				}
 				activate = yes
@@ -2734,14 +2705,10 @@ FST_far_east_collapse = {
 				advisor = {
 					slot = foreign_minister
 					idea_token = OMO_Vasily_Bekkerov_for
-					allowed = {
-						original_tag = MAG
-						has_character = OMO_Pavel_Sudoplatov
-					}
 					traits = { for_political_appointment }
 					ledger = civilian
 					cost = -1
-					removal_cost = -1
+					can_be_fired = no
 					ai_will_do = { factor = 0 }
 				}
 				activate = yes
@@ -2751,14 +2718,10 @@ FST_far_east_collapse = {
 				advisor = {
 					slot = economy_minister
 					idea_token = OMO_Ivan_Arento_eco
-					allowed = {
-						original_tag = MAG
-						has_character = OMO_Pavel_Sudoplatov
-					}
 					traits = { eco_balanced_budget_economy }
 					ledger = civilian
 					cost = -1
-					removal_cost = -1
+					can_be_fired = no
 					ai_will_do = { factor = 0 }
 				}
 				activate = yes
@@ -2768,14 +2731,10 @@ FST_far_east_collapse = {
 				advisor = {
 					slot = security_minister
 					idea_token = OMO_Yakov_Serebryansky_sec
-					allowed = {
-						original_tag = MAG
-						has_character = OMO_Pavel_Sudoplatov
-					}
 					traits = { sec_secret_police_chief }
 					ledger = civilian
 					cost = -1
-					removal_cost = -1
+					can_be_fired = no
 					ai_will_do = { factor = 0 }
 				}
 				activate = yes
@@ -2789,6 +2748,8 @@ FST_far_east_collapse = {
 			load_focus_tree = shattered_ambitions
 		}
 		OMO = {
+			clr_country_flag = RUS_regional_stage
+			clear_global_event_target = RUS_far_east_unifier
 			set_politics = {
 				ruling_party = despotism
 			}
@@ -2807,19 +2768,18 @@ FST_far_east_collapse = {
 				socialist = 80
 				progressivism = 0
 				liberalism = 0
-
+				liberal_conservatism = 0
 				conservatism = 0
 				paternalism = 0
 				despotism = 20
+				ultranationalism = 0
 				fascism = 0
 				national_socialism = 0
-				ultranationalism = 0
-
 			}
 			set_party_name = {
 				ideology = despotism
-				long_name = "Klika Nikishovskaya"
-				name = "Klika Nikishovskaya"
+				long_name = OMO_collaspe_despotism_party_long
+				name = OMO_collaspe_despotism_party
 			}
 			remove_ideas = {
 				RUS_isolated_vilages
@@ -2830,10 +2790,19 @@ FST_far_east_collapse = {
 			set_cosmetic_tag = OMO_collapse
 			transfer_state = 644
 			transfer_state = 891
+			add_state_core = 644
+			add_state_core = 891
 		}
 		OMO_gleb_yakunin = {
 			set_nationality = VIL
+		}
+		VIL = {
+			clr_global_flag = VIL_anarchy_flag
+			set_politics = {
+				ruling_party = despotism
+			}
 			add_country_leader_role = {
+				character = OMO_gleb_yakunin
 				country_leader = {
 					ideology = despotism_theocracy_subtype
 					desc = POLITICS_GLEB_YAKUNIN_COLLAPSE_DESC
@@ -2841,31 +2810,24 @@ FST_far_east_collapse = {
 				}
 				promote_leader = yes
 			}
-		}
-		VIL = {
-			clr_global_flag = VIL_anarchy_flag
-			set_politics = {
-				ruling_party = despotism
-			}
 
 			set_popularities = {
 				communist = 0
 				socialist = 40
 				progressivism = 0
 				liberalism = 0
-
+				liberal_conservatism = 0
 				conservatism = 0
 				paternalism = 0
 				despotism = 60
+				ultranationalism = 0
 				fascism = 0
 				national_socialism = 0
-				ultranationalism = 0
-
 			}
 			set_party_name = {
 				ideology = despotism
-				long_name = "Bratskiy Soyuz"
-				name = "Bratskiy Soyuz"
+				long_name = OMO_socialism_party_men_long
+				name = OMO_socialism_party_men
 			}
 			remove_ideas = RUS_isolated_vilages
 			add_ideas = RUS_shattered_ambitions
@@ -2875,6 +2837,10 @@ FST_far_east_collapse = {
 			transfer_state = 761
 			transfer_state = 889
 			transfer_state = 890
+			add_state_core = 575
+			add_state_core = 761
+			add_state_core = 889
+			add_state_core = 890
 		}
 		YAK = {
 			set_politics = {
@@ -2894,14 +2860,13 @@ FST_far_east_collapse = {
 				socialist = 30
 				progressivism = 0
 				liberalism = 0
-
+				liberal_conservatism = 0
 				conservatism = 0
 				paternalism = 10
 				despotism = 60
 				fascism = 0
-				national_socialism = 0
 				ultranationalism = 0
-
+				national_socialism = 0
 			}
 			remove_all_ministers = yes
 			add_ideas = {
@@ -2912,21 +2877,18 @@ FST_far_east_collapse = {
 			}
 			set_party_name = {
 				ideology = despotism
-				long_name = "Pervaya Armiya Dmitriy Donskoy"
-				name = "Pervaya Armiya Dmitriy Donskoy"
+				long_name = YAK_collaspe_despotism_party_long
+				name = YAK_collaspe_despotism_party
 			}
 			load_focus_tree = shattered_ambitions
 			set_cosmetic_tag = YAK_collapse
 			transfer_state = 574
 			transfer_state = 760
 			transfer_state = 759
+			add_state_core = 574
+			add_state_core = 760
+			add_state_core = 759
 		}
-
-		#CSB = {
-		#	transfer_state = 566
-		#	transfer_state = 575
-		#	transfer_state = 761
-		#}
 	}
 }
 

@@ -10,8 +10,8 @@ set_country_flag = is_postger_nation
 add_manpower = 75000
 
 load_focus_tree = shattered_ambitions
-set_variable = { TNO_economy_type = 1 }
-set_variable = { TNO_economy_subtype = 0 }
+set_variable = {TNO_economy_type = token:Econ_Type_Capitalism }
+
 set_politics = {
 	ruling_party = despotism
 	elections_allowed = no

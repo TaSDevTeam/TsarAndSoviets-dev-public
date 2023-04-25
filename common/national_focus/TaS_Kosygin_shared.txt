@@ -456,8 +456,8 @@ shared_focus = {
 	x = 13
 	y = 1
 	completion_reward = {
-		set_variable = { TNO_economy_type = 1 }
-		set_variable = { TNO_economy_subtype = 19 }
+		set_variable = { TNO_economy_type = token:Econ_Type_Capitalism }
+		set_variable = { TNO_economy_subtype = token:Econ_Subtype_Yagoda }
 		add_political_power = 100
 		add_stability = 0.1
 		set_temp_variable = { gdp_growth_temp = 1.25 }
