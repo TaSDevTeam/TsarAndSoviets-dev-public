@@ -1586,6 +1586,9 @@ MAR_Order_category = {
 				value = 0.2
 			}
 			custom_effect_tooltip = MAR_Order_Helping_Hand_tt
+			hidden_effect = {
+				country_event = {id = MAR_smuta.23 days = 14 }
+			}
 		}
 	}
 	MAR_Order_Army_Integration = {
@@ -1665,6 +1668,9 @@ MAR_Order_category = {
 				var = MAR_ord_army_org_factor
 				value = 0.03
 			}
+			hidden_effect = {
+				country_event = {id = MAR_smuta.24 days = 14 }
+			}
 			custom_effect_tooltip = MAR_Order_New_Church_tt
 		}
 	}
@@ -1682,6 +1688,7 @@ MAR_Order_category = {
 		cost = 50
 		
 		days_remove = 5
+		complete_effect = { country_event = {id = berez_belozerski.45 days = 90} }
 		remove_effect = {
 			add_to_variable = {
 				var = MAR_ord_recruitable_population_factor
@@ -1786,6 +1793,7 @@ MAR_Order_category = {
 		complete_effect = { 
 			hidden_effect = {
 				country_event = {id = berez_belozerski.44 days = 120}
+				country_event = {id = berez_belozerski.46 days = 86}
 			}
 		}
 		remove_effect = {
@@ -1953,14 +1961,19 @@ MAR_Order_category = {
 		
 		days_remove = 5
 		remove_effect = {
-			#add_to_variable = {
-			#	var = MAR_ord_production_speed_buildings_factor
-			#	value = 0.1
-			#}
-			#add_to_variable = {
-			#	var = MAR_ord_industrial_capacity_factory
-			#	value = 0.025
-			#}
+			add_to_variable = {
+				var = MAR_ord_monthly_population
+				value = 0.1
+			}
+			add_to_variable = {
+				var = MAR_ord_stability_factor
+				value = 0.025
+			}
+			add_to_variable = {
+				var = MAR_ord_taxable_population_modifier
+				value = 0.025
+			}
+			RUS_integration_cost_days_decrease = yes
 			country_event = { id = MAR_Kosygin.68 }
 			custom_effect_tooltip = MAR_Order_forgive_and_be_forgiven_tt
 		}
@@ -1979,14 +1992,14 @@ MAR_Order_category = {
 		
 		days_remove = 5
 		remove_effect = {
-			#add_to_variable = {
-			#	var = MAR_ord_production_speed_buildings_factor
-			#	value = 0.1
-			#}
-			#add_to_variable = {
-			#	var = MAR_ord_industrial_capacity_factory
-			#	value = 0.025
-			#}
+			add_to_variable = {
+				var = MAR_ord_political_power_factor
+				value = 0.15
+			}
+			add_to_variable = {
+				var = MAR_ord_taxable_population_modifier
+				value = 0.025
+			}
 			country_event = { id = MAR_Kosygin.69 }
 			custom_effect_tooltip = MAR_Order_allseeing_eye_tt
 		}
@@ -2005,14 +2018,14 @@ MAR_Order_category = {
 		
 		days_remove = 5
 		remove_effect = {
-			#add_to_variable = {
-			#	var = MAR_ord_production_speed_buildings_factor
-			#	value = 0.1
-			#}
-			#add_to_variable = {
-			#	var = MAR_ord_industrial_capacity_factory
-			#	value = 0.025
-			#}
+			add_to_variable = {
+				var = MAR_ord_land_reinforce_rate
+				value = 0.1
+			}
+			add_to_variable = {
+				var = MAR_ord_experience_loss_factor
+				value = -0.075
+			}
 			custom_effect_tooltip = MAR_Order_medical_order_tt
 		}
 	}
@@ -2024,20 +2037,21 @@ MAR_Order_category = {
 				character = MAR_advisor_Kosygin
 				ruling_only = yes
 			}
-			has_country_flag = W_RUSSIA_UNIFIED
+			has_country_flag = RUS_RUSSIA_UNIFIED
 		}
 		cost = 50
 		
 		days_remove = 5
 		remove_effect = {
-			#add_to_variable = {
-			#	var = MAR_ord_production_speed_buildings_factor
-			#	value = 0.1
-			#}
-			#add_to_variable = {
-			#	var = MAR_ord_industrial_capacity_factory
-			#	value = 0.025
-			#}
+			add_to_variable = {
+				var = MAR_ord_taxable_population_modifier
+				value = 0.05
+			}
+			add_to_variable = {
+				var = MAR_ord_monthly_population
+				value = 0.025
+			}
+			RUS_integration_cost_days_decrease = yes
 			custom_effect_tooltip = MAR_Order_we_are_all_brothers_tt
 		}
 	}
@@ -2056,14 +2070,14 @@ MAR_Order_category = {
 		
 		days_remove = 5
 		remove_effect = {
-			#add_to_variable = {
-			#	var = MAR_ord_production_speed_buildings_factor
-			#	value = 0.1
-			#}
-			#add_to_variable = {
-			#	var = MAR_ord_industrial_capacity_factory
-			#	value = 0.025
-			#}
+			add_to_variable = {
+				var = MAR_ord_land_reinforce_rate
+				value = 0.05
+			}
+			add_to_variable = {
+				var = MAR_ord_stability_factor
+				value = 0.025
+			}
 			custom_effect_tooltip = MAR_Order_cooperation_with_locals_tt
 		}
 	}

@@ -181,6 +181,32 @@ on_actions = {
 			else_if = {
 				limit = {
 					FROM = {
+						OR = {
+							original_tag = MJP
+							original_tag = MJP
+							original_tag = HAN
+							original_tag = PFF
+						}
+					}
+					ROOT = { 
+						OR = {
+							original_tag = MJP
+							original_tag = MJP
+							original_tag = HAN
+							original_tag = PFF
+						}
+					}
+				}
+				FROM = { 
+					annex_country = {
+						target = ROOT
+						transfer_troops = no
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
 						original_tag = MAN
 					}
 					ROOT = { 

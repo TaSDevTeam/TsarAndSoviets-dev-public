@@ -1647,7 +1647,7 @@ TaS_WRW2_the_final_battle = {
 			has_war = yes
 		}
 		allowed = {
-			tag = MAR
+			has_war = yes
 			NOT = { has_idea = MAR_go_oper }
 		}
 		custom_cost_trigger = { command_power > 19.99 }
@@ -1924,7 +1924,7 @@ TaS_WRW2_the_final_battle = {
 			check_variable = { WRW_deccat = 1 }
 		}
 		allowed = {
-			tag = MAR
+			has_war = yes
 			NOT = { has_idea = MAR_go_oper }
 		}
 		available = {
@@ -2340,10 +2340,10 @@ TaS_WRW2_the_final_battle = {
 					TAS_WRW2_ScriptedTrigger_GER_Devastation_MoreThanY = yes
 				}
 			}
-		}
-		NOT = {
-			MCW = {
-				exists = no
+			NOT = {
+				MCW = {
+					exists = no
+				}
 			}
 		}
 		custom_cost_trigger = { command_power > 19.99 }
@@ -2382,12 +2382,13 @@ TaS_WRW2_the_final_battle = {
 				set_temp_variable = { Y = 40 }
 				TAS_WRW2_ScriptedTrigger_GER_Devastation_MoreThanY = yes
 			}
-		}
-		NOT = {
-			CAU = {
-				exists = no
+			NOT = {
+				CAU = {
+					exists = no
+				}
 			}
 		}
+		
 		custom_cost_trigger = { command_power > 19.99 }
 		custom_cost_text = decision_cost_20_cp
 		fire_only_once = yes

@@ -1607,3 +1607,27 @@ TNO_HCW_Phase_Disengagement = {
 		has_country_flag = TNO_HCW_disengagement_phase
 	}
 }
+TNO_HCW_has_air_force = {
+	custom_trigger_tooltip = {
+		tooltip = TNO_HCW_has_air_force_tt
+		HAI = { has_country_flag = HCW_has_air_force }
+	}
+}
+TNO_HCW_has_naval_force = {
+	custom_trigger_tooltip = {
+		tooltip = TNO_HCW_has_naval_force_tt
+		HAI = { has_country_flag = HCW_has_coast_guard }
+	}
+}
+TNO_HCW_is_transfered = {
+	custom_trigger_tooltip = {
+		tooltip = TNO_HCW_is_transfered_tt
+		THIS = { has_state_flag = HCW_transfered }
+	}
+}
+TNO_HCW_is_locked = {
+	custom_trigger_tooltip = {
+		tooltip = TNO_HCW_is_locked_tt
+		THIS = { has_state_flag = HCW_locked }
+	}
+}

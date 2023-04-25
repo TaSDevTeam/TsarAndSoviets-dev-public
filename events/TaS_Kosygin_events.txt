@@ -1020,6 +1020,32 @@ country_event = {#fate of order
 	option = {
 		name = MAR_Kosygin.66.a
 		ai_chance = { factor = 1 }	
+		remove_dynamic_modifier = { modifier = MAR_military_order_modifier }
+		set_variable = {
+			var = MAR_ord_monthly_population
+			value = 0.05
+		}
+		set_variable = {
+			var = MAR_ord_stability_factor
+			value = 0.015
+		}
+		set_variable = {
+			var = MAR_ord_political_power_factor
+			value = -0.1
+		}
+		set_variable = {
+			var = MAR_ord_taxable_population_modifier
+			value = 0
+		}
+		set_variable = {
+			var = MAR_ord_land_reinforce_rate
+			value = 0
+		}
+		set_variable = {
+			var = MAR_ord_experience_loss_factor
+			value = 0
+		}
+		add_dynamic_modifier = {modifier = MAR_military_order_modifier}
 		country_event = { id = MAR_Kosygin.67 days = 4 }
 	}
 }

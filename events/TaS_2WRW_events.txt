@@ -1851,14 +1851,14 @@ country_event = { #Moscowien
 		add_political_power = 250
 		add_stability = -0.15
 		if = {
-			limit = { ruling_party = despotism }
+			limit = { has_government = despotism }
 			add_popularity = {
 				ideology = despotism
 				popularity = -0.15
 			}
 		}
 		else_if = {
-			limit = { ruling_party = socialist }
+			limit = { has_government = socialist }
 			add_popularity = {
 				ideology = socialist
 				popularity = -0.15

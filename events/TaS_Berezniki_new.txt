@@ -1883,6 +1883,36 @@ country_event = { #MAR_prizma_jopi PIZDA NIK
 	}
 }
 
+country_event = { # MAR order
+	id = MAR_smuta.23
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_smuta.23"}
+	title = MAR_smuta.23.t
+	desc = MAR_smuta.23.d
+	fire_only_once = yes
+	picture = GFX_event_MAR_smuta_23
+	is_triggered_only = yes
+
+	option = {
+		name = MAR_smuta.23.a
+		ai_chance = { factor = 1 }		
+	}
+}
+
+country_event = { # MAR order
+	id = MAR_smuta.24
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_smuta.24"}
+	title = MAR_smuta.24.t
+	desc = MAR_smuta.24.d
+	fire_only_once = yes
+	picture = GFX_event_MAR_smuta_24
+	is_triggered_only = yes
+
+	option = {
+		name = MAR_smuta.24.a
+		ai_chance = { factor = 1 }		
+	}
+}
+
 country_event = { #PRM
 	id = MAR_smuta_occupation.1
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_smuta_occupation.1"}

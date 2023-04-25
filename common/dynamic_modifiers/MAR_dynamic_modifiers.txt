@@ -46,6 +46,20 @@ MAR_military_order_modifier = {
 	recruitable_population_factor = MAR_ord_recruitable_population_factor
 }	
 
+MAR_civilian_order_modifier = {
+	icon = GFX_dynamic_modifier_MAR_Order_of_Saint_George
+	enable = {
+		tag = MAR
+	}
+	
+	monthly_population = MAR_ord_monthly_population
+	stability_factor = MAR_ord_stability_factor
+	political_power_factor = MAR_ord_political_power_factor
+	taxable_population_modifier = MAR_ord_taxable_population_modifier
+	land_reinforce_rate = MAR_ord_land_reinforce_rate
+	experience_loss_factor = MAR_ord_experience_loss_factor
+}
+
 MAR_prestol_insurgency_dynomod = {
 	#icon = GFX_idea_unknown
 	enable = { always = yes }

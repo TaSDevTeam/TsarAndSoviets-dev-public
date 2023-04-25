@@ -722,6 +722,34 @@ country_event = {#Here Comes The Guards
 	}	
 }
 
+country_event = {#
+	id = berez_belozerski.45
+	immediate = {log = "[GetDateText]: [Root.GetName]: event berez_belozerski.45"}
+	title = berez_belozerski.45.t
+	desc = berez_belozerski.45.d
+	is_triggered_only = yes
+	picture = GFX_event_berez_belozerski_45
+
+	option = {
+		name = berez_belozerski.45.a
+		ai_chance = { factor = 1 }
+	}	
+}
+
+country_event = {#
+	id = berez_belozerski.46
+	immediate = {log = "[GetDateText]: [Root.GetName]: event berez_belozerski.46"}
+	title = berez_belozerski.46.t
+	desc = berez_belozerski.46.d
+	is_triggered_only = yes
+	picture = GFX_event_berez_belozerski_46
+
+	option = {
+		name = berez_belozerski.46.a
+		ai_chance = { factor = 1 }
+	}	
+}
+
 
 
 
