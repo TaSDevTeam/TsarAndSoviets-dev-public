@@ -1297,26 +1297,44 @@ country_event = { #Novgorod Theatry
 			transfer_state = 1887
 		}
 		ai_chance = { factor = 1 }
-		MAR_Sergey_Belozerskiy = {
-			set_portraits = {
-				civilian = { large = "gfx/leaders/MAR/Collapse/Portrait_Berezniki_Belozerskid_70S.dds" }
+		if = {
+			limit = { has_government = despotism }
+			MAR = { 
+				set_country_leader_description = {
+					desc = "POLITICS_SERGEY_BELOZERSKI_F_DESC"
+				}
+				add_ideas = TaS_Post2WRW_WSR_fourth_time_a_row
 			}
-			swap_country_leader_traits = {
-				remove = char_objedinitel
-				add = char_projebavshij
-				ideology = despotism_mladorossi_autocracy_subtype
+			MAR_Sergey_Belozerskiy = {
+				set_portraits = {
+					civilian = { large = "gfx/leaders/MAR/Collapse/Portrait_Berezniki_Belozerskid_70S.dds" }
+				}
+				swap_country_leader_traits = {
+					remove = char_objedinitel
+					add = char_projebavshij
+					ideology = despotism_mladorossi_autocracy_subtype
+				}
+			}
+			hidden_effect = {
+				country_event ={
+					id = MAR_Collapse.1 days = 14
+				}
 			}
 		}
-		MAR = { 
-			set_country_leader_description = {
-				desc = "POLITICS_SERGEY_BELOZERSKI_F_DESC"
+		else_if = {
+			limit = { has_government = socialist }
+			MAR_advisor_Kosygin = {
+				set_portraits = {
+					civilian = { large = "gfx/leaders/MAR/Collapse/Portrait_Berezniki_Kosygind_70s.dds" }
+				}
+				swap_country_leader_traits = {
+					remove = char_reformator
+					add = char_projebavshij
+					ideology = socialist_social_monarchist_but_worse_subtype
+				}
 			}
-			add_ideas = TaS_Post2WRW_WSR_fourth_time_a_row
 		}
 		hidden_effect = {
-			country_event ={
-				id = MAR_Collapse.1 days = 14
-			}
 			every_country  = {
 				news_event = {
 					id = MAR_2WRW_world_news.12
