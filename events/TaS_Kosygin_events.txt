@@ -90,13 +90,34 @@ country_event = {#Always hide your cheat engine
 	
 	option = {
 		name = MAR_Kosygin.6.a
-		MAR_enable_prestol = yes
+		country_event = { id = MAR_Kosygin.12 }
 		ai_chance = { factor = 1 }
 	}
 	option = {
 		name = MAR_Kosygin.6.b
 		ai_chance = { factor = 0 }
-		#Insert Neko Ark here
+		trigger = {
+			NOT = { has_country_flag = MAR_JOKER }
+		}
+		set_country_flag = MAR_JOKER
+		set_temp_variable = { TNO_temp_super_event = token:SE_KOSYGIN_SECRET }
+		TNO_fire_super_event = yes
+		MAR_advisor_Kosygin = {
+			set_portraits = {
+				civilian = { large = "gfx/leaders/MAR/Portrait_Berezniki_Kosygind_Joker.dds" }
+			}
+		}
+		add_country_leader_role = {
+			character = MAR_advisor_Kosygin
+			promote_leader = yes
+			country_leader = {
+				desc = "POLITICS_KOSYGIN_IRONY_DESC"
+				ideology = socialist_panafricanism_subtype 
+				expire = "1999.1.1"
+				traits = { char_ironist }
+			}
+		}
+		country_event = { id = MAR_Kosygin.6 }
 	}
 }
 
@@ -246,14 +267,17 @@ country_event = {#Aftermaths
 		MAR_Prestol_start = yes
 		
 		hidden_effect = {
-			add_country_leader_role = {
-				character = MAR_advisor_Kosygin
-				promote_leader = yes
-				country_leader = {
-					desc = "POLITICS_KOSYGIN_POSTBOMB_DESC"
-					ideology = socialist_social_monarchist_but_worse_subtype
-					expire = "1999.1.1"
-					traits = { char_reformator }
+			if = {
+				limit = { NOT = { has_country_flag = MAR_JOKER } }
+				add_country_leader_role = {
+					character = MAR_advisor_Kosygin
+					promote_leader = yes
+					country_leader = {
+						desc = "POLITICS_KOSYGIN_POSTBOMB_DESC"
+						ideology = socialist_social_monarchist_but_worse_subtype
+						expire = "1999.1.1"
+						traits = { char_reformator }
+					}
 				}
 			}
 			set_country_flag = MAR_prestol_focus_tree

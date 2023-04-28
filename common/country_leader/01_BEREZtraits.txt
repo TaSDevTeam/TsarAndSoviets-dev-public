@@ -9,7 +9,20 @@ leader_traits = {
 			factor = 1
 		}
 	}
-
+	
+	char_ironist = {
+		random = no
+		war_support_factor = 1
+		political_power_gain = 1
+		production_factory_max_efficiency_factor = 1
+		research_speed_factor = 1
+		stability_factor = 1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
 	narod_lubimka = {
 		random = no
 		stability_factor = 0.1
