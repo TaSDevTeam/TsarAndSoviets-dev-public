@@ -506,7 +506,7 @@ country_event = { # MAR_proniknovenie_vtil
 	desc = berez_belozerski.32.d
 	fire_only_once = yes
 	is_triggered_only = yes
-	picture = GFX_report_event_belozerski.32
+	picture = GFX_event_berez_belozerski_32
 
 	option = {
 		name = berez_belozerski.32.a
@@ -871,7 +871,8 @@ country_event = { # Moder_step
 	desc = berez_kazahk.4.d
 	fire_only_once = yes
 	is_triggered_only = yes
-
+	picture = GFX_event_berez_kazakh_4
+	
 	option = {
 		name = berez_kazahk.4.a
 		ai_chance = { factor = 1 }	
@@ -900,7 +901,8 @@ country_event = { # Poezd_1
 	desc = berez_kazahk.6.d
 	fire_only_once = yes
 	is_triggered_only = yes
-
+	picture = GFX_event_berez_kazakh_4
+	
 	option = {
 		name = berez_kazahk.6.a
 		country_event = {
@@ -918,7 +920,7 @@ country_event = { # Poezd_2
 	desc = berez_kazahk.7.d
 	fire_only_once = yes
 	is_triggered_only = yes
-	picture = GFX_event_KAZ7
+	picture = GFX_event_berez_kazakh_4
 	
 	option = {
 		name = berez_kazahk.7.a
