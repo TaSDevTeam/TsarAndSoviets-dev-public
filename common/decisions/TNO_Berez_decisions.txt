@@ -2186,12 +2186,27 @@ MAR_category_prestol_terrorists = {
 					
 				}
 			}
+			hidden_effect = {
+				for_each_loop = {
+					array = MAR_map_grid_array
+					if = {
+						limit = {
+							check_variable = { v:kosygin_reception > 1 }
+						}
+						add_to_variable = { ROOT.rebelous_states_total = 1 }
+					}
+				}
+				log = "rebelous_states_total: [?ROOT.rebelous_states_total]"
+			}
 			if = {
-				limit = { check_variable = { ROOT.insurgency_strength < 15 } }
+				limit = {
+					check_variable = { ROOT.insurgency_strength < 15 }
+					check_variable = { ROOT.rebelous_states_total < 3 }
+				}
 				country_event = {
 					id = MAR_Kosygin_Prestol.29 days = 1
 				}
-			}
+			}	
 		}
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision MAR_biweekly_prestol_tick"

@@ -1798,7 +1798,7 @@ country_event = { #MAR_prizma_jopi komi
 	desc = MAR_smuta.19.d
 	fire_only_once = no
 	is_triggered_only = yes	
-	picture = GFX_report_event_Voina_28
+	picture = GFX_event_MAR_smuta_19
 	timeout_days = 5
 	#mean_time_to_happen = { days = 3 }
 
@@ -1818,7 +1818,7 @@ country_event = { #MAR_prizma_jopi komi2
 	desc = MAR_smuta.20.d
 	fire_only_once = no
 	is_triggered_only = yes	
-	picture = GFX_report_event_Voina_29
+	picture = GFX_event_MAR_smuta_20
 	timeout_days = 5
 	#mean_time_to_happen = { days = 2 }
 	option = {
@@ -1848,7 +1848,7 @@ country_event = { #MAR_prizma_jopi POBEDA ROSSII
 	desc = MAR_smuta.21.d
 	fire_only_once = yes
 	is_triggered_only = yes	
-	picture = GFX_report_event_Voina_30
+	picture = GFX_event_MAR_smuta_21
 	immediate = {
 		set_global_flag = nik_fall
 	}	
@@ -1874,7 +1874,7 @@ country_event = { #MAR_prizma_jopi PIZDA NIK
 	desc = MAR_smuta.22.d
 	fire_only_once = yes
 	is_triggered_only = yes	
-	picture = GFX_report_event_Voina_31
+	picture = GFX_event_MAR_smuta_22
 	
 	option = {
 		name = MAR_smuta.22.a
@@ -2092,7 +2092,7 @@ country_event = { #KOM dem
 	title = MAR_smuta_occupation.9.t
 	desc = MAR_smuta_occupation.9.d
 	fire_only_once = yes
-	picture = GFX_report_event_Voina_32
+	picture = GFX_event_MAR_smuta_occupation_9
 	is_triggered_only = yes	
 	option = {
 		name = MAR_smuta_occupation.9.a
@@ -2106,7 +2106,7 @@ country_event = { #KOM left
 	title = MAR_smuta_occupation.10.t
 	desc = MAR_smuta_occupation.10.d
 	fire_only_once = yes
-	picture = GFX_report_event_Voina_36
+	picture = GFX_event_MAR_smuta_occupation_10
 	is_triggered_only = yes
 
 	option = {
@@ -2122,7 +2122,7 @@ country_event = { #KOM right
 	title = MAR_smuta_occupation.11.t
 	desc = MAR_smuta_occupation.11.d
 	fire_only_once = yes
-	picture = GFX_report_event_Voina_37
+	picture = GFX_event_MAR_smuta_occupation_11
 	is_triggered_only = yes
 
 	option = {
