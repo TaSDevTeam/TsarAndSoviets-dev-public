@@ -108,7 +108,7 @@ MAR_OGAS_switch_to_the_next_stage = {
 		limit = { check_variable = { MAR_ogas_stages_status_array^MAR_ogas_current_stage = 1 } }
 		add_to_variable = { MAR_ogas_current_stage = 1 }
 		if = {
-			limit = { check_variable = { MAR_ogas_current_stage = 5 } }
+			limit = { check_variable = { MAR_ogas_current_stage > 5 } }
 			country_event = { id = MAR_Kosygin_OGAS.10 }
 		}
 	}

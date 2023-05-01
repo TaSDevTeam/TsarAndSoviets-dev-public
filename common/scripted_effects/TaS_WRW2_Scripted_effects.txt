@@ -798,6 +798,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			limit = { is_in_faction_with = GER }
 			leave_faction = yes
 			econ_leave_sphere = yes
+			white_peace = RUS
 		}	
 		every_country = {
 			limit = { check_variable = { ECON_SPHERE_LEADER = GER } }
@@ -807,7 +808,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 		GER = {
 			dismantle_faction = yes
 		}
-		MAR = {
+		RUS = {
 			transfer_state = 97
 		}
 		GEX = {
@@ -830,6 +831,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 			limit = { is_in_faction_with = GER }
 			leave_faction = yes
 			econ_leave_sphere = yes
+			white_peace = RUS
 		}	
 		every_country = {
 			limit = { check_variable = { ECON_SPHERE_LEADER = GER } }
@@ -2530,7 +2532,7 @@ TaS_WRW2_recount_exhausion_modifier = {
 TaS_WRW2_check_the_exhausion = {
 	if = {
 		limit = {
-			check_variable = { WRW2_devastation > 30 }
+			check_variable = { ROOT.WRW2_devastation > 30 }
 			NOT = { has_dynamic_modifier = { modifier = TaS_WRW2_exhausion_modifier } } 
 		}
 		add_dynamic_modifier = { modifier = TaS_WRW2_exhausion_modifier } 
@@ -2550,7 +2552,7 @@ TaS_WRW2_check_the_exhausion = {
 	}
 	if = {
 		limit = {
-			check_variable = { WRW2_devastation > 30 }
+			check_variable = { ROOT.WRW2_devastation > 30 }
 			has_dynamic_modifier = { modifier = TaS_WRW2_exhausion_modifier }
 		}
 		TaS_WRW2_recount_exhausion_modifier = yes

@@ -104,26 +104,26 @@ can_form_germany = {
 TAS_WRW2_ScriptedTrigger_GER_Devastation_MoreThanY = {
 	custom_trigger_tooltip = {
 		tooltip = TAS_WRW2_ScriptedTrigger_GER_Devastation_MoreThanY_Tt
-		check_variable = { RUS.GER_devastation > Y }
+		check_variable = { GER.WRW2_devastation > Y }
 	}
 }
 TAS_WRW2_ScriptedTrigger_GER_Devastation_LessThanY = {
 	custom_trigger_tooltip = {
 		tooltip = TAS_WRW2_ScriptedTrigger_GER_Devastation_LessThanY_Tt
-		check_variable = { RUS.GER_devastation < Y }
+		check_variable = { GER.WRW2_devastation < Y }
 	}
 }
 
 TAS_WRW2_ScriptedTrigger_MAR_Devastation_MoreThanY = {
 	custom_trigger_tooltip = {
 		tooltip = TAS_WRW2_ScriptedTrigger_MAR_Devastation_MoreThanY_Tt
-		check_variable = { RUS_devastation > Y }
+		check_variable = { RUS.WRW2_devastation > Y }
 	}
 }
 TAS_WRW2_ScriptedTrigger_MAR_Devastation_LessThanY = {
 	custom_trigger_tooltip = {
 		tooltip = TAS_WRW2_ScriptedTrigger_MAR_Devastation_LessThanY_Tt
-		check_variable = { RUS_devastation < Y }
+		check_variable = { RUS.WRW2_devastation < Y }
 	}
 }
 

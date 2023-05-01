@@ -1935,6 +1935,7 @@ MAR_Order_category = {
 				ruling_only = yes
 			}
 			has_country_flag = W_RUSSIA_UNIFIED
+			has_country_flag = MAR_order_Kosygin
 		}
 		cost = 50
 		
@@ -1956,6 +1957,7 @@ MAR_Order_category = {
 				ruling_only = yes
 			}
 			has_country_flag = W_RUSSIA_UNIFIED
+			has_country_flag = MAR_order_Kosygin
 		}
 		cost = 50
 		
@@ -1987,6 +1989,7 @@ MAR_Order_category = {
 				ruling_only = yes
 			}
 			has_country_flag = W_RUSSIA_UNIFIED
+			has_country_flag = MAR_order_Kosygin
 		}
 		cost = 50
 		
@@ -2013,6 +2016,7 @@ MAR_Order_category = {
 				ruling_only = yes
 			}
 			has_country_flag = W_RUSSIA_UNIFIED
+			has_country_flag = MAR_order_Kosygin
 		}
 		cost = 50
 		
@@ -2038,6 +2042,7 @@ MAR_Order_category = {
 				ruling_only = yes
 			}
 			has_country_flag = RUS_RUSSIA_UNIFIED
+			has_country_flag = MAR_order_Kosygin
 		}
 		cost = 50
 		
@@ -2065,6 +2070,7 @@ MAR_Order_category = {
 				ruling_only = yes
 			}
 			has_country_flag = RUS_RUSSIA_UNIFIED
+			has_country_flag = MAR_order_Kosygin
 		}
 		cost = 50
 		
@@ -2186,18 +2192,17 @@ MAR_category_prestol_terrorists = {
 					
 				}
 			}
-			hidden_effect = {
-				for_each_loop = {
-					array = MAR_map_grid_array
-					if = {
-						limit = {
-							check_variable = { v:kosygin_reception > 1 }
-						}
-						add_to_variable = { ROOT.rebelous_states_total = 1 }
+			set_variable = { ROOT.rebelous_states_total = -1 }
+			for_each_loop = {
+				array = MAR_map_grid_array
+				if = {
+					limit = {
+						check_variable = { v:kosygin_reception > 1 }
 					}
+					add_to_variable = { ROOT.rebelous_states_total = 1 }
 				}
-				log = "rebelous_states_total: [?ROOT.rebelous_states_total]"
 			}
+			log = "rebelous_states_total: [?ROOT.rebelous_states_total]"
 			if = {
 				limit = {
 					check_variable = { ROOT.insurgency_strength < 15 }

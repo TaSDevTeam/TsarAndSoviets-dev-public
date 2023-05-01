@@ -142,6 +142,7 @@ scripted_gui = {
 					check_variable = { operation_available = 0 }
 					check_variable = { kosygin_reception > 1 }
 				}
+				NOT = { check_variable = { var:insurgency_state_selected = 857 } }
 			}
 			MAR_antiprestol_decision_operation_two_visible = { var:insurgency_state_selected = { check_variable = { operation_available = 1 } } }
 			MAR_Prestol_KGB_Cover_visible = {

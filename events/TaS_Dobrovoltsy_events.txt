@@ -883,7 +883,7 @@ country_event = { #iran
 		has_country_flag = MAR_started_volunteer_sending
 	}
 	fire_only_once = yes
-	picture = GFX_event_MAR_dobr2
+	picture = GFX_MAR_forpol_1
 	option = { #yes
 		name = MAR_forpol.1.a
 		TaS_fopo_add_iranian_civil_war_tab = yes
@@ -952,7 +952,8 @@ country_event = { #oil crisis
 	id = MAR_forpol.4
 	immediate = {log = "[GetDateText]: [Root.GetName]: MAR_forpol.4"}
 	title = MAR_forpol.4.t
-	desc = MAR_oil_crisis.1.d
+	desc = MAR_forpol.4.d
+	picture = GFX_MAR_forpol_4
 	trigger = {
 		tag = MAR
 		has_global_flag = OC_Yemen_CW
@@ -980,7 +981,7 @@ country_event = { #congo cw
 		has_country_flag = MAR_started_volunteer_sending
 	}
 	fire_only_once = yes
-	picture = GFX_event_MAR_dobr2
+	picture = GFX_MAR_forpol_5
 	option = { #yes
 		name = MAR_forpol.5.a
 		if = {
