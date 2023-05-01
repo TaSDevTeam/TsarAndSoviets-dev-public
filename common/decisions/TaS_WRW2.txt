@@ -3405,6 +3405,9 @@ TaS_WRW2_europe_ultimatums = {
 		visible = {
 			owns_state = 216
 			owns_state = 195
+			NOT = {
+				owns_state = 1712
+			}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -3438,6 +3441,9 @@ TaS_WRW2_europe_ultimatums = {
 				}
 				owns_state = 231
 			}
+			NOT = {
+				owns_state = 1565
+			}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -3456,7 +3462,7 @@ TaS_WRW2_europe_ultimatums = {
 		}
 		days_remove = 14
 		remove_effect = {
-			TUR = { country_event = { id = MAR_ultimatums.13 } }
+			TUR = { country_event = { id = MAR_ultimatums.12 } }
 		}
 	}
 	TaS_WRW2_Armenia_independent = {
@@ -3541,6 +3547,8 @@ TaS_WRW2_europe_ultimatums = {
 		days_remove = 14
 		remove_effect = {
 			ROM = { country_event = { id = MAR_ultimatums.14 } }
+			ITA = { end_puppet = ROM }
+			ROM = { leave_faction = yes }
 		}
 	}
 	TaS_WRW2_Bessarabia_demand = {

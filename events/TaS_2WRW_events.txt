@@ -1134,10 +1134,10 @@ country_event = { #refused
 	option = { #their problems
 		name = MAR_ultimatums.2.b
 		declare_war_on = {
-			target = PREV
+			target = FROM
 			type = annex_everything
 		}
-		PREV = {
+		FROM = {
 			leave_faction = yes
 		}
 	}

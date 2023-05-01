@@ -198,14 +198,27 @@ shared_focus = {
 	y = 4
 	completion_reward = {
 		custom_effect_tooltip = MAR_check_vyatka_vibe_tt
+		if = { 
+			limit = { check_variable = { MAR_Okhranka_power < 25 } }
+			custom_effect_tooltip = MAR_vyt_oper_total_w_tt
+		}
+		if = { 
+			limit = {
+				check_variable = { MAR_Okhranka_power < 75 }
+				NOT = { check_variable = { MAR_Okhranka_power < 25 } }
+			}
+			custom_effect_tooltip = MAR_vyt_oper_small_w_tt
+		}
+		if = { 
+			limit = { check_variable = { MAR_Okhranka_power > 75 } }
+			custom_effect_tooltip = MAR_vyt_oper_fail_tt
+		}
 		hidden_effect = {
 			if = { 
-				custom_effect_tooltip = MAR_vyt_oper_total_w_tt
 				limit = { check_variable = { MAR_Okhranka_power < 25 } }
 				country_event = { id = MAR_initial.24 days = 3 }
 			}
 			if = { 
-				custom_effect_tooltip = MAR_vyt_oper_small_w_tt
 				limit = {
 					check_variable = { MAR_Okhranka_power < 75 }
 					NOT = { check_variable = { MAR_Okhranka_power < 25 } }
@@ -213,7 +226,6 @@ shared_focus = {
 				country_event = { id = MAR_initial.25 days = 4 }
 			}
 			if = { 
-				custom_effect_tooltip = MAR_vyt_oper_fail_tt
 				limit = { check_variable = { MAR_Okhranka_power > 75 } }
 				country_event = { id = MAR_initial.27 days = 6 }
 			}
@@ -888,14 +900,27 @@ shared_focus = {
 	y = 5
 	completion_reward = {
 		custom_effect_tooltip = MAR_check_vyatka_vibe_tt
+		if = { 
+			limit = { check_variable = { MAR_Okhranka_power < 25 } }
+			custom_effect_tooltip = MAR_vyt_oper_total_w_tt
+		}
+		if = { 
+			limit = {
+				check_variable = { MAR_Okhranka_power < 75 }
+				NOT = { check_variable = { MAR_Okhranka_power < 25 } }
+			}
+			custom_effect_tooltip = MAR_vyt_oper_small_w_tt
+		}
+		if = { 
+			limit = { check_variable = { MAR_Okhranka_power > 75 } }
+			custom_effect_tooltip = MAR_vyt_oper_fail_tt
+		}
 		hidden_effect = {
 			if = { 
-				custom_effect_tooltip = MAR_vyt_oper_total_w_tt
 				limit = { check_variable = { MAR_Okhranka_power < 25 } }
 				country_event = { id = MAR_initial.48 days = 3 }
 			}
 			if = { 
-				custom_effect_tooltip = MAR_vyt_oper_small_w_tt
 				limit = {
 					check_variable = { MAR_Okhranka_power < 75 } 
 					NOT = { check_variable = { MAR_Okhranka_power < 25 } } 
@@ -903,7 +928,6 @@ shared_focus = {
 				country_event = { id = MAR_initial.49 days = 4 }
 			}
 			if = { 
-				custom_effect_tooltip = MAR_vyt_oper_fail_tt
 				limit = { check_variable = { MAR_Okhranka_power > 75 } }
 				country_event = { id = MAR_initial.50 days = 6 }
 			}

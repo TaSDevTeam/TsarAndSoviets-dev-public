@@ -45,6 +45,10 @@ country_event = { # Gov't couped, eks dee
 					limit = { MAR = { has_government = despotism } }
 					TaS_WRW2_German_Collapse_Beloozersky = yes
 				}
+				else_if = {
+					limit = { MAR = { has_government = socialist } }
+					TaS_WRW2_German_Collapse_Kosygin = yes
+				}
 				TaS_WRW2_total_capitulation = yes
 			}
 			#set_country_flag = TNO_closing_screen_show
@@ -234,11 +238,13 @@ country_event = { # rip pro-german balkans and several colonies
 				limit = {
 					is_in_faction_with = GER
 					NOT = { is_puppet_of = GER }
+					NOT = { tag = GER }
 				}
-				white_peace = MAR
+				white_peace = RUS
 				leave_faction = yes
 				econ_leave_sphere = yes
 			}		
+			RUS = { TaS_WRW2_total_capitulation = yes }
 			ZZZ = {
 				country_event = { id = TaS_GERcollapse.5 days = 2 }
 			}
@@ -247,7 +253,7 @@ country_event = { # rip pro-german balkans and several colonies
 }
 
 country_event = { # rebbbelsus
-	id = TaS_GERcollapse.5
+	id = TaS_GERcollapse.5															
 	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_GERcollapse.5" }
 	title = TaS_GERcollapse.5.t
 	desc = TaS_GERcollapse.5.desc
@@ -343,7 +349,6 @@ country_event = { # f
 			else = {
 				TaS_WRW2_German_Collapse_Kosygin = yes
 			}
-			TaS_WRW2_total_capitulation = yes
 			hidden_effect = {
 				every_country  = {
 					news_event = {
@@ -1716,6 +1721,7 @@ country_event = { #-kazakhstan
 				long_name = PAV_MAR_collapse_party_long
 				name = PAV_MAR_collapse_party
 			}			
+			add_ideas = TaS_Post2WRW_PAV_steppe_riches
 			set_variable = {
 				TNO_economy_type = token:Econ_Type_Capitalism
 			}
@@ -2190,6 +2196,7 @@ country_event = { #F dv 2
 			add_ideas = {
 				OFN_Observer
 				TaS_Post2WRW_SIB_japanese_paranoia
+				TaS_Post2WRW_YAK_earth_riches
 			}
 			econ_join_sphere_USA = yes 
 			load_focus_tree = shattered_ambitions
@@ -2374,6 +2381,7 @@ country_event = { #F Ural
 				ideology = fascism
 				popularity = 0.45
 			}
+			add_ideas = TaS_Post2WRW_OMS_mountain_king
 			load_focus_tree = shattered_ambitions
 			add_country_leader_role = {
 				character = MAR_Vladimir_Gil
@@ -2417,6 +2425,7 @@ country_event = { #F Ural
 				ideology = paternalism
 				popularity = 0.45
 			}
+			add_ideas = TaS_Post2WRW_TYM_cornered_by_madmen
 			load_focus_tree = shattered_ambitions
 			add_country_leader_role = {
 				character = MAR_Evgeny_Primakov
@@ -2523,7 +2532,10 @@ country_event = { #Total f
 				long_name = KOM_MAR_collapse_party_long
 				name = KOM_MAR_collapse_party
 			}
-			add_ideas = TaS_Post2WRW_WSR_fourth_time_a_row
+			add_ideas = {
+				TaS_Post2WRW_WSR_fourth_time_a_row
+				TaS_Post2WRW_KOM_bandit_oprichina
+			}
 			set_variable = {
 				TNO_economy_type = token:Econ_Type_Corporatism
 				TNO_economy_subtype = token:Econ_Subtype_Dirigisme
@@ -2561,10 +2573,16 @@ country_event = { #Total f
 				ideology = paternalism
 				popularity = 0.45
 			}
-			add_ideas = TaS_Post2WRW_WSR_fourth_time_a_row
+			add_ideas = {
+				TaS_Post2WRW_WSR_fourth_time_a_row
+				TaS_Post2WRW_TAR_union_of_enemies
+			}
 			set_variable = {
 				TNO_economy_type = token:Econ_Type_Capitalism
 			}
+		}
+		MAR = {
+			add_ideas = TaS_Post2WRW_MAR_capital_of_broken_hopes
 		}
 		clear_global_event_target = RUS_western_unifier
 		clear_global_event_target = RUS_west_siberia_unifier
