@@ -2595,7 +2595,7 @@ TaS_2WRW_spawn_France = {
 		transfer_state = 1734
 		transfer_state = 6
 		if = {
-			GLC = { exists = yes }
+			limit = { GLC = { exists = yes } }
 			annex_country = {
 				target = GLC
 				transfer_troops = no
