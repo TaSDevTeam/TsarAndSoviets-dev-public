@@ -585,7 +585,12 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			news_event = { id = MAR_2WRW_world_news.11 hours = 6}
 		}
 		if = {
-			limit = { GER = { owns_state = 1734 } }
+			limit = {
+				OR = {
+					GER = { owns_state = 29 }
+					GLC = { owns_state = 29 }
+				}
+			}
 			TaS_2WRW_spawn_France = yes
 		}
 		GPL = {
@@ -644,14 +649,17 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 		}
 		GRH = {
 			econ_join_sphere_MAR = yes
-			transfer_state = 28
 			transfer_state = 42
 			transfer_state = 51
 			transfer_state = 8
 			transfer_state = 1809
 			transfer_state = 1810
 			transfer_state = 1811
-			transfer_state = 1812
+			if = {
+				limit = { NOT = { has_global_flag = POSTGER_FRANCE } }
+				transfer_state = 1812
+				transfer_state = 28
+			}
 			every_owned_state = {
 				GRH = {
 					add_state_core = PREV
@@ -726,7 +734,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			econ_join_sphere_MAR = yes
 			transfer_state = 71
 			transfer_state = 70
-			transfer_state = 664
+			#transfer_state = 664
 			transfer_state = 1762
 			transfer_state = 1763
 			every_owned_state = {
@@ -827,7 +835,12 @@ TaS_WRW2_German_Collapse_Kosygin = {
 	custom_effect_tooltip = TaS_WRW2_PEACE_TOTAL_TOOLTIP
 	hidden_effect = {
 		if = {
-			limit = { GER = { owns_state = 1734 } }
+			limit = {
+				OR = {
+					GER = { owns_state = 29 }
+					GLC = { owns_state = 29 }
+				}
+			}
 			TaS_2WRW_spawn_France = yes
 		}
 		ZNE = {
@@ -922,8 +935,11 @@ TaS_WRW2_German_Collapse_Kosygin = {
 			transfer_state = 42
 			
 			transfer_state = 1811
-			transfer_state = 28
-			transfer_state = 1812
+			if = {
+				limit = { NOT = { has_global_flag = POSTGER_FRANCE } }
+				transfer_state = 1812
+				transfer_state = 28
+			}
 			set_politics = {
 				ruling_party = progressivism
 			}
@@ -2569,8 +2585,24 @@ TaS_WRW2_check_the_exhausion = {
 
 TaS_2WRW_spawn_France = { 
 	GFR = {
+		transfer_state = 17
+		transfer_state = 28
+		transfer_state = 1812
+		transfer_state = 18
+		transfer_state = 1733
+		transfer_state = 29
+		transfer_state = 34
 		transfer_state = 1734
+		transfer_state = 6
+		if = {
+			GLC = { exists = yes }
+			annex_country = {
+				target = GLC
+				transfer_troops = no
+			}
+		}
 		econ_join_sphere_MAR = yes
 	}
+	set_global_flag = POSTGER_FRANCE
 
 }
