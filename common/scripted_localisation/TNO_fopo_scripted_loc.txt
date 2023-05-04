@@ -249,6 +249,12 @@ defined_text = {
 	# 	localization_key = ""
 	# }
 	text = {
+		trigger = {
+			check_variable = { TNO_active_conflicts^num = 0 }
+		}
+		localization_key = "TNO_fopo_no_conflict"
+	}
+	text = {
 		localization_key = "TNO_fopo_generic_conflict"
 	}
 }
