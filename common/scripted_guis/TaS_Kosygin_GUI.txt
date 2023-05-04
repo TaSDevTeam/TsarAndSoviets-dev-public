@@ -217,13 +217,17 @@ scripted_gui = {
 			}
 			MAR_antiprestol_decision_operation_one_click = {
 				MAR_Prestol_set_the_event_one = yes
-				add_to_variable = { MAR_Had_RecentAction = 1 }
 				add_command_power = -20
+				var:insurgency_state_selected = {
+					add_to_variable = { MAR_Had_RecentAction = 1 }
+				}
 			}
 			MAR_antiprestol_decision_operation_two_click = {
-				MAR_Prestol_set_the_event_two = yes
-				add_to_variable = { MAR_Had_RecentAction = 1 }
+				MAR_Prestol_set_the_event_two = yes				
 				add_command_power = -15
+				var:insurgency_state_selected = {
+					add_to_variable = { MAR_Had_RecentAction = 1 }
+				}
 			}
 		}
 		properties = {
