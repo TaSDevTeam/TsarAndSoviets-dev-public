@@ -792,11 +792,15 @@
  TaS_2WRW_mechanics_tt:0 "§RНачалось§! \n\nМы начали эту войну, и теперь, наша важнейшая задача - разгром немецких армий и полный возврат всех оккупированных территорий. Мы должны действовать быстро и успевать захватывать регионы до того, как вырастет §eистощение§!. \n\n§eИстощение§! - показатель усталости народа и государственной машины от войны. После преодоления рубежа в 30% §eистощения§!, усталось начнёт выливаться в серьёзные проблемы. Чем выше §eистощение§!, тем сильнее становятся эти самые проблемы. Если мы сможем довести показатель §eистощения§! достаточно высоко - немцы будут согласны на §Gболее лучшие§! для нас условия мира. §eНо это может работать и в обратную сторону§!."
  
  TaS_2WRW_exhaustion_title:0 "£war_exhaustion_icon Истощение в войне"
- TaS_WRW2_exhausion_modifier:0 "Апофеоз войны"
+ TaS_WRW2_exhausion_modifier_GER:0 "Апофеоз войны"
+ TaS_WRW2_exhausion_modifier_RUS:0 "Апофеоз войны"
  
- russian_title_loc:0 "§Y[MAR.GetNameDef]§! [MAR.GetFlag]"
+ russian_title_loc:0 "§Y[RUS.GetNameDef]§! [RUS.GetFlag]"
+ TaS_RUS_war_exhaustion_info_tt:0 "Текущий уровень §Bрусского§! военного истощения: [?RUS.WRW2_devastation]%\n-------------\nЭто даёт следующие негативные последствия:\n\nПрирост политической власти: [?RUS.WRW2_exhausion_political_power_factor|R%]\nОрганизация дивизий: [?RUS.WRW2_exhausion_army_org_factor|R%]\nСкорость строительства: [?RUS.WRW2_exhausion_production_speed_buildings_factor|R%]\nБазовая эффективность производства: [?RUS.WRW2_exhausion_production_factory_start_efficiency_factor|R%]\nАтака дивизий: [?RUS.WRW2_exhausion_army_attack_factor|R%]\nЗащита дивизий: [?RUS.WRW2_exhausion_army_defence_factor|R%]\nОбъём заводского производства: [?RUS.WRW2_exhausion_industrial_capacity_factory|R%]\nСкорость пополнения: [?RUS.WRW2_exhausion_land_reinforce_rate|R%]\nНужно гарнизонов: [?RUS.WRW2_exhausion_required_garrison_factor|G%]\nВоеннообязанное население: [?RUS.WRW2_exhausion_recruitable_population_factor|R%]\nНалогооблагаемое население: [?RUS.WRW2_exhausion_taxable_population_modifier|R%]"
+ 
  german_title_loc:0 "[GER.GetFlag] §Y[GER.GetName]§!"
- 
+ TaS_GER_war_exhaustion_info_tt:0 "Текущий уровень §gнемецкого§! военного истощения: [?GER.WRW2_devastation]%\n-------------\nЭто даёт следующие негативные последствия:\n\nПрирост политической власти:   [?GER.WRW2_exhausion_political_power_factor|R%]\nОрганизация дивизий: [?GER.WRW2_exhausion_army_org_factor|R%]\nСкорость строительства: [?GER.WRW2_exhausion_production_speed_buildings_factor|R%]\nБазовая эффективность производства: [?GER.WRW2_exhausion_production_factory_start_efficiency_factor|R%]\nАтака дивизий: [?GER.WRW2_exhausion_army_attack_factor|R%]\nЗащита дивизий: [?GER.WRW2_exhausion_army_defence_factor|R%]\nОбъём заводского производства: [?GER.WRW2_exhausion_industrial_capacity_factory|R%]\nСкорость пополнения: [?GER.WRW2_exhausion_land_reinforce_rate|R%]\nНужно гарнизонов: [?GER.WRW2_exhausion_required_garrison_factor|R%]\nВоеннообязанное население: [?GER.WRW2_exhausion_recruitable_population_factor|R%]\nНалогооблагаемое население: [?GER.WRW2_exhausion_taxable_population_modifier|R%]"
+    
  frontlines_button_name:0 "Передовая"
  frontlines_desc_tt:0 "Показать возможности на фронте"
  

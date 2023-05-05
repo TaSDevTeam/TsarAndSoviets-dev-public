@@ -801,7 +801,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			transfer_state = 5
 			transfer_state = 85
 			every_owned_state = {
-				GNR = {
+				PUS = {
 					add_state_core = PREV
 				}
 			}
@@ -833,16 +833,18 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 				GEX = {
 				    annex_country = {
 				        target = GER
-				        ransfer_troops = no
+				        transfer_troops = no
 			        }
 			        annex_country = {
 				        target = MAD
-				        ransfer_troops = no
+				        transfer_troops = no
 			        }
 					every_owned_state = {
-				        add_state_core = GEX
+						GEX = {
+							add_state_core = PREV
+						}
 				    }
-					set_capital = 945
+					set_capital = { state = 945 }
 				}	
 		
 			}
@@ -857,20 +859,22 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 				GEX = {
 				    annex_country = {
 				        target = GER
-				        ransfer_troops = no
+				        transfer_troops = no
 			        }
 			        annex_country = {
 				        target = GRO
-				        ransfer_troops = no
+				        transfer_troops = no
 			        }
 					annex_country = {
 				        target = COG
 				        transfer_troops = no
 			        }
 					every_owned_state = {
-				        add_state_core = GEX
+				        GEX = {
+							add_state_core = PREV
+						}
 				    }
-					set_capital = 295
+					set_capital = { state = 295 }
 				}	
 			}
 		}
@@ -887,11 +891,11 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 				GEX = {
 				    annex_country = {
 				        target = GER
-				        ransfer_troops = no
+				        transfer_troops = no
 			        }
 			        annex_country = {
 				        target = GRO
-				        ransfer_troops = no
+				        transfer_troops = no
 			        }
 					annex_country = {
 				        target = COG
@@ -901,9 +905,11 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 				        target = MAD
 				        transfer_troops = no
 			        }
-					set_capital = 295
+					set_capital = { state = 295 }
 					every_owned_state = {
-				        add_state_core = GEX
+				        GEX = {
+							add_state_core = PREV
+						}
 				    }
 				}	
 			}
@@ -914,9 +920,11 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 				    target = GER
 				    transfer_troops = no
 			    }
-                set_capital = 707	
+                set_capital = { state = 707 }
                 every_owned_state = {
-				    add_state_core = GEX
+				    GEX = {
+						add_state_core = PREV
+					}
 				}				
 			}
 		}
@@ -1262,18 +1270,18 @@ TaS_WRW2_German_Collapse_Kosygin = {
 				GEX = {
 				    annex_country = {
 				        target = GER
-				        ransfer_troops = no
+				        transfer_troops = no
 			        }
 			        annex_country = {
 				        target = MAD
-				        ransfer_troops = no
+				        transfer_troops = no
 			        }
 					every_owned_state = {
 				        GEX = {
 					        add_state_core = PREV
 				        }       
 			        }
-					set_capital = 945
+					set_capital = { state = 945 }
 				}	
 		
 			}
@@ -1288,11 +1296,11 @@ TaS_WRW2_German_Collapse_Kosygin = {
 				GEX = {
 				    annex_country = {
 				        target = GER
-				        ransfer_troops = no
+				        transfer_troops = no
 			        }
 			        annex_country = {
 				        target = GRO
-				        ransfer_troops = no
+				        transfer_troops = no
 			        }
 					annex_country = {
 				        target = COG
@@ -1303,7 +1311,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 					        add_state_core = PREV
 				        }       
 			        }
-					set_capital = 295
+					set_capital = { state = 295 }
 				}	
 			}
 		}
@@ -1320,11 +1328,11 @@ TaS_WRW2_German_Collapse_Kosygin = {
 				GEX = {
 				    annex_country = {
 				        target = GER
-				        ransfer_troops = no
+				        transfer_troops = no
 			        }
 			        annex_country = {
 				        target = GRO
-				        ransfer_troops = no
+				        transfer_troops = no
 			        }
 					annex_country = {
 				        target = COG
@@ -1334,7 +1342,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 				        target = MAD
 				        transfer_troops = no
 			        }
-					set_capital = 295
+					set_capital = { state = 295 }
 					every_owned_state = {
 				        GEX = {
 					        add_state_core = PREV
@@ -1349,7 +1357,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 				    target = GER
 				    transfer_troops = no
 			    }
-                set_capital = 707	
+                set_capital = { state = 707 }	
                 every_owned_state = {
 				    GEX = {
 					    add_state_core = PREV
@@ -2747,27 +2755,54 @@ TaS_WRW2_check_the_exhausion = {
 	if = {
 		limit = {
 			check_variable = { ROOT.WRW2_devastation > 30 }
-			NOT = { has_dynamic_modifier = { modifier = TaS_WRW2_exhausion_modifier } } 
+			NOT = {
+				OR = {
+					has_dynamic_modifier = { modifier = TaS_WRW2_exhausion_modifier_GER }
+					has_dynamic_modifier = { modifier = TaS_WRW2_exhausion_modifier_RUS }
+				}
+			} 
 		}
-		add_dynamic_modifier = { modifier = TaS_WRW2_exhausion_modifier } 
-		set_variable = { WRW2_exhausion_army_org_factor = 0 }
-		set_variable = { WRW2_exhausion_land_reinforce_rate = 0 }
-		set_variable = { WRW2_exhausion_political_power_factor = 0 } 
-		set_variable = { WRW2_exhausion_industrial_capacity_factory = 0 }
-		set_variable = { WRW2_exhausion_production_factory_start_efficiency_factor = 0 }
-		set_variable = { WRW2_exhausion_required_garrison_factor = 0 }
-		set_variable = { WRW2_exhausion_army_attack_factor = 0 }
-		set_variable = { WRW2_exhausion_army_defence_factor = 0 }
-		set_variable = { WRW2_exhausion_production_speed_buildings_factor = 0 }
-		set_variable = { WRW2_exhausion_taxable_population_modifier = 0 }
-		set_variable = { WRW2_exhausion_recruitable_population_factor = 0 }
+		if = {
+			limit = { tag = GER } 
+			add_dynamic_modifier = { modifier = TaS_WRW2_exhausion_modifier_GER } 
+			set_variable = { WRW2_exhausion_army_org_factor = 0 }
+			set_variable = { WRW2_exhausion_land_reinforce_rate = 0 }
+			set_variable = { WRW2_exhausion_political_power_factor = 0 } 
+			set_variable = { WRW2_exhausion_industrial_capacity_factory = 0 }
+			set_variable = { WRW2_exhausion_production_factory_start_efficiency_factor = 0 }
+			set_variable = { WRW2_exhausion_required_garrison_factor = 0 }
+			set_variable = { WRW2_exhausion_army_attack_factor = 0 }
+			set_variable = { WRW2_exhausion_army_defence_factor = 0 }
+			set_variable = { WRW2_exhausion_production_speed_buildings_factor = 0 }
+			set_variable = { WRW2_exhausion_taxable_population_modifier = 0 }
+			set_variable = { WRW2_exhausion_recruitable_population_factor = 0 }
+			TaS_WRW2_recount_exhausion_modifier_GER = yes
+		}
+		if = {
+			limit = { tag = RUS } 
+			add_dynamic_modifier = { modifier = TaS_WRW2_exhausion_modifier_RUS } 
+			set_variable = { WRW2_exhausion_army_org_factor = 0 }
+			set_variable = { WRW2_exhausion_land_reinforce_rate = 0 }
+			set_variable = { WRW2_exhausion_political_power_factor = 0 } 
+			set_variable = { WRW2_exhausion_industrial_capacity_factory = 0 }
+			set_variable = { WRW2_exhausion_production_factory_start_efficiency_factor = 0 }
+			set_variable = { WRW2_exhausion_required_garrison_factor = 0 }
+			set_variable = { WRW2_exhausion_army_attack_factor = 0 }
+			set_variable = { WRW2_exhausion_army_defence_factor = 0 }
+			set_variable = { WRW2_exhausion_production_speed_buildings_factor = 0 }
+			set_variable = { WRW2_exhausion_taxable_population_modifier = 0 }
+			set_variable = { WRW2_exhausion_recruitable_population_factor = 0 }
+			TaS_WRW2_recount_exhausion_modifier_RUS = yes
+		}
 			
-		TaS_WRW2_recount_exhausion_modifier = yes
 	}
 	if = {
 		limit = {
 			check_variable = { ROOT.WRW2_devastation > 30 }
-			has_dynamic_modifier = { modifier = TaS_WRW2_exhausion_modifier }
+			OR = {
+				has_dynamic_modifier = { modifier = TaS_WRW2_exhausion_modifier_GER }
+				has_dynamic_modifier = { modifier = TaS_WRW2_exhausion_modifier_RUS }
+			}
 		}
 		TaS_WRW2_recount_exhausion_modifier = yes
 	}
