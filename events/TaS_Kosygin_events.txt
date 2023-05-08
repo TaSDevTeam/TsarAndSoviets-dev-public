@@ -1086,7 +1086,7 @@ country_event = {#the letter
 		ai_chance = { factor = 1 }	
 	}
 }
-country_event = {#
+country_event = {#order stuff
 	id = MAR_Kosygin.68
 	title = MAR_Kosygin.68.t
 	desc = MAR_Kosygin.68.d
@@ -1099,7 +1099,7 @@ country_event = {#
 	}
 }
 
-country_event = {#
+country_event = {#order stuff
 	id = MAR_Kosygin.69
 	title = MAR_Kosygin.69.t
 	desc = MAR_Kosygin.69.d
@@ -1109,6 +1109,397 @@ country_event = {#
 	option = {
 		name = MAR_Kosygin.69.a
 		ai_chance = { factor = 1 }	
+	}
+}
+
+country_event = { #Good catch
+	id = MAR_Kosygin.70
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.70" }
+	title = MAR_Kosygin.70.t
+	desc = MAR_Kosygin.70.d
+	picture = GFX_event_MAR_Kosygin_70
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin.70.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = MAR_Kosygin.71
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.71" }
+	title = MAR_Kosygin.71.t
+	desc = MAR_Kosygin.71.d
+	picture = GFX_event_MAR_Kosygin_71
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin.71.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = MAR_Kosygin.72
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.72" }
+	title = MAR_Kosygin.72.t
+	desc = MAR_Kosygin.72.d
+	picture = GFX_event_MAR_Kosygin_72
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin.72.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = MAR_Kosygin.73
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.73" }
+	title = MAR_Kosygin.73.t
+	desc = MAR_Kosygin.73.d
+	picture = GFX_event_MAR_Kosygin_73
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin.73.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = MAR_Kosygin.74
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.74" }
+	title = MAR_Kosygin.74.t
+	desc = MAR_Kosygin.74.d
+	picture = GFX_event_MAR_Kosygin_74
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin.74.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = MAR_Kosygin.75
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.75" }
+	title = MAR_Kosygin.75.t
+	desc = MAR_Kosygin.75.d
+	picture = GFX_event_MAR_Kosygin_75
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin.75.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = MAR_Kosygin.76
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.76" }
+	title = MAR_Kosygin.76.t
+	desc = MAR_Kosygin.76.d
+	picture = GFX_event_MAR_Kosygin_76
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin.76.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = MAR_Kosygin.77
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.77" }
+	title = MAR_Kosygin.77.t
+	desc = MAR_Kosygin.77.d
+	picture = GFX_event_MAR_Kosygin_77
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin.77.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = MAR_Kosygin.78
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.78" }
+	title = MAR_Kosygin.78.t
+	desc = MAR_Kosygin.78.d
+	picture = GFX_event_MAR_Kosygin_78
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin.78.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = MAR_Kosygin.79
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.79" }
+	title = MAR_Kosygin.79.t
+	desc = MAR_Kosygin.79.d
+	picture = GFX_event_MAR_Kosygin_79
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin.79.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = MAR_Kosygin.80
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.80" }
+	title = MAR_Kosygin.80.t
+	desc = MAR_Kosygin.80.d
+	picture = GFX_event_MAR_Kosygin_80
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin.80.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = MAR_Kosygin.81
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.81" }
+	title = MAR_Kosygin.81.t
+	desc = MAR_Kosygin.81.d
+	picture = GFX_event_MAR_Kosygin_81
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin.81.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = MAR_Kosygin.82
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.82" }
+	title = MAR_Kosygin.82.t
+	desc = MAR_Kosygin.82.d
+	picture = GFX_event_MAR_Kosygin_82
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin.82.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = MAR_Kosygin.83
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.83" }
+	title = MAR_Kosygin.83.t
+	desc = MAR_Kosygin.83.d
+	picture = GFX_event_MAR_Kosygin_83
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin.83.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = MAR_Kosygin.84
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.84" }
+	title = MAR_Kosygin.84.t
+	desc = MAR_Kosygin.84.d
+	picture = GFX_event_MAR_Kosygin_84
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin.84.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = MAR_Kosygin.85
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.85" }
+	title = MAR_Kosygin.85.t
+	desc = MAR_Kosygin.85.d
+	picture = GFX_event_MAR_Kosygin_85
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin.85.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = MAR_Kosygin.86
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.86" }
+	title = MAR_Kosygin.86.t
+	desc = MAR_Kosygin.86.d
+	picture = GFX_event_MAR_Kosygin_86
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin.86.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = MAR_Kosygin.87
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.87" }
+	title = MAR_Kosygin.87.t
+	desc = MAR_Kosygin.87.d
+	picture = GFX_event_MAR_Kosygin_87
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin.87.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = MAR_Kosygin.88
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.88" }
+	title = MAR_Kosygin.88.t
+	desc = MAR_Kosygin.88.d
+	picture = GFX_event_MAR_Kosygin_88
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin.88.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = MAR_Kosygin.89
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.89" }
+	title = MAR_Kosygin.89.t
+	desc = MAR_Kosygin.89.d
+	picture = GFX_event_MAR_Kosygin_89
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin.89.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = MAR_Kosygin.90
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.90" }
+	title = MAR_Kosygin.90.t
+	desc = MAR_Kosygin.90.d
+	picture = GFX_event_MAR_Kosygin_90
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin.90.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = MAR_Kosygin.91
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.91" }
+	title = MAR_Kosygin.91.t
+	desc = MAR_Kosygin.91.d
+	picture = GFX_event_MAR_Kosygin_91
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin.91.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = MAR_Kosygin.92
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.92" }
+	title = MAR_Kosygin.92.t
+	desc = MAR_Kosygin.92.d
+	picture = GFX_event_MAR_Kosygin_92
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin.92.a
+		ai_chance = { factor = 1 }
+		
 	}
 }
 

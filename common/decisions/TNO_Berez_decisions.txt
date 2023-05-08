@@ -1592,7 +1592,7 @@ MAR_Order_category = {
 		}
 	}
 	MAR_Order_Army_Integration = {
-		icon = GFX_decision_generic_shake_hands
+		icon = GFX_order_army
 		fire_only_once = yes
 		visible = {
 			always = yes
@@ -1647,7 +1647,7 @@ MAR_Order_category = {
 		}
 	}
 	MAR_Order_New_Church = {
-		icon = GFX_decision_generic_shake_hands
+		icon = GFX_new_mladorossi_church
 		fire_only_once = yes
 		visible = {
 			always = yes
@@ -1676,7 +1676,7 @@ MAR_Order_category = {
 	}
 	###Belozerskiy unique stuff###
 	MAR_Order_Expand_Order = {
-		icon = GFX_decision_generic_shake_hands
+		icon = GFX_generic_church
 		fire_only_once = yes
 		visible = {
 			has_country_leader = {
@@ -1698,7 +1698,7 @@ MAR_Order_category = {
 		}
 	}
 	MAR_Order_Military_Squads = {
-		icon = GFX_decision_generic_shake_hands
+		icon = GFX_order_squads
 		fire_only_once = yes
 		visible = {
 			has_country_leader = {
@@ -1721,7 +1721,7 @@ MAR_Order_category = {
 		}
 	}
 	MAR_Order_Best_Among_Best = {
-		icon = GFX_decision_generic_shake_hands
+		icon = GFX_best_amonst_best
 		fire_only_once = yes
 		visible = {
 			has_country_leader = {
@@ -1741,7 +1741,7 @@ MAR_Order_category = {
 	}
 	
 	MAR_Order_Forges = {
-		icon = GFX_decision_generic_shake_hands
+		icon = GFX_order_forges
 		fire_only_once = yes
 		visible = {
 			has_country_leader = {
@@ -1767,7 +1767,7 @@ MAR_Order_category = {
 	}
 	
 	MAR_Order_South_Ural_Special_Zone = {
-		icon = GFX_decision_generic_shake_hands
+		icon = GFX_south_ural_order
 		fire_only_once = yes
 		visible = {
 			has_country_leader = {
@@ -1864,7 +1864,7 @@ MAR_Order_category = {
 	}
 	
 	MAR_Order_templar_factories = {
-		icon = GFX_decision_generic_shake_hands
+		icon = GFX_order_forges
 		fire_only_once = yes
 		visible = {
 			has_country_leader = {
@@ -1888,7 +1888,7 @@ MAR_Order_category = {
 		}
 	}
 	MAR_Order_battle_priests = {
-		icon = GFX_decision_generic_shake_hands
+		icon = GFX_decision_holy_icons
 		fire_only_once = yes
 		visible = {
 			has_country_leader = {
@@ -1913,7 +1913,7 @@ MAR_Order_category = {
 	}
 	
 	MAR_Order_kazakh_mission = {
-		icon = GFX_decision_generic_shake_hands
+		icon = GFX_kazakh_order
 		fire_only_once = yes
 		visible = {
 			has_completed_focus = MAR_comeback_step
@@ -1927,7 +1927,7 @@ MAR_Order_category = {
 	}
 	###Kosygin unique
 	MAR_Order_new_purpose = {
-		icon = GFX_decision_generic_shake_hands
+		icon = GFX_generic_church
 		fire_only_once = yes
 		visible = {
 			has_country_leader = {
@@ -1981,7 +1981,7 @@ MAR_Order_category = {
 		}
 	}
 	MAR_Order_allseeing_eye = {
-		icon = GFX_decision_generic_shake_hands
+		icon = GFX_decision_generic_CCTV
 		fire_only_once = yes
 		visible = {
 			has_country_leader = {
@@ -2008,7 +2008,7 @@ MAR_Order_category = {
 		}
 	}
 	MAR_Order_medical_order = {
-		icon = GFX_decision_generic_shake_hands
+		icon = GFX_decision_generic_building_hospital
 		fire_only_once = yes
 		visible = {
 			has_country_leader = {
@@ -2034,7 +2034,7 @@ MAR_Order_category = {
 		}
 	}
 	MAR_Order_we_are_all_brothers = {
-		icon = GFX_decision_generic_shake_hands
+		icon = GFX_decision_generic_russia
 		fire_only_once = yes
 		visible = {
 			has_country_leader = {
@@ -2062,7 +2062,7 @@ MAR_Order_category = {
 	}
 	
 	MAR_Order_cooperation_with_locals = {
-		icon = GFX_decision_generic_shake_hands
+		icon = GFX_kazakh_order
 		fire_only_once = yes
 		visible = {
 			has_country_leader = {
@@ -2240,7 +2240,7 @@ MAR_ogas_deccat = {
 	}
 	
 	MAR_ogas_first_spying_for_superpowers = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_unknown
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 1 }
 		}
@@ -2301,7 +2301,7 @@ MAR_ogas_deccat = {
 	}
 	
 	MAR_ogas_first_trip_to_guandong = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_unknown
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 1 }
 		}
@@ -2434,7 +2434,7 @@ MAR_ogas_deccat = {
 	}
 	
 	MAR_ogas_first_sort_the_designs = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_guangdong_data
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 1 }
 		}
@@ -2706,7 +2706,7 @@ MAR_ogas_deccat = {
 	}
 		
 	MAR_ogas_third_cybergrad_kazan = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_terrain_urban
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 3 }	
 		}
