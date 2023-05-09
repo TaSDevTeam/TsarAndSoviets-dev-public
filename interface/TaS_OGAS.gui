@@ -25,7 +25,7 @@ guiTypes = {
 			iconType = {
 				name = "MAR_OGAS_designstage_frame"
 				position = { x = -2 y = -2 }
-				spriteType = "GFX_MAR_OGAS_frame"
+				spriteType = "GFX_MAR_OGAS_stage_one"
 				pdx_tooltip = MAR_designstage_tt
 				pdx_tooltip_delayed = MAR_designstage_tt_desc
 			}
@@ -44,13 +44,18 @@ guiTypes = {
 				format = centre
 				maxWidth = 130
 			}
-			instantTextBoxType = { 
+			instantTextBoxType = {
 				name = "MAR_OGAS_designstage_progress_text"
 				position = { x = 0 y = 54 }
 				text = MAR_OGAS_designstage_progress_txt
 				font = "aldrich_36_outline"
 				format = centre
 				maxWidth = 130
+			}
+			iconType = {
+				name = "MAR_OGAS_current_stage_one"
+				position = { x = -4 y = -4 }
+				spriteType = "GFX_OGAS_is_current_stage"
 			}
 		}
 		containerWindowType = {
@@ -60,7 +65,7 @@ guiTypes = {
 			iconType = {
 				name = "MAR_OGAS_prepstage_frame"
 				position = { x = -2 y = -2 }
-				spriteType = "GFX_MAR_OGAS_frame"
+				spriteType = "GFX_MAR_OGAS_stage_two"
 				pdx_tooltip = MAR_devstage_tt
 				pdx_tooltip_delayed = MAR_devstage_tt_desc
 			}
@@ -88,6 +93,12 @@ guiTypes = {
 				format = centre
 				maxWidth = 130
 			}
+			
+			iconType = {
+				name = "MAR_OGAS_current_stage_two"
+				position = { x = -4 y = -4 }
+				spriteType = "GFX_OGAS_is_current_stage"
+			}
 			#iconType = {
 			#	name = "OGAS_stage_two_lock"
 			#	position = { x = -2 y = -2 }
@@ -95,6 +106,11 @@ guiTypes = {
 			#	pdx_tooltip = OGAS_stage_not_started
 			#	pdx_tooltip_delayed = OGAS_stage_not_started_desc
 			#}
+			iconType = {
+				name = "MAR_OGAS_current_stage_two"
+				position = { x = -2 y = -2 }
+				spriteType = "GFX_OGAS_is_current_stage"
+			}
 		}
 		containerWindowType = {
 			name = "MAR_OGAS_development_stage_container"
@@ -103,7 +119,7 @@ guiTypes = {
 			iconType = {
 				name = "MAR_OGAS_devstage_frame"
 				position = { x = -2 y = -2 }
-				spriteType = "GFX_MAR_OGAS_frame"
+				spriteType = "GFX_MAR_OGAS_stage_three"
 				pdx_tooltip = MAR_devstage_tt
 				pdx_tooltip_delayed = MAR_devstage_tt_desc
 			}
@@ -130,7 +146,11 @@ guiTypes = {
 				format = centre
 				maxWidth = 130
 			}
-			
+			iconType = {
+				name = "MAR_OGAS_current_stage_three"
+				position = { x = -4 y = -4 }
+				spriteType = "GFX_OGAS_is_current_stage"
+			}
 		}
 		containerWindowType = {
 			name = "MAR_OGAS_testing_stage_container"
@@ -139,7 +159,7 @@ guiTypes = {
 			iconType = {
 				name = "MAR_OGAS_teststage_frame"
 				position = { x = -2 y = -2 }
-				spriteType = "GFX_MAR_OGAS_frame"
+				spriteType = "GFX_MAR_OGAS_stage_four"
 				pdx_tooltip = MAR_teststage_tt
 				pdx_tooltip_delayed = MAR_teststage_tt_desc
 			}
@@ -166,6 +186,11 @@ guiTypes = {
 				format = centre
 				maxWidth = 130
 			}
+			iconType = {
+				name = "MAR_OGAS_current_stage_four"
+				position = { x = -4 y = -4 }
+				spriteType = "GFX_OGAS_is_current_stage"
+			}
 		}
 		
 		containerWindowType = {
@@ -175,7 +200,7 @@ guiTypes = {
 			iconType = {
 				name = "MAR_OGAS_intstage_frame"
 				position = { x = -2 y = -2 }
-				spriteType = "GFX_MAR_OGAS_frame"
+				spriteType = "GFX_MAR_OGAS_stage_five"
 				pdx_tooltip = MAR_intstage_tt
 				pdx_tooltip_delayed = MAR_intstage_tt_desc
 			}
@@ -202,6 +227,11 @@ guiTypes = {
 				format = centre
 				maxWidth = 130
 			}
+			iconType = {
+				name = "MAR_OGAS_current_stage_five"
+				position = { x = -4 y = -4 }
+				spriteType = "GFX_OGAS_is_current_stage"
+			}
 		}
 		
 		### stats ###
@@ -226,7 +256,7 @@ guiTypes = {
 			iconType = {
 				name = "MAR_OGAS_safetychar_frame"
 				position = { x = -2 y = -2 }
-				spriteType = "GFX_MAR_OGAS_frame"
+				spriteType = "GFX_MAR_OGAS_stat_one"
 				pdx_tooltip = MAR_safetychar_tt
 				pdx_tooltip_delayed = MAR_safetychar_tt_desc
 			}
@@ -262,7 +292,7 @@ guiTypes = {
 			iconType = {
 				name = "MAR_OGAS_effchar_frame"
 				position = { x = -2 y = -2 }
-				spriteType = "GFX_MAR_OGAS_frame"
+				spriteType = "GFX_MAR_OGAS_stat_two"
 				pdx_tooltip = MAR_effchar_tt
 				pdx_tooltip_delayed = MAR_effchar_tt_desc
 			}
@@ -273,7 +303,7 @@ guiTypes = {
 			#	spriteType = "GFX_SIB_icon_construction_speed"
 			#}
 			
-			instantTextBoxType = { 
+			instantTextBoxType = {
 				name = "MAR_OGAS_effchar_upper_text"
 				position = { x = 0 y = 24 }
 				text = MAR_OGAS_effchar_upper_txt
@@ -297,7 +327,7 @@ guiTypes = {
 			iconType = {
 				name = "MAR_OGAS_compchar_frame"
 				position = { x = -2 y = -2 }
-				spriteType = "GFX_MAR_OGAS_frame"
+				spriteType = "GFX_MAR_OGAS_stat_three"
 				pdx_tooltip = MAR_compchar_tt
 				pdx_tooltip_delayed = MAR_compchar_tt_desc
 			}

@@ -4,11 +4,11 @@ scripted_gui = {
 		window_name = "MAR_OGAS_gui_window_container"
 		#dirty = TNO_legacy_sibplan_dirty
 		triggers = {
-			#OGAS_stage_two_lock_visible = { has_country_flag = MAR_OGAS_stage_two_not_started }
-			#SIB_ring_construction_negative_visible = { check_variable = { SIB_construction_frame < 0.1 } }
-			#SIB_ring_factory_output_positive_visible = { check_variable = { SIB_output_frame > 0 } }
-			#SIB_ring_factory_output_negative_visible = { check_variable = { SIB_output_frame < 0.1 } }
-			#SIB_ring_resource_efficiency_positive_visible = { check_variable = { SIB_resource_frame > 0 } }
+			MAR_OGAS_current_stage_one_visible = { check_variable = { MAR_ogas_current_stage = 1 } }
+			MAR_OGAS_current_stage_two_visible = { check_variable = { MAR_ogas_current_stage = 2 } }
+			MAR_OGAS_current_stage_three_visible = { check_variable = { MAR_ogas_current_stage = 3 } }
+			MAR_OGAS_current_stage_four_visible = { check_variable = { MAR_ogas_current_stage = 4 } }
+			MAR_OGAS_current_stage_five_visible = { check_variable = { MAR_ogas_current_stage = 5 } }
 		}
 		properties = {
 			#OGAS_stage_two_lock = { frame = MAR_OGAS_prepstage_frame }

@@ -2240,7 +2240,7 @@ MAR_ogas_deccat = {
 	}
 	
 	MAR_ogas_first_spying_for_superpowers = {
-		icon = GFX_decision_unknown
+		icon = GFX_spying
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 1 }
 		}
@@ -2301,7 +2301,7 @@ MAR_ogas_deccat = {
 	}
 	
 	MAR_ogas_first_trip_to_guandong = {
-		icon = GFX_decision_unknown
+		icon = GFX_trip_to_guandong
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 1 }
 		}
@@ -2339,7 +2339,7 @@ MAR_ogas_deccat = {
 	}
 	
 	MAR_ogas_first_imperial_academy = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_build_a_academy
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 1 }
 		}
@@ -2398,7 +2398,7 @@ MAR_ogas_deccat = {
 	}  
 	 
 	MAR_ogas_first_our_previous_ideas = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_ultravisionary_socialism
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 1 }
 		} 
@@ -2485,7 +2485,7 @@ MAR_ogas_deccat = {
 	}
 	
 	MAR_ogas_second_talk_with_ibm = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_ibm
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 2 }
 		}
@@ -2539,7 +2539,7 @@ MAR_ogas_deccat = {
 	}
 	
 	MAR_ogas_second_get_all_the_nerds_in_the_one_place = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_nerd
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 2 }
 		}
@@ -2582,7 +2582,7 @@ MAR_ogas_deccat = {
 	}
 	
 	MAR_ogas_second_math_analyze = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_generic_document
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 2 }
 		}
@@ -2614,7 +2614,7 @@ MAR_ogas_deccat = {
 	}
 	
 	MAR_ogas_second_cybernetics_cult = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_generic_propaganda_off
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 2 }
 		}
@@ -2654,7 +2654,7 @@ MAR_ogas_deccat = {
 	}
 	
 	MAR_ogas_second_glushkovs_seminars = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_glushkov
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 2 }
 		}
@@ -2773,7 +2773,7 @@ MAR_ogas_deccat = {
 	}
 	
 	MAR_ogas_third_tsars_financing = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_generic_investors
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 3 }	
 		}
@@ -2816,7 +2816,7 @@ MAR_ogas_deccat = {
 	}
 	
 	MAR_ogas_third_kibersin = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_handshake
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 3 }	
 		}
@@ -2855,7 +2855,7 @@ MAR_ogas_deccat = {
 	}
 	
 	MAR_ogas_third_expand_the_institutions = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_generic_power
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 3 }	
 		}
@@ -2891,7 +2891,7 @@ MAR_ogas_deccat = {
 	}
 	
 	MAR_ogas_third_prepare_the_places = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_generic_supply
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 3 }	
 		}
@@ -2951,7 +2951,7 @@ MAR_ogas_deccat = {
 	}
 	
 	MAR_ogas_foutrh_stress_test_kazan = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_generic_building_offices
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 4 }
 		}
@@ -3001,7 +3001,7 @@ MAR_ogas_deccat = {
 	}
 	
 	MAR_ogas_foutrh_test_the_factory = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_generic_factory_inspection
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 4 }
 		}
@@ -3040,7 +3040,7 @@ MAR_ogas_deccat = {
 	}
 	
 	MAR_ogas_foutrh_develop_army_verison = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_generic_military_parade
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 4 }
 		}
@@ -3076,7 +3076,7 @@ MAR_ogas_deccat = {
 	}
 	
 	MAR_ogas_foutrh_test_it_in_sgvuz = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_build_a_academy
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 4 }
 		}
@@ -3167,7 +3167,7 @@ MAR_ogas_deccat = {
 	}
 	
 	MAR_ogas_intergrate_into_civil_economics = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_generic_heavy_industry
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 5 }
 		}
@@ -3206,7 +3206,7 @@ MAR_ogas_deccat = {
 	}
 	
 	MAR_ogas_intergrate_into_millitary_economics = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_factory_generic_blue
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 5 }
 		}
@@ -3239,7 +3239,7 @@ MAR_ogas_deccat = {
 	}
 	
 	MAR_ogas_intergrate_into_army = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_generic_military_hat
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 5 }
 		}
@@ -3276,7 +3276,7 @@ MAR_ogas_deccat = {
 	}
 	
 	MAR_ogas_fifth_integrate_into_education = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_generic_education
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 5 }
 		}
@@ -3313,7 +3313,7 @@ MAR_ogas_deccat = {
 	}
 	
 	MAR_ogas_fifth_semiconductor_valley = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_generic_building
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 5 }
 		}

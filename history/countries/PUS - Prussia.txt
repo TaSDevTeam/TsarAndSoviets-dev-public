@@ -5,11 +5,15 @@ recruit_character = PUS_Generic_Vacant
 fill_empty_minister_nochecks = yes # Please remove if you're adding ministers.
 
 recruit_character = PUS_Otto_Schmidt
+recruit_character = PUS_Cyril_Pavlov
 
 add_ideas = {
 	TaS_Post2WRW_avg_denazification
-	TaS_Post2WRW_PUS_russian_colony
-	TaS_Post2WRW_PUS_ethnic_problems
+	#TaS_Post2WRW_PUS_russian_colony
+	#TaS_Post2WRW_PUS_ethnic_problems
+	TaS_Post2WRW_PUS_ordens_mission
+	TaS_Post2WRW_PUS_under_winners_banner
+	
 	#economic#
 	tno_trade_laws_limited_exports
 	tno_income_taxation_high_income_weighted
@@ -58,7 +62,7 @@ add_ideas = {
 }
 
 set_politics = {
-	ruling_party = liberalism
+	ruling_party = despotism
 	elections_allowed = no
 	last_election = "1935.12.17"
 	election_frequency = 48
@@ -68,24 +72,15 @@ set_popularities = {
 	ultranationalism = 0
 	socialist = 0
 	progressivism = 0
-	liberalism = 50
+	liberalism = 0
 	conservatism = 0
-	paternalism = 0
-	despotism = 5
+	paternalism = 14
+	despotism = 34
 	fascism = 0
-	national_socialism = 45
-	esoteric_nazism = 0
+	national_socialism = 41
+	esoteric_nazism = 11
 }
-set_party_name = { 
-	ideology = liberalism 
-	long_name = PUS_liberalism_party_Long
-	name = PUS_liberalism_party
-}
-set_party_name = { 
-	ideology = despotism 
-	long_name = Post_WRW2_Russian_Army_party
-	name = Post_WRW2_Russian_Army_party
-}
+
 set_party_name = { 
 	ideology = national_socialism 
 	long_name = Post_WRW2_Werewolf_party
