@@ -806,6 +806,94 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 				}
 			}
 		}
+		GHU = {
+			if = {
+				limit = {
+					HUN = {
+					    is_in_faction_with = GER
+					}	
+				}	
+				GHU = {
+				    annex_country = {
+				        target = HUN
+				        transfer_troops = no
+			        }
+					every_owned_state = {
+				        GHU = {
+					        add_state_core = PREV
+				        }       
+			        }
+					econ_join_sphere_MAR = yes
+				}	
+		
+			}
+		}
+		GSE = {
+			if = {
+				limit = {
+					SER = {
+					    is_in_faction_with = GER
+					}	
+				}	
+				GSE = {
+				    annex_country = {
+				        target = SER
+				        transfer_troops = no
+			        }
+					every_owned_state = {
+				        GSE = {
+					        add_state_core = PREV
+				        }       
+			        }
+					econ_join_sphere_MAR = yes
+				}	
+		
+			}
+		}
+		GRM = {
+			if = {
+				limit = {
+					ROM = {
+					    is_in_faction_with = GER
+					}	
+				}	
+				GRM = {
+				    annex_country = {
+				        target = ROM
+				        transfer_troops = no
+			        }
+					every_owned_state = {
+				        GRM = {
+					        add_state_core = PREV
+				        }       
+			        }
+					econ_join_sphere_MAR = yes
+				}	
+		
+			}
+		}
+		GBU = {
+			if = {
+				limit = {
+					BUL = {
+					    is_in_faction_with = GER
+					}	
+				}	
+				GBU = {
+				    annex_country = {
+				        target = BUL
+				        transfer_troops = no
+			        }
+					every_owned_state = {
+				        GBU = {
+					        add_state_core = PREV
+				        }       
+			        }
+					econ_join_sphere_MAR = yes
+				}	
+		
+			}
+		}
 		every_country = {
 			limit = { is_in_faction_with = GER }
 			leave_faction = yes
@@ -1203,6 +1291,97 @@ TaS_WRW2_German_Collapse_Kosygin = {
 			set_variable = {
 				TNO_economy_type = token:Econ_Type_Planned
 				TNO_economy_subtype = token:Econ_Subtype_Worker_Directed
+			}
+		}
+		GHU = {
+			if = {
+				limit = {
+					HUN = {
+					    is_in_faction_with = GER
+					}	
+				}	
+				GHU = {
+				    annex_country = {
+				        target = HUN
+				        transfer_troops = no
+			        }
+					every_owned_state = {
+				        GHU = {
+					        add_state_core = PREV
+				        }       
+			        }
+					econ_join_sphere_MAR = yes
+				}	
+		
+			}
+		}
+		GSE = {
+			if = {
+				limit = {
+					SER = {
+					    is_in_faction_with = GER
+					}	
+				}	
+				GSE = {
+				    annex_country = {
+				        target = SER
+				        transfer_troops = no
+			        }
+					every_owned_state = {
+				        GSE = {
+					        add_state_core = PREV
+				        }       
+			        }
+					econ_join_sphere_MAR = yes
+				}	
+		
+			}
+		}
+		GRM = {
+			if = {
+				limit = {
+					ROM = {
+					    is_in_faction_with = GER
+					}	
+				}	
+				GRM = {
+				    annex_country = {
+				        target = ROM
+				        transfer_troops = no
+			        }
+					every_owned_state = {
+				        GRM = {
+					        add_state_core = PREV
+				        }       
+			        }
+					econ_join_sphere_MAR = yes
+					set_politics = {
+				        ruling_party = progressivism
+			        }
+				}	
+		
+			}
+		}
+		GBU = {
+			if = {
+				limit = {
+					BUL = {
+					    is_in_faction_with = GER
+					}	
+				}	
+				GBU = {
+				    annex_country = {
+				        target = BUL
+				        transfer_troops = no
+			        }
+					every_owned_state = {
+				        GBU = {
+					        add_state_core = PREV
+				        }       
+			        }
+					econ_join_sphere_MAR = yes
+				}	
+		
 			}
 		}
 		GHL = {

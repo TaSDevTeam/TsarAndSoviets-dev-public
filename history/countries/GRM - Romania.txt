@@ -1,4 +1,4 @@
-﻿capital = 1025
+﻿capital = 1281
 
 # Vacant
 recruit_character = GRM_Generic_Vacant
@@ -10,10 +10,10 @@ set_country_flag = is_postger_nation
 add_manpower = 75000
 
 load_focus_tree = shattered_ambitions
-set_variable = {TNO_economy_type = token:Econ_Type_Capitalism }
+set_variable = { TNO_economy_type = token:Econ_Type_Capitalism }
 
 set_politics = {
-	ruling_party = paternalism
+	ruling_party = despotism
 	elections_allowed = no
 	last_election = "1935.12.17"
 	election_frequency = 48
@@ -22,13 +22,13 @@ set_popularities = {
 	communist = 0
 	ultranationalism = 0
 	socialist = 0
-	progressivism = 0
+	paternalism = 0
 	liberalism = 0
 	conservatism = 0
-	paternalism = 33
-	despotism = 7
+	progressivism = 50
+	despotism = 50
 	fascism = 0
-	national_socialism = 60
+	national_socialism = 0
 	esoteric_nazism = 0
 }
 set_party_name = { 
@@ -47,6 +47,8 @@ set_party_name = {
 	name = Post_WRW2_KPG_party
 }
 # Leaders
+recruit_character = GRM_Ion_Iliescu
+recruit_character = GRM_Mihai_I
 
 
 add_ideas = {

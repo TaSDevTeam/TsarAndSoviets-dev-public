@@ -1,4 +1,4 @@
-﻿capital = 1025
+﻿capital = 1272
 
 # Vacant
 recruit_character = GSE_Generic_Vacant
@@ -13,22 +13,22 @@ load_focus_tree = shattered_ambitions
 set_variable = {TNO_economy_type = token:Econ_Type_Capitalism }
 
 set_politics = {
-	ruling_party = paternalism
+	ruling_party = communist
 	elections_allowed = no
 	last_election = "1935.12.17"
 	election_frequency = 48
 }
 set_popularities = {
-	communist = 0
+	communist = 100
 	ultranationalism = 0
 	socialist = 0
 	progressivism = 0
 	liberalism = 0
 	conservatism = 0
-	paternalism = 33
-	despotism = 7
+	paternalism = 0
+	despotism = 0
 	fascism = 0
-	national_socialism = 60
+	national_socialism = 0
 	esoteric_nazism = 0
 }
 set_party_name = { 
@@ -47,6 +47,7 @@ set_party_name = {
 	name = Post_WRW2_KPG_party
 }
 # Leaders
+recruit_character = GSE_Josip_Broz_Tito
 
 
 add_ideas = {
