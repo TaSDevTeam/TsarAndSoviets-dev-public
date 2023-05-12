@@ -3631,35 +3631,29 @@ TaS_WRW2_onpeace_rip_bozo = {
 			}
 		}
 	}
+}
+TaS_WRW2_manchu_cw_tempfix = {
 	TaS_WRW2_fix_the_manchuria = {
 		icon = GFX_decision_generic_decision
 		visible = {
 			has_global_flag = TaS_MAN_second_cw
-			OR = {
-				AND = {
-					PFF = { exists = yes }
-					MAN = { exists = no }
-					MJP = { exists = no }
-					HAN = { exists = no }
-				}
-				AND = {
-					PFF = { exists = no }
-					MAN = { exists = yes }
-					MJP = { exists = no }
-					HAN = { exists = no }
-				}
-				AND = {
-					PFF = { exists = no }
-					MAN = { exists = no }
-					MJP = { exists = yes }
-					HAN = { exists = no }
-				}
-				AND = {
-					PFF = { exists = no }
-					MAN = { exists = no }
-					MJP = { exists = no }
-					HAN = { exists = yes }
-				}
+			ROOT = {
+				controls_state = 1643
+				controls_state = 715
+				controls_state = 714
+				controls_state = 1638
+				controls_state = 1639
+				controls_state = 1637
+				controls_state = 717
+				controls_state = 801
+				controls_state = 328
+				controls_state = 1642
+				controls_state = 1641
+				controls_state = 1640
+				controls_state = 610
+				controls_state = 1265
+				controls_state = 716
+				controls_state = 1636
 			}
 		}
 		fire_only_once = yes
@@ -3667,10 +3661,7 @@ TaS_WRW2_onpeace_rip_bozo = {
 			clr_country_flag = RUS_something_goes_wrong
 			if = {
 				limit = {
-					PFF = { exists = no }
-					MAN = { exists = yes }
-					MJP = { exists = no }
-					HAN = { exists = no }
+					ROOT = { tag = MAN }
 				}
 				MAN = {
 					econ_join_sphere_USA = yes
@@ -3702,10 +3693,7 @@ TaS_WRW2_onpeace_rip_bozo = {
 			}
 			else_if = {
 				limit = {
-					PFF = { exists = no }
-					MAN = { exists = no }
-					MJP = { exists = no }
-					HAN = { exists = yes }
+					ROOT = { tag = HAN }
 				}
 				HAN = {
 					set_cosmetic_tag = HAN_cw_victory
@@ -3743,10 +3731,7 @@ TaS_WRW2_onpeace_rip_bozo = {
 			}
 			else_if = {
 				limit = {
-					PFF = { exists = no }
-					MAN = { exists = no }
-					MJP = { exists = yes }
-					HAN = { exists = no }
+					ROOT = { tag = MJP }
 				}
 				MJP = {
 					set_cosmetic_tag = MJP_JAP_autonomy
@@ -3786,10 +3771,7 @@ TaS_WRW2_onpeace_rip_bozo = {
 			}
 			else_if = {
 				limit = {
-					PFF = { exists = yes }
-					MAN = { exists = no }
-					MJP = { exists = no }
-					HAN = { exists = no }
+					ROOT = { tag = PFF }
 				}
 				every_country  = {
 					news_event = {
@@ -3820,9 +3802,10 @@ TaS_WRW2_onpeace_rip_bozo = {
 				PFF = {
 					set_capital = { state = 328 }
 				}
-
 				set_global_flag = skip_default_capitulation
 			}
 		}
 	}
 }
+
+
