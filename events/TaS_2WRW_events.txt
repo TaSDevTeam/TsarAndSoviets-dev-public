@@ -54,9 +54,18 @@ country_event = { #conditional surrender
 		RUS = {
 			white_peace = AFG
 		}
-		MTR = {
-			transfer_state = 1885
-			transfer_state = 1465
+		if = {
+			limit = { MTR = { exists = yes } } }
+			MTR = {
+				transfer_state = 1885
+				transfer_state = 1465
+			}
+		}
+		else = {
+			RUS = {
+				transfer_state = 1885
+				transfer_state = 1465
+			}
 		}
 		AFG = {
 			1470 = { set_demilitarized_zone = yes }
@@ -90,11 +99,22 @@ country_event = { #unconditional surrender
 		RUS = {
 			white_peace = AFG
 		}
-		MTR = {
-			transfer_state = 1468
-			transfer_state = 1885
-			transfer_state = 1470
-			transfer_state = 1471
+		if = {
+			limit = { MTR = { exists = yes } } }
+			MTR = {
+				transfer_state = 1468
+				transfer_state = 1885
+				transfer_state = 1470
+				transfer_state = 1471
+			}
+		}
+		else = {
+			RUS = {
+				transfer_state = 1468
+				transfer_state = 1885
+				transfer_state = 1470
+				transfer_state = 1471
+			}
 		}
 		AFG = {
 			econ_join_sphere_MAR = yes
@@ -749,6 +769,26 @@ country_event = { #Battle of Khabarovsk: lose
 		}
 	}
 }
+
+country_event = { #victory in FE #kosygin
+	id = MAR_Japan.16
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.16"}
+	title = MAR_Japan.16.t
+	desc = MAR_Japan.16.d
+	picture = GFX_event_MAR_japan_6
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = MAR_Japan.16.a
+		ai_chance = { factor = 1 }
+		annex_country = {
+			target = PFF
+			transfer_troops = yes
+		}
+		set_country_flag = MAR_has_primorie
+	}
+}
 ##Germaney
 
 country_event = { #Offer status quo
@@ -1268,6 +1308,10 @@ country_event = { #odesa agreed
 				add_state_core = 1282
 				transfer_state = 192
 				add_state_core = 192
+				transfer_state = 1965
+				transfer_state = 1966
+				add_state_core = 1965
+				add_state_core = 1966
 			}
 		}
 		if = {
@@ -1279,6 +1323,10 @@ country_event = { #odesa agreed
 				add_state_core = 1282
 				transfer_state = 192
 				add_state_core = 192
+				transfer_state = 1965
+				transfer_state = 1966
+				add_state_core = 1965
+				add_state_core = 1966
 			}
 		}
 	}
@@ -3129,6 +3177,39 @@ news_event = {
 	
 	option = {
 		name = MAR_2WRW_world_news.13.a
+	}
+}
+
+news_event = { 
+	id = MAR_2WRW_world_news.14
+	title = MAR_2WRW_world_news.14.t
+	desc = MAR_2WRW_world_news.14.d
+	picture = GFX_MAR_2WRW_world_news_008
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_2WRW_world_news.14.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = MAR
+					tag = GER
+				}
+			}
+		}
+	}
+	option = {
+		name = MAR_2WRW_world_news.14.b
+		trigger = {
+			tag = GER
+		}
+	}
+	option = {
+		name = MAR_2WRW_world_news.14.c
+		trigger = {
+			tag = MAR
+		}
 	}
 }
 

@@ -68,11 +68,18 @@
  MAR_2WRW_world_news.7.b:0 "This is not the end of the war!" 
  MAR_2WRW_world_news.7.c:0 "White stone in our hands" 
  
- MAR_2WRW_world_news.8.t:0 "[Get_newspaper_header]Battle of Berlin"
- MAR_2WRW_world_news.8.d:0 "A momentous event in the history of the Western Russian War and of the twentieth century as a whole occurred today. The German army was forced to retreat from Germany and the city was effectively taken over by Russian troops. Czar Sergei Belozersky had already declared that the end of Germany was only a matter of time. \n\nGerman Reich officials are not making any statements on the matter. However, there are reports that the Führer is in a safe place away from the front lines, but, in fact, all power in the country now actually belongs to the military, headed by the current Field Marshal Ernst Remer." 
- MAR_2WRW_world_news.8.a:0 "The fate of the Reich is already sealed" 
- MAR_2WRW_world_news.8.b:0 "This is the end..." 
- MAR_2WRW_world_news.8.c:0 "The death of the Nazi empire is near "
+ MAR_2WRW_world_news.8.t:0 "[Get_newspaper_header]Berlin taken by Russian troops."
+ MAR_2WRW_world_news.8.d:0 "It has just become known that the troops of the Russian People's Kingdom have taken the capital of the Great German Reich - the city of Berlin. This event is truly a significant event in the history of the Second Great Patriotic War and this decade.\n\nThe Wehrmacht troops were unable to withstand the pressure of the Russian troops and were forced to withdraw from Berlin. Thus, the city was taken without serious resistance. Tsar Sergey Belozersky, upon learning of the capture of Berlin, said that we are witnessing the collapse of Germany.\n\nThe leadership of the Great German Reich was unable to comment coherently on the capture of Berlin, saying only that they will definitely return to the city.\n\nIs this the end of the world order that the Nazis built in Europe after their victory in World War II?"
+ MAR_2WRW_world_news.8.a:0 "Whoever controls Berlin, controls Europe."
+ MAR_2WRW_world_news.8.b:0 "This is the end..."
+ MAR_2WRW_world_news.8.c:0 "Whoever controls Berlin, controls Europe."
+
+ MAR_2WRW_world_news.14.t:0 "[Get_newspaper_header]Battle for Berlin"
+ MAR_2WRW_world_news.14.d:0 "Today, the troops of the Russian People's Empire took the capital of the Great German Reich - the city of Berlin. This is truly a significant event not only in the history of this decade, but also of the Second Great Patriotic War as a whole.\n\nThe Wehrmacht troops were forced to retreat from the city to avoid complete defeat. Tsar Alexei II is already talking about the beginning of the end for Germany.\n\nThe leadership of the Great German Reich did not provide any coherent comments on this matter, only saying that the Wehrmacht will definitely return to Berlin.\n\nThe capture of Berlin will undoubtedly tilt the victory pendulum in Russia's favor. Perhaps we are witnessing the collapse of Germany and the Nazi regime."
+ MAR_2WRW_world_news.14.a:0 "The days of the German Reich are numbered."
+ MAR_2WRW_world_news.14.b:0 "This is the end..."
+ MAR_2WRW_world_news.14.c:0 "The days of the German Reich are numbered."
+
 
  MAR_2WRW_world_news.9.t:0 "[Get_newspaper_header]The Second West Russian War is Over"
  MAR_2WRW_world_news.9.d:0 "Today representatives of Germany and Russia have met to announce the terms of a peace treaty. Under its terms, the German Reich shall place under Russian control the territories of the East European commissariats of the Empire and undertake to pay reparations for a short period of time, while retaining control of the remaining commissariats.\n\no other positions stand out the conclusion of peace for 20 years and the obligation for Russia not to expel to Germany the descendants of settlers without their wishes and to allow them to become Russian citizens with the preservation of all property. Also, special rights are to be granted to German corporations, and their property is inviolable. In turn, the Reich allows the Russian inhabitants of the eastern commissariats to move to Russia and does not hinder this in any way.\n\n  Peace has come to Europe but much of the infrastructure is destroyed raging disease and famine and the Reich's position has been severely tested. Even though Germany retained control of some of the territory is weak."
@@ -99,6 +106,12 @@
  MAR_2WRW_world_news.13.t:0 "[Get_newspaper_header]The Third Time of Troubles"
  MAR_2WRW_world_news.13.d:0 "The current situation in Russia can be characterized as a new time of troubles. Just a few years ago, the country united under the banner of the Russian People's Kingdom, but now this alliance has been broken. The country was led by Tsar-General Sergei Sergeyevich Belozersky, but after his death and defeat in the Second West Russian War, Russia faced a new crisis. Deserting generals and political extremists used this situation to proclaim their quasi-states throughout the remaining territory of Russia, which led to even greater fragmentation. The legitimate government, led by Prime Minister Alexander Kazem-Bek, holds only the capital and some territories in the south. \n\nThe situation is further complicated by the invasion of Japanese troops, who have occupied the territory of Tuva, undermining political stability in the region. Now Russia has returned to the era of fragmentation, and the future of the country looks very worrying."
  MAR_2WRW_world_news.13.a:0 "Russia is bleeding again."
+ 
+ MAR_2WRW_world_news.14.t:0 "[Get_newspaper_header]Battle of Berlin"
+ MAR_2WRW_world_news.14.d:0 "A momentous event in the history of the Western Russian War and of the twentieth century as a whole occurred today. The German army was forced to retreat from Germany and the city was effectively taken over by Russian troops. Czar Sergei Belozersky had already declared that the end of Germany was only a matter of time. \n\nGerman Reich officials are not making any statements on the matter. However, there are reports that the Führer is in a safe place away from the front lines, but, in fact, all power in the country now actually belongs to the military, headed by the current Field Marshal Ernst Remer." 
+ MAR_2WRW_world_news.14.a:0 "The fate of the Reich is already sealed" 
+ MAR_2WRW_world_news.14.b:0 "This is the end..." 
+ MAR_2WRW_world_news.14.c:0 "The death of the Nazi empire is near "
 
  MAR_2WRW_world_news.30.t:0 "[Get_newspaper_header]Military Situation in Outer Manchuria"
  MAR_2WRW_world_news.30.d:0 "Disturbing news is coming to us from the Manchurian territories. There has been an upsurge in partisan activity on Soviet territories annexed by the puppet government of Manchuria during World War II. \n\nExperts link this activity to the emergence of a new unified government in the former Soviet Union. The Manchurian government has taken decisive action, imposing martial law throughout the state until this situation is resolved. Whether they can cope with the threat or whether this rebellion will be the downfall of the pearl of the Sphere of Co-Prosperity remains to be seen."
@@ -579,27 +592,43 @@
  
  GFR_Anatoly_Vavilov:0 "Anatoly Vavilov"
  #балканы потом
- GHU:0 "Hungarian Republic"
- GHU_DEF:0 "Hungarian Republic"
- GHU_ADJ:0 "Венгерск."
- 
+ GHU:0 "Kingdom of Hungary"
+ GHU_DEF:0 "Kingdom of Hungary"
+ GHU_ADJ:0 "Hungarian"
+
  GRM:0 "Kingdom of Romania"
  GRM_DEF:0 "Kingdom of Romania"
  GRM_ADJ:0 "Romanian"
- 
- GBU:0 "Tsardom of Bulgaria"
- GBU_DEF:0 "Tsardom of Bulgaria"
+
+ GRM_progressivism:0 "Romanian Republic"
+ GRM_progressivism_DEF:0 "Romanian Republic"
+ GRM_ADJ:0 "Romanian"
+
+ GBU:0 "Kingdom of Bulgaria"
+ GBU_DEF:0 "Kingdom of Bulgaria"
  GBU_ADJ:0 "Bulgarian"
- 
- GSE:0 "Kingdom of Yugoslavia"
- GSE_DEF:0 "Kingdom of Yugoslavia"
+
+ GSE:0 "Yugoslavia"
+ GSE_DEF:0 "Federal People's Republic of Yugoslavia"
  GSE_ADJ:0 "Yugoslav"
+
+ GHU_Istvan_Horthy:0 "Istvan VI"
+ GBU_Petar_Dertliev:0 "Petar Dertliev"
+ GRM_Ion_Iliescu:0 "Ion Iliescu"
+ GSE_Josip_Broz_Tito:0 "Josip Broz Tito"
+ GRM_Mihai_I:0 "Mihai I"
+
  
  #2зрв
  #ивенты для японского прокси
  MAR_Japan.6.t:0 "Vladivostok, home."
  MAR_Japan.6.d:0 "Today will be remembered by the residents of Vladivostok for a long time. Tsar-General Sergei Belozersky descended from his ship and stepped onto the city's embankment, where a crowd behind barriers greeted him with enthusiastic shouts. However, there was no time to waste, as the leaders of the partisan movement were coming to meet the tsar. All of them were dressed in old Soviet ceremonial coats. The tsar greeted each of them as if they were old friends and presented them with awards for liberating the Motherland from occupation. The oldest of the partisans, who was over seventy years old, approached the tsar and, taking off his fur hat, said, 'Many of us have waited for this moment for almost thirty years. Tsar-General, allow me to present you with the keys to the city.' At that moment, it became clear that the historical moment had arrived - Vladivostok had returned to the rule of Russia.\n\nThe conference that followed at the mayor's office and the joint declaration on the reintegration of Primorye into the Russian People's Empire became not only a formal act but also a symbol of long-awaited unity. After signing the declaration and holding a press conference with the leaders of the partisans, the tsar-general decided to hold another important ceremony - the opening of the Far Eastern branch of the Young Russian Party.\n\nUpon arrival, the tsar was greeted with loud applause from party members and local residents. He addressed the people of Vladivostok, assuring them that Russia does not forget about the common people and will do everything to ensure them a decent life and prosperity. Everyone who once fled to the north can now reclaim their rights to their old property. The Asian peoples forcibly resettled by Japan during its barbaric policy will have to either immigrate back to their home countries or assimilate and continue to engage in agriculture in this region.\n\nThe festive mood did not leave the city for a long time, and the streets were filled with people celebrating the return of the region to Russia. Leaving the city, Belozersky received a report from the MGB that the news of Vladivostok's return had sparked a chain of uprisings in the German-occupied lands of Moscow and the Caucasus."
  MAR_Japan.6.a:0 "We have only just begun."
+ 
+ MAR_Japan.16.t:0 "Returning to the homeland harbor."
+ MAR_Japan.16.d:0 "Not long ago, no one expected that the Primorsky Krai, which was under Japan's control, would someday be able to return to Russia. After all, it was still too weak to engage in any military actions with one of the three superpowers. However, now the flag of the Russian People's Empire is flying over these territories.\n\nNaturally, Russia's leadership visited the Primorsky Krai after the annexation. First, the Prime Minister Vladimir Gil visited there. He visited Vladivostok, Khabarovsk, Birobidzhan, and other cities. There, he talked with the locals and promised them comprehensive assistance from the government, especially with the restoration of the cities' infrastructure.\n\nAfter some time, Tsar Alexei II decided to visit Primorye himself. He met not only with citizens but also with former partisans who had been provided with comprehensive support during the entire time. The Tsar thanked them for their heroic performance of duty. Later, they were awarded the George Cross, 1st Class.\n\nAlso, upon Alexei Nikolaevich's arrival in Vladivostok, the locals organized a real celebration. Everywhere, there were signs saying "Warm greetings to Tsar Alexei from the residents of Vladivostok," "Glory to the liberator Tsar Alexei II," and others. In the evening, Alexei Nikolaevich attended a banquet in his honor.\n\nWhen the guests began to disperse, one of the KGB operatives who were supposed to accompany Alexei II during his trip approached him and gave him an important message from Vladimir Gil. The message stated that thanks to the success of the partisan struggle in Primorye, partisans in the Reichskommissariat Moskovien began to engage in similar activities as in Primorye."
+ MAR_Japan.16.a:0 "Soon, we will be celebrating in Moscow." 
+
  
  MAR_Japan.9.t:0 "Call from Harbin"
  MAR_Japan.9.d:0 "Gill leaned over the scattered military plans of Primorye, deeply absorbed in thought. He needed to mark the new locations of the Russian Empire's troops on the new territories, but suddenly a piercing ringtone sounded.\n\n"So..." Gill's gaze fell on the newest secure phone. It was external intelligence from the MGB, and a call from them meant only one thing - urgent information.\n"Gill, on the line," he said when he picked up the receiver.\n"Vladimir Vladimirovich! Our Harbin operatives have urgently contacted us. They report that the Manchurian rebels and Kim Il-sung's partisans have started an open rebellion against the Japanese and their puppets. The government's army has not yet been able to react, so if we send troops now to support the rebels, we have a good chance to strike back at Japan and push the Sphere even further out of Manchuria," the MGB officer on the other end of the line reported.\n\nGill understood that this was very important information, and he immediately asked for a full report to be sent to him. Then he hung up abruptly and grabbed another phone, preparing to make another call."

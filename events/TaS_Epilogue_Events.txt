@@ -38,7 +38,10 @@ country_event = { # Gov't couped, eks dee
 				GER_hans_speidel = {
 					promote_leader = yes
 				}
-				country_event = { id = TaS_GERcollapse.2 hours = 12 }
+				if = {
+					limit = { NOT = { has_global_flag = WRW2_german_collapse } }
+					country_event = { id = TaS_GERcollapse.2 hours = 12 }
+				}
 			}
 			else = {
 				if = {
@@ -160,8 +163,11 @@ country_event = { # first rebels
 					transfer_state = 17
 				}
 			}
-			ZZZ = {
-				country_event = { id = TaS_GERcollapse.3 days = 5 }
+			if = {
+				limit = { NOT = { has_global_flag = WRW2_german_collapse } }
+				ZZZ = {
+					country_event = { id = TaS_GERcollapse.3 days = 5 }
+				}
 			}
 		}
 	}
@@ -198,8 +204,11 @@ country_event = { # second rebels
 				transfer_state = 770
 				transfer_state = 50
 			}
-			ZZZ = {
-				country_event = { id = TaS_GERcollapse.4 days = 3 }
+			if = {
+				limit = { NOT = { has_global_flag = WRW2_german_collapse } }
+				ZZZ = {
+					country_event = { id = TaS_GERcollapse.4 days = 3 }
+				}
 			}
 		}
 	}
@@ -245,8 +254,11 @@ country_event = { # rip pro-german balkans and several colonies
 				econ_leave_sphere = yes
 			}		
 			RUS = { TaS_WRW2_total_capitulation = yes }
-			ZZZ = {
-				country_event = { id = TaS_GERcollapse.5 days = 2 }
+			if = {
+				limit = { NOT = { has_global_flag = WRW2_german_collapse } }
+				ZZZ = {
+					country_event = { id = TaS_GERcollapse.5 days = 2 }
+				}
 			}
 		}
 	}
@@ -289,8 +301,11 @@ country_event = { # rebbbelsus
 				transfer_state = 774
 			}
 			
-			ZZZ = {
-				country_event = { id = TaS_GERcollapse.6 days = 3 }
+			if = {
+				limit = { NOT = { has_global_flag = WRW2_german_collapse } }
+				ZZZ = {
+					country_event = { id = TaS_GERcollapse.6 days = 3 }
+				}
 			}
 		}
 	}
@@ -323,7 +338,12 @@ country_event = { # last rebelion
 			GPL = {
 				transfer_state = 87
 			}
-			country_event = { id = TaS_GERcollapse.7 days = 2 }
+			if = {
+				limit = { NOT = { has_global_flag = WRW2_german_collapse } }
+				ZZZ = {
+					country_event = { id = TaS_GERcollapse.7 days = 2 }
+				}
+			}
 		}
 	}
 }

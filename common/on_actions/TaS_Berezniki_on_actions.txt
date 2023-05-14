@@ -102,11 +102,23 @@ on_actions = {
 								is_russian_nation = yes
 							}
 							hidden_effect = {
-								every_country  = {
+								if = {
+									limit = { MAR = { has_government = despotism } }
+									every_country  = {
 										news_event = {
 											id = MAR_2WRW_world_news.8
 										}
+									}
 								}
+								else_if = {
+									limit = { MAR = { has_government = socialist } }
+									every_country  = {
+										news_event = {
+											id = MAR_2WRW_world_news.14
+										}
+									}
+								}
+								
 							}
 						}
 					}
