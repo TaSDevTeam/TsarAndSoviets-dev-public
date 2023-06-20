@@ -19,21 +19,6 @@ ideologies = {
 		}
 		dynamic_faction_names = {}
 		color = { 52 25 80 }
-		rules = {
-			can_create_collaboration_government = no
-			can_force_government = no
-			can_puppet = no
-			can_join_factions = no
-			can_send_volunteers = yes
-		}
-		modifiers = {
-			hidden_modifier = {
-				civilian_intel_to_others = 5.0
-				army_intel_to_others = 5.0
-				navy_intel_to_others = 5.0
-				airforce_intel_to_others = 5.0
-			}
-		}
 		ai_neutral = yes
 		can_be_boosted = no
 	}
@@ -53,21 +38,6 @@ ideologies = {
 		}
 		dynamic_faction_names = {}
 		color = { 80 50 0 }
-		rules = {
-			can_create_collaboration_government = no
-			can_force_government = no
-			can_puppet = no
-			can_join_factions = no
-			can_send_volunteers = yes
-		}
-		modifiers = {
-			hidden_modifier = {
-				civilian_intel_to_others = 15.0
-				army_intel_to_others = 10.0
-				navy_intel_to_others = 10.0
-				airforce_intel_to_others = 10.0
-			}
-		}
 		ai_neutral = yes
 		can_be_boosted = no
 	}
@@ -95,21 +65,6 @@ ideologies = {
 		}
 		dynamic_faction_names = {}
 		color = { 132 50 0 }
-		rules = {
-			can_create_collaboration_government = no
-			can_force_government = no
-			can_puppet = no
-			can_join_factions = no
-			can_send_volunteers = yes
-		}
-		modifiers = {
-			hidden_modifier = {
-				civilian_intel_to_others = 15.0
-				army_intel_to_others = 10.0
-				navy_intel_to_others = 10.0
-				airforce_intel_to_others = 10.0
-			}
-		}
 		ai_neutral = yes
 		can_be_boosted = no
 	}
@@ -128,21 +83,6 @@ ideologies = {
 		}
 		dynamic_faction_names = {}
 		color = { 35 35 35 }
-		rules = {
-			can_create_collaboration_government = no
-			can_force_government = no
-			can_puppet = no
-			can_join_factions = no
-			can_send_volunteers = yes
-		}
-		modifiers = {
-			hidden_modifier = {
-				civilian_intel_to_others = 10.0
-				army_intel_to_others = 10.0
-				navy_intel_to_others = 10.0
-				airforce_intel_to_others = 10.0
-			}
-		}
 		ai_neutral = yes
 		can_be_boosted = no
 	}
@@ -174,21 +114,6 @@ ideologies = {
 		}
 		dynamic_faction_names = {}
 		color = { 75 75 75 }
-		rules = {
-			can_create_collaboration_government = no
-			can_force_government = no
-			can_puppet = no
-			can_join_factions = no
-			can_send_volunteers = yes
-		}
-		modifiers = {
-			hidden_modifier = {
-				civilian_intel_to_others = 15.0
-				army_intel_to_others = 15.0
-				navy_intel_to_others = 15.0
-				airforce_intel_to_others = 15.0
-			}
-		}
 		ai_neutral = yes
 		can_be_boosted = no
 	}
@@ -227,21 +152,6 @@ ideologies = {
 		}
 		dynamic_faction_names = {}
 		color = { 130 130 130 }
-		rules = {
-			can_create_collaboration_government = no
-			can_force_government = no
-			can_puppet = no
-			can_join_factions = no
-			can_send_volunteers = yes
-		}
-		modifiers = {
-			hidden_modifier = {
-				civilian_intel_to_others = 20.0
-				army_intel_to_others = 10.0
-				navy_intel_to_others = 15.0
-				airforce_intel_to_others = 10.0
-			}
-		}
 		ai_neutral = yes
 		can_be_boosted = no
 	}
@@ -266,21 +176,6 @@ ideologies = {
 		}
 		dynamic_faction_names = {}
 		color = { 0 0 135 }
-		rules = {
-			can_create_collaboration_government = no
-			can_force_government = no
-			can_puppet = no
-			can_join_factions = no
-			can_send_volunteers = yes
-		}
-		modifiers = {
-			hidden_modifier = {
-				civilian_intel_to_others = 20.0
-				army_intel_to_others = 10.0
-				navy_intel_to_others = 20.0
-				airforce_intel_to_others = 10.0
-			}
-		}
 		ai_neutral = yes
 		can_be_boosted = no
 	}
@@ -296,21 +191,6 @@ ideologies = {
 		}
 		dynamic_faction_names = {}
 		color = { 39 49 149 }
-		rules = {
-			can_create_collaboration_government = no
-			can_force_government = no
-			can_puppet = no
-			can_join_factions = no
-			can_send_volunteers = yes
-		}
-		modifiers = {
-			hidden_modifier = {
-				civilian_intel_to_others = 20.0
-				army_intel_to_others = 10.0
-				navy_intel_to_others = 20.0
-				airforce_intel_to_others = 10.0
-			}
-		}
 		ai_neutral = yes
 		can_be_boosted = no
 	}
@@ -336,21 +216,6 @@ ideologies = {
 		}
 		dynamic_faction_names = {}
 		color = { 78 97 163 }
-		rules = {
-			can_create_collaboration_government = no
-			can_force_government = no
-			can_puppet = no
-			can_join_factions = no
-			can_send_volunteers = yes
-		}
-		modifiers = {
-			hidden_modifier = {
-				civilian_intel_to_others = 20.0
-				army_intel_to_others = 10.0
-				navy_intel_to_others = 20.0
-				airforce_intel_to_others = 10.0
-			}
-		}
 		ai_neutral = yes
 		can_be_boosted = no
 	}
@@ -370,28 +235,14 @@ ideologies = {
 			progressivism_left_wing_agrarianism_subtype = { can_be_randomly_selected = no }
 			progressivism_islamic_modernism_subtype = { can_be_randomly_selected = no }
 			progressivism_liberal_socialism_subtype = { can_be_randomly_selected = no }
+			progressivism_utopian_socialism_subtype = { can_be_randomly_selected = no }
 			progressivism_eastern_progressivism_subtype = { can_be_randomly_selected = no }
 			progressivism_western_progressivism_subtype = { can_be_randomly_selected = no }
-			progressivism_progressive_theocracy_subtype = { can_be_randomly_selected = no }
 			progressivism_gaitanismo_subtype = { can_be_randomly_selected = no }
+			progressivism_progressive_theocracy_subtype = { can_be_randomly_selected = no }
 		}
 		dynamic_faction_names = {}
 		color = { 169 27 79 }
-		rules = {
-			can_create_collaboration_government = no
-			can_force_government = no
-			can_puppet = no
-			can_join_factions = no
-			can_send_volunteers = yes
-		}
-		modifiers = {
-			hidden_modifier = {
-				civilian_intel_to_others = 20.0
-				army_intel_to_others = 10.0
-				navy_intel_to_others = 20.0
-				airforce_intel_to_others = 10.0
-			}
-		}
 		ai_neutral = yes
 		can_be_boosted = no
 	}
@@ -407,7 +258,6 @@ ideologies = {
 			socialist_ultravisionary_socialism_pink_subtype = { can_be_randomly_selected = no }
 			socialist_agrarian_socialism_subtype = { can_be_randomly_selected = no }
 			socialist_syndicalism_subtype = { can_be_randomly_selected = no }
-			socialist_utopian_socialism_subtype = { can_be_randomly_selected = no }
 			socialist_panafricanism_subtype = { can_be_randomly_selected = no }
 			socialist_baathism_subtype = { can_be_randomly_selected = no }
 			socialist_left_wing_nationalism_subtype = { can_be_randomly_selected = no }
@@ -425,22 +275,6 @@ ideologies = {
 		}
 		dynamic_faction_names = {}
 		color = { 155 0 0 }
-		rules = {
-			can_create_collaboration_government = no
-			can_force_government = no
-			can_puppet = no
-			can_join_factions = no
-			can_send_volunteers = yes
-		}
-		modifiers = {
-			hidden_modifier = {
-				ai_get_ally_desire_factor = -500
-				civilian_intel_to_others = 20.0
-				army_intel_to_others = 15.0
-				navy_intel_to_others = 15.0
-				airforce_intel_to_others = 15.0
-			}
-		}
 		ai_neutral = yes
 		can_be_boosted = no
 	}
@@ -465,24 +299,10 @@ ideologies = {
 			communist_revolutionary_baathism_subtype = { can_be_randomly_selected = no }
 			communist_autarkic_marxism_subtype = { can_be_randomly_selected = no }
 			communist_esoteric_leninism_subtype = { can_be_randomly_selected = no }
+
 		}
 		dynamic_faction_names = {}
 		color = { 110 0 0 }
-		rules = {
-			can_create_collaboration_government = no
-			can_force_government = no
-			can_puppet = no
-			can_join_factions = no
-			can_send_volunteers = yes
-		}
-		modifiers = {
-			hidden_modifier = {
-				civilian_intel_to_others = 10.0
-				army_intel_to_others = 15.0
-				navy_intel_to_others = 15.0
-				airforce_intel_to_others = 15.0
-			}
-		}
 		ai_neutral = yes
 		can_be_boosted = no
 	}
