@@ -1298,7 +1298,6 @@ KOM_zhdanov_favors_enabled = {
 RUS_is_CIA_sponsored = { #sanity check for CIA ops
 	is_russian_unifier = yes
 	NOT = { has_government = national_socialism }
-	NOT = { has_government = esoteric_nazism }
 	NOT = { has_government = fascism } # no magadan exception since they get their own special ops
 	NOT = { has_government = ultranationalism } # same as above for omsk
 

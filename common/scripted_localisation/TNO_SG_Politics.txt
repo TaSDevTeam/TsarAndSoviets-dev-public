@@ -44,10 +44,6 @@ defined_text = {
 		trigger = { has_government = national_socialism }
 		localization_key = "[GetSubIdeologyLocNationalSocialism]"
 	}
-	text = {
-		trigger = { has_government = esoteric_nazism }
-		localization_key = "[GetSubIdeologyLocEsotericNazism]"
-	}
 }
 
 defined_text = {
@@ -61,10 +57,6 @@ defined_text = {
 		localization_key = communist_marxism_leninism_subtype
 	}
 	text = {
-		trigger = { has_country_leader_ideology = communist_stalinism_subtype }
-		localization_key = communist_stalinism_subtype
-	}
-	text = {
 		trigger = { has_country_leader_ideology = communist_left_communist_subtype }
 		localization_key = communist_left_communist_subtype
 	}
@@ -75,14 +67,6 @@ defined_text = {
 	text = {
 		trigger = { has_country_leader_ideology = communist_maoism_subtype }
 		localization_key = communist_maoism_subtype
-	}
-	text = {
-		trigger = { has_country_leader_ideology = communist_mao_zedong_thought_subtype }
-		localization_key = communist_mao_zedong_thought_subtype
-	}
-	text = {
-		trigger = { has_country_leader_ideology = communist_islamic_marxism_subtype }
-		localization_key = communist_islamic_marxism_subtype
 	}
 	text = {
 		trigger = { has_country_leader_ideology = communist_amazonism_subtype }
@@ -107,10 +91,6 @@ defined_text = {
 	text = {
 		trigger = { has_country_leader_ideology = communist_revolutionary_baathism_subtype }
 		localization_key = communist_revolutionary_baathism_subtype
-	}
-	text = {
-		trigger = { has_country_leader_ideology = communist_autarkic_marxism_subtype }
-		localization_key = communist_autarkic_marxism_subtype
 	}
 	text = {
 		trigger = { has_country_leader_ideology = communist_esoteric_leninism_subtype }
@@ -140,16 +120,16 @@ defined_text = {
 		localization_key = socialist_ultravisionary_socialism_subtype
 	}
 	text = {
+		trigger = { has_country_leader_ideology = socialist_ultravisionary_socialism_pink_subtype }
+		localization_key = socialist_ultravisionary_socialism_pink_subtype
+	}
+	text = {
 		trigger = { has_country_leader_ideology = socialist_agrarian_socialism_subtype }
 		localization_key = socialist_agrarian_socialism_subtype
 	}
 	text = {
 		trigger = { has_country_leader_ideology = socialist_syndicalism_subtype }
 		localization_key = socialist_syndicalism_subtype
-	}
-	text = {
-		trigger = { has_country_leader_ideology = socialist_utopian_socialism_subtype }
-		localization_key = socialist_utopian_socialism_subtype
 	}
 	text = {
 		trigger = { has_country_leader_ideology = socialist_panafricanism_subtype }
@@ -188,6 +168,14 @@ defined_text = {
 		localization_key = socialist_reformist_socialism_subtype
 	}
 	text = {
+		trigger = { has_country_leader_ideology = socialist_buddhist_socialism_subtype }
+		localization_key = socialist_buddhist_socialism_subtype
+	}
+	text = {
+		trigger = { has_country_leader_ideology = socialist_revolutionary_gaitanismo_subtype }
+		localization_key = socialist_revolutionary_gaitanismo_subtype
+	}
+	text = {
         trigger = { has_country_leader_ideology = socialist_social_monarchist_subtype }
         localization_key = socialist_social_monarchist_subtype
     }
@@ -212,7 +200,7 @@ defined_text = {
 	}
 	text = {
 		trigger = { has_country_leader_ideology = progressivism_social_democracy_subtype }
-		localization_key = progressivism_progressivism_subtype
+		localization_key = progressivism_social_democracy_subtype
 	}
 	text = {
 		trigger = { has_country_leader_ideology = progressivism_left_wing_populism_subtype }
@@ -251,12 +239,20 @@ defined_text = {
 		localization_key = progressivism_liberal_socialism_subtype
 	}
 	text = {
+		trigger = { has_country_leader_ideology = progressivism_utopian_socialism_subtype }
+		localization_key = progressivism_utopian_socialism_subtype
+	}
+	text = {
 		trigger = { has_country_leader_ideology = progressivism_eastern_progressivism_subtype }
 		localization_key = progressivism_eastern_progressivism_subtype
 	}
 	text = {
 		trigger = { has_country_leader_ideology = progressivism_western_progressivism_subtype }
 		localization_key = progressivism_western_progressivism_subtype
+	}
+	text = {
+		trigger = { has_country_leader_ideology = progressivism_gaitanismo_subtype }
+		localization_key = progressivism_gaitanismo_subtype
 	}
 	text = {
 		trigger = { has_country_leader_ideology = progressivism_progressive_theocracy_subtype }
@@ -311,6 +307,10 @@ defined_text = {
 		localization_key = liberalism_dynastic_liberalism_lbj_subtype
 	}
 	text = {
+		trigger = { has_country_leader_ideology = liberalism_liberal_technocracy_subtype }
+		localization_key = liberalism_liberal_technocracy_subtype
+	}
+	text = {
 		localization_key = liberalism
 	}
 }
@@ -328,6 +328,14 @@ defined_text = {
 	text = {
 		trigger = { has_country_leader_ideology = liberal_conservatism_big_tent_subtype }
 		localization_key = liberal_conservatism_big_tent_subtype
+	}
+	text = {
+		trigger = { has_country_leader_ideology = liberal_conservatism_moderate_technocracy_subtype }
+		localization_key = liberal_conservatism_moderate_technocracy_subtype
+	}
+	text = {
+		trigger = { has_country_leader_ideology = liberal_conservatism_oligarchic_liberalism_subtype }
+		localization_key = liberal_conservatism_oligarchic_liberalism_subtype
 	}
 	text = {
 		localization_key = liberal_conservatism
@@ -385,6 +393,14 @@ defined_text = {
 		localization_key = conservatism_urban_populism_subtype
 	}
 	text = {
+		trigger = { has_country_leader_ideology = conservatism_prairie_populism_subtype }
+		localization_key = conservatism_prairie_populism_subtype
+	}
+	text = {
+		trigger = { has_country_leader_ideology = conservatism_goken_conservatism_subtype }
+		localization_key = conservatism_goken_conservatism_subtype
+	}
+	text = {
 		localization_key = conservatism
 	}
 }
@@ -418,10 +434,6 @@ defined_text = {
 	text = {
 		trigger = { has_country_leader_ideology = paternalism_military_mandate_subtype }
 		localization_key = paternalism_military_mandate_subtype
-	}
-	text = {
-		trigger = { has_country_leader_ideology = paternalism_neoconservatism_subtype }
-		localization_key = paternalism_neoconservatism_subtype
 	}
 	text = {
 		trigger = { has_country_leader_ideology = paternalism_dixiecrat_subtype }
@@ -484,13 +496,13 @@ defined_text = {
 		localization_key = paternalism_poujadism_subtype
 	}
 	text = {
-        trigger = { has_country_leader_ideology = paternalism_mladorossi_idea_subtype }
-        localization_key = paternalism_mladorossi_idea_subtype
-    }
-	text = {
 		trigger = { has_country_leader_ideology = paternalism_authoritarian_developmentalism_subtype }
 		localization_key = paternalism_authoritarian_developmentalism_subtype
 	}
+	text = {
+        trigger = { has_country_leader_ideology = paternalism_mladorossi_idea_subtype }
+        localization_key = paternalism_mladorossi_idea_subtype
+    }
 	text = {
 		localization_key = paternalism
 	}
@@ -567,6 +579,10 @@ defined_text = {
 		localization_key = despotism_managerial_state_subtype
 	}
 	text = {
+		trigger = { has_country_leader_ideology = despotism_institutional_despotism_subtype }
+		localization_key = despotism_institutional_despotism_subtype
+	}
+	text = {
         trigger = { has_country_leader_ideology = despotism_mladorossi_autocracy_subtype }
         localization_key = despotism_mladorossi_autocracy_subtype
     }
@@ -581,10 +597,6 @@ defined_text = {
 
 defined_text = {
 	name = GetSubIdeologyLocFascism
-	text = {
-		trigger = { has_country_leader_ideology = fascism_reformed_national_socialism_subtype }
-		localization_key = fascism_reformed_national_socialism_subtype
-	}
 	text = {
 		trigger = { has_country_leader_ideology = fascism_corporatism_subtype }
 		localization_key = fascism_corporatism_subtype
@@ -618,8 +630,8 @@ defined_text = {
 		localization_key = fascism_reform_bureaucracy_subtype
 	}
 	text = {
-		trigger = { has_country_leader_ideology = fascism_proletarian_nationalism_subtype }
-		localization_key = fascism_proletarian_nationalism_subtype
+		trigger = { has_country_leader_ideology = fascism_neosocialism_subtype }
+		localization_key = fascism_neosocialism_subtype
 	}
 	text = {
 		trigger = { has_country_leader_ideology = fascism_integralism_subtype }
@@ -636,6 +648,10 @@ defined_text = {
 	text = {
 		trigger = { has_country_leader_ideology = fascism_ecclesiastic_nationalism_subtype }
 		localization_key = fascism_ecclesiastic_nationalism_subtype
+	}
+	text = {
+		trigger = { has_country_leader_ideology = fascism_ordosocialism_subtype }
+		localization_key = fascism_ordosocialism_subtype
 	}
 	text = {
 		trigger = { has_country_leader_ideology = fascism_mladosocialism_subtype }
@@ -665,14 +681,6 @@ defined_text = {
 		localization_key = ultranationalism_fundamentalism_subtype
 	}
 	text = {
-		trigger = { has_country_leader_ideology = ultranationalism_stratocratic_nazism_subtype }
-		localization_key = ultranationalism_stratocratic_nazism_subtype
-	}
-	text = {
-		trigger = { has_country_leader_ideology = ultranationalism_qutbism_subtype }
-		localization_key = ultranationalism_qutbism_subtype
-	}
-	text = {
 		trigger = { has_country_leader_ideology = ultranationalism_esoteric_despotism_subtype }
 		localization_key = ultranationalism_esoteric_despotism_subtype
 	}
@@ -688,8 +696,16 @@ defined_text = {
 defined_text = {
 	name = GetSubIdeologyLocNationalSocialism
 	text = {
+		trigger = { has_country_leader_ideology = national_socialism_reformed_national_socialism_subtype }
+		localization_key = national_socialism_reformed_national_socialism_subtype
+	}
+	text = {
 		trigger = { has_country_leader_ideology = national_socialism_ariocriollismo_subtype }
 		localization_key = national_socialism_ariocriollismo_subtype
+	}
+	text = {
+		trigger = { has_country_leader_ideology = national_socialism_naturalised_nazism_subtype }
+		localization_key = national_socialism_naturalised_nazism_subtype
 	}
 	text = {
 		trigger = { has_country_leader_ideology = national_socialism_idiosyncratic_nazism_subtype }
@@ -720,32 +736,34 @@ defined_text = {
 		localization_key = national_socialism_revolutionary_nazism_subtype
 	}
 	text = {
+		trigger = { has_country_leader_ideology = national_socialism_national_socialist_orthodoxy_subtype }
+		localization_key = national_socialism_national_socialist_orthodoxy_subtype
+	}
+	text = {
+		trigger = { has_country_leader_ideology = national_socialism_esoteric_nazism_subtype }
+		localization_key = national_socialism_esoteric_nazism_subtype
+	}
+	text = {
+		trigger = { has_country_leader_ideology = national_socialism_burgundian_system_subtype }
+		localization_key = national_socialism_burgundian_system_subtype
+	}
+	text = {
+		trigger = { has_country_leader_ideology = national_socialism_imperial_cult_subtype }
+		localization_key = national_socialism_imperial_cult_subtype
+	}
+	text = {
+		trigger = { has_country_leader_ideology = national_socialism_deep_ecology_nazism_subtype }
+		localization_key = national_socialism_deep_ecology_nazism_subtype
+	}
+	text = {
+		trigger = { has_country_leader_ideology = national_socialism_rosenbergite_tendency_subtype }
+		localization_key = national_socialism_rosenbergite_tendency_subtype
+	}
+	text = {
 		localization_key = national_socialism
 	}
 }
 
-defined_text = {
-	name = GetSubIdeologyLocEsotericNazism
-	text = {
-		trigger = { has_country_leader_ideology = esoteric_nazism_burgundian_system_subtype }
-		localization_key = esoteric_nazism_burgundian_system_subtype
-	}
-	text = {
-		trigger = { has_country_leader_ideology = esoteric_nazism_imperial_cult_subtype }
-		localization_key = esoteric_nazism_imperial_cult_subtype
-	}
-	text = {
-		trigger = { has_country_leader_ideology = esoteric_nazism_agrarian_spartanism_subtype }
-		localization_key = esoteric_nazism_agrarian_spartanism_subtype
-	}
-	text = {
-		trigger = { has_country_leader_ideology = esoteric_nazism_deep_ecology_nazism_subtype }
-		localization_key = esoteric_nazism_deep_ecology_nazism_subtype
-	}
-	text = {
-		localization_key = esoteric_nazism
-	}
-}
 defined_text = {
 	name = GetFactionLeaderMember
 	text = {
@@ -766,8 +784,8 @@ defined_text = {
 defined_text = {
 	name = GetCurrentAutonomyState
 	text = {
-		trigger = { has_autonomy_state = autonomy_autonomous_reichskommissariat }
-		localization_key = autonomy_autonomous_reichskommissariat
+		trigger = { has_autonomy_state = autonomy_reichskommissariat }
+		localization_key = autonomy_reichskommissariat
 	}
 	text = {
 		trigger = { has_autonomy_state = autonomy_colony }
@@ -780,10 +798,6 @@ defined_text = {
 	text = {
 		trigger = { has_autonomy_state = autonomy_integrated_puppet }
 		localization_key = autonomy_integrated_puppet
-	}
-	text = {
-		trigger = { has_autonomy_state = autonomy_integrated_reichskommissariat }
-		localization_key = autonomy_integrated_reichskommissariat
 	}
 	text = {
 		trigger = { has_autonomy_state = autonomy_puppet }
@@ -1967,7 +1981,7 @@ defined_text = {
 	name = get_academic_base_development_status
 	text = {
 		trigger = {
-			check_variable = { var = academic_base_counter  value = 0 compare = greater_than_or_equals }
+			check_variable = { var = academic_base_counter value = 0 compare = greater_than_or_equals }
 		}
 		localization_key = TNO_SD_Trend_Academic_Base_Status_Positive
 	}
@@ -1983,7 +1997,7 @@ defined_text = {
 	name = get_research_facilities_development_status
 	text = {
 		trigger = {
-			check_variable = { var = research_facilities_counter  value = 0 compare = greater_than_or_equals }
+			check_variable = { var = research_facilities_counter value = 0 compare = greater_than_or_equals }
 		}
 		localization_key = TNO_SD_Trend_Research_Facilities_Status_Positive
 	}
@@ -1999,7 +2013,7 @@ defined_text = {
 	name = get_agriculture_development_status
 	text = {
 		trigger = {
-			check_variable = { var = agriculture_counter  value = 0 compare = greater_than_or_equals }
+			check_variable = { var = agriculture_counter value = 0 compare = greater_than_or_equals }
 		}
 		localization_key = TNO_SD_Trend_Agriculture_Status_Positive
 	}
@@ -2015,7 +2029,7 @@ defined_text = {
 	name = get_healthcare_development_status
 	text = {
 		trigger = {
-			check_variable = { var = healthcare_counter  value = 0 compare = greater_than_or_equals }
+			check_variable = { var = healthcare_counter value = 0 compare = greater_than_or_equals }
 		}
 		localization_key = TNO_SD_Trend_Healthcare_Status_Positive
 	}
@@ -2031,7 +2045,7 @@ defined_text = {
 	name = get_admin_efficiency_development_status
 	text = {
 		trigger = {
-			check_variable = { var = admin_efficiency_counter  value = 0 compare = greater_than_or_equals }
+			check_variable = { var = admin_efficiency_counter value = 0 compare = greater_than_or_equals }
 		}
 		localization_key = TNO_SD_Trend_Admin_Efficiency_Status_Positive
 	}
@@ -2047,7 +2061,7 @@ defined_text = {
 	name = get_industrial_equipment_development_status
 	text = {
 		trigger = {
-			check_variable = { var = industrial_equipment_counter  value = 0 compare = greater_than_or_equals }
+			check_variable = { var = industrial_equipment_counter value = 0 compare = greater_than_or_equals }
 		}
 		localization_key = TNO_SD_Trend_Industrial_Equip_Status_Positive
 	}
@@ -2063,7 +2077,7 @@ defined_text = {
 	name = get_industrial_expertise_development_status
 	text = {
 		trigger = {
-			check_variable = { var = industrial_expertise_counter  value = 0 compare = greater_than_or_equals }
+			check_variable = { var = industrial_expertise_counter value = 0 compare = greater_than_or_equals }
 		}
 		localization_key = TNO_SD_Trend_Industrial_Expertise_Status_Positive
 	}
@@ -2079,7 +2093,7 @@ defined_text = {
 	name = get_army_professionalism_development_status
 	text = {
 		trigger = {
-			check_variable = { var = army_professionalism_counter  value = 0 compare = greater_than_or_equals }
+			check_variable = { var = army_professionalism_counter value = 0 compare = greater_than_or_equals }
 		}
 		localization_key = TNO_SD_Trend_Army_Professionalism_Status_Positive
 	}

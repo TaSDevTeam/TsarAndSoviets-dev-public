@@ -150,6 +150,29 @@ defined_text = {
 	text = {
 		trigger = {
 			event_target:winning_country = {
+				OR = {
+					original_tag = UKR
+					original_tag = FUK
+					original_tag = BOV
+					original_tag = UKS
+					original_tag = HEE
+				}
+			}
+			event_target:losing_country = {
+				OR = {
+					original_tag = UKR
+					original_tag = FUK
+					original_tag = BOV
+					original_tag = UKS
+					original_tag = HEE
+				}
+			}
+		}
+		localization_key = TNO_PEACE_POPUP_WAR_CONCLUSION_UKRAINE
+	}
+	text = {
+		trigger = {
+			event_target:winning_country = {
 				original_tag = SAF
 			}
 			event_target:losing_country = {
@@ -416,28 +439,6 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			has_global_flag = german_civil_war_goeringvic
-			event_target:losing_country = {
-				OR= {
-					original_tag = OST
-					original_tag = MST
-					original_tag = JST
-					original_tag = DST
-					original_tag = UPO
-					original_tag = BLR
-					original_tag = CZE
-					original_tag = POL
-					original_tag = SLO
-				}
-			}
-			event_target:winning_country = {
-				original_tag = GER
-			}
-		}
-		localization_key = TNO_PEACE_POPUP_WAR_CONCLUSION_GER_PLANZEROWIN
-	}
-	text = {
-		trigger = {
 			event_target:losing_country = {
 				original_tag = INS
 			}
@@ -538,6 +539,9 @@ defined_text = {
 	# Scenario 1
 	text = {
 		trigger = {
+			event_target:winning_country = {
+				has_country_flag = WAA_MEMBER
+			}
 			event_target:losing_country = {
 				has_country_flag = PALF_MEMBER
 			}
@@ -547,6 +551,9 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			event_target:winning_country = {
+				has_country_flag = PALF_MEMBER
+			}
 			event_target:losing_country = {
 				has_country_flag = WAA_MEMBER
 			}
@@ -635,6 +642,9 @@ defined_text = {
 	# Scenario 3
 	text = {
 		trigger = {
+			event_target:winning_country = {
+				has_country_flag = FMA_MEMBER
+			}
 			event_target:losing_country = {
 				has_country_flag = PALF_MEMBER
 			}
@@ -644,6 +654,9 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			event_target:winning_country = {
+				has_country_flag = PALF_MEMBER
+			}
 			event_target:losing_country = {
 				has_country_flag = FMA_MEMBER
 			}
@@ -721,7 +734,10 @@ defined_text = {
 			}
 			event_target:winning_country = {
 				original_tag = KOM
-				has_government = esoteric_nazism
+				has_country_leader = {
+					character = KOM_Sergey_Taboritsky
+					ruling_only = yes
+				}
 			}
 		}
 		localization_key = TNO_PEACE_POPUP_WAR_CONCLUSION_RUS_tabby
@@ -867,6 +883,31 @@ defined_text = {
 	}
 
 	# Puerto Plata Invasion
+	text = {
+		trigger = {
+			has_global_flag = PPI_ceasefire_collapsed
+			event_target:winning_country = {
+				tag = CAL
+			}
+			event_target:losing_country = {
+				tag = DOM
+			}
+		}
+		localization_key = TNO_PEACE_POPUP_WAR_CONCLUSION_CAL_DOM_ceasefire
+	}
+	text = {
+		trigger = {
+			has_global_flag = PPI_ceasefire_collapsed
+			event_target:winning_country = {
+				tag = DOM
+			}
+			event_target:losing_country = {
+				tag = CAL
+			}
+		}
+		localization_key = TNO_PEACE_POPUP_WAR_CONCLUSION_DOM_CAL_ceasefire
+	}
+
 	text = {
 		trigger = {
 			event_target:winning_country = {
@@ -1052,6 +1093,7 @@ defined_text = {
 		}
 		localization_key = TNO_PEACE_POPUP_FLAVOR_KATAKURA
 	}
+	###end of tas stuff
 	text = {
 		trigger = {
 			event_target:losing_country = {
@@ -1102,14 +1144,6 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			event_target:losing_country = {
-				original_tag = MON
-			}
-		}
-		localization_key = TNO_PEACE_POPUP_FLAVOR_MON
-	}
-	text = {
-		trigger = {
 			event_target:winning_country = {
 				OR = {
 					tag = MEN
@@ -1134,6 +1168,42 @@ defined_text = {
 			}
 		}
 		localization_key = TNO_PEACE_POPUP_FLAVOR_CHI_GAW
+	}
+	text = {
+		trigger = {
+			event_target:losing_country = {
+				original_tag = CLC
+				has_country_leader = {
+					character = CLD_Heriberto_Schwartau
+					ruling_only = yes
+				}
+			}
+		}
+		localization_key = TNO_PEACE_POPUP_FLAVOR_NAZI
+	}
+	text = {
+		trigger = {
+			event_target:losing_country = {
+				original_tag = CLD
+				has_country_leader = {
+					character = CLD_Jose_Camacho_Carreno
+					ruling_only = yes
+				}
+			}
+		}
+		localization_key = TNO_PEACE_POPUP_FLAVOR_ARIO
+	}
+	text = {
+		trigger = {
+			event_target:losing_country = {
+				original_tag = CLL
+				has_country_leader = {
+					character = CLL_Partisans
+					ruling_only = yes
+				}
+			}
+		}
+		localization_key = TNO_PEACE_POPUP_FLAVOR_PARTISANS
 	}
 	text = {
 		trigger = {
@@ -1935,10 +2005,8 @@ defined_text = {
 				original_tag = NOV
 			}
 			NOT = {
-				OR = {
-					has_global_flag = AFTER_MIDNIGHT_COMMENCED
-					has_global_flag = SBA_collapsed
-				}
+				has_global_flag = AFTER_MIDNIGHT_COMMENCED
+				has_global_flag = SBA_collapsed
 			}
 		}
 		localization_key = TNO_PEACE_POPUP_FLAVOR_NOV
@@ -2010,10 +2078,8 @@ defined_text = {
 				original_tag = SBA
 			}
 			NOT = {
-				OR = {
-					has_global_flag = AFTER_MIDNIGHT_COMMENCED
-					has_global_flag = SBA_collapsed
-				}
+				has_global_flag = AFTER_MIDNIGHT_COMMENCED
+				has_global_flag = SBA_collapsed
 			}
 		}
 		localization_key = TNO_PEACE_POPUP_FLAVOR_SBA
@@ -2043,10 +2109,8 @@ defined_text = {
 				original_tag = KRS
 			}
 			NOT = {
-				OR = {
-					has_global_flag = AFTER_MIDNIGHT_COMMENCED
-					has_global_flag = SBA_collapsed
-				}
+				has_global_flag = AFTER_MIDNIGHT_COMMENCED
+				has_global_flag = SBA_collapsed
 			}
 		}
 		localization_key = TNO_PEACE_POPUP_FLAVOR_KRS
@@ -2097,10 +2161,8 @@ defined_text = {
 				original_tag = ALT
 			}
 			NOT = {
-				OR = {
-					has_global_flag = AFTER_MIDNIGHT_COMMENCED
-					has_global_flag = SBA_collapsed
-				}
+				has_global_flag = AFTER_MIDNIGHT_COMMENCED
+				has_global_flag = SBA_collapsed
 			}
 		}
 		localization_key = TNO_PEACE_POPUP_FLAVOR_ALT
@@ -2443,8 +2505,8 @@ defined_text = {
 		localization_key = TNO_PEACE_POPUP_FLAVOR_MSK_SNP
 	}
 	text = {
-		trigger = { 
-			event_target:losing_country = { original_tag = PAU } 
+		trigger = {
+			event_target:losing_country = { original_tag = PAU }
 			NOT = { has_global_flag = SGR_Slave_Revolt }
 		}
 		localization_key = TNO_PEACE_POPUP_FLAVOR_MSK_PAU
@@ -2502,15 +2564,6 @@ defined_text = {
 	text = {
 		trigger = {
 			event_target:losing_country = {
-				original_tag = PCZ
-			}
-		}
-		localization_key = TNO_PEACE_POPUP_FLAVOR_CANAL
-	}
-
-	text = {
-		trigger = {
-			event_target:losing_country = {
 				original_tag = URG
 			}
 		}
@@ -2528,24 +2581,24 @@ defined_text = {
 
 	text = {
 		trigger = {
+			NOT = { has_global_flag = PPI_ceasefire_collapsed }
 			event_target:winning_country = {
 				original_tag = CAL
 			}
 			event_target:losing_country = {
 				original_tag = DOM
-				NOT = { has_global_flag = DOM_Ceasefire }
 			}
 		}
 		localization_key = TNO_PEACE_POPUP_FLAVOR_Trujillo
 	}
 	text = {
 		trigger = {
+			has_global_flag = PPI_ceasefire_collapsed
 			event_target:winning_country = {
 				original_tag = CAL
 			}
 			event_target:losing_country = {
 				original_tag = DOM
-				has_global_flag = DOM_Ceasefire
 			}
 		}
 		localization_key = TNO_PEACE_POPUP_FLAVOR_DOM_Ceasefire
@@ -2668,7 +2721,7 @@ defined_text = {
 		}
 		localization_key = TNO_PEACE_POPUP_FLAVOR_CHARLEMAGNE_COLLAPSE
 	}
-	
+
 	## SS Civil War
 	text = {
 		trigger = {
@@ -3382,7 +3435,7 @@ defined_text = {
 		}
 		localization_key = TNO_PEACE_POPUP_FLAVOR_FRA_CW
 	}
-	
+
 	text = {
 		trigger = {
 			event_target:losing_country = {
@@ -3391,7 +3444,7 @@ defined_text = {
 		}
 		localization_key = TNO_PEACE_POPUP_FLAVOR_FRV_CW
 	}
-	
+
 	text = {
 		trigger = {
 			event_target:losing_country = {
@@ -3400,7 +3453,7 @@ defined_text = {
 		}
 		localization_key = TNO_PEACE_POPUP_FLAVOR_FRM_CW
 	}
-	
+
 	text = {
 		trigger = {
 			event_target:losing_country = {
@@ -3409,7 +3462,7 @@ defined_text = {
 		}
 		localization_key = TNO_PEACE_POPUP_FLAVOR_FMM_CW
 	}
-	
+
 	text = {
 		trigger = {
 			event_target:losing_country = {
@@ -3418,7 +3471,7 @@ defined_text = {
 		}
 		localization_key = TNO_PEACE_POPUP_FLAVOR_FIT_CW
 	}
-	
+
 	text = {
 		trigger = {
 			event_target:losing_country = {
@@ -3427,7 +3480,7 @@ defined_text = {
 		}
 		localization_key = TNO_PEACE_POPUP_FLAVOR_FGR_CW
 	}
-	
+
 	text = {
 		trigger = {
 			has_global_flag = FFR_reclamation_happening
@@ -3447,7 +3500,7 @@ defined_text = {
 		}
 		localization_key = TNO_PEACE_POPUP_FLAVOR_FRD_CW
 	}
-	
+
  # Colombian Civil War
 	text = {
 		trigger = {
@@ -3457,7 +3510,7 @@ defined_text = {
 		}
 		localization_key = TNO_PEACE_POPUP_FLAVOR_CLL_CW
 	}
-	
+
 	text = {
 		trigger = {
 			event_target:losing_country = {
@@ -3466,7 +3519,7 @@ defined_text = {
 		}
 		localization_key = TNO_PEACE_POPUP_FLAVOR_CLC_CW
 	}
-	
+
 	text = {
 		trigger = {
 			event_target:losing_country = {
@@ -3475,7 +3528,7 @@ defined_text = {
 		}
 		localization_key = TNO_PEACE_POPUP_FLAVOR_COL_CW
 	}
-	
+
 	text = {
 		trigger = {
 			event_target:losing_country = {
@@ -3502,7 +3555,7 @@ defined_text = {
 		}
 		localization_key = TNO_PEACE_POPUP_FLAVOR_SLF
 	}
-	
+
 	text = {
 		localization_key = TNO_PEACE_POPUP_FLAVOR_DEFAULT
 	}

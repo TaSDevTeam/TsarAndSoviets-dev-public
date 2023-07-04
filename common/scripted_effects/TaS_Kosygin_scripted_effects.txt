@@ -179,11 +179,11 @@ MAR_Prestol_start = {
 	set_variable = { MAR_tabby_timeout = 500 }
 	hidden_effect = {
 		add_popularity = {
-			ideology = esoteric_nazism
+			ideology = national_socialism
 			popularity = 0.1
 		}
 		set_party_name = {
-			ideology = esoteric_nazism
+			ideology = national_socialism
 			long_name = MAR_esoteric_nazism_taboritsky_party_long
 			name = MAR_esoteric_nazism_taboritsky_party
 		}
@@ -1075,7 +1075,7 @@ TaS_Kosygin_westrussian_collapse = {
 				character = SAM_Viktor_Maltsev
 				country_leader = {
 					desc = "POLITICS_VIKTOR_MALTSEV_COLLAPSE_DESC"
-					ideology = fascism_proletarian_nationalism_subtype
+					ideology = fascism_neosocialism_subtype
 					expire = "1999.1.1"
 					traits = { }
 				}

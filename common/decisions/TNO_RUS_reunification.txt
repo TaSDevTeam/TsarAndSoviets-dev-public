@@ -29,6 +29,7 @@ RUS_murmansk_crisis_category = {
 			activate_mission = WSR_tempo_of_war
 			hidden_effect = {
 				every_country = {
+					limit = { is_ai = no }
 					news_event = {
 						id = FIN_WORLD.7
 						days = 1
@@ -450,75 +451,75 @@ RUS_reunification_category = {
 		}
 	}
 
-	kazakhstan_reunification = {
-		icon = GFX_decision_generic_kazakhstan
-		available = {
-			can_form_kazakhstan = yes
-			has_war = no
-		}
-		allowed = {
-			is_kazakh_nation = yes
-		}
-		ai_will_do = {
-			factor = 200
-		}
-		fire_only_once = yes
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision kazakh_reunification"
-			save_global_event_target_as = RUS_kazakhstan_unifier
-			add_research_slot = 1
-			clr_country_flag = is_warlord
-			set_country_flag = RUS_regional_stage
-			generate_russia_state_gdp = yes
-			set_global_flag = KAZ_UNIFIED
-			custom_effect_tooltip = RUS_end_warlord_tt
-			hidden_effect = {
-				add_dynamic_modifier = { modifier = TNO_deficit_effects_modifier }
-				country_event = { id = RUS.3 days = 30 } #caffine flow
-				if = {
-					limit = {
-						has_idea = tno_income_taxation_not_applicable
-					}
-					swap_ideas = {
-						remove_idea = tno_income_taxation_not_applicable
-						add_idea = tno_income_taxation_flat_taxes
-					}
-				}
-			}
-			RUS_select_kazakh_cosmetic_tag = yes
-			RUS_select_kazakh_news_event = yes
-			if = {
-				limit = {
-					original_tag = AKT
-				}
-				add_manpower = 150000
-			}
-			if = {
-				limit = {
-					original_tag = NPL
-				}
-				country_event = RUS_kazakhstan.1
-			}
-			hidden_effect = {
-				for_each_scope_loop = {
-					array = global.russian_warlords
-					if = {
-						limit = {
-							NOT = { tag = ROOT }
-							exists = no
-							is_kazakh_nation = yes
-						}
-						every_state = {
-							limit = {
-								is_core_of = PREV
-							}
-							PREV = { remove_state_core = PREV }
-						}
-					}
-				}
-			}
-		}
-	}
+	#kazakhstan_reunification = {
+	#	icon = GFX_decision_generic_kazakhstan
+	#	available = {
+	#		can_form_kazakhstan = yes
+	#		has_war = no
+	#	}
+	#	allowed = {
+	#		is_kazakh_nation = yes
+	#	}
+	#	ai_will_do = {
+	#		factor = 200
+	#	}
+	#	fire_only_once = yes
+	#	complete_effect = {
+	#		log = "[GetDateText]: [Root.GetName]: Decision kazakh_reunification"
+	#		save_global_event_target_as = RUS_kazakhstan_unifier
+	#		add_research_slot = 1
+	#		clr_country_flag = is_warlord
+	#		set_country_flag = RUS_regional_stage
+	#		generate_russia_state_gdp = yes
+	#		set_global_flag = KAZ_UNIFIED
+	#		custom_effect_tooltip = RUS_end_warlord_tt
+	#		hidden_effect = {
+	#			add_dynamic_modifier = { modifier = TNO_deficit_effects_modifier }
+	#			country_event = { id = RUS.3 days = 30 } #caffine flow
+	#			if = {
+	#				limit = {
+	#					has_idea = tno_income_taxation_not_applicable
+	#				}
+	#				swap_ideas = {
+	#					remove_idea = tno_income_taxation_not_applicable
+	#					add_idea = tno_income_taxation_flat_taxes
+	#				}
+	#			}
+	#		}
+	#		RUS_select_kazakh_cosmetic_tag = yes
+	#		RUS_select_kazakh_news_event = yes
+	#		if = {
+	#			limit = {
+	#				original_tag = AKT
+	#			}
+	#			add_manpower = 150000
+	#		}
+	#		if = {
+	#			limit = {
+	#				original_tag = NPL
+	#			}
+	#			country_event = RUS_kazakhstan.1
+	#		}
+	#		hidden_effect = {
+	#			for_each_scope_loop = {
+	#				array = global.russian_warlords
+	#				if = {
+	#					limit = {
+	#						NOT = { tag = ROOT }
+	#						exists = no
+	#						is_kazakh_nation = yes
+	#					}
+	#					every_state = {
+	#						limit = {
+	#							is_core_of = PREV
+	#						}
+	#						PREV = { remove_state_core = PREV }
+	#					}
+	#				}
+	#			}
+	#		}
+	#	}
+	#}
 
 	russian_total_reunification = {
 
@@ -606,25 +607,26 @@ RUS_reunification_category = {
 			if = {
 				limit = {
 					NOT = {
-						OR = {
-							has_government = esoteric_nazism
-							original_tag = PRM
-							has_country_leader = {
-								character = WRS_Mikhail_Tukhachevsky
-								ruling_only = yes
-							}
-							original_tag = SBA
-							AND = { #ponies get better credit rating, thank you very much, this time for real
-								original_tag = OMO
-								NOT = {
-									has_country_leader = {
-										character = OMO_2022_Nikolai_Buckharin
-										ruling_only = yes
-									}
+						has_country_leader = {
+							character = KOM_Sergey_Taboritsky
+							ruling_only = yes
+						}
+						original_tag = PRM
+						has_country_leader = {
+							character = WRS_Mikhail_Tukhachevsky
+							ruling_only = yes
+						}
+						original_tag = SBA
+						AND = { #ponies get better credit rating, thank you very much, this time for real
+							original_tag = OMO
+							NOT = {
+								has_country_leader = {
+									character = OMO_2022_Nikolai_Buckharin
+									ruling_only = yes
 								}
 							}
-							original_tag = AMR
 						}
+						original_tag = AMR
 					}
 				}
 				econ_raise_max_credit_rating = yes
@@ -709,7 +711,10 @@ RUS_reunification_category = {
 				}
 				if = {
 					limit = {
-						has_government = esoteric_nazism
+						has_country_leader = {
+							character = KOM_Sergey_Taboritsky
+							ruling_only = yes
+						}
 					}
 					if = {
 						limit = {
@@ -1018,18 +1023,19 @@ RUS_reunification_category = {
 			navy_experience = 20
 			hidden_effect = {
 				add_manpower = 250000
-				country_event = { id = RUS_wonder.0 days = 7 }
+				country_event = { id = RUS_wonder.0 days = 15}
 			}
 			if = {
 				limit = {
 					NOT = {
-						OR = {
-							has_government = esoteric_nazism
-							original_tag = PRM
-							has_country_leader = {
-								character = WRS_Mikhail_Tukhachevsky
-								ruling_only = yes
-							}
+						has_country_leader = {
+							character = KOM_Sergey_Taboritsky
+							ruling_only = yes
+						}
+						original_tag = PRM
+						has_country_leader = {
+							character = WRS_Mikhail_Tukhachevsky
+							ruling_only = yes
 						}
 					}
 				}
@@ -1070,7 +1076,7 @@ RUS_reunification_category = {
 					original_tag = KOM
 					OR = {
 						has_government = progressivism
-						has_government = paternalism
+						has_government = liberal_conservatism
 						has_government = liberalism
 					}
 				}
@@ -1174,7 +1180,7 @@ RUS_reunification_category = {
 			}
 			hidden_effect = {
 				add_manpower = 250000
-				country_event = { id = RUS_wonder.0 days = 7 }
+				country_event = { id = RUS_wonder.0 days = 15 }
 				if = { #Kills North Siberian Anarchy if AI sucks
 					limit = { country_exists = NRL }
 					annex_country = {
@@ -1209,19 +1215,17 @@ RUS_reunification_category = {
 			if = {
 				limit = {
 					NOT = {
-						OR = {
-							original_tag = SBA
-							AND = { #ponies get better credit rating, thank you very much, this time for real
-								original_tag = OMO
-								NOT = {
-									has_country_leader = {
-										character = OMO_2022_Nikolai_Buckharin
-										ruling_only = yes
-									}
+						original_tag = SBA
+						AND = { #ponies get better credit rating, thank you very much, this time for real
+							original_tag = OMO
+							NOT = {
+								has_country_leader = {
+									character = OMO_2022_Nikolai_Buckharin
+									ruling_only = yes
 								}
 							}
-							original_tag = AMR
 						}
+						original_tag = AMR
 					}
 				}
 				econ_raise_max_credit_rating = yes
@@ -1304,21 +1308,6 @@ RUS_reunification_category = {
 		}
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision west_russia_reunification"
-			if = {
-				limit = {
-					NOT = {
-						tag = PRM
-					}
-				}
-				hidden_effect = {
-					FIN = {
-						country_event = {
-							id = murmansk.1
-							days = 330
-						}
-					}
-				}
-			}
 			set_global_flag = RUS_West_Russian_unification
 			save_global_event_target_as = RUS_western_unifier
 			RUS_calculate_prestige_value = yes
@@ -1363,6 +1352,29 @@ RUS_reunification_category = {
 				}
 				hidden_effect = {
 					RUS_state_pops_to_pop_wheel = yes
+				}
+			}
+			if = { #allows WRRF to move capital back to Rykov
+				limit = {
+					original_tag = WRS
+				}
+				country_event = {
+					id = zhukov.27
+					days = 5
+				}
+			}
+			if = { #allows despot Stalina to move capital to Vyatka, other have it in Smuta tree
+				limit = {
+					original_tag = KOM
+					has_country_leader = {
+						character = KOM_Svetlana_Stalina
+						ruling_only = yes
+					}
+					has_government = despotism
+				}
+				country_event = {
+					id = KOM.366
+					days = 5
 				}
 			}
 			if = {
@@ -1503,6 +1515,22 @@ RUS_reunification_category = {
 			}
 			clear_variable = loot_amount
 			set_country_flag = W_RUSSIA_UNIFIED
+			if = {
+				limit = {
+					NOT = {
+						tag = PRM
+					}
+				}
+				custom_effect_tooltip = WSR_uprising_stirs
+				hidden_effect = {
+					FIN = {
+						country_event = {
+							id = murmansk.1
+							days = 150
+						}
+					}
+				}
+			}
 		}
 	}
 
@@ -1512,7 +1540,10 @@ RUS_reunification_category = {
 
 		visible = {
 			has_country_flag = RUS_superregional_stage
-			has_government = esoteric_nazism
+			has_country_leader = {
+				character = KOM_Sergey_Taboritsky
+				ruling_only = yes
+			}
 			original_tag = KOM
 		}
 
@@ -1597,15 +1628,13 @@ RUS_reunification_category = {
 
 		visible = {
 			has_country_flag = RUS_regional_stage
+			NOT = {
+				has_country_flag = BEGUN_SOUTHERN_URALS_CRISIS
+			}
 			OR = {
 				country_exists = ORE
 				country_exists = URL
 				country_exists = MGN
-			}
-			NOT = {
-				original_tag = OMS
-				has_global_flag = OMS_BatovInsurrectionSuccess
-				has_country_flag = BEGUN_SOUTHERN_URALS_CRISIS
 			}
 		}
 
@@ -1658,6 +1687,9 @@ RUS_reunification_category = {
 				factor = 0
 				has_game_rule = { rule = WSR_WSB_war_or_peace option = WSR_WSB_WAR_OR_PEACE_PEACE }
 				WSR_WSB_is_compatible = yes
+				NOT = {
+					has_country_flag = RUS_fucked_up_horribly_war_time
+				}
 			}
 		}
 
@@ -1695,6 +1727,18 @@ RUS_reunification_category = {
 				}
 			}
 			set_variable = { RUSWarPreparedness = 0 }
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = RUSSIA_UNIFICATION_OUTCOME
+						option = RUSSIA_UNIFICATION_OUTCOME_WSR
+					}
+				}
+				country_event = {
+					id = russia_unification.200
+					days = 365
+				}
+			}
 		}
 	}
 
@@ -1894,7 +1938,11 @@ RUS_reunification_category = {
 
 		visible = {
 			has_country_flag = RUS_regional_stage
-			NOT = { has_country_flag = BEGUN_SOUTHERN_URALS_CRISIS }
+			NOT = {
+				original_tag = OMS
+				has_global_flag = OMS_BatovInsurrectionSuccess
+				has_country_flag = BEGUN_SOUTHERN_URALS_CRISIS
+			}
 			OR = {
 				country_exists = ORE
 				country_exists = URL
@@ -1959,6 +2007,9 @@ RUS_reunification_category = {
 				factor = 0
 				has_game_rule = { rule = WSR_WSB_war_or_peace option = WSR_WSB_WAR_OR_PEACE_PEACE }
 				WSR_WSB_is_compatible = yes
+				NOT = {
+					has_country_flag = RUS_fucked_up_horribly_war_time
+				}
 			}
 		}
 
@@ -1996,6 +2047,18 @@ RUS_reunification_category = {
 				}
 			}
 			set_variable = { RUSWarPreparedness = 0 }
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = RUSSIA_UNIFICATION_OUTCOME
+						option = RUSSIA_UNIFICATION_OUTCOME_WSB
+					}
+				}
+				country_event = {
+					id = russia_unification.200
+					days = 365
+				}
+			}
 		}
 	}
 
@@ -2065,10 +2128,7 @@ RUS_reunification_category = {
 		}
 		visible = {
 			NOT = {
-				OR = {
-					has_country_flag = PRC_MON
-					has_global_flag = SBA_collapsed
-				}
+				has_global_flag = SBA_collapsed
 			}
 		}
 		ai_will_do = {
@@ -2198,6 +2258,9 @@ RUS_reunification_category = {
 				factor = 0
 				has_game_rule = { rule = CSB_FST_war_or_peace option = CSB_FST_WAR_OR_PEACE_PEACE }
 				CSB_FST_is_compatible = yes
+				NOT = {
+					has_country_flag = RUS_fucked_up_horribly_war_time
+				}
 			}
 		}
 
@@ -2235,6 +2298,18 @@ RUS_reunification_category = {
 				}
 			}
 			set_variable = { RUSWarPreparedness = 0 }
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = SIBERIA_UNIFICATION_OUTCOME
+						option = SIBERIA_UNIFICATION_OUTCOME_CSB
+					}
+				}
+				country_event = {
+					id = russia_unification.200
+					days = 365
+				}
+			}
 		}
 	}
 
@@ -2307,7 +2382,17 @@ RUS_reunification_category = {
 					}
 				}
 			}
-			has_country_flag = RUS_Smuta_Ended
+			if = {
+				limit = {
+					NOT = {
+						AND = {
+							original_tag = OMO
+							OMO_2022_aprilfools_gamerule_active = yes
+						}
+					}
+				}
+				has_country_flag = RUS_Smuta_Ended
+			}
 		}
 		allowed = {
 			is_far_eastern_nation = yes
@@ -2378,16 +2463,6 @@ RUS_reunification_category = {
 
 			if = {
 				limit = {
-					original_tag = IRK
-				}
-				country_event = {
-					id = IRK.23
-					days = 1
-				}
-			}
-
-			else_if = {
-				limit = {
 					original_tag = AMR
 				}
 				country_event = {
@@ -2436,6 +2511,18 @@ RUS_reunification_category = {
 				set_variable = { OMO_2022_crystal_generics_increase_population_cost = 50 }
 			}
 
+			if = {
+				limit = {
+					original_tag = OMO
+					OMO_2022_aprilfools_gamerule_active = no
+				}
+				country_event = {
+					id = RUS_collapse.4
+					days = 300
+					random = 100
+				}
+			}
+
 			hidden_effect = {
 				for_each_scope_loop = {
 					array = global.russian_warlords
@@ -2464,13 +2551,10 @@ RUS_reunification_category = {
 					id = RUS.35
 					days = 30
 				}
-
-				hidden_effect = {
-					country_event = {
-						id = manul.3
-						days = 545
-						random = 100
-					}
+				country_event = {
+					id = manul.3
+					days = 545
+					random = 100
 				}
 			}
 			clear_variable = loot_amount
@@ -2506,6 +2590,9 @@ RUS_reunification_category = {
 				factor = 0
 				has_game_rule = { rule = CSB_FST_war_or_peace option = CSB_FST_WAR_OR_PEACE_PEACE }
 				CSB_FST_is_compatible = yes
+				NOT = {
+					has_country_flag = RUS_fucked_up_horribly_war_time
+				}
 			}
 		}
 
@@ -2543,6 +2630,18 @@ RUS_reunification_category = {
 				}
 			}
 			set_variable = { RUSWarPreparedness = 0 }
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = SIBERIA_UNIFICATION_OUTCOME
+						option = SIBERIA_UNIFICATION_OUTCOME_FST
+					}
+				}
+				country_event = {
+					id = russia_unification.200
+					days = 365
+				}
+			}
 		}
 	}
 
@@ -2629,6 +2728,25 @@ RUS_reunification_category = {
 
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 0
+				AND = {
+					OR = {
+						has_game_rule = {
+							rule = RUSSIA_TOTAL_UNIFICATION_CONFERENCE
+							option = RUSSIA_TOTAL_UNIFICATION_CONFERENCE_RWS
+						}
+						has_game_rule = {
+							rule = RUSSIA_TOTAL_UNIFICATION_CONFERENCE
+							option = RUSSIA_TOTAL_UNIFICATION_CONFERENCE_SIB
+						}
+					}
+					RWS_SIB_is_compatible = yes
+					NOT = {
+						has_country_flag = RUS_fucked_up_horribly_war_time_superregional
+					}
+				}
+			}
 		}
 
 		fire_only_once = yes
@@ -2668,6 +2786,18 @@ RUS_reunification_category = {
 				}
 			}
 			set_variable = { RUSWarPreparedness = 0 }
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = RUSSIA_TOTAL_UNIFICATION_OUTCOME
+						option = RUSSIA_TOTAL_UNIFICATION_OUTCOME_RWS
+					}
+				}
+				country_event = {
+					id = russia_unification.200
+					days = 365
+				}
+			}
 		}
 	}
 
@@ -2753,6 +2883,25 @@ RUS_reunification_category = {
 
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 0
+				AND = {
+					OR = {
+						has_game_rule = {
+							rule = RUSSIA_TOTAL_UNIFICATION_CONFERENCE
+							option = RUSSIA_TOTAL_UNIFICATION_CONFERENCE_RWS
+						}
+						has_game_rule = {
+							rule = RUSSIA_TOTAL_UNIFICATION_CONFERENCE
+							option = RUSSIA_TOTAL_UNIFICATION_CONFERENCE_SIB
+						}
+					}
+					RWS_SIB_is_compatible = yes
+					NOT = {
+						has_country_flag = RUS_fucked_up_horribly_war_time_superregional
+					}
+				}
+			}
 		}
 
 		fire_only_once = yes
@@ -2793,11 +2942,23 @@ RUS_reunification_category = {
 				}
 			}
 			set_variable = { RUSWarPreparedness = 0 }
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = RUSSIA_TOTAL_UNIFICATION_OUTCOME
+						option = RUSSIA_TOTAL_UNIFICATION_OUTCOME_SIB
+					}
+				}
+				country_event = {
+					id = russia_unification.200
+					days = 365
+				}
+			}
 		}
 	}
 
 	siberia_diplo_with_russia = {
-		icon = GFX_decision_generic_western_russia
+		icon = GFX_decision_generic_russia_superregional
 		allowed = {
 			OR = {
 				is_central_siberian_nation = yes
@@ -3051,6 +3212,7 @@ RUS_reunification_category = {
 								OR = {
 									has_government = progressivism
 									has_government = liberalism
+									has_government = liberal_conservatism
 									has_government = conservatism
 									has_government = paternalism
 								}
@@ -3172,6 +3334,7 @@ RUS_reunification_category = {
 								OR = {
 									has_government = progressivism
 									has_government = liberalism
+									has_government = liberal_conservatism
 									has_government = conservatism
 									has_government = paternalism
 								}
@@ -3345,6 +3508,7 @@ RUS_reunification_category = {
 								OR = {
 									has_government = progressivism
 									has_government = liberalism
+									has_government = liberal_conservatism
 									has_government = conservatism
 									has_government = paternalism
 								}
@@ -3455,6 +3619,7 @@ RUS_reunification_category = {
 								OR = {
 									has_government = progressivism
 									has_government = liberalism
+									has_government = liberal_conservatism
 									has_government = conservatism
 									has_government = paternalism
 								}
@@ -3738,6 +3903,7 @@ RUS_reunification_category = {
 								OR = {
 									has_government = progressivism
 									has_government = liberalism
+									has_government = liberal_conservatism
 									has_government = conservatism
 									has_government = paternalism
 								}
@@ -3864,6 +4030,7 @@ RUS_reunification_category = {
 								OR = {
 									has_government = progressivism
 									has_government = liberalism
+									has_government = liberal_conservatism
 									has_government = conservatism
 									has_government = paternalism
 								}
@@ -3926,6 +4093,7 @@ WSR_war_category = {
 			NOT = {
 				has_war_with = WSB
 			}
+			NOT = { has_country_flag = WSR_WSB_WAR }
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -3947,6 +4115,7 @@ WSR_war_category = {
 			hidden_effect = {
 				add_command_power = -25
 			}
+			set_country_flag = WSR_WSB_WAR
 
 			WSB = {
 				country_event = {
@@ -4025,13 +4194,14 @@ WSR_war_category = {
 			}
 		}
 		ai_will_do = {
-			factor = 20
+			factor = 100
 		}
 	}
 	WSR_cross_the_urals = {
 		icon = GFX_decision_generic_assault
 		visible = {
 			NOT = { country_exists = WSB }
+			NOT = { has_country_flag = WSR_WSB_WAR }
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -4053,6 +4223,7 @@ WSR_war_category = {
 			hidden_effect = {
 				add_command_power = -25
 			}
+			set_country_flag = WSR_WSB_WAR
 			every_country = {
 				limit = {
 					is_west_siberian_nation = yes
@@ -4078,7 +4249,7 @@ WSR_war_category = {
 			set_country_flag = RUS_hide_regional_war_decisions
 		}
 		ai_will_do = {
-			factor = 20
+			factor = 100
 		}
 	}
 	WSR_establish_ural_fortifications = {
@@ -4824,6 +4995,7 @@ WSB_war_category = {
 		visible = {
 			country_exists = WSR
 			NOT = { has_war_with = WSR }
+			NOT = { has_country_flag = WSR_WSB_WAR }
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -4845,6 +5017,7 @@ WSB_war_category = {
 			hidden_effect = {
 				add_command_power = -25
 			}
+			set_country_flag = WSR_WSB_WAR
 			WSR = {
 				country_event = {
 					id = russia_unification.11
@@ -4871,13 +5044,14 @@ WSB_war_category = {
 			}
 		}
 		ai_will_do = {
-			factor = 20
+			factor = 100
 		}
 	}
 	WSB_cross_the_urals = {
 		icon = GFX_decision_generic_assault
 		visible = {
 			NOT = { country_exists = WSR }
+			NOT = { has_country_flag = WSR_WSB_WAR }
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -4899,6 +5073,7 @@ WSB_war_category = {
 			hidden_effect = {
 				add_command_power = -25
 			}
+			set_country_flag = WSR_WSB_WAR
 			every_country = {
 				limit = {
 					is_central_russian_nation = yes
@@ -4924,7 +5099,7 @@ WSB_war_category = {
 			set_country_flag = RUS_hide_regional_war_decisions
 		}
 		ai_will_do = {
-			factor = 20
+			factor = 100
 		}
 	}
 	WSB_establish_ural_fortifications = {
@@ -5610,6 +5785,7 @@ CSB_war_category = {
 		visible = {
 			country_exists = FST
 			NOT = { has_war_with = FST }
+			NOT = { has_country_flag = CSB_FST_WAR }
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -5631,6 +5807,7 @@ CSB_war_category = {
 			hidden_effect = {
 				add_command_power = -25
 			}
+			set_country_flag = CSB_FST_WAR
 			FST = {
 				country_event = {
 					id = russia_unification.13
@@ -5640,7 +5817,15 @@ CSB_war_category = {
 		}
 		remove_effect = {
 			hidden_effect = {
-				if = { limit = { USA = { NOT = { has_country_flag = USA_CIA_RUS_CSBvsFST } } } USA = { country_event = USA_CIA_RUS.13 set_country_flag = USA_CIA_RUS_CSBvsFST } }
+				if = { 
+					limit = { 
+						USA = { NOT = { has_country_flag = USA_CIA_RUS_CSBvsFST } } 
+					} 
+					USA = { 
+						country_event = USA_CIA_RUS.13 
+						set_country_flag = USA_CIA_RUS_CSBvsFST 
+					} 
+				}
 			}
 			declare_war_on = {
 				target = FST
@@ -5649,13 +5834,14 @@ CSB_war_category = {
 			set_country_flag = RUS_hide_regional_war_decisions
 		}
 		ai_will_do = {
-			factor = 20
+			factor = 100
 		}
 	}
 	CSB_cross_the_border = {
 		icon = GFX_decision_generic_assault
 		visible = {
 			NOT = { country_exists = FST }
+			NOT = { has_country_flag = CSB_FST_WAR }
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -5676,6 +5862,7 @@ CSB_war_category = {
 			hidden_effect = {
 				add_command_power = -25
 			}
+			set_country_flag = CSB_FST_WAR
 			every_country = {
 				limit = {
 					is_far_eastern_nation = yes
@@ -5701,7 +5888,7 @@ CSB_war_category = {
 			set_country_flag = RUS_hide_regional_war_decisions
 		}
 		ai_will_do = {
-			factor = 20
+			factor = 100
 		}
 	}
 	CSB_establish_eastern_fortifications = {
@@ -5912,28 +6099,44 @@ CSB_war_category = {
 			add_to_variable = { RUSWarPreparedness = 10 }
 			custom_effect_tooltip = CSB_mobilize_airmobile_units_tt
 			air_experience = 15
-			567 = {
+			random_owned_controlled_state = {
+				limit = {
+					state = 567
+					air_base < 10
+				}
 				add_building_construction = {
 					type = air_base
 					level = 2
 					instant_build = yes
 				}
 			}
-			329 = {
+			random_owned_controlled_state = {
+				limit = {
+					state = 329
+					air_base < 10
+				}
 				add_building_construction = {
 					type = air_base
 					level = 2
 					instant_build = yes
 				}
 			}
-			758 = {
+			random_owned_controlled_state = {
+				limit = {
+					state = 758
+					air_base < 10
+				}
 				add_building_construction = {
 					type = air_base
 					level = 2
 					instant_build = yes
 				}
 			}
-			568 = {
+			random_owned_controlled_state = {
+				limit = {
+					state = 568
+					air_base < 10
+				}
 				add_building_construction = {
 					type = air_base
 					level = 2
@@ -5998,42 +6201,66 @@ CSB_war_category = {
 		remove_effect = {
 			add_to_variable = { RUSWarPreparedness = 20 }
 			custom_effect_tooltip = CSB_develop_siberian_railways_tt
-			567 = {
+			random_owned_controlled_state = {
+				limit = {
+					state = 567
+					infrastructure < 10
+				}
 				add_building_construction = {
 					type = infrastructure
 					level = 1
 					instant_build = yes
 				}
 			}
-			329 = {
+			random_owned_controlled_state = {
+				limit = {
+					state = 329
+					infrastructure < 10
+				}
 				add_building_construction = {
 					type = infrastructure
 					level = 1
 					instant_build = yes
 				}
 			}
-			758 = {
+			random_owned_controlled_state = {
+				limit = {
+					state = 758
+					infrastructure < 10
+				}
 				add_building_construction = {
 					type = infrastructure
 					level = 1
 					instant_build = yes
 				}
 			}
-			568 = {
+			random_owned_controlled_state = {
+				limit = {
+					state = 568
+					infrastructure < 10
+				}
 				add_building_construction = {
 					type = infrastructure
 					level = 1
 					instant_build = yes
 				}
 			}
-			757 = {
+			random_owned_controlled_state = {
+				limit = {
+					state = 757
+					infrastructure < 10
+				}
 				add_building_construction = {
 					type = infrastructure
 					level = 1
 					instant_build = yes
 				}
 			}
-			576 = {
+			random_owned_controlled_state = {
+				limit = {
+					state = 576
+					infrastructure < 10
+				}
 				add_building_construction = {
 					type = infrastructure
 					level = 1
@@ -6445,6 +6672,7 @@ FST_war_category = {
 		visible = {
 			country_exists = CSB
 			NOT = { has_war_with = CSB }
+			NOT = { has_country_flag = CSB_FST_WAR }
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -6466,10 +6694,19 @@ FST_war_category = {
 			hidden_effect = {
 				add_command_power = -25
 			}
+			set_country_flag = CSB_FST_WAR
 		}
 		remove_effect = {
 			hidden_effect = {
-				if = { limit = { USA = { NOT = { has_country_flag = USA_CIA_RUS_CSBvsFST } } } USA = { country_event = USA_CIA_RUS.13 set_country_flag = USA_CIA_RUS_CSBvsFST } }
+				if = { 
+					limit = { 
+						USA = { NOT = { has_country_flag = USA_CIA_RUS_CSBvsFST } } 
+					} 
+					USA = { 
+						country_event = USA_CIA_RUS.13 
+						set_country_flag = USA_CIA_RUS_CSBvsFST 
+					} 
+				}
 			}
 			declare_war_on = {
 				target = CSB
@@ -6478,13 +6715,14 @@ FST_war_category = {
 			set_country_flag = RUS_hide_regional_war_decisions
 		}
 		ai_will_do = {
-			factor = 20
+			factor = 100
 		}
 	}
 	FST_cross_the_border = {
 		icon = GFX_decision_generic_assault
 		visible = {
 			NOT = { country_exists = CSB }
+			NOT = { has_country_flag = CSB_FST_WAR }
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -6505,6 +6743,7 @@ FST_war_category = {
 			hidden_effect = {
 				add_command_power = -25
 			}
+			set_country_flag = CSB_FST_WAR
 			every_country = {
 				limit = {
 					is_central_siberian_nation = yes
@@ -6530,7 +6769,7 @@ FST_war_category = {
 			set_country_flag = RUS_hide_regional_war_decisions
 		}
 		ai_will_do = {
-			factor = 20
+			factor = 100
 		}
 	}
 	FST_establish_western_fortifications = {
@@ -6693,7 +6932,7 @@ FST_war_category = {
 		}
 	}
 	FST_survey_western_positions = {
-		icon = decision_generic_prepare_civil_war
+		icon = GFX_decision_generic_prepare_civil_war
 		visible = {
 		}
 		available = {
@@ -7195,7 +7434,7 @@ FST_peace_category = {
 		days_re_enable = 30
 		fire_only_once = no
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: FST_increase_prestige "
+			log = "[GetDateText]: [Root.GetName]: FST_increase_prestige"
 			RUS_increase_prestige_5 = yes
 		}
 		ai_will_do = {
@@ -7215,21 +7454,12 @@ RWS_war_category = {
 			NOT = {
 				has_war_with = SIB
 			}
+			NOT = { has_country_flag = RWS_SIB_WAR }
 		}
 		available = {
-			OR = {
-				custom_trigger_tooltip = {
-					tooltip = war_preparation_tt
-					check_variable = { RUSWarPreparedness > 74.99 }
-				}
-				AND = {
-					has_game_rule = {
-						rule = RUSSIA_TOTAL_UNIFICATION_OUTCOME
-						option = RUSSIA_TOTAL_UNIFICATION_OUTCOME_RWS
-					}
-					date > 1972.1.1
-					NOT = { has_war = yes }
-				}
+			custom_trigger_tooltip = {
+				tooltip = war_preparation_tt
+				check_variable = { RUSWarPreparedness > 74.99 }
 			}
 		}
 		custom_cost_trigger = { command_power > 24.99 }
@@ -7260,7 +7490,7 @@ RWS_war_category = {
 			set_country_flag = RUS_hide_superregional_war_decisions
 		}
 		ai_will_do = {
-			factor = 20
+			factor = 100
 		}
 	}
 	RWS_cross_the_border = {
@@ -7271,21 +7501,12 @@ RWS_war_category = {
 					has_country_flag = RUS_superregional_stage
 				}
 			}
+			NOT = { has_country_flag = RWS_SIB_WAR }
 		}
 		available = {
-			OR = {
-				custom_trigger_tooltip = {
-					tooltip = war_preparation_tt
-					check_variable = { RUSWarPreparedness > 74.99 }
-				}
-				AND = {
-					has_game_rule = {
-						rule = RUSSIA_TOTAL_UNIFICATION_OUTCOME
-						option = RUSSIA_TOTAL_UNIFICATION_OUTCOME_RWS
-					}
-					date > 1972.1.1
-					NOT = { has_war = yes }
-				}
+			custom_trigger_tooltip = {
+				tooltip = war_preparation_tt
+				check_variable = { RUSWarPreparedness > 74.99 }
 			}
 		}
 		custom_cost_trigger = { command_power > 24.99 }
@@ -7296,6 +7517,7 @@ RWS_war_category = {
 			hidden_effect = {
 				add_command_power = -25
 			}
+			set_country_flag = RWS_SIB_WAR
 			every_country = {
 				limit = {
 					is_far_eastern_nation = yes
@@ -7341,7 +7563,7 @@ RWS_war_category = {
 			set_country_flag = RUS_hide_superregional_war_decisions
 		}
 		ai_will_do = {
-			factor = 20
+			factor = 100
 		}
 	}
 	RWS_establish_eastern_fortifications = {
@@ -7580,35 +7802,55 @@ RWS_war_category = {
 			add_to_variable = { RUSWarPreparedness = 10 }
 			custom_effect_tooltip = RWS_mobilize_airmobile_units_tt
 			air_experience = 15
-			653 = {
-				add_building_construction = {
-					type = air_base
-					level = 4
-					instant_build = yes
+			random_owned_controlled_state = {
+				limit = {
+					state = 653
+					air_base < 10
 				}
-			}
-			571 = {
 				add_building_construction = {
 					type = air_base
 					level = 2
 					instant_build = yes
 				}
 			}
-			403 = {
+			random_owned_controlled_state = {
+				limit = {
+					state = 571
+					air_base < 10
+				}
 				add_building_construction = {
 					type = air_base
 					level = 2
 					instant_build = yes
 				}
 			}
-			580 = {
+			random_owned_controlled_state = {
+				limit = {
+					state = 403
+					air_base < 10
+				}
 				add_building_construction = {
 					type = air_base
 					level = 2
 					instant_build = yes
 				}
 			}
-			579 = {
+			random_owned_controlled_state = {
+				limit = {
+					state = 580
+					air_base < 10
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					state = 579
+					air_base < 10
+				}
 				add_building_construction = {
 					type = air_base
 					level = 2
@@ -7667,56 +7909,88 @@ RWS_war_category = {
 		remove_effect = {
 			add_to_variable = { RUSWarPreparedness = 20 }
 			custom_effect_tooltip = RWS_develop_siberian_railways_tt
-			653 = {
+			random_owned_controlled_state = {
+				limit = {
+					state = 653
+					infrastructure < 10
+				}
 				add_building_construction = {
 					type = infrastructure
 					level = 2
 					instant_build = yes
 				}
 			}
-			571 = {
+			random_owned_controlled_state = {
+				limit = {
+					state = 571
+					infrastructure < 10
+				}
 				add_building_construction = {
 					type = infrastructure
 					level = 2
 					instant_build = yes
 				}
 			}
-			403 = {
+			random_owned_controlled_state = {
+				limit = {
+					state = 403
+					infrastructure < 10
+				}
 				add_building_construction = {
 					type = infrastructure
 					level = 2
 					instant_build = yes
 				}
 			}
-			580 = {
+			random_owned_controlled_state = {
+				limit = {
+					state = 580
+					infrastructure < 10
+				}
 				add_building_construction = {
 					type = infrastructure
 					level = 2
 					instant_build = yes
 				}
 			}
-			579 = {
+			random_owned_controlled_state = {
+				limit = {
+					state = 579
+					infrastructure < 10
+				}
 				add_building_construction = {
 					type = infrastructure
 					level = 2
 					instant_build = yes
 				}
 			}
-			572 = {
+			random_owned_controlled_state = {
+				limit = {
+					state = 572
+					infrastructure < 10
+				}
 				add_building_construction = {
 					type = infrastructure
 					level = 2
 					instant_build = yes
 				}
 			}
-			754 = {
+			random_owned_controlled_state = {
+				limit = {
+					state = 754
+					infrastructure < 10
+				}
 				add_building_construction = {
 					type = infrastructure
 					level = 2
 					instant_build = yes
 				}
 			}
-			582 = {
+			random_owned_controlled_state = {
+				limit = {
+					state = 582
+					infrastructure < 10
+				}
 				add_building_construction = {
 					type = infrastructure
 					level = 2
@@ -8131,20 +8405,12 @@ SIB_war_category = {
 			NOT = {
 				has_war_with = RWS
 			}
+			NOT = { has_country_flag = RWS_SIB_WAR }
 		}
 		available = {
-			OR = {
-				custom_trigger_tooltip = {
-					tooltip = war_preparation_tt
-					check_variable = { RUSWarPreparedness > 74.99 }
-				}
-				AND = {
-					has_game_rule = {
-						rule = RUSSIA_TOTAL_UNIFICATION_OUTCOME
-						option = RUSSIA_TOTAL_UNIFICATION_OUTCOME_SIB
-					}
-					date > 1972.1.1
-				}
+			custom_trigger_tooltip = {
+				tooltip = war_preparation_tt
+				check_variable = { RUSWarPreparedness > 74.99 }
 			}
 		}
 		custom_cost_trigger = { command_power > 24.99 }
@@ -8175,7 +8441,7 @@ SIB_war_category = {
 			set_country_flag = RUS_hide_superregional_war_decisions
 		}
 		ai_will_do = {
-			factor = 20
+			factor = 100
 		}
 	}
 	SIB_cross_the_border = {
@@ -8186,34 +8452,23 @@ SIB_war_category = {
 					has_country_flag = RUS_superregional_stage
 				}
 			}
-			NOT = {
-				has_country_flag = RWS_SIB_WAR
-			}
+			NOT = { has_country_flag = RWS_SIB_WAR }
 		}
 		custom_cost_trigger = { command_power > 24.99 }
 		custom_cost_text = decision_cost_25_cp
 		available = {
-			OR = {
-				custom_trigger_tooltip = {
-					tooltip = war_preparation_tt
-					check_variable = { RUSWarPreparedness > 74.99 }
-				}
-				AND = {
-					has_game_rule = {
-						rule = RUSSIA_TOTAL_UNIFICATION_OUTCOME
-						option = RUSSIA_TOTAL_UNIFICATION_OUTCOME_SIB
-					}
-					date > 1972.1.1
-				}
+			custom_trigger_tooltip = {
+				tooltip = war_preparation_tt
+				check_variable = { RUSWarPreparedness > 74.99 }
 			}
 		}
 		fire_only_once = yes
-		days_remove = 30
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision SIB_cross_the_border"
 			hidden_effect = {
 				add_command_power = -25
 			}
+			set_country_flag = RWS_SIB_WAR
 			every_country = {
 				limit = {
 					OR = {
@@ -8247,7 +8502,7 @@ SIB_war_category = {
 			set_country_flag = RUS_hide_superregional_war_decisions
 		}
 		ai_will_do = {
-			factor = 20
+			factor = 100
 		}
 	}
 	SIB_establish_western_fortifications = {
@@ -8482,21 +8737,33 @@ SIB_war_category = {
 			add_to_variable = { RUSWarPreparedness = 10 }
 			custom_effect_tooltip = SIB_mobilize_airmobile_units_tt
 			air_experience = 25
-			578 = {
+			random_owned_controlled_state = {
+				limit = {
+					state = 578
+					air_base < 10
+				}
 				add_building_construction = {
 					type = air_base
 					level = 2
 					instant_build = yes
 				}
 			}
-			570 = {
+			random_owned_controlled_state = {
+				limit = {
+					state = 570
+					air_base < 10
+				}
 				add_building_construction = {
 					type = air_base
 					level = 2
 					instant_build = yes
 				}
 			}
-			577 = {
+			random_owned_controlled_state = {
+				limit = {
+					state = 577
+					air_base < 10
+				}
 				add_building_construction = {
 					type = air_base
 					level = 2
@@ -8555,42 +8822,66 @@ SIB_war_category = {
 		remove_effect = {
 			add_to_variable = { RUSWarPreparedness = 20 }
 			custom_effect_tooltip = SIB_develop_siberian_railways_tt
-			578 = {
+			random_owned_controlled_state = {
+				limit = {
+					state = 578
+					infrastructure < 10
+				}
 				add_building_construction = {
 					type = infrastructure
 					level = 2
 					instant_build = yes
 				}
 			}
-			570 = {
+			random_owned_controlled_state = {
+				limit = {
+					state = 570
+					infrastructure < 10
+				}
 				add_building_construction = {
 					type = infrastructure
 					level = 2
 					instant_build = yes
 				}
 			}
-			40 = {
+			random_owned_controlled_state = {
+				limit = {
+					state = 40
+					infrastructure < 10
+				}
 				add_building_construction = {
 					type = infrastructure
 					level = 2
 					instant_build = yes
 				}
 			}
-			887 = {
+			random_owned_controlled_state = {
+				limit = {
+					state = 887
+					infrastructure < 10
+				}
 				add_building_construction = {
 					type = infrastructure
 					level = 2
 					instant_build = yes
 				}
 			}
-			577 = {
+			random_owned_controlled_state = {
+				limit = {
+					state = 577
+					infrastructure < 10
+				}
 				add_building_construction = {
 					type = infrastructure
 					level = 2
 					instant_build = yes
 				}
 			}
-			516 = {
+			random_owned_controlled_state = {
+				limit = {
+					state = 516
+					infrastructure < 10
+				}
 				add_building_construction = {
 					type = infrastructure
 					level = 2

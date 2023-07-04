@@ -5,20 +5,20 @@ TaS_Global_Conflicts_Initalize = {
 MAR_Maldorossi_epilogue = {
 	country_event = {id = MAR_epilogue.1 days = 0}
 	set_politics = {
-		ruling_party = esoteric_nazism
+		ruling_party = national_socialism
 		elections_allowed = no
         last_election = "1935.12.17"
         election_frequency = 48
 	}
 	set_popularities = {
-		esoteric_nazism = 100
+		national_socialism = 100
 	}
 	create_country_leader = {
 		name = "Collapsed authority"
 		desc = "MAR_LEADER_STUL_DESC"
 		picture = "Portrait_MAR_Neco_arc.dds"
 		expire = "2000.1.1"
-		ideology = esoteric_nazism_subtype
+		ideology = national_socialism_esoteric_nazism_subtype
 		traits = {
 			
 		}

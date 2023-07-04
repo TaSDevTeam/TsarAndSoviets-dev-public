@@ -24,7 +24,7 @@ RUS_urals_influence_initialise = {
 	849 = { set_state_flag = RUS_orenburg_state }
 	852 = { set_state_flag = RUS_orenburg_state }
 	652 = { set_state_flag = RUS_orenburg_state }
-	
+
 	847 = { set_state_flag = RUS_beloretsk_state }
 	848 = { set_state_flag = RUS_beloretsk_state }
 
@@ -101,7 +101,7 @@ RUS_urals_set_receptiveness = {
 		limit = { URL = { exists = yes } }
 
 		set_variable = { RUS_urals_faction_exists^1 = 1 }
-		
+
 		RUS_urals_set_league_receptiveness = yes
 	}
 
@@ -150,6 +150,7 @@ RUS_urals_set_malenkov_receptiveness = {
 					OR = {
 						has_government = progressivism
 						has_government = liberalism
+						has_government = liberal_conservatism
 						has_government = conservatism
 					}
 				}
@@ -180,7 +181,10 @@ RUS_urals_set_malenkov_receptiveness = {
 				limit = {
 					OR = {
 						has_government = ultranationalism
-						has_government = esoteric_nazism
+						has_country_leader = {
+							character = KOM_Sergey_Taboritsky
+							ruling_only = yes
+						}
 					}
 				}
 				set_variable = { RUS_urals_receptiveness^0 = 0 }
@@ -360,6 +364,7 @@ RUS_urals_set_burba_receptiveness = {
 					OR = {
 						has_government = progressivism
 						has_government = liberalism
+						has_government = liberal_conservatism
 						has_government = conservatism
 					}
 				}
@@ -387,7 +392,10 @@ RUS_urals_set_burba_receptiveness = {
 				limit = {
 					OR = {
 						has_government = ultranationalism
-						has_government = esoteric_nazism
+						has_country_leader = {
+							character = KOM_Sergey_Taboritsky
+							ruling_only = yes
+						}
 					}
 				}
 				set_variable = { RUS_urals_receptiveness^0 = 0 }
@@ -568,6 +576,7 @@ RUS_urals_set_council_receptiveness = {
 						has_government = progressivism
 						has_government = liberalism
 						has_government = conservatism
+						has_government = liberal_conservatism
 					}
 				}
 				set_variable = { RUS_urals_receptiveness^0 = 0.2 }
@@ -597,7 +606,10 @@ RUS_urals_set_council_receptiveness = {
 				limit = {
 					OR = {
 						has_government = ultranationalism
-						has_government = esoteric_nazism
+						has_country_leader = {
+							character = KOM_Sergey_Taboritsky
+							ruling_only = yes
+						}
 					}
 				}
 				set_variable = { RUS_urals_receptiveness^0 = 0 }
@@ -777,6 +789,7 @@ RUS_urals_set_league_receptiveness = {
 					OR = {
 						has_government = progressivism
 						has_government = liberalism
+						has_government = liberal_conservatism
 						has_government = conservatism
 					}
 				}
@@ -814,7 +827,10 @@ RUS_urals_set_league_receptiveness = {
 				limit = {
 					OR = {
 						has_government = ultranationalism
-						has_government = esoteric_nazism
+						has_country_leader = {
+							character = KOM_Sergey_Taboritsky
+							ruling_only = yes
+						}
 					}
 				}
 				set_variable = { RUS_urals_receptiveness^1 = 0 }
@@ -983,7 +999,24 @@ RUS_urals_set_lysenko_receptiveness = {
 			limit = {
 				original_tag = MAR
 			}
-			set_variable = { RUS_urals_receptiveness^2 = 0.25 }
+			if = {
+				limit = {
+					OR = {
+						has_government = despotism
+						has_government = paternalism
+					}
+				}
+				set_variable = { RUS_urals_receptiveness^2 = 0.05 }
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_government = fascism
+						has_government = socialist
+					}
+				}
+				set_variable = { RUS_urals_receptiveness^2 = 0.15 }
+			}
 		}
 		if = {
 			limit = {
@@ -994,6 +1027,7 @@ RUS_urals_set_lysenko_receptiveness = {
 					OR = {
 						has_government = progressivism
 						has_government = liberalism
+						has_government = liberal_conservatism
 						has_government = conservatism
 					}
 				}
@@ -1024,7 +1058,10 @@ RUS_urals_set_lysenko_receptiveness = {
 				limit = {
 					OR = {
 						has_government = ultranationalism
-						has_government = esoteric_nazism
+						has_country_leader = {
+							character = KOM_Sergey_Taboritsky
+							ruling_only = yes
+						}
 					}
 				}
 				set_variable = { RUS_urals_receptiveness^2 = 0 }
@@ -1193,7 +1230,27 @@ RUS_urals_set_nkvd_receptiveness = {
 			limit = {
 				original_tag = MAR
 			}
-			set_variable = { RUS_urals_receptiveness^2 = 0.25 }
+			if = {
+				limit = {
+					OR = {
+						has_government = despotism
+						has_government = paternalism
+					}
+				}
+				set_variable = { RUS_urals_receptiveness^2 = 0.05 }
+			}
+			else_if = {
+				limit = {
+					has_government = fascism
+				}
+				set_variable = { RUS_urals_receptiveness^2 = 0.15 }
+			}
+			else_if = {
+				limit = {
+					has_government = socialist
+				}
+				set_variable = { RUS_urals_receptiveness^2 = 0.25 }
+			}
 		}
 		if = {
 			limit = {
@@ -1204,6 +1261,7 @@ RUS_urals_set_nkvd_receptiveness = {
 					OR = {
 						has_government = progressivism
 						has_government = liberalism
+						has_government = liberal_conservatism
 						has_government = conservatism
 					}
 				}
@@ -1234,7 +1292,10 @@ RUS_urals_set_nkvd_receptiveness = {
 				limit = {
 					OR = {
 						has_government = ultranationalism
-						has_government = esoteric_nazism
+						has_country_leader = {
+							character = KOM_Sergey_Taboritsky
+							ruling_only = yes
+						}
 					}
 				}
 				set_variable = { RUS_urals_receptiveness^2 = 0 }
@@ -1433,10 +1494,10 @@ RUS_urals_set_region_owners = {
 		set_variable = { RUS_urals_orenburg_owner = 3 }
 		set_variable = { RUS_urals_orenburg_owner_tag = DRL }
 	}
-	else = { 
-		set_variable = { RUS_urals_orenburg_owner = -1 } 
+	else = {
+		set_variable = { RUS_urals_orenburg_owner = -1 }
 	}
-	
+
 	# urals
 	if = {
 		limit = {
@@ -1548,7 +1609,7 @@ RUS_urals_set_region_owners = {
 RUS_urals_calc_tick = {
 	set_variable = { RUS_urals_base_tick = army_fielded_manpower_k } # army_fielded_manpower_k is calculated in calculate_fielded_manpower in TNO_economy_scripted_effects
 	divide_variable = { RUS_urals_base_tick = 250 }
-	
+
 	for_each_loop = {
 		array = RUS_urals_influence_tick
 		if = {
@@ -1568,14 +1629,32 @@ RUS_urals_apply_tick = {
 		array = RUS_urals_influence_tick
 		if = {
 			limit = { check_variable = { RUS_urals_faction_exists^i > 0 } }
-
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = SRL_RACE_FOR_URALS
+						option = SRL_RACE_FOR_URALS_FAVOR_WSR
+					}
+					tag = WSR
+				}
+				set_variable = { RUS_urals_influence_tick^i = 100 }
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = SRL_RACE_FOR_URALS
+						option = SRL_RACE_FOR_URALS_FAVOR_WSB
+					}
+					tag = WSB
+				}
+				set_variable = { RUS_urals_influence_tick^i = 100 }
+			}
 			add_to_variable = { RUS_urals_influence^i = RUS_urals_influence_tick^i }
 			clamp_variable = { var = RUS_urals_influence^i max = 100 }
 		}
 	}
 	RUS_urals_dirty_variable = yes
 }
-
 
 ########################
 ## GUI BUTTON EFFECTS ##
@@ -1651,7 +1730,7 @@ RUS_add_to_sphere = {
 
 	if = {
 		limit = { tag = WSR }
-		
+
 		if = {
 			limit = { check_variable = { RUS_selected_ural_faction = 0 } }
 			ORE = { RUS_puppet_keep_ideology = yes }
@@ -1714,14 +1793,14 @@ RUS_integrate_country = {
 
 RUS_remove_from_sphere = {
 
-	
+
 	subtract_from_variable = { RUS_urals_influence^RUS_selected_ural_faction = 100 }
-	
+
 	if = { # remove from WSB sphere
 		limit = { tag = WSR }
 
 		set_variable = { WSB.RUS_urals_relations_level^RUS_selected_ural_faction = 4 }
-	
+
 		if = {
 			limit = { check_variable = { RUS_selected_ural_faction = 0 } }
 			set_autonomy = {
@@ -1889,12 +1968,6 @@ RUS_puppet_keep_ideology = { # remove "_placeholder" when files are finished
 			}
 			set_temp_variable = { rulinggamerparty = 11 }
 		}
-		if = {
-			limit = {
-				has_government = esoteric_nazism
-			}
-			set_temp_variable = { rulinggamerparty = 12 }
-		}
 	}
 	ROOT = {
 		set_autonomy = {
@@ -1916,10 +1989,6 @@ RUS_puppet_keep_ideology = { # remove "_placeholder" when files are finished
 					popularity = 0.5
 				}
 				add_popularity = {
-					ideology = esoteric_nazism
-					popularity = -0.5
-				}
-				add_popularity = {
 					ideology = ultranationalism
 					popularity = -0.5
 				}
@@ -1934,10 +2003,6 @@ RUS_puppet_keep_ideology = { # remove "_placeholder" when files are finished
 				add_popularity = {
 					ideology = socialist
 					popularity = 0.35
-				}
-				add_popularity = {
-					ideology = esoteric_nazism
-					popularity = -0.5
 				}
 				add_popularity = {
 					ideology = ultranationalism
@@ -1956,10 +2021,6 @@ RUS_puppet_keep_ideology = { # remove "_placeholder" when files are finished
 					popularity = 0.35
 				}
 				add_popularity = {
-					ideology = esoteric_nazism
-					popularity = -0.5
-				}
-				add_popularity = {
 					ideology = ultranationalism
 					popularity = -0.5
 				}
@@ -1974,10 +2035,6 @@ RUS_puppet_keep_ideology = { # remove "_placeholder" when files are finished
 				add_popularity = {
 					ideology = liberalism
 					popularity = 0.35
-				}
-				add_popularity = {
-					ideology = esoteric_nazism
-					popularity = -0.5
 				}
 				add_popularity = {
 					ideology = ultranationalism
@@ -1996,10 +2053,6 @@ RUS_puppet_keep_ideology = { # remove "_placeholder" when files are finished
 					popularity = 0.35
 				}
 				add_popularity = {
-					ideology = esoteric_nazism
-					popularity = -0.5
-				}
-				add_popularity = {
 					ideology = ultranationalism
 					popularity = -0.5
 				}
@@ -2014,10 +2067,6 @@ RUS_puppet_keep_ideology = { # remove "_placeholder" when files are finished
 				add_popularity = {
 					ideology = paternalism
 					popularity = 0.35
-				}
-				add_popularity = {
-					ideology = esoteric_nazism
-					popularity = -0.5
 				}
 				add_popularity = {
 					ideology = ultranationalism
@@ -2036,10 +2085,6 @@ RUS_puppet_keep_ideology = { # remove "_placeholder" when files are finished
 					popularity = 0.35
 				}
 				add_popularity = {
-					ideology = esoteric_nazism
-					popularity = -0.5
-				}
-				add_popularity = {
 					ideology = ultranationalism
 					popularity = -0.5
 				}
@@ -2054,10 +2099,6 @@ RUS_puppet_keep_ideology = { # remove "_placeholder" when files are finished
 				add_popularity = {
 					ideology = fascism
 					popularity = 0.35
-				}
-				add_popularity = {
-					ideology = esoteric_nazism
-					popularity = -0.5
 				}
 				add_popularity = {
 					ideology = ultranationalism
@@ -2076,10 +2117,6 @@ RUS_puppet_keep_ideology = { # remove "_placeholder" when files are finished
 					popularity = 0.35
 				}
 				add_popularity = {
-					ideology = esoteric_nazism
-					popularity = -0.5
-				}
-				add_popularity = {
 					ideology = ultranationalism
 					popularity = -0.5
 				}
@@ -2094,30 +2131,6 @@ RUS_puppet_keep_ideology = { # remove "_placeholder" when files are finished
 				add_popularity = {
 					ideology = ultranationalism
 					popularity = 0.35
-				}
-				add_popularity = {
-					ideology = esoteric_nazism
-					popularity = -0.5
-				}
-				add_popularity = {
-					ideology = ultranationalism
-					popularity = -0.5
-				}
-			}
-			if = {
-				limit = {
-					check_variable = { rulinggamerparty = 12 }
-				}
-				set_politics = {
-					ruling_party = esoteric_nazism
-				}
-				add_popularity = {
-					ideology = esoteric_nazism
-					popularity = 0.35
-				}
-				add_popularity = {
-					ideology = esoteric_nazism
-					popularity = -0.5
 				}
 				add_popularity = {
 					ideology = ultranationalism

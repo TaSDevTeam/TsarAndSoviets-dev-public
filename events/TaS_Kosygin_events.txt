@@ -1913,7 +1913,7 @@ country_event = { #success
 		clr_country_flag = MAR_prestol_active
 		set_country_flag = MAR_order_Kosygin
 		add_popularity = {
-			ideology = esoteric_nazism
+			ideology = national_socialism
 			popularity = -0.25
 		}
 	}
@@ -1939,7 +1939,7 @@ country_event = { #fail 1
 			retire_character = MAR_advisor_Kosygin
 		}
 		set_politics = {
-			ruling_party = esoteric_nazism
+			ruling_party = national_socialism
 		}
 		country_event = { id = MAR_Kosygin_Prestol.17 days = 10 }
 	}
