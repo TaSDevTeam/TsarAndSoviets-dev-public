@@ -80,6 +80,9 @@ shared_focus = {
 	id = VOR_warlord_destroy_opressors
 	icon = GFX_VOR_Ynictogit_ygnetateleq
 	cost = 2.5
+	available = {
+		NOT = { has_country_flag = VOR_pechora_war }
+	}
 	prerequisite = {
 		focus = VOR_warlord_people_unchained
 	}
@@ -96,6 +99,9 @@ shared_focus = {
 	id = VOR_warlord_revolutionary_transformations
 	icon = GFX_VOR_warlord_revolutionary_transformations
 	cost = 2.5
+	available = {
+		NOT = { has_country_flag = VOR_pechora_war }
+	}
 	prerequisite = {
 		focus = VOR_warlord_destroy_opressors
 	}
@@ -129,6 +135,9 @@ shared_focus = {
 	id = VOR_warlord_land_decree
 	icon = GFX_VOR_warlord_land_decree
 	cost = 2.5
+	available = {
+		NOT = { has_country_flag = VOR_pechora_war }
+	}
 	prerequisite = {
 		focus = VOR_warlord_revolutionary_transformations
 	}
@@ -147,6 +156,9 @@ shared_focus = {
 	id = VOR_warlord_war_and_defence_council
 	icon = GFX_VOR_Sovet_Oboroni
 	cost = 2.5
+	available = {
+		NOT = { has_country_flag = VOR_pechora_war }
+	}
 	prerequisite = {
 		focus = VOR_warlord_people_unchained
 	}
@@ -165,6 +177,9 @@ shared_focus = {
 	id = VOR_warlord_get_uncertains
 	icon = GFX_VOR_get_uncertains
 	cost = 2.5
+	available = {
+		NOT = { has_country_flag = VOR_pechora_war }
+	}
 	prerequisite = {
 		focus = VOR_warlord_war_and_defence_council
 	}
@@ -183,6 +198,9 @@ shared_focus = {
 	id = VOR_warlord_revolutionary_struggle_troops
 	icon = GFX_VOR_warlord_revolutionary_struggle_troops
 	cost = 2.5
+	available = {
+		NOT = { has_country_flag = VOR_pechora_war }
+	}
 	prerequisite = {
 		focus = VOR_warlord_get_uncertains
 	}
@@ -200,6 +218,9 @@ shared_focus = {
 	id = VOR_warlord_prepare_masses_for_war
 	icon = GFX_VOR_warlord_prepare_masses_for_war
 	cost = 2.5
+	available = {
+		NOT = { has_country_flag = VOR_pechora_war }
+	}
 	prerequisite = {
 		focus = VOR_warlord_get_uncertains
 	}
@@ -217,6 +238,9 @@ shared_focus = {
 	id = VOR_warlord_struggle_continues
 	icon = GFX_VOR_warlord_struggle_continues
 	cost = 2.5
+	available = {
+		NOT = { has_country_flag = VOR_pechora_war }
+	}
 	prerequisite = {
 		focus = VOR_warlord_land_decree
 	}
@@ -232,7 +256,7 @@ shared_focus = {
 	x = 6
 	y = 4
 	completion_reward = {
-	country_event = {
+		country_event = {	
 			id = vorkuta_start.21 days = 0
 		}
         declare_war_on = {
@@ -245,29 +269,26 @@ shared_focus = {
 
 shared_focus = {
 	id = VOR_pechora_war
-	icon = GFX_goal_unknown
+	icon = GFX_VOR_pechora_war
 	cost = 2.5
 	allow_branch = {
 		has_country_flag = VOR_pechora_war
 	}
-	prerequisite = {
-		focus = VOR_warlord_struggle_continues
-	}
-	x = 11
-	y = 1
+	x = 15
+	y = 0
 	completion_reward = {
 	}
 }
 
 shared_focus = {
 	id = VOR_your_word_comrade_mauser
-	icon = GFX_goal_unknown
+	icon = GFX_VOR_your_word_comrade_mauser
 	cost = 2.5
 	prerequisite = {
 		focus = VOR_pechora_war
 	}
-	x = 9
-	y = 2
+	x = 13
+	y = 1
 	completion_reward = {
 	    add_stability = 0.10
 		add_manpower = -500
@@ -281,20 +302,20 @@ shared_focus = {
 
 shared_focus = {
 	id = VOR_revolutionary_justice
-	icon = GFX_goal_unknown
+	icon = GFX_VOR_revolutionary_justice
 	cost = 2.5
 	prerequisite = {
 		focus = VOR_pechora_war
 	}
-	x = 13
-	y = 2
+	x = 17
+	y = 1
 	completion_reward = {
 	}
 }	
 
 shared_focus = {
 	id = VOR_govering_bodies_reformation
-	icon = GFX_goal_unknown
+	icon = GFX_VOR_govering_bodies_reformation
 	cost = 2.5
 	prerequisite = {
 		focus = VOR_revolutionary_justice
@@ -302,41 +323,41 @@ shared_focus = {
 	prerequisite = {
 		focus = VOR_your_word_comrade_mauser
 	}
-	x = 11
-	y = 3
+	x = 15
+	y = 2
 	completion_reward = {
 	}
 }
 
 shared_focus = {
 	id = VOR_run_production
-	icon = GFX_goal_unknown
+	icon = GFX_VOR_run_production
 	cost = 2.5
 	prerequisite = {
 		focus = VOR_govering_bodies_reformation
 	}
-	x = 9
-	y = 4
+	x = 13
+	y = 3
 	completion_reward = {
 	}
 }
 
 shared_focus = {
 	id = VOR_open_party_recruitment
-	icon = GFX_goal_unknown
+	icon = GFX_VOR_open_party_recruitment
 	cost = 2.5
 	prerequisite = {
 		focus = VOR_govering_bodies_reformation
 	}
-	x = 13
-	y = 4
+	x = 17
+	y = 3
 	completion_reward = {
 	}
 }
 
 shared_focus = {
 	id = VOR_creating_nvr
-	icon = GFX_goal_unknown
+	icon = GFX_VOR_creating_nvr
 	cost = 2.5
 	prerequisite = {
 		focus = VOR_open_party_recruitment
@@ -344,21 +365,21 @@ shared_focus = {
 	prerequisite = {
 		focus = VOR_run_production
 	}
-	x = 11
-	y = 5
+	x = 15
+	y = 4
 	completion_reward = {
 	}
 }
 
 shared_focus = {
 	id = VOR_neo_narodnichectvo
-	icon = GFX_goal_unknown
+	icon = GFX_VOR_neo_narodnichectvo
 	cost = 2.5
 	prerequisite = {
 		focus = VOR_creating_nvr
 	}
-	x = 11
-	y = 6
+	x = 15
+	y = 5
 	completion_reward = {
 	   add_stability = 0.05
 	   add_political_power = 100
@@ -370,7 +391,7 @@ shared_focus = {
 shared_focus = {
 		id = Yusni_poxod
 		icon = GFX_Yusni_poxod
-		cost = 10,00
+		cost = 10.00
 		x = 7
 		y = 1
 
@@ -378,7 +399,7 @@ shared_focus = {
 shared_focus = {
 		id = rabota_ludi
 		icon = GFX_rabota_ludi
-		cost = 10,00
+		cost = 10.00
 		prerequisite = {
 			focus = Yusni_poxod
 		}
@@ -389,7 +410,7 @@ shared_focus = {
 shared_focus = {
 		id = agitprop
 		icon = GFX_agitprop
-		cost = 10,00
+		cost = 10.00
 		prerequisite = {
 			focus = Yusni_poxod
 		}
@@ -400,7 +421,7 @@ shared_focus = {
 shared_focus = {
 		id = zabastovki
 		icon = GFX_zabastovki
-		cost = 10,00
+		cost = 10.00
 		prerequisite = {
 			focus = Yusni_poxod
 		}
@@ -411,7 +432,7 @@ shared_focus = {
 shared_focus = {
 		id = boy_reaci
 		icon = GFX_boy_reaci
-		cost = 10,00
+		cost = 10.00
 		prerequisite = {
 			focus = rabota_ludi
 		}
@@ -428,7 +449,7 @@ shared_focus = {
 shared_focus = {
 		id = svoboda_ravenstvo
 		icon = GFX_svoboda_ravenstvo
-		cost = 10,00
+		cost = 10.00
 		prerequisite = {
 			focus = boy_reaci
 		}
@@ -439,7 +460,7 @@ shared_focus = {
 shared_focus = {
 		id = protivopostavleny_seba
 		icon = GFX_protivopostavleny_seba
-		cost = 10,00
+		cost = 10.00
 		prerequisite = {
 			focus = boy_reaci
 		}
@@ -450,7 +471,7 @@ shared_focus = {
 shared_focus = {
 		id = Krasnay_volna
 		icon = GFX_Krasnay_volna
-		cost = 10,00
+		cost = 10.00
 		prerequisite = {
 			focus = svoboda_ravenstvo
 		}
@@ -464,7 +485,7 @@ shared_focus = {
 shared_focus = {
 		id = torzestvo_spreavedlivosti
 		icon = GFX_torzestvo_spreavedlivosti
-		cost = 10,00
+		cost = 10.00
 		prerequisite = {
 			focus = Krasnay_volna
 		}
