@@ -63,4 +63,414 @@ shared_focus= {
     }
 } 
 
+shared_focus = {
+	id = VOR_warlord_people_unchained
+	icon = GFX_VOR_Slomat_okovi
+	cost = 2.5
+	x = 6
+	y = 0
+	completion_reward = {
+		country_event = {
+			id = vorkuta_start.12 days = 0
+		}	
+	}
+}
+	
+shared_focus = {
+	id = VOR_warlord_destroy_opressors
+	icon = GFX_VOR_Ynictogit_ygnetateleq
+	cost = 2.5
+	prerequisite = {
+		focus = VOR_warlord_people_unchained
+	}
+	x = 4
+	y = 1
+	completion_reward = {
+		country_event = {
+			id = vorkuta_start.13 days = 0
+		}	
+	}
+}
+	
+shared_focus = {
+	id = VOR_warlord_revolutionary_transformations
+	icon = GFX_VOR_warlord_revolutionary_transformations
+	cost = 2.5
+	prerequisite = {
+		focus = VOR_warlord_destroy_opressors
+	}
+	x = 4
+	y = 2
+	completion_reward = {
+		country_event = {
+			id = vorkuta_start.14 days = 0
+		}	
+	}
+}
+
+shared_focus = {
+	id = VOR_warlord_freedom_decree
+	icon = GFX_VOR_warlord_freedom_decree
+	cost = 2.5
+	prerequisite = {
+		focus = VOR_warlord_revolutionary_transformations
+	}
+	x = 3
+	y = 3
+	completion_reward = {	
+	    country_event = {
+			id = vorkuta_start.15 days = 0
+		}	
+	}
+}
+	
+ 	
+shared_focus = {
+	id = VOR_warlord_land_decree
+	icon = GFX_VOR_warlord_land_decree
+	cost = 2.5
+	prerequisite = {
+		focus = VOR_warlord_revolutionary_transformations
+	}
+	x = 5
+	y = 3
+	completion_reward = {	
+	 country_event = {
+			id = vorkuta_start.16 days = 0
+		}	
+	    TNO_improve_agriculture_med = yes
+	}
+}
+
+ 	
+shared_focus = {
+	id = VOR_warlord_war_and_defence_council
+	icon = GFX_VOR_Sovet_Oboroni
+	cost = 2.5
+	prerequisite = {
+		focus = VOR_warlord_people_unchained
+	}
+	x = 8
+	y = 1
+	completion_reward = {
+	 country_event = {
+			id = vorkuta_start.17 days = 0
+		}	
+        add_ideas = tno_army_professionalism_cronyism
+		add_ideas = VOR_council_of_war_and_defense
+	}
+}	
+ 	
+shared_focus = {
+	id = VOR_warlord_get_uncertains
+	icon = GFX_VOR_get_uncertains
+	cost = 2.5
+	prerequisite = {
+		focus = VOR_warlord_war_and_defence_council
+	}
+	x = 8
+	y = 2
+	completion_reward = {
+	country_event = {
+			id = vorkuta_start.18 days = 0
+		}
+        add_manpower = 10000	
+	}
+}
+
+ 	
+shared_focus = {
+	id = VOR_warlord_revolutionary_struggle_troops
+	icon = GFX_VOR_warlord_revolutionary_struggle_troops
+	cost = 2.5
+	prerequisite = {
+		focus = VOR_warlord_get_uncertains
+	}
+	x = 7
+	y = 3
+	completion_reward = {
+	country_event = {
+			id = vorkuta_start.19 days = 0
+		}
+        load_oob = VOR_internet_levaki	
+	}
+}	
+ 	
+shared_focus = {
+	id = VOR_warlord_prepare_masses_for_war
+	icon = GFX_VOR_warlord_prepare_masses_for_war
+	cost = 2.5
+	prerequisite = {
+		focus = VOR_warlord_get_uncertains
+	}
+	x = 9
+	y = 3
+	completion_reward = {
+	country_event = {
+			id = vorkuta_start.20 days = 0
+		}
+        add_war_support = 0.20	
+	}
+}	
+ 	
+shared_focus = {
+	id = VOR_warlord_struggle_continues
+	icon = GFX_VOR_warlord_struggle_continues
+	cost = 2.5
+	prerequisite = {
+		focus = VOR_warlord_land_decree
+	}
+	prerequisite = {
+		focus = VOR_warlord_freedom_decree
+	}
+	prerequisite = {
+		focus = VOR_warlord_revolutionary_struggle_troops
+	}
+	prerequisite = {
+		focus = VOR_warlord_prepare_masses_for_war
+	}
+	x = 6
+	y = 4
+	completion_reward = {
+	country_event = {
+			id = vorkuta_start.21 days = 0
+		}
+        declare_war_on = {
+			target = YGR
+			type = annex_everything
+		}	
+		add_stability = 0.10
+	}
+}
+
+shared_focus = {
+	id = VOR_pechora_war
+	icon = GFX_goal_unknown
+	cost = 2.5
+	allow_branch = {
+		has_country_flag = VOR_pechora_war
+	}
+	prerequisite = {
+		focus = VOR_warlord_struggle_continues
+	}
+	x = 11
+	y = 1
+	completion_reward = {
+	}
+}
+
+shared_focus = {
+	id = VOR_your_word_comrade_mauser
+	icon = GFX_goal_unknown
+	cost = 2.5
+	prerequisite = {
+		focus = VOR_pechora_war
+	}
+	x = 9
+	y = 2
+	completion_reward = {
+	    add_stability = 0.10
+		add_manpower = -500
+		add_popularity = {
+			ideology = communist
+			popularity = 0.10
+		}
+		
+	}
+}
+
+shared_focus = {
+	id = VOR_revolutionary_justice
+	icon = GFX_goal_unknown
+	cost = 2.5
+	prerequisite = {
+		focus = VOR_pechora_war
+	}
+	x = 13
+	y = 2
+	completion_reward = {
+	}
+}	
+
+shared_focus = {
+	id = VOR_govering_bodies_reformation
+	icon = GFX_goal_unknown
+	cost = 2.5
+	prerequisite = {
+		focus = VOR_revolutionary_justice
+	}
+	prerequisite = {
+		focus = VOR_your_word_comrade_mauser
+	}
+	x = 11
+	y = 3
+	completion_reward = {
+	}
+}
+
+shared_focus = {
+	id = VOR_run_production
+	icon = GFX_goal_unknown
+	cost = 2.5
+	prerequisite = {
+		focus = VOR_govering_bodies_reformation
+	}
+	x = 9
+	y = 4
+	completion_reward = {
+	}
+}
+
+shared_focus = {
+	id = VOR_open_party_recruitment
+	icon = GFX_goal_unknown
+	cost = 2.5
+	prerequisite = {
+		focus = VOR_govering_bodies_reformation
+	}
+	x = 13
+	y = 4
+	completion_reward = {
+	}
+}
+
+shared_focus = {
+	id = VOR_creating_nvr
+	icon = GFX_goal_unknown
+	cost = 2.5
+	prerequisite = {
+		focus = VOR_open_party_recruitment
+	}
+	prerequisite = {
+		focus = VOR_run_production
+	}
+	x = 11
+	y = 5
+	completion_reward = {
+	}
+}
+
+shared_focus = {
+	id = VOR_neo_narodnichectvo
+	icon = GFX_goal_unknown
+	cost = 2.5
+	prerequisite = {
+		focus = VOR_creating_nvr
+	}
+	x = 11
+	y = 6
+	completion_reward = {
+	   add_stability = 0.05
+	   add_political_power = 100
+	}
+}
+
+#SMUTA#
+
+shared_focus = {
+		id = Yusni_poxod
+		icon = GFX_Yusni_poxod
+		cost = 10,00
+		x = 7
+		y = 1
+
+	}
+shared_focus = {
+		id = rabota_ludi
+		icon = GFX_rabota_ludi
+		cost = 10,00
+		prerequisite = {
+			focus = Yusni_poxod
+		}
+		x = 5
+		y = 2
+
+	}
+shared_focus = {
+		id = agitprop
+		icon = GFX_agitprop
+		cost = 10,00
+		prerequisite = {
+			focus = Yusni_poxod
+		}
+		x = 7
+		y = 2
+
+	}
+shared_focus = {
+		id = zabastovki
+		icon = GFX_zabastovki
+		cost = 10,00
+		prerequisite = {
+			focus = Yusni_poxod
+		}
+		x = 9
+		y = 2
+
+	}
+shared_focus = {
+		id = boy_reaci
+		icon = GFX_boy_reaci
+		cost = 10,00
+		prerequisite = {
+			focus = rabota_ludi
+		}
+		prerequisite = {
+			focus = agitprop
+		}
+		prerequisite = {
+			focus = zabastovki
+		}
+		x = 7
+		y = 3
+
+	}
+shared_focus = {
+		id = svoboda_ravenstvo
+		icon = GFX_svoboda_ravenstvo
+		cost = 10,00
+		prerequisite = {
+			focus = boy_reaci
+		}
+		x = 6
+		y = 4
+
+	}
+shared_focus = {
+		id = protivopostavleny_seba
+		icon = GFX_protivopostavleny_seba
+		cost = 10,00
+		prerequisite = {
+			focus = boy_reaci
+		}
+		x = 8
+		y = 4
+
+	}
+shared_focus = {
+		id = Krasnay_volna
+		icon = GFX_Krasnay_volna
+		cost = 10,00
+		prerequisite = {
+			focus = svoboda_ravenstvo
+		}
+		prerequisite = {
+			focus = protivopostavleny_seba
+		}
+		x = 7
+		y = 5
+
+	}
+shared_focus = {
+		id = torzestvo_spreavedlivosti
+		icon = GFX_torzestvo_spreavedlivosti
+		cost = 10,00
+		prerequisite = {
+			focus = Krasnay_volna
+		}
+		x = 7
+		y = 6
+
+	}
+}
 	

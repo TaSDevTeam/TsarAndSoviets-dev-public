@@ -1,0 +1,20 @@
+VOR_debug_category = {
+
+
+VOR_load_Eseru_tree = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			check_variable = { VOR_debug_cat = 2 }
+		}
+		allowed = {
+			original_tag = VOR
+		}
+
+		fire_only_once = no
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: VOR_load_voina"
+			load_focus_tree = {	tree = VOR_SR_warlord keep_completed = no }
+		}
+	}
+}	
