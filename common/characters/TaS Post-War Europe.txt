@@ -1,0 +1,81 @@
+characters = {
+	### BULGARIA
+	GBU_Petar_Dertliev = {
+		name = GBU_Petar_Dertliev
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/POSTWRW2/Portrait_Petar_Dertliev.dds"
+			}
+		}
+		country_leader = {
+			#desc = "POLITICS_BORIS_III_DESC"
+			ideology = progressivism_social_democracy_subtype
+			traits = { }
+			expire = "1999.1.1.1"
+			id = -1
+		}
+	}
+	### ROMANIA
+	GRM_Ion_Iliescu = {
+		name = GRM_Ion_Iliescu
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/POSTWRW2/Portrait_Ion_Iliescu.dds"
+			}
+		}
+		country_leader = {
+			#desc = "POLITICS_BORIS_III_DESC"
+			ideology = progressivism_social_democracy_subtype
+			traits = { }
+			expire = "1999.1.1.1"
+			id = -1
+		}
+	}
+	GRM_Mihai_I = {
+		name = GRM_Mihai_I
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/ROM/Portrait_Romania_Michael_I.dds"
+			}
+		}
+		country_leader = {
+			desc = "POLITICS_MICHAEL_I_DESC"
+			ideology = despotism_mladorossi_authocracy_subtype
+			traits = { }
+			expire = "1975.1.1.1"
+			id = -1
+		}
+	}
+	### HUNGARY
+	GHU_Istvan_Horthy = {
+		name = GHU_Istvan_Horthy
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/POSTWRW2/Portrait_Istvan_Horthy.dds"
+			}
+		}
+		country_leader = {
+			#desc = "POLITICS_ISTVAN_HORTHY_DESC"
+			expire = "1999.1.1.1"
+			ideology = paternalism_semi_constitutional_monarchy_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	### YUGOSLAVIA
+	GSE_Josip_Broz_Tito = {
+		name = GSE_Josip_Broz_Tito
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/POSTWRW2/Portrait_Josip_Broz_Tito.dds"
+			}
+		}
+		country_leader = {
+			#desc = "POLITICS_JOSIP_BROZ_TITO_DESC"
+			ideology = communist_subtype
+			traits = { }
+			expire = "1990.1.1.1"
+			id = -1
+		}
+	}
+}	
