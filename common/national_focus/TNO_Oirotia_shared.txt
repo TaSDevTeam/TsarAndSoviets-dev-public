@@ -1,0 +1,332 @@
+shared_focus = {
+	id = ALT_focus_1
+	icon = GFX_ALT_focus_1
+	cost = 10
+	
+	x = 10
+	y = 1
+	
+	completion_reward = {
+		}
+	}
+shared_focus = {
+	id = ALT_focus_2
+	icon = GFX_ALT_focus_2
+	cost = 10
+	
+	relative_position_id = ALT_focus_1
+	
+	x = -3
+	y = 1
+	
+	prerequisite = { focus = ALT_focus_1 }
+	
+	completion_reward = {
+		}
+	}
+shared_focus = {
+	id = ALT_focus_3
+	icon = GFX_ALT_focus_3
+	cost = 10
+	
+	relative_position_id = ALT_focus_2
+	
+	x = 0
+	y = 1
+	
+	prerequisite = { focus = ALT_focus_2 }
+	
+	completion_reward = {
+		}
+	}
+shared_focus = {
+	id = ALT_focus_4
+	icon = GFX_ALT_focus_4
+	cost = 10
+	
+	relative_position_id = ALT_focus_3
+	
+	x = -1
+	y = 1
+	
+	prerequisite = { focus = ALT_focus_3 }
+	
+	completion_reward = {
+		}
+	}
+shared_focus = {
+	id = ALT_focus_5
+	icon = GFX_ALT_focus_5
+	cost = 10
+	
+	relative_position_id = ALT_focus_3
+	
+	x = 1
+	y = 1
+	
+	prerequisite = { focus = ALT_focus_3 }
+	
+	completion_reward = {
+		}
+	}
+shared_focus = {
+	id = ALT_focus_6
+	icon = GFX_ALT_focus_6
+	cost = 10
+	
+	relative_position_id = ALT_focus_3
+	
+	x = 0
+	y = 2
+	
+	prerequisite = { focus = ALT_focus_4 }
+	prerequisite = { focus = ALT_focus_5 }
+	
+	completion_reward = {
+		}
+	}
+shared_focus = {
+	id = ALT_focus_7
+	icon = GFX_ALT_focus_7
+	cost = 10
+	
+	relative_position_id = ALT_focus_1
+	
+	x = 0
+	y = 1
+	
+	prerequisite = { focus = ALT_focus_1 }
+	
+	completion_reward = {
+		}
+	}
+shared_focus = {
+	id = ALT_focus_8
+	icon = GFX_ALT_focus_8
+	cost = 10
+	
+	relative_position_id = ALT_focus_7
+	
+	x = -1
+	y = 1
+	
+	prerequisite = { focus = ALT_focus_7 }
+	
+	completion_reward = {
+		}
+	}
+shared_focus = {
+	id = ALT_focus_9
+	icon = GFX_ALT_focus_9
+	cost = 10
+	
+	relative_position_id = ALT_focus_7
+	
+	x = 1
+	y = 1
+	
+	prerequisite = { focus = ALT_focus_7 }
+	
+	completion_reward = {
+		}
+	}
+shared_focus = {
+	id = ALT_focus_10
+	icon = GFX_ALT_focus_10
+	cost = 10
+	
+	relative_position_id = ALT_focus_7
+	
+	x = 0
+	y = 2
+	
+	prerequisite = { focus = ALT_focus_8 }
+	prerequisite = { focus = ALT_focus_9 }
+	
+	completion_reward = {
+		}
+	}
+shared_focus = {
+	id = ALT_focus_11
+	icon = GFX_ALT_focus_11
+	cost = 10
+	
+	relative_position_id = ALT_focus_10
+	
+	x = 0
+	y = 1
+	
+	prerequisite = { focus = ALT_focus_10 }
+	
+	completion_reward = {
+		}
+	}
+shared_focus = {
+	id = ALT_focus_12
+	icon = GFX_ALT_focus_12
+	cost = 10
+	
+	relative_position_id = ALT_focus_1
+	
+	x = 3
+	y = 1
+	
+	prerequisite = { focus = ALT_focus_1 }
+	
+	completion_reward = {
+		}
+	}
+shared_focus = {
+	id = ALT_focus_13
+	icon = GFX_ALT_focus_13
+	cost = 10
+	
+	relative_position_id = ALT_focus_12
+	
+	x = 0
+	y = 1
+	
+	prerequisite = { focus = ALT_focus_12 }
+	
+	completion_reward = {
+		}
+	}
+shared_focus = {
+	id = ALT_focus_14
+	icon = GFX_ALT_focus_14
+	cost = 10
+	
+	relative_position_id = ALT_focus_13
+	
+	x = -1
+	y = 1
+	
+	prerequisite = { focus = ALT_focus_13 }
+	
+	completion_reward = {
+		}
+	}
+shared_focus = {
+	id = ALT_focus_15
+	icon = GFX_ALT_focus_15
+	cost = 10
+	
+	relative_position_id = ALT_focus_13
+	
+	x = 1
+	y = 1
+	
+	prerequisite = { focus = ALT_focus_13 }
+	
+	completion_reward = {
+		}
+	}
+shared_focus = {
+	id = ALT_focus_16
+	icon = GFX_ALT_focus_16
+	cost = 10
+	
+	relative_position_id = ALT_focus_13
+	
+	x = 0
+	y = 2
+	
+	prerequisite = { focus = ALT_focus_14 }
+	prerequisite = { focus = ALT_focus_15 }
+	
+	completion_reward = {
+		}
+	}
+shared_focus = {
+	id = ALT_focus_17
+	icon = GFX_ALT_focus_17
+	cost = 10
+	
+	relative_position_id = ALT_focus_11
+	
+	x = 0
+	y = 1
+	
+	prerequisite = { focus = ALT_focus_6 }
+	prerequisite = { focus = ALT_focus_11 }
+	prerequisite = { focus = ALT_focus_16 }
+	
+	completion_reward = {
+		}
+	}
+shared_focus = {
+	id = ALT_focus_18
+	icon = GFX_ALT_focus_18
+	cost = 10
+	
+	relative_position_id = ALT_focus_17
+	
+	x = -1
+	y = 1
+	
+	prerequisite = { focus = ALT_focus_17 }
+	
+	completion_reward = {
+		}
+	}
+shared_focus = {
+	id = ALT_focus_19
+	icon = GFX_ALT_focus_19
+	cost = 10
+	
+	relative_position_id = ALT_focus_18
+	
+	x = 0
+	y = 1
+	
+	prerequisite = { focus = ALT_focus_18 }
+	
+	completion_reward = {
+		}
+	}
+shared_focus = {
+	id = ALT_focus_20
+	icon = GFX_ALT_focus_20
+	cost = 10
+	
+	relative_position_id = ALT_focus_17
+	
+	x = 1
+	y = 1
+	
+	prerequisite = { focus = ALT_focus_17 }
+	
+	completion_reward = {
+		}
+	}
+shared_focus = {
+	id = ALT_focus_21
+	icon = GFX_ALT_focus_21
+	cost = 10
+	
+	relative_position_id = ALT_focus_20
+	
+	x = 0
+	y = 1
+	
+	prerequisite = { focus = ALT_focus_20 }
+	
+	completion_reward = {
+		}
+	}
+shared_focus = {
+	id = ALT_focus_22
+	icon = GFX_ALT_focus_22
+	cost = 10
+	
+	relative_position_id = ALT_focus_19
+	
+	x = 1
+	y = 1
+	
+	prerequisite = { focus = ALT_focus_19 }
+	prerequisite = { focus = ALT_focus_21 }
+	
+	completion_reward = {
+		}
+	}
