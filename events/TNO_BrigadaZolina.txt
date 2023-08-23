@@ -1,0 +1,345 @@
+add_namespace = ZLB_Zolin
+
+country_event = {#Cherni_nadel
+	id = ZLB_Zolin.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event berez_eco.36"}
+	title = ZLB_Zolin.1.t
+	desc = ZLB_Zolin.1.d
+	picture = GFX_event_Cherni_nadel
+	is_triggered_only = yes
+	
+	option = {
+		name = ZLB_Zolin.1.a
+		ai_chance = { factor = 1 }	
+	}
+	
+}
+country_event = {#Strah
+	id = ZLB_Zolin.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event berez_eco.36"}
+	title = ZLB_Zolin.2.t
+	desc = ZLB_Zolin.2.d
+	picture = GFX_event_Strah
+	is_triggered_only = yes
+	
+	option = {
+		name = ZLB_Zolin.2.a
+		ai_chance = { factor = 1 }	
+	}
+	
+}
+country_event = {#Terror
+	id = ZLB_Zolin.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event berez_eco.36"}
+	title = ZLB_Zolin.3.t
+	desc = ZLB_Zolin.3.d
+	picture = GFX_event_Terror
+	is_triggered_only = yes
+	
+	option = {
+		name = ZLB_Zolin.3.a
+		ai_chance = { factor = 1 }	
+	}
+	
+}
+country_event = {#Rituali
+	id = ZLB_Zolin.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event berez_eco.36"}
+	title = ZLB_Zolin.4.t
+	desc = ZLB_Zolin.4.d
+	picture = GFX_event_Rituali
+	is_triggered_only = yes
+	
+	option = {
+		name = ZLB_Zolin.4.a
+		ai_chance = { factor = 1 }	
+	}
+	
+}
+
+country_event = {#Cult
+	id = ZLB_Zolin.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event berez_eco.36"}
+	title = ZLB_Zolin.5.t
+	desc = ZLB_Zolin.5.d
+	picture = GFX_event_Cult
+	is_triggered_only = yes
+	
+	option = {
+		name = ZLB_Zolin.5.a
+		ai_chance = { factor = 1 }	
+	}
+	
+}
+country_event = {#Slyshat_molitva
+	id = ZLB_Zolin.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event berez_eco.36"}
+	title = ZLB_Zolin.6.t
+	desc = ZLB_Zolin.6.d
+	picture = GFX_event_Slyshat_molitva
+	is_triggered_only = yes
+	
+	option = {
+		name = ZLB_Zolin.6.a
+		ai_chance = { factor = 1 }	
+	    241 = {
+			create_unit = {
+				division = "division_template = \"Freikorps 'Siegfried Kasche'\" start_experience_factor = 0.3 start_equipment_factor = 0.7"
+				owner = ZLB
+			}
+			create_unit = {
+				division = "division_template = \"Freikorps 'Siegfried Kasche'\" start_experience_factor = 0.3 start_equipment_factor = 0.7"
+				owner = ZLB
+			}
+		}
+	}
+}
+country_event = {#Stoit_molitsa
+	id = ZLB_Zolin.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event berez_eco.36"}
+	title = ZLB_Zolin.7.t
+	desc = ZLB_Zolin.7.d
+	picture = GFX_event_Stoit_molitsa
+	is_triggered_only = yes
+	
+	option = {
+		name = ZLB_Zolin.7.a
+		ai_chance = { factor = 1 }
+        241 = {
+			create_unit = {
+				division = "division_template = \"Infanterie-Division\" start_experience_factor = 0.3 start_equipment_factor = 0.7"
+				owner = ZLB
+			}
+		}
+	}
+}
+country_event = {#Temie_creweni
+	id = ZLB_Zolin.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event berez_eco.36"}
+	title = ZLB_Zolin.8.t
+	desc = ZLB_Zolin.8.d
+	picture = GFX_event_Temie_creweni
+	is_triggered_only = yes
+	
+	option = {
+		name = ZLB_Zolin.8.a
+		ai_chance = { factor = 1 }	
+	}
+	
+}
+country_event = {#Zov_antihrista
+	id = ZLB_Zolin.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event berez_eco.36"}
+	title = ZLB_Zolin.9.t
+	desc = ZLB_Zolin.9.d
+	picture = GFX_event_Zov_antihrista
+	is_triggered_only = yes
+	
+	option = {
+		name = ZLB_Zolin.9.a
+		ai_chance = { factor = 1 }
+		set_politics = {
+			ruling_party = ultranationalism
+		}	
+		add_popularity = {
+			ideology = ultranationalism
+			popularity = 0.50
+		}
+		add_country_leader_role = {
+			character = ZLB_Antikhrist
+			promote_leader = yes 
+			country_leader = {
+				desc = "ZLB_Chik_DESC"
+				expire = "1994.2.2"
+				ideology = ultranationalism_fundamentalism_subtype
+				traits = { }
+				id = -1
+			}	
+		}
+		add_field_marshal_role = {
+			character = ZLB_Antikhrist
+			traits = { 	}
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 3
+			legacy_id = 3357
+		}
+		set_party_name = {
+			ideology = ultranationalism
+			long_name = ZLB_Cult_ultranationalism_long
+			name = ZLB_Cult_ultranationalism
+		}
+    }    
+	
+}		
+news_event = {#Shech_zemla
+	id = ZLB_Zolin.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event berez_eco.36"}
+	title = ZLB_Zolin.10.t
+	desc = ZLB_Zolin.10.d
+	picture = GFX_event_Shech_zemla
+	is_triggered_only = yes
+	
+	option = {
+		name = ZLB_Zolin.10.a
+		ai_chance = { factor = 1 }	
+	}
+	
+}
+country_event = {#Shssterni_voini
+	id = ZLB_Zolin.11
+	immediate = {log = "[GetDateText]: [Root.GetName]: event berez_eco.36"}
+	title = ZLB_Zolin.11.t
+	desc = ZLB_Zolin.11.d
+	picture = GFX_event_Shssterni_voini
+	is_triggered_only = yes
+	
+	option = {
+		name = ZLB_Zolin.11.a
+		ai_chance = { factor = 1 }	
+	}
+	
+}
+country_event = {#Crov_reka
+	id = ZLB_Zolin.12
+	immediate = {log = "[GetDateText]: [Root.GetName]: event berez_eco.36"}
+	title = ZLB_Zolin.12.t
+	desc = ZLB_Zolin.12.d
+	picture = GFX_event_Crov_reka
+	is_triggered_only = yes
+	
+	option = {
+		name = ZLB_Zolin.12.a
+		ai_chance = { factor = 1 }	
+	}
+	
+}
+country_event = {#Radi_bogadtvva
+	id = ZLB_Zolin.13
+	immediate = {log = "[GetDateText]: [Root.GetName]: event berez_eco.36"}
+	title = ZLB_Zolin.13.t
+	desc = ZLB_Zolin.13.d
+	picture = GFX_event_Radi_bogadtvva
+	is_triggered_only = yes
+	
+	option = {
+		name = ZLB_Zolin.13.a
+		ai_chance = { factor = 1 }
+        241 = {
+			create_unit = {
+				division = "division_template = \"Batalion Zolina\" start_experience_factor = 0.3 start_equipment_factor = 0.7"
+				owner = ZLB
+			}
+			create_unit = {
+				division = "division_template = \"Batalion Zolina\" start_experience_factor = 0.3 start_equipment_factor = 0.7"
+				owner = ZLB
+			}
+		}
+	}
+}
+country_event = {#Grabit_monastiri
+	id = ZLB_Zolin.14
+	immediate = {log = "[GetDateText]: [Root.GetName]: event berez_eco.36"}
+	title = ZLB_Zolin.14.t
+	desc = ZLB_Zolin.14.d
+	picture = GFX_event_Grabit_monastiri
+	is_triggered_only = yes
+	
+	option = {
+		name = ZLB_Zolin.14.a
+		ai_chance = { factor = 1 }	
+	}
+	
+}
+country_event = {#Desanita_cervka
+	id = ZLB_Zolin.15
+	immediate = {log = "[GetDateText]: [Root.GetName]: event berez_eco.36"}
+	title = ZLB_Zolin.15.t
+	desc = ZLB_Zolin.15.d
+	is_triggered_only = yes
+	
+	option = {
+		name = ZLB_Zolin.15.a
+		ai_chance = { factor = 1 }	
+	}
+	
+}
+country_event = {#Rasprava_nasoglasnix
+	id = ZLB_Zolin.16
+	immediate = {log = "[GetDateText]: [Root.GetName]: event berez_eco.36"}
+	title = ZLB_Zolin.16.t
+	desc = ZLB_Zolin.16.d
+	is_triggered_only = yes
+	
+	option = {
+		name = ZLB_Zolin.16.a
+		ai_chance = { factor = 1 }	
+	}
+	
+}
+country_event = {#Porabotit_plennix
+	id = ZLB_Zolin.17
+	immediate = {log = "[GetDateText]: [Root.GetName]: event berez_eco.36"}
+	title = ZLB_Zolin.17.t
+	desc = ZLB_Zolin.17.d
+	is_triggered_only = yes
+	
+	option = {
+		name = ZLB_Zolin.17.a
+		ai_chance = { factor = 1 }	
+	}
+	
+}	
+country_event = {#Rasprava_nasoglasnix
+	id = ZLB_Zolin.18
+	immediate = {log = "[GetDateText]: [Root.GetName]: event berez_eco.36"}
+	title = ZLB_Zolin.18.t
+	desc = ZLB_Zolin.18.d
+	is_triggered_only = yes
+	
+	option = {
+		name = ZLB_Zolin.18.a
+		ai_chance = { factor = 1 }	
+	}
+	
+}	
+country_event = {#Rasprava_nasoglasnix
+	id = ZLB_Zolin.19
+	immediate = {log = "[GetDateText]: [Root.GetName]: event berez_eco.36"}
+	title = ZLB_Zolin.19.t
+	desc = ZLB_Zolin.19.d
+	is_triggered_only = yes
+	
+	option = {
+		name = ZLB_Zolin.19.a
+		ai_chance = { factor = 1 }	
+	}
+	
+}	
+country_event = {#YBILI_ZOLINA
+	id = ZLB_Zolin.666
+	immediate = {log = "[GetDateText]: [Root.GetName]: event berez_eco.36"}
+	title = ZLB_Zolin.666.t
+	desc = ZLB_Zolin.666.d
+	picture = GFX_event_YBILI_ZOLINA
+	is_triggered_only = yes
+	
+	option = {
+		name = ZLB_Zolin.666.a
+		ai_chance = { factor = 1 }
+		hidden_effect = {
+			remove_all_ministers = yes
+			retire_character = ZLB_Pyotr_Zolin 
+		}
+		
+		add_ideas = {
+			ZLB_Antikhrist_hog
+			ZLB_Anatoli_Slivko_sec
+			ZLB_Anatoli_Utkin_eco
+			ZLB_Vyacheslav_Tolstopyatov_for
+		}
+	}
+	
+}					

@@ -1,0 +1,2810 @@
+add_namespace = TaS_GERcollapse
+add_namespace = TaS_GEREpilogue
+add_namespace = TaS_GEREpilogue_news
+
+add_namespace = MAR_Collapse
+add_namespace = TaS_RUSEpilogue
+add_namespace = TaS_RUSEpilogue_news
+
+country_event = { # Gov't couped, eks dee 
+	id = TaS_GERcollapse.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_GERcollapse.1" }
+	title = TaS_GERcollapse.1.t
+	desc = TaS_GERcollapse.1.desc
+	picture = x
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = TaS_GERcollapse.1.a
+		hidden_effect = {
+			retire_country_leader = yes
+			if = {
+				limit = {
+					GER = {
+						OR = {
+							has_government = fascism
+							has_government = national_socialism
+						}
+					}
+				}
+				set_politics = {
+					ruling_party = despotism
+					elections_allowed = no
+					last_election = "1935.12.17"
+					election_frequency = 48
+				}
+				GER_hans_speidel = {
+					promote_leader = yes
+				}
+				if = {
+					limit = { NOT = { has_global_flag = WRW2_german_collapse } }
+					country_event = { id = TaS_GERcollapse.2 hours = 12 }
+				}
+			}
+			else = {
+				if = {
+					limit = { MAR = { has_government = despotism } }
+					TaS_WRW2_German_Collapse_Beloozersky = yes
+				}
+				else_if = {
+					limit = { MAR = { has_government = socialist } }
+					TaS_WRW2_German_Collapse_Kosygin = yes
+				}
+				TaS_WRW2_total_capitulation = yes
+			}
+			#set_country_flag = TNO_closing_screen_show
+		}
+	}
+}
+
+country_event = { # first rebels
+	id = TaS_GERcollapse.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_GERcollapse.2" }
+	title = TaS_GERcollapse.2.t
+	desc = TaS_GERcollapse.2.desc
+	picture = x
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	hidden = yes
+
+	option = {
+		name = TaS_GERcollapse.2.a
+		set_global_flag = TNO_GERstarted_collapse
+		hidden_effect = {
+			GRH = {
+				transfer_state = 51
+			}
+			GSG = {
+				transfer_state = 153
+			}
+			if = {
+				limit = { 
+					BRG = { exists = no }
+				}
+				BEL = {
+					transfer_state = 6
+					transfer_state = 34
+					set_politics = {
+						ruling_party = fascism
+						elections_allowed = no
+						last_election = "1935.12.17"
+						election_frequency = 48
+					}					
+					BEL_Leon_Degrelle = {
+						promote_leader = yes
+					}
+					load_oob = HWL_BEL
+
+				}
+			}
+			if = {
+				limit = { 
+					FRA = { is_in_faction_with = GER }
+				}
+				FRA = {
+					leave_faction = yes
+					econ_leave_sphere = yes
+					white_peace = MAR
+				}
+			}
+			if = {
+				limit = { 
+					FRA = { is_in_faction_with = GER }
+					GLC = { exists = yes }
+				}
+				GLC = {
+					leave_faction = yes
+					econ_leave_sphere = yes
+					white_peace = MAR
+				}
+				FRA = {
+					leave_faction = yes
+					econ_leave_sphere = yes
+					white_peace = MAR
+					declare_war_on = {
+						target = GLC
+						type = annex_everything
+					}
+					remove_ideas = FRA_the_treaty_of_vichi
+				}
+			}
+			if = {
+				limit = { 
+					OR = {
+					FRA = { is_in_faction_with = USA }
+					FRA = { is_in_faction_with = JAP }
+					}
+					GLC = { exists = yes }
+				}
+				GLC = {
+					leave_faction = yes
+					econ_leave_sphere = yes
+					white_peace = MAR
+				}
+				FRA = {
+					declare_war_on = {
+						target = GLC
+						type = annex_everything
+					}
+					remove_ideas = FRA_the_treaty_of_vichi
+				}
+			}
+			if = {
+				limit = {
+					GLC = { exists = no }
+					BRG = { exists = no }
+				}
+				FRA = {
+					transfer_state = 29
+					transfer_state = 18
+					transfer_state = 17
+				}
+			}
+			if = {
+				limit = { NOT = { has_global_flag = WRW2_german_collapse } }
+				ZZZ = {
+					country_event = { id = TaS_GERcollapse.3 days = 5 }
+				}
+			}
+		}
+	}
+}
+
+country_event = { # second rebels
+	id = TaS_GERcollapse.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_GERcollapse.3" }
+	title = TaS_GERcollapse.3.t
+	desc = TaS_GERcollapse.3.desc
+	picture = GFX_heydrich_outro_2
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	hidden = yes
+
+	option = {
+		name = HGR.701.a 
+		hidden_effect = {
+			GWS = {
+				transfer_state = 775
+			}
+			GHL = {
+				transfer_state = 36
+			}
+			GCZ = {
+				transfer_state = 75
+			}
+			GPL = {
+				transfer_state = 1383
+				transfer_state = 90
+			}
+			GSG = {
+				transfer_state = 770
+				transfer_state = 50
+			}
+			if = {
+				limit = { NOT = { has_global_flag = WRW2_german_collapse } }
+				ZZZ = {
+					country_event = { id = TaS_GERcollapse.4 days = 3 }
+				}
+			}
+		}
+	}
+}
+
+country_event = { # rip pro-german balkans and several colonies
+	id = TaS_GERcollapse.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_GERcollapse.4" }
+	title = TaS_GERcollapse.4.t
+	desc = TaS_GERcollapse.4.desc
+	picture = GFX_heydrich_outro_2
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	hidden = yes
+
+	option = {
+		name = TaS_GERcollapse.4.a
+		hidden_effect = {
+			GWS = {
+				transfer_state = 188
+				transfer_state = 56
+			}
+			GHL = {
+				transfer_state = 7
+			}
+			GPL = {
+				transfer_state = 1382
+				transfer_state = 88
+			}
+			GSG = {
+				transfer_state = 152
+				transfer_state = 54
+			}
+			every_country = {
+				limit = {
+					is_in_faction_with = GER
+					NOT = { is_puppet_of = GER }
+					NOT = { tag = GER }
+				}
+				white_peace = RUS
+				leave_faction = yes
+				econ_leave_sphere = yes
+			}		
+			RUS = { TaS_WRW2_total_capitulation = yes }
+			if = {
+				limit = { NOT = { has_global_flag = WRW2_german_collapse } }
+				ZZZ = {
+					country_event = { id = TaS_GERcollapse.5 days = 2 }
+				}
+			}
+		}
+	}
+}
+
+country_event = { # rebbbelsus
+	id = TaS_GERcollapse.5															
+	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_GERcollapse.5" }
+	title = TaS_GERcollapse.5.t
+	desc = TaS_GERcollapse.5.desc
+	picture = GFX_heydrich_outro_2
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	hidden = yes
+
+	option = {
+		name = HGR.703.a
+		hidden_effect = {
+			GHL = {
+				load_oob = HOL_1962
+			}
+			GSG = {
+				transfer_state = 72
+				transfer_state = 52
+			}
+			GWS = {
+				transfer_state = 1373
+				transfer_state = 57
+			}
+			GRH = {
+				transfer_state = 42
+				transfer_state = 8
+			}
+			GDN = {
+				annex_country = {
+					target = DEN
+					transfer_troops = yes
+				}
+				transfer_state = 774
+			}
+			
+			if = {
+				limit = { NOT = { has_global_flag = WRW2_german_collapse } }
+				ZZZ = {
+					country_event = { id = TaS_GERcollapse.6 days = 3 }
+				}
+			}
+		}
+	}
+}
+
+country_event = { # last rebelion
+	id = TaS_GERcollapse.6
+	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_GERcollapse.6" }
+	title = TaS_GERcollapse.6.t
+	desc = TaS_GERcollapse.6.desc
+	picture = GFX_heydrich_outro_2
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	hidden = yes
+
+	option = {
+		name = TaS_GERcollapse.6.a
+		hidden_effect = {
+			GRH = {
+				transfer_state = 28
+			}
+			GWS = {
+				transfer_state = 59
+				transfer_state = 55
+			}
+			GSG = {
+				transfer_state = 4
+			}
+			GPL = {
+				transfer_state = 87
+			}
+			if = {
+				limit = { NOT = { has_global_flag = WRW2_german_collapse } }
+				ZZZ = {
+					country_event = { id = TaS_GERcollapse.7 days = 2 }
+				}
+			}
+		}
+	}
+}
+
+country_event = { # f
+	id = TaS_GERcollapse.7
+	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_GERcollapse.7" }
+	title = TaS_GERcollapse.7.t
+	desc = TaS_GERcollapse.7.desc
+	picture = GFX_heydrich_outro_2
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	hidden = yes
+
+	option = {
+		name = TaS_GERcollapse.7.a
+		hidden_effect = {
+			if = {
+				limit = { MAR = { has_government = despotism } }
+				TaS_WRW2_German_Collapse_Beloozersky = yes
+			}
+			else = {
+				TaS_WRW2_German_Collapse_Kosygin = yes
+			}
+			hidden_effect = {
+				every_country  = {
+					news_event = {
+						id = berez_world_news.5
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+country_event = {#GUOT New order
+	id = TaS_GEREpilogue.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GEREpilogue.1"}
+	title = TaS_GEREpilogue.1.t
+	desc = TaS_GEREpilogue.1.d
+	is_triggered_only = yes
+	picture = GFX_PostGER_1_pic
+	fire_only_once = yes
+	
+	option = {
+		name = TaS_GEREpilogue.1.a
+		ai_chance = { factor = 1 }	
+		custom_effect_tooltip = TaS_the_neu_ordung_tt
+		hidden_effect = {
+			add_political_power = 50
+			country_event = { id = TaS_GEREpilogue.2 days = 14}
+			swap_ideas = {
+				remove_idea = TaS_Post2WRW_BRL_nazi_heartland_1
+				add_idea = TaS_Post2WRW_BRL_nazi_heartland_2
+			}
+		}
+	}
+}
+country_event = {#GUOT big building is kil
+	id = TaS_GEREpilogue.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GEREpilogue.2"}
+	title = TaS_GEREpilogue.2.t
+	desc = TaS_GEREpilogue.2.d
+	is_triggered_only = yes
+	picture = GFX_PostGER_2_pic
+	fire_only_once = yes
+	
+	option = { #no
+		name = TaS_GEREpilogue.2.a
+		ai_chance = { factor = 1 }	
+		add_political_power = 50
+		custom_effect_tooltip = TaS_rip_big_building_tt
+		hidden_effect = {
+			country_event = { id = TaS_GEREpilogue.3 days = 7}
+			64 = { set_state_name = STATE_64_rus }
+			swap_ideas = {
+				remove_idea = TaS_Post2WRW_BRL_nazi_heartland_2
+				add_idea = TaS_Post2WRW_BRL_nazi_heartland_3
+			}
+			set_province_name = { id = 6521 name = VICTORY_POINTS_6521_rus }
+			#set_entity_position = {  #idk how it should work it crashes atm
+			#	name = "big_building_in_neu_berlin"
+			#	x = 3011.660
+			#	y = 1567.120
+			#	z = -10
+			#}
+		}
+	}
+}
+country_event = {#GUOT denazify forever
+	id = TaS_GEREpilogue.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GEREpilogue.3"}
+	title = TaS_GEREpilogue.3.t
+	desc = TaS_GEREpilogue.3.d
+	is_triggered_only = yes
+	picture = GFX_PostGER_3_pic
+	fire_only_once = yes
+	
+	option = { 
+		name = TaS_GEREpilogue.3.a
+		ai_chance = { factor = 1 }	
+		custom_effect_tooltip = TaS_denazification_tt
+		hidden_effect = {
+			add_ideas = MAR_Denazify
+			every_owned_state = {
+				BRL = {
+					add_state_core = PREV
+				}
+				add_to_variable = { global.postgervisits = 1 }
+			}
+			swap_ideas = {
+				remove_idea = TaS_Post2WRW_BRL_nazi_heartland_3
+				add_idea = TaS_Post2WRW_BRL_nazi_heartland_4
+			}
+		}
+	}
+}
+
+country_event = {#Garnizon spasenije
+	id = TaS_GEREpilogue.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GEREpilogue.4"}
+	title = TaS_GEREpilogue.4.t
+	desc = TaS_GEREpilogue.4.d
+	is_triggered_only = yes
+	picture = GFX_PostGER_4_pic
+	fire_only_once = yes
+	
+	option = { 
+		name = TaS_GEREpilogue.4.a
+		ai_chance = { factor = 1 }	
+		add_political_power = 50
+		custom_effect_tooltip = TaS_spasenie_tt
+		hidden_effect = {		
+			country_event = { id = TaS_GEREpilogue.5 days = 7}
+		}
+	}
+}
+country_event = {#Garnizon kazn'
+	id = TaS_GEREpilogue.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GEREpilogue.5"}
+	title = TaS_GEREpilogue.5.t
+	desc = TaS_GEREpilogue.5.d
+	is_triggered_only = yes
+	picture = GFX_PostGER_5_pic
+	fire_only_once = yes
+	
+	option = { 
+		name = TaS_GEREpilogue.5.a
+		ai_chance = { factor = 1 }	
+		custom_effect_tooltip = TaS_kazn_tt
+		hidden_effect = {		
+			country_event = { id = TaS_GEREpilogue.6 days = 7}
+			every_owned_state = {
+				ZNE = {
+					add_state_core = PREV
+				}
+			}
+		}
+	}
+}
+country_event = {#Garnizon bogatyr'
+	id = TaS_GEREpilogue.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GEREpilogue.6"}
+	title = TaS_GEREpilogue.6.t
+	desc = TaS_GEREpilogue.6.d
+	is_triggered_only = yes
+	picture = GFX_PostGER_6_pic
+	fire_only_once = yes
+	
+	option = { 
+		name = TaS_GEREpilogue.6.a
+		ai_chance = { factor = 1 }	
+		custom_effect_tooltip = TaS_bogatyr_tt
+		hidden_effect = {		
+			country_event = { id = TaS_GEREpilogue.7 days = 7}
+		}
+	}
+}
+country_event = {#Garnizon czechia'
+	id = TaS_GEREpilogue.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GEREpilogue.7"}
+	title = TaS_GEREpilogue.7.t
+	desc = TaS_GEREpilogue.7.d
+	is_triggered_only = yes
+	picture = GFX_PostGER_7_pic
+	fire_only_once = yes
+	
+	option = { 
+		name = TaS_GEREpilogue.7.a
+		ai_chance = { factor = 1 }	
+		custom_effect_tooltip = TaS_czech_tt
+		hidden_effect = {		
+			65 = {
+				set_demilitarized_zone = yes
+			}
+			add_to_variable = { global.postgervisits = 1 }
+		}
+	}
+}
+
+country_event = {#Czechia nation
+	id = TaS_GEREpilogue.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GEREpilogue.8"}
+	title = TaS_GEREpilogue.8.t
+	desc = TaS_GEREpilogue.8.d
+	is_triggered_only = yes
+	picture = GFX_PostGER_8_pic
+	fire_only_once = yes
+	
+	option = { 
+		name = TaS_GEREpilogue.8.a
+		ai_chance = { factor = 1 }	
+		custom_effect_tooltip = TaS_cznation_tt
+		9 = { add_manpower = -17912 }
+		hidden_effect = {		
+			country_event = { id = TaS_GEREpilogue.9 days = 7}
+			9 = { set_variable = { nationality = 500 } }
+			add_state_core = 9
+		}
+	}
+}
+country_event = {#Czechia night
+	id = TaS_GEREpilogue.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GEREpilogue.9"}
+	title = TaS_GEREpilogue.9.t
+	desc = TaS_GEREpilogue.9.d
+	is_triggered_only = yes
+	picture = GFX_PostGER_9_pic
+	fire_only_once = yes
+	
+	option = { 
+		name = TaS_GEREpilogue.9.a
+		ai_chance = { factor = 1 }	
+		custom_effect_tooltip = TaS_cznight_tt
+		75 = { add_manpower = -15312 }
+		9 = { add_manpower = -11232 }
+		74 = { add_manpower = -7874 }
+		69 = { add_manpower = -3663 }
+		hidden_effect = {		
+			country_event = { id = TaS_GEREpilogue.10 days = 7}
+			75 = { set_variable = { nationality = 500 } }
+		}
+	}
+}	
+country_event = {#Czechia anti-munich
+	id = TaS_GEREpilogue.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GEREpilogue.10"}
+	title = TaS_GEREpilogue.10.t
+	desc = TaS_GEREpilogue.10.d
+	is_triggered_only = yes
+	picture = GFX_PostGER_10_pic
+	fire_only_once = yes
+	
+	option = { 
+		name = TaS_GEREpilogue.10.a
+		ai_chance = { factor = 1 }	
+		custom_effect_tooltip = TaS_czmunich_tt
+		69 = { add_manpower = -6476 }
+		hidden_effect = {
+			country_event = { id = TaS_GEREpilogue.11 days = 7}
+			69 = { set_demilitarized_zone = yes	}
+		}
+	}	
+}
+country_event = {#Czechia guot call
+	id = TaS_GEREpilogue.11
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GEREpilogue.11"}
+	title = TaS_GEREpilogue.11.t
+	desc = TaS_GEREpilogue.11.d
+	is_triggered_only = yes
+	picture = GFX_PostGER_11_pic
+	fire_only_once = yes
+	
+	option = { 
+		name = TaS_GEREpilogue.11.a
+		ai_chance = { factor = 1 }	
+		custom_effect_tooltip = TaS_czguot_tt
+		69 = { add_manpower = -14854 }
+		hidden_effect = {	
+			add_to_variable = { global.postgervisits = 1 }		
+			74 = { set_demilitarized_zone = yes	}
+			GSU = {
+				transfer_state = 69
+			}		
+		}
+	}
+}
+
+country_event = {#Westhalia baader
+	id = TaS_GEREpilogue.12
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GEREpilogue.12"}
+	title = TaS_GEREpilogue.12.t
+	desc = TaS_GEREpilogue.12.d
+	is_triggered_only = yes
+	picture = GFX_PostGER_12_pic
+	fire_only_once = yes
+	
+	option = { 
+		name = TaS_GEREpilogue.12.a
+		ai_chance = { factor = 1 }	
+		custom_effect_tooltip = TaS_baader_tt
+		hidden_effect = {		
+			country_event = { id = TaS_GEREpilogue.13 days = 7}
+			add_political_power = -50
+		}
+	}	
+}
+country_event = {#Westhalia meinhof is kil
+	id = TaS_GEREpilogue.13
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GEREpilogue.13"}
+	title = TaS_GEREpilogue.13.t
+	desc = TaS_GEREpilogue.13.d
+	is_triggered_only = yes
+	picture = GFX_PostGER_13_pic
+	fire_only_once = yes
+	
+	option = { 
+		name = TaS_GEREpilogue.13.a
+		ai_chance = { factor = 1 }	
+		custom_effect_tooltip = TaS_fmeinhoff_tt
+		hidden_effect = {		
+			country_event = { id = TaS_GEREpilogue.14 days = 7}
+			add_political_power = -50
+			add_stability = -0.05
+		}
+	}	
+}
+country_event = {#Westhalia baaders ultimatum
+	id = TaS_GEREpilogue.14
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GEREpilogue.14"}
+	title = TaS_GEREpilogue.14.t
+	desc = TaS_GEREpilogue.14.d
+	is_triggered_only = yes
+	picture = GFX_PostGER_14_pic
+	fire_only_once = yes
+	
+	option = { 
+		name = TaS_GEREpilogue.14.a
+		ai_chance = { factor = 1 }	
+		custom_effect_tooltip = TaS_fmeinhoff_tt
+		hidden_effect = {		
+			add_to_variable = { global.postgervisits = 1 }
+			55 = {
+				set_demilitarized_zone = yes
+			}
+			775 = {
+				set_demilitarized_zone = yes
+			}
+		}
+	}	
+}
+
+country_event = {#Baden sleep
+	id = TaS_GEREpilogue.15
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GEREpilogue.15"}
+	title = TaS_GEREpilogue.15.t
+	desc = TaS_GEREpilogue.15.d
+	is_triggered_only = yes
+	picture = GFX_PostGER_15_pic
+	fire_only_once = yes
+	
+	option = { 
+		name = TaS_GEREpilogue.15.a
+		ai_chance = { factor = 1 }	
+		custom_effect_tooltip = TaS_sleepymax_tt
+		hidden_effect = {		
+			country_event = { id = TaS_GEREpilogue.16 days = 7}
+			add_stability = -0.05
+		}
+	}	
+}
+country_event = {#Baden hard to be king
+	id = TaS_GEREpilogue.16
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GEREpilogue.16"}
+	title = TaS_GEREpilogue.16.t
+	desc = TaS_GEREpilogue.16.d
+	is_triggered_only = yes
+	picture = GFX_PostGER_16_pic
+	fire_only_once = yes
+	
+	option = { 
+		name = TaS_GEREpilogue.16.a
+		ai_chance = { factor = 1 }	
+		custom_effect_tooltip = TaS_depressioninking_tt
+		hidden_effect = {		
+			country_event = { id = TaS_GEREpilogue.17 days = 7}
+			add_stability = -0.05
+		}
+	}	
+}
+country_event = {#Baden werewolfs
+	id = TaS_GEREpilogue.17
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GEREpilogue.17"}
+	title = TaS_GEREpilogue.17.t
+	desc = TaS_GEREpilogue.17.d
+	is_triggered_only = yes
+	picture = GFX_PostGER_17_pic
+	fire_only_once = yes
+	
+	option = { 
+		name = TaS_GEREpilogue.17.a
+		ai_chance = { factor = 1 }	
+		custom_effect_tooltip = TaS_badenrevolt_tt
+		hidden_effect = {
+			add_to_variable = { global.postgervisits = 1 }
+			GWF = {
+				transfer_state = 72
+				transfer_state = 72
+			}
+		}
+	}	
+}
+
+country_event = {#Rheinland predlozenie
+	id = TaS_GEREpilogue.18
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GEREpilogue.18"}
+	title = TaS_GEREpilogue.18.t
+	desc = TaS_GEREpilogue.18.d
+	is_triggered_only = yes
+	picture = GFX_PostGER_18_pic
+	fire_only_once = yes
+	
+	option = { 
+		name = TaS_GEREpilogue.18.a
+		ai_chance = { factor = 1 }	
+		custom_effect_tooltip = TaS_rheinsecret_tt
+		hidden_effect = {		
+			country_event = { id = TaS_GEREpilogue.19 days = 7}
+			add_stability = -0.05
+			set_temp_variable = { gdp_growth_temp = 1.50 }
+			econ_gdp_growth_change = yes
+		}
+	}	
+}
+country_event = {#Rheinland you nazi? 
+	id = TaS_GEREpilogue.19
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GEREpilogue.19"}
+	title = TaS_GEREpilogue.19.t
+	desc = TaS_GEREpilogue.19.d
+	is_triggered_only = yes
+	picture = GFX_PostGER_19_pic
+	fire_only_once = yes
+	
+	option = { 
+		name = TaS_GEREpilogue.19.a
+		ai_chance = { factor = 1 }	
+		custom_effect_tooltip = TaS_rheinnazis_tt
+		hidden_effect = {		
+			country_event = { id = TaS_GEREpilogue.20 days = 7}
+			add_stability = -0.15
+			28 = {
+				set_demilitarized_zone = yes
+			}
+		}
+	}	
+}
+country_event = {#Rheinland werewolfs
+	id = TaS_GEREpilogue.20
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GEREpilogue.20"}
+	title = TaS_GEREpilogue.20.t
+	desc = TaS_GEREpilogue.20.d
+	is_triggered_only = yes
+	picture = GFX_PostGER_20_pic
+	fire_only_once = yes
+	
+	option = { 
+		name = TaS_GEREpilogue.20.a
+		ai_chance = { factor = 1 }	
+		custom_effect_tooltip = TaS_rheinrevolt_tt
+		hidden_effect = {	
+			add_to_variable = { global.postgervisits = 1 }
+			GWF = {
+				transfer_state = 28
+				transfer_state = 8
+			}
+		}
+	}	
+}
+
+country_event = {#Bavaria rasplata
+	id = TaS_GEREpilogue.21
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GEREpilogue.21"}
+	title = TaS_GEREpilogue.21.t
+	desc = TaS_GEREpilogue.21.d
+	is_triggered_only = yes
+	picture = GFX_PostGER_21_pic
+	fire_only_once = yes
+	
+	option = { 
+		name = TaS_GEREpilogue.21.a
+		ai_chance = { factor = 1 }	
+		custom_effect_tooltip = TaS_bavariarasplate_tt
+		add_manpower = -11
+		hidden_effect = {		
+			country_event = { id = TaS_GEREpilogue.22 days = 7}
+			add_war_support = -0.05
+		}
+	}	
+}
+country_event = {#Bavaria vystuplenie
+	id = TaS_GEREpilogue.22
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GEREpilogue.22"}
+	title = TaS_GEREpilogue.22.t
+	desc = TaS_GEREpilogue.22.d
+	is_triggered_only = yes
+	picture = GFX_PostGER_22_pic
+	fire_only_once = yes
+	
+	option = { 
+		name = TaS_GEREpilogue.22.a
+		ai_chance = { factor = 1 }	
+		custom_effect_tooltip = TaS_bavariavystup_tt
+		hidden_effect = {		
+			country_event = { id = TaS_GEREpilogue.23 days = 7}
+			add_stability = -0.05
+		}
+	}	
+}
+country_event = {#Bavaria commie
+	id = TaS_GEREpilogue.23
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GEREpilogue.23"}
+	title = TaS_GEREpilogue.23.t
+	desc = TaS_GEREpilogue.23.d
+	is_triggered_only = yes
+	picture = GFX_PostGER_23_pic
+	fire_only_once = yes
+	
+	option = { 
+		name = TaS_GEREpilogue.23.a
+		ai_chance = { factor = 1 }	
+		custom_effect_tooltip = TaS_bavariacommie_tt
+		hidden_effect = {		
+			add_to_variable = { global.postgervisits = 1 }
+			GRA = {
+				transfer_state = 53
+			}			
+		}
+	}	
+}
+
+country_event = {#Austria ottocame
+	id = TaS_GEREpilogue.24
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GEREpilogue.24"}
+	title = TaS_GEREpilogue.24.t
+	desc = TaS_GEREpilogue.24.d
+	is_triggered_only = yes
+	picture = GFX_PostGER_24_pic
+	fire_only_once = yes
+	
+	option = { 
+		name = TaS_GEREpilogue.24.a
+		ai_chance = { factor = 1 }	
+		custom_effect_tooltip = TaS_ottohere_tt
+		hidden_effect = {		
+			country_event = { id = TaS_GEREpilogue.25 days = 7}
+			add_stability = 0.05
+		}
+	}	
+}
+country_event = {#Austria vienna
+	id = TaS_GEREpilogue.25
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GEREpilogue.25"}
+	title = TaS_GEREpilogue.25.t
+	desc = TaS_GEREpilogue.25.d
+	is_triggered_only = yes
+	picture = GFX_PostGER_25_pic
+	fire_only_once = yes
+	
+	option = { 
+		name = TaS_GEREpilogue.25.a
+		ai_chance = { factor = 1 }	
+		custom_effect_tooltip = TaS_ottovienna_tt
+		hidden_effect = {		
+			country_event = { id = TaS_GEREpilogue.26 days = 7}
+			add_stability = 0.05
+		}
+	}	
+}
+country_event = {#Austria revolt
+	id = TaS_GEREpilogue.26
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GEREpilogue.26"}
+	title = TaS_GEREpilogue.26.t
+	desc = TaS_GEREpilogue.26.d
+	is_triggered_only = yes
+	picture = GFX_PostGER_26_pic
+	fire_only_once = yes
+	
+	option = { 
+		add_to_variable = { global.postgervisits = 1 }
+		name = TaS_GEREpilogue.26.a
+		ai_chance = { factor = 1 }	
+		custom_effect_tooltip = TaS_austriarevolt_tt
+		hidden_effect = {		
+			GRA = {
+				transfer_state = 152
+			}
+			153 = { set_demilitarized_zone = yes }
+			1025 = { set_demilitarized_zone = yes } 
+		}
+	}	
+}
+
+country_event = {#Remer
+	id = TaS_GEREpilogue.27
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GEREpilogue.27"}
+	title = TaS_GEREpilogue.27.t
+	desc = TaS_GEREpilogue.27.d
+	is_triggered_only = yes
+	picture = GFX_PostGER_27_pic
+	fire_only_once = yes
+	
+	option = { 
+		name = TaS_GEREpilogue.27.a
+		ai_chance = { factor = 1 }	
+		custom_effect_tooltip = TaS_remerstate_tt
+		hidden_effect = {		
+			add_to_variable = { global.postgervisits = 1 }
+		}
+	}	
+}
+country_event = {#baader
+	id = TaS_GEREpilogue.28
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GEREpilogue.28"}
+	title = TaS_GEREpilogue.28.t
+	desc = TaS_GEREpilogue.28.d
+	is_triggered_only = yes
+	picture = GFX_PostGER_28_pic
+	fire_only_once = yes
+	
+	option = { 
+		name = TaS_GEREpilogue.28.a
+		ai_chance = { factor = 1 }	
+		custom_effect_tooltip = TaS_baaderstate_tt
+		hidden_effect = {		
+			add_to_variable = { global.postgervisits = 1 }			
+		}
+	}	
+}
+country_event = {#Sudeten
+	id = TaS_GEREpilogue.29
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GEREpilogue.29"}
+	title = TaS_GEREpilogue.29.t
+	desc = TaS_GEREpilogue.29.d
+	is_triggered_only = yes
+	picture = GFX_PostGER_29_pic
+	fire_only_once = yes
+	
+	option = { 
+		name = TaS_GEREpilogue.29.a
+		ai_chance = { factor = 1 }	
+		custom_effect_tooltip = TaS_sudeten_tt
+		hidden_effect = {		
+			add_to_variable = { global.postgervisits = 1 }
+		}
+	}	
+}
+country_event = { #Rip germany
+	id = TaS_GEREpilogue.30
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GEREpilogue.30"}
+	title = TaS_GEREpilogue.30.t
+	desc = TaS_GEREpilogue.30.d
+	is_triggered_only = yes
+	picture = GFX_PostGER_30_pic
+	fire_only_once = yes
+	
+	option = { 
+		name = TaS_GEREpilogue.29.a
+		ai_chance = { factor = 1 }	
+		custom_effect_tooltip = TaS_germany_tt
+		TNO_Country_Closing_Screen_Show = yes
+		hidden_effect = {		
+			TaS_2WRW_kill_germany = yes
+		}
+	}	
+}
+news_event = { # Westphalia
+	id = TaS_GEREpilogue_news.1
+	title = TaS_GEREpilogue_news.1.t
+	desc = TaS_GEREpilogue_news.1.d
+	picture = GFX_postger_world_news_001
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = TaS_GEREpilogue_news.1.a
+		trigger = {
+			tag = GWS
+		}
+	}
+	option = {
+		name = TaS_GEREpilogue_news.1.b
+		trigger = {
+			NOT = {
+				tag = GWS
+			}
+		}
+	}
+}
+news_event = { # Rheinland
+	id = TaS_GEREpilogue_news.2
+	title = TaS_GEREpilogue_news.2.t
+	desc = TaS_GEREpilogue_news.2.d
+	picture = GFX_postger_world_news_002
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = TaS_GEREpilogue_news.2.a
+		trigger = {
+			tag = GRH
+		}
+	}
+	option = {
+		name = TaS_GEREpilogue_news.2.b
+		trigger = {
+			NOT = {
+				tag = GRH
+			}
+		}
+	}
+}
+news_event = { # Baden
+	id = TaS_GEREpilogue_news.3
+	title = TaS_GEREpilogue_news.3.t
+	desc = TaS_GEREpilogue_news.3.d
+	picture = GFX_postger_world_news_003
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = TaS_GEREpilogue_news.3.a
+		trigger = {
+			tag = GBW
+		}
+	}
+	option = {
+		name = TaS_GEREpilogue_news.3.b
+		trigger = {
+			NOT = {
+				tag = GBW
+			}
+		}
+	}
+}
+news_event = { # Bavaria
+	id = TaS_GEREpilogue_news.4
+	title = TaS_GEREpilogue_news.4.t
+	desc = TaS_GEREpilogue_news.4.d
+	picture = GFX_postger_world_news_004
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = TaS_GEREpilogue_news.4.a
+		trigger = {
+			tag = GBV
+		}
+	}
+	option = {
+		name = TaS_GEREpilogue_news.4.b
+		trigger = {
+			NOT = {
+				tag = GBV
+			}
+		}
+	}
+}
+news_event = { # Austria
+	id = TaS_GEREpilogue_news.5
+	title = TaS_GEREpilogue_news.5.t
+	desc = TaS_GEREpilogue_news.5.d
+	picture = GFX_postger_world_news_005
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = TaS_GEREpilogue_news.5.a
+		trigger = {
+			tag = GAU
+		}
+	}
+	option = {
+		name = TaS_GEREpilogue_news.5.b
+		trigger = {
+			NOT = {
+				tag = GAU
+			}
+		}
+	}
+}
+news_event = { # Czechia
+	id = TaS_GEREpilogue_news.6
+	title = TaS_GEREpilogue_news.6.t
+	desc = TaS_GEREpilogue_news.6.d
+	picture = GFX_postger_world_news_006
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = TaS_GEREpilogue_news.6.a
+		trigger = {
+			tag = GCZ
+		}
+	}
+	option = {
+		name = TaS_GEREpilogue_news.6.b
+		trigger = {
+			NOT = {
+				tag = GCZ
+			}
+		}
+	}
+}
+news_event = { # Sudetenland
+	id = TaS_GEREpilogue_news.7
+	title = TaS_GEREpilogue_news.7.t
+	desc = TaS_GEREpilogue_news.7.d
+	picture = GFX_postger_world_news_007
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = TaS_GEREpilogue_news.7.a
+		trigger = {
+			tag = GSU
+		}
+	}
+	option = {
+		name = TaS_GEREpilogue_news.7.b
+		trigger = {
+			NOT = {
+				tag = GRH
+			}
+		}
+	}
+}
+news_event = { # Rot Armee
+	id = TaS_GEREpilogue_news.8
+	title = TaS_GEREpilogue_news.8.t
+	desc = TaS_GEREpilogue_news.8.d
+	picture = GFX_postger_world_news_008
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = TaS_GEREpilogue_news.8.a
+		trigger = {
+			tag = GRA
+		}
+	}
+	option = {
+		name = TaS_GEREpilogue_news.8.b
+		trigger = {
+			NOT = {
+				tag = GRA
+			}
+		}
+	}
+}
+news_event = { # Werewolfs
+	id = TaS_GEREpilogue_news.9
+	title = TaS_GEREpilogue_news.9.t
+	desc = TaS_GEREpilogue_news.9.d
+	picture = GFX_postger_world_news_009
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = TaS_GEREpilogue_news.9.a
+		trigger = {
+			tag = GWF
+		}
+	}
+	option = {
+		name = TaS_GEREpilogue_news.9.b
+		trigger = {
+			NOT = {
+				tag = GWF
+			}
+		}
+	}
+}
+news_event = { # RIP GERMANY
+	id = TaS_GEREpilogue_news.10
+	title = TaS_GEREpilogue_news.10.t
+	desc = TaS_GEREpilogue_news.10.d
+	picture = GFX_postger_world_news_010
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = TaS_GEREpilogue_news.10.a
+		trigger = {
+			tag = GWF
+		}
+	}
+	option = {
+		name = TaS_GEREpilogue_news.10.b
+		trigger = {
+			NOT = {
+				tag = GWF
+			}
+		}
+	}
+}
+news_event = { # GUOT inteventrion
+	id = TaS_GEREpilogue_news.11
+	title = TaS_GEREpilogue_news.11.t
+	desc = TaS_GEREpilogue_news.11.d
+	picture = GFX_postger_world_news_011
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = TaS_GEREpilogue_news.11.a
+		trigger = {
+			OR = {
+				tag = ZNE
+				tag = BRL
+				tag = MAR
+			}
+		}
+	}
+	option = {
+		name = TaS_GEREpilogue_news.11.b
+		trigger = {
+			NOT = {
+				OR = {
+					tag = ZNE
+					tag = BRL
+					tag = MAR
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Novgorod Theatry
+	id = MAR_Collapse.1941
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Collapse.1941"}
+	title = MAR_Collapse.1941.t
+	desc = MAR_Collapse.1941.d
+	picture = GFX_report_event_collapse1
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = MAR_Collapse.1941.a
+		every_country = {
+			limit = { has_war_with = MAR }
+			white_peace = MAR
+		}
+		MCW = {
+		    transfer_state = 858
+		    transfer_state = 859
+		    transfer_state = 214
+		    transfer_state = 861
+		    transfer_state = 860
+		    transfer_state = 857
+		    transfer_state = 351
+		    transfer_state = 856
+		    transfer_state = 855
+		    transfer_state = 252
+		    transfer_state = 256
+		    transfer_state = 250
+		    transfer_state = 755
+		}
+		FIN = { 
+		    transfer_state = 213
+		    transfer_state = 1359
+		    transfer_state = 215
+		    transfer_state = 216
+			transfer_state = 1887
+		}
+		ai_chance = { factor = 1 }
+		if = {
+			limit = { has_government = despotism }
+			MAR = { 
+				set_country_leader_description = {
+					desc = "POLITICS_SERGEY_BELOZERSKI_F_DESC"
+				}
+				add_ideas = TaS_Post2WRW_WSR_fourth_time_a_row
+			}
+			MAR_Sergey_Belozerskiy = {
+				set_portraits = {
+					civilian = { large = "gfx/leaders/MAR/Collapse/Portrait_Berezniki_Belozerskid_70S.dds" }
+				}
+				swap_country_leader_traits = {
+					remove = char_objedinitel
+					add = char_projebavshij
+					ideology = despotism_mladorossi_autocracy_subtype
+				}
+			}
+			hidden_effect = {
+				country_event ={
+					id = MAR_Collapse.1 days = 14
+				}
+			}
+		}
+		else_if = {
+			limit = { has_government = socialist }
+			MAR_advisor_Kosygin = {
+				set_portraits = {
+					civilian = { large = "gfx/leaders/MAR/Collapse/Portrait_Berezniki_Kosygind_70s.dds" }
+				}
+				swap_country_leader_traits = {
+					remove = char_reformator
+					add = char_projebavshij
+					ideology = socialist_social_monarchist_but_worse_subtype
+				}
+			}
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.12
+				}
+			}
+		}
+		add_political_power = -500
+		add_stability = -0.25
+	}
+	option = {
+		name = MAR_Collapse.1941.b
+		trigger = {
+			NOT = {
+				surrender_progress > 0.3
+			}
+		}
+
+	}
+}	
+
+country_event = { #Beloozerski ded - Regent council called
+	id = MAR_Collapse.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Collapse.1"}
+	title = MAR_Collapse.1.t
+	desc = MAR_Collapse.1.d
+	picture = GFX_report_event_collapse1
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = MAR_Collapse.1.a
+		ai_chance = { factor = 1 }
+		retire_character = MAR_Sergey_Belozerskiy
+		add_country_leader_role = {
+			character = MAR_Regent_council
+			promote_leader = yes
+			country_leader = {
+			desc = "POLITICS_REGENCY_DESC"
+			expire = "1999.1.1"
+			ideology = despotism_interim_government_subtype
+				traits = {
+					goverment_of_misery
+				}
+			}
+		}
+		hidden_effect = {
+			country_event ={
+				id = MAR_Collapse.2 days = 5
+			}
+		}
+		add_political_power = -50
+		add_stability = -0.10
+	}
+}
+country_event = { #Flavour regency discussions
+	id = MAR_Collapse.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Collapse.2"}
+	title = MAR_Collapse.2.t
+	desc = MAR_Collapse.2.d
+	picture = GFX_report_event_collapse2
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = MAR_Collapse.2.a
+		ai_chance = { factor = 1 }
+		add_political_power = -50
+		add_stability = -0.05
+		hidden_effect = {
+			country_event ={
+				id = MAR_Collapse.3 days = 2
+			}
+		}
+	}
+}
+country_event = { #Flavour vyatkan aristocracy dissapeared
+	id = MAR_Collapse.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Collapse.3"}
+	title = MAR_Collapse.3.t
+	desc = MAR_Collapse.3.d
+	picture = GFX_report_event_collapse3
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = MAR_Collapse.3.a
+		ai_chance = { factor = 1 }
+		add_political_power = -50
+		hidden_effect = {
+			country_event ={
+				id = MAR_Collapse.4 days = 1
+			}
+		}
+	}
+}
+country_event = { #Flavour capital infightings
+	id = MAR_Collapse.4 
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Collapse.4"}
+	title = MAR_Collapse.4.t
+	desc = MAR_Collapse.4.d
+	picture = GFX_report_event_collapse4
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		hidden_effect = {
+			capital_scope = {
+				 set_demilitarized_zone = yes
+			}
+		}
+	}
+	option = {
+		name = MAR_Collapse.4.a
+		ai_chance = { factor = 1 }
+		add_stability = -0.05
+		hidden_effect = {
+			country_event ={
+				id = MAR_Collapse.5 days = 3
+			}
+		}
+	}
+}
+country_event = { #capital infightings continue demil zones on far east and kazakh
+	id = MAR_Collapse.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Collapse.5"}
+	title = MAR_Collapse.5.t
+	desc = MAR_Collapse.5.d
+	picture = GFX_report_event_collapse5
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					owns_state = 657
+				}
+				657 = {
+					set_demilitarized_zone = yes
+				}
+			}
+			if = {
+				limit = {
+					owns_state = 814
+				}
+				814 = {
+					set_demilitarized_zone = yes
+				}
+			}	
+			1364 = {
+				set_demilitarized_zone = yes
+			}
+			561 = {
+				set_demilitarized_zone = yes
+			}
+			886 = {
+				set_demilitarized_zone = yes
+			}
+			562 = {
+				set_demilitarized_zone = yes
+			}
+			637 = {
+				set_demilitarized_zone = yes
+			}
+			891 = {
+				set_demilitarized_zone = yes
+			}
+			644 = {
+				set_demilitarized_zone = yes
+			}
+			759 = {
+				set_demilitarized_zone = yes
+			}
+			889 = {
+				set_demilitarized_zone = yes
+			}
+			890 = {
+				set_demilitarized_zone = yes
+			}
+			761 = {
+				set_demilitarized_zone = yes
+			}
+			574 = {
+				set_demilitarized_zone = yes
+			}
+			575 = {
+				set_demilitarized_zone = yes
+			}
+			516 = {
+				set_demilitarized_zone = yes
+			}
+			760 = {
+				set_demilitarized_zone = yes
+			}
+			563 = {
+				set_demilitarized_zone = yes
+			}
+			564 = {
+				set_demilitarized_zone = yes
+			}
+			565 = {
+				set_demilitarized_zone = yes
+			}
+		}
+	}
+	option = {
+		name = MAR_Collapse.5.a
+		ai_chance = { factor = 1 }
+		add_stability = -0.05
+		hidden_effect = {
+			if = {
+				limit = {
+					has_country_flag = MAR_has_turkestan
+				}
+				country_event = {
+					id = MAR_Collapse.7 days = 0
+				} 
+			}
+		}
+		hidden_effect = {
+			country_event ={
+				id = MAR_Collapse.6 days = 20
+			}
+		}
+	}
+}
+country_event = { #rip sphere 1
+	id = MAR_Collapse.6 
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Collapse.6"}
+	title = MAR_Collapse.6.t
+	desc = MAR_Collapse.6.d
+	picture = GFX_report_event_collapse6
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = MAR_Collapse.6.a
+		ai_chance = { factor = 1 }
+		add_stability = -0.05
+		YEM = {
+			econ_leave_sphere = yes
+			econ_join_sphere_ITA = yes
+		}
+		OMA = {
+			econ_leave_sphere = yes
+			econ_join_sphere_ITA = yes
+		}
+		SDF = {
+			econ_leave_sphere = yes
+			econ_join_sphere_JAP = yes
+		}
+		AZD = {
+			econ_leave_sphere = yes
+			econ_join_sphere_JAP = yes
+		}									
+		AZA = {
+			econ_leave_sphere = yes
+		}
+		hidden_effect = {
+			country_event ={
+				id = MAR_Collapse.8 days = 3
+			}
+		}
+	}
+}
+country_event = { #Turkestan breaks free
+	id = MAR_Collapse.7  
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Collapse.7"}
+	title = MAR_Collapse.7.t
+	desc = MAR_Collapse.7.d
+	picture = GFX_report_event_collapse7
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = MAR_Collapse.7.a
+		ai_chance = { factor = 1 }
+		add_stability = -0.05
+		XYZ = {
+			UZB_Alexander_Rutskoj = {
+				set_portraits = {
+					civilian = { large = "gfx/leaders/UZB/Portrait_Uzbekistan_Alexander_Rutskoy_ALT.dds" }
+				}
+				set_nationality = MTR
+			} 
+		}
+		MTR = {
+			end_puppet = MAR
+			econ_leave_sphere = yes
+			set_politics = {
+				ruling_party = paternalism 
+				last_election = "1933.2.16"
+				election_frequency = 36
+				elections_allowed = no
+			}
+			add_country_leader_role = {
+				character = UZB_Alexander_Rutskoj
+				promote_leader = yes
+				country_leader = {
+				   desc = "POLITICS_RUTSKOJ_COLLAPSE_DESC"
+					ideology = paternalism_stratocracy_subtype
+					expire = "1999.1.1"
+					traits = { }	
+				}
+			}
+		}
+	}	
+}
+country_event = { #-kazakhstan
+	id = MAR_Collapse.8 
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Collapse.8"}
+	title = MAR_Collapse.8.t
+	desc = MAR_Collapse.8.d
+	picture = GFX_report_event_collapse8
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = MAR_Collapse.8.a
+		ai_chance = { factor = 1 }
+		add_stability = -0.05
+		retire_character = MAR_Wojciech_Jaruzelski
+		retire_character = MAR_Cheslav_Kischak
+		MAR_Wojciech_Jaruzelski = {
+			set_nationality = NPL
+		}
+		XYZ = {
+			MAR_Vitaliy_Mukha = {
+				set_nationality = PAV
+			}
+		}
+		PAV = {
+			set_cosmetic_tag = PAV_MAR_collapse
+			add_state_core = 587
+			transfer_state = 587
+			add_state_core = 402
+			transfer_state = 402
+			add_state_core = 404
+			transfer_state = 404
+			add_state_core = 589
+			transfer_state = 589
+			add_state_core = 588
+			transfer_state = 588
+			add_state_core = 590
+			transfer_state = 590
+			add_state_core = 583
+			transfer_state = 583
+			add_state_core = 846
+			transfer_state = 846
+			add_state_core = 652
+			transfer_state = 652
+			add_state_core = 1808
+			transfer_state = 1808
+			add_state_core = 1807
+			transfer_state = 1807
+			add_state_core = 1802
+			transfer_state = 1802
+			add_state_core = 1803
+			transfer_state = 1803
+			add_state_core = 1804
+			transfer_state = 1804
+			remove_ideas = PAV_idealistic_revolutionaries 
+			set_politics = {
+				ruling_party = paternalism
+				last_election = "1933.2.16"
+				election_frequency = 36
+				elections_allowed = no
+			}
+			add_country_leader_role = {
+				character = MAR_Vitaliy_Mukha 
+				promote_leader = yes
+				country_leader = {
+					desc = "POLITICS_MUKHA_COLLAPSE_DESC"
+					ideology = paternalism_social_nationalism_subtype
+					expire = "1999.1.1"
+					traits = { }		
+				}
+			}
+			every_owned_state = {
+				set_demilitarized_zone = no
+			}			
+			set_party_name = {
+				ideology = paternalism
+				long_name = PAV_MAR_collapse_party_long
+				name = PAV_MAR_collapse_party
+			}			
+			add_ideas = TaS_Post2WRW_PAV_steppe_riches
+			set_variable = {
+				TNO_economy_type = token:Econ_Type_Capitalism
+			}
+		}
+		NPL  = {
+			set_cosmetic_tag = NPL_MAR_collapse
+			add_state_core = 406
+			transfer_state = 406
+			add_state_core = 407
+			transfer_state = 407
+			MAR_Wojciech_Jaruzelski = {
+				promote_character = {
+					ideology = paternalism_social_nationalism_subtype
+				}
+			}			
+			set_politics = {
+			    ruling_party = paternalism
+				last_election = "1933.2.16"
+				election_frequency = 36
+				elections_allowed = no
+			} 
+			add_country_leader_role = {
+				character = MAR_Wojciech_Jaruzelski
+				promote_leader = yes
+				country_leader = {
+					desc = "POLITICS_JARUZELSKI_COLLAPSE_DESC"
+					ideology = paternalism_social_nationalism_subtype
+					expire = "1999.1.1"
+					traits = { }
+				}
+			}	
+			set_party_name = {
+				ideology = paternalism
+				long_name = NPL_MAR_collapse_party_long
+				name = NPL_MAR_collapse_party
+			}
+			every_owned_state = {
+				set_demilitarized_zone = no
+			}	
+			add_ideas = TaS_Post2WRW_NPL_last_bastion
+			set_variable = {
+				TNO_economy_type = token:Econ_Type_Corporatism
+				TNO_economy_subtype = token:Econ_Subtype_Socialized_Economy
+			}
+		}
+		MTR = {
+			declare_war_on = {
+				target = PAV
+				type = annex_everything
+			}
+			add_ideas = TaS_Post2WRW_MTR_march_north
+		}
+		hidden_effect = {
+			country_event ={
+				id = MAR_Collapse.9 days = 2
+			}
+		}
+	}
+}	
+country_event = { #bek won, but at what cost
+	id = MAR_Collapse.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Collapse.9"}
+	title = MAR_Collapse.9.t
+	desc = MAR_Collapse.9.d
+	picture = GFX_report_event_collapse5
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = MAR_Collapse.9.a
+		ai_chance = { factor = 1 }
+		add_stability = -0.05
+		set_party_name = {
+			ideology = fascism
+			long_name = MAR_MAR_collapse_party_long
+			name = MAR_MAR_collapse_party
+		}
+		set_politics = {
+			ruling_party = fascism
+			last_election = "1933.2.16"
+			election_frequency = 36
+			elections_allowed = no
+		}
+		add_country_leader_role = {
+			character = MAR_Kazem_Bek
+			promote_leader = yes
+			country_leader = {
+				desc = "POLITICS_BEK_COLLAPSE_DESC"
+				ideology = fascism_fascist_populism_subtype
+				expire = "1999.1.1"
+				traits = { naked_king }
+			}
+		}	
+		MAR_Kazem_Bek = {
+			set_portraits = {
+				civilian = { large = "gfx/leaders/MAR/Portrait_Berezniki_Alexander_Kazembek70S.dds" }
+			}
+		}		
+		hidden_effect = {
+			every_state = {
+				limit = {
+					is_owned_by = MAR
+					NOT = {
+						state = 855
+						state = 351
+						state = 856
+						state = 857
+						state = 866
+						state = 397
+						state = 868
+						state = 867
+						state = 854
+						state = 400
+						state = 752
+						state = 865
+					}
+				}
+				set_demilitarized_zone = yes
+			}
+		}
+		hidden_effect = {
+			country_event ={
+				id = MAR_Collapse.10 days = 4
+			}
+		}
+	}
+}
+country_event = { #F sphere
+	id = MAR_Collapse.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Collapse.10"}
+	title = MAR_Collapse.10.t
+	desc = MAR_Collapse.10.d
+	picture = GFX_report_event_collapse5
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = MAR_Collapse.10.a
+		ai_chance = { factor = 1 }
+		add_stability = -0.05
+		hidden_effect = {
+			EGQ = {
+			    econ_leave_sphere = yes
+			    econ_join_sphere_JAP = yes
+			}
+			KUR = {
+			    econ_leave_sphere = yes
+			}
+			IRC = {
+			    econ_leave_sphere = yes
+			}
+			MAR = {
+			    econ_leave_sphere = yes
+			}
+		}
+		hidden_effect = {
+			country_event ={
+				id = MAR_Collapse.11 days = 7
+			}
+		}
+	}
+}
+country_event = { #F iraq
+	id = MAR_Collapse.11
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Collapse.11"}
+	title = MAR_Collapse.11.t
+	desc = MAR_Collapse.11.d
+	picture = GFX_report_event_collapse11
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = MAR_Collapse.11.a
+		ai_chance = { factor = 1 }
+		add_stability = -0.05
+		hidden_effect = {
+			 MAR_Iraq_Kurdistan_saddam = YES
+			 KUR = {
+				econ_leave_sphere = yes
+				end_puppet = MAR
+			 }
+		}
+		hidden_effect = {
+			country_event ={
+				id = MAR_Collapse.12 days = 0
+			}
+		}
+	}
+}
+country_event = { #F tuva and zeya
+	id = MAR_Collapse.12
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Collapse.12"}
+	title = MAR_Collapse.12.t
+	desc = MAR_Collapse.12.d
+	picture = GFX_report_event_collapse12
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = MAR_Collapse.12.a
+		ai_chance = { factor = 1 }
+		add_stability = -0.05
+		hidden_effect = {
+			MEN = {
+			    transfer_state = 329
+			    transfer_state = 654
+			}
+			every_other_country = {
+				limit = { controls_state = 801 }
+				transfer_state = 1364
+				transfer_state = 657
+				transfer_state = 1646
+				transfer_state = 1647
+				transfer_state = 1645
+				transfer_state = 409
+				transfer_state = 1644
+				transfer_state = 408
+				
+			}
+			hidden_effect = {
+				if = {
+					limit = { MJP = { exists = no } }
+					MJP = {
+						transfer_state = 809
+						transfer_state = 810
+						set_cosmetic_tag = MJP_JAP_autonomy
+						econ_join_sphere_JAP = yes
+						add_ideas = Sphere_Imp_Protectorate
+						add_ideas = MAN_Kwantung_Army
+						every_owned_state = {
+							MJP = {
+								add_state_core = PREV
+							}
+						}
+						if = { 
+							limit = { PFF = { exists = yes } }
+							declare_war_on = {
+								target = PFF
+								type = annex_everything
+							}
+						}
+						else_if = { 
+							limit = { MAN = { exists = yes } }
+							declare_war_on = {
+								target = MAN
+								type = annex_everything
+							}
+						}
+						else = { 
+							declare_war_on = {
+								target = HAN
+								type = annex_everything
+							}
+						}
+					}
+					JAP = {
+						add_to_faction = MJP
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			country_event ={
+				id = MAR_Collapse.13 days = 5
+			}
+		}
+	}
+}
+country_event = { #F dv 1
+	id = MAR_Collapse.13
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Collapse.13"}
+	title = MAR_Collapse.13.t
+	desc = MAR_Collapse.13.d
+	picture = GFX_report_event_collapse13
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = MAR_Collapse.13.a
+		ai_chance = { factor = 1 }
+		add_stability = -0.05
+		XYZ = {
+			MAR_Vladimir_Zhirinovsky = {
+				set_nationality = MAG
+			}
+		}
+		MAG = {
+			set_cosmetic_tag = MAG_MAR_collapse
+			add_state_core = 637
+			transfer_state = 637
+			add_state_core = 891
+			transfer_state = 891
+			add_state_core = 562
+			transfer_state = 562
+			add_state_core = 886
+			transfer_state = 886
+			add_state_core = 561
+			transfer_state = 561
+			add_state_core = 563
+			transfer_state = 563
+			add_ideas = {
+				OFN_Observer
+				TaS_Post2WRW_SIB_japanese_paranoia
+				TaS_Post2WRW_MAG_other_side_of_ocean
+			}
+			set_country_flag = RUS_cancel_all_ideas
+			econ_join_sphere_USA = yes 			
+			set_politics = {
+				ruling_party = liberalism
+				last_election = "1933.2.16"
+				election_frequency = 36
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = liberalism
+				popularity = 0.45
+			}
+			load_focus_tree = shattered_ambitions
+			add_country_leader_role = {
+				character = MAR_Vladimir_Zhirinovsky
+				promote_leader = yes
+				country_leader = {
+					desc = "POLITICS_ZHIRIK_COLLAPSE_DESC"
+					ideology = liberalism_liberal_radicalism_subtype
+					expire = "1999.1.1"
+					traits = { }
+				}
+			}
+			set_party_name = {
+				ideology = liberalism
+				long_name = MAG_MAR_collapse_party_long
+				name = MAG_MAR_collapse_party
+			}
+			every_owned_state = {
+				set_demilitarized_zone = no
+			}
+			set_variable = {
+				TNO_economy_type = token:Econ_Type_Capitalism
+				TNO_economy_subtype = token:Econ_Subtype_American_Capitalism
+			}
+		}	
+		hidden_effect = {
+			country_event ={
+				id = MAR_Collapse.14 days = 2
+			}
+		}
+	}
+}
+country_event = { #F dv 2
+	id = MAR_Collapse.14
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Collapse.14"}
+	title = MAR_Collapse.14.t
+	desc = MAR_Collapse.14.d
+	picture = GFX_report_event_collapse14
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = MAR_Collapse.14.a
+		ai_chance = { factor = 1 }
+		add_stability = -0.05
+		XYZ = {
+			MAR_Mikhail_Nikolayev = {
+				set_nationality = YAK
+			}
+		}
+		XYZ = {
+			MAR_Susanna_Pechuro = {	
+				set_nationality = IRK
+			}
+		}
+		IRK = {
+			retire_country_leader = yes
+			set_country_flag = RUS_cancel_all_ideas
+			set_cosmetic_tag = BRY_MAR_collapse
+			add_state_core = 760
+			transfer_state = 760
+			add_state_core = 565
+			transfer_state = 565
+			add_state_core = 564
+			transfer_state = 564
+			set_politics = {
+				ruling_party = socialist
+				last_election = "1933.2.16"
+				election_frequency = 36
+				elections_allowed = no
+			}
+			load_focus_tree = shattered_ambitions
+			MAG = {
+				IRK = { save_party_popularities = yes }
+				set_autonomy = {
+					target = IRK
+					autonomy_state = autonomy_military_government
+				}
+			}				
+			set_politics = {
+				ruling_party = socialist
+			}
+			add_popularity = {
+				ideology = socialist
+				popularity = 0.65
+			}
+			add_country_leader_role = {
+				character = MAR_Susanna_Pechuro
+				promote_leader = yes
+				country_leader = {
+					desc = "POLITICS_PECHURO_COLLAPSE_DESC"
+					ideology = socialist_subtype
+					expire = "1999.1.1"
+					traits = { }
+				}
+			}
+			set_party_name = {
+				ideology = socialist
+				long_name = BRY_MAR_collapse_party_long
+				name = BRY_MAR_collapse_party
+			}
+			add_ideas = {
+				OFN_Observer
+				TaS_Post2WRW_SIB_japanese_paranoia
+				TaS_Post2WRW_IRK_red_light
+			}
+			econ_join_sphere_USA = yes
+			apply_party_popularities = yes
+			every_owned_state = {
+				set_demilitarized_zone = no
+			}
+			set_variable = {
+				TNO_economy_type = token:Econ_Type_Corporatism
+				TNO_economy_subtype = token:Econ_Subtype_Colonial_Economy_Corporatism
+			}
+		}
+		YAK = {
+			set_cosmetic_tag = YAK_MAR_collapse
+			add_state_core = 574
+			transfer_state = 574
+			add_state_core = 759
+			transfer_state = 759
+			add_state_core = 644
+			transfer_state = 644
+			add_state_core = 889
+			transfer_state = 889
+			add_state_core = 890
+			transfer_state = 890
+			set_politics = {
+				ruling_party = liberalism
+				last_election = "1933.2.16"
+				election_frequency = 36
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = liberalism
+				popularity = 0.45
+			}
+			set_country_flag = RUS_cancel_all_ideas
+			MAG = {
+				YAK = { save_party_popularities = yes }
+				set_autonomy = {
+					target = YAK
+					autonomy_state = autonomy_military_government
+				}
+			}			
+			add_country_leader_role = {
+				character = MAR_Mikhail_Nikolayev
+				promote_leader = yes
+				country_leader = {
+					desc = "POLITICS_NIKOLAYEV_COLLAPSE_DESC"
+					ideology = liberalism_national_liberal_subtype
+					expire = "1999.1.1"
+					traits = { }
+				}
+			}
+			set_party_name = {
+				ideology = liberalism
+				long_name = YAK_MAR_collapse_party_long
+				name = YAK_MAR_collapse_party
+			}
+			add_ideas = {
+				OFN_Observer
+				TaS_Post2WRW_SIB_japanese_paranoia
+				TaS_Post2WRW_YAK_earth_riches
+			}
+			econ_join_sphere_USA = yes 
+			load_focus_tree = shattered_ambitions
+			apply_party_popularities = yes
+			every_owned_state = {
+				set_demilitarized_zone = no
+			}
+			set_variable = {
+				TNO_economy_type = token:Econ_Type_Corporatism
+				TNO_economy_subtype = token:Econ_Subtype_Colonial_Economy_Corporatism
+			}
+
+		}
+		
+		hidden_effect = {
+			country_event ={
+				id = MAR_Collapse.15 days = 6
+			}
+		}
+	}
+}
+country_event = { #F sibir
+	id = MAR_Collapse.15
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Collapse.15"}
+	title = MAR_Collapse.15.t
+	desc = MAR_Collapse.15.d
+	picture = GFX_report_event_collapse15
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = MAR_Collapse.15.a
+		ai_chance = { factor = 1 }
+		add_stability = -0.05
+		retire_character = MAR_Joseph_Beyrle
+		retire_character = MAR_Nikolai_Volkov
+		retire_character = MAR_Valentin_Ardashev
+		retire_character = MAR_Vladimir_Gil
+		MAR_Joseph_Beyrle = {
+			set_nationality = NOV
+		}
+		NOV = {
+			set_country_flag = RUS_cancel_all_ideas
+			set_cosmetic_tag = NOV_MAR_collapse
+			add_state_core = 516
+			transfer_state = 516
+			add_state_core = 577
+			transfer_state = 577
+			add_state_core = 888
+			transfer_state = 888
+			add_state_core = 576
+			transfer_state = 576
+			add_state_core = 887
+			transfer_state = 887
+			add_state_core = 578
+			transfer_state = 578
+			add_state_core = 570
+			transfer_state = 570
+			transfer_state = 40
+			add_state_core = 40
+			#transfer_state = 654
+			#add_state_core = 654
+			transfer_state = 569
+			add_state_core = 569
+			add_state_core = 757
+			transfer_state = 757
+			add_state_core = 568
+			transfer_state = 568
+			add_state_core = 567
+			transfer_state = 567
+			transfer_state = 758
+			add_state_core = 758
+			transfer_state = 566
+			add_state_core = 566
+			add_state_core = 761
+			transfer_state = 761
+			add_state_core = 575
+			transfer_state = 575
+	
+			set_politics = { 
+				ruling_party = despotism
+				last_election = "1933.2.16"
+				election_frequency = 36
+				elections_allowed = no
+			}
+			MAR_Joseph_Beyrle = {
+				promote_character = {
+					ideology = despotism_mladorossi_autocracy_subtype
+				}
+			}
+			add_popularity = {
+				ideology = despotism
+				popularity = 0.45
+			}
+			load_focus_tree = shattered_ambitions
+			add_country_leader_role = {
+				character = MAR_Joseph_Beyrle
+				promote_leader = yes
+				country_leader = {
+					desc = "POLITICS_BEYRLE_COLLAPSE_DESC"
+					ideology = despotism_mladorossi_autocracy_subtype
+					expire = "1999.1.1"
+					traits = { }
+				}
+			}
+			MAR_Joseph_Beyrle = {
+				set_portraits = {
+					civilian = { large = "gfx/leaders/MAR/Collapse/Portrait_Joseph_Beyrle.dds" }
+				}
+			}
+			set_party_name = {
+				ideology = despotism
+				long_name = NOV_MAR_collapse_party_long
+				name = NOV_MAR_collapse_party
+			}
+			load_focus_tree = shattered_ambitions
+			add_ideas = TaS_Post2WRW_NOV_feet_of_clay
+			set_variable = {
+				TNO_economy_type = token:Econ_Type_Planned
+				TNO_economy_subtype = token:Econ_Subtype_Military_Directed
+			}
+		}
+		hidden_effect = {
+			country_event ={
+				id = MAR_Collapse.16 days = 1
+			}
+		}
+		
+	}
+}
+country_event = { #F Ural
+	id = MAR_Collapse.16
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Collapse.16"}
+	title = MAR_Collapse.16.t
+	desc = MAR_Collapse.16.d
+	picture = GFX_report_event_collapse16
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = MAR_Collapse.16.a
+		ai_chance = { factor = 1 }
+		add_stability = -0.05
+		MAR_Vladimir_Gil = {
+			set_nationality = OMS
+		}
+		XYZ = {
+			MAR_Evgeny_Primakov = {
+				set_nationality = TYM
+			}
+		}
+ 		OMS = {
+			set_country_flag = RUS_cancel_all_ideas
+			set_cosmetic_tag = OMS_MAR_collapse
+			add_state_core = 844
+			transfer_state = 844
+			add_state_core = 756
+			transfer_state = 756
+			add_state_core = 579
+			transfer_state = 579
+			add_state_core = 845
+			transfer_state = 845
+			add_state_core = 871
+			transfer_state = 871
+			add_state_core = 573
+			transfer_state = 573
+			add_state_core = 653
+			transfer_state = 653
+			transfer_state = 754
+			add_state_core = 754
+
+			set_politics = {
+				ruling_party = fascism
+				last_election = "1933.2.16"
+				election_frequency = 36
+				elections_allowed = no
+			}
+			MAR_Vladimir_Gil = {
+				promote_character = {
+					ideology = fascism_revolutionary_nationalism_subtype
+				}
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.45
+			}
+			add_ideas = TaS_Post2WRW_OMS_mountain_king
+			load_focus_tree = shattered_ambitions
+			add_country_leader_role = {
+				character = MAR_Vladimir_Gil
+				promote_leader = yes
+				country_leader = {
+					desc = "POLITICS_GIL_COLLAPSE_DESC"
+					ideology = fascism_revolutionary_nationalism_subtype
+					expire = "1999.1.1"
+					traits = { }
+				}
+			}
+			set_party_name = {
+				ideology = fascism
+				long_name = OMS_MAR_collapse_party_long
+				name = OMS_MAR_collapse_party
+			}
+			set_variable = {
+				TNO_economy_type = token:Econ_Type_Planned
+				TNO_economy_subtype = token:Econ_Subtype_Military_Directed
+			}
+		}
+		TYM = {
+			set_country_flag = RUS_cancel_all_ideas
+			set_cosmetic_tag = SVR_MAR_collapse
+			add_state_core = 572
+			transfer_state = 572
+			add_state_core = 580
+			transfer_state = 580
+			add_state_core = 403
+			transfer_state = 403
+			add_state_core = 571
+			transfer_state = 571
+
+			set_politics = {
+				ruling_party = paternalism
+				last_election = "1933.2.16"
+				election_frequency = 36
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = paternalism
+				popularity = 0.45
+			}
+			add_ideas = TaS_Post2WRW_TYM_cornered_by_madmen
+			load_focus_tree = shattered_ambitions
+			add_country_leader_role = {
+				character = MAR_Evgeny_Primakov
+				promote_leader = yes
+				country_leader = {
+					desc = "POLITICS_PRIMAKOV_COLLAPSE_DESC"
+					ideology = paternalism_controlled_democracy_subtype
+					expire = "1999.1.1"
+					traits = { }
+				}
+			}
+			MAR_Evgeny_Primakov = {
+				promote_character = paternalism_controlled_democracy_subtype
+			}
+			set_party_name = {
+				ideology = paternalism
+				long_name = SVR_MAR_collapse_party_long
+				name = SVR_MAR_collapse_party
+			}
+			set_variable = {
+				TNO_economy_type = token:Econ_Type_Capitalism
+				TNO_economy_subtype = token:Econ_Subtype_Corporate_Oligopoly
+			}
+		}
+		OMS = {
+			declare_war_on = {
+				target = TYM
+				type = annex_everything
+			}
+		}
+		hidden_effect = {
+			country_event ={
+				id = MAR_Collapse.17 days = 14
+			}
+		}
+	}
+}
+country_event = { #Total f
+	id = MAR_Collapse.17
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Collapse.17"}
+	title = MAR_Collapse.17.t
+	desc = MAR_Collapse.17.d
+	picture = GFX_report_event_collapse17
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = MAR_Collapse.17.a
+		ai_chance = { factor = 1 }
+		add_stability = -0.05
+		XYZ = {
+			MAR_Dmitry_Vasilyev = {
+				set_nationality = KOM
+			}
+			MAR_Mintimer_Shaymiev = {
+				set_nationality = TAR
+			}
+		}
+		KOM = {
+			set_country_flag = RUS_cancel_all_ideas
+			set_cosmetic_tag = KOM_MAR_collapse
+			add_state_core = 862
+			transfer_state = 862
+			add_state_core = 262
+			transfer_state = 262
+			add_state_core = 863
+			transfer_state = 863
+			add_state_core = 581
+			transfer_state = 581
+			add_state_core = 869
+			transfer_state = 869
+			add_state_core = 870
+			transfer_state = 870
+			add_state_core = 866
+			transfer_state = 866
+			transfer_state = 397
+			add_state_core = 397
+			transfer_state = 868
+			add_state_core = 868
+			transfer_state = 867
+
+			set_politics = {
+				ruling_party = national_socialism
+				last_election = "1933.2.16"
+				election_frequency = 36
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = national_socialism
+				popularity = 0.45
+			}
+			load_focus_tree = shattered_ambitions
+			add_country_leader_role = {
+				character = MAR_Dmitry_Vasilyev 
+				promote_leader = yes
+				country_leader = {
+					desc = "POLITICS_VASILYEV_COLLAPSE_DESC"
+					ideology = national_socialism_clerical_fascism_subtype
+					expire = "1999.1.1"
+					traits = { }
+				}
+			}
+			set_party_name = {
+				ideology = national_socialism
+				long_name = KOM_MAR_collapse_party_long
+				name = KOM_MAR_collapse_party
+			}
+			add_ideas = {
+				TaS_Post2WRW_WSR_fourth_time_a_row
+				TaS_Post2WRW_KOM_bandit_oprichina
+			}
+			set_variable = {
+				TNO_economy_type = token:Econ_Type_Corporatism
+				TNO_economy_subtype = token:Econ_Subtype_Dirigisme
+			}
+		}
+		TAR = {
+			set_country_flag = RUS_cancel_all_ideas
+			set_cosmetic_tag = TAR_MAR_collapse
+			add_state_core = 249
+			transfer_state = 249
+			add_state_core = 854
+			transfer_state = 854
+			set_politics = {
+				ruling_party = paternalism
+				last_election = "1933.2.16"
+				election_frequency = 36
+				elections_allowed = no
+			}
+			add_country_leader_role = {
+				character = MAR_Mintimer_Shaymiev
+				promote_leader = yes
+				country_leader = {
+					desc = "POLITICS_SHAYMIEV_COLLAPSE_DESC"
+					ideology = paternalism_controlled_democracy_subtype
+					expire = "1999.1.1"
+					traits = { }
+				}
+			}
+			set_party_name = {
+				ideology = paternalism
+				long_name = TAR_MAR_collapse_party_long
+				name = TAR_MAR_collapse_party
+			}
+			add_popularity = {
+				ideology = paternalism
+				popularity = 0.45
+			}
+			add_ideas = {
+				TaS_Post2WRW_WSR_fourth_time_a_row
+				TaS_Post2WRW_TAR_union_of_enemies
+			}
+			set_variable = {
+				TNO_economy_type = token:Econ_Type_Capitalism
+			}
+		}
+		MAR = {
+			add_ideas = TaS_Post2WRW_MAR_capital_of_broken_hopes
+		}
+		clear_global_event_target = RUS_western_unifier
+		clear_global_event_target = RUS_west_siberia_unifier
+		clear_global_event_target = RUS_central_siberia_unifier
+		clear_global_event_target = RUS_far_east_unifier
+		clear_global_event_target = RUS_southern_urals_unifier
+		clear_global_event_target = RUS_kazakhstan_unifier
+		clear_global_event_target = RUS_russian_unifier
+		clear_global_event_target = RUS_siberian_unifier
+		clear_global_event_target = RUS_total_unifierэ
+	
+		clear_array = global.PostRus_collapse 
+		add_to_array = { global.PostRus_collapse = KOM }
+		add_to_array = { global.PostRus_collapse = TAR }
+		add_to_array = { global.PostRus_collapse = MAR }
+		add_to_array = { global.PostRus_collapse = OMS }
+		add_to_array = { global.PostRus_collapse = TYM }
+		add_to_array = { global.PostRus_collapse = NOV }
+		add_to_array = { global.PostRus_collapse = IRK }
+		add_to_array = { global.PostRus_collapse = YAK }
+		add_to_array = { global.PostRus_collapse = MAG }
+		clr_global_flag = RUS_national_unification
+		TNO_Country_Closing_Screen_Show = yes
+		set_country_flag = MAR_Bad_Ending
+		set_global_flag = WRW2_russian_collapse
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.13
+				}
+			}
+			for_each_scope_loop = {
+				array = global.PostRus_collapse
+				add_ideas = TaS_Post2WRW_RUS_third_smuta
+			}
+		}
+	}
+}
+
+news_event = { 
+	id = TaS_RUSEpilogue_news.1
+	title = TaS_RUSEpilogue_news.1.t
+	desc = TaS_RUSEpilogue_news.1.d
+	picture = GFX_TaS_RUSEpilogue_news_001
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = TaS_RUSEpilogue_news.1.a
+		trigger = {
+			tag = MAR
+		}
+	}
+	option = {
+		name = TaS_RUSEpilogue_news.1.b
+		trigger = {
+			NOT = {
+				tag = MAR
+			}
+		}
+	}
+}
+
+news_event = { 
+	id = TaS_RUSEpilogue_news.2
+	title = TaS_RUSEpilogue_news.2.t
+	desc = TaS_RUSEpilogue_news.2.d
+	picture = GFX_TaS_RUSEpilogue_news_002
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = TaS_RUSEpilogue_news.2.a
+	}
+}
+
+news_event = { 
+	id = TaS_RUSEpilogue_news.3
+	title = TaS_RUSEpilogue_news.3.t
+	desc = TaS_RUSEpilogue_news.3.d
+	picture = GFX_TaS_RUSEpilogue_news_003
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = TaS_RUSEpilogue_news.3.a
+	}
+}
+
+news_event = { 
+	id = TaS_RUSEpilogue_news.4
+	title = TaS_RUSEpilogue_news.4.t
+	desc = TaS_RUSEpilogue_news.4.d
+	picture = GFX_TaS_RUSEpilogue_news_004
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = TaS_RUSEpilogue_news.4.a
+	}
+}
+
+news_event = { 
+	id = TaS_RUSEpilogue_news.5
+	title = TaS_RUSEpilogue_news.5.t
+	desc = TaS_RUSEpilogue_news.5.d
+	picture = GFX_TaS_RUSEpilogue_news_005
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = TaS_RUSEpilogue_news.5.a
+	}
+}
+
+news_event = { 
+	id = TaS_RUSEpilogue_news.6
+	title = TaS_RUSEpilogue_news.6.t
+	desc = TaS_RUSEpilogue_news.6.d
+	picture = GFX_TaS_RUSEpilogue_news_006
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = TaS_RUSEpilogue_news.6.a
+	}
+}
+
+news_event = { 
+	id = TaS_RUSEpilogue_news.7
+	title = TaS_RUSEpilogue_news.7.t
+	desc = TaS_RUSEpilogue_news.7.d
+	picture = GFX_TaS_RUSEpilogue_news_007
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = TaS_RUSEpilogue_news.7.a
+	}
+}
+
+news_event = { 
+	id = TaS_RUSEpilogue_news.8
+	title = TaS_RUSEpilogue_news.8.t
+	desc = TaS_RUSEpilogue_news.8.d
+	picture = GFX_TaS_RUSEpilogue_news_008
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = TaS_RUSEpilogue_news.8.a
+	}
+}
+
+news_event = { 
+	id = TaS_RUSEpilogue_news.9
+	title = TaS_RUSEpilogue_news.9.t
+	desc = TaS_RUSEpilogue_news.9.d
+	picture = GFX_TaS_RUSEpilogue_news_009
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = TaS_RUSEpilogue_news.1.a
+	}
+}
+
+news_event = { 
+	id = TaS_RUSEpilogue_news.10
+	title = TaS_RUSEpilogue_news.10.t
+	desc = TaS_RUSEpilogue_news.10.d
+	picture = GFX_TaS_RUSEpilogue_news_010
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = TaS_RUSEpilogue_news.10.a
+	}
+}
+
+news_event = { 
+	id = TaS_RUSEpilogue_news.11
+	title = TaS_RUSEpilogue_news.11.t
+	desc = TaS_RUSEpilogue_news.11.d
+	picture = GFX_TaS_RUSEpilogue_news_011
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = TaS_RUSEpilogue_news.11.a
+	}
+}
+
+news_event = { 
+	id = TaS_RUSEpilogue_news.12
+	title = TaS_RUSEpilogue_news.12.t
+	desc = TaS_RUSEpilogue_news.12.d
+	picture = GFX_TaS_RUSEpilogue_news_012
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = TaS_RUSEpilogue_news.12.a
+	}
+}

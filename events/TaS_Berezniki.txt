@@ -1,0 +1,167 @@
+#######################################################################
+##██████╗░███████╗██████╗░███████╗███████╗    ███╗░░██╗██╗██╗░░██╗██╗##
+##██╔══██╗██╔════╝██╔══██╗██╔════╝╚════██║    ████╗░██║██║██║░██╔╝██║##
+##██████╦╝█████╗░░██████╔╝█████╗░░░░███╔═╝    ██╔██╗██║██║█████═╝░██║##
+##██╔══██╗██╔══╝░░██╔══██╗██╔══╝░░██╔══╝░░    ██║╚████║██║██╔═██╗░██║##
+##██████╦╝███████╗██║░░██║███████╗███████╗    ██║░╚███║██║██║░╚██╗██║## 
+##╚═════╝░╚══════╝╚═╝░░╚═╝╚══════╝╚══════╝    ╚═╝░░╚══╝╚═╝╚═╝░░╚═╝╚═╝#
+##╚═════╝░╚══════╝╚═╝░░╚═╝╚══════╝╚══════╝    ╚═╝░░╚══╝╚═╝╚═╝░░╚═╝╚═╝##
+#######################################################################
+
+add_namespace = berez_world_news
+
+news_event = { # Maria I Regional
+	id = berez_world_news.2
+	title = berez_world_news.2.t
+	desc = berez_world_news.2.d
+	picture = GFX_berez_world_news_002
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = berez_world_news.2.a
+	}
+}
+
+news_event = { # Kosygin Regional
+	id = berez_world_news.3
+	title = berez_world_news.3.t
+	desc = berez_world_news.3.d
+	picture = GFX_berez_world_news_003
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = berez_world_news.3.a
+	}
+}
+
+news_event = { # Belozerskiy Unifies Russia
+	id = berez_world_news.4
+	title = berez_world_news.4.t
+	desc = berez_world_news.4.d
+	picture = GFX_berez_world_news_004
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = berez_world_news.4.a
+			trigger = {
+				tag = MAR
+			}
+		if = {
+            limit = {
+                is_ai = no
+            }
+            set_temp_variable = { TNO_temp_super_event = token:SE_BELOZERSKY_RUSSIAN_REUNIFICATION }
+			TNO_fire_super_event = yes
+        }
+	}
+	
+	
+	option = {
+		name = berez_world_news.4.b
+		trigger = {
+			NOT = {
+				tag = MAR
+			}
+		}
+		if = {
+            limit = {
+                is_ai = no
+            }
+            set_temp_variable = { TNO_temp_super_event = token:SE_BELOZERSKY_RUSSIAN_REUNIFICATION }
+			TNO_fire_super_event = yes
+        }
+		
+	}
+}
+
+news_event = { #WRW2 Total Ending
+	id = berez_world_news.5
+	title = berez_world_news.5.t
+	desc = berez_world_news.5.d
+	picture = GFX_berez_world_news_005
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = berez_world_news.5.a
+			trigger = {
+				tag = MAR
+			}
+		if = {
+            limit = {
+                is_ai = no
+            }
+            if = {
+				limit = { MAR = { has_government = despotism } }
+				set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_VICTORY_BELOZERSKY }
+				TNO_fire_super_event = yes
+			}
+        }
+	}
+	
+	
+	option = {
+		name = berez_world_news.5.b
+		trigger = {
+			NOT = {
+				tag = MAR
+			}
+		}
+		if = {
+            limit = {
+                is_ai = no
+            }
+			if = {
+				limit = { MAR = { has_government = despotism } }
+				set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_VICTORY_BELOZERSKY }
+				TNO_fire_super_event = yes
+			}
+        }
+	}
+}
+
+news_event = { # Kosygin Unifies Russia
+	id = berez_world_news.6
+	title = berez_world_news.6.t
+	desc = berez_world_news.6.d
+	picture = GFX_berez_world_news_006
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = berez_world_news.6.a
+			trigger = {
+				tag = MAR
+			}
+		if = {
+            limit = {
+                is_ai = no
+            }
+            set_temp_variable = { TNO_temp_super_event = token:SE_KOSYGIN_RUSSIAN_REUNIFICATION }
+			TNO_fire_super_event = yes
+        }
+	}
+	
+	
+	option = {
+		name = berez_world_news.6.b
+		trigger = {
+			NOT = {
+				tag = MAR
+			}
+		}
+		if = {
+            limit = {
+                is_ai = no
+            }
+            set_temp_variable = { TNO_temp_super_event = token:SE_KOSYGIN_RUSSIAN_REUNIFICATION }
+			TNO_fire_super_event = yes
+        }
+	}
+}
+
+
+
