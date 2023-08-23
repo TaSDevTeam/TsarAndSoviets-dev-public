@@ -1,0 +1,599 @@
+defined_text = {
+	name = MAR_GET_Vyatka_influence_var
+	text = {
+		trigger = {
+			check_variable = {
+				var = MAR_var_Vyatka_influence
+				value = 60
+				compare = greater_than_or_equals
+			}
+		}
+		localization_key = MAR_Vyatka_inf_big
+	}
+	text = {
+		trigger = {
+			check_variable = { MAR_var_Vyatka_influence < 60 }
+			check_variable = {
+				var = MAR_var_Vyatka_influence
+				value = 40
+				compare = greater_than_or_equals
+			}
+		}
+		localization_key = MAR_Vyatka_inf_medium
+	}
+	text = {
+		trigger = {
+			check_variable = { MAR_var_Vyatka_influence < 40 }
+			check_variable = {
+				var = MAR_var_Vyatka_influence
+				value = 16
+				compare = greater_than_or_equals
+			}
+		}
+		localization_key = MAR_Vyatka_inf_small
+	}
+	text = {
+		trigger = {
+			check_variable = { MAR_var_Vyatka_influence < 16 }
+		}
+		localization_key = MAR_Vyatka_inf_safe
+	}
+}
+
+defined_text = {
+	name = MAR_MGB_GET_CURRENT_QUEST
+	text = {
+		trigger = { has_idea = MAR_idea_destroyed_souvernity }
+		localization_key = MAR_MGB_Quest_Existence
+	}
+	text = {
+		trigger = { NOT = { has_idea = MAR_idea_destroyed_souvernity } }
+		localization_key = MAR_MGB_Quest_resource
+	}
+}
+
+defined_text = {
+	name = MAR_GET_TROLL_TT
+	text = {
+		trigger = {
+			NOT = {
+				has_completed_focus = MAR_Solzh_Block_MGB
+				has_completed_focus = MAR_Solzh_catch_bandits
+				has_completed_focus = MAR_Solzh_speech
+			}
+		}
+		localization_key = MAR_Solzh_tt_Everything_is_normal
+	}
+	
+	text = {
+		trigger = {
+			OR = {
+				has_completed_focus = MAR_Solzh_Block_MGB
+				has_completed_focus = MAR_Solzh_catch_bandits
+				has_completed_focus = MAR_Solzh_speech
+			}
+		}
+		localization_key = MAR_Solzh_tt_Fuck
+	}
+}
+
+defined_text = {
+	name = MAR_EXP_GET_SS_STATUS
+	text = {
+		trigger = { has_country_flag = MAR_EXP_FL_SS_TOTAL_SUCESS }
+		localization_key = MAR_EXP_STATUS_SUCESS
+	}
+	text = {
+		trigger = { has_country_flag = MAR_EXP_FL_SS_PART_SUCESS }
+		localization_key = MAR_EXP_STATUS_PART_SUCESS
+	}
+	text = {
+		trigger = { has_country_flag = MAR_EXP_FL_SS_FAIL }
+		localization_key = MAR_EXP_STATUS_FAIL
+	}
+	text = {
+		trigger = { has_country_flag = MAR_EXP_FL_SS_STARTED }
+		localization_key = MAR_EXP_STATUS_STARTED
+	}
+	text = {
+		trigger = {has_country_flag = MAR_EXP_FL_SS_NOT_STARTED }
+		localization_key = MAR_EXP_STATUS_NOT_STARTED
+	}
+}
+
+defined_text = {
+	name = MAR_EXP_GET_TE_STATUS
+	text = {
+		trigger = { has_country_flag = MAR_EXP_FL_TE_TOTAL_SUCESS }
+		localization_key = MAR_EXP_STATUS_SUCESS
+	}
+	text = {
+		trigger = { has_country_flag = MAR_EXP_FL_TE_PARTIAL_SUCESS }
+		localization_key = MAR_EXP_STATUS_PART_SUCESS
+	}
+	text = {
+		trigger = { has_country_flag = MAR_EXP_FL_TE_FAIL }
+		localization_key = MAR_EXP_STATUS_FAIL
+	}
+	text = {
+		trigger = { has_country_flag = MAR_EXP_FL_TE_STARTED }
+		localization_key = MAR_EXP_STATUS_STARTED
+	}
+	text = {
+		trigger = {has_country_flag = MAR_EXP_FL_TE_NOT_STARTED }
+		localization_key = MAR_EXP_STATUS_NOT_STARTED
+	}
+}
+
+defined_text = {
+	name = MAR_EXP_GET_FC_STATUS
+	text = {
+		trigger = { has_country_flag = MAR_EXP_FL_FC_TOTAL_SUCESS }
+		localization_key = MAR_EXP_STATUS_SUCESS
+	}
+	text = {
+		trigger = { has_country_flag = MAR_EXP_FL_FC_PARTIAL_SUCESS }
+		localization_key = MAR_EXP_STATUS_PART_SUCESS
+	}
+	text = {
+		trigger = { has_country_flag = MAR_EXP_FL_FC_FAIL }
+		localization_key = MAR_EXP_STATUS_FAIL
+	}
+	text = {
+		trigger = { has_country_flag = MAR_EXP_FL_FC_STARTED }
+		localization_key = MAR_EXP_STATUS_STARTED
+	}
+	text = {
+		trigger = {has_country_flag = MAR_EXP_FL_FC_NOT_STARTED }
+		localization_key = MAR_EXP_STATUS_NOT_STARTED
+	}
+}
+
+defined_text = {
+	name = MAR_EXP_GET_LS_STATUS
+	text = {
+		trigger = { has_country_flag = MAR_EXP_FL_LS_TOTAL_SUCESS }
+		localization_key = MAR_EXP_STATUS_SUCESS
+	}
+	text = {
+		trigger = { has_country_flag = MAR_EXP_FL_LS_PARTIAL_SUCESS }
+		localization_key = MAR_EXP_STATUS_PART_SUCESS
+	}
+	text = {
+		trigger = { has_country_flag = MAR_EXP_FL_LS_FAIL }
+		localization_key = MAR_EXP_STATUS_FAIL
+	}
+	text = {
+		trigger = { has_country_flag = MAR_EXP_FL_LS_STARTED }
+		localization_key = MAR_EXP_STATUS_STARTED
+	}
+	text = {
+		trigger = {has_country_flag = MAR_EXP_FL_LS_NOT_STARTED }
+		localization_key = MAR_EXP_STATUS_NOT_STARTED
+	}
+}
+
+defined_text = {
+	name = MAR_EXP_GET_TF_STATUS
+	text = {
+		trigger = { has_country_flag = MAR_EXP_FL_TF_TOTAL_SUCESS }
+		localization_key = MAR_EXP_STATUS_SUCESS
+	}
+	text = {
+		trigger = { has_country_flag = MAR_EXP_FL_TF_PARTIAL_SUCESS }
+		localization_key = MAR_EXP_STATUS_PART_SUCESS
+	}
+	text = {
+		trigger = { has_country_flag = MAR_EXP_FL_TF_FAIL }
+		localization_key = MAR_EXP_STATUS_FAIL
+	}
+	text = {
+		trigger = { has_country_flag = MAR_EXP_FL_TF_STARTED }
+		localization_key = MAR_EXP_STATUS_STARTED
+	}
+	text = {
+		trigger = {has_country_flag = MAR_EXP_FL_TF_NOT_STARTED }
+		localization_key = MAR_EXP_STATUS_NOT_STARTED
+	}
+}
+
+defined_text = {
+	name = MAR_EXP_GET_ED_STATUS
+	text = {
+		trigger = { has_country_flag = MAR_EXP_FL_ED_TOTAL_SUCESS }
+		localization_key = MAR_EXP_STATUS_SUCESS
+	}
+	text = {
+		trigger = { has_country_flag = MAR_EXP_FL_ED_PARTIAL_SUCESS }
+		localization_key = MAR_EXP_STATUS_PART_SUCESS
+	}
+	text = {
+		trigger = { has_country_flag = MAR_EXP_FL_ED_FAIL }
+		localization_key = MAR_EXP_STATUS_FAIL
+	}
+	text = {
+		trigger = { has_country_flag = MAR_EXP_FL_ED_STARTED }
+		localization_key = MAR_EXP_STATUS_STARTED
+	}
+	text = {
+		trigger = {has_country_flag = MAR_EXP_FL_ED_NOT_STARTED }
+		localization_key = MAR_EXP_STATUS_NOT_STARTED
+	}
+}
+
+defined_text = {
+	name = MAR_EXP_GET_NL_STATUS
+	text = {
+		trigger = { has_country_flag = MAR_EXP_FL_NL_TOTAL_SUCESS }
+		localization_key = MAR_EXP_STATUS_SUCESS
+	}
+	text = {
+		trigger = { has_country_flag = MAR_EXP_FL_NL_PARTIAL_SUCESS }
+		localization_key = MAR_EXP_STATUS_PART_SUCESS
+	}
+	text = {
+		trigger = { has_country_flag = MAR_EXP_FL_NL_FAIL }
+		localization_key = MAR_EXP_STATUS_FAIL
+	}
+	text = {
+		trigger = { has_country_flag = MAR_EXP_FL_NL_STARTED }
+		localization_key = MAR_EXP_STATUS_STARTED
+	}
+	text = {
+		trigger = {has_country_flag = MAR_EXP_FL_NL_NOT_STARTED }
+		localization_key = MAR_EXP_STATUS_NOT_STARTED
+	}
+}
+
+defined_text = {
+	name = GET_COUNTRY_INFO
+	text = {
+		trigger = { tag = MAR }
+		localization_key = COUNTRY_INFO_BEREZNIKI
+	}
+}
+#defined_text = {
+#	name = GET_POSTER
+#	text = {
+#		trigger = { tag = MAR }
+#		localization_key = "GFX_TNO_OpeningScreen_Poster_Berezniki"
+#	}
+#}
+defined_text = {
+	name = GET_CLOSEBUTTON_TEXT
+	text = {
+		trigger = { tag = MAR }
+		localization_key = TNO_OPENING_SCREEN_BUTTON_TEXT_MAR
+	}
+}
+
+defined_text = {
+	name = MAR_FErebels_strength_var
+	text = {
+		trigger = {
+			check_variable = {
+				var = MAR_FErebels_strength_var
+				value = 85
+				compare = greater_than_or_equals
+			}
+		}
+		localization_key = MAR_FErebels_strength_huge
+	}
+	text = {
+		trigger = {
+			check_variable = { MAR_FErebels_strength_var < 85 }
+			check_variable = {
+				var = MAR_FErebels_strength_var
+				value = 50
+				compare = greater_than_or_equals
+			}
+		}
+		localization_key = MAR_FErebels_strength_big
+	}
+	text = {
+		trigger = {
+			check_variable = { MAR_FErebels_strength_var < 50 }
+			check_variable = {
+				var = MAR_FErebels_strength_var
+				value = 20
+				compare = greater_than_or_equals
+			}
+		}
+		localization_key = MAR_FErebels_strength_medium
+	}
+	text = {
+		trigger = {
+			check_variable = { MAR_FErebels_strength_var < 20 }
+		}
+		localization_key = MAR_FErebels_strength_low
+	}
+}
+#Oil Crisis
+defined_text = {
+	name = MAR_OC_Get_Participation
+	text = {
+		trigger = { check_variable = { MAR_OC_participation < 1 } }
+		localization_key = MAR_OC_participation_1
+	}
+	text = {
+		trigger = {
+			#check_variable = { MAR_OC_participation > 5 }
+			check_variable = { MAR_OC_participation < 20 }
+		}
+		localization_key = MAR_OC_participation_2
+	}
+	text = {
+		trigger = {
+			#check_variable = { MAR_OC_participation > 15 }
+			check_variable = { MAR_OC_participation < 40 }
+		}
+		localization_key = MAR_OC_participation_3
+	}
+	text = {
+		trigger = {
+			#check_variable = { MAR_OC_participation > 29 }
+			check_variable = { MAR_OC_participation < 60 }
+		}
+		localization_key = MAR_OC_participation_4
+	}
+	text = {
+		trigger = {
+			#check_variable = { MAR_OC_participation > 44 }
+			check_variable = { MAR_OC_participation < 80 }
+		}
+		localization_key = MAR_OC_participation_5
+	}
+	text = {
+		trigger = {
+			#check_variable = { MAR_OC_participation > 59 }
+			check_variable = { MAR_OC_participation < 100 }
+		}
+		localization_key = MAR_OC_participation_6
+	}
+	text = {
+		#trigger = { check_variable = { MAR_OC_participation > 79 } }
+		localization_key = MAR_OC_participation_7
+	}
+}
+
+defined_text = {
+	name = MAR_OC_Yemen_string
+	text = {
+		trigger = { has_global_flag = OC_Yemen_CW }
+		localization_key = MAR_oil_crisis_yemen
+	}
+}
+
+defined_text = {
+	name = MAR_OC_Oman_string
+	text = {
+		trigger = { has_global_flag = OC_Oman_CW }
+		localization_key = MAR_oil_crisis_oman
+	}
+}
+
+defined_text = {
+	name = MAR_OC_Iraq_string
+	text = {
+		trigger = { has_global_flag = OC_Iraq_CW }
+		localization_key = MAR_oil_crisis_iraq
+	}
+}
+
+defined_text = {
+	name = MAR_OC_Egypt_string
+	text = {
+		trigger = { has_global_flag = OC_Egypt_CW }
+		localization_key = MAR_oil_crisis_egypt
+	}
+}
+
+defined_text = {
+	name = MAR_OC_Sudan_string
+	text = {
+		trigger = { has_global_flag = OC_Sudan_CW }
+		localization_key = MAR_oil_crisis_sudan
+	}
+}
+
+defined_text = {
+	name = MAR_OC_Get_Country_Status_Yemen
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					is_in_array = {
+						array = global.OIL_supported_by_MAR
+						value = YEM
+					}
+					YEM = { has_war = yes }
+				}
+				AND = {
+					is_in_array = {
+						array = global.OIL_supported_by_MAR
+						value = NYM
+					}
+					NYM = { has_war = yes }
+				}
+			}
+		}
+		localization_key = BOR_OC_country_still_at_war
+	}
+	text = {
+		trigger = {
+			OR = {
+				YEM = { exists = yes }
+				NYM = { exists = yes }
+			}
+		}
+		localization_key = BOR_OC_country_victory
+	}
+	text = {
+		localization_key = BOR_OC_country_defeat
+	}
+}
+
+defined_text = {
+	name = MAR_OC_Get_Country_Status_Oman
+	text = {
+		trigger = {
+			NOT = {
+				is_in_array = {
+					array = global.OIL_supported_by_MAR
+					value = OMA
+				}
+			}
+			NOT = {
+				is_in_array = {
+					array = global.OIL_supported_by_MAR
+					value = OMB
+				}
+			}
+		}
+		localization_key = BOR_OC_country_were_uninvolved
+	}
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					is_in_array = {
+						array = global.OIL_supported_by_MAR
+						value = OMA
+					}
+					OMA = { exists = no }
+				}
+				AND = {
+					is_in_array = {
+						array = global.OIL_supported_by_MAR
+						value = OMB
+					}
+					OMB = { exists = no }
+				}
+			}
+		}
+		localization_key = BOR_OC_country_defeat
+	}
+	text = {
+		trigger = {
+			OR = {
+				OMA = { has_war = yes }
+				OMB = { has_war = yes }
+			}
+		}
+		localization_key = BOR_OC_country_still_at_war
+	}
+	text = {
+		localization_key = BOR_OC_country_victory
+	}
+}
+
+defined_text = {
+	name = MAR_OC_Get_Country_Status_Egypt
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					is_in_array = {
+						array = global.OIL_supported_by_MAR
+						value = EGB
+					}
+					EGB = { has_war = yes }
+				}
+				AND = {
+					is_in_array = {
+						array = global.OIL_supported_by_MAR
+						value = EGQ
+					}
+					EGQ = { has_war = yes }
+				}
+			}
+		}
+		localization_key = BOR_OC_country_still_at_war
+	}
+	text = {
+		trigger = {
+			OR = {
+				EGQ = { exists = yes }
+				EGB = { exists = yes }
+			}
+		}
+		localization_key = BOR_OC_country_victory
+	}
+	text = {
+		localization_key = BOR_OC_country_defeat
+	}
+}
+
+defined_text = {
+	name = MAR_OC_Get_Country_Status_Sudan
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					is_in_array = {
+						array = global.OIL_supported_by_MAR
+						value = SDF
+					}
+					SDF = { has_war = yes }
+				}
+				AND = {
+					is_in_array = {
+						array = global.OIL_supported_by_MAR
+						value = SDS
+					}
+					SDS = { has_war = yes }
+				}
+			}
+		}
+		localization_key = BOR_OC_country_still_at_war
+	}
+	text = {
+		trigger = {
+			OR = {
+				SDS = { exists = yes }
+				SDF = { exists = yes }
+			}
+		}
+		localization_key = BOR_OC_country_victory
+	}
+	text = {
+		localization_key = BOR_OC_country_defeat
+	}
+}
+
+defined_text = {
+	name = MAR_OC_Get_Country_Status_Iraq
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					is_in_array = {
+						array = global.OIL_supported_by_MAR
+						value = KUR
+					}
+					KUR = { exists = no }
+				}
+				AND = {
+					is_in_array = {
+						array = global.OIL_supported_by_MAR
+						value = BIR
+					}
+					BIR = { exists = no }
+				}
+			}
+		}
+		localization_key = BOR_OC_country_defeat
+	}
+	text = {
+		trigger = {
+			OR = {
+				KUR = { has_war = yes }
+				BIR = { has_war = yes }
+			}
+		}
+		localization_key = BOR_OC_country_still_at_war
+	}
+	text = {
+		localization_key = BOR_OC_country_victory
+	}
+}

@@ -1,0 +1,642 @@
+TaS_Global_Conflicts_Initalize = {
+	set_temp_variable = { TabName = token:BoP_Tab_GlobalConflicts }
+	TNO_BoP_AddTab = yes
+}
+MAR_Maldorossi_epilogue = {
+	country_event = {id = MAR_epilogue.1 days = 0}
+	set_politics = {
+		ruling_party = national_socialism
+		elections_allowed = no
+        last_election = "1935.12.17"
+        election_frequency = 48
+	}
+	set_popularities = {
+		national_socialism = 100
+	}
+	create_country_leader = {
+		name = "Collapsed authority"
+		desc = "MAR_LEADER_STUL_DESC"
+		picture = "Portrait_MAR_Neco_arc.dds"
+		expire = "2000.1.1"
+		ideology = national_socialism_esoteric_nazism_subtype
+		traits = {
+			
+		}
+	}
+}
+
+econ_join_sphere_MAR = {
+	set_temp_variable = { target = MAR }
+	econ_join_sphere_target = yes
+}
+
+MAR_debug_gimme_teh_variables = {
+	add_political_power = 1
+	log = "[GetDateText]: [Root.GetName]: MAR_Okhranka_connections = [?MAR.MAR_Okhranka_connections] MAR_agents_limit = [?MAR.MAR_agents_limit] MAR_Okhranka_agents = [?MAR.MAR_Okhranka_agents] MAR_decision_cost_one = [?MAR.MAR_decision_cost_one]"
+	log = "MAR_decision_cost_two = [?MAR.MAR_decision_cost_two] MAR_decision_cost_three = [?MAR.MAR_decision_cost_three] [?MAR.MAR_agents_start_temp_min] [?MAR.MAR_agents_limit]"
+}
+MAR_MGB_setup_the_variables = { 
+	#setting the connection value
+	set_temp_variable = { MAR_connections_start_temp = 1 }
+	randomize_temp_variable = {
+		var = MAR_connections_start_temp
+		distribution = uniform
+		min = 70
+		max = 85
+	}
+	round_temp_variable = MAR_connections_start_temp
+	set_variable = { MAR_Okhranka_connections = MAR_connections_start_temp }
+	
+	#setting the agents limit
+	set_temp_variable = { MAR_agents_limit_temp = 10 }
+	multiply_temp_variable = { MAR_agents_limit_temp = MAR_connections_start_temp }
+	set_variable = { MAR_agents_limit = MAR_agents_limit_temp }
+	
+	#setting the min setup
+	set_variable = { MAR_agents_start_temp_min = MAR_agents_limit }
+	add_to_variable = { MAR_agents_start_temp_min = -100 }
+	
+	#setting the start agents
+	set_temp_variable = { MAR_agents_start_temp = 1 }
+	randomize_temp_variable = {
+		var = MAR_agents_start_temp
+		distribution = uniform
+		min = MAR_agents_start_temp_min
+		max = MAR_agents_limit
+	}
+	round_temp_variable = MAR_agents_start_temp
+	set_variable = { MAR_Okhranka_agents = MAR_agents_start_temp }
+	
+	#setting up the okranka power	
+	set_temp_variable = { MAR_power_temp = MAR_Okhranka_agents }
+	divide_temp_variable = { MAR_power_temp = 10 }
+	set_variable = { MAR_Okhranka_power = MAR_power_temp }
+	round_variable = MAR_Okhranka_power
+	MAR_decision_cost_recount = yes
+}
+
+MAR_Okhranka_connections_change = { 
+	set_temp_variable = { temp_connections_gained_txt = temp_connections_gained }
+	add_to_variable = { MAR_Okhranka_connections = temp_connections_gained }
+	
+	clamp_variable = {
+		var = MAR_Okhranka_connections
+		min = 0
+		max = 100
+	}
+	if = {
+		limit = { check_variable = { temp_connections_gained < 0 } }
+		multiply_temp_variable = { temp_connections_gained_txt = -1 }
+		custom_effect_tooltip = MAR_MGB_connections_decrease_tt
+	}
+	else = {
+		custom_effect_tooltip = MAR_MGB_connections_growth_tt	 
+	}
+	MAR_Okhranka_recount = yes
+	MAR_decision_cost_recount = yes
+}
+
+MAR_Okhranka_agents_change = { 
+	set_temp_variable = { temp_agents_gained_txt = temp_agents_gained }
+	add_to_variable = { MAR_Okhranka_agents = temp_agents_gained }
+	
+	clamp_variable = {
+		var = MAR_Okhranka_agents
+		min = 0
+		max = MAR_agents_limit
+	}
+	if = {
+		limit = { check_variable = { temp_agents_gained < 0 } }
+		multiply_temp_variable = { temp_agents_gained_txt = -1 }
+		custom_effect_tooltip = MAR_MGB_agents_decrease_tt
+	}
+	else = {
+		custom_effect_tooltip = MAR_MGB_agents_growth_tt
+	}
+	MAR_Okhranka_recount = yes
+}
+
+MAR_Okhranka_recount = { 
+	#recountring power
+	set_temp_variable = { MAR_agents_temp_agents = MAR_Okhranka_agents }
+	divide_temp_variable = { MAR_agents_temp_agents = 100 }
+	
+	set_temp_variable = { MAR_power_temp = MAR_agents_temp_agents }
+	multiply_temp_variable = { MAR_power_temp = 10 }
+	set_variable = { MAR_Okhranka_power = MAR_power_temp }
+	round_variable = MAR_Okhranka_power
+	
+	#recountring max agents
+	set_temp_variable = { MAR_agents_limit_temp = 10 }
+	multiply_temp_variable = { MAR_agents_limit_temp = MAR_Okhranka_connections }
+	set_variable = { MAR_agents_limit = MAR_agents_limit_temp }
+}
+
+MAR_decision_cost_recount = { 
+	set_variable = { MAR_decision_cost_one = 5 }
+	set_variable = { MAR_decision_cost_two = 10 }
+	set_variable = { MAR_decision_cost_three = 15 }
+	set_temp_variable = { MAR_decision_cost_uppercost = MAR_Okhranka_connections }
+	divide_temp_variable = { MAR_decision_cost_uppercost = 2.5 }
+	add_to_variable = { MAR_decision_cost_one = MAR_decision_cost_uppercost }
+	add_to_variable = { MAR_decision_cost_two = MAR_decision_cost_uppercost }
+	add_to_variable = { MAR_decision_cost_three = MAR_decision_cost_uppercost }
+}
+
+
+MAR_Solzh_Vyatka_takeover = {
+	add_popularity = {
+		ideology = paternalism
+		popularity = 0.2
+	}
+	create_country_leader = {
+		name = "Aleksandr Solzhenitsyn"
+		picture = "MAR_SOLZH.dds"
+		expire = "2000.1.1"
+		ideology = paternalism_solidarism_subtype
+		traits = { }
+	}
+	set_politics = {
+		ruling_party = paternalism
+		elections_allowed = no
+		last_election = "1935.12.17"
+		election_frequency = 48
+	}
+	set_party_name = {
+		ideology = paternalism
+		long_name = MAR_under_Vyatka_long
+		name = MAR_under_Vyatka
+	}
+	set_cosmetic_tag = MAR_KIR
+	load_focus_tree = MAR_Solzh_tree
+	hidden_effect = {
+		remove_all_ministers = yes
+		fill_empty_minister_nochecks = yes 
+	}
+}
+
+MAR_enable_prestol = {
+	set_country_flag = MAR_fighting_prestol
+	mark_focus_tree_layout_dirty = yes
+	set_variable = {MAR_KOSYGINGUI_selected = 7}
+	#TODO
+}
+
+MAR_Iraq_Kurdistan_zhirik = {
+	XYZ = {
+		KUR_Vladimir_Zhirinovsky = {
+			set_nationality = KUR
+		}
+	}
+	KUR = {
+		every_owned_state = {
+			set_demilitarized_zone = no
+		}
+		add_state_core = 781
+		transfer_state = 781
+		add_state_core = 1334
+		transfer_state = 1334
+		add_state_core = 676
+		transfer_state = 676
+		add_state_core = 675
+		transfer_state = 675
+		add_state_core = 1333
+		transfer_state = 1333
+		add_state_core = 291
+		transfer_state = 291
+		add_state_core = 916
+		transfer_state = 916
+		add_state_core = 924
+		transfer_state = 924
+		add_state_core = 656
+		transfer_state = 656
+		set_capital = { state = 291 }
+		set_cosmetic_tag = KUR_Zhirik
+		set_country_flag = MAR_has_iraq
+		MAR = {
+			KUR = { save_party_popularities = yes }
+			set_autonomy = {
+				target = KUR
+				autonomy_state = autonomy_military_government
+			}
+		}
+		KUR = {
+			apply_party_popularities = yes
+			set_politics = {
+				ruling_party = paternalism
+			}
+			remove_ideas = {
+				MAR_KUR_zeroaproval
+				MAR_KUR_ihtamnet
+				MAR_volunteer_mladojopa_for
+			}
+			add_ideas = {
+				MAR_KUR_russian_frontier
+				MAR_KUR_fuck_bandits
+			}
+		}
+		add_country_leader_role = {
+			character = KUR_Vladimir_Zhirinovsky
+			promote_leader = yes
+			country_leader = {
+				desc = "POLITICS_VLADIMIR_ZHIRINOVSKY_DESC"
+				ideology = paternalism_military_mandate_subtype
+				expire = "1999.1.1"
+				traits = { }
+			}
+		}
+		set_popularities = {
+			paternalism = 34
+			conservatism = 23
+			despotism = 24
+			liberalism = 17
+			national_socialism = 2
+		}
+		set_party_name = {
+			ideology = paternalism
+			long_name = KUR_Vladimir_Zhirinovsky_party_long
+			name = KUR_Vladimir_Zhirinovsky_party
+		}
+		econ_join_sphere_MAR = yes
+	}
+	set_global_flag = KUR_Iraq_fixed
+}
+
+MAR_Iraq_Kurdistan_saddam = {
+	XYZ = {
+		KUR_Saddam_Hussein = {
+			set_nationality = KUR
+		}
+	}
+	KUR = {
+		every_owned_state = {
+			set_demilitarized_zone = no
+		}
+		add_state_core = 781
+		transfer_state = 781
+		add_state_core = 1334
+		transfer_state = 1334
+		add_state_core = 676
+		transfer_state = 676
+		add_state_core = 675
+		transfer_state = 675
+		add_state_core = 1333
+		transfer_state = 1333
+		add_state_core = 291
+		transfer_state = 291
+		add_state_core = 916
+		transfer_state = 916
+		add_state_core = 924
+		transfer_state = 924
+		add_state_core = 656
+		transfer_state = 656
+		remove_ideas = {
+			MAR_KUR_zeroaproval
+			MAR_KUR_ihtamnet
+			MAR_volunteer_mladojopa_for
+		}
+		add_ideas = {
+			MAR_KUR_pearl_of_middleeast
+			MAR_KUR_resolved_iraqikurd_problem
+		}
+		set_capital = { state = 291 }
+		set_cosmetic_tag = KUR_Saddam
+		set_politics = {
+			ruling_party = progressivism
+			last_election = "1933.2.16"
+			election_frequency = 36
+			elections_allowed = no
+		}
+		set_party_name = {
+			ideology = progressivism
+			long_name = KUR_Saddam_Hussein_party_long
+			name = KUR_Saddam_Hussein_party
+		}
+		add_country_leader_role = {
+			character = KUR_Saddam_Hussein
+			country_leader = {
+				desc = "POLITICS_SADDAM_HUSSEIN_DESC"
+				ideology = progressivism_popular_front_subtype
+				expire = "1999.1.1"
+				traits = { }
+			}
+		}
+		KUR_Saddam_Hussein = {
+			promote_character = yes
+		}
+		set_popularities = {
+			progressivism = 53
+			liberalism = 18
+			socialist = 12
+			communist = 5
+			paternalism = 12
+		}
+		econ_join_sphere_MAR = yes
+	}
+	set_global_flag = KUR_Iraq_fixed
+}
+MAR_install_mil_turkestan = {
+	XYZ = {
+		MTR_Military_Administration = {
+			set_nationality = MTR
+		}
+	}
+	MTR = {
+		TaS_2WRW_set_zone_laws = yes
+		set_politics = {
+			ruling_party = despotism
+			last_election = "1933.2.16"
+			election_frequency = 36
+			elections_allowed = no
+		}
+		set_party_name = { 
+			ideology = despotism 
+			long_name = Post_WRW2_Russian_Army_party
+			name = Post_WRW2_Russian_Army_party
+		}
+		set_popularities = {
+			despotism = 53
+			liberalism = 18
+			socialist = 12
+			communist = 5
+			paternalism = 12
+		}
+		MTR_Military_Administration = {
+			promote_character = yes
+		}
+		add_state_core = 750
+		transfer_state = 750
+		add_state_core = 585
+		transfer_state = 585
+		add_state_core = 405
+		transfer_state = 405
+		add_state_core = 1466
+		transfer_state = 1466
+		add_state_core = 1467
+		transfer_state = 1467
+		add_state_core = 586
+		transfer_state = 586
+		add_state_core = 732
+		transfer_state = 732
+		add_state_core = 742
+		transfer_state = 742
+		add_state_core = 1468
+		transfer_state = 1468
+		add_state_core = 584
+		transfer_state = 584
+		set_capital = { state = 1467 }
+		if = {
+			limit = { MAR = { has_government = socialist } }
+			set_cosmetic_tag = MilZones_Kosygin
+		}
+	}
+	MTR = {
+		get_current_government_type = yes
+		save_party_popularities = yes
+	}
+	RUS = {
+		set_autonomy = {
+			target = MTR
+			autonomy_state = autonomy_military_district
+		}	
+	}	
+	MTR = {
+		restore_previous_government_type = yes
+		apply_party_popularities = yes
+	}
+}
+MAR_Turkestan_govern = {
+	XYZ = {
+		UZB_Alexander_Rutskoj = {
+			set_nationality = MTR
+		}
+	}
+	MTR = {
+		remove_ideas = { MAR_military_administration }
+		set_politics = {
+			ruling_party = despotism
+			last_election = "1933.2.16"
+			election_frequency = 36
+			elections_allowed = no
+		}
+		every_owned_state = {
+			remove_core_of = KRK
+			remove_core_of = TRK
+			remove_core_of = KYR
+			remove_core_of = TAJ
+			remove_core_of = UTL
+			remove_core_of = UZB
+		}		 
+		add_country_leader_role = {
+			character = UZB_Alexander_Rutskoj
+			promote_leader = yes
+			country_leader = {
+				desc = "UZB_Alexander_Rutskoj_desc"
+				ideology = despotism_colonial_government_subtype
+				expire = "1999.1.1"
+				traits = { }
+			}
+		}
+		set_party_name = {
+			ideology = despotism
+			long_name = UZB_govern_party_long
+			name = UZB_govern_party
+		}
+		
+		econ_join_sphere_MAR = yes
+		MAR = {
+			set_country_flag = MAR_has_turkestan
+			MTR = { save_party_popularities = yes }
+			set_autonomy = {
+				target = MTR
+				autonomy_state = autonomy_military_government
+			}
+		}
+		set_popularities = {
+			despotism = 53
+			liberalism = 18
+			socialist = 12
+			communist = 5
+			paternalism = 12
+		}
+		add_ideas = {
+			MAR_UZB_coloniallike_govt 
+			MAR_UZB_national_conflicts
+		}
+		if = {
+			limit = { MAR = { has_government = despotism } }
+			set_cosmetic_tag = UZB_MAR_govern
+		}
+		if = {
+			limit = { MAR = { has_government = socialist } }
+			set_cosmetic_tag = MTR_Kosygin_governate
+		}
+	}
+	USA = {
+		TNO_fopo_remove_ca_conference_tab = yes
+	}
+	JAP = {
+		TNO_fopo_remove_ca_conference_tab = yes
+	}
+	GER = {
+		TNO_fopo_remove_ca_conference_tab = yes
+	}
+}
+MAR_Turkestan_autonomy = {
+	XYZ = {
+		UZB_Nuritdin_Mukhitdinov = {
+			set_nationality = MTR
+		}
+	}
+	MTR = {
+		remove_ideas = { MAR_military_administration }
+		set_politics = {
+			ruling_party = progressivism
+			last_election = "1933.2.16"
+			election_frequency = 36
+			elections_allowed = no
+		}
+		every_owned_state = {
+			remove_core_of = KRK
+			remove_core_of = TRK
+			remove_core_of = KYR
+			remove_core_of = TAJ
+			remove_core_of = UTL
+			remove_core_of = UZB
+		}		 
+		add_country_leader_role = {
+			character = UZB_Nuritdin_Mukhitdinov
+			promote_leader = yes
+			country_leader = {
+				desc = "UZB_Nuritdin_Mukhitdinov_desc"
+				ideology = progressivism_left_wing_agrarianism_subtype
+				expire = "1999.1.1"
+				traits = { }
+			}
+		}
+		set_party_name = {
+			ideology = progressivism
+			long_name = UZB_autonomy_party_long
+			name = UZB_autonomy_party
+		}
+		
+		econ_join_sphere_MAR = yes
+		MAR = {
+			set_country_flag = MAR_has_turkestan
+		}
+		set_popularities = {
+			despotism = 13
+			liberalism = 26
+			socialist = 18
+			communist = 6
+			paternalism = 11
+			progressivism = 26
+		}
+		add_ideas = {
+			#MAR_UZB_coloniallike_govt 
+			#MAR_UZB_national_conflicts
+		}
+		if = {
+			limit = { MAR = { has_government = despotism } }
+			set_cosmetic_tag = UZB_MAR_autonomy
+		}
+		if = {
+			limit = { MAR = { has_government = socialist } }
+			set_cosmetic_tag = MTR_Kosygin_autonomy
+		}
+	}
+	MTR = {
+		get_current_government_type = yes
+		save_party_popularities = yes
+	}
+	RUS = {
+		set_autonomy = {
+			target = MTR
+			autonomy_state = autonomy_satellite
+		}	
+	}	
+	MTR = {
+		restore_previous_government_type = yes
+		apply_party_popularities = yes
+	}
+}
+MAR_nuke = {
+	goto_province = 10218
+	create_entity = { 
+		entity = nuke_entity
+		id = 0401447
+		province = 10218
+		min_zoom = -1
+	}
+	set_entity_animation = {
+		id = 0401447
+		animation = "attack"
+	}
+}
+first_every_month_script_TaS = {
+	UAR = {
+		if = {
+			limit = {
+				has_global_flag = UAR_Faction_Start_Flag
+			}
+			set_temp_variable = { InfluenceChangeTemp = UAR_faction_influence_gain_array^0 }
+			set_temp_variable = { InfluenceChangeFactionTemp = 0 }
+			UAR_Influence_Change = yes
+			
+			set_temp_variable = { InfluenceChangeTemp = UAR_faction_influence_gain_array^1 }
+			set_temp_variable = { InfluenceChangeFactionTemp = 1 }
+			UAR_Influence_Change = yes
+			
+			set_temp_variable = { InfluenceChangeTemp = UAR_faction_influence_gain_array^2 }
+			set_temp_variable = { InfluenceChangeFactionTemp = 2 }
+			UAR_Influence_Change = yes
+		}
+	}
+}
+TaS_dobrovoltsy_dynmod_victory = {
+	custom_effect_tooltip = TaS_dobrovoltsy_dynmod_victory_tt
+	add_to_variable = {
+		var = MAR_dobr_infantry_attack
+		value = 0.015
+	}
+	add_to_variable = {
+		var = MAR_dobr_infantry_defence
+		value = 0.01
+	}
+	add_to_variable = {
+		var = MAR_dobr_speed
+		value = 0.01
+	}
+	add_to_variable = {
+		var = MAR_dobr_vertibird_attack
+		value = -0.005
+	}
+	add_to_variable = {
+		var = MAR_dobr_consumption
+		value = -0.005
+	}
+}
+
+TaS_dobrovoltsy_dynmod_lose = {
+	custom_effect_tooltip = TaS_dobrovoltsy_dynmod_lose_tt
+	add_to_variable = {
+		var = MAR_dobr_infantry_attack
+		value = 0.005
+	}
+	add_to_variable = {
+		var = MAR_dobr_infantry_defence
+		value = 0.005
+	}
+	add_to_variable = {
+		var = MAR_dobr_speed
+		value = 0.005
+	}
+	add_to_variable = {
+		var = MAR_dobr_vertibird_attack
+		value = -0.002
+	}
+	add_to_variable = {
+		var = MAR_dobr_consumption
+		value = -0.002
+	}
+}

@@ -1,0 +1,106 @@
+TNO_is_anarchy_visible = {
+	OR = {
+		TNO_anarchy_ZZZ_default = yes
+		TNO_anarchy_ZZZ_heydrich = yes
+		TNO_anarchy_ZZZ_thermonuclear_war = yes
+		TNO_anarchy_OMO_default = yes
+		TNO_anarchy_NRL_default = yes
+		TNO_anarchy_VIL_after_midnight = yes
+		TNO_anarchy_DRL_Orsk = yes
+		TNO_anarchy_UZB = yes
+		TNO_anarchy_MCW_Dissapearance = yes
+		TNO_anarchy_MAR_pepel = yes
+		TNO_paskhalka_dev = yes
+		TNO_anarchy_ZLB_antikhrist = yes
+		TNO_anarchy_ZZZ_remer = yes
+		TNO_anarchy_Manchurian_Catastrophe = yes
+	}
+}
+
+TNO_anarchy_ZZZ_default = {
+	original_tag = ZZZ
+	NOT = { has_global_flag = TNO_Heydrich_Anarchy }
+	NOT = { has_global_flag = TNO_my_world_is_on_fire_how_about_yours }
+}
+
+TNO_anarchy_ZZZ_heydrich = {
+	original_tag = ZZZ
+	has_global_flag = TNO_Heydrich_Anarchy
+	NOT = { has_global_flag = TNO_my_world_is_on_fire_how_about_yours }
+}
+
+TNO_anarchy_ZZZ_thermonuclear_war = {
+	has_global_flag = TNO_my_world_is_on_fire_how_about_yours
+}
+
+TNO_anarchy_OMO_default = {
+	original_tag = OMO
+	has_country_leader = {
+		character = OMO_No_Authority
+		ruling_only = yes
+	}
+}
+
+TNO_anarchy_NRL_default = {
+	original_tag = NRL
+	has_country_leader = {
+		character = NRL_No_Authority
+		ruling_only = yes
+	}
+}
+
+TNO_anarchy_VIL_after_midnight = {
+	original_tag = VIL
+	has_global_flag = VIL_anarchy_flag
+}
+
+TNO_anarchy_DRL_Orsk = {
+	original_tag = DRL
+	has_country_leader = {
+		character = DRL_Anarchic
+		ruling_only = yes
+	}
+}
+
+TNO_anarchy_UZB = {
+	original_tag = TRK
+	has_global_flag = TNO_rip_turkmenistan
+}
+
+TNO_anarchy_MCW_Dissapearance = {
+	original_tag = MCW
+	has_cosmetic_tag = MCW_Dissapearance
+}
+TNO_anarchy_MAR_pepel = {
+	original_tag = MAR
+	has_country_leader = {
+		name = "Pizdec"
+		ruling_only = yes
+	}
+}
+TNO_paskhalka_dev = {
+	original_tag = SSW
+	has_country_leader = {	
+		name = "Paskhalka"
+		ruling_only = yes
+	}
+}
+TNO_anarchy_ZLB_antikhrist = {
+	original_tag = ZLB
+	has_country_leader = {
+		character = ZLB_Pizdec
+		ruling_only = yes
+	}
+}
+TNO_anarchy_ZZZ_remer = {
+	original_tag = GWF
+	has_country_leader = {
+		name = "[NO SIGNAL]"
+		ruling_only = yes
+	}
+	NOT = { has_global_flag = TNO_my_world_is_on_fire_how_about_yours }
+}
+TNO_anarchy_Manchurian_Catastrophe = {
+	original_tag = HAN
+	has_cosmetic_tag = MAN_katastrophe
+}

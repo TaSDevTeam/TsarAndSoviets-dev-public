@@ -1,0 +1,135 @@
+TaS_is_alone_with_Berezniki = {
+	AND = {
+		OR = {
+			original_tag = WRS
+			NOT = {country_exists = WRS}
+		}
+		OR = {
+			original_tag = PLS
+			NOT = {country_exists = PLS}
+		}
+		OR = {
+			original_tag = UKH
+			NOT = {country_exists = UKH}
+		}
+		OR = {
+			original_tag = VOL
+			NOT = {country_exists = VOL}
+		}
+		OR = {
+			original_tag = KOM
+			NOT = {country_exists = KOM}
+		}
+		OR = {
+			original_tag = VYT
+			NOT = {country_exists = VYT}
+		}
+		OR = {
+			original_tag = TAR
+			NOT = {country_exists = TAR}
+		}
+		OR = {
+			original_tag = PRM
+			NOT = {country_exists = PRM}
+		}
+		OR = {
+			original_tag = BKR
+			NOT = {country_exists = BKR}
+		}
+		OR = {
+			original_tag = SAM
+			NOT = {country_exists = SAM}
+		}
+		OR = {
+			original_tag = GOR
+			NOT = {country_exists = GOR}
+		}
+	}
+}
+is_german_unifier = {
+	OR = {
+		original_tag = GWS
+		original_tag = GRH
+		original_tag = GBW
+		original_tag = GBV
+		original_tag = GAU
+		original_tag = GCZ
+		original_tag = GWF
+		original_tag = GRA
+		original_tag = GSU
+	}
+}
+
+is_european_major = {
+	OR = {
+		original_tag = ENG
+		original_tag = ITA
+		original_tag = FRA
+		original_tag = IBR
+		original_tag = FIT
+	}
+}
+is_russian_postger = {
+	OR = {
+		original_tag = BRL
+		original_tag = ZNE
+	}
+}
+can_form_germany = {
+	AND = {
+		owns_state = 28
+		owns_state = 42
+		owns_state = 51
+		owns_state = 8
+		owns_state = 775
+		owns_state = 188
+		owns_state = 56
+		owns_state = 59
+		owns_state = 1373
+		owns_state = 57
+		owns_state = 55
+		owns_state = 50
+		owns_state = 72
+		owns_state = 54
+		owns_state = 53
+		owns_state = 52
+		owns_state = 1025
+		owns_state = 4
+		owns_state = 770
+		owns_state = 152
+		owns_state = 153
+		owns_state = 69
+	}
+}
+TAS_WRW2_ScriptedTrigger_GER_Devastation_MoreThanY = {
+	custom_trigger_tooltip = {
+		tooltip = TAS_WRW2_ScriptedTrigger_GER_Devastation_MoreThanY_Tt
+		check_variable = { GER.WRW2_devastation > Y }
+	}
+}
+TAS_WRW2_ScriptedTrigger_GER_Devastation_LessThanY = {
+	custom_trigger_tooltip = {
+		tooltip = TAS_WRW2_ScriptedTrigger_GER_Devastation_LessThanY_Tt
+		check_variable = { GER.WRW2_devastation < Y }
+	}
+}
+
+TAS_WRW2_ScriptedTrigger_MAR_Devastation_MoreThanY = {
+	custom_trigger_tooltip = {
+		tooltip = TAS_WRW2_ScriptedTrigger_MAR_Devastation_MoreThanY_Tt
+		check_variable = { RUS.WRW2_devastation > Y }
+	}
+}
+TAS_WRW2_ScriptedTrigger_MAR_Devastation_LessThanY = {
+	custom_trigger_tooltip = {
+		tooltip = TAS_WRW2_ScriptedTrigger_MAR_Devastation_LessThanY_Tt
+		check_variable = { RUS.WRW2_devastation < Y }
+	}
+}
+
+UAR_faction_mech_no_other_decisions = {
+	custom_trigger_tooltip = {
+		tooltip = UAR_faction_mech_no_other_decisions
+		NOT = { has_country_flag = UAR_international_mech_decision }
+	}
+}
