@@ -14,6 +14,7 @@ recruit_character = MAR_Vladimir_Gil
 recruit_character = MAR_Maria_Romanova
 recruit_character = MAR_Regent_council
 recruit_character = MAR_the_throne
+recruit_character = MAR_Alexander_Solzenitsyn
 #ministers
 recruit_character = MAR_Yelita_Velchkovskiy
 recruit_character = MAR_Dmitriy_Alexandrovich
@@ -34,9 +35,14 @@ recruit_character = MAR_Georgey_Zagainov
 recruit_character = MAR_Anatoliy_Pepelyayev
 recruit_character = MAR_Semen_Gitler
 recruit_character = MAR_Timur_Frunze
-#huesos
+#huesosy
 recruit_character = MAR_Taboritsky_dummy
-
+recruit_character = MAR_Amozov_dummy
+recruit_character = MAR_Dikiy_dummy
+recruit_character = MAR_Goltz_dummy
+recruit_character = MAR_Kirpichnikov_dummy
+recruit_character = MAR_Maltsev_dummy
+recruit_character = MAR_Lashenko_dummy
 ###Playable
 set_country_flag = tno_playable_country
 
@@ -438,17 +444,11 @@ set_politics = {
 }
 
 set_popularities = {
-	communist = 0
-	ultranationalism = 0
-	national_socialism = 0
-	socialist = 15
-	progressivism = 0
-	liberalism = 0
-	conservatism = 0
-	paternalism = 21
-	despotism = 51
-	fascism = 13
-	
+	socialist = 17
+	paternalism = 15
+	paternalism_1 = 22
+	despotism = 27
+	fascism = 19
 }
 
 

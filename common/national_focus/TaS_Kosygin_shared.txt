@@ -331,7 +331,14 @@ shared_focus = {
 		RUS_decrease_administrative_strain = yes
 		remove_ideas_with_trait = head_of_government
 		add_ideas = MAR_Vladimir_Gil_hog
-		
+		add_country_leader_role = {
+			character = MAR_Vladimir_Gil
+			promote_leader = yes
+			country_leader = {
+				expire = "1999.1.1"
+				ideology = despotism_subtype
+			}
+			}
 		remove_ideas_with_trait = security_minister
 		add_ideas = MAR_Anatoly_Vavilov_sec
 

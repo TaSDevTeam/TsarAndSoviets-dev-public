@@ -288,6 +288,10 @@ country_event = { #bek visit
 		name = MAR_initial.14.a
 		ai_chance = { factor = 1 }
 		add_political_power = 30
+		add_popularity = {
+			ideology = paternalism
+			popularity = 0.02
+		}
 	}
 }
 
@@ -521,7 +525,7 @@ country_event = { #vyatka is agry
 		name = MAR_initial.26.b
 		ai_chance = { factor = 1 }
 		add_popularity = {
-			ideology = paternalism
+			ideology = paternalism_1
 			popularity = 0.05
 		}
 		add_to_variable = { MAR_MGB_vyatka_angry  = 1}
@@ -557,7 +561,7 @@ country_event = { #okhranka trap
 		name = MAR_initial.27.a
 		ai_chance = { factor = 1 }
 		add_popularity = {
-			ideology = paternalism
+			ideology = paternalism_1
 			popularity = 0.1
 		}
 		set_temp_variable = { temp_connections_gained = 10 }
@@ -1062,7 +1066,7 @@ country_event = { #chornyi lebed 2 - win/lose
 		name = MAR_initial.49.b
 		ai_chance = { factor = 1 }
 		add_popularity = {
-			ideology = paternalism
+			ideology = paternalism_1
 			popularity = 0.05
 		}
 		add_to_variable = { MAR_MGB_vyatka_angry  = 1}
@@ -1098,7 +1102,7 @@ country_event = { #chornyi lebed 3 - fail
 		name = MAR_initial.50.a
 		ai_chance = { factor = 1 }
 		add_popularity = {
-			ideology = paternalism
+			ideology = paternalism_1
 			popularity = 0.1
 		}
 		set_temp_variable = { temp_connections_gained = 10 }
@@ -1171,6 +1175,10 @@ country_event = { #fuck you vlad
 	option = { #
 		name = MAR_initial.52.a
 		ai_chance = { factor = 1 }
+		add_popularity = {
+			ideology = paternalism_1
+			popularity = -1
+		}
 		VYT = {
 				end_puppet = MAR
 				hidden_effect = {
@@ -1305,7 +1313,10 @@ country_event = { #first free party congress
 			ideology = despotism
 			popularity = 0.06
 		}
-		
+		add_popularity = {
+			ideology = socialist
+			popularity = 0.06
+		}
 	}
 }
 
@@ -2511,19 +2522,28 @@ country_event = { # MAR_final_vibori WIN SEREGA BELII
 		}
 		add_popularity = {
 			ideology = despotism
-			popularity = 0.05
+			popularity = 0.35
+		}
+		add_popularity = {
+			ideology = despotism_1
+			popularity = -1
+		}
+		set_party_name = { 
+			ideology = despotism
+			long_name = MAR_VSM_ruling_party_long
+			name = MAR_VSM_ruling_party
 		}
 		set_country_flag = MAR_POLITICS_RESOLVED
 		add_country_leader_role = {
 			character = MAR_Sergey_Belozerskiy
 			promote_leader = yes
-			country_leader = {
-			desc = "POLITICS_SERGEY_BELOZERSKI_DESC"
-			expire = "1999.1.1"
-			ideology = despotism_mladorossi_autocracy_subtype
-			traits = {
-				char_general
-			}
+				country_leader = {
+				desc = "POLITICS_SERGEY_BELOZERSKI_DESC"
+				expire = "1999.1.1"
+				ideology = despotism_mladorossi_autocracy_subtype
+				traits = {
+					char_general
+				}
 			}
 		}
 		MAR_Sergey_Belozerskiy = {
@@ -2576,6 +2596,11 @@ country_event = { # MAR_final_vibori MARIA WIN
 			ideology = paternalism
 			popularity = 0.4
 		}
+		set_party_name = { 
+			ideology = paternalism
+			long_name = MAR_VSM_ruling_party_long
+			name = MAR_VSM_ruling_party
+		}
 		set_country_flag = MAR_POLITICS_RESOLVED		
 		promote_character = MAR_Maria_Romanova
 		remove_ideas = MAR_Cyril_Yelita_Vilchkovsky_hog
@@ -2611,6 +2636,11 @@ country_event = { # MAR_final_vibori ROMANOV WIN
 		ai_chance = { factor = 1 }
 		set_politics = {
 			ruling_party = socialist
+		}
+		set_party_name = { 
+			ideology = socialist
+			long_name = MAR_VSM_ruling_party_long
+			name = MAR_VSM_ruling_party
 		}
 		add_popularity = {
 			ideology = socialist
