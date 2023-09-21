@@ -72,6 +72,22 @@ VOR_debug_category = {
 			load_focus_tree = {	tree = VOR_SR_SMUTA keep_completed = no }
 		}
 	}
+	VOR_load_eser_regional_tree = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			has_country_flag = VOR_debug_focus
+		}
+		allowed = {
+			original_tag = VOR
+		}
+
+		fire_only_once = no
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: VOR_load_eser_smuta_tree"
+			load_focus_tree = {	tree = VOR_SR_REG keep_completed = no }
+		}
+	}
 }
 
 	
