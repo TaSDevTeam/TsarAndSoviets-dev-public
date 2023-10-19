@@ -19,7 +19,7 @@ TNO_fopo_MADCW_War_Stage_3 = {
 
 TNO_fopo_MAD_controls_state = {
 	custom_trigger_tooltip = {
-		tooltip = MADCW_FOPO_MAD_controls_stae_tt
+		tooltip = MADCW_FOPO_MAD_controls_state_tt
 		var:Madagascar_selected_city = {
 			is_controlled_by = MAD
 		}
@@ -28,7 +28,7 @@ TNO_fopo_MAD_controls_state = {
 
 TNO_fopo_MDM_controls_state = {
 	custom_trigger_tooltip = {
-		tooltip = MADCW_FOPO_MDM_controls_stae_tt
+		tooltip = MADCW_FOPO_MDM_controls_state_tt
 		var:Madagascar_selected_city = {
 			is_controlled_by = MDM
 		}
@@ -37,7 +37,7 @@ TNO_fopo_MDM_controls_state = {
 
 TNO_fopo_MDG_controls_state = {
 	custom_trigger_tooltip = {
-		tooltip = MADCW_FOPO_MDG_controls_stae_tt
+		tooltip = MADCW_FOPO_MDG_controls_state_tt
 		var:Madagascar_selected_city = {
 			is_controlled_by = MDG
 		}
@@ -157,13 +157,6 @@ TNO_fopo_Madagascar_Port_Check = {
 	}
 }
 
-TNO_fopo_Madagascar_Influence_Check = {
-	custom_trigger_tooltip = {
-		tooltip = MADCW_FOPO_Sufficient_Influence_tt
-		check_variable = { var = Madagascar_selected_city:Madagascar_strength_var_@ROOT value = 50 compare = greater_than_or_equals }
-	}
-}
-
 TNO_node_bordering_state_controlled = {
 	custom_trigger_tooltip = {
 		tooltip = MADCW_FOPO_supply_route_controlled_tt
@@ -175,29 +168,29 @@ TNO_node_bordering_state_controlled = {
 						OR = {
 							tag = GER
 						}
-						MDG = { 	
+						MDG = {
 							AND = {
-								controls_province = 15964 
+								controls_province = 15964
 								controls_province = 15945
 							}
 						}
 					}
-				
+
 					AND = {
 						OR = {
 							tag = USA
 							tag = JAP
 						}
-						MAD = { 	
+						MAD = {
 							AND = {
-								controls_province = 15964 
+								controls_province = 15964
 								controls_province = 15945
 							}
 						}
 					}
 				}
 			}
-			
+
 			AND = {
 				check_variable = { Madagascar_selected_city = 1974 }
 				OR = { # tag control
@@ -205,29 +198,29 @@ TNO_node_bordering_state_controlled = {
 						OR = {
 							tag = GER
 						}
-						MDG = { 	
+						MDG = {
 							AND = {
-								controls_province = 16172 
+								controls_province = 16172
 								controls_province = 15959
 							}
 						}
 					}
-				
+
 					AND = {
 						OR = {
 							tag = USA
 							tag = JAP
 						}
-						MAD = { 	
+						MAD = {
 							AND = {
-								controls_province = 16172 
+								controls_province = 16172
 								controls_province = 15959
 							}
 						}
 					}
 				}
 			}
-			
+
 			AND = {
 				check_variable = { Madagascar_selected_city = 945 }
 				OR = { # tag control
@@ -235,23 +228,23 @@ TNO_node_bordering_state_controlled = {
 						OR = {
 							tag = GER
 						}
-						MDG = { 	
+						MDG = {
 							AND = {
-								controls_province = 16172 
+								controls_province = 16172
 								controls_province = 15959
 								controls_province = 15958
 							}
 						}
 					}
-				
+
 					AND = {
 						OR = {
 							tag = USA
 							tag = JAP
 						}
-						MAD = { 	
+						MAD = {
 							AND = {
-								controls_province = 16172 
+								controls_province = 16172
 								controls_province = 15959
 								controls_province = 15958
 							}
@@ -259,7 +252,7 @@ TNO_node_bordering_state_controlled = {
 					}
 				}
 			}
-			
+
 			AND = {
 				check_variable = { Madagascar_selected_city = 1970 }
 				OR = { # tag control
@@ -267,7 +260,7 @@ TNO_node_bordering_state_controlled = {
 						OR = {
 							tag = GER
 						}
-						MDG = { 	
+						MDG = {
 							AND = {
 								controls_province = 15958
 								controls_state = 1864
@@ -277,13 +270,13 @@ TNO_node_bordering_state_controlled = {
 							}
 						}
 					}
-				
+
 					AND = {
 						OR = {
 							tag = USA
 							tag = JAP
 						}
-						MAD = { 	
+						MAD = {
 							AND = {
 								controls_province = 15958
 								controls_state = 1864
@@ -295,7 +288,7 @@ TNO_node_bordering_state_controlled = {
 					}
 				}
 			}
-			
+
 			AND = {
 				check_variable = { Madagascar_selected_city = 1969 }
 				OR = { # tag control
@@ -303,19 +296,19 @@ TNO_node_bordering_state_controlled = {
 						OR = {
 							tag = GER
 						}
-						MDG = { 	
+						MDG = {
 							AND = {
 								controls_state = 1864
 							}
 						}
 					}
-				
+
 					AND = {
 						OR = {
 							tag = USA
 							tag = JAP
 						}
-						MAD = { 	
+						MAD = {
 							AND = {
 								controls_state = 1864
 							}
@@ -323,8 +316,8 @@ TNO_node_bordering_state_controlled = {
 					}
 				}
 			}
-			
-			
+
+
 			OR = {
 				check_variable = { Madagascar_selected_city = 946 }
 				check_variable = { Madagascar_selected_city = 1860 }
@@ -550,7 +543,7 @@ TNO_fopo_turkes_kenes_selected = {
 	}
 }
 
-TNO_fopo_gazaland_selected = {
+TNO_fopo_mozambique_selected = {
 	OR = {
 		check_variable = { selected_conflict_id = token:GC_MozambiqueCW }
 		AND = {
@@ -750,6 +743,16 @@ TNO_fopo_england_influence_battle_selected = {
 	}
 }
 
+TNO_fopo_channel_crisis_selected = {
+	OR = {
+		check_variable = { selected_conflict_id = token:GC_ChannelCrisis }
+		AND = {
+			is_in_array = { TNO_active_conflicts = token:GC_ChannelCrisis }
+			is_ai = yes
+		}
+	}
+}
+
 TNO_fopo_saw_withdrawal_selected_bormann = {
 	TNO_fopo_saw_withdrawal_selected = yes
 	has_global_flag = german_civil_war_bormannvic
@@ -763,40 +766,10 @@ TNO_fopo_saw_withdrawal_selected_goring = {
 	has_global_flag = german_civil_war_goeringvic
 }
 
-TNO_fopo_far_eastern_revolt_selected = {
-	OR = {
-		check_variable = { selected_conflict_id = token:GC_FarEasternRevolt }
-		AND = {
-			is_in_array = { TNO_active_conflicts = token:GC_FarEasternRevolt }
-			is_ai = yes
-		}
-	}
-}
-
-TNO_fopo_manchurian_civil_war_selected = {
-	OR = {
-		check_variable = { selected_conflict_id = token:GC_ManchurianCivilWar }
-		AND = {
-			is_in_array = { TNO_active_conflicts = token:GC_ManchurianCivilWar }
-			is_ai = yes
-		}
-	}
-}
-
-TNO_fopo_uar_influence_battle_selected = {
-	OR = {
-		check_variable = { selected_conflict_id = token:GC_UAR_influence_battle }
-		AND = {
-			is_in_array = { TNO_active_conflicts = token:GC_UAR_influence_battle }
-			is_ai = yes
-		}
-	}
-}	
 ## Conflict ##
 TNO_Germany_Italy_has_conflict = {
 	OR = {
 		has_global_flag = german_civil_war
-		has_global_flag = PostGER_second_cw
 		GER = { has_war = yes }
 		ITA = { has_war = yes }
 	}
@@ -813,8 +786,8 @@ TNO_Balkans_has_conflict = {
 TNO_France_Burgundy_Iberia_has_conflict = {
 	OR = {
 		has_global_flag = iberian_wars
-		BRG = { has_war_with = FRA }
-		BRT = { has_war_with = FRA }
+		BRG = { has_war = yes }
+		FRA = { has_war = yes }
 		has_global_flag = FRA_civil_war_ongoing
 	}
 }
@@ -848,7 +821,6 @@ TNO_West_Russia_has_conflict = {
 		BKR = { has_war = yes }
 		MGN = { has_war = yes }
 		GOR = { has_war = yes }
-		MAR = { has_war = yes }
 		# Cutting 4 regions into 3 triggers, good design
 		VOR = { has_war = yes }
 		YGR = { has_war = yes }
@@ -862,13 +834,8 @@ TNO_West_Russia_has_conflict = {
 
 TNO_Central_Asia_has_conflict = {
 	OR = {
-		NPL = { has_war = yes }
-		ARL = { has_war = yes }
-		DER = { has_war = yes }
-		KOK = { has_war = yes }
-		PAV = { has_war = yes }
 		KAZ = { has_war = yes }
-		AKT = { has_war = yes }
+		KZR = { has_war = yes }
 		KRK = { has_war = yes }
 		TRK = { has_war = yes }
 		UZB = { has_war = yes }
@@ -887,8 +854,6 @@ TNO_Central_Siberia_has_conflict = {
 		KRS = { has_war = yes }
 		SBA = { has_war = yes }
 		PRC = { has_war = yes }
-		IRK = { has_war = yes }
-		BRY = { has_war = yes }
 	}
 }
 
@@ -900,6 +865,8 @@ TNO_Far_Eastern_Russia_has_conflict = {
 		MAG = { has_war = yes }
 		KMC = { has_war = yes }
 		OMO = { has_war = yes }
+		IRK = { has_war = yes }
+		BRY = { has_war = yes }
 	}
 }
 
@@ -929,35 +896,39 @@ TNO_England_has_conflict = {
 }
 
 TNO_North_SAM_has_conflict = {
-	OR = {
-		OR = { # Colombia
-			COL = { has_war = yes }
-			CLL = { has_war = yes }
-			CLC = { has_war = yes }
+	OR = { # Colombia
+		count_triggers = {
+			amount = 2
+			country_exists = COL
+			country_exists = CLL
+			country_exists = CLC
+			country_exists = CLD
 		}
+		BOL = { has_war = yes } #War with Santa Cruz
 	}
 }
 
 TNO_South_SAM_has_conflict = {
 	OR = {
 		has_global_flag = christmas_war_happening
-		BRA = {
-			OR = {
-				has_idea = BRA_idea_Lobster_conflict
-				has_idea = BRA_idea_Lobster_conflict_2
-				has_idea = BRA_idea_Lobster_conflict_3
-				has_idea = BRA_idea_Lobster_conflict_4
-			}
-		}
+		# having lobster war equated to other wars is a bit excessive
+		#BRA = {
+		#	OR = {
+		#		has_idea = BRA_idea_Lobster_conflict
+		#		has_idea = BRA_idea_Lobster_conflict_2
+		#		has_idea = BRA_idea_Lobster_conflict_3
+		#		has_idea = BRA_idea_Lobster_conflict_4
+		#	}
+		#}
 		PAR = { has_war = yes } #Second Triple Alliance War
-		BOL = { has_war = yes } #War with Santa Cruz
 	}
 }
 
 TNO_Caribbean_has_conflict = {
 	OR = {
 		has_global_flag = PPI_landing_ongoing
-		# hispaniolan war
+		HAI = { has_war = yes }
+		DOM = { has_war = yes }
 	}
 }
 
@@ -975,7 +946,7 @@ TNO_Australia_has_conflict = {
 
 TNO_USA_Canada_has_conflict = {
 	OR = {
-		always = no
+		USA = { has_war = yes }
 	}
 }
 
@@ -1002,10 +973,6 @@ TNO_China_has_conflict = {
 		YUN = { has_war = yes }
 		CHI = { has_war_with = JAP }
 		MEN = { has_war = yes }
-		MAN = { has_war = yes }
-		PFF = { has_war = yes }
-		HAN = { has_war = yes }
-		MJP = { has_war = yes }
 	}
 }
 
@@ -1065,7 +1032,7 @@ TNO_East_Africa_has_conflict = {
 
 TNO_South_Africa_has_conflict = {
 	OR = {
-		has_global_flag = south_african_war
+		has_global_flag = south_african_war_happening
 		MZB = { has_war = yes }
 		GRO = { has_war = yes }
 		USC = { has_war = yes }
@@ -1120,173 +1087,173 @@ TNO_Middle_East_has_conflict = {
 }
 
 ## Proxy ##
-TNO_Germany_Italy_has_proxy = {
-	OR = {
-		always = no
-	}
-}
-
-TNO_Balkans_has_proxy = {
-	OR = {
-		always = no
-	}
-}
-
-TNO_France_Burgundy_Iberia_has_proxy = {
-	OR = {
-		always = no
-	}
-}
-
-TNO_Ostland_Moscow_has_proxy = {
-	OR = {
-		always = no
-	}
-}
-
-TNO_West_Russia_has_proxy = {
-	OR = {
-		always = no # But one day...
-	}
-}
-
-TNO_Central_Asia_has_proxy = {
-	OR = {
-		always = no
-	}
-}
-
-TNO_Central_Siberia_has_proxy = {
-	OR = {
-		always = no
-	}
-}
-
-TNO_Far_Eastern_Russia_has_proxy = {
-	OR = {
-		always = no
-	}
-}
-
-TNO_Scandinavia_has_proxy = {
-	OR = {
-		always = no
-	}
-}
-
-TNO_Madagascar_has_proxy = {
-	OR = {
-		always = no
-	}
-}
-
-TNO_England_has_proxy = {
-	OR = {
-		always = no
-	}
-}
-
-TNO_North_SAM_has_proxy = {
-	OR = {
-		COL = { has_war = yes }
-		CLL = { has_war = yes }
-		CLC = { has_war = yes }
-	}
-}
-
-TNO_South_SAM_has_proxy = {
-	OR = {
-		always = no
-	}
-}
-
-TNO_Caribbean_has_proxy = {
-	OR = {
-		always = no
-	}
-}
-
-TNO_Indonesia_has_proxy = {
-	OR = {
-		INS = { has_war_with = FRI }
-	}
-}
-
-TNO_Australia_has_proxy = {
-	OR = {
-		always = no
-	}
-}
-
-TNO_USA_Canada_has_proxy = {
-	OR = {
-		always = no
-	}
-}
-
-TNO_Mexico_Central_has_proxy = {
-	OR = {
-		always = no
-	}
-}
-
-TNO_South_East_Asia_has_proxy = {
-	OR = {
-		always = no
-	}
-}
-
-TNO_China_has_proxy = {
-	OR = {
-		always = no
-	}
-}
-
-TNO_India_has_proxy = {
-	OR = {
-		always = no
-	}
-}
-
-TNO_Egypt_has_proxy = {
-	OR = {
-		has_global_flag = OC_Egypt_CW
-	}
-}
-
-TNO_North_Africa_has_proxy = {
-	OR = {
-		always = no
-	}
-}
-
-TNO_West_Africa_has_proxy = {
-	OR = {
-		has_global_flag = west_african_war_ongoing
-		has_global_flag = mano_campaign_ongoing
-	}
-}
-
-TNO_East_Africa_has_proxy = {
-	OR = {
-		has_global_flag = OC_Sudan_CW
-	}
-}
-
-TNO_South_Africa_has_proxy = {
-	OR = {
-		has_global_flag = south_african_war
-	}
-}
-
-TNO_Middle_East_has_proxy = {
-	OR = {
-		has_global_flag = OC_Iraq_CW
-		has_global_flag = OC_Yemen_CW
-		has_global_flag = OC_Oman_CW
-		has_global_flag = OC_Iraq_CW
-	}
-}
+# TNO_Germany_Italy_has_proxy = {
+# 	OR = {
+# 		always = no
+# 	}
+# }
+#
+# TNO_Balkans_has_proxy = {
+# 	OR = {
+# 		always = no
+# 	}
+# }
+#
+# TNO_France_Burgundy_Iberia_has_proxy = {
+# 	OR = {
+# 		always = no
+# 	}
+# }
+#
+# TNO_Ostland_Moscow_has_proxy = {
+# 	OR = {
+# 		always = no
+# 	}
+# }
+#
+# TNO_West_Russia_has_proxy = {
+# 	OR = {
+# 		always = no # But one day...
+# 	}
+# }
+#
+# TNO_Central_Asia_has_proxy = {
+# 	OR = {
+# 		always = no
+# 	}
+# }
+#
+# TNO_Central_Siberia_has_proxy = {
+# 	OR = {
+# 		always = no
+# 	}
+# }
+#
+# TNO_Far_Eastern_Russia_has_proxy = {
+# 	OR = {
+# 		always = no
+# 	}
+# }
+#
+# TNO_Scandinavia_has_proxy = {
+# 	OR = {
+# 		always = no
+# 	}
+# }
+#
+# TNO_Madagascar_has_proxy = {
+# 	OR = {
+# 		always = no
+# 	}
+# }
+#
+# TNO_England_has_proxy = {
+# 	OR = {
+# 		always = no
+# 	}
+# }
+#
+# TNO_North_SAM_has_proxy = {
+# 	OR = {
+# 		COL = { has_war = yes }
+# 		CLL = { has_war = yes }
+# 		CLC = { has_war = yes }
+# 	}
+# }
+#
+# TNO_South_SAM_has_proxy = {
+# 	OR = {
+# 		always = no
+# 	}
+# }
+#
+# TNO_Caribbean_has_proxy = {
+# 	OR = {
+# 		always = no
+# 	}
+# }
+#
+# TNO_Indonesia_has_proxy = {
+# 	OR = {
+# 		INS = { has_war_with = FRI }
+# 	}
+# }
+#
+# TNO_Australia_has_proxy = {
+# 	OR = {
+# 		always = no
+# 	}
+# }
+#
+# TNO_USA_Canada_has_proxy = {
+# 	OR = {
+# 		always = no
+# 	}
+# }
+#
+# TNO_Mexico_Central_has_proxy = {
+# 	OR = {
+# 		always = no
+# 	}
+# }
+#
+# TNO_South_East_Asia_has_proxy = {
+# 	OR = {
+# 		always = no
+# 	}
+# }
+#
+# TNO_China_has_proxy = {
+# 	OR = {
+# 		always = no
+# 	}
+# }
+#
+# TNO_India_has_proxy = {
+# 	OR = {
+# 		always = no
+# 	}
+# }
+#
+# TNO_Egypt_has_proxy = {
+# 	OR = {
+# 		has_global_flag = OC_Egypt_CW
+# 	}
+# }
+#
+# TNO_North_Africa_has_proxy = {
+# 	OR = {
+# 		always = no
+# 	}
+# }
+#
+# TNO_West_Africa_has_proxy = {
+# 	OR = {
+# 		has_global_flag = west_african_war_ongoing
+# 		has_global_flag = mano_campaign_ongoing
+# 	}
+# }
+#
+# TNO_East_Africa_has_proxy = {
+# 	OR = {
+# 		has_global_flag = OC_Sudan_CW
+# 	}
+# }
+#
+# TNO_South_Africa_has_proxy = {
+# 	OR = {
+# 		has_global_flag = south_african_war_happening
+# 	}
+# }
+#
+# TNO_Middle_East_has_proxy = {
+# 	OR = {
+# 		has_global_flag = OC_Iraq_CW
+# 		has_global_flag = OC_Yemen_CW
+# 		has_global_flag = OC_Oman_CW
+# 		has_global_flag = OC_Iraq_CW
+# 	}
+# }
 
 CHL_argentina_friendly_government_temp = { # Temporary until IE release, ported from IE
 	OR = {
@@ -1619,10 +1586,10 @@ TNO_HCW_has_naval_force = {
 		HAI = { has_country_flag = HCW_has_coast_guard }
 	}
 }
-TNO_HCW_is_transfered = {
+TNO_HCW_is_transferred = {
 	custom_trigger_tooltip = {
-		tooltip = TNO_HCW_is_transfered_tt
-		THIS = { has_state_flag = HCW_transfered }
+		tooltip = TNO_HCW_is_transferred_tt
+		THIS = { has_state_flag = HCW_transferred }
 	}
 }
 TNO_HCW_is_locked = {
@@ -1631,3 +1598,64 @@ TNO_HCW_is_locked = {
 		THIS = { has_state_flag = HCW_locked }
 	}
 }
+TNO_HCW_monthly_trigger = {
+	custom_trigger_tooltip = {
+		tooltip = TNO_HCW_is_a_single_use_decision
+		USA = { NOT = { has_country_flag = HAICW_single_month_decision_used } }
+	}
+}
+
+TNO_HCW_coalition_conditions = {
+	custom_trigger_tooltip = {
+		tooltip = TNO_HCW_coalition_conditions_tt
+		check_variable = { USA.HAI_legitimacy > 24 }
+		check_variable = { USA.HAI_weariness < 91 }
+		
+	}
+}
+
+###CHANNEL CRISIS
+CC_is_concession_confirmed = {
+	is_in_array = { ENG.cc_negotiations_confirmed_array = ENG.cc_negotiations_concessions_array_val }
+}
+
+CC_essential_concession_active = {
+	OR = {
+		check_variable = { ENG.CC_negotiations_getstage = 11 }
+		check_variable = { ENG.CC_negotiations_getstage = 6 }
+		check_variable = { ENG.CC_negotiations_getstage = 1 }
+	}
+}
+
+CC_mild_concession_active = {
+	OR = {
+		check_variable = { ENG.CC_negotiations_getstage = 12 }
+		check_variable = { ENG.CC_negotiations_getstage = 7 }
+		check_variable = { ENG.CC_negotiations_getstage = 2 }
+	}
+}
+
+CC_moderate_concession_active = {
+	OR = {
+		check_variable = { ENG.CC_negotiations_getstage = 13 }
+		check_variable = { ENG.CC_negotiations_getstage = 8 }
+		check_variable = { ENG.CC_negotiations_getstage = 3 }
+	}
+}
+
+CC_severe_concession_active = {
+	OR = {
+		check_variable = { ENG.CC_negotiations_getstage = 14 }
+		check_variable = { ENG.CC_negotiations_getstage = 9 }
+		check_variable = { ENG.CC_negotiations_getstage = 4 }
+	}
+}
+
+CC_very_severe_concession_active = {
+	OR = {
+		check_variable = { ENG.CC_negotiations_getstage = 15 }
+		check_variable = { ENG.CC_negotiations_getstage = 10 }
+		check_variable = { ENG.CC_negotiations_getstage = 5 }
+	}
+}
+
