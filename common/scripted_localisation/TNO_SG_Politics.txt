@@ -65,8 +65,8 @@ defined_text = {
 		localization_key = communist_stratocratic_communism_subtype
 	}
 	text = {
-		trigger = { has_country_leader_ideology = communist_maoism_subtype }
-		localization_key = communist_maoism_subtype
+		trigger = { has_country_leader_ideology = communist_mao_zedong_thought_subtype }
+		localization_key = communist_mao_zedong_thought_subtype
 	}
 	text = {
 		trigger = { has_country_leader_ideology = communist_amazonism_subtype }
@@ -93,8 +93,8 @@ defined_text = {
 		localization_key = communist_revolutionary_baathism_subtype
 	}
 	text = {
-		trigger = { has_country_leader_ideology = communist_esoteric_leninism_subtype }
-		localization_key = communist_esoteric_leninism_subtype
+		trigger = { has_country_leader_ideology = communist_trotskyism_subtype }
+		localization_key = communist_trotskyism_subtype
 	}
 	text = {
 		localization_key = communist
@@ -176,18 +176,6 @@ defined_text = {
 		localization_key = socialist_revolutionary_gaitanismo_subtype
 	}
 	text = {
-        trigger = { has_country_leader_ideology = socialist_social_monarchist_subtype }
-        localization_key = socialist_social_monarchist_subtype
-    }
-	text = {
-        trigger = { has_country_leader_ideology = socialist_social_monarchist_but_worse_subtype }
-        localization_key = socialist_social_monarchist_but_worse_subtype
-    }
-	text = {
-        trigger = { has_country_leader_ideology = socialist_neo_narodism_subtype }
-        localization_key = socialist_neo_narodism_subtype
-    }
-	text = {
 		localization_key = socialist
 	}
 }
@@ -231,10 +219,6 @@ defined_text = {
 		localization_key = progressivism_left_wing_agrarianism_subtype
 	}
 	text = {
-		trigger = { has_country_leader_ideology = progressivism_islamic_modernism_subtype }
-		localization_key = progressivism_islamic_modernism_subtype
-	}
-	text = {
 		trigger = { has_country_leader_ideology = progressivism_liberal_socialism_subtype }
 		localization_key = progressivism_liberal_socialism_subtype
 	}
@@ -253,10 +237,6 @@ defined_text = {
 	text = {
 		trigger = { has_country_leader_ideology = progressivism_gaitanismo_subtype }
 		localization_key = progressivism_gaitanismo_subtype
-	}
-	text = {
-		trigger = { has_country_leader_ideology = progressivism_progressive_theocracy_subtype }
-		localization_key = progressivism_progressive_theocracy_subtype
 	}
 	text = {
 		localization_key = progressivism
@@ -338,6 +318,10 @@ defined_text = {
 		localization_key = liberal_conservatism_oligarchic_liberalism_subtype
 	}
 	text = {
+		trigger = { has_country_leader_ideology = liberal_conservatism_islamic_modernism_subtype }
+		localization_key = liberal_conservatism_islamic_modernism_subtype
+	}
+	text = {
 		localization_key = liberal_conservatism
 	}
 }
@@ -399,6 +383,10 @@ defined_text = {
 	text = {
 		trigger = { has_country_leader_ideology = conservatism_goken_conservatism_subtype }
 		localization_key = conservatism_goken_conservatism_subtype
+	}
+	text = {
+		trigger = { has_country_leader_ideology = conservatism_liberal_corporatism_subtype }
+		localization_key = conservatism_liberal_corporatism_subtype
 	}
 	text = {
 		localization_key = conservatism
@@ -500,10 +488,6 @@ defined_text = {
 		localization_key = paternalism_authoritarian_developmentalism_subtype
 	}
 	text = {
-        trigger = { has_country_leader_ideology = paternalism_mladorossi_idea_subtype }
-        localization_key = paternalism_mladorossi_idea_subtype
-    }
-	text = {
 		localization_key = paternalism
 	}
 }
@@ -583,15 +567,42 @@ defined_text = {
 		localization_key = despotism_institutional_despotism_subtype
 	}
 	text = {
-        trigger = { has_country_leader_ideology = despotism_mladorossi_autocracy_subtype }
-        localization_key = despotism_mladorossi_autocracy_subtype
-    }
-	text = {
-        trigger = { has_country_leader_ideology = despotism_securitocracy_subtype }
-        localization_key = despotism_securitocracy_subtype
-    }
+		trigger = { has_country_leader_ideology = despotism_aristocratic_republicanism_subtype }
+		localization_key = despotism_aristocratic_republicanism_subtype
+	}	
 	text = {
 		localization_key = despotism
+	}
+}
+
+defined_text = {
+	name = GetSubIdeologyLocUltranationalism
+	text = {
+		trigger = { has_country_leader_ideology = ultranationalism_slavo_aryanism_subtype }
+		localization_key = ultranationalism_slavo_aryanism_subtype
+	}
+	text = {
+		trigger = { has_country_leader_ideology = ultranationalism_eurasianism_subtype }
+		localization_key = ultranationalism_eurasianism_subtype
+	}
+	text = {
+		trigger = { has_country_leader_ideology = ultranationalism_ultramilitarism_subtype }
+		localization_key = ultranationalism_ultramilitarism_subtype
+	}
+	text = {
+		trigger = { has_country_leader_ideology = ultranationalism_fundamentalism_subtype }
+		localization_key = ultranationalism_fundamentalism_subtype
+	}
+	text = {
+		trigger = { has_country_leader_ideology = ultranationalism_esoteric_despotism_subtype }
+		localization_key = ultranationalism_esoteric_despotism_subtype
+	}
+	text = {
+		trigger = { has_country_leader_ideology = ultranationalism_reactionary_nationalism_subtype }
+		localization_key = ultranationalism_reactionary_nationalism_subtype
+	}
+	text = {
+		localization_key = ultranationalism
 	}
 }
 
@@ -654,42 +665,27 @@ defined_text = {
 		localization_key = fascism_ordosocialism_subtype
 	}
 	text = {
-		trigger = { has_country_leader_ideology = fascism_mladosocialism_subtype }
-		localization_key = fascism_mladosocialism_subtype
+		trigger = { has_country_leader_ideology = fascism_british_fascism_1_subtype }
+		localization_key = fascism_british_fascism_1_subtype
+	}
+	text = {
+		trigger = { has_country_leader_ideology = fascism_british_fascism_2_subtype }
+		localization_key = fascism_british_fascism_2_subtype
+	}
+	text = {
+		trigger = { has_country_leader_ideology = fascism_british_fascism_hamm_subtype }
+		localization_key = fascism_british_fascism_hamm_subtype
+	}
+	text = {
+		trigger = { has_country_leader_ideology = fascism_british_fascism_bean_subtype }
+		localization_key = fascism_british_fascism_bean_subtype
+	}
+	text = {
+		trigger = { has_country_leader_ideology = fascism_social_credit_subtype }
+		localization_key = fascism_social_credit_subtype
 	}
 	text = {
 		localization_key = fascism
-	}
-}
-
-defined_text = {
-	name = GetSubIdeologyLocUltranationalism
-	text = {
-		trigger = { has_country_leader_ideology = ultranationalism_slavo_aryanism_subtype }
-		localization_key = ultranationalism_slavo_aryanism_subtype
-	}
-	text = {
-		trigger = { has_country_leader_ideology = ultranationalism_eurasianism_subtype }
-		localization_key = ultranationalism_eurasianism_subtype
-	}
-	text = {
-		trigger = { has_country_leader_ideology = ultranationalism_ultramilitarism_subtype }
-		localization_key = ultranationalism_ultramilitarism_subtype
-	}
-	text = {
-		trigger = { has_country_leader_ideology = ultranationalism_fundamentalism_subtype }
-		localization_key = ultranationalism_fundamentalism_subtype
-	}
-	text = {
-		trigger = { has_country_leader_ideology = ultranationalism_esoteric_despotism_subtype }
-		localization_key = ultranationalism_esoteric_despotism_subtype
-	}
-	text = {
-		trigger = { has_country_leader_ideology = ultranationalism_reactionary_nationalism_subtype }
-		localization_key = ultranationalism_reactionary_nationalism_subtype
-	}
-	text = {
-		localization_key = ultranationalism
 	}
 }
 
@@ -736,10 +732,6 @@ defined_text = {
 		localization_key = national_socialism_revolutionary_nazism_subtype
 	}
 	text = {
-		trigger = { has_country_leader_ideology = national_socialism_national_socialist_orthodoxy_subtype }
-		localization_key = national_socialism_national_socialist_orthodoxy_subtype
-	}
-	text = {
 		trigger = { has_country_leader_ideology = national_socialism_esoteric_nazism_subtype }
 		localization_key = national_socialism_esoteric_nazism_subtype
 	}
@@ -784,8 +776,8 @@ defined_text = {
 defined_text = {
 	name = GetCurrentAutonomyState
 	text = {
-		trigger = { has_autonomy_state = autonomy_reichskommissariat }
-		localization_key = autonomy_reichskommissariat
+		trigger = { has_autonomy_state = autonomy_autonomous_reichskommissariat }
+		localization_key = autonomy_autonomous_reichskommissariat
 	}
 	text = {
 		trigger = { has_autonomy_state = autonomy_colony }
@@ -798,6 +790,10 @@ defined_text = {
 	text = {
 		trigger = { has_autonomy_state = autonomy_integrated_puppet }
 		localization_key = autonomy_integrated_puppet
+	}
+	text = {
+		trigger = { has_autonomy_state = autonomy_integrated_reichskommissariat }
+		localization_key = autonomy_integrated_reichskommissariat
 	}
 	text = {
 		trigger = { has_autonomy_state = autonomy_puppet }
@@ -2444,68 +2440,6 @@ defined_text = {
 }
 
 defined_text = {
-	name = get_child_labor_policy_trend
-	text = {
-		trigger = {
-			AND = {
-				get_child_labor_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { child_labor_policy_monthly_change_trigger = 0 }
-			}
-		}
-		localization_key = "GFX_policy_effectiveness_arrow_flat"
-	}
-	text = {
-		trigger = {
-			AND = {
-				get_child_labor_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { child_labor_policy_monthly_change_trigger > 0 }
-			}
-		}
-		localization_key = "GFX_policy_effectiveness_arrow_up"
-	}
-	text = {
-		trigger = {
-			AND = {
-				get_child_labor_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { child_labor_policy_monthly_change_trigger < 0 }
-			}
-		}
-		localization_key = "GFX_policy_effectiveness_arrow_down"
-	}
-}
-
-defined_text = {
-	name = get_child_labor_policy_trend_tt
-	text = {
-		trigger = {
-			AND = {
-				get_child_labor_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { child_labor_policy_monthly_change_trigger = 0 }
-			}
-		}
-		localization_key = TNO_SD_Trend_SocDev_Neutral
-	}
-	text = {
-		trigger = {
-			AND = {
-				get_child_labor_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { child_labor_policy_monthly_change_trigger > 0 }
-			}
-		}
-		localization_key = TNO_SD_Trend_SocDev_Increase
-	}
-	text = {
-		trigger = {
-			AND = {
-				get_child_labor_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { child_labor_policy_monthly_change_trigger < 0 }
-			}
-		}
-		localization_key = TNO_SD_Trend_SocDev_Decrease
-	}
-}
-
-defined_text = {
 	name = get_pensions_policy_trend
 	text = {
 		trigger = {
@@ -2692,68 +2626,6 @@ defined_text = {
 }
 
 defined_text = {
-	name = get_safety_policy_trend
-	text = {
-		trigger = {
-			AND = {
-				get_safety_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { safety_policy_monthly_change_trigger = 0 }
-			}
-		}
-		localization_key = "GFX_policy_effectiveness_arrow_flat"
-	}
-	text = {
-		trigger = {
-			AND = {
-				get_safety_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { safety_policy_monthly_change_trigger > 0 }
-			}
-		}
-		localization_key = "GFX_policy_effectiveness_arrow_up"
-	}
-	text = {
-		trigger = {
-			AND = {
-				get_safety_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { safety_policy_monthly_change_trigger < 0 }
-			}
-		}
-		localization_key = "GFX_policy_effectiveness_arrow_down"
-	}
-}
-
-defined_text = {
-	name = get_safety_policy_trend_tt
-	text = {
-		trigger = {
-			AND = {
-				get_safety_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { safety_policy_monthly_change_trigger = 0 }
-			}
-		}
-		localization_key = TNO_SD_Trend_SocDev_Neutral
-	}
-	text = {
-		trigger = {
-			AND = {
-				get_safety_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { safety_policy_monthly_change_trigger > 0 }
-			}
-		}
-		localization_key = TNO_SD_Trend_SocDev_Increase
-	}
-	text = {
-		trigger = {
-			AND = {
-				get_safety_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { safety_policy_monthly_change_trigger < 0 }
-			}
-		}
-		localization_key = TNO_SD_Trend_SocDev_Decrease
-	}
-}
-
-defined_text = {
 	name = get_health_care_policy_trend
 	text = {
 		trigger = {
@@ -2809,68 +2681,6 @@ defined_text = {
 			AND = {
 				get_health_care_policy_monthly_change_value_with_modifiers = yes
 				check_variable = { health_care_policy_monthly_change_trigger < 0 }
-			}
-		}
-		localization_key = TNO_SD_Trend_SocDev_Decrease
-	}
-}
-
-defined_text = {
-	name = get_pollution_policy_trend
-	text = {
-		trigger = {
-			AND = {
-				get_pollution_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { pollution_policy_monthly_change_trigger = 0 }
-			}
-		}
-		localization_key = "GFX_policy_effectiveness_arrow_flat"
-	}
-	text = {
-		trigger = {
-			AND = {
-				get_pollution_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { pollution_policy_monthly_change_trigger > 0 }
-			}
-		}
-		localization_key = "GFX_policy_effectiveness_arrow_up"
-	}
-	text = {
-		trigger = {
-			AND = {
-				get_pollution_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { pollution_policy_monthly_change_trigger < 0 }
-			}
-		}
-		localization_key = "GFX_policy_effectiveness_arrow_down"
-	}
-}
-
-defined_text = {
-	name = get_pollution_policy_trend_tt
-	text = {
-		trigger = {
-			AND = {
-				get_pollution_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { pollution_policy_monthly_change_trigger = 0 }
-			}
-		}
-		localization_key = TNO_SD_Trend_SocDev_Neutral
-	}
-	text = {
-		trigger = {
-			AND = {
-				get_pollution_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { pollution_policy_monthly_change_trigger > 0 }
-			}
-		}
-		localization_key = TNO_SD_Trend_SocDev_Increase
-	}
-	text = {
-		trigger = {
-			AND = {
-				get_pollution_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { pollution_policy_monthly_change_trigger < 0 }
 			}
 		}
 		localization_key = TNO_SD_Trend_SocDev_Decrease
@@ -3002,68 +2812,6 @@ defined_text = {
 }
 
 defined_text = {
-	name = get_lgbt_rights_policy_trend
-	text = {
-		trigger = {
-			AND = {
-				get_lgbt_rights_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { lgbt_rights_policy_monthly_change_trigger = 0 }
-			}
-		}
-		localization_key = "GFX_policy_effectiveness_arrow_flat"
-	}
-	text = {
-		trigger = {
-			AND = {
-				get_lgbt_rights_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { lgbt_rights_policy_monthly_change_trigger > 0 }
-			}
-		}
-		localization_key = "GFX_policy_effectiveness_arrow_up"
-	}
-	text = {
-		trigger = {
-			AND = {
-				get_lgbt_rights_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { lgbt_rights_policy_monthly_change_trigger < 0 }
-			}
-		}
-		localization_key = "GFX_policy_effectiveness_arrow_down"
-	}
-}
-
-defined_text = {
-	name = get_lgbt_rights_policy_trend_tt
-	text = {
-		trigger = {
-			AND = {
-				get_lgbt_rights_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { lgbt_rights_policy_monthly_change_trigger = 0 }
-			}
-		}
-		localization_key = TNO_SD_Trend_SocDev_Neutral
-	}
-	text = {
-		trigger = {
-			AND = {
-				get_lgbt_rights_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { lgbt_rights_policy_monthly_change_trigger > 0 }
-			}
-		}
-		localization_key = TNO_SD_Trend_SocDev_Increase
-	}
-	text = {
-		trigger = {
-			AND = {
-				get_lgbt_rights_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { lgbt_rights_policy_monthly_change_trigger < 0 }
-			}
-		}
-		localization_key = TNO_SD_Trend_SocDev_Decrease
-	}
-}
-
-defined_text = {
 	name = get_gender_rights_policy_trend
 	text = {
 		trigger = {
@@ -3119,68 +2867,6 @@ defined_text = {
 			AND = {
 				get_gender_rights_policy_monthly_change_value_with_modifiers = yes
 				check_variable = { gender_rights_policy_monthly_change_trigger < 0 }
-			}
-		}
-		localization_key = TNO_SD_Trend_SocDev_Decrease
-	}
-}
-
-defined_text = {
-	name = get_minorities_policy_trend
-	text = {
-		trigger = {
-			AND = {
-				get_minorities_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { minorities_policy_monthly_change_trigger = 0 }
-			}
-		}
-		localization_key = "GFX_policy_effectiveness_arrow_flat"
-	}
-	text = {
-		trigger = {
-			AND = {
-				get_minorities_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { minorities_policy_monthly_change_trigger > 0 }
-			}
-		}
-		localization_key = "GFX_policy_effectiveness_arrow_up"
-	}
-	text = {
-		trigger = {
-			AND = {
-				get_minorities_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { minorities_policy_monthly_change_trigger < 0 }
-			}
-		}
-		localization_key = "GFX_policy_effectiveness_arrow_down"
-	}
-}
-
-defined_text = {
-	name = get_minorities_policy_trend_tt
-	text = {
-		trigger = {
-			AND = {
-				get_minorities_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { minorities_policy_monthly_change_trigger = 0 }
-			}
-		}
-		localization_key = TNO_SD_Trend_SocDev_Neutral
-	}
-	text = {
-		trigger = {
-			AND = {
-				get_minorities_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { minorities_policy_monthly_change_trigger > 0 }
-			}
-		}
-		localization_key = TNO_SD_Trend_SocDev_Increase
-	}
-	text = {
-		trigger = {
-			AND = {
-				get_minorities_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { minorities_policy_monthly_change_trigger < 0 }
 			}
 		}
 		localization_key = TNO_SD_Trend_SocDev_Decrease
@@ -3811,70 +3497,6 @@ defined_text = {
 	}
 }
 
-
-defined_text = {
-	name = get_refugees_policy_trend
-	text = {
-		trigger = {
-			AND = {
-				get_refugees_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { refugees_policy_monthly_change_trigger = 0 }
-			}
-		}
-		localization_key = "GFX_policy_effectiveness_arrow_flat"
-	}
-	text = {
-		trigger = {
-			AND = {
-				get_refugees_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { refugees_policy_monthly_change_trigger > 0 }
-			}
-		}
-		localization_key = "GFX_policy_effectiveness_arrow_up"
-	}
-	text = {
-		trigger = {
-			AND = {
-				get_refugees_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { refugees_policy_monthly_change_trigger < 0 }
-			}
-		}
-		localization_key = "GFX_policy_effectiveness_arrow_down"
-	}
-}
-
-defined_text = {
-	name = get_refugees_policy_trend_tt
-	text = {
-		trigger = {
-			AND = {
-				get_refugees_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { refugees_policy_monthly_change_trigger = 0 }
-			}
-		}
-		localization_key = TNO_SD_Trend_SocDev_Neutral
-	}
-	text = {
-		trigger = {
-			AND = {
-				get_refugees_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { refugees_policy_monthly_change_trigger > 0 }
-			}
-		}
-		localization_key = TNO_SD_Trend_SocDev_Increase
-	}
-	text = {
-		trigger = {
-			AND = {
-				get_refugees_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { refugees_policy_monthly_change_trigger < 0 }
-			}
-		}
-		localization_key = TNO_SD_Trend_SocDev_Decrease
-	}
-}
-
-
 defined_text = {
 	name = get_conscription_policy_trend
 	text = {
@@ -3936,70 +3558,6 @@ defined_text = {
 		localization_key = TNO_SD_Trend_SocDev_Decrease
 	}
 }
-
-
-defined_text = {
-	name = get_women_policy_trend
-	text = {
-		trigger = {
-			AND = {
-				get_women_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { women_policy_monthly_change_trigger = 0 }
-			}
-		}
-		localization_key = "GFX_policy_effectiveness_arrow_flat"
-	}
-	text = {
-		trigger = {
-			AND = {
-				get_women_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { women_policy_monthly_change_trigger > 0 }
-			}
-		}
-		localization_key = "GFX_policy_effectiveness_arrow_up"
-	}
-	text = {
-		trigger = {
-			AND = {
-				get_women_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { women_policy_monthly_change_trigger < 0 }
-			}
-		}
-		localization_key = "GFX_policy_effectiveness_arrow_down"
-	}
-}
-
-defined_text = {
-	name = get_women_policy_trend_tt
-	text = {
-		trigger = {
-			AND = {
-				get_women_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { women_policy_monthly_change_trigger = 0 }
-			}
-		}
-		localization_key = TNO_SD_Trend_SocDev_Neutral
-	}
-	text = {
-		trigger = {
-			AND = {
-				get_women_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { women_policy_monthly_change_trigger > 0 }
-			}
-		}
-		localization_key = TNO_SD_Trend_SocDev_Increase
-	}
-	text = {
-		trigger = {
-			AND = {
-				get_women_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { women_policy_monthly_change_trigger < 0 }
-			}
-		}
-		localization_key = TNO_SD_Trend_SocDev_Decrease
-	}
-}
-
 
 defined_text = {
 	name = get_military_supervision_policy_trend
@@ -4125,70 +3683,6 @@ defined_text = {
 		localization_key = TNO_SD_Trend_SocDev_Decrease
 	}
 }
-
-
-defined_text = {
-	name = get_racial_integration_policy_trend
-	text = {
-		trigger = {
-			AND = {
-				get_racial_integration_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { racial_integration_policy_monthly_change_trigger = 0 }
-			}
-		}
-		localization_key = "GFX_policy_effectiveness_arrow_flat"
-	}
-	text = {
-		trigger = {
-			AND = {
-				get_racial_integration_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { racial_integration_policy_monthly_change_trigger > 0 }
-			}
-		}
-		localization_key = "GFX_policy_effectiveness_arrow_up"
-	}
-	text = {
-		trigger = {
-			AND = {
-				get_racial_integration_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { racial_integration_policy_monthly_change_trigger < 0 }
-			}
-		}
-		localization_key = "GFX_policy_effectiveness_arrow_down"
-	}
-}
-
-defined_text = {
-	name = get_racial_integration_policy_trend_tt
-	text = {
-		trigger = {
-			AND = {
-				get_racial_integration_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { racial_integration_policy_monthly_change_trigger = 0 }
-			}
-		}
-		localization_key = TNO_SD_Trend_SocDev_Neutral
-	}
-	text = {
-		trigger = {
-			AND = {
-				get_racial_integration_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { racial_integration_policy_monthly_change_trigger > 0 }
-			}
-		}
-		localization_key = TNO_SD_Trend_SocDev_Increase
-	}
-	text = {
-		trigger = {
-			AND = {
-				get_racial_integration_policy_monthly_change_value_with_modifiers = yes
-				check_variable = { racial_integration_policy_monthly_change_trigger < 0 }
-			}
-		}
-		localization_key = TNO_SD_Trend_SocDev_Decrease
-	}
-}
-
 
 defined_text = {
 	name = get_draft_exemptions_policy_trend
