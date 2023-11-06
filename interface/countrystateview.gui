@@ -362,10 +362,10 @@ guiTypes = {
 
 			gridBoxType = {
 				name = "dynamic_modifiers_grid"
-				position = { x = 423 y = 71 }
+				position = { x = 423 y = 103 }
 				size = { width = 0 height = 0 }
 				format = "LOWER_LEFT"
-				slotsize = { width = 40 height = 47 }
+				slotsize = { width = 64 height = 64 }
 				max_slots_vertical = 1
 			}
 
@@ -410,6 +410,34 @@ guiTypes = {
 					name = "kkk_icon"
 					spriteType = "GFX_modifiers_kkk_rioters"
 					position = { x = -20 y = 0 }
+					Orientation = "UPPER_LEFT"
+				}
+
+				iconType = {
+					name = "OST_mines_icon"
+					spriteType = "GFX_modifiers_OST_minefield"
+					position = { x = 0 y = 0 }
+					Orientation = "UPPER_LEFT"
+				}
+
+				iconType = {
+					name = "OST_scorched_earth_icon"
+					spriteType = "GFX_modifiers_OST_scorched_earth"
+					position = { x = 0 y = 0 }
+					Orientation = "UPPER_LEFT"
+				}
+
+				iconType = {
+					name = "OST_planned_defense_icon"
+					spriteType = "GFX_modifiers_OST_planned_defense"
+					position = { x = 0 y = 0 }
+					Orientation = "UPPER_LEFT"
+				}
+
+				iconType = {
+					name = "OST_planned_offensive_icon"
+					spriteType = "GFX_modifiers_OST_focused_offense"
+					position = { x = 0 y = 0 }
 					Orientation = "UPPER_LEFT"
 				}
 				iconType = {
@@ -630,7 +658,7 @@ guiTypes = {
 		iconType = {
 			name = "progress"
 			spriteType = "GFX_occupation_state_compliance_bar"
-			position = { x = 1 y = 1 }
+			position = { x = 2 y = 1 }
 			frame = 100
 		}
 
@@ -658,7 +686,7 @@ guiTypes = {
 		iconType = {
 			name = "progress"
 			spriteType = "GFX_occupation_state_resistance_bar"
-			position = { x = 1 y = 1 }
+			position = { x = 2 y = 1 }
 			frame = 100
 		}
 

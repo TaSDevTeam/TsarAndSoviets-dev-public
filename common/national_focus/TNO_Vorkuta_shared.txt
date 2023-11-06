@@ -1,17 +1,49 @@
 shared_focus = {
-	id = VOR_otchet
+	id = VOR_o_murke_i_gonchikh
 	icon = GFX_VOR_otchet
-	cost = 3.00
+	cost = 1
 	x = 7
 	y = 1
+    completion_reward = {
+		#country_event = {
+		#	id = vorkuta_start.1 days = 0
+	    #}
+    }
+} 
+
+shared_focus = {
+	id = VOR_otchet
+	icon = GFX_VOR_otchet
+	cost = 2.00
+	prerequisite = {
+		focus = VOR_o_murke_i_gonchikh
+	}
+	x = 7
+	y = 2
     completion_reward = {
 		country_event = {
 			id = vorkuta_start.1 days = 0
 	    }
-		set_temp_variable = { temp_econ_GDP_boost_flat = 0.35 }
+		set_temp_variable = { temp_econ_GDP_boost_flat = 0.035 }
 		econ_GDP_boost_once_flat = yes
 		set_temp_variable = { gdp_growth_temp = 0.25 }
         econ_gdp_growth_change = yes
+    }
+} 
+
+shared_focus = {
+	id = VOR_inventarization
+	icon = GFX_VOR_lager_capital
+	cost = 3.00
+	prerequisite = {
+		focus = VOR_otchet
+	}
+	x = 5
+	y = 3
+	completion_reward = {
+		#country_event = {
+		#    id = vorkuta_start.3 days = 0
+		#}
     }
 } 
 
@@ -22,8 +54,8 @@ shared_focus = {
 	prerequisite = {
 		focus = VOR_otchet
 	}
-	x = 5
-	y = 2
+	x = 8
+	y = 3
 	completion_reward = {
 		country_event = {
 		    id = vorkuta_start.3 days = 0
@@ -34,14 +66,49 @@ shared_focus = {
 } 
 
 shared_focus = {
+	id = VOR_renew_equip
+	icon = GFX_VOR_lager_capital
+	cost = 2
+	prerequisite = {
+		focus = VOR_inventarization
+	}
+	prerequisite = {
+		focus = VOR_lager_capital
+	}
+	x = 5
+	y = 4
+	completion_reward = {
+		#country_event = {
+		#    id = vorkuta_start.3 days = 0
+		#}
+    }
+} 
+
+shared_focus = {
+	id = VOR_reap_the_benifs
+	icon = GFX_VOR_lager_capital
+	cost = 2
+	prerequisite = {
+		focus = VOR_lager_capital
+	}
+	x = 7
+	y = 4
+	completion_reward = {
+		#country_event = {
+		#    id = vorkuta_start.3 days = 0
+		#}
+    }
+} 
+
+shared_focus = {
 	id = VOR_povisit_normi
 	icon = GFX_VOR_povisit_normi
-	cost = 3.00
+	cost = 2
 	prerequisite = {
-		focus = VOR_otchet
+		focus = VOR_lager_capital
 	}
 	x = 9
-	y = 2
+	y = 4
     completion_reward = {
 		country_event = {
 		    id = vorkuta_start.5 days = 0
@@ -53,25 +120,50 @@ shared_focus = {
 } 
 	
 
-shared_focus= {
+shared_focus = {
 	id = VOR_big_problem
 	icon = GFX_idea_VOR_problems_in_rechlag
-	cost = 3.00
+	cost = 8
 	prerequisite = {
-		focus = VOR_lager_capital
+		focus = VOR_renew_equip
+	}
+	prerequisite = {
+		focus = VOR_reap_the_benifs
 	}
 	prerequisite = {
 		focus = VOR_povisit_normi
 	}
 	x = 7
-	y = 3
-	completion_reward = {
-		country_event = {
-		    id = vorkuta_start.7 days = 0
+	y = 5
+	select_effect = {
+		hidden_effect = {
+			country_event = {id = vorkuta_start.7 days = 6}
+			add_stability = -0.1
 		}
-		add_stability = -0.1
+	}
+	completion_reward = {
+		#country_event = {
+		#    id = vorkuta_start.7 days = 0
+		#}
+		add_stability = 0.1
     }
 }
+
+shared_focus = {
+	id = VOR_one_more_winter
+	icon = GFX_VOR_lager_capital
+	cost = 2
+	prerequisite = {
+		focus = VOR_big_problem
+	}
+	x = 7
+	y = 6
+	completion_reward = {
+		#country_event = {
+		#    id = vorkuta_start.3 days = 0
+		#}
+    }
+} 
 
 shared_focus = {
 	id = VOR_warlord_people_unchained
@@ -87,25 +179,6 @@ shared_focus = {
 }
 	
 shared_focus = {
-	id = VOR_warlord_destroy_opressors
-	icon = GFX_VOR_Ynictogit_ygnetateleq
-	cost = 3.00
-	available = {
-		NOT = { has_country_flag = VOR_pechora_war }
-	}
-	prerequisite = {
-		focus = VOR_warlord_people_unchained
-	}
-	x = 4
-	y = 1
-	completion_reward = {
-		country_event = {
-			id = vorkuta_start.13 days = 0
-		}	
-	}
-}
-	
-shared_focus = {
 	id = VOR_warlord_revolutionary_transformations
 	icon = GFX_VOR_warlord_revolutionary_transformations
 	cost = 3.00
@@ -113,10 +186,10 @@ shared_focus = {
 		NOT = { has_country_flag = VOR_pechora_war }
 	}
 	prerequisite = {
-		focus = VOR_warlord_destroy_opressors
+		focus = VOR_warlord_people_unchained
 	}
-	x = 4
-	y = 2
+	x = 3
+	y = 1
 	completion_reward = {
 		country_event = {
 			id = vorkuta_start.14 days = 0
@@ -131,8 +204,8 @@ shared_focus = {
 	prerequisite = {
 		focus = VOR_warlord_revolutionary_transformations
 	}
-	x = 3
-	y = 3
+	x = 2
+	y = 2
 	completion_reward = {	
 	    country_event = {
 			id = vorkuta_start.15 days = 0
@@ -151,8 +224,8 @@ shared_focus = {
 	prerequisite = {
 		focus = VOR_warlord_revolutionary_transformations
 	}
-	x = 5
-	y = 3
+	x = 4
+	y = 2
 	completion_reward = {	
 	 country_event = {
 			id = vorkuta_start.16 days = 0
@@ -172,7 +245,7 @@ shared_focus = {
 	prerequisite = {
 		focus = VOR_warlord_people_unchained
 	}
-	x = 8
+	x = 9
 	y = 1
 	completion_reward = {
 	 country_event = {
@@ -182,10 +255,10 @@ shared_focus = {
 		add_ideas = VOR_council_of_war_and_defense
 	}
 }	
- 	
+ 		
 shared_focus = {
-	id = VOR_warlord_get_uncertains
-	icon = GFX_VOR_get_uncertains
+	id = VOR_warlord_revolutionary_struggle_troops
+	icon = GFX_VOR_warlord_revolutionary_struggle_troops
 	cost = 3.00
 	available = {
 		NOT = { has_country_flag = VOR_pechora_war }
@@ -195,27 +268,6 @@ shared_focus = {
 	}
 	x = 8
 	y = 2
-	completion_reward = {
-	country_event = {
-			id = vorkuta_start.18 days = 0
-		}
-        add_manpower = 10000	
-	}
-}
-
- 	
-shared_focus = {
-	id = VOR_warlord_revolutionary_struggle_troops
-	icon = GFX_VOR_warlord_revolutionary_struggle_troops
-	cost = 3.00
-	available = {
-		NOT = { has_country_flag = VOR_pechora_war }
-	}
-	prerequisite = {
-		focus = VOR_warlord_get_uncertains
-	}
-	x = 7
-	y = 3
 	completion_reward = {
 	country_event = {
 			id = vorkuta_start.19 days = 0
@@ -232,10 +284,10 @@ shared_focus = {
 		NOT = { has_country_flag = VOR_pechora_war }
 	}
 	prerequisite = {
-		focus = VOR_warlord_get_uncertains
+		focus = VOR_warlord_war_and_defence_council
 	}
-	x = 9
-	y = 3
+	x = 10
+	y = 2
 	completion_reward = {
 	country_event = {
 			id = vorkuta_start.20 days = 0
@@ -243,35 +295,98 @@ shared_focus = {
         add_war_support = 0.20	
 	}
 }	
- 	
+
 shared_focus = {
-	id = VOR_warlord_struggle_continues
-	icon = GFX_VOR_warlord_struggle_continues
+	id = VOR_warlord_get_uncertains
+	icon = GFX_VOR_get_uncertains
 	cost = 3.00
 	available = {
 		NOT = { has_country_flag = VOR_pechora_war }
 	}
 	prerequisite = {
-		focus = VOR_warlord_land_decree
+		focus = VOR_warlord_people_unchained
+	}
+	x = 5
+	y = 1
+	completion_reward = {
+	country_event = {
+			id = vorkuta_start.18 days = 0
+		}
+        add_manpower = 10000	
+	}
+}
+
+shared_focus = {
+	id = VOR_warlord_destroy_opressors
+	icon = GFX_VOR_Ynictogit_ygnetateleq
+	cost = 3.00
+	available = {
+		NOT = { has_country_flag = VOR_pechora_war }
+	}
+	prerequisite = {
+		focus = VOR_warlord_people_unchained
+	}
+	x = 7
+	y = 1
+	completion_reward = {
+		country_event = {
+			id = vorkuta_start.13 days = 0
+		}	
+	}
+}
+ 	
+shared_focus = {
+	id = VOR_raise_the_battleflags
+	icon = GFX_VOR_warlord_prepare_masses_for_war
+	cost = 3.00
+	available = {
+		NOT = { has_country_flag = VOR_pechora_war }
+	}
+	prerequisite = {
+		focus = VOR_warlord_get_uncertains
+	}
+	prerequisite = {
+		focus = VOR_warlord_destroy_opressors
+	}
+	x = 6
+	y = 2
+	completion_reward = {
+		#country_event = {
+		#	id = vorkuta_start.20 days = 0
+		#}
+        #add_war_support = 0.20	
+	}
+}
+
+shared_focus = {
+	id = VOR_flame_the_hearts
+	icon = GFX_VOR_warlord_prepare_masses_for_war
+	cost = 3.00
+	available = {
+		NOT = { has_country_flag = VOR_pechora_war }
+	}
+	prerequisite = {
+		focus = VOR_raise_the_battleflags
 	}
 	prerequisite = {
 		focus = VOR_warlord_freedom_decree
 	}
 	prerequisite = {
-		focus = VOR_warlord_revolutionary_struggle_troops
+		focus = VOR_warlord_land_decree
 	}
 	prerequisite = {
 		focus = VOR_warlord_prepare_masses_for_war
 	}
+	prerequisite = {
+		focus = VOR_warlord_revolutionary_struggle_troops
+	}
 	x = 6
-	y = 4
+	y = 3
 	completion_reward = {
-	    RUS_Smuta_Enable = yes
-		country_event = {	
-			id = vorkuta_start.21 days = 0
+	country_event = {
+			id = vorkuta_start.20 days = 0
 		}
-		add_war_support = 0.10
-		TNO_improve_army_professionalism_med = yes
+        add_war_support = 0.20	
 	}
 }
 
@@ -283,9 +398,12 @@ shared_focus = {
 		has_country_flag = VOR_pechora_war
 	}	
 	allow_branch = {
-		has_country_flag = VOR_pechora_war
+		OR = {
+			has_country_flag = VOR_pechora_war
+			has_country_flag = VOR_unlock_all_trees
+		}
 	}
-	x = 15
+	x = 14
 	y = 0
 	completion_reward = {
 	}
@@ -298,7 +416,7 @@ shared_focus = {
 	prerequisite = {
 		focus = VOR_pechora_war
 	}
-	x = 13
+	x = 12
 	y = 1
 	completion_reward = {
 	country_event = {	
@@ -316,13 +434,30 @@ shared_focus = {
 }
 
 shared_focus = {
+	id = VOR_motivate_peasanty
+	icon = GFX_VOR_your_word_comrade_mauser
+	cost = 3.00
+	prerequisite = {
+		focus = VOR_pechora_war
+	}
+	x = 14
+	y = 1
+	completion_reward = {
+		#country_event = {	
+		#	id = vorkuta_start.22 
+		#	days = 0
+		#}		
+	}
+}
+
+shared_focus = {
 	id = VOR_revolutionary_justice
 	icon = GFX_VOR_revolutionary_justice
 	cost = 3.00
 	prerequisite = {
 		focus = VOR_pechora_war
 	}
-	x = 17
+	x = 16
 	y = 1
 	completion_reward = {
 	add_timed_idea = {
@@ -336,17 +471,107 @@ shared_focus = {
 }	
 
 shared_focus = {
-	id = VOR_govering_bodies_reformation
-	icon = GFX_VOR_govering_bodies_reformation
+	id = VOR_peoples_revenge
+	icon = GFX_VOR_your_word_comrade_mauser
 	cost = 3.00
+	prerequisite = {
+		focus = VOR_your_word_comrade_mauser
+	}
 	prerequisite = {
 		focus = VOR_revolutionary_justice
 	}
 	prerequisite = {
+		focus = VOR_motivate_peasanty
+	}
+	x = 13
+	y = 2
+	completion_reward = {
+		#country_event = {	
+		#	id = vorkuta_start.22 
+		#	days = 0
+		#}		
+	}
+}
+
+shared_focus = {
+	id = VOR_revolution_from_bottom
+	icon = GFX_VOR_your_word_comrade_mauser
+	cost = 3.00
+	prerequisite = {
 		focus = VOR_your_word_comrade_mauser
+	}
+	prerequisite = {
+		focus = VOR_revolutionary_justice
+	}
+	prerequisite = {
+		focus = VOR_motivate_peasanty
 	}
 	x = 15
 	y = 2
+	completion_reward = {
+		#country_event = {	
+		#	id = vorkuta_start.22 
+		#	days = 0
+		#}		
+	}
+}
+
+shared_focus = {
+	id = VOR_blood_on_the_snow
+	icon = GFX_VOR_your_word_comrade_mauser
+	cost = 3.00
+	prerequisite = {
+		focus = VOR_peoples_revenge
+	}
+	prerequisite = {
+		focus = VOR_revolution_from_bottom
+	}
+	x = 14
+	y = 3
+	completion_reward = {
+		#country_event = {	
+		#	id = vorkuta_start.22 
+		#	days = 0
+		#}		
+		set_country_flag = VOR_unlock_all_trees
+		mark_focus_tree_layout_dirty = yes
+	}
+}
+
+shared_focus = {
+	id = VOR_neo_narodnichectvo
+	icon = GFX_VOR_neo_narodnichectvo
+	allow_branch = {
+		has_country_flag = VOR_unlock_all_trees
+	}
+	cost = 3.00
+	x = 10
+	y = 3
+	completion_reward = {
+	   add_stability = 0.05
+	   add_political_power = 100
+	   clr_country_flag = VOR_pechora_war
+	   add_country_leader_role = {
+			character = VOR_Boris_Kamkov
+			promote_leader = yes
+			country_leader = {
+				desc = "VOR_BORIS_KAMKOV_DESC"
+				ideology = socialist_neo_narodism_subtype
+				expire = "1999.1.1"
+				traits = { neo_revolutioner }
+			}
+		}
+	}
+}
+shared_focus = {
+	id = VOR_govering_bodies_reformation
+	icon = GFX_VOR_govering_bodies_reformation
+	cost = 3.00
+	prerequisite = {
+		focus = VOR_neo_narodnichectvo
+	}
+	x = 10
+	y = 4
 	completion_reward = {
 	TNO_improve_admin_efficiency_high = yes
 	country_event = {	
@@ -360,10 +585,10 @@ shared_focus = {
 	icon = GFX_VOR_run_production
 	cost = 3.00
 	prerequisite = {
-		focus = VOR_govering_bodies_reformation
+		focus = VOR_neo_narodnichectvo
 	}
-	x = 13
-	y = 3
+	x = 12
+	y = 4
 	completion_reward = {
 	TNO_improve_industrial_expertise_high = yes
 		set_temp_variable = { pus_temp = 2 }
@@ -381,19 +606,51 @@ shared_focus = {
 	icon = GFX_VOR_open_party_recruitment
 	cost = 3.00
 	prerequisite = {
-		focus = VOR_govering_bodies_reformation
+		focus = VOR_neo_narodnichectvo
 	}
-	x = 17
-	y = 3
+	x = 8
+	y = 4
 	completion_reward = {
-	add_political_power = 100
-	add_popularity = {
+		add_political_power = 100
+		add_popularity = {
 			ideology = socialist
 			popularity = 0.20
-	country_event = {	
+		}
+		country_event = {	
 			id = vorkuta_start.26 days = 0
 		}
-	  }
+	}
+}
+
+shared_focus = {
+	id = VOR_flame_of_the_battle
+	icon = GFX_VOR_creating_nvr
+	cost = 3.00
+	prerequisite = {
+		focus = VOR_flame_the_hearts
+	}
+	x = 6
+	y = 5
+	completion_reward = {
+		#country_event = {	
+		#	id = vorkuta_start.27 days = 0
+		#}
+	}
+}
+
+shared_focus = {
+	id = VOR_new_generation_of_socialists
+	icon = GFX_VOR_creating_nvr
+	cost = 3.00
+	prerequisite = {
+		focus = VOR_open_party_recruitment
+	}
+	x = 8
+	y = 5
+	completion_reward = {
+		#country_event = {	
+		#	id = vorkuta_start.27 days = 0
+		#}
 	}
 }
 
@@ -402,13 +659,10 @@ shared_focus = {
 	icon = GFX_VOR_creating_nvr
 	cost = 3.00
 	prerequisite = {
-		focus = VOR_open_party_recruitment
+		focus = VOR_govering_bodies_reformation
 	}
-	prerequisite = {
-		focus = VOR_run_production
-	}
-	x = 15
-	y = 4
+	x = 10
+	y = 5
 	completion_reward = {
 	country_event = {	
 			id = vorkuta_start.27 days = 0
@@ -417,30 +671,66 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = VOR_neo_narodnichectvo
-	icon = GFX_VOR_neo_narodnichectvo
+	id = VOR_image_of_worker_revolutioner
+	icon = GFX_VOR_creating_nvr
 	cost = 3.00
+	prerequisite = {
+		focus = VOR_run_production
+	}
+	x = 12
+	y = 5
+	completion_reward = {
+		#country_event = {	
+		#		id = vorkuta_start.27 days = 0
+		#	}
+	}
+}
+
+shared_focus = {
+	id = VOR_time_to_work
+	icon = GFX_VOR_creating_nvr
+	cost = 3.00
+	prerequisite = {
+		focus = VOR_blood_on_the_snow
+	}
+	x = 14
+	y = 5
+	completion_reward = {
+		#country_event = {	
+		#	id = vorkuta_start.27 days = 0
+		#}
+	}
+}
+
+shared_focus = {
+	id = VOR_warlord_struggle_continues
+	icon = GFX_VOR_warlord_struggle_continues
+	cost = 3.00
+	prerequisite = {
+		focus = VOR_flame_of_the_battle
+	}
+	prerequisite = {
+		focus = VOR_new_generation_of_socialists
+	}
 	prerequisite = {
 		focus = VOR_creating_nvr
 	}
-	x = 15
-	y = 5
-	completion_reward = {
-	   add_stability = 0.05
-	   add_political_power = 100
-	   clr_country_flag = VOR_pechora_war
-	   add_country_leader_role = {
-			character = VOR_Boris_Kamkov
-			promote_leader = yes
-			country_leader = {
-				desc = "VOR_BORIS_KAMKOV_DESC"
-				ideology = socialist_neo_narodism_subtype
-				expire = "1999.1.1"
-				traits = { neo_revolutioner }
-			}
-		}
+	prerequisite = {
+		focus = VOR_image_of_worker_revolutioner
 	}
-	
+	prerequisite = {
+		focus = VOR_time_to_work
+	}
+	x = 10
+	y = 6
+	completion_reward = {
+	    RUS_Smuta_Enable = yes
+		country_event = {	
+			id = vorkuta_start.21 days = 0
+		}
+		add_war_support = 0.10
+		TNO_improve_army_professionalism_med = yes
+	}
 }
 
 #SMUTA#
