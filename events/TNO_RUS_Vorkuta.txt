@@ -208,7 +208,7 @@ country_event = { #Shag_Pytuui
 	option = {
 		name = vorkuta_start.11.a
 		ai_chance = { factor = 1 }
-		set_cosmetic_tag = VOR_Eser_RUS
+		set_cosmetic_tag = VOR_Eser_warlord
 		set_politics = {
 			ruling_party = socialist
 		}	
@@ -255,6 +255,7 @@ country_event = { #Shag_Pytuui
 		retire_character = VOR_Boris_Trofimo
 		retire_character = VOR_Stepan_Garani
 		retire_character = VOR_Pyotr_Gladko
+		custom_effect_tooltip = VOR_tt_yugra
 		hidden_effect = {
 			load_focus_tree = VOR_SR_warlord
 			remove_ideas = {
@@ -271,6 +272,9 @@ country_event = { #Shag_Pytuui
 			    VOR_Vladimir_Karelin_eco
 			    VOR_Roberts_Eidemanis_sec
 		    }
+			YGR = {
+				country_event = { id = RUS.west_siberia.skeleton.1 days = 200 }
+			}
 		}
     }    	
 }		
