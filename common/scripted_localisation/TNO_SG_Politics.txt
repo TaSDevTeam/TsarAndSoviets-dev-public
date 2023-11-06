@@ -96,6 +96,12 @@ defined_text = {
 		trigger = { has_country_leader_ideology = communist_trotskyism_subtype }
 		localization_key = communist_trotskyism_subtype
 	}
+	
+	text = {
+		trigger = { has_country_leader_ideology = communist_esoteric_leninism_subtype }
+		localization_key = communist_esoteric_leninism_subtype
+	}
+	
 	text = {
 		localization_key = communist
 	}
@@ -175,6 +181,20 @@ defined_text = {
 		trigger = { has_country_leader_ideology = socialist_revolutionary_gaitanismo_subtype }
 		localization_key = socialist_revolutionary_gaitanismo_subtype
 	}
+	
+	text = {
+		trigger = { has_country_leader_ideology = socialist_social_monarchist_subtype }
+		localization_key = socialist_social_monarchist_subtype
+	}
+	text = {
+		trigger = { has_country_leader_ideology = socialist_social_monarchist_but_worse_subtype }
+		localization_key = socialist_social_monarchist_but_worse_subtype
+	}
+	text = {
+		trigger = { has_country_leader_ideology = socialist_neo_narodism_subtype }
+		localization_key = socialist_neo_narodism_subtype
+	}			
+			
 	text = {
 		localization_key = socialist
 	}
@@ -238,6 +258,12 @@ defined_text = {
 		trigger = { has_country_leader_ideology = progressivism_gaitanismo_subtype }
 		localization_key = progressivism_gaitanismo_subtype
 	}
+	
+	text = {
+		trigger = { has_country_leader_ideology = progressivism_progressive_theocracy_subtype }
+		localization_key = progressivism_progressive_theocracy_subtype
+	}
+	
 	text = {
 		localization_key = progressivism
 	}
@@ -487,6 +513,12 @@ defined_text = {
 		trigger = { has_country_leader_ideology = paternalism_authoritarian_developmentalism_subtype }
 		localization_key = paternalism_authoritarian_developmentalism_subtype
 	}
+	
+	text = {
+		trigger = { has_country_leader_ideology = paternalism_mladorossi_idea_subtype }
+		localization_key = paternalism_mladorossi_idea_subtype
+	}
+	
 	text = {
 		localization_key = paternalism
 	}
@@ -570,6 +602,16 @@ defined_text = {
 		trigger = { has_country_leader_ideology = despotism_aristocratic_republicanism_subtype }
 		localization_key = despotism_aristocratic_republicanism_subtype
 	}	
+	
+	text = {
+		trigger = { has_country_leader_ideology = despotism_mladorossi_autocracy_subtype }
+		localization_key = despotism_mladorossi_autocracy_subtype
+	}
+	text = {
+		trigger = { has_country_leader_ideology = despotism_securitocracy_subtype }
+		localization_key = despotism_securitocracy_subtype
+	}
+			
 	text = {
 		localization_key = despotism
 	}
@@ -684,6 +726,12 @@ defined_text = {
 		trigger = { has_country_leader_ideology = fascism_social_credit_subtype }
 		localization_key = fascism_social_credit_subtype
 	}
+	
+	text = {
+		trigger = { has_country_leader_ideology = fascism_mladosocialism_subtype }
+		localization_key = fascism_mladosocialism_subtype
+	}
+	
 	text = {
 		localization_key = fascism
 	}

@@ -10,7 +10,7 @@ country_event = { #StranaStart
 	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.1"}
 	title = vorkuta_start.1.t
 	desc = vorkuta_start.1.d
-	picture = GFX_event_Lager_ochet
+	#picture = GFX_event_Lager_ochet
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -30,7 +30,7 @@ country_event = { #Boris
 	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.2"}
 	title = vorkuta_start.2.t
 	desc = vorkuta_start.2.d
-	picture = GFX_event_Boris_Kamkov
+	#picture = GFX_event_Boris_Kamkov
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -46,7 +46,7 @@ country_event = { #Delai_dengi
 	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.3"}
 	title = vorkuta_start.3.t
 	desc = vorkuta_start.3.d
-	picture = GFX_event_obmen
+	#picture = GFX_event_obmen
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -72,7 +72,7 @@ country_event = { #Posled_day
 	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.4"}
 	title = vorkuta_start.4.t
 	desc = vorkuta_start.4.d
-	picture = GFX_event_posl
+	#picture = GFX_event_posl
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -88,7 +88,7 @@ country_event = { #Normu
 	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.5"}
 	title = vorkuta_start.5.t
 	desc = vorkuta_start.5.d
-	picture = GFX_event_za_kulico
+	#picture = GFX_event_za_kulico
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -110,7 +110,7 @@ country_event = { #Avaria
 	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
 	title = vorkuta_start.6.t
 	desc = vorkuta_start.6.d
-	picture = GFX_event_avaria
+	#picture = GFX_event_avaria
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -125,7 +125,7 @@ country_event = { #Shar_pervii
 	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.7"}
 	title = vorkuta_start.7.t
 	desc = vorkuta_start.7.d
-	picture = GFX_event_shag_odin
+	#picture = GFX_event_shag_odin
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -144,7 +144,7 @@ country_event = { #Shad_vtoroi
 	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.8"}
 	title = vorkuta_start.8.t
 	desc = vorkuta_start.8.d
-	picture = GFX_event_shag_dva
+	#picture = GFX_event_shag_dva
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -163,7 +163,7 @@ country_event = { #Shag_tretii
 	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.9"}
 	title = vorkuta_start.9.t
 	desc = vorkuta_start.9.d
-	picture = GFX_event_shag_tri
+	#picture = GFX_event_shag_tri
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -182,7 +182,7 @@ country_event = { #Shag_chetvertii
 	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.10"}
 	title = vorkuta_start.10.t
 	desc = vorkuta_start.10.d
-	picture = GFX_event_shag_chetare
+	#picture = GFX_event_shag_chetare
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -201,14 +201,14 @@ country_event = { #Shag_Pytuui
 	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.11"}
 	title = vorkuta_start.11.t
 	desc = vorkuta_start.11.d
-	picture = GFX_event_shag_pyat
+	#picture = GFX_event_shag_pyat
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = {
 		name = vorkuta_start.11.a
 		ai_chance = { factor = 1 }
-		set_cosmetic_tag = VOR_Eser_RUS
+		set_cosmetic_tag = VOR_Eser_warlord
 		set_politics = {
 			ruling_party = socialist
 		}	
@@ -255,6 +255,7 @@ country_event = { #Shag_Pytuui
 		retire_character = VOR_Boris_Trofimo
 		retire_character = VOR_Stepan_Garani
 		retire_character = VOR_Pyotr_Gladko
+		custom_effect_tooltip = VOR_tt_yugra
 		hidden_effect = {
 			load_focus_tree = VOR_SR_warlord
 			remove_ideas = {
@@ -271,6 +272,9 @@ country_event = { #Shag_Pytuui
 			    VOR_Vladimir_Karelin_eco
 			    VOR_Roberts_Eidemanis_sec
 		    }
+			YGR = {
+				country_event = { id = RUS.west_siberia.skeleton.1 days = 200 }
+			}
 		}
     }    	
 }		
@@ -280,7 +284,7 @@ country_event = { #
 	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.12"}
 	title = vorkuta_start.12.t
 	desc = vorkuta_start.12.d
-	#picture = GFX_event_shag_pyat
+	##picture = GFX_event_shag_pyat
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -308,7 +312,7 @@ country_event = { #
 	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.13"}
 	title = vorkuta_start.13.t
 	desc = vorkuta_start.13.d
-	#picture = GFX_event_shag_pyat
+	##picture = GFX_event_shag_pyat
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -332,7 +336,7 @@ country_event = { #
 	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.14"}
 	title = vorkuta_start.14.t
 	desc = vorkuta_start.14.d
-	#picture = GFX_event_shag_pyat
+	##picture = GFX_event_shag_pyat
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -357,7 +361,7 @@ country_event = { #
 	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.14"}
 	title = vorkuta_start.15.t
 	desc = vorkuta_start.15.d
-	#picture = GFX_event_shag_pyat
+	##picture = GFX_event_shag_pyat
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -387,7 +391,7 @@ country_event = { #zebly
 	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
 	title = vorkuta_start.16.t
 	desc = vorkuta_start.16.d
-	picture = GFX_event_avaria
+	#picture = GFX_event_avaria
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -402,7 +406,7 @@ country_event = { #defense
 	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
 	title = vorkuta_start.17.t
 	desc = vorkuta_start.17.d
-	picture = GFX_event_avaria
+	#picture = GFX_event_avaria
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -417,7 +421,7 @@ country_event = { #Colebanie
 	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
 	title = vorkuta_start.18.t
 	desc = vorkuta_start.18.d
-	picture = GFX_event_avaria
+	#picture = GFX_event_avaria
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -432,7 +436,7 @@ country_event = { #Otrudo
 	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
 	title = vorkuta_start.19.t
 	desc = vorkuta_start.19.d
-	picture = GFX_event_avaria
+	#picture = GFX_event_avaria
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -447,7 +451,7 @@ country_event = { #Massi
 	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
 	title = vorkuta_start.20.t
 	desc = vorkuta_start.20.d
-	picture = GFX_event_avaria
+	#picture = GFX_event_avaria
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -462,15 +466,15 @@ country_event = { #Borba
 	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
 	title = vorkuta_start.21.t
 	desc = vorkuta_start.21.d
-	picture = GFX_event_avaria
+	#picture = GFX_event_avaria
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = {
 		name = vorkuta_start.21.a
+		ai_chance = { factor = 1 }
 		hidden_effect = {
 			load_focus_tree = VOR_SR_SMUTA
-		ai_chance = { factor = 1 }
 		}
 	}
 }
@@ -480,7 +484,7 @@ country_event = { #Caesaris Caesari
 	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
 	title = vorkuta_start.22.t
 	desc = vorkuta_start.22.d
-	picture = GFX_event_avaria
+	#picture = GFX_event_avaria
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -495,7 +499,7 @@ country_event = { #Sravedlivost
 	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
 	title = vorkuta_start.23.t
 	desc = vorkuta_start.23.d
-	picture = GFX_event_avaria
+	#picture = GFX_event_avaria
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -510,7 +514,7 @@ country_event = { #Ihga
 	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
 	title = vorkuta_start.24.t
 	desc = vorkuta_start.24.d
-	picture = GFX_event_avaria
+	#picture = GFX_event_avaria
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -525,7 +529,7 @@ country_event = { #remint
 	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
 	title = vorkuta_start.25.t
 	desc = vorkuta_start.25.d
-	picture = GFX_event_avaria
+	#picture = GFX_event_avaria
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -540,7 +544,7 @@ country_event = { #sobr
 	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
 	title = vorkuta_start.26.t
 	desc = vorkuta_start.26.d
-	picture = GFX_event_avaria
+	#picture = GFX_event_avaria
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -555,7 +559,7 @@ country_event = { #rybes
 	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
 	title = vorkuta_start.27.t
 	desc = vorkuta_start.27.d
-	picture = GFX_event_avaria
+	#picture = GFX_event_avaria
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -573,7 +577,7 @@ country_event = { #rybes
 	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
 	title = vorkuta_smutaa.1.t
 	desc = vorkuta_smutaa.1.d
-	picture = GFX_event_MAR_Kosygin_24
+	#picture = GFX_event_MAR_Kosygin_24
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -588,7 +592,7 @@ country_event = { #Смена
 	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
 	title = vorkuta_smutaa.2.t
 	desc = vorkuta_smutaa.2.d
-	picture = GFX_event_MAR_Kosygin_54
+	#picture = GFX_event_MAR_Kosygin_54
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -603,7 +607,7 @@ country_event = { #Рабочие будни Агитпропа
 	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
 	title = vorkuta_smutaa.3.t
 	desc = vorkuta_smutaa.3.d
-	picture = GFX_event_MAR_Kosygin_28
+	#picture = GFX_event_MAR_Kosygin_28
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -618,7 +622,7 @@ country_event = { #Перерыв!
 	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
 	title = vorkuta_smutaa.4.t
 	desc = vorkuta_smutaa.4.d
-	picture = GFX_event_avaria
+	#picture = GFX_event_avaria
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -633,7 +637,7 @@ country_event = { #Ловушка времени
 	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
 	title = vorkuta_smutaa.5.t
 	desc = vorkuta_smutaa.5.d
-	picture = GFX_event_avaria
+	#picture = GFX_event_avaria
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -648,7 +652,7 @@ country_event = { #Сомнения
 	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
 	title = vorkuta_smutaa.6.t
 	desc = vorkuta_smutaa.6.d
-	picture = GFX_event_avaria
+	#picture = GFX_event_avaria
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -680,7 +684,7 @@ country_event = { #Радиоперехват
 	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
 	title = vorkuta_smutaa.7.t
 	desc = vorkuta_smutaa.7.d
-	picture = GFX_event_avaria
+	#picture = GFX_event_avaria
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -695,7 +699,7 @@ country_event = { #Знамение
 	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
 	title = vorkuta_smutaa.8.t
 	desc = vorkuta_smutaa.8.d
-	picture = GFX_event_avaria
+	#picture = GFX_event_avaria
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -710,7 +714,7 @@ country_event = { #Финальная остановка
 	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
 	title = vorkuta_smutaa.9.t
 	desc = vorkuta_smutaa.9.d
-	picture = GFX_event_avaria
+	#picture = GFX_event_avaria
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -727,7 +731,7 @@ country_event = {
 	id = vor_reg.0 
 	title = vor_reg.0.t 
 	desc = vor_reg.0.d 
-	picture = 
+	#picture = 
 	
 	is_triggered_only = yes 
 	fire_only_once = yes 
@@ -741,7 +745,7 @@ country_event = {
 	id = vor_reg.1
 	title = vor_reg.1.t 
 	desc = vor_reg.1.d 
-	picture = 
+	#picture = 
 	
 	is_triggered_only = yes 
 	fire_only_once = yes 
@@ -755,7 +759,7 @@ country_event = {
 	id = vor_reg.2
 	title = vor_reg.2.t 
 	desc = vor_reg.2.d 
-	picture = 
+	#picture = 
 	
 	is_triggered_only = yes 
 	fire_only_once = yes 
@@ -769,7 +773,7 @@ country_event = {
 	id = vor_reg.3
 	title = vor_reg.3.t 
 	desc = vor_reg.3.d 
-	picture = 
+	#picture = 
 	
 	is_triggered_only = yes 
 	fire_only_once = yes 
@@ -783,7 +787,7 @@ country_event = {
 	id = vor_reg.4
 	title = vor_reg.4.t 
 	desc = vor_reg.4.d 
-	picture = 
+	#picture = 
 	
 	is_triggered_only = yes 
 	fire_only_once = yes 
@@ -797,7 +801,7 @@ country_event = {
 	id = vor_reg.5
 	title = vor_reg.5.t 
 	desc = vor_reg.5.d 
-	picture = 
+	#picture = 
 	
 	is_triggered_only = yes 
 	fire_only_once = yes 
@@ -811,7 +815,7 @@ country_event = {
 	id = vor_reg.6
 	title = vor_reg.6.t 
 	desc = vor_reg.6.d 
-	picture = 
+	#picture = 
 	
 	is_triggered_only = yes 
 	fire_only_once = yes 
@@ -825,7 +829,7 @@ country_event = {
 	id = vor_reg.7 
 	title = vor_reg.7.t 
 	desc = vor_reg.7.d 
-	picture = 
+	#picture = 
 	
 	is_triggered_only = yes 
 	fire_only_once = yes 
@@ -839,7 +843,7 @@ country_event = {
 	id = vor_reg.8
 	title = vor_reg.8.t 
 	desc = vor_reg.8.d 
-	picture = 
+	#picture = 
 	
 	is_triggered_only = yes 
 	fire_only_once = yes 
@@ -853,7 +857,7 @@ country_event = {
 	id = vor_reg.9
 	title = vor_reg.9.t 
 	desc = vor_reg.9.d 
-	picture = 
+	#picture = 
 	
 	is_triggered_only = yes 
 	fire_only_once = yes 
@@ -867,7 +871,7 @@ country_event = {
 	id = vor_reg.10 
 	title = vor_reg.10.t 
 	desc = vor_reg.10.d 
-	picture = 
+	#picture = 
 	
 	is_triggered_only = yes 
 	fire_only_once = yes 
@@ -881,7 +885,7 @@ country_event = {
 	id = vor_reg.11 
 	title = vor_reg.11.t 
 	desc = vor_reg.11.d 
-	picture = 
+	#picture = 
 	
 	is_triggered_only = yes 
 	fire_only_once = yes 
@@ -895,7 +899,7 @@ country_event = {
 	id = vor_reg.12 
 	title = vor_reg.12.t 
 	desc = vor_reg.12.d 
-	picture = 
+	#picture = 
 	
 	is_triggered_only = yes 
 	fire_only_once = yes 
@@ -909,7 +913,7 @@ country_event = {
 	id = vor_reg.13 
 	title = vor_reg.13.t 
 	desc = vor_reg.13.d 
-	picture = 
+	#picture = 
 	
 	is_triggered_only = yes 
 	fire_only_once = yes 
@@ -923,7 +927,7 @@ country_event = {
 	id = vor_reg.14
 	title = vor_reg.14.t 
 	desc = vor_reg.14.d 
-	picture = 
+	#picture = 
 	
 	is_triggered_only = yes 
 	fire_only_once = yes 
@@ -933,25 +937,12 @@ country_event = {
 		ai_chance = { factor = 1 }
 	}
 }
-country_event = {
-	id = vor_reg.14
-	title = vor_reg.14.t 
-	desc = vor_reg.14.d 
-	picture = 
-	
-	is_triggered_only = yes 
-	fire_only_once = yes 
 
-	option = {
-		name = vor_reg.14.a
-		ai_chance = { factor = 1 }
-	}
-}
 country_event = {
 	id = vor_reg.15
 	title = vor_reg.15.t 
 	desc = vor_reg.15.d 
-	picture = 
+	#picture = 
 	
 	is_triggered_only = yes 
 	fire_only_once = yes 
@@ -965,7 +956,7 @@ country_event = {
 	id = vor_reg.16
 	title = vor_reg.16.t 
 	desc = vor_reg.16.d 
-	picture = 
+	#picture = 
 	
 	is_triggered_only = yes 
 	fire_only_once = yes 
@@ -979,7 +970,7 @@ country_event = {
 	id = vor_reg.17
 	title = vor_reg.17.t 
 	desc = vor_reg.17.d 
-	picture = 
+	#picture = 
 	
 	is_triggered_only = yes 
 	fire_only_once = yes 
@@ -993,7 +984,7 @@ country_event = {
 	id = vor_reg.18
 	title = vor_reg.18.t 
 	desc = vor_reg.18.d 
-	picture = 
+	#picture = 
 	
 	is_triggered_only = yes 
 	fire_only_once = yes 
@@ -1007,7 +998,7 @@ country_event = {
 	id = vor_reg.19
 	title = vor_reg.19.t 
 	desc = vor_reg.19.d 
-	picture = 
+	#picture = 
 	
 	is_triggered_only = yes 
 	fire_only_once = yes 
@@ -1021,7 +1012,7 @@ country_event = {
 	id = vor_reg.20
 	title = vor_reg.20.t 
 	desc = vor_reg.20.d 
-	picture = 
+	#picture = 
 	
 	is_triggered_only = yes 
 	fire_only_once = yes 
@@ -1035,7 +1026,7 @@ country_event = {
 	id = vor_reg.21
 	title = vor_reg.21.t 
 	desc = vor_reg.21.d 
-	picture = 
+	#picture = 
 	
 	is_triggered_only = yes 
 	fire_only_once = yes 
@@ -1049,7 +1040,7 @@ country_event = {
 	id = vor_reg.22
 	title = vor_reg.22.t 
 	desc = vor_reg.22.d 
-	picture = 
+	#picture = 
 	
 	is_triggered_only = yes 
 	fire_only_once = yes 
@@ -1063,7 +1054,7 @@ country_event = {
 	id = vor_reg.23
 	title = vor_reg.23.t 
 	desc = vor_reg.23.d 
-	picture = 
+	#picture = 
 	
 	is_triggered_only = yes 
 	fire_only_once = yes 
@@ -1077,7 +1068,7 @@ country_event = {
 	id = vor_reg.24
 	title = vor_reg.24.t 
 	desc = vor_reg.24.d 
-	picture = 
+	#picture = 
 	
 	is_triggered_only = yes 
 	fire_only_once = yes 
@@ -1091,7 +1082,7 @@ country_event = {
 	id = vor_reg.25
 	title = vor_reg.25.t 
 	desc = vor_reg.25.d 
-	picture = 
+	#picture = 
 	
 	is_triggered_only = yes 
 	fire_only_once = yes 
@@ -1105,7 +1096,7 @@ country_event = {
 	id = vor_reg.26
 	title = vor_reg.26.t 
 	desc = vor_reg.26.d 
-	picture = 
+	#picture = 
 	
 	is_triggered_only = yes 
 	fire_only_once = yes 
@@ -1119,7 +1110,7 @@ country_event = {
 	id = vor_reg.27
 	title = vor_reg.27.t 
 	desc = vor_reg.27.d 
-	picture = 
+	#picture = 
 	
 	is_triggered_only = yes 
 	fire_only_once = yes 
@@ -1133,7 +1124,7 @@ country_event = {
 	id = vor_reg.28
 	title = vor_reg.28.t 
 	desc = vor_reg.28.d 
-	picture = 
+	#picture = 
 	
 	is_triggered_only = yes 
 	fire_only_once = yes 
@@ -1147,7 +1138,7 @@ country_event = {
 	id = vor_reg.29
 	title = vor_reg.29.t 
 	desc = vor_reg.29.d 
-	picture = 
+	#picture = 
 	
 	is_triggered_only = yes 
 	fire_only_once = yes 

@@ -1659,3 +1659,33 @@ CC_very_severe_concession_active = {
 	}
 }
 
+###TSAR AND SOVIETS THING
+TNO_fopo_far_eastern_revolt_selected = {
+	OR = {
+		check_variable = { selected_conflict_id = token:GC_FarEasternRevolt }
+		AND = {
+			is_in_array = { TNO_active_conflicts = token:GC_FarEasternRevolt }
+			is_ai = yes
+		}
+	}
+}
+
+TNO_fopo_manchurian_civil_war_selected = {
+	OR = {
+		check_variable = { selected_conflict_id = token:GC_ManchurianCivilWar }
+		AND = {
+			is_in_array = { TNO_active_conflicts = token:GC_ManchurianCivilWar }
+			is_ai = yes
+		}
+	}
+}
+
+TNO_fopo_uar_influence_battle_selected = {
+	OR = {
+		check_variable = { selected_conflict_id = token:GC_UAR_influence_battle }
+		AND = {
+			is_in_array = { TNO_active_conflicts = token:GC_UAR_influence_battle }
+			is_ai = yes
+		}
+	}
+}	
