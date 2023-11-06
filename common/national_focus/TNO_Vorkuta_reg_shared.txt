@@ -1,5 +1,3 @@
-
-
 shared_focus = {
 		id = idealogia
 		icon = GFX_odealogia
@@ -9,7 +7,7 @@ shared_focus = {
 		y = 1
 		
 		completion_reward = {
-			country_event  = { id = vorkuta_reg.0 days = 0 }
+			country_event  = { id = vor_reg.0 days = 0 }
 			add_political_power = 100
 		}
 	}
@@ -27,7 +25,7 @@ shared_focus = {
 		y = 2
 
 		completion_reward = {
-			country_event = { id = vorkuta_reg.1 days = 0 }
+			country_event = { id = vor_reg.1 days = 0 }
 			add_stability = 0.03
 			add_popularity = {
 				ideology = liberalism
@@ -49,7 +47,7 @@ shared_focus = {
 		y = 2
 
 		completion_reward = {
-			country_event = { id = vorkuta_reg.2 days = 0 }
+			country_event = { id = vor_reg.2 days = 0 }
 			add_popularity = {
 				ideology = socialist
 				popularity = 0.03
@@ -71,7 +69,7 @@ shared_focus = {
 		y = 2
 
 		completion_reward = {
-			country_event = { id = vorkuta_reg.3 days = 0 }
+			country_event = { id = vor_reg.3 days = 0 }
 			add_war_support = 0.03
 			add_popularity = {
 				ideology = fascism
@@ -99,7 +97,7 @@ shared_focus = {
 		y = 3
 
 		completion_reward = {
-			country_event = { id = vorkuta_reg.4 days = 0 }
+			country_event = { id = vor_reg.4 days = 0 }
 			### Это надо прописать в ивенте ###
 			set_party_name = {
     			ideology = socialist
@@ -123,7 +121,7 @@ shared_focus = {
 		y = 4
 
 		completion_reward = {
-			country_event = { id = vorkuta_reg.5 days = 0 }
+			country_event = { id = vor_reg.5 days = 0 }
 			add_political_power = 100
 			add_popularity = {
 				ideology = socialist
@@ -146,7 +144,7 @@ shared_focus = {
 		y = 5
 
 		completion_reward = {
-			country_event = { id = vorkuta_reg.6 days = 0 }
+			country_event = { id = vor_reg.6 days = 0 }
 			tno_press_rights_improve = yes 
 		}
 
@@ -164,7 +162,7 @@ shared_focus = {
 		y = 4
 
 		completion_reward = {
-			country_event = { id = vorkuta_reg.7 days = 0 }
+			country_event = { id = vor_reg.7 days = 0 }
 			add_political_power = 50
 			set_temp_variable = { gdp_growth_temp = 1.50 }
 			tno_improve_agriculture = yes 
@@ -185,7 +183,7 @@ shared_focus = {
 		y = 5
 
 		completion_reward = {
-			country_event = { id = vorkuta_reg.8 days = 0 }
+			country_event = { id = vor_reg.8 days = 0 }
 		}
 
 	}
@@ -202,7 +200,7 @@ shared_focus = {
 		y = 4
 
 		completion_reward = { 
-			country_event = { id = vorkuta_reg.9 days = 0 }
+			country_event = { id = vor_reg.9 days = 0 }
 			tno_trade_laws_improve = yes
 			tno_pensions_improve = yes
 			swap_ideas = {
@@ -227,7 +225,7 @@ shared_focus = {
 		y = 5
 
 		completion_reward = {
-			country_event = { id = vorkuta_reg.10 days = 0 }
+			country_event = { id = vor_reg.10 days = 0 }
 			add_stability = 0.08
 			TNO_improve_poverty_high = yes
 		}
@@ -249,7 +247,7 @@ shared_focus = {
 		y = 6
 
 		completion_reward = {
-			country_event = { id = vorkuta_reg.11 days = 0 }
+			country_event = { id = vor_reg.11 days = 0 }
 			swap_ideas = {
 				remove_idea = tno_trade_unions_illegal
 				add_idea = tno_trade_unions_all_allowed_dummy
@@ -272,7 +270,7 @@ shared_focus = {
 		y = 6
 
 		completion_reward = {
-			country_event = { id = vorkuta_reg.12 days = 0 }
+			country_event = { id = vor_reg.12 days = 0 }
 			add_stability = 0.1
 			IF = {
 				limit = {
@@ -293,8 +291,8 @@ shared_focus = {
 		}
 	}
 	shared_focus = {
-		id = siesd
-		icon = GFX_siesd
+		id = terror_in_service_of_revolution
+		icon = GFX_terror_in_service_of_revolution
 		cost = 10.00
 
 		prerequisite = {
@@ -308,7 +306,26 @@ shared_focus = {
 		y = 7
 
 		completion_reward = {
-			country_event = { id = vorkuta_reg.13 days = 0 }
+			country_event = { id = vor_regg.13 days = 0 }
+		}
+	}
+	shared_focus = {
+		id = siesd
+		icon = GFX_siesd
+		cost = 10.00
+
+		prerequisite = {
+			focus = federacii_rabochi
+		}
+		prerequisite = {
+			focus = moloday_partia
+		}
+
+		x = 7
+		y = 8
+
+		completion_reward = {
+			country_event = { id = vor_reg.13 days = 0 }
 			add_political_power = 100
 			TNO_improve_admin_efficiency_low = yes
 		}
@@ -318,7 +335,7 @@ shared_focus = {
 	
 	shared_focus = {
 		id = VOR_engine_of_revolution
-		icon = GFX_goal_unknown
+		icon = GFX_VOR_engine_of_revolution
 		cost = 10.00
 
 		x = 19
@@ -333,7 +350,7 @@ shared_focus = {
 	}
 	shared_focus = {
 		id = VOR_factories_to_workers
-		icon = GFX_goal_unknown
+		icon = GFX_VOR_factories_to_workers
 		cost = 10.00
 
 		prerequisite = { focus = VOR_engine_of_revolution }
@@ -349,7 +366,7 @@ shared_focus = {
 	}
 	shared_focus = {
 		id = VOR_democracy_in_workplace
-		icon = GFX_goal_unknown
+		icon = GFX_VOR_democracy_in_workplace
 		cost = 10.00
 
 		prerequisite = { focus = VOR_factories_to_workers }
@@ -365,7 +382,7 @@ shared_focus = {
 	}
 	shared_focus = {
 		id = VOR_triumph_of_syndicalism
-		icon = GFX_goal_unknown
+		icon = GFX_VOR_triumph_of_syndicalism
 		cost = 10.00
 
 		prerequisite = { focus = VOR_democracy_in_workplace }
@@ -383,7 +400,7 @@ shared_focus = {
 	}
 	shared_focus = {
 		id = VOR_mountains_of_gems
-		icon = GFX_goal_unknown
+		icon = GFX_VOR_mountains_of_gems
 		cost = 10.00
 
 		prerequisite = { focus = VOR_factories_to_workers }
@@ -397,7 +414,7 @@ shared_focus = {
 	}
 	shared_focus = {
 		id = VOR_revtranssib
-		icon = GFX_goal_unknown
+		icon = GFX_VOR_revtranssib
 		cost = 10.00
 
 		prerequisite = { focus = VOR_mountains_of_gems }
@@ -412,7 +429,7 @@ shared_focus = {
 	}
 	shared_focus = {
 		id = VOR_part_of_team
-		icon = GFX_goal_unknown
+		icon = GFX_VOR_part_of_team
 		cost = 10.00
 
 		prerequisite = { focus = VOR_factories_to_workers }
@@ -430,7 +447,7 @@ shared_focus = {
 	}
 	shared_focus = {
 		id = VOR_let_people_decide
-		icon = GFX_goal_unknown
+		icon = GFX_VOR_let_people_decide
 		cost = 10.00
 
 		prerequisite = { focus = VOR_part_of_team }
@@ -445,7 +462,7 @@ shared_focus = {
 	}
 	shared_focus = {
 		id = VOR_land_to_peasants
-		icon = GFX_goal_unknown
+		icon = GFX_VOR_land_to_peasants
 		cost = 10.00
 
 		prerequisite = { focus = VOR_engine_of_revolution }
@@ -460,7 +477,7 @@ shared_focus = {
 	}
 	shared_focus = {
 		id = VOR_new_walks_in_people
-		icon = GFX_goal_unknown
+		icon = GFX_VOR_new_walks_in_people
 		cost = 10.00
 
 		prerequisite = { focus = VOR_land_to_peasants }
@@ -475,7 +492,7 @@ shared_focus = {
 	}
 	shared_focus = {
 		id = VOR_revitalize_grain_belt
-		icon = GFX_goal_unknown
+		icon = GFX_VOR_revitalize_grain_belt
 		cost = 10.00
 
 		prerequisite = { focus = VOR_land_to_peasants }
@@ -490,7 +507,7 @@ shared_focus = {
 	}
 	shared_focus = {
 		id = VOR_release_education
-		icon = GFX_goal_unknown
+		icon = GFX_VOR_release_education
 		cost = 10.00
 
 		prerequisite = { focus = VOR_new_walks_in_people }
@@ -506,7 +523,7 @@ shared_focus = {
 	}
 	shared_focus = {
 		id = VOR_beaten_path
-		icon = GFX_goal_unknown
+		icon = GFX_VOR_beaten_path
 		cost = 10.00
 
 		prerequisite = { focus = VOR_release_education }
@@ -523,7 +540,7 @@ shared_focus = {
 	}
 	shared_focus = {
 		id = VOR_revive_dalton_plan
-		icon = GFX_goal_unknown
+		icon = GFX_VOR_revive_dalton_plan
 		cost = 10.00
 
 		prerequisite = { focus = VOR_release_education }
@@ -552,6 +569,22 @@ shared_focus = {
 			country_event = { id = vor_reg.28 days = 0 }
 		}
 
+	}
+	shared_focus = {
+		id = VOR_earth_and_will
+		icon = GFX_VOR_earth_and_will
+		cost = 10.00
+
+		prerequisite = { focus = VOR_triumph_of_syndicalism }
+		prerequisite = { focus = VOR_revtranssib }
+		prerequisite = { focus = VOR_let_people_decide }
+		prerequisite = { focus = VOR_focus }
+		x = 22
+		y = 8
+
+		completion_reward = {
+			country_event = { id = vor_reg.29 days = 0 }
+		}
 	}
 	shared_focus = {
 		id = newfocus_30
@@ -711,95 +744,120 @@ shared_focus = {
 
 	}
 	shared_focus = {
-		id = newfocus_44
+		id = VOR_revolution_against_world_order
 		icon = GFX_goal_unknown
 		cost = 10.00
 		x = 49
 		y = 2
 
-	}
-	shared_focus = {
-		id = newfocus_45
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = newfocus_44
-		}
-		x = 47
-		y = 3
-
-	}
-	shared_focus = {
-		id = newfocus_46
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = newfocus_45
-		}
-		x = 47
-		y = 4
-
-	}
-	shared_focus = {
-		id = newfocus_48
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = newfocus_44
-		}
-		x = 49
-		y = 3
-
-	}
-	shared_focus = {
-		id = newfocus_47
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = newfocus_48
-		}
-		x = 49
-		y = 4
-
-	}
-	
-	shared_focus = {
-		id = VOR_earth_and_will
-		icon = GFX_goal_unknown
-		cost = 10.00
-
-		prerequisite = { focus = VOR_triumph_of_syndicalism }
-		prerequisite = { focus = VOR_revtranssib }
-		prerequisite = { focus = VOR_let_people_decide }
-		prerequisite = { focus = VOR_focus }
-
-		x = 22
-		y = 8
-
 		completion_reward = {
-			country_event = { id = vor_reg.29 days = 0 }
+			country_event = { id = vor_reg_politic.0 days = 0 }
 		}
-
 	}
 	shared_focus = {
-		id = newfocus_49
+		id = VOR_crimes_of_japanese
 		icon = GFX_goal_unknown
 		cost = 10.00
-		prerequisite = {
-			focus = newfocus_50
+		x = -2
+		y = 2
+		relative_position_id = VOR_revolution_against_world_order 
+		prerequisite = { focus = VOR_revolution_against_world_order }
+		completion_reward = {
+			country_event = { id = vor_reg_politic.1 days = 0 }
+			}
 		}
-		x = 51
-		y = 4
-
-	}
 	shared_focus = {
-		id = newfocus_50
+		id = VOR_hypocrisy_of_americans
 		icon = GFX_goal_unknown
 		cost = 10.00
-		prerequisite = {
-			focus = newfocus_44
+		x = 0
+		y = 2
+		relative_position_id = VOR_revolution_against_world_order 
+		prerequisite = { focus = VOR_revolution_against_world_order }
+		completion_reward = {
+			country_event = { id = vor_reg_politic.2 days = 0 }
+			}
 		}
-		x = 51
+	shared_focus = {
+		id = VOR_and_atrocities_of_nazis
+		icon = GFX_goal_unknown
+		cost = 10.00
+		x = 2
+		y = 2
+		relative_position_id = VOR_revolution_against_world_order 
+		prerequisite = { focus = VOR_revolution_against_world_order }
+		completion_reward = {
+			country_event = { id = vor_reg_politic.3 days = 0 }
+				}
+			}
+	shared_focus = {
+		id = VOR_cannot_be_forgiven
+		icon = GFX_goal_unknown
+		cost = 10.00
+		x = 0
 		y = 3
-
-	}
+		relative_position_id = VOR_revolution_against_world_order 
+		prerequisite = { focus = VOR_crimes_of_japanese }
+		prerequisite = { focus = VOR_hypocrisy_of_americans }
+		prerequisite = { focus = VOR_and_atrocities_of_nazis }
+		completion_reward = {
+			country_event = { id = vor_reg_politic.4 days = 0 }
+			}
+		}
+	shared_focus = {
+		id = VOR_light_fuse
+		icon = GFX_goal_unknown
+		cost = 10.00
+		x = -1
+		y = 2
+		relative_position_id = VOR_crimes_of_japanese
+		prerequisite = { focus = VOR_crimes_of_japanese }
+		mutually_exclusive = { focus = VOR_our_truth_in_minds }
+		mutually_exclusive = { focus = VOR_rifle_gives_birth_to_right }
+		completion_reward = {
+			country_event = { id = vor_reg_politic.5 days = 0 }
+			}
+		}
+	shared_focus = {
+		id = VOR_our_truth_in_minds
+		icon = GFX_goal_unknown
+		cost = 10.00
+		x = 0
+		y = 2
+		relative_position_id = VOR_hypocrisy_of_americans
+		prerequisite = { focus = VOR_crimes_of_japanese }
+		mutually_exclusive = { focus = VOR_light_fuse }
+		mutually_exclusive = { focus = VOR_rifle_gives_birth_to_right }
+		completion_reward = {
+			country_event = { id = vor_reg_politic.6 days = 0 }
+			}
+		}
+	shared_focus = {
+		id = VOR_rifle_gives_birth_to_right
+		icon = GFX_goal_unknown
+		cost = 10.00
+		x = 1
+		y = 2
+		relative_position_id = VOR_and_atrocities_of_nazis
+		prerequisite = { focus = VOR_crimes_of_japanese }
+		mutually_exclusive = { focus = VOR_our_truth_in_minds }
+		mutually_exclusive = { focus = VOR_light_fuse }
+		completion_reward = {
+			country_event = { id = vor_reg_politic.7 days = 0 }
+			}
+		}
+	shared_focus = {
+		id = VOR_fourth_sun_rises
+		icon = GFX_goal_unknown
+		cost = 10.00
+		x = 0
+		y = 1
+		relative_position_id = VOR_our_truth_in_minds
+		prerequisite = { focus = VOR_light_fuse 
+			focus = VOR_our_truth_in_minds 
+			focus = VOR_rifle_gives_birth_to_right
+			}
+		completion_reward = {
+			country_event = { id = vor_reg_politic.8 days = 0 }
+			}
+		}
