@@ -1676,29 +1676,27 @@ shared_focus = {
 	x = 22
 	y = 0
 	completion_reward = {
-		declare_war_on = {
-			target = NPL
-			type = annex_everything
+		if = {
+			limit = {
+				country_exists = KZR
+				KZR = { has_war = no }
+			}
+			custom_effect_tooltip = Russian_Kazakhstan_Berezniki_tt
+			country_event = { id = berez_kazahk.10 days = 7 }
 		}
-		declare_war_on = {
-			target = ARL
-			type = annex_everything
-		}
-		declare_war_on = {
-			target = DER
-			type = annex_everything
-		}
-		declare_war_on = {
-			target = KAZ
-			type = annex_everything
-		}
-		declare_war_on = {
-			target = KOK
-			type = annex_everything
-		}
-		declare_war_on = {
-			target = PAV
-			type = annex_everything
+		else = {
+			declare_war_on = {
+				target = KAZ
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = KZR
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = KZK
+				type = annex_everything
+			}	
 		}
 	}
 }
