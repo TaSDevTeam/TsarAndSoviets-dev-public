@@ -235,16 +235,14 @@ shared_focus = {
 
 		completion_reward = {
 			country_event = { id = pov_event.8 days = 0 }
-			IF = {
-				limit = {
-					has_idea = POV_war_communism_2
-					}
-				swap_ideas {
+			if = {
+				limit = { has_idea = POV_war_communism_2 }
+				swap_ideas = {
 					remove_idea = POV_war_communism_2
 					add_idea = POV_war_communism_4
 				}
 			}
-			ELSE = {
+			else = {
 				swap_ideas = {
 					remove_idea = POV_war_communism_3
 					add_idea = POV_war_communism_5
@@ -337,7 +335,7 @@ shared_focus = {
 				remove_idea = POV_revolutionary_zeal_1
 				add_idea = POV_revolutionary_zeal_2
 			}
-			every_evemy_country = {
+			every_enemy_country = {
 				add_timed_idea = {
 					idea = POV_pogroms
 					days = 180
