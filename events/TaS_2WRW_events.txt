@@ -55,7 +55,7 @@ country_event = { #conditional surrender
 			white_peace = AFG
 		}
 		if = {
-			limit = { MTR = { exists = yes } } }
+			limit = { MTR = { exists = yes } } 
 			MTR = {
 				transfer_state = 1885
 				transfer_state = 1465
@@ -100,7 +100,7 @@ country_event = { #unconditional surrender
 			white_peace = AFG
 		}
 		if = {
-			limit = { MTR = { exists = yes } } }
+			limit = { MTR = { exists = yes } } 
 			MTR = {
 				transfer_state = 1468
 				transfer_state = 1885
@@ -1040,7 +1040,7 @@ country_event = { #Offer surrender
 			hidden_effect = {
 				every_country  = {
 					news_event = {
-						id = MAR_2WRW_world_news.10
+						id = TaS_WRW2_total_capitulation.10
 					}
 				}
 			}
