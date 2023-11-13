@@ -2837,8 +2837,17 @@ TaS_2WRW_free_caucasus = { #god help us all
 			long_name = GEO_progressivism_party_long
 			name = GEO_progressivism_party
 		}
-		GEO_Eduard_Shevardnadze = {
-			promote_character = yes
+		add_country_leader_role = {
+			character = GEO_Eduard_Shevardnadze
+			promote_leader = yes
+			country_leader = {
+				desc = ""
+				expire = "1999.1.1"
+				ideology = progressivism_left_wing_populism_subtype
+				traits = {
+				}
+				id = -1
+			}
 		}
 		econ_join_sphere_MAR = yes
 		set_cosmetic_tag = GEO_freedom
@@ -2952,7 +2961,7 @@ TaS_WRW2_check_the_exhausion = {
 			set_variable = { WRW2_exhausion_production_speed_buildings_factor = 0 }
 			set_variable = { WRW2_exhausion_taxable_population_modifier = 0 }
 			set_variable = { WRW2_exhausion_recruitable_population_factor = 0 }
-			TaS_WRW2_recount_exhausion_modifier_GER = yes
+			TaS_WRW2_recount_exhausion_modifier = yes
 		}
 		if = {
 			limit = { tag = RUS } 
@@ -2968,7 +2977,7 @@ TaS_WRW2_check_the_exhausion = {
 			set_variable = { WRW2_exhausion_production_speed_buildings_factor = 0 }
 			set_variable = { WRW2_exhausion_taxable_population_modifier = 0 }
 			set_variable = { WRW2_exhausion_recruitable_population_factor = 0 }
-			TaS_WRW2_recount_exhausion_modifier_RUS = yes
+			TaS_WRW2_recount_exhausion_modifier = yes
 		}
 			
 	}
