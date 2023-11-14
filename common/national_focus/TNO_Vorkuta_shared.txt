@@ -629,8 +629,9 @@ shared_focus = {
 	prerequisite = {
 		focus = VOR_flame_the_hearts
 	}
-	x = 6
-	y = 5
+	prerequisite = {
+		focus = VOR_open_party_recruitment
+	}
 	completion_reward = {
 		#country_event = {	
 		#	id = vorkuta_start.27 days = 0
@@ -692,6 +693,9 @@ shared_focus = {
 	cost = 3.00
 	prerequisite = {
 		focus = VOR_blood_on_the_snow
+	}
+	prerequisite = {
+		focus = VOR_run_production
 	}
 	x = 14
 	y = 5
