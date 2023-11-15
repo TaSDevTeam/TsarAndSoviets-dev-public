@@ -1,6 +1,6 @@
 shared_focus = {
 	id = VOR_o_murke_i_gonchikh
-	icon = GFX_VOR_otchet
+	icon = GFX_VOR_report
 	cost = 1
 	x = 7
 	y = 1
@@ -12,8 +12,8 @@ shared_focus = {
 } 
 
 shared_focus = {
-	id = VOR_otchet
-	icon = GFX_VOR_otchet
+	id = VOR_report
+	icon = GFX_VOR_report
 	cost = 2.00
 	prerequisite = {
 		focus = VOR_o_murke_i_gonchikh
@@ -36,7 +36,7 @@ shared_focus = {
 	icon = GFX_VOR_lager_capital
 	cost = 3.00
 	prerequisite = {
-		focus = VOR_otchet
+		focus = VOR_report
 	}
 	x = 5
 	y = 3
@@ -52,7 +52,7 @@ shared_focus = {
 	icon = GFX_VOR_lager_capital
 	cost = 3.00
 	prerequisite = {
-		focus = VOR_otchet
+		focus = VOR_report
 	}
 	x = 8
 	y = 3
@@ -85,7 +85,7 @@ shared_focus = {
 } 
 
 shared_focus = {
-	id = VOR_reap_the_benifs
+	id = VOR_reap_the_benifits
 	icon = GFX_VOR_lager_capital
 	cost = 2
 	prerequisite = {
@@ -101,8 +101,8 @@ shared_focus = {
 } 
 
 shared_focus = {
-	id = VOR_povisit_normi
-	icon = GFX_VOR_povisit_normi
+	id = VOR_raise_production_quotas
+	icon = GFX_VOR_raise_production_quotas
 	cost = 2
 	prerequisite = {
 		focus = VOR_lager_capital
@@ -121,17 +121,17 @@ shared_focus = {
 	
 
 shared_focus = {
-	id = VOR_big_problem
+	id = VOR_problems_in_rechlag
 	icon = GFX_idea_VOR_problems_in_rechlag
 	cost = 8
 	prerequisite = {
 		focus = VOR_renew_equip
 	}
 	prerequisite = {
-		focus = VOR_reap_the_benifs
+		focus = VOR_reap_the_benifits
 	}
 	prerequisite = {
-		focus = VOR_povisit_normi
+		focus = VOR_raise_production_quotas
 	}
 	x = 7
 	y = 5
@@ -154,7 +154,7 @@ shared_focus = {
 	icon = GFX_VOR_lager_capital
 	cost = 2
 	prerequisite = {
-		focus = VOR_big_problem
+		focus = VOR_problems_in_rechlag
 	}
 	x = 7
 	y = 6
@@ -237,7 +237,7 @@ shared_focus = {
  	
 shared_focus = {
 	id = VOR_warlord_war_and_defence_council
-	icon = GFX_VOR_Sovet_Oboroni
+	icon = GFX_VOR_warlord_war_and_defence_council
 	cost = 3.00
 	available = {
 		NOT = { has_country_flag = VOR_pechora_war }
@@ -298,7 +298,7 @@ shared_focus = {
 
 shared_focus = {
 	id = VOR_warlord_get_uncertains
-	icon = GFX_VOR_get_uncertains
+	icon = GFX_VOR_warlord_get_uncertains
 	cost = 3.00
 	available = {
 		NOT = { has_country_flag = VOR_pechora_war }
@@ -318,7 +318,7 @@ shared_focus = {
 
 shared_focus = {
 	id = VOR_warlord_destroy_opressors
-	icon = GFX_VOR_Ynictogit_ygnetateleq
+	icon = GFX_VOR_warlord_destroy_opressors
 	cost = 3.00
 	available = {
 		NOT = { has_country_flag = VOR_pechora_war }
@@ -742,7 +742,7 @@ shared_focus = {
 #SMUTA#
 
 shared_focus = {
-		id = VOR_Yusni_poxod
+		id = VOR_march_to_south
 		icon = GFX_Yusni_poxod
 		cost = 3.00
 		x = 7
@@ -759,11 +759,11 @@ shared_focus = {
 }
 
 shared_focus = {
-		id = VOR_rabota_ludi
-		icon = GFX_rabota_ludi
+		id = VOR_provide_work
+		icon = GFX_VOR_provide_work
 		cost = 3.00
 		prerequisite = {
-			focus = VOR_Yusni_poxod
+			focus = VOR_march_to_south
 		}
 		x = 5
 		y = 2
@@ -781,10 +781,10 @@ shared_focus = {
 	
 shared_focus = {
 		id = VOR_agitprop
-		icon = GFX_agitprop
+		icon = GFX_VOR_agitprop
 		cost = 3.00
 		prerequisite = {
-			focus = VOR_Yusni_poxod
+			focus = VOR_march_to_south
 		}
 		x = 7
 		y = 2
@@ -798,8 +798,8 @@ shared_focus = {
 }
 	}
 shared_focus = {
-		id = VOR_zabastovki
-		icon = GFX_zabastovki
+		id = VOR_strikes
+		icon = GFX_VOR_strikes
 		cost = 3.00
 		prerequisite = {
 			focus = VOR_Yusni_poxod
@@ -817,7 +817,7 @@ shared_focus = {
 	icon = GFX_zabastovki
 	cost = 3.00
 	prerequisite = {
-		focus = VOR_rabota_ludi
+		focus = VOR_provide_work
 	}
 	x = 5
 	y = 3
@@ -863,7 +863,7 @@ shared_focus = {
 	icon = GFX_zabastovki
 	cost = 3.00
 	prerequisite = {
-		focus = VOR_zabastovki
+		focus = VOR_strikes
 	}
 	x = 9
 	y = 3
@@ -904,17 +904,17 @@ shared_focus = {
 	}
 }
 shared_focus = {
-		id = VOR_boy_reaci
-		icon = GFX_boy_reaci
+		id = VOR_fight_reaction
+		icon = GFX_VOR_fight_reaction
 		cost = 3.00
 		prerequisite = {
-			focus = VOR_rabota_ludi
+			focus = VOR_provide_work
 		}
 		prerequisite = {
 			focus = VOR_agitprop
 		}
 		prerequisite = {
-			focus = VOR_zabastovki
+			focus = VOR_strikes
 		}
 		x = 7
 		y = 3
@@ -926,11 +926,11 @@ shared_focus = {
 }
 	}
 shared_focus = {
-		id = VOR_svoboda_ravenstvo
-		icon = GFX_svoboda_ravenstvo
+		id = VOR_liberte_egalite
+		icon = GFX_VOR_liberte_egalite
 		cost = 3.00
 		prerequisite = {
-			focus = VOR_boy_reaci
+			focus = VOR_fight_reaction
 		}
 		x = 6
 		y = 4
@@ -942,11 +942,11 @@ shared_focus = {
 	}
 }
 shared_focus = {
-		id = VOR_protivopostavleny_seba
-		icon = GFX_protivopostavleny_seba
+		id = VOR_contrast_ourselves
+		icon = GFX_VOR_contrast_ourselves
 		cost = 3.00
 		prerequisite = {
-			focus = VOR_boy_reaci
+			focus = VOR_fight_reaction
 		}
 		x = 8
 		y = 4
@@ -958,11 +958,11 @@ shared_focus = {
 	}
 }
 shared_focus = {
-		id = VOR_Krasnay_volna
-		icon = GFX_Krasnay_volna
+		id = VOR_red_wave
+		icon = GFX_VOR_red_wave
 		cost = 3.00
 		prerequisite = {
-			focus = VOR_svoboda_ravenstvo
+			focus = VOR_liberte_egalite
 		}
 		prerequisite = {
 			focus = VOR_protivopostavleny_seba
@@ -977,11 +977,11 @@ shared_focus = {
 	}
 }
 shared_focus = {
-		id = VOR_torzestvo_spreavedlivosti
-		icon = GFX_torzestvo_spreavedlivosti
+		id = VOR_triumph_of_justice
+		icon = GFX_VOR_triumph_of_justice
 		cost = 3.00
 		prerequisite = {
-			focus = VOR_Krasnay_volna
+			focus = VOR_red_wave
 		}
 		prerequisite = {
 			focus = VOR_like_the_good_old_days
