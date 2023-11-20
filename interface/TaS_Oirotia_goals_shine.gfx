@@ -1,41 +1,10 @@
 spriteTypes = {
-    SpriteType = {
-		name = "GFX_sobrat_nemogix_shine"
-		texturefile = "gfx/interface/goals/sobrat_nemogix.dds"
-		effectFile = "gfx/FX/buttonstate.lua"
-		animation = {
-			animationmaskfile = "gfx/interface/goals/sobrat_nemogix.dds"
-			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
-			animationrotation = -90.0
-			animationlooping = no
-			animationtime = 0.75
-			animationdelay = 0
-			animationblendmode = "add"
-			animationtype = "scrolling"
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 }
-		}
-		
-		animation = {
-			animationmaskfile = "gfx/interface/goals/sobrat_nemogix.dds"
-			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
-			animationrotation = 90.0
-			animationlooping = no
-			animationtime = 0.75
-			animationdelay = 0
-			animationblendmode = "add"
-			animationtype = "scrolling"
-			animationrotationoffset = { x = 0.0 y = 0.0 }
-			animationtexturescale = { x = 1.0 y = 1.0 }
-		}
-		legacy_lazy_load = no
-	}
 	SpriteType = {
-		name = "GFX_central_komand_shine"
-		texturefile = "gfx/interface/goals/central_komand.dds"
+		name = "GFX_ALT_focus_22_shine"
+		texturefile = "gfx/interface/goals/ALT/ALT_focus_22.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/central_komand.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_22.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -46,9 +15,9 @@ spriteTypes = {
 			animationrotationoffset = { x = 0.0 y = 0.0 }
 			animationtexturescale = { x = 1.0 y = 1.0 }
 		}
-		
+
 		animation = {
-			animationmaskfile = "gfx/interface/goals/central_komand.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_22.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -61,12 +30,13 @@ spriteTypes = {
 		}
 		legacy_lazy_load = no
 	}
+
 	SpriteType = {
-		name = "GFX_koli_tolaki_shine"
-		texturefile = "gfx/interface/goals/koli_tolaki.dds"
+		name = "GFX_ALT_focus_21_shine"
+		texturefile = "gfx/interface/goals/ALT/ALT_focus_21.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/koli_tolaki.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_21.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -77,9 +47,9 @@ spriteTypes = {
 			animationrotationoffset = { x = 0.0 y = 0.0 }
 			animationtexturescale = { x = 1.0 y = 1.0 }
 		}
-		
+
 		animation = {
-			animationmaskfile = "gfx/interface/goals/koli_tolaki.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_21.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -92,12 +62,13 @@ spriteTypes = {
 		}
 		legacy_lazy_load = no
 	}
+
 	SpriteType = {
-		name = "GFX_na_moskvy_shine"
-		texturefile = "gfx/interface/goals/na_moskvy.dds"
+		name = "GFX_ALT_focus_20_shine"
+		texturefile = "gfx/interface/goals/ALT/ALT_focus_20.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/na_moskvy.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_20.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -108,9 +79,9 @@ spriteTypes = {
 			animationrotationoffset = { x = 0.0 y = 0.0 }
 			animationtexturescale = { x = 1.0 y = 1.0 }
 		}
-		
+
 		animation = {
-			animationmaskfile = "gfx/interface/goals/na_moskvy.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_20.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -123,12 +94,13 @@ spriteTypes = {
 		}
 		legacy_lazy_load = no
 	}
+
 	SpriteType = {
-		name = "GFX_nalet_shine"
-		texturefile = "gfx/interface/goals/nalet.dds"
+		name = "GFX_ALT_focus_19_shine"
+		texturefile = "gfx/interface/goals/ALT/ALT_focus_19.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/nalet.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_19.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -139,9 +111,9 @@ spriteTypes = {
 			animationrotationoffset = { x = 0.0 y = 0.0 }
 			animationtexturescale = { x = 1.0 y = 1.0 }
 		}
-		
+
 		animation = {
-			animationmaskfile = "gfx/interface/goals/nalet.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_19.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -154,12 +126,13 @@ spriteTypes = {
 		}
 		legacy_lazy_load = no
 	}
+
 	SpriteType = {
-		name = "GFX_svododa_shine"
-		texturefile = "gfx/interface/goals/svododa.dds"
+		name = "GFX_ALT_focus_18_shine"
+		texturefile = "gfx/interface/goals/ALT/ALT_focus_18.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/svododa.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_18.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -170,9 +143,9 @@ spriteTypes = {
 			animationrotationoffset = { x = 0.0 y = 0.0 }
 			animationtexturescale = { x = 1.0 y = 1.0 }
 		}
-		
+
 		animation = {
-			animationmaskfile = "gfx/interface/goals/svododa.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_18.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -185,12 +158,13 @@ spriteTypes = {
 		}
 		legacy_lazy_load = no
 	}
+
 	SpriteType = {
-		name = "GFX_organizovat_til_shine"
-		texturefile = "gfx/interface/goals/organizovat_til.dds"
+		name = "GFX_ALT_focus_17_shine"
+		texturefile = "gfx/interface/goals/ALT/ALT_focus_17.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/organizovat_til.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_17.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -201,9 +175,9 @@ spriteTypes = {
 			animationrotationoffset = { x = 0.0 y = 0.0 }
 			animationtexturescale = { x = 1.0 y = 1.0 }
 		}
-		
+
 		animation = {
-			animationmaskfile = "gfx/interface/goals/organizovat_til.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_17.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -216,12 +190,13 @@ spriteTypes = {
 		}
 		legacy_lazy_load = no
 	}
+
 	SpriteType = {
-		name = "GFX_vse_dly_fronta_shine"
-		texturefile = "gfx/interface/goals/vse_dly_fronta.dds"
+		name = "GFX_ALT_focus_16_shine"
+		texturefile = "gfx/interface/goals/ALT/ALT_focus_16.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/vse_dly_fronta.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_16.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -232,9 +207,9 @@ spriteTypes = {
 			animationrotationoffset = { x = 0.0 y = 0.0 }
 			animationtexturescale = { x = 1.0 y = 1.0 }
 		}
-		
+
 		animation = {
-			animationmaskfile = "gfx/interface/goals/vse_dly_fronta.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_16.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -247,12 +222,13 @@ spriteTypes = {
 		}
 		legacy_lazy_load = no
 	}
+
 	SpriteType = {
-		name = "GFX_standart_osnaw_shine"
-		texturefile = "gfx/interface/goals/standart_osnaw.dds"
+		name = "GFX_ALT_focus_15_shine"
+		texturefile = "gfx/interface/goals/ALT/ALT_focus_15.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/standart_osnaw.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_15.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -263,9 +239,9 @@ spriteTypes = {
 			animationrotationoffset = { x = 0.0 y = 0.0 }
 			animationtexturescale = { x = 1.0 y = 1.0 }
 		}
-		
+
 		animation = {
-			animationmaskfile = "gfx/interface/goals/standart_osnaw.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_15.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -278,12 +254,13 @@ spriteTypes = {
 		}
 		legacy_lazy_load = no
 	}
+
 	SpriteType = {
-		name = "GFX_prenamit_shine"
-		texturefile = "gfx/interface/goals/prenamit.dds"
+		name = "GFX_ALT_focus_14_shine"
+		texturefile = "gfx/interface/goals/ALT/ALT_focus_14.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/prenamit.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_14.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -294,9 +271,9 @@ spriteTypes = {
 			animationrotationoffset = { x = 0.0 y = 0.0 }
 			animationtexturescale = { x = 1.0 y = 1.0 }
 		}
-		
+
 		animation = {
-			animationmaskfile = "gfx/interface/goals/prenamit.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_14.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -309,12 +286,13 @@ spriteTypes = {
 		}
 		legacy_lazy_load = no
 	}
+
 	SpriteType = {
-		name = "GFX_voryu_shine"
-		texturefile = "gfx/interface/goals/voryu.dds"
+		name = "GFX_ALT_focus_13_shine"
+		texturefile = "gfx/interface/goals/ALT/ALT_focus_13.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/voryu.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_13.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -325,9 +303,9 @@ spriteTypes = {
 			animationrotationoffset = { x = 0.0 y = 0.0 }
 			animationtexturescale = { x = 1.0 y = 1.0 }
 		}
-		
+
 		animation = {
-			animationmaskfile = "gfx/interface/goals/voryu.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_13.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -340,12 +318,13 @@ spriteTypes = {
 		}
 		legacy_lazy_load = no
 	}
+
 	SpriteType = {
-		name = "GFX_nachatn_efir_shine"
-		texturefile = "gfx/interface/goals/nachatn_efir.dds"
+		name = "GFX_ALT_focus_12_shine"
+		texturefile = "gfx/interface/goals/ALT/ALT_focus_12.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/nachatn_efir.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_12.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -356,9 +335,9 @@ spriteTypes = {
 			animationrotationoffset = { x = 0.0 y = 0.0 }
 			animationtexturescale = { x = 1.0 y = 1.0 }
 		}
-		
+
 		animation = {
-			animationmaskfile = "gfx/interface/goals/nachatn_efir.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_12.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -371,12 +350,13 @@ spriteTypes = {
 		}
 		legacy_lazy_load = no
 	}
+
 	SpriteType = {
-		name = "GFX_vostan_shine"
-		texturefile = "gfx/interface/goals/vostan.dds"
+		name = "GFX_ALT_focus_11_shine"
+		texturefile = "gfx/interface/goals/ALT/ALT_focus_11.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/vostan.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_11.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -387,9 +367,9 @@ spriteTypes = {
 			animationrotationoffset = { x = 0.0 y = 0.0 }
 			animationtexturescale = { x = 1.0 y = 1.0 }
 		}
-		
+
 		animation = {
-			animationmaskfile = "gfx/interface/goals/vostan.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_11.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -402,12 +382,13 @@ spriteTypes = {
 		}
 		legacy_lazy_load = no
 	}
+
 	SpriteType = {
-		name = "GFX_ne_shadi_shine"
-		texturefile = "gfx/interface/goals/ne_shadi.dds"
+		name = "GFX_ALT_focus_10_shine"
+		texturefile = "gfx/interface/goals/ALT/ALT_focus_10.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/ne_shadi.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_10.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -418,9 +399,9 @@ spriteTypes = {
 			animationrotationoffset = { x = 0.0 y = 0.0 }
 			animationtexturescale = { x = 1.0 y = 1.0 }
 		}
-		
+
 		animation = {
-			animationmaskfile = "gfx/interface/goals/ne_shadi.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_10.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -433,12 +414,13 @@ spriteTypes = {
 		}
 		legacy_lazy_load = no
 	}
+
 	SpriteType = {
-		name = "GFX_proletarii_shine"
-		texturefile = "gfx/interface/goals/proletarii.dds"
+		name = "GFX_ALT_focus_9_shine"
+		texturefile = "gfx/interface/goals/ALT/ALT_focus_9.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/proletarii.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_9.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -449,9 +431,9 @@ spriteTypes = {
 			animationrotationoffset = { x = 0.0 y = 0.0 }
 			animationtexturescale = { x = 1.0 y = 1.0 }
 		}
-		
+
 		animation = {
-			animationmaskfile = "gfx/interface/goals/proletarii.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_9.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -464,12 +446,13 @@ spriteTypes = {
 		}
 		legacy_lazy_load = no
 	}
+
 	SpriteType = {
-		name = "GFX_spasay_shine"
-		texturefile = "gfx/interface/goals/spasay.dds"
+		name = "GFX_ALT_focus_8_shine"
+		texturefile = "gfx/interface/goals/ALT/ALT_focus_8.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/spasay.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_8.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -480,9 +463,9 @@ spriteTypes = {
 			animationrotationoffset = { x = 0.0 y = 0.0 }
 			animationtexturescale = { x = 1.0 y = 1.0 }
 		}
-		
+
 		animation = {
-			animationmaskfile = "gfx/interface/goals/spasay.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_8.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -495,12 +478,13 @@ spriteTypes = {
 		}
 		legacy_lazy_load = no
 	}
+
 	SpriteType = {
-		name = "GFX_ad_shine"
-		texturefile = "gfx/interface/goals/ad.dds"
+		name = "GFX_ALT_focus_7_shine"
+		texturefile = "gfx/interface/goals/ALT/ALT_focus_7.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/ad.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_7.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -511,9 +495,9 @@ spriteTypes = {
 			animationrotationoffset = { x = 0.0 y = 0.0 }
 			animationtexturescale = { x = 1.0 y = 1.0 }
 		}
-		
+
 		animation = {
-			animationmaskfile = "gfx/interface/goals/ad.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_7.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -526,12 +510,13 @@ spriteTypes = {
 		}
 		legacy_lazy_load = no
 	}
+
 	SpriteType = {
-		name = "GFX_serp_shine"
-		texturefile = "gfx/interface/goals/serp.dds"
+		name = "GFX_ALT_focus_6_shine"
+		texturefile = "gfx/interface/goals/ALT/ALT_focus_6.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/serp.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_6.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -542,9 +527,9 @@ spriteTypes = {
 			animationrotationoffset = { x = 0.0 y = 0.0 }
 			animationtexturescale = { x = 1.0 y = 1.0 }
 		}
-		
+
 		animation = {
-			animationmaskfile = "gfx/interface/goals/serp.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_6.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -557,12 +542,13 @@ spriteTypes = {
 		}
 		legacy_lazy_load = no
 	}
+
 	SpriteType = {
-		name = "GFX_molot_shine"
-		texturefile = "gfx/interface/goals/molot.dds"
+		name = "GFX_ALT_focus_5_shine"
+		texturefile = "gfx/interface/goals/ALT/ALT_focus_5.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/molot.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_5.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -573,9 +559,9 @@ spriteTypes = {
 			animationrotationoffset = { x = 0.0 y = 0.0 }
 			animationtexturescale = { x = 1.0 y = 1.0 }
 		}
-		
+
 		animation = {
-			animationmaskfile = "gfx/interface/goals/molot.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_5.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -588,12 +574,13 @@ spriteTypes = {
 		}
 		legacy_lazy_load = no
 	}
+
 	SpriteType = {
-		name = "GFX_svezda_shine"
-		texturefile = "gfx/interface/goals/svezda.dds"
+		name = "GFX_ALT_focus_4_shine"
+		texturefile = "gfx/interface/goals/ALT/ALT_focus_4.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/svezda.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_4.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -604,9 +591,9 @@ spriteTypes = {
 			animationrotationoffset = { x = 0.0 y = 0.0 }
 			animationtexturescale = { x = 1.0 y = 1.0 }
 		}
-		
+
 		animation = {
-			animationmaskfile = "gfx/interface/goals/svezda.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_4.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -619,12 +606,13 @@ spriteTypes = {
 		}
 		legacy_lazy_load = no
 	}
+
 	SpriteType = {
-		name = "GFX_naprigi_sil_shine"
-		texturefile = "gfx/interface/goals/naprigi_sil.dds"
+		name = "GFX_ALT_focus_3_shine"
+		texturefile = "gfx/interface/goals/ALT/ALT_focus_3.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/naprigi_sil.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_3.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -635,9 +623,9 @@ spriteTypes = {
 			animationrotationoffset = { x = 0.0 y = 0.0 }
 			animationtexturescale = { x = 1.0 y = 1.0 }
 		}
-		
+
 		animation = {
-			animationmaskfile = "gfx/interface/goals/naprigi_sil.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_3.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -650,12 +638,13 @@ spriteTypes = {
 		}
 		legacy_lazy_load = no
 	}
+
 	SpriteType = {
-		name = "GFX_v_bege_shine"
-		texturefile = "gfx/interface/goals/v_bege.dds"
+		name = "GFX_ALT_focus_2_shine"
+		texturefile = "gfx/interface/goals/ALT/ALT_focus_2.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/v_bege.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_2.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -666,9 +655,9 @@ spriteTypes = {
 			animationrotationoffset = { x = 0.0 y = 0.0 }
 			animationtexturescale = { x = 1.0 y = 1.0 }
 		}
-		
+
 		animation = {
-			animationmaskfile = "gfx/interface/goals/v_bege.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_2.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -681,12 +670,13 @@ spriteTypes = {
 		}
 		legacy_lazy_load = no
 	}
+
 	SpriteType = {
-		name = "GFX_poslenda_pipitka_shine"
-		texturefile = "gfx/interface/goals/poslenda_pipitka.dds"
+		name = "GFX_ALT_focus_1_shine"
+		texturefile = "gfx/interface/goals/ALT/ALT_focus_1.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/poslenda_pipitka.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_1.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -697,9 +687,9 @@ spriteTypes = {
 			animationrotationoffset = { x = 0.0 y = 0.0 }
 			animationtexturescale = { x = 1.0 y = 1.0 }
 		}
-		
+
 		animation = {
-			animationmaskfile = "gfx/interface/goals/poslenda_pipitka.dds"
+			animationmaskfile = "gfx/interface/goals/ALT/ALT_focus_1.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -712,5 +702,4 @@ spriteTypes = {
 		}
 		legacy_lazy_load = no
 	}
-	
-}	
+}
