@@ -118,7 +118,7 @@ shared_focus = {
 		add_stability = -0.1
     }
 } 
-	
+
 
 shared_focus = {
 	id = VOR_problems_in_rechlag
@@ -177,7 +177,7 @@ shared_focus = {
 		}	
 	}
 }
-	
+
 shared_focus = {
 	id = VOR_warlord_revolutionary_transformations
 	icon = GFX_VOR_warlord_revolutionary_transformations
@@ -212,8 +212,8 @@ shared_focus = {
 		}	
 	}
 }
-	
- 	
+
+
 shared_focus = {
 	id = VOR_warlord_land_decree
 	icon = GFX_VOR_warlord_land_decree
@@ -234,7 +234,7 @@ shared_focus = {
 	}
 }
 
- 	
+
 shared_focus = {
 	id = VOR_warlord_war_and_defence_council
 	icon = GFX_VOR_warlord_war_and_defence_council
@@ -255,7 +255,7 @@ shared_focus = {
 		add_ideas = VOR_council_of_war_and_defense
 	}
 }	
- 		
+
 shared_focus = {
 	id = VOR_warlord_revolutionary_struggle_troops
 	icon = GFX_VOR_warlord_revolutionary_struggle_troops
@@ -275,7 +275,7 @@ shared_focus = {
         load_oob = VOR_internet_levaki	
 	}
 }	
- 	
+
 shared_focus = {
 	id = VOR_warlord_prepare_masses_for_war
 	icon = GFX_VOR_warlord_prepare_masses_for_war
@@ -334,7 +334,7 @@ shared_focus = {
 		}	
 	}
 }
- 	
+
 shared_focus = {
 	id = VOR_raise_the_battleflags
 	icon = GFX_VOR_warlord_prepare_masses_for_war
@@ -429,7 +429,7 @@ shared_focus = {
 			ideology = socialist
 			popularity = 0.20
 		}
-		
+
 	}
 }
 
@@ -775,10 +775,10 @@ shared_focus = {
 		econ_pus_change = yes
 	set_temp_variable = { gdp_growth_temp = 1.50 }
     econ_gdp_growth_change = yes
-			
+
 }
 	}
-	
+
 shared_focus = {
 		id = VOR_agitprop
 		icon = GFX_VOR_agitprop
@@ -991,15 +991,15 @@ shared_focus = {
 		}
 		x = 7
 		y = 6
-		
+
 		available = {
 			RUS_Smuta_ScriptedTrigger_OnlyOneContenderLeft = yes
 			}
-		
+
         completion_reward = {
 			country_event = {
 				id = vorkuta_smutaa.9 days = 0
 			}
 		}
 	}
-	
+

@@ -513,10 +513,10 @@ spriteTypes = {
 
 	SpriteType = {
 		name = "GFX_terror_in_service_of_revolution_shine"
-		texturefile = "gfx/interface/goals/VOR/region/VOR_terror_in_service_of_revolution.dds"
+		texturefile = "gfx/interface/goals/VOR/region/terror_in_service_of_revolution.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/VOR/region/VOR_terror_in_service_of_revolution.dds"
+			animationmaskfile = "gfx/interface/goals/VOR/region/terror_in_service_of_revolution.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -529,7 +529,7 @@ spriteTypes = {
 		}
 
 		animation = {
-			animationmaskfile = "gfx/interface/goals/VOR/region/VOR_terror_in_service_of_revolution.dds"
+			animationmaskfile = "gfx/interface/goals/VOR/region/terror_in_service_of_revolution.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -1920,19 +1920,11 @@ spriteTypes = {
 	}
 
 	SpriteType = {
-<<<<<<< Updated upstream:interface/VOR_goals2_shine.gfx
-		name = "GFX_VOR_otchet_shine"
-		texturefile = "gfx/interface/goals/VOR_otchet.dds"
-		effectFile = "gfx/FX/buttonstate.lua"
-		animation = {
-			animationmaskfile = "gfx/interface/goals/VOR_otchet.dds"
-=======
 		name = "GFX_VOR_report_shine"
 		texturefile = "gfx/interface/goals/VOR/initialtree/VOR_report.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
 			animationmaskfile = "gfx/interface/goals/VOR/initialtree/VOR_report.dds"
->>>>>>> Stashed changes:interface/TaS_VOR_goals_shine.gfx
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -1945,11 +1937,7 @@ spriteTypes = {
 		}
 
 		animation = {
-<<<<<<< Updated upstream:interface/VOR_goals2_shine.gfx
-			animationmaskfile = "gfx/interface/goals/VOR_otchet.dds"
-=======
 			animationmaskfile = "gfx/interface/goals/VOR/initialtree/VOR_report.dds"
->>>>>>> Stashed changes:interface/TaS_VOR_goals_shine.gfx
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -1962,5 +1950,4 @@ spriteTypes = {
 		}
 		legacy_lazy_load = no
 	}
-
 }
