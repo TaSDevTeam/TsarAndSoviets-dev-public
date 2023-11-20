@@ -1,6 +1,6 @@
 shared_focus = {
-		id = VOR_ideology
-		icon = GFX_VOR_ideology
+		id = idealogia
+		icon = GFX_odealogia
 		cost = 10.00
 		
 		x = 7
@@ -12,12 +12,12 @@ shared_focus = {
 		}
 	}
 	shared_focus = {
-		id = VOR_father
-		icon = GFX_VOR_father
+		id = otec
+		icon = GFX_otec
 		cost = 10.00
 
 		prerequisite = {
-			focus = VOR_ideology
+			focus = idealogia
 			}
 
 
@@ -35,12 +35,12 @@ shared_focus = {
 	}
 
 	shared_focus = {
-		id = VOR_sister
-		icon = GFX_VOR_sister
+		id = sestra
+		icon = GFX_sestra
 		cost = 10.00
 
 		prerequisite = {
-			focus = VOR_ideology
+			focus = idealogia
 		}
 
 		x = 7
@@ -57,8 +57,8 @@ shared_focus = {
 	}
 
 	shared_focus = {
-		id = VOR_brother
-		icon = GFX_VOR_brother
+		id = brat
+		icon = GFX_brat
 		cost = 10.00
 
 		prerequisite = {
@@ -79,18 +79,18 @@ shared_focus = {
 	}
 
 	shared_focus = {
-		id = VOR_party_of_workers_and_intelligentsia
-		icon = GFX_VOR_party_of_workers_and_intelligentsia
+		id = partia_rabochix_i_td
+		icon = GFX_partia_rabochix_i_td
 		cost = 10.00
 
 		prerequisite = {
-			focus = VOR_father
+			focus = otec
 			}
 		prerequisite = {
-			focus = VOR_sister
+			focus = sestra
 			}
 		prerequisite = {
-			focus = VOR_brother
+			focus = brat
 			}
 
 		x = 7
@@ -109,12 +109,12 @@ shared_focus = {
 	}
 	
 	shared_focus = {
-		id = VOR_amnesty
-		icon = GFX_VOR_amnesty
+		id = amnistia
+		icon = GFX_amnistia
 		cost = 10.00
 
 		prerequisite = {
-			focus = VOR_party_of_workers_and_intelligentsia
+			focus = partia_rabochix_i_td
 		}
 
 		x = 4
@@ -132,12 +132,12 @@ shared_focus = {
 
 	}
 	shared_focus = {
-		id = VOR_let_roses_bloom
-		icon = GFX_VOR_let_roses_bloom
+		id = pust_rosi
+		icon = GFX_pust_rosi
 		cost = 10.00
 
 		prerequisite = {
-			focus = VOR_amnesty
+			focus = amnistia
 		}
 
 		x = 4
@@ -150,12 +150,12 @@ shared_focus = {
 
 	}
 	shared_focus = {
-		id = VOR_socialization_of_land
-		icon = GFX_VOR_socialization_of_land
+		id = sotsilcia_zemli
+		icon = GFX_sotsilcia_zemli
 		cost = 10.00
 
 		prerequisite = {
-			focus = VOR_party_of_workers_and_intelligentsia
+			focus = partia_rabochix_i_td
 		}
 
 		x = 7
@@ -171,12 +171,12 @@ shared_focus = {
 
 	}
 	shared_focus = {
-		id = VOR_reforming_republics
-		icon = GFX_VOR_reforming_republics
+		id = reformirovanie_respublik
+		icon = GFX_reformirovanie_respublik
 		cost = 10.00
 
 		prerequisite = {
-			focus = VOR_socialization_of_land
+			focus = sotsilcia_zemli
 		}
 
 		x = 7
@@ -188,12 +188,12 @@ shared_focus = {
 
 	}
 	shared_focus = {
-		id = VOR_workers_aether
-		icon = GFX_VOR_workers_aether
+		id = rai_rabochego
+		icon = GFX_rai_rabochego
 		cost = 10.00
 
 		prerequisite = {
-			focus = VOR_party_of_workers_and_intelligentsia
+			focus = partia_rabochix_i_td
 		}
 
 		x = 10
@@ -213,12 +213,12 @@ shared_focus = {
 
 	}
 	shared_focus = {
-		id = VOR_wellfed_worker_good_worker
-		icon = GFX_VOR_wellfed_worker_good_worker
+		id = sitii_rabochi
+		icon = GFX_sitii_rabochi
 		cost = 10.00
 
 		prerequisite = {
-			focus = VOR_workers_aether
+			focus = rai_rabochego
 		}
 
 		x = 10
@@ -232,15 +232,15 @@ shared_focus = {
 
 	}
 	shared_focus = {
-		id = VOR_unions_federation
-		icon = GFX_VOR_unions_federation
+		id = federacii_rabochi
+		icon = GFX_federacii_rabochi
 		cost = 10.00
 
 		prerequisite = {
-			focus = VOR_let_roses_bloom
+			focus = pust_rosi
 		}
 		prerequisite = {
-			focus = VOR_reforming_republics
+			focus = reformirovanie_respublik
 		}
 
 		x = 5
@@ -255,15 +255,15 @@ shared_focus = {
 		}
 	}
 	shared_focus = {
-		id = VOR_young_party
-		icon = GFX_VOR_young_party
+		id = moloday_partia
+		icon = GFX_moloday_partia
 		cost = 10.00
 
 		prerequisite = {
-			focus = VOR_reforming_republics
+			focus = reformirovanie_respublik
 		}
 		prerequisite = {
-			focus = VOR_wellfed_worker_good_worker
+			focus = sitii_rabochi
 		}
 
 		x = 9
@@ -296,29 +296,29 @@ shared_focus = {
 		cost = 10.00
 
 		prerequisite = {
-			focus = VOR_unions_federation
+			focus = federacii_rabochi
 		}
 		prerequisite = {
-			focus = VOR_young_party
-		}	
+			focus = moloday_partia
+		}
 
 		x = 7
 		y = 7
 
 		completion_reward = {
-			country_event = { id = vor_reg.133 days = 0 }
+			country_event = { id = vor_regg.13 days = 0 }
 		}
 	}
 	shared_focus = {
-		id = VOR_party_congress
-		icon = GFX_VOR_party_congress
+		id = siesd
+		icon = GFX_siesd
 		cost = 10.00
 
 		prerequisite = {
-			focus = VOR_unions_federation
+			focus = federacii_rabochi
 		}
 		prerequisite = {
-			focus = VOR_young_party
+			focus = moloday_partia
 		}
 
 		x = 7
