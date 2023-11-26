@@ -16,9 +16,7 @@ shared_focus = {
 	icon = GFX_VOR_father
 	cost = 10.00
 
-	prerequisite = {
-		focus = VOR_ideology
-		}
+	prerequisite = { focus = VOR_ideology }
 
 
 	x = 5
@@ -39,9 +37,7 @@ shared_focus = {
 	icon = GFX_VOR_sister
 	cost = 10.00
 
-	prerequisite = {
-		focus = VOR_ideology
-	}
+	prerequisite = { focus = VOR_ideology }
 
 	x = 7
 	y = 2
@@ -61,9 +57,7 @@ shared_focus = {
 	icon = GFX_VOR_brother
 	cost = 10.00
 
-	prerequisite = {
-		focus = VOR_ideology
-	}
+	prerequisite = { focus = VOR_ideology }
 
 	x = 9
 	y = 2
@@ -83,15 +77,9 @@ shared_focus = {
 	icon = GFX_VOR_party_of_workers_and_intelligentsia
 	cost = 10.00
 
-	prerequisite = {
-		focus = VOR_father
-		}
-	prerequisite = {
-		focus = VOR_sister
-		}
-	prerequisite = {
-		focus = VOR_brother
-		}
+	prerequisite = { focus = VOR_father }
+	prerequisite = { focus = VOR_sister }
+	prerequisite = { focus = VOR_brother }
 
 	x = 7
 	y = 3
@@ -113,9 +101,7 @@ shared_focus = {
 	icon = GFX_VOR_amnesty
 	cost = 10.00
 
-	prerequisite = {
-		focus = VOR_party_of_workers_and_intelligentsia
-	}
+	prerequisite = { focus = VOR_party_of_workers_and_intelligentsia }
 
 	x = 4
 	y = 4
@@ -136,9 +122,7 @@ shared_focus = {
 	icon = GFX_VOR_let_roses_bloom
 	cost = 10.00
 
-	prerequisite = {
-		focus = VOR_amnesty
-	}
+	prerequisite = { focus = VOR_amnesty }
 
 	x = 4
 	y = 5
@@ -154,9 +138,7 @@ shared_focus = {
 	icon = GFX_VOR_socialization_of_land
 	cost = 10.00
 
-	prerequisite = {
-		focus = VOR_party_of_workers_and_intelligentsia
-	}
+	prerequisite = { focus = VOR_party_of_workers_and_intelligentsia }
 
 	x = 7
 	y = 4
@@ -175,9 +157,7 @@ shared_focus = {
 	icon = GFX_VOR_reforming_republics
 	cost = 10.00
 
-	prerequisite = {
-		focus = VOR_socialization_of_land
-	}
+	prerequisite = { focus = VOR_socialization_of_land }
 
 	x = 7
 	y = 5
@@ -192,9 +172,7 @@ shared_focus = {
 	icon = GFX_VOR_workers_aether
 	cost = 10.00
 
-	prerequisite = {
-		focus = VOR_party_of_workers_and_intelligentsia
-	}
+	prerequisite = { focus = VOR_party_of_workers_and_intelligentsia }
 
 	x = 10
 	y = 4
@@ -217,9 +195,7 @@ shared_focus = {
 	icon = GFX_VOR_wellfed_worker_good_worker
 	cost = 10.00
 
-	prerequisite = {
-		focus = VOR_workers_aether
-	}
+	prerequisite = { focus = VOR_workers_aether }
 
 	x = 10
 	y = 5
@@ -236,12 +212,8 @@ shared_focus = {
 	icon = GFX_VOR_unions_federation
 	cost = 10.00
 
-	prerequisite = {
-		focus = VOR_let_roses_bloom
-	}
-	prerequisite = {
-		focus = VOR_reforming_republics
-	}
+	prerequisite = { focus = VOR_let_roses_bloom }
+	prerequisite = { focus = VOR_reforming_republics }
 
 	x = 5
 	y = 6
@@ -259,12 +231,8 @@ shared_focus = {
 	icon = GFX_VOR_young_party
 	cost = 10.00
 
-	prerequisite = {
-		focus = VOR_reforming_republics
-	}
-	prerequisite = {
-		focus = VOR_wellfed_worker_good_worker
-	}
+	prerequisite = { focus = VOR_reforming_republics }
+	prerequisite = { focus = VOR_wellfed_worker_good_worker }
 
 	x = 9
 	y = 6
@@ -291,16 +259,12 @@ shared_focus = {
 	}
 }
 shared_focus = {
-	id = terror_in_service_of_revolution
-	icon = GFX_terror_in_service_of_revolution
+	id = VOR_terror_in_service_of_revolution
+	icon = GFX_VOR_terror_in_service_of_revolution
 	cost = 10.00
 
-	prerequisite = {
-		focus = VOR_unions_federation
-	}
-	prerequisite = {
-		focus = VOR_young_party
-	}	
+	prerequisite = { focus = VOR_unions_federation }
+	prerequisite = { focus = VOR_young_party }	
 
 	x = 7
 	y = 7
@@ -314,12 +278,7 @@ shared_focus = {
 	icon = GFX_VOR_party_congress
 	cost = 10.00
 
-	prerequisite = {
-		focus = VOR_unions_federation
-	}
-	prerequisite = {
-		focus = VOR_young_party
-	}
+	prerequisite = { focus = VOR_terror_in_service_of_revolution }
 
 	x = 7
 	y = 8
@@ -332,7 +291,7 @@ shared_focus = {
 }
 
 
-
+#### ЭКОНОМИКА ###
 shared_focus = {
 	id = VOR_engine_of_revolution
 	icon = GFX_VOR_engine_of_revolution
@@ -586,163 +545,204 @@ shared_focus = {
 		country_event = { id = vor_reg.29 days = 0 }
 	}
 }
+
 shared_focus = {
-	id = newfocus_30
+	id = VOR_world_conflagration_army
 	icon = GFX_goal_unknown
 	cost = 10.00
 	x = 39
 	y = 2
-
 }
+
 shared_focus = {
-	id = newfocus_31
+	id = VOR_per_aspera
 	icon = GFX_goal_unknown
 	cost = 10.00
-	prerequisite = {
-		focus = newfocus_30
-	}
-	x = 34
+	prerequisite = { focus = VOR_world_conflagration_army }
+	x = 38
 	y = 3
-
 }
+
 shared_focus = {
-	id = newfocus_32
+	id = VOR_ad_astra
 	icon = GFX_goal_unknown
 	cost = 10.00
-	prerequisite = {
-		focus = newfocus_31
-	}
-	mutually_exclusive = {
-		focus = newfocus_33
-	}
-	x = 32
-	y = 4
-
-}
-shared_focus = {
-	id = newfocus_34
-	icon = GFX_goal_unknown
-	cost = 10.00
-	prerequisite = {
-		focus = newfocus_32
-	}
-	x = 32
-	y = 5
-
-}
-shared_focus = {
-	id = newfocus_33
-	icon = GFX_goal_unknown
-	cost = 10.00
-	prerequisite = {
-		focus = newfocus_31
-	}
-	mutually_exclusive = {
-		focus = newfocus_32
-	}
-	x = 36
-	y = 4
-
-}
-shared_focus = {
-	id = newfocus_35
-	icon = GFX_goal_unknown
-	cost = 10.00
-	prerequisite = {
-		focus = newfocus_33
-	}
-	x = 36
-	y = 5
-
-}
-shared_focus = {
-	id = newfocus_36
-	icon = GFX_goal_unknown
-	cost = 10.00
-	prerequisite = {
-		focus = newfocus_30
-	}
-	x = 39
+	prerequisite = { focus = VOR_world_conflagration_army }
+	x = 40
 	y = 3
-
 }
+
 shared_focus = {
-	id = newfocus_37
+	id = VOR_revolutionary_mobilisation
 	icon = GFX_goal_unknown
 	cost = 10.00
-	prerequisite = {
-		focus = newfocus_36
-	}
+	prerequisite = { focus = VOR_per_aspera }
+	mutually_exclusive = { focus = VOR_true_peoples_army }
+	x = 37
+	y = 4
+}
+
+shared_focus = {
+	id = VOR_true_peoples_army
+	icon = GFX_goal_unknown
+	cost = 10.00
+	prerequisite = { focus = VOR_ad_astra }
+	mutually_exclusive = { focus = VOR_revolutionary_mobilisation }
+	x = 41
+	y = 4
+}
+
+shared_focus = {
+	id = VOR_decentralizing_command
+	icon = GFX_goal_unknown
+	cost = 10.00
+	prerequisite = { focus = VOR_revolutionary_mobilisation }
+	x = 37
+	y = 5
+}
+
+shared_focus = {
+	id = VOR_assemble_officer_corps
+	icon = GFX_goal_unknown
+	cost = 10.00
+	prerequisite = { focus = VOR_true_peoples_army }
+	x = 41
+	y = 5
+}
+
+shared_focus = {
+	id = VOR_echoes_of_smuta
+	icon = GFX_goal_unknown
+	cost = 10.00
+	prerequisite = { focus = VOR_per_aspera }
+	prerequisite = { focus = VOR_ad_astra }
 	x = 39
 	y = 5
-
 }
+
 shared_focus = {
-	id = newfocus_38
+	id = VOR_zlatoust_miracle
 	icon = GFX_goal_unknown
 	cost = 10.00
-	prerequisite = {
-		focus = newfocus_37
-	}
+	prerequisite = { focus = VOR_echoes_of_smuta }
+	x = 39
+	y = 6
+}
+
+shared_focus = {
+	id = VOR_successes_of_the_revolution
+	icon = GFX_goal_unknown
+	cost = 10.00
+	prerequisite = { focus = VOR_echoes_of_smuta }
+	x = 36
+	y = 6
+}
+
+shared_focus = {
+	id = VOR_failures_of_the_directoria
+	icon = GFX_goal_unknown
+	cost = 10.00
+	prerequisite = { focus = VOR_echoes_of_smuta }
+	x = 42
+	y = 6
+}
+
+shared_focus = {
+	id = VOR_lessons_of_war
+	icon = GFX_goal_unknown
+	cost = 10.00
+	prerequisite = { focus = VOR_successes_of_the_revolution }
+	mutually_exclusive = { focus = VOR_military_democracy }
+	x = 35
+	y = 7
+}
+
+shared_focus = {
+	id = VOR_military_democracy
+	icon = GFX_goal_unknown
+	cost = 10.00
+	prerequisite = { focus = VOR_decentralizing_command }
+	prerequisite = { focus = VOR_successes_of_the_revolution }
+	mutually_exclusive = { focus = VOR_lessons_of_war }
 	x = 37
 	y = 7
-
 }
+
 shared_focus = {
-	id = newfocus_39
+	id = VOR_arsenal_of_tomorrow
 	icon = GFX_goal_unknown
 	cost = 10.00
-	prerequisite = {
-		focus = newfocus_37
-	}
+	prerequisite = { focus = VOR_zlatoust_miracle }
 	x = 39
 	y = 7
-
 }
+
 shared_focus = {
-	id = newfocus_40
+	id = VOR_no_to_new_kolchak
 	icon = GFX_goal_unknown
 	cost = 10.00
-	prerequisite = {
-		focus = newfocus_37
-	}
+	prerequisite = { focus = VOR_failures_of_the_directoria }
+	mutually_exclusive = { focus = VOR_shaking_hands_with_the_devil }
+	x = 43
+	y = 7
+}
+
+shared_focus = {
+	id = VOR_shaking_hands_with_the_devil
+	icon = GFX_goal_unknown
+	cost = 10.00
+	prerequisite = { focus = VOR_assemble_officer_corps }
+	prerequisite = { focus = VOR_failures_of_the_directoria }
+	mutually_exclusive = { focus = VOR_no_to_new_kolchak }
 	x = 41
 	y = 7
-
 }
+
 shared_focus = {
-	id = newfocus_41
+	id = VOR_peoples_syndicates
 	icon = GFX_goal_unknown
 	cost = 10.00
-	prerequisite = {
-		focus = newfocus_30
-	}
-	x = 42
-	y = 3
-
+	prerequisite = { focus = VOR_arsenal_of_tomorrow }
+	x = 39
+	y = 8
 }
+
 shared_focus = {
-	id = newfocus_42
+	id = VOR_tiger_hunt
 	icon = GFX_goal_unknown
 	cost = 10.00
-	prerequisite = {
-		focus = newfocus_41
-	}
-	x = 42
-	y = 4
-
+	prerequisite = { focus = VOR_arsenal_of_tomorrow }
+	x = 37
+	y = 8
 }
+
 shared_focus = {
-	id = newfocus_43
+	id = VOR_iron_chariot_of_proletariat
 	icon = GFX_goal_unknown
 	cost = 10.00
-	prerequisite = {
-		focus = newfocus_42
-	}
-	x = 42
-	y = 5
-
+	prerequisite = { focus = VOR_tiger_hunt }
+	x = 37
+	y = 9
 }
+
+shared_focus = {
+	id = VOR_seven_nights
+	icon = GFX_goal_unknown
+	cost = 10.00
+	prerequisite = { focus = VOR_arsenal_of_tomorrow }
+	x = 41
+	y = 8
+}
+
+shared_focus = {
+	id = VOR_project_voskhod
+	icon = GFX_goal_unknown
+	cost = 10.00
+	prerequisite = { focus = VOR_seven_nights }
+	x = 41
+	y = 9
+}
+
 shared_focus = {
 	id = VOR_revolution_against_world_order
 	icon = GFX_goal_unknown
@@ -861,202 +861,4 @@ shared_focus = {
 		country_event = { id = vor_reg_politic.8 days = 0 }
 		}
 	}
-	
-	
-	
-	shared_focus = {
-	id = VOR_world_conflagration_army
-	icon = GFX_goal_unknown
-	cost = 10.00
-	x = 59
-	y = 2
-}
 
-shared_focus = {
-	id = VOR_per_aspera
-	icon = GFX_goal_unknown
-	cost = 10.00
-	prerequisite = { focus = VOR_world_conflagration_army }
-	x = 58
-	y = 3
-}
-
-shared_focus = {
-	id = VOR_ad_astra
-	icon = GFX_goal_unknown
-	cost = 10.00
-	prerequisite = { focus = VOR_world_conflagration_army }
-	x = 60
-	y = 3
-}
-
-shared_focus = {
-	id = VOR_revolutionary_mobilisation
-	icon = GFX_goal_unknown
-	cost = 10.00
-	prerequisite = { focus = VOR_per_aspera }
-	mutually_exclusive = { focus = VOR_true_peoples_army }
-	x = 57
-	y = 4
-}
-
-shared_focus = {
-	id = VOR_true_peoples_army
-	icon = GFX_goal_unknown
-	cost = 10.00
-	prerequisite = { focus = VOR_ad_astra }
-	mutually_exclusive = { focus = VOR_revolutionary_mobilisation }
-	x = 61
-	y = 4
-}
-
-shared_focus = {
-	id = VOR_decentralizing_command
-	icon = GFX_goal_unknown
-	cost = 10.00
-	prerequisite = { focus = VOR_revolutionary_mobilisation }
-	x = 57
-	y = 5
-}
-
-shared_focus = {
-	id = VOR_assemble_officer_corps
-	icon = GFX_goal_unknown
-	cost = 10.00
-	prerequisite = { focus = VOR_true_peoples_army }
-	x = 61
-	y = 5
-}
-
-shared_focus = {
-	id = VOR_echoes_of_smuta
-	icon = GFX_goal_unknown
-	cost = 10.00
-	prerequisite = { focus = VOR_per_aspera }
-	prerequisite = { focus = VOR_ad_astra }
-	x = 59
-	y = 5
-}
-
-shared_focus = {
-	id = VOR_zlatoust_miracle
-	icon = GFX_goal_unknown
-	cost = 10.00
-	prerequisite = { focus = VOR_echoes_of_smuta }
-	x = 59
-	y = 6
-}
-
-shared_focus = {
-	id = VOR_successes_of_the_revolution
-	icon = GFX_goal_unknown
-	cost = 10.00
-	prerequisite = { focus = VOR_echoes_of_smuta }
-	x = 56
-	y = 6
-}
-
-shared_focus = {
-	id = VOR_failures_of_the_directoria
-	icon = GFX_goal_unknown
-	cost = 10.00
-	prerequisite = { focus = VOR_echoes_of_smuta }
-	x = 62
-	y = 6
-}
-
-shared_focus = {
-	id = VOR_lessons_of_war
-	icon = GFX_goal_unknown
-	cost = 10.00
-	prerequisite = { focus = VOR_successes_of_the_revolution }
-	mutually_exclusive = { focus = VOR_military_democracy }
-	x = 55
-	y = 7
-}
-
-shared_focus = {
-	id = VOR_military_democracy
-	icon = GFX_goal_unknown
-	cost = 10.00
-	prerequisite = { focus = VOR_decentralizing_command }
-	prerequisite = { focus = VOR_successes_of_the_revolution }
-	mutually_exclusive = { focus = VOR_lessons_of_war }
-	x = 57
-	y = 7
-}
-
-shared_focus = {
-	id = VOR_arsenal_of_tomorrow
-	icon = GFX_goal_unknown
-	cost = 10.00
-	prerequisite = { focus = VOR_zlatoust_miracle }
-	x = 59
-	y = 7
-}
-
-shared_focus = {
-	id = VOR_no_to_new_kolchak
-	icon = GFX_goal_unknown
-	cost = 10.00
-	prerequisite = { focus = VOR_failures_of_the_directoria }
-	mutually_exclusive = { focus = VOR_shaking_hands_with_the_devil }
-	x = 63
-	y = 7
-}
-
-shared_focus = {
-	id = VOR_shaking_hands_with_the_devil
-	icon = GFX_goal_unknown
-	cost = 10.00
-	prerequisite = { focus = VOR_assemble_officer_corps }
-	prerequisite = { focus = VOR_failures_of_the_directoria }
-	mutually_exclusive = { focus = VOR_no_to_new_kolchak }
-	x = 61
-	y = 7
-}
-
-shared_focus = {
-	id = VOR_peoples_syndicates
-	icon = GFX_goal_unknown
-	cost = 10.00
-	prerequisite = { focus = VOR_arsenal_of_tomorrow }
-	x = 59
-	y = 8
-}
-
-shared_focus = {
-	id = VOR_tiger_hunt
-	icon = GFX_goal_unknown
-	cost = 10.00
-	prerequisite = { focus = VOR_arsenal_of_tomorrow }
-	x = 57
-	y = 8
-}
-
-shared_focus = {
-	id = VOR_iron_chariot_of_proletariat
-	icon = GFX_goal_unknown
-	cost = 10.00
-	prerequisite = { focus = VOR_tiger_hunt }
-	x = 57
-	y = 9
-}
-
-shared_focus = {
-	id = VOR_seven_nights
-	icon = GFX_goal_unknown
-	cost = 10.00
-	prerequisite = { focus = VOR_arsenal_of_tomorrow }
-	x = 61
-	y = 8
-}
-
-shared_focus = {
-	id = VOR_project_voskhod
-	icon = GFX_goal_unknown
-	cost = 10.00
-	prerequisite = { focus = VOR_seven_nights }
-	x = 61
-	y = 9
-}
