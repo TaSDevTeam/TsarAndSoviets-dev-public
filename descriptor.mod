@@ -9,6 +9,6 @@ dependencies={
 	"The New Order: The Last Days Of Russia"
 	"The New Order: Last Days of Europe"
 }
-name="Tsar and Soviets: TNO Berezniki Submod"
+name="Tsar and Soviets - Dev"
 supported_version="1.13.*"
 remote_file_id="2811192226"
