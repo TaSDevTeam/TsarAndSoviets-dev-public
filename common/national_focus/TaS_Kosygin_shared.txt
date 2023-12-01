@@ -1383,6 +1383,19 @@ shared_focus = {
 	x = 6
 	y = 2
 	completion_reward = {
+		remove_ideas = MAR_Kosygin_martial_law
+		hidden_effect = {
+			swap_ideas = {
+				remove_idea = tno_max_workhours_14_hour_work_day
+				add_idea = tno_max_workhours_8_hour_work_day
+			}
+		}
+		effect_tooltip = {
+			swap_ideas = {
+				remove_idea = tno_max_workhours_14_hour_work_day_dummy
+				add_idea = tno_max_workhours_8_hour_work_day_dummy
+			}
+		}
 		country_event = {
 			id = MAR_Kosygin.45
 			days = 0

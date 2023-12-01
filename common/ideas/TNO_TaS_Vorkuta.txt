@@ -39,7 +39,7 @@ ideas = {
 		}
 		
 		VOR_rev_sud = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea VOR_inhospitable_climate"}
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea VOR_rev_sud"}
 			allowed = {
 				always = no
 			}
@@ -81,7 +81,7 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			#picture = TNO_winter_soldier
+			picture = TNO_winter_soldier
 			modifier = {
 				army_attack_factor = 0.05
 				army_defence_factor = 0.05
@@ -89,7 +89,7 @@ ideas = {
 			}
 		}
 		VOR_federation_of_trade_unions_1 = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea VOR_federation_of_trade_unions"}
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea VOR_federation_of_trade_unions_1"}
 			allowed = {
 				always = no
 			}
@@ -126,7 +126,7 @@ ideas = {
 			}
 		}
 		VOR_union_of_cooperatives = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea VOR_federation_of_trade_unions"}
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea VOR_union_of_cooperatives"}
 			allowed = {
 				always = no
 			}
@@ -138,8 +138,213 @@ ideas = {
 			picture = TNO_winter_soldier
 			modifier = {
 				stability_factor = -0.05
-				conscription_factor = 0.5
+				monthly_population = 0.05
 				political_power_factor = 0.15
+			}
+		}
+		VOR_road_through_suffering = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea VOR_road_through_suffering"}
+			allowed = {
+				always = no
+			}
+			cancel = { has_country_flag = RUS_cancel_all_ideas }
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = TNO_winter_soldier
+			modifier = {
+				conscription_factor = 0.05
+			}
+		}
+		VOR_gaze_towards_the_stars_0 = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea VOR_gaze_towards_the_stars_0"}
+			allowed = {
+				always = no
+			}
+			cancel = { has_country_flag = RUS_cancel_all_ideas }
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = TNO_winter_soldier
+			modifier = {
+				experience_gain_army_factor = 0.05
+			}
+		}
+		VOR_revolutionary_mobilization_0 = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea VOR_revolutionary_mobilization_0"}
+			allowed = {
+				always = no
+			}
+			cancel = { has_country_flag = RUS_cancel_all_ideas }
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = TNO_winter_soldier
+			modifier = {
+				conscription = 0.01
+				minimum_training_level = -0.05
+			}
+		}
+		VOR_revolutionary_mobilization_1 = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea VOR_revolutionary_mobilization_1"}
+			allowed = {
+				always = no
+			}
+			cancel = { has_country_flag = RUS_cancel_all_ideas }
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = TNO_winter_soldier
+			modifier = {
+				conscription = 0.01
+				minimum_training_level = -0.05
+				max_command_power = -20
+				command_power_gain = 0.4
+			}
+		}
+		VOR_rocky_road_to_perfection = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea VOR_rocky_road_to_perfection"}
+			allowed = {
+				always = no
+			}
+			cancel = { has_country_flag = RUS_cancel_all_ideas }
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = TNO_winter_soldier
+			modifier = {
+				conscription_factor = 0.05
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+			}
+		}
+		VOR_revolutionary_militia = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea VOR_revolutionary_militia"}
+			allowed = {
+				always = no
+			}
+			cancel = { has_country_flag = RUS_cancel_all_ideas }
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = TNO_winter_soldier
+			modifier = {
+				conscription = 0.01
+				conscription_factor = 0.1
+				army_morale_factor = 0.15
+				army_org_factor = -0.1
+				minimum_training_level = -0.1
+				max_command_power = -20
+				command_power_gain = 0.4
+				
+			}
+		}
+		VOR_peoples_army_0 = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea VOR_peoples_army_0"}
+			allowed = {
+				always = no
+			}
+			cancel = { has_country_flag = RUS_cancel_all_ideas }
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = TNO_winter_soldier
+			modifier = {
+				army_org_factor = 0.05
+				max_dig_in_factor = 0.1
+			}
+		}
+		VOR_peoples_army_1 = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea VOR_peoples_army_1"}
+			allowed = {
+				always = no
+			}
+			cancel = { has_country_flag = RUS_cancel_all_ideas }
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = TNO_winter_soldier
+			modifier = {
+				army_org_factor = 0.1
+				max_dig_in_factor = 0.1
+				experience_gain_army_unit_factor = 0.15
+			}
+		}
+		VOR_gaze_into_the_abyss = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea VOR_gaze_into_the_abyss"}
+			allowed = {
+				always = no
+			}
+			cancel = { has_country_flag = RUS_cancel_all_ideas }
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = TNO_winter_soldier
+			modifier = {
+				experience_gain_army_factor = 0.1
+				experience_gain_factor = 0.1
+				max_command_power = 20
+			}
+		}
+		VOR_gaze_towards_the_stars_weak = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea VOR_gaze_towards_the_stars_weak"}
+			allowed = {
+				always = no
+			}
+			cancel = { has_country_flag = RUS_cancel_all_ideas }
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = TNO_winter_soldier
+			modifier = {
+				experience_gain_army_factor = 0.1
+				political_power_gain = -0.05
+				#army_speed_factor = 0.05
+				breakthrough_factor = 0.05
+			}
+		VOR_gaze_towards_the_stars_1 = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea VOR_gaze_towards_the_stars_1"}
+			allowed = {
+				always = no
+			}
+			cancel = { has_country_flag = RUS_cancel_all_ideas }
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = TNO_winter_soldier
+			modifier = {
+				experience_gain_army_factor = 0.1
+				political_power_gain = 0.1
+				army_speed_factor = 0.05
+				breakthrough_factor = 0.1
+			}
+		}
+		VOR_peoples_syndicates_idea = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea VOR_peoples_syndicates"}
+			allowed = {
+				always = no
+			}
+			cancel = { has_country_flag = RUS_cancel_all_ideas }
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = TNO_winter_soldier
+			modifier = {
+				consumer_goods_use_modifier = -0.1
+				production_factory_max_efficiency_factor = -0.1
+				production_factory_efficiency_gain_factor = 0.15
 			}
 		}
 	}

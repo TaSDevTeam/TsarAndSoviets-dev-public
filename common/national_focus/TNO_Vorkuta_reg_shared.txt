@@ -546,59 +546,104 @@ shared_focus = {
 	}
 }
 
+
+### ВОЕННАЯ ###
 shared_focus = {
 	id = VOR_world_conflagration_army
 	icon = GFX_goal_unknown
+	
 	cost = 10.00
-	x = 39
+	
+	x = 37
 	y = 2
+	
+	completion_reward = {
+		country_event = { id = vor_reg_mil.0 days = 0 }
+		army_experience = 20
+		TNO_improve_training_policy_effectiveness_med = yes
+	}
 }
 
 shared_focus = {
 	id = VOR_per_aspera
 	icon = GFX_goal_unknown
 	cost = 10.00
+	
 	prerequisite = { focus = VOR_world_conflagration_army }
-	x = 38
+	x = 36
 	y = 3
+	
+	completion_reward = {
+		country_event = { id = vor_reg_mil.1 days = 0 }
+		add_ideas = VOR_road_through_suffering
+	}
 }
 
 shared_focus = {
 	id = VOR_ad_astra
 	icon = GFX_goal_unknown
 	cost = 10.00
+	
 	prerequisite = { focus = VOR_world_conflagration_army }
-	x = 40
+	x = 38
 	y = 3
+	
+	completion_reward = {
+		country_event = { id = vor_reg_mil.2 days = 0 }
+		add_ideas = VOR_gaze_towards_the_stars_0
+	}
 }
 
 shared_focus = {
-	id = VOR_revolutionary_mobilisation
+	id = VOR_revolutionary_mobilization
 	icon = GFX_goal_unknown
 	cost = 10.00
+	
 	prerequisite = { focus = VOR_per_aspera }
 	mutually_exclusive = { focus = VOR_true_peoples_army }
-	x = 37
+	x = 35
 	y = 4
+	
+	completion_reward = {
+		country_event = { id = vor_reg_mil.3 days = 0 }
+		TNO_improve_conscription_policy_effectiveness_med = yes
+		TNO_improve_draft_exemptions_policy_effectiveness_med = yes
+		add_ideas = VOR_revolutionary_mobilization_0
+	}
 }
 
 shared_focus = {
 	id = VOR_true_peoples_army
 	icon = GFX_goal_unknown
 	cost = 10.00
+	
 	prerequisite = { focus = VOR_ad_astra }
-	mutually_exclusive = { focus = VOR_revolutionary_mobilisation }
-	x = 41
+	mutually_exclusive = { focus = VOR_revolutionary_mobilization }
+	x = 39
 	y = 4
+	
+	completion_reward = {
+		country_event = { id = vor_reg_mil.4 days = 0 }
+		add_ideas = VOR_peoples_army_0
+	}
 }
 
 shared_focus = {
 	id = VOR_decentralizing_command
 	icon = GFX_goal_unknown
 	cost = 10.00
-	prerequisite = { focus = VOR_revolutionary_mobilisation }
-	x = 37
+	
+	prerequisite = { focus = VOR_revolutionary_mobilization }
+	x = 35
 	y = 5
+	
+	completion_reward = {
+		country_event = { id = vor_reg_mil.5 days = 0 }
+		swap_ideas = {
+			remove_idea = VOR_revolutionary_mobilization_0
+			add_idea = VOR_revolutionary_mobilization_1
+		}
+	}
 }
 
 shared_focus = {
@@ -606,143 +651,272 @@ shared_focus = {
 	icon = GFX_goal_unknown
 	cost = 10.00
 	prerequisite = { focus = VOR_true_peoples_army }
-	x = 41
+	x = 39
 	y = 5
+	
+	completion_reward = {
+		country_event = { id = vor_reg_mil.6 days = 0 }
+		TNO_improve_army_professionalism_high = yes
+		swap_ideas = {
+			remove_idea = VOR_peoples_army_0
+			add_idea = VOR_peoples_army_1
+		}
+	}
 }
 
 shared_focus = {
 	id = VOR_echoes_of_smuta
 	icon = GFX_goal_unknown
 	cost = 10.00
+	
 	prerequisite = { focus = VOR_per_aspera }
 	prerequisite = { focus = VOR_ad_astra }
-	x = 39
+	x = 37
 	y = 5
+	
+	completion_reward = {
+		country_event = { id = vor_reg_mil.7 days = 0 }
+		add_political_power = 25
+		add_war_support = 0.05
+	}
 }
 
 shared_focus = {
 	id = VOR_zlatoust_miracle
 	icon = GFX_goal_unknown
 	cost = 10.00
+	
 	prerequisite = { focus = VOR_echoes_of_smuta }
-	x = 39
+	x = 37
 	y = 6
+	
+	completion_reward = {
+		country_event = { id = vor_reg_mil.8 days = 0 }
+		add_tech_bonus = {
+			bonus = 1.00
+			uses = 1
+			category = artillery
+			category = infantry_weapons
+			category = motorized_equipment
+		}
+	}
 }
 
 shared_focus = {
 	id = VOR_successes_of_the_revolution
 	icon = GFX_goal_unknown
 	cost = 10.00
+	
 	prerequisite = { focus = VOR_echoes_of_smuta }
-	x = 36
+	x = 34
 	y = 6
+	
+	completion_reward = {
+		country_event = { id = vor_reg_mil.9 days = 0 }
+		add_doctrine_cost_reduction = {
+			cost_reduction = 0.5
+			uses = 1
+			category = land_doctrine
+		}
+		add_war_support = 0.05
+	}
 }
 
 shared_focus = {
 	id = VOR_failures_of_the_directoria
 	icon = GFX_goal_unknown
 	cost = 10.00
+	
 	prerequisite = { focus = VOR_echoes_of_smuta }
-	x = 42
+	x = 40
 	y = 6
+	
+	completion_reward = {
+		country_event = { id = vor_reg_mil.10 days = 0 }
+		add_popularity = {
+			ideology = socialist
+			popularity = 0.1
+		}
+		add_popularity = {
+			ideology = progressivism
+			popularity = 0.1
+		}
+	}
 }
 
 shared_focus = {
 	id = VOR_lessons_of_war
 	icon = GFX_goal_unknown
 	cost = 10.00
+	
 	prerequisite = { focus = VOR_successes_of_the_revolution }
 	mutually_exclusive = { focus = VOR_military_democracy }
-	x = 35
+	x = 33
 	y = 7
+	
+	completion_reward = {
+		country_event = { id = vor_reg_mil.11 days = 0 }
+		swap_ideas = {
+			remove_idea = VOR_road_through_suffering
+			add_idea = VOR_rocky_road_to_perfection
+		}
+	}
 }
 
 shared_focus = {
 	id = VOR_military_democracy
 	icon = GFX_goal_unknown
 	cost = 10.00
+	
 	prerequisite = { focus = VOR_decentralizing_command }
 	prerequisite = { focus = VOR_successes_of_the_revolution }
 	mutually_exclusive = { focus = VOR_lessons_of_war }
-	x = 37
+	x = 35
 	y = 7
+	
+	completion_reward = {
+		country_event = { id = vor_reg_mil.12 days = 0 }
+		remove_ideas = VOR_road_through_suffering
+		swap_ideas = {
+			remove_idea = VOR_revolutionary_mobilization_1
+			add_idea = VOR_revolutionary_militia
+		}
+	}
 }
 
 shared_focus = {
-	id = VOR_arsenal_of_tomorrow
+	id = VOR_tomorrow_war_arsenal
 	icon = GFX_goal_unknown
 	cost = 10.00
+	
 	prerequisite = { focus = VOR_zlatoust_miracle }
-	x = 39
+	x = 37
 	y = 7
+	
+	completion_reward = {
+		country_event = { id = vor_reg_mil.13 days = 0 }
+		random_list = {
+			5 = {
+				add_tech_bonus = {
+					bonus = 0.5
+					uses = 1
+					category = radar_tech
+				}
+			}
+			4 = {
+				add_tech_bonus = {
+					bonus = 0.5
+					uses = 1
+					category = jet_fighter
+				}
+			}
+			1 = {
+				add_tech_bonus = {
+					bonus = 0.5
+					uses = 1
+					category = MBT
+				}
+			}
+		}
+	}
 }
 
 shared_focus = {
 	id = VOR_no_to_new_kolchak
 	icon = GFX_goal_unknown
 	cost = 10.00
+	
 	prerequisite = { focus = VOR_failures_of_the_directoria }
 	mutually_exclusive = { focus = VOR_shaking_hands_with_the_devil }
-	x = 43
+	x = 41
 	y = 7
+	
+	completion_reward = {
+		country_event = { id = vor_reg_mil.14 days = 0 }
+		swap_ideas = {
+			remove_idea = VOR_gaze_towards_the_stars_0
+			add_idea = VOR_gaze_towards_the_stars_1
+		}
+	}
 }
 
 shared_focus = {
 	id = VOR_shaking_hands_with_the_devil
 	icon = GFX_goal_unknown
 	cost = 10.00
+	
 	prerequisite = { focus = VOR_assemble_officer_corps }
 	prerequisite = { focus = VOR_failures_of_the_directoria }
 	mutually_exclusive = { focus = VOR_no_to_new_kolchak }
-	x = 41
+	x = 39
 	y = 7
+	
+	completion_reward = {
+		country_event = { id = vor_reg_mil.15 days = 0 }
+	}
 }
 
 shared_focus = {
 	id = VOR_peoples_syndicates
 	icon = GFX_goal_unknown
 	cost = 10.00
-	prerequisite = { focus = VOR_arsenal_of_tomorrow }
-	x = 39
+	
+	prerequisite = { focus = VOR_tomorrow_war_arsenal }
+	x = 35
 	y = 8
+	
+	completion_reward = {
+		country_event = { id = vor_reg_mil.16 days = 0 }
+		add_ideas = VOR_peoples_syndicates_idea
+		set_temp_variable = { pus_temp = 1 }
+		econ_pus_change = yes
+	}
 }
 
 shared_focus = {
 	id = VOR_tiger_hunt
 	icon = GFX_goal_unknown
 	cost = 10.00
-	prerequisite = { focus = VOR_arsenal_of_tomorrow }
-	x = 37
+	
+	prerequisite = { focus = VOR_tomorrow_war_arsenal }
+	x = 39
 	y = 8
-}
-
-shared_focus = {
-	id = VOR_iron_chariot_of_proletariat
-	icon = GFX_goal_unknown
-	cost = 10.00
-	prerequisite = { focus = VOR_tiger_hunt }
-	x = 37
-	y = 9
+	
+	completion_reward = {
+		country_event = { id = vor_reg_mil.17 days = 0 }
+	}
 }
 
 shared_focus = {
 	id = VOR_seven_nights
 	icon = GFX_goal_unknown
 	cost = 10.00
-	prerequisite = { focus = VOR_arsenal_of_tomorrow }
-	x = 41
+	
+	prerequisite = { focus = VOR_tomorrow_war_arsenal }
+	x = 37
 	y = 8
+	
+	completion_reward = {
+		country_event = { id = vor_reg_mil.18 days = 0 }
+	}
 }
 
 shared_focus = {
 	id = VOR_project_voskhod
 	icon = GFX_goal_unknown
 	cost = 10.00
+	
 	prerequisite = { focus = VOR_seven_nights }
-	x = 41
+	x = 37
 	y = 9
+	
+	completion_reward = {
+		country_event = { id = vor_reg_mil.19 days = 0 }
+	}
 }
 
+
+### ВНЕШНЯЯ ПОЛИТИКА ###
 shared_focus = {
 	id = VOR_revolution_against_world_order
 	icon = GFX_goal_unknown
@@ -754,6 +928,7 @@ shared_focus = {
 		country_event = { id = vor_reg_politic.0 days = 0 }
 	}
 }
+
 shared_focus = {
 	id = VOR_crimes_of_japanese
 	icon = GFX_goal_unknown
