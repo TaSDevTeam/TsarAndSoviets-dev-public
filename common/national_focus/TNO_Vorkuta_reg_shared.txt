@@ -760,6 +760,13 @@ shared_focus = {
 			remove_idea = VOR_road_through_suffering
 			add_idea = VOR_rocky_road_to_perfection
 		}
+		hidden_effect = {
+			if = {
+				limit = { NOT = { has_country_flag = VOR_makashov_rises } }
+				set_country_flag = VOR_makashov_rises
+				country_event = { id = vor_reg_mil.20 days = 150 }
+			}
+		}
 	}
 }
 
@@ -780,6 +787,13 @@ shared_focus = {
 		swap_ideas = {
 			remove_idea = VOR_revolutionary_mobilization_1
 			add_idea = VOR_revolutionary_militia
+		}
+		hidden_effect = {
+			if = {
+				limit = { NOT = { has_country_flag = VOR_makashov_rises } }
+				set_country_flag = VOR_makashov_rises
+				country_event = { id = vor_reg_mil.20 days = 150 }
+			}
 		}
 	}
 }
@@ -818,6 +832,13 @@ shared_focus = {
 				}
 			}
 		}
+		hidden_effect = {
+			if = {
+				limit = { NOT = { has_country_flag = VOR_makashov_rises } }
+				set_country_flag = VOR_makashov_rises
+				country_event = { id = vor_reg_mil.20 days = 150 }
+			}
+		}
 	}
 }
 
@@ -837,6 +858,13 @@ shared_focus = {
 			remove_idea = VOR_gaze_towards_the_stars_0
 			add_idea = VOR_gaze_towards_the_stars_1
 		}
+		hidden_effect = {
+			if = {
+				limit = { NOT = { has_country_flag = VOR_makashov_rises } }
+				set_country_flag = VOR_makashov_rises
+				country_event = { id = vor_reg_mil.20 days = 150 }
+			}
+		}
 	}
 }
 
@@ -853,6 +881,13 @@ shared_focus = {
 	
 	completion_reward = {
 		country_event = { id = vor_reg_mil.15 days = 0 }
+		hidden_effect = {
+			if = {
+				limit = { NOT = { has_country_flag = VOR_makashov_rises } }
+				set_country_flag = VOR_makashov_rises
+				country_event = { id = vor_reg_mil.20 days = 150 }
+			}
+		}
 	}
 }
 
@@ -884,6 +919,8 @@ shared_focus = {
 	
 	completion_reward = {
 		country_event = { id = vor_reg_mil.17 days = 0 }
+		set_variable = { tiger_hunt_readiness = 0 }
+		set_variable = { tiger_hunt_readiness_neg = 100 }
 	}
 }
 
@@ -898,6 +935,8 @@ shared_focus = {
 	
 	completion_reward = {
 		country_event = { id = vor_reg_mil.18 days = 0 }
+		add_ideas = VOR_seven_nights_program
+		tno_training_improve = yes
 	}
 }
 
@@ -911,7 +950,18 @@ shared_focus = {
 	y = 9
 	
 	completion_reward = {
-		country_event = { id = vor_reg_mil.19 days = 0 }
+		if ={
+			limit = {
+				TOM = {
+					exists = yes
+				}
+			}
+			country_event = { id = vor_reg_mil.19 days = 0 }
+		}
+		else = {
+			country_event = { id = vor_reg_mil.191 days = 0 }
+		}
+		add_ideas = VOR_project_voskhod_idea
 	}
 }
 

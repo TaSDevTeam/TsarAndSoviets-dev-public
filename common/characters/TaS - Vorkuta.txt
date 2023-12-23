@@ -43,6 +43,54 @@ characters = {
 		}
 	}
 	
+	#Птичка польку танцевала на лужайке в ранний час
+	#Хвост налево
+	VOR_Boris_Scherbina = {
+		name = VOR_Boris_Scherbina
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/VOR/Portrait_Vorkuta_Boris_Scherbina.dds"
+			}
+		}
+		country_leader = {
+			desc = "VOR_BORIS_SCHERBINA_DESC"
+			expire = "1994.2.2"
+			ideology = socialist_syndicalism_subtype
+			id = -1
+		}
+	}
+	#Хвост направо
+	VOR_Yevgeniy_Primakov = {
+		name = VOR_Yevgeniy_Primakov
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/VOR/Portrait_Vorkuta_Yevgeniy_Primakov.dds"
+			}
+		}
+		country_leader = {
+			desc = "VOR_YEVGENIY_PRIMAKOV_DESC"
+			expire = "1994.2.2"
+			ideology = despotism
+			id = -1
+		}
+	}
+	#Это полька "Карабас"
+	VOR_Gennadiy_Shimanov = {
+		name = VOR_Gennadiy_Shimanov
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/VOR/Portrait_Vorkuta_Gennadiy_Shimanov.dds"
+			}
+		}
+		country_leader = {
+			desc = "VOR_GENNADIY_SHIMANOV_DESC"
+			expire = "1994.2.2"
+			ideology = fascism
+			id = -1
+		}
+	}
+	
+	
 	# Ministers #
 	VOR_Boris_Trofimo = {
 		name = VOR_Boris_Trofimo
@@ -220,6 +268,216 @@ characters = {
 			ai_will_do = { factor = 0 }
 		}
 	}
+	VOR_Albert_Makashov = {
+		name = VOR_Albert_Makashov
+		portraits = {
+			civilian = {
+				small = "GFX_idea_VOR_minister_Albert_Makashov"
+			}
+			army = {
+				large = "gfx/leaders/VOR/Portrait_Vorkuta_Albert_Makashov.dds"
+			}
+		}
+		advisor = {
+			slot = security_minister
+			idea_token = VOR_Albert_Makashov_sec
+			allowed = { original_tag = VOR }
+			traits = {
+				security_minister
+			}
+			ledger = civilian
+			cost = -1
+			removal_cost = -1
+			ai_will_do = { factor = 0 }
+		}
+	}
+	
+	#Птичка польку танцевала на лужайке в ранний час
+	#Хвост налево
+	VOR_Boris_Vail = {
+		name = VOR_Boris_Vail
+		portraits = {
+			civilian = {
+				small = "GFX_idea_VOR_minister_Boris_Vail"
+			}
+		}
+		advisor = {
+			slot = head_of_government
+			idea_token = VOR_Boris_Vail_hog
+			allowed = { original_tag = VOR }
+			traits = {
+				head_of_government
+			}
+			ledger = civilian
+			cost = -1
+			removal_cost = -1
+			ai_will_do = { factor = 0 }
+		}
+	}
+	VOR_Boris_Vail_diplomat = {
+		name = VOR_Boris_Vail
+		portraits = {
+			civilian = {
+				small = "GFX_idea_VOR_minister_Boris_Vail"
+			}
+		}
+		advisor = {
+			slot = foreign_minister
+			idea_token = VOR_Boris_Vail_for
+			allowed = { original_tag = VOR }
+			traits = {
+				foreign_minister
+			}
+			ledger = civilian
+			cost = -1
+			removal_cost = -1
+			ai_will_do = { factor = 0 }
+		}
+	}
+	VOR_Valeriy_Ronkin = {
+		name = VOR_Valeriy_Ronkin
+		portraits = {
+			civilian = {
+				small = "GFX_idea_VOR_minister_Valeriy_Ronkin"
+			}
+		}
+		advisor = {
+			slot = economy_minister
+			idea_token = VOR_Valeriy_Ronkin_eco
+			allowed = { original_tag = VOR }
+			traits = {
+				economy_minister
+			}
+			ledger = civilian
+			cost = -1
+			removal_cost = -1
+			ai_will_do = { factor = 0 }
+		}
+	}
+	#Хвост направо
+	VOR_Viktor_Chernomyrdin = {
+		name = VOR_Viktor_Chernomyrdin
+		portraits = {
+			civilian = {
+				small = "GFX_idea_VOR_minister_Viktor_Chernomyrdin"
+			}
+		}
+		advisor = {
+			slot = head_of_government
+			idea_token = VOR_Viktor_Chernomyrdin_hog
+			allowed = { original_tag = VOR }
+			traits = {
+				head_of_government
+			}
+			ledger = civilian
+			cost = -1
+			removal_cost = -1
+			ai_will_do = { factor = 0 }
+		}
+	}
+	VOR_Nikolai_Leonov = {
+		name = VOR_Nikolai_Leonov
+		portraits = {
+			civilian = {
+				small = "GFX_idea_VOR_minister_Nikolai_Leonov"
+			}
+		}
+		advisor = {
+			slot = foreign_minister
+			idea_token = VOR_Nikolai_Leonov_for
+			allowed = { original_tag = VOR }
+			traits = {
+				foreign_minister
+			}
+			ledger = civilian
+			cost = -1
+			removal_cost = -1
+			ai_will_do = { factor = 0 }
+		}
+	}
+	VOR_Vladimir_Dolgikh = {
+		name = VOR_Vladimir_Dolgikh
+		portraits = {
+			civilian = {
+				small = "GFX_idea_VOR_minister_Vladimir_Dolgikh"
+			}
+		}
+		advisor = {
+			slot = economy_minister
+			idea_token = VOR_Vladimir_Dolgikh_eco
+			allowed = { original_tag = VOR }
+			traits = {
+				economy_minister
+			}
+			ledger = civilian
+			cost = -1
+			removal_cost = -1
+			ai_will_do = { factor = 0 }
+		}
+	}
+	#Это полька "Карабас"
+	VOR_Vladimir_Osipov = {
+		name = VOR_Vladimir_Osipov
+		portraits = {
+			civilian = {
+				small = "GFX_idea_VOR_minister_Vladimir_Osipov"
+			}
+		}
+		advisor = {
+			slot = head_of_government
+			idea_token = VOR_Vladimir_Osipov_hog
+			allowed = { original_tag = VOR }
+			traits = {
+				head_of_government
+			}
+			ledger = civilian
+			cost = -1
+			removal_cost = -1
+			ai_will_do = { factor = 0 }
+		}
+	}
+	VOR_Nikolai_Yakovlev = {
+		name = VOR_Nikolai_Yakovlev
+		portraits = {
+			civilian = {
+				small = "GFX_idea_VOR_minister_Nikolai_Yakovlev"
+			}
+		}
+		advisor = {
+			slot = foreign_minister
+			idea_token = VOR_Nikolai_Yakovlev_for
+			allowed = { original_tag = VOR }
+			traits = {
+				foreign_minister
+			}
+			ledger = civilian
+			cost = -1
+			removal_cost = -1
+			ai_will_do = { factor = 0 }
+		}
+	}
+	VOR_Ivan_Rybkin = {
+		name = VOR_Ivan_Rybkin
+		portraits = {
+			civilian = {
+				small = "GFX_idea_VOR_minister_Ivan_Rybkin"
+			}
+		}
+		advisor = {
+			slot = economy_minister
+			idea_token = VOR_Ivan_Rybkin_eco
+			allowed = { original_tag = VOR }
+			traits = {
+				economy_minister
+			}
+			ledger = civilian
+			cost = -1
+			removal_cost = -1
+			ai_will_do = { factor = 0 }
+		}
+	}
+	
+	
 
 	# Generals #
 	VOR_Pyotr_Gladko = {
@@ -247,11 +505,11 @@ characters = {
 			}
 		}
 	}
-	VOR_Li_Harvald_Osvald = {
-		name = VOR_Li_Harvald_Osvald
+	VOR_Lee_Harvey_Osvald = {
+		name = VOR_Lee_Harvey_Osvald
 		portraits = {
 			army = {
-				large = "gfx/leaders/VOR/Portrait_VOR_Li_Harvald_Osvald.dds"
+				large = "gfx/leaders/VOR/Portrait_VOR_Lee_Harvey_Osvald.dds"
 			}
 		}
 	}

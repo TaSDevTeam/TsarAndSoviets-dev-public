@@ -90,4 +90,180 @@ VOR_debug_category = {
 	}
 }
 
-	
+VOR_tiger_hunt_category = {
+	VOR_tiger_hunt_mission = {
+		icon = GFX_decision_generic_tank
+		allowed = {
+			original_tag = VOR
+		}
+		activation = {
+			always = no #Активируется в ивенте к фокусу VOR_tiger_hunt
+		}
+		days_mission_timeout = 15
+		available = {
+			check_variable = { tiger_hunt_readiness = 100 }
+		}
+		complete_effect = {
+			country_event = vor_reg_mil.171
+			clear_variable = tiger_hunt_readiness
+			clear_variable = tiger_hunt_readiness_neg
+		}
+		timeout_effect = {
+			random_list = {
+				tiger_hunt_readiness = {
+					country_event = vor_reg_mil.171
+				}
+				tiger_hunt_readiness_neg = {
+					country_event = vor_reg_mil.172
+				}
+			}
+			clear_variable = tiger_hunt_readiness
+			clear_variable = tiger_hunt_readiness_neg
+		}
+	}
+	VOR_tiger_hunt_contact_ostland_partisans = {
+		icon = GFX_decision_generic_shake_hands
+		visible = {
+			has_variable = tiger_hunt_readiness
+		}
+		allowed = {
+			original_tag = VOR
+		}
+		fire_only_once = yes
+		custom_cost_trigger = { command_power > 29.99 }
+		custom_cost_tooltip = decision_cost_30_cp
+		days_remove = 3
+		complete_effect = {
+			add_command_power = -30
+		}
+		remove_effect = {
+			add_to_value = { tiger_hunt_readiness = 25 }
+			add_to_value = { tiger_hunt_readiness_neg = -25 }
+		}
+	}
+	VOR_tiger_hunt_bribe_swedes = {
+		icon = GFX_decision_generic_money
+		visible = {
+			has_variable = tiger_hunt_readiness
+		}
+		allowed = {
+			original_tag = VOR
+		}
+		fire_only_once = yes
+		custom_cost_tooltip = decision_cost_10_million
+		complete_effect = {
+			set_temp_variable = { temp_econ_spending_amount = 0.35 }
+			econ_spend_money_once_effect_raw_money = yes
+		}
+		remove_effect = {
+			add_to_value = { tiger_hunt_readiness = 25 }
+			add_to_value = { tiger_hunt_readiness_neg = -25 }
+		}
+	}
+	VOR_tiger_hunt_trade_ships_info = {
+		icon = GFX_decision_generic_decision
+		visible = {
+			has_variable = tiger_hunt_readiness
+		}
+		allowed = {
+			original_tag = VOR
+		}
+		fire_only_once = yes
+		days_remove = 3
+		cost = 50
+		remove_effect = {
+			add_to_value = { tiger_hunt_readiness = 25 }
+			add_to_value = { tiger_hunt_readiness_neg = -25 }
+		}
+	}
+	VOR_tiger_hunt_intercept_german_comms = {
+		icon = GFX_decision_werbell_intel_unit
+		visible = {
+			has_variable = tiger_hunt_readiness
+		}
+		allowed = {
+			original_tag = VOR
+		}
+		available = {
+			has_tech = radar_1960
+		}
+		fire_only_once = yes
+		days_remove = 3
+		remove_effect = {
+			add_to_value = { tiger_hunt_readiness = 50 }
+			add_to_value = { tiger_hunt_readiness_neg = -50 }
+		}
+	}
+	VOR_tiger_hunt_jap_intel = {
+		icon = GFX_decision_generic_investigate
+		visible = {
+			has_variable = tiger_hunt_readiness
+		}
+		allowed = {
+			original_tag = VOR
+		}
+		available = {
+			NOT = {
+				has_country_flag = VOR_tiger_hunt_intel_contact
+			}
+		}
+		fire_only_once = yes
+		days_remove = 3
+		remove_effect = {
+			set_country_flag = VOR_tiger_hunt_intel_contact
+			random = {
+				chance = 25
+				add_to_value = { tiger_hunt_readiness = 75 }
+				add_to_value = { tiger_hunt_readiness_neg = -75 }
+			}
+		}
+	}
+	VOR_tiger_hunt_usa_intel = {
+		icon = GFX_decision_generic_investigate
+		visible = {
+			has_variable = tiger_hunt_readiness
+		}
+		allowed = {
+			original_tag = VOR
+		}
+		available = {
+			NOT = {
+				has_country_flag = VOR_tiger_hunt_intel_contact
+			}
+		}
+		fire_only_once = yes
+		days_remove = 3
+		remove_effect = {
+			set_country_flag = VOR_tiger_hunt_intel_contact
+			random = {
+				chance = 50
+				add_to_value = { tiger_hunt_readiness = 50 }
+				add_to_value = { tiger_hunt_readiness_neg = -50 }
+			}
+		}	
+	}
+	VOR_tiger_hunt_ita_intel = {
+		icon = GFX_decision_generic_investigate
+		visible = {
+			has_variable = tiger_hunt_readiness
+		}
+		allowed = {
+			original_tag = VOR
+		}
+		available = {
+			NOT = {
+				has_country_flag = VOR_tiger_hunt_intel_contact
+			}
+		}
+		fire_only_once = yes
+		days_remove = 3
+		remove_effect = {
+			set_country_flag = VOR_tiger_hunt_intel_contact
+			random = {
+				chance = 75
+				add_to_value = { tiger_hunt_readiness = 25 }
+				add_to_value = { tiger_hunt_readiness_neg = -25 }
+			}
+		}	
+	}
+}

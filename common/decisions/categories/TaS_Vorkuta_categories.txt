@@ -15,3 +15,18 @@ VOR_debug_category = {
 		base = 150
 	}
 }
+
+VOR_tiger_hunt_category = {
+	icon = GFX_decision_category_generic_political_actions
+	
+	allowed = {
+		tag = VOR
+	}
+	visible = {
+		has_completed_focus = VOR_tiger_hunt
+	}
+	
+	priority = {
+		base = 1
+	}
+}
