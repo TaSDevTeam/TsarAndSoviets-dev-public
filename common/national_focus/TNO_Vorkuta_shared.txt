@@ -5,9 +5,9 @@ shared_focus = {
 	x = 7
 	y = 1
     completion_reward = {
-		#country_event = {
-		#	id = vorkuta_start.1 days = 0
-	    #}
+		country_event = {
+			id = VOR_initial.1 days = 0
+	    }
     }
 } 
 
@@ -22,7 +22,7 @@ shared_focus = {
 	y = 2
     completion_reward = {
 		country_event = {
-			id = vorkuta_start.1 days = 0
+			id = VOR_initial.2 days = 0
 	    }
 		set_temp_variable = { temp_econ_GDP_boost_flat = 0.035 }
 		econ_GDP_boost_once_flat = yes
@@ -41,9 +41,24 @@ shared_focus = {
 	x = 5
 	y = 3
 	completion_reward = {
-		#country_event = {
-		#    id = vorkuta_start.3 days = 0
-		#}
+		country_event = {
+			id = VOR_initial.4 days = 0
+	    }
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 300
+			producer = WRS
+		}
+		add_equipment_to_stockpile = {
+			type = support_equipment
+			amount = 50
+			producer = WRS
+		}
+		add_equipment_to_stockpile = {
+			type = anti_tank_equipment
+			amount = 50
+			producer = WRS
+		}
     }
 } 
 
@@ -58,7 +73,7 @@ shared_focus = {
 	y = 3
 	completion_reward = {
 		country_event = {
-		    id = vorkuta_start.3 days = 0
+		    id = VOR_initial.5 days = 0
 		}
 		set_temp_variable = { temp_econ_GDP_boost_flat = 0.68 }
 		econ_GDP_boost_once_flat = yes
@@ -78,9 +93,24 @@ shared_focus = {
 	x = 5
 	y = 4
 	completion_reward = {
-		#country_event = {
-		#    id = vorkuta_start.3 days = 0
-		#}
+		country_event = {
+		    id = VOR_initial.8 days = 0
+		}
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 500
+			producer = ZLT
+		}
+		add_equipment_to_stockpile = {
+			type = support_equipment
+			amount = 150
+			producer = ZLT
+		}
+		add_equipment_to_stockpile = {
+			type = anti_tank_equipment
+			amount = 150
+			producer = ZLT
+		}
     }
 } 
 
@@ -94,9 +124,9 @@ shared_focus = {
 	x = 7
 	y = 4
 	completion_reward = {
-		#country_event = {
-		#    id = vorkuta_start.3 days = 0
-		#}
+		country_event = {
+		    id = VOR_initial.9 days = 0
+		}
     }
 } 
 
@@ -111,7 +141,7 @@ shared_focus = {
 	y = 4
     completion_reward = {
 		country_event = {
-		    id = vorkuta_start.5 days = 0
+		    id = VOR_initial.10 days = 0
 		}
 		set_temp_variable = { gdp_growth_temp = 1.25 }
         econ_gdp_growth_change = yes
@@ -137,14 +167,14 @@ shared_focus = {
 	y = 5
 	select_effect = {
 		hidden_effect = {
-			country_event = {id = vorkuta_start.7 days = 6}
+			country_event = {id = VOR_initial.12 days = 6}
 			add_stability = -0.1
 		}
 	}
 	completion_reward = {
-		#country_event = {
-		#    id = vorkuta_start.7 days = 0
-		#}
+		country_event = {
+		    id = VOR_initial.7 days = 0
+		}
 		add_stability = 0.1
     }
 }
@@ -159,9 +189,9 @@ shared_focus = {
 	x = 7
 	y = 6
 	completion_reward = {
-		#country_event = {
-		#    id = vorkuta_start.3 days = 0
-		#}
+		country_event = {
+		    id = VOR_initial.17 days = 0
+		}
     }
 } 
 
@@ -173,7 +203,7 @@ shared_focus = {
 	y = 0
 	completion_reward = {
 		country_event = {
-			id = vorkuta_start.12 days = 0
+			id = VOR_initial.18 days = 0
 		}	
 	}
 }
@@ -192,7 +222,7 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		country_event = {
-			id = vorkuta_start.14 days = 0
+			id = VOR_initial.19 days = 0
 		}	
 	}
 }
@@ -207,9 +237,9 @@ shared_focus = {
 	x = 2
 	y = 2
 	completion_reward = {	
-	    country_event = {
-			id = vorkuta_start.15 days = 0
-		}	
+	   country_event = {
+			id = VOR_initial.20 days = 0
+		}
 	}
 }
 
@@ -227,8 +257,8 @@ shared_focus = {
 	x = 4
 	y = 2
 	completion_reward = {	
-	 country_event = {
-			id = vorkuta_start.16 days = 0
+		country_event = {
+			id = VOR_initial.21 days = 0
 		}	
 	    TNO_improve_agriculture_med = yes
 	}
@@ -248,9 +278,9 @@ shared_focus = {
 	x = 9
 	y = 1
 	completion_reward = {
-	 country_event = {
-			id = vorkuta_start.17 days = 0
-		}	
+		country_event = {
+			id = VOR_initial.22 days = 0
+		}
         add_ideas = tno_army_professionalism_cronyism
 		add_ideas = VOR_council_of_war_and_defense
 	}
@@ -269,8 +299,8 @@ shared_focus = {
 	x = 8
 	y = 2
 	completion_reward = {
-	country_event = {
-			id = vorkuta_start.19 days = 0
+		country_event = {
+			id = VOR_initial.23 days = 0
 		}
         load_oob = VOR_internet_levaki	
 	}
@@ -289,8 +319,8 @@ shared_focus = {
 	x = 10
 	y = 2
 	completion_reward = {
-	country_event = {
-			id = vorkuta_start.20 days = 0
+		country_event = {
+			id = VOR_initial.24 days = 0
 		}
         add_war_support = 0.20	
 	}
@@ -309,8 +339,8 @@ shared_focus = {
 	x = 5
 	y = 1
 	completion_reward = {
-	country_event = {
-			id = vorkuta_start.18 days = 0
+		country_event = {
+			id = VOR_initial.25 days = 0
 		}
         add_manpower = 10000	
 	}
@@ -330,7 +360,7 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		country_event = {
-			id = vorkuta_start.13 days = 0
+			id = VOR_initial.26 days = 0
 		}	
 	}
 }
@@ -351,10 +381,10 @@ shared_focus = {
 	x = 6
 	y = 2
 	completion_reward = {
-		#country_event = {
-		#	id = vorkuta_start.20 days = 0
-		#}
-        #add_war_support = 0.20	
+		country_event = {
+			id = VOR_initial.27 days = 0
+		}
+        add_war_support = 0.05	
 	}
 }
 
@@ -384,9 +414,9 @@ shared_focus = {
 	y = 3
 	completion_reward = {
 	country_event = {
-			id = vorkuta_start.20 days = 0
+			id = VOR_initial.28 days = 0
 		}
-        add_war_support = 0.20	
+        add_war_support = 0.1
 	}
 }
 
@@ -420,7 +450,7 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 	country_event = {	
-			id = vorkuta_start.22 
+			id = VOR_initial.29
 			days = 0
 		}
 	    add_stability = 0.10
@@ -443,10 +473,10 @@ shared_focus = {
 	x = 14
 	y = 1
 	completion_reward = {
-		#country_event = {	
-		#	id = vorkuta_start.22 
-		#	days = 0
-		#}		
+		country_event = {	
+			id = VOR_initial.30
+			days = 0
+		}		
 	}
 }
 
@@ -465,7 +495,7 @@ shared_focus = {
 			days = 60
 		}
 	country_event = {	
-			id = vorkuta_start.23 days = 0
+			id = VOR_initial.31 days = 0
 		}
 	}
 }	
@@ -486,10 +516,10 @@ shared_focus = {
 	x = 13
 	y = 2
 	completion_reward = {
-		#country_event = {	
-		#	id = vorkuta_start.22 
-		#	days = 0
-		#}		
+		country_event = {	
+			id = VOR_initial.32
+			days = 0
+		}		
 	}
 }
 
@@ -509,10 +539,10 @@ shared_focus = {
 	x = 15
 	y = 2
 	completion_reward = {
-		#country_event = {	
-		#	id = vorkuta_start.22 
-		#	days = 0
-		#}		
+		country_event = {	
+			id = VOR_initial.33
+			days = 0
+		}		
 	}
 }
 
@@ -529,10 +559,10 @@ shared_focus = {
 	x = 14
 	y = 3
 	completion_reward = {
-		#country_event = {	
-		#	id = vorkuta_start.22 
-		#	days = 0
-		#}		
+		country_event = {	
+			id = VOR_initial.34
+			days = 0
+		}		
 		set_country_flag = VOR_unlock_all_trees
 		mark_focus_tree_layout_dirty = yes
 	}
@@ -561,6 +591,10 @@ shared_focus = {
 				traits = { neo_revolutioner }
 			}
 		}
+		country_event = {	
+			id = VOR_initial.35
+			days = 0
+		}
 	}
 }
 shared_focus = {
@@ -574,8 +608,9 @@ shared_focus = {
 	y = 4
 	completion_reward = {
 	TNO_improve_admin_efficiency_high = yes
-	country_event = {	
-			id = vorkuta_start.24 days = 0
+		country_event = {	
+			id = VOR_initial.36
+			days = 0
 		}
 	}
 }
@@ -590,13 +625,14 @@ shared_focus = {
 	x = 12
 	y = 4
 	completion_reward = {
-	TNO_improve_industrial_expertise_high = yes
+		TNO_improve_industrial_expertise_high = yes
 		set_temp_variable = { pus_temp = 2 }
 		econ_pus_change = yes
-	set_temp_variable = { gdp_growth_temp = 1.50 }
-    econ_gdp_growth_change = yes
-	country_event = {	
-			id = vorkuta_start.25 days = 0
+		set_temp_variable = { gdp_growth_temp = 1.50 }
+		econ_gdp_growth_change = yes
+		country_event = {	
+			id = VOR_initial.38
+			days = 0
 		}
 	}
 }
@@ -614,10 +650,11 @@ shared_focus = {
 		add_political_power = 100
 		add_popularity = {
 			ideology = socialist
-			popularity = 0.20
+			popularity = 0.05
 		}
 		country_event = {	
-			id = vorkuta_start.26 days = 0
+			id = VOR_initial.39
+			days = 0
 		}
 	}
 }
@@ -635,9 +672,10 @@ shared_focus = {
 		focus = VOR_open_party_recruitment
 	}
 	completion_reward = {
-		#country_event = {	
-		#	id = vorkuta_start.27 days = 0
-		#}
+		country_event = {	
+			id = VOR_initial.40
+			days = 0
+		}
 	}
 }
 
@@ -651,9 +689,10 @@ shared_focus = {
 	x = 8
 	y = 5
 	completion_reward = {
-		#country_event = {	
-		#	id = vorkuta_start.27 days = 0
-		#}
+		country_event = {	
+			id = VOR_initial.41
+			days = 0
+		}
 	}
 }
 
@@ -667,8 +706,9 @@ shared_focus = {
 	x = 10
 	y = 5
 	completion_reward = {
-	country_event = {	
-			id = vorkuta_start.27 days = 0
+		country_event = {	
+			id = VOR_initial.42
+			days = 0
 		}
 	}
 }
@@ -683,9 +723,10 @@ shared_focus = {
 	x = 12
 	y = 5
 	completion_reward = {
-		#country_event = {	
-		#		id = vorkuta_start.27 days = 0
-		#	}
+		country_event = {	
+			id = VOR_initial.43
+			days = 0
+		}
 	}
 }
 
@@ -702,9 +743,10 @@ shared_focus = {
 	x = 14
 	y = 5
 	completion_reward = {
-		#country_event = {	
-		#	id = vorkuta_start.27 days = 0
-		#}
+		country_event = {	
+			id = VOR_initial.44
+			days = 0
+		}
 	}
 }
 
@@ -732,7 +774,8 @@ shared_focus = {
 	completion_reward = {
 	    RUS_Smuta_Enable = yes
 		country_event = {	
-			id = vorkuta_start.21 days = 0
+			id = VOR_initial.45
+			days = 0
 		}
 		add_war_support = 0.10
 		TNO_improve_army_professionalism_med = yes
@@ -768,15 +811,14 @@ shared_focus = {
 		x = 5
 		y = 2
 		completion_reward = {
-		country_event = {
-        id = vorkuta_smutaa.2 days = 0
-		}		
-		set_temp_variable = { pus_temp = 1 }
-		econ_pus_change = yes
-	set_temp_variable = { gdp_growth_temp = 1.50 }
-    econ_gdp_growth_change = yes
-
-}
+			country_event = {
+			id = vorkuta_smutaa.2 days = 0
+			}		
+			set_temp_variable = { pus_temp = 1 }
+			econ_pus_change = yes
+			set_temp_variable = { gdp_growth_temp = 1.50 }
+			econ_gdp_growth_change = yes
+		}
 	}
 
 shared_focus = {
@@ -789,26 +831,26 @@ shared_focus = {
 		x = 7
 		y = 2
 		completion_reward = {
-		set_temp_variable = { Y = -30 }
-		RUS_Smuta_Chaos_Add_Y = yes
-		TNO_improve_press_rights_policy_effectiveness_high = yes
-		country_event = {
-        id = vorkuta_smutaa.3 days = 0
+			set_temp_variable = { Y = -30 }
+			RUS_Smuta_Chaos_Add_Y = yes
+			TNO_improve_press_rights_policy_effectiveness_high = yes
+			country_event = {
+				id = vorkuta_smutaa.3 days = 0
+			}
 		}
-}
 	}
 shared_focus = {
-		id = VOR_strikes
-		icon = GFX_VOR_strikes
-		cost = 3.00
-		prerequisite = {
-			focus = VOR_Yusni_poxod
-		}
-		x = 9
-		y = 2
-		completion_reward = {
+	id = VOR_strikes
+	icon = GFX_VOR_strikes
+	cost = 3.00
+	prerequisite = {
+		focus = VOR_Yusni_poxod
+	}
+	x = 9
+	y = 2
+	completion_reward = {
 		country_event = {
-        id = vorkuta_smutaa.4 days = 0
+			id = vorkuta_smutaa.4 days = 0
 		}
 	}
 }

@@ -1,7 +1,1085 @@
-add_namespace = vorkuta_start
-add_namespace = vorkuta_smutaa
 add_namespace = vor_reg
 add_namespace = vor_reg_politic
+add_namespace = vorkuta_start
+add_namespace = vorkuta_smutaa
+
+add_namespace = VOR_initial
+add_namespace = VOR_smuta
+
+
+country_event = { #O Murke i Gonchikh -- Vorkuta Tales
+	id = VOR_initial.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.1" }
+	title = VOR_initial.1.t
+	desc = VOR_initial.1.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.1.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Report of 1961 -- Lager Report
+	id = VOR_initial.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.2" }
+	title = VOR_initial.2.t
+	desc = VOR_initial.2.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.2.a
+		ai_chance = { factor = 1 }
+		country_event = {
+			id = VOR_initial.3 days = 7
+		}
+	}
+}
+
+country_event = { #Report of 1961 -- Kamkov
+	id = VOR_initial.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.3" }
+	title = VOR_initial.3.t
+	desc = VOR_initial.3.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.3.a
+		ai_chance = { factor = 1 }
+		add_political_power = 50
+	}
+}
+
+country_event = { #Inventatization -- Scapegoat
+	id = VOR_initial.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.4" }
+	title = VOR_initial.4.t
+	desc = VOR_initial.4.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.4.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Capitalism in GULag -- Just Trade
+	id = VOR_initial.5
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.5" }
+	title = VOR_initial.5.t
+	desc = VOR_initial.5.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.5.a
+		ai_chance = { factor = 1 }
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 125
+			producer = ZLT
+		}
+		add_manpower = -200
+		custom_effect_tooltip = gain_loot_1
+		add_to_variable = { loot_amount = 1 }
+		country_event = {
+			id = VOR_initial.6 days = 7
+		}
+	}
+}
+
+country_event = { #Capitalism in GULag -- The Last Day in jail
+	id = VOR_initial.6
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.6" }
+	title = VOR_initial.6.t
+	desc = VOR_initial.6.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.6.a
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = gain_loot_2
+		add_to_variable = { loot_amount = 2 }
+	}
+}
+
+country_event = { #Inspection in the RechLag -- The Amazing Vorkuta Circus
+	id = VOR_initial.7
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.7" }
+	title = VOR_initial.7.t
+	desc = VOR_initial.7.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.7.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Renew Equipment -- Quid Pro Quo
+	id = VOR_initial.8
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.8" }
+	title = VOR_initial.8.t
+	desc = VOR_initial.8.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.8.a
+		ai_chance = { factor = 1 }
+		country_event = {
+			id = VOR_initial.9 days = 7
+		}
+	}
+}
+
+country_event = { #Reap the Benefits -- Verify Your C(l)ock
+	id = VOR_initial.9
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.9" }
+	title = VOR_initial.9.t
+	desc = VOR_initial.9.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.9.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Raise Production Quotas -- Behind the Scene
+	id = VOR_initial.10
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.10" }
+	title = VOR_initial.10.t
+	desc = VOR_initial.10.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.10.a
+		ai_chance = { factor = 1 }
+		country_event = {
+		    id = VOR_initial.11 days = 3
+		}
+		add_ideas = tno_max_workhours_14_hour_work_day
+		TNO_improve_max_workhours_policy_effectiveness_low = yes
+	}
+}
+
+country_event = { #Raise Production Quotas -- On the Factory
+	id = VOR_initial.11
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.11" }
+	title = VOR_initial.11.t
+	desc = VOR_initial.11.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.11.a
+		ai_chance = { factor = 1 }
+		add_stability = -0.1
+	}
+}
+
+country_event = { #Inspection in the RechLag -- Step One
+	id = VOR_initial.12
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.12" }
+	title = VOR_initial.12.t
+	desc = VOR_initial.12.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.12.a
+		ai_chance = { factor = 1 }
+		country_event = {
+		    id = VOR_initial.13 days = 3
+		}
+	}
+}
+
+country_event = { #Inspection in the RechLag -- Step Two
+	id = VOR_initial.13
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.13" }
+	title = VOR_initial.13.t
+	desc = VOR_initial.13.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.13.a
+		ai_chance = { factor = 1 }
+		country_event = {
+		    id = VOR_initial.14 days = 2
+		}
+	}
+}
+
+country_event = { #Inspection in the RechLag -- Step Three
+	id = VOR_initial.14
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.14" }
+	title = VOR_initial.14.t
+	desc = VOR_initial.14.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.14.a
+		ai_chance = { factor = 1 }
+		country_event = {
+		    id = VOR_initial.15 days = 4
+		}
+	}
+}
+
+country_event = { #Inspection in the RechLag -- Step Four
+	id = VOR_initial.15
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.15" }
+	title = VOR_initial.15.t
+	desc = VOR_initial.15.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.15.a
+		ai_chance = { factor = 1 }
+		country_event = {
+		    id = VOR_initial.16 days = 1
+		}
+	}
+}
+
+country_event = { #Inspection in the RechLag -- Step Five
+	id = VOR_initial.16
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.16" }
+	title = VOR_initial.16.t
+	desc = VOR_initial.16.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.16.a
+		ai_chance = { factor = 1 }
+		set_cosmetic_tag = VOR_Eser_warlord
+		set_politics = {
+			ruling_party = socialist
+		}	
+		add_popularity = {
+			ideology = socialist
+			popularity = 0.50
+		}
+		add_country_leader_role = {
+			character = VOR_Boris_Kamkov
+			promote_leader = yes 
+			country_leader = {
+				desc = "VOR_Boris_Kamkov_DESC"
+				expire = "1994.2.2"
+				ideology = socialist_syndicalism_subtype
+				traits = { }
+				id = -1
+			}	
+		}
+        set_party_name = {
+			ideology = socialist
+			long_name = VOR_Eser_socialist_long
+			name = VOR_Eser_socialist
+		}
+		add_field_marshal_role = {
+			character = VOR_Roberts_Eidemanis
+			skill = 2
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+			traits = { ambusher	winter_expert mountaineer }
+			legacy_id = 9483
+		}
+		add_corps_commander_role = {
+			character = VOR_Makariy_Petrov
+			traits = { winter_expert }
+			skill = 2
+			id = 8483
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+		}
+		retire_character = VOR_Boris_Trofimo
+		retire_character = VOR_Stepan_Garani
+		retire_character = VOR_Pyotr_Gladko
+		custom_effect_tooltip = VOR_tt_yugra
+		hidden_effect = {
+			load_focus_tree = VOR_SR_warlord
+			remove_ideas = {
+			    VOR_security_state
+			    RUS_vorkuta_gulags
+			    VOR_Vasily_Blokhi_hog
+			    VOR_Boris_Trofimo_for
+			    VOR_Yevgeniy_Yudi_eco
+			    VOR_Stepan_Garani_sec
+		    }
+		    add_ideas = {
+			    VOR_Vladimir_Trutovskiy_hog
+			    VOR_Andrei_Kolegaev_for
+			    VOR_Vladimir_Karelin_eco
+			    VOR_Roberts_Eidemanis_sec
+		    }
+			YGR = {
+				country_event = { id = RUS.west_siberia.skeleton.1 days = 200 }
+			}
+		}
+	}
+}
+
+country_event = { #One More Winter - chuspanam slovo ne davali
+	id = VOR_initial.17
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.17" }
+	title = VOR_initial.17.t
+	desc = VOR_initial.17.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.17.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #People Unchained - Convention
+	id = VOR_initial.18
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.18" }
+	title = VOR_initial.18.t
+	desc = VOR_initial.18.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.18.a
+		ai_chance = { factor = 1 }
+		add_stability = 0.05
+		add_political_power = 100
+		add_stability = 0.05
+		TNO_improve_poverty_med = yes
+		add_corps_commander_role = {
+			character = VOR_Li_Harvald_Osvald
+			traits = { winter_expert }
+			skill = 2
+			id = 8489
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
+}
+
+country_event = { #Revolutionary Transformations - Declaration
+	id = VOR_initial.19
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.19" }
+	title = VOR_initial.19.t
+	desc = VOR_initial.19.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.19.a
+		ai_chance = { factor = 1 }
+		swap_ideas = {
+			remove_idea = tno_public_meetings_outlawed
+			add_idea = tno_public_meetings_allowed
+		}
+		swap_ideas = {
+			remove_idea = tno_press_rights_propaganda_press
+			add_idea = tno_press_rights_free_press
+		}
+		TNO_improve_public_meetings_policy_effectiveness_low = yes
+		TNO_improve_press_rights_policy_effectiveness_high = yes
+	}
+}
+
+country_event = { #Freedom Decree - The brightest of the Torches (да не торч я)
+	id = VOR_initial.20
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.20" }
+	title = VOR_initial.20.t
+	desc = VOR_initial.20.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.20.a
+		ai_chance = { factor = 1 }
+		swap_ideas = {
+			remove_idea = tno_gender_rights_traditional_roles
+			add_idea = tno_gender_rights_gender_equality
+		}
+		swap_ideas = {
+			remove_idea = tno_lgbt_rights_lgbt_outlawed
+			add_idea = tno_lgbt_rights_lgbt_allowed
+		}
+		swap_ideas = {
+			remove_idea = tno_minorities_affirmative_action
+			add_idea = tno_minorities_equal_rights
+		}
+		swap_ideas = {
+			remove_idea = tno_women_banned
+			add_idea = tno_women_military_assistance
+		}
+	}
+}
+
+country_event = { #Land Decree - #(Люди между собой обсуждают для кого это, если тут почти и крестьян нету, ибо Север) а ивента нет
+	id = VOR_initial.21
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.21" }
+	title = VOR_initial.21.t
+	desc = VOR_initial.21.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.21.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #War and Defence council - Meeting
+	id = VOR_initial.22
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.22" }
+	title = VOR_initial.22.t
+	desc = VOR_initial.22.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.22.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Revolutionary Struggle Troops - The Volunteer
+	id = VOR_initial.23
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.23" }
+	title = VOR_initial.23.t
+	desc = VOR_initial.23.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.23.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Prepare Masses to War -  #Ивент о том, как Камков по радио рассказывает, что страна находиться в кольце врагов, которую хотят подавить нашу великую революцию поэтому нужно готовиться к войне.(а вот нет его)
+	id = VOR_initial.24
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.24" }
+	title = VOR_initial.24.t
+	desc = VOR_initial.24.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.24.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Get Uncertains - Redemption
+	id = VOR_initial.25
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.25" }
+	title = VOR_initial.25.t
+	desc = VOR_initial.25.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.25.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Destroy Opressors - Trial
+	id = VOR_initial.26
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.26" }
+	title = VOR_initial.26.t
+	desc = VOR_initial.26.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.26.a
+		ai_chance = { factor = 1 }
+		TNO_improve_poverty_low = yes
+		add_popularity = {
+			ideology = socialist
+			popularity = 0.25
+		}
+		add_popularity = {
+			ideology = despotism
+			popularity = -0.20
+		}
+	}
+}
+
+country_event = { #Raise The Battleflags - Creative crisis
+	id = VOR_initial.27
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.27" }
+	title = VOR_initial.27.t
+	desc = VOR_initial.27.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.27.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Flame The Hearts - Revival of the Dream
+	id = VOR_initial.28
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.28" }
+	title = VOR_initial.28.t
+	desc = VOR_initial.28.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.28.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Your Word Comrade Mauser - Caesaris Caesari
+	id = VOR_initial.29
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.29" }
+	title = VOR_initial.29.t
+	desc = VOR_initial.29.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.29.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Motivate Peasanty - Secret Veche
+	id = VOR_initial.30
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.30" }
+	title = VOR_initial.30.t
+	desc = VOR_initial.30.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.30.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Revolutionary Justice - Justice
+	id = VOR_initial.31
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.31" }
+	title = VOR_initial.31.t
+	desc = VOR_initial.31.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.31.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Peoples Revenge - Stole the stolen
+	id = VOR_initial.32
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.32" }
+	title = VOR_initial.32.t
+	desc = VOR_initial.32.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.32.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Revolution From Bottom - D-Day, H-Hour
+	id = VOR_initial.33
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.33" }
+	title = VOR_initial.33.t
+	desc = VOR_initial.33.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.33.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Blood on the Snow - Funeral
+	id = VOR_initial.34
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.34" }
+	title = VOR_initial.34.t
+	desc = VOR_initial.34.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.34.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Neo Narodnichectvo - In a blaze of glory
+	id = VOR_initial.35
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.35" }
+	title = VOR_initial.35.t
+	desc = VOR_initial.35.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.35.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Govering Bodies Reformation - Whole our life is a game
+	id = VOR_initial.36
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.36" }
+	title = VOR_initial.36.t
+	desc = VOR_initial.36.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.36.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { # Govering Bodies Reformation - ивент о создание Печорской народной республики(?)
+	id = VOR_initial.37
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.37" }
+	title = VOR_initial.37.t
+	desc = VOR_initial.37.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.37.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Run Production - Repair at the forefront
+	id = VOR_initial.38
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.37" }
+	title = VOR_initial.38.t
+	desc = VOR_initial.38.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.38.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Open Party Recruitment - Convention(another one)
+	id = VOR_initial.39
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.38" }
+	title = VOR_initial.39.t
+	desc = VOR_initial.39.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.38.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Flame of the battle - нет его нахуй 
+	id = VOR_initial.40
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.40" }
+	title = VOR_initial.40.t
+	desc = VOR_initial.40.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.40.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #New generation of socialists - Back to the old work
+	id = VOR_initial.41
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.41" }
+	title = VOR_initial.41.t
+	desc = VOR_initial.41.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.41.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Creating NVR - On the edge
+	id = VOR_initial.42
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.42" }
+	title = VOR_initial.42.t
+	desc = VOR_initial.42.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.42.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Image of Worker Revolutioner - нет его нахуй 
+	id = VOR_initial.43
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.43" }
+	title = VOR_initial.43.t
+	desc = VOR_initial.43.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.43.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Time To Work - нет его нахуй 
+	id = VOR_initial.44
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.44" }
+	title = VOR_initial.44.t
+	desc = VOR_initial.44.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.44.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Struggle Continues - а какой из двух?
+	id = VOR_initial.45
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.45" }
+	title = VOR_initial.45.t
+	desc = VOR_initial.45.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.45.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Pre-smuta flavor 1 - Serious Problem
+	id = VOR_initial.46
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.46" }
+	title = VOR_initial.46.t
+	desc = VOR_initial.46.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.46.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Pre-smuta flavor 2 - Talk in the kitchen
+	id = VOR_initial.47
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.47" }
+	title = VOR_initial.47.t
+	desc = VOR_initial.47.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.47.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Pre-smuta flavor 3 - Undeclared war
+	id = VOR_initial.48
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.48" }
+	title = VOR_initial.48.t
+	desc = VOR_initial.48.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.48.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Pre-smuta flavor 4 - Red Star, Black star
+	id = VOR_initial.49
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.49" }
+	title = VOR_initial.49.t
+	desc = VOR_initial.49.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.49.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Pre-smuta flavor 5 - Silver's Treasure
+	id = VOR_initial.50
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.50" }
+	title = VOR_initial.50.t
+	desc = VOR_initial.50.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.50.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Pre-smuta flavor 6 - Failed Valkyrie
+	id = VOR_initial.51
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.51" }
+	title = VOR_initial.51.t
+	desc = VOR_initial.51.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.51.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Pre-smuta flavor 7 - Farewell to the homeland
+	id = VOR_initial.52
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.52" }
+	title = VOR_initial.52.t
+	desc = VOR_initial.52.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.52.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #FREE SPACE
+	id = VOR_initial.53
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.53" }
+	title = VOR_initial.53.t
+	desc = VOR_initial.53.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.53.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #FREE SPACE
+	id = VOR_initial.54
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.54" }
+	title = VOR_initial.54.t
+	desc = VOR_initial.54.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.54.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #FREE SPACE
+	id = VOR_initial.55
+	immediate = { log = "[GetDateText]: [Root.GetName]: event VOR_initial.55" }
+	title = VOR_initial.55.t
+	desc = VOR_initial.55.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = VOR_initial.55.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
 
 
 
@@ -208,74 +1286,7 @@ country_event = { #Shag_Pytuui
 	option = {
 		name = vorkuta_start.11.a
 		ai_chance = { factor = 1 }
-		set_cosmetic_tag = VOR_Eser_warlord
-		set_politics = {
-			ruling_party = socialist
-		}	
-		add_popularity = {
-			ideology = socialist
-			popularity = 0.50
-		}
-		add_country_leader_role = {
-			character = VOR_Boris_Kamkov
-			promote_leader = yes 
-			country_leader = {
-				desc = "VOR_Boris_Kamkov_DESC"
-				expire = "1994.2.2"
-				ideology = socialist_syndicalism_subtype
-				traits = { }
-				id = -1
-			}	
-		}
-        set_party_name = {
-			ideology = socialist
-			long_name = VOR_Eser_socialist_long
-			name = VOR_Eser_socialist
-		}
-		add_field_marshal_role = {
-			character = VOR_Roberts_Eidemanis
-			skill = 2
-			attack_skill = 3
-			defense_skill = 2
-			planning_skill = 1
-			logistics_skill = 2
-			traits = { ambusher	winter_expert mountaineer }
-			legacy_id = 9483
-		}
-		add_corps_commander_role = {
-			character = VOR_Makariy_Petrov
-			traits = { winter_expert }
-			skill = 2
-			id = 8483
-			attack_skill = 2
-			defense_skill = 2
-			planning_skill = 3
-			logistics_skill = 2
-		}
-		retire_character = VOR_Boris_Trofimo
-		retire_character = VOR_Stepan_Garani
-		retire_character = VOR_Pyotr_Gladko
-		custom_effect_tooltip = VOR_tt_yugra
-		hidden_effect = {
-			load_focus_tree = VOR_SR_warlord
-			remove_ideas = {
-			    VOR_security_state
-			    RUS_vorkuta_gulags
-			    VOR_Vasily_Blokhi_hog
-			    VOR_Boris_Trofimo_for
-			    VOR_Yevgeniy_Yudi_eco
-			    VOR_Stepan_Garani_sec
-		    }
-		    add_ideas = {
-			    VOR_Vladimir_Trutovskiy_hog
-			    VOR_Andrei_Kolegaev_for
-			    VOR_Vladimir_Karelin_eco
-			    VOR_Roberts_Eidemanis_sec
-		    }
-			YGR = {
-				country_event = { id = RUS.west_siberia.skeleton.1 days = 200 }
-			}
-		}
+		
     }    	
 }		
 
@@ -319,15 +1330,7 @@ country_event = { #
 	option = {
 		name = vorkuta_start.13.a
 		ai_chance = { factor = 1 }
-		TNO_improve_poverty_low = yes
-		add_popularity = {
-			ideology = socialist
-			popularity = 0.25
-		}
-		add_popularity = {
-			ideology = despotism
-			popularity = -0.20
-		}
+		
     }    	
 }	
 
@@ -343,16 +1346,7 @@ country_event = { #
 	option = {
 		name = vorkuta_start.14.a
 		ai_chance = { factor = 1 }
-		swap_ideas = {
-				remove_idea = tno_public_meetings_outlawed
-				add_idea = tno_public_meetings_allowed
-			}
-		swap_ideas = {
-				remove_idea = tno_press_rights_propaganda_press
-				add_idea = tno_press_rights_free_press
-			}
-		TNO_improve_public_meetings_policy_effectiveness_low = yes
-		TNO_improve_press_rights_policy_effectiveness_high = yes
+		
     }    	
 }		
 
@@ -368,22 +1362,7 @@ country_event = { #
 	option = {
 		name = vorkuta_start.15.a
 		ai_chance = { factor = 1 }
-		swap_ideas = {
-				remove_idea = tno_gender_rights_traditional_roles
-				add_idea = tno_gender_rights_gender_equality
-			}
-		swap_ideas = {
-				remove_idea = tno_lgbt_rights_lgbt_outlawed
-				add_idea = tno_lgbt_rights_lgbt_allowed
-			}
-		swap_ideas = {
-				remove_idea = tno_minorities_affirmative_action
-				add_idea = tno_minorities_equal_rights
-			}
-		swap_ideas = {
-				remove_idea = tno_women_banned
-				add_idea = tno_women_military_assistance
-			}	
+			
     }    	
 }		
 country_event = { #zebly
