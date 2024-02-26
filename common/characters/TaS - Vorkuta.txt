@@ -268,6 +268,68 @@ characters = {
 			ai_will_do = { factor = 0 }
 		}
 	}
+
+	## МОЛОДАЯ ПАРТИЯ ##
+	VOR_Yevgeniy_Primakov_minister = {
+		name = VOR_Yevgeniy_Primakov
+		portraits = {
+			civilian = {
+				small = "GFX_idea_VOR_minister_Yevgeniy_Primakov"
+			}
+		}
+		advisor = {
+			slot = foreign_minister
+			idea_token = VOR_Yevgeniy_Primakov_hog
+			allowed = { original_tag = VOR }
+			traits = {
+				head_of_government
+			}
+			ledger = civilian
+			cost = -1
+			removal_cost = -1
+			ai_will_do = { factor = 0 }
+		}
+	}
+	VOR_Boris_Scherbina_minister = {
+		name = VOR_Boris_Scherbina
+		portraits = {
+			civilian = {
+				small = "GFX_idea_VOR_minister_Boris_Scherbina"
+			}
+		}
+		advisor = {
+			slot = economy_minister
+			idea_token = VOR_Boris_Scherbina_eco
+			allowed = { original_tag = VOR }
+			traits = {
+				economy_minister
+			}
+			ledger = civilian
+			cost = -1
+			removal_cost = -1
+			ai_will_do = { factor = 0 }
+		}
+	}
+	VOR_Nikolai_Leonov = {
+		name = VOR_Nikolai_Leonov
+		portraits = {
+			civilian = {
+				small = "GFX_idea_VOR_minister_Nikolai_Leonov"
+			}
+		}
+		advisor = {
+			slot = foreign_minister
+			idea_token = VOR_Nikolai_Leonov_for
+			allowed = { original_tag = VOR }
+			traits = {
+				foreign_minister
+			}
+			ledger = civilian
+			cost = -1
+			removal_cost = -1
+			ai_will_do = { factor = 0 }
+		}
+	}
 	VOR_Albert_Makashov = {
 		name = VOR_Albert_Makashov
 		portraits = {
@@ -375,7 +437,7 @@ characters = {
 			ai_will_do = { factor = 0 }
 		}
 	}
-	VOR_Nikolai_Leonov = {
+	VOR_Nikolai_Leonov_right = {
 		name = VOR_Nikolai_Leonov
 		portraits = {
 			civilian = {
@@ -384,7 +446,7 @@ characters = {
 		}
 		advisor = {
 			slot = foreign_minister
-			idea_token = VOR_Nikolai_Leonov_for
+			idea_token = VOR_Nikolai_Leonov_for_right
 			allowed = { original_tag = VOR }
 			traits = {
 				foreign_minister
@@ -509,7 +571,7 @@ characters = {
 		name = VOR_Lee_Harvey_Osvald
 		portraits = {
 			army = {
-				large = "gfx/leaders/VOR/Portrait_VOR_Lee_Harvey_Osvald.dds"
+				large = "gfx/leaders/VOR/Portrait_Vorkuta_Lee_Harvey_Osvald.dds"
 			}
 		}
 	}

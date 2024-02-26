@@ -88,7 +88,71 @@ VOR_debug_category = {
 			load_focus_tree = {	tree = VOR_SR_REG keep_completed = no }
 		}
 	}
-}
+	VOR_set_cosmetic_tag_eser_reg = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			always = yes
+		}
+		allowed = {
+			original_tag = VOR
+		}
+
+		fire_only_once = no
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: VOR_set_cosmetic_tag_eser_reg"
+			set_cosmetic_tag = VOR_Eser_reg
+		}
+	}
+	VOR_set_cosmetic_tag_left_eser_superreg = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			always = yes
+		}
+		allowed = {
+			original_tag = VOR
+		}
+
+		fire_only_once = no
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: VOR_set_cosmetic_tag_left_eser_superreg"
+			set_cosmetic_tag = VOR_Left_Eser_superreg
+		}
+	}
+	VOR_set_cosmetic_tag_right_eser_superreg = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			always = yes
+		}
+		allowed = {
+			original_tag = VOR
+		}
+
+		fire_only_once = no
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: VOR_set_cosmetic_tag_right_eser_superreg"
+			set_cosmetic_tag = VOR_Right_Eser_superreg
+		}
+	}
+	VOR_set_cosmetic_fascist_superreg = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			always = yes
+		}
+		allowed = {
+			original_tag = VOR
+		}
+
+		fire_only_once = no
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: VOR_set_cosmetic_fascist_superreg"
+			set_cosmetic_tag = VOR_Fascist_superreg
+		}
+	}
+}	
 
 VOR_tiger_hunt_category = {
 	VOR_tiger_hunt_mission = {
@@ -131,14 +195,14 @@ VOR_tiger_hunt_category = {
 		}
 		fire_only_once = yes
 		custom_cost_trigger = { command_power > 29.99 }
-		custom_cost_tooltip = decision_cost_30_cp
+		custom_cost_text = decision_cost_30_cp
 		days_remove = 3
 		complete_effect = {
 			add_command_power = -30
 		}
 		remove_effect = {
-			add_to_value = { tiger_hunt_readiness = 25 }
-			add_to_value = { tiger_hunt_readiness_neg = -25 }
+			add_to_variable = { tiger_hunt_readiness = 25 }
+			add_to_variable = { tiger_hunt_readiness_neg = -25 }
 		}
 	}
 	VOR_tiger_hunt_bribe_swedes = {
@@ -150,14 +214,16 @@ VOR_tiger_hunt_category = {
 			original_tag = VOR
 		}
 		fire_only_once = yes
-		custom_cost_tooltip = decision_cost_10_million
+		custom_cost_trigger = { check_variable = { GDP > 0 } }
+		custom_cost_text = decision_cost_25_million
+		days_remove = 3
 		complete_effect = {
-			set_temp_variable = { temp_econ_spending_amount = 0.35 }
+			set_temp_variable = { temp_econ_spending_amount = 0.25 }
 			econ_spend_money_once_effect_raw_money = yes
 		}
 		remove_effect = {
-			add_to_value = { tiger_hunt_readiness = 25 }
-			add_to_value = { tiger_hunt_readiness_neg = -25 }
+			add_to_variable = { tiger_hunt_readiness = 25 }
+			add_to_variable = { tiger_hunt_readiness_neg = -25 }
 		}
 	}
 	VOR_tiger_hunt_trade_ships_info = {
@@ -172,12 +238,12 @@ VOR_tiger_hunt_category = {
 		days_remove = 3
 		cost = 50
 		remove_effect = {
-			add_to_value = { tiger_hunt_readiness = 25 }
-			add_to_value = { tiger_hunt_readiness_neg = -25 }
+			add_to_variable = { tiger_hunt_readiness = 25 }
+			add_to_variable = { tiger_hunt_readiness_neg = -25 }
 		}
 	}
 	VOR_tiger_hunt_intercept_german_comms = {
-		icon = GFX_decision_werbell_intel_unit
+		icon = GFX_MAG_decision_werbell_intel_unit
 		visible = {
 			has_variable = tiger_hunt_readiness
 		}
@@ -190,8 +256,8 @@ VOR_tiger_hunt_category = {
 		fire_only_once = yes
 		days_remove = 3
 		remove_effect = {
-			add_to_value = { tiger_hunt_readiness = 50 }
-			add_to_value = { tiger_hunt_readiness_neg = -50 }
+			add_to_variable = { tiger_hunt_readiness = 50 }
+			add_to_variable = { tiger_hunt_readiness_neg = -50 }
 		}
 	}
 	VOR_tiger_hunt_jap_intel = {
@@ -213,8 +279,8 @@ VOR_tiger_hunt_category = {
 			set_country_flag = VOR_tiger_hunt_intel_contact
 			random = {
 				chance = 25
-				add_to_value = { tiger_hunt_readiness = 75 }
-				add_to_value = { tiger_hunt_readiness_neg = -75 }
+				add_to_variable = { tiger_hunt_readiness = 75 }
+				add_to_variable = { tiger_hunt_readiness_neg = -75 }
 			}
 		}
 	}
@@ -237,8 +303,8 @@ VOR_tiger_hunt_category = {
 			set_country_flag = VOR_tiger_hunt_intel_contact
 			random = {
 				chance = 50
-				add_to_value = { tiger_hunt_readiness = 50 }
-				add_to_value = { tiger_hunt_readiness_neg = -50 }
+				add_to_variable = { tiger_hunt_readiness = 50 }
+				add_to_variable = { tiger_hunt_readiness_neg = -50 }
 			}
 		}	
 	}
@@ -261,8 +327,8 @@ VOR_tiger_hunt_category = {
 			set_country_flag = VOR_tiger_hunt_intel_contact
 			random = {
 				chance = 75
-				add_to_value = { tiger_hunt_readiness = 25 }
-				add_to_value = { tiger_hunt_readiness_neg = -25 }
+				add_to_variable = { tiger_hunt_readiness = 25 }
+				add_to_variable = { tiger_hunt_readiness_neg = -25 }
 			}
 		}	
 	}

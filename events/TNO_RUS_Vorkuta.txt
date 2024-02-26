@@ -1,61 +1,89 @@
-add_namespace = vorkuta_start
-add_namespace = vorkuta_smutaa
+add_namespace = vor_start
+add_namespace = vor_esery_start
+add_namespace = vor_smuta
 add_namespace = vor_reg
 add_namespace = vor_reg_mil
 add_namespace = vor_reg_politic
 
-
-
-country_event = { #StranaStart
-	id = vorkuta_start.1
-	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.1"}
-	title = vorkuta_start.1.t
-	desc = vorkuta_start.1.d
+country_event = { #Vorkuta tales
+	id = vor_start.101
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_start.101"}
+	title = vor_start.101.t
+	desc = vor_start.101.d
 	picture = GFX_event_Lager_ochet
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = {
-		name = vorkuta_start.1.a
+		name = vor_start.101.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #Otchet
+	id = vor_start.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_start.1"}
+	title = vor_start.1.t
+	desc = vor_start.1.d
+	picture = GFX_event_Lager_ochet
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = vor_start.1.a
 		ai_chance = { factor = 1 }
 		add_political_power = 50
-        country_event = {
-			id = vorkuta_start.2
+		country_event = {
+			id = vor_start.2
 			days = 2
 		}
 	}
 }
 
 country_event = { #Boris
-	id = vorkuta_start.2
-	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.2"}
-	title = vorkuta_start.2.t
-	desc = vorkuta_start.2.d
+	id = vor_start.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_start.2"}
+	title = vor_start.2.t
+	desc = vor_start.2.d
 	picture = GFX_event_Boris_Kamkov
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = {
-		name = vorkuta_start.2.a
+		name = vor_start.2.a
 		ai_chance = { factor = 1 }
 
 	}
 }
 
-country_event = { #Delai_dengi
-	id = vorkuta_start.3
-	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.3"}
-	title = vorkuta_start.3.t
-	desc = vorkuta_start.3.d
+country_event = { #Inventar
+	id = vor_start.103
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_start.103"}
+	title = vor_start.103.t
+	desc = vor_start.103.d
 	picture = GFX_event_obmen
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = {
-		name = vorkuta_start.3.a
+		name = vor_start.103.a
+	}
+}
+
+country_event = { #Delai_dengi
+	id = vor_start.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_start.3"}
+	title = vor_start.3.t
+	desc = vor_start.3.d
+	picture = GFX_event_obmen
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = vor_start.3.a
 		ai_chance = { factor = 1 }
 		country_event = {
-			id = vorkuta_start.4
+			id = vor_start.4
 			days = 2
 		}	
 		set_temp_variable = { gdp_growth_temp = 0.2 }
@@ -68,36 +96,68 @@ country_event = { #Delai_dengi
 	}
 }
 
+country_event = { #Renew equip
+	id = vor_start.104
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_start.104"}
+	title = vor_start.104.t
+	desc = vor_start.104.d
+	picture = GFX_event_obmen
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = vor_start.104.a
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 500
+		}
+	}
+}
+
+country_event = { #Renew equip
+	id = vor_start.105
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_start.105"}
+	title = vor_start.105.t
+	desc = vor_start.105.d
+	picture = GFX_event_obmen
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = vor_start.105.a
+	}
+}
+
 country_event = { #Posled_day
-	id = vorkuta_start.4
-	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.4"}
-	title = vorkuta_start.4.t
-	desc = vorkuta_start.4.d
+	id = vor_start.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_start.4"}
+	title = vor_start.4.t
+	desc = vor_start.4.d
 	picture = GFX_event_posl
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = {
-		name = vorkuta_start.4.a
+		name = vor_start.4.a
 		ai_chance = { factor = 1 }
 
 	}
 }
 
 country_event = { #Normu
-	id = vorkuta_start.5
-	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.5"}
-	title = vorkuta_start.5.t
-	desc = vorkuta_start.5.d
+	id = vor_start.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_start.5"}
+	title = vor_start.5.t
+	desc = vor_start.5.d
 	picture = GFX_event_za_kulico
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = {
-		name = vorkuta_start.5.a
+		name = vor_start.5.a
 		ai_chance = { factor = 1 }
 		country_event = {
-			id = vorkuta_start.6
+			id = vor_start.6
 			days = 1
 		}	
 		hidden_effect = {
@@ -107,107 +167,107 @@ country_event = { #Normu
 }
 
 country_event = { #Avaria
-	id = vorkuta_start.6
-	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
-	title = vorkuta_start.6.t
-	desc = vorkuta_start.6.d
+	id = vor_start.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_start.6"}
+	title = vor_start.6.t
+	desc = vor_start.6.d
 	picture = GFX_event_avaria
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = {
-		name = vorkuta_start.6.a
+		name = vor_start.6.a
 		ai_chance = { factor = 1 }
 	}
 }
 
 country_event = { #Shar_pervii
-	id = vorkuta_start.7
-	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.7"}
-	title = vorkuta_start.7.t
-	desc = vorkuta_start.7.d
+	id = vor_start.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_start.7"}
+	title = vor_start.7.t
+	desc = vor_start.7.d
 	picture = GFX_event_shag_odin
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = {
-		name = vorkuta_start.7.a
+		name = vor_start.7.a
 		ai_chance = { factor = 1 }
 		country_event = {
-			id = vorkuta_start.8
+			id = vor_start.8
 			days = 0
 		}
 	}
 }
 
 country_event = { #Shad_vtoroi
-	id = vorkuta_start.8
-	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.8"}
-	title = vorkuta_start.8.t
-	desc = vorkuta_start.8.d
+	id = vor_start.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_start.8"}
+	title = vor_start.8.t
+	desc = vor_start.8.d
 	picture = GFX_event_shag_dva
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = {
-		name = vorkuta_start.8.a
+		name = vor_start.8.a
 		ai_chance = { factor = 1 }
 		country_event = {
-			id = vorkuta_start.9
+			id = vor_start.9
 			days = 0
 		}
 	}
 }
 
 country_event = { #Shag_tretii
-	id = vorkuta_start.9
-	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.9"}
-	title = vorkuta_start.9.t
-	desc = vorkuta_start.9.d
+	id = vor_start.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_start.9"}
+	title = vor_start.9.t
+	desc = vor_start.9.d
 	picture = GFX_event_shag_tri
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = {
-		name = vorkuta_start.9.a
+		name = vor_start.9.a
 		ai_chance = { factor = 1 }
 		country_event = {
-			id = vorkuta_start.10
+			id = vor_start.10
 			days = 0
 		}
 	}
 }
 
 country_event = { #Shag_chetvertii
-	id = vorkuta_start.10
-	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.10"}
-	title = vorkuta_start.10.t
-	desc = vorkuta_start.10.d
+	id = vor_start.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_start.10"}
+	title = vor_start.10.t
+	desc = vor_start.10.d
 	picture = GFX_event_shag_chetare
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = {
-		name = vorkuta_start.10.a
+		name = vor_start.10.a
 		ai_chance = { factor = 1 }
 		country_event = {
-			id = vorkuta_start.11
+			id = vor_start.11
 			days = 0
 		}
 	}
 }
 
 country_event = { #Shag_Pytuui
-	id = vorkuta_start.11
-	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.11"}
-	title = vorkuta_start.11.t
-	desc = vorkuta_start.11.d
+	id = vor_start.11
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_start.11"}
+	title = vor_start.11.t
+	desc = vor_start.11.d
 	picture = GFX_event_shag_pyat
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = {
-		name = vorkuta_start.11.a
+		name = vor_start.11.a
 		ai_chance = { factor = 1 }
 		set_cosmetic_tag = VOR_Eser_warlord
 		set_politics = {
@@ -247,11 +307,11 @@ country_event = { #Shag_Pytuui
 			character = VOR_Makariy_Petrov
 			traits = { winter_expert }
 			skill = 2
-			id = 8483
 			attack_skill = 2
 			defense_skill = 2
 			planning_skill = 3
 			logistics_skill = 2
+			legacy_id = 8483
 		}
 		retire_character = VOR_Boris_Trofimo
 		retire_character = VOR_Stepan_Garani
@@ -278,19 +338,34 @@ country_event = { #Shag_Pytuui
 			}
 		}
     }    	
-}		
+}
+
+country_event = { #Epic fail
+	id = vor_start.42069
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_start.42069"}
+	title = vor_start.42069.t
+	desc = vor_start.42069.d
+	picture = GFX_event_shag_chetare
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = vor_start.42069.a
+		ai_chance = { factor = 1 }
+	}
+}
 
 country_event = { #
-	id = vorkuta_start.12
-	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.12"}
-	title = vorkuta_start.12.t
-	desc = vorkuta_start.12.d
+	id = vor_esery_start.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_esery_start.1"}
+	title = vor_esery_start.1.t
+	desc = vor_esery_start.1.d
 	#picture = GFX_event_shag_pyat
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = {
-		name = vorkuta_start.12.a
+		name = vor_esery_start.1.a
 		ai_chance = { factor = 1 }
 		add_political_power = 100
 		add_stability = 0.05
@@ -299,7 +374,7 @@ country_event = { #
 			character = VOR_Lee_Harvey_Osvald
 			traits = { winter_expert }
 			skill = 2
-			id = 8489
+			legacy_id = 8489
 			attack_skill = 1
 			defense_skill = 3
 			planning_skill = 1
@@ -309,16 +384,16 @@ country_event = { #
 }
 
 country_event = { #
-	id = vorkuta_start.13
-	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.13"}
-	title = vorkuta_start.13.t
-	desc = vorkuta_start.13.d
+	id = vor_esery_start.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_esery_start.2"}
+	title = vor_esery_start.2.t
+	desc = vor_esery_start.2.d
 	#picture = GFX_event_shag_pyat
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = {
-		name = vorkuta_start.13.a
+		name = vor_esery_start.2.a
 		ai_chance = { factor = 1 }
 		TNO_improve_poverty_low = yes
 		add_popularity = {
@@ -333,16 +408,16 @@ country_event = { #
 }	
 
 country_event = { #
-	id = vorkuta_start.14
-	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.14"}
-	title = vorkuta_start.14.t
-	desc = vorkuta_start.14.d
+	id = vor_esery_start.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_esery_start.3"}
+	title = vor_esery_start.3.t
+	desc = vor_esery_start.3.d
 	#picture = GFX_event_shag_pyat
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = {
-		name = vorkuta_start.14.a
+		name = vor_esery_start.3.a
 		ai_chance = { factor = 1 }
 		swap_ideas = {
 				remove_idea = tno_public_meetings_outlawed
@@ -358,16 +433,16 @@ country_event = { #
 }		
 
 country_event = { #
-	id = vorkuta_start.15
-	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.14"}
-	title = vorkuta_start.15.t
-	desc = vorkuta_start.15.d
+	id = vor_esery_start.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_esery_start.4"}
+	title = vor_esery_start.4.t
+	desc = vor_esery_start.4.d
 	#picture = GFX_event_shag_pyat
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = {
-		name = vorkuta_start.15.a
+		name = vor_esery_start.4.a
 		ai_chance = { factor = 1 }
 		swap_ideas = {
 				remove_idea = tno_gender_rights_traditional_roles
@@ -388,91 +463,346 @@ country_event = { #
     }    	
 }		
 country_event = { #zebly
-	id = vorkuta_start.16
-	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
-	title = vorkuta_start.16.t
-	desc = vorkuta_start.16.d
+	id = vor_esery_start.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_esery_start.5"}
+	title = vor_esery_start.5.t
+	desc = vor_esery_start.5.d
 	picture = GFX_event_avaria
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = {
-		name = vorkuta_start.16.a
+		name = vor_esery_start.5.a
 		ai_chance = { factor = 1 }
 	}
 }
 
 country_event = { #defense
-	id = vorkuta_start.17
-	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
-	title = vorkuta_start.17.t
-	desc = vorkuta_start.17.d
+	id = vor_esery_start.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_esery_start.6"}
+	title = vor_esery_start.6.t
+	desc = vor_esery_start.6.d
 	picture = GFX_event_avaria
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = {
-		name = vorkuta_start.17.a
+		name = vor_esery_start.6.a
 		ai_chance = { factor = 1 }
 	}
 }
 
 country_event = { #Colebanie
-	id = vorkuta_start.18
-	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
-	title = vorkuta_start.18.t
-	desc = vorkuta_start.18.d
+	id = vor_esery_start.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_esery_start.7"}
+	title = vor_esery_start.7.t
+	desc = vor_esery_start.7.d
 	picture = GFX_event_avaria
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = {
-		name = vorkuta_start.18.a
+		name = vor_esery_start.7.a
 		ai_chance = { factor = 1 }
 	}
 }
 
 country_event = { #Otrudo
-	id = vorkuta_start.19
-	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
-	title = vorkuta_start.19.t
-	desc = vorkuta_start.19.d
+	id = vor_esery_start.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_esery_start.8"}
+	title = vor_esery_start.8.t
+	desc = vor_esery_start.8.d
 	picture = GFX_event_avaria
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = {
-		name = vorkuta_start.19.a
+		name = vor_esery_start.8.a
 		ai_chance = { factor = 1 }
 	}
 }
 
 country_event = { #Massi
-	id = vorkuta_start.20
-	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
-	title = vorkuta_start.20.t
-	desc = vorkuta_start.20.d
+	id = vor_esery_start.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_esery_start.9"}
+	title = vor_esery_start.9.t
+	desc = vor_esery_start.9.d
 	picture = GFX_event_avaria
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = {
-		name = vorkuta_start.20.a
+		name = vor_esery_start.9.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { 
+	id = vor_esery_start.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_esery_start.10"}
+	title = vor_esery_start.10.t
+	desc = vor_esery_start.10.d
+	picture = GFX_event_avaria
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = vor_esery_start.10.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { 
+	id = vor_esery_start.11
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_esery_start.10"}
+	title = vor_esery_start.11.t
+	desc = vor_esery_start.11.d
+	picture = GFX_event_avaria
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = vor_esery_start.11.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #Caesaris Caesari 
+	id = vor_esery_start.12
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_esery_start.12"}
+	title = vor_esery_start.12.t
+	desc = vor_esery_start.12.d
+	picture = GFX_event_avaria
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = vor_esery_start.12.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #Sravedlivost
+	id = vor_esery_start.13
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_esery_start.13"}
+	title = vor_esery_start.13.t
+	desc = vor_esery_start.13.d
+	picture = GFX_event_avaria
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = vor_esery_start.13.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { 
+	id = vor_esery_start.14
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_esery_start.14"}
+	title = vor_esery_start.14.t
+	desc = vor_esery_start.14.d
+	picture = GFX_event_avaria
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = vor_esery_start.14.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { 
+	id = vor_esery_start.15
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_esery_start.15"}
+	title = vor_esery_start.15.t
+	desc = vor_esery_start.15.d
+	picture = GFX_event_avaria
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = vor_esery_start.15.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { 
+	id = vor_esery_start.16
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_esery_start.16"}
+	title = vor_esery_start.16.t
+	desc = vor_esery_start.16.d
+	picture = GFX_event_avaria
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = vor_esery_start.16.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { 
+	id = vor_esery_start.17
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_esery_start.17"}
+	title = vor_esery_start.17.t
+	desc = vor_esery_start.17.d
+	picture = GFX_event_avaria
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = vor_esery_start.17.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { 
+	id = vor_esery_start.18
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_esery_start.18"}
+	title = vor_esery_start.18.t
+	desc = vor_esery_start.18.d
+	picture = GFX_event_avaria
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = vor_esery_start.18.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #Ihga
+	id = vor_esery_start.19
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_esery_start.19"}
+	title = vor_esery_start.19.t
+	desc = vor_esery_start.19.d
+	picture = GFX_event_avaria
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = vor_esery_start.19.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #remint
+	id = vor_esery_start.20
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_esery_start.20"}
+	title = vor_esery_start.20.t
+	desc = vor_esery_start.20.d
+	picture = GFX_event_avaria
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = vor_esery_start.20.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #sobr
+	id = vor_esery_start.21
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_esery_start.21"}
+	title = vor_esery_start.21.t
+	desc = vor_esery_start.21.d
+	picture = GFX_event_avaria
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = vor_esery_start.21.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #rybes
+	id = vor_esery_start.22
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_esery_start.22"}
+	title = vor_esery_start.22.t
+	desc = vor_esery_start.22.d
+	picture = GFX_event_avaria
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = vor_esery_start.22.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { 
+	id = vor_esery_start.23
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_esery_start.23"}
+	title = vor_esery_start.23.t
+	desc = vor_esery_start.23.d
+	picture = GFX_event_avaria
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = vor_esery_start.23.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { 
+	id = vor_esery_start.24
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_esery_start.24"}
+	title = vor_esery_start.24.t
+	desc = vor_esery_start.24.d
+	picture = GFX_event_avaria
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = vor_esery_start.24.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { 
+	id = vor_esery_start.25
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_esery_start.25"}
+	title = vor_esery_start.25.t
+	desc = vor_esery_start.25.d
+	picture = GFX_event_avaria
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = vor_esery_start.25.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { 
+	id = vor_esery_start.26
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_esery_start.26"}
+	title = vor_esery_start.26.t
+	desc = vor_esery_start.26.d
+	picture = GFX_event_avaria
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = vor_esery_start.26.a
 		ai_chance = { factor = 1 }
 	}
 }
 
 country_event = { #Borba
-	id = vorkuta_start.21
-	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
-	title = vorkuta_start.21.t
-	desc = vorkuta_start.21.d
+	id = vor_esery_start.27
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_esery_start.27"}
+	title = vor_esery_start.27.t
+	desc = vor_esery_start.27.d
 	picture = GFX_event_avaria
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = {
-		name = vorkuta_start.21.a
+		name = vor_esery_start.27.a
 		ai_chance = { factor = 1 }
 		hidden_effect = {
 			load_focus_tree = VOR_SR_SMUTA
@@ -480,185 +810,94 @@ country_event = { #Borba
 	}
 }
 
-country_event = { #Caesaris Caesari 
-	id = vorkuta_start.22
-	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
-	title = vorkuta_start.22.t
-	desc = vorkuta_start.22.d
-	picture = GFX_event_avaria
-	is_triggered_only = yes
-	fire_only_once = yes
-	
-	option = {
-		name = vorkuta_start.22.a
-		ai_chance = { factor = 1 }
-	}
-}
-
-country_event = { #Sravedlivost
-	id = vorkuta_start.23
-	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
-	title = vorkuta_start.23.t
-	desc = vorkuta_start.23.d
-	picture = GFX_event_avaria
-	is_triggered_only = yes
-	fire_only_once = yes
-	
-	option = {
-		name = vorkuta_start.23.a
-		ai_chance = { factor = 1 }
-	}
-}
-
-country_event = { #Ihga
-	id = vorkuta_start.24
-	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
-	title = vorkuta_start.24.t
-	desc = vorkuta_start.24.d
-	picture = GFX_event_avaria
-	is_triggered_only = yes
-	fire_only_once = yes
-	
-	option = {
-		name = vorkuta_start.24.a
-		ai_chance = { factor = 1 }
-	}
-}
-
-country_event = { #remint
-	id = vorkuta_start.25
-	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
-	title = vorkuta_start.25.t
-	desc = vorkuta_start.25.d
-	picture = GFX_event_avaria
-	is_triggered_only = yes
-	fire_only_once = yes
-	
-	option = {
-		name = vorkuta_start.25.a
-		ai_chance = { factor = 1 }
-	}
-}
-
-country_event = { #sobr
-	id = vorkuta_start.26
-	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
-	title = vorkuta_start.26.t
-	desc = vorkuta_start.26.d
-	picture = GFX_event_avaria
-	is_triggered_only = yes
-	fire_only_once = yes
-	
-	option = {
-		name = vorkuta_start.26.a
-		ai_chance = { factor = 1 }
-	}
-}
-
-country_event = { #rybes
-	id = vorkuta_start.27
-	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
-	title = vorkuta_start.27.t
-	desc = vorkuta_start.27.d
-	picture = GFX_event_avaria
-	is_triggered_only = yes
-	fire_only_once = yes
-	
-	option = {
-		name = vorkuta_start.27.a
-		ai_chance = { factor = 1 }
-	}
-}
-
-
- ### СМУТА ###
+### СМУТА ###
   
-  country_event = { #Солдатский вечер
-	id = vorkuta_smutaa.1
-	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
-	title = vorkuta_smutaa.1.t
-	desc = vorkuta_smutaa.1.d
+country_event = { #Солдатский вечер
+	id = vor_smuta.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_smuta.1"}
+	title = vor_smuta.1.t
+	desc = vor_smuta.1.d
 	picture = GFX_event_MAR_Kosygin_24
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = {
-		name = vorkuta_smutaa.1.a
+		name = vor_smuta.1.a
 		ai_chance = { factor = 1 }
 	}
 }
 
 country_event = { #Смена
-	id = vorkuta_smutaa.2
-	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
-	title = vorkuta_smutaa.2.t
-	desc = vorkuta_smutaa.2.d
+	id = vor_smuta.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_smuta.2"}
+	title = vor_smuta.2.t
+	desc = vor_smuta.2.d
 	picture = GFX_event_MAR_Kosygin_54
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = {
-		name = vorkuta_smutaa.2.a
+		name = vor_smuta.2.a
 		ai_chance = { factor = 1 }
 	}
 }
 
 country_event = { #Рабочие будни Агитпропа 
-	id = vorkuta_smutaa.3
-	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
-	title = vorkuta_smutaa.3.t
-	desc = vorkuta_smutaa.3.d
+	id = vor_smuta.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_smuta.3"}
+	title = vor_smuta.3.t
+	desc = vor_smuta.3.d
 	picture = GFX_event_MAR_Kosygin_28
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = {
-		name = vorkuta_smutaa.3.a
+		name = vor_smuta.3.a
 		ai_chance = { factor = 1 }
 	}
 }
 
 country_event = { #Перерыв!
-	id = vorkuta_smutaa.4
-	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
-	title = vorkuta_smutaa.4.t
-	desc = vorkuta_smutaa.4.d
+	id = vor_smuta.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_smuta.4"}
+	title = vor_smuta.4.t
+	desc = vor_smuta.4.d
 	picture = GFX_event_avaria
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = {
-		name = vorkuta_smutaa.4.a
+		name = vor_smuta.4.a
 		ai_chance = { factor = 1 }
 	}
 }
 
 country_event = { #Ловушка времени
-	id = vorkuta_smutaa.5
-	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
-	title = vorkuta_smutaa.5.t
-	desc = vorkuta_smutaa.5.d
+	id = vor_smuta.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_smuta.5"}
+	title = vor_smuta.5.t
+	desc = vor_smuta.5.d
 	picture = GFX_event_avaria
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = {
-		name = vorkuta_smutaa.5.a
+		name = vor_smuta.5.a
 		ai_chance = { factor = 1 }
 	}
 }
 
 country_event = { #Сомнения
-	id = vorkuta_smutaa.6
-	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
-	title = vorkuta_smutaa.6.t
-	desc = vorkuta_smutaa.6.d
+	id = vor_smuta.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_smuta.6"}
+	title = vor_smuta.6.t
+	desc = vor_smuta.6.d
 	picture = GFX_event_avaria
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = {
-		name = vorkuta_smutaa.6.a
+		name = vor_smuta.6.a
 		ai_chance = { factor = 1 }
           swap_ideas = {
 				remove_idea = tno_political_parties_nonpartisan_system
@@ -681,46 +920,46 @@ country_event = { #Сомнения
     }    	
 }		
 country_event = { #Радиоперехват
-	id = vorkuta_smutaa.7
-	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
-	title = vorkuta_smutaa.7.t
-	desc = vorkuta_smutaa.7.d
+	id = vor_smuta.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_smuta.7"}
+	title = vor_smuta.7.t
+	desc = vor_smuta.7.d
 	picture = GFX_event_avaria
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = {
-		name = vorkuta_smutaa.7.a
+		name = vor_smuta.7.a
 		ai_chance = { factor = 1 }
 	}
 }
 
 country_event = { #Знамение
-	id = vorkuta_smutaa.8
-	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
-	title = vorkuta_smutaa.8.t
-	desc = vorkuta_smutaa.8.d
+	id = vor_smuta.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_smuta.8"}
+	title = vor_smuta.8.t
+	desc = vor_smuta.8.d
 	picture = GFX_event_avaria
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = {
-		name = vorkuta_smutaa.8.a
+		name = vor_smuta.8.a
 		ai_chance = { factor = 1 }
 	}
 }
 
 country_event = { #Финальная остановка
-	id = vorkuta_smutaa.9
-	immediate = {log = "[GetDateText]: [Root.GetName]: event vorkuta_start.6"}
-	title = vorkuta_smutaa.9.t
-	desc = vorkuta_smutaa.9.d
+	id = vor_smuta.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_smuta.9"}
+	title = vor_smuta.9.t
+	desc = vor_smuta.9.d
 	picture = GFX_event_avaria
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = {
-		name = vorkuta_smutaa.9.a
+		name = vor_smuta.9.a
 		ai_chance = { factor = 1 }
 		hidden_effect = {
 			load_focus_tree = VOR_SR_REG
@@ -911,24 +1150,10 @@ country_event = {
 	}
 }
 country_event = {
-	id = vor_reg.133
-	title = vor_regg.133.t 
-	desc = vor_regg.133.d 
-	#picture = 
-	
-	is_triggered_only = yes
-	fire_only_once = yes 
-
-	option = {
-		name = vor_regg.133.a
-		ai_chance = { factor = 1 }
-	}
-}
-country_event = {
 	id = vor_reg.13 
 	title = vor_reg.13.t 
 	desc = vor_reg.13.d 
-	#picture = 
+	picture = GFX_event_phoenix_from_ashes
 	
 	is_triggered_only = yes
 	fire_only_once = yes 
@@ -938,6 +1163,25 @@ country_event = {
 		ai_chance = { factor = 1 }
 	}
 }
+country_event = {
+	id = vor_reg.133
+	title = vor_reg.133.t 
+	desc = vor_reg.133.d 
+	picture = GFX_event_second_after_kamkov
+	
+	is_triggered_only = yes
+	fire_only_once = yes 
+
+	option = {
+		name = vor_reg.133.a
+		ai_chance = { factor = 1 }
+		remove_ideas = VOR_Vladimir_Trutovskiy_hog
+		add_ideas = VOR_Yevgeniy_Primakov_hog
+	}
+}
+
+## ЭКОНОМИКА ##
+
 country_event = {
 	id = vor_reg.14
 	title = vor_reg.14.t 
@@ -992,6 +1236,7 @@ country_event = {
 	option = {
 		name = vor_reg.16.a
 		ai_chance = { factor = 1 }
+		country_event = { id = vor_reg.166 days = 2 }
 	}
 }
 country_event = {
@@ -1190,6 +1435,24 @@ country_event = {
 		ai_chance = { factor = 1 }
 	}
 }
+country_event = {
+	id = vor_reg.299
+	title = vor_reg.299.t 
+	desc = vor_reg.299.d 
+	picture = GFX_event_unexpected_successor
+	
+	is_triggered_only = yes
+	fire_only_once = yes 
+
+	option = {
+		name = vor_reg.299.a
+		ai_chance = { factor = 1 }
+		remove_ideas = VOR_Vladimir_Karelin_eco
+		add_ideas = VOR_Boris_Scherbina_eco
+	}
+}
+
+## ВОЕНКА ##
 
 country_event = {
 	id = vor_reg_mil.0
@@ -1635,18 +1898,19 @@ country_event = {
 	}
 }
 
-country_event = {
-	id = vor_reg_mil.20 #Приход Макашова на пост министра
+country_event = { #Приход Макашова на пост министра
+	id = vor_reg_mil.20
 	title = vor_reg_mil.20.t 
 	desc = vor_reg_mil.20.d 
-	#picture = 
+	picture = GFX_event_on_the_brink_of_abilities
 	
 	is_triggered_only = yes
 	fire_only_once = yes 
 
 	option = {
-		name = vor_reg_mil.191.a
+		name = vor_reg_mil.20.a
 		ai_chance = { factor = 1 }
+		remove_ideas = VOR_Roberts_Eidemanis_sec
 		add_ideas = VOR_Albert_Makashov_sec
 	}
 }
@@ -1664,8 +1928,8 @@ country_event = {
 	option = {
 		name = vor_reg_politic.0.a 
 		ai_chance = { factor = 1 }
-		}
 	}
+}
 country_event = {
 	id = vor_reg_politic.1
 	title = vor_reg_politic.1.t
@@ -1678,8 +1942,8 @@ country_event = {
 	option = {
 		name = vor_reg_politic.1.a 
 		ai_chance = { factor = 1 }
-		}
 	}
+}
 country_event = {
 	id = vor_reg_politic.2
 	title = vor_reg_politic.2.t
@@ -1692,8 +1956,8 @@ country_event = {
 	option = {
 		name = vor_reg_politic.2.a 
 		ai_chance = { factor = 1 }
-		}
 	}
+}
 country_event = {
 	id = vor_reg_politic.3
 	title = vor_reg_politic.3.t
@@ -1706,8 +1970,8 @@ country_event = {
 	option = {
 		name = vor_reg_politic.3.a 
 		ai_chance = { factor = 1 }
-		}
 	}
+}
 country_event = {
 	id = vor_reg_politic.4
 	title = vor_reg_politic.4.t
@@ -1720,8 +1984,8 @@ country_event = {
 	option = {
 		name = vor_reg_politic.4.a 
 		ai_chance = { factor = 1 }
-		}
 	}
+}
 country_event = {
 	id = vor_reg_politic.5
 	title = vor_reg_politic.5.t
@@ -1734,8 +1998,8 @@ country_event = {
 	option = {
 		name = vor_reg_politic.5.a 
 		ai_chance = { factor = 1 }
-		}
 	}
+}
 country_event = {
 	id = vor_reg_politic.6
 	title = vor_reg_politic.6.t
@@ -1748,8 +2012,8 @@ country_event = {
 	option = {
 		name = vor_reg_politic.6.a 
 		ai_chance = { factor = 1 }
-		}
 	}
+}
 country_event = {
 	id = vor_reg_politic.7
 	title = vor_reg_politic.7.t
@@ -1762,8 +2026,8 @@ country_event = {
 	option = {
 		name = vor_reg_politic.7.a 
 		ai_chance = { factor = 1 }
-		}
 	}
+}
 country_event = {
 	id = vor_reg_politic.8
 	title = vor_reg_politic.8.t
@@ -1776,5 +2040,21 @@ country_event = {
 	option = {
 		name = vor_reg_politic.8.a 
 		ai_chance = { factor = 1 }
-		}
 	}
+}
+country_event = {
+	id = vor_reg_politic.9
+	title = vor_reg_politic.9.t
+	desc = vor_reg_politic.9.d 
+	picture = GFX_event_call_from_above
+
+	is_triggered_only = yes
+	fire_only_once = yes 
+
+	option = {
+		name = vor_reg_politic.9.a 
+		ai_chance = { factor = 1 }
+		remove_ideas = VOR_Andrei_Kolegaev_for
+		add_ideas = VOR_Nikolai_Leonov_for 
+	}
+}

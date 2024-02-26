@@ -24,6 +24,16 @@ TaS_fopo_remove_iranian_civil_war_tab = {
 	set_temp_variable = { conflict_id = token:GC_IranCW }
 	TNO_remove_fopo_conflict_tab = yes
 }
+
+TaS_fopo_add_french_civil_war_tab = {
+	set_temp_variable = { conflict_id = token:GC_FranceCW }
+	TNO_add_fopo_conflict_tab = yes
+}
+TaS_fopo_remove_french_civil_war_tab = {
+	set_temp_variable = { conflict_id = token:GC_FranceCW }
+	TNO_remove_fopo_conflict_tab = yes
+}
+
 TaS_fopo_add_oil_crisis_tab = {
 	set_temp_variable = { conflict_id = token:GC_OilCrisis }
 	TNO_add_fopo_conflict_tab = yes
@@ -32,6 +42,7 @@ TaS_fopo_remove_oil_crisis_tab = {
 	set_temp_variable = { conflict_id = token:GC_OilCrisis }
 	TNO_remove_fopo_conflict_tab = yes
 }
+
 TaS_fopo_add_congo_cw_tab = {
 	set_temp_variable = { conflict_id = token:GC_CongoCW }
 	TNO_add_fopo_conflict_tab = yes
@@ -40,6 +51,7 @@ TaS_fopo_remove_congo_cw_tab = {
 	set_temp_variable = { conflict_id = token:GC_CongoCW }
 	TNO_remove_fopo_conflict_tab = yes
 }
+
 TaS_fopo_add_iberian_wars_tab = {
 	set_temp_variable = { conflict_id = token:GC_IberianWars }
 	TNO_add_fopo_conflict_tab = yes
@@ -912,95 +924,88 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			transfer_state = 97
 		}
 		if = {
-			if = {
-				limit = {
-					MAD = {
-					    is_puppet_of = GER
-					}	
+			limit = {
+				MAD = {
+					is_puppet_of = GER
 				}	
-				GEX = {
-				    annex_country = {
-				        target = GER
-				        transfer_troops = no
-			        }
-			        annex_country = {
-				        target = MAD
-				        transfer_troops = no
-			        }
-					every_owned_state = {
-						GEX = {
-							add_state_core = PREV
-						}
-				    }
-					set_capital = { state = 945 }
-				}	
-		
-			}
-		}
-		else_if = {
-			if = {
-				limit = {
-					GRO = {
-					    is_puppet_of = GER
-					}	
-				}	
-				GEX = {
-				    annex_country = {
-				        target = GER
-				        transfer_troops = no
-			        }
-			        annex_country = {
-				        target = GRO
-				        transfer_troops = no
-			        }
-					annex_country = {
-				        target = COG
-				        transfer_troops = no
-			        }
-					every_owned_state = {
-				        GEX = {
-							add_state_core = PREV
-						}
-				    }
-					set_capital = { state = 295 }
-				}	
-			}
-		}
-		else_if = {
-			if = {
-				limit = {
-				    MAD = {
-					    is_puppet_of = GER
+			}	
+			GEX = {
+				annex_country = {
+					target = GER
+					transfer_troops = no
+				}
+				annex_country = {
+					target = MAD
+					transfer_troops = no
+				}
+				every_owned_state = {
+					GEX = {
+						add_state_core = PREV
 					}
-					GRO = {
-					    is_puppet_of = GER
-					}	
+				}
+				set_capital = { state = 945 }
+			}	
+		}
+		else_if = {
+			limit = {
+				GRO = {
+					is_puppet_of = GER
 				}	
-				GEX = {
-				    annex_country = {
-				        target = GER
-				        transfer_troops = no
-			        }
-			        annex_country = {
-				        target = GRO
-				        transfer_troops = no
-			        }
-					annex_country = {
-				        target = COG
-				        transfer_troops = no
-			        }
-					annex_country = {
-				        target = MAD
-				        transfer_troops = no
-			        }
-					set_capital = { state = 295 }
-					every_owned_state = {
-				        GEX = {
-							add_state_core = PREV
-						}
-				    }
+			}	
+			GEX = {
+				annex_country = {
+					target = GER
+					transfer_troops = no
+				}
+				annex_country = {
+					target = GRO
+					transfer_troops = no
+				}
+				annex_country = {
+					target = COG
+					transfer_troops = no
+				}
+				every_owned_state = {
+					GEX = {
+						add_state_core = PREV
+					}
+				}
+				set_capital = { state = 295 }
+			}	
+		}
+		else_if = {
+			limit = {
+				MAD = {
+					is_puppet_of = GER
+				}
+				GRO = {
+					is_puppet_of = GER
 				}	
-			}
+			}	
+			GEX = {
+				annex_country = {
+					target = GER
+					transfer_troops = no
+				}
+				annex_country = {
+					target = GRO
+					transfer_troops = no
+				}
+				annex_country = {
+					target = COG
+					transfer_troops = no
+				}
+				annex_country = {
+					target = MAD
+					transfer_troops = no
+				}
+				set_capital = { state = 295 }
+				every_owned_state = {
+					GEX = {
+						add_state_core = PREV
+					}
+				}
+			}	
 		}
 		else = {
 			GEX = {
@@ -1440,95 +1445,88 @@ TaS_WRW2_German_Collapse_Kosygin = {
 			transfer_state = 97
 		}
 		if = {
-			if = {
-				limit = {
-					MAD = {
-					    is_puppet_of = GER
-					}	
+			limit = {
+				MAD = {
+					is_puppet_of = GER
 				}	
+			}	
 				GEX = {
-				    annex_country = {
-				        target = GER
-				        transfer_troops = no
-			        }
-			        annex_country = {
-				        target = MAD
-				        transfer_troops = no
-			        }
-					every_owned_state = {
-				        GEX = {
-					        add_state_core = PREV
-				        }       
-			        }
-					set_capital = { state = 945 }
-				}	
-		
-			}
-		}
-		else_if = {
-			if = {
-				limit = {
-					GRO = {
-					    is_puppet_of = GER
-					}	
-				}	
-				GEX = {
-				    annex_country = {
-				        target = GER
-				        transfer_troops = no
-			        }
-			        annex_country = {
-				        target = GRO
-				        transfer_troops = no
-			        }
-					annex_country = {
-				        target = COG
-				        transfer_troops = no
-			        }
-					every_owned_state = {
-				        GEX = {
-					        add_state_core = PREV
-				        }       
-			        }
-					set_capital = { state = 295 }
-				}	
-			}
-		}
-		else_if = {
-			if = {
-				limit = {
-				    MAD = {
-					    is_puppet_of = GER
+				annex_country = {
+					target = GER
+					transfer_troops = no
+				}
+				annex_country = {
+					target = MAD
+					transfer_troops = no
+				}
+				every_owned_state = {
+					GEX = {
+						add_state_core = PREV
 					}
-					GRO = {
-					    is_puppet_of = GER
-					}	
+				}
+				set_capital = { state = 945 }
+			}	
+		}
+		else_if = {
+			limit = {
+				GRO = {
+					is_puppet_of = GER
 				}	
-				GEX = {
-				    annex_country = {
-				        target = GER
-				        transfer_troops = no
-			        }
-			        annex_country = {
-				        target = GRO
-				        transfer_troops = no
-			        }
-					annex_country = {
-				        target = COG
-				        transfer_troops = no
-			        }
-					annex_country = {
-				        target = MAD
-				        transfer_troops = no
-			        }
-					set_capital = { state = 295 }
-					every_owned_state = {
-				        GEX = {
-					        add_state_core = PREV
-				        }       
-			        }
-				}	
+			}	
+			GEX = {
+				annex_country = {
+					target = GER
+					transfer_troops = no
+				}
+				annex_country = {
+					target = GRO
+					transfer_troops = no
+				}
+				annex_country = {
+					target = COG
+					transfer_troops = no
+				}
+				every_owned_state = {
+					GEX = {
+						add_state_core = PREV
+					}       
+				}
+				set_capital = { state = 295 }
 			}
+		}
+		else_if = {
+			limit = {
+				MAD = {
+					is_puppet_of = GER
+				}
+				GRO = {
+					is_puppet_of = GER
+				}	
+			}	
+			GEX = {
+				annex_country = {
+					target = GER
+					transfer_troops = no
+				}
+				annex_country = {
+					target = GRO
+					transfer_troops = no
+				}
+				annex_country = {
+					target = COG
+					transfer_troops = no
+				}
+				annex_country = {
+					target = MAD
+					transfer_troops = no
+				}
+				set_capital = { state = 295 }
+				every_owned_state = {
+					GEX = {
+						add_state_core = PREV
+					}
+				}
+			}	
 		}
 		else = {
 			GEX = {
