@@ -538,8 +538,8 @@ shared_focus = {
 	}
 }
 
-
 ### ВОЕННАЯ ###
+
 shared_focus = {
 	id = VOR_world_conflagration_army
 	icon = GFX_VOR_world_conflagration_army
@@ -923,7 +923,7 @@ shared_focus = {
 	
 	prerequisite = { focus = VOR_tomorrow_war_arsenal }
 	x = 37
-	y = 8
+	y = 9
 	
 	completion_reward = {
 		country_event = { id = vor_reg_mil.18 days = 0 }
@@ -939,7 +939,7 @@ shared_focus = {
 	
 	prerequisite = { focus = VOR_seven_nights }
 	x = 37
-	y = 9
+	y = 10
 	
 	completion_reward = {
 		if ={
@@ -959,9 +959,11 @@ shared_focus = {
 
 
 ### ВНЕШНЯЯ ПОЛИТИКА ###
+
+
 shared_focus = {
 	id = VOR_revolution_against_world_order
-	icon = GFX_goal_unknown
+	icon = GFX_VOR_revolution_against_world_order
 	cost = 10.00
 	x = 49
 	y = 2
@@ -973,7 +975,7 @@ shared_focus = {
 
 shared_focus = {
 	id = VOR_crimes_of_japanese
-	icon = GFX_goal_unknown
+	icon = GFX_VOR_crimes_of_japanese
 	cost = 10.00
 	x = -2
 	y = 2
@@ -985,7 +987,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = VOR_hypocrisy_of_americans
-	icon = GFX_goal_unknown
+	icon = GFX_VOR_hypocrisy_of_americans
 	cost = 10.00
 	x = 0
 	y = 2
@@ -997,7 +999,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = VOR_and_atrocities_of_nazis
-	icon = GFX_goal_unknown
+	icon = GFX_VOR_and_atrocities_of_nazis
 	cost = 10.00
 	x = 2
 	y = 2
@@ -1009,7 +1011,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = VOR_cannot_be_forgiven
-	icon = GFX_goal_unknown
+	icon = GFX_VOR_cannot_be_forgiven
 	cost = 10.00
 	x = 0
 	y = 3
@@ -1023,7 +1025,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = VOR_light_fuse
-	icon = GFX_goal_unknown
+	icon = GFX_VOR_light_fuse
 	cost = 10.00
 	x = -1
 	y = 2
@@ -1037,7 +1039,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = VOR_our_truth_in_minds
-	icon = GFX_goal_unknown
+	icon = GFX_VOR_our_truth_in_minds
 	cost = 10.00
 	x = 0
 	y = 2
@@ -1051,7 +1053,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = VOR_rifle_gives_birth_to_right
-	icon = GFX_goal_unknown
+	icon = GFX_VOR_rifle_gives_birth_to_right
 	cost = 10.00
 	x = 1
 	y = 2
@@ -1065,7 +1067,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = VOR_fourth_sun_rises
-	icon = GFX_goal_unknown
+	icon = GFX_VOR_fourth_sun_rises
 	cost = 10.00
 	x = 0
 	y = 1

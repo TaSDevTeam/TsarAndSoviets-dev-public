@@ -59,10 +59,21 @@ defined_text = {
 		localization_key = TNO_newspaper_header_AMR
 	}
 	text = {
-		trigger = {
+		trigger = { #Berezniki
 			original_tag = MAR
 		}
 		localization_key = TaS_newsheader_K_Rosii
+	}
+	text = {
+		trigger = { #Berezniki
+			AND = {
+				original_tag = VOR
+				NOT = {
+					has_country_leader = { character = VOR_Vasily_Blokhi ruling_only = yes }
+				}
+			}
+		}
+		localization_key = TaS_newsheader_Znamya_Truda
 	}
 	### OFN and LATAM ###
 	text = {

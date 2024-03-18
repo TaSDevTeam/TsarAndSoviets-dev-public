@@ -16,7 +16,7 @@ country_event = {
 				target = VOR
 				type = annex_everything
 			}
-			add_ideas = YGR_pechora_war
+			add_ideas = VOR_pechora_war
 			863 = {
 				add_core_of = YGR
 			}
@@ -24,12 +24,12 @@ country_event = {
 		VOR = {
 			capital_scope = {
 				create_unit = {
-					division = "name = \"Bandity\" division_template = \"Prestupnaya Diviziya\" start_experience_factor = 1 start_equipment_factor = 0.90"
+					division = "name = \"Bandity\" division_template = \"Prestupnaya Diviziya\" start_experience_factor = 0.5 start_equipment_factor = 0.90"
 					owner = YGR
 					allow_spawning_on_enemy_provs = yes
 				}
 			}
-			add_ideas = VOR_pechora_war
+			#add_ideas = VOR_pechora_war
 			set_country_flag = VOR_pechora_war
 			mark_focus_tree_layout_dirty = yes
 			844 = {

@@ -3653,11 +3653,12 @@ RUS_DecisionCategory_Smuta = {
 			}
 		}
 		available = {
-			ROOT = {
-				is_neighbor_of = VOR
-			}
-			set_temp_variable = { Y = 250 }
-			RUS_Smuta_ScriptedTrigger_Chaos_LessThanY = yes
+			#ROOT = {
+			#	is_neighbor_of = VOR
+			#}
+			#set_temp_variable = { Y = 250 }
+			#RUS_Smuta_ScriptedTrigger_Chaos_LessThanY = yes
+			always = no
 		}
 		fire_only_once = yes
 
@@ -3742,6 +3743,7 @@ RUS_DecisionCategory_Smuta = {
 			is_neighbor_of = FAV
 			set_temp_variable = { Y = 250 }
 			RUS_Smuta_ScriptedTrigger_Chaos_LessThanY = yes
+			NOT = { country_exists = VOR }
 		}
 		fire_only_once = yes
 
@@ -3861,6 +3863,44 @@ RUS_DecisionCategory_Smuta = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_FAV_TYM_LetsBeFriends"
 			FAV = {
 				country_event = { id = TYM.30 }
+			}
+		}
+
+		cancel_trigger = { hidden_trigger = { NOT = { country_exists = FAV } } }
+
+		ai_will_do = { factor = 1000 }
+
+	}
+
+	###################
+	# {=| VORKUTA |=} #
+	###################
+
+	RUS_Decision_Smuta_Expansion_FAV_VOR_LetsBeFriends = {
+
+		icon = GFX_decision_generic_shake_hands
+
+		visible = {
+			tag = VOR
+			FAV = { exists = yes }
+		}
+		available = {
+			is_neighbor_of = FAV
+			set_temp_variable = { Y = 250 }
+			RUS_Smuta_ScriptedTrigger_Chaos_LessThanY = yes
+		}
+		fire_only_once = yes
+
+		cost = 30
+		modifier = {
+			political_power_gain = -1
+		}
+
+		days_remove = 5
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_FAV_VOR_LetsBeFriends"
+			VOR = {
+				country_event = { id = vor_smuta.10 }
 			}
 		}
 

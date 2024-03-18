@@ -18,7 +18,6 @@ ideas = {
 				#enemy_#partisan_effect = -0.25
 			}
 		}
-
 		VOR_inhospitable_climate = {
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea VOR_inhospitable_climate"}
 			allowed = {
@@ -36,7 +35,22 @@ ideas = {
 				army_core_defence_factor = 0.15
 			}
 		}
-		
+		VOR_peasant_strikes = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea VOR_rev_sud"}
+			allowed = {
+				always = no
+			}
+			cancel = { has_country_flag = RUS_cancel_all_ideas }
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = VOR_peasant_strikes
+			modifier = {
+				weekly_manpower = -100
+				stability_weekly = -0.05
+			}
+		}
 		VOR_rev_sud = {
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea VOR_rev_sud"}
 			allowed = {
@@ -53,7 +67,6 @@ ideas = {
 				stability_weekly = -0.005
 			}
 		}
-
 		VOR_pechora_war = {
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea VOR_pechora_war"}
 			allowed = {
@@ -67,7 +80,7 @@ ideas = {
 			picture = TNO_winter_soldier
 			modifier = {
 				winter_attrition_factor = -0.25
-				army_speed_factor = 0.25
+				army_defence_factor = 0.15
 			}
 		}
 		VOR_council_of_war_and_defense = {
@@ -80,11 +93,77 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = TNO_winter_soldier
+			picture = VOR_council_of_war_and_defense
 			modifier = {
 				army_attack_factor = 0.05
 				army_defence_factor = 0.05
 				max_planning = 0.10
+			}
+		}
+		VOR_revolution_banner = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea VOR_revolution_banner"}
+			allowed = {
+				always = no
+			}
+			cancel = { has_country_flag = RUS_cancel_all_ideas }
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = VOR_revolution_banner
+			modifier = {
+				org_loss_at_low_org_factor = -0.1
+				org_loss_when_moving = -0.1
+			}
+		}
+		VOR_revolution_banner_1 = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea VOR_revolution_banner_1"}
+			allowed = {
+				always = no
+			}
+			cancel = { has_country_flag = RUS_cancel_all_ideas }
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = VOR_revolution_banner
+			modifier = {
+				org_loss_at_low_org_factor = -0.15
+				org_loss_when_moving = -0.15
+				army_morale_factor = 0.1
+			}
+		}
+		VOR_burning_heart = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea VOR_burning_heart"}
+			allowed = {
+				always = no
+			}
+			cancel = { has_country_flag = RUS_cancel_all_ideas }
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = VOR_burning_heart
+			modifier = {
+				party_popularity_stability_factor = 0.15
+			}
+		}
+		VOR_burning_heart_1 = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea VOR_burning_heart_1"}
+			allowed = {
+				always = no
+			}
+			cancel = { has_country_flag = RUS_cancel_all_ideas }
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = VOR_burning_heart
+			modifier = {
+				party_popularity_stability_factor = 0.15
+				breakthrough_factor = 0.1
+				experience_gain_army_unit_factor = 0.15
+				initiative_factor = 0.1
 			}
 		}
 		VOR_federation_of_trade_unions_1 = {

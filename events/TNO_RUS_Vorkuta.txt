@@ -316,7 +316,6 @@ country_event = { #Shag_Pytuui
 		retire_character = VOR_Boris_Trofimo
 		retire_character = VOR_Stepan_Garani
 		retire_character = VOR_Pyotr_Gladko
-		custom_effect_tooltip = VOR_tt_yugra
 		hidden_effect = {
 			load_focus_tree = VOR_SR_warlord
 			remove_ideas = {
@@ -333,9 +332,6 @@ country_event = { #Shag_Pytuui
 			    VOR_Vladimir_Karelin_eco
 			    VOR_Roberts_Eidemanis_sec
 		    }
-			YGR = {
-				country_event = { id = RUS.west_siberia.skeleton.1 days = 200 }
-			}
 		}
     }    	
 }
@@ -427,8 +423,8 @@ country_event = { #
 				remove_idea = tno_press_rights_propaganda_press
 				add_idea = tno_press_rights_free_press
 			}
-		TNO_improve_public_meetings_policy_effectiveness_low = yes
-		TNO_improve_press_rights_policy_effectiveness_high = yes
+		TNO_worsen_public_meetings_policy_effectiveness_low = yes
+		TNO_worsen_press_rights_policy_effectiveness_high = yes
     }    	
 }		
 
@@ -564,6 +560,7 @@ country_event = {
 	option = {
 		name = vor_esery_start.11.a
 		ai_chance = { factor = 1 }
+		custom_effect_tooltip = VOR_tt_yugra
 	}
 }
 
@@ -964,6 +961,35 @@ country_event = { #Финальная остановка
 		hidden_effect = {
 			load_focus_tree = VOR_SR_REG
 		}
+	}
+}
+
+country_event = {
+	id = vor_smuta.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event vor_smuta.10"}
+	title = vor_smuta.10.t
+	desc = vor_smuta.10.d
+	picture = GFX_event_avaria
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = vor_smuta.10.a
+		ai_chance = { factor = 1 }
+		annex_country = {
+			target = FAV
+			transfer_troops = yes
+		}
+		TNO_improve_admin_efficiency_low = yes
+		579 = {
+			add_core_of = VOR
+			remove_core_of = FAV
+		}
+		FAV = {
+			every_unit_leader = {
+				set_nationality = VOR
+			}
+		}	
 	}
 }
 

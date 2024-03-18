@@ -1,6 +1,6 @@
 shared_focus = {
 	id = VOR_o_murke_i_gonchikh
-	icon = GFX_VOR_report
+	icon = GFX_VOR_murka
 	cost = 1
 	x = 7
 	y = 1
@@ -33,7 +33,7 @@ shared_focus = {
 
 shared_focus = {
 	id = VOR_inventarization
-	icon = GFX_VOR_lager_capital
+	icon = GFX_VOR_inventarization
 	cost = 3.00
 	prerequisite = {
 		focus = VOR_report
@@ -67,7 +67,7 @@ shared_focus = {
 
 shared_focus = {
 	id = VOR_renew_equip
-	icon = GFX_VOR_lager_capital
+	icon = GFX_VOR_renew_equip
 	cost = 2
 	prerequisite = {
 		focus = VOR_inventarization
@@ -85,8 +85,8 @@ shared_focus = {
 } 
 
 shared_focus = {
-	id = VOR_reap_the_benifits
-	icon = GFX_VOR_lager_capital
+	id = VOR_reap_the_benefits
+	icon = GFX_VOR_reap_the_benefits
 	cost = 2
 	prerequisite = {
 		focus = VOR_lager_capital
@@ -128,7 +128,7 @@ shared_focus = {
 		focus = VOR_renew_equip
 	}
 	prerequisite = {
-		focus = VOR_reap_the_benifits
+		focus = VOR_reap_the_benefits
 	}
 	prerequisite = {
 		focus = VOR_raise_production_quotas
@@ -151,7 +151,7 @@ shared_focus = {
 
 shared_focus = {
 	id = VOR_one_more_winter
-	icon = GFX_VOR_lager_capital
+	icon = GFX_VOR_one_more_winter
 	cost = 2
 	prerequisite = {
 		focus = VOR_problems_in_rechlag
@@ -169,9 +169,6 @@ shared_focus = {
 	id = VOR_warlord_people_unchained
 	icon = GFX_VOR_warlord_people_unchained
 	cost = 3.00
-	bypass = {
-		has_country_flag = VOR_pechora_war 
-	}
 	x = 6
 	y = 0
 	completion_reward = {
@@ -185,9 +182,6 @@ shared_focus = {
 	id = VOR_warlord_destroy_opressors
 	icon = GFX_VOR_warlord_destroy_opressors
 	cost = 3.00
-	bypass = {
-		has_country_flag = VOR_pechora_war 
-	}
 	prerequisite = {
 		focus = VOR_warlord_people_unchained
 	}
@@ -204,9 +198,6 @@ shared_focus = {
 	id = VOR_warlord_revolutionary_transformations
 	icon = GFX_VOR_warlord_revolutionary_transformations
 	cost = 3.00
-	bypass = {
-		has_country_flag = VOR_pechora_war 
-	}
 	prerequisite = {
 		focus = VOR_warlord_people_unchained
 	}
@@ -223,9 +214,6 @@ shared_focus = {
 	id = VOR_warlord_freedom_decree
 	icon = GFX_VOR_warlord_freedom_decree
 	cost = 3.00
-	bypass = {
-		has_country_flag = VOR_pechora_war 
-	}
 	prerequisite = {
 		focus = VOR_warlord_revolutionary_transformations
 	}
@@ -243,9 +231,6 @@ shared_focus = {
 	id = VOR_warlord_land_decree
 	icon = GFX_VOR_warlord_land_decree
 	cost = 3.00
-	bypass = {
-		has_country_flag = VOR_pechora_war 
-	}
 	prerequisite = {
 		focus = VOR_warlord_revolutionary_transformations
 	}
@@ -264,9 +249,6 @@ shared_focus = {
 	id = VOR_warlord_war_and_defence_council
 	icon = GFX_VOR_warlord_war_and_defence_council
 	cost = 3.00
-	bypass = {
-		has_country_flag = VOR_pechora_war 
-	}
 	prerequisite = {
 		focus = VOR_warlord_people_unchained
 	}
@@ -285,9 +267,6 @@ shared_focus = {
 	id = VOR_warlord_get_uncertains
 	icon = GFX_VOR_warlord_get_uncertains
 	cost = 3.00
-	available = {
-		NOT = { has_country_flag = VOR_pechora_war }
-	}
 	prerequisite = {
 		focus = VOR_warlord_people_unchained
 	}
@@ -305,9 +284,6 @@ shared_focus = {
 	id = VOR_warlord_revolutionary_struggle_troops
 	icon = GFX_VOR_warlord_revolutionary_struggle_troops
 	cost = 3.00
-	bypass = {
-		has_country_flag = VOR_pechora_war 
-	}
 	prerequisite = {
 		focus = VOR_warlord_war_and_defence_council
 	}
@@ -317,6 +293,7 @@ shared_focus = {
 	country_event = {
 			id = vor_esery_start.8 days = 0
 		}
+		custom_effect_tooltip = VOR_struggle_troops_tt
 		hidden_effect = {
 			load_oob = VOR_internet_levaki
 		}
@@ -327,9 +304,6 @@ shared_focus = {
 	id = VOR_warlord_prepare_masses_for_war
 	icon = GFX_VOR_warlord_prepare_masses_for_war
 	cost = 3.00
-	bypass = {
-		has_country_flag = VOR_pechora_war 
-	}
 	prerequisite = {
 		focus = VOR_warlord_war_and_defence_council
 	}
@@ -347,9 +321,6 @@ shared_focus = {
 	id = VOR_raise_the_battleflags
 	icon = GFX_VOR_warlord_prepare_masses_for_war
 	cost = 3.00
-	bypass = {
-		has_country_flag = VOR_pechora_war 
-	}
 	prerequisite = {
 		focus = VOR_warlord_get_uncertains
 	}
@@ -362,6 +333,7 @@ shared_focus = {
 		country_event = {
 			id = vor_esery_start.10 days = 0
 		}
+		add_ideas = VOR_revolution_banner
 	}
 }
 
@@ -369,9 +341,6 @@ shared_focus = {
 	id = VOR_flame_the_hearts
 	icon = GFX_VOR_warlord_prepare_masses_for_war
 	cost = 3.00
-	bypass = {
-		has_country_flag = VOR_pechora_war 
-	}
 	prerequisite = {
 		focus = VOR_raise_the_battleflags
 	}
@@ -394,6 +363,12 @@ shared_focus = {
 			id = vor_esery_start.11 days = 0
 		}
         add_war_support = 0.20	
+		add_ideas = VOR_burning_heart
+		hidden_effect = {
+			YGR = {
+				country_event = { id = RUS.west_siberia.skeleton.1 days = 3 random_days = 2 }
+			}
+		}
 	}
 }
 
@@ -402,7 +377,7 @@ shared_focus = {
 shared_focus = {
 	id = VOR_scarlet_flame_frozen_river
 	icon = GFX_VOR_pechora_war
-	cost = 3.00
+	cost = 1.00
 	bypass = {
 		has_country_flag = VOR_pechora_war
 	}	
@@ -422,7 +397,7 @@ shared_focus = {
 shared_focus = {
 	id = VOR_your_word_comrade_mauser
 	icon = GFX_VOR_your_word_comrade_mauser
-	cost = 3.00
+	cost = 1.00
 	prerequisite = {
 		focus = VOR_scarlet_flame_frozen_river
 	}
@@ -437,7 +412,7 @@ shared_focus = {
 		add_manpower = -500
 		add_popularity = {
 			ideology = socialist
-			popularity = 0.20
+			popularity = 0.10
 		}
 
 	}
@@ -446,7 +421,7 @@ shared_focus = {
 shared_focus = {
 	id = VOR_revolutionary_justice
 	icon = GFX_VOR_revolutionary_justice
-	cost = 3.00
+	cost = 1.00
 	prerequisite = {
 		focus = VOR_scarlet_flame_frozen_river
 	}
@@ -466,13 +441,19 @@ shared_focus = {
 shared_focus = {
 	id = VOR_motivate_peasantry
 	icon = GFX_VOR_your_word_comrade_mauser
-	cost = 3.00
+	cost = 1.00
 	prerequisite = {
 		focus = VOR_scarlet_flame_frozen_river
 	}
 	x = 14
 	y = 1
 	completion_reward = {
+		YGR = {
+			add_timed_idea = {
+				idea = VOR_peasant_strikes
+				days = 30
+			}
+		}
 		country_event = {	
 			id = vor_esery_start.14
 			days = 0
@@ -483,7 +464,7 @@ shared_focus = {
 shared_focus = {
 	id = VOR_peoples_revenge
 	icon = GFX_VOR_your_word_comrade_mauser
-	cost = 3.00
+	cost = 1.00
 	prerequisite = {
 		focus = VOR_your_word_comrade_mauser
 	}
@@ -496,6 +477,7 @@ shared_focus = {
 	x = 13
 	y = 2
 	completion_reward = {
+		TNO_improve_poverty_med = yes 
 		country_event = {	
 			id = vor_esery_start.15 
 			days = 0
@@ -506,7 +488,7 @@ shared_focus = {
 shared_focus = {
 	id = VOR_revolution_from_bottom
 	icon = GFX_VOR_your_word_comrade_mauser
-	cost = 3.00
+	cost = 1.00
 	prerequisite = {
 		focus = VOR_your_word_comrade_mauser
 	}
@@ -519,6 +501,16 @@ shared_focus = {
 	x = 15
 	y = 2
 	completion_reward = {
+		YGR = {
+			capital_scope = {
+				create_unit = {
+					division = "name = \"Narodnoye Opolcheniye\" division_template = \"Narodnoye Opolcheniye\" start_experience_factor = 0.4 start_equipment_factor = 1 "
+					owner = VOR
+					count = 2
+					allow_spawning_on_enemy_provs = yes
+				}
+			}
+		}
 		country_event = {	
 			id = vor_esery_start.16 
 			days = 0
@@ -529,7 +521,7 @@ shared_focus = {
 shared_focus = {
 	id = VOR_blood_on_the_snow
 	icon = GFX_VOR_your_word_comrade_mauser
-	cost = 3.00
+	cost = 2.00
 	prerequisite = {
 		focus = VOR_peoples_revenge
 	}
@@ -539,6 +531,10 @@ shared_focus = {
 	x = 14
 	y = 3
 	completion_reward = {
+		845 = {
+			add_manpower = -739
+		}
+		add_stability = 0.05
 		country_event = {	
 			id = vor_esery_start.17
 			days = 0
@@ -580,8 +576,8 @@ shared_focus = {
 	}
 }
 shared_focus = {
-	id = VOR_govering_bodies_reformation
-	icon = GFX_VOR_govering_bodies_reformation
+	id = VOR_governing_bodies_reformation
+	icon = GFX_VOR_governing_bodies_reformation
 	cost = 3.00
 	prerequisite = {
 		focus = VOR_neo_narodnichectvo
@@ -606,12 +602,12 @@ shared_focus = {
 	x = 12
 	y = 4
 	completion_reward = {
-	TNO_improve_industrial_expertise_high = yes
+		TNO_improve_industrial_expertise_high = yes
 		set_temp_variable = { pus_temp = 2 }
 		econ_pus_change = yes
-	set_temp_variable = { gdp_growth_temp = 1.50 }
-    econ_gdp_growth_change = yes
-	country_event = {	
+		set_temp_variable = { gdp_growth_temp = 1.50 }
+		econ_gdp_growth_change = yes
+		country_event = {	
 			id = vor_esery_start.20 days = 0
 		}
 	}
@@ -651,8 +647,13 @@ shared_focus = {
 		focus = VOR_open_party_recruitment
 	}
 	completion_reward = {
+		TNO_improve_army_professionalism_med = yes 
 		country_event = {	
 			id = vor_esery_start.22 days = 0
+		}
+		swap_ideas = {
+			remove_idea = VOR_revolution_banner
+			add_idea = VOR_revolution_banner_1
 		}
 	}
 }
@@ -670,6 +671,10 @@ shared_focus = {
 		country_event = {	
 			id = vor_esery_start.23 days = 0
 		}
+		swap_ideas = {
+			remove_idea = VOR_burning_heart
+			add_idea = VOR_burning_heart_1
+		}
 	}
 }
 
@@ -678,7 +683,7 @@ shared_focus = {
 	icon = GFX_VOR_creating_nvr
 	cost = 3.00
 	prerequisite = {
-		focus = VOR_govering_bodies_reformation
+		focus = VOR_governing_bodies_reformation
 	}
 	x = 10
 	y = 5
@@ -687,7 +692,7 @@ shared_focus = {
 			limit = { has_dlc = "La Resistance" }
 			create_intelligence_agency = {
 				icon = GFX_intelligence_agency_logo_rus
-				name = "UGB"
+				name = "SGB"
 			}
 		}
 		country_event = {	
@@ -706,6 +711,7 @@ shared_focus = {
 	x = 12
 	y = 5
 	completion_reward = {
+		tno_improve_industrial_expertise_med = yes
 		country_event = {	
 			id = vor_esery_start.25 days = 0
 		}
@@ -725,6 +731,7 @@ shared_focus = {
 	x = 14
 	y = 5
 	completion_reward = {
+		RUS_integration_cost_days_decrease = yes
 		country_event = {	
 			id = vor_esery_start.26 days = 0
 		}
@@ -749,6 +756,11 @@ shared_focus = {
 	}
 	prerequisite = {
 		focus = VOR_time_to_work
+	}
+	available = {
+		NOT = {
+			has_idea = SIB_terror_bombing
+		}
 	}
 	x = 10
 	y = 6
@@ -830,6 +842,18 @@ shared_focus = {
 	x = 9
 	y = 2
 	completion_reward = {
+		custom_effect_tooltip = VOR_siberian_strikes_tt
+		hidden_effect = {
+			every_possible_country = {
+				if = {
+					limit = {
+						is_west_siberian_nation = yes
+						NOT = { tag = VOR }
+					}
+					add_ideas = VOR_peasant_strikes
+				}
+			}
+		}
 		country_event = {
        		id = vor_smuta.4 days = 0
 		}

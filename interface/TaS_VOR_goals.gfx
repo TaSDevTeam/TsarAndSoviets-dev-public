@@ -1,8 +1,24 @@
 spriteTypes = {
     ### Initial tree ###
 	SpriteType = {
+		name = "GFX_VOR_murka"
+		texturefile = "gfx/interface/goals/VOR/initialtree/VOR_murka.dds"
+	}
+	SpriteType = {
 		name = "GFX_VOR_report"
 		texturefile = "gfx/interface/goals/VOR/initialtree/VOR_report.dds"
+	}
+	SpriteType = {
+		name = "GFX_VOR_inventarization"
+		texturefile = "gfx/interface/goals/VOR/initialtree/VOR_inventarization.dds"
+	}
+	SpriteType = {
+		name = "GFX_VOR_renew_equip"
+		texturefile = "gfx/interface/goals/VOR/initialtree/VOR_renew_equip.dds"
+	}
+	SpriteType = {
+		name = "GFX_VOR_reap_the_benefits"
+		texturefile = "gfx/interface/goals/VOR/initialtree/VOR_reap_the_benefits.dds"
 	}
 	SpriteType = {
 		name = "GFX_VOR_lager_capital"
@@ -16,8 +32,15 @@ spriteTypes = {
 		name = "GFX_VOR_problems_in_rechlag"
 		texturefile = "gfx/interface/goals/VOR/initialtree/VOR_problems_in_rechlag.dds"
 	}
+	SpriteType = {
+		name = "GFX_VOR_one_more_winter"
+		texturefile = "gfx/interface/goals/VOR/initialtree/VOR_one_more_winter.dds"
+	}
 
+	#################
 	### Eser tree ###
+	#################
+
 	SpriteType = {
 		name = "GFX_VOR_warlord_people_unchained"
 		texturefile = "gfx/interface/goals/VOR/esertree/VOR_Slomat_okovi.dds"
@@ -71,8 +94,8 @@ spriteTypes = {
 		texturefile = "gfx/interface/goals/VOR/esertree/VOR_revolutionary_justice.dds"
 	}
 	SpriteType = {
-		name = "GFX_VOR_govering_bodies_reformation"
-		texturefile = "gfx/interface/goals/VOR/esertree/VOR_govering_bodies_reformation.dds"
+		name = "GFX_VOR_governing_bodies_reformation"
+		texturefile = "gfx/interface/goals/VOR/esertree/VOR_governing_bodies_reformation.dds"
 	}
 	SpriteType = {
 		name = "GFX_VOR_run_production"
@@ -90,6 +113,11 @@ spriteTypes = {
 		name = "GFX_VOR_neo_narodnichectvo"
 		texturefile = "gfx/interface/goals/VOR/esertree/VOR_neo_narodnichectvo.dds"
 	}
+
+	###############
+	#### SMUTA ####
+	###############
+
 	SpriteType = {
 		name = "GFX_VOR_march_to_south"
 		texturefile = "gfx/interface/goals/VOR/smuta/VOR_march_to_south.dds"
@@ -125,9 +153,13 @@ spriteTypes = {
 	SpriteType = {
 		name = "GFX_VOR_triumph_of_justice"
 		texturefile = "gfx/interface/goals/VOR/smuta/VOR_triumph_of_justice.dds"
-	}  
+	}
 
-	### REGION ###
+	################
+	#### REGION ####
+	################
+
+	#### POLITICS ####
 
 	SpriteType = {
 		name = "GFX_VOR_ideology"
@@ -189,6 +221,9 @@ spriteTypes = {
 		name = "GFX_VOR_party_congress"
 		texturefile = "gfx/interface/goals/VOR/region/VOR_party_congress.dds"
 	}
+
+	#### ECONOMY ####
+
 	SpriteType = {
 		name = "GFX_VOR_engine_of_revolution"
 		texturefile = "gfx/interface/goals/VOR/region/VOR_engine_of_revolution.dds"
@@ -250,6 +285,7 @@ spriteTypes = {
 		texturefile = "gfx/interface/goals/VOR/region/VOR_earth_and_will.dds"
 	}
 
+	#### MILITARY ####
 
 	SpriteType = {
 		name = "GFX_VOR_world_conflagration_army"
@@ -330,5 +366,44 @@ spriteTypes = {
 	SpriteType = {
 		name = "GFX_VOR_assemble_officer_corps"
 		texturefile = "gfx/interface/goals/VOR/region/VOR_assemble_officer_corps.dds"
+	}
+
+	#### FOPO ####
+
+	SpriteType = {
+		name = "GFX_VOR_revolution_against_world_order"
+		texturefile = "gfx/interface/goals/VOR/region/VOR_revolution_against_world_order.dds"
+	}
+	SpriteType = {
+		name = "GFX_VOR_crimes_of_japanese"
+		texturefile = "gfx/interface/goals/VOR/region/VOR_crimes_of_japanese.dds"
+	}
+	SpriteType = {
+		name = "GFX_VOR_hypocrisy_of_americans"
+		texturefile = "gfx/interface/goals/VOR/region/VOR_hypocrisy_of_americans.dds"
+	}
+	SpriteType = {
+		name = "GFX_VOR_and_atrocities_of_nazis"
+		texturefile = "gfx/interface/goals/VOR/region/VOR_and_atrocities_of_nazis.dds"
+	}
+	SpriteType = {
+		name = "GFX_VOR_cannot_be_forgiven"
+		texturefile = "gfx/interface/goals/VOR/region/VOR_cannot_be_forgiven.dds"
+	}
+	SpriteType = {
+		name = "GFX_VOR_light_fuse"
+		texturefile = "gfx/interface/goals/VOR/region/VOR_light_fuse.dds"
+	}
+	SpriteType = {
+		name = "GFX_VOR_our_truth_in_minds"
+		texturefile = "gfx/interface/goals/VOR/region/VOR_our_truth_in_minds.dds"
+	}
+	SpriteType = {
+		name = "GFX_VOR_rifle_gives_birth_to_right"
+		texturefile = "gfx/interface/goals/VOR/region/VOR_rifle_gives_birth_to_right.dds"
+	}
+	SpriteType = {
+		name = "GFX_VOR_fourth_sun_rises"
+		texturefile = "gfx/interface/goals/VOR/region/VOR_fourth_sun_rises.dds"
 	}
 }

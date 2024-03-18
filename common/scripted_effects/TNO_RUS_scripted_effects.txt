@@ -1511,7 +1511,7 @@ WRS_west_russian_collapse = {
 				popularity = 0.5
 			}
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			#load_focus_tree = shattered_ambitions
 			set_variable = { national_debt = 0 } # clear debt for successor
 			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
 			econ_type_change = yes
@@ -1535,7 +1535,7 @@ WRS_west_russian_collapse = {
 			econ_type_change = yes
 			remove_all_ministers = yes
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			#load_focus_tree = shattered_ambitions
 			add_ideas = {
 				GOR_ONG_Ivan_Kiselyov_hog
 				GOR_ONG_Vasily_Semyonov_for
@@ -1592,7 +1592,7 @@ WRS_west_russian_collapse = {
 			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
 			econ_type_change = yes
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			#load_focus_tree = shattered_ambitions
 			remove_all_ministers = yes
 			add_ideas = {
 				GAY_ONG_Flor_Vasilyev_hog
@@ -1630,7 +1630,7 @@ WRS_west_russian_collapse = {
 			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
 			econ_type_change = yes
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			#load_focus_tree = shattered_ambitions
 			remove_all_ministers = yes
 			add_ideas = VYT_Nikolay_Rumyantsev_hog
 			add_ideas = VYT_Leonid_Makerov_for
@@ -1671,7 +1671,7 @@ WRS_west_russian_collapse = {
 			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
 			econ_type_change = yes
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			#load_focus_tree = shattered_ambitions
 			set_politics = {
 				ruling_party = liberal_conservatism
 			}
@@ -1745,7 +1745,7 @@ WRS_west_russian_collapse = {
 			econ_set_credit_rating = yes
 
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			#load_focus_tree = shattered_ambitions
 			remove_all_ministers = yes
 			add_ideas = {
 				PRM_Vladimir_Trapeznikov_hog
@@ -1802,7 +1802,7 @@ WRS_west_russian_collapse = {
 			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
 			econ_type_change = yes
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			#load_focus_tree = shattered_ambitions
 			remove_all_ministers = yes
 			add_ideas = SAM_Vitaly_Vorotnikov_hog
 			add_ideas = SAM_Leonid_Yefremov_for
@@ -1844,7 +1844,7 @@ WRS_west_russian_collapse = {
 				popularity = 0.5
 			}
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			#load_focus_tree = shattered_ambitions
 			set_variable = { national_debt = 0 } # clear debt for successor
 			retire_country_leader = yes
 			promote_character = TAR_Ibragim_Mingazeyev
@@ -1900,7 +1900,7 @@ WSB_ONG_west_siberia_collapse = {
 			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
 			econ_type_change = yes
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			#load_focus_tree = shattered_ambitions
 			remove_all_ministers = yes
 			add_ideas = TYM_Ivan_Fedyuninsky_hog
 			add_ideas = TYM_Yelena_Karbysheva_for
@@ -1991,7 +1991,7 @@ WSB_ONG_west_siberia_collapse = {
 			add_ideas = YGR_Aleksandr_Bezumov_eco
 			add_ideas = YGR_Alexey_Kalinin_sec
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			#load_focus_tree = shattered_ambitions
 			YGR = {
 				every_unit_leader = { retire = yes }
 			}
@@ -2027,7 +2027,7 @@ WSB_ONG_west_siberia_collapse = {
 				every_unit_leader = { retire = yes }
 			}
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			#load_focus_tree = shattered_ambitions
 			remove_all_ministers = yes
 			add_ideas = OMS_Oskar_Kuul_hog
 			add_ideas = OMS_Leonid_Shevchuk_for
@@ -2110,7 +2110,7 @@ WSB_ONG_west_siberia_collapse = {
 			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
 			econ_type_change = yes
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			#load_focus_tree = shattered_ambitions
 			remove_all_ministers = yes
 			add_ideas = {
 				SVR_Anatoly_Krasnov_Levitin_hog
@@ -2162,7 +2162,7 @@ WSB_ONG_west_siberia_collapse = {
 			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
 			econ_type_change = yes
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			#load_focus_tree = shattered_ambitions
 			remove_faction_status = yes
 		}
 		URL = {
@@ -2175,7 +2175,7 @@ WSB_ONG_west_siberia_collapse = {
 			transfer_state = 846
 			add_state_core = 846
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			#load_focus_tree = shattered_ambitions
 			remove_faction_status = yes
 		}
 		ONG = {
@@ -2218,7 +2218,7 @@ WSB_add_collapse_administration = {
 			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
 			econ_type_change = yes
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			#load_focus_tree = shattered_ambitions
 			remove_all_ministers = yes
 			TYM_Boris_Shcherbina = {
 				add_country_leader_role = {
@@ -2318,7 +2318,7 @@ WSB_add_collapse_administration = {
 				YGR_Alexey_Kalinin_sec
 				RUS_shattered_ambitions
 			}
-			load_focus_tree = shattered_ambitions
+			#load_focus_tree = shattered_ambitions
 			YGR = {
 				every_unit_leader = { retire = yes }
 			}
@@ -2345,7 +2345,7 @@ WSB_add_collapse_administration = {
 
 			}
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			#load_focus_tree = shattered_ambitions
 			remove_all_ministers = yes
 			OMS = {
 				every_unit_leader = { retire = yes }
@@ -2427,7 +2427,7 @@ WSB_add_collapse_administration = {
 			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
 			econ_type_change = yes
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			#load_focus_tree = shattered_ambitions
 			remove_all_ministers = yes
 			add_ideas = SVR_Anatoly_Krasnov_Levitin_hog
 			add_ideas = SVR_Sergey_Izvekov_for
@@ -2537,7 +2537,7 @@ KRS_reformed_siberian_socialist_workers_republic = {
 			legacy_id = 15106
 		}
 		hidden_effect = {
-			load_focus_tree = shattered_ambitions
+			#load_focus_tree = shattered_ambitions
 			remove_ideas = {
 				KRS_wild_promises
 				KRS_military_guided_democracy
@@ -2610,7 +2610,7 @@ ALT_siberian_workers_and_peasants_union = {
 			legacy_id = 15107
 		}
 		hidden_effect = {
-			load_focus_tree = shattered_ambitions
+			#load_focus_tree = shattered_ambitions
 			remove_ideas = {
 				ALT_religious_divide
 				ALT_christian_socialism
@@ -2663,7 +2663,7 @@ SBA_free_workers_republic_of_siberia = {
 		set_temp_variable = { TNO_economy_subtype_temp = token:Econ_Subtype_Worker_Directed }
 		econ_subtype_change = yes
 		hidden_effect = {
-			load_focus_tree = shattered_ambitions
+			#load_focus_tree = shattered_ambitions
 			remove_ideas = {
 				SBA_anarchist_refuge
 				SBA_militarized_society
@@ -2777,7 +2777,7 @@ FST_far_east_collapse = {
 				promote_leader = yes
 			}
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			#load_focus_tree = shattered_ambitions
 			set_cosmetic_tag = BRY_collapse
 			transfer_state = 565
 			add_state_core = 565
@@ -2826,7 +2826,7 @@ FST_far_east_collapse = {
 				CHT_sunset_of_white_chivalry
 			}
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			#load_focus_tree = shattered_ambitions
 			set_cosmetic_tag = CHT_collapse
 			transfer_state = 563
 			add_state_core = 563
@@ -2869,7 +2869,7 @@ FST_far_east_collapse = {
 				IRK_yagodas_paranoia
 			}
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			#load_focus_tree = shattered_ambitions
 			set_cosmetic_tag = IRK_collapse
 			transfer_state = 564
 			transfer_state = 566
@@ -2902,7 +2902,7 @@ FST_far_east_collapse = {
 				KMC_sailor_state
 			}
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			#load_focus_tree = shattered_ambitions
 			set_cosmetic_tag = KMC_collapse
 			transfer_state = 637
 			add_state_core = 637
@@ -3006,7 +3006,7 @@ FST_far_east_collapse = {
 				MAG_gateway_into_russia
 			}
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			#load_focus_tree = shattered_ambitions
 		}
 		OMO = {
 			clr_country_flag = RUS_regional_stage
@@ -3047,7 +3047,7 @@ FST_far_east_collapse = {
 				OMO_holy_duty
 			}
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			#load_focus_tree = shattered_ambitions
 			set_cosmetic_tag = OMO_collapse
 			transfer_state = 644
 			transfer_state = 891
@@ -3092,7 +3092,7 @@ FST_far_east_collapse = {
 			}
 			remove_ideas = RUS_isolated_vilages
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			#load_focus_tree = shattered_ambitions
 			set_cosmetic_tag = VIL_collapse
 			transfer_state = 575
 			transfer_state = 761
@@ -3141,7 +3141,7 @@ FST_far_east_collapse = {
 				long_name = YAK_collapse_despotism_party_long
 				name = YAK_collapse_despotism_party
 			}
-			load_focus_tree = shattered_ambitions
+			#load_focus_tree = shattered_ambitions
 			set_cosmetic_tag = YAK_collapse
 			transfer_state = 574
 			transfer_state = 760
