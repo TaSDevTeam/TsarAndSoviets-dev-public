@@ -9869,7 +9869,7 @@ SpriteType = {
 	}
 	
 	SpriteType = {
-		name = "GFX_MAR_Help_to_Front"
+		name = "GFX_MAR_Help_to_Front_shine"
 		texturefile = "gfx/interface/goals/MAR_Help_to_Front.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
@@ -9901,7 +9901,7 @@ SpriteType = {
 	}
 	
 	SpriteType = {
-		name = "GFX_MAR_Kosygin_Plan"
+		name = "GFX_MAR_Kosygin_Plan_shine"
 		texturefile = "gfx/interface/goals/MAR_Kosygin_Plan.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
@@ -11230,6 +11230,40 @@ SpriteType = {
 
 		animation = {
 			animationmaskfile = "gfx/interface/goals/MAR_kosnuk_oryzhie_prometeya.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+
+
+
+	SpriteType = {
+		name = "GFX_MAR_everything_for_the_front_shine"
+		texturefile = "gfx/interface/goals/MAR_everything_for_the_front.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MAR_everything_for_the_front.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MAR_everything_for_the_front.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no

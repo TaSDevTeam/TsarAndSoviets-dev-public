@@ -54,3 +54,16 @@ focus_tree = {
 	shared_focus = VOR_revolution_against_world_order
 	shared_focus = VOR_world_conflagration_army
 }
+
+focus_tree = {
+	id = VOR_SR_RIGHT_SUPERREG
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = VOR
+		}
+	}
+	default = no
+	
+}

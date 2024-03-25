@@ -206,7 +206,7 @@ ideas = {
 				always = yes
 			}
 			cancel = { has_country_flag = RUS_cancel_all_ideas }
-			picture = VYT_Officer_Infighting
+			picture = VYT_officer_infighting
 			
 			removal_cost = -1
 			
@@ -231,7 +231,7 @@ ideas = {
 				always = yes
 			}
 			cancel = { has_country_flag = RUS_cancel_all_ideas }
-			picture = VYT_Officer_Infighting
+			picture = VYT_officer_infighting
 			
 			removal_cost = -1
 			
@@ -880,7 +880,7 @@ ideas = {
 			modifier = {
 				stability_factor = -0.2
 				production_units_to_GDP_ratio_modifier = -0.15
-				industrial_capacity_factory -0.1
+				industrial_capacity_factory = -0.1
 			}
 		}
 	}
@@ -991,7 +991,7 @@ ideas = {
 			modifier = {
 				stability_factor = -0.1
 				production_units_to_GDP_ratio_modifier = -0.05
-				industrial_capacity_factory -0.05
+				industrial_capacity_factory = -0.05
 			}
 		}
 	}
@@ -1014,7 +1014,7 @@ ideas = {
 			
 			modifier = {
 				stability_factor = 0.1
-				industrial_capacity_factory 0.1
+				industrial_capacity_factory = 0.1
 			}
 		}
 	}
@@ -1506,7 +1506,7 @@ ideas = {
 			modifier = {
 				stability_factor = -0.1
 				production_units_to_GDP_ratio_modifier = -0.2
-				industrial_capacity_factory -0.2
+				industrial_capacity_factory = -0.2
 			}
 		}
 	}

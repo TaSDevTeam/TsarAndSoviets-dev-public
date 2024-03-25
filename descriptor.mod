@@ -6,7 +6,7 @@ tags={
 	"Alternative History"
 }
 dependencies={
-	"The New Order: The Last Days Of Russia"
+	"The New Order: Last Days Of Europe (RUSSIAN)"
 	"The New Order: Last Days of Europe"
 }
 name="Tsar and Soviets - Dev"
