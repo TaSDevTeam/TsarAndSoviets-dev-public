@@ -1,0 +1,435 @@
+shared_focus = {
+	id = VOR_chernov_smiles_from_heaven
+	icon = GFX_VOR_chernov_smiles_from_heaven
+	cost = 4.00
+
+	x = 7
+	y = 1
+
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = VOR_vae_victis
+	icon = GFX_VOR_vae_victis
+	cost = 4.00
+
+	prerequisite = {
+		focus = VOR_chernov_smiles_from_heaven
+	}
+
+	x = -3
+	y = 1
+	relative_position_id = VOR_chernov_smiles_from_heaven
+
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = VOR_primakonomics
+	icon = GFX_VOR_primakonomics
+	cost = 4.00
+
+	prerequisite = {
+		focus = VOR_chernov_smiles_from_heaven
+	}
+
+	x = 0
+	y = 1
+	relative_position_id = VOR_chernov_smiles_from_heaven
+
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = VOR_american_novel
+	icon = GFX_VOR_american_novel
+	cost = 4.00
+
+	prerequisite = {
+		focus = VOR_chernov_smiles_from_heaven
+	}
+
+	x = 4
+	y = 1
+	relative_position_id = VOR_chernov_smiles_from_heaven
+
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = VOR_primakov_loop
+	icon = GFX_VOR_primakov_loop
+	cost = 4.00
+
+	prerequisite = {
+		focus = VOR_vae_victis
+	}
+	mutually_exclusive = {
+		focus = VOR_they_learned_their_lesson
+	}
+
+	x = -1
+	y = 1
+	relative_position_id = VOR_vae_victis
+
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = VOR_they_learned_their_lesson
+	icon = GFX_VOR_they_learned_their_lesson
+	cost = 4.00
+
+	prerequisite = {
+		focus = VOR_vae_victis
+	}
+	mutually_exclusive = {
+		focus = VOR_primakov_loop
+	}
+
+	x = 1
+	y = 1
+	relative_position_id = VOR_vae_victis
+
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = VOR_market_adaptation
+	icon = GFX_VOR_market_adaptation
+	cost = 4.00
+
+	prerequisite = {
+		focus = VOR_primakonomics
+	}
+
+	x = 0
+	y = 1
+	relative_position_id = VOR_primakonomics
+
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = VOR_atlantic_armistice
+	icon = GFX_VOR_atlantic_armistice
+	cost = 4.00
+
+	prerequisite = {
+		focus = VOR_american_novel
+	}
+	mutually_exclusive = {
+		focus = VOR_atlantic_alliance
+	}
+
+	x = -1
+	y = 1
+	relative_position_id = VOR_american_novel
+
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = VOR_atlantic_alliance
+	icon = GFX_VOR_atlantic_alliance
+	cost = 4.00
+
+	prerequisite = {
+		focus = VOR_american_novel
+	}
+	mutually_exclusive = {
+		focus = VOR_atlantic_armistice
+	}
+
+	x = 1
+	y = 1
+	relative_position_id = VOR_american_novel
+
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = VOR_end_of_factionalism
+	icon = GFX_VOR_end_of_factionalism
+	cost = 4.00
+
+	prerequisite = {
+		focus = VOR_primakov_loop
+	}
+
+	x = 0
+	y = 1
+	relative_position_id = VOR_primakov_loop
+
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = VOR_controlled_opposition
+	icon = GFX_VOR_controlled_opposition
+	cost = 4.00
+
+	prerequisite = {
+		focus = VOR_they_learned_their_lesson
+	}
+
+	x = 0
+	y = 1
+	relative_position_id = VOR_they_learned_their_lesson
+
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = VOR_privatization
+	icon = GFX_VOR_privatization
+	cost = 4.00
+
+	prerequisite = {
+		focus = VOR_market_adaptation
+	}
+
+	x = 0
+	y = 1
+	relative_position_id = VOR_market_adaptation
+
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = VOR_partners_by_circumstances
+	icon = GFX_VOR_partners_by_circumstances
+	cost = 4.00
+
+	prerequisite = {
+		focus = VOR_atlantic_armistice
+	}
+
+	x = 0
+	y = 1
+	relative_position_id = VOR_atlantic_armistice
+
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = VOR_ot_smerti_zaslonim
+	icon = GFX_VOR_ot_smerti_zaslonim
+	cost = 4.00
+
+	prerequisite = {
+		focus = VOR_atlantic_alliance
+	}
+
+	x = 0
+	y = 1
+	relative_position_id = VOR_atlantic_alliance
+
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = VOR_party_stands_firm
+	icon = GFX_VOR_party_stands_firm
+	cost = 4.00
+
+	prerequisite = {
+		focus = VOR_end_of_factionalism
+		focus = VOR_controlled_opposition
+	}
+
+	x = 1
+	y = 1
+	relative_position_id = VOR_end_of_factionalism
+
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = VOR_on_guard_for_people_property
+	icon = GFX_VOR_on_guard_for_people_property
+	cost = 4.00
+
+	prerequisite = {
+		focus = VOR_privatization
+	}
+	mutually_exclusive = {
+		focus = VOR_perm_economic_zone
+	}
+
+	x = -1
+	y = 1
+	relative_position_id = VOR_privatization
+
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = VOR_perm_economic_zone
+	icon = GFX_VOR_perm_economic_zone
+	cost = 4.00
+
+	prerequisite = {
+		focus = VOR_privatization
+	}
+	mutually_exclusive = {
+		focus = VOR_on_guard_for_people_property
+	}
+
+	x = 1
+	y = 1
+	relative_position_id = VOR_privatization
+
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = VOR_economic_concessions
+	icon = GFX_VOR_economic_concessions
+	cost = 4.00
+
+	prerequisite = {
+		focus = VOR_partners_by_circumstances
+	}
+
+	x = 0
+	y = 1
+	relative_position_id = VOR_partners_by_circumstances
+
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = VOR_intel_exchange
+	icon = GFX_VOR_intel_exchange
+	cost = 4.00
+
+	prerequisite = {
+		focus = VOR_ot_smerti_zaslonim
+	}
+
+	x = 0
+	y = 1
+	relative_position_id = VOR_ot_smerti_zaslonim
+
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = VOR_ready_to_move_forward
+	icon = GFX_VOR_ready_to_move_forward
+	cost = 4.00
+
+	prerequisite = {
+		focus = VOR_party_stands_firm
+	}
+
+	x = 0
+	y = 1
+	relative_position_id = VOR_party_stands_firm
+
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = VOR_foreign_market
+	icon = GFX_VOR_foreign_market
+	cost = 4.00
+
+	prerequisite = {
+		focus = VOR_on_guard_for_people_property
+		focus = VOR_perm_economic_zone
+	}
+
+	x = 1
+	y = 1
+	relative_position_id = VOR_on_guard_for_people_property
+
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = VOR_recognition_of_our_legitimacy
+	icon = GFX_VOR_recognition_of_our_legitimacy
+	cost = 4.00
+
+	prerequisite = {
+		focus = VOR_economic_concessions
+		focus = VOR_intel_exchange
+	}
+
+	x = 1
+	y = 1
+	relative_position_id = VOR_economic_concessions
+
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = VOR_second_wind
+	icon = GFX_VOR_second_wind
+	cost = 4.00
+
+	prerequisite = {
+		focus = VOR_foreign_market
+	}
+	prerequisite = {
+		focus = VOR_recognition_of_our_legitimacy
+	}
+	prerequisite = {
+		focus = VOR_ready_to_move_forward
+	}
+
+	x = 0
+	y = 1
+	relative_position_id = VOR_foreign_market
+
+	completion_reward = {
+		
+	}
+}

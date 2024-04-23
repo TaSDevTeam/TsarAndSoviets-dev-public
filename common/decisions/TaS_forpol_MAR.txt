@@ -302,9 +302,6 @@ MAR_foreign_policy_category = {
 			PFF = { has_war = yes }
 			TNO_fopo_far_eastern_revolt_selected = yes
 			TNO_volunteer_cap_less_5 = yes
-			check_variable = {
-				MAR_FE_volunteer_sent < 3
-			}
 		}
 
 		cost = 50
