@@ -302,9 +302,6 @@ MAR_foreign_policy_category = {
 			PFF = { has_war = yes }
 			TNO_fopo_far_eastern_revolt_selected = yes
 			TNO_volunteer_cap_less_5 = yes
-			check_variable = {
-				MAR_FE_volunteer_sent < 3
-			}
 		}
 
 		cost = 50
@@ -2946,7 +2943,7 @@ MAR_foreign_policy_category = {
 		complete_effect = {
 			send_equipment = {
 				equipment = MBT_chassis
-				amount = PPR
+				amount = 500
 				target = SPR
 			}
 		}
@@ -3153,7 +3150,7 @@ MAR_foreign_policy_category = {
 	MAR_FrenchReclamation_Decision_MAR_send_military_advisors = {
 		icon = GFX_decision_generic_military_parade
 		visible = {
-			TNO_fopo_congo_civil_war_selected = yes
+			TNO_fopo_french_civil_war_selected = yes
 			NOT = { has_government = socialist }
 		}
 
@@ -3335,7 +3332,7 @@ MAR_foreign_policy_category = {
 	MAR_Kosygin_FrenchReclamation_Decision_MAR_send_military_advisors = {
 		icon = GFX_decision_generic_military_parade
 		visible = {
-			TNO_fopo_congo_civil_war_selected = yes
+			TNO_fopo_french_civil_war_selected = yes
 			has_government = socialist
 		}
 

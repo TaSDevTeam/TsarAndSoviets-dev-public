@@ -965,7 +965,8 @@ defined_text = {
 	text = { # French Civil War
 		trigger = {
 			check_variable = { selected_conflict_id = token:GC_FranceCW }
-			has_global_flag = FFR_reclamation_civil_war_happening
+			has_global_flag = FRA_civil_war_ongoing
+			tag = MAR
 		}
 		localization_key = "GFX_fopo_french_civil_war_sidebar"
 	}
@@ -1594,6 +1595,8 @@ defined_text = {
 	text = { # French Civil War
 		trigger = {
 			check_variable = { conflict_id = token:GC_FranceCW }
+			has_global_flag = FRA_civil_war_ongoing
+			tag = MAR
 		}
 		localization_key = "GFX_fopo_french_civil_war_icon"
 	}

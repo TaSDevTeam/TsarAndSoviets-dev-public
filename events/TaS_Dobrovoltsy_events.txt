@@ -1000,55 +1000,141 @@ country_event = { #congo cw
 	}
 }
 
-country_event = { #iberian wars
-	id = MAR_forpol.6
-	immediate = {log = "[GetDateText]: [Root.GetName]: MAR_forpol.6"}
-	title = MAR_forpol.6.t
-	desc = MAR_forpol.6.d
+country_event = { #france CW BEL join
+	id = MAR_forpol.700
+	immediate = {log = "[GetDateText]: [Root.GetName]: MAR_forpol.700"}
+	title = MAR_forpol.700.t
+	desc = MAR_forpol.700.d
 	trigger = {
-		tag = ZZZ
-		has_global_flag = IBW_CONFLICT
+		tag = MAR
+		has_government = despotism
+		has_global_flag = FRA_civil_war_ongoing
+		has_country_flag = MAR_started_volunteer_sending
 	}
 	fire_only_once = yes
 	picture = GFX_event_MAR_dobr2
 	option = { #yes
-		name = MAR_forpol.6.a
-		MAR = {
-			TaS_fopo_add_iberian_wars_tab = yes
-		}
+		name = MAR_forpol.700.a
+		TaS_fopo_add_france_civil_war_tab = yes
+		FRM  = { set_country_flag = MAR_aid_FRM }
+		set_temp_variable = { target = FRM }
+		set_temp_variable = { number = 4 }
+		TNO_set_num_volunteers = yes
 	}
 }
 
-country_event = { #france CW
-	id = MAR_forpol.7
-	immediate = {log = "[GetDateText]: [Root.GetName]: MAR_forpol.77"}
-	title = MAR_forpol.7.t
-	desc = MAR_forpol.7.d
+country_event = { #france CW BEL win
+	id = MAR_forpol.701
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_forpol.701"}
+	title = MAR_forpol.701.t
+	desc = MAR_forpol.701.d
+	picture = GFX_event_MAR_dobr2
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = { FRV = { has_war = no } }
+
+	option = {
+		name = MAR_forpol.701.a
+		TaS_fopo_remove_france_civil_war_tab = yes
+		add_political_power = 100
+		add_stability = 0.03
+		add_war_support = 0.03
+		FRM  = { clr_country_flag = MAR_aid_FRM }
+		add_popularity = { ideology = despotism popularity = 0.02 }
+		TaS_dobrovoltsy_dynmod_victory = yes
+	}
+}
+
+country_event = { #france CW BEL lose
+	id = MAR_forpol.702
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_forpol.702"}
+	title = MAR_forpol.702.t
+	desc = MAR_forpol.702.d
+	picture = GFX_event_MAR_dobr2
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = { FRV = { has_war = no } }
+
+	option = {
+		name = MAR_forpol.702.a
+		TaS_fopo_remove_france_civil_war_tab = yes
+		add_political_power = -50
+		add_stability = -0.03
+		add_war_support = -0.03
+		FRM = { clr_country_flag = MAR_aid_FRM }
+		add_popularity = { ideology = despotism popularity = -0.02 }
+		TaS_dobrovoltsy_dynmod_lose = yes
+	}
+}
+
+country_event = { #france CW KOS join
+	id = MAR_forpol.710
+	immediate = {log = "[GetDateText]: [Root.GetName]: MAR_forpol.710"}
+	title = MAR_forpol.710.t
+	desc = MAR_forpol.710.d
 	trigger = {
-		tag = ZZZ
-		has_global_flag = FFR_reclamation_civil_war_happening
+		tag = MAR
+		has_government = socialist
+		has_global_flag = FRA_civil_war_ongoing
+		has_country_flag = MAR_started_volunteer_sending
 	}
 	fire_only_once = yes
 	picture = GFX_event_MAR_dobr2
 	option = { #yes
-		name = MAR_forpol.7.a
-		MAR = {
-			TNO_fopo_add_french_reclamation_civil_war_tab = yes
-			if = {
-				limit = { has_government = socialist }
-				FRV  = { set_country_flag = MAR_aid_FRV }
-				set_temp_variable = { target = FRV }
-				set_temp_variable = { number = 4 }
-				TNO_set_num_volunteers = yes
-			}
-			else_if = {
-				limit = { has_government = despotism }
-				FRM  = { set_country_flag = MAR_aid_FRM }
-				set_temp_variable = { target = FRM }
-				set_temp_variable = { number = 4 }
-				TNO_set_num_volunteers = yes
-			}
-		}
+		name = MAR_forpol.710.a
+		TaS_fopo_add_france_civil_war_tab = yes
+		FRV  = { set_country_flag = MAR_aid_FRV }
+		set_temp_variable = { target = FRV }
+		set_temp_variable = { number = 4 }
+		TNO_set_num_volunteers = yes
+	}
+}
+
+country_event = { #france CW KOS win
+	id = MAR_forpol.711
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_forpol.711"}
+	title = MAR_forpol.711.t
+	desc = MAR_forpol.711.d
+	picture = GFX_event_MAR_dobr2
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = { FRV = { has_war = no } }
+
+	option = {
+		name = MAR_forpol.711.a
+		TaS_fopo_remove_france_civil_war_tab = yes
+		add_political_power = 100
+		add_stability = 0.03
+		add_war_support = 0.03
+		FRV  = { clr_country_flag = MAR_aid_FRV }
+		add_popularity = { ideology = socialist popularity = 0.02 }
+		TaS_dobrovoltsy_dynmod_victory = yes
+	}
+}
+
+country_event = { #france CW KOS lose
+	id = MAR_forpol.712
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_forpol.712"}
+	title = MAR_forpol.712.t
+	desc = MAR_forpol.712.d
+	picture = GFX_event_MAR_dobr2
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = { FRV = { has_war = no } }
+
+	option = {
+		name = MAR_forpol.712.a
+		TaS_fopo_remove_france_civil_war_tab = yes
+		add_political_power = -50
+		add_stability = -0.03
+		add_war_support = -0.03
+		FRV  = { clr_country_flag = MAR_aid_FRV }
+		add_popularity = { ideology = socialist popularity = -0.02 }
+		TaS_dobrovoltsy_dynmod_lose = yes
 	}
 }
 

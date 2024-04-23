@@ -1,3 +1,12 @@
+TaS_fopo_add_france_civil_war_tab = {
+	set_temp_variable = { conflict_id = token:France_CW }
+	TNO_add_fopo_conflict_tab = yes
+}
+TaS_fopo_remove_france_civil_war_tab = {
+	set_temp_variable = { conflict_id = token:France_CW }
+	TNO_remove_fopo_conflict_tab = yes
+}
+
 TaS_fopo_add_far_eastern_revolt_tab = {
 	set_temp_variable = { conflict_id = token:GC_FarEasternRevolt }
 	TNO_add_fopo_conflict_tab = yes
