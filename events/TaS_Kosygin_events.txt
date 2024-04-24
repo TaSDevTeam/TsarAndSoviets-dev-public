@@ -2559,7 +2559,7 @@ country_event = { #Rus win
 					promote_character = yes
 				}
 				if = {
-					limit = { SYR = exists }
+					limit = { country_exists = SYR }
 					annex_country = {
 						target = SYR
 						transfer_troops = yes
@@ -2658,7 +2658,7 @@ country_event = { #Ger win
 					promote_character = yes
 				}
 				if = {
-					limit = { BIR = exists }
+					limit = { country_exists = BIR }
 					annex_country = {
 						target = BIR
 						transfer_troops = yes
@@ -2744,7 +2744,7 @@ country_event = { #no win
 					promote_character = yes
 				}
 				if = {
-					limit = { SYR = exists }
+					limit = {  country_exists = SYR }
 					annex_country = {
 						target = SYR
 						transfer_troops = yes

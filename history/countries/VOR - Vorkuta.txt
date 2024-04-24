@@ -29,6 +29,8 @@ set_popularities = {
 	communist = 15
 }
 
+set_research_slots = 3
+
 set_technology = {
 	basic_train = 1
 
@@ -56,21 +58,8 @@ set_technology = {
 	assault_weapons_1 = 1
 	tech_recon = 1
 	##ARTY##
-	artillery4 = 1
-	antiair5 = 1
+	
 	##ARMOR##
-	advanced_light_tank = 1
-	advanced_medium_tank = 1
-	mechanised_infantry3 = 1
-
-	APC_1950 = 1
-
-	IFV_1950 = 1
-
-	MBT_1950 = 1
-
-	AC_1945 = 1
-	AC_1950 = 1
 
 	##AIRCRAFT##
 	early_fighter = 1
@@ -101,7 +90,68 @@ set_technology = {
 	excavation0 = 1
 	energy_technology_1 = 1
 	social_construction_1 = 1
+	administration_construction_1 = 1
 	military_construction_1 = 1
+	production_unit_gain_1 = 1
+	production_unit_gain_2 = 1
+}
+
+# NSB tech #
+
+if = {
+	limit = {
+		NOT = { has_dlc = "No Step Back" }
+	}
+	set_technology = {
+		IFV_1945 = 1
+		MBT_1945 = 1
+		APC_1945 = 1
+
+		APC_1950 = 1
+
+		IFV_1950 = 1
+
+		MBT_1950 = 1
+
+		Heavy_1945 = 1
+
+		AC_1945 = 1
+		AC_1950 = 1
+
+		artillery_1945 = 1
+		antiair_1945 = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		NSB_APC_1945 = 1
+		NSB_APC_1950 = 1
+
+		NSB_IFV_1945 = 1
+		NSB_IFV_1945_modules_1 = 1
+		NSB_IFV_1945_modules_2 = 1
+		NSB_IFV_1950 = 1
+
+		NSB_MBT_1945 = 1
+		NSB_MBT_1945_modules_1 = 1
+		NSB_MBT_1945_modules_2 = 1
+		NSB_MBT_1950 = 1
+
+		NSB_AC_1945 = 1
+		NSB_AC_1950 = 1
+		
+		NSB_Heavy_1945 = 1
+
+		NSB_Armour_1 = 1
+		NSB_Engine_1 = 1
+
+		NSB_artillery_1945 = 1
+
+		NSB_antiair_1945 = 1
+	}
 }
 
 # Country leader
@@ -121,7 +171,7 @@ recruit_character = VOR_Roberts_Eidemanis
 ### Commanders ###
 recruit_character = VOR_Pyotr_Gladko
 recruit_character = VOR_Makariy_Petrov
-recruit_character = VOR_Li_Harvald_Osvald
+recruit_character = VOR_Lee_Harvey_Osvald
 
 add_ideas = {
 	### Standard ###
