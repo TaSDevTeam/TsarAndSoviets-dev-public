@@ -32,19 +32,3 @@ country_event = { #test
 		
 	}
 }
-country_event = { #test
-	id = tas_test.3
-	immediate = {log = "[GetDateText]: [Root.GetName]: event tas_test.3"}
-	title = tas_test.3.t
-	desc = tas_test.3.d
-	picture = GFX_event_Lager_ochet
-	is_triggered_only = yes
-	fire_only_once = yes
-	
-	option = {
-		name = tas_test.3.a
-		ai_chance = { factor = 1 }
-		load_focus_tree = POV_war_tree
-		
-	}
-}

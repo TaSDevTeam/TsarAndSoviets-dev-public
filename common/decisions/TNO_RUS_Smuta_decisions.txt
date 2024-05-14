@@ -39,7 +39,7 @@ RUS_DecisionCategory_Smuta = {
 	##########################################
 
 	RUS_Mission_Smuta_AMR_AvengingExile = {
-		icon = GFX_decision_red_skull
+		icon = GFX_decision_generic_red_skull
 		priority = 200
 		activation = { always = no }
 		available = { hidden_trigger = { always = no } }
@@ -185,7 +185,7 @@ RUS_DecisionCategory_Smuta = {
 	}
 
 	RUS_Decision_Smuta_CHT_LessonFromBolshevik_2 = {
-		icon = GFX_decision_forced_labor
+		icon = GFX_decision_generic_forced_labor
 		visible = {
 			has_completed_focus = CHT_lessons_from_the_bolsheviks
 		}
@@ -305,7 +305,7 @@ RUS_DecisionCategory_Smuta = {
 	}
 
 	RUS_Decision_Smuta_Chaos_Decrease_FuckFuckFUck = {
-		icon = GFX_decision_revolt
+		icon = GFX_decision_generic_revolt
 		cost = 20
 		available = {
 			RUS_Smuta_ScriptedTrigger_Chaos_Bad = yes
@@ -328,7 +328,7 @@ RUS_DecisionCategory_Smuta = {
 	}
 
 	RUS_Decision_Smuta_SuppliesForChaos = {
-		icon = GFX_decision_factory_generic_red
+		icon = GFX_decision_generic_factory_red
 		available = {
 			set_temp_variable = { Y = 250 }
 			RUS_Smuta_ScriptedTrigger_Chaos_LessThanY = yes
@@ -1444,6 +1444,7 @@ RUS_DecisionCategory_Smuta = {
 		visible = {
 			IRK = { exists = no }
 			any_owned_state = { is_core_of = IRK }
+			NOT = { original_tag = BRY }
 		}
 		available = {
 			NOT = { has_decision = RUS_Decision_Smuta_Chaos_Decrease_FuckFuckFUck }
@@ -1751,6 +1752,7 @@ RUS_DecisionCategory_Smuta = {
 			log = "[GetDateText]: [Root.GetName]: Decision Complete RUS_Decision_Smuta_Expansion_WRS_Generic"
 			set_temp_variable = { TargetTag = WRS }
 			RUS_Smuta_Expansion_TargetTag_Generic_Complete = yes
+			set_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		days_remove = 15
@@ -1758,13 +1760,22 @@ RUS_DecisionCategory_Smuta = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_WRS_Generic"
 			set_temp_variable = { TargetTag = WRS }
 			RUS_Smuta_Expansion_TargetTag_Generic_Remove = yes
+			clr_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		cancel_trigger = { hidden_trigger = { NOT = { country_exists = WRS } } }
-		cancel_effect = { remove_from_array = { Smuta_PrepareWarOn = WRS } }
+		cancel_effect = {
+			remove_from_array = { Smuta_PrepareWarOn = WRS }
+			clr_country_flag = RUS_Smuta_preparing_expansion
+		}
 
-		ai_will_do = { factor = 1000 }
-
+		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
+			factor = 125
+			modifier = {
+				factor = 0
+				has_country_flag = RUS_Smuta_preparing_expansion
+			}
+		}
 	}
 
 	################
@@ -1789,25 +1800,20 @@ RUS_DecisionCategory_Smuta = {
 			RUS_Smuta_ScriptedTrigger_Chaos_LessThanY = yes
 			custom_trigger_tooltip = {
 				tooltip = KOM_no_possible_peace_tt
-				OR = {
-					NOT = {
-						AND = {
-							tag = WRS
-							WRS_Georgy_Zhukov = { is_country_leader = yes }
-							KOM = {
-								OR = {
-									has_government = communist
-									has_government = socialist
-								}
+				NOT = {
+					AND = {
+						tag = WRS
+						WRS_Georgy_Zhukov = { is_country_leader = yes }
+						KOM = {
+							OR = {
+								has_government = communist
+								has_government = socialist
 							}
-							NOT = {
-								has_country_flag = WRS_SOVKOM_WAR
-							}
-						}		
-					}
-					NOT = { 
-						has_country_flag = INVASION_KOM_DISALLOWED
-					}
+						}
+						NOT = {
+							has_country_flag = WRS_SOVKOM_WAR
+						}
+					}		
 				}
 			}
 		}
@@ -1854,6 +1860,7 @@ RUS_DecisionCategory_Smuta = {
 			}
 			set_temp_variable = { TargetTag = KOM }
 			RUS_Smuta_Expansion_TargetTag_Generic_Complete = yes
+set_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		days_remove = 15
@@ -1861,6 +1868,7 @@ RUS_DecisionCategory_Smuta = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_KOM_Generic"
 			set_temp_variable = { TargetTag = KOM }
 			RUS_Smuta_Expansion_TargetTag_Generic_Remove = yes
+clr_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		cancel_trigger = {
@@ -1871,10 +1879,25 @@ RUS_DecisionCategory_Smuta = {
 				} 
 			} 
 		}
-		cancel_effect = { remove_from_array = { Smuta_PrepareWarOn = KOM } }
+		cancel_effect = {
+			remove_from_array = { Smuta_PrepareWarOn = KOM }
+			clr_country_flag = RUS_Smuta_preparing_expansion
+		}
 
-		ai_will_do = { factor = 1000 }
-
+		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
+			factor = 100 # Same as non-unifier, VYT goes south, WRRF attacks with no preference
+			modifier = {
+				factor = 0
+				has_country_flag = RUS_Smuta_preparing_expansion
+			}
+			modifier = { #Priority returns to unifier level if Komi is flanked and WRRF could potentially start attacking other unifiers
+				add = 25
+				NOT = {
+					country_exists = VOL
+					country_exists = GAY
+				}
+			}
+		}
 	}
 
 	##################
@@ -1927,6 +1950,7 @@ RUS_DecisionCategory_Smuta = {
 			}
 			set_temp_variable = { TargetTag = SAM }
 			RUS_Smuta_Expansion_TargetTag_Generic_Complete = yes
+set_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		days_remove = 15
@@ -1934,6 +1958,7 @@ RUS_DecisionCategory_Smuta = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_SAM_Generic"
 			set_temp_variable = { TargetTag = SAM }
 			RUS_Smuta_Expansion_TargetTag_Generic_Remove = yes
+clr_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		cancel_trigger = {
@@ -1944,10 +1969,18 @@ RUS_DecisionCategory_Smuta = {
 				} 
 			} 
 		}
-		cancel_effect = { remove_from_array = { Smuta_PrepareWarOn = SAM } }
+		cancel_effect = {
+			remove_from_array = { Smuta_PrepareWarOn = SAM }
+			clr_country_flag = RUS_Smuta_preparing_expansion
+		}
 
-		ai_will_do = { factor = 1000 }
-
+		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
+			factor = 125
+			modifier = {
+				factor = 0
+				has_country_flag = RUS_Smuta_preparing_expansion
+			}
+		}
 	}
 
 	#################
@@ -1964,6 +1997,9 @@ RUS_DecisionCategory_Smuta = {
 			has_war = no
 			NOT = { has_non_aggression_pact_with = GOR }
 			RUS_Smuta_ScriptedTrigger_Expansion_GOR_Generic_NotVisible = yes
+			NOT = {
+				has_country_flag = INVASION_GOR_DISALLOWED
+			}
 		}
 		available = {
 			set_temp_variable = { Y = 250 }
@@ -2001,6 +2037,7 @@ RUS_DecisionCategory_Smuta = {
 			hidden_effect = {
 				set_temp_variable = { Y = -0.3 }
 				RUS_Smuta_Supplies_Add_Y = yes
+				set_country_flag = RUS_Smuta_preparing_expansion
 			}
 		}
 
@@ -2008,6 +2045,7 @@ RUS_DecisionCategory_Smuta = {
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_GOR_Generic"
 			declare_war_on = { target = GOR type = annex_everything }
+			clr_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		cancel_trigger = {
@@ -2018,9 +2056,21 @@ RUS_DecisionCategory_Smuta = {
 				} 
 			} 
 		}
+cancel_effect = {
+			clr_country_flag = RUS_Smuta_preparing_expansion
+		}
 
-		ai_will_do = { factor = 100 }
-
+		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
+			factor = 100
+			modifier = {
+				factor = 0
+				has_country_flag = RUS_Smuta_preparing_expansion
+			}
+			modifier = { # Samara can crush early if Tatarstan border is open
+				add = 30
+				NOT = { country_exists = TAR }
+			}
+		}
 	}
 
 	###################
@@ -2094,6 +2144,7 @@ RUS_DecisionCategory_Smuta = {
 			hidden_effect = {
 				set_temp_variable = { Y = -0.3 }
 				RUS_Smuta_Supplies_Add_Y = yes
+set_country_flag = RUS_Smuta_preparing_expansion
 			}
 		}
 
@@ -2101,6 +2152,7 @@ RUS_DecisionCategory_Smuta = {
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_VOL_Generic"
 			declare_war_on = { target = VOL type = annex_everything }
+clr_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		cancel_trigger = {
@@ -2111,9 +2163,17 @@ RUS_DecisionCategory_Smuta = {
 				} 
 			} 
 		}
+cancel_effect = {
+			clr_country_flag = RUS_Smuta_preparing_expansion
+		}
 
-		ai_will_do = { factor = 100 }
-
+		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
+			factor = 100
+			modifier = {
+				factor = 0
+				has_country_flag = RUS_Smuta_preparing_expansion
+			}
+		}
 	}
 
 	##################
@@ -2166,6 +2226,7 @@ RUS_DecisionCategory_Smuta = {
 			}
 			set_temp_variable = { TargetTag = VYT }
 			RUS_Smuta_Expansion_TargetTag_Generic_Complete = yes
+			set_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		days_remove = 15
@@ -2173,6 +2234,7 @@ RUS_DecisionCategory_Smuta = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_VYT_Generic"
 			set_temp_variable = { TargetTag = VYT }
 			RUS_Smuta_Expansion_TargetTag_Generic_Remove = yes
+			clr_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		cancel_trigger = {
@@ -2183,10 +2245,18 @@ RUS_DecisionCategory_Smuta = {
 				} 
 			} 
 		}
-		cancel_effect = { remove_from_array = { Smuta_PrepareWarOn = VYT } }
+		cancel_effect = {
+			remove_from_array = { Smuta_PrepareWarOn = VYT }
+			clr_country_flag = RUS_Smuta_preparing_expansion
+		}
 
-		ai_will_do = { factor = 1000 }
-
+		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
+			factor = 125
+			modifier = {
+				factor = 0
+				has_country_flag = RUS_Smuta_preparing_expansion
+			}
+		}
 	}
 
 	#####################
@@ -2246,6 +2316,7 @@ RUS_DecisionCategory_Smuta = {
 			hidden_effect = {
 				set_temp_variable = { Y = -0.3 }
 				RUS_Smuta_Supplies_Add_Y = yes
+				set_country_flag = RUS_Smuta_preparing_expansion
 			}
 		}
 
@@ -2253,6 +2324,7 @@ RUS_DecisionCategory_Smuta = {
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_TAR_Generic"
 			declare_war_on = { target = TAR type = annex_everything }
+			clr_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		cancel_trigger = {
@@ -2263,68 +2335,16 @@ RUS_DecisionCategory_Smuta = {
 				} 
 			} 
 		}
-		
-		ai_will_do = { factor = 100 }
-
-	}
-	#####################
-	# {=| BEREZNIKI |=} #
-	#####################
-	
-	RUS_Decision_Smuta_Expansion_MAR_Generic = {
-
-		icon = GFX_decision_generic_assault
-
-		visible = {
-			is_central_russian_nation = yes
-			is_neighbor_of = MAR
-			has_war = no
-			NOT = { has_non_aggression_pact_with = MAR }
-			RUS_Smuta_ScriptedTrigger_Expansion_TAR_Generic_NotVisible = yes
-		}
-		available = {
-			set_temp_variable = { Y = 250 }
-			RUS_Smuta_ScriptedTrigger_Chaos_LessThanY = yes
+		cancel_effect = {
+			clr_country_flag = RUS_Smuta_preparing_expansion
 		}
 
-		fire_only_once = yes
-
-		custom_cost_trigger = {
-			set_temp_variable = { N = 0.7 }
-			check_variable = { Smuta_Supplies > 0.69 }
-		}
-		custom_cost_text = decision_cost_N_smuta_supplies
-
+		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
+			factor = 125 # Gets Vyatka moving south, prevents Samara-Gorky one province border war
 		modifier = {
-			command_power_gain = -0.5
-			political_power_gain = -1
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision Complete RUS_Decision_Smuta_Expansion_MAR_Generic"
-			if = {
-				limit = {
-					has_country_flag = tukha_in_power
-				}
-				custom_effect_tooltip = WRS_SMUTA_SEND_ULTIMATUM_tt
-				hidden_effect = {
-					MAR = {
-						country_event = {
-							id = tukha_ultimatum.29
-						}
-					}
-				}
+			factor = 0
+				has_country_flag = RUS_Smuta_preparing_expansion
 			}
-			hidden_effect = {
-				set_temp_variable = { Y = -0.3 }
-				RUS_Smuta_Supplies_Add_Y = yes
-			}
-		}
-
-		days_remove = 15
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_MAR_Generic"
-			declare_war_on = { target = MAR type = annex_everything }
 		}
 
 		cancel_trigger = {
@@ -2390,6 +2410,7 @@ RUS_DecisionCategory_Smuta = {
 			}
 			set_temp_variable = { TargetTag = PRM }
 			RUS_Smuta_Expansion_TargetTag_Generic_Complete = yes
+			set_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		days_remove = 15
@@ -2397,6 +2418,7 @@ RUS_DecisionCategory_Smuta = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_PRM_Generic"
 			set_temp_variable = { TargetTag = PRM }
 			RUS_Smuta_Expansion_TargetTag_Generic_Remove = yes
+			clr_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		cancel_trigger = {
@@ -2407,10 +2429,18 @@ RUS_DecisionCategory_Smuta = {
 				} 
 			} 
 		}
-		cancel_effect = { remove_from_array = { Smuta_PrepareWarOn = PRM } }
+		cancel_effect = {
+			remove_from_array = { Smuta_PrepareWarOn = PRM }
+			clr_country_flag = RUS_Smuta_preparing_expansion
+		}
 
-		ai_will_do = { factor = 1000 }
-
+		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
+			factor = 125
+			modifier = {
+				factor = 0
+				has_country_flag = RUS_Smuta_preparing_expansion
+			}
+		}
 	}
 
 	#################################
@@ -2464,6 +2494,7 @@ RUS_DecisionCategory_Smuta = {
 			hidden_effect = {
 				set_temp_variable = { Y = -0.3 }
 				RUS_Smuta_Supplies_Add_Y = yes
+set_country_flag = RUS_Smuta_preparing_expansion
 			}
 		}
 
@@ -2471,6 +2502,7 @@ RUS_DecisionCategory_Smuta = {
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_GAY_Generic"
 			declare_war_on = { target = GAY type = annex_everything }
+clr_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		cancel_trigger = {
@@ -2481,9 +2513,21 @@ RUS_DecisionCategory_Smuta = {
 				} 
 			} 
 		}
-		
-		ai_will_do = { factor = 100 }
+		cancel_effect = {
+			clr_country_flag = RUS_Smuta_preparing_expansion
+		}
 
+		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
+			factor = 100
+			modifier = {
+				factor = 0
+				has_country_flag = RUS_Smuta_preparing_expansion
+			}
+			modifier = { # AB will go in any direction first
+				add = 25
+				tag = PRM
+			}
+		}
 	}
 
 	#########################
@@ -2543,6 +2587,7 @@ RUS_DecisionCategory_Smuta = {
 			hidden_effect = {
 				set_temp_variable = { Y = -0.3 }
 				RUS_Smuta_Supplies_Add_Y = yes
+				set_country_flag = RUS_Smuta_preparing_expansion
 			}
 		}
 
@@ -2550,6 +2595,7 @@ RUS_DecisionCategory_Smuta = {
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_BKR_Generic"
 			declare_war_on = { target = BKR type = annex_everything }
+			clr_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		cancel_trigger = {
@@ -2560,9 +2606,17 @@ RUS_DecisionCategory_Smuta = {
 				} 
 			} 
 		}
-		
-		ai_will_do = { factor = 100 }
+		cancel_effect = {
+			clr_country_flag = RUS_Smuta_preparing_expansion
+		}
 
+		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
+			factor = 125 # Gets Vyatka moving south, Samara east, AB west
+			modifier = {
+				factor = 0
+				has_country_flag = RUS_Smuta_preparing_expansion
+			}
+		}
 	}
 
 	####################
@@ -2605,20 +2659,24 @@ RUS_DecisionCategory_Smuta = {
 		}
 
 		days_remove = 10
+			complete_effect = {
+			set_country_flag = INVASION_GOR_DISALLOWED
+		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_GOR_WRS_NyomNyomNyom"
 			custom_effect_tooltip = RUS_Decision_Smuta_Expansion_GOR_WRS_NyomNyomNyom_Tt
 			hidden_effect = {
 				GOR = {
-					GOR_Ivan_Chernyakhovsky = { set_nationality = WRS }
-					GOR_Pyotr_Nikolaevich_Lashchenko = { set_nationality = WRS }
-					GOR_Nikolai_Averin = { set_nationality = WRS }
+					every_unit_leader = {
+						set_nationality = ROOT
+					}
 				}
 			}
 			annex_country = {
 				target = GOR
 				transfer_troops = yes
 			}
+			clr_country_flag = INVASION_GOR_DISALLOWED
 		}
 
 		cancel_trigger = { hidden_trigger = { NOT = { country_exists = GOR } } }
@@ -2661,17 +2719,18 @@ RUS_DecisionCategory_Smuta = {
 			KOM = { country_event = zhukov.4 }
 		}
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 125 }
 
 	}
 
 	RUS_Decision_Smuta_Expansion_KOM_WRS_End_NAP = {
 
-		icon = GFX_decision_document_cancel
+		icon = GFX_decision_generic_document_cancel
 
 		visible = {
 			tag = WRS
 			has_non_aggression_pact_with = KOM
+			NOT = { has_country_flag = KOM_WRS_chosen_peace }
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -2718,7 +2777,30 @@ RUS_DecisionCategory_Smuta = {
 			declare_war_on = { target = KOM type = annex_everything }
 		}
 		
-		ai_will_do = { factor = 1000 }
+		cancel_trigger = {
+			hidden_trigger = {
+				OR = {
+					KOM = { exists = no }
+					has_war_with = KOM
+				}
+			}
+		}
+
+		ai_will_do = { #AI won't mess with you until you choose
+			factor = 125
+			modifier = {
+				factor = 0
+				KOM = { is_ai = no }
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = WRS_INTEGRATION_KOMI option = WRS_INTEGRATION_KOMI_YES }
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = WRS_INTEGRATION_KOMI option = WRS_INTEGRATION_KOMI_INTEGRATES_WRRF_YES }
+			}
+		}
 
 	}
 
@@ -2755,11 +2837,13 @@ RUS_DecisionCategory_Smuta = {
 
 		modifier = {
 			command_power_gain = -0.5
-			political_power_gain = -1
+			political_power_gain = -0.25
 		}
 		
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Complete RUS_Decision_Smuta_Expansion_KOM_WRS_Integrate_Komi_Soviet"
+			WRS = { set_country_flag = KOM_WRS_chosen_peace }
+			KOM = { set_country_flag = KOM_WRS_chosen_peace } #allows this to happen with AI only, won't always go to war
 		}
 		remove_effect = {
 			hidden_effect = {
@@ -2773,9 +2857,38 @@ RUS_DecisionCategory_Smuta = {
 				target = KOM
 				transfer_troops = yes
 			}
+		clr_country_flag = KOM_WRS_chosen_peace
 		}
 
-		ai_will_do = { factor = 1000 }
+		cancel_trigger = {
+			hidden_trigger = {
+				OR = {
+					KOM = { exists = no }
+					has_war_with = KOM
+				}
+			}
+		}
+
+		ai_will_do = { #AI won't mess with you until you choose, also prevents surprise annexation
+			factor = 125
+			modifier = {
+				factor = 0
+				KOM = { is_ai = no }
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = {
+						rule = WRS_INTEGRATION_KOMI
+						option = WRS_INTEGRATION_KOMI_NO
+					}
+					has_game_rule = {
+						rule = WRS_INTEGRATION_KOMI
+						option = WRS_INTEGRATION_KOMI_INTEGRATES_WRRF_YES
+					}
+				}
+			}
+		}
 
 	}
 
@@ -2887,17 +3000,18 @@ RUS_DecisionCategory_Smuta = {
 			WRS = { country_event = komidiplo.1 }
 		}
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 125 }
 
 	}
 
 	RUS_Decision_Smuta_Expansion_WRS_KOM_End_NAP = {
 
-		icon = GFX_decision_document_cancel
+		icon = GFX_decision_generic_document_cancel
 
 		visible = {
 			tag = KOM
 			has_non_aggression_pact_with = WRS
+			NOT = { has_country_flag = KOM_WRS_chosen_peace }
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -2942,7 +3056,30 @@ RUS_DecisionCategory_Smuta = {
 			declare_war_on = { target = WRS type = annex_everything }
 		}
 
-		ai_will_do = { factor = 1000 }
+		cancel_trigger = {
+			hidden_trigger = {
+				OR = {
+					WRS = { exists = no }
+					has_war_with = WRS
+				}
+			}
+		}
+
+		ai_will_do = { #AI won't mess with you until you choose
+			factor = 125
+			modifier = {
+				factor = 0
+				WRS = { is_ai = no }
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = WRS_INTEGRATION_KOMI option = WRS_INTEGRATION_KOMI_YES }
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = WRS_INTEGRATION_KOMI option = WRS_INTEGRATION_KOMI_INTEGRATES_WRRF_YES }
+			}
+		}
 
 	}
 
@@ -2967,10 +3104,24 @@ RUS_DecisionCategory_Smuta = {
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Complete RUS_Decision_Smuta_Expansion_WRS_KOM_Propose_Union"
 			WRS = { country_event = komidiplo.55 }
+		KOM = { set_country_flag = KOM_WRS_chosen_peace }
+			WRS = { set_country_flag = KOM_WRS_chosen_peace } #allows this to happen with AI only, won't always go to war
 		}
 
-		ai_will_do = { factor = 1000 }
-
+		ai_will_do = { #AI won't mess with you until you choose, also prevents surprise annexation
+			factor = 125
+			modifier = {
+				factor = 0
+				WRS = { is_ai = no }
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = WRS_INTEGRATION_KOMI
+					option = WRS_INTEGRATION_KOMI_YES
+				}
+			}
+		}
 	}
 	
 	RUS_Decision_Smuta_Expansion_WRS_KOM_Complete_Union = {
@@ -2992,20 +3143,14 @@ RUS_DecisionCategory_Smuta = {
 				transfer_troops = yes
 			}
 			set_cosmetic_tag = KOM_UNITED_FRONT
-		}
-		cancel_trigger = {
-			OR = {
-				WRS = {
-					exists = no
-				}
-				KOM = {
-					exists = no
-				}
-			}
+		clr_country_flag = KOM_WRS_chosen_peace
 		}
 
-		ai_will_do = { factor = 1000 }
+		cancel_trigger = { hidden_trigger = { NOT = { country_exists = WRS } } }
 
+		ai_will_do = {
+			factor = 1000
+		}
 	}
 
 	RUS_Decision_Smuta_Expansion_VOL_KOM_Propose_Union = {
@@ -3039,12 +3184,13 @@ RUS_DecisionCategory_Smuta = {
 			set_country_flag = INVASION_VOL_DISALLOWED
 		}
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision Complete RUS_Decision_Smuta_Expansion_WRS_KOM_Propose_Union"
+			log = "[GetDateText]: [Root.GetName]: Decision Complete RUS_Decision_Smuta_Expansion_VOL_KOM_Propose_Union"
 			VOL = { country_event = komidiplo.25 }
 		}
 
-		ai_will_do = { factor = 1000 }
+		cancel_trigger = { hidden_trigger = { NOT = { country_exists = VOL } } }
 
+		ai_will_do = { factor = 1000 }
 	}
 
 	RUS_Decision_Smuta_Expansion_TAR_KOM_Propose_Union = {
@@ -3057,7 +3203,13 @@ RUS_DecisionCategory_Smuta = {
 				exists = yes
 			}
 			OR = {
-				has_government = despotism
+				AND = {
+					has_government = despotism
+					has_country_leader = {
+						character = KOM_Svetlana_Stalina
+						ruling_only = yes
+					}
+				}
 				has_government = progressivism
 				has_government = liberal_conservatism
 				has_government = liberalism
@@ -3078,9 +3230,11 @@ RUS_DecisionCategory_Smuta = {
 			set_country_flag = INVASION_TAR_DISALLOWED
 		}
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision Complete RUS_Decision_Smuta_Expansion_WRS_KOM_Propose_Union"
+			log = "[GetDateText]: [Root.GetName]: Decision Complete RUS_Decision_Smuta_Expansion_TAR_KOM_Propose_Union"
 			TAR = { country_event = komidiplo.28 }
 		}
+
+		cancel_trigger = { hidden_trigger = { NOT = { country_exists = TAR } } }
 
 		ai_will_do = { factor = 1000 }
 
@@ -3096,7 +3250,13 @@ RUS_DecisionCategory_Smuta = {
 				exists = yes
 			}
 			OR = {
-				has_government = despotism
+				AND = {
+					has_government = despotism
+						has_country_leader = {
+						character = KOM_Svetlana_Stalina
+						ruling_only = yes
+					}
+				}
 				has_government = progressivism
 				has_government = liberal_conservatism
 				has_government = liberalism
@@ -3120,6 +3280,8 @@ RUS_DecisionCategory_Smuta = {
 			log = "[GetDateText]: [Root.GetName]: Decision Complete RUS_Decision_Smuta_Expansion_WRS_KOM_Propose_Union"
 			BKR = { country_event = komidiplo.31 }
 		}
+
+		cancel_trigger = { hidden_trigger = { NOT = { country_exists = BKR } } }
 
 		ai_will_do = { factor = 1000 }
 
@@ -3281,6 +3443,7 @@ RUS_DecisionCategory_Smuta = {
 			log = "[GetDateText]: [Root.GetName]: Decision Complete RUS_Decision_Smuta_Expansion_OMS_Generic"
 			set_temp_variable = { TargetTag = OMS }
 			RUS_Smuta_Expansion_TargetTag_Generic_Complete = yes
+			set_country_flag = RUS_Smuta_preparing_expansion
 			if = {
 				limit = { tag = SVR }
 				country_event = { id = SVR.16 hours = 6 }
@@ -3292,13 +3455,22 @@ RUS_DecisionCategory_Smuta = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_OMS_Generic"
 			set_temp_variable = { TargetTag = OMS }
 			RUS_Smuta_Expansion_TargetTag_Generic_Remove = yes
+			clr_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		cancel_trigger = { hidden_trigger = { NOT = { country_exists = OMS } } }
-		cancel_effect = { remove_from_array = { Smuta_PrepareWarOn = OMS } }
+		cancel_effect = {
+			remove_from_array = { Smuta_PrepareWarOn = OMS }
+			clr_country_flag = RUS_Smuta_preparing_expansion
+		}
 
-		ai_will_do = { factor = 1000 }
-
+		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
+			factor = 125
+			modifier = {
+				factor = 0
+				has_country_flag = RUS_Smuta_preparing_expansion
+			}
+		}
 	}
 
 	#########################
@@ -3339,6 +3511,7 @@ RUS_DecisionCategory_Smuta = {
 			hidden_effect = {
 				set_temp_variable = { Y = -0.3 }
 				RUS_Smuta_Supplies_Add_Y = yes
+				set_country_flag = RUS_Smuta_preparing_expansion
 			}
 		}
 
@@ -3346,12 +3519,21 @@ RUS_DecisionCategory_Smuta = {
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_FAV_Generic"
 			declare_war_on = { target = FAV type = annex_everything }
+			clr_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		cancel_trigger = { hidden_trigger = { NOT = { country_exists = FAV } } }
+		cancel_effect = {
+			clr_country_flag = RUS_Smuta_preparing_expansion
+		}
 
-		ai_will_do = { factor = 100 }
-
+		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
+			factor = 100
+			modifier = {
+				factor = 0
+				has_country_flag = RUS_Smuta_preparing_expansion
+			}
+		}
 	}
 
 	####################
@@ -3392,6 +3574,7 @@ RUS_DecisionCategory_Smuta = {
 			hidden_effect = {
 				set_temp_variable = { Y = -0.3 }
 				RUS_Smuta_Supplies_Add_Y = yes
+				set_country_flag = RUS_Smuta_preparing_expansion
 				if = {
 					limit = { tag = SVR }
 					set_country_flag = SVR_zlatoust_war
@@ -3403,12 +3586,21 @@ RUS_DecisionCategory_Smuta = {
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_ZLT_Generic"
 			declare_war_on = { target = ZLT type = annex_everything }
+			clr_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		cancel_trigger = { hidden_trigger = { NOT = { country_exists = ZLT } } }
+		cancel_effect = {
+			clr_country_flag = RUS_Smuta_preparing_expansion
+		}
 
-		ai_will_do = { factor = 100 }
-
+		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
+			factor = 100
+			modifier = {
+				factor = 0
+				has_country_flag = RUS_Smuta_preparing_expansion
+			}
+		}
 	}
 
 	######################
@@ -3448,6 +3640,7 @@ RUS_DecisionCategory_Smuta = {
 			log = "[GetDateText]: [Root.GetName]: Decision Complete RUS_Decision_Smuta_Expansion_SVR_Generic"
 			set_temp_variable = { TargetTag = SVR }
 			RUS_Smuta_Expansion_TargetTag_Generic_Complete = yes
+			set_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		days_remove = 15
@@ -3455,13 +3648,22 @@ RUS_DecisionCategory_Smuta = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_SVR_Generic"
 			set_temp_variable = { TargetTag = SVR }
 			RUS_Smuta_Expansion_TargetTag_Generic_Remove = yes
+			clr_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		cancel_trigger = { hidden_trigger = { NOT = { country_exists = SVR } } }
-		cancel_effect = { remove_from_array = { Smuta_PrepareWarOn = SVR } }
+		cancel_effect = {
+			remove_from_array = { Smuta_PrepareWarOn = SVR }
+			clr_country_flag = RUS_Smuta_preparing_expansion
+		}
 
-		ai_will_do = { factor = 1000 }
-
+		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
+			factor = 125
+			modifier = {
+				factor = 0
+				has_country_flag = RUS_Smuta_preparing_expansion
+			}
+		}
 	}
 
 	###################
@@ -3501,6 +3703,7 @@ RUS_DecisionCategory_Smuta = {
 			log = "[GetDateText]: [Root.GetName]: Decision Complete RUS_Decision_Smuta_Expansion_TYM_Generic"
 			set_temp_variable = { TargetTag = TYM }
 			RUS_Smuta_Expansion_TargetTag_Generic_Complete = yes
+			set_country_flag = RUS_Smuta_preparing_expansion
 			if = {
 				limit = { tag = SVR }
 				country_event = { id = SVR.14 hours = 6 }
@@ -3512,13 +3715,22 @@ RUS_DecisionCategory_Smuta = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_TYM_Generic"
 			set_temp_variable = { TargetTag = TYM }
 			RUS_Smuta_Expansion_TargetTag_Generic_Remove = yes
+			clr_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		cancel_trigger = { hidden_trigger = { NOT = { country_exists = TYM } } }
-		cancel_effect = { remove_from_array = { Smuta_PrepareWarOn = TYM } }
+		cancel_effect = {
+			remove_from_array = { Smuta_PrepareWarOn = TYM }
+			clr_country_flag = RUS_Smuta_preparing_expansion
+		}
 
-		ai_will_do = { factor = 1000 }
-
+		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
+			factor = 125
+			modifier = {
+				factor = 0
+				has_country_flag = RUS_Smuta_preparing_expansion
+			}
+		}
 	}
 
 	#################
@@ -3559,6 +3771,7 @@ RUS_DecisionCategory_Smuta = {
 			hidden_effect = {
 				set_temp_variable = { Y = -0.3 }
 				RUS_Smuta_Supplies_Add_Y = yes
+				set_country_flag = RUS_Smuta_preparing_expansion
 			}
 			if = {
 				limit = { tag = SVR }
@@ -3570,12 +3783,21 @@ RUS_DecisionCategory_Smuta = {
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_YGR_Generic"
 			declare_war_on = { target = YGR type = annex_everything }
+			clr_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		cancel_trigger = { hidden_trigger = { NOT = { country_exists = YGR } } }
+		cancel_effect = {
+			clr_country_flag = RUS_Smuta_preparing_expansion
+		}
 
-		ai_will_do = { factor = 100 }
-
+		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
+			factor = 100
+			modifier = {
+				factor = 0
+				has_country_flag = RUS_Smuta_preparing_expansion
+			}
+		}
 	}
 
 	###################
@@ -3616,6 +3838,7 @@ RUS_DecisionCategory_Smuta = {
 			hidden_effect = {
 				set_temp_variable = { Y = -0.3 }
 				RUS_Smuta_Supplies_Add_Y = yes
+				set_country_flag = RUS_Smuta_preparing_expansion
 			}
 			if = {
 				limit = { tag = SVR }
@@ -3627,12 +3850,21 @@ RUS_DecisionCategory_Smuta = {
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_VOR_Generic"
 			declare_war_on = { target = VOR type = annex_everything }
+			clr_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		cancel_trigger = { hidden_trigger = { NOT = { country_exists = VOR } } }
+cancel_effect = {
+			clr_country_flag = RUS_Smuta_preparing_expansion
+		}
 
-		ai_will_do = { factor = 100 }
-
+		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
+			factor = 100
+			modifier = {
+				factor = 0
+				has_country_flag = RUS_Smuta_preparing_expansion
+			}
+		}
 	}
 
 	####################
@@ -3653,12 +3885,11 @@ RUS_DecisionCategory_Smuta = {
 			}
 		}
 		available = {
-			#ROOT = {
-			#	is_neighbor_of = VOR
-			#}
-			#set_temp_variable = { Y = 250 }
-			#RUS_Smuta_ScriptedTrigger_Chaos_LessThanY = yes
-			always = no
+			ROOT = {
+			is_neighbor_of = VOR
+			}
+			set_temp_variable = { Y = 250 }
+			RUS_Smuta_ScriptedTrigger_Chaos_LessThanY = yes
 		}
 		fire_only_once = yes
 
@@ -3678,7 +3909,7 @@ RUS_DecisionCategory_Smuta = {
 			}
 			else = {
 				VOR = {
-					country_event = { id = vor_smuta.1 }
+					country_event = { id = vorkuta_smuta.1 }
 				}
 			}
 		}
@@ -3743,7 +3974,6 @@ RUS_DecisionCategory_Smuta = {
 			is_neighbor_of = FAV
 			set_temp_variable = { Y = 250 }
 			RUS_Smuta_ScriptedTrigger_Chaos_LessThanY = yes
-			NOT = { country_exists = VOR }
 		}
 		fire_only_once = yes
 
@@ -3870,45 +4100,7 @@ RUS_DecisionCategory_Smuta = {
 
 		ai_will_do = { factor = 1000 }
 
-	}
-
-	###################
-	# {=| VORKUTA |=} #
-	###################
-
-	RUS_Decision_Smuta_Expansion_FAV_VOR_LetsBeFriends = {
-
-		icon = GFX_decision_generic_shake_hands
-
-		visible = {
-			tag = VOR
-			FAV = { exists = yes }
 		}
-		available = {
-			is_neighbor_of = FAV
-			set_temp_variable = { Y = 250 }
-			RUS_Smuta_ScriptedTrigger_Chaos_LessThanY = yes
-		}
-		fire_only_once = yes
-
-		cost = 30
-		modifier = {
-			political_power_gain = -1
-		}
-
-		days_remove = 5
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_FAV_VOR_LetsBeFriends"
-			VOR = {
-				country_event = { id = vor_smuta.10 }
-			}
-		}
-
-		cancel_trigger = { hidden_trigger = { NOT = { country_exists = FAV } } }
-
-		ai_will_do = { factor = 1000 }
-
-	}
 
 	###############################
 	# {===| CENTRAL SIBERIA |===} #
@@ -3955,6 +4147,7 @@ RUS_DecisionCategory_Smuta = {
 			log = "[GetDateText]: [Root.GetName]: Decision Complete RUS_Decision_Smuta_Expansion_TOM_Generic"
 			set_temp_variable = { TargetTag = TOM }
 			RUS_Smuta_Expansion_TargetTag_Generic_Complete = yes
+			set_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		days_remove = 15
@@ -3962,13 +4155,22 @@ RUS_DecisionCategory_Smuta = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_TOM_Generic"
 			set_temp_variable = { TargetTag = TOM }
 			RUS_Smuta_Expansion_TargetTag_Generic_Remove = yes
+			clr_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		cancel_trigger = { hidden_trigger = { NOT = { country_exists = TOM } } }
-		cancel_effect = { remove_from_array = { Smuta_PrepareWarOn = TOM } }
+		cancel_effect = {
+			remove_from_array = { Smuta_PrepareWarOn = TOM }
+			clr_country_flag = RUS_Smuta_preparing_expansion
+		}
 
-		ai_will_do = { factor = 1000 }
-
+		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
+			factor = 100
+			modifier = {
+				factor = 0
+				has_country_flag = RUS_Smuta_preparing_expansion
+			}
+		}
 	}
 
 	###############################
@@ -4008,6 +4210,7 @@ RUS_DecisionCategory_Smuta = {
 			log = "[GetDateText]: [Root.GetName]: Decision Complete RUS_Decision_Smuta_Expansion_SBA_Generic"
 			set_temp_variable = { TargetTag = SBA }
 			RUS_Smuta_Expansion_TargetTag_Generic_Complete = yes
+			set_country_flag = RUS_Smuta_preparing_expansion
 			if = {
 				limit = { tag = TOM }
 				country_event = TOM.43
@@ -4019,13 +4222,22 @@ RUS_DecisionCategory_Smuta = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_SBA_Generic"
 			set_temp_variable = { TargetTag = SBA }
 			RUS_Smuta_Expansion_TargetTag_Generic_Remove = yes
+			clr_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		cancel_trigger = { hidden_trigger = { NOT = { country_exists = SBA } } }
-		cancel_effect = { remove_from_array = { Smuta_PrepareWarOn = SBA } }
+		cancel_effect = {
+			remove_from_array = { Smuta_PrepareWarOn = SBA }
+			clr_country_flag = RUS_Smuta_preparing_expansion
+		}
 
-		ai_will_do = { factor = 1000 }
-
+		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
+			factor = 125
+			modifier = {
+				factor = 0
+				has_country_flag = RUS_Smuta_preparing_expansion
+			}
+		}
 	}
 
 	#################
@@ -4067,6 +4279,7 @@ RUS_DecisionCategory_Smuta = {
 				set_temp_variable = { Y = -0.3 }
 				RUS_Smuta_Supplies_Add_Y = yes
 			}
+set_country_flag = RUS_Smuta_preparing_expansion
 			if = {
 				limit = { tag = TOM }
 				country_event = TOM.18
@@ -4077,12 +4290,21 @@ RUS_DecisionCategory_Smuta = {
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_ALT_Generic"
 			declare_war_on = { target = ALT type = annex_everything }
+			clr_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		cancel_trigger = { hidden_trigger = { NOT = { country_exists = ALT } } }
+		cancel_effect = {
+			clr_country_flag = RUS_Smuta_preparing_expansion
+		}
 
-		ai_will_do = { factor = 100 }
-
+		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
+			factor = 100
+			modifier = {
+				factor = 0
+				has_country_flag = RUS_Smuta_preparing_expansion
+			}
+		}
 	}
 
 	####################
@@ -4122,6 +4344,7 @@ RUS_DecisionCategory_Smuta = {
 			log = "[GetDateText]: [Root.GetName]: Decision Complete RUS_Decision_Smuta_Expansion_KEM_Generic"
 			set_temp_variable = { TargetTag = KEM }
 			RUS_Smuta_Expansion_TargetTag_Generic_Complete = yes
+			set_country_flag = RUS_Smuta_preparing_expansion
 			if = {
 				limit = { tag = TOM }
 				country_event = TOM.17
@@ -4133,13 +4356,22 @@ RUS_DecisionCategory_Smuta = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_KEM_Generic"
 			set_temp_variable = { TargetTag = KEM }
 			RUS_Smuta_Expansion_TargetTag_Generic_Remove = yes
+			clr_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		cancel_trigger = { hidden_trigger = { NOT = { country_exists = KEM } } }
-		cancel_effect = { remove_from_array = { Smuta_PrepareWarOn = KEM } }
+		cancel_effect = {
+			remove_from_array = { Smuta_PrepareWarOn = KEM }
+			clr_country_flag = RUS_Smuta_preparing_expansion
+		}
 
-		ai_will_do = { factor = 1000 }
-
+		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
+			factor = 125
+			modifier = {
+				factor = 0
+				has_country_flag = RUS_Smuta_preparing_expansion
+			}
+		}
 	}
 
 	#######################
@@ -4179,6 +4411,7 @@ RUS_DecisionCategory_Smuta = {
 			log = "[GetDateText]: [Root.GetName]: Decision Complete RUS_Decision_Smuta_Expansion_NOV_Generic"
 			set_temp_variable = { TargetTag = NOV }
 			RUS_Smuta_Expansion_TargetTag_Generic_Complete = yes
+			set_country_flag = RUS_Smuta_preparing_expansion
 			if = {
 				limit = { tag = TOM }
 				country_event = TOM.13
@@ -4190,13 +4423,22 @@ RUS_DecisionCategory_Smuta = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_NOV_Generic"
 			set_temp_variable = { TargetTag = NOV }
 			RUS_Smuta_Expansion_TargetTag_Generic_Remove = yes
+			clr_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		cancel_trigger = { hidden_trigger = { NOT = { country_exists = NOV } } }
-		cancel_effect = { remove_from_array = { Smuta_PrepareWarOn = NOV } }
+		cancel_effect = {
+			remove_from_array = { Smuta_PrepareWarOn = NOV }
+			clr_country_flag = RUS_Smuta_preparing_expansion
+		}
 
-		ai_will_do = { factor = 1000 }
-
+		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
+			factor = 125
+			modifier = {
+				factor = 0
+				has_country_flag = RUS_Smuta_preparing_expansion
+			}
+		}
 	}
 
 	#########################################
@@ -4237,6 +4479,7 @@ RUS_DecisionCategory_Smuta = {
 			hidden_effect = {
 				set_temp_variable = { Y = -0.3 }
 				RUS_Smuta_Supplies_Add_Y = yes
+				set_country_flag = RUS_Smuta_preparing_expansion
 			}
 			if = {
 				limit = { tag = TOM }
@@ -4248,12 +4491,21 @@ RUS_DecisionCategory_Smuta = {
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_PRC_Generic"
 			declare_war_on = { target = PRC type = annex_everything }
+			clr_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		cancel_trigger = { hidden_trigger = { NOT = { country_exists = PRC } } }
+		cancel_effect = {
+			clr_country_flag = RUS_Smuta_preparing_expansion
+		}
 
-		ai_will_do = { factor = 100 }
-
+		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
+			factor = 100
+			modifier = {
+				factor = 0
+				has_country_flag = RUS_Smuta_preparing_expansion
+			}
+		}
 	}
 
 	#######################
@@ -4294,6 +4546,7 @@ RUS_DecisionCategory_Smuta = {
 			hidden_effect = {
 				set_temp_variable = { Y = -0.3 }
 				RUS_Smuta_Supplies_Add_Y = yes
+				set_country_flag = RUS_Smuta_preparing_expansion
 			}
 			if = {
 				limit = { tag = TOM }
@@ -4305,12 +4558,21 @@ RUS_DecisionCategory_Smuta = {
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_KRS_Generic"
 			declare_war_on = { target = KRS type = annex_everything }
+			clr_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		cancel_trigger = { hidden_trigger = { NOT = { country_exists = KRS } } }
+		cancel_effect = {
+			clr_country_flag = RUS_Smuta_preparing_expansion
+		}
 
-		ai_will_do = { factor = 100 }
-
+		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
+			factor = 125 #Krasnoyarsk gets same priority as unifiers due causing roadblocks
+			modifier = {
+				factor = 0
+				has_country_flag = RUS_Smuta_preparing_expansion
+			}
+		}
 	}
 
 	####################
@@ -4362,6 +4624,7 @@ RUS_DecisionCategory_Smuta = {
 			log = "[GetDateText]: [Root.GetName]: Decision Complete RUS_Decision_Smuta_Expansion_MAG_Generic"
 			set_temp_variable = { TargetTag = MAG }
 			RUS_Smuta_Expansion_TargetTag_Generic_Complete = yes
+			set_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		days_remove = 15
@@ -4369,6 +4632,7 @@ RUS_DecisionCategory_Smuta = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_MAG_Generic"
 			set_temp_variable = { TargetTag = MAG }
 			RUS_Smuta_Expansion_TargetTag_Generic_Remove = yes
+			clr_country_flag = RUS_Smuta_preparing_expansion
 			if = {
 				limit = { 
 					tag = IRK 
@@ -4377,16 +4641,24 @@ RUS_DecisionCategory_Smuta = {
 				country_event = {
 					id = IRK.19
 					days = 21 
-					random = 72
+					random_hours = 72
 				}
 			}
 		}
 
 		cancel_trigger = { hidden_trigger = { NOT = { country_exists = MAG } } }
-		cancel_effect = { remove_from_array = { Smuta_PrepareWarOn = MAG } }
+		cancel_effect = {
+			remove_from_array = { Smuta_PrepareWarOn = MAG }
+			clr_country_flag = RUS_Smuta_preparing_expansion
+		}
 
-		ai_will_do = { factor = 1000 }
-
+		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
+			factor = 125
+			modifier = {
+				factor = 0
+				has_country_flag = RUS_Smuta_preparing_expansion
+			}
+		}
 	}
 
 	#####################
@@ -4428,6 +4700,7 @@ RUS_DecisionCategory_Smuta = {
 			hidden_effect = {
 				set_temp_variable = { Y = -0.3 }
 				RUS_Smuta_Supplies_Add_Y = yes
+set_country_flag = RUS_Smuta_preparing_expansion
 			}
 		}
 
@@ -4435,12 +4708,21 @@ RUS_DecisionCategory_Smuta = {
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_KMC_Generic"
 			declare_war_on = { target = KMC type = annex_everything }
+clr_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		cancel_trigger = { hidden_trigger = { NOT = { country_exists = KMC } } }
-		
-		ai_will_do = { factor = 100 }
+		cancel_effect = {
+			clr_country_flag = RUS_Smuta_preparing_expansion
+		}
 
+		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
+			factor = 150 #High priority for Omolon expansion decisions
+			modifier = {
+				factor = 0
+				has_country_flag = RUS_Smuta_preparing_expansion
+			}
+		}
 	}
 
 	###################
@@ -4480,6 +4762,7 @@ RUS_DecisionCategory_Smuta = {
 			log = "[GetDateText]: [Root.GetName]: Decision Complete RUS_Decision_Smuta_Expansion_IRK_Generic"
 			set_temp_variable = { TargetTag = IRK }
 			RUS_Smuta_Expansion_TargetTag_Generic_Complete = yes
+			set_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		days_remove = 15
@@ -4487,13 +4770,22 @@ RUS_DecisionCategory_Smuta = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_IRK_Generic"
 			set_temp_variable = { TargetTag = IRK }
 			RUS_Smuta_Expansion_TargetTag_Generic_Remove = yes
+			clr_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		cancel_trigger = { hidden_trigger = { NOT = { country_exists = IRK } } }
-		cancel_effect = { remove_from_array = { Smuta_PrepareWarOn = IRK } }
+		cancel_effect = {
+			remove_from_array = { Smuta_PrepareWarOn = IRK }
+			clr_country_flag = RUS_Smuta_preparing_expansion
+		}
 
-		ai_will_do = { factor = 1000 }
-
+		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
+			factor = 125
+			modifier = {
+				factor = 0
+				has_country_flag = RUS_Smuta_preparing_expansion
+			}
+		}
 	}
 
 	####################
@@ -4533,6 +4825,7 @@ RUS_DecisionCategory_Smuta = {
 			log = "[GetDateText]: [Root.GetName]: Decision Complete RUS_Decision_Smuta_Expansion_BRY_Generic"
 			set_temp_variable = { TargetTag = BRY }
 			RUS_Smuta_Expansion_TargetTag_Generic_Complete = yes
+			set_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		days_remove = 15
@@ -4540,13 +4833,22 @@ RUS_DecisionCategory_Smuta = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_BRY_Generic"
 			set_temp_variable = { TargetTag = BRY }
 			RUS_Smuta_Expansion_TargetTag_Generic_Remove = yes
+			clr_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		cancel_trigger = { hidden_trigger = { NOT = { country_exists = BRY } } }
-		cancel_effect = { remove_from_array = { Smuta_PrepareWarOn = BRY } }
+		cancel_effect = {
+			remove_from_array = { Smuta_PrepareWarOn = BRY }
+			clr_country_flag = RUS_Smuta_preparing_expansion
+		}
 
-		ai_will_do = { factor = 1000 }
-
+		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
+			factor = 125
+			modifier = {
+				factor = 0
+				has_country_flag = RUS_Smuta_preparing_expansion
+			}
+		}
 	}
 
 	#################
@@ -4586,6 +4888,7 @@ RUS_DecisionCategory_Smuta = {
 			log = "[GetDateText]: [Root.GetName]: Decision Complete RUS_Decision_Smuta_Expansion_CHT_Generic"
 			set_temp_variable = { TargetTag = CHT }
 			RUS_Smuta_Expansion_TargetTag_Generic_Complete = yes
+			set_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		days_remove = 15
@@ -4593,13 +4896,22 @@ RUS_DecisionCategory_Smuta = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_CHT_Generic"
 			set_temp_variable = { TargetTag = CHT }
 			RUS_Smuta_Expansion_TargetTag_Generic_Remove = yes
+			clr_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		cancel_trigger = { hidden_trigger = { NOT = { country_exists = CHT } } }
-		cancel_effect = { remove_from_array = { Smuta_PrepareWarOn = CHT } }
+		cancel_effect = {
+			remove_from_array = { Smuta_PrepareWarOn = CHT }
+			clr_country_flag = RUS_Smuta_preparing_expansion
+		}
 
-		ai_will_do = { factor = 1000 }
-
+		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
+			factor = 125
+			modifier = {
+				factor = 0
+				has_country_flag = RUS_Smuta_preparing_expansion
+			}
+		}
 	}
 
 	################
@@ -4639,6 +4951,7 @@ RUS_DecisionCategory_Smuta = {
 			log = "[GetDateText]: [Root.GetName]: Decision Complete RUS_Decision_Smuta_Expansion_AMR_Generic"
 			set_temp_variable = { TargetTag = AMR }
 			RUS_Smuta_Expansion_TargetTag_Generic_Complete = yes
+set_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		days_remove = 15
@@ -4646,6 +4959,7 @@ RUS_DecisionCategory_Smuta = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_AMR_Generic"
 			set_temp_variable = { TargetTag = AMR }
 			RUS_Smuta_Expansion_TargetTag_Generic_Remove = yes
+clr_country_flag = RUS_Smuta_preparing_expansion
 			if = {
 				limit = { 
 					tag = IRK 
@@ -4654,16 +4968,24 @@ RUS_DecisionCategory_Smuta = {
 				country_event = {
 					id = IRK.19
 					days = 21 
-					random = 72
+					random_hours = 72
 				}
 			}
 		}
 
 		cancel_trigger = { hidden_trigger = { NOT = { country_exists = AMR } } }
-		cancel_effect = { remove_from_array = { Smuta_PrepareWarOn = AMR } }
+		cancel_effect = {
+			remove_from_array = { Smuta_PrepareWarOn = AMR }
+			clr_country_flag = RUS_Smuta_preparing_expansion
+		}
 
-		ai_will_do = { factor = 1000 }
-
+		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
+			factor = 125
+			modifier = {
+				factor = 0
+				has_country_flag = RUS_Smuta_preparing_expansion
+			}
+		}
 	}
 
 	RUS_Decision_Smuta_Expansion_AMR_Werbell = {
@@ -4700,6 +5022,10 @@ RUS_DecisionCategory_Smuta = {
 		available = {
 			set_temp_variable = { Y = 250 }
 			RUS_Smuta_ScriptedTrigger_Chaos_LessThanY = yes
+			custom_trigger_tooltip = {
+				tooltip = FST_South_Secured
+				check_variable = { Smuta_ContendersReal_Num < 4 }
+			}
 		}
 
 		fire_only_once = yes
@@ -4716,23 +5042,33 @@ RUS_DecisionCategory_Smuta = {
 		}
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision Complete RUS_Decision_Smuta_Expansion_KMC_Generic"
+			log = "[GetDateText]: [Root.GetName]: Decision Complete RUS_Decision_Smuta_Expansion_OMO_Generic"
 			hidden_effect = {
 				set_temp_variable = { Y = -0.3 }
 				RUS_Smuta_Supplies_Add_Y = yes
+				set_country_flag = RUS_Smuta_preparing_expansion
 			}
 		}
 
 		days_remove = 15
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_KMC_Generic"
+			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_OMO_Generic"
 			declare_war_on = { target = OMO type = annex_everything }
+			clr_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		cancel_trigger = { hidden_trigger = { NOT = { country_exists = OMO } } }
+		cancel_effect = {
+			clr_country_flag = RUS_Smuta_preparing_expansion
+		}
 
-		ai_will_do = { factor = 100 }
-
+		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
+			factor = 100
+			modifier = {
+				factor = 0
+				has_country_flag = RUS_Smuta_preparing_expansion
+			}
+		}
 	}
 
 	###################
@@ -4825,6 +5161,7 @@ RUS_DecisionCategory_Smuta = {
 			hidden_effect = {
 				set_temp_variable = { Y = -0.3 }
 				RUS_Smuta_Supplies_Add_Y = yes
+				set_country_flag = RUS_Smuta_preparing_expansion
 			}
 		}
 
@@ -4832,19 +5169,32 @@ RUS_DecisionCategory_Smuta = {
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_YAK_Generic"
 			declare_war_on = { target = YAK type = annex_everything }
+			clr_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		cancel_trigger = { hidden_trigger = { NOT = { country_exists = YAK } } }
+		cancel_effect = {
+			clr_country_flag = RUS_Smuta_preparing_expansion
+		}
 
-		ai_will_do = { factor = 100 }
-
+		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
+			factor = 125
+			modifier = {
+				factor = 0
+				has_country_flag = RUS_Smuta_preparing_expansion
+			}
+			modifier = { #Priortize non-unifier YAK, better front for any unifier invasion
+				add = 50
+				tag = OMO
+			}
+		}
 	}
 
 	####################
 	# {==| UNIQUE |==} #
 	####################
 
-	RUS_Mission_Smuta_CHT_ChitaModelSobchackIsACoolGuy = {
+	RUS_Mission_Smuta_CHT_ChitaModelSobchakIsACoolGuy = {
 		icon = GFX_decision_generic_building
 		activation = { always = no }
 		available = { hidden_trigger = { always = no } }
@@ -4893,15 +5243,15 @@ RUS_DecisionCategory_Smuta = {
 					5 = { set_variable = { Smuta_ChitaModelMode = 5 } }
 				}
 			}
-			activate_mission = RUS_Mission_Smuta_CHT_ChitaModelSobchackIsACoolGuy
+			activate_mission = RUS_Mission_Smuta_CHT_ChitaModelSobchakIsACoolGuy
 		}
 		cancel_trigger = {
-			hidden_trigger = { has_country_flag = RUS_Smuta_Enabled }
+			hidden_trigger = { NOT = { has_country_flag = RUS_Smuta_Enabled } }
 		}
 	}
 
 	RUS_Mission_Smuta_CHT_MakeMikhailCool = {
-		icon = GFX_decision_chess_king
+		icon = GFX_decision_generic_chess_king
 		activation = { always = no }
 		available = {
 			has_completed_focus = CHT_a_perfectly_legitimate_claimant
@@ -4962,8 +5312,10 @@ RUS_DecisionCategory_Smuta = {
 				target = KMC
 				transfer_troops = yes
 			}
+			KMC = {
 			every_unit_leader = {
 				set_nationality = ROOT
+			}
 			}
 			KMC = { 
 				transfer_navy = { target = ROOT } 
@@ -4980,6 +5332,25 @@ RUS_DecisionCategory_Smuta = {
 
 		ai_will_do = { factor = 1000 }
 	}
+
+	RUS_Decision_Smuta_OMO_Deactivation = {
+		icon = GFX_decision_generic_document_cancel
+		visible = {
+			tag = OMO
+		}
+		available = {
+			RUS_Smuta_ScriptedTrigger_OnlyOneContenderLeft = yes
+		}
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Complete RUS_Decision_Smuta_OMO_Deactivation"
+			RUS_Smuta_Disable = yes
+		}
+
+		ai_will_do = { factor = 1000 }
+	}
+
 
 	##############################
 	## |===={ STRATEGIES }====| ##
@@ -5254,7 +5625,7 @@ RUS_DecisionCategory_Smuta = {
 
 	RUS_Decision_Smuta_Strategies_ReorientIndustrialOutput = {
 
-		icon = GFX_decision_factory_generic_red
+		icon = GFX_decision_generic_factory_red
 		visible = {
 			has_war = yes
 			NOT = { has_decision = RUS_Decision_Smuta_Strategies_SeizeAgriculturalReserves }
@@ -5470,7 +5841,7 @@ RUS_DecisionCategory_Smuta = {
 
 	RUS_Decision_Smuta_Strategies_ResourceExtractionOverdrive = {
 
-		icon = GFX_decision_oil_extraction
+		icon = GFX_decision_generic_oil_extraction
 		visible = {
 			has_war = yes
 			NOT = { has_decision = RUS_Decision_Smuta_Strategies_EnforceExtendedWorkhours }
@@ -5730,7 +6101,7 @@ RUS_DecisionCategory_Smuta = {
 
 	RUS_Decision_Smuta_Strategies_GrantIndustrialAutonomy = {
 
-		icon = GFX_decision_document_cancel
+		icon = GFX_decision_generic_document_cancel
 		visible = {
 			has_war = yes
 			tag = SBA

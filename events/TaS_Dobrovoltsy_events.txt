@@ -367,8 +367,8 @@ country_event = { #Iran 1
 				news_event = { id = berez_dobrovoltsy_world_news.13 days = 1 }
 			}
 		}
-		give_resource_rights = { receiver = MAR state = 411 resources = { oil aluminium rubber tungsten steel chromium uranium } }
-		give_resource_rights = { receiver = MAR state = 412 resources = { oil aluminium rubber tungsten steel chromium uranium } }
+		give_resource_rights = { receiver = MAR state = 411 }
+		give_resource_rights = { receiver = MAR state = 412 }
 	}
 }
 country_event = { #Spain
@@ -1032,7 +1032,10 @@ country_event = { #france CW BEL win
 
 	fire_only_once = yes
 	is_triggered_only = yes
-	trigger = { FRV = { has_war = no } }
+	trigger = {
+		country_exists = FRM
+		FRM = { has_war = no }
+	}
 
 	option = {
 		name = MAR_forpol.701.a
@@ -1055,7 +1058,9 @@ country_event = { #france CW BEL lose
 
 	fire_only_once = yes
 	is_triggered_only = yes
-	trigger = { FRV = { has_war = no } }
+	trigger = {
+		NOT = { country_exists = FRM }
+	}
 
 	option = {
 		name = MAR_forpol.702.a
@@ -1077,7 +1082,7 @@ country_event = { #france CW KOS join
 	trigger = {
 		tag = MAR
 		has_government = socialist
-		has_global_flag = FRA_civil_war_ongoing
+		has_global_flag = FRA_civil_war_sidos
 		has_country_flag = MAR_started_volunteer_sending
 	}
 	fire_only_once = yes
@@ -1101,7 +1106,10 @@ country_event = { #france CW KOS win
 
 	fire_only_once = yes
 	is_triggered_only = yes
-	trigger = { FRV = { has_war = no } }
+	trigger = {
+		country_exists = FRV
+		FRV = { has_war = no } 
+	}
 
 	option = {
 		name = MAR_forpol.711.a
@@ -1124,7 +1132,9 @@ country_event = { #france CW KOS lose
 
 	fire_only_once = yes
 	is_triggered_only = yes
-	trigger = { FRV = { has_war = no } }
+	trigger = {
+		NOT = { country_exists = FRV }
+	}
 
 	option = {
 		name = MAR_forpol.712.a
