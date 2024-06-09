@@ -1,12 +1,15 @@
 MAR_foreign_policy_category = {
 	MAR_FErebels_mission = {
 		icon = GFX_decision_generic_ignite_civil_war
+		visible = {
+			TNO_fopo_far_eastern_revolt_selected = yes
+		}
 		allowed = {
-			 tag = MAR
+			tag = MAR
 		}			
 		available = {
 			always = no
-		}
+		}			
 		activation = {
 			has_global_flag = MAR_fareast_proxy
 		}
@@ -32,8 +35,11 @@ MAR_foreign_policy_category = {
 	}
 	MAR_FE_Boli_planned_attack = {
 		icon = GFX_decision_generic_ignite_civil_war
+		visible = {
+			TNO_fopo_far_eastern_revolt_selected = yes
+		}
 		allowed = {
-			 tag = MAR
+			tag = MAR
 		}			
 		available = {
 			always = no
@@ -1100,10 +1106,11 @@ MAR_foreign_policy_category = {
 		activation = {
 			always = no
 		}
+		visible = {
+			TNO_fopo_uar_influence_battle_selected = yes
+		}	
 		available = {
-			hidden_trigger = {
-				NOT = { TNO_fopo_uar_influence_battle_selected = yes }
-			}
+			always = no
 		}
 		cancel_trigger = {
 			NOT = { check_variable = { UAR_leading_faction_idx = 1 } }
@@ -1123,10 +1130,11 @@ MAR_foreign_policy_category = {
 		activation = {
 			always = no
 		}
+		visible = {
+			TNO_fopo_uar_influence_battle_selected = yes
+		}	
 		available = {
-			hidden_trigger = {
-				NOT = { TNO_fopo_uar_influence_battle_selected = yes }
-			}
+			always = no
 		}
 		cancel_trigger = {
 			NOT = { check_variable = { UAR_leading_faction_idx = 2 } }
@@ -1145,10 +1153,11 @@ MAR_foreign_policy_category = {
 		activation = {
 			always = no
 		}
+		visible = {
+			TNO_fopo_uar_influence_battle_selected = yes
+		}	
 		available = {
-			hidden_trigger = {
-				NOT = { TNO_fopo_uar_influence_battle_selected = yes }
-			}
+			always = no
 		}
 		cancel_trigger = {
 			NOT = { check_variable = { UAR_leading_faction_idx = 0 } }
@@ -1167,10 +1176,11 @@ MAR_foreign_policy_category = {
 		activation = {
 			always = no
 		}
+		visible = {
+			TNO_fopo_uar_influence_battle_selected = yes
+		}	
 		available = {
-			hidden_trigger = {
-				NOT = { TNO_fopo_uar_influence_battle_selected = yes }
-			}
+			always = no
 		}
 		cancel_trigger = {
 		}

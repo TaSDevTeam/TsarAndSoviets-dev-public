@@ -363,6 +363,7 @@ TaS_WRW2_fate_and_coring_of_territories = {
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
 			add_state_core = 742
+			add_state_core = 1465
 			add_stability = 0.025
 			set_temp_variable = { gdp_growth_temp = 0.01 }
 			econ_gdp_growth_change = yes
@@ -394,6 +395,12 @@ TaS_WRW2_fate_and_coring_of_territories = {
 					1471 = {
 						is_core_of = ROOT
 					}
+					1474 = {
+						is_core_of = ROOT
+					}
+					1884 = {
+						is_core_of = ROOT
+					}
 				}
 				
 			}
@@ -422,12 +429,13 @@ TaS_WRW2_fate_and_coring_of_territories = {
 
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
-			add_state_core = 1465
 			add_state_core = 1885
 			if = {
 				limit = { owns_state = 1470 }
 				add_state_core = 1470
 				add_state_core = 1471
+				add_state_core = 1884
+				add_state_core = 1474
 			}
 			add_stability = 0.025
 			set_temp_variable = { gdp_growth_temp = 0.01 }

@@ -420,10 +420,11 @@ UAR_foreign_policy_category = {
 		activation = {
 			always = no
 		}
+		visible = {
+			TNO_fopo_uar_influence_battle_selected = yes
+		}	
 		available = {
-			hidden_trigger = {
-				NOT = { TNO_fopo_uar_influence_battle_selected  = yes }
-			}
+			always = no
 		}
 		cancel_trigger = {
 			NOT = { check_variable = { UAR_leading_faction_idx = 1 } }
@@ -454,10 +455,11 @@ UAR_foreign_policy_category = {
 		activation = {
 			always = no
 		}
+		visible = {
+			TNO_fopo_uar_influence_battle_selected = yes
+		}	
 		available = {
-			hidden_trigger = {
-				NOT = { TNO_fopo_uar_influence_battle_selected  = yes }
-			}
+			always = no
 		}
 		cancel_trigger = {
 			NOT = { check_variable = { UAR_leading_faction_idx = 2 } }
@@ -488,10 +490,11 @@ UAR_foreign_policy_category = {
 		activation = {
 			always = no
 		}
+		visible = {
+			TNO_fopo_uar_influence_battle_selected = yes
+		}	
 		available = {
-			hidden_trigger = {
-				NOT = { TNO_fopo_uar_influence_battle_selected  = yes }
-			}
+			always = no
 		}
 		cancel_trigger = {
 			NOT = { check_variable = { UAR_leading_faction_idx = 0 } }
@@ -522,10 +525,11 @@ UAR_foreign_policy_category = {
 		activation = {
 			always = no
 		}
+		visible = {
+			TNO_fopo_uar_influence_battle_selected = yes
+		}	
 		available = {
-			hidden_trigger = {
-				NOT = { TNO_fopo_uar_influence_battle_selected  = yes }
-			}
+			always = no
 		}
 		cancel_trigger = {
 		}
