@@ -3399,7 +3399,10 @@ TaS_WRW2_europe_ultimatums = {
 		}
 		days_remove = 14
 		remove_effect = {
-			FIN = { country_event = { id = MAR_ultimatums.1 } }
+			custom_effect_tooltip = TaS_WRW2_Karelia_demands_tt
+			hidden_effect = {
+				FIN = { country_event = { id = MAR_ultimatums.1 } }
+			}
 		}
 	}
 	TaS_WRW2_Vyborg_question = {
@@ -3428,7 +3431,10 @@ TaS_WRW2_europe_ultimatums = {
 		}
 		days_remove = 14
 		remove_effect = {
-			FIN = { country_event = { id = MAR_ultimatums.11 } }
+			custom_effect_tooltip = TaS_WRW2_Vyborg_question_tt
+			hidden_effect = {
+				FIN = { country_event = { id = MAR_ultimatums.11 } }
+			}
 		}
 	}
 	TaS_WRW2_Batumi_Issue = {
@@ -3464,7 +3470,10 @@ TaS_WRW2_europe_ultimatums = {
 		}
 		days_remove = 14
 		remove_effect = {
-			TUR = { country_event = { id = MAR_ultimatums.12 } }
+			custom_effect_tooltip = TaS_WRW2_Batumi_Issue_tt
+			hidden_effect = {
+				TUR = { country_event = { id = MAR_ultimatums.12 } }
+			}
 		}
 	}
 	TaS_WRW2_Armenia_independent = {
@@ -3491,7 +3500,10 @@ TaS_WRW2_europe_ultimatums = {
 		}
 		days_remove = 14
 		remove_effect = {
-			ARM = { country_event = { id = MAR_ultimatums.16 } }
+			custom_effect_tooltip = TaS_WRW2_Armenia_independent_tt
+			hidden_effect = {
+				ARM = { country_event = { id = MAR_ultimatums.16 } }
+			}
 		}
 	}
 	TaS_WRW2_Armenia_are_turkey = {
@@ -3518,7 +3530,10 @@ TaS_WRW2_europe_ultimatums = {
 		}
 		days_remove = 14
 		remove_effect = {
-			TUR = { country_event = { id = MAR_ultimatums.13 } }
+			custom_effect_tooltip = TaS_WRW2_Armenia_are_turkey_tt
+			hidden_effect = {
+				TUR = { country_event = { id = MAR_ultimatums.13 } }
+			}
 		}
 	}
 	TaS_WRW2_Odessa_demand  = {
@@ -3548,9 +3563,12 @@ TaS_WRW2_europe_ultimatums = {
 		}
 		days_remove = 14
 		remove_effect = {
-			ROM = { country_event = { id = MAR_ultimatums.14 } }
-			ITA = { end_puppet = ROM }
-			ROM = { leave_faction = yes }
+			custom_effect_tooltip = TaS_WRW2_Odessa_demand_tt
+			hidden_effect = {
+				ROM = { country_event = { id = MAR_ultimatums.14 } }
+				ITA = { end_puppet = ROM }
+				ROM = { leave_faction = yes }
+			}
 		}
 	}
 	TaS_WRW2_Bessarabia_demand = {
@@ -3580,7 +3598,10 @@ TaS_WRW2_europe_ultimatums = {
 		}
 		days_remove = 14
 		remove_effect = {
-			ROM = { country_event = { id = MAR_ultimatums.15 } }
+			custom_effect_tooltip = TaS_WRW2_Bessarabia_demand_tt
+			hidden_effect = {
+				ROM = { country_event = { id = MAR_ultimatums.15 } }
+			}
 		}
 	}
 	TaS_WRW2_Galicia_issue = {
@@ -3605,7 +3626,10 @@ TaS_WRW2_europe_ultimatums = {
 		}
 		days_remove = 14
 		remove_effect = {
-			GPL = { country_event = { id = MAR_ultimatums.17 } }
+			custom_effect_tooltip = TaS_WRW2_Galicia_issue_tt
+			hidden_effect = {
+				GPL = { country_event = { id = MAR_ultimatums.17 } }
+			}
 		}
 	}
 } 

@@ -490,6 +490,7 @@ Tas_WRW2_increase_depression = {
 TaS_WRW2_total_capitulation = {
 	custom_effect_tooltip = TaS_WRW2_total_capitulation_tt
 	set_global_flag = TaS_WRW2_Russian_victory
+	TaS_WRW2_Peace_Yall = yes
 	MAR = {
 		annex_country = {
 			target = MCW
@@ -583,11 +584,23 @@ TaS_2WRW_spawn_volunteers = {
 		}
 	}	
 }
+TaS_WRW2_Peace_Yall = {
+	custom_effect_tooltip = TaS_WRW2_Peace_Yall_tt
+	every_country = {
+		limit = { is_puppet_of = GER }
+		white_peace = RUS
+	}	
+	every_country = {
+		limit = { is_in_faction_with = GER }
+		white_peace = RUS
+	}	
+}
 TaS_WRW2_German_Collapse_Beloozersky = {
 	custom_effect_tooltip = TaS_WRW2_PEACE_TOTAL_TOOLTIP
 	hidden_effect = {
 		set_global_flag = WRW2_german_collapse
 		set_global_flag = PostGER_belooz_epilogue
+		TaS_WRW2_total_capitulation = yes
 		every_country = {
 			news_event = { id = MAR_2WRW_world_news.11 hours = 6}
 		}
@@ -813,6 +826,19 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 				}
 			}
 		}
+		if = {
+			limit = {
+				TNS = {
+					is_in_faction_with = GER
+				}	
+			}	
+			MUK = {
+				annex_country = {
+					target = TNS
+					transfer_troops = no
+				}
+			}	
+		}
 		GHU = {
 			if = {
 				limit = {
@@ -905,7 +931,6 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			limit = { is_in_faction_with = GER }
 			leave_faction = yes
 			econ_leave_sphere = yes
-			white_peace = RUS
 		}	
 		every_country = {
 			limit = { check_variable = { ECON_SPHERE_LEADER = GER } }
@@ -915,7 +940,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 		GER = {
 			dismantle_faction = yes
 		}
-		RUS = {
+		MBL = {
 			transfer_state = 97
 		}
 		if = {
@@ -1028,6 +1053,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 TaS_WRW2_German_Collapse_Kosygin = {
 	custom_effect_tooltip = TaS_WRW2_PEACE_TOTAL_TOOLTIP
 	hidden_effect = {
+		TaS_WRW2_total_capitulation = yes
 		if = {
 			limit = {
 				OR = {
