@@ -94,8 +94,8 @@ TaS_2WRW_manchuria_spawn_states = {
 	
 		}
 	}	
-	MJP = {
-		promote_character = KOR_Hiromichi_Yahara
+	PJP = {
+		promote_character = PJP_Hiromichi_Yahara
 		transfer_state = 1645
 		add_state_core = 1645
 		transfer_state = 1644
@@ -114,7 +114,7 @@ TaS_2WRW_manchuria_spawn_states = {
 }
 TaS_2WRW_manchuria_start_rebelion = {
 	custom_effect_tooltip = TaS_2WRW_manchuria_start_rebelion_tt	
-	MJP = {
+	PJP = {
 		if = {
 			limit = {
 				check_variable = { JAP.JAP_FErebels_infantry_weapons  > 0 }
@@ -190,7 +190,7 @@ TaS_2WRW_manchuria_start_rebelion = {
 			capital_scope = {
 					create_unit = {
 						division = "division_template = \"Kei Fuhyōshidan\" start_experience_factor = 0.6 start_equipment_factor = 0.9"
-						owner = MJP
+						owner = PJP
 						count = JAP.JAP_FErebels_adddivisions
 					}
 				}
@@ -296,7 +296,7 @@ TaS_2WRW_manchuria_start_rebelion = {
 			}
 		}
 	}
-	MJP = {
+	PJP = {
 		declare_war_on = {
 			target = PFF
 			type = annex_everything

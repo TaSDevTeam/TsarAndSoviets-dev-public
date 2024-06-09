@@ -766,7 +766,7 @@ country_event = { #Battle of Khabarovsk: victory
 	option = {
 		name = MAR_Japan.14.a
 		ai_chance = { factor = 1 }
-		MJP = {
+		PJP = {
 			add_stability = -0.03
 			add_timed_idea = {
 				idea = MJP_Boli_blocade_broke
@@ -790,7 +790,7 @@ country_event = { #Battle of Khabarovsk: lose
 		PFF = {
 			add_stability = -0.1
 		}
-		MJP = {
+		PJP = {
 			transfer_state = 409
 		}
 	}

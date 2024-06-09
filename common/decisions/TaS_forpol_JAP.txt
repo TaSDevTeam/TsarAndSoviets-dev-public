@@ -336,7 +336,7 @@ JAP_foreign_policy_category = {
 		icon = GFX_decision_generic_prepare_civil_war
 		visible = {
 			tag = JAP
-			MJP = { has_war_with = PFF }
+			PJP = { has_war_with = PFF }
 			TNO_fopo_far_eastern_revolt_selected = yes
 			TNO_volunteer_cap_less_5 = yes
 			check_variable = {
@@ -351,7 +351,7 @@ JAP_foreign_policy_category = {
 			log = "[GetDateText]: [Root.GetName]: Decision JAP_FE_increase_commitment"
 				add_command_power = 25
 				JAP = {
-					set_temp_variable = { target = MJP }
+					set_temp_variable = { target = PJP }
 					TNO_increase_volunteer_cap_1 = yes
 				}
 
@@ -368,7 +368,7 @@ JAP_foreign_policy_category = {
 	JAP_FE_bomb_someone = {
 		icon = GFX_decision_generic_bombing
 		visible = {
-			MJP = { has_war_with = PFF }
+			PJP = { has_war_with = PFF }
 			tag = JAP
 			TNO_fopo_far_eastern_revolt_selected = yes
 		}
@@ -381,7 +381,7 @@ JAP_foreign_policy_category = {
 		on_map_mode = map_and_decisions_view
 		highlight_states = {
 			highlight_states_trigger = {
-				is_controlled_by = MJP
+				is_controlled_by = PJP
 			}
 		}
 
@@ -391,7 +391,7 @@ JAP_foreign_policy_category = {
 			PFF = {
 				if = {
 					limit = {
-						has_war_with = MJP
+						has_war_with = PJP
 					}
 					add_ideas = JAP_OC_bombing_runs
 					set_country_flag = JAP_FE_being_bombed
@@ -413,7 +413,7 @@ JAP_foreign_policy_category = {
 	JAP_FE_send_army_instructors = {
 		icon = GFX_decision_generic_military_parade
 		visible = {
-			MJP = { has_war_with = PFF }
+			PJP = { has_war_with = PFF }
 			tag = JAP
 			TNO_fopo_far_eastern_revolt_selected = yes
 		}
@@ -429,7 +429,7 @@ JAP_foreign_policy_category = {
 		on_map_mode = map_and_decisions_view
 		highlight_states = {
 			highlight_states_trigger = {
-				is_controlled_by = MJP
+				is_controlled_by = PJP
 			}
 		}
 
@@ -457,7 +457,7 @@ JAP_foreign_policy_category = {
 	JAP_FE_send_industrial_support = {
 		icon = GFX_decision_generic_industry
 		visible = {
-			MJP = { has_war_with = PFF }
+			PJP = { has_war_with = PFF }
 			tag = JAP
 			TNO_fopo_far_eastern_revolt_selected = yes
 		}
@@ -472,7 +472,7 @@ JAP_foreign_policy_category = {
 		on_map_mode = map_and_decisions_view
 		highlight_states = {
 			highlight_states_trigger = {
-				is_controlled_by = MJP
+				is_controlled_by = PJP
 			}
 		}
 
@@ -482,7 +482,7 @@ JAP_foreign_policy_category = {
 			econ_spend_money_once_effect_raw_money = yes
 		}
 		remove_effect = {
-			MJP = {
+			PJP = {
 				add_timed_idea = { idea = JAP_OC_japanese_technicians days = 365 }
 				TNO_improve_industrial_expertise_med = yes
 				TNO_improve_industrial_equipment_med = yes
@@ -503,7 +503,7 @@ JAP_foreign_policy_category = {
 	JAP_FE_cold_of_the_taiga = {
 		icon = GFX_decision_generic_assault
 		visible = {
-			MJP = { has_war_with = PFF }
+			PJP = { has_war_with = PFF }
 			TNO_fopo_far_eastern_revolt_selected = yes
 		}
 

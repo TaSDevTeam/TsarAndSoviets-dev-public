@@ -87,14 +87,14 @@ on_actions = {
 							original_tag = PFF
 						}
 						ROOT = { 
-							original_tag = MJP
+							original_tag = PJP
 						}
 						AND = {
 							PFF = { NOT = { has_cosmetic_tag = PFF_Second_CW } }
 						}
 					}
 					FROM = {
-					white_peace = ROOT
+						white_peace = ROOT
 						annex_country = {
 							target = ROOT
 							transfer_troops = no
@@ -151,7 +151,7 @@ on_actions = {
 			else_if = {
 					limit = {
 						FROM = {
-							original_tag = MJP
+							original_tag = PJP
 						}
 						ROOT = { 
 							original_tag = PFF

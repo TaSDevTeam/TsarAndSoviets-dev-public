@@ -328,7 +328,7 @@ MAR_foreign_policy_category = {
 	MAR_FE_bomb_someone = {
 		icon = GFX_decision_generic_bombing
 		visible = {
-			MJP = { has_war_with = PFF }
+			PJP = { has_war_with = PFF }
 			tag = MAR
 			TNO_fopo_far_eastern_revolt_selected = yes
 		}
@@ -348,7 +348,7 @@ MAR_foreign_policy_category = {
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision JAP_FE_bomb_someone"
 			hidden_effect = { add_command_power = -15 }
-			MJP = {
+			PJP = {
 				if = {
 					limit = {
 						has_war_with = PFF
@@ -360,7 +360,7 @@ MAR_foreign_policy_category = {
 			}
 		}
 		remove_effect = {
-			MJP = {
+			PJP = {
 				remove_ideas = MAR_KOR_Bombing_runs
 				clr_country_flag = JAP_FE_being_bombed
 			}
@@ -373,7 +373,7 @@ MAR_foreign_policy_category = {
 	MAR_FE_send_army_instructors = {
 		icon = GFX_decision_generic_military_parade
 		visible = {
-			MJP = { has_war_with = PFF }
+			PJP = { has_war_with = PFF }
 			tag = MAR
 			TNO_fopo_far_eastern_revolt_selected = yes
 		}
@@ -417,7 +417,7 @@ MAR_foreign_policy_category = {
 	MAR_FE_send_industrial_support = {
 		icon = GFX_decision_generic_industry
 		visible = {
-			MJP = { has_war_with = PFF }
+			PJP = { has_war_with = PFF }
 			tag = MAR
 			TNO_fopo_far_eastern_revolt_selected = yes
 		}
@@ -463,7 +463,7 @@ MAR_foreign_policy_category = {
 	MAR_FE_cold_of_the_taiga = {
 		icon = GFX_decision_generic_assault
 		visible = {
-			MJP = { has_war_with = PFF }
+			PJP = { has_war_with = PFF }
 			TNO_fopo_far_eastern_revolt_selected = yes
 		}
 

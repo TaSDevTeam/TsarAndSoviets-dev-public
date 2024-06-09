@@ -21,18 +21,18 @@ TaS_WRW2_manchu_cw_tempfix = {
 	icon = GFX_decision_category_generic_formable_nations
 	picture = GFX_MAR_GER_EPILOGUE_category
 	
-	allowed = {
-		OR = {
-			tag = PFF
-			tag = MJP
-			tag = HAN
-			tag = MAN
-		}
-	}
+	#allowed = {
+	#	OR = {
+	#		tag = PFF
+	#		tag = MJP
+	#		tag = HAN
+	#		tag = MAN
+	#	}
+	#}
 	
-	visible = {
-		has_global_flag = TaS_MAN_second_cw
-	}
+	#visible = {
+	#	has_global_flag = TaS_MAN_second_cw
+	#}
 	
 	visible_when_empty = yes
 	

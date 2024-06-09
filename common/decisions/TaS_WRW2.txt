@@ -3657,6 +3657,9 @@ TaS_WRW2_manchu_cw_tempfix = {
 			}
 		}
 		fire_only_once = yes
+		ai_will_do = {
+			factor = 100
+		}
 		complete_effect = {
 			clr_country_flag = RUS_something_goes_wrong
 			if = {
