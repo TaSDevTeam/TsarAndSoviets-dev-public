@@ -33,7 +33,6 @@ defined_text = {
 			NOT = {
 				original_tag = WRS
 				original_tag = PRC
-				original_tag = MAR
 			}
 		}
 		localization_key = TNO_newspaper_header_RUS_commie
@@ -58,12 +57,13 @@ defined_text = {
 		}
 		localization_key = TNO_newspaper_header_AMR
 	}
-	text = {
+	text = { #Berezniki
 		trigger = {
 			original_tag = MAR
 		}
 		localization_key = TaS_newsheader_K_Rosii
 	}
+	
 	### OFN and LATAM ###
 	text = {
 		trigger = {
@@ -148,6 +148,18 @@ defined_text = {
 			original_tag = CHI
 		}
 		localization_key = TNO_newspaper_header_CHI
+	}
+	text = {
+		trigger = {
+			original_tag = YUN
+		}
+		localization_key = TNO_newspaper_header_YUN
+	}
+	text = {
+		trigger = {
+			original_tag = GNG
+		}
+		localization_key = TNO_newspaper_header_GNG
 	}
 	text = {
 		trigger = {

@@ -369,7 +369,8 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 			}
 			else_if = { #Otherwise, it'll join at most as an observer.
 				limit = {
-					check_variable = { JAP.JAP_OC_participation > 59 }
+					check_variable = { JAP.JAP_OC_participation > 69 }
+					check_variable = { JAP.JAP_OC_participation > MAR.MAR_OC_participation }
 				}
 				SDF = {
 					econ_join_sphere_JAP = yes

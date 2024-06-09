@@ -188,9 +188,9 @@ if = {
 		NOT = { has_dlc = "No Step Back" }
 	}
 	set_technology = {
-		advanced_light_tank = 1
-		advanced_medium_tank = 1
-		mechanised_infantry3 = 1
+		IFV_1945 = 1
+		MBT_1945 = 1
+		APC_1945 = 1
 
 		APC_1950 = 1
 		APC_1950_basic_turret = 1
@@ -205,8 +205,8 @@ if = {
 		AC_1945 = 1
 		AC_1950 = 1
 
-		artillery4 = 1
-		antiair5 = 1
+		artillery_1945 = 1
+		antiair_1945 = 1
 	}
 }
 if = {
@@ -257,7 +257,7 @@ if = {
 			engine_type_slot = tank_diesel_engine
 			special_type_slot_1 = secondary_turret_hmg
 		}
-		icon = GFX_WRS_advanced_medium_tank_medium
+		icon = GFX_WRS_MBT_1945_medium
 		upgrades = {
 			tank_nsb_engine_upgrade = 6
 			tank_nsb_armor_upgrade = 6
@@ -276,7 +276,7 @@ if = {
 			engine_type_slot = tank_gasoline_engine
 		}
 		
-		icon = GFX_WRS_advanced_light_tank_medium
+		icon = GFX_WRS_IFV_1945_medium
 		upgrades = {
 			tank_nsb_engine_upgrade = 4
 			tank_nsb_armor_upgrade = 4

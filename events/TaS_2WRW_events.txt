@@ -84,6 +84,7 @@ country_event = { #conditional surrender
 		name = MAR_AFG.2.b
 	}
 }
+
 country_event = { #unconditional surrender
 	id = MAR_AFG.3
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_AFG.3"}
@@ -106,6 +107,9 @@ country_event = { #unconditional surrender
 				transfer_state = 1885
 				transfer_state = 1470
 				transfer_state = 1471
+				transfer_state = 1465
+				transfer_state = 1474
+				transfer_state = 1884
 			}
 		}
 		else = {
@@ -114,19 +118,38 @@ country_event = { #unconditional surrender
 				transfer_state = 1885
 				transfer_state = 1470
 				transfer_state = 1471
+				transfer_state = 1465
+				transfer_state = 1474
+				transfer_state = 1884
 			}
 		}
 		AFG = {
 			econ_join_sphere_MAR = yes
 			transfer_state = 442
 			add_state_core = 442
+			transfer_state = 929
+			add_state_core = 929
+			transfer_state = 1894
+			add_state_core = 1894
+			add_state_core = 1895
+			add_state_core = 1896
+			add_state_core = 1897
+			add_state_core = 1898
+			add_state_core = 1899
+			annex_country = {
+				target = MFP
+				transfer_troops = yes
+			}
+			set_cosmetic_tag = AFG_pushtunistan
 		}
 		PAK = {
 			econ_join_sphere_MAR = yes
+			annex_country = {
+				target = KLT
+				transfer_troops = yes
+			}
 			transfer_state = 1533
 			add_state_core = 1533
-			transfer_state = 929
-			add_state_core = 929
 			transfer_state = 445
 			add_state_core = 445
 			transfer_state = 1534
@@ -135,6 +158,9 @@ country_event = { #unconditional surrender
 			add_state_core = 444
 			transfer_state = 749
 			add_state_core = 749
+			add_state_core = 1891
+			add_state_core = 1892
+			add_state_core = 1893
 		}
 		hidden_effect = {
 			every_country  = {
@@ -1040,7 +1066,7 @@ country_event = { #Offer surrender
 			hidden_effect = {
 				every_country  = {
 					news_event = {
-						id = TaS_WRW2_total_capitulation.10
+						id = MAR_2WRW_world_news.10
 					}
 				}
 			}

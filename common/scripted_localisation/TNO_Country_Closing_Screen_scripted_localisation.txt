@@ -399,6 +399,32 @@ defined_text = {
 	}
 }
 
+defined_text = {
+	name = Get_TNO_CountryClosing_picture_MAR
+	text = {
+		trigger = { 
+			has_country_flag = MAR_Good_Ending
+		}
+		localization_key = "GFX_CountryClosing_picture_MAR_WRW_Victory"
+	}
+	text = {
+		trigger = { 
+			has_country_flag = MAR_Bad_Ending
+		}
+		localization_key = "GFX_CountryClosing_picture_MAR_Third_Smuta"
+	}
+	text = {
+		trigger = { 
+			has_country_flag = MAR_Path_not_done
+		}
+		localization_key = "GFX_CountryClosing_picture_MAR_path_is_not_done_you_silly"
+	}
+	text = {
+		localization_key = "GFX_TNO_CountryClosing_picture_generic"
+	}
+}
+
+
 # / Tag-Specific Text
 defined_text = {
 	name = Get_TNO_CountryClosing_epilogue_USA
@@ -616,31 +642,6 @@ defined_text = { #### UKRAINE END SLIDES
 	text = {
 		trigger = { has_country_flag = UKR_Stus_Ending }
 		localization_key = "TNO_CountryClosing_epilogue_UNRA_Stus_victory_UCW"
-	}
-}
-
-defined_text = {
-	name = Get_TNO_CountryClosing_picture_MAR
-	text = {
-		trigger = { 
-			has_country_flag = MAR_Good_Ending
-		}
-		localization_key = "GFX_CountryClosing_picture_MAR_WRW_Victory"
-	}
-	text = {
-		trigger = { 
-			has_country_flag = MAR_Bad_Ending
-		}
-		localization_key = "GFX_CountryClosing_picture_MAR_Third_Smuta"
-	}
-	text = {
-		trigger = { 
-			has_country_flag = MAR_Path_not_done
-		}
-		localization_key = "GFX_CountryClosing_picture_MAR_path_is_not_done_you_silly"
-	}
-	text = {
-		localization_key = "GFX_TNO_CountryClosing_picture_generic"
 	}
 }
 

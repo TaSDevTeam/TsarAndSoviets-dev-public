@@ -124,6 +124,10 @@ defined_text = {
 				has_government = liberalism
 				has_government = paternalism
 				has_government = liberal_conservatism
+				has_country_leader = {
+					character = KOM_Passionariyy_Organization
+					ruling_only = yes
+				}
 			}
 		}
 		localization_key = KOM_regional_democratic
@@ -453,105 +457,7 @@ defined_text = {
 	}
 }
 
-### Kazakhstan ###
-defined_text = {
-	name = GetKazakhstanReunificationTitle
-	text = {
-		trigger = {
-			original_tag = AKT
-		}
-		localization_key = KAZ_AKT_kazakhstan
-	}
-	text = {
-		trigger = {
-			original_tag = ARL
-		}
-		localization_key = KAZ_ARL_kazakhstan
-	}
-	text = {
-		trigger = {
-			original_tag = DER
-		}
-		localization_key = KAZ_DER_kazakhstan
-	}
-	text = {
-		trigger = {
-			original_tag = NPL
-		}
-		localization_key = KAZ_NPL_kazakhstan
-	}
-	text = {
-		trigger = {
-			original_tag = KAZ
-		}
-		localization_key = KAZ_KAZ_kazakhstan
-	}
-	text = {
-		trigger = {
-			original_tag = KOK
-		}
-		localization_key = KAZ_KOK_kazakhstan
-	}
-	text = {
-		trigger = {
-			original_tag = PAV
-		}
-		localization_key = KAZ_PAV_kazakhstan
-	}
-	text = {
-		localization_key = RUS_somethings_wrong
-	}
-}
-
-defined_text = {
-	name = GetKazakhstanReunificationDesc
-	text = {
-		trigger = {
-			original_tag = AKT
-		}
-		localization_key = KAZ_AKT_kazakhstan_desc
-	}
-	text = {
-		trigger = {
-			original_tag = ARL
-		}
-		localization_key = KAZ_ARL_kazakhstan_desc
-	}
-	text = {
-		trigger = {
-			original_tag = DER
-		}
-		localization_key = KAZ_DER_kazakhstan_desc
-	}
-	text = {
-		trigger = {
-			original_tag = NPL
-		}
-		localization_key = KAZ_NPL_kazakhstan_desc
-	}
-	text = {
-		trigger = {
-			original_tag = KAZ
-		}
-		localization_key = KAZ_KAZ_kazakhstan_desc
-	}
-	text = {
-		trigger = {
-			original_tag = KOK
-		}
-		localization_key = KAZ_KOK_kazakhstan_desc
-	}
-	text = {
-		trigger = {
-			original_tag = PAV
-		}
-		localization_key = KAZ_PAV_kazakhstan_desc
-	}
-	text = {
-		localization_key = RUS_somethings_wrong_desc
-	}
-}
-
+### Raiding ###
 defined_text = {
 	name = GetRaidingDesc
 	

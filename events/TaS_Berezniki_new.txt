@@ -1199,7 +1199,7 @@ country_event = { #fuck you vlad
 	}
 }
 
-country_event = { #fuck me vlad
+country_event = { #you fucked up
 	id = MAR_initial.53
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_initial.53" }
 	title = MAR_initial.53.t
@@ -1211,8 +1211,14 @@ country_event = { #fuck me vlad
 	
 	option = { #rip bozo
 		name = MAR_initial.53.a
+		custom_effect_tooltip = MAR_VYT_annnexation_one_tt
 		ai_chance = { factor = 1 }
-		MAR_Solzh_Vyatka_takeover = yes
+		hidden_effect = {
+			country_event = { id = MAR_initial.54 random_days = 5 }
+		}
+		add_stability = -0.3
+		add_war_support = -0.3
+		load_focus_tree = ZZZ_blank_focus
 	}
 }
 
@@ -1221,15 +1227,29 @@ country_event = { #free space
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_initial.54" }
 	title = MAR_initial.54.t
 	desc = MAR_initial.54.d
-	#picture = 
+	picture = GFX_event_MAR_Initial_54
 	
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = { #
 		name = MAR_initial.54.a
+		custom_effect_tooltip = MAR_VYT_annnexation_two_tt
 		ai_chance = { factor = 1 }
-		
+		hidden_effect = {
+			VYT = {
+				change_tag_from = ROOT
+			}
+			VYT = {
+				annex_country = {
+					target = MAR
+					transfer_troops = yes
+				}
+				add_state_core = 398
+				add_state_core = 866
+				add_state_core = 865
+			}
+		}
 	}
 }
 

@@ -15,7 +15,6 @@ TNO_is_russian_nation_initialize = {
 				original_tag = BRY
 				original_tag = CHT
 				original_tag = DRL
-				original_tag = ESB
 				original_tag = FAV
 				original_tag = GAY
 				original_tag = GOR
@@ -39,6 +38,7 @@ TNO_is_russian_nation_initialize = {
 				original_tag = SBA
 				original_tag = SGV
 				original_tag = SVR
+				original_tag = TAN
 				original_tag = TAR
 				original_tag = TOM
 				original_tag = TYM
@@ -76,12 +76,11 @@ TNO_is_kazakh_nation_initialize = {
 		limit = {
 			OR = {
 				original_tag = KAZ
-				original_tag = ARL
-				original_tag = AKT
-				original_tag = NPL
-				original_tag = KOK
-				original_tag = DER
-				original_tag = PAV
+				original_tag = KZR
+
+				original_tag = TMK
+				original_tag = TML
+				original_tag = TMP
 			}
 		}
 
@@ -1511,7 +1510,7 @@ WRS_west_russian_collapse = {
 				popularity = 0.5
 			}
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			load_focus_tree = ZZZ_blank_focus
 			set_variable = { national_debt = 0 } # clear debt for successor
 			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
 			econ_type_change = yes
@@ -1535,7 +1534,7 @@ WRS_west_russian_collapse = {
 			econ_type_change = yes
 			remove_all_ministers = yes
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			load_focus_tree = ZZZ_blank_focus
 			add_ideas = {
 				GOR_ONG_Ivan_Kiselyov_hog
 				GOR_ONG_Vasily_Semyonov_for
@@ -1592,7 +1591,7 @@ WRS_west_russian_collapse = {
 			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
 			econ_type_change = yes
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			load_focus_tree = ZZZ_blank_focus
 			remove_all_ministers = yes
 			add_ideas = {
 				GAY_ONG_Flor_Vasilyev_hog
@@ -1630,7 +1629,7 @@ WRS_west_russian_collapse = {
 			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
 			econ_type_change = yes
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			load_focus_tree = ZZZ_blank_focus
 			remove_all_ministers = yes
 			add_ideas = VYT_Nikolay_Rumyantsev_hog
 			add_ideas = VYT_Leonid_Makerov_for
@@ -1671,7 +1670,7 @@ WRS_west_russian_collapse = {
 			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
 			econ_type_change = yes
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			load_focus_tree = ZZZ_blank_focus
 			set_politics = {
 				ruling_party = liberal_conservatism
 			}
@@ -1745,7 +1744,7 @@ WRS_west_russian_collapse = {
 			econ_set_credit_rating = yes
 
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			load_focus_tree = ZZZ_blank_focus
 			remove_all_ministers = yes
 			add_ideas = {
 				PRM_Vladimir_Trapeznikov_hog
@@ -1802,7 +1801,7 @@ WRS_west_russian_collapse = {
 			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
 			econ_type_change = yes
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			load_focus_tree = ZZZ_blank_focus
 			remove_all_ministers = yes
 			add_ideas = SAM_Vitaly_Vorotnikov_hog
 			add_ideas = SAM_Leonid_Yefremov_for
@@ -1844,7 +1843,7 @@ WRS_west_russian_collapse = {
 				popularity = 0.5
 			}
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			load_focus_tree = ZZZ_blank_focus
 			set_variable = { national_debt = 0 } # clear debt for successor
 			retire_country_leader = yes
 			promote_character = TAR_Ibragim_Mingazeyev
@@ -1900,7 +1899,7 @@ WSB_ONG_west_siberia_collapse = {
 			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
 			econ_type_change = yes
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			load_focus_tree = ZZZ_blank_focus
 			remove_all_ministers = yes
 			add_ideas = TYM_Ivan_Fedyuninsky_hog
 			add_ideas = TYM_Yelena_Karbysheva_for
@@ -1991,7 +1990,7 @@ WSB_ONG_west_siberia_collapse = {
 			add_ideas = YGR_Aleksandr_Bezumov_eco
 			add_ideas = YGR_Alexey_Kalinin_sec
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			load_focus_tree = ZZZ_blank_focus
 			YGR = {
 				every_unit_leader = { retire = yes }
 			}
@@ -2027,7 +2026,7 @@ WSB_ONG_west_siberia_collapse = {
 				every_unit_leader = { retire = yes }
 			}
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			load_focus_tree = ZZZ_blank_focus
 			remove_all_ministers = yes
 			add_ideas = OMS_Oskar_Kuul_hog
 			add_ideas = OMS_Leonid_Shevchuk_for
@@ -2110,7 +2109,7 @@ WSB_ONG_west_siberia_collapse = {
 			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
 			econ_type_change = yes
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			load_focus_tree = ZZZ_blank_focus
 			remove_all_ministers = yes
 			add_ideas = {
 				SVR_Anatoly_Krasnov_Levitin_hog
@@ -2162,7 +2161,7 @@ WSB_ONG_west_siberia_collapse = {
 			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
 			econ_type_change = yes
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			load_focus_tree = ZZZ_blank_focus
 			remove_faction_status = yes
 		}
 		URL = {
@@ -2175,7 +2174,7 @@ WSB_ONG_west_siberia_collapse = {
 			transfer_state = 846
 			add_state_core = 846
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			load_focus_tree = ZZZ_blank_focus
 			remove_faction_status = yes
 		}
 		ONG = {
@@ -2218,7 +2217,7 @@ WSB_add_collapse_administration = {
 			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
 			econ_type_change = yes
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			load_focus_tree = ZZZ_blank_focus
 			remove_all_ministers = yes
 			TYM_Boris_Shcherbina = {
 				add_country_leader_role = {
@@ -2318,7 +2317,7 @@ WSB_add_collapse_administration = {
 				YGR_Alexey_Kalinin_sec
 				RUS_shattered_ambitions
 			}
-			load_focus_tree = shattered_ambitions
+			load_focus_tree = ZZZ_blank_focus
 			YGR = {
 				every_unit_leader = { retire = yes }
 			}
@@ -2345,7 +2344,7 @@ WSB_add_collapse_administration = {
 
 			}
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			load_focus_tree = ZZZ_blank_focus
 			remove_all_ministers = yes
 			OMS = {
 				every_unit_leader = { retire = yes }
@@ -2427,7 +2426,7 @@ WSB_add_collapse_administration = {
 			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
 			econ_type_change = yes
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			load_focus_tree = ZZZ_blank_focus
 			remove_all_ministers = yes
 			add_ideas = SVR_Anatoly_Krasnov_Levitin_hog
 			add_ideas = SVR_Sergey_Izvekov_for
@@ -2458,7 +2457,7 @@ WSB_add_collapse_administration = {
 		}
 	}
 	ZLT = {
-		set_cosmetic_tag =  ZLT_SERENE_REPUBLIC
+		set_cosmetic_tag = ZLT_SERENE_REPUBLIC
 		add_state_core = 754
 		add_state_core = 572
 		add_state_core = 653
@@ -2469,7 +2468,7 @@ WSB_add_collapse_administration = {
 	}
 }
 
-### Central Siberia - Worker's Revolt Collapse ###
+### Central Siberia - Workers' Revolt Collapse ###
 KRS_reformed_siberian_socialist_workers_republic = {
 	set_global_flag = TNO_RUS_central_siberia_collapse
 	KRS = {
@@ -2537,7 +2536,7 @@ KRS_reformed_siberian_socialist_workers_republic = {
 			legacy_id = 15106
 		}
 		hidden_effect = {
-			load_focus_tree = shattered_ambitions
+			load_focus_tree = ZZZ_blank_focus
 			remove_ideas = {
 				KRS_wild_promises
 				KRS_military_guided_democracy
@@ -2610,7 +2609,7 @@ ALT_siberian_workers_and_peasants_union = {
 			legacy_id = 15107
 		}
 		hidden_effect = {
-			load_focus_tree = shattered_ambitions
+			load_focus_tree = ZZZ_blank_focus
 			remove_ideas = {
 				ALT_religious_divide
 				ALT_christian_socialism
@@ -2663,7 +2662,7 @@ SBA_free_workers_republic_of_siberia = {
 		set_temp_variable = { TNO_economy_subtype_temp = token:Econ_Subtype_Worker_Directed }
 		econ_subtype_change = yes
 		hidden_effect = {
-			load_focus_tree = shattered_ambitions
+			load_focus_tree = ZZZ_blank_focus
 			remove_ideas = {
 				SBA_anarchist_refuge
 				SBA_militarized_society
@@ -2777,16 +2776,15 @@ FST_far_east_collapse = {
 				promote_leader = yes
 			}
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			load_focus_tree = ZZZ_blank_focus
 			set_cosmetic_tag = BRY_collapse
 			transfer_state = 565
 			add_state_core = 565
-			set_capital = { state = 565 }
+			set_capital = { state = 565 remember_old_capital = no }
 		}
 		#absolutely disgusting but I've ran out of idea on how it works
 
 		CHT = {
-
 			set_politics = {
 				ruling_party = paternalism
 			}
@@ -2826,13 +2824,13 @@ FST_far_east_collapse = {
 				CHT_sunset_of_white_chivalry
 			}
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			load_focus_tree = ZZZ_blank_focus
 			set_cosmetic_tag = CHT_collapse
 			transfer_state = 563
 			add_state_core = 563
+			set_capital = { state = 563 remember_old_capital = no }
 		}
 		IRK = {
-
 			set_politics = {
 				ruling_party = communist
 			}
@@ -2869,12 +2867,13 @@ FST_far_east_collapse = {
 				IRK_yagodas_paranoia
 			}
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			load_focus_tree = ZZZ_blank_focus
 			set_cosmetic_tag = IRK_collapse
 			transfer_state = 564
 			transfer_state = 566
 			add_state_core = 564
 			add_state_core = 566
+			set_capital = { state = 566 remember_old_capital = no }
 		}
 		KMC = {
 			add_country_leader_role = {
@@ -2902,10 +2901,11 @@ FST_far_east_collapse = {
 				KMC_sailor_state
 			}
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			load_focus_tree = ZZZ_blank_focus
 			set_cosmetic_tag = KMC_collapse
 			transfer_state = 637
 			add_state_core = 637
+			set_capital = { state = 637 remember_old_capital = no }
 		}
 		MAG = {
 			set_politics = {
@@ -2938,6 +2938,7 @@ FST_far_east_collapse = {
 			add_state_core = 562
 			add_state_core = 886
 			add_state_core = 1364
+			set_capital = { state = 562 remember_old_capital = no }
 			OMO = { OMO_Pavel_Sudoplatov = { set_nationality = MAG } }
 			add_country_leader_role = {
 				character = OMO_Pavel_Sudoplatov
@@ -2959,7 +2960,7 @@ FST_far_east_collapse = {
 					can_be_fired = no
 					ai_will_do = { factor = 0 }
 				}
-				
+				activate = yes
 			}
 			add_advisor_role = {
 				character = MAG_Vasily_Bekkerov
@@ -2972,7 +2973,7 @@ FST_far_east_collapse = {
 					can_be_fired = no
 					ai_will_do = { factor = 0 }
 				}
-				
+				activate = yes
 			}
 			add_advisor_role = {
 				character = MAG_Ivan_Arento
@@ -2985,7 +2986,7 @@ FST_far_east_collapse = {
 					can_be_fired = no
 					ai_will_do = { factor = 0 }
 				}
-				
+				activate = yes
 			}
 			add_advisor_role = {
 				character = MAG_Yakov_Serebryansky
@@ -2998,7 +2999,7 @@ FST_far_east_collapse = {
 					can_be_fired = no
 					ai_will_do = { factor = 0 }
 				}
-				
+				activate = yes
 			}
 			remove_ideas = {
 				RUS_heirs_of_harbin
@@ -3006,7 +3007,7 @@ FST_far_east_collapse = {
 				MAG_gateway_into_russia
 			}
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			load_focus_tree = ZZZ_blank_focus
 		}
 		OMO = {
 			clr_country_flag = RUS_regional_stage
@@ -3047,14 +3048,15 @@ FST_far_east_collapse = {
 				OMO_holy_duty
 			}
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			load_focus_tree = ZZZ_blank_focus
 			set_cosmetic_tag = OMO_collapse
 			transfer_state = 644
 			transfer_state = 891
 			add_state_core = 644
 			add_state_core = 891
+			set_capital = { state = 644 remember_old_capital = no }
 		}
-		OMO_gleb_yakunin = {
+		OMO_Gleb_Yakunin = {
 			set_nationality = VIL
 		}
 		VIL = {
@@ -3063,7 +3065,7 @@ FST_far_east_collapse = {
 				ruling_party = despotism
 			}
 			add_country_leader_role = {
-				character = OMO_gleb_yakunin
+				character = OMO_Gleb_Yakunin
 				country_leader = {
 					ideology = despotism_theocracy_subtype
 					desc = POLITICS_GLEB_YAKUNIN_COLLAPSE_DESC
@@ -3092,7 +3094,7 @@ FST_far_east_collapse = {
 			}
 			remove_ideas = RUS_isolated_vilages
 			add_ideas = RUS_shattered_ambitions
-			load_focus_tree = shattered_ambitions
+			load_focus_tree = ZZZ_blank_focus
 			set_cosmetic_tag = VIL_collapse
 			transfer_state = 575
 			transfer_state = 761
@@ -3102,6 +3104,7 @@ FST_far_east_collapse = {
 			add_state_core = 761
 			add_state_core = 889
 			add_state_core = 890
+			set_capital = { state = 890 remember_old_capital = no }
 		}
 		YAK = {
 			set_politics = {
@@ -3141,7 +3144,7 @@ FST_far_east_collapse = {
 				long_name = YAK_collapse_despotism_party_long
 				name = YAK_collapse_despotism_party
 			}
-			load_focus_tree = shattered_ambitions
+			load_focus_tree = ZZZ_blank_focus
 			set_cosmetic_tag = YAK_collapse
 			transfer_state = 574
 			transfer_state = 760
@@ -3149,6 +3152,7 @@ FST_far_east_collapse = {
 			add_state_core = 574
 			add_state_core = 760
 			add_state_core = 759
+			set_capital = { state = 574 remember_old_capital = no }
 		}
 	}
 }
@@ -3250,7 +3254,7 @@ RUS_fire_southern_urals_aftermath_magnitogorsk_despotism = {
 			country_event = {
 				id = iainmbanks.9
 				days = 30
-				random = 200
+				random_hours = 200
 			}
 		}
 		if = {
@@ -3502,7 +3506,7 @@ RUS_fire_southern_urals_aftermath_magnitogorsk_communist = {
 			country_event = {
 				id = iainmbanks.9
 				days = 30
-				random = 200
+				random_hours = 200
 			}
 		}
 		if = {
@@ -3539,7 +3543,7 @@ RUS_fire_southern_urals_aftermath_magnitogorsk_communist = {
 			country_event = {
 				id = komi.51
 				days = 60
-				random = 200
+				random_hours = 200
 			}
 		}
 		if = {
@@ -3759,7 +3763,7 @@ RUS_fire_southern_urals_aftermath_orenburg_socialist = {
 			country_event = {
 				id = iainmbanks.6
 				days = 50
-				random = 200
+				random_hours = 200
 			}
 		}
 		if = {
@@ -3796,7 +3800,7 @@ RUS_fire_southern_urals_aftermath_orenburg_socialist = {
 			country_event = {
 				id = komi.40
 				days = 50
-				random = 200
+				random_hours = 200
 			}
 		}
 		if = {
@@ -4016,7 +4020,7 @@ RUS_fire_southern_urals_aftermath_orenburg_communist = {
 			country_event = {
 				id = iainmbanks.6
 				days = 50
-				random = 200
+				random_hours = 200
 			}
 		}
 		if = {
@@ -4053,7 +4057,7 @@ RUS_fire_southern_urals_aftermath_orenburg_communist = {
 			country_event = {
 				id = komi.39
 				days = 50
-				random = 200
+				random_hours = 200
 			}
 		}
 		if = {
@@ -4273,7 +4277,7 @@ RUS_fire_southern_urals_aftermath_orenburg_authdem = {
 			country_event = {
 				id = iainmbanks.6
 				days = 50
-				random = 200
+				random_hours = 200
 			}
 		}
 		if = {
@@ -4310,7 +4314,7 @@ RUS_fire_southern_urals_aftermath_orenburg_authdem = {
 			country_event = {
 				id = komi.38
 				days = 50
-				random = 200
+				random_hours = 200
 			}
 		}
 		if = {
@@ -4562,7 +4566,7 @@ RUS_fire_southern_urals_aftermath_ural_league = {
 			country_event = {
 				id = komi.41
 				days = 75
-				random = 200
+				random_hours = 200
 			}
 		}
 		if = {
@@ -4814,7 +4818,7 @@ RUS_fire_southern_urals_aftermath_orsk = {
 			country_event = {
 				id = komi.42
 				days = 25
-				random = 200
+				random_hours = 200
 			}
 		}
 		if = {
@@ -5386,54 +5390,54 @@ VP_change_fin = {
 
 
 RUS_monthly_deferred_payments_calculation = {
-	set_variable = {monthly_deferred_payments = manpower_costs}
-	divide_variable = {monthly_deferred_payments = 12}
-	set_temp_variable = {reduced_expenditure_multiplier = modifier@Military_expenditures_factor}
-	add_to_temp_variable = {reduced_expenditure_multiplier = 0.2}
-	multiply_temp_variable = {reduced_expenditure_multiplier = modifier@personnel_cost_modifier}
+	set_variable = { monthly_deferred_payments = manpower_costs }
+	divide_variable = { monthly_deferred_payments = 12 }
+	set_temp_variable = { reduced_expenditure_multiplier = modifier@Military_expenditures_factor }
+	add_to_temp_variable = { reduced_expenditure_multiplier = 0.2 }
+	multiply_temp_variable = { reduced_expenditure_multiplier = modifier@personnel_cost_modifier }
 	#-1*-1 = 1. Don't forget that if you remove/add a modifier
 	clamp_temp_variable = {
 		var = reduced_expenditure_multiplier
 		min = 0.01
 		max = 1
 	}
-	divide_variable = {monthly_deferred_payments = reduced_expenditure_multiplier}
-	add_to_variable = {deferred_military_cost = monthly_deferred_payments}
-	set_temp_variable = {monthly_inflation = base_inflation_rate}
-	divide_temp_variable = {monthly_inflation = 12}
-	divide_temp_variable = {monthly_inflation = 100}
-	add_to_temp_variable = {monthly_inflation = 1}
-	multiply_variable = {deferred_military_cost = monthly_inflation}
+	divide_variable = { monthly_deferred_payments = reduced_expenditure_multiplier }
+	add_to_variable = { deferred_military_cost = monthly_deferred_payments }
+	set_temp_variable = { monthly_inflation = base_inflation_rate }
+	divide_temp_variable = { monthly_inflation = 12 }
+	divide_temp_variable = { monthly_inflation = 100 }
+	add_to_temp_variable = { monthly_inflation = 1 }
+	multiply_variable = { deferred_military_cost = monthly_inflation }
 	log = "[GetDateText]: [Root.GetName]: [?monthly_deferred_payments] monthly deferred military cost"
-	set_variable = {deferred_military_cost_million = 1000}
-	multiply_variable = {deferred_military_cost_million = deferred_military_cost}
+	set_variable = { deferred_military_cost_million = 1000 }
+	multiply_variable = { deferred_military_cost_million = deferred_military_cost }
 	if = {
 		limit = {
 			has_idea = RUS_promisory_notes_system
 		}
-		multiply_temp_variable = {deferred_military_cost_million = 1.2}
+		multiply_temp_variable = { deferred_military_cost_million = 1.2 }
 	}
 	else_if = {
 		limit = {
 			has_idea = RUS_expanded_promisory_notes_system
 		}
-		multiply_variable = {deferred_military_cost_million = 1.4}
+		multiply_variable = { deferred_military_cost_million = 1.4 }
 	}
 }
 
 RUS_solve_deferred_military_payments = {
-	set_temp_variable = {temp_econ_spending_amount = deferred_military_cost}
+	set_temp_variable = { temp_econ_spending_amount = deferred_military_cost }
 	if = {
 		limit = {
 			has_idea = RUS_promisory_notes_system
 		}
-		multiply_temp_variable = {temp_econ_spending_amount = 1.2}
+		multiply_temp_variable = { temp_econ_spending_amount = 1.2 }
 	}
 	else_if = {
 		limit = {
 			has_idea = RUS_expanded_promisory_notes_system
 		}
-		multiply_temp_variable = {temp_econ_spending_amount = 1.4}
+		multiply_temp_variable = { temp_econ_spending_amount = 1.4 }
 	}
 	log = "[GetDateText]: [Root.GetName]: [?temp_econ_spending_amount] promisory notes system total cost"
 	econ_spend_money_once_effect_raw_money = yes
@@ -5444,7 +5448,7 @@ RUS_solve_deferred_military_payments = {
 	}
 	if = {
 		limit = { check_variable = { promisory_notes_inflation > 0 } }
-		set_temp_variable = {inflation_temp = promisory_notes_inflation}
+		set_temp_variable = { inflation_temp = promisory_notes_inflation }
 		Econ_inflation_change = yes
 	}
 }
@@ -5460,9 +5464,9 @@ RUS_expand_promisory_notes_system = {
 	}
 	else_if = {
 		limit = { has_idea = RUS_expanded_promisory_notes_system }
-		set_temp_variable = { inflation_temp = 2}
+		set_temp_variable = { inflation_temp = 2 }
 		activate_mission = RUS_Worsening_moral_2
-		add_to_variable = {promisory_notes_inflation = -1}
+		add_to_variable = { promisory_notes_inflation = -1 }
 		Econ_inflation_change = yes
 	}
 	else_if = {
@@ -5574,17 +5578,6 @@ RUS_select_regional_news_event = {
 			hidden_effect = {
 				if = {
 					limit = {
-						has_government = liberal_conservatism
-					} #Make a new one
-					every_country = {
-						limit = { is_ai = no }
-						news_event = {
-							id = RUS_news.4
-						}
-					}
-				}
-				if = {
-					limit = {
 						has_government = progressivism
 					}
 					every_country = {
@@ -5596,7 +5589,10 @@ RUS_select_regional_news_event = {
 				}
 				if = {
 					limit = {
-						has_government = liberalism
+						OR = {
+							has_government = liberalism
+							has_government = liberal_conservatism
+						}
 					}
 					every_country = {
 						limit = { is_ai = no }
@@ -8354,140 +8350,6 @@ RUS_select_final_cosmetic_tag = {
 	}
 }
 
-RUS_select_kazakh_news_event = {
-	if = {
-		limit = {
-			original_tag = AKT
-		}
-		hidden_effect = {
-			every_country = {
-				limit = { is_ai = no }
-				news_event = {
-					id = WORLD.1104
-				}
-			}
-		}
-	}
-	if = {
-		limit = {
-			original_tag = ARL
-		}
-		hidden_effect = {
-			every_country = {
-				limit = { is_ai = no }
-				news_event = {
-					id = WORLD.1103
-				}
-			}
-		}
-	}
-	if = {
-		limit = {
-			original_tag = DER
-		}
-		hidden_effect = {
-			every_country = {
-				limit = { is_ai = no }
-				news_event = {
-					id = WORLD.1106
-				}
-			}
-		}
-	}
-	if = {
-		limit = {
-			original_tag = NPL
-		}
-		hidden_effect = {
-			every_country = {
-				limit = { is_ai = no }
-				news_event = {
-					id = WORLD.1105
-					hours = 2
-				}
-			}
-		}
-	}
-	if = {
-		limit = {
-			original_tag = KAZ
-		}
-		hidden_effect = {
-			every_country = {
-				limit = { is_ai = no }
-				news_event = {
-					id = WORLD.1100
-				}
-			}
-		}
-	}
-	if = {
-		limit = {
-			original_tag = KOK
-		}
-		hidden_effect = {
-			every_country = {
-				limit = { is_ai = no }
-				news_event = {
-					id = WORLD.1101
-				}
-			}
-		}
-	}
-	if = {
-		limit = {
-			original_tag = PAV
-		}
-		hidden_effect = {
-			every_country = {
-				limit = { is_ai = no }
-				news_event = {
-					id = WORLD.1102
-				}
-			}
-		}
-	}
-}
-
-RUS_select_kazakh_cosmetic_tag = {
-	if = {
-		limit = {
-			original_tag = AKT
-		}
-		set_cosmetic_tag = AKT_regional_unifier
-	}
-	if = {
-		limit = {
-			original_tag = ARL
-		}
-		set_cosmetic_tag = ARL_regional_unifier
-	}
-	if = {
-		limit = {
-			original_tag = DER
-		}
-		set_cosmetic_tag = DER_regional_unifier
-	}
-	if = {
-		limit = {
-			original_tag = KAZ
-		}
-		set_cosmetic_tag = KAZ_regional_unifier
-	}
-	if = {
-		limit = {
-			original_tag = KOK
-		}
-		set_cosmetic_tag = KOK_regional_unifier
-	}
-	if = {
-		limit = {
-			original_tag = PAV
-		}
-		set_cosmetic_tag = PAV_regional_unifier
-	}
-}
-
 RUS_FE_manpower_add_to_states = {
 	if = {
 		limit = {
@@ -8497,37 +8359,37 @@ RUS_FE_manpower_add_to_states = {
 			limit = {
 				country_exists = AMR
 			}
-			574 = {add_manpower = 1000}
+			574 = { add_manpower = 1000 }
 		}
 		if = {
 			limit = {
 				country_exists = CHT
 			}
-			562 = {add_manpower = 1250}
-			563 = {add_manpower = 1250}
+			562 = { add_manpower = 1250 }
+			563 = { add_manpower = 1250 }
 		}
 		if = {
 			limit = {
 				country_exists = MAG
 			}
-			562 = {add_manpower = 1000}
-			760 = {add_manpower = 1000}
-			637 = {add_manpower = 1000}
+			562 = { add_manpower = 1000 }
+			760 = { add_manpower = 1000 }
+			637 = { add_manpower = 1000 }
 		}
 		if = {
 			limit = {
 				country_exists = BRY
 			}
-			562 = {add_manpower = 1000}
-			564 = {add_manpower = 1000}
+			562 = { add_manpower = 1000 }
+			564 = { add_manpower = 1000 }
 		}
 		if = {
 			limit = {
 				country_exists = IRK
 			}
-			562 = {add_manpower = 1000}
-			563 = {add_manpower = 1000}
-			566 = {add_manpower = 1000}
+			562 = { add_manpower = 1000 }
+			563 = { add_manpower = 1000 }
+			566 = { add_manpower = 1000 }
 		}
 	}
 
@@ -8539,35 +8401,35 @@ RUS_FE_manpower_add_to_states = {
 			limit = {
 				country_exists = AMR
 			}
-			574 = {add_manpower = 1500}
+			574 = { add_manpower = 1500 }
 		}
 		if = {
 			limit = {
 				country_exists = CHT
 			}
-			562 = {add_manpower = 2000}
-			563 = {add_manpower = 2000}
+			562 = { add_manpower = 2000 }
+			563 = { add_manpower = 2000 }
 		}
 		if = {
 			limit = {
 				country_exists = MAG
 			}
-			562 = {add_manpower = 2000}
-			563 = {add_manpower = 2000}
-			574 = {add_manpower = 2000}
+			562 = { add_manpower = 2000 }
+			563 = { add_manpower = 2000 }
+			574 = { add_manpower = 2000 }
 		}
 		if = {
 			limit = {
 				country_exists = BRY
 			}
-			562 = {add_manpower = 2000}
-			564 = {add_manpower = 2000}
+			562 = { add_manpower = 2000 }
+			564 = { add_manpower = 2000 }
 		}
 		if = {
 			limit = {
 				country_exists = IRK
 			}
-			574 = {add_manpower = 2000}
+			574 = { add_manpower = 2000 }
 		}
 	}
 
@@ -8579,11 +8441,11 @@ RUS_FE_manpower_add_to_states = {
 			limit = {
 				country_exists = AMR
 			}
-			561 = {add_manpower = 1000}
-			1364 = {add_manpower = 1000}
-			564 = {add_manpower = 1000}
-			566 = {add_manpower = 1000}
-			886 = {add_manpower = 1000}
+			561 = { add_manpower = 1000 }
+			1364 = { add_manpower = 1000 }
+			564 = { add_manpower = 1000 }
+			566 = { add_manpower = 1000 }
+			886 = { add_manpower = 1000 }
 		}
 		if = {
 			limit = {
@@ -8592,11 +8454,11 @@ RUS_FE_manpower_add_to_states = {
 					has_country_flag = CHT_shepunov_victorious
 				}
 			}
-			564 = {add_manpower = 2000}
-			563 = {add_manpower = 2000}
-			566 = {add_manpower = 2000}
-			561 = {add_manpower = 2000}
-			1364 = {add_manpower = 2000}
+			564 = { add_manpower = 2000 }
+			563 = { add_manpower = 2000 }
+			566 = { add_manpower = 2000 }
+			561 = { add_manpower = 2000 }
+			1364 = { add_manpower = 2000 }
 		}
 		if = {
 			limit = {
@@ -8605,37 +8467,37 @@ RUS_FE_manpower_add_to_states = {
 					has_country_flag = CHT_mikhail_victorious
 				}
 			}
-			574 = {add_manpower = 2000}
-			563 = {add_manpower = 2000}
-			566 = {add_manpower = 2000}
-			637 = {add_manpower = 2000}
-			562 = {add_manpower = 2000}
+			574 = { add_manpower = 2000 }
+			563 = { add_manpower = 2000 }
+			566 = { add_manpower = 2000 }
+			637 = { add_manpower = 2000 }
+			562 = { add_manpower = 2000 }
 		}
 		if = {
 			limit = {
 				country_exists = MAG
 			}
-			562 = {add_manpower = 3000}
-			563 = {add_manpower = 3000}
-			637 = {add_manpower = 3000}
-			574 = {add_manpower = 3000}
-			566 = {add_manpower = 3000}
+			562 = { add_manpower = 3000 }
+			563 = { add_manpower = 3000 }
+			637 = { add_manpower = 3000 }
+			574 = { add_manpower = 3000 }
+			566 = { add_manpower = 3000 }
 		}
 		if = {
 			limit = {
 				country_exists = BRY
 			}
-			562 = {add_manpower = 3000}
-			564 = {add_manpower = 3000}
-			574 = {add_manpower = 3000}
-			561 = {add_manpower = 3000}
-			637 = {add_manpower = 3000}
+			562 = { add_manpower = 3000 }
+			564 = { add_manpower = 3000 }
+			574 = { add_manpower = 3000 }
+			561 = { add_manpower = 3000 }
+			637 = { add_manpower = 3000 }
 		}
 		if = {
 			limit = {
 				country_exists = IRK
 			}
-			574 = {add_manpower = 3000}
+			574 = { add_manpower = 3000 }
 		}
 	}
 }
@@ -8643,8 +8505,11 @@ RUS_FE_manpower_add_to_states = {
 RUS_reset_war_weariness = {
 	if = {
 		limit = {
-			all_enemy_country = {
-				is_russian_nation = no
+			OR = {
+				has_war = no
+				any_enemy_country = {
+					is_russian_nation = no
+				}
 			}
 		}
 		set_variable = { RUS_surrender_limit = 0 }
@@ -8670,7 +8535,7 @@ RUS_capitulation_effect = {
 	}
 
 	# Peace deal code
-	#Worker's Uprising
+	#Workers' Uprising
 	if = {
 		limit = {
 			FROM = { tag = KAL }
@@ -8704,6 +8569,9 @@ RUS_capitulation_effect = {
 			annex_country = {
 				target = KAL
 				transfer_troops = no
+			}
+			every_owned_state = {
+				remove_core_of = KAL
 			}
 			remove_ideas = KAL_general_strike_1
 			remove_ideas = KAL_general_strike_2
@@ -8904,29 +8772,6 @@ RUS_capitulation_effect = {
 		set_global_flag = skip_default_capitulation
 	}
 
-
-	###END KOMI DIPLO PEACE DEALS
-
-	#else_if = {
-	#	limit = {
-	#		ROOT = { original_tag = VOL }
-	#		FROM = { AND = { is_russian_nation = yes has_war_with = KOM } }
-	#	}
-	#	FROM = { white_peace = VOL }
-	#	FROM = {
-	#		annex_country = {
-	#			target = VOL
-	#			transfer_troops = no
-	#		}
-	#		transfer_state = 857
-	#		transfer_state = 855
-	#		transfer_state = 867
-	#		transfer_state = 351
-	#		transfer_state = 856
-	#	}
-	#	set_global_flag = skip_default_capitulation
-	#}
-
 	else_if = {
 		limit = {
 			ROOT = {
@@ -8985,37 +8830,12 @@ RUS_capitulation_effect = {
 		set_global_flag = skip_default_capitulation
 	}
 
-	#Warlord State in West Siberia for Zlatoust being a fuck
-	else_if = {
-		limit = {
-			FROM = {
-				is_russian_nation = yes
-				NOT = { tag = ZLT }
-			}
-			ROOT = {
-				tag = ZLT
-				is_in_faction = yes
-			}
-		}
-		ZLT = { dismantle_faction = yes }
-		FROM = {
-			every_enemy_country = {
-				limit = {
-					is_in_faction_with = ZLT
-				}
-				white_peace = PREV
-				annex_country = {
-					target = PREV
-					transfer_troops = no
-				}
-			}
-		}
-		set_global_flag = skip_default_capitulation
-	}
-
+	# SBA Collapse Wars
 	else_if = {
 		limit = {
 			has_global_flag = SBA_collapsed
+			FROM = { is_central_siberian_nation = yes }
+			ROOT = { is_central_siberian_nation = yes }
 		}
 		if = { # Mongush wins against Stepanov
 			limit = {
@@ -9176,6 +8996,25 @@ RUS_capitulation_effect = {
 		}
 	}
 
+	else_if = { # Pechora War
+		limit = {
+			FROM = {
+				OR = {
+					tag = VOR
+					tag = YGR
+				}
+			}
+			ROOT = {
+				OR = {
+					tag = VOR
+					tag = YGR
+				}
+			}
+		}
+		VOR = { remove_ideas = VOR_pechora_war }
+		YGR = { remove_ideas = YGR_pechora_war }
+	}
+
 	# Flavor
 	if = {
 		limit = {
@@ -9224,7 +9063,7 @@ RUS_capitulation_effect = {
 			ROOT = { tag = ONG }
 		}
 		KOM = {
-			country_event = { id = KOM.427 days = 21 random = 48 }
+			country_event = { id = KOM.427 days = 21 random_hours = 48 }
 		}
 	}
 	else_if = {
@@ -9238,7 +9077,7 @@ RUS_capitulation_effect = {
 			ROOT = { tag = ONG }
 		}
 		KOM = {
-			country_event = { id = KOM.433 days = 21 random = 48 }
+			country_event = { id = KOM.433 days = 21 random_hours = 48 }
 		}
 	}
 	else_if = {
@@ -9307,15 +9146,6 @@ RUS_capitulation_effect = {
 			country_event = { id = zhukov.13 days = 7 }
 		}
 	}
-	else_if = {
-		limit = {
-			tag = KOK
-		}
-		add_to_variable = {
-			var = khanate_war_exhaustion
-			value = -20
-		}
-	}
 	else_if = { # Fire event for the Ural Guard if Orenburg dies
 		limit = {
 			ROOT = { tag = ORE }
@@ -9348,7 +9178,7 @@ RUS_capitulation_effect = {
 				}
 			}
 		}
-		TYM = { country_event = { id = TYM.115 days = 7 random = 3 } }
+		TYM = { country_event = { id = TYM.115 days = 7 random_hours = 3 } }
 	}
 	else_if = {
 		limit = {
@@ -9363,7 +9193,7 @@ RUS_capitulation_effect = {
 				}
 			}
 		}
-		TYM = { country_event = { id = TYM.160 days = 7 random = 3 } }
+		TYM = { country_event = { id = TYM.160 days = 7 random_hours = 3 } }
 	}
 	# two flavour events one if eurasia capitulates decembrist tomsk and the other if the opposite happens
 	else_if = { #tomsk capitulates eurasia
@@ -9398,6 +9228,10 @@ RUS_capitulation_effect = {
 					original_tag = URL
 					original_tag = MGN
 					original_tag = DRL
+				}
+				AND = {
+					country_exists = WSR
+					country_exists = WSB
 				}
 			}
 		}

@@ -50,7 +50,7 @@ RUS_murmansk_crisis_category = {
 	}
 
 	WSR_tempo_of_war = {
-		icon = GFX_decision_clock
+		icon = GFX_decision_generic_clock
 		activation = { always = no }
 		available = {
 			NOT = {
@@ -71,7 +71,7 @@ RUS_murmansk_crisis_category = {
 	}
 
 	WSR_dispatch_volunteer_brigade = {
-		icon = GFX_decision_generic_military_hat_alternate
+		icon = GFX_decision_generic_military_hat_red
 		visible = {
 			MPR = {
 				exists = yes
@@ -314,6 +314,7 @@ RUS_murmansk_crisis_category = {
 		remove_effect = {
 			#Increase preparedness for the war and add a supply depot near Onega.
 			add_to_variable = { MPRInterventionProgress = 25 }
+			clamp_variable = { var = MPRInterventionProgress max = 100 }
 			custom_effect_tooltip = WSR_prepare_military_infrastructure_tt
 			214 = {
 				add_building_construction = {
@@ -329,7 +330,7 @@ RUS_murmansk_crisis_category = {
 		}
 	}
 	WSR_expand_arkhangelsk = {
-		icon = GFX_decision_shipyard
+		icon = GFX_decision_generic_shipyard
 		visible = {
 			MPR = {
 				exists = yes
@@ -365,6 +366,7 @@ RUS_murmansk_crisis_category = {
 				}
 			}
 			add_to_variable = { MPRInterventionProgress = 15 }
+			clamp_variable = { var = MPRInterventionProgress max = 100 }
 		}
 		ai_will_do = {
 			factor = 100
@@ -409,6 +411,7 @@ RUS_murmansk_crisis_category = {
 			custom_effect_tooltip = WSR_arm_karelian_partisans_tt
 			hidden_effect = {
 				add_to_variable = { MPRInterventionProgress = 10 }
+				clamp_variable = { var = MPRInterventionProgress max = 100 }
 				215 = {
 					damage_building = {
 						type = rail_way
@@ -437,7 +440,7 @@ RUS_murmansk_crisis_category = {
 RUS_reunification_category = {
 
 	TYM_the_clock_ticks = {
-		icon = GFX_decision_clock
+		icon = GFX_decision_generic_clock
 		activation = { always = no }
 		available = { hidden_trigger = { always = no } }
 		is_good = yes
@@ -451,79 +454,9 @@ RUS_reunification_category = {
 		}
 	}
 
-	#kazakhstan_reunification = {
-	#	icon = GFX_decision_generic_kazakhstan
-	#	available = {
-	#		can_form_kazakhstan = yes
-	#		has_war = no
-	#	}
-	#	allowed = {
-	#		is_kazakh_nation = yes
-	#	}
-	#	ai_will_do = {
-	#		factor = 200
-	#	}
-	#	fire_only_once = yes
-	#	complete_effect = {
-	#		log = "[GetDateText]: [Root.GetName]: Decision kazakh_reunification"
-	#		save_global_event_target_as = RUS_kazakhstan_unifier
-	#		add_research_slot = 1
-	#		clr_country_flag = is_warlord
-	#		set_country_flag = RUS_regional_stage
-	#		generate_russia_state_gdp = yes
-	#		set_global_flag = KAZ_UNIFIED
-	#		custom_effect_tooltip = RUS_end_warlord_tt
-	#		hidden_effect = {
-	#			add_dynamic_modifier = { modifier = TNO_deficit_effects_modifier }
-	#			country_event = { id = RUS.3 days = 30 } #caffine flow
-	#			if = {
-	#				limit = {
-	#					has_idea = tno_income_taxation_not_applicable
-	#				}
-	#				swap_ideas = {
-	#					remove_idea = tno_income_taxation_not_applicable
-	#					add_idea = tno_income_taxation_flat_taxes
-	#				}
-	#			}
-	#		}
-	#		RUS_select_kazakh_cosmetic_tag = yes
-	#		RUS_select_kazakh_news_event = yes
-	#		if = {
-	#			limit = {
-	#				original_tag = AKT
-	#			}
-	#			add_manpower = 150000
-	#		}
-	#		if = {
-	#			limit = {
-	#				original_tag = NPL
-	#			}
-	#			country_event = RUS_kazakhstan.1
-	#		}
-	#		hidden_effect = {
-	#			for_each_scope_loop = {
-	#				array = global.russian_warlords
-	#				if = {
-	#					limit = {
-	#						NOT = { tag = ROOT }
-	#						exists = no
-	#						is_kazakh_nation = yes
-	#					}
-	#					every_state = {
-	#						limit = {
-	#							is_core_of = PREV
-	#						}
-	#						PREV = { remove_state_core = PREV }
-	#					}
-	#				}
-	#			}
-	#		}
-	#	}
-	#}
-
 	russian_total_reunification = {
 
-		icon = GFX_decision_generic_russia
+		icon = GFX_decision_diplo_russia
 
 		allowed = {
 			is_russian_unifier = yes
@@ -677,7 +610,7 @@ RUS_reunification_category = {
 							}
 						}
 						hidden_effect = {
-							country_event = { id = zhukovsuperregional.11 days = 4 random = 48 }
+							country_event = { id = zhukovsuperregional.11 days = 4 random_hours = 48 }
 						}
 					}
 					else_if = {
@@ -688,7 +621,7 @@ RUS_reunification_category = {
 							}
 						}
 						hidden_effect = {
-							country_event = { id = tukhasuperregional.6 days = 4 random = 48 }
+							country_event = { id = tukhasuperregional.6 days = 4 random_hours = 48 }
 						}
 					}
 				}
@@ -705,7 +638,7 @@ RUS_reunification_category = {
 						country_event = {
 							id = zhdanov.50
 							days = 7
-							random = 100
+							random_hours = 100
 						}
 					}
 				}
@@ -734,7 +667,7 @@ RUS_reunification_category = {
 						has_government = paternalism
 					}
 					hidden_effect = {
-						country_event = { id = SAM_zykov.9 days = 4 random = 48 }
+						country_event = { id = SAM_zykov.9 days = 4 random_hours = 48 }
 					}
 				}
 				if = {
@@ -742,7 +675,7 @@ RUS_reunification_category = {
 						has_government = despotism
 					}
 					hidden_effect = {
-						country_event = { id = SAM_bunyachenko.10 days = 4 random = 48 }
+						country_event = { id = SAM_bunyachenko.10 days = 4 random_hours = 48 }
 					}
 				}
 				if = {
@@ -750,7 +683,7 @@ RUS_reunification_category = {
 						has_government = national_socialism
 					}
 					hidden_effect = {
-						country_event = { id = SAM_oktan.9 days = 4 random = 48 }
+						country_event = { id = SAM_oktan.9 days = 4 random_hours = 48 }
 					}
 				}
 			}
@@ -780,7 +713,7 @@ RUS_reunification_category = {
 						has_government = paternalism
 					}
 					hidden_effect = {
-						country_event = { id = batov.11 days = 4 random = 48 }
+						country_event = { id = batov.11 days = 4 random_hours = 48 }
 					}
 				}
 				if = {
@@ -807,7 +740,7 @@ RUS_reunification_category = {
 						country_event = {
 							id = TYM.155
 							days = 2
-							random = 2
+							random_hours = 2
 						}
 					}
 				}
@@ -822,7 +755,7 @@ RUS_reunification_category = {
 						country_event = {
 							id = TYM.141
 							days = 2
-							random = 2
+							random_hours = 2
 						}
 					}
 				}
@@ -832,7 +765,7 @@ RUS_reunification_category = {
 					original_tag = OMS
 				}
 				hidden_effect = {
-					country_event = { id = omsksr.27 days = 4 random = 48 }
+					country_event = { id = omsksr.27 days = 4 random_hours = 48 }
 				}
 			}
 			if = {
@@ -844,7 +777,7 @@ RUS_reunification_category = {
 						has_government = paternalism
 					}
 					hidden_effect = {
-						country_event = { id = NOV_superregional.16 days = 4 random = 48 }
+						country_event = { id = NOV_superregional.16 days = 4 random_hours = 48 }
 					}
 				}
 				else_if = {
@@ -852,7 +785,7 @@ RUS_reunification_category = {
 						has_government = conservatism
 					}
 					hidden_effect = {
-						country_event = { id = NOV_superregional.17 days = 4 random = 48 }
+						country_event = { id = NOV_superregional.17 days = 4 random_hours = 48 }
 					}
 				}
 			}
@@ -865,7 +798,7 @@ RUS_reunification_category = {
 						has_government = socialist
 					}
 					hidden_effect = {
-						country_event = { id = SBA_LibSoc.38 days = 4 random = 48 }
+						country_event = { id = SBA_LibSoc.38 days = 4 random_hours = 48 }
 					}
 				}
 				if = {
@@ -873,7 +806,7 @@ RUS_reunification_category = {
 						has_government = despotism
 					}
 					hidden_effect = {
-						country_event = { id = SBA_Despotist.23 days = 4 random = 48 }
+						country_event = { id = SBA_Despotist.23 days = 4 random_hours = 48 }
 					}
 				}
 			}
@@ -882,7 +815,7 @@ RUS_reunification_category = {
 					original_tag = AMR
 				}
 				hidden_effect = {
-					country_event = { id = amur.100 days = 4 random = 48 }
+					country_event = { id = amur.100 days = 4 random_hours = 48 }
 				}
 			}
 			if = {
@@ -902,7 +835,7 @@ RUS_reunification_category = {
 						has_country_flag = BRY_sablin_leninist
 					}
 					hidden_effect = {
-						country_event = { id = BRY.61 days = 4 random = 48 }
+						country_event = { id = BRY.61 days = 4 random_hours = 48 }
 					}
 				}
 				if = {
@@ -910,7 +843,7 @@ RUS_reunification_category = {
 						has_country_flag = BRY_sablin_bukharinist
 					}
 					hidden_effect = {
-						country_event = { id = BRY.83 days = 4 random = 48 }
+						country_event = { id = BRY.83 days = 4 random_hours = 48 }
 					}
 				}
 			}
@@ -926,7 +859,7 @@ RUS_reunification_category = {
 						}
 					}
 					hidden_effect = {
-						country_event = { id = matkovsky.11 days = 4 random = 48 }
+						country_event = { id = matkovsky.11 days = 4 random_hours = 48 }
 					}
 				}
 				if = {
@@ -940,7 +873,7 @@ RUS_reunification_category = {
 						}
 					}
 					hidden_effect = {
-						country_event = { id = petlin.12 days = 4 random = 48 }
+						country_event = { id = petlin.12 days = 4 random_hours = 48 }
 					}
 				}
 				if = {
@@ -951,7 +884,7 @@ RUS_reunification_category = {
 						}
 					}
 					hidden_effect = {
-						country_event = { id = wa_superregional.10 days = 14 random = 48 }
+						country_event = { id = wa_superregional.10 days = 14 random_hours = 48 }
 						country_event = { id = MAG_WA_journalist.7 days = 7 } #Journalist chain end
 						USA = { country_event = { id = MAG_WA_journalist.7 days = 7 } } #Journalist chain end
 					}
@@ -974,7 +907,7 @@ RUS_reunification_category = {
 
 	russian_reunification = {
 
-		icon = GFX_decision_generic_russia_superregional
+		icon = GFX_decision_diplo_russia_superregional
 
 		allowed = {
 			OR = {
@@ -1019,11 +952,10 @@ RUS_reunification_category = {
 			save_global_event_target_as = RUS_russian_unifier
 			set_country_flag = RUS_RUSSIA_UNIFIED
 			add_stability = 0.20
-			#set_country_flag = { flag = RUS_RACE_TO_KAZAKHSTAN_LOCKED days = 120 }
 			navy_experience = 20
 			hidden_effect = {
 				add_manpower = 250000
-				country_event = { id = RUS_wonder.0 days = 15}
+				country_event = { id = RUS_wonder.0 days = 15 }
 			}
 			if = {
 				limit = {
@@ -1067,7 +999,7 @@ RUS_reunification_category = {
 					country_event = {
 						id = ultravisionary_flavor.22
 						days = 100
-						random = 500
+						random_hours = 500
 					}
 				}
 			}
@@ -1122,7 +1054,7 @@ RUS_reunification_category = {
 
 	siberian_reunification = {
 
-		icon = GFX_decision_generic_siberia_superregional
+		icon = GFX_decision_diplo_siberia_superregional
 
 		allowed = {
 			OR = {
@@ -1161,7 +1093,6 @@ RUS_reunification_category = {
 			save_global_event_target_as = RUS_siberian_unifier
 			set_country_flag = RUS_SIBERIA_UNIFIED
 			add_stability = 0.20
-			#set_country_flag = { flag = RUS_RACE_TO_KAZAKHSTAN_LOCKED days = 120 }
 			navy_experience = 20
 			if = {
 				limit = {
@@ -1293,7 +1224,7 @@ RUS_reunification_category = {
 	}
 
 	west_russia_reunification = {
-		icon = GFX_decision_generic_western_russia
+		icon = GFX_decision_diplo_western_russia
 		available = {
 			can_form_west_russia = yes
 			has_war = no
@@ -1452,6 +1383,20 @@ RUS_reunification_category = {
 					days = 5
 				}
 			}
+			if = { # Multiple charcters with same name weirdness
+				limit = {
+					original_tag = KOM
+					has_country_leader = {
+						character = KOM_Andrei_Zhdanov
+						ruling_only = yes
+					}
+					NOT = { has_character = WRS_Dmitry_Ustinov }
+				}
+				WRS = {
+					remove_unit_leader_role = WRS_Dmitry_Ustinov 
+					WRS_Dmitry_Ustinov = { set_nationality = KOM }
+				}
+			}
 			if = {
 				limit = {
 					AND = {
@@ -1561,15 +1506,6 @@ RUS_reunification_category = {
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision RUS_intervene_in_kazakhstan"
-			every_country = {
-				limit = {
-					is_kazakh_nation = yes
-				}
-				country_event = {
-					id = RUS_race_to_kazakhstan.18
-					hours = 1
-				}
-			}
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision RUS_intervene_in_kazakhstan remove"
@@ -1588,7 +1524,7 @@ RUS_reunification_category = {
 	}
 
 	integrate_south_urals = {
-		icon = GFX_decision_generic_ural_four
+		icon = GFX_decision_diplo_south_urals
 		allowed = {
 			is_russian_unifier = yes
 		}
@@ -1621,7 +1557,7 @@ RUS_reunification_category = {
 	}
 
 	west_russia_launch_race_to_urals = {
-		icon = GFX_decision_generic_ural_four
+		icon = GFX_decision_diplo_south_urals
 		allowed = {
 			is_central_russian_nation = yes
 		}
@@ -1659,7 +1595,7 @@ RUS_reunification_category = {
 	}
 
 	west_russia_war_with_wsb = {
-		icon = GFX_decision_generic_western_siberia
+		icon = GFX_decision_diplo_western_siberia
 		allowed = {
 			is_central_russian_nation = yes
 		}
@@ -1743,7 +1679,7 @@ RUS_reunification_category = {
 	}
 
 	west_russia_diplo_with_wsb = {
-		icon = GFX_decision_generic_western_siberia
+		icon = GFX_decision_diplo_western_siberia
 		allowed = {
 			is_central_russian_nation = yes
 		}
@@ -1797,7 +1733,7 @@ RUS_reunification_category = {
 	}
 
 	west_siberia_reunification = {
-		icon = GFX_decision_generic_western_siberia
+		icon = GFX_decision_diplo_western_siberia
 		available = {
 			can_form_west_siberia = yes
 			has_war = no
@@ -1931,7 +1867,7 @@ RUS_reunification_category = {
 	}
 
 	west_siberia_launch_race_to_urals = {
-		icon = GFX_decision_generic_ural_four
+		icon = GFX_decision_diplo_south_urals
 		allowed = {
 			is_west_siberian_nation = yes
 		}
@@ -1939,8 +1875,10 @@ RUS_reunification_category = {
 		visible = {
 			has_country_flag = RUS_regional_stage
 			NOT = {
-				original_tag = OMS
-				has_global_flag = OMS_BatovInsurrectionSuccess
+				AND = {
+					original_tag = OMS
+					has_global_flag = OMS_BatovInsurrectionSuccess
+				}
 				has_country_flag = BEGUN_SOUTHERN_URALS_CRISIS
 			}
 			OR = {
@@ -1970,7 +1908,7 @@ RUS_reunification_category = {
 	}
 
 	west_siberia_war_with_wsr = {
-		icon = GFX_decision_generic_western_russia
+		icon = GFX_decision_diplo_western_russia
 		allowed = {
 			is_west_siberian_nation = yes
 		}
@@ -2063,7 +2001,7 @@ RUS_reunification_category = {
 	}
 
 	west_siberia_diplo_with_wsr = {
-		icon = GFX_decision_generic_western_russia
+		icon = GFX_decision_diplo_western_russia
 		allowed = {
 			is_west_siberian_nation = yes
 		}
@@ -2117,7 +2055,7 @@ RUS_reunification_category = {
 	}
 
 	central_siberia_reunification = {
-		icon = GFX_decision_generic_central_siberia
+		icon = GFX_decision_diplo_central_siberia
 		available = {
 			can_form_central_siberia = yes
 			has_war = no
@@ -2182,7 +2120,7 @@ RUS_reunification_category = {
 						}
 						check_variable = { SIB_worker_tension > 10 }
 					}
-					country_event = { id = kostin.1 days = 12 random = 50 }
+					country_event = { id = kostin.1 days = 12 random_hours = 50 }
 				}
 			}
 			if = {
@@ -2196,6 +2134,8 @@ RUS_reunification_category = {
 					TOM_idea_basic_army
 					TOM_idea_Disorganized_economy
 					TOM_idea_political_crisis
+					TOM_idea_moderate_idealism
+					TOM_idea_some_political_outsiders
 				}
 				hidden_effect = {
 					country_event = { id = TOM.105 days = 4 }
@@ -2230,7 +2170,7 @@ RUS_reunification_category = {
 	}
 
 	central_siberia_war_with_fst = {
-		icon = GFX_decision_generic_far_east
+		icon = GFX_decision_diplo_far_east
 		allowed = {
 			is_central_siberian_nation = yes
 		}
@@ -2314,7 +2254,7 @@ RUS_reunification_category = {
 	}
 
 	central_siberia_diplo_with_fst = {
-		icon = GFX_decision_generic_far_east
+		icon = GFX_decision_diplo_far_east
 		allowed = {
 			is_central_siberian_nation = yes
 		}
@@ -2366,7 +2306,7 @@ RUS_reunification_category = {
 	}
 
 	far_east_reunification = {
-		icon = GFX_decision_generic_far_east
+		icon = GFX_decision_diplo_far_east
 		available = {
 			can_form_far_east = yes
 			has_war = no
@@ -2441,7 +2381,7 @@ RUS_reunification_category = {
 				}
 				remove_ideas = RUS_IRK_repop_program_1
 				remove_ideas = RUS_AMR_repop_program_1
-				set_variable = {RUS_FE_repop_monthly_pop = 0.05}
+				set_variable = { RUS_FE_repop_monthly_pop = 0.05 }
 				if = {
 					limit = {
 						tag = IRK
@@ -2455,6 +2395,18 @@ RUS_reunification_category = {
 					}
 					add_dynamic_modifier = { modifier = RUS_FE_repop_program_AMR }
 					add_dynamic_modifier = { modifier = RUS_FE_immigration_program_AMR }
+				}
+				if = {
+					limit = {
+						NOT = { tag = AMR }
+						is_ai = yes
+					}
+					MAN = {
+						country_event = {
+							id = MAN_skeleton.28
+							days = 60
+						}
+					}
 				}
 			}
 
@@ -2519,7 +2471,7 @@ RUS_reunification_category = {
 				country_event = {
 					id = RUS_collapse.4
 					days = 300
-					random = 100
+					random_hours = 100
 				}
 			}
 
@@ -2554,7 +2506,7 @@ RUS_reunification_category = {
 				country_event = {
 					id = manul.3
 					days = 545
-					random = 100
+					random_hours = 100
 				}
 			}
 			clear_variable = loot_amount
@@ -2562,7 +2514,7 @@ RUS_reunification_category = {
 	}
 
 	far_east_war_with_csb = {
-		icon = GFX_decision_generic_central_siberia
+		icon = GFX_decision_diplo_central_siberia
 		allowed = {
 			is_far_eastern_nation = yes
 		}
@@ -2646,7 +2598,7 @@ RUS_reunification_category = {
 	}
 
 	far_east_diplo_with_csb = {
-		icon = GFX_decision_generic_central_siberia
+		icon = GFX_decision_diplo_central_siberia
 		allowed = {
 			is_far_eastern_nation = yes
 		}
@@ -2698,7 +2650,7 @@ RUS_reunification_category = {
 	}
 
 	russia_war_with_siberia = {
-		icon = GFX_decision_generic_siberia_superregional
+		icon = GFX_decision_diplo_siberia_superregional
 		allowed = {
 			OR = {
 				is_central_russian_nation = yes
@@ -2802,7 +2754,7 @@ RUS_reunification_category = {
 	}
 
 	russia_diplo_with_siberia = {
-		icon = GFX_decision_generic_siberia_superregional
+		icon = GFX_decision_diplo_siberia_superregional
 		allowed = {
 			OR = {
 				is_central_russian_nation = yes
@@ -2853,7 +2805,7 @@ RUS_reunification_category = {
 	}
 
 	siberia_war_with_russia = {
-		icon = GFX_decision_generic_russia_superregional
+		icon = GFX_decision_diplo_russia_superregional
 		allowed = {
 			OR = {
 				is_central_siberian_nation = yes
@@ -2958,7 +2910,7 @@ RUS_reunification_category = {
 	}
 
 	siberia_diplo_with_russia = {
-		icon = GFX_decision_generic_russia_superregional
+		icon = GFX_decision_diplo_russia_superregional
 		allowed = {
 			OR = {
 				is_central_siberian_nation = yes
@@ -3009,7 +2961,7 @@ RUS_reunification_category = {
 	}
 
 	southern_urals_reunification = {
-		icon = GFX_decision_generic_ural_four
+		icon = GFX_decision_diplo_south_urals
 		available = {
 			can_form_southern_urals = yes
 			has_war = no
@@ -4654,7 +4606,7 @@ WSR_war_category = {
 
 WSR_peace_category = {
 	WSR_begin_final_unification_talks = {
-		icon = GFX_decision_generic_russia_superregional
+		icon = GFX_decision_diplo_russia_superregional
 		cancel_trigger = {
 			WSB = {
 				exists = no
@@ -4942,7 +4894,7 @@ WSR_peace_category = {
 		}
 	}
 	WSR_offer_diplomatic_concession = {
-		icon = GFX_decision_document_building
+		icon = GFX_decision_generic_document_building
 		cancel_trigger = {
 			WSB = {
 				exists = no
@@ -4973,7 +4925,7 @@ WSR_peace_category = {
 		}
 	}
 	WSR_increase_prestige = {
-		icon = GFX_decision_humanitarian_aid_increase
+		icon = GFX_decision_generic_humanitarian_aid_increase
 		available = {
 		}
 		cost = 25
@@ -5294,7 +5246,7 @@ WSB_war_category = {
 		}
 	}
 	WSB_convert_industrial_centers = {
-		icon = GFX_decision_factory_generic_blue
+		icon = GFX_decision_generic_factory_blue
 		visible = {
 
 		}
@@ -5443,7 +5395,7 @@ WSB_war_category = {
 
 WSB_peace_category = {
 	WSB_begin_final_unification_talks = {
-		icon = GFX_decision_generic_russia_superregional
+		icon = GFX_decision_diplo_russia_superregional
 		cancel_trigger = {
 			WSR = {
 				exists = no
@@ -5602,7 +5554,7 @@ WSB_peace_category = {
 		}
 	}
 	WSB_offer_resource_deals = {
-		icon = GFX_decision_oil_extraction
+		icon = GFX_decision_generic_oil_extraction
 		cancel_trigger = {
 			WSR = {
 				exists = no
@@ -5732,7 +5684,7 @@ WSB_peace_category = {
 		}
 	}
 	WSB_offer_diplomatic_concession = {
-		icon = GFX_decision_document_building
+		icon = GFX_decision_generic_document_building
 		cancel_trigger = {
 			WSR = {
 				exists = no
@@ -5763,7 +5715,7 @@ WSB_peace_category = {
 		}
 	}
 	WSB_increase_prestige = {
-		icon = GFX_decision_humanitarian_aid_increase
+		icon = GFX_decision_generic_humanitarian_aid_increase
 		available = {
 		}
 		cost = 25
@@ -6149,7 +6101,7 @@ CSB_war_category = {
 		}
 	}
 	CSB_prepare_industrial_centers = {
-		icon = GFX_decision_factory_generic_blue
+		icon = GFX_decision_generic_factory_blue
 		visible = {
 		}
 		available = {
@@ -6331,7 +6283,7 @@ CSB_war_category = {
 
 CSB_peace_category = {
 	CSB_begin_final_unification_talks = {
-		icon = GFX_decision_generic_siberia_superregional
+		icon = GFX_decision_diplo_siberia_superregional
 		cancel_trigger = {
 			FST = {
 				exists = no
@@ -6489,7 +6441,7 @@ CSB_peace_category = {
 		}
 	}
 	CSB_offer_industrial_aid = {
-		icon = GFX_decision_factory_generic_blue
+		icon = GFX_decision_generic_factory_blue
 		cancel_trigger = {
 			FST = {
 				exists = no
@@ -6619,7 +6571,7 @@ CSB_peace_category = {
 		}
 	}
 	CSB_offer_diplomatic_concession = {
-		icon = GFX_decision_document_building
+		icon = GFX_decision_generic_document_building
 		cancel_trigger = {
 			FST = {
 				exists = no
@@ -6650,7 +6602,7 @@ CSB_peace_category = {
 		}
 	}
 	CSB_increase_prestige = {
-		icon = GFX_decision_humanitarian_aid_increase
+		icon = GFX_decision_generic_humanitarian_aid_increase
 		available = {
 		}
 		cost = 25
@@ -6964,7 +6916,7 @@ FST_war_category = {
 		}
 	}
 	FST_convert_industrial_centers = {
-		icon = GFX_decision_factory_generic_blue
+		icon = GFX_decision_generic_factory_blue
 		visible = {
 		}
 		available = {
@@ -7108,7 +7060,7 @@ FST_war_category = {
 
 FST_peace_category = {
 	FST_begin_final_unification_talks = {
-		icon = GFX_decision_generic_siberia_superregional
+		icon = GFX_decision_diplo_siberia_superregional
 		cancel_trigger = {
 			CSB = {
 				exists = no
@@ -7396,7 +7348,7 @@ FST_peace_category = {
 		}
 	}
 	FST_offer_diplomatic_concession = {
-		icon = GFX_decision_document_building
+		icon = GFX_decision_generic_document_building
 		cancel_trigger = {
 			CSB = {
 				exists = no
@@ -7427,7 +7379,7 @@ FST_peace_category = {
 		}
 	}
 	FST_increase_prestige = {
-		icon = GFX_decision_humanitarian_aid_increase
+		icon = GFX_decision_generic_humanitarian_aid_increase
 		available = {
 		}
 		cost = 25
@@ -7863,7 +7815,7 @@ RWS_war_category = {
 		}
 	}
 	RWS_prepare_industrial_centers = {
-		icon = GFX_decision_factory_generic_blue
+		icon = GFX_decision_generic_factory_blue
 		visible = {
 		}
 		available = {
@@ -8061,7 +8013,7 @@ RWS_war_category = {
 
 RWS_peace_category = {
 	RWS_begin_final_unification_talks = {
-		icon = GFX_decision_generic_russia
+		icon = GFX_decision_diplo_russia
 		cancel_trigger = {
 			SIB = {
 				exists = no
@@ -8347,7 +8299,7 @@ RWS_peace_category = {
 		}
 	}
 	RWS_offer_diplomatic_concession = {
-		icon = GFX_decision_document_building
+		icon = GFX_decision_generic_document_building
 		cancel_trigger = {
 			SIB = {
 				exists = no
@@ -8378,7 +8330,7 @@ RWS_peace_category = {
 		}
 	}
 	RWS_increase_prestige = {
-		icon = GFX_decision_humanitarian_aid_increase
+		icon = GFX_decision_generic_humanitarian_aid_increase
 		available = {
 		}
 		cost = 25
@@ -8776,7 +8728,7 @@ SIB_war_category = {
 		}
 	}
 	SIB_prepare_industrial_centers = {
-		icon = GFX_decision_factory_generic_blue
+		icon = GFX_decision_generic_factory_blue
 		visible = {
 		}
 		available = {
@@ -8952,7 +8904,7 @@ SIB_war_category = {
 
 SIB_peace_category = {
 	SIB_begin_final_unification_talks = {
-		icon = GFX_decision_generic_russia
+		icon = GFX_decision_diplo_russia
 		cancel_trigger = {
 			RWS = {
 				exists = no
@@ -9238,7 +9190,7 @@ SIB_peace_category = {
 		}
 	}
 	SIB_offer_diplomatic_concession = {
-		icon = GFX_decision_document_building
+		icon = GFX_decision_generic_document_building
 		cancel_trigger = {
 			RWS = {
 				exists = no
@@ -9269,7 +9221,7 @@ SIB_peace_category = {
 		}
 	}
 	SIB_increase_prestige = {
-		icon = GFX_decision_humanitarian_aid_increase
+		icon = GFX_decision_generic_humanitarian_aid_increase
 		available = {
 		}
 		cost = 25

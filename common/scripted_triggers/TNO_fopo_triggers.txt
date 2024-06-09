@@ -438,10 +438,6 @@ TNO_fopo_saw_selected_speer = {
 	TNO_fopo_saw_selected = yes
 	has_global_flag = german_civil_war_speervic
 }
-TNO_fopo_saw_selected_goring = {
-	TNO_fopo_saw_selected = yes
-	has_global_flag = german_civil_war_goeringvic
-}
 TNO_fopo_saw_homefront_selected = {
 	TNO_fopo_saw_selected = yes
 	check_variable = { TNO_fopo_selected_front = 2 }
@@ -512,17 +508,6 @@ TNO_fopo_baathism_support_selected = {
 	}
 }
 
-TNO_fopo_srilanka_selected = {
-	always = no
-	# OR = {
-	# 	check_variable = { selected_conflict_id = token: }
-	# 	AND = {
-	# 		is_in_array = { TNO_active_conflicts = token: }
-	# 		is_ai = yes
-	# 	}
-	# }
-}
-
 TNO_fopo_trinidad_bpr_selected = {
 	OR = {
 		check_variable = { selected_conflict_id = token:GC_TrinidadRev }
@@ -563,31 +548,11 @@ TNO_fopo_philippines_selected = {
 	}
 }
 
-TNO_fopo_malayan_reconstruction_selected = {
-	OR = {
-		check_variable = { selected_conflict_id = token:GC_MalayanReconsturction }
-		AND = {
-			is_in_array = { TNO_active_conflicts = token:GC_MalayanReconsturction }
-			is_ai = yes
-		}
-	}
-}
-
 TNO_fopo_philippines_war_selected = {
 	OR = {
 		check_variable = { selected_conflict_id = token:GC_PhilippinesWar }
 		AND = {
 			is_in_array = { TNO_active_conflicts = token:GC_PhilippinesWar }
-			is_ai = yes
-		}
-	}
-}
-
-TNO_fopo_mengjiang_conflict_selected = {
-	OR = {
-		check_variable = { selected_conflict_id = token:GC_Mengjiang }
-		AND = {
-			is_in_array = { TNO_active_conflicts = token:GC_Mengjiang }
 			is_ai = yes
 		}
 	}
@@ -760,10 +725,6 @@ TNO_fopo_saw_withdrawal_selected_bormann = {
 TNO_fopo_saw_withdrawal_selected_speer = {
 	TNO_fopo_saw_withdrawal_selected = yes
 	has_global_flag = german_civil_war_speervic
-}
-TNO_fopo_saw_withdrawal_selected_goring = {
-	TNO_fopo_saw_withdrawal_selected = yes
-	has_global_flag = german_civil_war_goeringvic
 }
 
 ## Conflict ##
@@ -973,6 +934,10 @@ TNO_China_has_conflict = {
 		YUN = { has_war = yes }
 		CHI = { has_war_with = JAP }
 		MEN = { has_war = yes }
+		MAN = { has_war = yes }
+		MJP = { has_war = yes }
+		PFF = { has_war = yes }
+		HAN = { has_war = yes }
 	}
 }
 
@@ -1450,7 +1415,7 @@ CHL_argentina_friendly_government_temp = { # Temporary until IE release, ported 
 
 # African Mandates
 TNO_mandates_can_support_COG = {
-	COG = { has_government = paternalism }
+	COG = { has_country_leader = { character = COG_USA_Creighton_Abrams ruling_only = yes } }
 	NOT = {
 		has_global_flag = CAR_FORMED
 		has_country_flag = Mandates_Central_Africa_collapsed
@@ -1459,7 +1424,7 @@ TNO_mandates_can_support_COG = {
 }
 
 TNO_mandates_can_support_ANG = {
-	ANG = { has_government = paternalism }
+	ANG = { has_country_leader = { character = ANG_USA_John_D_Lavelle ruling_only = yes } }
 	NOT = {
 		has_global_flag = CAR_FORMED
 		has_country_flag = Mandates_Angola_collapsed
@@ -1468,7 +1433,7 @@ TNO_mandates_can_support_ANG = {
 }
 
 TNO_mandates_can_support_MZB = {
-	MZB = { has_government = paternalism }
+	MZB = { has_country_leader = { character = MZB_USA_William_Westmoreland ruling_only = yes } }
 	NOT = {
 		has_global_flag = CAR_FORMED
 		has_country_flag = Mandates_East_Africa_collapsed
@@ -1477,7 +1442,7 @@ TNO_mandates_can_support_MZB = {
 }
 
 TNO_mandates_can_support_USC = {
-	USC = { has_government = paternalism }
+	USC = { has_country_leader = { character = MZB_USA_William_Westmoreland ruling_only = yes } }
 	has_global_flag = CAR_FORMED
 }
 
@@ -1659,7 +1624,7 @@ CC_very_severe_concession_active = {
 	}
 }
 
-###TSAR AND SOVIETS THING
+###TAS STUFF
 TNO_fopo_far_eastern_revolt_selected = {
 	OR = {
 		check_variable = { selected_conflict_id = token:GC_FarEasternRevolt }

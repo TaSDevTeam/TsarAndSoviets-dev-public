@@ -9,11 +9,9 @@ TNO_is_anarchy_visible = {
 		TNO_anarchy_DRL_Orsk = yes
 		TNO_anarchy_UZB = yes
 		TNO_anarchy_MCW_Dissapearance = yes
-		TNO_anarchy_MAR_pepel = yes
-		TNO_paskhalka_dev = yes
-		TNO_anarchy_ZLB_antikhrist = yes
 		TNO_anarchy_ZZZ_remer = yes
 		TNO_anarchy_Manchurian_Catastrophe = yes
+		original_tag = MDM
 	}
 }
 
@@ -71,27 +69,7 @@ TNO_anarchy_MCW_Dissapearance = {
 	original_tag = MCW
 	has_cosmetic_tag = MCW_Dissapearance
 }
-TNO_anarchy_MAR_pepel = {
-	original_tag = MAR
-	has_country_leader = {
-		name = "Pizdec"
-		ruling_only = yes
-	}
-}
-TNO_paskhalka_dev = {
-	original_tag = SSW
-	has_country_leader = {	
-		name = "Paskhalka"
-		ruling_only = yes
-	}
-}
-TNO_anarchy_ZLB_antikhrist = {
-	original_tag = ZLB
-	has_country_leader = {
-		character = ZLB_Pizdec
-		ruling_only = yes
-	}
-}
+
 TNO_anarchy_ZZZ_remer = {
 	original_tag = GWF
 	has_country_leader = {

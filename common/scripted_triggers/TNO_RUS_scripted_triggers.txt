@@ -10,7 +10,7 @@ is_russian_unifier = {
 		original_tag = KOM
 		original_tag = PRM
 		original_tag = MAR
-
+		
 		original_tag = OMS
 		original_tag = TYM
 		original_tag = SVR
@@ -25,17 +25,7 @@ is_russian_unifier = {
 		original_tag = MAG
 		original_tag = BRY
 		original_tag = IRK
-	}
-}
-
-is_kazakh_unifier = {
-	OR = {
-		original_tag = DER
-		original_tag = KAZ
-		original_tag = KOK
-		original_tag = PAV
-		original_tag = AKT
-		original_tag = ARL
+		original_tag = OMO #For Ferus
 	}
 }
 
@@ -46,14 +36,13 @@ is_central_russian_nation = {
 		original_tag = KOM
 		original_tag = SAM
 		original_tag = GOR
-		original_tag = KST
 		original_tag = VOL
 		original_tag = VYT
-		original_tag = MAR
 		original_tag = TAR
 		original_tag = PRM
 		original_tag = GAY
 		original_tag = BKR
+		original_tag = MAR
 	}
 }
 
@@ -81,6 +70,7 @@ is_central_siberian_nation = {
 		original_tag = PRC
 		original_tag = KRS
 		original_tag = KAL
+		original_tag = TAN
 	}
 }
 
@@ -89,7 +79,6 @@ is_far_eastern_nation = {
 		original_tag = MAG
 		original_tag = KMC
 		original_tag = IRK
-		original_tag = ALD
 		original_tag = BRY
 		original_tag = CHT
 		original_tag = AMR
@@ -128,22 +117,14 @@ is_wasteland = {
 				}
 			}
 		}
-		original_tag = CHK
-		original_tag = KOL
 		original_tag = VIL
-		original_tag = CHR
 	}
 }
 
 is_kazakh_nation = {
 	OR = {
-		original_tag = AKT
-		original_tag = ARL
-		original_tag = DER
-		original_tag = KOK
 		original_tag = KAZ
-		original_tag = PAV
-		original_tag = NPL
+		original_tag = KZR
 
 		original_tag = TMK
 		original_tag = TML
@@ -422,6 +403,7 @@ is_west_russian_state = {
 		state = 868
 		state = 869
 		state = 870
+		state = 1887
 	}
 }
 
@@ -504,6 +486,13 @@ is_kazakh_state = {
 		state = 588
 		state = 589
 		state = 590
+		state = 1806
+		state = 1805
+		state = 1804
+		state = 1803
+		state = 1802
+		state = 1807
+		state = 1808
 	}
 }
 
@@ -731,12 +720,9 @@ RWS_SIB_is_compatible = {
 			AND = {
 				RWS = {
 					original_tag = KOM
-					AND = {
-						has_government = despotism
-						has_country_leader = {
-							character = KOM_Igor_Shafarevich
-							ruling_only = yes
-						}
+					has_country_leader = {
+						character = KOM_Igor_Shafarevich
+						ruling_only = yes
 					}
 				}
 				OR = {
@@ -796,7 +782,7 @@ RWS_SIB_is_compatible = {
 					OR = {
 						has_government = liberalism
 						has_government = progressivism
-						has_government = paternalism
+						has_government = liberal_conservatism
 					}
 				}
 				OR = {
@@ -1105,47 +1091,6 @@ RWS_SIB_is_compatible = {
 	else = { always = no }
 }
 
-RUS_KAZ_is_compatible = {
-	custom_trigger_tooltip = {
-		tooltip = RUS_KAZ_is_compatible_tooltip
-		if = {
-			limit = {
-				OR = {
-					has_government = progressivism
-					has_government = liberalism
-					has_government = conservatism
-					has_government = paternalism
-				}
-			}
-			OR = {
-				AND = {
-					has_global_flag = RUS_shattered_kazakhstan
-					country_exists = KAZ
-				}
-				KZK = { tag = PAV }
-			}
-		}
-		else_if = {
-			limit = {
-				OR = {
-					has_government = socialist
-					has_government = communist
-				}
-			}
-			OR = {
-				AND = {
-					has_global_flag = RUS_shattered_kazakhstan
-					country_exists = NPL
-				}
-				KZK = { tag = KAZ }
-			}
-		}
-		else = {
-			always = no
-		}
-	}
-}
-
 is_russian_state = {
 	OR = {
 		state = 213
@@ -1251,16 +1196,25 @@ KOM_has_left_government = {
 
 KOM_has_right_government = {
 	OR = {
-		has_government = fascism
-		has_government = national_socialism
-		has_government = ultranationalism
-		has_government = conservatism
-		AND = {
-			has_government = despotism
-			has_country_leader = {
-				character = KOM_Igor_Shafarevich
-				ruling_only = yes
-			}
+		has_country_leader = {
+			character = KOM_Passionariyy_Organization
+			ruling_only = yes
+		}
+		has_country_leader = {
+			character = KOM_Igor_Shafarevich
+			ruling_only = yes
+		}
+		has_country_leader = {
+			character = KOM_Lev_Gumilyov
+			ruling_only = yes
+		}
+		has_country_leader = {
+			character = KOM_Ivan_Serov
+			ruling_only = yes
+		}
+		has_country_leader = {
+			character = KOM_Sergey_Taboritsky
+			ruling_only = yes
 		}
 	}
 }
@@ -1282,12 +1236,10 @@ KOM_has_center_government = {
 
 KOM_zhdanov_favors_enabled = {
 	NOT = {
-		OR = {
-			check_variable = { KOM_leader_status^1 = 0 }
-			check_variable = { KOM_leader_status^1 = 2 }
-			check_variable = { KOM_leader_status^1 = 1 }
-			has_country_flag = KOM_VOZNESENSKY_CUT_TIES
-		}
+		check_variable = { KOM_leader_status^1 = 0 }
+		check_variable = { KOM_leader_status^1 = 2 }
+		check_variable = { KOM_leader_status^1 = 1 }
+		has_country_flag = KOM_VOZNESENSKY_CUT_TIES
 	}
 	has_country_leader = {
 		character = KOM_Nikolai_Voznesensky
@@ -1339,32 +1291,62 @@ RUS_is_CIA_sponsored = { #sanity check for CIA ops
 	if = {
 		limit = { tag = WSR }
 		exists = yes
-		USA = { has_country_flag = RUS_CIA_backing_WSR }
+		USA = {
+			NOT = {
+				has_country_flag = RUS_CIA_backing_WSB
+				has_country_flag = RUS_CIA_not_backing_WSRvsWSB
+			}
+		}
 	}
 	else_if = {
 		limit = { tag = WSB }
 		exists = yes
-		USA = { has_country_flag = RUS_CIA_backing_WSB }
+		USA = {
+			NOT = {
+				has_country_flag = RUS_CIA_backing_WSR
+				has_country_flag = RUS_CIA_not_backing_WSRvsWSB
+			}
+		}
 	}
 	else_if = {
 		limit = { tag = CSB }
 		exists = yes
-		USA = { has_country_flag = RUS_CIA_backing_CSB }
+		USA = {
+			NOT = {
+				has_country_flag = RUS_CIA_backing_FST
+				has_country_flag = RUS_CIA_not_backing_CSBvsFST
+			}
+		}
 	}
 	else_if = {
 		limit = { tag = FST }
 		exists = yes
-		USA = { has_country_flag = RUS_CIA_backing_FST }
+		USA = {
+			NOT = {
+				has_country_flag = RUS_CIA_backing_CSB
+				has_country_flag = RUS_CIA_not_backing_CSBvsFST
+			}
+		}
 	}
 	else_if = {
 		limit = { tag = RWS }
 		exists = yes
-		USA = { has_country_flag = RUS_CIA_backing_RWS }
+		USA = {
+			NOT = {
+				has_country_flag = RUS_CIA_backing_SIB
+				has_country_flag = RUS_CIA_not_backing_RWSvsSIB
+			}
+		}
 	}
 	else_if = {
 		limit = { tag = SIB }
 		exists = yes
-		USA = { has_country_flag = RUS_CIA_backing_SIB }
+		USA = {
+			NOT = {
+				has_country_flag = RUS_CIA_backing_RWS
+				has_country_flag = RUS_CIA_not_backing_RWSvsSIB
+			}
+		}
 	}
 }
 
@@ -1394,14 +1376,14 @@ RUS_can_diplomatize_with_finland_or_whatever = {
 		AND = {
 			original_tag = KOM
 			OR = {
+				has_government = communist
+				has_government = socialist
+				has_government = progressivism
+				has_government = liberalism
+				has_government = liberal_conservatism
 				has_government = conservatism
 				has_government = paternalism
-				has_government = liberalism
-				has_government = progressivism
-				has_government = socialist
-				has_government = communist
 				has_government = despotism
-				has_government = national_socialism
 			}
 		}
 		original_tag = VYT
