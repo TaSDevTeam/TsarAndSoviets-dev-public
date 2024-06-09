@@ -206,7 +206,7 @@ ideas = {
 				always = yes
 			}
 			cancel = { has_country_flag = RUS_cancel_all_ideas }
-			picture = VYT_Officer_Infighting
+			picture = VYT_officer_infighting
 			
 			removal_cost = -1
 			
@@ -231,7 +231,7 @@ ideas = {
 				always = yes
 			}
 			cancel = { has_country_flag = RUS_cancel_all_ideas }
-			picture = VYT_Officer_Infighting
+			picture = VYT_officer_infighting
 			
 			removal_cost = -1
 			
@@ -782,7 +782,7 @@ ideas = {
 			}
 			cancel = { has_country_flag = RUS_cancel_all_ideas }		
 			removal_cost = -1
-			picture = NIK_kazan_military_academy
+			picture = RUS_kazan_military_academy
 			modifier = {
 				training_time_factor = -0.1
 				army_org = 10
@@ -944,7 +944,7 @@ ideas = {
 			}
 			traits = {
 				foreign_minister
-				fascism
+				#fascism
 				for_iron_fisted_brute
 			}
 			cancel_if_invalid = no
@@ -964,7 +964,7 @@ ideas = {
 			}
 			traits = {
 				economy_minister
-				fascism
+				#fascism
 				eco_mixed_economy
 			}
 			cancel_if_invalid = no
@@ -1615,7 +1615,7 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MLY_Dismal_Infrastructure
+			picture = generic_devastated_building	
 			modifier = {
 				conscription_factor = -0.4
 				army_org_factor = -0.25
@@ -1751,7 +1751,7 @@ ideas = {
 			on_remove = { remove_dynamic_modifier = { modifier = MAR_prestol_insurgency_dynomod } }
 			cancel = { has_country_flag = RUS_cancel_all_ideas }
 			removal_cost = -1
-			picture = CZE_mysterious_insurgency
+			picture = generic_mysterious_insurgency
 		}
 	}
 	country = {
