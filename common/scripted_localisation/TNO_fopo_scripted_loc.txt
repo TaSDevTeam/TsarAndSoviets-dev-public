@@ -180,11 +180,7 @@ defined_text = {
 		trigger = { check_variable = { selected_conflict_id = token:GC_JamaicanCrisis } }
 		localization_key = "TNO_Jamaican_Crisis_GUI"
 	}
-	# text = {
-	# 	trigger = { check_variable = { selected_conflict_id = token: } }
-	# 	localization_key = "TNO_SriLanka_Crisis_GUI"
-	# }
-	text = {
+		text = {
 		trigger = { check_variable = { selected_conflict_id = token:GC_TrinidadRev } }
 		localization_key = "TNO_Trinidad_BPR_GUI"
 	}
@@ -192,11 +188,7 @@ defined_text = {
 		trigger = { check_variable = { selected_conflict_id = token:GC_Turkestan } }
 		localization_key = "TNO_CA_Conference_Unification_1_GUI"
 	}
-	text = {
-		trigger = { check_variable = { selected_conflict_id = token:GC_MalayanReconsturction } }
-		localization_key = "TNO_Malayan_Reconstruction_GUI"
-	}
-	text = {
+		text = {
 		trigger = { check_variable = { selected_conflict_id = token:GC_PhilippinesWar } tag = JAP }
 		localization_key = "TNO_Philippines_Prep_GUI"
 	}
@@ -244,10 +236,10 @@ defined_text = {
 		trigger = { check_variable = { selected_conflict_id = token:GC_MalagasyCW } }
 		localization_key = "TNO_Madagascar_GUI"
 	}
-	# text = {
-	# 	trigger = { check_variable = { selected_conflict_id = token: } }
-	# 	localization_key = ""
-	# }
+	text = {
+	trigger = { check_variable = { selected_conflict_id = token:GC_ChannelCrisis } }
+	localization_key = "TNO_Channel_Crisis_GUI"
+	}
 	text = {
 		trigger = {
 			check_variable = { TNO_active_conflicts^num = 0 }
@@ -291,7 +283,7 @@ defined_text = {
 		localization_key = "TNO_PPI_ceasefire_tension_relaxed"
 	}
 }
-defined_text =  {
+defined_text = {
 	name = GetPPInvasionUSADesc
 	text = {
 		trigger = { has_global_flag = PPI_ceasefire_happening }
@@ -301,7 +293,7 @@ defined_text =  {
 		localization_key = "USA_PP_invasion_desc"
 	}
 }
-defined_text =  {
+defined_text = {
 	name = GetPPInvasionIBRDesc
 	text = {
 		trigger = { has_global_flag = PPI_ceasefire_happening }
@@ -311,7 +303,7 @@ defined_text =  {
 		localization_key = "IBR_PP_invasion_desc"
 	}
 }
-defined_text =  {
+defined_text = {
 	name = GetPPInvasionGERDesc
 	text = {
 		trigger = { has_global_flag = PPI_ceasefire_happening }
@@ -355,15 +347,7 @@ defined_text = {
 		}
 		localization_key = GER_Bormann_SAF_War_category_desc
 	}
-	text = {
-		trigger = {
-			check_variable = { selected_conflict_id = token:GC_SAW }
-			has_global_flag = german_civil_war_goeringvic
-			tag = GER
-		}
-		localization_key = GER_Goring_SAF_War_category_desc
-	}
-	text = {
+		text = {
 		trigger = {
 			check_variable = { selected_conflict_id = token:GC_SAW }
 			has_global_flag = german_civil_war_speervic
@@ -472,11 +456,11 @@ defined_text = {
 		localization_key = JAP_IBW_PW_desc
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = token:GC_MozambiqueCW } tag = USA USA = { has_country_flag = US_aid_gazaland_mondlane } }
+		trigger = { check_variable = { selected_conflict_id = token:GC_MozambiqueCW } tag = USA USA = { has_country_flag = US_aid_mozambique_mondlane } }
 		localization_key = USA_GZCW_PW_desc_mondlane
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = token:GC_MozambiqueCW } tag = USA USA = { has_country_flag = US_aid_gazaland_simango } }
+		trigger = { check_variable = { selected_conflict_id = token:GC_MozambiqueCW } tag = USA USA = { has_country_flag = US_aid_mozambique_simango } }
 		localization_key = USA_GZCW_PW_desc_simango
 	}
 	text = {
@@ -491,15 +475,7 @@ defined_text = {
 		trigger = { check_variable = { selected_conflict_id = token:GC_BalintawakBlitz } tag = JAP }
 		localization_key = JAP_PHI_PW_1_desc
 	}
-	text = {
-		trigger = { check_variable = { selected_conflict_id = token:GC_MalayanReconsturction } tag = USA }
-		localization_key = "Placeholder"
-	}
-	text = {
-		trigger = { check_variable = { selected_conflict_id = token:GC_MalayanReconsturction } tag = JAP }
-		localization_key = "Placeholder"
-	}
-	text = {
+		text = {
 		trigger = { check_variable = { selected_conflict_id = token:GC_PhilippinesWar } has_global_flag = PHI_proxy_war_preparation tag = JAP }
 		localization_key = JAP_PHI_PW_2_desc
 	}
@@ -511,11 +487,7 @@ defined_text = {
 		trigger = { check_variable = { selected_conflict_id = token:GC_PhilippinesWar } tag = USA }
 		localization_key = USA_PHI_PW_2_desc
 	}
-	text = {
-		trigger = { check_variable = { selected_conflict_id = token:GC_Mengjiang } tag = JAP }
-		localization_key = JAP_mengjiang_conflict_desc
-	}
-	text = {
+		text = {
 		trigger = { check_variable = { selected_conflict_id = token:GC_SAWReconstruction } tag = USA }
 		localization_key = USA_saf_aftermath
 	}
@@ -660,32 +632,40 @@ defined_text = {
 		localization_key = IBR_french_civil_war_desc
 	}
 	text = {
-		trigger = { check_variable = { conflict_id = token:GC_ColombiaCW } tag = USA }
+		trigger = { check_variable = { selected_conflict_id = token:GC_ColombiaCW } tag = USA }
 		localization_key = USA_CCW_desc
 	}
 	text = {
-		trigger = { check_variable = { conflict_id = token:GC_ColombiaCW } tag = JAP }
+		trigger = { check_variable = { selected_conflict_id = token:GC_ColombiaCW } tag = JAP }
 		localization_key = JAP_CCW_desc
 	}
 	text = {
-		trigger = { check_variable = { conflict_id = token:GC_ColombiaCW } tag = IBR }
+		trigger = { check_variable = { selected_conflict_id = token:GC_ColombiaCW } tag = IBR }
 		localization_key = IBR_CCW_desc
 	}
 	text = {
-		trigger = { check_variable = { conflict_id = token:GC_ColombiaCW } tag = GER }
+		trigger = { check_variable = { selected_conflict_id = token:GC_ColombiaCW } tag = GER }
 		localization_key = GER_CCW_desc
 	}
 	text = {
-		trigger = { check_variable = { conflict_id = token:GC_ColombiaCW } tag = BRA }
+		trigger = { check_variable = { selected_conflict_id = token:GC_ColombiaCW } tag = BRA }
 		localization_key = BRA_CCW_desc
 	}
 	text = {
-		trigger = { check_variable = { conflict_id = token:GC_ReichsstaatCabal } }
+		trigger = { check_variable = { selected_conflict_id = token:GC_ReichsstaatCabal } }
 		localization_key = GER_RAC_desc
 	}
 	text = {
-		trigger = { check_variable = { conflict_id = token:GC_EnglandInfluenceBattle } }
+		trigger = { check_variable = { selected_conflict_id = token:GC_EnglandInfluenceBattle } tag = ENG }
 		localization_key = ENG_IBC_desc
+	}
+	text = {
+		trigger = { check_variable = { selected_conflict_id = token:GC_EnglandInfluenceBattle } tag = GER }
+		localization_key = GER_IBC_desc
+	}
+	text = {
+		trigger = { check_variable = { selected_conflict_id = token:GC_EnglandInfluenceBattle } tag = USA }
+		localization_key = USA_IBC_desc
 	}
 	#TaS stuff
 	text = {
@@ -776,24 +756,6 @@ defined_text = {
 		trigger = { check_variable = { conflict_id = token:GC_IberianWars } tag = MAR }
 		localization_key = MAR_IBW_PW_desc
 	}
-	#text = {
-	#	trigger = {
-	#		check_variable = { selected_conflict_id = token:GC_FranceCW }
-	#		has_global_flag = FFR_reclamation_happening
-	#		tag = MAR
-	#		has_government = socialist
-	#	}
-	#	localization_key = MAR_Kosygin_ffr_reclamation_desc
-	#}
-	#text = {
-	#	trigger = {
-	#		check_variable = { selected_conflict_id = token:GC_FranceCW }
-	#		has_global_flag = FFR_reclamation_happening
-	#		tag = MAR
-	#		NOT = { has_government = socialist }
-	#	}
-	#	localization_key = MAR_ffr_reclamation_desc
-	#}
 	text = {
 		trigger = {
 			check_variable = { selected_conflict_id = token:GC_FranceCW }
@@ -884,20 +846,17 @@ defined_text = {
 		}
 		localization_key = "GFX_fopo_turkes_kenes_sidebar"
 	}
-	text = { # Gazaland Civil War
+	text = { # Mozambican Civil War
 		trigger = {
 			check_variable = { selected_conflict_id = token:GC_MozambiqueCW }
 		}
-		localization_key = ""
+		localization_key = "GFX_fopo_mozambican_civil_war_sidebar"
 	}
-	text = { # Iberian Wars, Japan
+	text = { # Iberian Wars
 		trigger = {
 			check_variable = { selected_conflict_id = token:GC_IberianWars }
-			AND = {
-				has_country_flag = JAP_IBW_1
-			}
-		}
-		localization_key = "GFX_fopo_IBW_jap"
+						}
+		localization_key = "GFX_fopo_iberian_wars_sidebar"
 	}
 
 	text = { # Philippines, Balintawak Blitz
@@ -913,13 +872,7 @@ defined_text = {
 		}
 		localization_key = "GFX_fopo_philippines_landing_sidebar"
 	}
-	text = { # Mengjiang Conflict
-		trigger = {
-			check_variable = { selected_conflict_id = token:GC_Mengjiang }
-		}
-		localization_key = "GFX_fopo_mengjiang_conflict_sidebar"
-	}
-	text = { # South African War Aftermath
+		text = { # South African War Aftermath
 		trigger = { check_variable = { selected_conflict_id = token:GC_SAWReconstruction } }
 		localization_key = "GFX_fopo_congo_sidebar"
 	}
@@ -979,6 +932,10 @@ defined_text = {
 	}
 	text = { # England Influence Battle
 		trigger = { check_variable = { selected_conflict_id = token:GC_EnglandInfluenceBattle } }
+		localization_key = "GFX_fopo_england_influence_battle_sidebar"
+	}
+	text = { # Not intended to be used but will leave this here in case it does show up
+		trigger = { check_variable = { selected_conflict_id = token:GC_ChannelCrisis } }
 		localization_key = "GFX_fopo_england_influence_battle_sidebar"
 	}
 	#TaS stuff
@@ -1072,6 +1029,20 @@ defined_text = {
 	text = { # RAC, GER
 		trigger = { check_variable = { conflict_id = token:GC_ReichsstaatCabal } tag = GER }
 		localization_key = "GFX_fopo_reichsstaat_african_cabal_icon_GRO"
+	}
+text = { # Channel Crisis, OFN
+		trigger = {
+			check_variable = { conflict_id = token:GC_ChannelCrisis }
+			OR = {
+				tag = USA
+				tag = ENG
+			}
+		}
+		localization_key = "GFX_fopo_channel_crisis_icon_ofn"
+	}
+	text = { # Channel Crisis, Pakt
+		trigger = { check_variable = { conflict_id = token:GC_ChannelCrisis } tag = GER }
+		localization_key = "GFX_fopo_channel_crisis_icon_pakt"
 	}
 	text = { # EIB, ENG
 		trigger = { check_variable = { conflict_id = token:GC_EnglandInfluenceBattle } tag = ENG }
@@ -1376,7 +1347,7 @@ defined_text = {
 	}
 
 	text = {
-		trigger = { check_variable = { conflict_id = token:GC_MozambiqueCW } tag = USA USA = { has_country_flag = US_aid_gazaland_simango } }
+		trigger = { check_variable = { conflict_id = token:GC_MozambiqueCW } tag = USA USA = { has_country_flag = US_aid_mozambique_simango } }
 		localization_key = GFX_fopo_mozambique_3_way_icon_USA
 	}
 	text = {
@@ -1384,7 +1355,7 @@ defined_text = {
 		localization_key = GFX_fopo_mozambique_2_way_icon_USA
 	}
 	text = {
-		trigger = { check_variable = { conflict_id = token:GC_MozambiqueCW } tag = JAP USA = { has_country_flag = US_aid_gazaland_simango } }
+		trigger = { check_variable = { conflict_id = token:GC_MozambiqueCW } tag = JAP USA = { has_country_flag = US_aid_mozambique_simango } }
 		localization_key = GFX_fopo_mozambique_3_way_icon_JAP
 	}
 	text = {
@@ -1401,15 +1372,7 @@ defined_text = {
 		trigger = { check_variable = { conflict_id = token:GC_BalintawakBlitz } tag = JAP }
 		localization_key = "GFX_fopo_philippines_blitz_icon_jap"
 	}
-	text = { # Malayan Reconstruction - Operation Domino
-		trigger = { check_variable = { conflict_id = token:GC_MalayanReconsturction } tag = USA }
-		localization_key = "GFX_fopo_malaysia_civil_war_icon_us"
-	}
-	text = { # Malayan Reconstruction - Strengthening the Sphere
-		trigger = { check_variable = { conflict_id = token:GC_MalayanReconsturction } tag = JAP }
-		localization_key = "GFX_fopo_malayan_reconstruction_icon_jap"
-	}
-	text = { # The War for the Philippines - USA
+		text = { # The War for the Philippines - USA
 		trigger = { check_variable = { conflict_id = token:GC_PhilippinesWar } tag = USA }
 		localization_key = "GFX_fopo_philippines_prep_us"
 	}
@@ -1429,38 +1392,13 @@ defined_text = {
 	}
 
 
-	text = { # The War for the Philippines - Landing -  JAP
+	text = { # The War for the Philippines - Landing - JAP
 		trigger = { check_variable = { conflict_id = token:GC_PhilippinesWar } tag = JAP has_global_flag = PHI_landing_ongoing }
 		localization_key = "GFX_philippines_landing_jap"
 	}
 
 	text = {
-		trigger = { check_variable = { conflict_id = token:GC_Mengjiang } tag = JAP }
-		localization_key = "GFX_fopo_mengjiang_conflict"
-	}
-
-	text = {
-		trigger = { check_variable = { conflict_id = token:GC_Mengjiang } tag = USA }
-		localization_key = "GFX_fopo_mengjiang_conflict"
-	}
-	text = {
-		trigger = { check_variable = { conflict_id = token:GC_Mengjiang } tag = GER }
-		localization_key = "GFX_fopo_mengjiang_conflict"
-	}
-	text = {
-		trigger = { check_variable = { conflict_id = token:GC_Mengjiang } tag = JAP }
-		localization_key = "GFX_fopo_mengjiang_conflict"
-	}
-	text = {
-		trigger = { check_variable = { conflict_id = token:GC_SAWReconstruction } tag = USA }
-		localization_key = "GFX_fopo_mandates_icon"
-	}
-	text = {
-		trigger = { check_variable = { conflict_id = token:GC_SAWReconstruction } tag = GER }
-		localization_key = "GFX_fopo_mandates_icon"
-	}
-	text = {
-		trigger = { check_variable = { conflict_id = token:GC_SAWReconstruction } tag = JAP }
+		trigger = { check_variable = { conflict_id = token:GC_SAWReconstruction } }
 		localization_key = "GFX_fopo_mandates_icon"
 	}
 	text = {
@@ -1479,10 +1417,14 @@ defined_text = {
 		trigger = { check_variable = { conflict_id = token:GC_PhilippinesReconstruction } }
 		localization_key = "GFX_fopo_philippines_reconstruction"
 	}
-	#text = {
-	#	trigger = { check_variable = { conflict_id = token:GC_ManoCamapign } }
-	#	localization_key = "GFX_fopo_mano_campaign_icon"
-	#}
+	text = {
+	trigger = { check_variable = { conflict_id = token:GC_ManoCamapign } tag = JAP }
+	localization_key = "GFX_fopo_mano_campaign_jap"
+	}
+	text = {
+		trigger = { check_variable = { conflict_id = token:GC_ManoCamapign } tag = USA }
+		localization_key = "GFX_fopo_mano_campaign_usa"
+	}
 	text = {
 		trigger = {
 			check_variable = { conflict_id = token:GC_Orungu }
@@ -1815,7 +1757,7 @@ defined_text = {
 	name = Get_fopo_header
 	text = {
 		trigger = { check_variable = { selected_conflict_id = token:GC_SAW } }
-		localization_key = "GFX_SAF_decision_category_war"
+		localization_key = "GFX_decision_image_SAF_war"
 	}
 	text = {
 		trigger = { check_variable = { selected_conflict_id = token:GC_IndonesiaCW } }
@@ -1848,6 +1790,10 @@ defined_text = {
 	text = {
 		trigger = { tag = IBR }
 		localization_key = "GFX_fopo_iberia_seal"
+	}
+	text = { # waiting on GFX
+		trigger = { tag = ENG }
+		localization_key = "GFX_fopo_britain_seal"
 	}
 	text = {
 		trigger = { tag = MAR }
@@ -1988,6 +1934,10 @@ defined_text = {
 }
 defined_text = {
 	name = GetPPCustomizationTooltip
+text = {
+		trigger = { has_global_flag = PPI_ceasefire_happening }
+		localization_key = USA_PP_ceasefire_tooltip
+	}
 	text = {
 		trigger = { has_global_flag = PPI_landing_ongoing }
 		localization_key = USA_PP_ongoing_tooltip
@@ -2013,15 +1963,41 @@ defined_text = {
 	name = GetUSAMozambiqueSupportFlag
 	text = {
 		trigger = {
-			has_country_flag = US_aid_gazaland_simango
+			has_country_flag = US_aid_mozambique_simango
 		}
 		localization_key = "[GZS.GetFlag]"
 	}
 	text = {
 		trigger = {
-			has_country_flag = US_aid_gazaland_mondlane
+			has_country_flag = US_aid_mozambique_mondlane
 		}
 		localization_key = "[GZO.GetFlag]"
+	}
+}
+
+# Congo US Supported Faction
+defined_text = {
+	name = GetUSACongoSupportName
+	text = {
+		trigger = {
+			has_country_flag = US_aid_CFS
+		}
+		localization_key = "[CFS.GetNameDefCap]"
+	}
+	text = {
+		localization_key = "[COG.GetNameDefCap]"
+	}
+}
+defined_text = {
+	name = CFS_GetVictoryEventPic
+	text = {
+		trigger = {
+			CFS = { has_country_leader = { character = CFS_Patrice_Lumumba ruling_only = yes } }
+		}
+		localization_key = "GFX_report_event_COG_lumumba_2"
+	}
+	text = {
+		localization_key = "GFX_report_event_COG_congo_army"
 	}
 }
 
@@ -2105,17 +2081,878 @@ defined_text = {
 }
 
 defined_text = {
-	name = Get_Madagascar_Controller
+	name = 1857_Get_Madagascar_Controller
 	text = {
 		trigger = {
-			var:mad_v = {
+			1857 = {
 				is_controlled_by = MDM
 			}
 		}
 		localization_key = Madagascar_state_controller_no_one_tt
 	}
 	text = {
-		localization_key = "[?mad_v:controller.GetNameWithFlag]"
+		localization_key = "[1857.controller.GetNameWithFlag]"
+	}
+}
+defined_text = {
+	name = 1969_Get_Madagascar_Controller
+	text = {
+		trigger = {
+			1969 = {
+				is_controlled_by = MDM
+			}
+		}
+		localization_key = Madagascar_state_controller_no_one_tt
+	}
+	text = {
+		localization_key = "[1969.controller.GetNameWithFlag]"
+	}
+}
+defined_text = {
+	name = 944_Get_Madagascar_Controller
+	text = {
+		trigger = {
+			944 = {
+				is_controlled_by = MDM
+			}
+		}
+		localization_key = Madagascar_state_controller_no_one_tt
+	}
+	text = {
+		localization_key = "[944.controller.GetNameWithFlag]"
+	}
+}
+defined_text = {
+	name = 945_Get_Madagascar_Controller
+	text = {
+		trigger = {
+			945 = {
+				is_controlled_by = MDM
+			}
+		}
+		localization_key = Madagascar_state_controller_no_one_tt
+	}
+	text = {
+		localization_key = "[945.controller.GetNameWithFlag]"
+	}
+}
+defined_text = {
+	name = 1970_Get_Madagascar_Controller
+	text = {
+		trigger = {
+			1970 = {
+				is_controlled_by = MDM
+			}
+		}
+		localization_key = Madagascar_state_controller_no_one_tt
+	}
+	text = {
+		localization_key = "[1970.controller.GetNameWithFlag]"
+	}
+}
+defined_text = {
+	name = 1974_Get_Madagascar_Controller
+	text = {
+		trigger = {
+			1974 = {
+				is_controlled_by = MDM
+			}
+		}
+		localization_key = Madagascar_state_controller_no_one_tt
+	}
+	text = {
+		localization_key = "[1974.controller.GetNameWithFlag]"
+	}
+}
+defined_text = {
+	name = 1975_Get_Madagascar_Controller
+	text = {
+		trigger = {
+			1975 = {
+				is_controlled_by = MDM
+			}
+		}
+		localization_key = Madagascar_state_controller_no_one_tt
+	}
+	text = {
+		localization_key = "[1975.controller.GetNameWithFlag]"
+	}
+}
+defined_text = {
+	name = 1860_Get_Madagascar_Controller
+	text = {
+		trigger = {
+			1860 = {
+				is_controlled_by = MDM
+			}
+		}
+		localization_key = Madagascar_state_controller_no_one_tt
+	}
+	text = {
+		localization_key = "[1860.controller.GetNameWithFlag]"
+	}
+}
+defined_text = {
+	name = 946_Get_Madagascar_Controller
+	text = {
+		trigger = {
+			946 = {
+				is_controlled_by = MDM
+			}
+		}
+		localization_key = Madagascar_state_controller_no_one_tt
+	}
+	text = {
+		localization_key = "[946.controller.GetNameWithFlag]"
+	}
+}
+defined_text = {
+	name = 1864_Get_Madagascar_Controller
+	text = {
+		trigger = {
+			1864 = {
+				is_controlled_by = MDM
+			}
+		}
+		localization_key = Madagascar_state_controller_no_one_tt
+	}
+	text = {
+		localization_key = "[1864.controller.GetNameWithFlag]"
+	}
+}
+defined_text = {
+	name = 1859_Get_Madagascar_Controller
+	text = {
+		trigger = {
+			1859 = {
+				is_controlled_by = MDM
+			}
+		}
+		localization_key = Madagascar_state_controller_no_one_tt
+	}
+	text = {
+		localization_key = "[1859.controller.GetNameWithFlag]"
+	}
+}
+defined_text = {
+	name = 1971_Get_Madagascar_Controller
+	text = {
+		trigger = {
+			1971 = {
+				is_controlled_by = MDM
+			}
+		}
+		localization_key = Madagascar_state_controller_no_one_tt
+	}
+	text = {
+		localization_key = "[1971.controller.GetNameWithFlag]"
+	}
+}
+defined_text = {
+	name = 1972_Get_Madagascar_Controller
+	text = {
+		trigger = {
+			1972 = {
+				is_controlled_by = MDM
+			}
+		}
+		localization_key = Madagascar_state_controller_no_one_tt
+	}
+	text = {
+		localization_key = "[1972.controller.GetNameWithFlag]"
+	}
+}
+defined_text = {
+	name = 1861_Get_Madagascar_Controller
+	text = {
+		trigger = {
+			1861 = {
+				is_controlled_by = MDM
+			}
+		}
+		localization_key = Madagascar_state_controller_no_one_tt
+	}
+	text = {
+		localization_key = "[1861.controller.GetNameWithFlag]"
+	}
+}
+
+defined_text = {
+	name = MAD_proxy_color_1864
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						tag = USA
+						tag = JAP
+					}
+					1864 = { is_controlled_by = MDG }
+				}
+				AND = {
+					tag = GER
+					1864 = { is_controlled_by = MAD }
+				}
+			}
+		}
+		localization_key = "GFX_madagascar_trail_1864_red"
+	}
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						tag = USA
+						tag = JAP
+					}
+					1864 = { is_controlled_by = MAD }
+				}
+				AND = {
+					tag = GER
+					1864 = { is_controlled_by = MDG }
+				}
+			}
+		}
+		localization_key = "GFX_madagascar_trail_1864_grn"
+	}
+	text = {
+		trigger = {
+			1864 = { is_controlled_by = MDM }
+		}
+		localization_key = "GFX_madagascar_trail_1864_blank"
+	}
+}
+
+defined_text = {
+	name = MAD_proxy_color_1859
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						tag = USA
+						tag = JAP
+					}
+					AND = {
+						MDG = { controls_province = 16171 }
+						MDG = { controls_province = 13706 }
+						MDG = { controls_province = 13726 }
+					}
+				}
+				AND = {
+					tag = GER
+					AND = {
+						MAD = { controls_province = 16171 }
+						MAD = { controls_province = 13706 }
+						MAD = { controls_province = 13726 }
+					}
+				}
+			}
+		}
+		localization_key = "GFX_madagascar_trail_1859_red"
+	}
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						tag = USA
+						tag = JAP
+					}
+					AND = {
+						MAD = { controls_province = 16171 }
+						MAD = { controls_province = 13706 }
+						MAD = { controls_province = 13726 }
+					}
+				}
+				AND = {
+					tag = GER
+					AND = {
+						MDG = { controls_province = 16171 }
+						MDG = { controls_province = 13706 }
+						MDG = { controls_province = 13726 }
+					}
+				}
+			}
+		}
+		localization_key = "GFX_madagascar_trail_1859_grn"
+	}
+	text = {
+		trigger = {
+			AND = {
+				MDM = { controls_province = 16171 }
+				MDM = { controls_province = 13706 }
+				MDM = { controls_province = 13726 }
+			}
+		}
+		localization_key = "GFX_madagascar_trail_1859_blank"
+	}
+}
+
+defined_text = {
+	name = MAD_proxy_color_1971
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						tag = USA
+						tag = JAP
+					}
+					1971 = { is_controlled_by = MDG }
+				}
+				AND = {
+					tag = GER
+					1971 = { is_controlled_by = MAD }
+				}
+			}
+		}
+		localization_key = "GFX_madagascar_trail_1971_red"
+	}
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						tag = USA
+						tag = JAP
+					}
+					1971 = { is_controlled_by = MAD }
+				}
+				AND = {
+					tag = GER
+					1971 = { is_controlled_by = MDG }
+				}
+			}
+		}
+		localization_key = "GFX_madagascar_trail_1971_grn"
+	}
+	text = {
+		trigger = {
+			1971 = { is_controlled_by = MDM }
+		}
+		localization_key = "GFX_madagascar_trail_1971_blank"
+	}
+}
+
+defined_text = {
+	name = MAD_proxy_color_1972
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						tag = USA
+						tag = JAP
+					}
+					1972 = { is_controlled_by = MDG }
+				}
+				AND = {
+					tag = GER
+					1972 = { is_controlled_by = MAD }
+				}
+			}
+		}
+		localization_key = "GFX_madagascar_trail_1972_red"
+	}
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						tag = USA
+						tag = JAP
+					}
+					1972 = { is_controlled_by = MAD }
+				}
+				AND = {
+					tag = GER
+					1972 = { is_controlled_by = MDG }
+				}
+			}
+		}
+		localization_key = "GFX_madagascar_trail_1972_grn"
+	}
+	text = {
+		trigger = {
+			1972 = { is_controlled_by = MDM }
+		}
+		localization_key = "GFX_madagascar_trail_1972_blank"
+	}
+}
+
+defined_text = {
+	name = MAD_proxy_color_1861
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						tag = USA
+						tag = JAP
+					}
+					AND = {
+						MDG = { controls_province = 15964 }
+						MDG = { controls_province = 15945 }
+					}
+				}
+				AND = {
+					tag = GER
+					AND = {
+						MAD = { controls_province = 15964 }
+						MAD = { controls_province = 15945 }
+					}
+				}
+			}
+		}
+		localization_key = "GFX_madagascar_trail_1861_red"
+	}
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						tag = USA
+						tag = JAP
+					}
+					AND = {
+						MAD = { controls_province = 15964 }
+						MAD = { controls_province = 15945 }
+					}
+				}
+				AND = {
+					tag = GER
+					AND = {
+						MDG = { controls_province = 15964 }
+						MDG = { controls_province = 15945 }
+					}
+				}
+			}
+		}
+		localization_key = "GFX_madagascar_trail_1861_grn"
+	}
+	text = {
+		trigger = {
+			AND = {
+				MDM = { controls_province = 15964 }
+				MDM = { controls_province = 15945 }
+			}
+		}
+		localization_key = "GFX_madagascar_trail_1861_blank"
+	}
+}
+
+defined_text = {
+	name = MAD_proxy_color_1857
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						tag = USA
+						tag = JAP
+					}
+					1857 = { is_controlled_by = MDG }
+				}
+				AND = {
+					tag = GER
+					1857 = { is_controlled_by = MAD }
+				}
+			}
+		}
+		localization_key = "GFX_madagascar_city_main_red"
+	}
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						tag = USA
+						tag = JAP
+					}
+					1857 = { is_controlled_by = MAD }
+				}
+				AND = {
+					tag = GER
+					1857 = { is_controlled_by = MDG }
+				}
+			}
+		}
+		localization_key = "GFX_madagascar_city_main_grn"
+	}
+	text = {
+		trigger = {
+			1857 = { is_controlled_by = MDM }
+		}
+		localization_key = "GFX_madagascar_city_main_blank"
+	}
+}
+
+defined_text = {
+	name = MAD_proxy_color_1969
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						tag = USA
+						tag = JAP
+					}
+					1969 = { is_controlled_by = MDG }
+				}
+				AND = {
+					tag = GER
+					1969 = { is_controlled_by = MAD }
+				}
+			}
+		}
+		localization_key = "GFX_madagascar_city_mini_red"
+	}
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						tag = USA
+						tag = JAP
+					}
+					1969 = { is_controlled_by = MAD }
+				}
+				AND = {
+					tag = GER
+					1969 = { is_controlled_by = MDG }
+				}
+			}
+		}
+		localization_key = "GFX_madagascar_city_mini_grn"
+	}
+	text = {
+		trigger = {
+			1969 = { is_controlled_by = MDM }
+		}
+		localization_key = "GFX_madagascar_city_mini_blank"
+	}
+}
+
+defined_text = {
+	name = MAD_proxy_color_944
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						tag = USA
+						tag = JAP
+					}
+					944 = { is_controlled_by = MDG }
+				}
+				AND = {
+					tag = GER
+					944 = { is_controlled_by = MAD }
+				}
+			}
+		}
+		localization_key = "GFX_madagascar_city_main_red"
+	}
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						tag = USA
+						tag = JAP
+					}
+					944 = { is_controlled_by = MAD }
+				}
+				AND = {
+					tag = GER
+					944 = { is_controlled_by = MDG }
+				}
+			}
+		}
+		localization_key = "GFX_madagascar_city_main_grn"
+	}
+	text = {
+		trigger = {
+			944 = { is_controlled_by = MDM }
+		}
+		localization_key = "GFX_madagascar_city_main_blank"
+	}
+}
+
+defined_text = {
+	name = MAD_proxy_color_945
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						tag = USA
+						tag = JAP
+					}
+					945 = { is_controlled_by = MDG }
+				}
+				AND = {
+					tag = GER
+					945 = { is_controlled_by = MAD }
+				}
+			}
+		}
+		localization_key = "GFX_madagascar_city_main_red"
+	}
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						tag = USA
+						tag = JAP
+					}
+					945 = { is_controlled_by = MAD }
+				}
+				AND = {
+					tag = GER
+					945 = { is_controlled_by = MDG }
+				}
+			}
+		}
+		localization_key = "GFX_madagascar_city_main_grn"
+	}
+	text = {
+		trigger = {
+			945 = { is_controlled_by = MDM }
+		}
+		localization_key = "GFX_madagascar_city_main_blank"
+	}
+}
+
+defined_text = {
+	name = MAD_proxy_color_1970
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						tag = USA
+						tag = JAP
+					}
+					1970 = { is_controlled_by = MDG }
+				}
+				AND = {
+					tag = GER
+					1970 = { is_controlled_by = MAD }
+				}
+			}
+		}
+		localization_key = "GFX_madagascar_city_mini_red"
+	}
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						tag = USA
+						tag = JAP
+					}
+					1970 = { is_controlled_by = MAD }
+				}
+				AND = {
+					tag = GER
+					1970 = { is_controlled_by = MDG }
+				}
+			}
+		}
+		localization_key = "GFX_madagascar_city_mini_grn"
+	}
+	text = {
+		trigger = {
+			1970 = { is_controlled_by = MDM }
+		}
+		localization_key = "GFX_madagascar_city_mini_blank"
+	}
+}
+
+defined_text = {
+	name = MAD_proxy_color_1974
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						tag = USA
+						tag = JAP
+					}
+					1974 = { is_controlled_by = MDG }
+				}
+				AND = {
+					tag = GER
+					1974 = { is_controlled_by = MAD }
+				}
+			}
+		}
+		localization_key = "GFX_madagascar_city_mini_red"
+	}
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						tag = USA
+						tag = JAP
+					}
+					1974 = { is_controlled_by = MAD }
+				}
+				AND = {
+					tag = GER
+					1974 = { is_controlled_by = MDG }
+				}
+			}
+		}
+		localization_key = "GFX_madagascar_city_mini_grn"
+	}
+	text = {
+		trigger = {
+			1974 = { is_controlled_by = MDM }
+		}
+		localization_key = "GFX_madagascar_city_mini_blank"
+	}
+}
+
+defined_text = {
+	name = MAD_proxy_color_1975
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						tag = USA
+						tag = JAP
+					}
+					1975 = { is_controlled_by = MDG }
+				}
+				AND = {
+					tag = GER
+					1975 = { is_controlled_by = MAD }
+				}
+			}
+		}
+		localization_key = "GFX_madagascar_city_mini_red"
+	}
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						tag = USA
+						tag = JAP
+					}
+					1975 = { is_controlled_by = MAD }
+				}
+				AND = {
+					tag = GER
+					1975 = { is_controlled_by = MDG }
+				}
+			}
+		}
+		localization_key = "GFX_madagascar_city_mini_grn"
+	}
+	text = {
+		trigger = {
+			1975 = { is_controlled_by = MDM }
+		}
+		localization_key = "GFX_madagascar_city_mini_blank"
+	}
+}
+
+defined_text = {
+	name = MAD_proxy_color_1860
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						tag = USA
+						tag = JAP
+					}
+					1860 = { is_controlled_by = MDG }
+				}
+				AND = {
+					tag = GER
+					1860 = { is_controlled_by = MAD }
+				}
+			}
+		}
+		localization_key = "GFX_madagascar_city_main_red"
+	}
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						tag = USA
+						tag = JAP
+					}
+					1860 = { is_controlled_by = MAD }
+				}
+				AND = {
+					tag = GER
+					1860 = { is_controlled_by = MDG }
+				}
+			}
+		}
+		localization_key = "GFX_madagascar_city_main_grn"
+	}
+	text = {
+		trigger = {
+			1860 = { is_controlled_by = MDM }
+		}
+		localization_key = "GFX_madagascar_city_main_blank"
+	}
+}
+
+defined_text = {
+	name = MAD_proxy_color_946
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						tag = USA
+						tag = JAP
+					}
+					946 = { is_controlled_by = MDG }
+				}
+				AND = {
+					tag = GER
+					946 = { is_controlled_by = MAD }
+				}
+			}
+		}
+		localization_key = "GFX_madagascar_city_main_red"
+	}
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						tag = USA
+						tag = JAP
+					}
+					946 = { is_controlled_by = MAD }
+				}
+				AND = {
+					tag = GER
+					946 = { is_controlled_by = MDG }
+				}
+			}
+		}
+		localization_key = "GFX_madagascar_city_main_grn"
+	}
+	text = {
+		trigger = {
+			946 = { is_controlled_by = MDM }
+		}
+		localization_key = "GFX_madagascar_city_main_blank"
 	}
 }
 
@@ -2295,5 +3132,290 @@ defined_text = {
 	text = {
 		trigger = { TNO_HCW_Phase_Disengagement = yes }
 		localization_key = TNO_HCW_Phase_title_Disengagement
+	}
+}
+
+defined_text = {
+	name = GetHAIConstructorLevel
+	text = {
+		trigger = { check_variable = { HAI_dev_program_strength = 0 } }
+		localization_key = TNO_HAICW_one_star
+	}
+	text = {
+		trigger = { check_variable = { HAI_dev_program_strength = 1 } }
+		localization_key = TNO_HAICW_two_star
+	}
+	text = {
+		trigger = { check_variable = { HAI_dev_program_strength = 2 } }
+		localization_key = TNO_HAICW_three_star
+	}
+}
+
+defined_text = {
+	name = puertoplatamissiontitle
+	text = {
+		trigger = { ZZZ = { has_active_mission = ZZZ_PPI_Invasion_Begins } }
+		localization_key = USA_PPI_Invasion_Begins
+	}
+	text = {
+		trigger = { ZZZ = { has_active_mission = ZZZ_PPI_CAL_training } }
+		localization_key = USA_PPI_CAL_training
+	}
+	text = {
+		trigger = { ZZZ = { has_active_mission = ZZZ_PPI_Invasion_Ends } }
+		localization_key = USA_PPI_Invasion_Ends
+	}
+}
+
+defined_text = {
+	name = puertoplatamissiontime
+	text = {
+		trigger = { ZZZ = { has_active_mission = ZZZ_PPI_Invasion_Begins } }
+		localization_key = ZZZ_PP_Mission_1
+	}
+	text = {
+		trigger = { ZZZ = { has_active_mission = ZZZ_PPI_CAL_training } }
+		localization_key = ZZZ_PP_Mission_2
+	}
+	text = {
+		trigger = { ZZZ = { has_active_mission = ZZZ_PPI_Invasion_Ends } }
+		localization_key = ZZZ_PP_Mission_3
+	}
+}
+
+defined_text = {
+	name = GetChannelCrisisDesc
+	text = {
+		trigger = { 
+			tag = ENG 
+			has_global_flag = channel_crisis_ongoing_buildup
+		}
+		localization_key = ENG_Channel_Crisis_buildup_desc
+	}
+	text = {
+		trigger = { 
+			tag = GER 
+			has_global_flag = channel_crisis_ongoing_buildup
+		}
+		localization_key = GER_Channel_Crisis_buildup_desc
+	}
+	text = {
+		trigger = { 
+			tag = USA 
+			has_global_flag = channel_crisis_ongoing_buildup
+		}
+		localization_key = USA_Channel_Crisis_buildup_desc
+	}
+	text = {
+		trigger = { 
+			tag = ENG 
+		}
+		localization_key = ENG_Channel_Crisis_confrontation_desc
+	}
+	text = {
+		trigger = { 
+			tag = GER 
+		}
+		localization_key = GER_Channel_Crisis_confrontation_desc
+	}
+	text = {
+		trigger = { 
+			tag = USA 
+		}
+		localization_key = USA_Channel_Crisis_confrontation_desc
+	}
+}
+
+defined_text = {
+	name = CC_current_phase_loc
+	text = {
+		trigger = {
+			has_global_flag = channel_crisis_ongoing_buildup
+		}
+		localization_key = channel_crisis_buildup
+	}
+	text = {
+		localization_key = channel_crisis_confrontation
+	}
+}
+
+defined_text = {
+	name = Get_cc_display_image
+	text = {
+		trigger = {
+			has_global_flag = channel_crisis_ongoing_buildup
+		}
+		localization_key = "GFX_channel_crisis_topbar_image_1"
+	}
+	text = {
+		localization_key = "GFX_channel_crisis_topbar_image_2"
+	}
+}
+
+defined_text = {
+	name = GetChannelCrisisRejectorDemand
+	text = {
+		trigger = {
+			ROOT = { tag = GER }
+		}
+		localization_key = "Channel_Crisis_Demand_text"
+	}
+	text = {
+		localization_key = "Channel_Crisis_Reject_text"
+	}
+	
+}
+
+defined_text = {
+	name = Get_CC_Zeroes_Amount
+	text = {
+		trigger = {
+			check_variable = { CC_display_two = 100 }
+		}
+		localization_key = ""
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = CC_display_two
+				value = 9
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = "00"
+	}
+	text = {
+		localization_key = "0"
+	}
+}
+
+defined_text = {
+	name = GetChannelCrisis_nego_bg_text
+	text = {
+		trigger = {
+			has_global_flag = channel_crisis_ongoing_buildup
+		}
+		localization_key = Channel_Crisis_Negotiations_not_yet_text
+	}
+	text = {
+		localization_key = Channel_Crisis_Negotiations_none_active_text
+	}
+}
+
+defined_text = {
+	name = GetChannelCrisis_player_readiness_tt
+	text = {
+		trigger = {
+			tag = GER
+		}
+		localization_key = CC_player_readiness_pakt_tt
+	}
+	text = {
+		localization_key = CC_player_readiness_ofn_tt
+	}
+}
+
+defined_text = {
+	name = GetChannelCrisis_opposing_tt
+	text = {
+		trigger = {
+			if = {
+				limit = { tag = GER }
+				check_variable = { GER.CC_current_uncertainty = 100 }
+			}
+			else = { check_variable = { ENG.CC_current_uncertainty = 100 } }
+		}
+		localization_key = CC_opposing_readiness_no_info_tt
+	}
+	text = {
+		trigger = {
+			tag = GER
+			check_variable = { GER.CC_current_uncertainty = 0 }
+		}
+		localization_key = CC_opposing_readiness_full_info_pakt_tt
+	}
+	text = {
+		trigger = {
+			OR = {
+				tag = ENG
+				tag = USA
+			}
+			check_variable = { ENG.CC_current_uncertainty = 0 }
+		}
+		localization_key = CC_opposing_readiness_full_info_ofn_tt
+	}
+	text = {
+		trigger = {
+			tag = GER
+		}
+		localization_key = CC_opposing_readiness_for_pakt_tt
+	}
+	text = {
+		localization_key = CC_opposing_readiness_for_ofn_tt
+	}
+}
+
+defined_text = {
+	name = Get_negotiations_tt
+	text = {
+		trigger = { has_global_flag = channel_crisis_ongoing_buildup }
+		localization_key = Channel_Crisis_Negotiations_not_yet_text
+	}
+	text = {
+		trigger = {
+			tag = GER
+			NOT = { has_global_flag = channel_crisis_ongoing_buildup }
+		}
+		localization_key = CC_negotiations_pakt_tt
+	}
+	text = {
+		trigger = {
+			NOT = { 
+				has_global_flag = channel_crisis_ongoing_buildup
+				tag = GER
+			}
+		}
+		localization_key = CC_negotiations_ofn_tt
+	}
+}
+
+defined_text = {
+	name = Get_CC_negotiations_concession_descrip
+	text = {
+		trigger = {
+			ENG = {
+				meta_trigger = {
+					text = { set_temp_variable = { description_var = token:[TERM]_Desc } }
+					TERM = "[?ENG.cc_negotiations_concessions_array_val.GetTokenKey]"
+				}
+			}
+		}
+		localization_key = "[?ENG.description_var.GetTokenLocalizedKey]"
+	}
+}
+
+defined_text = {
+	name = CC_getSAWconcession
+	#text = { #needs too much to make it in the initial release, implementing later
+	#	trigger = {
+	#		has_global_flag = south_african_war_happening
+	#	}
+	#	localization_key = concession_saw
+	#}
+	text = {
+		localization_key = concession_spy_exchange
+	}
+}
+
+defined_text = {
+	name = CC_getSAWconcession_desc
+	#text = {
+	#	trigger = {
+	#		has_global_flag = south_african_war_happening
+	#	}
+	#	localization_key = concession_saw_desc
+	#}
+	text = {
+		localization_key = concession_spy_exchange_desc
 	}
 }

@@ -408,31 +408,31 @@ on_actions = {
 					}
 				}
 			}
-			else_if = {
-				limit = {
-					FROM = {
-						original_tag = MAR
-					}
-					ROOT = { 
-						original_tag = MEN
-					}
-				}
-				FROM = {
-				white_peace = ROOT
-				}
-				MON = {
-					transfer_state = 814
-					transfer_state = 330
-					transfer_state = 815
-					econ_join_sphere_MAR = yes
-				}
-				MEN = {
-					transfer_state = 612
-					transfer_state = 621
-					transfer_state = 955
-				}
-				set_global_flag = skip_default_capitulation
-			}
+			#else_if = {
+			#	limit = {
+			#		FROM = {
+			#			original_tag = MAR
+			#		}
+			#		ROOT = { 
+			#			original_tag = MEN
+			#		}
+			#	}
+			#	FROM = {
+			#	white_peace = ROOT
+			#	}
+			#	MON = {
+			#		transfer_state = 814
+			#		transfer_state = 330
+			#		transfer_state = 815
+			#		econ_join_sphere_MAR = yes
+			#	}
+			#	MEN = {
+			#		transfer_state = 612
+			#		transfer_state = 621
+			#		transfer_state = 955
+			#	}
+			#	set_global_flag = skip_default_capitulation
+			#}
 			else_if = {
 				limit = {
 					FROM = {

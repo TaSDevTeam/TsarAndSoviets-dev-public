@@ -348,7 +348,7 @@ shared_focus = {
 
 shared_focus = {
 	id = VOR_raise_the_battleflags
-	icon = GFX_VOR_warlord_prepare_masses_for_war
+	icon = GFX_VOR_raise_the_battleflags
 	cost = 3.00
 	prerequisite = {
 		focus = VOR_warlord_get_uncertains
@@ -368,7 +368,7 @@ shared_focus = {
 
 shared_focus = {
 	id = VOR_flame_the_hearts
-	icon = GFX_VOR_warlord_prepare_masses_for_war
+	icon = GFX_VOR_flame_the_hearts
 	cost = 3.00
 	prerequisite = {
 		focus = VOR_raise_the_battleflags
@@ -469,7 +469,7 @@ shared_focus = {
 
 shared_focus = {
 	id = VOR_motivate_peasantry
-	icon = GFX_VOR_your_word_comrade_mauser
+	icon = GFX_VOR_motivate_peasantry
 	cost = 1.00
 	prerequisite = {
 		focus = VOR_scarlet_flame_frozen_river
@@ -492,7 +492,7 @@ shared_focus = {
 
 shared_focus = {
 	id = VOR_peoples_revenge
-	icon = GFX_VOR_your_word_comrade_mauser
+	icon = GFX_VOR_peoples_revenge
 	cost = 1.00
 	prerequisite = {
 		focus = VOR_your_word_comrade_mauser
@@ -516,7 +516,7 @@ shared_focus = {
 
 shared_focus = {
 	id = VOR_revolution_from_bottom
-	icon = GFX_VOR_your_word_comrade_mauser
+	icon = GFX_VOR_revolution_from_bottom
 	cost = 1.00
 	prerequisite = {
 		focus = VOR_your_word_comrade_mauser
@@ -549,7 +549,7 @@ shared_focus = {
 
 shared_focus = {
 	id = VOR_blood_on_the_snow
-	icon = GFX_VOR_your_word_comrade_mauser
+	icon = GFX_VOR_blood_on_the_snow
 	cost = 2.00
 	available = {
 		NOT = {
@@ -670,7 +670,7 @@ shared_focus = {
 
 shared_focus = {
 	id = VOR_flame_of_the_battle
-	icon = GFX_VOR_creating_nvr
+	icon = GFX_VOR_flame_of_the_battle
 	cost = 4.00
 	x = 6
 	y = 5
@@ -694,7 +694,7 @@ shared_focus = {
 
 shared_focus = {
 	id = VOR_new_generation_of_socialists
-	icon = GFX_VOR_creating_nvr
+	icon = GFX_VOR_new_generation_of_socialists
 	cost = 4.00
 	prerequisite = {
 		focus = VOR_open_party_recruitment
@@ -737,7 +737,7 @@ shared_focus = {
 
 shared_focus = {
 	id = VOR_image_of_worker_revolutioner
-	icon = GFX_VOR_creating_nvr
+	icon = GFX_VOR_image_of_worker_revolutioner
 	cost = 4.00
 	prerequisite = {
 		focus = VOR_run_production
@@ -754,7 +754,7 @@ shared_focus = {
 
 shared_focus = {
 	id = VOR_time_to_work
-	icon = GFX_VOR_creating_nvr
+	icon = GFX_VOR_time_to_work
 	cost = 4.00
 	prerequisite = {
 		focus = VOR_blood_on_the_snow
