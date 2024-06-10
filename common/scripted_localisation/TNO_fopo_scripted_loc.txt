@@ -221,7 +221,10 @@ defined_text = {
 		localization_key = "TNO_Puerto_Plata_Invasion_GUI_GER"
 	}
 	text = {
-		trigger = { check_variable = { selected_conflict_id = token:GC_FranceCW } }
+		trigger = {
+			check_variable = { selected_conflict_id = token:GC_FranceCW }
+			not = { tag = MAR }
+		}
 		localization_key = "TNO_FrenchReclamation_DecisionGUI"
 	}
 	text = {
@@ -245,6 +248,13 @@ defined_text = {
 			check_variable = { TNO_active_conflicts^num = 0 }
 		}
 		localization_key = "TNO_fopo_no_conflict"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_conflict_id = token:GC_FranceCW }
+			tag = MAR
+		}
+		localization_key = "TNO_fopo_generic_conflict"
 	}
 	text = {
 		localization_key = "TNO_fopo_generic_conflict"
@@ -789,7 +799,7 @@ defined_text = {
 	text = {
 		trigger = {
 			check_variable = { selected_conflict_id = token:GC_FranceCW }
-			has_global_flag = FFR_reclamation_civil_war_happening
+			#has_global_flag = FFR_reclamation_civil_war_happening
 			tag = MAR
 			has_government = socialist
 		}
@@ -798,7 +808,7 @@ defined_text = {
 	text = {
 		trigger = {
 			check_variable = { selected_conflict_id = token:GC_FranceCW }
-			has_global_flag = FFR_reclamation_civil_war_happening
+			#has_global_flag = FFR_reclamation_civil_war_happening
 			tag = MAR
 			NOT = { has_government = socialist }
 		}
@@ -980,6 +990,13 @@ defined_text = {
 	text = {
 		trigger = { check_variable = { selected_conflict_id = token:GC_UAR_influence_battle } }
 		localization_key = "GFX_fopo_uar_influence_battle_sidebar"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_conflict_id = token:GC_FranceCW }
+			tag = MAR
+		}
+		localization_key = "GFX_fopo_french_civil_war_sidebar"
 	}
 	text = {
 		localization_key = ""

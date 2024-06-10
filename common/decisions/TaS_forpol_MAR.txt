@@ -3328,13 +3328,13 @@ MAR_foreign_policy_category = {
 			log = "[GetDateText]: [Root.GetName]: Decision Complete MAR_Kosygin_FrenchReclamation_Decision_SendMotorizedEquipmentShipments"
 			every_country = {
 				limit = { has_war_with = FRV }
-				add_ideas = MAR_Kosygin_Plane_Bombing
+				add_ideas = MAR_Plane_Bombing
 			}	
 		}
 		remove_effect = {
 			every_country = {
 				limit = { has_war_with = FRV }
-				remove_ideas = MAR_Kosygin_Plane_Bombing
+				remove_ideas = MAR_Plane_Bombing
 			}	
 		}
 		ai_will_do = {

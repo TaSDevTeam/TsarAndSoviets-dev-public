@@ -976,23 +976,15 @@ on_actions = {
 					}
 				}
 			}
-			## French Civil War ##
 			else_if = {
 				limit = {
-					has_global_flag = FRA_civil_war_ongoing #should prevent trigger during non-CW Reclamation
 					FROM = {
 						OR = {
-							original_tag = FFR
-							original_tag = FRS
-							original_tag = FRD
 							original_tag = FRM
 							original_tag = FRV
-							original_tag = FMM
-							original_tag = FGR
-							original_tag = FIT
 						}
 					}
-					ROOT = {
+					ROOT = { 
 						OR = {
 							original_tag = FRS
 							original_tag = FRD
@@ -1004,246 +996,48 @@ on_actions = {
 						}
 					}
 				}
-
-				every_country = {
-					limit = { has_war_with = ROOT }
-					white_peace = ROOT
-				}
-
-				if = { # Reclamation defeated
+				if = {
 					limit = {
-						has_global_flag = FFR_reclamation_civil_war_happening
-						ROOT = { original_tag = FRD }
-					}
-
-					set_global_flag = FFR_reclamation_defeated
-					FROM = { # Take Kerguelen
-						add_state_core = 713
-						transfer_state = 713
-					}
-					every_state = { # Transfer whatever states FFR gobbled up
-						limit = {
-							is_owned_by = FFR
-							is_core_of = FROM
-						}
-
-						FROM = { transfer_state = PREV }
-					}
-
-					FFR_reclamation_defeat = yes
-				}
-
-				every_state = {
-					limit = {
-						is_core_of = ROOT
-					}
-					remove_core_of = ROOT
-				}
-
-				FROM = {
-					if = {
-						limit = {
-							original_tag = FFR
-							country_exists = FRD
-						}
-						FRD = {
-							annex_country = {
-								target = ROOT
-								transfer_troops = no
+						NOT = {
+							count_triggers = {
+								amount = 2
+								country_exists = FRS
+								country_exists = FRD
+								country_exists = FRM
+								country_exists = FRV
+								country_exists = FMM
+								country_exists = FGR
+								country_exists = FIT
 							}
 						}
 					}
-					else = {
-						annex_country = {
-							target = ROOT
-							transfer_troops = no
+					else_if = {
+						limit = { country_exists = FRV }
+						
+						if = { 
+							limit = { has_country_flag = MAR_aid_FRV }
+							#econ_join_sphere_MAR = yes
+							MAR = {
+								country_event = { id = MAR_forpol.711 days = 3 }
+							}
+						}
+						every_country = {
+							limit = { is_ai = no }
+							news_event = { id = WORLD.20000 days = 1 }
 						}
 					}
-
-					if = {
-						limit = {
-							NOT = {
-								count_triggers = {
-									amount = 2
-									country_exists = FRS
-									country_exists = FRD
-									country_exists = FRM
-									country_exists = FRV
-									country_exists = FMM
-									country_exists = FGR
-									country_exists = FIT
-								}
+					else_if = {
+						limit = { country_exists = FRM }
+						
+						if = { 
+							limit = { has_country_flag = MAR_aid_FRM }
+							#econ_join_sphere_MAR = yes
+							MAR = {
+								country_event = { id = MAR_forpol.701 days = 3 }
 							}
-						}
-
-						clr_global_flag = FRA_civil_war_sidos
-						clr_global_flag = FRA_civil_war_poujade
-						clr_global_flag = FRA_civil_war_ongoing
-						set_global_flag = FRA_civil_war_over
-						set_capital = { state = 19 remember_old_capital = no }
-
-						if = { # Reclamation victorious
-							limit = {
-								has_global_flag = FFR_reclamation_civil_war_happening
-								OR = {
-									original_tag = FFR
-									original_tag = FRD
-								}
-							}
-
-							set_global_flag = FFR_reclamation_successful
-							FFR_reclamation_victory = yes
-						}
-						else_if = {
-							limit = { has_country_flag = FRA_sidos_elected }
-
-							if = {
-								limit = { has_idea = FRA_mediterranean_brotherhood }
-								
-								ITA = { add_to_faction = FRA }
-							}
-							else_if = {
-								limit = {
-									FRA = {
-										check_variable = { ECON_SPHERE_LEADER = GER }
-									}
-								}
-								GER = { add_to_faction = FRA }
-							}
-
-							every_country = {
-								limit = { is_ai = no }
-								news_event = { id = WORLD.30101 days = 1 }
-							}
-						}
-						else_if = {
-							limit = { has_country_flag = FRA_poujade_elected }
-
-							if = {
-								limit = {
-									FRA = {
-										check_variable = { ECON_SPHERE_LEADER = GER }
-									}
-								}
-								GER = { add_to_faction = FRA }
-							}
-
-							every_country = {
-								limit = { is_ai = no }
-								news_event = { id = WORLD.30108 days = 1 }
-							}
-						}
-						else_if = {
-							limit = { country_exists = FRD }
-
-							set_cosmetic_tag = FRA_postCW
-							every_country = {
-								limit = { is_ai = no }
-								news_event = { id = WORLD.30102 days = 1 }
-							}
-						}
-						else_if = {
-							limit = { country_exists = FRV }
-							
-							set_cosmetic_tag = FRA_postCW
-							every_country = {
-								limit = { is_ai = no }
-								news_event = { id = WORLD.30103 days = 1 }
-							}
-							FRV = {
-								if = { 
-									limit = { has_country_flag = MAR_aid_FRV }
-									econ_join_sphere_MAR = yes
-								}
-							}
-						}
-						else_if = {
-							limit = { country_exists = FRM }
-							
-							set_cosmetic_tag = FRA_postCW
-							every_country = {
-								limit = { is_ai = no }
-								news_event = { id = WORLD.30104 days = 1 }
-							}
-							FRM = {
-								if = { 
-									limit = { has_country_flag = MAR_aid_FRM }
-									econ_join_sphere_MAR = yes
-								}
-							}
-						}
-						else_if = {
-							limit = { country_exists = FMM }
-							
-							set_cosmetic_tag = FRA_postCW
-							every_country = {
-								limit = { is_ai = no }
-								news_event = { id = WORLD.30105 days = 1 }
-							}
-						}
-						else_if = {
-							limit = { country_exists = FGR }
-							
-							set_cosmetic_tag = FRA_postCW
-							every_country = {
-								limit = { is_ai = no }
-								news_event = { id = WORLD.30106 days = 1 }
-							}
-
-							GER = {
-								add_to_faction = FGR
-								set_temp_variable = { SeaZone_ID = 3 } # 3; North Atlantic
-								Cold_War_GUI_PowerProjection_AddSeaZone = yes
-							}
-							FGR = {
-								add_ideas = Pakt_Bundnispartner
-							}
-							if = {
-								limit = { has_global_flag = german_civil_war_speervic }
-								join_zollverein = yes
-							}
-							else = {
-								econ_join_sphere_GER = yes
-							}
-						}
-						else_if = {
-							limit = { country_exists = FIT }
-							
-							set_cosmetic_tag = FRA_postCW
-							every_country = {
-								limit = { is_ai = no }
-								news_event = { id = WORLD.30107 days = 1 }
-							}
-
-							set_country_flag = FRA_Italy_Aligned
-
-							if = {
-								limit = {
-									USA = { is_faction_leader = yes }
-									ITA = { is_in_faction_with = USA }
-								}
-								USA = { add_to_faction = FIT }
-								add_ideas = OFN_Independent_Member
-							}
-							else_if = {
-								limit = {
-									JAP = { is_faction_leader = yes }
-									ITA = { is_in_faction_with = JAP }
-								}
-								JAP = { add_to_faction = FIT }
-								add_ideas = Sphere_Coequal
-							}
-							else_if = {
-								limit = {
-									ITA = { is_faction_leader = yes }
-								}
-								ITA = { add_to_faction = FIT }
-							}
-							econ_join_sphere_ITA = yes
 						}
 					}
 				}
-				set_global_flag = skip_default_capitulation
 			}
 			else_if = {
 				limit = {

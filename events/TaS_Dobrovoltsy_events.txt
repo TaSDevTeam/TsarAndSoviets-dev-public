@@ -1008,7 +1008,10 @@ country_event = { #france CW BEL join
 	trigger = {
 		tag = MAR
 		has_government = despotism
-		has_global_flag = FRA_civil_war_ongoing
+		OR = {
+			has_global_flag = FRA_civil_war_sidos
+			has_global_flag = FRA_civil_war_poujade
+		}
 		has_country_flag = MAR_started_volunteer_sending
 	}
 	fire_only_once = yes
@@ -1031,10 +1034,12 @@ country_event = { #france CW BEL win
 	picture = GFX_event_MAR_dobr2
 
 	fire_only_once = yes
-	is_triggered_only = yes
+	#is_triggered_only = yes
 	trigger = {
+		tag = MAR
+		has_government = despotism
 		country_exists = FRM
-		FRM = { has_war = no }
+		has_global_flag = FRA_civil_war_over
 	}
 
 	option = {
@@ -1043,7 +1048,10 @@ country_event = { #france CW BEL win
 		add_political_power = 100
 		add_stability = 0.03
 		add_war_support = 0.03
-		FRM  = { clr_country_flag = MAR_aid_FRM }
+		FRM  = {
+			clr_country_flag = MAR_aid_FRM
+			econ_join_sphere_MAR = yes
+		}
 		add_popularity = { ideology = despotism popularity = 0.02 }
 		TaS_dobrovoltsy_dynmod_victory = yes
 	}
@@ -1057,9 +1065,11 @@ country_event = { #france CW BEL lose
 	picture = GFX_event_MAR_dobr2
 
 	fire_only_once = yes
-	is_triggered_only = yes
+	#is_triggered_only = yes
 	trigger = {
+		tag = MAR
 		NOT = { country_exists = FRM }
+		has_government = despotism
 	}
 
 	option = {
@@ -1105,10 +1115,12 @@ country_event = { #france CW KOS win
 	picture = GFX_event_MAR_dobr2
 
 	fire_only_once = yes
-	is_triggered_only = yes
+	#is_triggered_only = yes
 	trigger = {
+		tag = MAR
+		has_government = socialist
 		country_exists = FRV
-		FRV = { has_war = no } 
+		has_global_flag = FRA_civil_war_over
 	}
 
 	option = {
@@ -1117,7 +1129,10 @@ country_event = { #france CW KOS win
 		add_political_power = 100
 		add_stability = 0.03
 		add_war_support = 0.03
-		FRV  = { clr_country_flag = MAR_aid_FRV }
+		FRV  = {
+			clr_country_flag = MAR_aid_FRV
+			econ_join_sphere_MAR = yes
+		}
 		add_popularity = { ideology = socialist popularity = 0.02 }
 		TaS_dobrovoltsy_dynmod_victory = yes
 	}
@@ -1131,8 +1146,10 @@ country_event = { #france CW KOS lose
 	picture = GFX_event_MAR_dobr2
 
 	fire_only_once = yes
-	is_triggered_only = yes
+	#is_triggered_only = yes
 	trigger = {
+		tag = MAR
+		has_government = socialist
 		NOT = { country_exists = FRV }
 	}
 
