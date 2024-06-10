@@ -53,31 +53,6 @@ defined_text = {
 }
 
 defined_text = {
-	name = MAR_GET_TROLL_TT
-	text = {
-		trigger = {
-			NOT = {
-				has_completed_focus = MAR_Solzh_Block_MGB
-				has_completed_focus = MAR_Solzh_catch_bandits
-				has_completed_focus = MAR_Solzh_speech
-			}
-		}
-		localization_key = MAR_Solzh_tt_Everything_is_normal
-	}
-	
-	text = {
-		trigger = {
-			OR = {
-				has_completed_focus = MAR_Solzh_Block_MGB
-				has_completed_focus = MAR_Solzh_catch_bandits
-				has_completed_focus = MAR_Solzh_speech
-			}
-		}
-		localization_key = MAR_Solzh_tt_Fuck
-	}
-}
-
-defined_text = {
 	name = MAR_EXP_GET_SS_STATUS
 	text = {
 		trigger = { has_country_flag = MAR_EXP_FL_SS_TOTAL_SUCESS }
