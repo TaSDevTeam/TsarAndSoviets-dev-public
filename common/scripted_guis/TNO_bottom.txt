@@ -116,7 +116,7 @@ scripted_gui = {
 			}
 			MAR_Prestol_GUI_Opener_visible = {
 				original_tag = MAR
-				#has_country_flag = BRI_WorkshopMechanic_Active
+				has_country_flag = MAR_prestol_active
 			}
 		}
 
@@ -340,6 +340,13 @@ scripted_gui = {
 				}
 				add_to_variable = { BRI_Workshop_Dirty = 1 }
 			}
+			MAR_Prestol_GUI_Opener_click = {
+				if = {
+					limit = { has_country_flag = MAR_Prestol_GUI_visible }
+					clr_country_flag = MAR_Prestol_GUI_visible
+				}
+				else = { set_country_flag = MAR_Prestol_GUI_visible }
+			}
 		}
 
 		properties = {
@@ -413,13 +420,6 @@ scripted_gui = {
 					clr_country_flag = GNG_arms_market_visible
 				}
 				else = { set_country_flag = GNG_arms_market_visible }
-			}
-			MAR_Prestol_GUI_Opener_visible = {
-				if = {
-					limit = { has_country_flag = MAR_Prestol_GUI_visible }
-					clr_country_flag = MAR_Prestol_GUI_visible
-				}
-				else = { set_country_flag = MAR_Prestol_GUI_visible }
 			}
 		}
 	}

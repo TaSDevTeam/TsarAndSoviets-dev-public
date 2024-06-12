@@ -6,10 +6,10 @@ guiTypes = {
 
 		buttonType = {
 			name = "MAR_Prestol_GUI_Opener"
-			quadTextureSprite = "GFX_MAR_berezpower" # Needs replacement
-			position = { x = 265 y = 74 }
+			quadTextureSprite = "GFX_MAR_Prestol_gui_opener_button" 
+			position = { x = 275 y = 64 }
 			centerposition = yes
-			scale = 0.70
+			#scale = 0.70
 			pdx_tooltip = MAR_Prestol_GUI_Opener_TT
 		}
 		iconType = {
@@ -20,7 +20,7 @@ guiTypes = {
 	}
 	containerWindowType = {
 		name = "MAR_Prestol_GUI"
-		size = { width = 600 height = 810 }
+		size = { width = 600 height = 1070 }
 		position = { x = 190 y = 28 }
 		moveable = yes
 		
@@ -35,11 +35,11 @@ guiTypes = {
 			instantTextBoxType = {
 				name = "gui_window_title"
 				position = { x = 0 y = 8 }
-				maxWidth = 580
+				maxWidth = 600
 				maxHeight = 40
 				format = center
 				font = "aldrich_36_outline"
-				text = "OPERATIVNAYA OBSTANOVKA"
+				text = MAR_gui_title
 			}
 		}
 		containerWindowType = {
@@ -203,6 +203,32 @@ guiTypes = {
 			Orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			pdx_tooltip = "CLOSE"
+		}
+		instantTextBoxType = {
+			name = "days_left_text"
+			position = { x = 29 y = 810 }
+			maxWidth = 360
+			maxHeight = 66
+			format = left
+			font = "aldrich_48_outline"
+			text = MAR_days_left_text
+		}
+		instantTextBoxType = {
+			name = "situation_change"
+			position = { x = 29 y = 920 }
+			maxWidth = 262
+			maxHeight = 46
+			format = left
+			font = "aldrich_32_outline"
+			text = MAR_situation_change
+		}
+		iconType = {
+			name = "gui_clock"
+			position = { x = 325 y = 790 }
+			quadTextureSprite = "GFX_MAR_Prestol_Clock_one"
+			scale = 0.47
+			
+			pdx_tooltip = "MAR_gui_prestol_clock_tt"
 		}
 	}
 	containerWindowType = {

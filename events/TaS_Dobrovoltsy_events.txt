@@ -1068,7 +1068,16 @@ country_event = { #france CW BEL lose
 	#is_triggered_only = yes
 	trigger = {
 		tag = MAR
-		NOT = { country_exists = FRM }
+		OR = {
+			AND = { 
+				NOT = { country_exists = FRM }
+				has_global_flag = FRA_civil_war_over
+			}
+			AND = { 
+				NOT = { country_exists = FRM }
+				has_global_flag = FRA_civil_war_poujade
+			}
+		}
 		has_government = despotism
 	}
 
@@ -1150,7 +1159,16 @@ country_event = { #france CW KOS lose
 	trigger = {
 		tag = MAR
 		has_government = socialist
-		NOT = { country_exists = FRV }
+		OR = {
+			AND = { 
+				NOT = { country_exists = FRV }
+				has_global_flag = FRA_civil_war_over
+			}
+			AND = { 
+				NOT = { country_exists = FRV }
+				has_global_flag = FRA_civil_war_sidos
+			}
+		}
 	}
 
 	option = {
