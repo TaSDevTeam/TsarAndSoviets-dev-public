@@ -1427,24 +1427,27 @@ shared_focus = {
 		if = {
 			limit = {
 				country_exists = KZR
+				country_exists = KAZ
+				KZR = { has_war = yes }
+			}
+			custom_effect_tooltip = Civil_War_Kazakhstan_Berezniki_tt
+			country_event = { id = berez_kazahk.11 days = 3 }
+		}
+		if = {
+			limit = {
+				country_exists = KZR
 				KZR = { has_war = no }
 			}
 			custom_effect_tooltip = Russian_Kazakhstan_Berezniki_tt
-			country_event = { id = berez_kazahk.10 days = 7 }
+			country_event = { id = berez_kazahk.12 days = 3 }
 		}
-		else = {
-			declare_war_on = {
-				target = KAZ
-				type = annex_everything
+		if = {
+			limit = {
+				country_exists = KAZ
+				KAZ = { has_war = no }
 			}
-			declare_war_on = {
-				target = KZR
-				type = annex_everything
-			}
-			declare_war_on = {
-				target = KZK
-				type = annex_everything
-			}
+			custom_effect_tooltip = Kazazh_Kazakhstan_Berezniki_tt
+			country_event = { id = berez_kazahk.13 days = 3 }
 		}
 	}
 }
@@ -1453,8 +1456,16 @@ shared_focus = {
 	icon = GFX_MAR_Kazax_otdel
 	cost = 3.00
 	available = { 
-		406 = { 
-			is_owned_and_controlled_by = MAR
+		custom_trigger_tooltip = {
+			tooltip = MAR_KAZ_ours
+			OR = {
+				406 = { 
+					is_owned_and_controlled_by = MAR
+				}
+				406 = { 
+					is_owned_and_controlled_by = MKZ
+				}
+			}
 		}
 	}
 	prerequisite = {

@@ -335,6 +335,129 @@ MAR_Iraq_Kurdistan_saddam = {
 	}
 	set_global_flag = KUR_Iraq_fixed
 }
+MAR_KAZ_check_vars = {
+	custom_effect_tooltip = MAR_KAZ_talks_result_tt
+	hidden_effect = {
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						check_variable = { MAR_KAZ_talks_fail = 0}
+						check_variable = { MAR_KAZ_talks_success = 3 }
+					}
+					AND = {
+						check_variable = { MAR_KAZ_talks_fail = 0}
+						check_variable = { MAR_KAZ_talks_success = 2 }
+					}
+				}
+				set_country_flag = MAR_KAZ_total_success
+				country_event = { id = berez_kazahk.18 days = 3 }
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					AND = {
+						check_variable = { MAR_KAZ_talks_fail = 1}
+						check_variable = { MAR_KAZ_talks_success = 2 }
+					}
+					AND = {
+						check_variable = { MAR_KAZ_talks_fail = 0}
+						check_variable = { MAR_KAZ_talks_success = 1 }
+					}
+				}
+				set_country_flag = MAR_KAZ_part_success
+				country_event = { id = berez_kazahk.18 days = 3 }
+			}
+		}
+		else = {
+			country_event = { id = berez_kazahk.17 days = 3 }
+		}
+	}
+
+}
+MAR_install_mil_kazakhstan = {
+	XYZ = {
+		MKZ_Military_Administration = {
+			set_nationality = MKZ
+		}
+	}
+	MKZ = {
+		TaS_2WRW_set_zone_laws = yes
+		set_politics = {
+			ruling_party = despotism
+			last_election = "1933.2.16"
+			election_frequency = 36
+			elections_allowed = no
+		}
+		set_party_name = { 
+			ideology = despotism 
+			long_name = Post_WRW2_Russian_Army_party
+			name = Post_WRW2_Russian_Army_party
+		}
+		set_popularities = {
+			despotism = 53
+			liberalism = 18
+			socialist = 12
+			communist = 5
+			paternalism = 12
+		}
+		MKZ_Military_Administration = {
+			promote_character = yes
+		}
+		add_state_core = 407
+		transfer_state = 407
+		add_state_core = 406
+		transfer_state = 406
+		add_state_core = 402
+		transfer_state = 402
+		add_state_core = 583
+		transfer_state = 583
+		add_state_core = 587
+		transfer_state = 587
+		add_state_core = 404
+		transfer_state = 404
+		add_state_core = 1807
+		transfer_state = 1807
+		add_state_core = 590
+		transfer_state = 590
+		add_state_core = 1808
+		transfer_state = 1808
+		add_state_core = 1802
+		transfer_state = 1802
+		add_state_core = 1803
+		transfer_state = 1803
+		add_state_core = 1804
+		transfer_state = 1804
+		add_state_core = 1805
+		transfer_state = 1805
+		add_state_core = 1806
+		transfer_state = 1806
+		add_state_core = 589
+		transfer_state = 589
+		add_state_core = 588
+		transfer_state = 588
+		set_capital = { state = 404 }
+		if = {
+			limit = { MAR = { has_government = socialist } }
+			set_cosmetic_tag = MilZones_Kosygin
+		}
+	}
+	MKZ = {
+		get_current_government_type = yes
+		save_party_popularities = yes
+	}
+	RUS = {
+		set_autonomy = {
+			target = MKZ
+			autonomy_state = autonomy_military_district
+		}	
+	}	
+	MKZ = {
+		restore_previous_government_type = yes
+		apply_party_popularities = yes
+	}
+}
 MAR_install_mil_turkestan = {
 	XYZ = {
 		MTR_Military_Administration = {
