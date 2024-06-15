@@ -76,7 +76,7 @@ bookmarks = {
 			ideology = fascism
 			ideas = {
 				JAP_showa_emperor
-				JAP_nihon_ascendant
+				JAP_legacy_guarded_pearl_exercises
 				JAP_zaibatsu_question
 			}
 			focuses = {
@@ -91,7 +91,7 @@ bookmarks = {
 			ideology = fascism
 			ideas = {
 				ITA_king_umberto
-				ITA_fadingfascism
+				ITA_fading_fascism
 				ITA_navy_strengthened
 			}
 			focuses = {
@@ -112,32 +112,21 @@ bookmarks = {
 		
 		"ENG" = {
 			history = "ENG_THENEWORDER_DESC"
-			ideology = paternalism
+			ideology = fascism
 			ideas = {
-				ENG_HMMLR
-				ENG_Own_Peoples_Hate
-				ENG_Across_The_Channel
+				ENG_The_Terrible_Twins
+				ENG_British_Free_Corps
+				ENG_German_Corporate_Dominance_0
 			}
 			focuses = {
-				ENG_keeping_ahead
-				ENG_the_kings_speech
-				ENG_writing_on_the_walls
+				ENG_hurrah_for_the_blackshirts
+				ENG_coronation_day
+				ENG_a_government_true_to_his_majesty
 			}
 		}
 
-		"ALT" = {
-			history = ""
-			ideology = progressivism
-			ideas = {}
-			focuses = {}
-		}
-
-		"KMC" = {
-			history = ""
-			ideology = communist
-			ideas = {}
-			focuses = {}
-		}
+		"ZZZ" = { history = "" }
+		"ZZZ" = { history = "" }
 
 		"CHI" = {
 			history = "CHI_THENEWORDER_DESC"
@@ -215,20 +204,12 @@ bookmarks = {
 		"ZZZ" = { minor = yes history = "" }
 
 		## OFN ##
-		"SCO" = {
+		"CHL" = {
 			minor = yes
-			history = "SCO_THENEWORDER_DESC"
-			ideology = liberalism
-			ideas = {
-				SCO_The_Lonely_Ilse
-				SCO_Itchy_Trigger
-				SCO_Derry_Scapa_deal
-			}
-			focuses = {
-				SCO_ILP_Victory
-				SCO_SNP_Victory
-				SCO_UP_Victory
-			}
+			history = ""
+			ideology = liberal_conservatism
+			ideas = {}
+			focuses = {}
 		}
 
 		"MEX" = {
@@ -454,13 +435,7 @@ bookmarks = {
 		## OFN ##
 		"ZZZ" = { minor = yes history = "" }
 
-		"CHL" = {
-			minor = yes
-			history = ""
-			ideology = liberal_conservatism
-			ideas = {}
-			focuses = {}
-		}
+		"ZZZ" = { minor = yes history = "" }
 
 		"ZZZ" = { minor = yes history = "" }
 		## OFN ##
@@ -476,10 +451,18 @@ bookmarks = {
 
 		"UKR" = {
 			minor = yes
-			history = ""
+			history = "UKR_THENEWORDER_DESC"
 			ideology = national_socialism
-			ideas = {}
-			focuses = {}
+			ideas = {
+				UKR_breadbasket_of_the_reich
+				UKR_land_of_contrasts
+				UKR_paradise_undone
+			}
+			focuses = {
+				UKR_the_melt_of_rot
+				FUK_the_new_hruchevsky
+				UKS_the_longest_war
+			}
 		}
 
 		"OST" = {
