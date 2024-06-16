@@ -397,8 +397,20 @@ defined_text = {
 	text = {
 		trigger = {
 			OR = {
-				YEM = { exists = yes }
-				NYM = { exists = yes }
+				AND = {
+					is_in_array = {
+						array = global.OIL_supported_by_MAR
+						value = YEM
+					}
+					YEM = { has_war = no }
+				}
+				AND = {
+					is_in_array = {
+						array = global.OIL_supported_by_MAR
+						value = NYM
+					}
+					NYM = { has_war = no }
+				}
 			}
 		}
 		localization_key = BOR_OC_country_victory
@@ -488,8 +500,20 @@ defined_text = {
 	text = {
 		trigger = {
 			OR = {
-				EGQ = { exists = yes }
-				EGB = { exists = yes }
+				AND = {
+					is_in_array = {
+						array = global.OIL_supported_by_MAR
+						value = EGB
+					}
+					EGB = { has_war = no }
+				}
+				AND = {
+					is_in_array = {
+						array = global.OIL_supported_by_MAR
+						value = EGQ
+					}
+					EGQ = { has_war = no }
+				}
 			}
 		}
 		localization_key = BOR_OC_country_victory
@@ -525,8 +549,20 @@ defined_text = {
 	text = {
 		trigger = {
 			OR = {
-				SDS = { exists = yes }
-				SDF = { exists = yes }
+				AND = {
+					is_in_array = {
+						array = global.OIL_supported_by_MAR
+						value = SDF
+					}
+					SDF = { has_war = no }
+				}
+				AND = {
+					is_in_array = {
+						array = global.OIL_supported_by_MAR
+						value = SDS
+					}
+					SDS = { has_war = no }
+				}
 			}
 		}
 		localization_key = BOR_OC_country_victory

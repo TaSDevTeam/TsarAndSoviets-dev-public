@@ -1679,14 +1679,14 @@ country_event = { #-kazakhstan
 		retire_character = MAR_Wojciech_Jaruzelski
 		retire_character = MAR_Cheslav_Kischak
 		MAR_Wojciech_Jaruzelski = {
-			set_nationality = NPL
+			set_nationality = KAZ
 		}
 		XYZ = {
 			MAR_Vitaliy_Mukha = {
-				set_nationality = PAV
+				set_nationality = KZR
 			}
 		}
-		PAV = {
+		KZR = {
 			set_cosmetic_tag = PAV_MAR_collapse
 			add_state_core = 587
 			transfer_state = 587
@@ -1746,7 +1746,7 @@ country_event = { #-kazakhstan
 				TNO_economy_type = token:Econ_Type_Capitalism
 			}
 		}
-		NPL  = {
+		KAZ  = {
 			set_cosmetic_tag = NPL_MAR_collapse
 			add_state_core = 406
 			transfer_state = 406
@@ -1789,7 +1789,7 @@ country_event = { #-kazakhstan
 		}
 		MTR = {
 			declare_war_on = {
-				target = PAV
+				target = KZR
 				type = annex_everything
 			}
 			add_ideas = TaS_Post2WRW_MTR_march_north
@@ -1915,7 +1915,7 @@ country_event = { #F iraq
 		ai_chance = { factor = 1 }
 		add_stability = -0.05
 		hidden_effect = {
-			 MAR_Iraq_Kurdistan_saddam = YES
+			 MAR_Iraq_Kurdistan_saddam = yes
 			 KUR = {
 				econ_leave_sphere = yes
 				end_puppet = MAR

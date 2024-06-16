@@ -9,6 +9,20 @@
 #######################################################################
 
 add_namespace = berez_world_news
+add_namespace = berez_kazahk_news
+
+news_event = { # Sergei I Regional
+	id = berez_world_news.1
+	title = berez_world_news.1.t
+	desc = berez_world_news.1.d
+	picture = GFX_berez_world_news_001
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = berez_world_news.1.a
+	}
+}
 
 news_event = { # Maria I Regional
 	id = berez_world_news.2
