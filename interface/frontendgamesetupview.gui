@@ -3,14 +3,14 @@ guiTypes = {
 	containerWindowType = {
 		name ="proxy_window"
 		position = { x=0 y =0}
-		size = { width=1 height =1}
+		size = { width=1 height =1 }
 	}
 
 	### bookmark entry
 	containerWindowType = {
 		name = "bookmark_entry"
 		position = { x = 130 y =0 }
-		size = { width=232 height=211}
+		size = { width=232 height=211 }
 		clipping = no
 		fade_time = 500
 		fade_type = linear
@@ -624,6 +624,23 @@ guiTypes = {
 			quadTextureSprite ="GFX_country_selection_bg"
 		}
 
+		iconType = { # TFL NEW -- BRITAIN
+			name = "country_selection_new_ugly_ger"
+			position = { x = 282 y = 119 }
+			spriteType = "GFX_country_selection_new_big_shine"
+			pdx_tooltip = "BOOKMARK_TFL_NEW_BRITAIN"
+			pdx_tooltip_delayed = "BOOKMARK_TFL_NEW_DELAYED_BRITAIN"
+		}
+
+		iconType = { # THE RUIN - JAPAN FACELIFT
+			name = "country_selection_new_ugly_jap"
+			position = { x = 822 y = 49 }
+			spriteType = "GFX_country_selection_new_big_shine"
+			pdx_tooltip = "BOOKMARK_UGLY_AMERICAN_NEW_JAP"
+			pdx_tooltip_delayed = "BOOKMARK_UGLY_AMERICAN_NEW_DELAYED_JAP"
+		}
+
+
 		containerWindowType = {
 			name ="countries"
 			position = { x = 15 y = 45 }
@@ -702,19 +719,12 @@ guiTypes = {
 				pdx_tooltip = "BOOKMARK_VORKUTA_BLOCKER"
 				pdx_tooltip_delayed = "BOOKMARK_VORKUTA_BLOCKER_DELAYED"
 			}
-			iconType = { # OYROTIA BLOCKED ENTRY
-				name = "countries_blocker_oyrotia_entry"
-				position = { x = 467 y = 90 }
-				spriteType = "GFX_country_selection_screen_blocker_big"
-				pdx_tooltip = "BOOKMARK_OYROTIA_BLOCKER"
-				pdx_tooltip_delayed = "BOOKMARK_OYROTIA_BLOCKER_DELAYED"
-			}
-			iconType = { # KAMCHATKA BLOCKED ENTRY
-				name = "countries_blocker_kamchatka_entry"
-				position = { x = 647 y = 90 }
-				spriteType = "GFX_country_selection_screen_blocker_big"
-				pdx_tooltip = "BOOKMARK_KAMCHATKA_BLOCKER"
-				pdx_tooltip_delayed = "BOOKMARK_KAMCHATKA_BLOCKER_DELAYED"
+			iconType = { # BRITAIN INFO
+				name = "country_selection_info_britain"
+				position = { x = 267 y = 65 }
+				spriteType = "GFX_country_selection_alert_big_shine"
+				pdx_tooltip = "BOOKMARK_BRITAIN_INFO"
+				pdx_tooltip_delayed = "BOOKMARK_BRITAIN_INFO_DELAYED"
 			}
 			iconType = { # FRANCE BLOCKED ENTRY
 				name = "countries_blocker_big_pakt_3_entry"
@@ -876,7 +886,7 @@ guiTypes = {
 		}
 		iconType = { # CHILE BLOCKED ENTRY
 			name = "countries_blocker_ofn_2_2_entry"
-			position = { x = 136 y = 325 }
+			position = { x = 74 y = 284 }
 			spriteType = "GFX_country_selection_screen_blocker"
 			pdx_tooltip = "BOOKMARK_CHILE_BLOCKER"
 			pdx_tooltip_delayed = "BOOKMARK_CHILE_BLOCKER_DELAYED"
@@ -923,10 +933,10 @@ guiTypes = {
 			pdx_tooltip = "BOOKMARK_POLAND_BLOCKER"
 			pdx_tooltip_delayed = "BOOKMARK_POLAND_BLOCKER_DELAYED"
 		}
-		iconType = { # UKRAINE BLOCKED ENTRY
-			name = "countries_blocker_pakt_2_2_entry"
-			position = { x = 316 y = 325 }
-			spriteType = "GFX_country_selection_screen_blocker"
+		iconType = { # UKRAINE NEW
+			name = "country_selection_new_ukraine"
+			position = { x = 300 y = 325 }
+			spriteType = "GFX_country_selection_new_shine"
 			pdx_tooltip = "BOOKMARK_UKRAINE_BLOCKER"
 			pdx_tooltip_delayed = "BOOKMARK_UKRAINE_BLOCKER_DELAYED"
 		}
@@ -946,13 +956,6 @@ guiTypes = {
 		}
 
 		# Sphere
-		iconType = { # GUANGDONG NEW
-			name = "country_selection_new_dong"
-			position = { x = 780 y = 282 }
-			spriteType = "GFX_country_selection_new_shine"
-			pdx_tooltip = "BOOKMARK_GUANGDONG_NEW"
-			pdx_tooltip_delayed = "BOOKMARK_GUANGDONG_NEW_DELAYED"
-		}
 
 		# Triumvirate
 		iconType = { # GREECE BLOCKED ENTRY
@@ -1360,10 +1363,10 @@ guiTypes = {
 
 			instantTextBoxType = {
 				name = "leader"
-				position = { x = 100 y = 28 }
+				position = { x = 80 y = 28 }
 				font = "aldrich_24_outline"
 				borderSize = {x = 0 y = 0}
-				maxWidth = 250
+				maxWidth = 270
 				maxHeight = 40
 				fixedsize = yes
 				format = right
@@ -1444,11 +1447,11 @@ guiTypes = {
 
 			instantTextBoxType = {
 				name = "party"
-				position = { x = 100 y = 70 }
+				position = { x = 115 y = 70 }
 				textureFile = ""
 				font = "aldrich_24_outline"
 				borderSize = {x = 0 y = 0}
-				maxWidth = 250
+				maxWidth = 235
 				maxHeight = 40
 				fixedsize = yes
 				format = right
@@ -1459,7 +1462,7 @@ guiTypes = {
 	containerWindowType = {
 		name = "gamesetup_multiplayer_settings_window"
 		position = { x = 0 y = 196}
-		show_position = { x = 5 y = -261}
+		show_position = { x = 5 y = -261 }
 		animation_type = decelerated
 		animation_time = 1000
 
@@ -2032,7 +2035,7 @@ guiTypes = {
 		iconType = {
 			name = "disallow_achievements"
 			spriteType = "GFX_game_rule_option_disallow_achievements"
-			position = { x = 236 y = 0 }
+			position = { x = 336 y = 0 }
 			alwaystransparent = yes
 		}
 	}
@@ -2094,7 +2097,7 @@ guiTypes = {
 				iconType = {
 					name = "disallow_achievements"
 					spriteType = "GFX_game_rule_option_disallow_achievements"
-					position = { x = 246 y = 6 }
+					position = { x = 346 y = 6 }
 					alwaystransparent = yes
 				}
 			}
@@ -2153,8 +2156,8 @@ guiTypes = {
 
 	containerWindowType = {
 		name ="gamesetup_gameplay_settings_window"
-		position = { x = 600 y = 41}
-		show_position = { x = 2 y = 41}
+		position = { x = 600 y = 41 }
+		show_position = { x = 2 y = 41 }
 		animation_type = decelerated
 		animation_time = 1000
 		clipping = no
