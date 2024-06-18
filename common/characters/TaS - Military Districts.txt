@@ -90,6 +90,21 @@ characters = {
 			id = -1
 		}
 	}
+	MKZ_Military_Administration = {
+		name = MAR_Military_Administration
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/MAR/Portrait_Berezniki_Millitary_Administration.dds"
+			}
+		}
+		country_leader = {
+			#desc = "MAR_Military_Administration_DESC"
+			ideology = despotism_interim_government_subtype
+			traits = { }
+			expire = "2222.2.2"
+			id = -1
+		}
+	}
 	#free baltics
 	EST_Tonis_Kint = {
 		name = EST_Tonis_Kint

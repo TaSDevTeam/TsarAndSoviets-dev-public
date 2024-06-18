@@ -1969,7 +1969,10 @@ country_event = { #success
 
 country_event = { #fail 1
 	id = MAR_Kosygin_Prestol.16
-	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin_Prestol.16" }
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin_Prestol.16"
+		scoped_play_song = "clock_over"
+	}
 	title = MAR_Kosygin_Prestol.16.t
 	desc = MAR_Kosygin_Prestol.16.d
 	picture = GFX_event_MAR_Kosygin_Prestol_16

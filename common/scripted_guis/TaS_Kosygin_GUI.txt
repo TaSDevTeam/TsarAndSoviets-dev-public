@@ -1,9 +1,53 @@
 scripted_gui = {
+
+	MAR_Prestol_GUI_Opener = {
+		context_type = player_context
+		parent_window_token = politics_tab
+		window_name = "MAR_Prestol_GUI_Opener"
+
+		visible = {
+			tag = MAR
+			#NOT = { has_country_flag = BRG_domestic_GUI_disabled }
+		}
+
+		triggers = {
+			gui_alert_visible = {
+				NOT = { has_country_flag = MAR_Prestol_GUI_Opener_Clear }
+				has_country_flag = MAR_prestol_active
+			}
+			MAR_Prestol_GUI_Opener_visible = {
+				has_country_flag = MAR_prestol_active
+			}
+
+			#TNO_Burgundy_Domestic_GUI_Opener_Button_click_enabled = {
+			#	NOT = { has_country_flag = BRG_Revolt_Happened }
+			#}
+
+			#TNO_BRG_gui_alert_visible = {
+			#	any_owned_state = { has_state_flag = BRG_State_Doesnt_Have_Enough_Cops }
+			#}
+		}
+
+		effects = {
+			MAR_Prestol_GUI_Opener_click = {
+				if = {
+					limit = { has_country_flag = MAR_Prestol_GUI_visible }
+					clr_country_flag = MAR_Prestol_GUI_visible
+				}
+				else = { set_country_flag = MAR_Prestol_GUI_visible }
+				set_country_flag = MAR_Prestol_GUI_Opener_Clear
+			}
+		}
+
+	}
+	
 	MAR_Prestol_GUI = {
-		context_type = decision_category
+		context_type = player_context
 		window_name = "MAR_Prestol_GUI"
-		#dirty = MAR_insurgency_controller
-		visible = { always = yes }
+		dirty = MAR_insurgency_controller
+		visible = {
+			has_country_flag = MAR_Prestol_GUI_visible
+		}
 		dynamic_lists = {
 			prestol_map_gridbox = {
 				array = MAR_map_grid_array
@@ -19,7 +63,11 @@ scripted_gui = {
 				x = MAR_map_x^idx
 				y = MAR_map_y^idx
 			} 
-			top_bar_strength_bar = { frame = insurgency_strength }
+			top_bar_strength_bar = { frame = ROOT.insurgency_strength }
+			
+			gui_clock = {
+				image = "[MAR_PRESTOL_GET_CLOCK]"
+			}
 		}
 		triggers = {
 			map_state_850_selected_visible = { check_variable = { insurgency_state_selected = 850 } }
@@ -39,6 +87,14 @@ scripted_gui = {
 			map_backgroundhelper_visible = { is_debug = yes }
 		}
 		effects = {
+			gui_close_button_click = {
+				if = {
+					limit = { has_country_flag = MAR_Prestol_GUI_visible }
+					clr_country_flag = MAR_Prestol_GUI_visible
+				}
+				else = { set_country_flag = MAR_Prestol_GUI_visible }
+				set_country_flag = MAR_Prestol_GUI_Opener_Clear
+			}
 			prestol_map_state_click = {
 				set_variable = { insurgency_state_selected = MAR_map_grid_array^idx }
 				set_variable = { insurgency_state_selected_i = idx }
@@ -144,7 +200,12 @@ scripted_gui = {
 				}
 				NOT = { check_variable = { var:insurgency_state_selected = 857 } }
 			}
-			MAR_antiprestol_decision_operation_two_visible = { var:insurgency_state_selected = { check_variable = { operation_available = 1 } } }
+			MAR_antiprestol_decision_operation_two_visible = {
+				var:insurgency_state_selected = {
+					check_variable = { operation_available = 1 }
+					check_variable = { kosygin_reception > 1 }
+				}
+			}
 			MAR_Prestol_KGB_Cover_visible = {
 				OR = {
 					var:insurgency_state_selected = {

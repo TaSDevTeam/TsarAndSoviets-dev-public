@@ -335,6 +335,129 @@ MAR_Iraq_Kurdistan_saddam = {
 	}
 	set_global_flag = KUR_Iraq_fixed
 }
+MAR_KAZ_check_vars = {
+	custom_effect_tooltip = MAR_KAZ_talks_result_tt
+	hidden_effect = {
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						check_variable = { MAR_KAZ_talks_fail = 0}
+						check_variable = { MAR_KAZ_talks_success = 3 }
+					}
+					AND = {
+						check_variable = { MAR_KAZ_talks_fail = 0}
+						check_variable = { MAR_KAZ_talks_success = 2 }
+					}
+				}
+			}
+			set_country_flag = MAR_KAZ_total_success
+			country_event = { id = berez_kazahk.18 days = 3 }
+		}
+		else_if = {
+			limit = {
+				OR = {
+					AND = {
+						check_variable = { MAR_KAZ_talks_fail = 1}
+						check_variable = { MAR_KAZ_talks_success = 2 }
+					}
+					AND = {
+						check_variable = { MAR_KAZ_talks_fail = 0}
+						check_variable = { MAR_KAZ_talks_success = 1 }
+					}
+				}
+			}
+			set_country_flag = MAR_KAZ_part_success
+			country_event = { id = berez_kazahk.18 days = 3 }
+		}
+		else = {
+			country_event = { id = berez_kazahk.17 days = 3 }
+		}
+	}
+
+}
+MAR_install_mil_kazakhstan = {
+	XYZ = {
+		MKZ_Military_Administration = {
+			set_nationality = MKZ
+		}
+	}
+	MKZ = {
+		TaS_2WRW_set_zone_laws = yes
+		set_politics = {
+			ruling_party = despotism
+			last_election = "1933.2.16"
+			election_frequency = 36
+			elections_allowed = no
+		}
+		set_party_name = { 
+			ideology = despotism 
+			long_name = Post_WRW2_Russian_Army_party
+			name = Post_WRW2_Russian_Army_party
+		}
+		set_popularities = {
+			despotism = 53
+			liberalism = 18
+			socialist = 12
+			communist = 5
+			paternalism = 12
+		}
+		MKZ_Military_Administration = {
+			promote_character = yes
+		}
+		add_state_core = 407
+		transfer_state = 407
+		add_state_core = 406
+		transfer_state = 406
+		add_state_core = 402
+		transfer_state = 402
+		add_state_core = 583
+		transfer_state = 583
+		add_state_core = 587
+		transfer_state = 587
+		add_state_core = 404
+		transfer_state = 404
+		add_state_core = 1807
+		transfer_state = 1807
+		add_state_core = 590
+		transfer_state = 590
+		add_state_core = 1808
+		transfer_state = 1808
+		add_state_core = 1802
+		transfer_state = 1802
+		add_state_core = 1803
+		transfer_state = 1803
+		add_state_core = 1804
+		transfer_state = 1804
+		add_state_core = 1805
+		transfer_state = 1805
+		add_state_core = 1806
+		transfer_state = 1806
+		add_state_core = 589
+		transfer_state = 589
+		add_state_core = 588
+		transfer_state = 588
+		set_capital = { state = 404 }
+		if = {
+			limit = { MAR = { has_government = socialist } }
+			set_cosmetic_tag = MilZones_Kosygin
+		}
+	}
+	MKZ = {
+		get_current_government_type = yes
+		save_party_popularities = yes
+	}
+	RUS = {
+		set_autonomy = {
+			target = MKZ
+			autonomy_state = autonomy_military_district
+		}	
+	}	
+	MKZ = {
+		restore_previous_government_type = yes
+		apply_party_popularities = yes
+	}
+}
 MAR_install_mil_turkestan = {
 	XYZ = {
 		MTR_Military_Administration = {
@@ -593,6 +716,99 @@ first_every_month_script_TaS = {
 		}
 	}
 }
+first_every_day_script_TaS 	= {	
+	MAR = {
+		if = {
+			limit = {
+				has_country_flag = MAR_prestol_active
+			}
+			MAR_prestol_calc_nationwide_strength = yes
+			add_to_variable = { MAR_prestol_clock_time = -1 }
+			add_to_variable = { MAR_prestol_update_time = -1 }
+			clamp_variable = {
+				var = MAR_prestol_clock_time
+				min = 0
+				max = 500
+			}
+			if = {
+				limit = { check_variable = { MAR_prestol_update_time = 0 } }
+				set_variable = { MAR_prestol_update_time = 14 }
+				MAR_prestol_biweekly_update = yes
+				random_list = {
+					var:prestol_terror_risk = {
+						random_list = {
+							33 = {
+								country_event = {
+									id = MAR_Kosygin_Prestol.25 days = 0
+								}
+							}
+							33 = {
+								country_event = {
+									id = MAR_Kosygin_Prestol.26 days = 0
+								}
+							}
+							34 = {
+								country_event = {
+									id = MAR_Kosygin_Prestol.27 days = 0
+								}
+							}
+						}
+					}
+					var:prestol_terror_anti_risk = {
+						
+					}
+				}
+				set_variable = { ROOT.rebelous_states_total = -1 }
+				for_each_loop = {
+					array = MAR_map_grid_array
+					if = {
+						limit = {
+							check_variable = { v:kosygin_reception > 1 }
+						}
+						add_to_variable = { ROOT.rebelous_states_total = 1 }
+					}
+				}
+				log = "rebelous_states_total: [?ROOT.rebelous_states_total]"
+				if = {
+					limit = {
+						check_variable = { ROOT.insurgency_strength < 15 }
+						check_variable = { ROOT.rebelous_states_total < 3 }
+					}
+					country_event = {
+						id = MAR_Kosygin_Prestol.29 days = 1
+					}
+				}
+			}
+			
+			if = {
+				limit = { check_variable = { MAR_prestol_clock_time = 0 } }
+				country_event = { id = MAR_Kosygin_Prestol.16 random_days = 5 }
+			}
+			if = {
+				limit = {
+					has_country_flag = MAR_Prestol_GUI_visible
+					OR = {
+						check_variable = { MAR_prestol_clock_time = 490 }
+						check_variable = { MAR_prestol_clock_time = 450 }
+						check_variable = { MAR_prestol_clock_time = 400 }
+						check_variable = { MAR_prestol_clock_time = 350 }
+						check_variable = { MAR_prestol_clock_time = 300 }
+						check_variable = { MAR_prestol_clock_time = 250 }
+						check_variable = { MAR_prestol_clock_time = 200 }
+						check_variable = { MAR_prestol_clock_time = 150 }
+						check_variable = { MAR_prestol_clock_time = 100 }
+						check_variable = { MAR_prestol_clock_time = 50 }
+						check_variable = { MAR_prestol_clock_time = 5 }
+					}
+				}
+				scoped_play_song = "clock_move"
+			}
+		}
+	}
+}
+
+
+
 TaS_dobrovoltsy_dynmod_victory = {
 	custom_effect_tooltip = TaS_dobrovoltsy_dynmod_victory_tt
 	add_to_variable = {

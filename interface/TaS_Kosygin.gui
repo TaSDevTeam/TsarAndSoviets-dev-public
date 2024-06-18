@@ -1,12 +1,51 @@
 guiTypes = {
 	containerWindowType = {
+		name = "MAR_Prestol_GUI_Opener"
+		size = { width = 220 height = 128 }
+		position = { x = 0 y = 289 }
+
+		buttonType = {
+			name = "MAR_Prestol_GUI_Opener"
+			quadTextureSprite = "GFX_MAR_Prestol_gui_opener_button" 
+			position = { x = 275 y = 64 }
+			centerposition = yes
+			#scale = 0.70
+			pdx_tooltip = MAR_Prestol_GUI_Opener_TT
+		}
+		iconType = {
+			name = "gui_alert"
+			spriteType = "GFX_gui_alert"
+			position = { x=189 y=-16 }
+		}
+	}
+	containerWindowType = {
 		name = "MAR_Prestol_GUI"
-		size = { width = 482 height = 700 }
-		position = { x = 0 y = 0 }
+		size = { width = 600 height = 1070 }
+		position = { x = 190 y = 28 }
+		moveable = yes
+		
+		background = {
+			name = "Background"
+			quadTextureSprite = "GFX_tiled_window_thin_border2"
+		}
+		containerWindowType = {
+			name = "window_title"
+			size = { width = 482 height = 50 }
+			position = { x = 11 y = 0 }
+			instantTextBoxType = {
+				name = "gui_window_title"
+				position = { x = 0 y = 8 }
+				maxWidth = 600
+				maxHeight = 40
+				format = center
+				font = "aldrich_36_outline"
+				text = MAR_gui_title
+			}
+		}
 		containerWindowType = {
 			name = "top_bar"
 			size = { width = 482 height = 50 }
-			position = { x = 11 y = -6 }
+			position = { x = 59 y = 50 }
 			iconType = {
 				name = "top_bar_bg"
 				spriteType = "GFX_OMS_insurgency_top_bar_bg"
@@ -50,7 +89,7 @@ guiTypes = {
 		containerWindowType = {
 			name = "map"
 			size = { width = 462 height = 706 }
-			position = { x = 16 y = 102 }
+			position = { x = 69 y = 162 }
 			iconType = {
 				name = "map_state_850_selected"
 				position = { x = 186 y = 407 }
@@ -149,12 +188,47 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = "selected_state_ttl"
-			position = { x = 21 y = 626 }
+			position = { x = 69 y = 700 }
 			maxWidth = 462
 			maxHeight = 46
 			format = center
 			font = "aldrich_32_outline"
 			text = "MAR_insurgency_selected_state_ttl"
+		}
+		buttonType = {
+			name = "gui_close_button"
+			position = { x = -29 y = 10 }
+			quadTextureSprite ="GFX_crt_closebutton"
+			shortcut = "ESCAPE"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			pdx_tooltip = "CLOSE"
+		}
+		instantTextBoxType = {
+			name = "days_left_text"
+			position = { x = 29 y = 810 }
+			maxWidth = 360
+			maxHeight = 66
+			format = left
+			font = "aldrich_48_outline"
+			text = MAR_days_left_text
+		}
+		instantTextBoxType = {
+			name = "situation_change"
+			position = { x = 29 y = 920 }
+			maxWidth = 262
+			maxHeight = 46
+			format = left
+			font = "aldrich_32_outline"
+			text = MAR_situation_change
+		}
+		iconType = {
+			name = "gui_clock"
+			position = { x = 325 y = 790 }
+			quadTextureSprite = "GFX_MAR_Prestol_Clock_one"
+			scale = 0.47
+			
+			pdx_tooltip = "MAR_gui_prestol_clock_tt"
 		}
 	}
 	containerWindowType = {
