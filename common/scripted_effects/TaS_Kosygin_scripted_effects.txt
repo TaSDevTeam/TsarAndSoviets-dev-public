@@ -177,8 +177,6 @@ MAR_Prestol_start = {
 	#set_variable = { OMS_batov_base_effectiveness = 0.05 }
 	#set_variable = { OMS_our_base_effectiveness = -0.05 }
 	set_variable = { MAR_tabby_timeout = 500 }
-	set_variable = { MAR_prestol_clock_time = 500 }
-	set_variable = { MAR_prestol_update_time = 14 }
 	hidden_effect = {
 		add_popularity = {
 			ideology = national_socialism
@@ -355,6 +353,8 @@ MAR_Prestol_start = {
 		country_event = { id = MAR_Kosygin_Prestol.23 days = 315 } 
 	}
 	MAR_prestol_calc_nationwide_strength = yes
+	MAR_calculate_dynmod_effects = yes
+	MAR_calculate_terror_risk = yes
 	
 	set_variable = { insurgency_state_selected = 850 }
 }
@@ -374,14 +374,13 @@ MAR_prestol_calc_nationwide_strength = {
 		}
 		log = "MAR_map_grid_array^num: [?MAR_map_grid_array^num]"
 
-		divide_variable = { ROOT.insurgency_strength = 6 }
+		divide_variable = { ROOT.insurgency_strength = 13 }
 		multiply_variable = { ROOT.insurgency_strength = 100 }
 		
 		log = "[?ROOT.insurgency_strength]"
 		
 		add_to_variable = { insurgency_controller = 1 }
 		MAR_calculate_dynmod_effects = yes
-		MAR_calculate_terror_risk = yes
 	}
 }
 
@@ -397,28 +396,17 @@ MAR_prestol_biweekly_update = {
 				add_to_variable = { insurgency_strength = change_strenghth_temp }
 				custom_effect_tooltip = MAR_prestol_power_change
 				set_variable = { MAR_Had_RecentAction = 0 }
-				clamp_variable = {
-					var = insurgency_strength
-					min = 0
-					max = 1
-				}
 			}
 		}
 	}
 	MAR_prestol_calc_nationwide_strength = yes
-	MAR_calculate_terror_risk = yes
 }
 
 MAR_clamp_insurgency_strength = {
-	for_each_loop = {
-		array = MAR_map_grid_array
-		var:v = {
-			clamp_variable = {
-				var = insurgency_strength
-				min = 0
-				max = 1
-			}
-		}
+	clamp_variable = {
+		var = insurgency_strength
+		min = 0
+		max = 1
 	}
 }
 

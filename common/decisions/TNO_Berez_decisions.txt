@@ -2161,7 +2161,7 @@ MAR_category_prestol_terrorists = {
 		}
 		priority = 500
 		selectable_mission = no
-		days_mission_timeout = 140
+		days_mission_timeout = 14
 		is_good = no
 
 		timeout_effect = {
@@ -3782,79 +3782,6 @@ MAR_greater_good_category = {
 			TNO_improve_military_supervision_policy_effectiveness_high = yes
 			TNO_improve_conscription_policy_effectiveness_high = yes
 			TNO_improve_draft_exemptions_policy_effectiveness_high = yes
-		}
-	}
-}
-
-MAR_yug_excersices_category = {
-	MAR_yug_do_excersices = {
-		icon = GFX_decision_revolt
-		activation = { always = no }
-		available = {
-			has_equipment = {
-				infantry_equipment > 1500
-			}
-			has_equipment = {
-				anti_tank_equipment > 300
-			}
-			has_equipment = {
-				support_equipment > 300
-			}
-			has_equipment = {
-				artillery_equipment > 100
-			}
-			divisions_in_state = {
-				state = 572
-				size > 3
-			}
-			divisions_in_state = {
-				state = 571
-				size > 3
-			}
-			divisions_in_state = {
-				state = 754
-				size > 3
-			}
-		}
-		priority = 300
-		days_mission_timeout = 21
-		is_good = no
-
-		timeout_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision Timeout MAR_yug_do_excersices"
-			custom_effect_tooltip = MAR_KAZ_talks_decrease_tt
-			add_to_variable = { MAR_KAZ_talks_fail = 1 }
-			TNO_worsen_army_professionalism_low = yes
-			country_event = { id = berez_kazahk.16 days = 3 }
-		}
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision MAR_yug_do_excersices"
-			custom_effect_tooltip = MAR_KAZ_talks_increase_tt
-			add_to_variable = { MAR_KAZ_talks_success = 1 }
-			clr_country_flag = MAR_yug_70_excercises
-			TNO_improve_army_professionalism_med = yes
-			add_equipment_to_stockpile = {
-				type = infantry_equipment
-				amount = -1100
-				producer = MAR
-			}
-			add_equipment_to_stockpile = {
-				type = support_equipment
-				amount = -200
-				producer = MAR
-			}
-			add_equipment_to_stockpile = {
-				type = anti_tank_equipment
-				amount = -215
-				producer = MAR
-			}
-			add_equipment_to_stockpile = {
-				type = artillery_equipment
-				amount = -55
-				producer = MAR
-			}
-			country_event = { id = berez_kazahk.16 days = 3 }
-			news_event = { id = berez_kazahk_news.6 days = 3 }
 		}
 	}
 }

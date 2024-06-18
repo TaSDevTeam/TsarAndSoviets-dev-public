@@ -1,6 +1,6 @@
 on_actions = {
 	on_capitulation = {
-			effect = {
+				effect = {
 				if = {
 					limit = {
 						FROM = {
@@ -1080,31 +1080,6 @@ on_actions = {
 					TaS_WRW2_German_Collapse_Kosygin = yes
 				}
 			}
-			else_if = {
-					limit = {
-						FROM = {
-							original_tag = MAR
-						}
-						ROOT = { 
-							OR = {
-								original_tag = KAZ
-								original_tag = KZR
-							}
-						}
-						AND = {
-							NOT = {
-								country_exists = KAZ
-							}
-							NOT = {
-								country_exists = KZR
-							}
-						}
-					}
-					FROM = {
-						MAR_install_mil_kazakhstan = yes
-					}
-					set_global_flag = skip_default_capitulation
-				}
 		}
 	}
 }
