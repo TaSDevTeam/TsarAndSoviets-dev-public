@@ -7,7 +7,7 @@ TaS_WRW2_onpeace_rip_bozo = {
 	}
 	
 	visible = {
-		has_country_flag = RUS_something_goes_wrong
+		is_debug = yes
 	}
 	
 	visible_when_empty = no
@@ -40,6 +40,26 @@ TaS_WRW2_manchu_cw_tempfix = {
 		base = 40
 	}
 }
+
+TaS_WRW2_territorial_reclamation = {
+	icon = GFX_MAR_Reclamation_category_icon
+	picture = GFX_MAR_RECLAMATION_category
+	
+	allowed = {
+		tag = MAR
+	}
+	
+	visible = {
+		is_debug = yes
+	}
+	
+	visible_when_empty = yes
+	
+	priority = {
+		base = 40
+	}
+}
+
 TaS_WRW2_central_asia_invasion = {
 	icon = GFX_decision_category_generic_political_actions
 	picture = GFX_MAR_WARPLAN_ALPHA_category

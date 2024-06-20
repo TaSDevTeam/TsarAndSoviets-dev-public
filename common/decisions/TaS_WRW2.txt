@@ -1929,52 +1929,8 @@ TaS_WRW2_central_asia_invasion = {
 		}
 		days_remove = 30
 		remove_effect = {
-				set_country_flag = RUS_something_goes_wrong 
-				declare_war_on = {
-					target = UZB
-					type = annex_everything
-				}
-				declare_war_on = {
-					target = KRK
-					type = annex_everything
-				}
-				declare_war_on = {
-					target = UTL
-					type = annex_everything
-				}
-				declare_war_on = {
-					target = TAJ
-					type = annex_everything
-				}
-				declare_war_on = {
-					target = KYR
-					type = annex_everything
-				}
-				declare_war_on = {
-					target = TRK
-					type = annex_everything
-				}
-				hidden_effect = {
-				UZB = { leave_faction = yes }
-				KRK = { leave_faction = yes }
-				UTL = { leave_faction = yes }
-				TAJ = { leave_faction = yes }
-				KYR = { leave_faction = yes }
-				TRK = { leave_faction = yes }
-				if = {
-					limit = {
-						TAJ = {
-							is_puppet_of = AFG				
-						}
-					}
-					AFG = { leave_faction = yes }
-				}
-				every_country  = {
-					news_event = {
-						id = MAR_2WRW_world_news.1
-					}
-				}
-			}
+			set_country_flag = RUS_something_goes_wrong 
+			
 		}
 	}
 }
@@ -3849,4 +3805,68 @@ TaS_WRW2_manchu_cw_tempfix = {
 	}
 }
 
-
+TaS_WRW2_territorial_reclamation = {
+	TaS_WRW2_look_up_at_turkestan = {
+		icon = GFX_turkestan
+		fire_only_once = yes
+		custom_cost_trigger = { command_power > 24.99 }
+		custom_cost_text = decision_cost_25_cp
+		fire_only_once = yes
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = TaS_WRW2_kenes_over
+				has_global_flag = TNO_TURKES_KENES_OVER_OVER
+			}
+		}
+		complete_effect = {
+			add_war_support = 0.03
+			hidden_effect = {
+				add_command_power = -25
+			}
+		}
+		days_remove = 14
+		remove_effect = { 
+		
+		}
+	}
+	TaS_WRW2_contact_with_primorie = {
+		icon = GFX_primorie
+		fire_only_once = yes
+		custom_cost_trigger = { command_power > 24.99 }
+		custom_cost_text = decision_cost_25_cp
+		fire_only_once = yes
+		available = {
+		
+		}
+		complete_effect = {
+			add_war_support = 0.03
+			hidden_effect = {
+				add_command_power = -25
+			}
+		}
+		days_remove = 14
+		remove_effect = { 
+		
+		}
+	}
+	TaS_WRW2_prepare_for_war = {
+		icon = GFX_moscowien
+		fire_only_once = yes
+		custom_cost_trigger = { command_power > 24.99 }
+		custom_cost_text = decision_cost_25_cp
+		fire_only_once = yes
+		available = {
+		
+		}
+		complete_effect = {
+			add_war_support = 0.03
+			hidden_effect = {
+				add_command_power = -25
+			}
+		}
+		days_remove = 14
+		remove_effect = { 
+		
+		}
+	}
+}

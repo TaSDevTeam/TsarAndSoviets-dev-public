@@ -1,4 +1,5 @@
 add_namespace = MAR_2WRW
+add_namespace = MAR_Turkestan
 add_namespace = MAR_Japan
 add_namespace = MAR_territorial_fate
 add_namespace = MAR_AFG
@@ -7,7 +8,171 @@ add_namespace = MAR_2WRW_world_news
 
 ###2WRW stuff
 #MAR_2WRW
-#MAR_Japan
+
+#MAR_Turkestan
+country_event = { #Kenes over - Germans
+	id = MAR_Turkestan.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Turkestan.1"}
+	title = MAR_Turkestan.1.t
+	desc = MAR_Turkestan.1.d
+	#picture = GFX_report_event_peace_deal
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #shit
+		name = MAR_Turkestan.1.a
+		set_country_flag = MAR_Turkestan_German
+	}	
+}
+
+country_event = { #Kenes over - Japs
+	id = MAR_Turkestan.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Turkestan.2"}
+	title = MAR_Turkestan.2.t
+	desc = MAR_Turkestan.2.d
+	#picture = GFX_report_event_peace_deal
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #cool, let's invade this dumpster fire
+		name = MAR_Turkestan.2.a
+		annex_country = {
+			target = TRK
+			transfer_troops = no
+		}
+		declare_war_on = {
+			target = UTL
+			type = annex_everything
+		}
+		declare_war_on = {
+			target = TAJ
+			type = annex_everything
+		}
+		declare_war_on = {
+			target = KYR
+			type = annex_everything
+		}
+		hidden_effect = {
+			UZB = { leave_faction = yes }
+			KRK = { leave_faction = yes }
+			UTL = { leave_faction = yes }
+			TAJ = { leave_faction = yes }
+			KYR = { leave_faction = yes }
+			TRK = { leave_faction = yes }
+			if = {
+				limit = {
+					TAJ = {
+						is_puppet_of = AFG				
+					}
+				}
+				AFG = { leave_faction = yes }
+			}
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.1
+				}
+			}
+		}
+	}	
+}
+country_event = { #Kenes over - Turks/Americans
+	id = MAR_Turkestan.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Turkestan.3"}
+	title = MAR_Turkestan.3.t
+	desc = MAR_Turkestan.3.d
+	#picture = GFX_report_event_peace_deal
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #let's talk
+		name = MAR_Turkestan.3.a
+		hidden_effect = {
+			TRK = {
+				country_event = {
+					id = MAR_Turkestan.10 days = 3
+				}
+			}
+		}
+	}	
+}
+
+country_event = { #Kenes over - Turks/Americans - they agreed
+	id = MAR_Turkestan.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Turkestan.4"}
+	title = MAR_Turkestan.4.t
+	desc = MAR_Turkestan.4.d
+	#picture = GFX_report_event_peace_deal
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #ogey
+		name = MAR_Turkestan.4.a
+		MAR_install_mil_turkestan = yes
+	}	
+}
+
+country_event = { #Kenes over - Turks/Americans - they didn't agree
+	id = MAR_Turkestan.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Turkestan.5"}
+	title = MAR_Turkestan.5.t
+	desc = MAR_Turkestan.5.d
+	#picture = GFX_report_event_peace_deal
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #ogey
+		name = MAR_Turkestan.5.a
+		annex_country = {
+			target = TRK
+			transfer_troops = no
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.1
+				}
+			}
+		}
+	}	
+}
+
+country_event = { #Kenes over - Turks/Americans - 
+	id = MAR_Turkestan.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Turkestan.10"}
+	title = MAR_Turkestan.10.t
+	desc = MAR_Turkestan.10.d
+	#picture = GFX_report_event_peace_deal
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #ogey
+		name = MAR_Turkestan.10.a
+		ai_chance = { factor = 3 }
+		MAR = {
+			country_event = {
+				id = MAR_Turkestan.4 days = 3
+			}
+		}
+	}
+	option = { #not ogey
+		name = MAR_Turkestan.10.a
+		ai_chance = { factor = 7 }
+		MAR = {
+			country_event = {
+				id = MAR_Turkestan.5 days = 3
+			}
+		}
+	}		
+}
+
+
+#MAR_AFG
 country_event = { #Offer ceasefire - yes
 	id = MAR_AFG.1
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_AFG.1"}
