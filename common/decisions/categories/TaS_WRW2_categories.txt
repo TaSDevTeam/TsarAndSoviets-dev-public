@@ -1,46 +1,3 @@
-TaS_WRW2_onpeace_rip_bozo = {
-	icon = GFX_decision_category_generic_political_actions
-	picture = GFX_MAR_WARPLAN_ALPHA_category
-	
-	allowed = {
-		tag = MAR
-	}
-	
-	visible = {
-		is_debug = yes
-	}
-	
-	visible_when_empty = no
-	
-	priority = {
-		base = 40
-	}
-}
-
-TaS_WRW2_manchu_cw_tempfix = {
-	icon = GFX_decision_category_generic_formable_nations
-	picture = GFX_MAR_GER_EPILOGUE_category
-	
-	#allowed = {
-	#	OR = {
-	#		tag = PFF
-	#		tag = MJP
-	#		tag = HAN
-	#		tag = MAN
-	#	}
-	#}
-	
-	visible = {
-		is_debug = yes
-	}
-	
-	visible_when_empty = yes
-	
-	priority = {
-		base = 40
-	}
-}
-
 TaS_WRW2_territorial_reclamation = {
 	icon = GFX_MAR_Reclamation_category_icon
 	picture = GFX_MAR_RECLAMATION_category
@@ -51,26 +8,6 @@ TaS_WRW2_territorial_reclamation = {
 	
 	visible = {
 		is_debug = yes
-	}
-	
-	visible_when_empty = yes
-	
-	priority = {
-		base = 40
-	}
-}
-
-TaS_WRW2_central_asia_invasion = {
-	icon = GFX_decision_category_generic_political_actions
-	picture = GFX_MAR_WARPLAN_ALPHA_category
-	
-	allowed = {
-		tag = MAR
-	}
-	
-	visible = {
-		has_global_flag = RUS_national_unification
-		NOT = { has_country_flag = MAR_has_central_asia }
 	}
 	
 	visible_when_empty = yes
@@ -106,65 +43,6 @@ TaS_WRW2_fate_and_coring_of_territories = {
 		base = 40
 	}
 }
-TaS_WRW2_prepare_for_final_battle = {
-	icon = GFX_decision_category_generic_political_actions
-	picture = GFX_MAR_PREPARE_TO_WAR_category
-	
-	allowed = {
-		tag = MAR
-	}
-	
-	visible = {
-		has_country_flag = MAR_has_central_asia
-		has_country_flag = MAR_has_primorie
-	}
-	
-	visible_when_empty = yes
-	
-	priority = {
-		base = 40
-	}
-}
-
-TaS_WRW2_the_final_battle = {
-	icon = GFX_decision_generic_ignite_civil_war
-	picture = GFX_MAR_FINAL_BATTLE_category
-	
-	allowed = {
-		OR = {
-			tag = MAR
-			tag = GER
-		}
-	}
-	
-	visible = {
-		MAR = { has_war_with = GER }
-	}
-	scripted_gui = war_overview 
-	visible_when_empty = yes
-	
-	priority = {
-		base = 40
-	}
-}
-TaS_WRW2_the_final_battle_GER = {
-	icon = GFX_decision_category_generic_political_actions
-	picture = GFX_MAR_FINAL_BATTLE_category
-	
-	allowed = {
-		tag = GER
-	}
-	
-	visible = {
-		MAR = { has_war_with = GER }
-	}
-	
-	visible_when_empty = yes
-	
-	priority = {
-		base = 40
-	}
-}
 TaS_WRW2_ost_territories_GER_braindead = {
 	icon = GFX_decision_generic_ignite_civil_war
 	picture = GFX_MAR_FINAL_BATTLE_category
@@ -184,25 +62,6 @@ TaS_WRW2_ost_territories_GER_braindead = {
 			}
 			has_global_flag = TNO_Heydrich_Anarchy
 		}		
-	}
-	
-	visible_when_empty = yes
-	
-	priority = {
-		base = 40
-	}
-}
-TaS_WRW2_europe_ultimatums = {
-	icon = GFX_decision_category_generic_political_actions
-	picture = GFX_MAR_EUROPE_ULTIMATUMS_category
-	
-	allowed = {
-		tag = MAR
-	}
-	
-	visible = {
-		has_global_flag = TaS_WRW2_Russian_victory
-		is_ai = no
 	}
 	
 	visible_when_empty = yes
@@ -243,23 +102,6 @@ TaS_WRW2_GER_epilogue = {
 		base = 40
 	}
 }
-TaS_WRW2_the_final_battle_legacy = {
-	icon = GFX_decision_category_generic_political_actions
-	picture = GFX_RUS_placeholder
-
-	allowed = {
-		tag = MAR
-	}
-	visible = {
-		is_debug = yes
-		is_ai = no
-	}
-
-	visible_when_empty = yes
-	priority = {
-		base = 150
-	}
-}
 TaS_WRW2_RUS_post_collapse = {
 	icon = GFX_decision_category_generic_formable_nations
 	picture = GFX_MAR_GER_EPILOGUE_category
@@ -289,5 +131,22 @@ TaS_WRW2_RUS_post_collapse = {
 	
 	priority = {
 		base = 40
+	}
+}
+TaS_WRW2_the_final_battle_legacy = {
+	icon = GFX_decision_category_generic_political_actions
+	picture = GFX_RUS_placeholder
+
+	allowed = {
+		tag = MAR
+	}
+	visible = {
+		is_debug = yes
+		is_ai = no
+	}
+
+	visible_when_empty = yes
+	priority = {
+		base = 150
 	}
 }

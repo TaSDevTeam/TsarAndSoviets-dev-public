@@ -1908,33 +1908,6 @@ TaS_WRW2_fate_and_coring_of_territories = {
 		}
 	}
 }
-TaS_WRW2_central_asia_invasion = {
-	TaS_WRW2_start_invasion = {
-		icon = GFX_decision_generic_decision
-		fire_only_once = yes
-		custom_cost_trigger = { command_power > 24.99 }
-		custom_cost_text = decision_cost_25_cp
-		fire_only_once = yes
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = TaS_WRW2_kenes_over
-				has_global_flag = TNO_TURKES_KENES_OVER_OVER
-			}
-		}
-		complete_effect = {
-			add_war_support = 0.03
-			hidden_effect = {
-				add_command_power = -25
-			}
-		}
-		days_remove = 30
-		remove_effect = {
-			set_country_flag = RUS_something_goes_wrong 
-			
-		}
-	}
-}
-
 
 TaS_WRW2_the_final_battle_legacy = {
 	
@@ -2592,13 +2565,119 @@ TaS_WRW2_ost_territories_GER_braindead = {
 		}
 	}
 }
-TaS_WRW2_europe_ultimatums = { 
+TaS_WRW2_territorial_reclamation = {
+	TaS_WRW2_look_up_at_turkestan = {
+		icon = GFX_turkestan
+		fire_only_once = yes
+		custom_cost_trigger = { command_power > 24.99 }
+		custom_cost_text = decision_cost_25_cp
+		fire_only_once = yes
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = TaS_WRW2_kenes_over
+				has_global_flag = TNO_TURKES_KENES_OVER_OVER
+			}
+		}
+		complete_effect = {
+			add_war_support = 0.03
+			hidden_effect = {
+				add_command_power = -25
+			}
+		}
+		days_remove = 14
+		remove_effect = { 
+			custom_effect_tooltip = look_up_at_turkestan_tt
+			hidden_effect = {
+				if = {
+					limit = {
+						has_global_flag = TNO_TURKES_KENES_OVER_GER_WINS 
+					}
+					country_event = {
+						id = MAR_Turkestan.1 days = 3
+					}
+				}
+				if = {
+					limit = {
+						has_global_flag = TNO_TURKES_KENES_OVER_NEUTRALITY 
+					}
+					country_event = {
+						id = MAR_Turkestan.2 days = 3
+					}
+				}
+				if = {
+					limit = {
+						has_global_flag = TNO_TURKES_KENES_OVER_USA_WINS 
+					}
+					country_event = {
+						id = MAR_Turkestan.3 days = 3
+					}
+				}
+			}
+		
+		}
+	}
+	TaS_WRW2_contact_with_primorie = {
+		icon = GFX_primorie
+		fire_only_once = yes
+		custom_cost_trigger = { command_power > 24.99 }
+		custom_cost_text = decision_cost_25_cp
+		fire_only_once = yes
+		available = {
+		
+		}
+		complete_effect = {
+			add_war_support = 0.03
+			hidden_effect = {
+				add_command_power = -25
+			}
+		}
+		days_remove = 14
+		remove_effect = { 
+			custom_effect_tooltip = contact_with_primorie_tt
+			hidden_effect = {
+				country_event = {
+					id = MAR_Japan.10 days = 3
+				}
+			}
+		}
+	}
+	TaS_WRW2_prepare_for_war = {
+		icon = GFX_moscowien
+		fire_only_once = yes
+		custom_cost_trigger = { command_power > 24.99 }
+		custom_cost_text = decision_cost_25_cp
+		fire_only_once = yes
+		available = {
+		
+		}
+		complete_effect = {
+			add_war_support = 0.03
+			hidden_effect = {
+				add_command_power = -25
+			}
+		}
+		days_remove = 14
+		remove_effect = { 
+			custom_effect_tooltip = prepare_for_war_tt
+			hidden_effect = {
+				#country_event = {
+				#	id = MAR_Japan.10 days = 3
+				#}
+				set_temp_variable = { TabName = token:BoP_Tab_SWRW }
+				TNO_BoP_AddTab = yes
+				set_variable = { TaS_swrw_stage = 1 }
+				set_variable = { swrw_preparation_category = 1 }
+				set_variable = { SWRW_suspicion_gain = -2 }
+			}
+		}
+	}
 	TaS_WRW2_Karelia_demands = {
 		icon = GFX_finland_rus
 		visible = {
 			NOT = {
 				owns_state = 216
 			}
+			has_global_flag = TaS_WRW2_Russian_victory
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -2631,6 +2710,7 @@ TaS_WRW2_europe_ultimatums = {
 			NOT = {
 				owns_state = 1712
 			}
+			has_global_flag = TaS_WRW2_Russian_victory
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -2670,6 +2750,7 @@ TaS_WRW2_europe_ultimatums = {
 			NOT = {
 				owns_state = 1565
 			}
+			has_global_flag = TaS_WRW2_Russian_victory
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -2700,6 +2781,7 @@ TaS_WRW2_europe_ultimatums = {
 			ARM = {
 				owns_state = 230
 			}
+			has_global_flag = TaS_WRW2_Russian_victory
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -2730,6 +2812,7 @@ TaS_WRW2_europe_ultimatums = {
 			TUR = {
 				owns_state = 230
 			}
+			has_global_flag = TaS_WRW2_Russian_victory
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -2763,6 +2846,7 @@ TaS_WRW2_europe_ultimatums = {
 				}
 				owns_state = 197
 			}
+			has_global_flag = TaS_WRW2_Russian_victory
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -2798,6 +2882,7 @@ TaS_WRW2_europe_ultimatums = {
 				}
 				owns_state = 192
 			}
+			has_global_flag = TaS_WRW2_Russian_victory
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -2826,6 +2911,7 @@ TaS_WRW2_europe_ultimatums = {
 		icon = GFX_romania_rus
 		visible = {
 			GPL = { exists = yes }
+			has_global_flag = TaS_WRW2_Russian_victory
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -2848,273 +2934,6 @@ TaS_WRW2_europe_ultimatums = {
 			hidden_effect = {
 				GPL = { country_event = { id = MAR_ultimatums.17 } }
 			}
-		}
-	}
-} 
-TaS_WRW2_onpeace_rip_bozo = {
-	TaS_WRW2_fix_the_turkestan = {
-		icon = GFX_decision_generic_decision
-		visible = {
-			KRK = { exists = no }
-			UZB = { exists = no }
-			TRK = { exists = no }
-			KYR = { exists = no }
-			UTL = { exists = no }
-			TAJ = { exists = no }
-			NOT = { has_country_flag = MAR_has_central_asia }
-		}
-		fire_only_once = yes
-		complete_effect = {
-			clr_country_flag = RUS_something_goes_wrong
-			MAR_install_mil_turkestan = yes
-			set_country_flag = MAR_has_central_asia
-			country_event = {
-				id = MAR_Japan.10 days = 17
-			}
-		}
-	}
-}
-TaS_WRW2_manchu_cw_tempfix = {
-	TaS_WRW2_fix_the_manchuria = {
-		icon = GFX_decision_generic_decision
-		visible = {
-			has_global_flag = TaS_MAN_second_cw
-			ROOT = {
-				controls_state = 1643
-				controls_state = 715
-				controls_state = 714
-				controls_state = 1638
-				controls_state = 1639
-				controls_state = 1637
-				controls_state = 717
-				controls_state = 801
-				controls_state = 328
-				controls_state = 1642
-				controls_state = 1641
-				controls_state = 1640
-				controls_state = 610
-				controls_state = 1265
-				controls_state = 716
-				controls_state = 1636
-			}
-		}
-		fire_only_once = yes
-		ai_will_do = {
-			factor = 100
-		}
-		complete_effect = {
-			clr_country_flag = RUS_something_goes_wrong
-			if = {
-				limit = {
-					ROOT = { tag = MAN }
-				}
-				MAN = {
-					econ_join_sphere_USA = yes
-					add_ideas = OFN_observer
-				}
-				every_country  = {
-					news_event = {
-						id = MAR_2WRW_world_news.37
-					}
-				}
-				USA = {
-					set_temp_variable = { Victory_ID = 50 }
-					set_temp_variable = { Victory_Outcome = 5 }
-					set_temp_variable = { Victory_Points = 150 }
-					Cold_War_GUI_ManipulateVictory = yes
-					TaS_fopo_remove_manchurian_civil_war_tab = yes
-				}
-				JAP = {
-					set_temp_variable = { Victory_ID = 50 }
-					set_temp_variable = { Victory_Outcome = 1 }
-					set_temp_variable = { Victory_Points = -200 }
-					Cold_War_GUI_ManipulateVictory = yes
-					TaS_fopo_remove_manchurian_civil_war_tab = yes
-				}
-				MAR = {
-					TaS_fopo_remove_manchurian_civil_war_tab = yes
-				}
-				set_global_flag = skip_default_capitulation
-			}
-			else_if = {
-				limit = {
-					ROOT = { tag = HAN }
-				}
-				HAN = {
-					set_cosmetic_tag = HAN_cw_victory
-				}
-				every_country  = {
-					news_event = {
-						id = MAR_2WRW_world_news.36
-					}
-				}
-				USA = {
-					set_temp_variable = { Victory_ID = 50 }
-					set_temp_variable = { Victory_Outcome = 2 }
-					set_temp_variable = { Victory_Points = -50 }
-					Cold_War_GUI_ManipulateVictory = yes
-					TaS_fopo_remove_manchurian_civil_war_tab = yes
-				}
-				JAP = {
-					set_temp_variable = { Victory_ID = 50 }
-					set_temp_variable = { Victory_Outcome = 1 }
-					set_temp_variable = { Victory_Points = -250 }
-					Cold_War_GUI_ManipulateVictory = yes
-					TaS_fopo_remove_manchurian_civil_war_tab = yes
-				}
-				MAR = {
-					TaS_fopo_remove_manchurian_civil_war_tab = yes
-					if = {
-						limit = { NOT = { has_government = socialist } }
-						HAN = { econ_join_sphere_MAR = yes }
-					}
-				}
-				HAN = {
-					set_capital = { state = 328 }
-				}
-				set_global_flag = skip_default_capitulation
-			}
-			else_if = {
-				limit = {
-					ROOT = { tag = MJP }
-				}
-				MJP = {
-					set_cosmetic_tag = MJP_JAP_autonomy
-					econ_join_sphere_JAP = yes
-					add_ideas = Sphere_Imp_Protectorate
-					add_ideas = MAN_Kwantung_Army
-				}
-				JAP = {
-					add_to_faction = MJP
-				}
-				every_country  = {
-					news_event = {
-						id = MAR_2WRW_world_news.38
-					}
-				}
-				USA = {
-					set_temp_variable = { Victory_ID = 50 }
-					set_temp_variable = { Victory_Outcome = 2 }
-					set_temp_variable = { Victory_Points = -50 }
-					Cold_War_GUI_ManipulateVictory = yes
-					TaS_fopo_remove_manchurian_civil_war_tab = yes
-				}
-				JAP = {
-					set_temp_variable = { Victory_ID = 50 }
-					set_temp_variable = { Victory_Outcome = 4 }
-					set_temp_variable = { Victory_Points = 150 }
-					Cold_War_GUI_ManipulateVictory = yes
-					TaS_fopo_remove_manchurian_civil_war_tab = yes
-				}
-				MAR = {
-					TaS_fopo_remove_manchurian_civil_war_tab = yes
-				}
-				MJP = {
-					set_capital = { state = 328 }
-				}
-				set_global_flag = skip_default_capitulation
-			}
-			else_if = {
-				limit = {
-					ROOT = { tag = PFF }
-				}
-				every_country  = {
-					news_event = {
-						id = MAR_2WRW_world_news.39
-					}
-				}
-				USA = {
-					set_temp_variable = { Victory_ID = 50 }
-					set_temp_variable = { Victory_Outcome = 2 }
-					set_temp_variable = { Victory_Points = -50 }
-					Cold_War_GUI_ManipulateVictory = yes
-					TaS_fopo_remove_manchurian_civil_war_tab = yes
-				}
-				JAP = {
-					set_temp_variable = { Victory_ID = 50 }
-					set_temp_variable = { Victory_Outcome = 1 }
-					set_temp_variable = { Victory_Points = -200 }
-					Cold_War_GUI_ManipulateVictory = yes
-					TaS_fopo_remove_manchurian_civil_war_tab = yes
-				}
-				MAR = {
-					TaS_fopo_remove_manchurian_civil_war_tab = yes
-					if = {
-						limit = { has_government = socialist }
-						PFF = { econ_join_sphere_MAR = yes }
-					}
-				}
-				PFF = {
-					set_capital = { state = 328 }
-				}
-				set_global_flag = skip_default_capitulation
-			}
-		}
-	}
-}
-
-TaS_WRW2_territorial_reclamation = {
-	TaS_WRW2_look_up_at_turkestan = {
-		icon = GFX_turkestan
-		fire_only_once = yes
-		custom_cost_trigger = { command_power > 24.99 }
-		custom_cost_text = decision_cost_25_cp
-		fire_only_once = yes
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = TaS_WRW2_kenes_over
-				has_global_flag = TNO_TURKES_KENES_OVER_OVER
-			}
-		}
-		complete_effect = {
-			add_war_support = 0.03
-			hidden_effect = {
-				add_command_power = -25
-			}
-		}
-		days_remove = 14
-		remove_effect = { 
-		
-		}
-	}
-	TaS_WRW2_contact_with_primorie = {
-		icon = GFX_primorie
-		fire_only_once = yes
-		custom_cost_trigger = { command_power > 24.99 }
-		custom_cost_text = decision_cost_25_cp
-		fire_only_once = yes
-		available = {
-		
-		}
-		complete_effect = {
-			add_war_support = 0.03
-			hidden_effect = {
-				add_command_power = -25
-			}
-		}
-		days_remove = 14
-		remove_effect = { 
-		
-		}
-	}
-	TaS_WRW2_prepare_for_war = {
-		icon = GFX_moscowien
-		fire_only_once = yes
-		custom_cost_trigger = { command_power > 24.99 }
-		custom_cost_text = decision_cost_25_cp
-		fire_only_once = yes
-		available = {
-		
-		}
-		complete_effect = {
-			add_war_support = 0.03
-			hidden_effect = {
-				add_command_power = -25
-			}
-		}
-		days_remove = 14
-		remove_effect = { 
-		
 		}
 	}
 }
