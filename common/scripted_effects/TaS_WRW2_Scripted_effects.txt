@@ -600,10 +600,6 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 	hidden_effect = {
 		set_global_flag = WRW2_german_collapse
 		set_global_flag = PostGER_belooz_epilogue
-		TaS_WRW2_total_capitulation = yes
-		every_country = {
-			news_event = { id = MAR_2WRW_world_news.11 hours = 6}
-		}
 		if = {
 			limit = {
 				OR = {
@@ -1053,7 +1049,6 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 TaS_WRW2_German_Collapse_Kosygin = {
 	custom_effect_tooltip = TaS_WRW2_PEACE_TOTAL_TOOLTIP
 	hidden_effect = {
-		TaS_WRW2_total_capitulation = yes
 		if = {
 			limit = {
 				OR = {

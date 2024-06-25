@@ -2076,10 +2076,10 @@ MAR_SWRW_category = {
 			set_temp_variable = { SWRW_suspicion_temp = 7 }
 			TaS_SWRW_change_suspicion = yes
 			MCW = {
-				add_ideas = TaS_war_partisans 
+				add_ideas = SWRW_war_partisans 
 			}
 			GER = {
-				add_ideas = TaS_war_partisans 
+				add_ideas = SWRW_war_partisans 
 			}
 			264 = {
 				remove_core_of = MCW
@@ -4874,6 +4874,7 @@ MAR_SWRW_category = {
 			}
 		}
 	}
+	### DIPLOMACY ###
 	TaS_WRW2_offer_total_capitulation = {
 		icon = GFX_decision_generic_military_parade
 		visible = {
@@ -4902,46 +4903,6 @@ MAR_SWRW_category = {
 		}
 		remove_effect = {
 			country_event = { id = MAR_2WRW.5 }
-		}
-		ai_will_do = {
-			factor = 20
-		}
-	}
-	TaS_WRW2_offer_total_total_capitulation = {
-		icon = GFX_decision_generic_military_parade
-		visible = {
-			check_variable = { WRW_deccat = 3 }
-			check_variable = { TaS_swrw_stage = 2 }
-			is_russian_nation = yes
-		}
-		available = {
-			has_war = yes
-			controls_state = 5
-			controls_state = 88
-			set_temp_variable = { Y = 45 }
-			TAS_WRW2_ScriptedTrigger_GER_Devastation_MoreThanY = yes
-			
-		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
-		fire_only_once = no
-		days_re_enable = 14
-		days_remove = 14
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_activate_plan_riga "
-			hidden_effect = {
-				add_command_power = -20
-			}
-		}
-		remove_effect = {
-			random_list = {
-				2 = {
-					country_event = { id = MAR_2WRW.6 }
-				}
-				1 = {
-				
-				}
-			}
 		}
 		ai_will_do = {
 			factor = 20
