@@ -1,0 +1,36 @@
+GER_Panic_strat = {
+	allowed = {
+		tag = GER
+	}
+	enable = {
+		MAR = {
+			has_active_mission = TaS_SWRW_germs_panick
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = prepare_for_war
+		id = RUS
+		value = 1000
+	}
+	
+	ai_strategy = {
+		type = conquer
+		id = RUS
+		value = 1000
+	}
+
+	ai_strategy = {
+		type = consider_weak
+		id = RUS
+		value = 1000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = RUS
+		value = 1000
+	}
+	
+}
