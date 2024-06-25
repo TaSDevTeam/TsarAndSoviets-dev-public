@@ -30,44 +30,7 @@ MAR_SWRW_category = {
 			}
 		}
 		remove_effect = {
-			declare_war_on = {
-				target = GER
-				type = annex_everything
-			}
-			declare_war_on = {
-				target = MCW
-				type = annex_everything
-			}
-			set_global_flag = nukes_disabled
-			add_ideas = { MAR_oper_zero }
-			set_variable = { WRW2_devastation_gain = 3 }
-			set_variable = { GER.WRW2_devastation_gain = 3 }
-			set_global_flag = TaS_2WRW_started
-			set_variable = { TaS_swrw_stage = 2 }
-			if = {
-				limit = { check_variable = { MAR_no_naval_invasions = 1 } }
-				GER = { add_ideas = { TaS_2WRW_north_sea_problems } }
-			}
-			hidden_effect = {
-				every_country  = {
-					news_event = {
-						id = MAR_2WRW_world_news.6
-					}
-				}
-				MCW = {
-					add_ideas = SWRW_reichskommisariat
-				}
-				OST = {
-					add_ideas = SWRW_reichskommisariat
-				}
-				UKR = {
-					add_ideas = SWRW_reichskommisariat
-				}
-				CAU = {
-					add_ideas = SWRW_reichskommisariat
-				}
-				
-			}
+			TaS_SWRW_start_the_war = yes
 		}
 		ai_will_do = {
 			factor = 20
@@ -1959,13 +1922,13 @@ MAR_SWRW_category = {
 			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_prepare_economics"
 			set_temp_variable = { gdp_growth_temp = -1 }
 			econ_gdp_growth_change = yes
+			set_temp_variable = { SWRW_suspicion_temp = 7 }
+			TaS_SWRW_change_suspicion = yes
 		}
 		modifier = {
 			political_power_gain = -0.25
 			stability_factor = -0.10
 			consumer_goods_use_modifier = 0.10
-			set_temp_variable = { SWRW_suspicion_temp = 7 }
-			TaS_SWRW_change_suspicion = yes
 		}
 		remove_effect = {
 			set_temp_variable = { SWRW_readiness_temp = 5 }

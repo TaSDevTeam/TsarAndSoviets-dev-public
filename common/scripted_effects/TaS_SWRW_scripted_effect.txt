@@ -52,3 +52,64 @@ TaS_SWRW_change_suspicion_gain = {
 		custom_effect_tooltip = SWRW_suspicion_gain_growth_tt
 	}
 }
+
+TaS_SWRW_start_the_war = {
+	custom_effect_tooltip = start_the_war_tt
+	hidden_effect = {
+		declare_war_on = {
+			target = GER
+			type = annex_everything
+		}
+		declare_war_on = {
+			target = MCW
+			type = annex_everything
+		}
+		declare_war_on = {
+			target = CAU
+			type = annex_everything
+		}
+		declare_war_on = {
+			target = OST
+			type = annex_everything
+		}
+		declare_war_on = {
+			target = UKR
+			type = annex_everything
+		}
+		set_global_flag = nukes_disabled
+		add_ideas = { MAR_oper_zero }
+		set_variable = { WRW2_devastation_gain = 3 }
+		set_variable = { GER.WRW2_devastation_gain = 3 }
+		set_global_flag = TaS_2WRW_started
+		set_variable = { TaS_swrw_stage = 2 }
+		GER = {
+			set_temp_variable = { TabName = token:BoP_Tab_SWRW }
+			TNO_BoP_AddTab = yes
+			set_variable = { TaS_swrw_stage = 2 }
+		}
+		every_country  = {
+			news_event = {
+				id = MAR_2WRW_world_news.6
+			}
+		}
+		MCW = {
+			add_ideas = SWRW_reichskommisariat
+		}
+		OST = {
+			add_ideas = SWRW_reichskommisariat
+		}
+		UKR = {
+			add_ideas = SWRW_reichskommisariat
+		}
+		CAU = {
+			add_ideas = SWRW_reichskommisariat
+		}	
+	}
+	if = {
+		limit = { check_variable = { MAR_no_naval_invasions = 1 } }
+		custom_effect_tooltip = no_naval_ger_tt
+		hidden_effect = {
+			GER = { add_ideas = { TaS_2WRW_north_sea_problems } }
+		}
+	}
+}
