@@ -1,12 +1,10 @@
-#####################################################################
-
-### Belozerski Politic ###
-
+### Regional Tree###
+###Political Tree
 shared_focus = {
 	id = MAR_pervii_ukaz
 	icon = GFX_MAR_first_orders
 	cost = 3.58
-	x = 9
+	x = 4
 	y = 0
 	completion_reward = {
 		swap_ideas = {
@@ -31,7 +29,7 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_pervii_ukaz
 	}
-	x = 7
+	x = 3
 	y = 1
 	completion_reward = {
 		RUS_decrease_administrative_strain = yes
@@ -45,7 +43,7 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_pervii_ukaz
 	}
-	x = 11
+	x = 5
 	y = 1
 	completion_reward = {
 		swap_ideas = {
@@ -68,7 +66,7 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_svoboda_vibora
 	}
-	x = 9
+	x = 4
 	y = 2
 	completion_reward = {
 		swap_ideas = {
@@ -88,7 +86,7 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_novia_soveti
 	}
-	x = 9
+	x = 4
 	y = 3
 	completion_reward = {
 		RUS_decrease_administrative_strain = yes
@@ -102,8 +100,8 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_graniti_gubernii
 	}
-	x = 9
-	y = 4
+	x = 4
+	y = 5
 	completion_reward = {
 		country_event = {
 			id = berez_belozerski.5 days = 1 
@@ -119,7 +117,7 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_novia_soveti
 	}
-	x = 14
+	x = 6
 	y = 3
 	completion_reward = {
 		country_event = {
@@ -138,7 +136,7 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_kozli_opuhenia
 	}
-	x = 14
+	x = 6
 	y = 4
 	completion_reward = {
 		country_event = {
@@ -156,7 +154,7 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_vspomnit_uspeh
 	}
-	x = 14
+	x = 6
 	y = 5
 	completion_reward = {
 		swap_ideas = {
@@ -176,7 +174,7 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_novia_soveti
 	}
-	x = 4
+	x = 2
 	y = 3
 	completion_reward = {
 	    TNO_improve_admin_efficiency_high = yes	
@@ -217,7 +215,7 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_uchrejdenie_prikazov
 	}
-	x = 2
+	x = 1
 	y = 4
 	completion_reward = {
 		TNO_improve_agriculture_med = yes
@@ -232,7 +230,7 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_uchrejdenie_prikazov
 	}
-	x = 6
+	x = 3
 	y = 4
 	completion_reward = {
 		add_political_power = 100
@@ -249,7 +247,7 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_podgotovka_konsti
 	}
-	x = 4
+	x = 2
 	y = 5
 	completion_reward = {
 		add_popularity = {
@@ -273,7 +271,7 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_uroki_zubatova
 	}
-	x = 9
+	x = 4
 	y = 6
 	completion_reward = {
 		TNO_improve_admin_efficiency_med = yes
@@ -285,15 +283,14 @@ shared_focus = {
 		custom_effect_tooltip = RUS_unlock_race_to_urals_tt
 	}
 }
-#####################################################
 
-### Belozer Ecomonimc ###
+###Economy Tree
 
 shared_focus = {
 	id = MAR_reanim_eco
 	icon = GFX_MAR_reanimation_of_our_economy
 	cost = 3.58
-	x = 25
+	x = 12
 	y = 0
 	available = {
 		has_completed_focus = MAR_pervi_siezd
@@ -319,7 +316,7 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_reanim_eco
 	}
-	x = 28
+	x = 16
 	y = 1
 	completion_reward = {
 		set_temp_variable = { temp_econ_spending_amount = 0.2 }
@@ -337,13 +334,30 @@ shared_focus = {
 	}
 }
 shared_focus = {
+	id = MAR_sistema_obr
+	icon = GFX_MAR_Vost_system_obraz
+	cost = 3.00
+	prerequisite = {
+		focus = MAR_reanim_eco
+	}
+	x = 14
+	y = 1
+	completion_reward = {
+		country_event = { 
+			id = berez_belozerski.16
+			days = 0
+		}
+		TNO_education_improve = yes	
+	}
+}
+shared_focus = {
 	id = MAR_razvi_otrasle
 	icon = GFX_MAR_Developing_otrasli_nayki
 	cost = 3.00
 	prerequisite = {
 		focus = MAR_vost_nayki
 	}
-	x = 26
+	x = 16
 	y = 2
 	completion_reward = {
 			add_tech_bonus = {
@@ -352,36 +366,19 @@ shared_focus = {
 			category = synth_resources
 		}	
 	}
-}	
-shared_focus = {
-	id = MAR_sistema_obr
-	icon = GFX_MAR_Vost_system_obraz
-	cost = 3.00
-	prerequisite = {
-		focus = MAR_vost_nayki
-	}
-	x = 30
-	y = 2
-	completion_reward = {
-		country_event = { 
-			id = berez_belozerski.16
-			days = 0
-		}
-		TNO_education_improve = yes	
-	}
-}	
+}
 shared_focus = {
 	id = MAR_naykogradi
 	icon = GFX_MAR_Building_of_Naukograds
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_razvi_otrasle
+		focus = MAR_vost_nayki
 	}
 	prerequisite = {
 		focus = MAR_sistema_obr
 	}
-	x = 28
-	y = 3
+	x = 14
+	y = 2
 	completion_reward = {
 		country_event = { 
 			id = berez_belozerski.17
@@ -401,7 +398,7 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_reanim_eco
 	}
-	x = 21
+	x = 12
 	y = 1
 	completion_reward = {
 		#country_event = { 
@@ -420,7 +417,7 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_econom_prikaz
 	}
-	x = 21
+	x = 12
 	y = 2
 	completion_reward = {
 		swap_ideas = {
@@ -439,7 +436,7 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_dveri
 	}
-	x = 18
+	x = 9
 	y = 3
 	completion_reward = {
 		country_event = { 
@@ -454,6 +451,24 @@ shared_focus = {
 		set_temp_variable = { gdp_growth_temp = 2.5 }
         econ_gdp_growth_change = yes
 	}
+}
+shared_focus = {
+	id = MAR_ih_znania
+	icon = GFX_MAR_Berez_their_znania
+	cost = 3.00
+	prerequisite = {
+		focus = MAR_priv_invest
+	}
+	x = 9
+	y = 4
+	completion_reward = {
+		country_event = { 
+			id = berez_belozerski.22
+			days = 0
+		}
+		TNO_improve_industrial_equipment_low = yes
+		TNO_improve_industrial_expertise_med = yes		
+	}
 }	
 shared_focus = {
 	id = MAR_mts
@@ -462,7 +477,7 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_dveri
 	}
-	x = 21
+	x = 12
 	y = 3
 	completion_reward = {
 		TNO_improve_agriculture_high = yes
@@ -485,7 +500,7 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_mts
 	}
-	x = 21
+	x = 12
 	y = 4
 	completion_reward = {
 		TNO_improve_poverty_med = yes
@@ -498,6 +513,25 @@ shared_focus = {
 			}
 		}
 	}
+}
+shared_focus = {
+	id = MAR_stab_rubl
+	icon = GFX_MAR_Berez_rouble
+	cost = 3.00
+	prerequisite = {
+		focus = MAR_ih_znania
+	}
+	prerequisite = {
+		focus = MAR_mali_biznes
+	}
+	x = 10
+	y = 5
+	completion_reward = {
+		TNO_improve_poverty_low = yes
+		set_temp_variable = { inflation_temp = -0.35 }
+		econ_inflation_change = yes
+		add_stability = 0.10		
+	}
 }	
 shared_focus = {
 	id = MAR_taz_prom
@@ -506,7 +540,7 @@ shared_focus = {
 	prerequisite = {
 			focus = MAR_dveri
 	}
-	x = 24
+	x = 15
 	y = 3
 	completion_reward = {
 		random_owned_state = {
@@ -528,7 +562,7 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_taz_prom
 	}
-	x = 24
+	x = 15
 	y = 4
 	completion_reward = {
 		country_event = { 
@@ -620,7 +654,7 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_stroim_infry
 	}
-	x = 23
+	x = 14
 	y = 5
 	completion_reward = {
 		country_event = { 
@@ -634,44 +668,7 @@ shared_focus = {
         set_temp_variable = { temp_econ_spending_amount = 0.25 }
         econ_spend_money_once_effect_raw_money = yes
 	}
-}	
-shared_focus = {
-	id = MAR_ih_znania
-	icon = GFX_MAR_Berez_their_znania
-	cost = 3.00
-	prerequisite = {
-		focus = MAR_priv_invest
-	}
-	x = 18
-	y = 4
-	completion_reward = {
-		country_event = { 
-			id = berez_belozerski.22
-			days = 0
-		}
-		TNO_improve_industrial_equipment_low = yes
-		TNO_improve_industrial_expertise_med = yes		
-	}
-}	
-shared_focus = {
-	id = MAR_stab_rubl
-	icon = GFX_MAR_Berez_rouble
-	cost = 3.00
-	prerequisite = {
-		focus = MAR_ih_znania
-	}
-	prerequisite = {
-		focus = MAR_mali_biznes
-	}
-	x = 20
-	y = 5
-	completion_reward = {
-		TNO_improve_poverty_low = yes
-		set_temp_variable = { inflation_temp = -0.35 }
-		econ_inflation_change = yes
-		add_stability = 0.10		
-	}
-}	
+}
 shared_focus = {
 	id = MAR_epoxa_prosveta
 	icon = GFX_MAR_Berez_prosperity
@@ -682,7 +679,7 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_prom_centr
 	}
-	x = 21
+	x = 12
 	y = 6
 	completion_reward = {
 		country_event = { 
@@ -691,187 +688,15 @@ shared_focus = {
 		}
 		add_ideas = { MAR_epoxa_prosvet }
 	}
-}	
-#############################################################
-shared_focus = {
-	id = MAR_posol_prikaz
-	icon = GFX_MAR_prizak_o_posolstvax
-	cost = 3.58
-	x = 50
-	y = 0
-	completion_reward = {
-		country_event = { 
-			id = berez_belozerski.10 
-			days = 0 
-		}
-		add_political_power = 50
-		hidden_effect = {
-			country_event = {
-				id = MAR_belozerskiy_flavour.4
-				days = 120
-			}
-		}
-	}	
 }
 
-shared_focus = {
-	id = MAR_torgovie_anali
-	icon = GFX_MAR_torg_puti
-	cost = 3.58
-	prerequisite = {
-		focus = MAR_posol_prikaz
-	}
-	x = 50
-	y = 1
-	completion_reward = {
-		country_event = { 
-			id = berez_belozerski.11 
-			days = 0 
-		}
-		TNO_improve_poverty_med = yes
-        set_temp_variable = { gdp_growth_temp = 1.25 }
-        econ_gdp_growth_change = yes
-        give_resource_rights = { 
-        	receiver = USA 
-        	state = 855
-        }
-        give_resource_rights = { 
-        	receiver = USA 
-        	state = 351
-        }
-		set_temp_variable = { interest_rates_temp = -0.2 }
-		econ_interest_rates_change = yes 		
-	}	
-}
-
-
-shared_focus = {
-	id = MAR_vstrecha_dvuh_orlov
-	icon = GFX_MAR_vstreca_orlov
-	cost = 3.58
-	prerequisite = {
-		focus = MAR_torgovie_anali
-	}
-	x = 47
-	y = 2
-	completion_reward = {
-		country_event = { 
-			id = berez_belozerski.12 
-			days = 0 
-		}
-		add_opinion_modifier = {
-		    target = USA
-		    modifier = MAR_usa_friend
-		}
-	}	
-}
-shared_focus = {
-	id = MAR_podrjka_ofn
-	icon = GFX_MAR_podderka_OFN
-	cost = 3.58
-	prerequisite = {
-		focus = MAR_vstrecha_dvuh_orlov
-	}
-	x = 46
-	y = 3
-	completion_reward = {
-		TNO_improve_industrial_equipment_med = yes	
-		TNO_improve_army_professionalism_med = yes
-		country_event = { 
-			id = berez_belozerski.13 
-			days = 0 
-		}
-	}	
-}
-shared_focus = {
-	id = MAR_russkie_dobrovolchi
-	icon = GFX_MAR_Russian_Rembo
-	cost = 3.58
-	prerequisite = {
-		focus = MAR_torgovie_anali
-	}
-	x = 53
-	y = 2
-	completion_reward = {
-		country_event = { 
-			id = berez_belozerski.14 
-			days = 0 
-		}
-		TaS_Global_Conflicts_Initalize = yes
-		set_country_flag = MAR_started_volunteer_sending
-		add_dynamic_modifier = { modifier = MAR_dobrovoltsy_modifier }
-		custom_effect_tooltip = MAR_tt_Volunteer_available
-	}	
-}
-
-shared_focus = {
-	id = MAR_proniknovenie_vtil
-	icon = GFX_MAR_til_vraga
-	cost = 3.58
-	prerequisite = {
-		focus = MAR_russkie_dobrovolchi
-	}
-	x = 54
-	y = 3
-	completion_reward = {
-		country_event = { id = berez_belozerski.32 days = 0 }
-		start_border_war = {
-		    change_state_after_war = no
-		    attacker = {
-		        state = 250
-		        num_provinces = 4
-		        on_win = berez_belozerski.40
-		        on_lose = berez_belozerski.41
-		        on_cancel = japan_border_conflict.4
-		    }	
-		    defender = {
-		        state = 263
-		        num_provinces = 4
-		        on_win = berez_belozerski.40
-		        on_lose = berez_belozerski.42
-		        on_cancel = japan_border_conflict.4
-		    }
-		}
-	}	
-}
-
-shared_focus = {
-	id = MAR_anti_nemec
-	icon = GFX_MAR_anti_nemec
-	cost = 3.58
-	prerequisite = {
-		focus = MAR_podrjka_ofn
-	}
-	prerequisite = {
-		focus = MAR_proniknovenie_vtil
-	}
-	x = 50
-	y = 4
-	completion_reward = {
-		country_event = { id = berez_belozerski.30 days = 0 }
-	}	
-}
-shared_focus = {
-	id = MAR_orel_backs
-	icon = GFX_MAR_orel_voshodit
-	cost = 3.58
-	prerequisite = {
-		focus = MAR_anti_nemec
-	}
-	x = 50
-	y = 5
-	completion_reward = {
-		add_ideas = { MAR_orel_back }
-		country_event = { id = berez_belozerski.31 days = 0 }
-	}
-}
-#############################################################
+###Military Tree
 
 shared_focus = {
 	id = MAR_voen_prikaz
 	icon = GFX_MAR_Voennie_prikaz
 	cost = 3.00
-	x = 38
+	x = 22
 	y = 0
 	completion_reward = {
 		army_experience = 25	
@@ -894,7 +719,7 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_voen_prikaz
 	}
-	x = 34
+	x = 19
 	y = 1
 	completion_reward = {
 		country_event = { 
@@ -944,7 +769,7 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_exper_KB
 	}
-	x = 34
+	x = 19
 	y = 2
 	completion_reward = {
 		add_tech_bonus = {
@@ -962,7 +787,7 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_sovr_voina
 	}
-	x = 35
+	x = 21
 	y = 3
 	completion_reward = {
 		add_tech_bonus = {
@@ -979,7 +804,7 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_voen_prikaz
 	}
-	x = 38
+	x = 22
 	y = 1
 	completion_reward = {
 		country_event = { 
@@ -996,7 +821,7 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_razv_tren
 	}
-	x = 38
+	x = 22
 	y = 2
 	completion_reward = {
 		air_experience = 25
@@ -1014,7 +839,7 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_voen_prikaz
 	}
-	x = 42
+	x = 25
 	y = 1
 	completion_reward = {
 		add_tech_bonus = {
@@ -1031,7 +856,7 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_standart_oryg
 	}
-	x = 42
+	x = 25
 	y = 2
 	completion_reward = {
 		add_tech_bonus = {
@@ -1053,7 +878,7 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_tsar_gvardia
 	}
-	x = 41
+	x = 23
 	y = 3
 	completion_reward = {
 		country_event = { 
@@ -1073,7 +898,7 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_yroki_urala
 	}
-	x = 38
+	x = 22
 	y = 4
 	completion_reward = {
 		add_war_support = 0.10
@@ -1083,17 +908,191 @@ shared_focus = {
 		}
 		TNO_improve_army_professionalism_high = yes
 	}
-}	
+}
 
-#### BELOZER SUPER ####
+###Diplomacy Tree
+shared_focus = {
+	id = MAR_posol_prikaz
+	icon = GFX_MAR_prizak_o_posolstvax
+	cost = 3.58
+	x = 30
+	y = 0
+	completion_reward = {
+		country_event = { 
+			id = berez_belozerski.10 
+			days = 0 
+		}
+		add_political_power = 50
+		hidden_effect = {
+			country_event = {
+				id = MAR_belozerskiy_flavour.4
+				days = 120
+			}
+		}
+	}	
+}
+
+shared_focus = {
+	id = MAR_torgovie_anali
+	icon = GFX_MAR_torg_puti
+	cost = 3.58
+	prerequisite = {
+		focus = MAR_posol_prikaz
+	}
+	x = 30
+	y = 1
+	completion_reward = {
+		country_event = { 
+			id = berez_belozerski.11 
+			days = 0 
+		}
+		TNO_improve_poverty_med = yes
+        set_temp_variable = { gdp_growth_temp = 1.25 }
+        econ_gdp_growth_change = yes
+        give_resource_rights = { 
+        	receiver = USA 
+        	state = 855
+        }
+        give_resource_rights = { 
+        	receiver = USA 
+        	state = 351
+        }
+		set_temp_variable = { interest_rates_temp = -0.2 }
+		econ_interest_rates_change = yes 		
+	}	
+}
+
+
+shared_focus = {
+	id = MAR_vstrecha_dvuh_orlov
+	icon = GFX_MAR_vstreca_orlov
+	cost = 3.58
+	prerequisite = {
+		focus = MAR_torgovie_anali
+	}
+	x = 29
+	y = 2
+	completion_reward = {
+		country_event = { 
+			id = berez_belozerski.12 
+			days = 0 
+		}
+		add_opinion_modifier = {
+		    target = USA
+		    modifier = MAR_usa_friend
+		}
+	}	
+}
+shared_focus = {
+	id = MAR_podrjka_ofn
+	icon = GFX_MAR_podderka_OFN
+	cost = 3.58
+	prerequisite = {
+		focus = MAR_vstrecha_dvuh_orlov
+	}
+	x = 28
+	y = 3
+	completion_reward = {
+		TNO_improve_industrial_equipment_med = yes	
+		TNO_improve_army_professionalism_med = yes
+		country_event = { 
+			id = berez_belozerski.13 
+			days = 0 
+		}
+	}	
+}
+shared_focus = {
+	id = MAR_russkie_dobrovolchi
+	icon = GFX_MAR_Russian_Rembo
+	cost = 3.58
+	prerequisite = {
+		focus = MAR_torgovie_anali
+	}
+	x = 31
+	y = 2
+	completion_reward = {
+		country_event = { 
+			id = berez_belozerski.14 
+			days = 0 
+		}
+		TaS_Global_Conflicts_Initalize = yes
+		set_country_flag = MAR_started_volunteer_sending
+		add_dynamic_modifier = { modifier = MAR_dobrovoltsy_modifier }
+		custom_effect_tooltip = MAR_tt_Volunteer_available
+	}	
+}
+
+shared_focus = {
+	id = MAR_proniknovenie_vtil
+	icon = GFX_MAR_til_vraga
+	cost = 3.58
+	prerequisite = {
+		focus = MAR_russkie_dobrovolchi
+	}
+	x = 32
+	y = 3
+	completion_reward = {
+		country_event = { id = berez_belozerski.32 days = 0 }
+		start_border_war = {
+		    change_state_after_war = no
+		    attacker = {
+		        state = 250
+		        num_provinces = 4
+		        on_win = berez_belozerski.40
+		        on_lose = berez_belozerski.41
+		        on_cancel = japan_border_conflict.4
+		    }	
+		    defender = {
+		        state = 263
+		        num_provinces = 4
+		        on_win = berez_belozerski.40
+		        on_lose = berez_belozerski.42
+		        on_cancel = japan_border_conflict.4
+		    }
+		}
+	}	
+}
+
+shared_focus = {
+	id = MAR_anti_nemec
+	icon = GFX_MAR_anti_nemec
+	cost = 3.58
+	prerequisite = {
+		focus = MAR_podrjka_ofn
+	}
+	prerequisite = {
+		focus = MAR_proniknovenie_vtil
+	}
+	x = 30
+	y = 4
+	completion_reward = {
+		country_event = { id = berez_belozerski.30 days = 0 }
+	}	
+}
+shared_focus = {
+	id = MAR_orel_backs
+	icon = GFX_MAR_orel_voshodit
+	cost = 3.58
+	prerequisite = {
+		focus = MAR_anti_nemec
+	}
+	x = 30
+	y = 5
+	completion_reward = {
+		add_ideas = { MAR_orel_back }
+		country_event = { id = berez_belozerski.31 days = 0 }
+	}
+}
+
+#### Superregional Tree ####
 
 
 shared_focus = {
 	id = MAR_vne_sesd
 	icon = GFX_MAR_vnecherodnoi_sesd
 	cost = 3.00
-	x = 8
-	y = 1
+	x = 5
+	y = 0
 	completion_reward = {
 		TNO_improve_admin_efficiency_med = yes	
 		add_political_power = 50
@@ -1110,8 +1109,8 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_vne_sesd
 	}
-	x = 5
-	y = 2
+	x = 2
+	y = 1
 	completion_reward = {
 		RUS_integration_cost_days_decrease = yes	
 	}
@@ -1123,8 +1122,8 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_sibir_prostor
 	}
-	x = 3
-	y = 3
+	x = 1
+	y = 2
 	completion_reward = {
 		RUS_integration_cost_days_decrease = yes
 		add_stability = 0.05
@@ -1141,8 +1140,8 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_sibir_prostor
 	}
-	x = 7
-	y = 3
+	x = 3
+	y = 2
 	completion_reward = {
 		add_manpower = 50000
 	}
@@ -1157,8 +1156,8 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_integration_armii
 	}
-	x = 5
-	y = 4
+	x = 2
+	y = 3
 	completion_reward = {
 		add_political_power = 25
 		country_event = { 
@@ -1174,8 +1173,8 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_vne_sesd
 	}
-	x = 11
-	y = 2
+	x = 4
+	y = 1
 	completion_reward = {
 		add_tech_bonus = {
 			bonus = 1
@@ -1195,8 +1194,8 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_vne_sesd
 	}
-	x = 14
-	y = 2
+	x = 6
+	y = 1
 	completion_reward = {
 		add_equipment_to_stockpile = {
 			type = infantry_equipment
@@ -1246,8 +1245,8 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_bogatsvo_zlatoysta
 	}
-	x = 12
-	y = 3
+	x = 5
+	y = 2
 	completion_reward = {
 		diplomatic_relation = {
             country = USA
@@ -1269,8 +1268,8 @@ shared_focus = {
 		prerequisite = {
 			focus = MAR_vne_sesd
 		}
-		x = 16
-		y = 2
+		x = 8
+		y = 1
 		completion_reward = {
 		set_temp_variable = { temp_econ_spending_amount = 2 }
 		econ_spend_money_once_effect_raw_money = yes
@@ -1370,8 +1369,8 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_poezdka_amerika
 	}
-	x = 16
-	y = 4
+	x = 8
+	y = 3
 	completion_reward = {
 		set_temp_variable = { gdp_growth_temp = 1.0 }
         econ_gdp_growth_change = yes
@@ -1397,8 +1396,8 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_resyrsi
 	}
-	x = 10
-	y = 5
+	x = 5
+	y = 4
 	completion_reward = {
 		country_event = { 
 			id = berez_belozerski.38
@@ -1407,7 +1406,7 @@ shared_focus = {
 	}
 }
 
-###kz and nuke
+###Kazakhstan Tree
 
 focus_tree = {
 	id = MAR_Kazah_Bel
@@ -1421,7 +1420,7 @@ shared_focus = {
 	id = MAR_comeback_step
 	icon = GFX_MAR_comeback_step
 	cost = 3.00
-	x = 31
+	x = 20
 	y = 0
 	completion_reward = {
 		if = {
@@ -1471,7 +1470,7 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_comeback_step
 	}
-	x = 31
+	x = 20
 	y = 1
 	completion_reward = {
 		TNO_improve_admin_efficiency_med = yes	
@@ -1490,7 +1489,7 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_Kazax_otdel
 	}
-	x = 29
+	x = 18
 	y = 2
 	completion_reward = {
 		MAR_Wojciech_Jaruzelski = {
@@ -1527,7 +1526,7 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_Kazax_otdel
 	}
-	x = 31
+	x = 20
 	y = 2
 	completion_reward = {
 		406 = {
@@ -1582,7 +1581,7 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_modern_Step
 	}
-	x = 31
+	x = 20
 	y = 3
 	completion_reward = {
 		hidden_effect = {
@@ -1777,7 +1776,7 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_Kazax_otdel
 	}
-	x = 33
+	x = 22
 	y = 2
 	completion_reward = {
 		TNO_improve_admin_efficiency_med = yes	
@@ -1795,7 +1794,7 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_Rus_delo
 	}
-	x = 33
+	x = 22
 	y = 3
 	completion_reward = {
 		add_stability = 0.10
@@ -1811,7 +1810,7 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_general_gyber
 	}
-	x = 32
+	x = 21
 	y = 4
 	completion_reward = {
 		RUS_integration_cost_days_decrease = yes
@@ -1822,7 +1821,7 @@ shared_focus = {
 	}
 }
 
-##nuke
+###Nuclear Tree
 
 focus_tree = {
 	id = MAR_Nuke_Belozer
@@ -1836,8 +1835,8 @@ shared_focus = {
 	id = MAR_Grozni
 	icon = MAR_Grozni
 	cost = 3.00
-	x = 22
-	y = 1
+	x = 13
+	y = 0
 	ai_will_do = {
 		factor = 20
 	}
@@ -1858,8 +1857,8 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_Grozni
 	}
-	x = 20
-	y = 2
+	x = 11
+	y = 1
 	ai_will_do = {
 		factor = 20
 	}
@@ -1894,8 +1893,8 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_otdel_nayki
 	}
-	x = 20
-	y = 3
+	x = 11
+	y = 2
 	completion_reward = {
 		set_temp_variable = { temp_econ_spending_amount = 0.3 }
 		econ_spend_money_once_effect_raw_money = yes
@@ -1908,15 +1907,6 @@ shared_focus = {
 			add_to_variable = { RUSNukesTheoryProgress = 15 }
 		}
 		add_to_variable = { RUSNukesMonthlyProgress = 3 }
-		#hidden_effect = { #как это вообще тут появилось блять#
-		#	if = {
-		#		limit = {
-		#			tag = SAM
-		#			has_government = fascism
-		#		}
-		#		country_event = { id = SAM_oktan.4 days = 7 random = 48 }
-		#	}
-		#}
 	}
 }
 shared_focus = {
@@ -1926,8 +1916,8 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_Grozni
 	}
-	x = 24
-	y = 2
+	x = 14
+	y = 1
 	completion_reward = {
 		custom_effect_tooltip = RUS_RWS_nukes_address_the_uranium_problem_tt
 		if = {
@@ -1951,8 +1941,8 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_Yran_problem
 	}
-	x = 24
-	y = 3
+	x = 13
+	y = 2
 	completion_reward = {
 		country_event = { 
 			id = berez_nuke_belo.2
@@ -1992,8 +1982,8 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_Yran_problem
 	}
-	x = 26
-	y = 3
+	x = 15
+	y = 2
 	completion_reward = {
 		custom_effect_tooltip = RUS_RWS_nukes_source_foreign_materials_tt
 		add_stability = -0.03
@@ -2021,8 +2011,11 @@ shared_focus = {
 	prerequisite = {
 		focus = MAR_podarok_USA
 	}
-	x = 22
-	y = 4
+	prerequisite = {
+		focus = MAR_Curgan_shat
+	}
+	x = 13
+	y = 3
 	completion_reward = {
 		country_event = { 
 			id = berez_nuke_belo.3
@@ -2032,5 +2025,227 @@ shared_focus = {
 		add_timed_idea = { idea = RUS_RWS_nukes_chasing_the_sun_misc_costs days = 90 }
 		add_to_variable = { RUSNukesMonthlyProgress = 3 }
 		TNO_improve_industrial_expertise_med = yes
+	}
+}
+
+###Post-Unification Intro
+shared_focus = {
+	id = MAR_united_russia
+	icon = GFX_MAR_Edinaya_And_Nedilimaya
+	cost = 1
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	
+	x = 9
+	y = 0
+	completion_reward = {
+		add_stability = 0.2
+		add_war_support = 0.2
+	}
+}
+
+shared_focus = { 
+	id = MAR_allrussian_mladorossi_party
+	icon = GFX_MAR_All_Russian_Mladorossi_Party
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = MAR_united_russia
+	}
+	x = 7
+	y = 1
+	completion_reward = {
+		#country_event = { id = MAR_initial.2 days = 5 }
+		add_political_power = 50
+		add_popularity = {
+			ideology = despotism
+			popularity = 0.1
+		}
+		TNO_improve_admin_efficiency_med = yes
+	}
+}
+
+shared_focus = { 
+	id = MAR_partisan_problem
+	icon = GFX_MAR_Partisan_Problem
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = MAR_united_russia
+	}
+	x = 9
+	y = 1
+	completion_reward = {
+		#country_event = { id = MAR_initial.2 days = 5 }
+		add_popularity = {
+			ideology = communist
+			popularity = -0.02
+		}
+		add_popularity = {
+			ideology = socialist
+			popularity = -0.02
+		}
+		add_popularity = {
+			ideology = progressivism
+			popularity = -0.02
+		}
+		add_popularity = {
+			ideology = liberalism
+			popularity = -0.02
+		}
+		add_popularity = {
+			ideology = conservatism
+			popularity = -0.02
+		}
+		add_popularity = {
+			ideology = paternalism
+			popularity = -0.02
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = -0.02
+		}
+		add_popularity = {
+			ideology = national_socialism
+			popularity = -0.02
+		}
+		add_popularity = {
+			ideology = ultranationalism
+			popularity = -0.02
+		}
+	}
+}
+
+shared_focus = { 
+	id = MAR_siberian_amnesty
+	icon = GFX_MAR_Amnistiya
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = MAR_united_russia
+	}
+	x = 11
+	y = 1
+	completion_reward = {
+		#country_event = { id = MAR_initial.2 days = 5 }
+		NOV = {
+			NOV_Mikhail_Baganov = {
+				set_nationality = MAR
+			}
+			NOV_Nestor_Kozin = {
+				set_nationality = MAR
+			}
+		}
+		TOM = {
+			TOM_Nikolai_Batyuk = {
+				set_nationality = MAR
+			}
+		}
+		KEM = {
+			KEM_Alexander_Shevtsov = {
+				set_nationality = MAR
+			}
+		}
+		IRK = {
+			IRK_Genrikh_Lyushkov = {
+				set_nationality = MAR
+			}
+		}
+	}
+}
+
+shared_focus = { 
+	id = MAR_worldwide_recognition
+	icon = GFX_MAR_Diplomatic_Recognition
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = MAR_siberian_amnesty
+	}
+	x = 10
+	y = 2
+	completion_reward = {
+		#country_event = { id = MAR_initial.2 days = 5 }
+		every_country = {
+			limit = { 
+				OR = {
+					is_in_faction_with = USA
+					has_democratic_government = yes
+					has_socialist_government = yes
+					has_authoritarian_government = yes
+				}
+				NOT = {
+					OR = {
+						is_in_faction_with = GER
+						is_in_faction_with = JAP
+						has_fascist_government = yes
+					}
+				}
+			}
+			add_opinion_modifier = {
+				target = MAR
+				modifier = MAR_unifier_of_russia
+			}
+		}
+	}
+}
+
+shared_focus = { 
+	id = MAR_russia_trip
+	icon = GFX_MAR_Kareta
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = MAR_partisan_problem
+	}
+	prerequisite = {
+		focus = MAR_allrussian_mladorossi_party
+	}	
+		
+	x = 8
+	y = 2
+	completion_reward = {
+		#country_event = { id = MAR_initial.2 days = 5 }
+		RUS_integration_cost_days_decrease = yes
+	}
+}
+
+shared_focus = { 
+	id = MAR_allrussia_congress
+	icon = GFX_MAR_Congress_Of_Soviets
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = MAR_russia_trip	
+	}
+	prerequisite = {
+		focus = MAR_worldwide_recognition
+	}
+	x = 9
+	y = 3
+	completion_reward = {
+		#country_event = { id = MAR_initial.2 days = 5 }
+		add_political_power = 100
+		TNO_improve_admin_efficiency_med = yes
 	}
 }
