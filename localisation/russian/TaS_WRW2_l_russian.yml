@@ -794,168 +794,6 @@
  MAR_army_infiltrartion_desc:0 "В нашу армию проникла российская разведка. Либо с помощью взяток, либо принуждения, ряд наших высокопоставленных офицеров передают разведданные нашим врагам. Пока мы не сможем искоренить этих шпионов, наша способность планировать наступательные операции и координировать передвижения войск будет затруднена." 
  
  
- #Дойчланд
- TaS_WRW2_prepare_for_final_battle:0 "Подготовка к решающей битве"
- TaS_WRW2_prepare_for_final_battle_desc:0 "Слишком долго Запад нашей родины находился под вражеским гнётом. Но мы не можем торопиться, одно неверное движение и все наши труды могут пойти прахом. Пришло время подготовиться к финальной битве за судьбу России.\n\nНаш уровень готовности - [?RUS2WRWWarPreparedness]/100"
- 
- TaS_WRW2_launch_attack_on_germany:0 "Вернуть то, что нам принадлежит"
- TaS_WRW2_establish_southborders_fortifications:0 "Южная линия обороны"
- TaS_WRW2_establish_southern_fortifications_tt:0 "Мы организуем на юге систему фортификаций, что даст нам 20 готовности к войне."
- TaS_WRW2_establish_northborders_fortifications:0 "Северная линия обороны"
- TaS_WRW2_establish_northern_fortifications_tt:0 "Мы организуем на севере систему фортификаций, что даст нам 10 готовности к войне."
- TaS_WRW2_mobilize_airmobile_units:0 "Развернуть аэродромы у границы"
- TaS_WRW2_mobilize_airmobile_units_tt:0 "Мы развернём сеть аэродромов у границы, что даст нам 10 готовности к войне."
- TaS_WRW2_prepare_industrial_centers:0 "Подготовить центры промышленности"
- TaS_WRW2_prepare_industrial_centers_tt:0 "Мы создадим новые индустриальные центры, что даст нам 15 готовности к войне."
- TaS_WRW2_send_partisans:0 "Создать партизанско-диверсионную сеть"
- TaS_WRW2_send_partisans_tt:0 "Мы получим возможность поднять небольшую армию партизан, как только они услышат наш зов. Это даст нам 10 готовности к войне."
- TaS_WRW2_block_the_barentsevo_sea:0 "Заблокировать Баренцево Море"
- TaS_WRW2_no_naval_for_ger_tt:0 "Баренцево Море станет неприступной крепостью для Кригсмарине."
- TaS_WRW2_develop_front_railways:0 "Расширить прифронтовую инфраструктуру"
- TaS_WRW2_develop_siberian_railways_tt:0 "Развернув широкую инфраструктурную сети на границе, мы обеспечим достойное снабжение на линии фронта. Это даст нам 20 готовности к войне."
- TaS_WRW2_raise_additional_reserves:0 "Призвать резервы"
- TaS_WRW2_raise_additional_reserves_tt:0 "Подготовка мобилизационного резерва даст нам 15 готовности к войне."
- 
- TaS_WRW2_the_final_battle:0 "Финальная битва"
- TaS_2WRW_mechanics_tt:0 "§RНачалось§! \n\nМы начали эту войну, и теперь, наша важнейшая задача - разгром немецких армий и полный возврат всех оккупированных территорий. Мы должны действовать быстро и успевать захватывать регионы до того, как вырастет §eистощение§!. \n\n§eИстощение§! - показатель усталости народа и государственной машины от войны. После преодоления рубежа в 30% §eистощения§!, усталось начнёт выливаться в серьёзные проблемы. Чем выше §eистощение§!, тем сильнее становятся эти самые проблемы. Если мы сможем довести показатель §eистощения§! достаточно высоко - немцы будут согласны на §Gболее лучшие§! для нас условия мира. §eНо это может работать и в обратную сторону§!."
- 
- TaS_2WRW_exhaustion_title:0 "£war_exhaustion_icon Истощение в войне"
- TaS_WRW2_exhausion_modifier_GER:0 "Апофеоз войны"
- TaS_WRW2_exhausion_modifier_RUS:0 "Апофеоз войны"
- 
- russian_title_loc:0 "§Y[RUS.GetNameDef]§! [RUS.GetFlag]"
- TaS_RUS_war_exhaustion_info_tt:0 "Текущий уровень §Bрусского§! военного истощения: [?RUS.WRW2_devastation]%\n-------------\nЭто даёт следующие негативные последствия:\n\nПрирост политической власти: [?RUS.WRW2_exhausion_political_power_factor|R%]\nОрганизация дивизий: [?RUS.WRW2_exhausion_army_org_factor|R%]\nСкорость строительства: [?RUS.WRW2_exhausion_production_speed_buildings_factor|R%]\nБазовая эффективность производства: [?RUS.WRW2_exhausion_production_factory_start_efficiency_factor|R%]\nАтака дивизий: [?RUS.WRW2_exhausion_army_attack_factor|R%]\nЗащита дивизий: [?RUS.WRW2_exhausion_army_defence_factor|R%]\nОбъём заводского производства: [?RUS.WRW2_exhausion_industrial_capacity_factory|R%]\nСкорость пополнения: [?RUS.WRW2_exhausion_land_reinforce_rate|R%]\nНужно гарнизонов: [?RUS.WRW2_exhausion_required_garrison_factor|G%]\nВоеннообязанное население: [?RUS.WRW2_exhausion_recruitable_population_factor|R%]\nНалогооблагаемое население: [?RUS.WRW2_exhausion_taxable_population_modifier|R%]"
- 
- german_title_loc:0 "[GER.GetFlag] §Y[GER.GetName]§!"
- TaS_GER_war_exhaustion_info_tt:0 "Текущий уровень §gнемецкого§! военного истощения: [?GER.WRW2_devastation]%\n-------------\nЭто даёт следующие негативные последствия:\n\nПрирост политической власти:   [?GER.WRW2_exhausion_political_power_factor|R%]\nОрганизация дивизий: [?GER.WRW2_exhausion_army_org_factor|R%]\nСкорость строительства: [?GER.WRW2_exhausion_production_speed_buildings_factor|R%]\nБазовая эффективность производства: [?GER.WRW2_exhausion_production_factory_start_efficiency_factor|R%]\nАтака дивизий: [?GER.WRW2_exhausion_army_attack_factor|R%]\nЗащита дивизий: [?GER.WRW2_exhausion_army_defence_factor|R%]\nОбъём заводского производства: [?GER.WRW2_exhausion_industrial_capacity_factory|R%]\nСкорость пополнения: [?GER.WRW2_exhausion_land_reinforce_rate|R%]\nНужно гарнизонов: [?GER.WRW2_exhausion_required_garrison_factor|R%]\nВоеннообязанное население: [?GER.WRW2_exhausion_recruitable_population_factor|R%]\nНалогооблагаемое население: [?GER.WRW2_exhausion_taxable_population_modifier|R%]"
-    
- frontlines_button_name:0 "Передовая"
- frontlines_desc_tt:0 "Показать возможности на фронте"
- 
- TaS_WRW2_raid_in_the_germany:0 "Рейд на Германию"
- MAR_WRW2_very_severe_damage:0 "Мы нанесём §Rогромный ущерб§! немецкой инфраструктуре."
- MAR_WRW2_big_damage:0 "Мы нанесём §Yбольшой ущерб§! немецкой инфраструктуре." 
- MAR_WRW2_mild_damage:0 "Мы нанесём §Gнезначительный ущерб§! немецкой инфраструктуре." 
- 
- TaS_WRW2_activate_partisans:0 "Поднять диверсантов и партизан"
-  
- TaS_WRW2_activate_plan_spb:0 "§CОперация 'Александр Невский'§!"
- TaS_WRW2_activate_plan_spb_mission:0 "Время для §CОперации 'Александр Невский'§!."
- 
- TaS_WRW2_activate_plan_msk:0 "§RОперация 'Минин и Пожарский'§!"
- TaS_WRW2_activate_plan_msk_mission: "Время для §RОперации 'Минин и Пожарский'§!."
- 
- TaS_WRW2_activate_plan_volga:0 "§YОперация 'Дмитрий Донской'§!"
- TaS_WRW2_activate_plan_volga_mission: "Время для §YОперации 'Дмитрий Донской'§!."
- 
- TaS_WRW2_activate_plan_kyiv:0 "§GОперация 'Святослав Игоревич'§!"
- TaS_WRW2_activate_plan_kyiv_mission:0 "Время для §GОперации 'Святослав Игоревич'§!." 
- 
- TaS_WRW2_activate_plan_riga:0 "§GОперация 'Иван Грозный'§!"
- TaS_WRW2_activate_plan_riga_mission:0 "Время для §GОперации 'Иван Грозный'§!."
- 
-
- RUS_over_the_oka:0 "Пересечь Оку"
- RUS_take_tichwin:0 "Взять Тихвин"
- RUS_push_to_paulusburg:0 "Рывок на Паулюсбург"
- RUS_push_to_penza:0 "Рывок на Пензу"
- RUS_down_the_don:0 "Продвижение по Дону"
- RUS_march_over_moscow:0 "Марш на Белокаменную"
- RUS_take_novgorod:0 "Освободить Новгород"
- RUS_push_to_petrograd:0 "Рывок на Петроград"
- RUS_storm_smolensk:0 "Штурм Смоленска"
- RUS_onto_oryol:0 "На Орёл"
- RUS_home_sweet_homel:0 "Поход на Гомель"
- 
- RUS_charge_into_the_caucasus:0 "Дальше, на Кавказ!"
- RUS_blitz_to_baku:0 "Блиц до Баку"
- RUS_take_tbilisi:0 "Взять Тифлис"
- 
- RUS_secure_sevastopol:0 "В родную гавань"
- RUS_push_to_poltava:0 "Поход на Полтаву"
- RUS_take_zaporizhia:0 "Взять Запорожье"
- RUS_liberate_kiev:0 "Мать городов Русских"
- RUS_past_the_dniepr:0 "Пересечь Днепр"
- RUS_into_volhynia:0 "На Волынь"
- 
- RUS_blitz_belarus:0 "Освободить Беларусь"
- RUS_race_to_riga:0 "Гонка до Риги"
- RUS_liberate_lithuania:0 "Поход через Литву"
- 
- RUS_march_on_galicia:0 "Марш на Галицию"
- RUS_remember_1758:0 "Вспомнить 1758"
- RUS_heart_of_poland:0 "Сердце Польши"
- RUS_gate_of_berlin:0 "Ворота Берлина"
- RUS_battle_of_germania:0 "Битва за Германию"
- 
- homefront_button_name:0 "Тыл"
- homefront_desc_tt:0 "Показать возможности в тылу"
- 
- RUS_propaganda_campaign:0 "Агитационная кампания"
- RUS_reassure_populace:0 "Воодушевить население"
- RUS_raise_war_taxes:0 "Поднять военный налог"
- RUS_lease_private_arms_companies:0 "Привлечь частные компании к производству оружия"
- TaS_WRW2_expand_war_orders:0 "Увеличить военный заказ"
- RUS_war_bonds:0 "Ввести военные займы"
- RUS_general_staff_meeting:0 "Провести собрание высшего коммандования"
- TaS_WRW2_get_rid_of_traitors:0 "Провести чистки от ненадёжных элементов"
- 
- 
- diplomacy_button_name:0 "Дипломатия"
- diplomacy_desc_tt:0 "Показать дипломатические возможности"
- 
- TaS_WRW2_ask_for_ofn_help:0 "Попросить помощи у ОСН"
- TaS_WRW2_form_the_internation_legion:0 "Сформировать интернациональный анти-фашисткий корпус"
- TaS_WRW2_ask_for_german_isolation:0 "Призвать к международной изоляции Рейха"
- TaS_WRW2_spread_anti_war_propaganda:0 "Рапространить анти-военную пропаганду в Германии"
- 
- TaS_2WRW_fail_tt:0 "§RМы потерпели неудачу§!"
- TaS_2WRW_small_w_tt:0 "§YНебольшой успех§!"
- 
- WRW2_Devastation_Low:0 "§GНизкий§!"
- WRW2_Devastation_Medium:0 "§YСредний§!"
- WRW2_Devastation_High:0 "§RВыскокий§!" 
- #([GetRusDevastation])#
- TaS_WRW2_devastation_growth_tt: "Это §Rувеличит§! §eистощение§! §Yв войне§! на §R[?temp_devastation_gained_txt]§!.\n"
- TaS_WRW2_devastation_decrease_tt: "Это §Gуменьшит§! §eистощение§! §Yв войне§! на §G[?temp_devastation_gained_txt]§!.\n"
- 
- TaS_WRW2_devastation_gain_growth_tt: "Это §Rувеличит§! §eрост истощения§! §Yв войне§! на §R[?temp_devastation_gain_gained_txt]§!.\n"
- TaS_WRW2_devastation_gain_decrease_tt: "Это §Gуменьшит§! §eрост истощение§! §Yв войне§! на §G[?temp_devastation_gain_gained_txt]§!.\n"
- 
- TaS_WRW2_devastation_tick:0 "Рост истощения!"
- TaS_WRW2_devastation_tick_tt:0 "§eИстощение§! §Rувеличится§! на §R[?RUS.WRW2_devastation_gain]§!.\n"
- 
- Tas_WRW2_increase_depression_tt:0 "§YЭто§! §eухудшит§! §Yсостояние общества§!"
- Tas_WRW2_decrease_depression_tt:0 "§YЭто§! §Gулучшит§! §Yсостояние общества§!"
- 
- TAS_WRW2_ScriptedTrigger_GER_Devastation_MoreThanY_Tt: "§eИстощение§! фрицев больше, чем [?Y|Y0]"
- TAS_WRW2_ScriptedTrigger_GER_Devastation_LessThanY_Tt: "§eИстощение§! фрицев меньше, чем [?Y|Y0]"
- 
- TAS_WRW2_ScriptedTrigger_MAR_Devastation_MoreThanY_Tt: "§eИстощение§! русских больше, чем [?Y|Y0]"
- TAS_WRW2_ScriptedTrigger_MAR_Devastation_LessThanY_Tt: "§eИстощение§! русских меньше, чем [?Y|Y0]"
- 
- TaS_WRW2_show_war_plans:0 "Отобразить список военных операций"
- TaS_WRW2_hide_war_plans:0 "Скрыть список военных операций"
- 
- 
- TaS_WRW2_expand_industries:0 "Расширение фабрик и заводов"
- TaS_WRW2_expand_war_bonds:0 "Расширить заказы на вооружение"
- TaS_WRW2_millitary_parade:0 "Провести военный парад"
- TaS_WRW2_promise_victory:0 "Пообещать скорую победу"
- 
- TaS_WRW2_get_rid_of_traitors:0 "Чистки неблагонадёжных элементов"
- TaS_WRW2_economic_mobilization:0 "Законы военного времени"
- 
- TaS_WRW2_show_emergency_decisions:0 "Ввести экстренные меры"
- TaS_WRW2_cancel_war_decisions:0 "Вернуть всё в норму"
- TaS_WRW2_total_war_mobilization:0 "Мобилизация для тотальной войны"
- TaS_WRW2_equipment_old:0 "Смести все склады"
- TaS_WRW2_army_mobilization:0 "Мобилизация всех, кто умеет стрелять"
- TaS_WRW2_our_last_stand:0 "Отступать некуда!"
- TaS_WRW2_ultima_ratio:0 "§RПоследний шаг§!"
- 
- TaS_WRW2_offer_total_capitulation:0 "Потребовать полную капитуляцию"
- TaS_WRW2_offer_total_total_capitulation:0 "Потребовать §Rбезоговорочную§! капитуляцию"
  #события войны
  MAR_2WRW.1.t:0 "Германия предлагает статус-кво"
  MAR_2WRW.1.d:0 "Несмотря на начальный успех операции, темпы нашего наступления оставляют желать лучшего, ситуация на фронте остается тяжелой и продолжает накаляться с каждой минутой. \n\nВ связи с таким развитием событий, подлые немцы, опасаясь дальнейшей эскалации, предлагают нам заключить мирное договор на условия статус-кво.\n\nНесмотря на возмутительность данного предложения, некоторые лица в нашем правительстве предрекают полнейший крах фронта в ближайшие недели. Они поддерживают решение заключить этот договор на таких спорных условиях, тем самым закончив войну с небольшими потерями, но стоит ли предательство людей в Рейхкомиссариатах того?"
@@ -1836,3 +1674,323 @@
  TaS_WRW2_look_up_at_turkestan:0 "Взор на Среднюю Азию"
  TaS_WRW2_contact_with_primorie:0 "Выйти на контакт с Приморьем"
  TaS_WRW2_prepare_for_war:0 "Начать подготовку к §eвойне с Рейхом§!"
+ 
+ #SWRW GUI
+ BoP_Tab_SWRW:0 "      Решающая битва"
+ BoP_Tab_SWRW_RUS:0 "      Вторая Отечественная"
+ BoP_Tab_SWRW_GER:0 "      Вторая Западнорусская"
+ swrw_title:0 "[Get_swrw_title]"
+ swrw_title_rus:0 "Вторая Отечественная Война"
+ swrw_title_ger:0 "Вторая Западнорусская Война"
+ TaS_SWRW_into_icon_tt:0 "§eВТОРАЯ ОТЕЧЕСТВЕННАЯ ВОЙНА§!"
+ TaS_SWRW_into_icon_tt_delayed:0 "уээээээ"
+ stage_title:0 "[Get_swrw_stage]"
+ stage_one_title:0 "Этап 1: Подготовка"
+ stage_two_title:0 "Этап 2: Война"
+ stage_ger_title:0 "DASEINKAMPF"
+ readiness_title:0 "Готовность к войне"
+ suspicion_scale:0 "Подозрения Рейха"
+ swrw_desc:0 "[Get_swrw_desc]"
+ stage_one_desc:0 "Изменения подозрений Рейха в месяц: [?SWRW_suspicion_gain]"
+ stage_two_desc:0 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce laoreet velit iaculis, rhoncus sem in, dictum mi. Fusce varius, urna non rhoncus tristique, tortor orci hendrerit lacus, a consequat libero neque ut lectus. Praesent eget bibendum mi. Vivamus imperdiet mauris mauris, a mattis magna aliquet in. Aenean mollis arcu ut rhoncus iaculis. "
+ stage_ger_desc:0 "DASEINKAMPF"
+ 
+ button_selected_tt:0 "Категория выбрана"
+ 
+ TaS_SWRW_readiness_tt:0 "Текущий уровень готовности: [?SWRW_readiness_var]"
+ TaS_SWRW_readiness_tt_delayed:0 ""
+ 
+ TaS_SWRW_suspicion_tt:0 "Текущий уровень подозрений: [?SWRW_suspicion_var]"
+ TaS_SWRW_suspicion_tt_delayed:0 ""
+ 
+ SWRW_suspicion_decrease_tt:0 "§RПодозрения§! Германии §Gснизятся§! на §Y[?temp_suspicion_gained_txt]%§!"
+ SWRW_suspicion_growth_tt:0 "§RПодозрения§! Германии §eповысятся§! на §Y[?temp_suspicion_gained_txt]%§!"'
+ 
+ SWRW_suspicion_gain_decrease_tt:0 "§RЕжемесячный рост подозрений§! Германии §Gснизится§! на §Y[?temp_suspicion_gain_gained_txt]%§!"
+ SWRW_suspicion_gain_growth_tt:0 "§RЕжемесячный рост подозрений§! Германии §eповысится§! на §Y[?temp_suspicion_gain_gained_txt]%§!"'
+ 
+ SWRW_readiness_growth_tt:0 "§GГотовность§! к войне повысится на §Y[?temp_readiness_gained_txt]%§!"'
+ 
+ #SWRW decisons
+ TaS_WRW2_prepare_for_final_battle:0 "Подготовка к решающей битве"
+ TaS_WRW2_prepare_for_final_battle_desc:0 "Слишком долго Запад нашей родины находился под вражеским гнётом. Но мы не можем торопиться, одно неверное движение и все наши труды могут пойти прахом. Пришло время подготовиться к финальной битве за судьбу России.\n\nНаш уровень готовности - [?RUS2WRWWarPreparedness]/100"
+ 
+ TaS_WRW2_launch_attack_on_germany:0 "§eНачать последнюю битву§!"
+ 
+ #cat one
+ TaS_WRW2_zapad_excersices:0 "Учения "Запад-71""
+ TaS_WRW2_zapad_excersices_desc:0 ""
+ 
+ TaS_WRW2_sever_excersices:0 "Учения "Север-72""
+ TaS_WRW2_sever_excersices_desc:0 ""
+ 
+ TaS_WRW2_vostok_excersices:0 "Учения "Восток-73""
+ TaS_WRW2_vostok_excersices_desc:0 ""
+ 
+ TaS_WRW2_volga_excersices:0 "Учения "Волга-74""
+ TaS_WRW2_volga_excersices_desc:0 ""
+ 
+ Tas_WRW2_excersices_tt:0 "§JПроведённые учения§! стали хорошем показателем §Rнашей силы§!."
+ 
+ TaS_WRW2_establish_northborders_fortifications:0 "Северная линия обороны"
+ TaS_WRW2_establish_northborders_fortifications_desc:0 ""
+ 
+ TaS_WRW2_establish_southborders_fortifications:0 "Южная линия обороны"
+ TaS_WRW2_establish_southborders_fortifications_desc:0 ""
+ 
+ TaS_WRW2_establish_centralasian_fortifications:0 "Центральноазиатская линия обороны"
+ TaS_WRW2_establish_centralasian_fortifications_desc:0 ""
+ 
+ TaS_WRW2_establish_fallback_fortifications:0 "Резервная линия обороны"
+ TaS_WRW2_establish_fallback_fortifications_desc:0 ""
+ 
+ Tas_WRW2_fortifications_tt:0 "§JПостроенные укрепления§! помогут нашей армии при §Rнаступлении врага §!.\n"
+ 
+ TaS_WRW2_mobilize_airmobile_units:0 "Развёртывание аэродромов"
+ TaS_WRW2_mobilize_airmobile_units_desc:0 ""
+ Tas_WRW2_airmobile_units_tt:0 "§JПостроенные аэродромы§! помогут нашей армии при §aзахватить превосходство в небе§!.\n"
+ 
+ TaS_WRW2_millitary_production_contracts:0 "Контракты на производство вооружений"
+ TaS_WRW2_millitary_production_contracts_desc:0 ""
+ Tas_WRW2_production_contracts_tt:0 "§JКонтракты на закупку вооружений§! §Gудешевлят стоимость§! производства оружия.\n"
+ 
+ SWRW_increased_arms_prodution:0 "Контракты на закупку вооружений"
+ SWRW_increased_arms_prodution_desc:0 ""
+ 
+ TaS_WRW2_radars_constuction:0 "Строительство радаров"
+ TaS_WRW2_radars_constuction_desc:0 ""
+ Tas_WRW2_radars_tt:0 "§JРадары§! §Gпозволят нам§! видеть насквозь любые передвижение врага.\n"
+ 
+ #cat two
+ TaS_WRW2_raise_additional_reserves:0 "Мобилизационная кампания"
+ TaS_WRW2_raise_additional_reserves_desc:0 ""
+ TaS_WRW2_reserves_tt:0 " "
+ 
+ TaS_WRW2_draft_propaganda:0 "Пропаганда призыва"
+ TaS_WRW2_draft_propaganda_desc:0 ""
+ TaS_WRW2_propaganda_tt:0 " "
+ 
+ SWRW_draft_propaganda:0 "Пропаганда призыва"
+ SWRW_draft_propaganda_desc:0 ""
+ 
+ TaS_WRW2_develop_front_railways:0 "Строительство железных дорог"
+ TaS_WRW2_develop_front_railways_desc:0 ""
+ TaS_WRW2_railways_tt:0 " "
+ 
+ TaS_WRW2_develop_front_infrastructure:0 "Строительство прифронтовой инфраструктуры"
+ TaS_WRW2_develop_front_infrastructure_desc:0 ""
+ TaS_WRW2_infrastructure_tt:0 " "
+ 
+ TaS_WRW2_prepare_industrial_centers:0 "Развитие военной промышленности"
+ TaS_WRW2_prepare_industrial_centers_desc:0 ""
+ TaS_WRW2_industrial_centers_tt:0 " "
+ 
+ TaS_WRW2_prepare_economics:0 "Укрепление экономики"
+ TaS_WRW2_prepare_economics_desc:0 ""
+ TaS_WRW2_economics_tt:0 " "
+ 
+ SWRW_free_money:0 "деньги"
+ SWRW_free_money_desc:0 "бесплатно"
+ 
+ TaS_WRW2_mobilize_economics:0 "Моблизиация экономики"
+ TaS_WRW2_mobilize_economics_desc:0 ""
+ TaS_WRW2_mobilize_tt:0 " "
+ 
+ TaS_WRW2_buy_equipment:0 "Закупка промышленного оборудования"
+ TaS_WRW2_buy_equipment_desc:0 ""
+ TaS_WRW2_equipment_tt:0 " "
+ 
+ #cat three
+ TaS_WRW2_send_partisans:0 "Отправить партизан"
+ TaS_WRW2_send_partisans_desc:0 ""
+ TaS_WRW2_partisans_tt:0 " "
+ 
+ SWRW_war_partisans:0 "Партизаны"
+ SWRW_war_partisans_desc:0 ""
+ 
+ TaS_WRW2_block_the_barentsevo_sea:0 "Операция "Ледокол""
+ TaS_WRW2_block_the_barentsevo_sea_desc:0 ""
+ TaS_WRW2_barentsevo_tt:0 " "
+ 
+ TaS_WRW2_buy_guns:0 "Закупка вооружения зарубежом"
+ TaS_WRW2_buy_guns_desc:0 ""
+ TaS_WRW2_guns_tt:0 " "
+ 
+ TaS_WRW2_test_technology:0 "Русское поле экспериментов"
+ TaS_WRW2_test_technology_desc:0 ""
+ TaS_WRW2_tests_tt:0 " "
+ 
+ TaS_WRW2_international_recruiting:0 "Международная программа набора"
+ TaS_WRW2_international_recruiting_desc:0 ""
+ TaS_WRW2_international_tt:0 " "
+ 
+ SWRW_international_recruiting:0 "Международный набор"
+ SWRW_international_recruiting_desc:0 ""
+ 
+ TaS_WRW2_block_suez:0 "Заблокировать Суэцкий Канал"
+ TaS_WRW2_block_suez_desc:0 ""
+ TaS_WRW2_suez_tt:0 " "
+ 
+ SWRW_interrupted_trade:0 "Торговые проблемы"
+ SWRW_interrupted_trade_desc:0 ""
+ 
+ TaS_WRW2_france_talks:0 "Переговоры с Францией"
+ TaS_WRW2_france_talks_desc:0 ""
+ TaS_WRW2_france_tt:0 " "
+ 
+ TaS_WRW2_chill_down_germs:0 "Успокоить немцев"
+ TaS_WRW2_chill_down_germs_desc:0 ""
+ 
+ TaS_WRW2_chill_down_germs_little:0 "Обещания мира"
+ TaS_WRW2_chill_down_germs_little_desc:0 ""
+ 
+ TaS_SWRW_germs_panick:0 "Рейх собирает силы"
+ TaS_SWRW_germs_panick_desc:0 ""
+ TaS_SWRW_panick_tt:0 "ты еблан блять"
+ 
+ SWRW_broken_plans:0 "Сорванные планы"
+ 
+ ### Stage two
+ SWRW_reichskommisariat:0 "Административная часть Рейха"
+ SWRW_reichskommisariat_desc:0 ""
+ 
+ TaS_WRW2_the_final_battle:0 "Финальная битва"
+ TaS_2WRW_mechanics_tt:0 "§RНачалось§! \n\nМы начали эту войну, и теперь, наша важнейшая задача - разгром немецких армий и полный возврат всех оккупированных территорий. Мы должны действовать быстро и успевать захватывать регионы до того, как вырастет §eистощение§!. \n\n§eИстощение§! - показатель усталости народа и государственной машины от войны. После преодоления рубежа в 30% §eистощения§!, усталось начнёт выливаться в серьёзные проблемы. Чем выше §eистощение§!, тем сильнее становятся эти самые проблемы. Если мы сможем довести показатель §eистощения§! достаточно высоко - немцы будут согласны на §Gболее лучшие§! для нас условия мира. §eНо это может работать и в обратную сторону§!."
+ 
+ TaS_2WRW_exhaustion_title:0 "£war_exhaustion_icon Истощение в войне"
+ TaS_WRW2_exhausion_modifier_GER:0 "Апофеоз войны"
+ TaS_WRW2_exhausion_modifier_RUS:0 "Апофеоз войны"
+ 
+ russian_title_loc:0 "§Y[RUS.GetNameDef]§! [RUS.GetFlag]"
+ TaS_RUS_war_exhaustion_info_tt:0 "Текущий уровень §Bрусского§! военного истощения: [?RUS.WRW2_devastation]%\n-------------\nЭто даёт следующие негативные последствия:\n\nПрирост политической власти: [?RUS.WRW2_exhausion_political_power_factor|R%]\nОрганизация дивизий: [?RUS.WRW2_exhausion_army_org_factor|R%]\nСкорость строительства: [?RUS.WRW2_exhausion_production_speed_buildings_factor|R%]\nБазовая эффективность производства: [?RUS.WRW2_exhausion_production_factory_start_efficiency_factor|R%]\nАтака дивизий: [?RUS.WRW2_exhausion_army_attack_factor|R%]\nЗащита дивизий: [?RUS.WRW2_exhausion_army_defence_factor|R%]\nОбъём заводского производства: [?RUS.WRW2_exhausion_industrial_capacity_factory|R%]\nСкорость пополнения: [?RUS.WRW2_exhausion_land_reinforce_rate|R%]\nНужно гарнизонов: [?RUS.WRW2_exhausion_required_garrison_factor|G%]\nВоеннообязанное население: [?RUS.WRW2_exhausion_recruitable_population_factor|R%]\nНалогооблагаемое население: [?RUS.WRW2_exhausion_taxable_population_modifier|R%]"
+ 
+ german_title_loc:0 "[GER.GetFlag] §Y[GER.GetName]§!"
+ TaS_GER_war_exhaustion_info_tt:0 "Текущий уровень §gнемецкого§! военного истощения: [?GER.WRW2_devastation]%\n-------------\nЭто даёт следующие негативные последствия:\n\nПрирост политической власти:   [?GER.WRW2_exhausion_political_power_factor|R%]\nОрганизация дивизий: [?GER.WRW2_exhausion_army_org_factor|R%]\nСкорость строительства: [?GER.WRW2_exhausion_production_speed_buildings_factor|R%]\nБазовая эффективность производства: [?GER.WRW2_exhausion_production_factory_start_efficiency_factor|R%]\nАтака дивизий: [?GER.WRW2_exhausion_army_attack_factor|R%]\nЗащита дивизий: [?GER.WRW2_exhausion_army_defence_factor|R%]\nОбъём заводского производства: [?GER.WRW2_exhausion_industrial_capacity_factory|R%]\nСкорость пополнения: [?GER.WRW2_exhausion_land_reinforce_rate|R%]\nНужно гарнизонов: [?GER.WRW2_exhausion_required_garrison_factor|R%]\nВоеннообязанное население: [?GER.WRW2_exhausion_recruitable_population_factor|R%]\nНалогооблагаемое население: [?GER.WRW2_exhausion_taxable_population_modifier|R%]"
+    
+ frontlines_button_name:0 "Передовая"
+ frontlines_desc_tt:0 "Показать возможности на фронте"
+ 
+ TaS_WRW2_raid_in_the_germany:0 "Рейд на Германию"
+ MAR_WRW2_very_severe_damage:0 "Мы нанесём §Rогромный ущерб§! немецкой инфраструктуре."
+ MAR_WRW2_big_damage:0 "Мы нанесём §Yбольшой ущерб§! немецкой инфраструктуре." 
+ MAR_WRW2_mild_damage:0 "Мы нанесём §Gнезначительный ущерб§! немецкой инфраструктуре." 
+ 
+ TaS_WRW2_activate_partisans:0 "Поднять диверсантов и партизан"
+  
+ TaS_WRW2_activate_plan_spb:0 "§CОперация 'Александр Невский'§!"
+ TaS_WRW2_activate_plan_spb_mission:0 "Время для §CОперации 'Александр Невский'§!."
+ 
+ TaS_WRW2_activate_plan_msk:0 "§RОперация 'Минин и Пожарский'§!"
+ TaS_WRW2_activate_plan_msk_mission: "Время для §RОперации 'Минин и Пожарский'§!."
+ 
+ TaS_WRW2_activate_plan_volga:0 "§YОперация 'Дмитрий Донской'§!"
+ TaS_WRW2_activate_plan_volga_mission: "Время для §YОперации 'Дмитрий Донской'§!."
+ 
+ TaS_WRW2_activate_plan_kiev:0 "§GОперация 'Святослав Игоревич'§!"
+ TaS_WRW2_activate_plan_kiev_mission:0 "Время для §GОперации 'Святослав Игоревич'§!." 
+ 
+ TaS_WRW2_activate_plan_riga:0 "§GОперация 'Иван Грозный'§!"
+ TaS_WRW2_activate_plan_riga_mission:0 "Время для §GОперации 'Иван Грозный'§!."
+ 
+
+ SWRW_over_the_oka:0 "Пересечь Оку"
+ SWRW_take_tichwin:0 "Взять Тихвин"
+ SWRW_push_to_paulusburg:0 "Рывок на Паулюсбург"
+ SWRW_push_to_penza:0 "Рывок на Пензу"
+ SWRW_down_the_don:0 "Продвижение по Дону"
+ SWRW_march_over_moscow:0 "Марш на Белокаменную"
+ SWRW_take_novgorod:0 "Освободить Новгород"
+ SWRW_push_to_petrograd:0 "Рывок на Петроград"
+ SWRW_storm_smolensk:0 "Штурм Смоленска"
+ SWRW_onto_oryol:0 "На Орёл"
+ SWRW_home_sweet_homel:0 "Поход на Гомель"
+ 
+ SWRW_charge_into_the_caucasus:0 "Дальше, на Кавказ!"
+ SWRW_blitz_to_baku:0 "Блиц до Баку"
+ SWRW_take_tbilisi:0 "Взять Тифлис"
+ 
+ SWRW_secure_sevastopol:0 "В родную гавань"
+ SWRW_push_to_poltava:0 "Поход на Полтаву"
+ SWRW_take_zaporizhia:0 "Взять Запорожье"
+ SWRW_liberate_kiev:0 "Мать городов Русских"
+ SWRW_past_the_dniepr:0 "Пересечь Днепр"
+ SWRW_into_volhynia:0 "На Волынь"
+ 
+ SWRW_blitz_belaSWRW:0 "Освободить Беларусь"
+ SWRW_race_to_riga:0 "Гонка до Риги"
+ SWRW_liberate_lithuania:0 "Поход через Литву"
+ 
+ SWRW_march_on_galicia:0 "Марш на Галицию"
+ SWRW_remember_1758:0 "Вспомнить 1758"
+ SWRW_heart_of_poland:0 "Сердце Польши"
+ SWRW_gate_of_berlin:0 "Ворота Берлина"
+ SWRW_battle_of_germania:0 "Битва за Германию"
+ 
+ homefront_button_name:0 "Тыл"
+ homefront_desc_tt:0 "Показать возможности в тылу"
+ 
+ SWRW_propaganda_campaign:0 "Агитационная кампания"
+ SWRW_reassure_populace:0 "Воодушевить население"
+ SWRW_raise_war_taxes:0 "Поднять военный налог"
+ SWRW_lease_private_arms_companies:0 "Привлечь частные компании к производству оружия"
+ TaS_WRW2_expand_war_orders:0 "Увеличить военный заказ"
+ SWRW_war_bonds:0 "Ввести военные займы"
+ SWRW_general_staff_meeting:0 "Провести собрание высшего коммандования"
+ TaS_WRW2_get_rid_of_traitors:0 "Провести чистки от ненадёжных элементов"
+ 
+ 
+ diplomacy_button_name:0 "Дипломатия"
+ diplomacy_desc_tt:0 "Показать дипломатические возможности"
+ 
+ TaS_WRW2_ask_for_ofn_help:0 "Попросить помощи у ОСН"
+ TaS_WRW2_form_the_internation_legion:0 "Сформировать интернациональный анти-фашисткий корпус"
+ TaS_WRW2_ask_for_german_isolation:0 "Призвать к международной изоляции Рейха"
+ TaS_WRW2_spread_anti_war_propaganda:0 "Рапространить анти-военную пропаганду в Германии"
+ 
+ TaS_2WRW_fail_tt:0 "§RМы потерпели неудачу§!"
+ TaS_2WRW_small_w_tt:0 "§YНебольшой успех§!"
+ 
+ WRW2_Devastation_Low:0 "§GНизкий§!"
+ WRW2_Devastation_Medium:0 "§YСредний§!"
+ WRW2_Devastation_High:0 "§RВыскокий§!" 
+ #([GetRusDevastation])#
+ TaS_WRW2_devastation_growth_tt: "Это §Rувеличит§! §eистощение§! §Yв войне§! на §R[?temp_devastation_gained_txt]§!.\n"
+ TaS_WRW2_devastation_decrease_tt: "Это §Gуменьшит§! §eистощение§! §Yв войне§! на §G[?temp_devastation_gained_txt]§!.\n"
+ 
+ TaS_WRW2_devastation_gain_growth_tt: "Это §Rувеличит§! §eрост истощения§! §Yв войне§! на §R[?temp_devastation_gain_gained_txt]§!.\n"
+ TaS_WRW2_devastation_gain_decrease_tt: "Это §Gуменьшит§! §eрост истощение§! §Yв войне§! на §G[?temp_devastation_gain_gained_txt]§!.\n"
+ 
+ TaS_WRW2_devastation_tick:0 "Рост истощения!"
+ TaS_WRW2_devastation_tick_tt:0 "§eИстощение§! §Rувеличится§! на §R[?RUS.WRW2_devastation_gain]§!.\n"
+ 
+ Tas_WRW2_increase_depression_tt:0 "§YЭто§! §eухудшит§! §Yсостояние общества§!"
+ Tas_WRW2_decrease_depression_tt:0 "§YЭто§! §Gулучшит§! §Yсостояние общества§!"
+ 
+ TAS_WRW2_ScriptedTrigger_GER_Devastation_MoreThanY_Tt: "§eИстощение§! фрицев больше, чем [?Y|Y0]"
+ TAS_WRW2_ScriptedTrigger_GER_Devastation_LessThanY_Tt: "§eИстощение§! фрицев меньше, чем [?Y|Y0]"
+ 
+ TAS_WRW2_ScriptedTrigger_MAR_Devastation_MoreThanY_Tt: "§eИстощение§! русских больше, чем [?Y|Y0]"
+ TAS_WRW2_ScriptedTrigger_MAR_Devastation_LessThanY_Tt: "§eИстощение§! русских меньше, чем [?Y|Y0]"
+ 
+ TaS_WRW2_show_war_plans:0 "Отобразить список военных операций"
+ TaS_WRW2_hide_war_plans:0 "Скрыть список военных операций"
+ 
+ 
+ TaS_WRW2_expand_industries:0 "Расширение фабрик и заводов"
+ TaS_WRW2_expand_war_bonds:0 "Расширить заказы на вооружение"
+ TaS_WRW2_millitary_parade:0 "Провести военный парад"
+ TaS_WRW2_promise_victory:0 "Пообещать скорую победу"
+ 
+ TaS_WRW2_get_rid_of_traitors:0 "Чистки неблагонадёжных элементов"
+ TaS_WRW2_economic_mobilization:0 "Законы военного времени"
+ 
+ TaS_WRW2_show_emergency_decisions:0 "Ввести экстренные меры"
+ TaS_WRW2_cancel_war_decisions:0 "Вернуть всё в норму"
+ TaS_WRW2_total_war_mobilization:0 "Мобилизация для тотальной войны"
+ TaS_WRW2_equipment_old:0 "Смести все склады"
+ TaS_WRW2_army_mobilization:0 "Мобилизация всех, кто умеет стрелять"
+ TaS_WRW2_our_last_stand:0 "Отступать некуда!"
+ TaS_WRW2_ultima_ratio:0 "§RПоследний шаг§!"
+ 
+ TaS_WRW2_offer_total_capitulation:0 "Потребовать полную капитуляцию"
+ TaS_WRW2_offer_total_total_capitulation:0 "Потребовать §Rбезоговорочную§! капитуляцию"

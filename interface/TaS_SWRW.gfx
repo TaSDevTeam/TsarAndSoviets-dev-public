@@ -1,0 +1,94 @@
+spriteTypes = {	
+	spriteType = { # Espionage
+		name = "GFX_BoP_Tab_SWRW_Icon"
+		textureFile = "gfx/interface/swrw_gui/GFX_BoP_Tab_SWRW_Icon.dds"
+	}
+	spriteType = {
+		name = "GFX_frame"
+		textureFile = "gfx/interface/swrw_gui/frame.dds"
+	}
+	spriteType = {
+		name = "GFX_title_frame"
+		textureFile = "gfx/interface/swrw_gui/title_frame.dds"
+	}
+	spriteType = {
+		name = "GFX_title_frame_war"
+		textureFile = "gfx/interface/swrw_gui/title_frame_war.dds"
+	}
+	progressbartype = {
+		name = "GFX_readiness"
+		texturefile1 = "gfx/interface/swrw_gui/readiness_scale.dds"
+		texturefile2 = "gfx/interface/blank.dds"
+		size = { x = 472 y = 44 }
+		effectfile = "gfx/FX/progress.lua"
+		horizontal = yes
+	}
+	progressbartype = {
+		name = "GFX_suspicion"
+		texturefile1 = "gfx/interface/swrw_gui/suspicion_scale.dds"
+		texturefile2 = "gfx/interface/blank.dds"
+		size = { x = 472 y = 44 }
+		effectfile = "gfx/FX/progress.lua"
+		horizontal = yes
+	}
+	spriteType = {
+		name = "GFX_button_selected"
+		textureFile = "gfx/interface/swrw_gui/selected_button.dds"
+	}
+	spriteType = {
+		name = "GFX_gui_image_rus_one"
+		textureFile = "gfx/interface/swrw_gui/GFX_MAR_WAR_PREPARATION.dds"
+	}
+	spriteType = {
+		name = "GFX_gui_image_rus_two"
+		textureFile = "gfx/interface/swrw_gui/GFX_MAR_FINAL_BATTLE.dds"
+	}
+	spriteType = {
+		name = "GFX_gui_image_ger"
+		textureFile = "gfx/interface/swrw_gui/GFX_GER_FINAL_BATTLE.dds"
+	}
+	spriteType = { 
+		name = "GFX_zapad"
+		textureFile = "gfx/interface/swrw_gui/zapad.dds"
+	}
+	spriteType = { 
+		name = "GFX_sever"
+		textureFile = "gfx/interface/swrw_gui/sever.dds"
+	}
+	spriteType = { 
+		name = "GFX_vostok"
+		textureFile = "gfx/interface/swrw_gui/vostok.dds"
+	}
+	spriteType = { 
+		name = "GFX_volga"
+		textureFile = "gfx/interface/swrw_gui/volga.dds"
+	}
+	spriteType = { 
+		name = "GFX_radar"
+		textureFile = "gfx/interface/swrw_gui/radar.dds"
+	}
+	spriteType = { 
+		name = "GFX_recruit"
+		textureFile = "gfx/interface/swrw_gui/recruits.dds"
+	}
+	spriteType = { 
+		name = "GFX_donskoy"
+		textureFile = "gfx/interface/swrw_gui/donskoy.dds"
+	}
+	spriteType = { 
+		name = "GFX_grozny"
+		textureFile = "gfx/interface/swrw_gui/grozny.dds"
+	}
+	spriteType = { 
+		name = "GFX_nevsky"
+		textureFile = "gfx/interface/swrw_gui/nevsky.dds"
+	}
+	spriteType = { 
+		name = "GFX_pozharskiy_minin"
+		textureFile = "gfx/interface/swrw_gui/pozharskiy_minin.dds"
+	}
+	spriteType = { 
+		name = "GFX_svyatoslav"
+		textureFile = "gfx/interface/swrw_gui/svyatoslav.dds"
+	}
+}

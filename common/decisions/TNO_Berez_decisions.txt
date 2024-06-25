@@ -1,5 +1,27 @@
 MAR_debug_category = {
 	#ya pokakal
+	MAR_load_bop = {
+		icon = GFX_decision_generic_visibility
+
+		allowed = {
+			original_tag = MAR
+		}
+		fire_only_once = no
+
+		complete_effect = { 
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_load_bop"
+			set_temp_variable = { TabName = token:BoP_Tab_SWRW }
+			TNO_BoP_AddTab = yes
+			set_variable = { TaS_swrw_stage = 1 }
+			set_variable = { swrw_preparation_category = 1 }
+			set_variable = { SWRW_suspicion_gain = -1 }
+			GER = {
+				set_temp_variable = { TabName = token:BoP_Tab_SWRW }
+				TNO_BoP_AddTab = yes
+			}
+		}
+	}
+	
 	MAR_load_initial_decisions = {
 		icon = GFX_decision_generic_visibility
 

@@ -715,6 +715,15 @@ first_every_month_script_TaS = {
 			UAR_Influence_Change = yes
 		}
 	}
+	MAR = {
+		if = {
+			limit = {
+				check_variable = { TaS_swrw_stage = 1 }
+			}
+			set_temp_variable = { SWRW_suspicion_temp = SWRW_suspicion_gain }
+			TaS_SWRW_change_suspicion = yes
+		}
+	}
 }
 first_every_day_script_TaS 	= {	
 	MAR = {

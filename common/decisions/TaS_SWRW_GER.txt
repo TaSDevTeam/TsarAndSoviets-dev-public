@@ -1,0 +1,315 @@
+GER_SWRW_category = {
+	TaS_WRW2_devastation_tick_ger = {
+		priority = 100
+    	available = {
+			NOT = {	
+				MAR = { has_war_with = GER }
+			} 
+    	}
+	
+    	activation = {
+    		has_global_flag = TaS_2WRW_started
+    	}
+	
+    	is_good = no
+	
+    	days_mission_timeout = 14
+	
+		timeout_effect = {
+    		log = "[GetDateText]: [Root.GetName]: TaS_WRW2_devastation_tick_ger mission timer elapsed" 
+			custom_effect_tooltip = TaS_WRW2_devastation_tick_tt
+    		add_to_variable = {
+    		    GER.WRW2_devastation = GER.WRW2_devastation_gain
+    		}
+
+			TaS_WRW2_check_the_exhausion = yes
+	
+    		hidden_effect = {
+    			if = {
+    				limit = {
+    					has_war_with = MAR 
+    				}
+    				activate_mission = TaS_WRW2_devastation_tick_ger
+    			}
+    		}
+    	}
+	
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Mission TaS_WRW2_devastation_tick_ger Completed (Should never happen for this mission, please report if you see this in the log.)"
+    	}
+  	}
+	TaS_WRW2_offer_status_quo = {
+		icon = GFX_decision_generic_military_parade
+		visible = {
+			tag = GER
+		}
+		available = {
+			OR = {
+				AND = {
+					casualties > 100000
+					MCW = {
+						surrender_progress > 0.1
+					}
+					RUS = {
+						casualties > 100000
+					}
+				}
+				AND = {
+					set_temp_variable = { Y = 25 }
+					TAS_WRW2_ScriptedTrigger_GER_Devastation_MoreThanY = yes
+					set_temp_variable = { Y = 25 }
+					TAS_WRW2_ScriptedTrigger_MAR_Devastation_MoreThanY = yes
+				}
+			}
+			NOT = {
+				MCW = {
+					surrender_progress > 0.65
+				}
+			}
+		}
+		custom_cost_trigger = { command_power > 19.99 }
+		custom_cost_text = decision_cost_20_cp
+		fire_only_once = yes
+		days_remove = 14
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision 	TaS_WRW2_offer_status_quo"
+			hidden_effect = {
+				add_command_power = -20
+			}
+		}
+		remove_effect = {
+			MAR = {
+				country_event = { id = MAR_2WRW.1 }
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	TaS_WRW2_offer_muscowy = {
+		icon = GFX_decision_generic_military_parade
+		visible = {
+			tag = GER
+		}
+		available = {
+			OR = {
+				AND = {
+					casualties > 300000
+					MCW = {
+						surrender_progress > 0.65
+					}
+					RUS = {
+						casualties > 100000
+					}
+				}
+				AND = {
+					set_temp_variable = { Y = 90 }
+					TAS_WRW2_ScriptedTrigger_GER_Devastation_MoreThanY = yes
+				}
+			}
+			NOT = {
+				MCW = {
+					exists = no
+				}
+			}
+		}
+		custom_cost_trigger = { command_power > 19.99 }
+		custom_cost_text = decision_cost_20_cp
+		fire_only_once = yes
+		days_remove = 14
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision 	TaS_WRW2_offer_muscowy"
+			hidden_effect = {
+				add_command_power = -20
+			}
+		}
+		remove_effect = {
+			MAR = {
+				country_event = { id = MAR_2WRW.2 }
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	TaS_WRW2_offer_muscowy_caucasus = {
+		icon = GFX_decision_generic_military_parade
+		visible = {
+			tag = GER
+		}
+		available = {
+			AND = {
+				casualties > 300000
+				MCW = {
+					exists = no
+				}
+				RUS = {
+					casualties > 100000
+				}
+				set_temp_variable = { Y = 40 }
+				TAS_WRW2_ScriptedTrigger_GER_Devastation_MoreThanY = yes
+			}
+			NOT = {
+				CAU = {
+					exists = no
+				}
+			}
+		}
+		
+		custom_cost_trigger = { command_power > 19.99 }
+		custom_cost_text = decision_cost_20_cp
+		fire_only_once = yes
+		days_remove = 14
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision 	TaS_WRW2_offer_muscowy"
+			hidden_effect = {
+				add_command_power = -20
+			}
+		}
+		remove_effect = {
+			MAR = {
+				country_event = { id = MAR_2WRW.3 }
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	TaS_WRW2_offer_muscowy_caucasus_dnepr = {
+		icon = GFX_decision_generic_military_parade
+		visible = {
+			tag = GER
+		}
+		available = {
+			OR = {
+				AND = {
+					casualties > 300000
+					MCW = {
+						exists = no
+					}
+					CAU = {
+						exists = no
+					}
+					RUS = {
+						casualties > 100000
+					}
+					set_temp_variable = { Y = 50}
+					TAS_WRW2_ScriptedTrigger_GER_Devastation_MoreThanY = yes
+				}
+				AND = {
+					casualties > 1500000
+					set_temp_variable = { Y = 90 }
+					TAS_WRW2_ScriptedTrigger_GER_Devastation_MoreThanY = yes
+				}
+			}
+			NOT = {
+				UKR = {
+					exists = no
+				}
+			}
+		}
+		custom_cost_trigger = { command_power > 19.99 }
+		custom_cost_text = decision_cost_20_cp
+		fire_only_once = yes
+		days_remove = 14
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision 	TaS_WRW2_offer_muscowy"
+			hidden_effect = {
+				add_command_power = -20
+			}
+		}
+		remove_effect = {
+			MAR = {
+				country_event = { id = MAR_2WRW.4 }
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	TaS_WRW2_offer_total_cap = {
+		icon = GFX_decision_generic_military_parade
+		visible = {
+			tag = GER
+		}
+		available = {
+			OR = {
+				GER = {
+					surrender_progress > 0.05
+				}
+				AND = {
+					set_temp_variable = { Y = 70 }
+					TAS_WRW2_ScriptedTrigger_GER_Devastation_MoreThanY = yes
+					OST = {
+						exists = no
+					}
+					UKR = {
+						exists = no
+					}
+				}
+			}
+			NOT = {
+				GER = {
+					surrender_progress > 0.25
+				}
+			}
+			
+		}
+		custom_cost_trigger = { command_power > 19.99 }
+		custom_cost_text = decision_cost_20_cp
+		fire_only_once = yes
+		days_remove = 14
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision 	TaS_WRW2_offer_status_quo"
+			hidden_effect = {
+				add_command_power = -20
+			}
+		}
+		remove_effect = {
+			MAR = {
+				country_event = { id = MAR_2WRW.5 }
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	TaS_WRW2_offer_russian_cap = {
+		icon = GFX_decision_generic_military_parade
+		visible = {
+			tag = GER
+		}
+		available = {
+			OR = {
+				RUS = {
+					surrender_progress > 0.1
+				}
+				AND = {
+					set_temp_variable = { Y = 60 }
+					TAS_WRW2_ScriptedTrigger_MAR_Devastation_MoreThanY = yes
+					RUS = {
+						surrender_progress > 0.01
+					}
+				}
+			}
+		}
+		custom_cost_trigger = { command_power > 19.99 }
+		custom_cost_text = decision_cost_20_cp
+		fire_only_once = yes
+		days_remove = 14
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision 	TaS_WRW2_offer_status_quo"
+			hidden_effect = {
+				add_command_power = -20
+			}
+		}
+		remove_effect = {
+			MAR = {
+				country_event = { id = MAR_Collapse.1941 }
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+	}
+}
