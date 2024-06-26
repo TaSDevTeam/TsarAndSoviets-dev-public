@@ -1,0 +1,197 @@
+shared_focus = {
+	id = MAR_the_second_patriotic_war
+	icon = GFX_MAR_the_second_patriotic_war
+	cost = 3.58
+	x = 8
+	y = 0
+	completion_reward = {
+
+	}
+}
+shared_focus = {
+	id = MAR_the_last_fight
+	icon = GFX_MAR_the_last_fight
+	cost = 3.58
+	prerequisite = {focus = MAR_the_second_patriotic_war}
+	relative_position_id = MAR_the_second_patriotic_war
+	x = 0
+	y = 1
+	completion_reward = {
+
+	}
+}
+shared_focus = {
+	id = MAR_white_are_we
+	icon = GFX_MAR_white_are_we
+	cost = 3.58
+	prerequisite = {focus = MAR_the_last_fight}
+	relative_position_id = MAR_the_last_fight
+	x = -3
+	y = 1
+	completion_reward = {
+
+	}
+}
+shared_focus = {
+	id = MAR_red_are_we
+	icon = GFX_MAR_red_are_we
+	cost = 3.58
+	prerequisite = {focus = MAR_the_last_fight}
+	relative_position_id = MAR_the_last_fight
+	x = 3
+	y = 1
+	completion_reward = {
+
+	}
+}
+shared_focus = {
+	id = MAR_russians_are_we
+	icon = GFX_MAR_russians_are_we
+	cost = 3.58
+	prerequisite = {focus = MAR_the_last_fight}
+	relative_position_id = MAR_the_last_fight
+	x = 0
+	y = 3
+	completion_reward = {
+
+	}
+}
+shared_focus = {
+	id = MAR_imperial_nostalgia
+	icon = GFX_MAR_imperial_nostalgia
+	cost = 3.58
+	prerequisite = {focus = MAR_white_are_we}
+	relative_position_id = MAR_white_are_we
+	x = -1
+	y = 1
+	completion_reward = {
+
+	}
+}
+shared_focus = {
+	id = MAR_for_our_grandfathers
+	icon = GFX_MAR_for_our_grandfathers
+	cost = 3.58
+	prerequisite = {focus = MAR_white_are_we}
+	relative_position_id = MAR_white_are_we
+	x = 1
+	y = 1
+	completion_reward = {
+
+	}
+}
+shared_focus = {
+	id = MAR_onwards_bogatyrs
+	icon = GFX_MAR_onwards_bogatyrs
+	cost = 3.58
+	prerequisite = {focus = MAR_imperial_nostalgia}
+	prerequisite = {focus = MAR_for_our_grandfathers}
+	relative_position_id = MAR_white_are_we
+	x = 0
+	y = 2
+	completion_reward = {
+
+	}
+}
+shared_focus = {
+	id = MAR_and_our_fathers
+	icon = GFX_MAR_and_our_fathers
+	cost = 3.58
+	prerequisite = {focus = MAR_red_are_we}
+	relative_position_id = MAR_red_are_we
+	x = -1
+	y = 1
+	completion_reward = {
+
+	}
+}
+shared_focus = {
+	id = MAR_antifascist_brigades
+	icon = GFX_MAR_antifascist_brigades
+	cost = 3.58
+	prerequisite = {focus = MAR_red_are_we}
+	relative_position_id = MAR_red_are_we
+	x = 1
+	y = 1
+	completion_reward = {
+
+	}
+}
+shared_focus = {
+	id = MAR_germans_did_that
+	icon = GFX_MAR_germans_did_that
+	cost = 3.58
+	prerequisite = {focus = MAR_antifascist_brigades}
+	prerequisite = {focus = MAR_and_our_fathers}
+	relative_position_id = MAR_red_are_we
+	x = 0
+	y = 2
+	completion_reward = {
+
+	}
+}
+shared_focus = {
+	id = MAR_german_free_army
+	icon = GFX_MAR_german_free_army
+	cost = 3.58
+	prerequisite = {focus = MAR_onwards_bogatyrs}
+	prerequisite = {focus = MAR_russians_are_we}
+	relative_position_id = MAR_russians_are_we
+	x = -1
+	y = 1
+	completion_reward = {
+
+	}
+}
+shared_focus = {
+	id = MAR_arise_ye_downtrodden
+	icon = GFX_MAR_arise_ye_downtrodden
+	cost = 3.58
+	prerequisite = {focus = MAR_germans_did_that}
+	prerequisite = {focus = MAR_russians_are_we}
+	relative_position_id = MAR_russians_are_we
+	x = 1
+	y = 1
+	completion_reward = {
+
+	}
+}
+shared_focus = {
+	id = MAR_break_the_german_machine
+	icon = GFX_MAR_break_the_german_machine
+	cost = 3.58
+	prerequisite = {focus = MAR_onwards_bogatyrs}
+	prerequisite = {focus = MAR_german_free_army}
+	relative_position_id = MAR_russians_are_we
+	x = -2
+	y = 2
+	completion_reward = {
+
+	}
+}
+shared_focus = {
+	id = MAR_patchwork_chimera
+	icon = GFX_MAR_patchwork_chimera
+	cost = 3.58
+	prerequisite = {focus = MAR_germans_did_that}
+	prerequisite = {focus = MAR_arise_ye_downtrodden}
+	relative_position_id = MAR_russians_are_we
+	x = 2
+	y = 2
+	completion_reward = {
+
+	}
+}
+shared_focus = {
+	id = MAR_we_have_won
+	icon = GFX_MAR_we_have_won
+	cost = 3.58
+	prerequisite = {focus = MAR_patchwork_chimera}
+	prerequisite = {focus = MAR_break_the_german_machine}
+	relative_position_id = MAR_russians_are_we
+	x = 0
+	y = 3
+	completion_reward = {
+
+	}
+}
