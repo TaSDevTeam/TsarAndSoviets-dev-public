@@ -2,8 +2,7 @@ shared_focus = {
 	id = GER_battle_of_civilizations
 	icon = GFX_GER_battle_of_civilizations
 	cost = 3.58
-	relative_position_id = MAR_russians_are_we
-	x = 8
+	x = 6
 	y = 0
 	completion_reward = {
 
@@ -153,6 +152,128 @@ shared_focus = {
 	relative_position_id = GER_united_in_purpose
 	x = 0
 	y = 2
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = GER_fire_in_the_east
+	icon = GFX_GER_fire_in_the_east
+	cost = 3.58
+	x = 16
+	y = 0
+	completion_reward = {
+
+	}
+}
+shared_focus = {
+	id = GER_graveyard_of_the_empires
+	icon = GFX_GER_graveyard_of_the_empires
+	cost = 3.58
+	prerequisite = {focus = GER_fire_in_the_east}
+	relative_position_id = GER_fire_in_the_east
+	x = -3
+	y = 1
+	completion_reward = {
+
+	}
+}
+shared_focus = {
+	id = GER_mountains_of_madness
+	icon = GFX_GER_mountains_of_madness
+	cost = 3.58
+	prerequisite = {focus = GER_fire_in_the_east}
+	relative_position_id = GER_fire_in_the_east
+	x = -1
+	y = 1
+	completion_reward = {
+
+	}
+}
+shared_focus = {
+	id = GER_burning_breadbasket
+	icon = GFX_GER_burning_breadbasket
+	cost = 3.58
+	prerequisite = {focus = GER_fire_in_the_east}
+	relative_position_id = GER_fire_in_the_east
+	x = 1
+	y = 1
+	completion_reward = {
+
+	}
+}
+shared_focus = {
+	id = GER_baltic_citadel
+	icon = GFX_GER_baltic_citadel
+	cost = 3.58
+	prerequisite = {focus = GER_fire_in_the_east}
+	relative_position_id = GER_fire_in_the_east
+	x = 3
+	y = 1
+	completion_reward = {
+
+	}
+}
+
+### FAIL ###
+
+shared_focus = {
+	id = GER_daseinkampf
+	icon = GFX_GER_daseinkampf
+	cost = 3.58
+	x = 4
+	y = 0
+	completion_reward = {
+
+	}
+}
+shared_focus = {
+	id = GER_dies_irae
+	icon = GFX_GER_dies_irae
+	prerequisite = {focus = GER_daseinkampf}
+	relative_position_id = GER_daseinkampf
+	cost = 3.58
+	x = 0
+	y = 1
+	completion_reward = {
+
+	}
+}
+shared_focus = {
+	id = GER_when_they_cry
+	icon = GFX_GER_when_they_cry
+	prerequisite = {focus = GER_daseinkampf}
+	relative_position_id = GER_daseinkampf
+	cost = 3.58
+	x = -2
+	y = 2
+	completion_reward = {
+
+	}
+}
+shared_focus = {
+	id = GER_stay_night
+	icon = GFX_GER_stay_night
+	prerequisite = {focus = GER_daseinkampf}
+	relative_position_id = GER_daseinkampf
+	cost = 3.58
+	x = 2
+	y = 2
+	completion_reward = {
+
+	}
+}
+shared_focus = {
+	id = GER_GOTTERDAMMERUNG
+	icon = GFX_GER_GOTTERDAMMERUNG
+	prerequisite = {focus = GER_stay_night}
+	prerequisite = {focus = GER_when_they_cry}
+	prerequisite = {focus = GER_dies_irae}
+	relative_position_id = GER_daseinkampf
+	cost = 3.58
+	x = 0
+	y = 3
 	completion_reward = {
 
 	}
