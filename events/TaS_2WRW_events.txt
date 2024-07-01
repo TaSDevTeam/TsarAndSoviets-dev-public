@@ -1212,8 +1212,9 @@ country_event = { #Offer surrender
 				}
 			}
 		}
-	option = { #no
+	option = { #no #goes nuke
 		name = MAR_2WRW.5.b
+		country_event = { id = MAR_2WRW.7 days = 3 }
 	}
 }
 
@@ -1246,6 +1247,221 @@ country_event = { #TOTALEN surrender
 		}
 	}
 }
+
+country_event = { #german nuclear ultimatum
+	id = MAR_2WRW.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_2WRW.7"}
+	title = MAR_2WRW.7.t
+	desc = MAR_2WRW.7.d
+	picture = GFX_report_event_peace_deal
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #yes
+		name = MAR_2WRW.7.a
+			TaS_WRW2_Peace_Yall = yes
+			MAR = {
+				annex_country = {
+					target = MCW
+					transfer_troops = no
+				}
+				annex_country = {
+					target = CAU
+					transfer_troops = no
+				}				
+				every_state = {
+					limit = {
+						is_core_of = MCW
+					}
+					#add_core_of = RUS
+					hidden_effect = { remove_core_of = MCW }
+				}
+				every_state = {
+					limit = {
+						is_core_of = CAU
+					}
+					#add_core_of = RUS
+					hidden_effect = { remove_core_of = CAU }
+				}
+			}
+			hidden_effect = {
+				every_country  = {
+					news_event = {
+						id = MAR_2WRW_world_news.19
+					}
+				}
+				TaS_2WRW_form_ost_zones = yes
+			}			
+		}
+	option = { #boom
+		name = MAR_2WRW.7.b
+	}
+}
+
+country_event = { #Bulgaria wants to quit
+	id = MAR_2WRW.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_2WRW.10"}
+	title = MAR_2WRW.10.t
+	desc = MAR_2WRW.10.d
+	picture = GFX_report_event_peace_deal
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #yes, without anything
+		name = MAR_2WRW.10.a
+		BUL = {
+			white_peace = RUS 
+			leave_faction = yes
+			econ_leave_sphere = yes
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.15
+				}
+			}
+		}
+	}
+	option = { #demand something
+		name = MAR_2WRW.10.b
+		
+	}
+	option = { #keep it going
+		name = MAR_2WRW.10.c
+	}
+}
+
+country_event = { #Serbia wants to quit
+	id = MAR_2WRW.11
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_2WRW.11"}
+	title = MAR_2WRW.11.t
+	desc = MAR_2WRW.11.d
+	picture = GFX_report_event_peace_deal
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #yes, without anything
+		name = MAR_2WRW.11.a
+		SER = {
+			white_peace = RUS 
+			leave_faction = yes
+			econ_leave_sphere = yes
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.16
+				}
+			}
+		}
+	}
+	option = { #demand something
+		name = MAR_2WRW.11.b
+		
+	}
+	option = { #keep it going
+		name = MAR_2WRW.11.c
+	}
+}
+
+country_event = { #Hungary wants to quit
+	id = MAR_2WRW.12
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_2WRW.12"}
+	title = MAR_2WRW.12.t
+	desc = MAR_2WRW.12.d
+	picture = GFX_report_event_peace_deal
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #yes, without anything
+		name = MAR_2WRW.12.a
+		SER = {
+			white_peace = RUS 
+			leave_faction = yes
+			econ_leave_sphere = yes
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.17
+				}
+			}
+		}
+	}
+	option = { #demand something
+		name = MAR_2WRW.12.b
+		
+	}
+	option = { #keep it going
+		name = MAR_2WRW.12.c
+	}
+}
+
+country_event = { #UK wants to quit
+	id = MAR_2WRW.13
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_2WRW.13"}
+	title = MAR_2WRW.13.t
+	desc = MAR_2WRW.13.d
+	picture = GFX_report_event_peace_deal
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #well
+		name = MAR_2WRW.13.a
+		ENG = {
+			white_peace = RUS 
+			leave_faction = yes
+			econ_leave_sphere = yes
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.18
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Romania wants to quit
+	id = MAR_2WRW.14
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_2WRW.14"}
+	title = MAR_2WRW.14.t
+	desc = MAR_2WRW.14.d
+	picture = GFX_report_event_peace_deal
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #yes, without anything
+		name = MAR_2WRW.14.a
+		ROM = {
+			white_peace = RUS 
+			leave_faction = yes
+			econ_leave_sphere = yes
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.19
+				}
+			}
+		}
+	}
+	option = { #demand something
+		name = MAR_2WRW.14.b
+		
+	}
+	option = { #keep it going
+		name = MAR_2WRW.14.c
+	}
+}
+
 
 country_event = { #RIP SWEET TSAR
 	id = MAR_2WRW.1978
@@ -3370,6 +3586,171 @@ news_event = {
 	}
 	option = {
 		name = MAR_2WRW_world_news.14.c
+		trigger = {
+			tag = MAR
+		}
+	}
+}
+
+news_event = { 
+	id = MAR_2WRW_world_news.15
+	title = MAR_2WRW_world_news.15.t
+	desc = MAR_2WRW_world_news.15.d
+	picture = GFX_MAR_2WRW_world_news_015
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_2WRW_world_news.15.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = MAR
+					tag = GER
+				}
+			}
+		}
+	}
+	option = {
+		name = MAR_2WRW_world_news.15.b
+		trigger = {
+			tag = GER
+		}
+	}
+	option = {
+		name = MAR_2WRW_world_news.15.c
+		trigger = {
+			tag = MAR
+		}
+	}
+}
+
+news_event = { 
+	id = MAR_2WRW_world_news.16
+	title = MAR_2WRW_world_news.16.t
+	desc = MAR_2WRW_world_news.16.d
+	picture = GFX_MAR_2WRW_world_news_016
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_2WRW_world_news.16.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = MAR
+					tag = GER
+				}
+			}
+		}
+	}
+	option = {
+		name = MAR_2WRW_world_news.16.b
+		trigger = {
+			tag = GER
+		}
+	}
+	option = {
+		name = MAR_2WRW_world_news.16.c
+		trigger = {
+			tag = MAR
+		}
+	}
+}
+
+news_event = { 
+	id = MAR_2WRW_world_news.17
+	title = MAR_2WRW_world_news.17.t
+	desc = MAR_2WRW_world_news.17.d
+	picture = GFX_MAR_2WRW_world_news_017
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_2WRW_world_news.17.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = MAR
+					tag = GER
+				}
+			}
+		}
+	}
+	option = {
+		name = MAR_2WRW_world_news.17.b
+		trigger = {
+			tag = GER
+		}
+	}
+	option = {
+		name = MAR_2WRW_world_news.17.c
+		trigger = {
+			tag = MAR
+		}
+	}
+}
+
+news_event = { 
+	id = MAR_2WRW_world_news.18
+	title = MAR_2WRW_world_news.18.t
+	desc = MAR_2WRW_world_news.18.d
+	picture = GFX_MAR_2WRW_world_news_018
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_2WRW_world_news.18.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = MAR
+					tag = GER
+				}
+			}
+		}
+	}
+	option = {
+		name = MAR_2WRW_world_news.18.b
+		trigger = {
+			tag = GER
+		}
+	}
+	option = {
+		name = MAR_2WRW_world_news.18.c
+		trigger = {
+			tag = MAR
+		}
+	}
+}
+
+news_event = { 
+	id = MAR_2WRW_world_news.19
+	title = MAR_2WRW_world_news.19.t
+	desc = MAR_2WRW_world_news.19.d
+	picture = GFX_MAR_2WRW_world_news_019
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_2WRW_world_news.19.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = MAR
+					tag = GER
+				}
+			}
+		}
+	}
+	option = {
+		name = MAR_2WRW_world_news.19.b
+		trigger = {
+			tag = GER
+		}
+	}
+	option = {
+		name = MAR_2WRW_world_news.19.c
 		trigger = {
 			tag = MAR
 		}
