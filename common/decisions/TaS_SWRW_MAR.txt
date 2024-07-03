@@ -2602,6 +2602,60 @@ MAR_SWRW_category = {
     				}
     				activate_mission = TaS_WRW2_devastation_tick
     			}
+				if = {
+					limit = {
+						RUS = {
+							controls_state = 1442
+						}
+						has_war_with = BUL
+						OR = {
+							NOT = { has_country_flag = BUL_demands }
+							NOT = { has_country_flag = BUL_refuse }
+						}
+					}
+					country_event = { id = MAR_2WRW.10 }
+					
+				}
+				if = {
+					limit = {
+						MCW = { has_capitulated = yes }
+						has_war_with = SER
+						OR = {
+							NOT = { has_country_flag = SER_demands }
+							NOT = { has_country_flag = SER_refuse }
+						}
+					}
+					country_event = { id = MAR_2WRW.11 }
+				}
+				if = {
+					limit = {
+						MCW = { has_capitulated = yes }
+						has_war_with = HUN
+						OR = {
+							NOT = { has_country_flag = HUN_demands }
+							NOT = { has_country_flag = HUN_refuse }
+						}
+					}
+					country_event = { id = MAR_2WRW.12 days = 5 }
+				}
+				if = {
+					limit = {
+						CAU = { has_capitulated = yes }
+						has_war_with = ENG
+					}
+					country_event = { id = MAR_2WRW.13 }
+				}
+				if = {
+					limit = {
+						UKR = { has_capitulated = yes }
+						has_war_with = ROM
+						OR = {
+							NOT = { has_country_flag = ROM_demands }
+							NOT = { has_country_flag = ROM_refuse }
+						}
+					}
+					country_event = { id = MAR_2WRW.14 }
+				}
     		}
     	}
 	

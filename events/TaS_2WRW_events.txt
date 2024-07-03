@@ -1326,10 +1326,32 @@ country_event = { #Bulgaria wants to quit
 	}
 	option = { #demand something
 		name = MAR_2WRW.10.b
-		
+		random_list = {
+			7 = {
+				custom_effect_tooltip = SWRW_DEMANDS_tt
+				set_country_flag = BUL_demands
+				BUL = {
+					white_peace = RUS 
+					leave_faction = yes
+					econ_leave_sphere = yes
+				}
+				hidden_effect = {
+					every_country  = {
+						news_event = {
+							id = MAR_2WRW_world_news.15
+						}
+					}
+				}
+			}
+			3 = {
+				custom_effect_tooltip = SWRW_DEMANDS_FAIL_tt
+				set_country_flag = BUL_refuse
+			}
+		}
 	}
 	option = { #keep it going
 		name = MAR_2WRW.10.c
+		set_country_flag = BUL_refuse
 	}
 }
 
@@ -1360,10 +1382,32 @@ country_event = { #Serbia wants to quit
 	}
 	option = { #demand something
 		name = MAR_2WRW.11.b
-		
+		random_list = {
+			7 = {
+				custom_effect_tooltip = SWRW_DEMANDS_tt
+				set_country_flag = SER_demands
+				SER = {
+					white_peace = RUS 
+					leave_faction = yes
+					econ_leave_sphere = yes
+				}
+				hidden_effect = {
+					every_country  = {
+						news_event = {
+							id = MAR_2WRW_world_news.16
+						}
+					}
+				}
+			}
+			3 = {
+				custom_effect_tooltip = SWRW_DEMANDS_FAIL_tt
+				set_country_flag = SER_refuse
+			}
+		}
 	}
 	option = { #keep it going
 		name = MAR_2WRW.11.c
+		set_country_flag = SER_refuse
 	}
 }
 
@@ -1379,7 +1423,7 @@ country_event = { #Hungary wants to quit
 
 	option = { #yes, without anything
 		name = MAR_2WRW.12.a
-		SER = {
+		HUN = {
 			white_peace = RUS 
 			leave_faction = yes
 			econ_leave_sphere = yes
@@ -1394,10 +1438,32 @@ country_event = { #Hungary wants to quit
 	}
 	option = { #demand something
 		name = MAR_2WRW.12.b
-		
+		random_list = {
+			7 = {
+				custom_effect_tooltip = SWRW_DEMANDS_tt
+				set_country_flag = HUN_demands
+				HUN = {
+					white_peace = RUS 
+					leave_faction = yes
+					econ_leave_sphere = yes
+				}
+				hidden_effect = {
+					every_country  = {
+						news_event = {
+							id = MAR_2WRW_world_news.17
+						}
+					}
+				}
+			}
+			3 = {
+				custom_effect_tooltip = SWRW_DEMANDS_FAIL_tt
+				set_country_flag = HUN_refuse
+			}
+		}
 	}
 	option = { #keep it going
 		name = MAR_2WRW.12.c
+		set_country_flag = HUN_refuse
 	}
 }
 
@@ -1455,10 +1521,32 @@ country_event = { #Romania wants to quit
 	}
 	option = { #demand something
 		name = MAR_2WRW.14.b
-		
+		random_list = {
+			7 = {
+				custom_effect_tooltip = SWRW_DEMANDS_tt
+				set_country_flag = ROM_demands
+				ROM = {
+					white_peace = RUS 
+					leave_faction = yes
+					econ_leave_sphere = yes
+				}
+				hidden_effect = {
+					every_country  = {
+						news_event = {
+							id = MAR_2WRW_world_news.17
+						}
+					}
+				}
+			}
+			3 = {
+				custom_effect_tooltip = SWRW_DEMANDS_FAIL_tt
+				set_country_flag = ROM_refuse
+			}
+		}
 	}
 	option = { #keep it going
 		name = MAR_2WRW.14.c
+		set_country_flag = ROM_refuse
 	}
 }
 

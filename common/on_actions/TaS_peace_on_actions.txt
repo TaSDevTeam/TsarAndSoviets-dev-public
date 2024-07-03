@@ -1078,30 +1078,114 @@ on_actions = {
 				}
 			}
 			else_if = {
-					limit = {
-						FROM = {
-							original_tag = MAR
-						}
-						ROOT = { 
-							OR = {
-								original_tag = KAZ
-								original_tag = KZR
-							}
-						}
-						AND = {
-							NOT = {
-								country_exists = KAZ
-							}
-							NOT = {
-								country_exists = KZR
-							}
-						}
-					}
+				limit = {
 					FROM = {
-						MAR_install_mil_kazakhstan = yes
+						original_tag = MAR
 					}
-					set_global_flag = skip_default_capitulation
+					ROOT = { 
+						OR = {
+							original_tag = KAZ
+							original_tag = KZR
+						}
+					}
+					AND = {
+						NOT = {
+							country_exists = KAZ
+						}
+						NOT = {
+							country_exists = KZR
+						}
+					}
 				}
+				FROM = {
+					MAR_install_mil_kazakhstan = yes
+				}
+				set_global_flag = skip_default_capitulation
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = MAR
+					}
+					ROOT = { 
+						original_tag = ROM
+					}
+					NOT = { ROM = { is_in_faction_with = GER } }
+				}
+				FROM = {
+					white_peace = ROOT
+				}
+				GRM = {
+					annex_country = {
+						target = ROOT
+						transfer_troops = yes
+					}
+				}
+				set_global_flag = skip_default_capitulation
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = MAR
+					}
+					ROOT = { 
+						original_tag = HUN
+					}
+					NOT = { HUN = { is_in_faction_with = GER } }
+				}
+				FROM = {
+					white_peace = ROOT
+				}
+				GHU = {
+					annex_country = {
+						target = ROOT
+						transfer_troops = yes
+					}
+				}
+				set_global_flag = skip_default_capitulation
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = MAR
+					}
+					ROOT = { 
+						original_tag = SER
+					}
+					NOT = { SER = { is_in_faction_with = GER } }
+				}
+				FROM = {
+					white_peace = ROOT
+				}
+				GSE = {
+					annex_country = {
+						target = ROOT
+						transfer_troops = yes
+					}
+				}
+				set_global_flag = skip_default_capitulation
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = MAR
+					}
+					ROOT = { 
+						original_tag = BUL
+					}
+					NOT = { BUL = { is_in_faction_with = GER } }
+				}
+				FROM = {
+					white_peace = ROOT
+				}
+				GBU = {
+					annex_country = {
+						target = ROOT
+						transfer_troops = yes
+					}
+				}
+				set_global_flag = skip_default_capitulation
+			}
 		}
 	}
 }

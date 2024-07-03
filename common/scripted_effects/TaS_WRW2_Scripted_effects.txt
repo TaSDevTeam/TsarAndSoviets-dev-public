@@ -687,6 +687,22 @@ TaS_2WRW_spawn_volunteers = {
 }
 TaS_WRW2_Peace_Yall = {
 	custom_effect_tooltip = TaS_WRW2_Peace_Yall_tt
+	if = {
+		limit = { has_country_flag = BUL_refuse }
+		leave_faction = yes
+	}
+	if = {
+		limit = { has_country_flag = SER_refuse }
+		leave_faction = yes
+	}
+	if = {
+		limit = { has_country_flag = HUN_refuse }
+		leave_faction = yes
+	}
+	if = {
+		limit = { has_country_flag = ROM_refuse }
+		leave_faction = yes
+	}
 	every_country = {
 		limit = { is_puppet_of = GER }
 		white_peace = RUS
@@ -694,7 +710,77 @@ TaS_WRW2_Peace_Yall = {
 	every_country = {
 		limit = { is_in_faction_with = GER }
 		white_peace = RUS
-	}	
+	}
+	if = {
+		limit = { has_country_flag = BUL_demands }
+		BUL = {
+			econ_join_sphere_MAR = yes
+		}
+		RUS = { 
+			set_temp_variable = { gdp_growth_temp = 0.75 }
+			econ_gdp_growth_change = yes
+		}
+	}
+	if = {
+		limit = { has_country_flag = SER_demands }
+		SER = {
+			econ_join_sphere_MAR = yes
+		}
+		RUS = { 
+			set_temp_variable = { gdp_growth_temp = 0.75 }
+			econ_gdp_growth_change = yes
+		}
+	}
+	if = {
+		limit = { has_country_flag = HUN_demands }
+		HUN = {
+			econ_join_sphere_MAR = yes
+		}
+		RUS = { 
+			set_temp_variable = { gdp_growth_temp = 0.75 }
+			econ_gdp_growth_change = yes
+		}
+	}
+	if = {
+		limit = { has_country_flag = ROM_demands }
+		ROM = {
+			econ_join_sphere_MAR = yes
+		}
+		RUS = { 
+			set_temp_variable = { gdp_growth_temp = 0.75 }
+			econ_gdp_growth_change = yes
+		}
+		if = {
+			limit = { RUS = { owns_state = 197 } }
+			RUS = {
+				transfer_state = 198
+				add_state_core = 189
+				transfer_state = 1282
+				add_state_core = 1282
+				transfer_state = 192
+				add_state_core = 192
+				transfer_state = 1965
+				transfer_state = 1966
+				add_state_core = 1965
+				add_state_core = 1966
+			}
+		}
+		if = {
+			limit = { MUK = { owns_state = 197 } }
+			MUK = {
+				transfer_state = 198
+				add_state_core = 189
+				transfer_state = 1282
+				add_state_core = 1282
+				transfer_state = 192
+				add_state_core = 192
+				transfer_state = 1965
+				transfer_state = 1966
+				add_state_core = 1965
+				add_state_core = 1966
+			}
+		}
+	}
 }
 TaS_WRW2_German_Collapse_Beloozersky = {
 	custom_effect_tooltip = TaS_WRW2_PEACE_TOTAL_TOOLTIP
