@@ -3104,6 +3104,7 @@ country_event = {#General - Wehrmacht goes awol
 					id = TaS_GERCollapse_news.20
 				}
 			}
+			add_ideas = SWRW_wehrmacht_fail
 			if = {
 				limit = { has_template = "Infanterie-Division" }
 				delete_unit_template_and_units = { division_template = "Infanterie-Division" }
@@ -3462,7 +3463,8 @@ country_event = {#General - US - OFN article 5
 					id = TaS_GERCollapse_news.33
 				}
 			}
-			GER = { country_event = { id = TaS_GERCollapse.34 days = 14} }
+			set_global_flag = TaS_SWRW_democracy_time
+			GER = { country_event = { id = TaS_GERCollapse.34 days = 3} }
 		}
 	}
 }
@@ -3479,10 +3481,396 @@ country_event = {#General - It has begun
 		name = TaS_GERCollapse.34.a
 		ai_chance = { factor = 1 }	
 		add_political_power = -500
-		hidden_effect = {
-			every_country  = {
-				news_event = {
-					id = TaS_GERCollapse_news.34
+		USA = { 
+			declare_war_on = {
+				target = GER
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = HOL
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = DEN
+				type = annex_everything
+			}
+		}
+		hidden_effect = {	
+			set_global_flag = nukes_disabled
+			every_country = {
+				limit = { is_ai = no }
+				news_event = { id = TaS_GERCollapse_news.34 }
+			}
+			#GER = {
+				#add_ideas = ENG_lost_and_hopeless
+				#country_event = { id = channelcrisis.1010 days = 90 } #ends the invasion if it goes on for too long
+			#}
+			division_template = {
+				name = "Infantry Division"
+				division_names_group = USA_infantry_ger
+				is_locked = yes
+				regiments = {
+					APC = { x = 0 y = 0 }
+					APC = { x = 0 y = 1 }
+					APC = { x = 0 y = 2 }
+					APC = { x = 1 y = 0 }
+					APC = { x = 1 y = 1 }
+					APC = { x = 1 y = 2 }
+					APC = { x = 2 y = 0 }
+					APC = { x = 2 y = 1 }
+					APC = { x = 2 y = 2 }
+				}
+				support = {
+					IFV_recon = { x = 0 y = 0 }
+					anti_tank = { x = 0 y = 1 }
+					engineer = { x = 0 y = 2 }
+					artillery = { x = 0 y = 3 }
+					transport_helicopter_company = { x = 0 y = 4 }
+				}
+			}
+			division_template = {
+				name = "Armored Division"
+				division_names_group = USA_armored_ger
+				is_locked = yes
+				regiments = {
+					APC = { x = 0 y = 0 }
+					APC = { x = 0 y = 1 }
+					APC = { x = 0 y = 2 }
+					APC = { x = 1 y = 0 }
+					APC = { x = 1 y = 1 }
+					MBT = { x = 2 y = 0 }
+					MBT = { x = 2 y = 1 }
+					MBT = { x = 2 y = 2 }
+					MBT = { x = 3 y = 0 }
+					MBT = { x = 3 y = 1 }
+					MBT = { x = 3 y = 2 }
+				}
+				support = {
+					IFV_recon = { x = 0 y = 0 }
+					signal_company = { x = 0 y = 1 }
+					engineer = { x = 0 y = 2 }
+					artillery = { x = 0 y = 3 }
+					transport_helicopter_company = { x = 0 y = 4 }
+				}
+			}
+			division_template = {
+				name = "Airborne Division"
+				division_names_group = USA_paratroopers_ger
+				is_locked = yes
+				regiments = {
+					elite_infantry = { x = 0 y = 0 }
+					elite_infantry = { x = 0 y = 1 }
+					elite_infantry = { x = 0 y = 2 }
+					elite_infantry = { x = 1 y = 0 }
+					elite_infantry = { x = 1 y = 1 }
+					elite_infantry = { x = 1 y = 2 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					signal_company = { x = 0 y = 1 }
+					air_assault = { x = 0 y = 2 }
+					transport_helicopter_company = { x = 0 y = 3 }
+					attack_helicopter_company = { x = 0 y = 4 }
+				}
+			}
+			division_template = {
+				name = "Marine Division"
+				division_names_group = USA_marines_ger
+				is_locked = yes
+				regiments = {
+					marine = { x = 0 y = 0 }
+					marine = { x = 0 y = 1 }
+					marine = { x = 0 y = 2 }
+					marine = { x = 1 y = 0 }
+					marine = { x = 1 y = 1 }
+					marine = { x = 1 y = 2 }
+					marine = { x = 2 y = 0 }
+					marine = { x = 2 y = 1 }
+					marine = { x = 2 y = 2 }
+				}
+				support = {
+					signal_company = { x = 0 y = 1 }
+					engineer = { x = 0 y = 2 }
+					artillery = { x = 0 y = 3 }
+					transport_helicopter_company = { x = 0 y = 4 }
+				}
+			}
+			74 = {
+				create_unit = {
+					division = "division_template = \"Airborne Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					prioritize_location = 15981
+					owner = USA
+					#count =
+				}
+			}
+			7 = {
+				create_unit = {
+					division = "division_template = \"Marine Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					prioritize_location = 68
+					owner = USA
+					count = 2
+				}
+				create_unit = {
+					division = "division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					prioritize_location = 3314
+					owner = USA
+					count = 1
+				}
+				create_unit = {
+					division = "division_template = \"Armored Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					prioritize_location = 15980
+					owner = USA
+					#count =
+				}
+			}
+			36 = {
+				create_unit = {
+					division = "division_template = \"Marine Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					prioritize_location = 6336
+					owner = USA
+					#count =
+				}
+			}
+			56 = {
+				create_unit = {
+					division = "division_template = \"Airborne Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					prioritize_location = 11360
+					owner = USA
+					count = 2
+				}
+			}
+			188 = {
+				create_unit = {
+					division = "division_template = \"Airborne Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					prioritize_location = 6349
+					owner = USA
+					count = 2
+				}
+				create_unit = {
+					division = "division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					prioritize_location = 374
+					owner = USA
+					count = 2
+				}
+			}
+			58 = {
+				create_unit = {
+					division = "division_template = \"Airborne Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					prioritize_location = 3231
+					owner = USA
+					count = 1
+				}
+				create_unit = {
+					division = "division_template = \"Armored Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					prioritize_location = 317
+					owner = USA
+					count = 1
+				}
+			}
+			774 = {
+				create_unit = {
+					division = "division_template = \"Marine Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					prioritize_location = 11251
+					owner = USA
+					count = 1
+				}
+			}
+			99 = {
+				create_unit = {
+					division = "division_template = \"Airborne Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					prioritize_location = 399
+					owner = USA
+					count = 1
+				}
+				create_unit = {
+					division = "division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					prioritize_location = 6235
+					owner = USA
+					count = 1
+				}
+			}
+			61 = {
+				create_unit = {
+					division = "division_template = \"Airborne Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					prioritize_location = 11305
+					owner = USA
+					count = 2
+				}
+			}
+			1886 = {
+				create_unit = {
+					division = "division_template = \"Marine Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					prioritize_location = 6286
+					owner = USA
+					count = 1
+				}
+				create_unit = {
+					division = "division_template = \"Airborne Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					prioritize_location = 11456
+					owner = USA
+					count = 1
+				}
+			}
+			1373 = {
+				create_unit = {
+					division = "division_template = \"Airborne Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					prioritize_location = 9509
+					owner = USA
+					count = 1
+				}
+			}
+			59 = {
+				create_unit = {
+					division = "division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					prioritize_location = 3234
+					owner = USA
+					count = 1
+				}
+			}
+			if = {
+				limit = { is_ai = yes }
+				56 = {
+					create_unit = {
+						division = "division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
+						allow_spawning_on_enemy_provs = yes
+						prioritize_location = 247
+						owner = USA
+						count = 2
+					}
+				}
+				188 = {
+					create_unit = {
+						division = "division_template = \"Marine Division\" start_experience_factor = 1 start_equipment_factor = 1"
+						allow_spawning_on_enemy_provs = yes
+						prioritize_location = 6218
+						owner = USA
+						#count =
+					}
+				}
+				58 = {
+					create_unit = {
+						division = "division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
+						allow_spawning_on_enemy_provs = yes
+						prioritize_location = 9320
+						owner = USA
+						#count =
+					}
+					create_unit = {
+						division = "division_template = \"Armored Division\" start_experience_factor = 1 start_equipment_factor = 1"
+						allow_spawning_on_enemy_provs = yes
+						prioritize_location = 6389
+						owner = USA
+						count = 2
+					}
+				}
+				776 = {
+					create_unit = {
+						division = "division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
+						allow_spawning_on_enemy_provs = yes
+						prioritize_location = 11219
+						owner = USA
+						count = 1
+					}
+				}
+				59 = {
+					create_unit = {
+						division = "division_template = \"Marine Division\" start_experience_factor = 1 start_equipment_factor = 1"
+						allow_spawning_on_enemy_provs = yes
+						prioritize_location = 3395
+						owner = USA
+						count = 1
+					}
+					create_unit = {
+						division = "division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
+						allow_spawning_on_enemy_provs = yes
+						prioritize_location = 6513
+						owner = USA
+						count = 2
+					}
+				}
+				1373 = {
+					create_unit = {
+						division = "division_template = \"Armored Division\" start_experience_factor = 1 start_equipment_factor = 1"
+						allow_spawning_on_enemy_provs = yes
+						prioritize_location = 9509
+						owner = USA
+						count = 2
+					}
+				}
+				35 = {
+					create_unit = {
+						division = "division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
+						allow_spawning_on_enemy_provs = yes
+						prioritize_location = 6496
+						owner = USA
+						count = 1
+					}
+					create_unit = {
+						division = "division_template = \"Armored Division\" start_experience_factor = 1 start_equipment_factor = 1"
+						allow_spawning_on_enemy_provs = yes
+						prioritize_location = 15983
+						owner = USA
+						count = 1
+					}
+				}
+				1810 = {
+					create_unit = {
+						division = "division_template = \"Airborne Division\" start_experience_factor = 1 start_equipment_factor = 1"
+						allow_spawning_on_enemy_provs = yes
+						prioritize_location = 3512
+						owner = USA
+						count = 2
+					}
+				}
+				37 = {
+					create_unit = {
+						division = "division_template = \"Armored Division\" start_experience_factor = 1 start_equipment_factor = 1"
+						allow_spawning_on_enemy_provs = yes
+						prioritize_location = 6287
+						owner = USA
+						count = 2
+					}
+					create_unit = {
+						division = "division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
+						allow_spawning_on_enemy_provs = yes
+						prioritize_location = 3374
+						owner = USA
+						count = 2
+					}
+				}
+				61 = {
+					create_unit = {
+						division = "division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
+						allow_spawning_on_enemy_provs = yes
+						prioritize_location = 321
+						owner = USA
+						count = 1
+					}
+					create_unit = {
+						division = "division_template = \"Armored Division\" start_experience_factor = 1 start_equipment_factor = 1"
+						allow_spawning_on_enemy_provs = yes
+						prioritize_location = 3258
+						owner = USA
+						count = 1
+					}
 				}
 			}
 		}
@@ -3874,6 +4262,10 @@ news_event = { #OFN invades Germany
 	
 	option = {
 		name = TaS_GERCollapse_news.34.a
+		hidden_effect = {
+			set_temp_variable = { TNO_temp_super_event = token:SE_US_INVASION_GER }
+			TNO_fire_super_event = yes
+		}
 	}
 }
 

@@ -169,5 +169,24 @@ ideas = {
 				surrender_limit = 100
 			}
 		}
+		SWRW_wehrmacht_fail = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SWRW_wehrmacht_fail" }
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = GER_oversized_wehrmacht
+			modifier = {
+				surrender_limit = -0.25
+				war_support_factor = -0.25
+				army_attack_factor = -0.25
+				army_defence_factor = -0.2
+				army_morale_factor = -0.3
+				weekly_manpower = -10000
+			}
+		}
 	}
 }

@@ -113,3 +113,184 @@ TaS_SWRW_start_the_war = {
 		}
 	}
 }
+TaS_SWRW_american_germany = {
+	ZNE = { 
+		add_ideas = OFN_Mandate
+		transfer_state = 1813
+		transfer_state = 1814
+		transfer_state = 188
+		transfer_state = 60
+		transfer_state = 65
+		transfer_state = 776
+		transfer_state = 64
+		transfer_state = 63
+		transfer_state = 61
+		transfer_state = 775
+		transfer_state = 188
+		transfer_state = 66
+		transfer_state = 72
+		transfer_state = 50
+		transfer_state = 54
+		transfer_state = 1026
+		transfer_state = 68
+		transfer_state = 52
+		transfer_state = 53
+		transfer_state = 59
+		transfer_state = 56
+		transfer_state = 1373
+		transfer_state = 57
+		transfer_state = 1815
+		transfer_state = 1810
+		transfer_state = 1809
+		transfer_state = 51
+		transfer_state = 55
+		transfer_state = 42
+		transfer_state = 1811
+		transfer_state = 58
+		every_owned_state = {
+			ZNE = {
+				add_state_core = PREV
+			}
+		}
+	}
+	GCZ = {
+		add_ideas = OFN_Dependent_Member
+		econ_join_sphere_USA = yes
+		transfer_state = 75
+		transfer_state = 9
+		transfer_state = 69
+		every_owned_state = {
+			GCZ = {
+				add_state_core = PREV
+			}
+		}
+	}
+	GHL = {
+		add_ideas = OFN_Dependent_Member
+		econ_join_sphere_USA = yes
+		transfer_state = 36
+		transfer_state = 7
+		transfer_state = 1886
+		transfer_state = 74
+		transfer_state = 35
+		if = {
+			limit = {
+				PUS = {
+					owns_state = 6
+				}
+			}
+			transfer_state = 6
+			transfer_state = 1734
+		}
+		every_owned_state = {
+			GHL = {
+				add_state_core = PREV
+			}
+		}
+	}
+	GDN = {
+		add_ideas = OFN_Dependent_Member
+		econ_join_sphere_USA = yes
+		transfer_state = 99 
+		transfer_state = 37
+		transfer_state = 774
+		every_owned_state = {
+			GDN = {
+				add_state_core = PREV
+			}
+		}
+	}
+	GAU = {
+		add_ideas = OFN_Dependent_Member
+		econ_join_sphere_USA = yes
+		transfer_state = 1025
+		transfer_state = 4
+		transfer_state = 770
+		transfer_state = 152
+		transfer_state = 153
+		transfer_state = 86
+		transfer_state = 1772
+		transfer_state = 62
+		transfer_state = 98
+		every_owned_state = {
+			GAU = {
+				add_state_core = PREV
+			}
+		}
+	}
+	GPL = {
+		#econ_join_sphere_USA = yes
+		transfer_state = 87
+		transfer_state = 67
+		transfer_state = 88
+		transfer_state = 1382
+		transfer_state = 10
+		transfer_state = 1380
+		transfer_state = 90
+		transfer_state = 1383
+		transfer_state = 1381
+		transfer_state = 1384
+		transfer_state = 92
+		transfer_state = 1385
+		transfer_state = 1386
+		transfer_state = 1389
+		transfer_state = 1392
+		
+		transfer_state = 1390
+		transfer_state = 1391
+		transfer_state = 1387
+		transfer_state = 1393
+		transfer_state = 1388
+		transfer_state = 1394
+		transfer_state = 89
+		transfer_state = 91
+		transfer_state = 85
+		every_owned_state = {
+			GPL = {
+				add_state_core = PREV
+			}
+		}
+	}
+	if = {
+		limit = {
+			FRA = { is_in_faction_with = USA }
+		}
+		FRA = {
+			transfer_state = 8
+			transfer_state = 1812
+			transfer_state = 28
+		}
+	}
+	else = {
+		ZNE = {
+			transfer_state = 8
+			transfer_state = 1812
+			transfer_state = 28
+		}
+	}
+	PUS = {
+		transfer_state = 5
+	}
+	RUS = {
+		transfer_state = 97
+	}
+	GSV = {
+		transfer_state = 70
+		transfer_state = 1762
+		transfer_state = 71
+		transfer_state = 1763
+		every_owned_state = {
+			GSV = {
+				add_state_core = PREV
+			}
+		}
+	}
+	USA = {
+		add_to_faction = ZNE
+		add_to_faction = GHL
+		add_to_faction = GDN
+		add_to_faction = GPL
+		add_to_faction = GAU
+		add_to_faction = GCZ
+	}
+}
