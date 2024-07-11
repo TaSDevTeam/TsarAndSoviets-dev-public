@@ -2656,6 +2656,13 @@ MAR_SWRW_category = {
 					}
 					country_event = { id = MAR_2WRW.14 }
 				}
+				if = {
+					limit = {
+						UKR = { has_capitulated = yes }
+						has_war_with = FRA
+					}
+					country_event = { id = MAR_2WRW.15 days = 5 }
+				}
     		}
     	}
 	
