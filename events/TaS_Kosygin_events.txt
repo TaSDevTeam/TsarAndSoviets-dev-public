@@ -909,6 +909,29 @@ country_event = {#akmola celebration
 		name = MAR_Kosygin.56.a
 		ai_chance = { factor = 1 }	
 		add_ideas = MAR_Kosygin_kaz_legions
+		if = {
+			limit = {
+				MKZ = {
+					exists = yes
+					has_government = despotism
+				}
+			}
+			custom_effect_tooltip = KAZ_mil_annexation_tt
+			hidden_effect = {
+				MKZ = {
+					every_owned_state = {
+						add_state_core = RWS
+						remove_core_of = MKZ
+						remove_core_of = KAZ
+						remove_core_of = KZR
+					}
+				}
+				annex_country = {
+					target = MKZ
+					transfer_troops = yes
+				}
+			}
+		}
 	}
 }
 

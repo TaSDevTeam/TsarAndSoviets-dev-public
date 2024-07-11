@@ -600,4 +600,80 @@ characters = {
 			id = -1
 		}
 	}
+	ZNE_Markus_Wolf = {
+		name = ZNE_Markus_Wolf
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/POSTWRW2/Portrait_Markus_Wolf.dds"
+			}
+		}
+		country_leader = {
+			desc = ""
+			ideology = paternalism_social_nationalism_subtype  
+			traits = { }
+			expire = "2222.2.2"
+			id = -1
+		}
+	}
+	BRL_USA_William_Westmoreland = {
+		name = BRL_USA_William_Westmoreland
+		portraits = {
+			civilian = { large = "gfx/leaders/USA/Portrait_USA_GEN_William_Westmoreland.dds" }
+			army = {
+				large = "gfx/leaders/USA/Portrait_USA_GEN_William_Westmoreland.dds"
+				small = "GFX_idea_USA_William_Westmoreland"
+			}
+		}
+		field_marshal = {
+			#desc = "GENERAL_WILLIAM_WESTMORELAND_DESC"
+			traits = {
+				offensive_doctrine
+				organizer
+				fast_planner
+				aggressive_assaulter
+			}
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 4
+		}
+		country_leader = {
+			#desc = "POLITICS_WILLIAM_WESTMORELAND_DESC"
+			expire = "1999.1.23"
+			ideology = paternalism_military_mandate_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	GCZ_USA_Creighton_Abrams = {
+		name = GCZ_USA_Creighton_Abrams
+		portraits = {
+			civilian = { large = "gfx/leaders/USA/Portrait_USA_Creighton_Abrams.dds" }
+			army = {
+				large = "gfx/leaders/USA/Portrait_USA_Creighton_Abrams.dds"
+				small = "GFX_idea_USA_Creighton_Abrams"
+			}
+		}
+		country_leader = {
+			#desc = "POLITICS_CREIGHTON_ABRAMS_DESC"
+			expire = "1999.1.23"
+			ideology = paternalism_military_mandate_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	GFR_Charles_of_Flanders = {
+		name = GFR_Charles_of_Flanders
+		portraits = {
+			civilian = { large = "gfx/leaders/POSTWRW2/Portrait_Charles_of_Flanders.dds" }
+		}
+		country_leader = {
+			#desc = "POLITICS_CREIGHTON_ABRAMS_DESC"
+			expire = "1999.1.23"
+			ideology = paternalism_semi_constitutional_monarchy_subtype 
+			traits = { }
+			id = -1
+		}
+	}
 }

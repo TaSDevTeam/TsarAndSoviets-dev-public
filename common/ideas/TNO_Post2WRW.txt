@@ -1122,4 +1122,80 @@ ideas = {
 			}
 		}
 	}
+	
+	country = {
+		TaS_Post2WRW_ZNE_strangers_among_own = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea TaS_Post2WRW_ZNE_strangers_among_own"}
+			allowed = {
+				always = no	
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = placeholder
+			modifier = {
+				stability_factor = -0.15
+				war_support_factor = -0.15
+				national_socialism_drift = -0.01
+			}
+		}
+	}
+	
+	country = {
+		TaS_Post2WRW_GSG_red_vienna = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea TaS_Post2WRW_GSG_red_vienna"}
+			allowed = {
+				always = no	
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = placeholder
+			modifier = {
+				stability_factor = -0.15
+				#war_support_factor = -0.15
+				#national_socialism_drift = -0.01
+			}
+		}
+	}
+	
+	country = {
+		TaS_Post2WRW_BRL_yankee_in_volkshalle = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea TaS_Post2WRW_BRL_yankee_in_volkshalle"}
+			allowed = {
+				always = no	
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = placeholder
+			modifier = {
+				stability_factor = -0.15
+				#war_support_factor = -0.15
+				#national_socialism_drift = -0.01
+			}
+		}
+	}
+	
+	country = {
+		TaS_Post2WRW_GCZ_golden_city_liberated = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea TaS_Post2WRW_ZNE_strangers_among_own"}
+			allowed = {
+				always = no	
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = placeholder
+			modifier = {
+				stability_factor = -0.15
+				#war_support_factor = -0.15
+				#national_socialism_drift = -0.01
+			}
+		}
+	}
 }

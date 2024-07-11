@@ -44,3 +44,28 @@ GER_war_strat = {
 		value = 1000
 	}
 }
+
+USA_invastion_strat = {
+	allowed = {
+		tag = GER
+	}
+	enable = {
+		USA = {
+			has_war_with = GER
+		}
+		has_global_flag = TaS_SWRW_democracy_time
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = consider_weak
+		id = GER
+		value = 1000
+	}
+
+	ai_strategy = {
+		type = conquer
+		id = GER
+		value = 1000
+	}
+}

@@ -122,7 +122,6 @@ TaS_SWRW_american_germany = {
 		transfer_state = 60
 		transfer_state = 65
 		transfer_state = 776
-		transfer_state = 64
 		transfer_state = 63
 		transfer_state = 61
 		transfer_state = 775
@@ -147,6 +146,36 @@ TaS_SWRW_american_germany = {
 		transfer_state = 42
 		transfer_state = 1811
 		transfer_state = 58
+		remove_ideas = TaS_Post2WRW_BRL_ZNE_russian_army 
+		remove_ideas = TaS_Post2WRW_BRL_nazi_heartland_1
+		remove_ideas = TaS_Post2WRW_ZNE_exec_centre 	
+		set_politics = {
+			ruling_party = paternalism
+			last_election = "1933.3.5"
+			election_frequency = 48
+			elections_allowed = no
+		}
+		set_popularities = {
+			communist = 0
+			ultranationalism = 0
+			socialist = 0
+			progressivism = 0
+			liberalism = 0
+			conservatism = 20
+			paternalism = 40
+			despotism = 10
+			fascism = 20
+			national_socialism = 10
+		}
+		set_party_name = {
+			ideology = paternalism
+			long_name = ZNE_usa_party_long
+			name = ZNE_usa_party
+		}		
+		set_cosmetic_tag = ZNE_usa
+		add_ideas = TaS_Post2WRW_werewolf_activity
+		add_ideas = TaS_Post2WRW_ZNE_strangers_among_own
+		add_ideas = TaS_Post2WRW_fast_denazification
 		every_owned_state = {
 			ZNE = {
 				add_state_core = PREV
@@ -154,39 +183,53 @@ TaS_SWRW_american_germany = {
 		}
 	}
 	GCZ = {
-		add_ideas = OFN_Dependent_Member
-		econ_join_sphere_USA = yes
 		transfer_state = 75
 		transfer_state = 9
 		transfer_state = 69
+		remove_ideas = TaS_Post2WRW_commie_activity
+		remove_ideas = TaS_Post2WRW_GCZ_big_brother
+		remove_ideas = TaS_Post2WRW_GCZ_czechia_revival
+		remove_ideas = TaS_Post2WRW_GCZ_sudetenland_genocide
+		set_politics = {
+			ruling_party = paternalism
+			last_election = "1933.3.5"
+			election_frequency = 48
+			elections_allowed = no
+		}
+		set_party_name = {
+			ideology = paternalism
+			long_name = BRL_usa_party_long
+			name = BRL_usa_party
+		}	
+		set_popularities = {
+			communist = 0
+			ultranationalism = 0
+			socialist = 0
+			progressivism = 0
+			liberalism = 0
+			conservatism = 20
+			paternalism = 40
+			despotism = 10
+			fascism = 20
+			national_socialism = 10
+		}
+		set_cosmetic_tag = GCZ_usa
+		promote_character = GCZ_USA_Creighton_Abrams
+		OFN_MANDATE_set_starting_laws = yes
+		inherit_technology = USA
+		econ_join_sphere_USA = yes
+		set_temp_variable = { TNO_economy_subtype_temp = token:Econ_Subtype_American_Capitalism }
+		econ_subtype_change = yes
+		add_ideas = OFN_Mandate
+		add_ideas = TaS_Post2WRW_werewolf_activity
+		add_ideas = TaS_Post2WRW_GCZ_golden_city_liberated
+		add_ideas = TaS_Post2WRW_fast_denazification
 		every_owned_state = {
 			GCZ = {
 				add_state_core = PREV
 			}
 		}
-	}
-	GHL = {
-		add_ideas = OFN_Dependent_Member
-		econ_join_sphere_USA = yes
-		transfer_state = 36
-		transfer_state = 7
-		transfer_state = 1886
-		transfer_state = 74
-		transfer_state = 35
-		if = {
-			limit = {
-				PUS = {
-					owns_state = 6
-				}
-			}
-			transfer_state = 6
-			transfer_state = 1734
-		}
-		every_owned_state = {
-			GHL = {
-				add_state_core = PREV
-			}
-		}
+		
 	}
 	GDN = {
 		add_ideas = OFN_Dependent_Member
@@ -194,14 +237,20 @@ TaS_SWRW_american_germany = {
 		transfer_state = 99 
 		transfer_state = 37
 		transfer_state = 774
+		set_cosmetic_tag = GDN_usa
+		remove_ideas = TaS_Post2WRW_GDN_antimonarch_protests
+		remove_ideas = TaS_Post2WRW_GDN_GNR_scandinavian_liberation 
 		every_owned_state = {
 			GDN = {
 				add_state_core = PREV
 			}
 		}
 	}
-	GAU = {
+	GSG = {
 		add_ideas = OFN_Dependent_Member
+		add_ideas = TaS_Post2WRW_werewolf_activity
+		add_ideas = TaS_Post2WRW_GSG_red_vienna
+		add_ideas = TaS_Post2WRW_fast_denazification
 		econ_join_sphere_USA = yes
 		transfer_state = 1025
 		transfer_state = 4
@@ -212,8 +261,9 @@ TaS_SWRW_american_germany = {
 		transfer_state = 1772
 		transfer_state = 62
 		transfer_state = 98
+		set_cosmetic_tag = GSG_usa
 		every_owned_state = {
-			GAU = {
+			GSG = {
 				add_state_core = PREV
 			}
 		}
@@ -250,6 +300,7 @@ TaS_SWRW_american_germany = {
 				add_state_core = PREV
 			}
 		}
+		remove_ideas = TaS_Post2WRW_commie_activity
 	}
 	if = {
 		limit = {
@@ -285,12 +336,160 @@ TaS_SWRW_american_germany = {
 			}
 		}
 	}
+	BRL = {
+		transfer_state = 64
+		remove_ideas = TaS_Post2WRW_BRL_ZNE_russian_army
+		remove_ideas = TaS_Post2WRW_BRL_nazi_heartland_1
+		remove_ideas = TaS_Post2WRW_BRL_mind_centre
+		add_ideas = TaS_Post2WRW_werewolf_activity
+		add_ideas = TaS_Post2WRW_BRL_yankee_in_volkshalle
+		add_ideas = TaS_Post2WRW_fast_denazification
+		set_politics = {
+			ruling_party = paternalism
+			last_election = "1933.3.5"
+			election_frequency = 48
+			elections_allowed = no
+		}
+		set_party_name = {
+			ideology = paternalism
+			long_name = BRL_usa_party_long
+			name = BRL_usa_party
+		}	
+		set_popularities = {
+			communist = 0
+			ultranationalism = 0
+			socialist = 0
+			progressivism = 0
+			liberalism = 0
+			conservatism = 20
+			paternalism = 40
+			despotism = 10
+			fascism = 20
+			national_socialism = 10
+		}
+		set_cosmetic_tag = BRL_usa
+		promote_character = BRL_USA_William_Westmoreland
+		OFN_MANDATE_set_starting_laws = yes
+		inherit_technology = USA
+		econ_join_sphere_USA = yes
+		set_temp_variable = { TNO_economy_subtype_temp = token:Econ_Subtype_American_Capitalism }
+		econ_subtype_change = yes
+		add_ideas = OFN_Mandate
+		every_owned_state = {
+			BRL = {
+				add_state_core = PREV
+			}
+		}
+	}
+	if = {
+		limit = { SUR = { has_idea = SUR_queen_juliana } }
+		SUR = {
+			set_cosmetic_tag = SUR_kingdom_of_netherlands
+			transfer_state = 36
+			transfer_state = 7
+			transfer_state = 1886
+			transfer_state = 74
+			transfer_state = 35
+			set_capital = { state = 7 }
+			if = {
+				limit = {
+					BRG = { exists = no }
+				}
+				transfer_state = 6
+				transfer_state = 1734
+			}
+			every_owned_state = {
+				SUR = {
+					add_state_core = PREV
+				}
+			}
+		}
+	}
+	else = {
+		CUR = {
+			set_cosmetic_tag = SUR_kingdom_of_netherlands
+			transfer_state = 36
+			transfer_state = 7
+			transfer_state = 1886
+			transfer_state = 74
+			transfer_state = 35
+			set_capital = { state = 7 }
+			if = {
+				limit = {
+					BRG = { exists = no }
+				}
+				transfer_state = 6
+				transfer_state = 1734
+			}
+			every_owned_state = {
+				CUR = {
+					add_state_core = PREV
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			BRG = { exists = no }
+		}
+		GFR = {
+			set_cosmetic_tag = GFR_usa
+			transfer_state = 6
+			transfer_state = 1734
+			transfer_state = 34
+			set_politics = {
+				ruling_party = paternalism
+				last_election = "1933.3.5"
+				election_frequency = 48
+				elections_allowed = no
+			}
+			set_party_name = {
+				ideology = paternalism
+				long_name = GFR_usa_party_long
+				name = GFR_usa_party
+			}	
+			set_popularities = {
+				communist = 0
+				ultranationalism = 0
+				socialist = 0
+				progressivism = 0
+				liberalism = 0
+				conservatism = 20
+				paternalism = 50
+				despotism = 10
+				fascism = 10
+				national_socialism = 10
+			}
+			add_ideas = OFN_Dependent_Member
+			set_cosmetic_tag = GFR_usa
+			promote_character = GFR
+			OFN_MANDATE_set_starting_laws = yes
+			inherit_technology = USA
+			econ_join_sphere_USA = yes
+		}
+		FRA = {
+			transfer_state = 15
+			transfer_state = 16
+			transfer_state = 788
+			transfer_state = 1625
+			transfer_state = 1626
+			transfer_state = 1635
+			transfer_state = 17
+			transfer_state = 18
+			transfer_state = 29
+			transfer_state = 1733
+			every_owned_state = {
+				add_core_of = FRA
+			}
+		}
+	}
 	USA = {
 		add_to_faction = ZNE
 		add_to_faction = GHL
 		add_to_faction = GDN
 		add_to_faction = GPL
-		add_to_faction = GAU
+		add_to_faction = GSG
 		add_to_faction = GCZ
+		add_to_faction = BRL
 	}
 }

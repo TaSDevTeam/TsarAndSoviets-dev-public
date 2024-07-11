@@ -1013,6 +1013,9 @@ TaS_2WRW_remove_schnitzel = {
 			transfer_state = 55
 			transfer_state = 42
 			transfer_state = 8
+			transfer_state = 1811
+			transfer_state = 1810
+			transfer_state = 1809
 			set_cosmetic_tag = GWS_czech
 		}
 		GBW = {
@@ -1029,6 +1032,9 @@ TaS_2WRW_remove_schnitzel = {
 			transfer_state = 54
 			transfer_state = 52
 			transfer_state = 153
+			transfer_state = 68
+			transfer_state = 1026
+			transfer_state = 53
 			set_cosmetic_tag = GBW_czech
 		}
 		GAU = {
@@ -1045,6 +1051,10 @@ TaS_2WRW_remove_schnitzel = {
 			transfer_state = 4
 			transfer_state = 1025
 			transfer_state = 770
+			transfer_state = 86
+			transfer_state = 1772
+			transfer_state = 62
+			transfer_state = 98 
 			set_cosmetic_tag = GAU_czech
 		}
 		GCZ = {
@@ -1111,11 +1121,13 @@ TaS_2WRW_remove_schnitzel = {
 			limit = { BRG = { exists = yes } }
 			BRG = {
 				transfer_state = 28
+				transfer_state = 1812
 			}
 		}
 		else = {
 			FRA = {
 				transfer_state = 28
+				transfer_state = 1812
 			}
 		}
 	}	

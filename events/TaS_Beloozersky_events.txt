@@ -945,6 +945,29 @@ country_event = { # Poezd_1
 		name = berez_kazahk.8.a
 		ai_chance = { factor = 1 }
         add_stability = 0.15
+		if = {
+			limit = {
+				MKZ = {
+					exists = yes
+					has_government = despotism
+				}
+			}
+			custom_effect_tooltip = KAZ_mil_annexation_tt
+			hidden_effect = {
+				MKZ = {
+					every_owned_state = {
+						add_state_core = RWS
+						remove_core_of = MKZ
+						remove_core_of = KAZ
+						remove_core_of = KZR
+					}
+				}
+				annex_country = {
+					target = MKZ
+					transfer_troops = yes
+				}
+			}
+		}
 	}		
 }
 
@@ -1171,10 +1194,17 @@ country_event = { # talks success
 		ai_chance = { factor = 1 }
 		trigger = {
 			has_country_flag = MAR_KAZ_part_success
-		}		
-		declare_war_on = {
-			target = KAZ
-			type = annex_everything
+		}
+		random_list = { 
+			2 = {
+				declare_war_on = {
+					target = KAZ
+					type = annex_everything
+				}
+			}
+			8 = {
+				MAR_install_mil_kazakhstan = yes
+			}
 		}
 		news_event = { id = berez_kazahk_news.5 days = 1 }
 	}
@@ -1185,6 +1215,9 @@ country_event = { # talks success
 			has_country_flag = MAR_KAZ_part_success
 		}			
 		news_event = { id = berez_kazahk_news.3 days = 1 }
+		hidden_effect = {
+			MAR_install_autonomy_kazakhstan = yes
+		}
 	}
 }
 

@@ -519,7 +519,7 @@ on_actions = {
 				FROM = {
 					white_peace = ROOT
 				}
-				ROM = {
+				GRM = {
 					transfer_state = 1288
 					transfer_state = 76
 					transfer_state = 83
@@ -562,7 +562,7 @@ on_actions = {
 						transfer_state = 1966
 					}
 				}
-				ROM = {
+				GRM = {
 					econ_join_sphere_MAR = yes
 				}
 				set_global_flag = skip_default_capitulation
@@ -570,8 +570,7 @@ on_actions = {
 			else_if = {
 				limit = {
 					FROM = {
-						original_tag = MAR
-						MAR = { has_global_flag = TaS_WRW2_Russian_victory }
+						original_tag = RUS
 					}
 					ROOT = { 
 						original_tag = TUR
@@ -581,8 +580,8 @@ on_actions = {
 					white_peace = ROOT
 				}
 				if = {
-					limit = { MAR = { owns_state = 231 } }
-					MAR = {
+					limit = { RUS = { owns_state = 231 } }
+					RUS = {
 						transfer_state = 1565
 						transfer_state = 230
 						transfer_state = 1568
@@ -626,6 +625,32 @@ on_actions = {
 					}
 				}
 				TUR = {
+					transfer_state = 184
+					transfer_state = 1266
+					transfer_state = 163
+					transfer_state = 1267
+					transfer_state = 345
+					transfer_state = 341
+					transfer_state = 340
+					transfer_state = 347
+					transfer_state = 339
+					transfer_state = 349
+					transfer_state = 342
+					transfer_state = 343
+					transfer_state = 1986
+					transfer_state = 49
+					transfer_state = 346
+					transfer_state = 344
+					transfer_state = 348
+					transfer_state = 1987
+					transfer_state = 355
+					transfer_state = 354
+					transfer_state = 1990
+					transfer_state = 350
+					transfer_state = 1992
+					transfer_state = 352
+					transfer_state = 1988
+					
 					econ_join_sphere_MAR = yes
 				}
 				set_global_flag = skip_default_capitulation
