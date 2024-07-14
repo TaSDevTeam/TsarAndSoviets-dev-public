@@ -331,7 +331,12 @@ country_event = { #Congo 1
 	picture = GFX_event_MAR_dobr23
 	option = { #very cool
 		name = berez_dobrovoltsy.23.a
-		AZD = {
+		KSI = {
+			econ_join_sphere_MAR = yes
+			set_temp_variable = { gdp_growth_temp = 0.15 }
+			econ_gdp_growth_change = yes
+		}
+		KTG = {
 			econ_join_sphere_MAR = yes
 			set_temp_variable = { gdp_growth_temp = 0.15 }
 			econ_gdp_growth_change = yes
@@ -339,6 +344,7 @@ country_event = { #Congo 1
 		MAR = {
 			set_temp_variable = { gdp_growth_temp = 0.04 }
 			econ_gdp_growth_change = yes
+			TaS_fopo_remove_congo_cw_tab = yes
 		}
 	}
 }

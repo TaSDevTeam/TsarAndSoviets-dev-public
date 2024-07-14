@@ -685,28 +685,45 @@ TaS_WRW2_Peace_Yall = {
 	custom_effect_tooltip = TaS_WRW2_Peace_Yall_tt
 	if = {
 		limit = { has_country_flag = BUL_refuse }
-		leave_faction = yes
+		BUL = { leave_faction = yes }
+		declare_war_on = {
+			target = BUL
+			type = annex_everything
+		}
 	}
 	if = {
 		limit = { has_country_flag = SER_refuse }
-		leave_faction = yes
+		SER = { leave_faction = yes }
+		declare_war_on = {
+			target = SER
+			type = annex_everything
+		}
 	}
 	if = {
 		limit = { has_country_flag = HUN_refuse }
-		leave_faction = yes
+		HUN = { leave_faction = yes }
+		declare_war_on = {
+			target = HUN
+			type = annex_everything
+		}
 	}
 	if = {
 		limit = { has_country_flag = ROM_refuse }
-		leave_faction = yes
+		ROM = { leave_faction = yes }
+		declare_war_on = {
+			target = ROM
+			type = annex_everything
+		}
 	}
 	every_country = {
-		limit = { is_puppet_of = GER }
+		limit = {
+			OR = { 
+				is_puppet_of = GER
+				is_in_faction_with = GER
+			}
+		}
 		white_peace = RUS
 	}	
-	every_country = {
-		limit = { is_in_faction_with = GER }
-		white_peace = RUS
-	}
 	if = {
 		limit = { has_country_flag = BUL_demands }
 		BUL = {

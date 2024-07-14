@@ -961,7 +961,6 @@ on_actions = {
 						NOT = {
 							country_exists = CFS
 							country_exists = CPR
-							country_exists = KTG
 							country_exists = AZD
 							AND = {
 								has_global_flag = COG_PW_GRO_or_COG_in
@@ -986,7 +985,54 @@ on_actions = {
 					}
 					MAR = {
 						if = {
-							limit = { NOT = { has_government = socialist } has_country_flag = MAR_aid_KSI }
+							limit = {
+								NOT = { has_government = socialist }
+								has_country_flag = MAR_aid_KSI
+							}
+							TaS_dobrovoltsy_dynmod_victory = yes
+							country_event = { id = berez_dobrovoltsy.23 days = 3 }
+							TaS_fopo_remove_congo_cw_tab = yes
+						}
+						else = {
+							TaS_dobrovoltsy_dynmod_lose = yes
+							TaS_fopo_remove_congo_cw_tab = yes
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						country_exists = KTG
+						NOT = {
+							country_exists = CFS
+							country_exists = CPR
+							country_exists = AZD
+							AND = {
+								has_global_flag = COG_PW_GRO_or_COG_in
+								OR = {
+									country_exists = GRO
+									country_exists = COG
+								}
+							}
+						}
+					}
+					KTG = {
+						country_event = {
+							id = COG_PW.7
+							days = 5
+						}
+					}
+					USA = {
+						country_event = {
+							id = COG_PW.99
+							days = 5
+						}
+					}
+					MAR = {
+						if = {
+							limit = {
+								NOT = { has_government = socialist }
+								has_country_flag = MAR_aid_KSI
+							}
 							TaS_dobrovoltsy_dynmod_victory = yes
 							country_event = { id = berez_dobrovoltsy.23 days = 3 }
 							TaS_fopo_remove_congo_cw_tab = yes
