@@ -4981,7 +4981,7 @@ MAR_SWRW_category = {
 	}
 	#Other diplomacy
 	TaS_WRW2_ask_for_ofn_help = {
-		icon = GFX_decision_SAF_ask_OFN_stationing
+		icon = GFX_decision_generic_ofn_stationing
 		visible = {
 			is_russian_nation = yes
 			check_variable = { WRW_deccat = 3 }
@@ -5008,6 +5008,7 @@ MAR_SWRW_category = {
 		visible = {
 			is_russian_nation = yes
 			check_variable = { WRW_deccat = 3 }
+			check_variable = { TaS_swrw_stage = 2 }
 			NOT = { has_country_flag = legion_fully_formed }
 		}
 		available = {
@@ -5066,7 +5067,7 @@ MAR_SWRW_category = {
 	}
 	
 	TaS_WRW2_ask_for_german_isolation = {
-		icon = GFX_decision_SAF_end_pakt_trade
+		icon = GFX_decision_generic_protest
 		visible = {
 			is_russian_nation = yes
 			check_variable = { WRW_deccat = 3 }
@@ -5188,7 +5189,7 @@ MAR_SWRW_category = {
 	}
 	SWRW_raise_war_taxes = {
 		priority = 70
-		icon = GFX_decision_raise_tax
+		icon = GFX_decision_generic_economy_graph
 		cost = 50
 		visible = {
 			is_russian_nation = yes
@@ -5205,7 +5206,7 @@ MAR_SWRW_category = {
 	}
 	SWRW_lease_private_arms_companies = {
 		priority = 70
-		icon = GFX_decision_factory_generic_blue
+		icon = GFX_decision_generic_factory_blue
 		cost = 50
 		visible = {
 			is_russian_nation = yes
@@ -5224,7 +5225,7 @@ MAR_SWRW_category = {
 	}
 	TaS_WRW2_expand_war_orders = {
 		priority = 70
-		icon = GFX_decision_black_market_infantry_purchase
+		icon = GFX_decision_generic_supply
 		visible = {
 			is_russian_nation = yes
 			check_variable = { WRW_deccat = 2 }
