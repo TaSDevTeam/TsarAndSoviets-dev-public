@@ -520,8 +520,6 @@ on_actions = {
 					white_peace = ROOT
 				}
 				GRM = {
-					transfer_state = 1288
-					transfer_state = 76
 					transfer_state = 83
 					transfer_state = 82
 					transfer_state = 81
@@ -530,10 +528,12 @@ on_actions = {
 					transfer_state = 1283
 					transfer_state = 79
 					transfer_state = 1284
-					transfer_state = 1289
 					transfer_state = 84
 					transfer_state = 1287
-				
+					every_owned_state = {
+						remove_core_of = RON
+						add_core_of = GRN
+					}
 				}
 				if = {
 					limit = { MAR = { owns_state = 1428 } }

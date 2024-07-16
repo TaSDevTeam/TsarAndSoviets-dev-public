@@ -137,3 +137,151 @@ defined_text = {
 		localization_key = stage_ger_desc
 	}
 }
+
+defined_text = {
+	name = SWRW_blagoveshensk_map
+	text = { # with
+		trigger = {
+			NOT = { RUS = { controls_state = 1364 } }
+		}
+		localization_key = "GFX_blagoveshensk"
+	}
+	text = { # without
+		trigger = {
+			RUS = { controls_state = 1364 }
+		}
+		localization_key = "GFX_blagoveshensk_birobidzhan"
+	}
+}
+
+defined_text = {
+	name = SWRW_blagoveshensk_active_map
+	text = { # with
+		trigger = {
+			NOT = { RUS = { controls_state = 1364 } }
+		}
+		localization_key = "GFX_blagoveshensk_active"
+	}
+	text = { # without
+		trigger = {
+			RUS = { controls_state = 1364 }
+		}
+		localization_key = "GFX_blagoveshensk_birobidzhan_active"
+	}
+}
+
+defined_text = {
+	name = FE_negotiations_round
+	text = { # 1
+		trigger = {
+			check_variable = { fe_round = 1 }
+		}
+		localization_key = TaS_FE_round_one
+	}
+	text = { # 2
+		trigger = {
+			check_variable = { fe_round = 2 }
+		}
+		localization_key = TaS_FE_round_two
+	}
+	text = { # 2
+		trigger = {
+			check_variable = { fe_round = 3 }
+		}
+		localization_key = TaS_FE_round_three
+	}
+	text = { # 2
+		trigger = {
+			check_variable = { fe_round = 4 }
+		}
+		localization_key = TaS_FE_round_four
+	}
+}
+
+defined_text = {
+	name = fe_blagoveshensk_status
+	text = { # 1
+		trigger = {
+			check_variable = { blagoveshensk_status = 1 }
+		}
+		localization_key = TaS_FE_status_not
+	}
+	text = { # 2
+		trigger = {
+			check_variable = { blagoveshensk_status = 2 }
+		}
+		localization_key = TaS_FE_status_ongoing
+	}
+	text = { # 3
+		trigger = {
+			check_variable = { blagoveshensk_status = 3 }
+		}
+		localization_key = TaS_FE_status_over
+	}
+}
+
+defined_text = {
+	name = fe_khabarovsk_status
+	text = { # 1
+		trigger = {
+			check_variable = { khabarovsk_status = 1 }
+		}
+		localization_key = TaS_FE_status_not
+	}
+	text = { # 2
+		trigger = {
+			check_variable = { khabarovsk_status = 2 }
+		}
+		localization_key = TaS_FE_status_ongoing
+	}
+	text = { # 3
+		trigger = {
+			check_variable = { khabarovsk_status = 3 }
+		}
+		localization_key = TaS_FE_status_over
+	}
+}
+
+defined_text = {
+	name = fe_primorie_status
+	text = { # 1
+		trigger = {
+			check_variable = { primorie_status = 1 }
+		}
+		localization_key = TaS_FE_status_not
+	}
+	text = { # 2
+		trigger = {
+			check_variable = { primorie_status = 2 }
+		}
+		localization_key = TaS_FE_status_ongoing
+	}
+	text = { # 3
+		trigger = {
+			check_variable = { primorie_status = 3 }
+		}
+		localization_key = TaS_FE_status_over
+	}
+}
+
+defined_text = {
+	name = fe_vladivostok_status
+	text = { # 1
+		trigger = {
+			check_variable = { vladivostok_status = 1 }
+		}
+		localization_key = TaS_FE_status_not
+	}
+	text = { # 2
+		trigger = {
+			check_variable = { vladivostok_status = 2 }
+		}
+		localization_key = TaS_FE_status_ongoing
+	}
+	text = { # 3
+		trigger = {
+			check_variable = { vladivostok_status = 3 }
+		}
+		localization_key = TaS_FE_status_over
+	}
+}
