@@ -11,8 +11,13 @@ MAR_SWRW_category = {
 		}
 		available = {
 			custom_trigger_tooltip = {
-				tooltip = war_preparation_tt
+				tooltip = SWRW_readiness_tt
 				check_variable = { SWRW_readiness_var > 74.99 }
+			}
+			custom_trigger_tooltip = {
+				tooltip = SWRW_issues_done_tt
+				has_country_flag = MAR_has_primorie
+				has_country_flag = MAR_has_turkestan
 			}
 		}
 		custom_cost_trigger = {
@@ -4321,6 +4326,7 @@ MAR_SWRW_category = {
 			}
 		}
 		remove_effect = {
+			custom_effect_tooltip = TaS_WRW2_activate_plan_spb_tt
 			set_country_flag = MAR_started_spb_offensive
 			add_timed_idea = {
 				idea = MAR_go_oper
@@ -4392,6 +4398,7 @@ MAR_SWRW_category = {
 			}
 		}
 		remove_effect = {
+			custom_effect_tooltip = TaS_WRW2_activate_plan_msk_tt
 			set_country_flag = MAR_started_MSK_offensive
 			add_timed_idea = {
 				idea = MAR_go_oper
@@ -4466,6 +4473,7 @@ MAR_SWRW_category = {
 			}
 		}
 		remove_effect = {
+			custom_effect_tooltip = TaS_WRW2_activate_plan_volga_tt
 			set_country_flag = MAR_started_CAU_offensive
 			add_timed_idea = {
 				idea = MAR_go_oper
@@ -4540,6 +4548,7 @@ MAR_SWRW_category = {
 			}
 		}
 		remove_effect = {
+			custom_effect_tooltip = TaS_WRW2_activate_plan_kiev_tt
 			set_country_flag = MAR_started_UKR_offensive
 			add_timed_idea = {
 				idea = MAR_go_oper
@@ -4614,6 +4623,7 @@ MAR_SWRW_category = {
 			}
 		}
 		remove_effect = {
+			custom_effect_tooltip = TaS_WRW2_activate_plan_riga_tt
 			set_country_flag = MAR_started_OST_offensive
 			add_timed_idea = {
 				idea = MAR_go_oper

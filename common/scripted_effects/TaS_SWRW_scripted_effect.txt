@@ -493,3 +493,41 @@ TaS_SWRW_american_germany = {
 		add_to_faction = BRL
 	}
 }
+
+TaS_SWRW_change_diplo_jap = { 
+	set_temp_variable = { temp_diplo_gained_txt = swrw_diplo_temp }
+	add_to_variable = { swrw_diplo_jap = swrw_diplo_temp }
+	
+	clamp_variable = {
+		var = swrw_diplo_jap
+		min = 0
+		max = 100
+	}
+	if = {
+		limit = { check_variable = { swrw_diplo_temp < 0 } }
+		multiply_temp_variable = { temp_diplo_gained_txt = -1 }
+		custom_effect_tooltip = swrw_fe_diplo_decrease_tt
+	}
+	else = {
+		custom_effect_tooltip = swrw_fe_diplo_increase_tt
+	}
+}
+
+TaS_SWRW_change_corpo_jap = { 
+	set_temp_variable = { temp_corpo_gained_txt = swrw_corpo_temp }
+	add_to_variable = { swrw_corpo_jap = swrw_corpo_temp }
+	
+	clamp_variable = {
+		var = swrw_corpo_jap
+		min = 0
+		max = 100
+	}
+	if = {
+		limit = { check_variable = { swrw_corpo_temp < 0 } }
+		multiply_temp_variable = { temp_corpo_gained_txt = -1 }
+		custom_effect_tooltip = swrw_fe_corpo_decrease_tt
+	}
+	else = {
+		custom_effect_tooltip = swrw_fe_corpo_increase_tt
+	}
+}

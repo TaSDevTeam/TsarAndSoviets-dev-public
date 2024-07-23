@@ -1,27 +1,5 @@
 MAR_debug_category = {
-	#ya pokakal
-	MAR_load_bop = {
-		icon = GFX_decision_generic_visibility
-
-		allowed = {
-			original_tag = MAR
-		}
-		fire_only_once = no
-
-		complete_effect = { 
-			log = "[GetDateText]: [Root.GetName]: Decision MAR_load_bop"
-			set_temp_variable = { TabName = token:BoP_Tab_SWRW }
-			TNO_BoP_AddTab = yes
-			set_variable = { TaS_swrw_stage = 1 }
-			set_variable = { swrw_preparation_category = 1 }
-			set_variable = { SWRW_suspicion_gain = -1 }
-			GER = {
-				set_temp_variable = { TabName = token:BoP_Tab_SWRW }
-				TNO_BoP_AddTab = yes
-			}
-		}
-	}
-	
+	#ya pokakal	
 	MAR_load_initial_decisions = {
 		icon = GFX_decision_generic_visibility
 
@@ -777,7 +755,52 @@ MAR_debug_category = {
 		}
 	}
 	
+	MAR_load_fareast_gui = {
+		icon = GFX_decision_generic_industry
 
+		allowed = {
+			original_tag = MAR
+		}
+		fire_only_once = no
+
+		complete_effect = { 
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_load_fareast_gui"
+			set_global_flag = FE_negotiations_start
+			set_variable = { fe_round = 1 }
+			
+			set_variable = { blagoveshensk_status = 2 }
+			set_variable = { khabarovsk_status = 1 }
+			set_variable = { primorie_status = 1 }
+			set_variable = { vladivostok_status = 1 }
+			
+			set_variable = { swrw_diplo_jap = 55 }
+			set_variable = { swrw_corpo_jap = 45 }
+			set_variable = { SWRW_round_timeout = 60 }
+		}
+	}
+	
+	MAR_load_bop = {
+		icon = GFX_decision_generic_industry
+
+		allowed = {
+			original_tag = MAR
+		}
+		fire_only_once = no
+
+		complete_effect = { 
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_load_bop"
+			set_temp_variable = { TabName = token:BoP_Tab_SWRW }
+			TNO_BoP_AddTab = yes
+			set_variable = { TaS_swrw_stage = 1 }
+			set_variable = { swrw_preparation_category = 1 }
+			set_variable = { SWRW_suspicion_gain = -1 }
+			GER = {
+				set_temp_variable = { TabName = token:BoP_Tab_SWRW }
+				TNO_BoP_AddTab = yes
+			}
+		}
+	}
+	
 	TaS_2WRW_load_Russia_focus_tree = {
 		icon = GFX_decision_generic_industry
 		allowed = {

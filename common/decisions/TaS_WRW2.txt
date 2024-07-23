@@ -2937,3 +2937,128 @@ TaS_WRW2_territorial_reclamation = {
 		}
 	}
 }
+
+TaS_SWRW_far_eastern_negotiations = {
+	SWRW_FEnegotiations_mission = {
+		icon = GFX_decision_generic_handshake
+		allowed = {
+			tag = MAR
+		}			
+		available = {
+			always = no
+		}			
+		activation = {
+			has_global_flag = FE_negotiations_start
+		}
+
+		days_mission_timeout = SWRW_round_timeout
+		is_good = no
+
+		timeout_effect = {
+			custom_effect_tooltip = SWRW_FEnegotiations_mission_tt
+			hidden_effect = {
+				if = {
+					limit = {
+						check_variable = { fe_round = 1 }
+					}
+					if = { 
+						limit = {
+							check_variable = { swrw_diplo_jap > 75 }
+							check_variable = { swrw_corpo_jap > 75 }
+						}
+						country_event = { id = MAR_Japan.21 days = 3}
+					}
+					else = {
+						country_event = { id = MAR_Japan.25 days = 3}
+					}
+				}
+				if = {
+					limit = {
+						check_variable = { fe_round = 2 }
+					}
+					if = { 
+						limit = {
+							check_variable = { swrw_diplo_jap > 75 }
+							check_variable = { swrw_corpo_jap > 75 }
+						}
+						country_event = { id = MAR_Japan.22 days = 3}
+					}
+					else = {
+						country_event = { id = MAR_Japan.25 days = 3}
+					}
+				}
+				if = {
+					limit = {
+						check_variable = { fe_round = 3 }
+					}
+					if = { 
+						limit = {
+							check_variable = { swrw_diplo_jap > 85 }
+							check_variable = { swrw_corpo_jap > 85 }
+						}
+						country_event = { id = MAR_Japan.23 days = 3}
+					}
+					else = {
+						country_event = { id = MAR_Japan.25 days = 3}
+					}
+				}
+				if = {
+					limit = {
+						check_variable = { fe_round = 4 }
+					}
+					if = { 
+						limit = {
+							check_variable = { swrw_diplo_jap > 95 }
+							check_variable = { swrw_corpo_jap > 95 }
+						}
+						country_event = { id = MAR_Japan.24 days = 3}
+					}
+					else = {
+						country_event = { id = MAR_Japan.26 days = 3}
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	##Generic
+	SWRW_FEnegotiations_buy_diplomats = {
+		icon = GFX_decision_generic_corruption_yen
+		fire_only_once = no
+		custom_cost_trigger = { command_power > 24.99 }
+		custom_cost_text = decision_cost_50_million_25_cp
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -25
+			}
+			set_temp_variable = { temp_econ_spending_amount = 0.05 }
+			econ_spend_money_once_effect_raw_money = yes
+		}
+		days_remove = 14
+		remove_effect = {
+			set_temp_variable = { swrw_diplo_temp = 5 }
+			TaS_SWRW_change_diplo_jap = yes
+		}
+	}
+	SWRW_FEnegotiations_buy_corpos = {
+		icon = GFX_decision_generic_corruption_yen
+		fire_only_once = no
+		custom_cost_trigger = { has_political_power > 14.99 }
+		custom_cost_text = decision_cost_100_million_15_pp
+		complete_effect = {
+			hidden_effect = {
+				add_political_power = -15
+			}
+			set_temp_variable = { temp_econ_spending_amount = 0.1 }
+			econ_spend_money_once_effect_raw_money = yes
+		}
+		days_remove = 14
+		remove_effect = {
+			set_temp_variable = { swrw_corpo_temp = 5 }
+			TaS_SWRW_change_corpo_jap = yes
+		}
+	}
+}

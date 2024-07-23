@@ -22,7 +22,7 @@ TaS_SWRW_far_eastern_negotiations = {
 	picture = GFX_MAR_RECLAMATION_category
 	scripted_gui = TaS_FE_GUI
 	allowed = { original_tag = MAR }
-	visible = { is_debug = yes }
+	visible = { has_global_flag = FE_negotiations_start }
 	visible_when_empty = yes
 	priority = { base = 1000 }
 }
