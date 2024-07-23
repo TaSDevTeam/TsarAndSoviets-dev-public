@@ -195,3 +195,66 @@ shared_focus = {
 
 	}
 }
+
+### FAIL ###
+
+shared_focus = {
+	id = MAR_cold_world
+	icon = GFX_MAR_cold_world
+	cost = 3.58
+	x = 4
+	y = 0
+	completion_reward = {
+
+	}
+}
+shared_focus = {
+	id = MAR_avesta_of_black_and_white
+	icon = GFX_MAR_avesta_of_black_and_white
+	prerequisite = {focus = MAR_cold_world}
+	relative_position_id = MAR_cold_world
+	cost = 3.58
+	x = 0
+	y = 1
+	completion_reward = {
+
+	}
+}
+shared_focus = {
+	id = MAR_golden_fantasia
+	icon = GFX_MAR_golden_fantasia
+	prerequisite = {focus = MAR_cold_world}
+	relative_position_id = MAR_cold_world
+	cost = 3.58
+	x = -2
+	y = 2
+	completion_reward = {
+
+	}
+}
+shared_focus = {
+	id = MAR_melty_blood
+	icon = GFX_MAR_melty_blood
+	prerequisite = {focus = MAR_cold_world}
+	relative_position_id = MAR_cold_world
+	cost = 3.58
+	x = 2
+	y = 2
+	completion_reward = {
+
+	}
+}
+shared_focus = {
+	id = MAR_we_shall_all_go_to_heaven
+	icon = GFX_MAR_we_shall_all_go_to_heaven
+	prerequisite = {focus = MAR_melty_blood}
+	prerequisite = {focus = MAR_golden_fantasia}
+	prerequisite = {focus = MAR_avesta_of_black_and_white}
+	relative_position_id = MAR_cold_world
+	cost = 3.58
+	x = 0
+	y = 3
+	completion_reward = {
+
+	}
+}
