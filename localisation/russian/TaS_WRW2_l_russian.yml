@@ -868,7 +868,7 @@
  TaS_FE_blagoveshensk_tt_desc:0 "описание Благовещенска"
  
  TaS_FE_khabarovsk_tt:0 "§fХабаровск§! - статус переговоров: [fe_khabarovsk_status]"
- TaS_FE_khabarovsk_desc:0 "описание Хабаровска"
+ TaS_FE_khabarovsk_tt_desc:0 "описание Хабаровска"
  
  TaS_FE_primorie_tt:0 "§CПриморье§! - статус переговоров: [fe_primorie_status]"
  TaS_FE_primorie_desc:0 "описание Приморья"
@@ -881,17 +881,82 @@
  indicator_corpo_txt:0 "Позиция корпораций"
  indicator_corpo_number_tt:0 "§Y[?swrw_corpo_jap]%§!"
  
- swrw_fe_diplo_decrease_tt:0 "Позиция дипломатов изменится на [?temp_diplo_gained_txt]%"
- swrw_fe_diplo_increase_tt:0 "Позиция дипломатов изменится на [?temp_diplo_gained_txt]%"
+ swrw_fe_diplo_decrease_tt:0 "Позиция §Yдипломатов§! §Rсклонится в сторону§! §EЯпонии§! на §R[?temp_diplo_gained_txt]%§!"
+ swrw_fe_diplo_increase_tt:0 "Позиция §Yдипломатов§! §Gсклонится в сторону§! §KРоссии§! на §G[?temp_diplo_gained_txt]%§!"
  
- swrw_fe_corpo_decrease_tt:0 "Позиция корпораций изменится на [?temp_corpo_gained_txt]%"
- swrw_fe_corpo_increase_tt:0 "Позиция корпораций изменится на [?temp_corpo_gained_txt]%"
+ swrw_fe_corpo_decrease_tt:0 "Позиция §pкорпораций§! §Rсклонится в сторону§! §EЯпонии§! на §R[?temp_corpo_gained_txt]%§!"
+ swrw_fe_corpo_increase_tt:0 "Позиция §pкорпораций§! §Gсклонится в сторону§! §KРоссии§! на §G[?temp_corpo_gained_txt]%§!"
  
  SWRW_FEnegotiations_mission:0 "Окончание [?fe_round]-го раунда перевогоров"
  SWRW_FEnegotiations_mission_tt:0 "Мы закончим переговоры, касающие данную территорию.\nОжидаемый результат:"
  
  SWRW_FEnegotiations_buy_diplomats:0 "Подкупить дипломатов"
  SWRW_FEnegotiations_buy_corpos:0 "Подкупить корпорации"
+ 
+ SWRW_FEnegotiations_help_with_partisans:0 "Предоставить помощь в борьбе с САЯОА"
+ SWRW_FEnegotiations_help_with_partisans_desc:0 ""
+ 
+ SWRW_FEnegotiations_defend_property:0 "Гарантировать сохранность собственности "
+ SWRW_FEnegotiations_defend_property_desc:0 ""
+ 
+ SWRW_FEnegotiations_demilitarize_amur:0 "Пообещать демилитаризацию Амура"
+ SWRW_FEnegotiations_demilitarize_amur_desc:0 ""
+ FE_demilitarize_amur_tt:0 "После окончания переговоров, все новые территории станут демилитаризованной зоной"
+ 
+ SWRW_FEnegotiations_guanrantees_for_dongbei:0 "Гарантии безопасности для переселенцев"
+ SWRW_FEnegotiations_guanrantees_for_dongbei_desc:0 ""
+ 
+ SWRW_FEnegotiations_meet_in_guandong:0 "Встреча в Гуандуне"
+ SWRW_FEnegotiations_meet_in_guandong_desc:0 ""
+ 
+ SWRW_FEnegotiations_give_magadan:0 "Предоставить Магаданский порт"
+ SWRW_FEnegotiations_give_magadan_desc:0 ""
+ 
+ SWRW_FEnegotiations_demonstrate_power:0 "Демонстрация силы"
+ SWRW_FEnegotiations_demonstrate_power_desc:0 ""
+ 
+ SWRW_FEnegotiations_talks_with_nissan:0 "Договор с Nissan"
+ SWRW_FEnegotiations_talks_with_nissan_desc:0 ""
+ 
+ SWRW_FEnegotiations_resource_trade:0 "Ресурсные поставки"
+ SWRW_FEnegotiations_resource_trade_desc:0 ""
+ 
+ SWRW_FEnegotiations_russo_manchu_theatry:0 "Русско-Манчжурский договор о дружбе"
+ SWRW_FEnegotiations_russo_manchu_theatry_desc:0 ""
+ 
+ SWRW_FEnegotiations_propose_korean_resettlement:0 "Предложить переселение Корейцев"
+ SWRW_FEnegotiations_propose_korean_resettlement_desc:0 ""
+ FE_korean_resettlement_tt:0 "После окончания переговоров, этническая карта Дальнего Востока изменится"
+ 
+ SWRW_FEnegotiations_china_talks:0 "Переговоры с Китаем"
+ SWRW_FEnegotiations_china_talks_desc:0 ""
+ 
+ SWRW_FEnegotiations_legco_talks:0 "Договор с LegCo"
+ SWRW_FEnegotiations_legco_talks_desc:0 ""
+ 
+ SWRW_FEnegotiations_pipeline:0 "Газопровод "Дружба""
+ SWRW_FEnegotiations_pipeline_desc:0 ""
+ 
+ SWRW_FEnegotiations_european_ports:0 "Предоставить европейские порты"
+ SWRW_FEnegotiations_european_ports_desc:0 ""
+ 
+ SWRW_FEnegotiations_demil_far_east:0 "Демилитаризовать Дальний Восток"
+ SWRW_FEnegotiations_demil_far_east_desc:0 ""
+ 
+ SWRW_FEnegotiations_double_administrartion:0 "Двойная администрация во Владивостоке"
+ SWRW_FEnegotiations_double_administrartion_desc:0 ""
+ FE_double_administrartion_tt:0 "После введения §Yдвойной администрации§!, §xВладивосток§! §eникогда не сможет§! стать §Dнациональной территорией§! §KРоссии§!"
+ 
+ SWRW_FEnegotiations_give_ural:0 "Пустить корпорации на Урал"
+ SWRW_FEnegotiations_give_ural_desc:0 ""
+ 
+ SWRW_FEnegotiations_russo_japanese_pact:0 "Русско-Японский оборонительный пакт"
+ SWRW_FEnegotiations_russo_japanese_pact_desc:0 ""
+ 
+ var_nationality.1000: "Русская, со значительным числом §Bкорейских переселенцев§!, переехавших сюда по результатам §YМагаданских соглашений§!"
+ var_nationality.1001: "Русско-Дунбэйская, со значительным §Rяпонским меньшинством§!, составляющим часть §Yновой администрации§! §xВладивостока-Урадзио§!"
+ TaS_Vladivostok_Urajio_dual_administration:0 "Двойная администрация Владивосток-Урадзио"
+ VICTORY_POINTS_957_dual:0 "Владивосток-Урадзио"
  
  TaS_FE_desc_txt:0 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet accumsan lacus, quis feugiat augue. Donec eleifend mattis neque, sed tempor turpis blandit in. Integer convallis turpis et mauris tempor vehicula. Maecenas consequat magna sit amet ex accumsan faucibus. Nullam faucibus vitae leo ut vehicula. Curabitur ac vestibulum elit. Nulla ac ex nunc. In fringilla consequat tincidunt. Suspendisse dolor lectus, malesuada vel neque quis, malesuada tincidunt neque. Ut tortor sem, rhoncus nec rhoncus quis, tincidunt eu nulla. Pellentesque semper dapibus nibh, vitae dictum mauris posuere eget. Nam ac neque congue, placerat justo nec, tincidunt justo."
  
@@ -1773,7 +1838,7 @@
  TaS_SWRW_readiness_tt_delayed:0 "£readiness_war §GГотовность§! отражает §Yстепень того§! насколько §Dнаше государство§! подготовлено к §Rпоследнему бою§! с §qВеликогерманским Рейхом§!. §YДанный показатель§! §Gможно повышать§! за счёт взятия §Yрешений§!. При £readiness_war §Gготовности§! выше §Y75%§! вы сможете §Rначать войну§! с §qГерманией§!."
  
  TaS_SWRW_suspicion_tt:0 "§YТекущий уровень§! £reich_awareness §Rподозрений§!: [?SWRW_suspicion_var]"
- TaS_SWRW_suspicion_tt_delayed:0 "£reich_awareness §RПодозрение§! отражает §Yстепень того§! насколько §qТретий Рейх§! осведомлён о §Dнаших намерениях§! начать §RВторую Отечественную Войну§!. Если £reich_awareness §Rподозрение§! §qРейха§! станет больше §Y80§!, то §qон§! §Rподведёт войска§! к §Dнашей границе§!. Если же £reich_awareness §Rподозрение§! достигнет §Y100%§!, то §qГермания§! §eнападёт§! на нас §Rпервой§!, сведя всю §Gнашу подготовку§! на §eнет§!. \n\n§YИзменение§! £reich_awareness §Rподозрений§! §qРейха§! в месяц: §Y[?SWRW_suspicion_gain]§!"
+ TaS_SWRW_suspicion_tt_delayed:0 "£reich_awareness §RПодозрение§! отражает §Yстепень того§! насколько §qТретий Рейх§! осведомлён о §Dнаших намерениях§! начать §xВторую Отечественную Войну§!. Если £reich_awareness §Rподозрение§! §qРейха§! станет больше §Y80§!, то §qон§! §Rподведёт войска§! к §Dнашей границе§!. Если же £reich_awareness §Rподозрение§! достигнет §Y100%§!, то §qГермания§! §eнападёт§! на нас §Rпервой§!, сведя всю §Gнашу подготовку§! на §eнет§!. \n\n§YИзменение§! £reich_awareness §Rподозрений§! §qРейха§! в месяц: §Y[?SWRW_suspicion_gain]§!"
  
  SWRW_suspicion_decrease_tt:0 "£reich_awareness §RПодозрения§! Германии §Gснизятся§! на §Y[?temp_suspicion_gained_txt]%§!"
  SWRW_suspicion_growth_tt:0 "£reich_awareness §RПодозрения§! Германии §eповысятся§! на §Y[?temp_suspicion_gained_txt]%§!"'

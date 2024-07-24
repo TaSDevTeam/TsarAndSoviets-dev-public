@@ -1078,6 +1078,8 @@ country_event = { #3 round success
 		clr_global_flag = FE_negotiations_start
 		custom_effect_tooltip = FE_primorie_success_tt
 		hidden_effect = {
+			add_to_variable = { MAR_fates_done = 1 }
+			set_country_flag = Primorie_fate_is_done
 			transfer_state = 1364
 			transfer_state = 657
 			transfer_state = 408
@@ -1086,6 +1088,36 @@ country_event = { #3 round success
 			transfer_state = 1644
 			transfer_state = 1646
 			transfer_state = 1647
+			if = {
+				limit = { has_country_flag = FE_demilitarize_amur }
+				1364 = { set_demilitarized_zone = yes }
+				657 = { set_demilitarized_zone = yes }
+				408 = { set_demilitarized_zone = yes }
+				409 = { set_demilitarized_zone = yes }
+				1645 = { set_demilitarized_zone = yes }
+				1644 = { set_demilitarized_zone = yes }
+				1646 = { set_demilitarized_zone = yes }
+				1647 = { set_demilitarized_zone = yes }
+			}
+			if = {
+				limit = { has_country_flag = FE_korean_resettlement }
+				1646 = { set_variable = { nationality = 1000 } }
+				1647 = { set_variable = { nationality = 1000 } }
+				
+				1646 = { add_manpower = 312423 }
+				1647 = { add_manpower = 434391 }
+				
+				963 = { add_manpower = -434391 }
+				655 = { add_manpower = -312423 }
+				
+				1018 = { set_variable = { nationality = 444 } }
+				1816 = { set_variable = { nationality = 444 } }
+				1817 = { set_variable = { nationality = 444 } }
+				1819 = { set_variable = { nationality = 444 } }
+				963 = { set_variable = { nationality = 445 } }
+				963 = { add_core_of = JAP }
+				655 = { add_core_of = JAP }
+			}
 		}
 	}
 	option = { #let's try
@@ -1122,6 +1154,8 @@ country_event = { #4 round success
 		clr_global_flag = FE_negotiations_start
 		custom_effect_tooltip = FE_vladivostok_success_tt
 		hidden_effect = {
+			add_to_variable = { MAR_fates_done = 1 }
+			set_country_flag = Primorie_fate_is_done
 			transfer_state = 1364
 			transfer_state = 657
 			transfer_state = 809
@@ -1131,6 +1165,60 @@ country_event = { #4 round success
 			transfer_state = 1644
 			transfer_state = 1646
 			transfer_state = 1647
+			if = {
+				limit = { has_country_flag = FE_demilitarize_amur }
+				1364 = { set_demilitarized_zone = yes }
+				657 = { set_demilitarized_zone = yes }
+				408 = { set_demilitarized_zone = yes }
+				409 = { set_demilitarized_zone = yes }
+				809 = { set_demilitarized_zone = yes }
+				1645 = { set_demilitarized_zone = yes }
+				1644 = { set_demilitarized_zone = yes }
+				1646 = { set_demilitarized_zone = yes }
+				1647 = { set_demilitarized_zone = yes }
+			}
+			if = {
+				limit = { has_country_flag = FE_korean_resettlement }
+				1646 = { set_variable = { nationality = 1000 } }
+				1647 = { set_variable = { nationality = 1000 } }
+				
+				1646 = { add_manpower = 312423 }
+				1647 = { add_manpower = 434391 }
+				
+				963 = { add_manpower = -434391 }
+				655 = { add_manpower = -312423 }
+				
+				1018 = { set_variable = { nationality = 444 } }
+				1816 = { set_variable = { nationality = 444 } }
+				1817 = { set_variable = { nationality = 444 } }
+				1819 = { set_variable = { nationality = 444 } }
+				963 = { set_variable = { nationality = 445 } }
+				963 = { add_core_of = JAP }
+				655 = { add_core_of = JAP }
+			}
+			if = {
+				limit = { has_country_flag = FE_demilitarize_far_east }
+				637 = { set_demilitarized_zone = yes }
+				562 = { set_demilitarized_zone = yes }
+				886 = { set_demilitarized_zone = yes }
+				561 = { set_demilitarized_zone = yes }
+				563 = { set_demilitarized_zone = yes }
+			}
+			if = {
+				limit = { has_country_flag = FE_double_administrartion }
+				809 = { set_variable = { nationality = 1001 } }
+				809 = { add_compliance = 0.95 }
+				809 = {
+					add_province_modifier = {
+						static_modifiers = { TaS_Vladivostok_Urajio_dual_administration }
+						province = {
+							all_provinces = yes
+						}
+					}
+				}
+				809 = { set_state_name = VICTORY_POINTS_957_dual }
+				set_province_name = { id = 957 name = VICTORY_POINTS_957_dual }
+			}
 		}
 	}
 }
@@ -1151,10 +1239,38 @@ country_event = { #1-3 round fail
 		clr_global_flag = FE_negotiations_start
 		custom_effect_tooltip = FE_blagoveshensk_safe_fail_tt
 		hidden_effect = {
+			add_to_variable = { MAR_fates_done = 1 }
+			set_country_flag = Primorie_fate_is_done
 			transfer_state = 1364
 			transfer_state = 657
 			transfer_state = 1646
 			transfer_state = 1647
+			if = {
+				limit = { has_country_flag = FE_demilitarize_amur }
+				1364 = { set_demilitarized_zone = yes }
+				657 = { set_demilitarized_zone = yes }
+				1646 = { set_demilitarized_zone = yes }
+				1647 = { set_demilitarized_zone = yes }
+			}
+			if = {
+				limit = { has_country_flag = FE_korean_resettlement }
+				1646 = { set_variable = { nationality = 1000 } }
+				1647 = { set_variable = { nationality = 1000 } }
+				
+				1646 = { add_manpower = 312423 }
+				1647 = { add_manpower = 434391 }
+				
+				963 = { add_manpower = -434391 }
+				655 = { add_manpower = -312423 }
+				
+				1018 = { set_variable = { nationality = 444 } }
+				1816 = { set_variable = { nationality = 444 } }
+				1817 = { set_variable = { nationality = 444 } }
+				1819 = { set_variable = { nationality = 444 } }
+				963 = { set_variable = { nationality = 445 } }
+				963 = { add_core_of = JAP }
+				655 = { add_core_of = JAP }
+			}
 		}
 	}
 }
@@ -1175,6 +1291,8 @@ country_event = { #4 round fail
 		clr_global_flag = FE_negotiations_start
 		custom_effect_tooltip = FE_khabarovsk_safe_fail_tt
 		hidden_effect = {
+			add_to_variable = { MAR_fates_done = 1 }
+			set_country_flag = Primorie_fate_is_done
 			transfer_state = 1364
 			transfer_state = 657
 			transfer_state = 409
@@ -1182,6 +1300,36 @@ country_event = { #4 round fail
 			transfer_state = 1644
 			transfer_state = 1646
 			transfer_state = 1647
+			if = {
+				limit = { has_country_flag = FE_demilitarize_amur }
+				1364 = { set_demilitarized_zone = yes }
+				657 = { set_demilitarized_zone = yes }
+				408 = { set_demilitarized_zone = yes }
+				409 = { set_demilitarized_zone = yes }
+				1645 = { set_demilitarized_zone = yes }
+				1644 = { set_demilitarized_zone = yes }
+				1646 = { set_demilitarized_zone = yes }
+				1647 = { set_demilitarized_zone = yes }
+			}
+			if = {
+				limit = { has_country_flag = FE_korean_resettlement }
+				1646 = { set_variable = { nationality = 1000 } }
+				1647 = { set_variable = { nationality = 1000 } }
+				
+				1646 = { add_manpower = 312423 }
+				1647 = { add_manpower = 434391 }
+				
+				963 = { add_manpower = -434391 }
+				655 = { add_manpower = -312423 }
+				
+				1018 = { set_variable = { nationality = 444 } }
+				1816 = { set_variable = { nationality = 444 } }
+				1817 = { set_variable = { nationality = 444 } }
+				1819 = { set_variable = { nationality = 444 } }
+				963 = { set_variable = { nationality = 445 } }
+				963 = { add_core_of = JAP }
+				655 = { add_core_of = JAP }
+			}
 		}
 	}
 }
