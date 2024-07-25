@@ -4,7 +4,16 @@ on_actions = {
 			MAR = {
 				set_country_flag = TaS_MARIA_NOT_DONE
 				set_variable = { RUS_integration_cost_days = 70 }
-				give_resource_rights = { receiver = VYT state = 398 }
+				give_resource_rights = {
+					receiver = VYT
+					state = 398
+					resources = { oil aluminium rubber tungsten steel chromium uranium }
+				}
+				give_resource_rights = {
+					receiver = VYT
+					state = 866
+					resources = { oil aluminium rubber tungsten steel chromium uranium }
+				}
 				
 				add_to_array = { CountryInfo_array_main = 101 }
 				add_to_array = { CountryInfo_array_main = 1 }

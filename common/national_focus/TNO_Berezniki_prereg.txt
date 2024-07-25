@@ -197,39 +197,49 @@ shared_focus = {
 	x = 2
 	y = 4
 	completion_reward = {
-		custom_effect_tooltip = MAR_check_vyatka_vibe_tt
-		if = { 
-			limit = { check_variable = { MAR_Okhranka_power < 25 } }
-			custom_effect_tooltip = MAR_vyt_oper_total_w_tt
-		}
-		if = { 
-			limit = {
-				check_variable = { MAR_Okhranka_power < 75 }
-				NOT = { check_variable = { MAR_Okhranka_power < 25 } }
-			}
-			custom_effect_tooltip = MAR_vyt_oper_small_w_tt
-		}
-		if = { 
-			limit = { check_variable = { MAR_Okhranka_power > 75 } }
-			custom_effect_tooltip = MAR_vyt_oper_fail_tt
-		}
 		hidden_effect = {
-			if = { 
-				limit = { check_variable = { MAR_Okhranka_power < 25 } }
-				country_event = { id = MAR_initial.24 days = 3 }
-			}
-			if = { 
+			IF = {
 				limit = {
-					check_variable = { MAR_Okhranka_power < 75 }
-					NOT = { check_variable = { MAR_Okhranka_power < 25 } }
+					check_variable = {
+						MAR.MAR_Okhranka_power < MAR.MAR_MGB_var_resources_second_threshold
+					}
 				}
-				country_event = { id = MAR_initial.25 days = 4 }
+				country_event = {
+					id = MAR_initial.24
+				}
+				set_country_flag = MAR_MGB_resources_operation_success_flag
 			}
-			if = { 
-				limit = { check_variable = { MAR_Okhranka_power > 75 } }
-				country_event = { id = MAR_initial.27 days = 6 }
+			IF = {
+				limit = {
+					NOT = {
+						check_variable = {
+							MAR.MAR_Okhranka_power < MAR.MAR_MGB_var_resources_second_threshold
+						}
+					}
+					check_variable = {
+						MAR.MAR_Okhranka_power < MAR.MAR_MGB_var_resources_threshold
+					}
+				}
+				country_event = {
+					id = MAR_initial.25
+				}
+				set_country_flag = MAR_MGB_resources_operation_success_flag
+			}
+			IF = {
+				limit = {
+					NOT = {
+						check_variable = {
+							MAR.MAR_Okhranka_power < MAR.MAR_MGB_var_resources_threshold
+						}
+					}
+				}
+				country_event = {
+					id = MAR_initial.27
+				}
 			}
 		}
+		set_country_flag = MAR_MGB_resources_operation_complete_flag
+		custom_effect_tooltip = MAR_MGB_resources_operation_status_tt
 	}
 }
 
@@ -510,6 +520,7 @@ shared_focus = {
 	y = 5
 	completion_reward = {
 		country_event = { id = MAR_initial.14 days = 0 }
+		custom_effect_tooltip = MAR_children_can_redempt_decision_tt
 	}
 }
 
@@ -610,13 +621,15 @@ shared_focus = {
 	y = 7
 	completion_reward = {
 		country_event = { id = MAR_initial.19 days = 2 }
-		set_temp_variable = { temp_connections_gained = -12 }
+		custom_effect_tooltip = MAR_destroy_okhranka_cells_decision_tt
+		set_temp_variable = { temp_connections_gained = -10 }
 		MAR_Okhranka_connections_change = yes
-		set_temp_variable = { temp_agents_gained = -120 }
-		MAR_Okhranka_agents_change = yes
-		add_popularity = {
-			ideology = paternalism_1
-			popularity = -0.06
+		custom_effect_tooltip = MAR_destroy_okhranka_cells_popularity_tt
+		hidden_effect = {
+			add_popularity = {
+				ideology = paternalism_1
+				popularity = -0.06
+			}
 		}
 	}
 }
@@ -636,6 +649,7 @@ shared_focus = {
 	y = 7
 	completion_reward = {
 		country_event = { id = MAR_initial.20 days = 2 }
+		custom_effect_tooltip = MAR_defend_the_populace_decision_tt
 		custom_effect_tooltip = MAR_defend_aganist_ariev
 		hidden_effect = { 
 			398 = {
@@ -665,6 +679,8 @@ shared_focus = {
 		}
 	}
 }
+
+###Military tree###
 
 shared_focus = {
 	id = MAR_army_condition
@@ -899,39 +915,52 @@ shared_focus = {
 	x = 16
 	y = 5
 	completion_reward = {
-		custom_effect_tooltip = MAR_check_vyatka_vibe_tt
-		if = { 
-			limit = { check_variable = { MAR_Okhranka_power < 25 } }
-			custom_effect_tooltip = MAR_vyt_oper_total_w_tt
-		}
-		if = { 
-			limit = {
-				check_variable = { MAR_Okhranka_power < 75 }
-				NOT = { check_variable = { MAR_Okhranka_power < 25 } }
-			}
-			custom_effect_tooltip = MAR_vyt_oper_small_w_tt
-		}
-		if = { 
-			limit = { check_variable = { MAR_Okhranka_power > 75 } }
-			custom_effect_tooltip = MAR_vyt_oper_fail_tt
-		}
 		hidden_effect = {
-			if = { 
-				limit = { check_variable = { MAR_Okhranka_power < 25 } }
-				country_event = { id = MAR_initial.48 days = 3 }
-			}
-			if = { 
+			IF = {
 				limit = {
-					check_variable = { MAR_Okhranka_power < 75 } 
-					NOT = { check_variable = { MAR_Okhranka_power < 25 } } 
+					check_variable = {
+						MAR.MAR_Okhranka_power < MAR.MAR_MGB_var_advisors_second_threshold
+					}
 				}
-				country_event = { id = MAR_initial.49 days = 4 }
+				country_event = {
+					id = MAR_initial.48
+					days = 0
+				}
+				set_country_flag = MAR_MGB_advisors_operation_success_flag
 			}
-			if = { 
-				limit = { check_variable = { MAR_Okhranka_power > 75 } }
-				country_event = { id = MAR_initial.50 days = 6 }
+			IF = {
+				limit = {
+					NOT = {
+						check_variable = {
+							MAR.MAR_Okhranka_power < MAR.MAR_MGB_var_advisors_second_threshold
+						}
+					}
+					check_variable = {
+						MAR.MAR_Okhranka_power < MAR.MAR_MGB_var_advisors_threshold
+					}
+				}
+				country_event = {
+					id = MAR_initial.49
+					days = 0
+				}
+				set_country_flag = MAR_MGB_advisors_operation_success_flag
+			}
+			IF = {
+				limit = {
+					NOT = {
+						check_variable = {
+							MAR.MAR_Okhranka_power < MAR.MAR_MGB_var_advisors_threshold
+						}
+					}
+				}
+				country_event = {
+					id = MAR_initial.50
+					days = 0
+				}
 			}
 		}
+		set_country_flag = MAR_MGB_advisors_operation_complete_flag
+		custom_effect_tooltip = MAR_MGB_advisors_operation_status_tt
 	}
 }
 shared_focus = {
@@ -983,38 +1012,27 @@ shared_focus = {
 	x = 9
 	y = 8
 	completion_reward = {
-		TNO_improve_admin_efficiency_low = yes
-		if = {
-			limit = { check_variable = { MAR_MGB_vyatka_angry = 2 } }
-			if = {
-				limit = { check_variable = { MAR_Okhranka_power < 15 } }
-				country_event = { id = MAR_initial.52 days = 2 }
+		hidden_effect = {
+			IF = {
+				limit = {
+					check_variable = {
+						MAR.MAR_Okhranka_power < MAR.MAR_MGB_var_liberation_threshold
+					}
+				}
+				country_event = {
+					id = MAR_initial.52
+					days = 0
+				}
 			}
-			else = {
-				country_event = { id = MAR_initial.53 days = 2 }
-			}
-		}
-		if = {
-			limit = { check_variable = { MAR_MGB_vyatka_angry = 1 } }
-			if = {
-				limit = { check_variable = { MAR_Okhranka_power < 35 } }
-				country_event = { id = MAR_initial.52 days = 2 }
-			}
-			else = {
-				country_event = { id = MAR_initial.53 days = 2 }
+			ELSE = {
+				country_event = {
+					id = MAR_initial.53
+					days = 0
+				}
 			}
 		}
-		if = {
-			limit = { check_variable = { MAR_MGB_vyatka_angry = 0 } }
-			if = {
-				limit = { check_variable = { MAR_Okhranka_power < 60 } }
-				country_event = { id = MAR_initial.52 days = 2 }
-			}
-			else = {
-				country_event = { id = MAR_initial.53 days = 2 }
-			}
-		}
-		clr_country_flag = MAR_MGB_available
+		custom_effect_tooltip = MAR_MGB_liberation_operation_status_tt
+		MAR_MGB_clear_flags = yes
 	}
 }
 
