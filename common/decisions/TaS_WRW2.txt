@@ -510,7 +510,7 @@ TaS_WRW2_fate_and_coring_of_territories = {
 				add_state_core = 408
 			}
 			if = {
-				RUS = { NOT = { has_country_flag = FE_double_administrartion } }
+				limit = { RUS = { NOT = { has_country_flag = FE_double_administrartion } } }
 				add_state_core = 809
 			}
 			add_stability = 0.025
@@ -3378,9 +3378,9 @@ TaS_SWRW_far_eastern_negotiations = {
 			set_temp_variable = { pus_temp = 3 }
 			econ_pus_change = yes
 			TNO_improve_trade_laws_policy_effectiveness_med = yes
-			TNO_worsen_trade_unions_policy_effectiveness_low = yes
-			TNO_worsen_regulations_policy_effectiveness_low = yes
-			TNO_worsen_safety_policy_effectiveness_low = yes
+			TNO_worsen_trade_unions_policy_effectiveness_med = yes
+			TNO_worsen_regulations_policy_effectiveness_med = yes
+			TNO_worsen_max_workhours_policy_effectiveness_med = yes
 			563 = {
 				add_building_construction = {
 					type = infrastructure
