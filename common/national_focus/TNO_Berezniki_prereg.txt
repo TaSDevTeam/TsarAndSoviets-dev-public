@@ -700,6 +700,12 @@ shared_focus = {
 	y = 3
 	completion_reward = {
 		country_event = { id = MAR_initial.39 days = 2 }
+		hidden_effect = {
+			country_event = {
+				id = MAR_initial.60
+				days = 14
+			}
+		}
 		custom_effect_tooltip = MAR_army_upgrade_tt
 	}
 }
@@ -721,10 +727,6 @@ shared_focus = {
 	x = 14
 	y = 4
 	completion_reward = {
-		swap_ideas = {
-			remove_idea = MAR_oldfashion_army_1
-			add_idea = MAR_oldfashion_army_2
-		}
 		add_opinion_modifier = {
 			target = USA
 			modifier = MAR_old_svyazi
@@ -734,6 +736,10 @@ shared_focus = {
 				target = MAR
 				modifier = MAR_old_svyazi
 			}
+		}
+		swap_ideas = {
+			remove_idea = MAR_oldfashion_army_1
+			add_idea = MAR_oldfashion_army_2
 		}
 		country_event = { id = MAR_initial.40 days = 3 }
 		add_political_power = 30
@@ -755,6 +761,19 @@ shared_focus = {
 	y = 5
 	completion_reward = {
 		country_event = { id = MAR_initial.41 days = 7 }
+		hidden_effect = {
+			398 = {
+				create_unit = {
+					division = "division_template = \"Dzhentelmeni Udachi\" start_experience_factor = 0.5 start_equipment_factor = 1.0"
+					owner = MAR
+				}
+				create_unit = {
+					division = "division_template = \"Dzhentelmeni Udachi\" start_experience_factor = 0.5 start_equipment_factor = 1.0"
+					owner = MAR
+				}
+			}
+		}
+		custom_effect_tooltip = MAR_fortune_gentlemen_tt
 	}
 }
 
@@ -773,6 +792,18 @@ shared_focus = {
 	y = 6
 	completion_reward = {
 		country_event = { id = MAR_initial.42 days = 0 }
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 550
+		}
+		add_equipment_to_stockpile = { 
+			type = support_equipment 
+			amount = 200
+		}
+		add_equipment_to_stockpile = { 
+			type = anti_tank_equipment 
+			amount = 200
+		}
 	}
 }
 
@@ -791,14 +822,12 @@ shared_focus = {
 	y = 6
 	completion_reward = {
 		country_event = { id = MAR_initial.43 days = 0 }
-		tno_training_improve = yes
-		set_variable = { tno_training_effectiveness = 39 } 
-		TNO_update_policy_effectiveness = yes
 		add_tech_bonus = {
 			bonus = 0.5
 			uses = 2
 			category = special_forces_tech
 		}
+		TNO_improve_army_professionalism_med = yes
 	}
 }
 
@@ -825,11 +854,11 @@ shared_focus = {
 			add_idea = MAR_oldfashion_army_2
 		}
 		add_doctrine_cost_reduction = {
-				name = land_doc_bonus
-				cost_reduction = 0.6
-				uses = 1
-				category = land_doctrine
-			}
+			name = land_doc_bonus
+			cost_reduction = 0.6
+			uses = 1
+			category = land_doctrine
+		}
 	}
 }
 
@@ -848,15 +877,19 @@ shared_focus = {
 	y = 5
 	completion_reward = {
 		country_event = { id = MAR_initial.45 days = 0 }
-		add_political_power = 5
-		add_corps_commander_role = {
-			character = MAR_Anatoliy_Pepelyayev
-			traits = { old_guard }
-			skill = 4
-			attack_skill = 4
-			defense_skill = 3
-			planning_skill = 4
-			logistics_skill = 3
+		add_political_power = 25
+		custom_effect_tooltip = MAR_cossacks_brigades_tt
+		hidden_effect = {
+			398 = {
+				create_unit = {
+					division = "division_template = \"Motorizovannaya Kazachya Brigada\" start_experience_factor = 0.9 start_equipment_factor = 0.75"
+					owner = MAR
+				}
+				create_unit = {
+					division = "division_template = \"Motorizovannaya Kazachya Brigada\" start_experience_factor = 0.9 start_equipment_factor = 0.75"
+					owner = MAR
+				}
+			}
 		}
 	}
 }
@@ -879,6 +912,7 @@ shared_focus = {
 		add_ideas = {
 			MAR_komissars_in_army
 		}
+		TNO_improve_army_professionalism_low = yes
 	}
 }
 
@@ -898,6 +932,12 @@ shared_focus = {
 	completion_reward = {
 		country_event = { id = MAR_initial.46 days = 0 }
 		army_experience = 5
+		add_doctrine_cost_reduction = {
+			name = land_doc_bonus
+			cost_reduction = 0.6
+			uses = 1
+			category = land_doctrine
+		}
 	}
 }
 
@@ -972,20 +1012,27 @@ shared_focus = {
 		factor = 1
 	}
 	prerequisite = {
-		focus = MAR_humanitarian_supplies
-		focus = MAR_veterans_of_wrw
-	}
-	prerequisite = {
-		focus = MAR_russian_spec_ops
-		focus = MAR_tsarist_comissars
-	}
-	prerequisite = {
 		focus = MAR_arest_vyatkatard_instructors
+	}
+	prerequisite = {
+		focus = MAR_veterans_of_wrw
+		focus = MAR_humanitarian_supplies
+	}
+	prerequisite = {
+		focus = MAR_tsarist_comissars
+		focus = MAR_russian_spec_ops
 	}
 	x = 16
 	y = 7
 	completion_reward = {
 		country_event = { id = MAR_initial.51 days = 0 }
+		swap_ideas = {
+			add_idea = MAR_renewed_army
+			remove_idea = MAR_oldfashion_army_2
+		}
+		tno_training_improve = yes
+		set_variable = { tno_training_effectiveness = 39 } 
+		TNO_update_policy_effectiveness = yes
 	}	
 }
 

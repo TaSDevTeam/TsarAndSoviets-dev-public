@@ -821,16 +821,6 @@ country_event = { #mercs time
 	option = { #
 		name = MAR_initial.41.a
 		ai_chance = { factor = 1 }
-		398 = {
-			create_unit = {
-				division = "division_template = \"Dzhentelmeni Udachi\" start_experience_factor = 0.5 start_equipment_factor = 1.0"
-				owner = MAR
-			}
-			create_unit = {
-				division = "division_template = \"Dzhentelmeni Udachi\" start_experience_factor = 0.5 start_equipment_factor = 1.0"
-				owner = MAR
-			}
-		}
 		MAR_Sergey_Belozerskiy = {
 			add_attack = 1
 			add_logistics = 2
@@ -855,18 +845,6 @@ country_event = { #"""humanitarian""" supply
 	option = { #
 		name = MAR_initial.42.a
 		ai_chance = { factor = 1 }
-		add_equipment_to_stockpile = {
-			type = infantry_equipment
-			amount = 550
-		}
-		add_equipment_to_stockpile = { 
-			type = support_equipment 
-			amount = 200
-		}
-		add_equipment_to_stockpile = { 
-			type = anti_tank_equipment 
-			amount = 200
-		}
 	}
 }
 
@@ -916,16 +894,6 @@ country_event = { #cossack-comrades
 	option = { #
 		name = MAR_initial.45.a
 		ai_chance = { factor = 1 }
-		398 = {
-			create_unit = {
-				division = "division_template = \"Kazachya Brigada\" start_experience_factor = 0.9 start_equipment_factor = 0.75"
-				owner = MAR
-			}
-			create_unit = {
-				division = "division_template = \"Kazachya Brigada\" start_experience_factor = 0.9 start_equipment_factor = 0.75"
-				owner = MAR
-			}
-		}
 	}
 }
 
@@ -942,14 +910,6 @@ country_event = { #old days
 	option = { #
 		name = MAR_initial.46.a
 		ai_chance = { factor = 1 }
-		add_doctrine_cost_reduction = {
-				name = land_doc_bonus
-				cost_reduction = 0.6
-				uses = 1
-				category = land_doctrine
-			}
-		TNO_improve_army_professionalism_high = yes
-		TNO_improve_army_professionalism_high = yes
 	}
 }
 
@@ -966,17 +926,6 @@ country_event = { #tsarskiy politruk
 	option = { #
 		name = MAR_initial.47.a
 		ai_chance = { factor = 1 }
-		add_ideas = { MAR_komissars_in_army }
-		MAR_Timur_Frunze = {
-			add_corps_commander_role = {
-				traits = { infantry_officer }
-				skill = 1
-				attack_skill = 1
-				defense_skill = 2
-				planning_skill = 2
-				logistics_skill = 1
-			}
-		}
 	}
 }
 
@@ -1067,13 +1016,19 @@ country_event = { #new armee
 	option = { #
 		name = MAR_initial.51.a
 		ai_chance = { factor = 1 }
-		swap_ideas = {
-			add_idea = MAR_renewed_army
-			remove_idea = MAR_oldfashion_army_2
-		}
 		MAR_Semen_Gitler = {
 			add_corps_commander_role = {
 				traits = { trait_engineer }
+				skill = 1
+				attack_skill = 1
+				defense_skill = 2
+				planning_skill = 2
+				logistics_skill = 1
+			}
+		}
+		MAR_Timur_Frunze = {
+			add_corps_commander_role = {
+				traits = { infantry_officer }
 				skill = 1
 				attack_skill = 1
 				defense_skill = 2
@@ -1289,6 +1244,27 @@ country_event = { #Yurla fail
 		}
 		custom_effect_tooltip = MAR_MGB_ROVS_expansion_tt
 		MAR_MGB_shake_the_souverinity = yes
+	}
+}
+
+country_event = { #Bye, Peps
+	id = MAR_initial.60
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_initial.60" }
+	title = MAR_initial.60.t
+	desc = MAR_initial.60.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #Sad, isn't it?
+		name = MAR_initial.60.a
+		ai_chance = { factor = 1 }
+		retire_character = MAR_Anatoliy_Pepelyayev
+		delete_unit_template_and_units = {
+			division_template = "Kazachya Brigada"
+			disband = yes
+		}
 	}
 }
 
