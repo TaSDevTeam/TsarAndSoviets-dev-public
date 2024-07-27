@@ -1899,7 +1899,7 @@
  SWRW_increased_arms_prodution_desc:0 "Вступая в самую крупную войну со времён Первой Западнорусской, во имя существования России мы обязаны выжать максимум из того военно-промышленного комплекса, который выстраивали ещё со времён, когда наша власть ограничивалась лишь окрестностями Березников. Либо мы разогреем свою индустрию до того, чтобы выпускать больше винтовок, снарядов и танков, чем немцы, либо наша Родина в очередной раз будет разбита как прежде при Николае и Бухарине. Пусть даже придётся пойти по жёстким рельсам мер военного времени, но альтернативой является дорога в пропасть с падением на свалку истории, на которой уж всяко приятнее будет видеть орла Адлера, а не двуглавого. Более века тень висела над русским оружием, и настала пора исправить эту ошибку, дав ему воссиять пуще, чем когда-либо прежде."
  
  TaS_WRW2_radars_constuction:0 "Строительство радаров"
- TaS_WRW2_radars_constuction_desc:0 "Радары - наши глаза и уши ещё со времён войн за объединение России. А уж про будущую войну с Германией и говорить не стоит.\n\nДругое дело состоит в том, что у нас нет того количества радаров, благодаря которым мы может противостоять Рейху. Поэтому, строительство радаров является одной из наших приоритетных задач для разгрома Германии.\n\n"
+ TaS_WRW2_radars_constuction_desc:0 "Радары - наши глаза и уши ещё со времён войн за объединение России. А уж про будущую войну с Германией и говорить не стоит.\n\nДругое дело состоит в том, что у нас нет того количества радаров, благодаря которым мы может противостоять Рейху. Поэтому, строительство радаров является одной из наших приоритетных задач для разгрома Германии."
  Tas_WRW2_radars_tt:0 "§JРадары§! §Gпозволят нам§! видеть насквозь любые передвижение врага.\n"
  
  #cat two
@@ -2003,10 +2003,10 @@
  TaS_WRW2_exhausion_modifier_GER:0 "Апофеоз войны"
  TaS_WRW2_exhausion_modifier_RUS:0 "Апофеоз войны"
  
- russian_title_loc:0 "§Y[RUS.GetNameDef]§! [RUS.GetFlag]"
+ russian_title_loc:0 "§Y[RUS.GetNameDef][RUS.GetFlag]§!"
  TaS_RUS_war_exhaustion_info_tt:0 "Текущий уровень §Bрусского§! военного истощения: [?RUS.WRW2_devastation]%\n-------------\nЭто даёт следующие негативные последствия:\n\nПрирост политической власти: [?RUS.WRW2_exhausion_political_power_factor|R%]\nОрганизация дивизий: [?RUS.WRW2_exhausion_army_org_factor|R%]\nСкорость строительства: [?RUS.WRW2_exhausion_production_speed_buildings_factor|R%]\nБазовая эффективность производства: [?RUS.WRW2_exhausion_production_factory_start_efficiency_factor|R%]\nАтака дивизий: [?RUS.WRW2_exhausion_army_attack_factor|R%]\nЗащита дивизий: [?RUS.WRW2_exhausion_army_defence_factor|R%]\nОбъём заводского производства: [?RUS.WRW2_exhausion_industrial_capacity_factory|R%]\nСкорость пополнения: [?RUS.WRW2_exhausion_land_reinforce_rate|R%]\nНужно гарнизонов: [?RUS.WRW2_exhausion_required_garrison_factor|G%]\nВоеннообязанное население: [?RUS.WRW2_exhausion_recruitable_population_factor|R%]\nНалогооблагаемое население: [?RUS.WRW2_exhausion_taxable_population_modifier|R%]"
  
- german_title_loc:0 "[GER.GetFlag] §Y[GER.GetName]§!"
+ german_title_loc:0 "§Y[GER.GetFlag][GER.GetName]§!"
  TaS_GER_war_exhaustion_info_tt:0 "Текущий уровень §gнемецкого§! военного истощения: [?GER.WRW2_devastation]%\n-------------\nЭто даёт следующие негативные последствия:\n\nПрирост политической власти:   [?GER.WRW2_exhausion_political_power_factor|R%]\nОрганизация дивизий: [?GER.WRW2_exhausion_army_org_factor|R%]\nСкорость строительства: [?GER.WRW2_exhausion_production_speed_buildings_factor|R%]\nБазовая эффективность производства: [?GER.WRW2_exhausion_production_factory_start_efficiency_factor|R%]\nАтака дивизий: [?GER.WRW2_exhausion_army_attack_factor|R%]\nЗащита дивизий: [?GER.WRW2_exhausion_army_defence_factor|R%]\nОбъём заводского производства: [?GER.WRW2_exhausion_industrial_capacity_factory|R%]\nСкорость пополнения: [?GER.WRW2_exhausion_land_reinforce_rate|R%]\nНужно гарнизонов: [?GER.WRW2_exhausion_required_garrison_factor|R%]\nВоеннообязанное население: [?GER.WRW2_exhausion_recruitable_population_factor|R%]\nНалогооблагаемое население: [?GER.WRW2_exhausion_taxable_population_modifier|R%]"
     
  frontlines_button_name:0 "Передовая"
@@ -2150,8 +2150,8 @@
  MAR_the_second_patriotic_war:0 "Вторая Отечественная Война"
  MAR_the_last_fight:0 "Последний бой"
  MAR_white_are_we:0 "Белые мы!"
- MAR_red_are_we:0 "Красный мы!"
- MAR_russians_are_we:0 "Русские!"
+ MAR_red_are_we:0 "Красные мы!"
+ MAR_russians_are_we:0 "Русские мы!"
  MAR_imperial_nostalgia:0 "Ностальгия по империи"
  MAR_for_our_grandfathers:0 "Во имя дедов..."
  MAR_onwards_bogatyrs:0 "Вперёд, богатыри!"
@@ -2164,12 +2164,6 @@
  MAR_patchwork_chimera:0 "Лоскутная Химера"
  MAR_we_have_won:0 "Мы победили"
  
- MAR_cold_world:0 "Cold World"
- MAR_avesta_of_black_and_white:0 "Avesta Of Black And White"
- MAR_golden_fantasia:0 "Golden Fantasia"
- MAR_melty_blood:0 "Melty Blood"
- MAR_we_shall_all_go_to_heaven:0 "We Shall All Go To Heaven"
-
  MAR_the_second_patriotic_war_desc:0 ""
  MAR_the_last_fight_desc:0 ""
  MAR_white_are_we_desc:0 ""
@@ -2187,11 +2181,17 @@
  MAR_patchwork_chimera_desc:0 ""
  MAR_we_have_won_desc:0 ""
  
- MAR_cold_world_desc:0 "Холодный мир"
- MAR_avesta_of_black_and_white_desc:0 "Чёрно-белая Авеста"
- MAR_golden_fantasia_desc:0 "Золотая Фантазия"
- MAR_melty_blood_desc:0 "Тающая Кровь"
- MAR_we_shall_all_go_to_heaven_desc:0 "Все мы попадём в рай..."
+ MAR_cold_world:0 "Холодный мир"
+ MAR_avesta_of_black_and_white:0 "Чёрно-белая Авеста"
+ MAR_golden_fantasia:0 "Золотая Фантазия"
+ MAR_melty_blood:0 "Тающая Кровь"
+ MAR_we_shall_all_go_to_heaven:0 "Все мы попадём в рай..."
+ 
+ MAR_cold_world_desc:0 ""
+ MAR_avesta_of_black_and_white_desc:0 ""
+ MAR_golden_fantasia_desc:0 ""
+ MAR_melty_blood_desc:0 ""
+ MAR_we_shall_all_go_to_heaven_desc:0 ""
 
  GER_battle_of_civilizations:0 "Столкновение цивилизаций"
  GER_their_bestial_nature:0 "Их зверинная натура"
@@ -2206,18 +2206,6 @@
  GER_blood_for_the_machine:0 "Кровь для машины"
  GER_united_in_purpose:0 "Единая цель"
  GER_ultimate_victory:0 "Окончательная победа"
- 
- GER_fire_in_the_east:0 "Восточный пожар"
- GER_graveyard_of_the_empires:0 "Кладбище империй"
- GER_mountains_of_madness:0 "Хребты безумия"
- GER_burning_breadbasket:0 "Горящая житница"
- GER_baltic_citadel:0 "Балтийская цитадель"
- 
- GER_daseinkampf:0 "Daseinkampf"
- GER_dies_irae:0 "Dies Irae"
- GER_when_they_cry:0 "Когда они плачут"
- GER_stay_night:0 "Ночь схатки"
- GER_GOTTERDAMMERUNG:0 "Сумерки Богов"
 
  GER_battle_of_civilizations_desc:0 ""
  GER_their_bestial_nature_desc:0 ""
@@ -2232,11 +2220,25 @@
  GER_blood_for_the_machine_desc:0 ""
  GER_united_in_purpose_desc:0 ""
  GER_ultimate_victory_desc:0 ""
+ 
+ GER_fire_in_the_east:0 "Восточный пожар"
+ GER_graveyard_of_the_empires:0 "Кладбище империй"
+ GER_mountains_of_madness:0 "Хребты безумия"
+ GER_burning_breadbasket:0 "Горящая житница"
+ GER_baltic_citadel:0 "Балтийская цитадель"
+ 
  GER_fire_in_the_east_desc:0 ""
  GER_graveyard_of_the_empires_desc:0 ""
  GER_mountains_of_madness_desc:0 ""
  GER_burning_breadbasket_desc:0 ""
  GER_baltic_citadel_desc:0 ""
+
+ GER_daseinkampf:0 "Daseinkampf"
+ GER_dies_irae:0 "Dies Irae"
+ GER_when_they_cry:0 "Когда они плачут"
+ GER_stay_night:0 "Ночь схатки"
+ GER_GOTTERDAMMERUNG:0 "Сумерки Богов"
+ 
  GER_daseinkampf_desc:0 ""
  GER_dies_irae_desc:0 ""
  GER_when_they_cry_desc:0 ""
@@ -2475,7 +2477,7 @@
  TaS_GERCollapse.34.d:0 ""
  TaS_GERCollapse.34.a:0 ""
 
- TaS_GERCollapse_news.1.t:0 "[Get_newspaper_header]"
+ TaS_GERCollapse_news.1.t:0 "[Get_newspaper_header]Кризис в Вольксхалле"
  TaS_GERCollapse_news.1.d:0 "Предсказуемые новости приходят из Зала Народов. Во время экстренного заседании конгресса по теме недавнего поражения, Великогерманский Рейх определял срочные меры послевоенного восстановления, в ходе чего значительная часть выступления была посвящена необходимости выискать всех предателей нации, чьи действия привели к поражению во Второй Западно-Русской войне. Начавшееся следствие уже определило множество подозреваемых, и [GER.GetLeader]  предал огласке их имена в своём выступлении.\n\nНесмотря на статус Фюрера, политический авторитет немецкого лидера был значительно подорван за недавнее время, отчего множество фракций выразили недовольство, и планировавшиеся задержания были отменены. Лишь действия охраны заседания смогли привести в порядок бурлящих членов собрания, находившихся на грани рукоприкладства. Зал Народов не смог прийти к единому мнению, а заседание преждевременно завершено."
  TaS_GERCollapse_news.1.a:0 "Рейхсадлер падает подстреленным"
 
@@ -2551,7 +2553,7 @@
  TaS_GERCollapse_news.22.d:0 ""
  TaS_GERCollapse_news.22.a:0 ""
 
- TaS_GERCollapse_news.23.t:0 "[Get_newspaper_header]Исландский кризис"
+ TaS_GERCollapse_news.23.t:0 "[Get_newspaper_header]Исландский ракетный кризис"
  TaS_GERCollapse_news.23.d:0 "Тревожные новости приходят с обледеневших территорий Исландии пока весь мир медленно приходит в норму после поражения Рейха во Второй Западнорусской войне. Неизвестная баллистическая ракеты была сбита над городом Хёбн. По имеющейся информации несмотря на то, что сама ракета была оперативно нейтрализована системами ПВО её осколки всё-таки, повредили городскую мэрию и вызвали возгорание в здании. На данный момент известно об одном погибшем и нескольких раненых, на месте крушения сейчас работают службы первой помощи.\n\nПредварительные анализы обломков говорят, что они, скорее всего, являются обломками ракеты серии ФАУ. Правительство Исландии запросило объяснений по данной ситуации от официальных представителей Третьего Рейха, однако посольство и официальные лица продолжают хранить молчание. Похоже, что даже после окончания Второй Западнорусской войны над миром продолжает висеть тень мирового конфликта."
  TaS_GERCollapse_news.23.a:0 "Агония Рейха продолжается"
 
