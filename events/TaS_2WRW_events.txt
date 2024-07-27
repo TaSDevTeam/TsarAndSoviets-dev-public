@@ -5,7 +5,7 @@ add_namespace = MAR_territorial_fate
 add_namespace = MAR_AFG
 add_namespace = MAR_ultimatums
 add_namespace = MAR_2WRW_world_news
-
+add_namespace = TaS_SWRW
 ###2WRW stuff
 #MAR_2WRW
 
@@ -1630,6 +1630,7 @@ country_event = { #Offer surrender
 		}
 	option = { #no #goes nuke
 		name = MAR_2WRW.5.b
+		custom_effect_tooltip = MAR_2WRW_gone_wrong_tt
 		country_event = { id = MAR_2WRW.7 days = 3 }
 	}
 }
@@ -4451,3 +4452,346 @@ news_event = { #Rip the Tsar
 		name = MAR_2WRW_world_news.39.a
 	}
 }
+
+#### SWRW misc events 
+
+country_event = { #
+	id = TaS_SWRW.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.1" }
+	title = TaS_SWRW.1.t
+	desc = TaS_SWRW.1.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = TaS_SWRW.1.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = TaS_SWRW.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.2" }
+	title = TaS_SWRW.2.t
+	desc = TaS_SWRW.2.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = TaS_SWRW.2.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = TaS_SWRW.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.3" }
+	title = TaS_SWRW.3.t
+	desc = TaS_SWRW.3.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = TaS_SWRW.3.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = TaS_SWRW.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.4" }
+	title = TaS_SWRW.4.t
+	desc = TaS_SWRW.4.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = TaS_SWRW.4.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = TaS_SWRW.5
+	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.5" }
+	title = TaS_SWRW.5.t
+	desc = TaS_SWRW.5.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = TaS_SWRW.5.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = TaS_SWRW.6
+	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.6" }
+	title = TaS_SWRW.6.t
+	desc = TaS_SWRW.6.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = TaS_SWRW.6.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = TaS_SWRW.7
+	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.7" }
+	title = TaS_SWRW.7.t
+	desc = TaS_SWRW.7.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = TaS_SWRW.7.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = TaS_SWRW.8
+	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.8" }
+	title = TaS_SWRW.8.t
+	desc = TaS_SWRW.8.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = TaS_SWRW.8.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = TaS_SWRW.9
+	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.9" }
+	title = TaS_SWRW.9.t
+	desc = TaS_SWRW.9.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = TaS_SWRW.9.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = TaS_SWRW.10
+	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.10" }
+	title = TaS_SWRW.10.t
+	desc = TaS_SWRW.10.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = TaS_SWRW.10.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = TaS_SWRW.11
+	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.11" }
+	title = TaS_SWRW.11.t
+	desc = TaS_SWRW.11.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = TaS_SWRW.11.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = TaS_SWRW.12
+	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.12" }
+	title = TaS_SWRW.12.t
+	desc = TaS_SWRW.12.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = TaS_SWRW.12.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = TaS_SWRW.13
+	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.13" }
+	title = TaS_SWRW.13.t
+	desc = TaS_SWRW.13.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = TaS_SWRW.13.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = TaS_SWRW.14
+	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.14" }
+	title = TaS_SWRW.14.t
+	desc = TaS_SWRW.14.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = TaS_SWRW.14.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = TaS_SWRW.15
+	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.15" }
+	title = TaS_SWRW.15.t
+	desc = TaS_SWRW.15.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = TaS_SWRW.15.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = TaS_SWRW.16
+	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.16" }
+	title = TaS_SWRW.16.t
+	desc = TaS_SWRW.16.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = TaS_SWRW.16.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = TaS_SWRW.17
+	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.17" }
+	title = TaS_SWRW.17.t
+	desc = TaS_SWRW.17.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = TaS_SWRW.17.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = TaS_SWRW.18
+	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.18" }
+	title = TaS_SWRW.18.t
+	desc = TaS_SWRW.18.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = TaS_SWRW.18.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = TaS_SWRW.19
+	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.19" }
+	title = TaS_SWRW.19.t
+	desc = TaS_SWRW.19.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = TaS_SWRW.19.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = TaS_SWRW.20
+	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.20" }
+	title = TaS_SWRW.20.t
+	desc = TaS_SWRW.20.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = TaS_SWRW.20.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
