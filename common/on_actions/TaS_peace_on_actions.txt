@@ -88,6 +88,7 @@ on_actions = {
 						}
 						AND = {
 							PFF = { NOT = { has_cosmetic_tag = PFF_Second_CW } }
+							PJP = { NOT = { has_country_flag = MAN_katastrophe } }
 						}
 					}
 					FROM = {
@@ -98,22 +99,8 @@ on_actions = {
 						}
 					}
 					MAN = {		
-						random_list = {
-							20 = { #Direct Japanese Control
-								country_event = {
-									id = MAR_Japan.7 days = 90
-								}
-							}
-							60 = { #civil war
-								country_event = {
-									id = MAR_Japan.1 days = 10
-								}
-							}
-							20 = { #katastrophe
-								country_event = {
-									id = MAR_Japan.8 days = 43
-								}
-							}
+						country_event = {
+							id = MAR_Japan.1 days = 30
 						}					
 					}
 					JAP = {
@@ -122,12 +109,14 @@ on_actions = {
 						set_temp_variable = { Victory_Points = -100 }
 						Cold_War_GUI_ManipulateVictory = yes
 						TaS_fopo_remove_far_eastern_revolt_tab = yes
+						set_temp_variable = { target = PJP }
+						TNO_clear_and_recall_volunteers = yes
 					}
 					MAR = {
 						if = {
 							limit = { has_government = despotism }
 							country_event = {
-								id = MAR_Japan.6 days = 2
+								id = MAR_Japan.17 days = 2
 							}
 						}
 						else_if = {
@@ -137,6 +126,8 @@ on_actions = {
 							}
 						}
 						TaS_fopo_remove_far_eastern_revolt_tab = yes
+						set_temp_variable = { target = PFF }
+						TNO_clear_and_recall_volunteers = yes
 					}
 					every_country  = {
 						news_event = {
@@ -155,6 +146,7 @@ on_actions = {
 						}
 						AND = {
 							PFF = { NOT = { has_cosmetic_tag = PFF_Second_CW } }
+							PJP = { NOT = { has_country_flag = MAN_katastrophe } }
 						}
 					}
 					FROM = {
@@ -169,6 +161,8 @@ on_actions = {
 						set_country_flag = MAR_has_primorie
 						TaS_fopo_remove_far_eastern_revolt_tab = yes
 						clr_country_flag = RUS_something_goes_wrong
+						set_temp_variable = { target = PFF }
+						TNO_clear_and_recall_volunteers = yes
 					}
 					JAP = {
 						transfer_state = 809
@@ -178,6 +172,8 @@ on_actions = {
 						set_temp_variable = { Victory_Points = 50 }
 						Cold_War_GUI_ManipulateVictory = yes
 						TaS_fopo_remove_far_eastern_revolt_tab = yes
+						set_temp_variable = { target = PJP }
+						TNO_clear_and_recall_volunteers = yes
 					}	
 					every_country  = {
 						news_event = {
@@ -201,6 +197,8 @@ on_actions = {
 					HAN = { exists = no }
 					PFF = { exists = no }
 					MJP = { exists = no }
+					
+					NOT = { PJP = { has_country_flag = MAN_katastrophe } }
 				}
 				FROM = {
 					econ_join_sphere_USA = yes
@@ -217,6 +215,8 @@ on_actions = {
 					set_temp_variable = { Victory_Points = 150 }
 					Cold_War_GUI_ManipulateVictory = yes
 					TaS_fopo_remove_manchurian_civil_war_tab = yes
+					set_temp_variable = { target = MAN }
+					TNO_clear_and_recall_volunteers = yes
 				}
 				JAP = {
 					set_temp_variable = { Victory_ID = 50 }
@@ -224,10 +224,16 @@ on_actions = {
 					set_temp_variable = { Victory_Points = -200 }
 					Cold_War_GUI_ManipulateVictory = yes
 					TaS_fopo_remove_manchurian_civil_war_tab = yes
+					set_temp_variable = { target = MJP }
+					TNO_clear_and_recall_volunteers = yes
 				}
 				MAR = {
 					TaS_fopo_remove_manchurian_civil_war_tab = yes
 					clr_country_flag = RUS_something_goes_wrong
+					set_temp_variable = { target = PFF }
+					TNO_clear_and_recall_volunteers = yes
+					set_temp_variable = { target = HAN }
+					TNO_clear_and_recall_volunteers = yes
 				}
 				set_global_flag = skip_default_capitulation
 			}
@@ -246,6 +252,8 @@ on_actions = {
 					PFF = { exists = no }
 					MAN = { exists = no }
 					MJP = { exists = no }
+					
+					NOT = { PJP = { has_country_flag = MAN_katastrophe } }
 				}
 				FROM = {
 					set_cosmetic_tag = HAN_cw_victory
@@ -261,6 +269,8 @@ on_actions = {
 					set_temp_variable = { Victory_Points = -50 }
 					Cold_War_GUI_ManipulateVictory = yes
 					TaS_fopo_remove_manchurian_civil_war_tab = yes
+					set_temp_variable = { target = MAN }
+					TNO_clear_and_recall_volunteers = yes
 				}
 				JAP = {
 					set_temp_variable = { Victory_ID = 50 }
@@ -268,6 +278,8 @@ on_actions = {
 					set_temp_variable = { Victory_Points = -250 }
 					Cold_War_GUI_ManipulateVictory = yes
 					TaS_fopo_remove_manchurian_civil_war_tab = yes
+					set_temp_variable = { target = MJP }
+					TNO_clear_and_recall_volunteers = yes
 				}
 				MAR = {
 					TaS_fopo_remove_manchurian_civil_war_tab = yes
@@ -276,6 +288,10 @@ on_actions = {
 						FROM = { econ_join_sphere_MAR = yes }
 					}
 					clr_country_flag = RUS_something_goes_wrong
+					set_temp_variable = { target = PFF }
+					TNO_clear_and_recall_volunteers = yes
+					set_temp_variable = { target = HAN }
+					TNO_clear_and_recall_volunteers = yes
 				}
 				HAN = {
 					set_capital = { state = 328 }
@@ -297,6 +313,8 @@ on_actions = {
 					HAN = { exists = no }
 					MAN = { exists = no }
 					MJP = { exists = no }
+					
+					NOT = { PJP = { has_country_flag = MAN_katastrophe } }
 				}
 				FROM = {
 					set_cosmetic_tag = MJP_JAP_autonomy
@@ -318,6 +336,8 @@ on_actions = {
 					set_temp_variable = { Victory_Points = -50 }
 					Cold_War_GUI_ManipulateVictory = yes
 					TaS_fopo_remove_manchurian_civil_war_tab = yes
+					set_temp_variable = { target = MAN }
+					TNO_clear_and_recall_volunteers = yes	
 				}
 				JAP = {
 					set_temp_variable = { Victory_ID = 50 }
@@ -325,10 +345,16 @@ on_actions = {
 					set_temp_variable = { Victory_Points = 150 }
 					Cold_War_GUI_ManipulateVictory = yes
 					TaS_fopo_remove_manchurian_civil_war_tab = yes
+					set_temp_variable = { target = MJP }
+					TNO_clear_and_recall_volunteers = yes
 				}
 				MAR = {
 					TaS_fopo_remove_manchurian_civil_war_tab = yes
 					clr_country_flag = RUS_something_goes_wrong
+					set_temp_variable = { target = PFF }
+					TNO_clear_and_recall_volunteers = yes
+					set_temp_variable = { target = HAN }
+					TNO_clear_and_recall_volunteers = yes
 				}
 				MJP = {
 					set_capital = { state = 328 }
@@ -351,6 +377,8 @@ on_actions = {
 					HAN = { exists = no }
 					MAN = { exists = no }
 					MJP = { exists = no }
+					
+					NOT = { PJP = { has_country_flag = MAN_katastrophe } }
 				}
 				every_country  = {
 					news_event = {
@@ -363,6 +391,8 @@ on_actions = {
 					set_temp_variable = { Victory_Points = -50 }
 					Cold_War_GUI_ManipulateVictory = yes
 					TaS_fopo_remove_manchurian_civil_war_tab = yes
+					set_temp_variable = { target = MAN }
+					TNO_clear_and_recall_volunteers = yes	
 				}
 				JAP = {
 					set_temp_variable = { Victory_ID = 50 }
@@ -370,6 +400,8 @@ on_actions = {
 					set_temp_variable = { Victory_Points = -200 }
 					Cold_War_GUI_ManipulateVictory = yes
 					TaS_fopo_remove_manchurian_civil_war_tab = yes
+					set_temp_variable = { target = MJP }
+					TNO_clear_and_recall_volunteers = yes
 				}
 				MAR = {
 					TaS_fopo_remove_manchurian_civil_war_tab = yes
@@ -378,6 +410,10 @@ on_actions = {
 						FROM = { econ_join_sphere_MAR = yes }
 					}
 					clr_country_flag = RUS_something_goes_wrong
+					set_temp_variable = { target = PFF }
+					TNO_clear_and_recall_volunteers = yes
+					set_temp_variable = { target = HAN }
+					TNO_clear_and_recall_volunteers = yes
 				}
 				PFF = {
 					set_capital = { state = 328 }
@@ -397,6 +433,8 @@ on_actions = {
 							original_tag = MJP
 						}
 					}
+			
+					NOT = { PJP = { has_country_flag = MAN_katastrophe } }
 				}
 				FROM = {
 					annex_country = {

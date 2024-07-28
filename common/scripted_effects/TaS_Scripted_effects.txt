@@ -691,6 +691,30 @@ first_every_month_script_TaS = {
 			TaS_SWRW_change_suspicion = yes
 		}
 	}
+	MJP = { 
+		if = {
+			limit = {
+				#NOT = { has_country_flag = MJP_reclamation_timeout }
+				#PJP = { has_country_flag = MAN_catastrophe }
+			}
+			random_list = {
+				1 = {
+					random_state = {
+						limit = {
+							is_owned_by = PJP
+						}
+						MJP = {
+							transfer_state = PREV
+							add_state_core = PREV
+						}	
+					}
+				}
+				1 = {
+					
+				}
+			}
+		}
+	}
 }
 first_every_day_script_TaS 	= {	
 	MAR = {

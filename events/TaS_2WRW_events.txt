@@ -342,12 +342,166 @@ country_event = { #Technical stuff no loc
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.1"}
 	title = MAR_Japan.1.t
 	desc = MAR_Japan.1.d
-	picture = GFX_report_event_collapse2
+	picture = GFX_report_event_peace_deal
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = {
 		name = MAR_Japan.1.a
+		ai_chance = { factor = 1 }
+		PJP = {
+			PJP_Hiromichi_Yahara = {
+				set_nationality = MAN
+			}
+		}
+		MAN = {
+			set_politics = {
+				ruling_party = ultranationalism
+				last_election = "1933.2.16"
+				election_frequency = 36
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = ultranationalism
+				popularity = 0.25
+			}
+			retire_country_leader = yes
+			add_country_leader_role = {
+				character = PJP_Hiromichi_Yahara
+				promote_leader = yes
+				country_leader = {
+					desc = "POLITICS_HIROMICHI_YAHARA_ONE_MORE_DESC"
+					ideology = ultranationalism_ultramilitarism_subtype
+					expire = "1999.1.1"
+					traits = { one_more_chance }
+				}
+			}
+			remove_ideas = Sphere_Fully_Dependent
+			remove_ideas = MAN_Partisans_In_East
+			
+			set_cosmetic_tag = MJP_JAP_autonomy
+			add_ideas = Sphere_Imp_Protectorate
+			
+			country_event = {
+				id = MAR_Japan.2 days = 26
+			}
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.33
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Technical stuff no loc
+	id = MAR_Japan.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.2"}
+	title = MAR_Japan.2.t
+	desc = MAR_Japan.2.d
+	picture = GFX_report_event_peace_deal
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = MAR_Japan.2.a
+		ai_chance = { factor = 1 }
+		1643 = { set_demilitarized_zone = yes }
+		1643 = { remove_core_of = MAN }
+		1643 = { add_core_of = PFF }
+		
+		801 = { set_demilitarized_zone = yes }
+		801 = { remove_core_of = MAN }
+		801 = { add_core_of = HAN }
+		
+		delete_unit = {
+			state = 1646
+			disband = no
+		}
+		delete_unit = {
+			state = 801
+			disband = no
+		}
+			
+		country_event = {
+			id = MAR_Japan.3 days = 16
+		}
+	}
+}
+
+country_event = { #Technical stuff no loc
+	id = MAR_Japan.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.3"}
+	title = MAR_Japan.3.t
+	desc = MAR_Japan.3.d
+	picture = GFX_report_event_peace_deal
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = MAR_Japan.3.a
+		ai_chance = { factor = 1 }
+		XYZ = {
+			MAN_Kuan_Chung = {
+				set_nationality = MAN
+			}
+		}
+		MAN = {
+			set_politics = {
+				ruling_party = despotism
+				last_election = "1933.2.16"
+				election_frequency = 36
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = despotism
+				popularity = 0.33
+			}
+			set_party_name = { 
+				ideology = despotism
+				long_name = MAN_cw_despotism_party_long
+				name = MAN_cw_despotism_party
+			}
+			retire_country_leader = yes
+			add_country_leader_role = {
+				character = MAN_Kuan_Chung
+				promote_leader = yes
+				country_leader = {
+					desc = "POLITICS_KUAN_CHUNG_DESC"
+					ideology = despotism_corporatocracy_subtype 
+					expire = "1999.1.1"
+					traits = { leader_in_name_only }
+				}
+			}
+			set_cosmetic_tag = MAN_Second_CW
+			remove_ideas = MAN_Chained_To_Rising_Sun
+		}
+		country_event = {
+			id = MAR_Japan.4 days = 21
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.34
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Technical stuff no loc
+	id = MAR_Japan.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.4"}
+	title = MAR_Japan.4.t
+	desc = MAR_Japan.4.d
+	picture = GFX_report_event_peace_deal
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = MAR_Japan.4.a
 		ai_chance = { factor = 1 }
 		MJP = {
 			set_cosmetic_tag = MJP_Second_CW
@@ -372,140 +526,35 @@ country_event = { #Technical stuff no loc
 				name = MJP_national_socialism_party
 			}
 		}
-		MAN = {
-			set_capital = { state = 328 }
-			remove_ideas = MAN_Kwantung_Army
-			retire_character = MAN_katakura_tadashi 
-			
-		}
 		
-		country_event = {
-			id = MAR_Japan.2 days = 17
-		}
-	}
-}
-country_event = { #Technical stuff no loc
-	id = MAR_Japan.2
-	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.2"}
-	title = MAR_Japan.2.t
-	desc = MAR_Japan.2.d
-	picture = GFX_report_event_collapse2
-	is_triggered_only = yes
-	fire_only_once = yes
-	
-	option = {
-		name = MAR_Japan.2.a
-		ai_chance = { factor = 1 }
-		XYZ = {
-			MAN_Kuan_Chung = {
-				set_nationality = MAN
-			}
-		}
-		MAN = {
-			set_politics = {
-				ruling_party = paternalism
-				last_election = "1933.2.16"
-				election_frequency = 36
-				elections_allowed = no
-			}
-			add_popularity = {
-				ideology = paternalism
-				popularity = 0.33
-			}
-			set_party_name = { 
-				ideology = paternalism
-				long_name = MAN_cw_paternalism_party_long
-				name = MAN_cw_paternalism_party
-			}
-			promote_character = MAN_Kuan_Chung	
-		}
-		country_event = {
-			id = MAR_Japan.3 days = 11
-		}
-	}
-} 
-country_event = { #Technical stuff no loc
-	id = MAR_Japan.3
-	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.3"}
-	title = MAR_Japan.3.t
-	desc = MAR_Japan.3.d
-	picture = GFX_report_event_collapse2
-	is_triggered_only = yes
-	fire_only_once = yes
-	
-	option = {
-		name = MAR_Japan.3.a
-		ai_chance = { factor = 1 }
-		HAN = {
-			set_cosmetic_tag = HAN_Second_CW
-			transfer_state = 801
-			add_state_core = 801
-			set_politics = {
-				ruling_party = despotism
-				last_election = "1933.2.16"
-				election_frequency = 36
-				elections_allowed = no
-			}
-			add_popularity = {
-				ideology = despotism
-				popularity = 0.29
-			}
-			HAN_Pujie = {
-				promote_character = yes
-			}
-			set_party_name = { 
-				ideology = despotism
-				long_name = HAN_despotism_party_long
-				name = HAN_despotism_party
-			}
-		}
-		PFF = {
-			set_cosmetic_tag = PFF_Second_CW
-			transfer_state = 1643
-			add_state_core = 1643
-			set_politics = {
-				ruling_party = communist
-				last_election = "1933.2.16"
-				election_frequency = 36
-				elections_allowed = no
-			}
-			add_popularity = {
-				ideology = communist
-				popularity = 0.47
-			}
-			PFF_Kim_Il_Sung = {
-				promote_character = yes
-			}
-			set_party_name = { 
-				ideology = communist
-				long_name = PFF_communist_party_long
-				name = PFF_communist_party
-			}
-		}
-		country_event = {
-			id = MAR_Japan.4 days = 11
-		}
-	}
-}
-country_event = { #Technical stuff no loc
-	id = MAR_Japan.4
-	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.4"}
-	title = MAR_Japan.4.t
-	desc = MAR_Japan.4.d
-	picture = GFX_report_event_collapse2
-	is_triggered_only = yes
-	fire_only_once = yes
-	
-	option = {	
-		name = MAR_Japan.4.a
-		ai_chance = { factor = 1 }
-		MAN = {
-			set_cosmetic_tag = MAN_Second_CW
-			leave_faction = yes
-			econ_leave_sphere = yes
-			remove_ideas = Sphere_Fully_Dependent
-			remove_ideas = MAN_Chained_To_Rising_Sun
-		}
+		715 = { set_demilitarized_zone = yes }
+		715 = { remove_core_of = MAN }
+		715 = { add_core_of = PFF }
+		
+		1637 = { set_demilitarized_zone = yes }
+		1637 = { remove_core_of = MAN }
+		1637 = { add_core_of = HAN }
+		
+		1638 = { set_demilitarized_zone = yes }
+		1638 = { remove_core_of = MAN }
+		1638 = { add_core_of = HAN }
+		
+		1639 = { set_demilitarized_zone = yes }
+		1639 = { remove_core_of = MAN }
+		1639 = { add_core_of = HAN }
+		
+		716 = { set_demilitarized_zone = yes }
+		716 = { remove_core_of = MAN }
+		716 = { add_core_of = MJP }
+		
+		1636 = { set_demilitarized_zone = yes }
+		1636 = { remove_core_of = MAN }
+		1636 = { add_core_of = MJP }
+		
+		1265 = { set_demilitarized_zone = yes }
+		1265 = { remove_core_of = MAN }
+		1265 = { add_core_of = MJP }
+		
 		MAN = {
 			delete_unit = {
 				state = 1643
@@ -571,18 +620,18 @@ country_event = { #Technical stuff no loc
 				state = 1636
 				disband = no
 			}
+			leave_faction = yes
+			econ_leave_sphere = yes
+			remove_ideas = MAN_Chained_To_Rising_Sun
+			remove_ideas = Sphere_Imp_Protectorate
 		}
-		every_state = {
-			limit = {
-				is_owned_by = MAN
-			}
-			set_demilitarized_zone = yes
-		}			
+		
 		country_event = {
-			id = MAR_Japan.5 days = 9
+			id = MAR_Japan.5 days = 21
 		}
 	}
 }
+
 country_event = { #Technical stuff no loc
 	id = MAR_Japan.5
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.5"}
@@ -598,28 +647,62 @@ country_event = { #Technical stuff no loc
 		#TaS_2WRW_spawn_divs_second_cw = yes
 		set_global_flag = TaS_MAN_second_cw
 		HAN = {
+			set_cosmetic_tag = HAN_Second_CW
+			set_politics = {
+				ruling_party = despotism
+				last_election = "1933.2.16"
+				election_frequency = 36
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = despotism
+				popularity = 0.29
+			}
+			HAN_Pujie = {
+				promote_character = yes
+			}
+			set_party_name = { 
+				ideology = despotism
+				long_name = HAN_despotism_party_long
+				name = HAN_despotism_party
+			}
 			transfer_state = 1639
-			add_state_core = 1639
 			transfer_state = 1638
-			add_state_core = 1638
 			transfer_state = 1637
-			add_state_core = 1637
+			transfer_state = 801
 			load_oob = HAN_second_cw
 		}
 		MJP = {
 			transfer_state = 1265
-			add_state_core = 1265
 			transfer_state = 716
-			add_state_core = 716
 			transfer_state = 1636
-			add_state_core = 1636
 			load_oob = MJP_second_cw
 		}
 		PFF = {
+			set_cosmetic_tag = PFF_Second_CW
+			transfer_state = 1643
 			transfer_state = 715
-			add_state_core = 715
+			set_politics = {
+				ruling_party = communist
+				last_election = "1933.2.16"
+				election_frequency = 36
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = communist
+				popularity = 0.47
+			}
+			PFF_Kim_Il_Sung = {
+				promote_character = yes
+			}
+			set_party_name = { 
+				ideology = communist
+				long_name = PFF_communist_party_long
+				name = PFF_communist_party
+			}
 			load_oob = PFF_second_cw
 		}
+		
 		HAN = {
 			declare_war_on = {
 				target = MAN
@@ -681,86 +764,26 @@ country_event = { #Technical stuff no loc
 		MAR = {
 			country_event = { id = MAR_Japan.9 days = 3 }
 		}
-		set_country_flag = RUS_something_goes_wrong 
+		ZZZ = {
+			country_event = { id = MAR_Japan.6 days = 210 }
+		}
+		#set_country_flag = RUS_something_goes_wrong 
 	}
 }
 
-country_event = { #victory in FE
+country_event = { #Technical stuff no loc
 	id = MAR_Japan.6
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.6"}
 	title = MAR_Japan.6.t
 	desc = MAR_Japan.6.d
-	picture = GFX_event_MAR_japan_6
+	picture = GFX_report_event_peace_deal
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = {
 		name = MAR_Japan.6.a
 		ai_chance = { factor = 1 }
-		annex_country = {
-			target = PFF
-			transfer_troops = yes
-		}
-		set_country_flag = MAR_has_primorie
-	}
-}
-country_event = { #Technical stuff no loc
-	id = MAR_Japan.7
-	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.7"}
-	title = MAR_Japan.7.t
-	desc = MAR_Japan.7.d
-	picture = GFX_report_event_peace_deal
-	is_triggered_only = yes
-	fire_only_once = yes
-	
-	option = {
-		name = MAR_Japan.7.a
-		ai_chance = { factor = 1 }
-		MJP = {
-			annex_country = {
-				target = MAN
-				transfer_troops = yes
-			}
-			set_cosmetic_tag = MJP_JAP_autonomy
-			econ_join_sphere_JAP = yes
-			add_ideas = Sphere_Imp_Protectorate
-			add_ideas = MAN_Kwantung_Army
-			every_owned_state = {
-				MJP = {
-					add_state_core = PREV
-				}
-			}
-		}
-		JAP = {
-			add_to_faction = MJP
-		}
-		hidden_effect = {
-			every_country  = {
-				news_event = {
-					id = MAR_2WRW_world_news.33
-				}
-			}
-		}
-	}
-}
-
-country_event = { #Technical stuff no loc
-	id = MAR_Japan.8
-	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.8"}
-	title = MAR_Japan.8.t
-	desc = MAR_Japan.8.d
-	picture = GFX_report_event_peace_deal
-	is_triggered_only = yes
-	fire_only_once = yes
-	
-	option = {
-		name = MAR_Japan.8.a
-		ai_chance = { factor = 1 }
-		HAN = {
-			annex_country = {
-				target = MAN
-				transfer_troops = no
-			}
+		PJP = {
 			create_country_leader = {
 				name = "Anarchy"
 				desc = "POLITICS_ANARCHY_DESC"
@@ -786,16 +809,129 @@ country_event = { #Technical stuff no loc
 			}
 			add_ideas = ZZZ_anarchy
 			set_cosmetic_tag = MAN_katastrophe
+			transfer_state = 1641
+			transfer_state = 1369
+		}
+		ZZZ = {
+			country_event = { id = MAR_Japan.7 days = 5 }
+		}
+	}
+}
+
+country_event = { #Technical stuff no loc
+	id = MAR_Japan.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.7"}
+	title = MAR_Japan.7.t
+	desc = MAR_Japan.7.d
+	picture = GFX_report_event_peace_deal
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = MAR_Japan.7.a
+		ai_chance = { factor = 1 }
+		PJP = {
+			transfer_state = 610
+			transfer_state = 1643
+			transfer_state = 717
+			transfer_state = 1637
+		}
+		ZZZ = {
+			country_event = { id = MAR_Japan.8 days = 7 }
+		}
+	}
+}
+
+country_event = { #Technical stuff no loc
+	id = MAR_Japan.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.8"}
+	title = MAR_Japan.8.t
+	desc = MAR_Japan.8.d
+	picture = GFX_report_event_peace_deal
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = MAR_Japan.8.a
+		ai_chance = { factor = 1 }
+		PJP = {
+			annex_country = {
+				target = HAN
+				transfer_troops = no
+			}
+			annex_country = {
+				target = MAN
+				transfer_troops = no
+			}
+			annex_country = {
+				target = PFF
+				transfer_troops = no
+			}
+			annex_country = {
+				target = MJP
+				transfer_troops = no
+			}
+		}
+		USA = {
+			set_temp_variable = { Victory_ID = 50 }
+			set_temp_variable = { Victory_Outcome = 2 }
+			set_temp_variable = { Victory_Points = -50 }
+			Cold_War_GUI_ManipulateVictory = yes
+			TaS_fopo_remove_manchurian_civil_war_tab = yes
+			set_temp_variable = { target = MAN }
+			TNO_clear_and_recall_volunteers = yes	
+		}
+		JAP = {
+			set_temp_variable = { Victory_ID = 50 }
+			set_temp_variable = { Victory_Outcome = 1 }
+			set_temp_variable = { Victory_Points = -100 }
+			Cold_War_GUI_ManipulateVictory = yes
+			TaS_fopo_remove_manchurian_civil_war_tab = yes
+			set_temp_variable = { target = MJP }
+			TNO_clear_and_recall_volunteers = yes
+		}
+		MAR = {
+			set_temp_variable = { Victory_ID = 50 }
+			set_temp_variable = { Victory_Outcome = 1 }
+			set_temp_variable = { Victory_Points = -200 }
+			Cold_War_GUI_ManipulateVictory = yes
+			TaS_fopo_remove_manchurian_civil_war_tab = yes
+			set_temp_variable = { target = PFF }
+			TNO_clear_and_recall_volunteers = yes
+			set_temp_variable = { target = HAN }
+			TNO_clear_and_recall_volunteers = yes
+		}
+		MJP = {
+			transfer_state = 810
+			transfer_state = 1636
+			set_cosmetic_tag = MJP_JAP_autonomy
+			econ_join_sphere_JAP = yes
+			add_ideas = Sphere_Imp_Protectorate
+			add_ideas = MAN_Kwantung_Army
+			every_owned_state = {
+				MJP = {
+					add_state_core = PREV
+				}
+			}
+			set_country_flag = {
+				flag = MJP_reclamation_timeout
+				value = 1 
+				days = 180
+			}
+		}
+		JAP = {
+			add_to_faction = MJP
 		}
 		hidden_effect = {
 			every_country  = {
 				news_event = {
-					id = MAR_2WRW_world_news.34
+					id = MAR_2WRW_world_news.35
 				}
 			}
 		}
 	}
 }
+
 
 country_event = { #MANCHU CW STARTS GET UP GUYS
 	id = MAR_Japan.9
@@ -981,6 +1117,26 @@ country_event = { #victory in FE #kosygin
 		set_country_flag = MAR_has_primorie
 	}
 }
+country_event = { #victory in FE
+	id = MAR_Japan.17
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.17"}
+	title = MAR_Japan.17.t
+	desc = MAR_Japan.17.d
+	picture = GFX_event_MAR_japan_6
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = MAR_Japan.17.a
+		ai_chance = { factor = 1 }
+		annex_country = {
+			target = PFF
+			transfer_troops = yes
+		}
+		set_country_flag = MAR_has_primorie
+	}
+}
+
 
 country_event = { #The olive branch
 	id = MAR_Japan.20
@@ -1395,6 +1551,446 @@ country_event = { #kosygin specific
 		name = MAR_Japan.30.a
 		ai_chance = { factor = 1 }
 		#set_country_flag = MAR_has_primorie
+	}
+}
+##LEGACY CW EVENT
+country_event = { #Technical stuff no loc #legacy
+	id = MAR_Japan.100
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.100"}
+	title = MAR_Japan.100.t
+	desc = MAR_Japan.100.d
+	picture = GFX_report_event_collapse2
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = MAR_Japan.100.a
+		ai_chance = { factor = 1 }
+		MJP = {
+			set_cosmetic_tag = MJP_Second_CW
+			transfer_state = 810
+			add_state_core = 810
+			set_politics = {
+				ruling_party = national_socialism
+				last_election = "1933.2.16"
+				election_frequency = 36
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = national_socialism
+				popularity = 0.33
+			}
+			MJP_Katakura_Tadashi = {
+				promote_character = yes
+			}
+			set_party_name = { 
+				ideology = national_socialism
+				long_name = MJP_national_socialism_party_long
+				name = MJP_national_socialism_party
+			}
+		}
+		MAN = {
+			set_capital = { state = 328 }
+			remove_ideas = MAN_Kwantung_Army
+			retire_character = MAN_katakura_tadashi 
+			
+		}
+		
+		country_event = {
+			id = MAR_Japan.2 days = 17
+		}
+	}
+}
+country_event = { #Technical stuff no loc
+	id = MAR_Japan.200
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.200"}
+	title = MAR_Japan.200.t
+	desc = MAR_Japan.200.d
+	picture = GFX_report_event_collapse2
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = MAR_Japan.200.a
+		ai_chance = { factor = 1 }
+		XYZ = {
+			MAN_Kuan_Chung = {
+				set_nationality = MAN
+			}
+		}
+		MAN = {
+			set_politics = {
+				ruling_party = paternalism
+				last_election = "1933.2.16"
+				election_frequency = 36
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = paternalism
+				popularity = 0.33
+			}
+			set_party_name = { 
+				ideology = paternalism
+				long_name = MAN_cw_despotism_party_long
+				name = MAN_cw_despotism_party
+			}
+			promote_character = MAN_Kuan_Chung	
+		}
+		country_event = {
+			id = MAR_Japan.3 days = 11
+		}
+	}
+} 
+country_event = { #Technical stuff no loc
+	id = MAR_Japan.300
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.300"}
+	title = MAR_Japan.300.t
+	desc = MAR_Japan.300.d
+	picture = GFX_report_event_collapse2
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = MAR_Japan.300.a
+		ai_chance = { factor = 1 }
+		HAN = {
+			set_cosmetic_tag = HAN_Second_CW
+			transfer_state = 801
+			add_state_core = 801
+			set_politics = {
+				ruling_party = despotism
+				last_election = "1933.2.16"
+				election_frequency = 36
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = despotism
+				popularity = 0.29
+			}
+			HAN_Pujie = {
+				promote_character = yes
+			}
+			set_party_name = { 
+				ideology = despotism
+				long_name = HAN_despotism_party_long
+				name = HAN_despotism_party
+			}
+		}
+		PFF = {
+			set_cosmetic_tag = PFF_Second_CW
+			transfer_state = 1643
+			add_state_core = 1643
+			set_politics = {
+				ruling_party = communist
+				last_election = "1933.2.16"
+				election_frequency = 36
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = communist
+				popularity = 0.47
+			}
+			PFF_Kim_Il_Sung = {
+				promote_character = yes
+			}
+			set_party_name = { 
+				ideology = communist
+				long_name = PFF_communist_party_long
+				name = PFF_communist_party
+			}
+		}
+		country_event = {
+			id = MAR_Japan.4 days = 11
+		}
+	}
+}
+country_event = { #Technical stuff no loc
+	id = MAR_Japan.400
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.400"}
+	title = MAR_Japan.400.t
+	desc = MAR_Japan.400.d
+	picture = GFX_report_event_collapse2
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {	
+		name = MAR_Japan.4.a
+		ai_chance = { factor = 1 }
+		MAN = {
+			set_cosmetic_tag = MAN_Second_CW
+			leave_faction = yes
+			econ_leave_sphere = yes
+			remove_ideas = Sphere_Fully_Dependent
+			remove_ideas = MAN_Chained_To_Rising_Sun
+		}
+		MAN = {
+			delete_unit = {
+				state = 1643
+				disband = no
+			}
+			delete_unit = {
+				state = 715
+				disband = no
+			}
+			delete_unit = {
+				state = 714
+				disband = no
+			}
+			delete_unit = {
+				state = 1638
+				disband = no
+			}
+			delete_unit = {
+				state = 1639
+				disband = no
+			}
+			delete_unit = {
+				state = 1637
+				disband = no
+			}
+			delete_unit = {
+				state = 717
+				disband = no
+			}
+			delete_unit = {
+				state = 801
+				disband = no
+			}
+			delete_unit = {
+				state = 328
+				disband = no
+			}
+			delete_unit = {
+				state = 1642
+				disband = no
+			}
+			delete_unit = {
+				state = 1641
+				disband = no
+			}
+			delete_unit = {
+				state = 1640
+				disband = no
+			}
+			delete_unit = {
+				state = 610
+				disband = no
+			}
+			delete_unit = {
+				state = 1265
+				disband = no
+			}
+			delete_unit = {
+				state = 716
+				disband = no
+			}
+			delete_unit = {
+				state = 1636
+				disband = no
+			}
+		}
+		every_state = {
+			limit = {
+				is_owned_by = MAN
+			}
+			set_demilitarized_zone = yes
+		}			
+		country_event = {
+			id = MAR_Japan.5 days = 9
+		}
+	}
+}
+country_event = { #Technical stuff no loc
+	id = MAR_Japan.500
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.500"}
+	title = MAR_Japan.500.t
+	desc = MAR_Japan.500.d
+	picture = GFX_report_event_collapse2
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = MAR_Japan.5.a
+		ai_chance = { factor = 1 }
+		#TaS_2WRW_spawn_divs_second_cw = yes
+		set_global_flag = TaS_MAN_second_cw
+		HAN = {
+			transfer_state = 1639
+			add_state_core = 1639
+			transfer_state = 1638
+			add_state_core = 1638
+			transfer_state = 1637
+			add_state_core = 1637
+			load_oob = HAN_second_cw
+		}
+		MJP = {
+			transfer_state = 1265
+			add_state_core = 1265
+			transfer_state = 716
+			add_state_core = 716
+			transfer_state = 1636
+			add_state_core = 1636
+			load_oob = MJP_second_cw
+		}
+		PFF = {
+			transfer_state = 715
+			add_state_core = 715
+			load_oob = PFF_second_cw
+		}
+		HAN = {
+			declare_war_on = {
+				target = MAN
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = MJP
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = PFF
+				type = annex_everything
+			}
+		}
+		MJP = {
+			declare_war_on = {
+				target = MAN
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = HAN
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = PFF
+				type = annex_everything
+			}
+		}
+		MAN = {
+			declare_war_on = {
+				target = HAN
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = PFF
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = MJP
+				type = annex_everything
+			}
+			load_oob = MAN_second_cw
+		}
+		CHI = { end_puppet = MEN }
+		MEN = { leave_faction = yes }
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.5
+				}
+			}
+		}
+		USA = {
+			country_event = { id = MAR_Japan.9 days = 3 }
+		}
+		JAP = {
+			country_event = { id = MAR_Japan.9 days = 3 }
+		}
+		MAR = {
+			country_event = { id = MAR_Japan.9 days = 3 }
+		}
+		set_country_flag = RUS_something_goes_wrong 
+	}
+}
+country_event = { #Technical stuff no loc
+	id = MAR_Japan.700
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.700"}
+	title = MAR_Japan.700.t
+	desc = MAR_Japan.700.d
+	picture = GFX_report_event_peace_deal
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = MAR_Japan.7.a
+		ai_chance = { factor = 1 }
+		MJP = {
+			annex_country = {
+				target = MAN
+				transfer_troops = yes
+			}
+			set_cosmetic_tag = MJP_JAP_autonomy
+			econ_join_sphere_JAP = yes
+			add_ideas = Sphere_Imp_Protectorate
+			add_ideas = MAN_Kwantung_Army
+			every_owned_state = {
+				MJP = {
+					add_state_core = PREV
+				}
+			}
+		}
+		JAP = {
+			add_to_faction = MJP
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.33
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Technical stuff no loc
+	id = MAR_Japan.800
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Japan.800"}
+	title = MAR_Japan.800.t
+	desc = MAR_Japan.800.d
+	picture = GFX_report_event_peace_deal
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = MAR_Japan.8.a
+		ai_chance = { factor = 1 }
+		HAN = {
+			annex_country = {
+				target = MAN
+				transfer_troops = no
+			}
+			create_country_leader = {
+				name = "Anarchy"
+				desc = "POLITICS_ANARCHY_DESC"
+				picture = "Portrait_ZZZ_Anarchy.dds"
+				expire = "3000.1.1"
+				ideology = socialist_subtype
+				traits = { }
+			}
+			set_variable = { TNO_economy_type = token:Econ_Type_Planned }
+			set_variable = { TNO_economy_subtype = token:Econ_Subtype_Anarchic }
+			set_country_flag = TNO_eliminate_building_demand
+			set_country_flag = can_not_use_econ_system
+			set_country_flag = MAN_katastrophe
+			set_politics = {
+				ruling_party = socialist
+				last_election = "1961.1.20"
+				election_frequency = 48
+				elections_allowed = yes
+
+			}
+			set_popularities = {
+				socialist = 100
+			}
+			add_ideas = ZZZ_anarchy
+			set_cosmetic_tag = MAN_katastrophe
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.35
+				}
+			}
+		}
 	}
 }
 ##Germaney
@@ -4370,7 +4966,7 @@ news_event = { #Direct rule regime in Manchuria
 		name = MAR_2WRW_world_news.33.a
 	}
 }
-news_event = { #Manchurian Catastrophe
+news_event = { #Respublic of Manchuria
 	id = MAR_2WRW_world_news.34
 	title = MAR_2WRW_world_news.34.t
 	desc = MAR_2WRW_world_news.34.d
@@ -4382,7 +4978,7 @@ news_event = { #Manchurian Catastrophe
 		name = MAR_2WRW_world_news.34.a
 	}
 }
-news_event = { #Russian SMO in Menjiang
+news_event = { #Manchu Catastrophe
 	id = MAR_2WRW_world_news.35
 	title = MAR_2WRW_world_news.35.t
 	desc = MAR_2WRW_world_news.35.d

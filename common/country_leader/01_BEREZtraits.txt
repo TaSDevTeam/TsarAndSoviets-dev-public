@@ -104,4 +104,24 @@ leader_traits = {
 			factor = 1
 		}		
 	}
+	one_more_chance = { 
+		random = no
+		stability_factor = -0.15
+		war_support_factor = -0.15
+		political_power_gain = -0.45
+				
+		ai_will_do = {
+			factor = 1
+		}		
+	}
+	leader_in_name_only = { 
+		random = no
+		stability_factor = -0.1
+		war_support_factor = -0.05
+		political_power_gain = -0.2
+				
+		ai_will_do = {
+			factor = 1
+		}		
+	}
 }	
