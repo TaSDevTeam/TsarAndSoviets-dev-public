@@ -531,3 +531,294 @@ TaS_SWRW_change_corpo_jap = {
 		custom_effect_tooltip = swrw_fe_corpo_increase_tt
 	}
 }
+
+TaS_SWRW_Manchu_CW_MJP_win = { 
+	MJP = {
+		set_cosmetic_tag = MJP_JAP_autonomy
+		econ_join_sphere_JAP = yes
+		add_ideas = Sphere_Imp_Protectorate
+		add_ideas = MAN_Kwantung_Army
+		set_capital = { state = 328 }
+		every_owned_state = {
+			MJP = {
+				add_state_core = PREV
+			}
+		}
+		country_lock_all_division_template = yes
+		add_ideas = MJP_chained_forever
+		add_ideas = MJP_reconstruction_programm
+
+	}
+	JAP = {
+		add_to_faction = MJP
+	}
+	every_country  = {
+		news_event = {
+			id = MAR_2WRW_world_news.38
+		}
+	}
+	USA = {
+		set_temp_variable = { Victory_ID = 50 }
+		set_temp_variable = { Victory_Outcome = 2 }
+		set_temp_variable = { Victory_Points = -50 }
+		Cold_War_GUI_ManipulateVictory = yes
+		TaS_fopo_remove_manchurian_civil_war_tab = yes
+		set_temp_variable = { target = MAN }
+		TNO_clear_and_recall_volunteers = yes	
+	}
+	JAP = {
+		set_temp_variable = { Victory_ID = 50 }
+		set_temp_variable = { Victory_Outcome = 4 }
+		set_temp_variable = { Victory_Points = 150 }
+		Cold_War_GUI_ManipulateVictory = yes
+		TaS_fopo_remove_manchurian_civil_war_tab = yes
+		set_temp_variable = { target = MJP }
+		TNO_clear_and_recall_volunteers = yes
+	}
+	MAR = {
+		TaS_fopo_remove_manchurian_civil_war_tab = yes
+		clr_country_flag = RUS_something_goes_wrong
+		set_temp_variable = { target = PFF }
+		TNO_clear_and_recall_volunteers = yes
+		set_temp_variable = { target = HAN }
+		TNO_clear_and_recall_volunteers = yes
+	}
+}
+
+TaS_SWRW_Manchu_CW_HAN_win = { 
+	MJP = {
+		transfer_state = 1637
+		transfer_state = 1636
+		transfer_state = 810
+		transfer_state = 716
+		transfer_state = 1265
+		transfer_state = 717
+		transfer_state = 328
+		transfer_state = 1640
+		transfer_state = 610
+		
+		country_lock_all_division_template = yes
+		add_ideas = MJP_chained_forever
+		add_ideas = MJP_reconstruction_programm
+		add_ideas = MJP_lost_north
+		
+		set_cosmetic_tag = MJP_JAP_autonomy
+		econ_join_sphere_JAP = yes
+		add_ideas = Sphere_Imp_Protectorate
+		add_ideas = MAN_Kwantung_Army
+		set_capital = { state = 328 }
+		every_owned_state = {
+			MJP = {
+				add_state_core = PREV
+			}
+		}
+	}
+	JAP = {
+		add_to_faction = MJP
+	}
+	HAN = {
+		set_cosmetic_tag = HAN_cw_victory
+		set_capital = { state = 801 }
+		every_owned_state = {
+			HAN = {
+				add_state_core = PREV
+			}
+		}
+		
+		add_ideas = MAN_liberty
+		add_ideas = MAN_refugees
+		add_ideas = HAN_voiceback_of_china
+	}
+	every_country  = {
+		news_event = {
+			id = MAR_2WRW_world_news.36
+		}
+	}
+	USA = {
+		set_temp_variable = { Victory_ID = 50 }
+		set_temp_variable = { Victory_Outcome = 2 }
+		set_temp_variable = { Victory_Points = -50 }
+		Cold_War_GUI_ManipulateVictory = yes
+		TaS_fopo_remove_manchurian_civil_war_tab = yes
+		set_temp_variable = { target = MAN }
+		TNO_clear_and_recall_volunteers = yes
+	}
+	JAP = {
+		set_temp_variable = { Victory_ID = 50 }
+		set_temp_variable = { Victory_Outcome = 1 }
+		set_temp_variable = { Victory_Points = -250 }
+		Cold_War_GUI_ManipulateVictory = yes
+		TaS_fopo_remove_manchurian_civil_war_tab = yes
+		set_temp_variable = { target = MJP }
+		TNO_clear_and_recall_volunteers = yes
+	}
+	MAR = {
+		TaS_fopo_remove_manchurian_civil_war_tab = yes
+		if = {
+			limit = { NOT = { has_government = socialist } }
+			FROM = { econ_join_sphere_MAR = yes }
+		}
+		clr_country_flag = RUS_something_goes_wrong
+		set_temp_variable = { target = PFF }
+		TNO_clear_and_recall_volunteers = yes
+		set_temp_variable = { target = HAN }
+		TNO_clear_and_recall_volunteers = yes
+	}
+}
+TaS_SWRW_Manchu_CW_PFF_win = { 
+	MJP = {
+		transfer_state = 1637
+		transfer_state = 1636
+		transfer_state = 810
+		transfer_state = 716
+		transfer_state = 1265
+		transfer_state = 717
+		transfer_state = 328
+		transfer_state = 1640
+		transfer_state = 610
+		
+		country_lock_all_division_template = yes
+		add_ideas = MJP_chained_forever
+		add_ideas = MJP_reconstruction_programm
+		add_ideas = MJP_lost_north
+		
+		set_cosmetic_tag = MJP_JAP_autonomy
+		econ_join_sphere_JAP = yes
+		add_ideas = Sphere_Imp_Protectorate
+		add_ideas = MAN_Kwantung_Army
+		set_capital = { state = 328 }
+		every_owned_state = {
+			MJP = {
+				add_state_core = PREV
+			}
+		}
+	}
+	JAP = {
+		add_to_faction = MJP
+	}
+	PFF = {
+		#set_cosmetic_tag = HAN_cw_victory
+		set_capital = { state = 801 }
+		every_owned_state = {
+			PFF = {
+				add_state_core = PREV
+			}
+		}
+		
+		add_ideas = MAN_liberty
+		add_ideas = MAN_refugees
+		add_ideas = PFF_surrounded_by_fear
+	}
+	every_country  = {
+		news_event = {
+			id = MAR_2WRW_world_news.39
+		}
+	}
+	USA = {
+		set_temp_variable = { Victory_ID = 50 }
+		set_temp_variable = { Victory_Outcome = 2 }
+		set_temp_variable = { Victory_Points = -50 }
+		Cold_War_GUI_ManipulateVictory = yes
+		TaS_fopo_remove_manchurian_civil_war_tab = yes
+		set_temp_variable = { target = MAN }
+		TNO_clear_and_recall_volunteers = yes	
+	}
+	JAP = {
+		set_temp_variable = { Victory_ID = 50 }
+		set_temp_variable = { Victory_Outcome = 1 }
+		set_temp_variable = { Victory_Points = -200 }
+		Cold_War_GUI_ManipulateVictory = yes
+		TaS_fopo_remove_manchurian_civil_war_tab = yes
+		set_temp_variable = { target = MJP }
+		TNO_clear_and_recall_volunteers = yes
+	}
+	MAR = {
+		TaS_fopo_remove_manchurian_civil_war_tab = yes
+		if = {
+			limit = { has_government = socialist }
+			FROM = { econ_join_sphere_MAR = yes }
+		}
+		clr_country_flag = RUS_something_goes_wrong
+		set_temp_variable = { target = PFF }
+		TNO_clear_and_recall_volunteers = yes
+		set_temp_variable = { target = HAN }
+		TNO_clear_and_recall_volunteers = yes
+	}
+}
+TaS_SWRW_Manchu_CW_MAN_win = { 
+	MJP = {
+		transfer_state = 1637
+		transfer_state = 1636
+		transfer_state = 810
+		transfer_state = 716
+		transfer_state = 1265
+		transfer_state = 717
+		transfer_state = 328
+		transfer_state = 1640
+		transfer_state = 610
+		
+		country_lock_all_division_template = yes
+		add_ideas = MJP_chained_forever
+		add_ideas = MJP_reconstruction_programm
+		add_ideas = MJP_lost_north
+		
+		set_cosmetic_tag = MJP_JAP_autonomy
+		econ_join_sphere_JAP = yes
+		add_ideas = Sphere_Imp_Protectorate
+		add_ideas = MAN_Kwantung_Army
+		set_capital = { state = 328 }
+		every_owned_state = {
+			MJP = {
+				add_state_core = PREV
+			}
+		}
+	}
+	JAP = {
+		add_to_faction = MJP
+	}
+	MAN = {
+		econ_join_sphere_USA = yes
+		add_ideas = OFN_observer
+		set_capital = { state = 801 }
+		every_owned_state = {
+			MAN = {
+				add_state_core = PREV
+			}
+		}
+
+		add_ideas = MAN_liberty
+		add_ideas = MAN_refugees
+		add_ideas = MAN_shadow_deals
+	}
+	every_country  = {
+		news_event = {
+			id = MAR_2WRW_world_news.37
+		}
+	}
+	USA = {
+		set_temp_variable = { Victory_ID = 50 }
+		set_temp_variable = { Victory_Outcome = 5 }
+		set_temp_variable = { Victory_Points = 150 }
+		Cold_War_GUI_ManipulateVictory = yes
+		TaS_fopo_remove_manchurian_civil_war_tab = yes
+		set_temp_variable = { target = MAN }
+		TNO_clear_and_recall_volunteers = yes
+	}
+	JAP = {
+		set_temp_variable = { Victory_ID = 50 }
+		set_temp_variable = { Victory_Outcome = 1 }
+		set_temp_variable = { Victory_Points = -200 }
+		Cold_War_GUI_ManipulateVictory = yes
+		TaS_fopo_remove_manchurian_civil_war_tab = yes
+		set_temp_variable = { target = MJP }
+		TNO_clear_and_recall_volunteers = yes
+	}
+	MAR = {
+		TaS_fopo_remove_manchurian_civil_war_tab = yes
+		clr_country_flag = RUS_something_goes_wrong
+		set_temp_variable = { target = PFF }
+		TNO_clear_and_recall_volunteers = yes
+		set_temp_variable = { target = HAN }
+		TNO_clear_and_recall_volunteers = yes
+	}
+}
