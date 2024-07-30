@@ -112,6 +112,20 @@ TaS_SWRW_start_the_war = {
 			GER = { add_ideas = { TaS_2WRW_north_sea_problems } }
 		}
 	}
+	GER = {
+		if = {
+			limit = {
+				has_country_leader = {
+					character = GER_albert_speer 
+					ruling_only = yes
+				}
+			}
+			set_variable = { sgr_wehrmacht_div_limit = 150 }			
+		}
+		else = { 
+			set_variable = { ger_div_limit = 250 }
+		}
+	}
 }
 TaS_SWRW_american_germany = {
 	ZNE = { 
@@ -820,5 +834,24 @@ TaS_SWRW_Manchu_CW_MAN_win = {
 		TNO_clear_and_recall_volunteers = yes
 		set_temp_variable = { target = HAN }
 		TNO_clear_and_recall_volunteers = yes
+	}
+}
+
+SWRW_add_army_size_modifier = {
+	ROOT = {
+		every_unit_leader = {
+			add_trait = { trait = SWRW_army_size_modifier }
+		}
+	}
+}
+
+SWRW_remove_army_size_modifier = {
+	ROOT = {
+		every_unit_leader = {
+			limit = {
+				has_trait = SWRW_army_size_modifier
+			}
+			remove_trait = { trait = SWRW_army_size_modifier }
+		}
 	}
 }
