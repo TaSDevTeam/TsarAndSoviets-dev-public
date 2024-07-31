@@ -649,6 +649,7 @@ country_event = { #Technical stuff no loc
 		#TaS_2WRW_spawn_divs_second_cw = yes
 		set_global_flag = TaS_MAN_second_cw
 		HAN = {
+			add_ideas = MAN_civil_war
 			set_cosmetic_tag = HAN_Second_CW
 			set_politics = {
 				ruling_party = despotism
@@ -675,12 +676,14 @@ country_event = { #Technical stuff no loc
 			load_oob = HAN_second_cw
 		}
 		MJP = {
+			add_ideas = MAN_civil_war
 			transfer_state = 1265
 			transfer_state = 716
 			transfer_state = 1636
 			load_oob = MJP_second_cw
 		}
 		PFF = {
+			add_ideas = MAN_civil_war
 			set_cosmetic_tag = PFF_Second_CW
 			transfer_state = 1643
 			transfer_state = 715
@@ -734,6 +737,7 @@ country_event = { #Technical stuff no loc
 			}
 		}
 		MAN = {
+			add_ideas = MAN_civil_war
 			declare_war_on = {
 				target = HAN
 				type = annex_everything
@@ -3149,7 +3153,7 @@ country_event = { #rom
 			}
 		}
 		MAR = {
-			country_event = { id = MAR_ultimatums.9 days = 2 }
+			country_event = { id = MAR_ultimatums.6 days = 2 }
 		}
 	}
 }
@@ -3189,7 +3193,7 @@ country_event = { #rom 2
 			}
 		}
 		MAR = {
-			country_event = { id = MAR_ultimatums.8 days = 2 }
+			country_event = { id = MAR_ultimatums.9 days = 2 }
 		}
 	}
 }

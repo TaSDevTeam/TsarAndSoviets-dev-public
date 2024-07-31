@@ -2756,7 +2756,15 @@ TaS_WRW2_territorial_reclamation = {
 				owns_state = 231
 			}
 			NOT = {
-				owns_state = 1565
+				OR = {
+					GEO = {
+						owns_state = 1565
+					}
+					MCS = {
+						owns_state = 1565
+					}
+					owns_state = 1565
+				}
 			}
 			has_global_flag = TaS_WRW2_Russian_victory
 		}
@@ -2788,6 +2796,11 @@ TaS_WRW2_territorial_reclamation = {
 		visible = {
 			ARM = {
 				owns_state = 230
+			}
+			NOT = {
+				ARM = {
+					owns_state = 1554
+				}
 			}
 			has_global_flag = TaS_WRW2_Russian_victory
 		}
