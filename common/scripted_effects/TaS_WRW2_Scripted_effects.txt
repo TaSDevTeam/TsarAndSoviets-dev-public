@@ -512,6 +512,10 @@ TaS_WRW2_total_capitulation = {
 			target = BLR
 			transfer_troops = no
 		}
+		#in case if ostland were annexed
+		transfer_state = 1397
+		transfer_state = 1404
+		 
 		transfer_state = 195
 		transfer_state = 137
 		transfer_state = 1532
@@ -1864,7 +1868,7 @@ TaS_2WRW_form_ost_zones = {
 			apply_party_popularities = yes
 	    }
 	}
-	if = {
+	if = { 
 		limit = { MAR = { owns_state = 1404 } }
 		MBL = {
 			transfer_state = 1406
