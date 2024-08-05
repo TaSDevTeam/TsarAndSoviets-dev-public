@@ -1822,27 +1822,27 @@
  swrw_title:0 "[Get_swrw_title]"
  swrw_title_rus:0 "Second Great Patriotic War"
  swrw_title_ger:0 "Second West Russian War"
- TaS_SWRW_into_icon_tt:0 "§eВТОРАЯ ОТЕЧЕСТВЕННАЯ ВОЙНА§!"
- TaS_SWRW_into_icon_tt_delayed:0 "Экран §eВторой Западнорусской Войны§! отображает §Yтекущую§! стадию §Rвойны§! между §qТретьим Рейхом§! и §Kобъединённой Россией§!. §DКаждый§! отдельный этап §Rвойны§! содержит §Yсобственный набор решений§!. Также §Yданный экран§! содержит §Bинформацию§! о таких §Gпеременных§! как £readiness_war §Gподготовка§! §KРоссии§! и уровень £reich_awareness §Rподозрений§! §qРейха§! в §Bпервой фазе§!, а также о §eвоенном истощении§! обеих сторон во §Bвторой§!. \n\n§KПобеда§! или §eпоражение§! в этом §Vконфликте§! приведут к §xсерьёзным§! §Yизменениям§! §aполитической ситуации§! по §Mвсему земному шару§!. Падёт ли §rстарый порядок§! или же §qГермания§! отстоит §jсвоё право§! на §jсуществование§!? §OСудьба§! §Mвсего мира§! решится §xна полях сражений§! §oвосточной Европы§!. Не стоит, однако, забывать, что в случае §eэскалации§! §Yданный конфликт§! может стать §eпоследним§! §Iв истории человеческой цивилизации§!.\n\n§eЧасы судного дня§! §hуже начали свой бег§!. §QСможете ли вы остановиться§! §nвовремя?§!"
- "§eВThe Second West Russian War§e! screen displays the §Ycurrent stage§! of the §Rwar§! between the §qThird Reich§! and a §Kunited Russia§!. Each phase of the war contains its own set of §Ydecisions§!. This screen also provides information on variables such as £readiness_war §Greadiness§! and the Reich's £reich_awareness §Rsuspicion§! in the first phase, as well as the §emilitary exhaustion§! of both sides in the second phase.\n\n§KVictory§! или §edefeat§! in this conflict will lead to §xsignificant changes§! in the global political landscape. Will the old order fall, or will §qGermany§! defend its right to exist? The fate of the entire world will be decided on the battlefields of §oEastern Europe§!. However, it should not be forgotten that if the conflict §eescalates§!, it may become the §elast in the history§! of §Ihuman civilization§!.\n\n§eThe doomsday clock has already started ticking§!. §QCan you stop before it gets too late?§!"
+ TaS_SWRW_into_icon_tt:0 "§eSECOND GREAT PATRIOTIC WAR§!"
+ TaS_SWRW_into_icon_tt_delayed:0 "§eThe Second West Russian War§! screen displays the §Ycurrent stage§! of the §Rwar§! between the §qThird Reich§! and a §Kunited Russia§!. Each phase of the war contains its own set of §Ydecisions§!. This screen also provides information on variables such as £readiness_war §Greadiness§! and the Reich's £reich_awareness §Rsuspicion§! in the first phase, as well as the §emilitary exhaustion§! of both sides in the second phase.\n\n§KVictory§! or §edefeat§! in this conflict will lead to §xsignificant changes§! in the global political landscape. Will the old order fall, or will §qGermany§! defend its right to exist? The fate of the entire world will be decided on the battlefields of §oEastern Europe§!. However, it should not be forgotten that if the conflict §eescalates§!, it may become the §elast in the history§! of §Ihuman civilization§!.\n\n§eThe doomsday clock has already started ticking§!. §QCan you stop before it gets too late?§!"
+ 
 
  stage_title:0 "[Get_swrw_stage]"
  stage_one_title:0 "Stage 1: Preparation "
  stage_two_title:0 "Stage 2: War"
  stage_ger_title:0 "DASEINKAMPF"
- readiness_title:0 "War Readiness"
- suspicion_scale:0 "Reich's Suspicion"
- swrw_desc:0 "[Get_swrw_desc]"
+ readiness_title: "War Readiness"
+ suspicion_scale: "Reich's Suspicion"
+ swrw_desc:0 "[Get_swrw_desc]" 
  stage_one_desc:0 "The Russian state has faced the German colossus on the battlefield more than once. Each time, victory slipped from our grasp. Now, we cannot afford to make any mistakes. The battle we will wage against Germany must determine the fate of both nations. Therefore, we cannot treat our preparations carelessly. After all, Russia may not get another chance."
  stage_two_desc:0 "The Second Patriotic War has already begun. The time has come to put an end to the humiliation of our people! All of Europe yearns for liberation from the German yoke, and we must respond to the call of the doomed. Our armies are already marching westward, and the great struggle for the future of Russia is now in full swing. Forward, comrades! Germany must be destroyed!"
  stage_ger_desc:0 "Это уже случалось два десятка лет назад. Русская орда вновь лезет из-за Уральских гор, чтобы уничтожить наше государство, нашу цивилизацию. Сейчас мы ведём борьбу за то, чтобы народ наш действительно мог выполнить ту историческую миссию, которая возложена на него творцом вселенной. И мы не позволим, чтобы завоевания наших предков обернулись пеплом."
  
  button_selected_tt:0 "Category selected"
  
- TaS_SWRW_readiness_tt:0 "§YТекущий уровень§! £readiness_war §Gготовности§!: [?SWRW_readiness_var]"
+ TaS_SWRW_readiness_tt:0 "§YCurrent§! £readiness_war §Greadiness§!: [?SWRW_readiness_var]"
  TaS_SWRW_readiness_tt_delayed:0 "£readiness_war §GReadiness§! indicates how prepared our state is for the §Rfinal battle§! with the §qGreater German Reich§!. §YThis variable§! can be §Gincreased§! by completing §Ydecisions§!. With a £readiness_war §Greadiness§! level above §Y75%§!, you will be able to §Rinitiate the war§! with §qGermany§!."
  
- TaS_SWRW_suspicion_tt:0 "§YТекущий уровень§! £reich_awareness §Rподозрений§!: [?SWRW_suspicion_var]"
+ TaS_SWRW_suspicion_tt:0 "§YCurrent§! £reich_awareness §Rsuspicion§!: [?SWRW_suspicion_var]"
  TaS_SWRW_suspicion_tt_delayed:0 "£reich_awareness §RSuspicion§! indicates how aware the §qThird Reich§! is of our intentions to start the §xSecond Patriotic War§!. If the Reich's £reich_awareness §Rsuspicion§! exceeds §Y80§!, they will deploy troops to our border. If the £reich_awareness §Rsuspicion§! reaches §Y100§!, §qGermany§! will §Rattack us first§!, §enullifying§! all our preparations. \n\n£reich_awareness §RSuspicion§! change in month: §Y[?SWRW_suspicion_gain]§!"
  
  SWRW_suspicion_decrease_tt:0 "This will §Rincrease§! German Reich £reich_awareness §Rsuspicion§! by §Y[?temp_suspicion_gained_txt]%§!"
@@ -1860,8 +1860,8 @@
  TaS_WRW2_launch_attack_on_germany:0 "§eStart the War§!"
  start_the_war_tt:0 "§eWe will start war with German Reich and Reichskommissariat§!"
  no_naval_ger_tt:0 "Благодаря §aоперации "Ледокол"§!, §eРейх§! §Gне сможет совершить§! десантную операцию на §Yнаши берега§!"
- SWRW_readiness_tt:0 "Наша £readiness_war §Gготовность§! превышает 75%"
- SWRW_issues_done_tt:0 "Мы решили §Kвсе вопросы§!, касающие §YСредней Азии§! и §DПриморья§!"
+ SWRW_readiness_tt:0 "Our £readiness_war §Greadiness§! exceeds 75%"
+ SWRW_issues_done_tt:0 "We have resolved §Kall issues§! concerning §YCentral Asia§! and §DPrimorye§!"
  #cat one
  TaS_WRW2_zapad_excersices:0 "Учения "Запад-71""
  TaS_WRW2_zapad_excersices_desc:0 "Учения “Запад-71” направлены на подготовку группы войск, которая в дальнейшем будет действовать в центральной части Рейхскомиссариата Московия.\n\nПоскольку эта территория включает в себя болота и леса, то данные учения должны пройти в пригороде нашей столицы, которая как раз и включает в себя подобную местность"
@@ -1904,7 +1904,7 @@
  
  TaS_WRW2_radars_constuction:0 "Radar Construction "
  TaS_WRW2_radars_constuction_desc:0 "Radars have been our eyes and ears since the wars for the unification of Russia. As for the future war with Germany, there's no need to even mention its significance.\n\nThe problem, however, is that we do not have enough radars to effectively counter the Reich. Therefore, building radars is one of our top priorities in the effort to defeat Germany."
- Tas_WRW2_radars_tt:0 "§JРадары§! §Gпозволят нам§! видеть насквозь любые передвижение врага.\n"
+ Tas_WRW2_radars_tt:0 "§JRadars§! §Gwill allow us§! to see through any enemy movement."
  
  #cat two
  TaS_WRW2_raise_additional_reserves:0 "Мобилизационная кампания"
@@ -2038,10 +2038,10 @@
  TaS_WRW2_activate_plan_volga_tt:0 "В течении §Y90 дней§! мы должны захватить §CВолгоград§!. На время операции будет выдан §Yнациональный дух§!, §Gусиляющий наступление армии§!. §RПровал операции§! нанесёт §eсерьёзный удар§! по §Kбоеспособности§! §Dнашей армии§!."
  TaS_WRW2_activate_plan_volga_mission: "Time for §YOperation 'Dmitry Donskoy'§!."
 
- TaS_WRW2_activate_plan_kyiv:0 "§GOperation 'Svyatoslav Igorevich'§!"
+ TaS_WRW2_activate_plan_kiev:0 "§GOperation 'Svyatoslav Igorevich'§!"
  TaS_WRW2_activate_plan_kiev_desc:0 "The objective of Operation "Svyatoslav Igorevich" is to seize the fertile lands of Reichskommissariat Ukraine. Capturing this territory will deprive the Wehrmacht of its food supplies and may also cause food supply issues within the Reich itself."
  TaS_WRW2_activate_plan_kiev_tt:0 "Within §Y90 days§!, we must capture §CKiev§!. During the operation, we will receive a §Ynational spirit§! that §Gstrengthens army's offensive capabilities§!. §RFailure of the operation§! will deal a §eserious blow§! to our army's combat effectiveness."
- TaS_WRW2_activate_plan_kyiv_mission:0 "Time for §GOperation 'Svyatoslav Igorevich'§!."
+ TaS_WRW2_activate_plan_kiev_mission:0 "Time for §GOperation 'Svyatoslav Igorevich'§!."
  
  TaS_WRW2_activate_plan_riga:0 "§GOperation 'Ivan the Fearsome'§!"
  TaS_WRW2_activate_plan_riga_desc:0 "Операция "Иван Грозный" играет ключевую роль во всей войне. Поскольку её целью является захват территории Прибалтики и Беларуси. Занятие этих территорий открывает нам дорогу на территорию Великогерманского Рейха."
@@ -2162,7 +2162,7 @@
  MAR_antifascist_brigades:0 "Antifascist Brigades"
  MAR_germans_did_that:0 "Germans Did That"
  MAR_german_free_army:0 "Freies Deutschland Armee"
- MAR_arise_ye_downtrodden:0 "Arise, ye downtrodden!"
+ MAR_arise_ye_downtrodden:0 "Arise, Ye Downtrodden!"
  MAR_break_the_german_machine:0 "Break the German Machine"
  MAR_patchwork_chimera:0 "Patchwork Chimera"
  MAR_we_have_won:0 "My Pobedily!"
