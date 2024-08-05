@@ -1221,22 +1221,6 @@ country_event = { # talks success
 	}
 }
 
-country_event = { # letter from diplomat
-	id = berez_kazahk.1488
-	immediate = {log = "[GetDateText]: [Root.GetName]: berez_kazahk.1488"}
-	title = berez_kazahk.1488.t
-	desc = berez_kazahk.1488.d
-	fire_only_once = yes
-	is_triggered_only = yes
-	#picture = GFX_event_MAR_Kazah_otdel
-
-	option = { #oh dear
-		custom_effect_tooltip = berez_kazahk.1488_tt
-		name = berez_kazahk.1488.a
-		ai_chance = { factor = 1 }	
-	}
-}
-
 ### MAR_belozerskiy_flavour ###
 country_event = {
 	id = MAR_belozerskiy_flavour.1
