@@ -32,7 +32,7 @@ MAR_MGB_Okhranka_category = {
 		cancel_trigger = { hidden_trigger = { NOT = { country_exists = VYT } } }
 	}
 	MAR_MGB_mission_collapsing_souverinity = {
-		icon = GFX_decision_generic_assault
+		icon = GFX_collapsing_souverenity
 		activation = { 
 			check_variable = { MAR_Okhranka_power > 94.99 }
 			has_country_flag = MAR_MGB_available
@@ -56,7 +56,7 @@ MAR_MGB_Okhranka_category = {
 		}
 	}
 	MAR_MGB_mission_collapsing_network = {
-		icon = GFX_decision_generic_assault
+		icon = GFX_decision_generic_document_burn
 		activation = {
 			check_variable = { MAR_Okhranka_power < 1 }
 			has_country_flag = MAR_MGB_available
@@ -92,7 +92,7 @@ MAR_MGB_Okhranka_category = {
 		}
 	}
 	MAR_MGB_mission_collapsing_connections = {
-		icon = GFX_decision_generic_assault
+		icon = GFX_decision_generic_document_burn
 		activation = {
 			check_variable = { MAR_Okhranka_connections < 1 }
 			has_country_flag = MAR_MGB_available
@@ -117,7 +117,7 @@ MAR_MGB_Okhranka_category = {
 		}
 	}
 	MAR_MGB_mission_overwhelming_connections = {
-		icon = GFX_decision_generic_assault
+		icon = GFX_decision_generic_document_concessions
 		activation = {
 			check_variable = { MAR_Okhranka_connections > 98.99 }
 			has_country_flag = MAR_MGB_available
@@ -142,7 +142,7 @@ MAR_MGB_Okhranka_category = {
 		}
 	}
 	MAR_MGB_operation_status_info = { #Empty decision to show operations
-		icon = GFX_decision_generic_assault
+		icon = GFX_decision_generic_document_target
 		visible = {
 			always = yes
 		}
@@ -159,7 +159,7 @@ MAR_MGB_Okhranka_category = {
 		}
 	}
 	MAR_MGB_yurla_operation = { #Operation Gray Falcon
-		icon = GFX_decision_generic_assault
+		icon = GFX_yurla
 		 
 		visible = {
 			always = yes
@@ -234,7 +234,7 @@ MAR_MGB_Okhranka_category = {
 		}
 	}
 	MAR_MGB_fight_agents_small = {
-		icon = GFX_decision_generic_decision
+		icon = GFX_decision_generic_investigate
 		
 		#available = {
 		#	has_country_flag = MAR_started_fighting_Vyatka
@@ -262,7 +262,7 @@ MAR_MGB_Okhranka_category = {
 		}
 	}
 	MAR_MGB_fight_agents_medium = {
-		icon = GFX_decision_generic_decision
+		icon = GFX_decision_generic_assassination
 		
 		#available = {
 		#	has_country_flag = MAR_started_fighting_Vyatka
@@ -291,7 +291,7 @@ MAR_MGB_Okhranka_category = {
 	}
 	
 	MAR_MGB_fight_agents_huge = {
-		icon = GFX_decision_generic_decision
+		icon = GFX_decision_generic_riot_police
 		
 		#available = {
 		#	has_country_flag = MAR_started_fighting_Vyatka
@@ -320,7 +320,7 @@ MAR_MGB_Okhranka_category = {
 	}
 	
 	MAR_MGB_raid_okhranka_cells = {
-		icon = GFX_decision_generic_decision
+		icon = GFX_decision_generic_barracks_burning
 		visible = {
 			always = yes
 		}
@@ -342,7 +342,7 @@ MAR_MGB_Okhranka_category = {
 	}
 	
 	MAR_MGB_covert_action_separator = {
-		icon = GFX_decision_generic_assault
+		icon = GFX_decision_generic_break_treaty
 		visible = {
 			always = yes
 		}
@@ -357,7 +357,7 @@ MAR_MGB_Okhranka_category = {
 	}
 	
 	MAR_MGB_general_staff_rotation = {
-		icon = GFX_decision_generic_decision
+		icon = GFX_decision_generic_police_redeployment
 		
 		visible = {
 			always = yes
@@ -386,7 +386,7 @@ MAR_MGB_Okhranka_category = {
 	}
 	
 	MAR_MGB_military_trainings = {
-		icon = GFX_decision_generic_decision
+		icon = GFX_decision_generic_military_guns_blue
 		
 		visible = {
 			always = yes
@@ -415,7 +415,7 @@ MAR_MGB_Okhranka_category = {
 	}
 	
 	MAR_MGB_reorganize_ministries = {
-		icon = GFX_decision_generic_decision
+		icon = GFX_decision_generic_building_offices
 		
 		visible = {
 			always = yes
@@ -448,7 +448,7 @@ MAR_MGB_Okhranka_category = {
 	}
 	
 	MAR_MGB_civillian_reorganisation = {
-		icon = GFX_decision_generic_decision
+		icon = GFX_decision_generic_reassurance
 		
 		visible = {
 			always = yes
@@ -475,7 +475,7 @@ MAR_MGB_Okhranka_category = {
 	}
 	
 	MAR_MGB_double_agents = {
-		icon = GFX_decision_generic_decision
+		icon = GFX_decision_generic_insider_attack
 		
 		visible = {
 			always = yes
@@ -526,7 +526,7 @@ MAR_MGB_Okhranka_category = {
 	
 	
 	MAR_MGB_collaboration_action_separator = {
-		icon = GFX_decision_generic_assault
+		icon = GFX_vytmar_coop
 		visible = {
 			always = yes
 		}
@@ -541,7 +541,7 @@ MAR_MGB_Okhranka_category = {
 	}
 	
 	MAR_MGB_resource_deals = {
-		icon = GFX_decision_generic_decision
+		icon = GFX_decision_generic_oil_extraction
 		
 		visible = {
 			always = yes
@@ -617,7 +617,7 @@ MAR_MGB_Okhranka_category = {
 	}
 	
 	MAR_MGB_military_cooperation = {
-		icon = GFX_decision_generic_decision
+		icon = GFX_decision_generic_military_hat
 		
 		visible = {
 			always = yes
@@ -678,7 +678,7 @@ MAR_MGB_Okhranka_category = {
 	}
 	
 	MAR_MGB_buy_yurla_assets = {
-		icon = GFX_decision_generic_decision
+		icon = GFX_decision_generic_corruption
 		
 		visible = {
 			always = yes
@@ -721,7 +721,7 @@ MAR_MGB_Okhranka_category = {
 	}
 	
 	MAR_MGB_visit_vyatka_court = {
-		icon = GFX_decision_generic_decision
+		icon = GFX_decision_generic_invitation
 		visible = {
 			always = yes
 		}
@@ -748,7 +748,7 @@ MAR_MGB_Okhranka_category = {
 	}
 	
 	MAR_MGB_southern_wall = {
-		icon = GFX_decision_generic_decision
+		icon = GFX_decision_generic_destroy_fort
 		visible = {
 			always = yes
 		}
