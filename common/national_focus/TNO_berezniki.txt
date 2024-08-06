@@ -81,6 +81,7 @@ focus_tree = {
 	}
 	default = no
 	shared_focus = MAR_united_russia
+	shared_focus = MAR_warprep_calm_before_the_storm
 }
 
 focus_tree = {
@@ -90,6 +91,7 @@ focus_tree = {
 	}
 	default = no
 	shared_focus = return_of_empire
+	shared_focus = MAR_warprep_calm_before_the_storm
 }
 
 focus_tree = {
@@ -124,4 +126,12 @@ focus_tree = {
 	}
 	default = no
 	shared_focus = GER_daseinkampf
+}
+focus_tree = {
+	id = MAR_war_preparation_tree
+	country = {
+		factor = 0
+	}
+	default = no
+	shared_focus = MAR_warprep_calm_before_the_storm
 }

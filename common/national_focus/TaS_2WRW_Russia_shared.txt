@@ -258,3 +258,123 @@ shared_focus = {
 
 	}
 }
+
+###WAR PREP###
+shared_focus = {
+	id = MAR_warprep_calm_before_the_storm
+	icon = GFX_MAR_warprep_calm_before_the_storm
+	cost = 3.58
+	allow_branch = { has_country_flag = TaSWRW2_War_Prep_Tree_Load }
+	x = 3
+	y = 0
+	completion_reward = {
+
+	}
+}
+shared_focus = {
+	id = MAR_warprep_rise_up_people_of_russia
+	icon = GFX_MAR_warprep_rise_up_people_of_russia
+	cost = 3.58
+	prerequisite = {focus = MAR_warprep_calm_before_the_storm }
+	x = 3
+	y = 1
+	completion_reward = {
+
+	}
+}
+shared_focus = {
+	id = MAR_warprep_leviathan_of_eurasia
+	icon = GFX_MAR_warprep_leviathan_of_eurasia
+	cost = 3.58
+	prerequisite = {focus = MAR_warprep_calm_before_the_storm }
+	x = 1
+	y = 1
+	completion_reward = {
+
+	}
+}
+shared_focus = {
+	id = MAR_warprep_prepare_for_the_worst
+	icon = GFX_MAR_warprep_prepare_for_the_worst
+	cost = 3.58
+	prerequisite = {focus = MAR_warprep_leviathan_of_eurasia }
+	x = 0
+	y = 2
+	completion_reward = {
+
+	}
+}
+shared_focus = {
+	id = MAR_warprep_modern_warfare_logistics
+	icon = GFX_MAR_warprep_modern_warfare_logistics
+	cost = 3.58
+	prerequisite = {focus = MAR_warprep_leviathan_of_eurasia }
+	x = 2
+	y = 2
+	completion_reward = {
+
+	}
+}
+shared_focus = {
+	id = MAR_warprep_friends_around_the_world
+	icon = GFX_MAR_warprep_friends_around_the_world
+	cost = 3.58
+	prerequisite = {focus = MAR_warprep_calm_before_the_storm }
+	x = 5
+	y = 1
+	completion_reward = {
+
+	}
+}
+shared_focus = {
+	id = MAR_warprep_better_call_sam
+	icon = GFX_MAR_warprep_better_call_sam
+	cost = 3.58
+	prerequisite = {focus = MAR_warprep_friends_around_the_world }
+	mutually_exclusive = { focus = MAR_warprep_chrysanthemum_friendship }
+	x = 4
+	y = 2
+	completion_reward = {
+
+	}
+}
+shared_focus = {
+	id = MAR_warprep_chrysanthemum_friendship
+	icon = GFX_MAR_warprep_chrysanthemum_friendship
+	cost = 3.58
+	prerequisite = {focus = MAR_warprep_friends_around_the_world }
+	mutually_exclusive = { focus = MAR_warprep_better_call_sam }
+	x = 6
+	y = 2
+	completion_reward = {
+
+	}
+}
+shared_focus = {
+	id = MAR_warprep_dance_on_the_ravaged_land
+	icon = GFX_MAR_warprep_dance_on_the_ravaged_land
+	prerequisite = {focus = MAR_warprep_prepare_for_the_worst }
+	prerequisite = {focus = MAR_warprep_modern_warfare_logistics }
+	prerequisite = {focus = MAR_warprep_rise_up_people_of_russia }
+	prerequisite = {
+		focus = MAR_warprep_better_call_sam
+		focus = MAR_warprep_chrysanthemum_friendship
+	}
+	cost = 3.58
+	x = 3
+	y = 3
+	completion_reward = {
+
+	}
+}
+shared_focus = {
+	id = MAR_warprep_so_kill_him
+	icon = GFX_MAR_warprep_so_kill_him
+	cost = 3.58
+	prerequisite = {focus = MAR_warprep_dance_on_the_ravaged_land }
+	x = 3
+	y = 5
+	completion_reward = {
+		set_country_flag = TaSWRW2_War_Prep_Tree_Complete
+	}
+}

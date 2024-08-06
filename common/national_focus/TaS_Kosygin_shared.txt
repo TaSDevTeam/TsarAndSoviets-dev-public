@@ -1953,7 +1953,7 @@ shared_focus = {
 	icon = GFX_MAR_rebirth_of_empire
 	cost = 4.00
 	x = 9
-	y = 1
+	y = -1
 	
 	completion_reward = {
 	    add_political_power = 100
@@ -1969,7 +1969,7 @@ shared_focus = {
 		focus = return_of_empire
 	}
 	x = 9
-	y = 2
+	y = 0
 	
 	completion_reward = {
 	    add_popularity = { ideology = socialist popularity = 0.1 }
@@ -1984,8 +1984,8 @@ shared_focus = {
 	prerequisite = {
 		focus = new_coronation
 	}
-	x = 6
-	y = 3
+	x = 7
+	y = 1
 	
 	completion_reward = {
 	    set_temp_variable = { temp_econ_spending_amount = 0.2 }
@@ -2002,7 +2002,7 @@ shared_focus = {
 		focus = new_coronation
 	}
 	x = 9
-	y = 3
+	y = 1
 	
 	completion_reward = {
 	    add_war_support = 0.05
@@ -2017,8 +2017,8 @@ shared_focus = {
 	prerequisite = {
 		focus = new_coronation
 	}
-	x = 12
-	y = 3
+	x = 11
+	y = 1
 	
 	completion_reward = {
 	    562 = { 
@@ -2051,7 +2051,7 @@ shared_focus = {
 		focus = neon_sphere
 	}
 	x = 8
-	y = 4
+	y = 2
 	
 	completion_reward = {
 		give_resource_rights = { receiver = USA state = 887 }
@@ -2079,7 +2079,7 @@ shared_focus = {
 		focus = sunny_america
 	}
 	x = 10
-	y = 4
+	y = 2
 	
 	completion_reward = {
 	    give_resource_rights = { receiver = JAP state = 563 }
@@ -2098,7 +2098,7 @@ shared_focus = {
 		focus = neon_sphere
 	}
 	x = 9
-	y = 5
+	y = 3
 	
 	completion_reward = {
 	    add_stability = 0.05

@@ -801,6 +801,34 @@ MAR_debug_category = {
 		}
 	}
 	
+	TaS_2WRW_load_Russia_preparation_focus_tree = {
+		icon = GFX_decision_generic_industry
+		allowed = {
+			original_tag = MAR
+		}
+		visible = {
+			has_country_flag = MAR_debug_2wrw
+		}
+		fire_only_once = no
+	
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: TaS_2WRW_load_focus_tree"
+			
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_focus_tree = MAR_Belozerski_post_unification_tree
+							has_focus_tree = MAR_Kosygin_post_unification
+						}
+					}
+				}
+				load_focus_tree = MAR_war_preparation_tree
+			}
+			set_country_flag = TaSWRW2_War_Prep_Tree_Load
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
 	TaS_2WRW_load_Russia_focus_tree = {
 		icon = GFX_decision_generic_industry
 		allowed = {
