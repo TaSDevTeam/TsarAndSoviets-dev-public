@@ -178,7 +178,7 @@ country_event = { #Offer ceasefire - yes
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_AFG.1"}
 	title = MAR_AFG.1.t
 	desc = MAR_AFG.1.d
-	picture = GFX_report_event_peace_deal
+	picture = GFX_report_event_generic_peace_deal
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -209,7 +209,7 @@ country_event = { #conditional surrender
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_AFG.2"}
 	title = MAR_AFG.2.t
 	desc = MAR_AFG.2.d
-	picture = GFX_report_event_peace_deal
+	picture = GFX_report_event_generic_peace_deal
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -222,20 +222,17 @@ country_event = { #conditional surrender
 		if = {
 			limit = { MTR = { exists = yes } } 
 			MTR = {
-				transfer_state = 1885
 				transfer_state = 1465
 			}
 		}
 		else = {
 			RUS = {
-				transfer_state = 1885
 				transfer_state = 1465
 			}
 		}
 		AFG = {
+			1885 = { set_demilitarized_zone = yes }
 			1470 = { set_demilitarized_zone = yes }
-			1884 = { set_demilitarized_zone = yes }
-			1469 = { set_demilitarized_zone = yes }
 		}
 		hidden_effect = {
 			every_country  = {
@@ -255,7 +252,7 @@ country_event = { #unconditional surrender
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_AFG.3"}
 	title = MAR_AFG.3.t
 	desc = MAR_AFG.3.d
-	picture = GFX_report_event_peace_deal
+	picture = GFX_report_event_generic_peace_deal
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -268,69 +265,652 @@ country_event = { #unconditional surrender
 		if = {
 			limit = { MTR = { exists = yes } } 
 			MTR = {
-				transfer_state = 1468
 				transfer_state = 1885
-				transfer_state = 1470
 				transfer_state = 1471
+				transfer_state = 1470
 				transfer_state = 1465
-				transfer_state = 1474
-				transfer_state = 1884
+				every_owned_state = {
+					remove_core_of = AFG
+					add_core_of = MTR
+				}
 			}
 		}
 		else = {
 			RUS = {
-				transfer_state = 1468
 				transfer_state = 1885
-				transfer_state = 1470
 				transfer_state = 1471
+				transfer_state = 1470
 				transfer_state = 1465
-				transfer_state = 1474
-				transfer_state = 1884
 			}
 		}
 		AFG = {
-			econ_join_sphere_MAR = yes
-			transfer_state = 442
-			add_state_core = 442
-			transfer_state = 929
-			add_state_core = 929
-			transfer_state = 1894
-			add_state_core = 1894
-			add_state_core = 1895
-			add_state_core = 1896
-			add_state_core = 1897
-			add_state_core = 1898
-			add_state_core = 1899
-			annex_country = {
-				target = MFP
-				transfer_troops = yes
-			}
-			set_cosmetic_tag = AFG_pushtunistan
-		}
-		PAK = {
-			econ_join_sphere_MAR = yes
 			annex_country = {
 				target = KLT
 				transfer_troops = yes
 			}
-			transfer_state = 1533
-			add_state_core = 1533
-			transfer_state = 445
-			add_state_core = 445
-			transfer_state = 1534
-			add_state_core = 1534				
-			transfer_state = 444
-			add_state_core = 444
-			transfer_state = 749
-			add_state_core = 749
-			add_state_core = 1891
-			add_state_core = 1892
-			add_state_core = 1893
+			annex_country = {
+				target = MFP
+				transfer_troops = yes
+			}
+			every_owned_state = {
+				remove_core_of = KLT
+				remove_core_of = MFP
+				add_core_of = AFG
+			}
+			if = {
+				limit = {
+					OR = {
+						has_cosmetic_tag = AFG_republic_amin
+						has_cosmetic_tag = AFG_mao
+						has_country_leader = {
+							character = AFG_Mohammed_Zahir_Shah
+							ruling_only = yes
+						}
+					}
+				}
+				set_global_flag = ACW_twoside
+				country_event = { id = MAR_AFG.4 days = 180 }
+			}
+			else = {
+				country_event = { id = MAR_AFG.7 days = 180 }
+			}
+		}
+		IND = {
+			transfer_state = 1898
+			add_state_core = 1898
 		}
 		hidden_effect = {
 			every_country  = {
 				news_event = {
 					id = MAR_2WRW_world_news.3
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Northern Rebellion #MAO/AMIN/ZAHIR
+	id = MAR_AFG.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_AFG.4"}
+	title = MAR_AFG.4.t
+	desc = MAR_AFG.4.d
+	picture = GFX_report_event_generic_peace_deal
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = MAR_AFG.4.a
+		XYZ = {
+			NAL_Mohammad_Najibullah = {
+				set_nationality = NAL
+			}
+		}
+		NAL = {
+			set_politics = {
+				ruling_party = liberal_conservatism
+				last_election = "1969.8.29"
+				election_frequency = 48
+				elections_allowed = no
+			}
+			ai_chance = {
+				base = 10
+			}
+			set_popularities = {
+				liberal_conservatism = 40
+				conservatism = 25
+				liberalism = 25
+				progressivism = 10
+			}
+			set_party_name = {
+				ideology = liberal_conservatism
+				name = NAL_liberal_conservatism_party
+				long_name = NAL_liberal_conservatism_party_long
+			}
+			set_party_name = {
+				ideology = conservatism
+				name = NAL_conservatism_party
+				long_name = NAL_conservatism_party_long
+			}
+			set_party_name = {
+				ideology = liberalism
+				name = NAL_liberalism_party
+				long_name = NAL_liberalism_party_long
+			}
+			set_party_name = {
+				ideology = progressivism
+				name = NAL_progressivism_party
+				long_name = NAL_progressivism_party_long
+			}
+			add_country_leader_role = {
+				character = NAL_Mohammad_Najibullah
+				promote_leader = yes
+				country_leader = {
+					ideology = liberal_conservatism_big_tent_subtype
+					expire = "1999.1.1"
+				}
+			}
+			inherit_technology = AFG
+			load_oob = "NAL_acw"
+			transfer_state = 1474
+			transfer_state = 1472
+			transfer_state = 1473
+			every_owned_state = {
+				add_core_of = NAL
+			}
+		}
+		if = {
+			limit = { has_global_flag = ACW_twoside }
+			country_event = { MAR_AFG.5 days = 11 }
+			if = {
+				limit = { MAR = { has_government = despotism } }
+				country_event = { id = MAR_AFG.9 days = 7 }
+			}
+			else = { 
+				country_event = { id = MAR_AFG.11 days = 7 }
+			}
+		}
+		else = {
+			country_event = { id = MAR_AFG.8 days = 7 }
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.21
+				}
+			}
+		}
+	}	
+}
+
+country_event = { #Daoud pro-sphere coup #start of the CW
+	id = MAR_AFG.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_AFG.5"}
+	title = MAR_AFG.5.t
+	desc = MAR_AFG.5.d
+	picture = GFX_report_event_generic_peace_deal
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = MAR_AFG.5.a
+		set_politics = {
+			ruling_party = fascism
+			last_election = "1969.8.29"
+			election_frequency = 48
+			elections_allowed = no
+		}
+		ai_chance = {
+			base = 10
+		}
+		set_popularities = {
+			communist = 10
+			fascism = 65
+			despotism = 15
+			ultranationalism = 10
+		}
+		set_party_name = {
+			ideology = communist
+			name = AFG_communist_party_endgame
+			long_name = AFG_communist_party_endgame_long
+		}
+		set_party_name = {
+			ideology = despotism
+			name = AFG_despotism_party
+			long_name = AFG_despotism_party_long
+		}
+		set_party_name = {
+			ideology = fascism
+			name = AFG_national_socialism_party
+			long_name = AFG_national_socialism_party_long
+		}
+		set_party_name = {
+			ideology = ultranationalism
+			name = AFG_ultranationalism_party_endgame
+			long_name = AFG_ultranationalism_party_endgame_long
+		}
+		promote_character = AFG_Faiz_Ahmad
+		promote_character = AFG_Burnahuddin_Rabbani
+		AFG_Ahmad_Shah_Khan = { promote_character = despotism_absolute_monarchy_subtype }
+		AFG_Mohammad_Daoud_Khan = { promote_character = fascism_revolutionary_nationalism_subtype }
+		set_cosmetic_tag = AFG_republic
+		econ_join_sphere_JAP = yes
+		every_country = {
+			limit = { is_subject_of = AFG }
+			econ_join_sphere_JAP = yes
+		}
+		set_global_flag = AFG_DK_JAP
+		NAL = { declare_war_on = { target = AFG type = annex_everything } }
+		country_event = { MAR_AFG.6 days = 7 }
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.22
+				}
+			}
+		}
+	}	
+}
+
+country_event = { #India occupies Kalat
+	id = MAR_AFG.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_AFG.6"}
+	title = MAR_AFG.6.t
+	desc = MAR_AFG.6.d
+	picture = GFX_report_event_generic_peace_deal
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = MAR_AFG.6.a
+		IND = {
+			transfer_state = 749
+			transfer_state = 444
+			transfer_state = 1534
+			transfer_state = 445
+			transfer_state = 1892
+			transfer_state = 1893
+			transfer_state = 1891
+			transfer_state = 1533
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.23
+				}
+			}
+		}
+	}	
+}
+
+
+country_event = { #AFG revolution
+	id = MAR_AFG.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_AFG.7"}
+	title = MAR_AFG.7.t
+	desc = MAR_AFG.7.d
+	picture = GFX_report_event_generic_peace_deal
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { #Sarwari
+		name = MAR_AFG.7.a
+		trigger = {
+			has_global_flag = TaS_WRW2_Russian_victory
+			MAR = { has_government = despotism } 
+		}
+		XYZ = {
+			AFG_Assadullah_Sarwari = {
+				set_nationality = AFG
+			}
+		}
+		set_politics = {
+			ruling_party = communist
+			last_election = "1969.8.29"
+			election_frequency = 48
+			elections_allowed = no
+		}
+		ai_chance = {
+			base = 10
+		}
+		set_popularities = {
+			communist = 65
+			fascism = 10
+			despotism = 15
+			ultranationalism = 10
+		}
+		set_party_name = {
+			ideology = communist
+			name = AFG_communist_party_endgame
+			long_name = AFG_communist_party_endgame_long
+		}
+		set_party_name = {
+			ideology = despotism
+			name = AFG_despotism_party
+			long_name = AFG_despotism_party_long
+		}
+		set_party_name = {
+			ideology = fascism
+			name = AFG_national_socialism_party
+			long_name = AFG_national_socialism_party_long
+		}
+		set_party_name = {
+			ideology = ultranationalism
+			name = AFG_ultranationalism_party_endgame
+			long_name = AFG_ultranationalism_party_endgame_long
+		}
+		add_country_leader_role = {
+			character = AFG_Assadullah_Sarwari
+			promote_leader = yes
+			country_leader = {
+				ideology = communist_stratocratic_communism_subtype
+				expire = "1999.1.1"
+			}
+		}
+		set_cosmetic_tag = AFG_republic
+		country_event = { MAR_AFG.4 days = 7 }
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.25
+				}
+			}
+		}
+	}
+	option = { #Taraki commie
+		name = MAR_AFG.7.b
+		trigger = {
+			has_global_flag = TaS_WRW2_Russian_victory
+			MAR = { has_government = socialist } 
+		}
+		XYZ = {
+			AFG_Nur_Muhammad_Taraki = {
+				set_nationality = AFG
+			}
+		}
+		set_politics = {
+			ruling_party = communist
+			last_election = "1969.8.29"
+			election_frequency = 48
+			elections_allowed = no
+		}
+		ai_chance = {
+			base = 10
+		}
+		set_popularities = {
+			communist = 65
+			fascism = 10
+			despotism = 15
+			ultranationalism = 10
+		}
+		set_party_name = {
+			ideology = communist
+			name = AFG_communist_party_endgame
+			long_name = AFG_communist_party_endgame_long
+		}
+		set_party_name = {
+			ideology = despotism
+			name = AFG_despotism_party
+			long_name = AFG_despotism_party_long
+		}
+		set_party_name = {
+			ideology = fascism
+			name = AFG_national_socialism_party
+			long_name = AFG_national_socialism_party_long
+		}
+		set_party_name = {
+			ideology = ultranationalism
+			name = AFG_ultranationalism_party_endgame
+			long_name = AFG_ultranationalism_party_endgame_long
+		}
+		add_country_leader_role = {
+			character = AFG_Nur_Muhammad_Taraki
+			promote_leader = yes
+			country_leader = {
+				ideology = communist_national_communism_subtype
+				expire = "1999.1.1"
+			}
+		}
+		set_cosmetic_tag = AFG_republic
+		country_event = { MAR_AFG.4 days = 7 }
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.25
+				}
+			}
+		}
+	}	
+	option = { #Taraki fascist
+		name = MAR_AFG.7.c
+		trigger = { NOT = { has_global_flag = TaS_WRW2_Russian_victory } }
+		XYZ = {
+			AFG_Nur_Muhammad_Taraki = {
+				set_nationality = AFG
+			}
+		}
+		set_politics = {
+			ruling_party = fascism
+			last_election = "1969.8.29"
+			election_frequency = 48
+			elections_allowed = no
+		}
+		ai_chance = {
+			base = 10
+		}
+		set_popularities = {
+			communist = 10
+			fascism = 65
+			despotism = 15
+			ultranationalism = 10
+		}
+		set_party_name = {
+			ideology = communist
+			name = AFG_communist_party_endgame
+			long_name = AFG_communist_party_endgame_long
+		}
+		set_party_name = {
+			ideology = despotism
+			name = AFG_despotism_party
+			long_name = AFG_despotism_party_long
+		}
+		set_party_name = {
+			ideology = fascism
+			name = AFG_national_socialism_party
+			long_name = AFG_national_socialism_party_long
+		}
+		set_party_name = {
+			ideology = ultranationalism
+			name = AFG_ultranationalism_party_endgame
+			long_name = AFG_ultranationalism_party_endgame_long
+		}
+		add_country_leader_role = {
+			character = AFG_Nur_Muhammad_Taraki
+			promote_leader = yes
+			country_leader = {
+				ideology = fascism_fascist_populism_subtype
+				expire = "1999.1.1"
+			}
+		}
+		set_cosmetic_tag = AFG_republic
+		country_event = { MAR_AFG.7 days = 7 }
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.25
+				}
+			}
+		}
+	}	
+}
+
+country_event = { #Mujahideen
+	id = MAR_AFG.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_AFG.8"}
+	title = MAR_AFG.8.t
+	desc = MAR_AFG.8.d
+	picture = GFX_report_event_generic_peace_deal
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = MAR_AFG.8.a
+		XYZ = {
+			MUJ_Gulbuddin_Hekmatyar = {
+				set_nationality = MUJ
+			}
+		}
+		MUJ = {
+			set_politics = {
+				ruling_party = ultranationalism 
+				last_election = "1969.8.29"
+				election_frequency = 48
+				elections_allowed = no
+			}
+			ai_chance = {
+				base = 10
+			}
+			set_popularities = {
+				ultranationalism  = 40
+				national_socialism = 25
+				fascism = 25
+				despotism = 10
+			}
+			set_party_name = {
+				ideology = ultranationalism
+				name = MUJ_ultranationalism_party
+				long_name = MUJ_ultranationalism_party_long
+			}
+			set_party_name = {
+				ideology = national_socialism
+				name = MUJ_national_socialism_party
+				long_name = MUJ_national_socialism_party_long
+			}
+			set_party_name = {
+				ideology = fascism
+				name = MUJ_fascism_party
+				long_name = MUJ_fascism_party_long
+			}
+			set_party_name = {
+				ideology = despotism
+				name = MUJ_despotism_party
+				long_name = MUJ_despotism_party_long
+			}
+			add_country_leader_role = {
+				character = MUJ_Gulbuddin_Hekmatyar
+				promote_leader = yes
+				country_leader = {
+					ideology = ultranationalism_fundamentalism_subtype
+					expire = "1999.1.1"
+				}
+			}
+			inherit_technology = AFG
+			load_oob = "MUJ_acw"
+			transfer_state = 929
+			transfer_state = 415
+			transfer_state = 1889
+			transfer_state = 1890
+			every_owned_state = {
+				add_core_of = MUJ_acw
+			}
+		}
+		AFG = {
+			declare_war_on = {
+				target = NAL
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = MUJ
+				type = annex_everything
+			}
+		}
+		NAL = {
+			declare_war_on = {
+				target = AFG
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = MUJ
+				type = annex_everything
+			}
+		}
+		MUJ = {
+			declare_war_on = {
+				target = AFG
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = NAL
+				type = annex_everything
+			}
+		}
+		country_event = { id = MAR_AFG.6 days = 3 }
+		country_event = { id = MAR_AFG.10 days = 7 }
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.26
+				}
+			}
+		}
+	}	
+}
+
+country_event = { #Twoside proxy starts
+	id = MAR_AFG.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_AFG.9"}
+	title = MAR_AFG.9.t
+	desc = MAR_AFG.9.d
+	picture = GFX_report_event_peace_deal
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = MAR_AFG.9.a
+		ai_chance = { factor = 1 }
+		MAR = {
+			TaS_fopo_add_afghanistan_civil_war_tab = yes
+		}
+		JAP = {
+			TaS_fopo_add_afghanistan_civil_war_tab = yes
+		}
+		USA = { 
+			TaS_fopo_add_afghanistan_civil_war_tab = yes
+		}
+	}
+}
+
+country_event = { #Threeside proxy starts
+	id = MAR_AFG.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_AFG.10"}
+	title = MAR_AFG.10.t
+	desc = MAR_AFG.10.d
+	picture = GFX_report_event_peace_deal
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = MAR_AFG.10.a
+		ai_chance = { factor = 1 }
+		MAR = {
+			TaS_fopo_add_afghanistan_civil_war_tab = yes
+		}
+		JAP = {
+			TaS_fopo_add_afghanistan_civil_war_tab = yes
+		}
+		USA = { 
+			TaS_fopo_add_afghanistan_civil_war_tab = yes
+		}
+	}
+}
+
+country_event = { #No proxy, Kosygin
+	id = MAR_AFG.11
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_AFG.11"}
+	title = MAR_AFG.11.t
+	desc = MAR_AFG.11.d
+	picture = GFX_report_event_peace_deal
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = MAR_AFG.11.a
+		ai_chance = { factor = 1 }
+		MAR = {
+			declare_war_on = {
+				target = AFG
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = NAL
+				type = annex_everything
+			}
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.25
 				}
 			}
 		}
@@ -4919,6 +5499,123 @@ news_event = {
 		trigger = {
 			tag = MAR
 		}
+	}
+}
+
+news_event = { #Northern Alliance revolt solo
+	id = MAR_2WRW_world_news.21
+	title = MAR_2WRW_world_news.21.t
+	desc = MAR_2WRW_world_news.21.d
+	picture = GFX_MAR_2WRW_world_news_021
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_2WRW_world_news.21.a
+	}
+}
+
+news_event = { #Daoud coup (Pro-Sphere)
+	id = MAR_2WRW_world_news.22
+	title = MAR_2WRW_world_news.22.t
+	desc = MAR_2WRW_world_news.22.d
+	picture = GFX_MAR_2WRW_world_news_022
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_2WRW_world_news.22.a
+	}
+}
+
+news_event = { #India takes Kalat
+	id = MAR_2WRW_world_news.23
+	title = MAR_2WRW_world_news.23.t
+	desc = MAR_2WRW_world_news.23.d
+	picture = GFX_MAR_2WRW_world_news_023
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_2WRW_world_news.23.a
+	}
+}
+
+news_event = { #Russia invades again
+	id = MAR_2WRW_world_news.24
+	title = MAR_2WRW_world_news.24.t
+	desc = MAR_2WRW_world_news.24.d
+	picture = GFX_MAR_2WRW_world_news_024
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_2WRW_world_news.24.a
+	}
+}
+
+news_event = { #Afgani revolution
+	id = MAR_2WRW_world_news.25
+	title = MAR_2WRW_world_news.25.t
+	desc = MAR_2WRW_world_news.25.d
+	picture = GFX_MAR_2WRW_world_news_025
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_2WRW_world_news.25.a
+	}
+}
+
+news_event = { #Mujahideen revolt - Start of the CW
+	id = MAR_2WRW_world_news.26
+	title = MAR_2WRW_world_news.26.t
+	desc = MAR_2WRW_world_news.26.d
+	picture = GFX_MAR_2WRW_world_news_026
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_2WRW_world_news.26.a
+	}
+}
+
+news_event = { #NA wins
+	id = MAR_2WRW_world_news.27
+	title = MAR_2WRW_world_news.27.t
+	desc = MAR_2WRW_world_news.27.d
+	picture = GFX_MAR_2WRW_world_news_027
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_2WRW_world_news.27.a
+	}
+}
+
+news_event = { #AFG wins
+	id = MAR_2WRW_world_news.28
+	title = MAR_2WRW_world_news.28.t
+	desc = MAR_2WRW_world_news.28.d
+	picture = GFX_MAR_2WRW_world_news_028
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_2WRW_world_news.28.a
+	}
+}
+
+news_event = { #MUJ wins
+	id = MAR_2WRW_world_news.29
+	title = MAR_2WRW_world_news.29.t
+	desc = MAR_2WRW_world_news.29.d
+	picture = GFX_MAR_2WRW_world_news_029
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_2WRW_world_news.29.a
 	}
 }
 

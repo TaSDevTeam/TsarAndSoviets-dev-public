@@ -55,7 +55,14 @@ TaS_fopo_remove_france_civil_war_tab = {
 	set_temp_variable = { conflict_id = token:GC_FranceCW }
 	TNO_remove_fopo_conflict_tab = yes
 }
-
+TaS_fopo_add_afghanistan_civil_war_tab = {
+	set_temp_variable = { conflict_id = token:GC_AfghanistanCivilWar }
+	TNO_add_fopo_conflict_tab = yes
+}
+TaS_fopo_remove_afghanistan_civil_war_tab = {
+	set_temp_variable = { conflict_id = token:GC_AfghanistanCivilWar }
+	TNO_remove_fopo_conflict_tab = yes
+}
 TaS_OIL_get_supported_factions = {
 	if = {
 		limit = { MAR = { NOT = { has_government = socialist } } }

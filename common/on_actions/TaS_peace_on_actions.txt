@@ -1086,6 +1086,308 @@ on_actions = {
 				TaS_SWRW_american_germany = yes
 				set_global_flag = skip_default_capitulation
 			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = AFG
+					}
+					ROOT = { 
+						OR = {
+							original_tag = NAL
+							original_tag = MUJ
+						}
+					}
+					NAL = { exists = no }
+					MUJ = { exists = no }
+				}
+				if = {
+					limit = {
+						MAR = { has_government = socialist }
+						NOT = { has_global_flag = ACW_twoside }
+					}
+					AFG = { econ_join_sphere_MAR = yes }
+					USA = {
+						set_temp_variable = { Victory_ID = 52 }
+						set_temp_variable = { Victory_Outcome = 2 }
+						set_temp_variable = { Victory_Points = -50 }
+						Cold_War_GUI_ManipulateVictory = yes
+						TaS_fopo_remove_manchurian_civil_war_tab = yes
+						set_temp_variable = { target = NAL }
+						TNO_clear_and_recall_volunteers = yes
+					}
+					JAP = {
+						set_temp_variable = { Victory_ID = 52 }
+						set_temp_variable = { Victory_Outcome = 2 }
+						set_temp_variable = { Victory_Points = -50 }
+						Cold_War_GUI_ManipulateVictory = yes
+						TaS_fopo_remove_manchurian_civil_war_tab = yes
+						set_temp_variable = { target = MUJ }
+						TNO_clear_and_recall_volunteers = yes
+					}
+					MAR = {
+						set_temp_variable = { target = AFG }
+						TNO_clear_and_recall_volunteers = yes
+						set_temp_variable = { target = NAL }
+						TNO_clear_and_recall_volunteers = yes
+					}
+					every_country  = {
+						news_event = {
+							id = MAR_2WRW_world_news.28
+						}
+					}
+				}
+				else = {
+					USA = {
+						set_temp_variable = { Victory_ID = 52 }
+						set_temp_variable = { Victory_Outcome = 2 }
+						set_temp_variable = { Victory_Points = -50 }
+						Cold_War_GUI_ManipulateVictory = yes
+						TaS_fopo_remove_manchurian_civil_war_tab = yes
+						set_temp_variable = { target = NAL }
+						TNO_clear_and_recall_volunteers = yes
+					}
+					JAP = {
+						set_temp_variable = { Victory_ID = 52 }
+						set_temp_variable = { Victory_Outcome = 2 }
+						set_temp_variable = { Victory_Points = -50 }
+						Cold_War_GUI_ManipulateVictory = yes
+						TaS_fopo_remove_manchurian_civil_war_tab = yes
+						set_temp_variable = { target = MUJ }
+						TNO_clear_and_recall_volunteers = yes
+					}
+					MAR = {
+						set_temp_variable = { target = AFG }
+						TNO_clear_and_recall_volunteers = yes
+						set_temp_variable = { target = NAL }
+						TNO_clear_and_recall_volunteers = yes
+					}
+					every_country  = {
+						news_event = {
+							id = MAR_2WRW_world_news.28
+						}
+					}
+				}
+				set_global_flag = skip_default_capitulation
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = MUJ
+					}
+					ROOT = { 
+						OR = {
+							original_tag = NAL
+							original_tag = AFG
+						}
+					}
+					AFG = { exists = no }
+					NAL = { exists = no }
+				}
+				MUJ = { econ_join_sphere_JAP = yes } 
+				USA = {
+					set_temp_variable = { Victory_ID = 52 }
+					set_temp_variable = { Victory_Outcome = 2 }
+					set_temp_variable = { Victory_Points = -50 }
+					Cold_War_GUI_ManipulateVictory = yes
+					TaS_fopo_remove_manchurian_civil_war_tab = yes
+					set_temp_variable = { target = NAL }
+					TNO_clear_and_recall_volunteers = yes
+				}
+				JAP = {
+					set_temp_variable = { Victory_ID = 52 }
+					set_temp_variable = { Victory_Outcome = 4 }
+					set_temp_variable = { Victory_Points = 100 }
+					Cold_War_GUI_ManipulateVictory = yes
+					TaS_fopo_remove_manchurian_civil_war_tab = yes
+					set_temp_variable = { target = MUJ }
+					TNO_clear_and_recall_volunteers = yes
+				}
+				MAR = {
+					set_temp_variable = { target = AFG }
+					TNO_clear_and_recall_volunteers = yes
+					set_temp_variable = { target = NAL }
+					TNO_clear_and_recall_volunteers = yes
+				}
+				every_country  = {
+					news_event = {
+						id = MAR_2WRW_world_news.29
+					}
+				}
+				set_global_flag = skip_default_capitulation
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = NAL
+					}
+					ROOT = { 
+						OR = {
+							original_tag = MUJ
+							original_tag = AFG
+						}
+					}
+					MUJ = { exists = no }
+					NAL = { exists = no }
+				}
+				USA = {
+					set_temp_variable = { Victory_ID = 52 }
+					set_temp_variable = { Victory_Outcome = 4 }
+					set_temp_variable = { Victory_Points = 50 }
+					Cold_War_GUI_ManipulateVictory = yes
+					TaS_fopo_remove_manchurian_civil_war_tab = yes
+					set_temp_variable = { target = NAL }
+					TNO_clear_and_recall_volunteers = yes
+				}
+				JAP = {
+					set_temp_variable = { Victory_ID = 52 }
+					set_temp_variable = { Victory_Outcome = 2 }
+					set_temp_variable = { Victory_Points = -50 }
+					Cold_War_GUI_ManipulateVictory = yes
+					TaS_fopo_remove_manchurian_civil_war_tab = yes
+					set_temp_variable = { target = MUJ }
+					TNO_clear_and_recall_volunteers = yes
+				}
+				MAR = {
+					set_temp_variable = { target = AFG }
+					TNO_clear_and_recall_volunteers = yes
+					set_temp_variable = { target = NAL }
+					TNO_clear_and_recall_volunteers = yes
+				}
+				if = {
+					limit = {
+						MAR = { has_government = socialist }
+						NOT = { has_global_flag = ACW_twoside }
+					}
+					NAL = { econ_join_sphere_USA = yes }
+				}
+				else = {
+					NAL = { econ_join_sphere_MAR = yes }
+				}
+				every_country  = {
+					news_event = {
+						id = MAR_2WRW_world_news.27
+					}
+				}
+				set_global_flag = skip_default_capitulation
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = AFG
+					}
+					ROOT = { 
+						original_tag = NAL
+					}
+					has_global_flag = ACW_twoside
+				}
+				USA = {
+					set_temp_variable = { Victory_ID = 52 }
+					set_temp_variable = { Victory_Outcome = 2 }
+					set_temp_variable = { Victory_Points = -50 }
+					Cold_War_GUI_ManipulateVictory = yes
+					TaS_fopo_remove_manchurian_civil_war_tab = yes
+					set_temp_variable = { target = NAL }
+					TNO_clear_and_recall_volunteers = yes
+				}
+				JAP = {
+					set_temp_variable = { Victory_ID = 52 }
+					set_temp_variable = { Victory_Outcome = 4 }
+					set_temp_variable = { Victory_Points = 100 }
+					Cold_War_GUI_ManipulateVictory = yes
+					TaS_fopo_remove_manchurian_civil_war_tab = yes
+					set_temp_variable = { target = AFG }
+					TNO_clear_and_recall_volunteers = yes
+				}
+				MAR = {
+					set_temp_variable = { target = NAL }
+					TNO_clear_and_recall_volunteers = yes
+				}
+				every_country  = {
+					news_event = {
+						id = MAR_2WRW_world_news.28
+					}
+				}
+				set_global_flag = skip_default_capitulation
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = NAL
+					}
+					ROOT = { 
+						original_tag = AFG
+					}
+					has_global_flag = ACW_twoside
+				}
+				USA = {
+					set_temp_variable = { Victory_ID = 52 }
+					set_temp_variable = { Victory_Outcome = 4 }
+					set_temp_variable = { Victory_Points = 50 }
+					Cold_War_GUI_ManipulateVictory = yes
+					TaS_fopo_remove_manchurian_civil_war_tab = yes
+					set_temp_variable = { target = NAL }
+					TNO_clear_and_recall_volunteers = yes
+				}
+				JAP = {
+					set_temp_variable = { Victory_ID = 52 }
+					set_temp_variable = { Victory_Outcome = 2 }
+					set_temp_variable = { Victory_Points = -50 }
+					Cold_War_GUI_ManipulateVictory = yes
+					TaS_fopo_remove_manchurian_civil_war_tab = yes
+					set_temp_variable = { target = AFG }
+					TNO_clear_and_recall_volunteers = yes
+				}
+				MAR = {
+					set_temp_variable = { target = NAL }
+					TNO_clear_and_recall_volunteers = yes
+				}
+				NAL = { econ_join_sphere_MAR = yes }
+				every_country  = {
+					news_event = {
+						id = MAR_2WRW_world_news.27
+					}
+				}
+				set_global_flag = skip_default_capitulation
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = AFG
+					}
+					ROOT = { 
+						original_tag = NAL
+					}
+					has_global_flag = ACW_twoside
+				}
+				USA = {
+					set_temp_variable = { Victory_ID = 52 }
+					set_temp_variable = { Victory_Outcome = 2 }
+					set_temp_variable = { Victory_Points = -50 }
+					Cold_War_GUI_ManipulateVictory = yes
+					TaS_fopo_remove_manchurian_civil_war_tab = yes
+					set_temp_variable = { target = NAL }
+					TNO_clear_and_recall_volunteers = yes
+				}
+				JAP = {
+					set_temp_variable = { Victory_ID = 52 }
+					set_temp_variable = { Victory_Outcome = 4 }
+					set_temp_variable = { Victory_Points = 50 }
+					Cold_War_GUI_ManipulateVictory = yes
+					TaS_fopo_remove_manchurian_civil_war_tab = yes
+					set_temp_variable = { target = AFG }
+					TNO_clear_and_recall_volunteers = yes
+				}
+				MAR = {
+					set_temp_variable = { target = NAL }
+					TNO_clear_and_recall_volunteers = yes
+				}
+				every_country  = {
+					news_event = {
+						id = MAR_2WRW_world_news.28
+					}
+				}
+				set_global_flag = skip_default_capitulation
+			}
 		}
 	}
 }
