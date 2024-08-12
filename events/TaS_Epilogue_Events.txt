@@ -2534,12 +2534,17 @@ country_event = { #Bormann specific - Klopher is new fuhrer
 				character = GER_gerhard_klopfer
 				promote_leader = yes
 				country_leader = {
-					desc = ""
+					desc = "GER_gerhard_klopfer_POSTWRW2_DESC"
 					expire = "1999.1.1"
 					ideology = national_socialism_subtype
 					traits = {
 					}
 					id = -1
+				}
+			}
+			GER_gerhard_klopfer = {
+				set_portraits = {
+					civilian = { large = "gfx/leaders/POSTWRW2/Portrait_GER_Gerhard_Klopfer.dds" }
 				}
 			}
 			country_event = { id = TaS_GERCollapse.4 days = 8}
@@ -2774,7 +2779,7 @@ country_event = { #Fash Speer specific - Abs is new fuhrer
 				character = GER_Hermann_Josef_Abs
 				promote_leader = yes
 				country_leader = {
-					desc = ""
+					desc = "GER_Hermann_Josef_Abs_DESC"
 					expire = "1999.1.1"
 					ideology = despotism_corporatocracy_subtype 
 					traits = {

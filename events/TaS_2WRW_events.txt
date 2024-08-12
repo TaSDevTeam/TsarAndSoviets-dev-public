@@ -202,6 +202,7 @@ country_event = { #Offer ceasefire - yes
 	}	
 	option = {
 		name = MAR_AFG.1.b
+		trigger = { NOT = { has_country_flag = afg_ru_cap } }
 	}
 }
 country_event = { #conditional surrender

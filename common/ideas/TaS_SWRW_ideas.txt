@@ -188,5 +188,25 @@ ideas = {
 				weekly_manpower = -10000
 			}
 		}
+		SWRW_mountainous_war = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea SWRW_mountainous_war" }
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = generic_war_exhaustion
+			targeted_modifier = {
+				tag = AFG
+				attack_bonus_against = -0.25		
+				defense_bonus_against = -0.25
+			}
+			modifier = {
+				planning_speed = -0.2
+				army_speed_factor = -0.5
+			}
+		}
 	}
 }
