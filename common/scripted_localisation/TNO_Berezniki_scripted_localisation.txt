@@ -608,3 +608,25 @@ defined_text = {
 		localization_key = BOR_OC_country_victory
 	}
 }
+defined_text = {
+	name = Get_Event_berez_kazahk_12_Desc
+	text = {
+		trigger = { KZR = { has_government = paternalism } }
+		localization_key = berez_kazahk_12_shelokov
+	}
+	text = {
+		trigger = { KZR = { has_government = communist } }
+		localization_key = berez_kazahk_12_solomentsev
+	}
+}
+defined_text = {
+	name = Get_Event_berez_kazahk_12_Answer
+	text = {
+		trigger = { KZR = { has_government = paternalism } }
+		localization_key = berez_kazahk_12_shelokov_a
+	}
+	text = {
+		trigger = { KZR = { has_government = communist } }
+		localization_key = berez_kazahk_12_solomentsev_a
+	}
+}

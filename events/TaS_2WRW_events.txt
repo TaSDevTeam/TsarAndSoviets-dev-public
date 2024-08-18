@@ -342,6 +342,9 @@ country_event = { #Northern Rebellion #MAO/AMIN/ZAHIR
 
 	option = {
 		name = MAR_AFG.4.a
+		ai_chance = {
+			base = 10
+		}
 		XYZ = {
 			NAL_Mohammad_Najibullah = {
 				set_nationality = NAL
@@ -353,9 +356,6 @@ country_event = { #Northern Rebellion #MAO/AMIN/ZAHIR
 				last_election = "1969.8.29"
 				election_frequency = 48
 				elections_allowed = no
-			}
-			ai_chance = {
-				base = 10
 			}
 			set_popularities = {
 				liberal_conservatism = 40
@@ -5503,7 +5503,7 @@ news_event = {
 	}
 }
 
-news_event = { #Northern Alliance revolt solo
+news_event = { #Northern Alliance revolt
 	id = MAR_2WRW_world_news.21
 	title = MAR_2WRW_world_news.21.t
 	desc = MAR_2WRW_world_news.21.d
