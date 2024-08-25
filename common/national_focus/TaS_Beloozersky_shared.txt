@@ -1,8 +1,8 @@
 ### Regional Tree###
 ###Political Tree
 shared_focus = {
-	id = MAR_pervii_ukaz
-	icon = GFX_MAR_first_orders
+	id = MAR_the_first_decrees
+	icon = GFX_MAR_the_first_decrees
 	cost = 3.58
 	x = 4
 	y = 0
@@ -23,11 +23,11 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = MAR_integratia_chinov
-	icon = GFX_MAR_integration
+	id = MAR_integration_of_officials
+	icon = GFX_MAR_integration_of_officials
 	cost = 3.58
 	prerequisite = {
-		focus = MAR_pervii_ukaz
+		focus = MAR_the_first_decrees
 	}
 	x = 3
 	y = 1
@@ -37,11 +37,11 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = MAR_svoboda_vibora
-	icon = GFX_MAR_choise
+	id = MAR_freedom_of_choice
+	icon = GFX_MAR_freedom_of_choice
 	cost = 3.58
 	prerequisite = {
-		focus = MAR_pervii_ukaz
+		focus = MAR_the_first_decrees
 	}
 	x = 5
 	y = 1
@@ -57,14 +57,14 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = MAR_novia_soveti
-	icon = GFX_MAR_no_soviets
+	id = MAR_the_new_soviets
+	icon = GFX_MAR_the_new_soviets
 	cost = 3.58
 	prerequisite = {
-		focus = MAR_integratia_chinov
+		focus = MAR_integration_of_officials
 	}
 	prerequisite = {
-		focus = MAR_svoboda_vibora
+		focus = MAR_freedom_of_choice
 	}
 	x = 4
 	y = 2
@@ -80,11 +80,11 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = MAR_graniti_gubernii
-	icon = GFX_MAR_govern
+	id = MAR_governates_borders
+	icon = GFX_MAR_governates_borders
 	cost = 3.58
 	prerequisite = {
-		focus = MAR_novia_soveti
+		focus = MAR_the_new_soviets
 	}
 	x = 4
 	y = 3
@@ -94,11 +94,11 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = MAR_cherkovni_vopros
-	icon = GFX_MAR_Cervov_vopros
+	id = MAR_question_of_church
+	icon = GFX_MAR_question_of_church
 	cost = 3.58
 	prerequisite = {
-		focus = MAR_graniti_gubernii
+		focus = MAR_governates_borders
 	}
 	x = 4
 	y = 5
@@ -111,11 +111,11 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = MAR_kozli_opuhenia
-	icon = GFX_MAR_goats
+	id = MAR_scapegoats
+	icon = GFX_MAR_scapegoats
 	cost = 3.58
 	prerequisite = {
-		focus = MAR_novia_soveti
+		focus = MAR_the_new_soviets
 	}
 	x = 6
 	y = 3
@@ -130,11 +130,11 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = MAR_vspomnit_uspeh
-	icon = GFX_MAR_Successes_of_yesterday
+	id = MAR_remember_glories_of_the_past
+	icon = GFX_MAR_remember_glories_of_the_past
 	cost = 3.58
 	prerequisite = {
-		focus = MAR_kozli_opuhenia
+		focus = MAR_scapegoats
 	}
 	x = 6
 	y = 4
@@ -148,11 +148,11 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = MAR_uroki_zubatova
-	icon = GFX_MAR_zubatov
+	id = MAR_lessons_from_zubatov
+	icon = GFX_MAR_lessons_from_zubatov
 	cost = 3.58
 	prerequisite = {
-		focus = MAR_vspomnit_uspeh
+		focus = MAR_remember_glories_of_the_past
 	}
 	x = 6
 	y = 5
@@ -168,11 +168,11 @@ shared_focus = {
 }		
 
 shared_focus = {
-	id = MAR_uchrejdenie_prikazov
-	icon = GFX_MAR_Sosdanie_prikazov
+	id = MAR_establish_prikazy
+	icon = GFX_MAR_establish_prikazy
 	cost = 3.58
 	prerequisite = {
-		focus = MAR_novia_soveti
+		focus = MAR_the_new_soviets
 	}
 	x = 2
 	y = 3
@@ -209,11 +209,11 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = MAR_zem_reforma
-	icon = GFX_MAR_land_regorm
+	id = MAR_land_reform
+	icon = GFX_MAR_land_reform
 	cost = 3.58
 	prerequisite = {
-		focus = MAR_uchrejdenie_prikazov
+		focus = MAR_establish_prikazy
 	}
 	x = 1
 	y = 4
@@ -224,11 +224,11 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = MAR_podgotovka_konsti
-	icon = GFX_MAR_constitution
+	id = MAR_creation_of_constitution
+	icon = GFX_MAR_creation_of_constitution
 	cost = 3.58
 	prerequisite = {
-		focus = MAR_uchrejdenie_prikazov
+		focus = MAR_establish_prikazy
 	}
 	x = 3
 	y = 4
@@ -238,14 +238,14 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = MAR_novie_partiici
-	icon = GFX_MAR_new_partietsi
+	id = MAR_correct_the_party
+	icon = GFX_MAR_correct_the_party
 	cost = 3.58
 	prerequisite = {
-		focus = MAR_zem_reforma
+		focus = MAR_land_reform
 	}
 	prerequisite = {
-		focus = MAR_podgotovka_konsti
+		focus = MAR_creation_of_constitution
 	}
 	x = 2
 	y = 5
@@ -259,17 +259,17 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = MAR_pervi_siezd
-	icon = GFX_MAR_open_sesd
+	id = MAR_first_congress_of_soviets
+	icon = GFX_MAR_first_congress_of_soviets
 	cost = 3.58
 	prerequisite = {
-		focus = MAR_novie_partiici
+		focus = MAR_correct_the_party
 	}
 	prerequisite = {
-		focus = MAR_cherkovni_vopros
+		focus = MAR_question_of_church
 	}
 	prerequisite = {
-		focus = MAR_uroki_zubatova
+		focus = MAR_lessons_from_zubatov
 	}
 	x = 4
 	y = 6
@@ -287,13 +287,13 @@ shared_focus = {
 ###Economy Tree
 
 shared_focus = {
-	id = MAR_reanim_eco
-	icon = GFX_MAR_reanimation_of_our_economy
+	id = MAR_reanimating_the_economy
+	icon = GFX_MAR_reanimating_the_economy
 	cost = 3.58
 	x = 12
 	y = 0
 	available = {
-		has_completed_focus = MAR_pervi_siezd
+		has_completed_focus = MAR_first_congress_of_soviets
 	}
 	completion_reward = {
 		add_tech_bonus = {
@@ -310,11 +310,11 @@ shared_focus = {
 	}	
 }
 shared_focus = {
-	id = MAR_vost_nayki
-	icon = GFX_MAR_vostanovlenie_nayki
+	id = MAR_restoration_of_science
+	icon = GFX_MAR_restoration_of_science
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_reanim_eco
+		focus = MAR_reanimating_the_economy
 	}
 	x = 16
 	y = 1
@@ -334,11 +334,11 @@ shared_focus = {
 	}
 }
 shared_focus = {
-	id = MAR_sistema_obr
-	icon = GFX_MAR_Vost_system_obraz
+	id = MAR_remake_education
+	icon = GFX_MAR_remake_education
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_reanim_eco
+		focus = MAR_reanimating_the_economy
 	}
 	x = 14
 	y = 1
@@ -351,11 +351,11 @@ shared_focus = {
 	}
 }
 shared_focus = {
-	id = MAR_razvi_otrasle
-	icon = GFX_MAR_Developing_otrasli_nayki
+	id = MAR_petroleum_development
+	icon = GFX_MAR_petroleum_development
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_vost_nayki
+		focus = MAR_restoration_of_science
 	}
 	x = 16
 	y = 2
@@ -368,14 +368,14 @@ shared_focus = {
 	}
 }
 shared_focus = {
-	id = MAR_naykogradi
-	icon = GFX_MAR_Building_of_Naukograds
+	id = MAR_naukograds
+	icon = GFX_MAR_naukograds
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_vost_nayki
+		focus = MAR_restoration_of_science
 	}
 	prerequisite = {
-		focus = MAR_sistema_obr
+		focus = MAR_remake_education
 	}
 	x = 14
 	y = 2
@@ -386,17 +386,17 @@ shared_focus = {
 		}
 		set_temp_variable = { temp_econ_spending_amount = 0.5 }
 		econ_spend_money_once_effect_raw_money = yes
-		add_ideas = { MAR_naykograd }
+		add_ideas = { MAR_naukograds_idea }
 		set_temp_variable = { pus_temp = 1 }
 		econ_pus_change = yes
 	}
 }	
 shared_focus = {
 	id = MAR_econom_prikaz
-	icon = GFX_MAR_economic_prikaz
+	icon = GFX_MAR_econom_prikaz
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_reanim_eco
+		focus = MAR_reanimating_the_economy
 	}
 	x = 12
 	y = 1
@@ -411,8 +411,8 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-	id = MAR_dveri
-	icon = GFX_MAR_Berez_open_door
+	id = MAR_open_doors
+	icon = GFX_MAR_open_doors
 	cost = 3.00
 	prerequisite = {
 		focus = MAR_econom_prikaz
@@ -430,11 +430,11 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-	id = MAR_priv_invest
-	icon = GFX_MAR_Berez_invest
+	id = MAR_attract_investments
+	icon = GFX_MAR_attract_investments
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_dveri
+		focus = MAR_open_doors
 	}
 	x = 9
 	y = 3
@@ -453,11 +453,11 @@ shared_focus = {
 	}
 }
 shared_focus = {
-	id = MAR_ih_znania
-	icon = GFX_MAR_Berez_their_znania
+	id = MAR_foreign_know_how
+	icon = GFX_MAR_foreign_know_how
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_priv_invest
+		focus = MAR_attract_investments
 	}
 	x = 9
 	y = 4
@@ -472,10 +472,10 @@ shared_focus = {
 }	
 shared_focus = {
 	id = MAR_mts
-	icon = GFX_MAR_Berez_mts
+	icon = GFX_MAR_mts
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_dveri
+		focus = MAR_open_doors
 	}
 	x = 12
 	y = 3
@@ -494,8 +494,8 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-	id = MAR_mali_biznes
-	icon = GFX_MAR_Berez_small_biz
+	id = MAR_support_small_business
+	icon = GFX_MAR_support_small_business
 	cost = 3.00
 	prerequisite = {
 		focus = MAR_mts
@@ -515,14 +515,14 @@ shared_focus = {
 	}
 }
 shared_focus = {
-	id = MAR_stab_rubl
-	icon = GFX_MAR_Berez_rouble
+	id = MAR_stabilize_ruble
+	icon = GFX_MAR_stabilize_ruble
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_ih_znania
+		focus = MAR_foreign_know_how
 	}
 	prerequisite = {
-		focus = MAR_mali_biznes
+		focus = MAR_support_small_business
 	}
 	x = 10
 	y = 5
@@ -534,11 +534,11 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-	id = MAR_taz_prom
-	icon = GFX_MAR_Tyg_prom
+	id = MAR_heavy_industry
+	icon = GFX_MAR_heavy_industry
 	cost = 3.00
 	prerequisite = {
-			focus = MAR_dveri
+			focus = MAR_open_doors
 	}
 	x = 15
 	y = 3
@@ -556,11 +556,11 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-	id = MAR_stroim_infry
-	icon = GFX_MAR_Berez_roads
+	id = MAR_resurrection_of_infrastructure
+	icon = GFX_MAR_resurrection_of_infrastructure
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_taz_prom
+		focus = MAR_heavy_industry
 	}
 	x = 15
 	y = 4
@@ -648,11 +648,11 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-	id = MAR_prom_centr
-	icon = GFX_MAR_Berez_new_centers
+	id = MAR_industrial_centers
+	icon = GFX_MAR_industrial_centers
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_stroim_infry
+		focus = MAR_resurrection_of_infrastructure
 	}
 	x = 14
 	y = 5
@@ -670,14 +670,14 @@ shared_focus = {
 	}
 }
 shared_focus = {
-	id = MAR_epoxa_prosveta
-	icon = GFX_MAR_Berez_prosperity
+	id = MAR_age_of_prosperity
+	icon = GFX_MAR_age_of_prosperity
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_stab_rubl
+		focus = MAR_stabilize_ruble
 	}
 	prerequisite = {
-		focus = MAR_prom_centr
+		focus = MAR_industrial_centers
 	}
 	x = 12
 	y = 6
@@ -686,15 +686,15 @@ shared_focus = {
 			id = berez_belozerski.23
 			days = 0
 		}
-		add_ideas = { MAR_epoxa_prosvet }
+		add_ideas = { MAR_age_of_prosperity_idea }
 	}
 }
 
 ###Military Tree
 
 shared_focus = {
-	id = MAR_voen_prikaz
-	icon = GFX_MAR_Voennie_prikaz
+	id = MAR_military_prikaz
+	icon = GFX_MAR_military_prikaz
 	cost = 3.00
 	x = 22
 	y = 0
@@ -713,11 +713,11 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-	id = MAR_exper_KB
-	icon = GFX_MAR_exper_KB
+	id = MAR_experimental_design_bureau
+	icon = GFX_MAR_experimental_design_bureau
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_voen_prikaz
+		focus = MAR_military_prikaz
 	}
 	x = 19
 	y = 1
@@ -763,17 +763,17 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-	id = MAR_sovr_voina
-	icon = GFX_MAR_sovr_metod_voini
+	id = MAR_modern_war_methods
+	icon = GFX_MAR_modern_war_methods
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_exper_KB
+		focus = MAR_experimental_design_bureau
 	}
 	x = 19
 	y = 2
 	completion_reward = {
-		add_tech_bonus = {
-			bonus = 1
+		add_doctrine_cost_reduction = {
+			cost_reduction = 1
 			uses = 1
 			category = land_doctrine
 		}
@@ -781,11 +781,11 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-	id = MAR_tank_pred
-	icon = GFX_MAR_tank_predriatia
+	id = MAR_tank_factories
+	icon = GFX_MAR_tank_factories
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_sovr_voina
+		focus = MAR_modern_war_methods
 	}
 	x = 21
 	y = 3
@@ -798,11 +798,11 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-	id = MAR_razv_tren
-	icon = GFX_MAR_razvitie_metod_tren
+	id = MAR_training_advancements
+	icon = GFX_MAR_training_advancements
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_voen_prikaz
+		focus = MAR_military_prikaz
 	}
 	x = 22
 	y = 1
@@ -815,11 +815,11 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-	id = MAR_rus_avia
-	icon = GFX_MAR_aviaprom
+	id = MAR_aircraft_industry
+	icon = GFX_MAR_aircraft_industry
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_razv_tren
+		focus = MAR_training_advancements
 	}
 	x = 22
 	y = 2
@@ -833,11 +833,11 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-	id = MAR_standart_oryg
-	icon = GFX_MAR_standart_voor
+	id = MAR_arms_standarts
+	icon = GFX_MAR_arms_standarts
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_voen_prikaz
+		focus = MAR_military_prikaz
 	}
 	x = 25
 	y = 1
@@ -850,11 +850,11 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-	id = MAR_tsar_gvardia
-	icon = GFX_MAR_tsar_grardia
+	id = MAR_tsar_guard
+	icon = GFX_MAR_tsar_guard
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_standart_oryg
+		focus = MAR_arms_standarts
 	}
 	x = 25
 	y = 2
@@ -872,11 +872,11 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-	id = MAR_yroki_urala
-	icon = GFX_MAR_Uroki_Urala
+	id = MAR_ural_guard_lessons
+	icon = GFX_MAR_ural_guard_lessons
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_tsar_gvardia
+		focus = MAR_tsar_guard
 	}
 	x = 23
 	y = 3
@@ -889,14 +889,14 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-	id = MAR_rus_ybersoldat
-	icon = GFX_MAR_Novie_rus_soldat
+	id = MAR_new_russian_soldier
+	icon = GFX_MAR_new_russian_soldier
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_tank_pred
+		focus = MAR_tank_factories
 	}
 	prerequisite = {
-		focus = MAR_yroki_urala
+		focus = MAR_ural_guard_lessons
 	}
 	x = 22
 	y = 4
@@ -912,8 +912,8 @@ shared_focus = {
 
 ###Diplomacy Tree
 shared_focus = {
-	id = MAR_posol_prikaz
-	icon = GFX_MAR_prizak_o_posolstvax
+	id = MAR_embassy_prikaz
+	icon = GFX_MAR_embassy_prikaz
 	cost = 3.58
 	x = 30
 	y = 0
@@ -933,11 +933,11 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = MAR_torgovie_anali
-	icon = GFX_MAR_torg_puti
+	id = MAR_reestablish_trading_channels
+	icon = GFX_MAR_reestablish_trading_channels
 	cost = 3.58
 	prerequisite = {
-		focus = MAR_posol_prikaz
+		focus = MAR_embassy_prikaz
 	}
 	x = 30
 	y = 1
@@ -964,11 +964,11 @@ shared_focus = {
 
 
 shared_focus = {
-	id = MAR_vstrecha_dvuh_orlov
-	icon = GFX_MAR_vstreca_orlov
+	id = MAR_two_eagles_meeting
+	icon = GFX_MAR_two_eagles_meeting
 	cost = 3.58
 	prerequisite = {
-		focus = MAR_torgovie_anali
+		focus = MAR_reestablish_trading_channels
 	}
 	x = 29
 	y = 2
@@ -984,11 +984,11 @@ shared_focus = {
 	}	
 }
 shared_focus = {
-	id = MAR_podrjka_ofn
-	icon = GFX_MAR_podderka_OFN
+	id = MAR_ofn_support
+	icon = GFX_MAR_ofn_support
 	cost = 3.58
 	prerequisite = {
-		focus = MAR_vstrecha_dvuh_orlov
+		focus = MAR_two_eagles_meeting
 	}
 	x = 28
 	y = 3
@@ -1002,11 +1002,11 @@ shared_focus = {
 	}	
 }
 shared_focus = {
-	id = MAR_russkie_dobrovolchi
-	icon = GFX_MAR_Russian_Rembo
+	id = MAR_russian_volunteers
+	icon = GFX_MAR_russian_volunteers
 	cost = 3.58
 	prerequisite = {
-		focus = MAR_torgovie_anali
+		focus = MAR_reestablish_trading_channels
 	}
 	x = 31
 	y = 2
@@ -1023,11 +1023,11 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = MAR_proniknovenie_vtil
-	icon = GFX_MAR_til_vraga
+	id = MAR_infiltrate_the_reich
+	icon = GFX_MAR_infiltrate_the_reich
 	cost = 3.58
 	prerequisite = {
-		focus = MAR_russkie_dobrovolchi
+		focus = MAR_russian_volunteers
 	}
 	x = 32
 	y = 3
@@ -1054,14 +1054,14 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = MAR_anti_nemec
-	icon = GFX_MAR_anti_nemec
+	id = MAR_anti_german_alliance
+	icon = GFX_MAR_anti_german_alliance
 	cost = 3.58
 	prerequisite = {
-		focus = MAR_podrjka_ofn
+		focus = MAR_ofn_support
 	}
 	prerequisite = {
-		focus = MAR_proniknovenie_vtil
+		focus = MAR_infiltrate_the_reich
 	}
 	x = 30
 	y = 4
@@ -1070,16 +1070,16 @@ shared_focus = {
 	}	
 }
 shared_focus = {
-	id = MAR_orel_backs
-	icon = GFX_MAR_orel_voshodit
+	id = MAR_return_of_the_eagle
+	icon = GFX_MAR_return_of_the_eagle
 	cost = 3.58
 	prerequisite = {
-		focus = MAR_anti_nemec
+		focus = MAR_anti_german_alliance
 	}
 	x = 30
 	y = 5
 	completion_reward = {
-		add_ideas = { MAR_orel_back }
+		add_ideas = { MAR_return_of_the_eagle_idea }
 		country_event = { id = berez_belozerski.31 days = 0 }
 	}
 }
@@ -1088,8 +1088,8 @@ shared_focus = {
 
 
 shared_focus = {
-	id = MAR_vne_sesd
-	icon = GFX_MAR_vnecherodnoi_sesd
+	id = MAR_extracurricular_congress
+	icon = GFX_MAR_extracurricular_congress
 	cost = 3.00
 	x = 5
 	y = 0
@@ -1103,11 +1103,11 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-	id = MAR_sibir_prostor
-	icon = GFX_MAR_sibir_prostor
+	id = MAR_siberian_expanse
+	icon = GFX_MAR_siberian_expanse
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_vne_sesd
+		focus = MAR_extracurricular_congress
 	}
 	x = 2
 	y = 1
@@ -1120,7 +1120,7 @@ shared_focus = {
 	icon = GFX_MAR_omsk_problem
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_sibir_prostor
+		focus = MAR_siberian_expanse
 	}
 	x = 1
 	y = 2
@@ -1134,11 +1134,11 @@ shared_focus = {
 	}
 }
 shared_focus = {
-	id = MAR_integration_armii
-	icon = GFX_MAR_integracia_armii
+	id = MAR_army_integration
+	icon = GFX_MAR_army_integration
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_sibir_prostor
+		focus = MAR_siberian_expanse
 	}
 	x = 3
 	y = 2
@@ -1147,14 +1147,14 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-	id = MAR_chelover
-	icon = GFX_MAR_chelovek_blagodaru
+	id = MAR_greatest_man
+	icon = GFX_MAR_greatest_man
 	cost = 3.00
 	prerequisite = {
 		focus = MAR_omsk_problem
 	}
 	prerequisite = {
-		focus = MAR_integration_armii
+		focus = MAR_army_integration
 	}
 	x = 2
 	y = 3
@@ -1167,11 +1167,11 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-	id = MAR_dragynov
-	icon = GFX_MAR_beseda_dragynov
+	id = MAR_meeting_with_dragunov
+	icon = GFX_MAR_meeting_with_dragunov
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_vne_sesd
+		focus = MAR_extracurricular_congress
 	}
 	x = 4
 	y = 1
@@ -1188,11 +1188,11 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-	id = MAR_bogatsvo_zlatoysta
-	icon = GFX_MAR_bogatsvo_zlatoust
+	id = MAR_wealth_of_zlatoust
+	icon = GFX_MAR_wealth_of_zlatoust
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_vne_sesd
+		focus = MAR_extracurricular_congress
 	}
 	x = 6
 	y = 1
@@ -1236,14 +1236,14 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-	id = MAR_poezdka_amerika
-	icon = GFX_MAR_poezdka_USA
+	id = MAR_trip_to_washington
+	icon = GFX_MAR_trip_to_washington
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_dragynov
+		focus = MAR_meeting_with_dragunov
 	}
 	prerequisite = {
-		focus = MAR_bogatsvo_zlatoysta
+		focus = MAR_wealth_of_zlatoust
 	}
 	x = 5
 	y = 2
@@ -1262,15 +1262,15 @@ shared_focus = {
 	}	
 }	
 shared_focus = {
-		id = MAR_zapolare
-		icon = GFX_MAR_osvoen_zapolar
-		cost = 3.00
-		prerequisite = {
-			focus = MAR_vne_sesd
-		}
-		x = 8
-		y = 1
-		completion_reward = {
+	id = MAR_arctic_development
+	icon = GFX_MAR_arctic_development
+	cost = 3.00
+	prerequisite = {
+		focus = MAR_extracurricular_congress
+	}
+	x = 8
+	y = 1
+	completion_reward = {
 		set_temp_variable = { temp_econ_spending_amount = 2 }
 		econ_spend_money_once_effect_raw_money = yes
 		214 = {
@@ -1360,14 +1360,14 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-	id = MAR_resyrsi
-	icon = GFX_MAR_dari_prirodi
+	id = MAR_gifts_of_nature
+	icon = GFX_MAR_gifts_of_nature
 	cost = 3.00
 	prerequisite = {
-			focus = MAR_zapolare
+		focus = MAR_arctic_development
 	}
 	prerequisite = {
-		focus = MAR_poezdka_amerika
+		focus = MAR_trip_to_washington
 	}
 	x = 8
 	y = 3
@@ -1387,14 +1387,14 @@ shared_focus = {
 	}
 }
 shared_focus = {
-	id = MAR_edinaa_rus
-	icon = GFX_MAR_Za_Rossiu
+	id = MAR_united_russia
+	icon = GFX_MAR_united_russia
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_chelover
+		focus = MAR_greatest_man
 	}
 	prerequisite = {
-		focus = MAR_resyrsi
+		focus = MAR_gifts_of_nature
 	}
 	x = 5
 	y = 4
@@ -1413,12 +1413,12 @@ focus_tree = {
 	country = {
 		factor = 0
 	}
-	shared_focus = MAR_comeback_step
+	shared_focus = MAR_return_to_steppe
 }
 	
 shared_focus = {
-	id = MAR_comeback_step
-	icon = GFX_MAR_comeback_step
+	id = MAR_return_to_steppe
+	icon = GFX_MAR_return_to_steppe
 	cost = 3.00
 	x = 20
 	y = 0
@@ -1451,8 +1451,8 @@ shared_focus = {
 	}
 }
 shared_focus = {
-	id = MAR_Kazax_otdel
-	icon = GFX_MAR_Kazax_otdel
+	id = MAR_kazakh_branch
+	icon = GFX_MAR_kazakh_branch
 	cost = 3.00
 	available = { 
 		custom_trigger_tooltip = {
@@ -1468,7 +1468,7 @@ shared_focus = {
 		}
 	}
 	prerequisite = {
-		focus = MAR_comeback_step
+		focus = MAR_return_to_steppe
 	}
 	x = 20
 	y = 1
@@ -1483,11 +1483,11 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-	id = MAR_Pol_Legion
-	icon = GFX_MAR_Pol_Legion
+	id = MAR_polish_legion
+	icon = GFX_MAR_polish_legion
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_Kazax_otdel
+		focus = MAR_kazakh_branch
 	}
 	x = 18
 	y = 2
@@ -1520,11 +1520,11 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-	id = MAR_modern_Step
-	icon = GFX_MAR_modern_Step
+	id = MAR_modernize_steppe
+	icon = GFX_MAR_modernize_steppe
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_Kazax_otdel
+		focus = MAR_kazakh_branch
 	}
 	x = 20
 	y = 2
@@ -1575,11 +1575,11 @@ shared_focus = {
 	}
 }
 shared_focus = {
-	id = MAR_perestroit_infru
-	icon = GFX_MAR_perestroit_infru
+	id = MAR_kazakh_highways
+	icon = GFX_MAR_kazakh_highways
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_modern_Step
+		focus = MAR_modernize_steppe
 	}
 	x = 20
 	y = 3
@@ -1770,11 +1770,11 @@ shared_focus = {
 	}
 }
 shared_focus = {
-	id = MAR_Rus_delo
-	icon = GFX_MAR_Rus_delo
+	id = MAR_russification_of_records
+	icon = GFX_MAR_russification_of_records
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_Kazax_otdel
+		focus = MAR_kazakh_branch
 	}
 	x = 22
 	y = 2
@@ -1788,11 +1788,11 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-	id = MAR_general_gyber
-	icon = GFX_MAR_general_gyber
+	id = MAR_establish_governor_generals
+	icon = GFX_MAR_establish_governor_generals
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_Rus_delo
+		focus = MAR_russification_of_records
 	}
 	x = 22
 	y = 3
@@ -1801,14 +1801,14 @@ shared_focus = {
 	}
 }
 shared_focus = {
-	id = MAR_Tsar_poezd
-	icon = GFX_MAR_Tsar_poezd
+	id = MAR_royal_journey
+	icon = GFX_MAR_royal_journey
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_perestroit_infru
+		focus = MAR_kazakh_highways
 	}
 	prerequisite = {
-		focus = MAR_general_gyber
+		focus = MAR_establish_governor_generals
 	}
 	x = 21
 	y = 4
@@ -1828,12 +1828,12 @@ focus_tree = {
 	country = {
 		factor = 0
 	}
-	shared_focus = MAR_Grozni
+	shared_focus = MAR_project_grozny
 }	
 
 shared_focus = {
-	id = MAR_Grozni
-	icon = MAR_Grozni
+	id = MAR_project_grozny
+	icon = GFX_MAR_project_grozny
 	cost = 3.00
 	x = 13
 	y = 0
@@ -1851,11 +1851,11 @@ shared_focus = {
 	}
 }
 shared_focus = {
-	id = MAR_otdel_nayki
-	icon = GFX_MAR_otdel_nayki
+	id = MAR_nuclear_department
+	icon = GFX_MAR_nuclear_department
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_Grozni
+		focus = MAR_project_grozny
 	}
 	x = 11
 	y = 1
@@ -1887,11 +1887,11 @@ shared_focus = {
 	}
 }
 shared_focus = {
-	id = MAR_pindos_spec
-	icon = GFX_MAR_pindos_spec
+	id = MAR_attract_foreign_specialists
+	icon = GFX_MAR_attract_foreign_specialists
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_otdel_nayki
+		focus = MAR_nuclear_department
 	}
 	x = 11
 	y = 2
@@ -1910,11 +1910,11 @@ shared_focus = {
 	}
 }
 shared_focus = {
-	id = MAR_Yran_problem
-	icon = GFX_MAR_Yran_problem
+	id = MAR_uranium_problem
+	icon = GFX_MAR_uranium_problem
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_Grozni
+		focus = MAR_project_grozny
 	}
 	x = 14
 	y = 1
@@ -1935,11 +1935,11 @@ shared_focus = {
 	}
 }
 shared_focus = {
-	id = MAR_podarok_USA
-	icon = GFX_MAR_podarok_USA
+	id = MAR_gift_from_usa
+	icon = GFX_MAR_gift_from_usa
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_Yran_problem
+		focus = MAR_uranium_problem
 	}
 	x = 13
 	y = 2
@@ -1976,11 +1976,11 @@ shared_focus = {
 	}
 }
 shared_focus = {
-	id = MAR_Curgan_shat
-	icon = GFX_MAR_Curgan_shat
+	id = MAR_kurgan_deposits
+	icon = GFX_MAR_kurgan_deposits
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_Yran_problem
+		focus = MAR_uranium_problem
 	}
 	x = 15
 	y = 2
@@ -2002,17 +2002,17 @@ shared_focus = {
 	}
 }
 shared_focus = {
-	id = MAR_Ruchnoe_Solnce
-	icon = GFX_MAR_Ruchnoe_Solnce
+	id = MAR_handmade_sun
+	icon = GFX_MAR_handmade_sun
 	cost = 3.00
 	prerequisite = {
-		focus = MAR_pindos_spec
+		focus = MAR_attract_foreign_specialists
 	}
 	prerequisite = {
-		focus = MAR_podarok_USA
+		focus = MAR_gift_from_usa
 	}
 	prerequisite = {
-		focus = MAR_Curgan_shat
+		focus = MAR_kurgan_deposits
 	}
 	x = 13
 	y = 3

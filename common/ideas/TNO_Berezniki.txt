@@ -657,8 +657,8 @@ ideas = {
 		}
 	}	
 	country = {
-		MAR_naykograd = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAR_naykograd"}
+		MAR_naukograds_idea = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAR_naukograds_idea"}
 			allowed = {
 				always = no
 			}
@@ -679,8 +679,8 @@ ideas = {
 		}
 	}
 	country = {
-		MAR_epoxa_prosvet = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAR_epoxa_prosvet"}
+		MAR_age_of_prosperity_idea = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAR_age_of_prosperity_idea"}
 			allowed = {
 				always = no
 			}
@@ -703,8 +703,8 @@ ideas = {
 		}
 	}
 	country = {
-		MAR_orel_back = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAR_orel_back"}
+		MAR_return_of_the_eagle_idea = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAR_return_of_the_eagle_idea"}
 			allowed = {
 				always = no
 			}
@@ -715,7 +715,7 @@ ideas = {
 				always = yes
 			}
 			cancel = { has_country_flag = RUS_cancel_all_ideas }
-			picture = MAR_orel_back
+			picture = MAR_return_of_the_eagle_idea
 			
 			removal_cost = -1
 			
