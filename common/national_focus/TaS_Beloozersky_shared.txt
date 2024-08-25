@@ -2030,8 +2030,8 @@ shared_focus = {
 
 ###Post-Unification Intro
 shared_focus = {
-	id = MAR_united_russia
-	icon = GFX_MAR_Edinaya_And_Nedilimaya
+	id = MAR_united_and_indivisible
+	icon = GFX_MAR_united_and_indivisible
 	cost = 1
 	available_if_capitulated = no
 	ai_will_do = {
@@ -2048,14 +2048,14 @@ shared_focus = {
 
 shared_focus = { 
 	id = MAR_allrussian_mladorossi_party
-	icon = GFX_MAR_All_Russian_Mladorossi_Party
+	icon = GFX_MAR_allrussian_mladorossi_party
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1
 	}
 	prerequisite = {
-		focus = MAR_united_russia
+		focus = MAR_united_and_indivisible
 	}
 	x = 7
 	y = 1
@@ -2072,14 +2072,14 @@ shared_focus = {
 
 shared_focus = { 
 	id = MAR_partisan_problem
-	icon = GFX_MAR_Partisan_Problem
+	icon = GFX_MAR_partisan_problem
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1
 	}
 	prerequisite = {
-		focus = MAR_united_russia
+		focus = MAR_united_and_indivisible
 	}
 	x = 9
 	y = 1
@@ -2126,14 +2126,14 @@ shared_focus = {
 
 shared_focus = { 
 	id = MAR_siberian_amnesty
-	icon = GFX_MAR_Amnistiya
+	icon = GFX_MAR_siberian_amnesty
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1
 	}
 	prerequisite = {
-		focus = MAR_united_russia
+		focus = MAR_united_and_indivisible
 	}
 	x = 11
 	y = 1
@@ -2166,8 +2166,8 @@ shared_focus = {
 }
 
 shared_focus = { 
-	id = MAR_worldwide_recognition
-	icon = GFX_MAR_Diplomatic_Recognition
+	id = MAR_international_recognition
+	icon = GFX_MAR_international_recognition
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
@@ -2205,8 +2205,8 @@ shared_focus = {
 }
 
 shared_focus = { 
-	id = MAR_russia_trip
-	icon = GFX_MAR_Kareta
+	id = MAR_tour_of_russia
+	icon = GFX_MAR_tour_of_russia
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
@@ -2228,18 +2228,18 @@ shared_focus = {
 }
 
 shared_focus = { 
-	id = MAR_allrussia_congress
-	icon = GFX_MAR_Congress_Of_Soviets
+	id = MAR_allrussian_congress
+	icon = GFX_MAR_allrussian_congress
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1
 	}
 	prerequisite = {
-		focus = MAR_russia_trip	
+		focus = MAR_tour_of_russia	
 	}
 	prerequisite = {
-		focus = MAR_worldwide_recognition
+		focus = MAR_international_recognition
 	}
 	x = 9
 	y = 3
