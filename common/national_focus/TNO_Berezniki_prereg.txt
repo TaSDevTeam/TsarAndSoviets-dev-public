@@ -184,8 +184,8 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = MAR_we_need_it_more
-	icon = GFX_MAR_we_need_it_more
+	id = MAR_to_take_what_is_ours
+	icon = GFX_MAR_to_take_what_is_ours
 	cost = 3
 	available_if_capitulated = no
 	ai_will_do = {
@@ -337,8 +337,8 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = MAR_right_on_the_future
-	icon = GFX_MAR_right_on_the_future
+	id = MAR_right_to_future
+	icon = GFX_MAR_right_to_future
 	cost = 4
 	available_if_capitulated = no
 	ai_will_do = {
@@ -356,8 +356,8 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = MAR_in_one_row_with_man
-	icon = GFX_MAR_in_one_row_with_man
+	id = MAR_alongside_with_men
+	icon = GFX_MAR_alongside_with_men
 	cost = 4
 	available_if_capitulated = no
 	ai_will_do = {
@@ -376,8 +376,8 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = MAR_into_light_future
-	icon = GFX_MAR_into_light_future
+	id = MAR_economic_miracle
+	icon = GFX_MAR_economic_miracle
 	cost = 3
 	available_if_capitulated = no
 	ai_will_do = {
@@ -385,14 +385,14 @@ shared_focus = {
 	}
 	prerequisite = {
 		focus = MAR_rabfaki
-		focus = MAR_in_one_row_with_man
+		focus = MAR_alongside_with_men
 	}
 	prerequisite = {
 		focus = MAR_the_new_equipment
-		focus = MAR_right_on_the_future
+		focus = MAR_right_to_future
 	}
 	prerequisite = {
-		focus = MAR_we_need_it_more
+		focus = MAR_to_take_what_is_ours
 	}
 	x = 2
 	y = 7
@@ -1045,7 +1045,7 @@ shared_focus = {
 		factor = 1
 	}
 	prerequisite = {
-		focus = MAR_into_light_future
+		focus = MAR_economic_miracle
 	}
 	prerequisite = {
 		focus = MAR_new_model_army
@@ -1171,7 +1171,7 @@ shared_focus = {
 	cost = 1
 	available_if_capitulated = no
 	available = {
-		NOT = { has_completed_focus = MAR_tore_everything_apart }
+		NOT = { has_completed_focus = MAR_turn_everything_upside_down }
 	}
 	ai_will_do = {
 		factor = 1
@@ -1287,8 +1287,8 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = MAR_tore_everything_apart
-	icon = GFX_MAR_tore_everything_apart
+	id = MAR_turn_everything_upside_down
+	icon = GFX_MAR_turn_everything_upside_down
 	cost = 1
 	available_if_capitulated = no
 	available = {
@@ -1331,7 +1331,7 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_everyone_for_front
-	icon = GFX_MAR_tore_everything_apart
+	icon = GFX_MAR_turn_everything_upside_down
 	cost = 1
 	available_if_capitulated = no
 	available = {
@@ -1344,7 +1344,7 @@ shared_focus = {
 		focus = MAR_mass_trainings
 	}
     mutually_exclusive = {
-        focus = MAR_tore_everything_apart
+        focus = MAR_turn_everything_upside_down
     }
 	x = 7
 	y = 3
@@ -1371,7 +1371,7 @@ shared_focus = {
     }
     prerequisite = {
         focus = MAR_everyone_for_front
-        focus = MAR_tore_everything_apart
+        focus = MAR_turn_everything_upside_down
     }
 	x = 6
 	y = 4
