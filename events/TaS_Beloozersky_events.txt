@@ -1183,18 +1183,24 @@ country_event = { # talks success
 	option = { #nice
 		name = berez_kazahk.18.a
 		ai_chance = { factor = 1 }
-		trigger = {
-			has_country_flag = MAR_KAZ_total_success
-		}
 		news_event = { id = berez_kazahk_news.3 days = 1 }
 		MAR_install_mil_kazakhstan = yes
 	}
+}
+
+
+country_event = { # talks kinda success
+	id = berez_kazahk.19
+	immediate = {log = "[GetDateText]: [Root.GetName]: berez_kazahk.19"}
+	title = berez_kazahk.19.t
+	desc = berez_kazahk.19.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	#picture = GFX_event_MAR_Kazah_otdel
+	
 	option = { #oh dear
-		name = berez_kazahk.18.b
+		name = berez_kazahk.19.a
 		ai_chance = { factor = 1 }
-		trigger = {
-			has_country_flag = MAR_KAZ_part_success
-		}
 		random_list = { 
 			2 = {
 				declare_war_on = {
@@ -1209,18 +1215,28 @@ country_event = { # talks success
 		news_event = { id = berez_kazahk_news.5 days = 1 }
 	}
 	option = { #well?
-		name = berez_kazahk.18.c
-		ai_chance = { factor = 1 }
-		trigger = {
-			has_country_flag = MAR_KAZ_part_success
-		}			
-		news_event = { id = berez_kazahk_news.3 days = 1 }
+		name = berez_kazahk.19.b
+		ai_chance = { factor = 1 }			
+		news_event = { id = berez_kazahk_news.5 days = 1 }
 		hidden_effect = {
 			MAR_install_autonomy_kazakhstan = yes
 		}
 	}
 }
-
+country_event = {
+	id = berez_kazahk.20
+	immediate = {log = "[GetDateText]: [Root.GetName]: berez_kazahk.20"}
+	title = berez_kazahk.20.t
+	desc = berez_kazahk.20.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	#picture = GFX_event_MAR_BLZ_FAVOUR1
+	
+	option = {
+		news_event = { id = berez_kazahk_news.6 days = 1 }
+		name = berez_kazahk.20.a
+	}
+}
 ### MAR_belozerskiy_flavour ###
 country_event = {
 	id = MAR_belozerskiy_flavour.1

@@ -243,7 +243,6 @@ MAR_KAZ_check_vars = {
 					}
 				}
 			}
-			set_country_flag = MAR_KAZ_total_success
 			country_event = { id = berez_kazahk.18 days = 3 }
 		}
 		else_if = {
@@ -259,8 +258,7 @@ MAR_KAZ_check_vars = {
 					}
 				}
 			}
-			set_country_flag = MAR_KAZ_part_success
-			country_event = { id = berez_kazahk.18 days = 3 }
+			country_event = { id = berez_kazahk.19 days = 3 }
 		}
 		else = {
 			country_event = { id = berez_kazahk.17 days = 3 }
