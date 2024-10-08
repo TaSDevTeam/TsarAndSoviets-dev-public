@@ -1,3 +1,150 @@
+###WAR PREP###
+shared_focus = {
+	id = MAR_warprep_calm_before_the_storm
+	icon = GFX_MAR_warprep_calm_before_the_storm
+	cost = 3.58
+	allow_branch = { has_country_flag = TaSWRW2_War_Prep_Tree_Load }
+	x = 3
+	y = 0
+	completion_reward = {
+		country_event = { id = RUS_SWRW_preparation.1 }
+		set_temp_variable = { TabName = token:BoP_Tab_SWRW }
+		TNO_BoP_AddTab = yes
+		set_variable = { TaS_swrw_stage = 1 }
+		set_variable = { swrw_preparation_category = 1 }
+		set_variable = { SWRW_suspicion_gain = -2 }
+	}
+}
+shared_focus = {
+	id = MAR_warprep_rise_up_people_of_russia
+	icon = GFX_MAR_warprep_rise_up_people_of_russia
+	cost = 3.58
+	prerequisite = {focus = MAR_warprep_calm_before_the_storm }
+	x = 3
+	y = 1
+	completion_reward = {
+		custom_effect_tooltip = SWRW_decisions_mobilisation_tt
+		set_country_flag = SWRW_decisions_mobilisation
+		country_event = { id = RUS_SWRW_preparation.2 }
+		add_manpower = 150000
+	}
+}
+shared_focus = {
+	id = MAR_warprep_leviathan_of_eurasia
+	icon = GFX_MAR_warprep_leviathan_of_eurasia
+	cost = 3.58
+	prerequisite = {focus = MAR_warprep_calm_before_the_storm }
+	x = 1
+	y = 1
+	completion_reward = {
+		custom_effect_tooltip = SWRW_decisions_leviathan_tt
+		set_country_flag = SWRW_decisions_leviathan
+	}
+}
+shared_focus = {
+	id = MAR_warprep_prepare_for_the_worst
+	icon = GFX_MAR_warprep_prepare_for_the_worst
+	cost = 3.58
+	prerequisite = {focus = MAR_warprep_leviathan_of_eurasia }
+	x = 0
+	y = 2
+	completion_reward = {
+		country_event = { id = RUS_SWRW_preparation.3 }
+		custom_effect_tooltip = SWRW_decisions_bunkers_tt
+		set_country_flag = SWRW_decisions_bunkers
+	}
+}
+shared_focus = {
+	id = MAR_warprep_modern_warfare_logistics
+	icon = GFX_MAR_warprep_modern_warfare_logistics
+	cost = 3.58
+	prerequisite = {focus = MAR_warprep_leviathan_of_eurasia }
+	x = 2
+	y = 2
+	completion_reward = {
+		custom_effect_tooltip = SWRW_decisions_logistics_tt
+		set_country_flag = SWRW_decisions_logistics
+	}
+}
+shared_focus = {
+	id = MAR_warprep_friends_around_the_world
+	icon = GFX_MAR_warprep_friends_around_the_world
+	cost = 3.58
+	prerequisite = {focus = MAR_warprep_calm_before_the_storm }
+	x = 5
+	y = 1
+	completion_reward = {
+		custom_effect_tooltip = SWRW_decisions_fopo_tt
+		set_country_flag = SWRW_decisions_fopo
+	}
+}
+shared_focus = {
+	id = MAR_warprep_better_call_sam
+	icon = GFX_MAR_warprep_better_call_sam
+	cost = 3.58
+	prerequisite = {focus = MAR_warprep_friends_around_the_world }
+	mutually_exclusive = { focus = MAR_warprep_chrysanthemum_friendship }
+	x = 4
+	y = 2
+	completion_reward = {
+		country_event = { id = RUS_SWRW_preparation.4 }
+		custom_effect_tooltip = SWRW_decisions_usa_tt
+		set_country_flag = SWRW_decisions_usa
+	}
+}
+shared_focus = {
+	id = MAR_warprep_chrysanthemum_friendship
+	icon = GFX_MAR_warprep_chrysanthemum_friendship
+	cost = 3.58
+	prerequisite = {focus = MAR_warprep_friends_around_the_world }
+	mutually_exclusive = { focus = MAR_warprep_better_call_sam }
+	x = 6
+	y = 2
+	completion_reward = {
+		custom_effect_tooltip = SWRW_decisions_jap_tt
+		set_country_flag = SWRW_decisions_jap
+		country_event = { id = RUS_SWRW_preparation.5 }
+
+	}
+}
+shared_focus = {
+	id = MAR_warprep_dance_on_the_ravaged_land
+	icon = GFX_MAR_warprep_dance_on_the_ravaged_land
+	prerequisite = {focus = MAR_warprep_prepare_for_the_worst }
+	prerequisite = {focus = MAR_warprep_modern_warfare_logistics }
+	prerequisite = {focus = MAR_warprep_rise_up_people_of_russia }
+	prerequisite = {
+		focus = MAR_warprep_better_call_sam
+		focus = MAR_warprep_chrysanthemum_friendship
+	}
+	cost = 3.58
+	x = 3
+	y = 3
+	completion_reward = {
+		custom_effect_tooltip = SWRW_decisions_ger_tt
+		set_country_flag = SWRW_decisions_ger
+		country_event = { id = RUS_SWRW_preparation.6 }
+	}
+}
+shared_focus = {
+	id = MAR_warprep_so_kill_him
+	icon = GFX_MAR_warprep_so_kill_him
+	cost = 3.58
+	prerequisite = {focus = MAR_warprep_dance_on_the_ravaged_land }
+	x = 3
+	y = 5
+	completion_reward = {
+		set_country_flag = TaSWRW2_War_Prep_Tree_Complete
+		if = {
+			limit = { has_government = despotism }
+			country_event = { id = RUS_SWRW_preparation.7 }
+		}
+		else = {
+			country_event = { id = RUS_SWRW_preparation.8 }
+		}
+	}
+}
+
 shared_focus = {
 	id = MAR_the_second_patriotic_war
 	icon = GFX_MAR_the_second_patriotic_war
@@ -256,125 +403,5 @@ shared_focus = {
 	y = 3
 	completion_reward = {
 
-	}
-}
-
-###WAR PREP###
-shared_focus = {
-	id = MAR_warprep_calm_before_the_storm
-	icon = GFX_MAR_warprep_calm_before_the_storm
-	cost = 3.58
-	allow_branch = { has_country_flag = TaSWRW2_War_Prep_Tree_Load }
-	x = 3
-	y = 0
-	completion_reward = {
-
-	}
-}
-shared_focus = {
-	id = MAR_warprep_rise_up_people_of_russia
-	icon = GFX_MAR_warprep_rise_up_people_of_russia
-	cost = 3.58
-	prerequisite = {focus = MAR_warprep_calm_before_the_storm }
-	x = 3
-	y = 1
-	completion_reward = {
-
-	}
-}
-shared_focus = {
-	id = MAR_warprep_leviathan_of_eurasia
-	icon = GFX_MAR_warprep_leviathan_of_eurasia
-	cost = 3.58
-	prerequisite = {focus = MAR_warprep_calm_before_the_storm }
-	x = 1
-	y = 1
-	completion_reward = {
-
-	}
-}
-shared_focus = {
-	id = MAR_warprep_prepare_for_the_worst
-	icon = GFX_MAR_warprep_prepare_for_the_worst
-	cost = 3.58
-	prerequisite = {focus = MAR_warprep_leviathan_of_eurasia }
-	x = 0
-	y = 2
-	completion_reward = {
-
-	}
-}
-shared_focus = {
-	id = MAR_warprep_modern_warfare_logistics
-	icon = GFX_MAR_warprep_modern_warfare_logistics
-	cost = 3.58
-	prerequisite = {focus = MAR_warprep_leviathan_of_eurasia }
-	x = 2
-	y = 2
-	completion_reward = {
-
-	}
-}
-shared_focus = {
-	id = MAR_warprep_friends_around_the_world
-	icon = GFX_MAR_warprep_friends_around_the_world
-	cost = 3.58
-	prerequisite = {focus = MAR_warprep_calm_before_the_storm }
-	x = 5
-	y = 1
-	completion_reward = {
-
-	}
-}
-shared_focus = {
-	id = MAR_warprep_better_call_sam
-	icon = GFX_MAR_warprep_better_call_sam
-	cost = 3.58
-	prerequisite = {focus = MAR_warprep_friends_around_the_world }
-	mutually_exclusive = { focus = MAR_warprep_chrysanthemum_friendship }
-	x = 4
-	y = 2
-	completion_reward = {
-
-	}
-}
-shared_focus = {
-	id = MAR_warprep_chrysanthemum_friendship
-	icon = GFX_MAR_warprep_chrysanthemum_friendship
-	cost = 3.58
-	prerequisite = {focus = MAR_warprep_friends_around_the_world }
-	mutually_exclusive = { focus = MAR_warprep_better_call_sam }
-	x = 6
-	y = 2
-	completion_reward = {
-
-	}
-}
-shared_focus = {
-	id = MAR_warprep_dance_on_the_ravaged_land
-	icon = GFX_MAR_warprep_dance_on_the_ravaged_land
-	prerequisite = {focus = MAR_warprep_prepare_for_the_worst }
-	prerequisite = {focus = MAR_warprep_modern_warfare_logistics }
-	prerequisite = {focus = MAR_warprep_rise_up_people_of_russia }
-	prerequisite = {
-		focus = MAR_warprep_better_call_sam
-		focus = MAR_warprep_chrysanthemum_friendship
-	}
-	cost = 3.58
-	x = 3
-	y = 3
-	completion_reward = {
-
-	}
-}
-shared_focus = {
-	id = MAR_warprep_so_kill_him
-	icon = GFX_MAR_warprep_so_kill_him
-	cost = 3.58
-	prerequisite = {focus = MAR_warprep_dance_on_the_ravaged_land }
-	x = 3
-	y = 5
-	completion_reward = {
-		set_country_flag = TaSWRW2_War_Prep_Tree_Complete
 	}
 }
