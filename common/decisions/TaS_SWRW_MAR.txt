@@ -7,10 +7,11 @@ MAR_SWRW_category = {
 			GER = {
 				exists = yes
 			}
-			has_country_flag = TaSWRW2_War_Prep_Tree_Complete
+			#has_country_flag = TaSWRW2_War_Prep_Tree_Complete
 			check_variable = { TaS_swrw_stage = 1 }
 		}
 		available = {
+			has_completed_focus = MAR_warprep_so_kill_him
 			custom_trigger_tooltip = {
 				tooltip = SWRW_readiness_tt
 				check_variable = { SWRW_readiness_var > 74.99 }
@@ -417,10 +418,11 @@ MAR_SWRW_category = {
 		visible = {
 			check_variable = { TaS_swrw_stage = 1 }
 			check_variable = { swrw_preparation_category = 1 }
-			has_country_flag = SWRW_decisions_bunkers
+			#has_country_flag = SWRW_decisions_bunkers
 		}
 		available = {
 			has_war = no
+			has_completed_focus = MAR_warprep_prepare_for_the_worst
 		}
 		custom_cost_trigger = {
 			command_power > 14.99
@@ -618,10 +620,11 @@ MAR_SWRW_category = {
 		visible = {
 			check_variable = { TaS_swrw_stage = 1 }
 			check_variable = { swrw_preparation_category = 1 }
-			has_country_flag = SWRW_decisions_bunkers
+			#has_country_flag = SWRW_decisions_bunkers
 		}
 		available = {
 			has_war = no
+			has_completed_focus = MAR_warprep_prepare_for_the_worst
 		}
 		custom_cost_trigger = {
 			command_power > 14.99
@@ -899,10 +902,11 @@ MAR_SWRW_category = {
 		visible = {
 			check_variable = { TaS_swrw_stage = 1 }
 			check_variable = { swrw_preparation_category = 1 }
-			has_country_flag = SWRW_decisions_bunkers
+			#has_country_flag = SWRW_decisions_bunkers
 		}
 		available = {
 			has_war = no
+			has_completed_focus = MAR_warprep_prepare_for_the_worst
 		}
 		custom_cost_trigger = {
 			command_power > 14.99
@@ -1086,11 +1090,12 @@ MAR_SWRW_category = {
 	TaS_WRW2_establish_fallback_fortifications = {
 		icon = GFX_decision_generic_destroy_fort
 		visible = {
-			has_country_flag = SWRW_decisions_bunkers
+			#has_country_flag = SWRW_decisions_bunkers
 			check_variable = { TaS_swrw_stage = 1 }
 			check_variable = { swrw_preparation_category = 1 }
 		}
 		available = {
+			has_completed_focus = MAR_warprep_prepare_for_the_worst
 			has_war = no
 		}
 		custom_cost_trigger = {
@@ -1428,11 +1433,12 @@ MAR_SWRW_category = {
 	TaS_WRW2_millitary_production_contracts = {
 		icon = GFX_decision_generic_arms_trade_increase
 		visible = {
-			has_country_flag = SWRW_decisions_leviathan
+			#has_country_flag = SWRW_decisions_leviathan
 			check_variable = { TaS_swrw_stage = 1 }
 			check_variable = { swrw_preparation_category = 1 }
 		}
 		available = {
+			has_completed_focus = MAR_warprep_leviathan_of_eurasia
 			has_equipment = {
 				infantry_equipment > 10000
 			}
@@ -1492,12 +1498,13 @@ MAR_SWRW_category = {
 	TaS_WRW2_radars_constuction = {
 		icon = GFX_radar
 		visible = {
-			has_country_flag = SWRW_decisions_leviathan
+			#has_country_flag = SWRW_decisions_leviathan
 			check_variable = { TaS_swrw_stage = 1 }
 			check_variable = { swrw_preparation_category = 1 }
 		}
 		available = {
 			has_war = no
+			has_completed_focus = MAR_warprep_leviathan_of_eurasia
 		}
 		custom_cost_trigger = {
 			command_power > 19.99
@@ -1568,12 +1575,13 @@ MAR_SWRW_category = {
 	TaS_WRW2_raise_additional_reserves = {
 		icon = GFX_decision_generic_military_parade
 		visible = {
-			has_country_flag = SWRW_decisions_mobilisation
+			#has_country_flag = SWRW_decisions_mobilisation
 			check_variable = { TaS_swrw_stage = 1 }
 			check_variable = { swrw_preparation_category = 2 }
 		}
 		available = {
 			has_war = no
+			has_completed_focus = MAR_warprep_rise_up_people_of_russia
 		}
 		custom_cost_trigger = {
 			command_power > 19.99
@@ -1614,12 +1622,13 @@ MAR_SWRW_category = {
 	TaS_WRW2_draft_propaganda = {
 		icon = GFX_recruit
 		visible = {
-			has_country_flag = SWRW_decisions_mobilisation
+			#has_country_flag = SWRW_decisions_mobilisation
 			check_variable = { TaS_swrw_stage = 1 }
 			check_variable = { swrw_preparation_category = 2 }
 		}
 		available = {
 			has_war = no
+			has_completed_focus = MAR_warprep_rise_up_people_of_russia
 		}
 		custom_cost_trigger = {
 			command_power > 9.99
@@ -1660,12 +1669,13 @@ MAR_SWRW_category = {
 	TaS_WRW2_develop_front_railways = {
 		icon = GFX_decision_generic_supply
 		visible = {
-			has_country_flag = SWRW_decisions_logistics
+			#has_country_flag = SWRW_decisions_logistics
 			check_variable = { TaS_swrw_stage = 1 }
 			check_variable = { swrw_preparation_category = 2 }
 		}
 		available = {
 			has_war = no
+			has_completed_focus = MAR_warprep_modern_warfare_logistics
 		}
 		cost = 75
 		fire_only_once = yes
@@ -1772,12 +1782,13 @@ MAR_SWRW_category = {
 	TaS_WRW2_develop_front_infrastructure = {
 		icon = GFX_decision_generic_infrastructure
 		visible = {
-			has_country_flag = SWRW_decisions_logistics
+			#has_country_flag = SWRW_decisions_logistics
 			check_variable = { TaS_swrw_stage = 1 }
 			check_variable = { swrw_preparation_category = 2 }
 		}
 		available = {
 			has_war = no
+			has_completed_focus = MAR_warprep_modern_warfare_logistics
 		}
 		cost = 100
 		fire_only_once = yes
@@ -1879,12 +1890,13 @@ MAR_SWRW_category = {
 	TaS_WRW2_prepare_industrial_centers = {
 		icon = GFX_decision_generic_factory_blue
 		visible = {
-			has_country_flag = SWRW_decisions_leviathan
+			#has_country_flag = SWRW_decisions_leviathan
 			check_variable = { TaS_swrw_stage = 1 }
 			check_variable = { swrw_preparation_category = 2 }
 		}
 		available = {
 			has_war = no
+			has_completed_focus = MAR_warprep_leviathan_of_eurasia
 		}
 		cost = 150
 		fire_only_once = yes
@@ -1967,12 +1979,13 @@ MAR_SWRW_category = {
 	TaS_WRW2_mobilize_economics = {
 		icon = GFX_decision_generic_military_parade
 		visible = {
-			has_country_flag = SWRW_decisions_mobilisation
+			#has_country_flag = SWRW_decisions_mobilisation
 			check_variable = { TaS_swrw_stage = 1 }
 			check_variable = { swrw_preparation_category = 2 }
 		}
 		available = {
 			has_war = no
+			has_completed_focus = MAR_warprep_rise_up_people_of_russia
 		}
 		cost = 75
 		fire_only_once = yes
@@ -2055,12 +2068,13 @@ MAR_SWRW_category = {
 	TaS_WRW2_send_partisans = {	
 		icon = GFX_decision_generic_revolt
 		visible = {
-			has_country_flag = SWRW_decisions_ger
+			#has_country_flag = SWRW_decisions_ger
 			check_variable = { TaS_swrw_stage = 1 }
 			check_variable = { swrw_preparation_category = 3 }
 		}
 		available = {
 			has_war = no
+			has_completed_focus = MAR_warprep_dance_on_the_ravaged_land
 		}
 		custom_cost_trigger = { command_power > 29.99 }
 		custom_cost_text = decision_cost_30_cp
@@ -2130,12 +2144,13 @@ MAR_SWRW_category = {
 	TaS_WRW2_block_the_barentsevo_sea = {	
 		icon = GFX_decision_generic_landmines
 		visible = {
-			has_country_flag = SWRW_decisions_ger
+			#has_country_flag = SWRW_decisions_ger
 			check_variable = { TaS_swrw_stage = 1 }
 			check_variable = { swrw_preparation_category = 3 }
 		}
 		available = {
 			has_war = no
+			has_completed_focus = MAR_warprep_dance_on_the_ravaged_land
 		}
 		custom_cost_trigger = { command_power > 34.99 }
 		custom_cost_text = decision_cost_35_cp
@@ -2164,12 +2179,13 @@ MAR_SWRW_category = {
 	TaS_WRW2_buy_guns = {	
 		icon = GFX_decision_market_infantry
 		visible = {
-			has_country_flag = SWRW_decisions_usa
+			#has_country_flag = SWRW_decisions_usa
 			check_variable = { TaS_swrw_stage = 1 }
 			check_variable = { swrw_preparation_category = 3 }
 		}
 		available = {
 			has_war = no
+			has_completed_focus = MAR_warprep_better_call_sam
 		}
 		custom_cost_trigger = { command_power > 29.99 }
 		custom_cost_text = decision_cost_30_cp
@@ -2254,12 +2270,13 @@ MAR_SWRW_category = {
 	TaS_WRW2_test_technology = {	
 		icon = GFX_decision_generic_tank
 		visible = {
-			has_country_flag = SWRW_decisions_usa
+			#has_country_flag = SWRW_decisions_usa
 			check_variable = { TaS_swrw_stage = 1 }
 			check_variable = { swrw_preparation_category = 3 }
 		}
 		available = {
 			has_war = no
+			has_completed_focus = MAR_warprep_better_call_sam
 		}
 		custom_cost_trigger = { command_power > 24.99 }
 		custom_cost_text = decision_cost_25_cp
@@ -2334,12 +2351,13 @@ MAR_SWRW_category = {
 	TaS_WRW2_buy_guns_jap = {	
 		icon = GFX_decision_market_infantry
 		visible = {
-			has_country_flag = SWRW_decisions_jap
+			#has_country_flag = SWRW_decisions_jap
 			check_variable = { TaS_swrw_stage = 1 }
 			check_variable = { swrw_preparation_category = 3 }
 		}
 		available = {
 			has_war = no
+			has_completed_focus = MAR_warprep_chrysanthemum_friendship
 		}
 		custom_cost_trigger = { command_power > 29.99 }
 		custom_cost_text = decision_cost_30_cp
@@ -2424,12 +2442,13 @@ MAR_SWRW_category = {
 	TaS_WRW2_test_technology_jap = {	
 		icon = GFX_decision_generic_tank
 		visible = {
-			has_country_flag = SWRW_decisions_jap
+			#has_country_flag = SWRW_decisions_jap
 			check_variable = { TaS_swrw_stage = 1 }
 			check_variable = { swrw_preparation_category = 3 }
 		}
 		available = {
 			has_war = no
+			has_completed_focus = MAR_warprep_chrysanthemum_friendship
 		}
 		custom_cost_trigger = { command_power > 24.99 }
 		custom_cost_text = decision_cost_25_cp
@@ -2504,11 +2523,12 @@ MAR_SWRW_category = {
 	TaS_WRW2_international_recruiting = {
 		icon = generic_workers
 		visible = {
-			SWRW_decisions_fopo
+			#SWRW_decisions_fopo
 			check_variable = { TaS_swrw_stage = 1 }
 			check_variable = { swrw_preparation_category = 3 }
 		}
 		available = {
+			has_completed_focus = MAR_warprep_friends_around_the_world
 			has_war = no
 		}
 		cost = 75
@@ -2537,7 +2557,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_block_suez = {
 		icon = generic_battleship
 		visible = {
-			has_country_flag = SWRW_decisions_fopo
+			has_country_flag = #SWRW_decisions_fopo
 			check_variable = { TaS_swrw_stage = 1 }
 			check_variable = { swrw_preparation_category = 3 }
 			OR = {
@@ -2550,6 +2570,7 @@ MAR_SWRW_category = {
 			}
 		}
 		available = {
+			has_completed_focus = MAR_warprep_friends_around_the_world
 			has_war = no
 		}
 		custom_cost_trigger = { command_power > 19.99 }
@@ -2586,11 +2607,12 @@ MAR_SWRW_category = {
 	TaS_WRW2_chill_down_germs = {
 		icon = generic_pakt_business
 		visible = {
-			has_country_flag = SWRW_decisions_fopo
+			#has_country_flag = SWRW_decisions_fopo
 			check_variable = { TaS_swrw_stage = 1 }
 			check_variable = { swrw_preparation_category = 3 }
 		}
 		available = {
+			has_completed_focus = MAR_warprep_friends_around_the_world
 			divisions_in_state = {
 				state = 857
 				size < 3

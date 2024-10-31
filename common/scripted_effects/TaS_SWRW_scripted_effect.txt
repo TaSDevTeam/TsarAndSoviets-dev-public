@@ -103,7 +103,9 @@ TaS_SWRW_start_the_war = {
 		}
 		CAU = {
 			add_ideas = SWRW_reichskommisariat
-		}	
+		}
+		load_focus_tree = MAR_second_patriotic_war
+		mark_focus_tree_layout_dirty = yes		
 	}
 	if = {
 		limit = { check_variable = { MAR_no_naval_invasions = 1 } }
@@ -125,6 +127,7 @@ TaS_SWRW_start_the_war = {
 		else = { 
 			set_variable = { ger_div_limit = 250 }
 		}
+		load_focus_tree = GER_second_patriotic_war
 	}
 }
 TaS_SWRW_american_germany = {

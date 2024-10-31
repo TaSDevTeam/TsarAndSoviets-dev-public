@@ -1528,24 +1528,6 @@ ideas = {
 		}
 	}
 	country = {
-		TaS_2WRW_last_stand = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea TaS_2WRW_last_stand"}
-			allowed = {
-				always = no
-			}
-			allowed_civil_war = {
-					always = yes
-			}
-			removal_cost = -1
-			picture = BRT_bezen_perrot_integrated
-			modifier = {
-				army_attack_factor = 0.25
-				army_defence_factor = 0.25
-				army_org_factor = -0.2
-			}
-		}
-	}
-	country = {
 		TaS_2WRW_north_sea_problems = {
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAR_MCW_partisans"}
 			allowed = {

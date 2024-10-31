@@ -208,5 +208,81 @@ ideas = {
 				army_speed_factor = -0.5
 			}
 		}
+		SWRW_offensive_against_ger = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea SWRW_offensive_against_ger"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			cancel = {
+				NOT = { has_war_with = GER }
+			}
+			picture = MAR_kill_AB
+			removal_cost = -1
+			targeted_modifier = {
+				tag = GER
+				attack_bonus_against = 0.2
+			}		
+		}
+		SWRW_offensive_against_rus = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea SWRW_offensive_against_rus"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			cancel = {
+				NOT = { has_war_with = RUS }
+			}
+			picture = MAR_kill_AB
+			removal_cost = -1
+			targeted_modifier = {
+				tag = RUS
+				attack_bonus_against = 0.2
+			}	
+			modifier = {
+				army_org_factor = -0.1
+			}			
+		}
+		SWRW_mass_strikes = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea SWRW_mass_strikes"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			cancel = {
+				has_war = no
+			}
+			picture = MAR_kill_AB
+			removal_cost = -1
+			modifier = {
+				production_speed_buildings_factor = -0.15
+				gdp_growth_modifier = -5.00
+				production_factory_max_efficiency_factor = -0.15 
+				production_factory_efficiency_gain_factor = -0.15 
+			}		
+		}
+		SWRW_last_stand = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea SWRW_last_stand"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+					always = yes
+			}
+			removal_cost = -1
+			picture = BRT_bezen_perrot_integrated
+			modifier = {
+				army_attack_factor = 0.35
+				army_defence_factor = 0.35
+				army_org_factor = -0.5
+				army_morale_factor = -0.4	
+			}
+		}
 	}
 }

@@ -692,6 +692,167 @@ TaS_2WRW_spawn_volunteers = {
 		}
 	}	
 }
+
+TaS_2WRW_spawn_antifascists = {
+	division_template = {
+		name = "Antifashistkaya Brigada"
+		priority = 2
+		regiments = {
+			infantry = { x = 0 y = 0 }
+			infantry = { x = 0 y = 1 }
+			infantry = { x = 0 y = 2 }
+			infantry = { x = 1 y = 0}
+			infantry = { X = 1 y = 1}
+			infantry = { X = 1 y = 2}
+		}
+		support = {
+			artillery = { x = 0 y = 0 }
+		}	
+    }
+	random_owned_controlled_state = {
+		prioritize = { 214 262 }
+		create_unit = {
+			division = "division_template = \"Antifashistkaya Brigada\" start_experience_factor = 0.6 start_equipment_factor = 0.5"
+			owner = MAR
+		}
+		create_unit = {
+			division = "division_template = \"Antifashistkaya Brigada\" start_experience_factor = 0.6 start_equipment_factor = 0.5"
+			owner = MAR
+		}
+		create_unit = {
+			division = "division_template = \"Antifashistkaya Brigada\" start_experience_factor = 0.6 start_equipment_factor = 0.5"
+			owner = MAR
+		}
+		create_unit = {
+			division = "division_template = \"Antifashistkaya Brigada\" start_experience_factor = 0.6 start_equipment_factor = 0.5"
+			owner = MAR
+		}
+		create_unit = {
+			division = "division_template = \"Antifashistkaya Brigada\" start_experience_factor = 0.6 start_equipment_factor = 0.5"
+			owner = MAR
+		}
+		create_unit = {
+			division = "division_template = \"Antifashistkaya Brigada\" start_experience_factor = 0.6 start_equipment_factor = 0.5"
+			owner = MAR
+		}
+		create_unit = {
+			division = "division_template = \"Antifashistkaya Brigada\" start_experience_factor = 0.6 start_equipment_factor = 0.5"
+			owner = MAR
+		}
+		create_unit = {
+			division = "division_template = \"Antifashistkaya Brigada\" start_experience_factor = 0.6 start_equipment_factor = 0.5"
+			owner = MAR
+		}
+		create_unit = {
+			division = "division_template = \"Antifashistkaya Brigada\" start_experience_factor = 0.6 start_equipment_factor = 0.5"
+			owner = MAR
+		}
+		create_unit = {
+			division = "division_template = \"Antifashistkaya Brigada\" start_experience_factor = 0.6 start_equipment_factor = 0.5"
+			owner = MAR
+		}
+		create_unit = {
+			division = "division_template = \"Antifashistkaya Brigada\" start_experience_factor = 0.6 start_equipment_factor = 0.5"
+			owner = MAR
+		}
+		create_unit = {
+			division = "division_template = \"Antifashistkaya Brigada\" start_experience_factor = 0.6 start_equipment_factor = 0.5"
+			owner = MAR
+		}
+	}	
+}
+TaS_2WRW_spawn_germans = {
+	add_corps_commander_role = {
+		character = MAR_Kessler_Heinz
+		traits = {
+			politically_connected
+			commando
+		}
+		skill = 2
+		attack_skill = 3
+		defense_skill = 1
+		planning_skill = 1
+		logistics_skill = 2
+	}
+	division_template = {
+		name = "Infanterie Division"
+		priority = 2
+		regiments = {
+			infantry = { x = 0 y = 0 }
+			infantry = { x = 0 y = 1 }
+			infantry = { x = 0 y = 2 }
+			infantry = { x = 1 y = 0}
+			infantry = { X = 1 y = 1}
+			infantry = { X = 1 y = 2}
+			infantry = { x = 2 y = 0}
+			artillery_brigade = { X = 2 y = 1}
+			artillery_brigade = { X = 2 y = 2}
+		}
+		support = {
+			recon = { x = 0 y = 0 }
+			artillery = { x = 0 y = 1 }
+			logistics_company = { x = 0 y = 2 }
+		}	
+    }
+	division_template = {
+		name = "Panzerdivision"
+		priority = 2
+		regiments = {
+			MBT = { x = 0 y = 0 }
+			MBT = { x = 0 y = 1 }
+			MBT = { x = 1 y = 0}
+			MBT = { X = 1 y = 1}
+			APC = { x = 2 y = 0}
+			APC = { X = 2 y = 1}
+		}
+		support = {
+			maintenance_company = { x = 0 y = 0 }
+		}
+	}
+	random_owned_controlled_state = {
+		prioritize = { 214 262 }
+		create_unit = {
+			division = "division_template = \"Panzerdivision\" start_experience_factor = 0.6 start_equipment_factor = 0.5"
+			owner = MAR
+		}
+		create_unit = {
+			division = "division_template = \"Panzerdivision\" start_experience_factor = 0.6 start_equipment_factor = 0.5"
+			owner = MAR
+		}
+		create_unit = {
+			division = "division_template = \"Panzerdivision\" start_experience_factor = 0.6 start_equipment_factor = 0.5"
+			owner = MAR
+		}
+		create_unit = {
+			division = "division_template = \"Panzerdivision\" start_experience_factor = 0.6 start_equipment_factor = 0.5"
+			owner = MAR
+		}
+		create_unit = {
+			division = "division_template = \"Infanterie Division\" start_experience_factor = 0.6 start_equipment_factor = 0.5"
+			owner = MAR
+		}
+		create_unit = {
+			division = "division_template = \"Infanterie Division\" start_experience_factor = 0.6 start_equipment_factor = 0.5"
+			owner = MAR
+		}
+		create_unit = {
+			division = "division_template = \"Infanterie Division\" start_experience_factor = 0.6 start_equipment_factor = 0.5"
+			owner = MAR
+		}
+		create_unit = {
+			division = "division_template = \"Infanterie Division\" start_experience_factor = 0.6 start_equipment_factor = 0.5"
+			owner = MAR
+		}
+		create_unit = {
+			division = "division_template = \"Infanterie Division\" start_experience_factor = 0.6 start_equipment_factor = 0.5"
+			owner = MAR
+		}
+		create_unit = {
+			division = "division_template = \"Infanterie Division\" start_experience_factor = 0.6 start_equipment_factor = 0.5"
+			owner = MAR
+		}
+	}	
+}
 TaS_WRW2_Peace_Yall = {
 	custom_effect_tooltip = TaS_WRW2_Peace_Yall_tt
 	if = {

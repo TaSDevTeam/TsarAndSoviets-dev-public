@@ -24,7 +24,7 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		custom_effect_tooltip = SWRW_decisions_mobilisation_tt
-		set_country_flag = SWRW_decisions_mobilisation
+		#set_country_flag = SWRW_decisions_mobilisation
 		country_event = { id = RUS_SWRW_preparation.2 }
 		add_manpower = 150000
 	}
@@ -38,7 +38,7 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		custom_effect_tooltip = SWRW_decisions_leviathan_tt
-		set_country_flag = SWRW_decisions_leviathan
+		#set_country_flag = SWRW_decisions_leviathan
 	}
 }
 shared_focus = {
@@ -51,7 +51,7 @@ shared_focus = {
 	completion_reward = {
 		country_event = { id = RUS_SWRW_preparation.3 }
 		custom_effect_tooltip = SWRW_decisions_bunkers_tt
-		set_country_flag = SWRW_decisions_bunkers
+		#set_country_flag = SWRW_decisions_bunkers
 	}
 }
 shared_focus = {
@@ -63,7 +63,7 @@ shared_focus = {
 	y = 2
 	completion_reward = {
 		custom_effect_tooltip = SWRW_decisions_logistics_tt
-		set_country_flag = SWRW_decisions_logistics
+		#set_country_flag = SWRW_decisions_logistics
 	}
 }
 shared_focus = {
@@ -75,7 +75,7 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		custom_effect_tooltip = SWRW_decisions_fopo_tt
-		set_country_flag = SWRW_decisions_fopo
+		#set_country_flag = SWRW_decisions_fopo
 	}
 }
 shared_focus = {
@@ -89,7 +89,7 @@ shared_focus = {
 	completion_reward = {
 		country_event = { id = RUS_SWRW_preparation.4 }
 		custom_effect_tooltip = SWRW_decisions_usa_tt
-		set_country_flag = SWRW_decisions_usa
+		#set_country_flag = SWRW_decisions_usa
 	}
 }
 shared_focus = {
@@ -102,7 +102,7 @@ shared_focus = {
 	y = 2
 	completion_reward = {
 		custom_effect_tooltip = SWRW_decisions_jap_tt
-		set_country_flag = SWRW_decisions_jap
+		#set_country_flag = SWRW_decisions_jap
 		country_event = { id = RUS_SWRW_preparation.5 }
 
 	}
@@ -122,7 +122,7 @@ shared_focus = {
 	y = 3
 	completion_reward = {
 		custom_effect_tooltip = SWRW_decisions_ger_tt
-		set_country_flag = SWRW_decisions_ger
+		#set_country_flag = SWRW_decisions_ger
 		country_event = { id = RUS_SWRW_preparation.6 }
 	}
 }
@@ -134,7 +134,7 @@ shared_focus = {
 	x = 3
 	y = 5
 	completion_reward = {
-		set_country_flag = TaSWRW2_War_Prep_Tree_Complete
+		#set_country_flag = TaSWRW2_War_Prep_Tree_Complete
 		if = {
 			limit = { has_government = despotism }
 			country_event = { id = RUS_SWRW_preparation.7 }
@@ -148,11 +148,14 @@ shared_focus = {
 shared_focus = {
 	id = MAR_the_second_patriotic_war
 	icon = GFX_MAR_the_second_patriotic_war
-	cost = 3.58
+	cost = 4
 	x = 8
 	y = 0
+	bypass = {
+		has_war_with = GER
+	}
 	completion_reward = {
-
+	
 	}
 }
 shared_focus = {
@@ -164,7 +167,9 @@ shared_focus = {
 	x = 0
 	y = 1
 	completion_reward = {
-
+		add_stability = 0.1
+		add_war_support = 0.15
+		country_event = { id = RUS_SWRW.1 }
 	}
 }
 shared_focus = {
@@ -176,7 +181,7 @@ shared_focus = {
 	x = -3
 	y = 1
 	completion_reward = {
-
+		add_manpower = 150000
 	}
 }
 shared_focus = {
@@ -188,7 +193,8 @@ shared_focus = {
 	x = 3
 	y = 1
 	completion_reward = {
-
+		set_temp_variable = { pus_temp = 6 }
+		econ_pus_change = yes
 	}
 }
 shared_focus = {
@@ -200,7 +206,10 @@ shared_focus = {
 	x = 0
 	y = 3
 	completion_reward = {
-
+		add_stability = 0.1
+		add_political_power = 150
+		set_temp_variable = { temp_devastation_gained = -7.5 }
+		TaS_WRW2_change_devastation = yes
 	}
 }
 shared_focus = {
@@ -212,7 +221,9 @@ shared_focus = {
 	x = -1
 	y = 1
 	completion_reward = {
-
+		country_event = { id = RUS_SWRW.2 }
+		set_temp_variable = { inflation_temp = -3 }
+		econ_inflation_change = yes
 	}
 }
 shared_focus = {
@@ -224,7 +235,26 @@ shared_focus = {
 	x = 1
 	y = 1
 	completion_reward = {
-
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 15000
+			producer = MAR
+		}
+		add_equipment_to_stockpile = {
+			type = support_equipment
+			amount = 5000
+			producer = MAR
+		}
+		add_equipment_to_stockpile = {
+			type = anti_tank_equipment
+			amount = 2500
+			producer = MAR
+		}
+		add_equipment_to_stockpile = {
+			type = artillery_equipment
+			amount = 3000
+			producer = MAR
+		}
 	}
 }
 shared_focus = {
@@ -237,7 +267,9 @@ shared_focus = {
 	x = 0
 	y = 2
 	completion_reward = {
-
+		TNO_improve_army_professionalism_high = yes
+		TNO_improve_army_professionalism_high = yes
+		country_event = { id = RUS_SWRW.3 }
 	}
 }
 shared_focus = {
@@ -249,7 +281,34 @@ shared_focus = {
 	x = -1
 	y = 1
 	completion_reward = {
-
+		if = { 
+			limit = { 
+				has_dlc = "No Step Back"
+			}
+			add_equipment_to_stockpile = {
+				type = MBT_chassis
+				amount = 1000
+				producer = MAR
+			}
+		}
+		else = {
+			add_equipment_to_stockpile = {
+				type = MBT_equipment
+				amount = 1000
+				producer = MAR
+			}
+		}
+		add_equipment_to_stockpile = {
+			type = jet_fighter_equipment_2
+			amount = 200
+			producer = MAR
+		}
+		add_equipment_to_stockpile = {
+			type = jet_CAS_equipment_2
+			amount = 200
+			producer = MAR
+		}
+		country_event = { id = RUS_SWRW.4 }
 	}
 }
 shared_focus = {
@@ -261,7 +320,7 @@ shared_focus = {
 	x = 1
 	y = 1
 	completion_reward = {
-
+		TaS_2WRW_spawn_antifascists = yes
 	}
 }
 shared_focus = {
@@ -274,7 +333,13 @@ shared_focus = {
 	x = 0
 	y = 2
 	completion_reward = {
-
+		every_controlled_state = {
+			limit = {
+				has_resistance = yes
+			}
+			add_compliance = 30
+			add_resistance = -15
+		}
 	}
 }
 shared_focus = {
@@ -287,7 +352,8 @@ shared_focus = {
 	x = -1
 	y = 1
 	completion_reward = {
-
+		TaS_2WRW_spawn_germans = yes
+		country_event = { id = RUS_SWRW.7 }
 	}
 }
 shared_focus = {
@@ -300,7 +366,12 @@ shared_focus = {
 	x = 1
 	y = 1
 	completion_reward = {
-
+		GER = {
+			add_timed_idea = {
+				idea = SWRW_mass_strikes
+				days = 180
+			}
+		}
 	}
 }
 shared_focus = {
@@ -313,7 +384,11 @@ shared_focus = {
 	x = -2
 	y = 2
 	completion_reward = {
-
+		country_event = { id = RUS_SWRW.5 }
+		add_timed_idea = {
+			idea = SWRW_offensive_against_ger
+			days = 180
+		}
 	}
 }
 shared_focus = {
@@ -326,7 +401,31 @@ shared_focus = {
 	x = 2
 	y = 2
 	completion_reward = {
-
+		set_temp_variable = { temp_devastation_gained = -5 }
+		TaS_WRW2_change_devastation = yes
+		GER = {
+			random_owned_controlled_state = {
+			damage_building = {
+				type = infrastructure
+				damage = 2
+			}
+				add_manpower = -139
+			}
+			random_owned_controlled_state = {
+				damage_building = {
+					type = infrastructure
+					damage = 2
+				}
+				add_manpower = -64
+			}
+			random_owned_controlled_state = {
+				damage_building = {
+					type = infrastructure
+					damage = 2
+				}
+				add_manpower = -112
+			}
+		}
 	}
 }
 shared_focus = {
@@ -339,7 +438,7 @@ shared_focus = {
 	x = 0
 	y = 3
 	completion_reward = {
-
+		country_event = { id = RUS_SWRW.6 }
 	}
 }
 
@@ -352,7 +451,22 @@ shared_focus = {
 	x = 4
 	y = 0
 	completion_reward = {
-
+		tno_trade_laws_clear = yes
+		add_ideas = { tno_trade_laws_closed_economy }
+		tno_minimum_wage_clear = yes
+		add_ideas = { tno_minimum_wage_no_minimum_wage }
+		tno_max_workhours_clear = yes
+		add_ideas = { tno_max_workhours_unlimited_work_day }
+		tno_safety_clear = yes
+		add_ideas = { tno_safety_no_regulations	}
+		tno_pollution_clear = yes
+		add_ideas = { tno_pollution_no_controls	}
+		tno_child_labor_clear = yes
+		add_ideas = { tno_child_labor_legal }
+		tno_pensions_clear = yes
+		add_ideas = { tno_pensions_no_pensions }
+		tno_unemployment_clear = yes
+		add_ideas = { tno_unemployment_no_subsidies }
 	}
 }
 shared_focus = {
@@ -364,7 +478,48 @@ shared_focus = {
 	x = 0
 	y = 1
 	completion_reward = {
-
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_1
+			amount = 25000
+			producer = MAR
+		}
+		add_equipment_to_stockpile = {
+			type = anti_tank_equipment_0
+			amount = 10000
+			producer = MAR
+		}
+		add_equipment_to_stockpile = {
+			type = support_equipment
+			amount = 6000
+			producer = MAR
+		}
+		add_equipment_to_stockpile = {
+			type = artillery_equipment
+			amount = 5000
+			producer = MAR
+		}
+		add_equipment_to_stockpile = {
+			type = motorized_equipment_0
+			amount = 2000
+			producer = MAR
+		}
+		if = { 
+			limit = { 
+				has_dlc = "No Step Back"
+			}
+			add_equipment_to_stockpile = {
+				type = MBT_chassis_0
+				amount = 1000
+				producer = MAR
+			}
+		}
+		else = {
+			add_equipment_to_stockpile = {
+				type = MBT_equipment_0
+				amount = 1000
+				producer = MAR
+			}
+		}
 	}
 }
 shared_focus = {
@@ -376,7 +531,14 @@ shared_focus = {
 	x = -2
 	y = 2
 	completion_reward = {
-
+		tno_conscription_clear = yes
+		add_ideas = { tno_conscription_all_adults_serve }			
+		tno_military_supervision_clear = yes 
+		add_ideas = { tno_military_supervision_no_supervision }			
+		tno_training_clear = yes
+		add_ideas = { tno_training_none }			
+		tno_draft_exemptions_clear = yes
+		add_ideas = { tno_draft_exemptions_none }	
 	}
 }
 shared_focus = {
@@ -388,7 +550,10 @@ shared_focus = {
 	x = 2
 	y = 2
 	completion_reward = {
-
+		add_timed_idea = {
+			idea = SWRW_last_stand
+			days = 120
+		}
 	}
 }
 shared_focus = {
@@ -402,6 +567,6 @@ shared_focus = {
 	x = 0
 	y = 3
 	completion_reward = {
-
+		country_event = { id = nuclearwar.1 }
 	}
 }
