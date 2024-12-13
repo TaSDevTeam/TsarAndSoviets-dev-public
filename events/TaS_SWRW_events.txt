@@ -431,7 +431,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #Indroduction
 	id = GER_SWRW.6
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_SWRW.6" }
 	title = GER_SWRW.6.t
@@ -448,7 +448,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #Moscowien
 	id = GER_SWRW.7
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_SWRW.7" }
 	title = GER_SWRW.7.t
@@ -458,14 +458,19 @@ country_event = { #
 	is_triggered_only = yes
 	fire_only_once = yes
 	
-	option = { #
+	option = { #Rely on locals
 		name = GER_SWRW.7.a
+		ai_chance = { factor = 1 }
+		country_event = { id = GER_SWRW.11 }
+	}
+	option = { #Rely on SS
+		name = GER_SWRW.7.b
 		ai_chance = { factor = 1 }
 		
 	}
 }
 
-country_event = { #
+country_event = { #Caucasus
 	id = GER_SWRW.8
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_SWRW.8" }
 	title = GER_SWRW.8.t
@@ -475,14 +480,19 @@ country_event = { #
 	is_triggered_only = yes
 	fire_only_once = yes
 	
-	option = { #
+	option = { #Mountainous Defence
 		name = GER_SWRW.8.a
+		ai_chance = { factor = 1 }
+		
+	}
+	option = { #Burn everything
+		name = GER_SWRW.8.b
 		ai_chance = { factor = 1 }
 		
 	}
 }
 
-country_event = { #
+country_event = { #Ukraine
 	id = GER_SWRW.9
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_SWRW.9" }
 	title = GER_SWRW.9.t
@@ -492,14 +502,19 @@ country_event = { #
 	is_triggered_only = yes
 	fire_only_once = yes
 	
-	option = { #
+	option = { #Defend what we can
 		name = GER_SWRW.9.a
+		ai_chance = { factor = 1 }
+		
+	}
+	option = { #Form TRO
+		name = GER_SWRW.9.b
 		ai_chance = { factor = 1 }
 		
 	}
 }
 
-country_event = { #
+country_event = { #Ostland
 	id = GER_SWRW.10
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_SWRW.10" }
 	title = GER_SWRW.10.t
@@ -509,10 +524,130 @@ country_event = { #
 	is_triggered_only = yes
 	fire_only_once = yes
 	
-	option = { #
+	option = { # Defend at all costs
 		name = GER_SWRW.10.a
 		ai_chance = { factor = 1 }
 		
+	}
+}
+
+country_event = { #RONA mobilisation
+	id = GER_SWRW.11
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_SWRW.11" }
+	title = GER_SWRW.11.t
+	desc = GER_SWRW.11.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_SWRW.11.a
+		ai_chance = { factor = 1 }
+		country_event = { id = GER_SWRW.13 }
+	1
+}
+
+country_event = { #Evac of Ostdeutsche
+	id = GER_SWRW.13
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_SWRW.13" }
+	title = GER_SWRW.13.t
+	desc = GER_SWRW.13.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_SWRW.13.a
+		ai_chance = { factor = 1 }
+		country_event = { id = GER_SWRW.14 }
+		#news_event = { id = }
+	}
+}
+
+country_event = { #Moscowien is ready
+	id = GER_SWRW.14
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_SWRW.14" }
+	title = GER_SWRW.14.t
+	desc = GER_SWRW.14.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_SWRW.14.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Fear and Hunger
+	id = GER_SWRW.15
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_SWRW.15" }
+	title = GER_SWRW.15.t
+	desc = GER_SWRW.15.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_SWRW.15.a
+		ai_chance = { factor = 1 }
+		country_event = { id = GER_SWRW.16 }
+	}
+}
+
+country_event = { #GET VAXXED
+	id = GER_SWRW.16
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_SWRW.16" }
+	title = GER_SWRW.16.t
+	desc = GER_SWRW.16.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_SWRW.16.a
+		ai_chance = { factor = 1 }
+		country_event = { id = GER_SWRW.17 }
+	}
+}
+
+country_event = { #Gorky oof
+	id = GER_SWRW.17
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_SWRW.17" }
+	title = GER_SWRW.17.t
+	desc = GER_SWRW.17.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_SWRW.17.a
+		ai_chance = { factor = 1 }
+		country_event = { id = GER_SWRW.18 }
+	}
+}
+
+country_event = { #Koenigsberg oof
+	id = GER_SWRW.18
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_SWRW.18" }
+	title = GER_SWRW.18.t
+	desc = GER_SWRW.18.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_SWRW.18.a
+		ai_chance = { factor = 1 }
+		#country_event = { id = GER_SWRW.20 }
 	}
 }
 
