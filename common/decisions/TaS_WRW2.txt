@@ -2575,7 +2575,11 @@ TaS_WRW2_territorial_reclamation = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = TaS_WRW2_kenes_over
-				has_global_flag = TNO_TURKES_KENES_OVER_OVER
+				OR = {
+					has_global_flag = TNO_TURKES_KENES_OVER_USA_WINS 
+					has_global_flag = TNO_TURKES_KENES_OVER_NEUTRALITY 
+					has_global_flag = TNO_TURKES_KENES_OVER_GER_WINS 
+				}
 			}
 		}
 		complete_effect = {

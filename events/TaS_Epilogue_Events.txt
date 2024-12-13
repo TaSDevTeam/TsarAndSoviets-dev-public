@@ -984,6 +984,11 @@ country_event = { #Novgorod Theatry
 					ideology = socialist_social_monarchist_but_worse_subtype
 				}
 			}
+			hidden_effect = {
+				country_event ={
+					id = MAR_Collapse.1 days = 14
+				}
+			}
 		}
 		hidden_effect = {
 			every_country  = {
@@ -999,9 +1004,10 @@ country_event = { #Novgorod Theatry
 		name = MAR_Collapse.1941.b
 		trigger = {
 			NOT = {
-				surrender_progress > 0.3
+				surrender_progress > 0.4
 			}
 		}
+		load_focus_tree = MAR_second_patriotic_war_fail
 
 	}
 }	
@@ -2268,6 +2274,47 @@ country_event = { #Total f
 	}
 }
 
+country_event = { #Faust Deal
+	id = MAR_Collapse.20
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Collapse.20"}
+	title = MAR_Collapse.20.t
+	desc = MAR_Collapse.20.d
+	picture = GFX_report_event_collapse20
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = MAR_Collapse.20.a
+		ai_chance = { factor = 1 }
+		add_stability = -0.5
+		MAR = {
+			add_ideas = TaS_Post2WRW_MAR_capital_of_broken_hopes
+		}
+		clear_global_event_target = RUS_western_unifier
+		clear_global_event_target = RUS_west_siberia_unifier
+		clear_global_event_target = RUS_central_siberia_unifier
+		clear_global_event_target = RUS_far_east_unifier
+		clear_global_event_target = RUS_southern_urals_unifier
+		clear_global_event_target = RUS_kazakhstan_unifier
+		clear_global_event_target = RUS_russian_unifier
+		clear_global_event_target = RUS_siberian_unifier
+		clear_global_event_target = RUS_total_unifierэ
+		
+		clr_global_flag = RUS_national_unification
+		TNO_Country_Closing_Screen_Show = yes
+		drop_cosmetic_tag = yes
+		set_cosmetic_tag = MAR_JAP
+		set_country_flag = MAR_Bad_Ending
+		set_global_flag = WRW2_russian_collapse
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = TaS_RUSEpilogue_news.13
+				}
+			}
+		}
+	}
+}
+
 news_event = { 
 	id = TaS_RUSEpilogue_news.1
 	title = TaS_RUSEpilogue_news.1.t
@@ -2434,6 +2481,20 @@ news_event = {
 		name = TaS_RUSEpilogue_news.12.a
 	}
 }
+
+news_event = { 
+	id = TaS_RUSEpilogue_news.13
+	title = TaS_RUSEpilogue_news.13.t
+	desc = TaS_RUSEpilogue_news.13.d
+	picture = GFX_TaS_RUSEpilogue_news_013
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = TaS_RUSEpilogue_news.13.a
+	}
+}
+
 
 country_event = {#First troubles 
 	id = TaS_GERCollapse.1	

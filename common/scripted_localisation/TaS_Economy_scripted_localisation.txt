@@ -27,6 +27,10 @@ defined_text = {
 		localization_key = econ_sphere_name_IBR
 	}
 	text = {
+		trigger = { check_variable = { ECON_SPHERE_LEADER = TUR } }
+		localization_key = econ_sphere_name_TUR
+	}
+	text = {
 		trigger = { check_variable = { ECON_SPHERE_LEADER = ARG } }
 		localization_key = econ_sphere_name_ARG
 	}
@@ -123,6 +127,10 @@ defined_text = {
 		localization_key = econ_sphere_name_long_IBR
 	}
 	text = {
+		trigger = { check_variable = { ECON_SPHERE_LEADER = TUR } }
+		localization_key = econ_sphere_name_long_TUR
+	}
+	text = {
 		trigger = { check_variable = { ECON_SPHERE_LEADER = ARG } }
 		localization_key = econ_sphere_name_long_ARG
 	}
@@ -190,6 +198,105 @@ defined_text = {
 	text = { localization_key = "No Sphere" }
 }
 defined_text = {
+	name = GetSphereNameTab
+	text = {
+		trigger = {
+			check_variable = { ECON_SPHERE_LEADER = GER }
+			NOT = { has_global_flag = german_civil_war_speervic }
+		}
+		localization_key = econ_sphere_name_tab_GER
+	}
+	text = {
+		trigger = {
+			check_variable = { ECON_SPHERE_LEADER = GER }
+			has_global_flag = german_civil_war_speervic
+		}
+		localization_key = econ_sphere_name_tab_ZV
+	}
+	text = {
+		trigger = { check_variable = { ECON_SPHERE_LEADER = JAP } }
+		localization_key = econ_sphere_name_tab_JAP
+	}
+	text = {
+		trigger = { check_variable = { ECON_SPHERE_LEADER = ITA } }
+		localization_key = econ_sphere_name_tab_ITA
+	}
+	text = {
+		trigger = { check_variable = { ECON_SPHERE_LEADER = IBR } }
+		localization_key = econ_sphere_name_tab_IBR
+	}
+	text = {
+		trigger = { check_variable = { ECON_SPHERE_LEADER = TUR } }
+		localization_key = econ_sphere_name_tab_TUR
+	}
+	text = {
+		trigger = { check_variable = { ECON_SPHERE_LEADER = ARG } }
+		localization_key = econ_sphere_name_tab_ARG
+	}
+	text = {
+		trigger = { check_variable = { ECON_SPHERE_LEADER = BRA } }
+		localization_key = econ_sphere_name_tab_BRA
+	}
+	text = {
+		trigger = { check_variable = { ECON_SPHERE_LEADER = MEX } }
+		localization_key = econ_sphere_name_tab_MEX
+	}
+	text = {
+		trigger = { check_variable = { ECON_SPHERE_LEADER = USA } }
+		localization_key = econ_sphere_name_tab_USA
+	}
+	text = {
+		trigger = { check_variable = { ECON_SPHERE_LEADER = WOL } }
+		localization_key = econ_sphere_name_tab_WOL
+	}
+	text = {
+		trigger = { check_variable = { ECON_SPHERE_LEADER = MAR } }
+		localization_key = econ_sphere_name_tab_MAR
+	}
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { ECON_SPHERE_LEADER = FFR }
+				AND = {
+					check_variable = { ECON_SPHERE_LEADER = FRA }
+					OR = {
+						has_global_flag = FFR_reclamation_successful
+						has_global_flag = FFR_reconciliation_happened
+					}
+				}
+			}
+		}
+		localization_key = econ_sphere_name_tab_FFR
+	}
+	text = {
+		trigger = { check_variable = { ECON_SPHERE_LEADER = CAO } }
+		localization_key = econ_sphere_name_tab_CAO
+	}
+	text = {
+		trigger = { check_variable = { ECON_SPHERE_LEADER = ENG } }
+		localization_key = econ_sphere_name_tab_ENG
+	}
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { ECON_SPHERE_LEADER = ADN }
+				tag = ADN
+			}
+		}
+		localization_key = econ_sphere_name_tab_ADN
+	}
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { ECON_SPHERE_LEADER = CME }
+				tag = CME
+			}
+		}
+		localization_key = econ_sphere_name_tab_CME
+	}
+	text = { localization_key = econ_sphere_name_none }
+}
+defined_text = {
 	name = GetSphereIcon
 	text = {
 		trigger = {
@@ -238,6 +345,13 @@ defined_text = {
 			has_global_flag = Triumvirate_Collapse
 		}
 		localization_key = "GFX_econ_sphere_icon_IBR"
+	}
+	text = {
+		trigger = {
+			check_variable = { ECON_SPHERE_LEADER = TUR }
+			has_global_flag = Triumvirate_Collapse
+		}
+		localization_key = "GFX_econ_sphere_icon_TUR"
 	}
 	text = {
 		trigger = {
@@ -316,5 +430,40 @@ defined_text = {
 	}
 	text = {
 		localization_key = "GFX_econ_sphere_icon_none"
+	}
+}
+
+defined_text = {
+	name = GetSphereCreditRatingType
+	text = {
+		trigger = {
+			OR = {
+				TAG = GER
+				TAG = BGR
+				TAG = GGR
+				TAG = SGR
+				TAG = HGR
+				check_variable = { ECON_SPHERE_LEADER = GER }
+			}
+		}
+		localization_key = "GFX_econ_credit_ratings_GER"
+	}
+	text = {
+		trigger = {
+			OR = {
+				TAG = JAP
+				check_variable = { ECON_SPHERE_LEADER = JAP }
+			}
+		}
+		localization_key = "GFX_econ_credit_ratings_JAP"
+	}
+	text = {
+		trigger = {
+			tag = ARG
+		}
+		localization_key = "GFX_econ_credit_ratings_ARG"
+	}
+	text = {
+		localization_key = "GFX_econ_credit_ratings"
 	}
 }

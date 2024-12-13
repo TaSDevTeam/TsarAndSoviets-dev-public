@@ -273,6 +273,10 @@ MAR_install_mil_kazakhstan = {
 		}
 	}
 	MKZ = {
+		annex_country = {
+			target = KAZ
+			transfer_troops = yes
+		}
 		TaS_2WRW_set_zone_laws = yes
 		set_politics = {
 			ruling_party = despotism
@@ -358,6 +362,10 @@ MAR_install_autonomy_kazakhstan = {
 	}
 	MKZ = {
 		TaS_2WRW_set_autonomy_laws = yes
+		annex_country = {
+			target = KAZ
+			transfer_troops = yes
+		}
 		set_politics = {
 			ruling_party = paternalism
 			last_election = "1933.2.16"
@@ -804,10 +812,16 @@ first_every_day_script_TaS 	= {
 			MAR_prestol_calc_nationwide_strength = yes
 			add_to_variable = { MAR_prestol_clock_time = -1 }
 			add_to_variable = { MAR_prestol_update_time = -1 }
+			add_to_variable = { MAR_prestol_dirty_var = 1 }
 			clamp_variable = {
 				var = MAR_prestol_clock_time
 				min = 0
 				max = 500
+			}
+			if = {
+				check_variable = { MAR_Prestol_clock_time < 50}
+				set_temp_variable = { alert_id = token:Alert_PrestolTimeoutSoon }
+				add_TNO_alert = yes
 			}
 			if = {
 				limit = { check_variable = { MAR_prestol_update_time = 0 } }

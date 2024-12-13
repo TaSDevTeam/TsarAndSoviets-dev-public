@@ -424,7 +424,7 @@ ideas = {
 				always = yes
 			}
 			cancel = { has_country_flag = RUS_cancel_all_ideas }
-			picture = MAR_help_workers
+			picture = generic_armor_expertise
 			
 			removal_cost = -1
 			
@@ -1587,6 +1587,26 @@ ideas = {
 		}
 	}
 	country = {
+		MAR_economic_recovery = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAR_economic_recovery"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = idea_generic_economic_plan
+			modifier = {
+				gdp_growth_modifier = 7
+				production_factory_efficiency_gain_factor = 0.1
+				production_factory_max_efficiency_factor = 0.15
+				production_speed_buildings_factor = 0.15
+				misc_income_modifier = 0.5
+			}
+		}
+	}
+	country = {
 		TaS_RUS_shattered_ambitions = {
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea RUS_shattered_ambitions"}
 			allowed = {
@@ -1620,7 +1640,7 @@ ideas = {
 				always = yes
 			}
 			cancel = { has_country_flag = RUS_cancel_all_ideas }
-			picture = idea_MAR_Gil_Broken_Economy
+			picture = generic_social_rights_2
 			
 			removal_cost = -1
 			

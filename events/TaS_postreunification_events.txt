@@ -401,7 +401,7 @@ country_event = { #Northern Rebellion #MAO/AMIN/ZAHIR
 		}
 		if = {
 			limit = { has_global_flag = ACW_twoside }
-			country_event = { MAR_AFG.5 days = 11 }
+			country_event = { id = MAR_AFG.5 days = 11 }
 			if = {
 				limit = { MAR = { has_government = despotism } }
 				country_event = { id = MAR_AFG.9 days = 7 }
@@ -481,7 +481,7 @@ country_event = { #Daoud pro-sphere coup #start of the CW
 		}
 		set_global_flag = AFG_DK_JAP
 		NAL = { declare_war_on = { target = AFG type = annex_everything } }
-		country_event = { MAR_AFG.6 days = 7 }
+		country_event = { id = MAR_AFG.6 days = 7 }
 		hidden_effect = {
 			every_country  = {
 				news_event = {
@@ -588,7 +588,7 @@ country_event = { #AFG revolution
 			}
 		}
 		set_cosmetic_tag = AFG_republic
-		country_event = { MAR_AFG.4 days = 7 }
+		country_event = { id = MAR_AFG.4 days = 7 }
 		hidden_effect = {
 			every_country  = {
 				news_event = {
@@ -652,7 +652,7 @@ country_event = { #AFG revolution
 			}
 		}
 		set_cosmetic_tag = AFG_republic
-		country_event = { MAR_AFG.4 days = 7 }
+		country_event = { id = MAR_AFG.4 days = 7 }
 		hidden_effect = {
 			every_country  = {
 				news_event = {
@@ -713,7 +713,7 @@ country_event = { #AFG revolution
 			}
 		}
 		set_cosmetic_tag = AFG_republic
-		country_event = { MAR_AFG.7 days = 7 }
+		country_event = { id = MAR_AFG.4 days = 7 }
 		hidden_effect = {
 			every_country  = {
 				news_event = {
@@ -736,6 +736,9 @@ country_event = { #Mujahideen
 
 	option = {
 		name = MAR_AFG.8.a
+		ai_chance = {
+			base = 10
+		}
 		XYZ = {
 			MUJ_Gulbuddin_Hekmatyar = {
 				set_nationality = MUJ
@@ -747,9 +750,6 @@ country_event = { #Mujahideen
 				last_election = "1969.8.29"
 				election_frequency = 48
 				elections_allowed = no
-			}
-			ai_chance = {
-				base = 10
 			}
 			set_popularities = {
 				ultranationalism  = 40
@@ -3859,6 +3859,7 @@ country_event = { #Turkestan
 		ai_chance = { factor = 1 }
 		custom_effect_tooltip = MAR_annex_em_all_tt
 		hidden_effect = {
+			set_country_flag = MAR_has_turkestan
 			annex_country = {
 				target = MTR
 				transfer_troops = yes

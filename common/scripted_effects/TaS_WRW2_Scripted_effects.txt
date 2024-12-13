@@ -2251,7 +2251,10 @@ TaS_2WRW_form_ost_zones = {
 TaS_2WRW_set_zone_laws = {
 	set_variable = { TNO_economy_type = token:Econ_Type_Planned }
 	set_variable = { TNO_economy_subtype = token:Econ_Subtype_Military_Directed }
-	add_ideas = { MAR_military_administration }
+	add_ideas = {
+		MAR_military_administration
+		MAR_economic_recovery
+	}
 	set_politics = {
 		ruling_party = despotism
 	}

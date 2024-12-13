@@ -16,7 +16,7 @@ MAR_dolina_primirenya_category = {
 		has_country_flag = MAR_dolina_primireniya
 	}
 	
-	visible_when_empty = yes
+	visible_when_empty = no
 	
 	priority = {
 		base = 20
@@ -35,7 +35,7 @@ MAR_ogas_deccat = {
 
 MAR_greater_good_category = {
 	icon = GFX_decision_category_generic_industry
-	picture = GFX_RUS_category_regional_development
+	picture = GFX_MAR_GREATER_GOOD_category
 	
 	allowed = {
 		tag = MAR
@@ -44,7 +44,7 @@ MAR_greater_good_category = {
 		has_country_flag = MAR_greater_good_program
 	}
 	
-	visible_when_empty = yes
+	visible_when_empty = no
 	
 	priority = {
 		base = 20

@@ -2351,7 +2351,6 @@ RUS_DecisionCategory_Smuta = {
 	#####################
 	# {=| BEREZNIKI |=} #
 	#####################
-	
 	RUS_Decision_Smuta_Expansion_MAR_Generic = {
 
 		icon = GFX_decision_generic_assault
@@ -2361,7 +2360,7 @@ RUS_DecisionCategory_Smuta = {
 			is_neighbor_of = MAR
 			has_war = no
 			NOT = { has_non_aggression_pact_with = MAR }
-			RUS_Smuta_ScriptedTrigger_Expansion_TAR_Generic_NotVisible = yes
+			RUS_Smuta_ScriptedTrigger_Expansion_MAR_Generic_NotVisible = yes
 		}
 		available = {
 			set_temp_variable = { Y = 250 }
@@ -2382,7 +2381,7 @@ RUS_DecisionCategory_Smuta = {
 		}
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision Complete RUS_Decision_Smuta_Expansion_MAR_Generic"
+			log = "[GetDateText]: [Root.GetName]: Decision Complete RUS_Decision_Smuta_Expansion_PRM_Generic"
 			if = {
 				limit = {
 					has_country_flag = tukha_in_power
@@ -2396,29 +2395,39 @@ RUS_DecisionCategory_Smuta = {
 					}
 				}
 			}
-			hidden_effect = {
-				set_temp_variable = { Y = -0.3 }
-				RUS_Smuta_Supplies_Add_Y = yes
-			}
+			set_temp_variable = { TargetTag = MAR }
+			RUS_Smuta_Expansion_TargetTag_Generic_Complete = yes
+			set_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		days_remove = 15
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_MAR_Generic"
-			declare_war_on = { target = MAR type = annex_everything }
+			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_Decision_Smuta_Expansion_PRM_Generic"
+			set_temp_variable = { TargetTag = MAR }
+			RUS_Smuta_Expansion_TargetTag_Generic_Remove = yes
+			clr_country_flag = RUS_Smuta_preparing_expansion
 		}
 
 		cancel_trigger = {
 			hidden_trigger = {
 				NOT = {
-					country_exists = MAR 
+					country_exists = MAR
 					has_war_with = MAR
-				} 
-			} 
+				}
+			}
 		}
-		
-		ai_will_do = { factor = 100 }
+		cancel_effect = {
+			remove_from_array = { Smuta_PrepareWarOn = MAR }
+			clr_country_flag = RUS_Smuta_preparing_expansion
+		}
 
+		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
+			factor = 125
+			modifier = {
+				factor = 0
+				has_country_flag = RUS_Smuta_preparing_expansion
+			}
+		}
 	}
 
 	###############################

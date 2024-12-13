@@ -33,6 +33,11 @@ TaS_SWRW_change_suspicion = {
 	else = {
 		custom_effect_tooltip = SWRW_suspicion_growth_tt
 	}
+	if = {
+		limit = { check_variable = { SWRW_suspicion_var > 95 } }
+		set_temp_variable = { alert_id = token:GFX_TNO_Alert_SWRWGermanAttention }
+		add_TNO_alert = yes
+	}
 }
 TaS_SWRW_change_suspicion_gain = { 
 	set_temp_variable = { temp_suspicion_gain_gained_txt = SWRW_suspicion_gain_temp }

@@ -1102,9 +1102,15 @@ shared_focus = {
 	x = 33
 	y = 2
 	completion_reward = {
-		add_opinion_modifier = {
-			target = USA
-			modifier = MAR_usa_friend
+		USA = {
+			add_opinion_modifier = {
+				target = MAR
+				modifier = RUS_recognition
+			}
+			reverse_add_opinion_modifier = {
+				target = MAR
+				modifier = RUS_recognition	
+			}
 		}
 		country_event = {
 			id = MAR_Kosygin.30
@@ -1150,9 +1156,15 @@ shared_focus = {
 	x = 35
 	y = 2
 	completion_reward = {
-		add_opinion_modifier = {
-			target = JAP
-			modifier = RUS_recognition
+		JAP = {
+			add_opinion_modifier = {
+				target = MAR
+				modifier = RUS_recognition
+			}
+			reverse_add_opinion_modifier = {
+				target = MAR
+				modifier = RUS_recognition	
+			}
 		}
 		country_event = {
 			id = MAR_Kosygin.32
@@ -1195,6 +1207,16 @@ shared_focus = {
 	x = 34
 	y = 4
 	completion_reward = {
+		IND = {
+			add_opinion_modifier = {
+				target = MAR
+				modifier = RUS_recognition
+			}
+			reverse_add_opinion_modifier = {
+				target = MAR
+				modifier = RUS_recognition	
+			}
+		}
 		country_event = {
 			id = MAR_Kosygin.34
 			days = 0
@@ -1698,7 +1720,7 @@ shared_focus = {
 				country_exists = KAZ
 				KAZ = { has_war = no }
 			}
-			custom_effect_tooltip = Kazazh_Kazakhstan_Berezniki_tt
+			custom_effect_tooltip = Kazakh_Kazakhstan_Berezniki_tt
 			country_event = { id = berez_kazahk.13 days = 3 }
 		}
 	}
@@ -1807,6 +1829,12 @@ shared_focus = {
 				}
 			}
 		}
+		MKZ = {
+			set_temp_variable = { gdp_growth_temp = 4.5 }
+			econ_gdp_growth_change = yes
+			set_temp_variable = { temp_econ_GDP_boost_flat = 1 }
+			econ_GDP_boost_once_flat = yes	
+		}	
 		custom_effect_tooltip = MAR_Belozerskiy_add_2_inf_in_Kazakhstan
 	}
 }
@@ -1849,6 +1877,12 @@ shared_focus = {
 				 type = oil
 				 amount = 12
 			}
+		}
+		MKZ = {
+			set_temp_variable = { gdp_growth_temp = 1.5 }
+			econ_gdp_growth_change = yes
+			set_temp_variable = { temp_econ_GDP_boost_flat = 1.5 }
+			econ_GDP_boost_once_flat = yes	
 		}
 		country_event = {
 			id = MAR_Kosygin.54
@@ -1904,6 +1938,10 @@ shared_focus = {
 				instant_build = yes
 			}
 			add_extra_state_shared_building_slots = 3
+		}
+		MKZ = {
+			set_temp_variable = { temp_econ_GDP_boost_flat = 2.5 }
+			econ_GDP_boost_once_flat = yes	
 		}
 	}
 }

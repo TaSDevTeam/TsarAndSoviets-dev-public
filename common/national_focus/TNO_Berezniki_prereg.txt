@@ -762,6 +762,24 @@ shared_focus = {
 	completion_reward = {
 		country_event = { id = MAR_initial.41 days = 7 }
 		hidden_effect = {
+			division_template = {
+				name = "Dzhentelmeni Udachi"
+				is_locked = yes
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 2 y = 0 }
+					artillery_brigade = {x = 2 y = 1}
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+				}
+			}
 			398 = {
 				create_unit = {
 					division = "division_template = \"Dzhentelmeni Udachi\" start_experience_factor = 0.5 start_equipment_factor = 1.0"
@@ -1331,7 +1349,7 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_everyone_for_front
-	icon = GFX_MAR_turn_everything_upside_down
+	icon = GFX_MAR_vse_dly_fronta
 	cost = 1
 	available_if_capitulated = no
 	available = {

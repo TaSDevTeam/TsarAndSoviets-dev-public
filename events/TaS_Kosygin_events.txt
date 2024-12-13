@@ -280,6 +280,7 @@ country_event = {#Aftermaths
 					}
 				}
 			}
+			add_popularity = { ideology = despotism_1 popularity = -1 }
 			set_country_flag = MAR_prestol_focus_tree
 			mark_focus_tree_layout_dirty = yes
 		}
@@ -478,6 +479,12 @@ country_event = {#mfa
 		name = MAR_Kosygin.28.a
 		ai_chance = { factor = 1 }	
 		hidden_effect = {
+			if = {
+				limit = { has_country_flag = MAR_RFI_alliance }
+				RFI = {
+					econ_join_sphere_MAR = yes
+				}
+			}
 		    MAR = {
 				econ_join_sphere_MAR = yes
 			}
@@ -573,10 +580,6 @@ country_event = {#india trip
 	option = {
 		name = MAR_Kosygin.34.a
 		ai_chance = { factor = 1 }	
-		reverse_add_opinion_modifier = {
-			target = IND
-			modifier = RUS_recognition
-		}
 		set_temp_variable = { gdp_growth_temp = 0.2 }
 		econ_gdp_growth_change = yes
 		IND = {
@@ -920,7 +923,6 @@ country_event = {#akmola celebration
 			hidden_effect = {
 				MKZ = {
 					every_owned_state = {
-						add_state_core = RWS
 						remove_core_of = MKZ
 						remove_core_of = KAZ
 						remove_core_of = KZR
@@ -929,6 +931,24 @@ country_event = {#akmola celebration
 				annex_country = {
 					target = MKZ
 					transfer_troops = yes
+				}
+				RWS = {
+					add_state_core = 407
+					add_state_core = 406
+					add_state_core = 402
+					add_state_core = 583
+					add_state_core = 587
+					add_state_core = 404
+					add_state_core = 1807
+					add_state_core = 590
+					add_state_core = 1808
+					add_state_core = 1802
+					add_state_core = 1803
+					add_state_core = 1804
+					add_state_core = 1805
+					add_state_core = 1806
+					add_state_core = 589
+					add_state_core = 588
 				}
 			}
 		}
@@ -950,7 +970,7 @@ country_event = {#future, forward!
 				civilian = { large = "gfx/leaders/MAR/Portrait_Berezniki_Kosygind_70s.dds" }
 			}
 		}
-		#load_focus_tree = { tree = MAR_Kosygin_post_unification keep_completed = no }
+		load_focus_tree = { tree = MAR_Kosygin_post_unification keep_completed = no }
 	}
 }
 
@@ -1959,6 +1979,7 @@ country_event = { #400 event 2
 	
 	option = { #
 		name = MAR_Kosygin_Prestol.14.a
+		set_country_flag = MAR_prestol_tabby_ded
 		ai_chance = { factor = 1 }
 		add_manpower = -1
 		country_event = { id = MAR_Kosygin_Prestol.15 days = 3 }
@@ -1994,7 +2015,9 @@ country_event = { #fail 1
 	id = MAR_Kosygin_Prestol.16
 	immediate = {
 		log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin_Prestol.16"
-		scoped_play_song = "clock_over"
+		hidden_effect = {
+			scoped_play_song = "clock_over"
+		}
 	}
 	title = MAR_Kosygin_Prestol.16.t
 	desc = MAR_Kosygin_Prestol.16.d

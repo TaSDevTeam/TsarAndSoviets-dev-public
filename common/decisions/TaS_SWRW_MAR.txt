@@ -2557,7 +2557,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_block_suez = {
 		icon = generic_battleship
 		visible = {
-			has_country_flag = #SWRW_decisions_fopo
+			#has_country_flag = #SWRW_decisions_fopo
 			check_variable = { TaS_swrw_stage = 1 }
 			check_variable = { swrw_preparation_category = 3 }
 			OR = {

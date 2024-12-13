@@ -36,6 +36,8 @@ scripted_gui = {
 				}
 				else = { set_country_flag = MAR_Prestol_GUI_visible }
 				set_country_flag = MAR_Prestol_GUI_Opener_Clear
+				set_temp_variable = { alert_id = token:Alert_PrestolActionAvailable }
+				remove_TNO_alert = yes
 			}
 		}
 
@@ -44,7 +46,7 @@ scripted_gui = {
 	MAR_Prestol_GUI = {
 		context_type = player_context
 		window_name = "MAR_Prestol_GUI"
-		dirty = MAR_insurgency_controller
+		dirty = MAR_prestol_dirty_var
 		visible = {
 			has_country_flag = MAR_Prestol_GUI_visible
 		}
@@ -99,7 +101,7 @@ scripted_gui = {
 				set_variable = { insurgency_state_selected = MAR_map_grid_array^idx }
 				set_variable = { insurgency_state_selected_i = idx }
 				
-				add_to_variable = { MAR_insurgency_controller = 1 }
+				add_to_variable = { MAR_prestol_dirty_var = 1 }
 				
 				if = {
 					limit = { has_country_flag = MAR_state_interaction_open }
@@ -114,7 +116,7 @@ scripted_gui = {
 	MAR_Prestol_GUI_state_interaction = {
 		context_type = player_context
 		window_name = "MAR_Prestol_regional_interaction_menu"
-
+		
 		visible = {
 			tag = MAR
 			NOT = {
@@ -139,7 +141,7 @@ scripted_gui = {
 						check_variable = { MAR_Had_RecentAction = 0 }
 					}
 				}
-				has_political_power > 24.99
+				command_power > 19.99
 			}
 			MAR_antiprestol_decision_three_click_enabled = {
 				custom_trigger_tooltip = {
@@ -148,7 +150,8 @@ scripted_gui = {
 						check_variable = { MAR_Had_RecentAction = 0 }
 					}
 				}
-				has_political_power > 24.99
+				has_manpower > 1000
+				has_equipment = { infantry_equipment > 150 }
 			}
 			MAR_antiprestol_decision_operation_one_click_enabled = {
 				custom_trigger_tooltip = {
@@ -229,6 +232,7 @@ scripted_gui = {
 					clr_country_flag = MAR_state_interaction_open
 				}
 				else = { set_country_flag = MAR_state_interaction_open }
+				add_to_variable = { MAR_prestol_dirty_var = 1 }
 			}
 			MAR_antiprestol_decision_one_click = {
 				var:insurgency_state_selected = {
@@ -245,6 +249,7 @@ scripted_gui = {
 					MAR_clamp_insurgency_strength = yes
 				}
 				add_political_power = -25
+				add_to_variable = { MAR_prestol_dirty_var = 1 }
 			}
 			MAR_antiprestol_decision_two_click = {
 				var:insurgency_state_selected = {
@@ -259,7 +264,8 @@ scripted_gui = {
 					custom_effect_tooltip = MAR_prestol_power_trend_change
 					MAR_clamp_insurgency_strength = yes
 				}
-				add_political_power = -25
+				add_command_power = -20
+				add_to_variable = { MAR_prestol_dirty_var = 1 }
 			}
 			MAR_antiprestol_decision_three_click = {
 				var:insurgency_state_selected = {
@@ -274,7 +280,12 @@ scripted_gui = {
 					custom_effect_tooltip = MAR_prestol_power_trend_change
 					MAR_clamp_insurgency_strength = yes
 				}
-				add_political_power = -25
+				add_manpower = -500
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = -100
+				}
+				add_to_variable = { MAR_prestol_dirty_var = 1 }
 			}
 			MAR_antiprestol_decision_operation_one_click = {
 				MAR_Prestol_set_the_event_one = yes
@@ -282,6 +293,7 @@ scripted_gui = {
 				var:insurgency_state_selected = {
 					add_to_variable = { MAR_Had_RecentAction = 1 }
 				}
+				add_to_variable = { MAR_prestol_dirty_var = 1 }
 			}
 			MAR_antiprestol_decision_operation_two_click = {
 				MAR_Prestol_set_the_event_two = yes				
@@ -289,6 +301,7 @@ scripted_gui = {
 				var:insurgency_state_selected = {
 					add_to_variable = { MAR_Had_RecentAction = 1 }
 				}
+				add_to_variable = { MAR_prestol_dirty_var = 1 }
 			}
 		}
 		properties = {

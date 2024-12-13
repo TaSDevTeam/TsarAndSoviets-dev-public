@@ -112,6 +112,8 @@ MAR_OGAS_switch_to_the_next_stage = {
 			country_event = { id = MAR_Kosygin_OGAS.10 }
 		}
 	}
+	set_temp_variable = { alert_id = token:Alert_OGASUpgraded }
+	add_TNO_alert = yes
 }
 
 MAR_calculate_ogas_dynmod_effects = {
@@ -353,6 +355,9 @@ MAR_Prestol_start = {
 		country_event = { id = MAR_Kosygin_Prestol.21 days = 110 } 
 		country_event = { id = MAR_Kosygin_Prestol.22 days = 350 } 
 		country_event = { id = MAR_Kosygin_Prestol.23 days = 315 } 
+		
+		set_temp_variable = { alert_id = token:Alert_PrestolActionAvailable }
+		add_TNO_alert = yes
 	}
 	MAR_prestol_calc_nationwide_strength = yes
 	
@@ -404,6 +409,8 @@ MAR_prestol_biweekly_update = {
 				}
 			}
 		}
+		set_temp_variable = { alert_id = token:Alert_PrestolActionAvailable }
+		add_TNO_alert = yes`
 	}
 	MAR_prestol_calc_nationwide_strength = yes
 	MAR_calculate_terror_risk = yes
@@ -554,6 +561,117 @@ TaS_Kosygin_westrussian_collapse = {
 		if = {
 			limit = { has_war_with = MGN }
 			white_peace = MGN		
+		}
+	}
+	every_country = {
+		limit = { check_variable = { ECON_SPHERE_LEADER = MAR } }
+		econ_leave_sphere = yes
+	}
+	if = {
+		limit = {
+			country_exists = FIN	
+			MAR = { controls_state = 213 }
+		}
+		FIN = {
+			transfer_state = 722
+			transfer_state = 1724
+			transfer_state = 1359
+			transfer_state = 213
+			transfer_state = 147
+			transfer_state = 215
+			transfer_state = 216
+			every_owned_state = {
+				FIN = {
+					add_state_core = PREV
+				}
+			} 
+		}
+	}
+	if = {
+		limit = {
+			country_exists = RFI	
+			MAR = { controls_state = 213 }
+		}
+		RFI = {
+			transfer_state = 722
+			transfer_state = 1724
+			transfer_state = 1359
+			transfer_state = 213
+			transfer_state = 147
+			transfer_state = 215
+			transfer_state = 216
+			every_owned_state = {
+				RFI = {
+					add_state_core = PREV
+				}
+			} 
+		}
+	}
+	if = {
+		limit = {
+			AND = { 
+				country_exists = WSB
+				MAR = { controls_state = 848 }
+			}
+		}
+		WSB = {
+			transfer_state = 848
+			transfer_state = 847
+			every_owned_state = {
+				WSB = {
+					add_state_core = PREV
+				}
+			} 
+		}
+	}
+	if = {
+		limit = {
+			AND = { 
+				country_exists = WSB
+				MAR = { controls_state = 582 }
+			}
+		}
+		WSB = {
+			transfer_state = 582
+			every_owned_state = {
+				WSB = {
+					add_state_core = PREV
+				}
+			} 
+		}
+	}
+	if = {
+		limit = {
+			AND = { 
+				country_exists = WSB
+				MAR = { controls_state = 846 }
+			}
+		}
+		WSB = {
+			transfer_state = 846
+			every_owned_state = {
+				WSB = {
+					add_state_core = PREV
+				}
+			} 
+		}
+	}
+	if = {
+		limit = {
+			AND = { 
+				country_exists = WSB
+				MAR = { controls_state = 582 }
+			}
+		}
+		WSB = {
+			transfer_state = 852
+			transfer_state = 652
+			transfer_state = 849
+			every_owned_state = {
+				WSB = {
+					add_state_core = PREV
+				}
+			} 
 		}
 	}
 	ONG = {
@@ -936,7 +1054,7 @@ TaS_Kosygin_westrussian_collapse = {
 		set_politics = {
 			ruling_party = despotism
 		}
-		retire_country_leader = yes
+		#retire_country_leader = yes
 		add_country_leader_role = {
 			character = MAR_Vladimir_Gil
 			country_leader = {

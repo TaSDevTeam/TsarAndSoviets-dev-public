@@ -47,7 +47,7 @@ MAR_debug_category = {
 		}
 	}
 
-	MAR_afterbomb_tree_load = { 
+	MAR_afterbomb_tree_load = {
 		icon = GFX_decision_generic_industry
 
 		allowed = {
@@ -2044,8 +2044,11 @@ MAR_category_prestol_terrorists = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = MAR_taboritskys_insurgency_trigger
-				NOT = {
-					has_country_flag = MAR_prestol_active
+				OR = {
+					NOT = {
+						has_country_flag = MAR_prestol_active
+					}
+					has_country_flag = MAR_prestol_tabby_ded
 				}
 			}
 		}
@@ -2067,77 +2070,77 @@ MAR_category_prestol_terrorists = {
 		}
 	}
 	
-	MAR_biweekly_prestol_tick = {
-		icon = GFX_decision_generic_ignite_civil_war
-		activation = { always = no }
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = MAR_taboritskys_insurgency_trigger
-				NOT = {
-					has_country_flag = MAR_prestol_active
-				}
-			}
-		}
-		priority = 500
-		selectable_mission = no
-		days_mission_timeout = 140
-		is_good = no
-
-		timeout_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision Timeout MAR_biweekly_prestol_tick"
-			MAR_prestol_biweekly_update = yes
-			activate_mission = MAR_biweekly_prestol_tick
-			random_list = {
-				var:prestol_terror_risk = {
-					random_list = {
-						33 = {
-							country_event = {
-								id = MAR_Kosygin_Prestol.25 days = 0
-							}
-						}
-						33 = {
-							country_event = {
-								id = MAR_Kosygin_Prestol.26 days = 0
-							}
-						}
-						34 = {
-							country_event = {
-								id = MAR_Kosygin_Prestol.27 days = 0
-							}
-						}
-					}
-				}
-				var:prestol_terror_anti_risk = {
-					
-				}
-			}
-			set_variable = { ROOT.rebelous_states_total = -1 }
-			for_each_loop = {
-				array = MAR_map_grid_array
-				if = {
-					limit = {
-						check_variable = { v:kosygin_reception > 1 }
-					}
-					add_to_variable = { ROOT.rebelous_states_total = 1 }
-				}
-			}
-			log = "rebelous_states_total: [?ROOT.rebelous_states_total]"
-			if = {
-				limit = {
-					check_variable = { ROOT.insurgency_strength < 15 }
-					check_variable = { ROOT.rebelous_states_total < 3 }
-				}
-				country_event = {
-					id = MAR_Kosygin_Prestol.29 days = 1
-				}
-			}	
-		}
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision MAR_biweekly_prestol_tick"
-			#custom_effect_tooltip = OMS_total_destruction_cancel_tt_2
-			#set_variable = { OMS_army_deployed = 1 }
-		}
-	}
+	#MAR_biweekly_prestol_tick = {
+	#	icon = GFX_decision_generic_ignite_civil_war
+	#	activation = { always = no }
+	#	available = {
+	#		custom_trigger_tooltip = {
+	#			tooltip = MAR_taboritskys_insurgency_trigger
+	#			NOT = {
+	#				has_country_flag = MAR_prestol_active
+	#			}
+	#		}
+	#	}
+	#	priority = 500
+	#	selectable_mission = no
+	#	days_mission_timeout = 140
+	#	is_good = no
+	#
+	#	timeout_effect = {
+	#		log = "[GetDateText]: [Root.GetName]: Decision Timeout MAR_biweekly_prestol_tick"
+	#		MAR_prestol_biweekly_update = yes
+	#		activate_mission = MAR_biweekly_prestol_tick
+	#		random_list = {
+	#			var:prestol_terror_risk = {
+	#				random_list = {
+	#					33 = {
+	#						country_event = {
+	#							id = MAR_Kosygin_Prestol.25 days = 0
+	#						}
+	#					}
+	#					33 = {
+	#						country_event = {
+	#							id = MAR_Kosygin_Prestol.26 days = 0
+	#						}
+	#					}
+	#					34 = {
+	#						country_event = {
+	#							id = MAR_Kosygin_Prestol.27 days = 0
+	#						}
+	#					}
+	#				}
+	#			}
+	#			var:prestol_terror_anti_risk = {
+	#				
+	#			}
+	#		}
+	#		set_variable = { ROOT.rebelous_states_total = -1 }
+	#		for_each_loop = {
+	#			array = MAR_map_grid_array
+	#			if = {
+	#				limit = {
+	#					check_variable = { v:kosygin_reception > 1 }
+	#				}
+	#				add_to_variable = { ROOT.rebelous_states_total = 1 }
+	#			}
+	#		}
+	#		log = "rebelous_states_total: [?ROOT.rebelous_states_total]"
+	#		if = {
+	#			limit = {
+	#				check_variable = { ROOT.insurgency_strength < 15 }
+	#				check_variable = { ROOT.rebelous_states_total < 3 }
+	#			}
+	#			country_event = {
+	#				id = MAR_Kosygin_Prestol.29 days = 1
+	#			}
+	#		}	
+	#	}
+	#	complete_effect = {
+	#		log = "[GetDateText]: [Root.GetName]: Decision MAR_biweekly_prestol_tick"
+	#		#custom_effect_tooltip = OMS_total_destruction_cancel_tt_2
+	#		#set_variable = { OMS_army_deployed = 1 }
+	#	}
+	#}
 
 }
 #ogas
@@ -2317,7 +2320,7 @@ MAR_ogas_deccat = {
 	}  
 	 
 	MAR_ogas_first_our_previous_ideas = {
-		icon = GFX_decision_ultravisionary_socialism
+		icon = GFX_decision_category_KOM_ultravisionary_socialism
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 1 }
 		} 
@@ -2353,7 +2356,7 @@ MAR_ogas_deccat = {
 	}
 	
 	MAR_ogas_first_sort_the_designs = {
-		icon = GFX_decision_guangdong_data
+		icon = GFX_decision_GNG_data
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 1 }
 		}
@@ -2630,7 +2633,7 @@ MAR_ogas_deccat = {
 			check_variable = { MAR_ogas_current_stage = 3 }	
 		}
 		cost = 25
-		days_remove = 1
+		days_remove = 180
 		fire_only_once = yes
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_third_cybergrad_kazan"
@@ -2735,7 +2738,7 @@ MAR_ogas_deccat = {
 	}
 	
 	MAR_ogas_third_kibersin = {
-		icon = GFX_decision_handshake
+		icon = GFX_decision_generic_handshake
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 3 }	
 		}
@@ -3487,7 +3490,7 @@ MAR_greater_good_category = {
 	
 	MAR_greater_good_invest_in_scientific_research = {
 
-		icon = GFX_decision_research_generic
+		icon = GFX_decision_generic_research
 		available = {
 		}
 		visible = {
@@ -3507,6 +3510,8 @@ MAR_greater_good_category = {
 		}
 
 		days_remove = 365
+		
+		fire_only_once = yes
 
 		cost = 50
 

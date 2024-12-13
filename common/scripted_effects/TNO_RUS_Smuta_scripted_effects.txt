@@ -188,11 +188,6 @@ RUS_Smuta_Contenders_Setup = {
 				limit = { PRM = { exists = yes } }
 				add_to_variable = { Smuta_ContendersReal_Num = 1 }
 			}
-			add_to_array = { Smuta_Contenders = GAY }
-			if = {
-				limit = { GAY = { exists = yes } }
-				add_to_variable = { Smuta_ContendersReal_Num = 1 }
-			}
 			add_to_array = { Smuta_Contenders = BKR }
 			if = {
 				limit = { BKR = { exists = yes } }
