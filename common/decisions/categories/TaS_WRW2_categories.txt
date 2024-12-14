@@ -7,7 +7,8 @@ TaS_WRW2_territorial_reclamation = {
 	}
 	
 	visible = {
-		has_global_flag = RUS_national_unification
+		#has_global_flag = RUS_national_unification
+		has_country_flag = RUS_postreunification_tree_completed
 	}
 	
 	visible_when_empty = yes

@@ -2698,8 +2698,7 @@ TaS_WRW2_territorial_reclamation = {
 				#country_event = {
 				#	id = MAR_Japan.10 days = 3
 				#}
-				set_country_flag = TaSWRW2_War_Prep_Tree_Load
-				mark_focus_tree_layout_dirty = yes
+				load_focus_tree = { tree = MAR_war_preparation_tree keep_completed = no }
 			}
 		}
 	}

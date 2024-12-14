@@ -1469,6 +1469,83 @@ country_event = { # Tsar Meeting
 	}	
 }
 
+country_event = { # All-Russian Mladorossi Party
+	id = MAR_epilogue.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: MAR_epilogue.4"}
+	title = MAR_epilogue.4.t
+	desc = MAR_epilogue.4.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	#picture = GFX_MAR_Bel_epilogue_4
+
+	option = {
+		name = MAR_epilogue.4.a
+		ai_chance = { factor = 1 }	
+	}	
+}
+
+country_event = { # Amnesty
+	id = MAR_epilogue.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: MAR_epilogue.5"}
+	title = MAR_epilogue.5.t
+	desc = MAR_epilogue.5.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	#picture = GFX_MAR_Bel_epilogue_5
+
+	option = {
+		name = MAR_epilogue.5.a
+		ai_chance = { factor = 1 }	
+	}	
+}
+
+country_event = { # RusTour
+	id = MAR_epilogue.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: MAR_epilogue.6"}
+	title = MAR_epilogue.6.t
+	desc = MAR_epilogue.6.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	#picture = GFX_MAR_Bel_epilogue_6
+
+	option = {
+		name = MAR_epilogue.6.a
+		ai_chance = { factor = 1 }	
+	}	
+}
+
+country_event = { # International Recognition
+	id = MAR_epilogue.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: MAR_epilogue.7"}
+	title = MAR_epilogue.7.t
+	desc = MAR_epilogue.7.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	#picture = GFX_MAR_Bel_epilogue_7
+
+	option = {
+		name = MAR_epilogue.7.a
+		ai_chance = { factor = 1 }	
+	}	
+}
+
+country_event = { # New Congress
+	id = MAR_epilogue.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: MAR_epilogue.8"}
+	title = MAR_epilogue.8.t
+	desc = MAR_epilogue.8.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	#picture = GFX_MAR_Bel_epilogue_8
+
+	option = {
+		name = MAR_epilogue.8.a
+		ai_chance = { factor = 1 }	
+		custom_effect_tooltip = RUS_territorial_reclamation_available_tt
+		set_country_flag = RUS_postreunification_tree_completed
+	}	
+}
+
 #####################################################################################
 ################################### Funny Experiments ###############################
 #####################################################################################

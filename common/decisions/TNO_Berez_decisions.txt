@@ -814,18 +814,7 @@ MAR_debug_category = {
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: TaS_2WRW_load_focus_tree"
 			
-			if = {
-				limit = {
-					NOT = {
-						OR = {
-							has_focus_tree = MAR_Belozerski_post_unification_tree
-							has_focus_tree = MAR_Kosygin_post_unification
-						}
-					}
-				}
-				load_focus_tree = MAR_war_preparation_tree
-			}
-			set_country_flag = TaSWRW2_War_Prep_Tree_Load
+			load_focus_tree = { tree = MAR_war_preparation_tree keep_completed = no }
 			mark_focus_tree_layout_dirty = yes
 		}
 	}

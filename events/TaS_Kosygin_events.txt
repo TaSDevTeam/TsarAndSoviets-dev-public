@@ -965,11 +965,6 @@ country_event = {#future, forward!
 	option = {
 		name = MAR_Kosygin.57.a
 		ai_chance = { factor = 1 }	
-		MAR_advisor_Kosygin = {
-			set_portraits = {
-				civilian = { large = "gfx/leaders/MAR/Portrait_Berezniki_Kosygind_70s.dds" }
-			}
-		}
 		load_focus_tree = { tree = MAR_Kosygin_post_unification keep_completed = no }
 	}
 }
@@ -1529,7 +1524,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #Alexei, tsar of all russias
 	id = MAR_Kosygin.92
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.92" }
 	title = MAR_Kosygin.92.t
@@ -1546,6 +1541,87 @@ country_event = { #
 	}
 }
 
+country_event = { #Training
+	id = MAR_Kosygin.93
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.93" }
+	title = MAR_Kosygin.93.t
+	desc = MAR_Kosygin.93.d
+	picture = GFX_event_MAR_Kosygin_93
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin.93.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+country_event = { #Building the F-E
+	id = MAR_Kosygin.94
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.94" }
+	title = MAR_Kosygin.94.t
+	desc = MAR_Kosygin.94.d
+	picture = GFX_event_MAR_Kosygin_94
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin.94.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+country_event = { #On the beaches of California
+	id = MAR_Kosygin.95
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.95" }
+	title = MAR_Kosygin.95.t
+	desc = MAR_Kosygin.95.d
+	picture = GFX_event_MAR_Kosygin_95
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin.95.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+country_event = { #In the mounts of Kanto
+	id = MAR_Kosygin.96
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.96" }
+	title = MAR_Kosygin.96.t
+	desc = MAR_Kosygin.96.d
+	picture = GFX_event_MAR_Kosygin_96
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin.96.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+country_event = { #Tsars speech
+	id = MAR_Kosygin.97
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.97" }
+	title = MAR_Kosygin.97.t
+	desc = MAR_Kosygin.97.d
+	picture = GFX_event_MAR_Kosygin_97
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin.97.a
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = RUS_territorial_reclamation_available_tt
+		set_country_flag = RUS_postreunification_tree_completed
+	}
+}
 country_event = {#valley of peace
 	id = MAR_Kosygin.100
 	title = MAR_Kosygin.100.t
