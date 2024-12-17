@@ -91,11 +91,157 @@ on_actions = {
 							}
 							hidden_effect = {
 								every_country  = {
-										news_event = {
-											id = MAR_2WRW_world_news.7
-										}
+									news_event = {
+										id = MAR_2WRW_world_news.7
+									}
 								}
+								ROOT = { country_event = { id = TaS_SWRW.10 } }
 							}
+							
+						}
+					}
+				}
+				if = {
+					limit = {
+						FROM.FROM = {
+							state = 195
+						}
+						
+					}
+					ROOT = {
+						if = {
+							limit = {
+								is_russian_nation = yes
+							}
+							hidden_effect = { country_event = { id = TaS_SWRW.1 } }
+						}
+					}
+				}
+				if = {
+					limit = {
+						FROM.FROM = {
+							state = 243
+						}
+						
+					}
+					ROOT = {
+						if = {
+							limit = {
+								is_russian_nation = yes
+							}
+							hidden_effect = { country_event = { id = TaS_SWRW.2 } }
+						}
+					}
+				}
+				if = {
+					limit = {
+						FROM.FROM = {
+							state = 234
+						}
+						
+					}
+					ROOT = {
+						if = {
+							limit = {
+								is_russian_nation = yes
+							}
+							hidden_effect = { country_event = { id = TaS_SWRW.3 } }
+						}
+					}
+				}
+				if = {
+					limit = {
+						FROM.FROM = {
+							state = 1552
+						}
+						
+					}
+					ROOT = {
+						if = {
+							limit = {
+								is_russian_nation = yes
+							}
+							hidden_effect = { country_event = { id = TaS_SWRW.4 } }
+						}
+					}
+				}
+				if = {
+					limit = {
+						FROM.FROM = {
+							state = 221
+						}
+						
+					}
+					ROOT = {
+						if = {
+							limit = {
+								is_russian_nation = yes
+							}
+							hidden_effect = { country_event = { id = TaS_SWRW.5 } }
+						}
+					}
+				}
+				if = {
+					limit = {
+						FROM.FROM = {
+							state = 1428
+						}
+						
+					}
+					ROOT = {
+						if = {
+							limit = {
+								is_russian_nation = yes
+							}
+							hidden_effect = { country_event = { id = TaS_SWRW.6 } }
+						}
+					}
+				}
+				if = {
+					limit = {
+						FROM.FROM = {
+							state = 1404
+						}
+						
+					}
+					ROOT = {
+						if = {
+							limit = {
+								is_russian_nation = yes
+							}
+							hidden_effect = { country_event = { id = TaS_SWRW.7 } }
+						}
+					}
+				}
+				if = {
+					limit = {
+						FROM.FROM = {
+							state = 1532
+						}
+						
+					}
+					ROOT = {
+						if = {
+							limit = {
+								is_russian_nation = yes
+							}
+							hidden_effect = { country_event = { id = TaS_SWRW.8 } }
+						}
+					}
+				}
+				if = {
+					limit = {
+						FROM.FROM = {
+							state = 1397
+						}
+						
+					}
+					ROOT = {
+						if = {
+							limit = {
+								is_russian_nation = yes
+							}
+							hidden_effect = { country_event = { id = TaS_SWRW.9 } }
 						}
 					}
 				}

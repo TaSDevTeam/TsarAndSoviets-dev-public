@@ -819,7 +819,7 @@ first_every_day_script_TaS 	= {
 				max = 500
 			}
 			if = {
-				check_variable = { MAR_Prestol_clock_time < 50}
+				limit = { check_variable = { MAR_Prestol_clock_time < 50} }
 				set_temp_variable = { alert_id = token:Alert_PrestolTimeoutSoon }
 				add_TNO_alert = yes
 			}

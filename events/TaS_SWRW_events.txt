@@ -143,40 +143,6 @@ country_event = { #
 }
 
 country_event = { #
-	id = RUS_SWRW_preparation.9
-	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW_preparation.9" }
-	title = RUS_SWRW_preparation.9.t
-	desc = RUS_SWRW_preparation.9.d
-	#picture = 
-	
-	is_triggered_only = yes
-	fire_only_once = yes
-	
-	option = { #
-		name = RUS_SWRW_preparation.9.a
-		ai_chance = { factor = 1 }
-		
-	}
-}
-
-country_event = { #
-	id = RUS_SWRW_preparation.10
-	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW_preparation.10" }
-	title = RUS_SWRW_preparation.10.t
-	desc = RUS_SWRW_preparation.10.d
-	#picture = 
-	
-	is_triggered_only = yes
-	fire_only_once = yes
-	
-	option = { #
-		name = RUS_SWRW_preparation.10.a
-		ai_chance = { factor = 1 }
-		
-	}
-}
-
-country_event = { #
 	id = RUS_SWRW.1
 	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW.1" }
 	title = RUS_SWRW.1.t
@@ -295,7 +261,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #infux of refugees
 	id = RUS_SWRW.8
 	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW.8" }
 	title = RUS_SWRW.8.t
@@ -308,11 +274,11 @@ country_event = { #
 	option = { #
 		name = RUS_SWRW.8.a
 		ai_chance = { factor = 1 }
-		
+		country_event = { id = RUS_SWRW.9 }
 	}
 }
 
-country_event = { #
+country_event = { #now regulate it
 	id = RUS_SWRW.9
 	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW.9" }
 	title = RUS_SWRW.9.t
@@ -329,7 +295,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #measuring the damage
 	id = RUS_SWRW.10
 	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW.10" }
 	title = RUS_SWRW.10.t
@@ -341,6 +307,23 @@ country_event = { #
 	
 	option = { #
 		name = RUS_SWRW.10.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #mountainous rebels
+	id = RUS_SWRW.11
+	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW.11" }
+	title = RUS_SWRW.11.t
+	desc = RUS_SWRW.11.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = RUS_SWRW.11.a
 		ai_chance = { factor = 1 }
 		
 	}
@@ -507,11 +490,6 @@ country_event = { #Ukraine
 		ai_chance = { factor = 1 }
 		
 	}
-	option = { #Form TRO
-		name = GER_SWRW.9.b
-		ai_chance = { factor = 1 }
-		
-	}
 }
 
 country_event = { #Ostland
@@ -545,7 +523,7 @@ country_event = { #RONA mobilisation
 		name = GER_SWRW.11.a
 		ai_chance = { factor = 1 }
 		country_event = { id = GER_SWRW.13 }
-	1
+	}
 }
 
 country_event = { #Evac of Ostdeutsche
@@ -651,7 +629,244 @@ country_event = { #Koenigsberg oof
 	}
 }
 
-country_event = { #
+country_event = { #Azerbaijan oil oof
+	id = GER_SWRW.19
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_SWRW.19" }
+	title = GER_SWRW.19.t
+	desc = GER_SWRW.19.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_SWRW.19.a
+		ai_chance = { factor = 1 }
+		country_event = { id = GER_SWRW.20 }
+	}
+}
+
+country_event = { #Kuban oil oof
+	id = GER_SWRW.20
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_SWRW.20" }
+	title = GER_SWRW.20.t
+	desc = GER_SWRW.20.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_SWRW.20.a
+		ai_chance = { factor = 1 }
+		country_event = { id = GER_SWRW.21 }
+	}
+}
+
+country_event = { #Detonation
+	id = GER_SWRW.21
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_SWRW.21" }
+	title = GER_SWRW.21.t
+	desc = GER_SWRW.21.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_SWRW.21.a
+		ai_chance = { factor = 1 }
+		country_event = { id = GER_SWRW.22 }
+	}
+}
+
+country_event = { #Black Sea Oil 
+	id = GER_SWRW.22
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_SWRW.22" }
+	title = GER_SWRW.22.t
+	desc = GER_SWRW.22.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_SWRW.22.a
+		ai_chance = { factor = 1 }
+		#country_event = { id = GER_SWRW.22 }
+	}
+}
+
+country_event = { #Talks with minorities
+	id = GER_SWRW.23
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_SWRW.23" }
+	title = GER_SWRW.23.t
+	desc = GER_SWRW.23.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_SWRW.23.a
+		ai_chance = { factor = 1 }
+		country_event = { id = GER_SWRW.24 }
+	}
+}
+
+country_event = { #Mountainous Defence
+	id = GER_SWRW.24
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_SWRW.24" }
+	title = GER_SWRW.24.t
+	desc = GER_SWRW.24.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_SWRW.24.a
+		ai_chance = { factor = 1 }
+		country_event = { id = GER_SWRW.25 }
+	}
+}
+
+country_event = { #Caucasus is ready
+	id = GER_SWRW.25
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_SWRW.25" }
+	title = GER_SWRW.25.t
+	desc = GER_SWRW.25.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_SWRW.25.a
+		ai_chance = { factor = 1 }
+		#country_event = { id = GER_SWRW.26 }
+	}
+}
+
+country_event = { #Burnin fields
+	id = GER_SWRW.26
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_SWRW.26" }
+	title = GER_SWRW.26.t
+	desc = GER_SWRW.26.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_SWRW.26.a
+		ai_chance = { factor = 1 }
+		country_event = { id = GER_SWRW.27 }
+	}
+}
+
+country_event = { #New raids
+	id = GER_SWRW.27
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_SWRW.28" }
+	title = GER_SWRW.27.t
+	desc = GER_SWRW.27.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_SWRW.27.a
+		ai_chance = { factor = 1 }
+		country_event = { id = GER_SWRW.28 }
+	}
+}
+
+country_event = { #Caucasus is ready
+	id = GER_SWRW.28
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_SWRW.28" }
+	title = GER_SWRW.28.t
+	desc = GER_SWRW.28.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_SWRW.28.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #Ostland 1
+	id = GER_SWRW.29
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_SWRW.29" }
+	title = GER_SWRW.29.t
+	desc = GER_SWRW.29.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_SWRW.29.a
+		ai_chance = { factor = 1 }
+		country_event = { id = GER_SWRW.30 }
+	}
+}
+
+country_event = { #Ostland 2
+	id = GER_SWRW.30
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_SWRW.30" }
+	title = GER_SWRW.30.t
+	desc = GER_SWRW.30.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_SWRW.30.a
+		ai_chance = { factor = 1 }
+		country_event = { id = GER_SWRW.31 }
+	}
+}
+
+country_event = { #Ostland 3
+	id = GER_SWRW.31
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_SWRW.31" }
+	title = GER_SWRW.31.t
+	desc = GER_SWRW.31.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_SWRW.31.a
+		ai_chance = { factor = 1 }
+		country_event = { id = GER_SWRW.32 }
+	}
+}
+
+country_event = { #Ostland is ready
+	id = GER_SWRW.32
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_SWRW.32" }
+	title = GER_SWRW.32.t
+	desc = GER_SWRW.32.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_SWRW.32.a
+		ai_chance = { factor = 1 }
+		#country_event = { id = GER_SWRW.28 }
+	}
+}
+
+country_event = { #Peterburg
 	id = TaS_SWRW.1
 	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.1" }
 	title = TaS_SWRW.1.t
@@ -668,7 +883,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #Volgograd
 	id = TaS_SWRW.2
 	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.2" }
 	title = TaS_SWRW.2.t
@@ -685,7 +900,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #Krasnodar
 	id = TaS_SWRW.3
 	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.3" }
 	title = TaS_SWRW.3.t
@@ -702,7 +917,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #Baku
 	id = TaS_SWRW.4
 	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.4" }
 	title = TaS_SWRW.4.t
@@ -719,7 +934,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #Kharkov
 	id = TaS_SWRW.5
 	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.5" }
 	title = TaS_SWRW.5.t
@@ -736,7 +951,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #Kiev
 	id = TaS_SWRW.6
 	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.6" }
 	title = TaS_SWRW.6.t
@@ -753,7 +968,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #Minsk
 	id = TaS_SWRW.7
 	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.7" }
 	title = TaS_SWRW.7.t
@@ -770,7 +985,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #Sevastopol
 	id = TaS_SWRW.8
 	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.8" }
 	title = TaS_SWRW.8.t
@@ -787,7 +1002,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #Riga
 	id = TaS_SWRW.9
 	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.9" }
 	title = TaS_SWRW.9.t
@@ -804,7 +1019,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #Moscow
 	id = TaS_SWRW.10
 	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.10" }
 	title = TaS_SWRW.10.t

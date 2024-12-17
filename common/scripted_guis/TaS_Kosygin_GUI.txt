@@ -36,6 +36,8 @@ scripted_gui = {
 				}
 				else = { set_country_flag = MAR_Prestol_GUI_visible }
 				set_country_flag = MAR_Prestol_GUI_Opener_Clear
+				set_temp_variable = { alert_id = token:Alert_PrestolTimeoutSoon }
+				remove_TNO_alert = yes
 				set_temp_variable = { alert_id = token:Alert_PrestolActionAvailable }
 				remove_TNO_alert = yes
 			}
