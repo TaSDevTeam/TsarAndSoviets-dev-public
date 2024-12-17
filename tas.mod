@@ -11,4 +11,4 @@ dependencies={
 }
 name="Tsar and Soviets Development Edition"
 supported_version="1.15.*"
-path="Hearts of Iron IV/mod/TsarAndSoviets-dev"
+path="mod/TsarAndSoviets-dev"
