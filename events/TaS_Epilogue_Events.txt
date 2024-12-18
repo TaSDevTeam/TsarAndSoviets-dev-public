@@ -3598,6 +3598,7 @@ country_event = {#General - It has begun
 		}
 		hidden_effect = {	
 			set_global_flag = nukes_disabled
+			set_global_flag = GER_its_joever
 			every_country = {
 				limit = { is_ai = no }
 				news_event = { id = TaS_GERCollapse_news.34 }

@@ -278,6 +278,16 @@ on_actions = {
 								
 							}
 						}
+						if = {
+							limit = {
+								tag = USA
+								has_global_flag = TaS_SWRW_democracy_time
+							}
+							FROM = {
+								white_peace = ROOT
+							}
+							TaS_SWRW_american_germany = yes
+						{
 					}
 				}
 			}
