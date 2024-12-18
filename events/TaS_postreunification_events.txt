@@ -2889,7 +2889,7 @@ country_event = { #german nuclear ultimatum
 			hidden_effect = {
 				every_country  = {
 					news_event = {
-						id = MAR_2WRW_world_news.19
+						id = MAR_2WRW_world_news.20
 					}
 				}
 				TaS_2WRW_form_ost_zones = yes
@@ -2897,284 +2897,6 @@ country_event = { #german nuclear ultimatum
 		}
 	option = { #boom
 		name = MAR_2WRW.7.b
-	}
-}
-
-country_event = { #Bulgaria wants to quit
-	id = MAR_2WRW.10
-	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_2WRW.10"}
-	title = MAR_2WRW.10.t
-	desc = MAR_2WRW.10.d
-	picture = GFX_report_event_peace_deal
-
-	fire_only_once = yes
-	is_triggered_only = yes
-
-	option = { #yes, without anything
-		name = MAR_2WRW.10.a
-		BUL = {
-			white_peace = RUS 
-			leave_faction = yes
-			econ_leave_sphere = yes
-		}
-		hidden_effect = {
-			every_country  = {
-				news_event = {
-					id = MAR_2WRW_world_news.15
-				}
-			}
-		}
-	}
-	option = { #demand something
-		name = MAR_2WRW.10.b
-		random_list = {
-			7 = {
-				custom_effect_tooltip = SWRW_DEMANDS_tt
-				set_country_flag = BUL_demands
-				BUL = {
-					white_peace = RUS 
-					leave_faction = yes
-					econ_leave_sphere = yes
-				}
-				hidden_effect = {
-					every_country  = {
-						news_event = {
-							id = MAR_2WRW_world_news.15
-						}
-					}
-				}
-			}
-			3 = {
-				custom_effect_tooltip = SWRW_DEMANDS_FAIL_tt
-				set_country_flag = BUL_refuse
-			}
-		}
-	}
-	option = { #keep it going
-		name = MAR_2WRW.10.c
-		set_country_flag = BUL_refuse
-	}
-}
-
-country_event = { #Serbia wants to quit
-	id = MAR_2WRW.11
-	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_2WRW.11"}
-	title = MAR_2WRW.11.t
-	desc = MAR_2WRW.11.d
-	picture = GFX_report_event_peace_deal
-
-	fire_only_once = yes
-	is_triggered_only = yes
-
-	option = { #yes, without anything
-		name = MAR_2WRW.11.a
-		SER = {
-			white_peace = RUS 
-			leave_faction = yes
-			econ_leave_sphere = yes
-		}
-		hidden_effect = {
-			every_country  = {
-				news_event = {
-					id = MAR_2WRW_world_news.16
-				}
-			}
-		}
-	}
-	option = { #demand something
-		name = MAR_2WRW.11.b
-		random_list = {
-			7 = {
-				custom_effect_tooltip = SWRW_DEMANDS_tt
-				set_country_flag = SER_demands
-				SER = {
-					white_peace = RUS 
-					leave_faction = yes
-					econ_leave_sphere = yes
-				}
-				hidden_effect = {
-					every_country  = {
-						news_event = {
-							id = MAR_2WRW_world_news.16
-						}
-					}
-				}
-			}
-			3 = {
-				custom_effect_tooltip = SWRW_DEMANDS_FAIL_tt
-				set_country_flag = SER_refuse
-			}
-		}
-	}
-	option = { #keep it going
-		name = MAR_2WRW.11.c
-		set_country_flag = SER_refuse
-	}
-}
-
-country_event = { #Hungary wants to quit
-	id = MAR_2WRW.12
-	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_2WRW.12"}
-	title = MAR_2WRW.12.t
-	desc = MAR_2WRW.12.d
-	picture = GFX_report_event_peace_deal
-
-	fire_only_once = yes
-	is_triggered_only = yes
-
-	option = { #yes, without anything
-		name = MAR_2WRW.12.a
-		HUN = {
-			white_peace = RUS 
-			leave_faction = yes
-			econ_leave_sphere = yes
-		}
-		hidden_effect = {
-			every_country  = {
-				news_event = {
-					id = MAR_2WRW_world_news.17
-				}
-			}
-		}
-	}
-	option = { #demand something
-		name = MAR_2WRW.12.b
-		random_list = {
-			7 = {
-				custom_effect_tooltip = SWRW_DEMANDS_tt
-				set_country_flag = HUN_demands
-				HUN = {
-					white_peace = RUS 
-					leave_faction = yes
-					econ_leave_sphere = yes
-				}
-				hidden_effect = {
-					every_country  = {
-						news_event = {
-							id = MAR_2WRW_world_news.17
-						}
-					}
-				}
-			}
-			3 = {
-				custom_effect_tooltip = SWRW_DEMANDS_FAIL_tt
-				set_country_flag = HUN_refuse
-			}
-		}
-	}
-	option = { #keep it going
-		name = MAR_2WRW.12.c
-		set_country_flag = HUN_refuse
-	}
-}
-
-country_event = { #UK wants to quit
-	id = MAR_2WRW.13
-	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_2WRW.13"}
-	title = MAR_2WRW.13.t
-	desc = MAR_2WRW.13.d
-	picture = GFX_report_event_peace_deal
-
-	fire_only_once = yes
-	is_triggered_only = yes
-
-	option = { #well
-		name = MAR_2WRW.13.a
-		ENG = {
-			white_peace = RUS 
-			leave_faction = yes
-			econ_leave_sphere = yes
-		}
-		hidden_effect = {
-			every_country  = {
-				news_event = {
-					id = MAR_2WRW_world_news.18
-				}
-			}
-		}
-	}
-}
-
-country_event = { #Romania wants to quit
-	id = MAR_2WRW.14
-	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_2WRW.14"}
-	title = MAR_2WRW.14.t
-	desc = MAR_2WRW.14.d
-	picture = GFX_report_event_peace_deal
-
-	fire_only_once = yes
-	is_triggered_only = yes
-
-	option = { #yes, without anything
-		name = MAR_2WRW.14.a
-		ROM = {
-			white_peace = RUS 
-			leave_faction = yes
-			econ_leave_sphere = yes
-		}
-		hidden_effect = {
-			every_country  = {
-				news_event = {
-					id = MAR_2WRW_world_news.19
-				}
-			}
-		}
-	}
-	option = { #demand something
-		name = MAR_2WRW.14.b
-		random_list = {
-			7 = {
-				custom_effect_tooltip = SWRW_DEMANDS_tt
-				set_country_flag = ROM_demands
-				ROM = {
-					white_peace = RUS 
-					leave_faction = yes
-					econ_leave_sphere = yes
-				}
-				hidden_effect = {
-					every_country  = {
-						news_event = {
-							id = MAR_2WRW_world_news.17
-						}
-					}
-				}
-			}
-			3 = {
-				custom_effect_tooltip = SWRW_DEMANDS_FAIL_tt
-				set_country_flag = ROM_refuse
-			}
-		}
-	}
-	option = { #keep it going
-		name = MAR_2WRW.14.c
-		set_country_flag = ROM_refuse
-	}
-}
-
-country_event = { #France wants to quit
-	id = MAR_2WRW.15
-	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_2WRW.15"}
-	title = MAR_2WRW.15.t
-	desc = MAR_2WRW.15.d
-	picture = GFX_report_event_peace_deal
-
-	fire_only_once = yes
-	is_triggered_only = yes
-
-	option = { #well
-		name = MAR_2WRW.15.a
-		FRA = {
-			white_peace = RUS 
-			leave_faction = yes
-			econ_leave_sphere = yes
-		}
-		hidden_effect = {
-			every_country  = {
-				news_event = {
-					id = MAR_2WRW_world_news.20
-				}
-			}
-		}
 	}
 }
 
@@ -5670,7 +5392,7 @@ news_event = { #Direct rule regime in Manchuria
 		name = MAR_2WRW_world_news.33.a
 	}
 }
-news_event = { #Respublic of Manchuria
+news_event = { #Republic of Manchuria
 	id = MAR_2WRW_world_news.34
 	title = MAR_2WRW_world_news.34.t
 	desc = MAR_2WRW_world_news.34.d
@@ -5751,6 +5473,45 @@ news_event = { #Rip the Tsar
 	is_triggered_only = yes
 	
 	option = {
-		name = MAR_2WRW_world_news.39.a
+		name = MAR_2WRW_world_news.40.a
+	}
+}
+
+news_event = { #Evacuation of Volga Germans
+	id = MAR_2WRW_world_news.41
+	title = MAR_2WRW_world_news.41.t
+	desc = MAR_2WRW_world_news.41.d
+	picture = GFX_MAR_2WRW_world_news_041
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_2WRW_world_news.41.a
+	}
+}
+
+news_event = { #Koenigsberg on Quarantine	
+	id = MAR_2WRW_world_news.42
+	title = MAR_2WRW_world_news.42.t
+	desc = MAR_2WRW_world_news.42.d
+	picture = GFX_MAR_2WRW_world_news_042
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_2WRW_world_news.42.a
+	}
+}
+
+news_event = { #Black Sea Oil Stain	
+	id = MAR_2WRW_world_news.43
+	title = MAR_2WRW_world_news.43.t
+	desc = MAR_2WRW_world_news.43.d
+	picture = GFX_MAR_2WRW_world_news_043
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_2WRW_world_news.43.a
 	}
 }

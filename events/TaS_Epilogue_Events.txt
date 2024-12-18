@@ -3426,7 +3426,8 @@ country_event = {#General - Russia - Opportunities ahead
 	option = { #Let's go 
 		name = TaS_GERCollapse.28.a
 		ai_chance = { factor = 1 }	
-		set_global_flag = nukes_disabled
+		set_global_flag = nukes_disabled  
+		set_global_flag = GER_its_joever
 		declare_war_on = {
 			target = GER
 			type = annex_everything

@@ -2830,7 +2830,7 @@ MAR_SWRW_category = {
 							NOT = { has_country_flag = BUL_refuse }
 						}
 					}
-					country_event = { id = MAR_2WRW.10 }
+					country_event = { id = TaS_SWRW.16 }
 					
 				}
 				if = {
@@ -2844,7 +2844,7 @@ MAR_SWRW_category = {
 							NOT = { has_country_flag = SER_refuse }
 						}
 					}
-					country_event = { id = MAR_2WRW.11 }
+					country_event = { id = TaS_SWRW.11 }
 				}
 				if = {
 					limit = {
@@ -2857,7 +2857,7 @@ MAR_SWRW_category = {
 							NOT = { has_country_flag = HUN_refuse }
 						}
 					}
-					country_event = { id = MAR_2WRW.12 }
+					country_event = { id = TaS_SWRW.12 }
 				}
 				if = {
 					limit = {
@@ -2866,7 +2866,7 @@ MAR_SWRW_category = {
 						}
 						has_war_with = ENG
 					}
-					country_event = { id = MAR_2WRW.13 }
+					country_event = { id = TaS_SWRW.13 }
 				}
 				if = {
 					limit = {
@@ -2879,17 +2879,17 @@ MAR_SWRW_category = {
 							NOT = { has_country_flag = ROM_refuse }
 						}
 					}
-					country_event = { id = MAR_2WRW.14 }
+					country_event = { id = TaS_SWRW.14 }
 				}
-				if = {
-					limit = {
-						OST = {
-							surrender_progress > 0.5
-						}
-						has_war_with = FRA
-					}
-					country_event = { id = MAR_2WRW.15 days = 5 }
-				}
+				#if = {
+				#	limit = {
+				#		OST = {
+				#			surrender_progress > 0.5
+				#		}
+				#		has_war_with = FRA
+				#	}
+				#	country_event = { id = TaS_SWRW.15 days = 5 }
+				#}
     		}
     	}
 	

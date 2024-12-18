@@ -258,9 +258,8 @@ shared_focus = {
 	x = 16
 	y = 0
 	completion_reward = {
-		completion_reward = {
-			country_event = { id = GER_SWRW.6 }
-		}
+		custom_effect_tooltip = G_SWRW_need_to_choose_tt
+		country_event = { id = GER_SWRW.6 }
 	}
 }
 shared_focus = {
@@ -271,9 +270,17 @@ shared_focus = {
 	relative_position_id = GER_fire_in_the_east
 	x = -3
 	y = 1
-	completion_reward = {
-		completion_reward = {
+	completion_reward = { 
+		if = {
+			limit = { has_country_flag = GER_SWRW_defence_focus }
 			country_event = { id = GER_SWRW.7 }
+		}
+		else_if = { 
+			limit = { has_country_flag = GER_SWRW_destruction_focus }
+			country_event = { id = GER_SWRW.12 }
+		}
+		else = {
+			custom_effect_tooltip = G_SWRW_effect_depends_of_event_tt
 		}
 	}
 }
@@ -286,8 +293,16 @@ shared_focus = {
 	x = -1
 	y = 1
 	completion_reward = {
-		completion_reward = {
-			country_event = { id = GER_SWRW.8 }
+		if = {
+			limit = { has_country_flag = GER_SWRW_defence_focus }
+			country_event = { id = GER_SWRW.9 }
+		}
+		else_if = { 
+			limit = { has_country_flag = GER_SWRW_destruction_focus }
+			country_event = { id = GER_SWRW.14 }
+		}
+		else = {
+			custom_effect_tooltip = G_SWRW_effect_depends_of_event_tt
 		}
 	}
 }
@@ -300,8 +315,16 @@ shared_focus = {
 	x = 1
 	y = 1
 	completion_reward = {
-		completion_reward = {
-			country_event = { id = GER_SWRW.9 }
+		if = {
+			limit = { has_country_flag = GER_SWRW_defence_focus }
+			country_event = { id = GER_SWRW.10 }
+		}
+		else_if = { 
+			limit = { has_country_flag = GER_SWRW_destruction_focus }
+			country_event = { id = GER_SWRW.15 }
+		}
+		else = {
+			custom_effect_tooltip = G_SWRW_effect_depends_of_event_tt
 		}
 	}
 }
@@ -314,8 +337,16 @@ shared_focus = {
 	x = 3
 	y = 1
 	completion_reward = {
-		completion_reward = {
-			country_event = { id = GER_SWRW.10 }
+		if = {
+			limit = { has_country_flag = GER_SWRW_defence_focus }
+			country_event = { id = GER_SWRW.11 }
+		}
+		else_if = { 
+			limit = { has_country_flag = GER_SWRW_destruction_focus }
+			country_event = { id = GER_SWRW.16 }
+		}
+		else = {
+			custom_effect_tooltip = G_SWRW_effect_depends_of_event_tt
 		}
 	}
 }

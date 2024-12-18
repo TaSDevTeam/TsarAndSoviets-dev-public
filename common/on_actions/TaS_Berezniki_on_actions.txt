@@ -250,6 +250,7 @@ on_actions = {
 						FROM.FROM = {
 							state = 64
 						}
+						has_global_flag = GER_its_joever
 					}
 					ROOT = {
 						if = {
@@ -257,6 +258,7 @@ on_actions = {
 								is_russian_nation = yes
 							}
 							hidden_effect = {
+								ROOT = { country_event = { id = MAR_2WRW.6 } }
 								if = {
 									limit = { MAR = { has_government = despotism } }
 									every_country  = {
