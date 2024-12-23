@@ -18,7 +18,7 @@ MAR_Maldorossi_epilogue = {
 		desc = "MAR_LEADER_STUL_DESC"
 		picture = "Portrait_MAR_Neco_arc.dds"
 		expire = "2000.1.1"
-		ideology = national_socialism_esoteric_nazism_subtype
+		ideology = national_socialism_palingenetic_nazism_subtype
 		traits = {
 			
 		}
@@ -84,6 +84,7 @@ MAR_Iraq_Kurdistan_zhirik = {
 		every_owned_state = {
 			set_demilitarized_zone = no
 		}
+		TNO_startup_nation = yes
 		add_state_core = 781
 		transfer_state = 781
 		add_state_core = 1334
@@ -115,7 +116,7 @@ MAR_Iraq_Kurdistan_zhirik = {
 		KUR = {
 			apply_party_popularities = yes
 			set_politics = {
-				ruling_party = paternalism
+				ruling_party = despotism
 			}
 			remove_ideas = {
 				MAR_KUR_zeroaproval
@@ -132,7 +133,7 @@ MAR_Iraq_Kurdistan_zhirik = {
 			promote_leader = yes
 			country_leader = {
 				desc = "POLITICS_VLADIMIR_ZHIRINOVSKY_DESC"
-				ideology = paternalism_military_mandate_subtype
+				ideology = despotism_military_junta_subtype
 				expire = "1999.1.1"
 				traits = { }
 			}
@@ -145,7 +146,7 @@ MAR_Iraq_Kurdistan_zhirik = {
 			national_socialism = 2
 		}
 		set_party_name = {
-			ideology = paternalism
+			ideology = despotism
 			long_name = KUR_Vladimir_Zhirinovsky_party_long
 			name = KUR_Vladimir_Zhirinovsky_party
 		}
@@ -164,6 +165,7 @@ MAR_Iraq_Kurdistan_saddam = {
 		every_owned_state = {
 			set_demilitarized_zone = no
 		}
+		TNO_startup_nation = yes
 		add_state_core = 781
 		transfer_state = 781
 		add_state_core = 1334
@@ -277,28 +279,6 @@ MAR_install_mil_kazakhstan = {
 			target = KAZ
 			transfer_troops = yes
 		}
-		TaS_2WRW_set_zone_laws = yes
-		set_politics = {
-			ruling_party = despotism
-			last_election = "1933.2.16"
-			election_frequency = 36
-			elections_allowed = no
-		}
-		set_party_name = { 
-			ideology = despotism 
-			long_name = Post_WRW2_Russian_Army_party
-			name = Post_WRW2_Russian_Army_party
-		}
-		set_popularities = {
-			despotism = 53
-			liberalism = 18
-			socialist = 12
-			communist = 5
-			paternalism = 12
-		}
-		MKZ_Military_Administration = {
-			promote_character = yes
-		}
 		add_state_core = 407
 		transfer_state = 407
 		add_state_core = 406
@@ -331,7 +311,6 @@ MAR_install_mil_kazakhstan = {
 		transfer_state = 589
 		add_state_core = 588
 		transfer_state = 588
-		set_capital = { state = 404 }
 		if = {
 			limit = { MAR = { has_government = socialist } }
 			set_cosmetic_tag = MilZones_Kosygin
@@ -366,18 +345,21 @@ MAR_install_autonomy_kazakhstan = {
 			target = KAZ
 			transfer_troops = yes
 		}
+		TNO_startup_nation = yes
 		set_politics = {
 			ruling_party = paternalism
 			last_election = "1933.2.16"
 			election_frequency = 36
 			elections_allowed = no
 		}
-		set_popularities = {
-			despotism = 22
-			liberalism = 7
-			socialist = 13
-			communist = 17
-			paternalism = 41
+		add_popularity = {
+			ideology = paternalism
+			popularity = 0.45
+		}	
+		set_party_name = { 
+			ideology = despotism 
+			long_name = MCS_despotism_postmil_party
+			name = MCS_despotism_postmil_party
 		}
 		MKZ_Nursultan_Nazarbayev = {
 			promote_character = yes
@@ -441,34 +423,7 @@ MAR_install_autonomy_kazakhstan = {
 }
 
 MAR_install_mil_turkestan = {
-	XYZ = {
-		MTR_Military_Administration = {
-			set_nationality = MTR
-		}
-	}
 	MTR = {
-		TaS_2WRW_set_zone_laws = yes
-		set_politics = {
-			ruling_party = despotism
-			last_election = "1933.2.16"
-			election_frequency = 36
-			elections_allowed = no
-		}
-		set_party_name = { 
-			ideology = despotism 
-			long_name = Post_WRW2_Russian_Army_party
-			name = Post_WRW2_Russian_Army_party
-		}
-		set_popularities = {
-			despotism = 53
-			liberalism = 18
-			socialist = 12
-			communist = 5
-			paternalism = 12
-		}
-		MTR_Military_Administration = {
-			promote_character = yes
-		}
 		add_state_core = 750
 		transfer_state = 750
 		add_state_core = 585
@@ -489,10 +444,13 @@ MAR_install_mil_turkestan = {
 		transfer_state = 1468
 		add_state_core = 584
 		transfer_state = 584
-		set_capital = { state = 1467 }
 		if = {
 			limit = { MAR = { has_government = socialist } }
 			set_cosmetic_tag = MilZones_Kosygin
+		}
+		add_timed_idea = {
+			idea = MAR_economic_recovery
+			days = 900
 		}
 	}
 	MTR = {
@@ -542,12 +500,10 @@ MAR_Turkestan_govern = {
 				traits = { }
 			}
 		}
-		set_party_name = {
+		add_popularity = {
 			ideology = despotism
-			long_name = UZB_govern_party_long
-			name = UZB_govern_party
+			popularity = 0.15
 		}
-		
 		econ_join_sphere_MAR = yes
 		MAR = {
 			set_country_flag = MAR_has_turkestan
@@ -557,20 +513,14 @@ MAR_Turkestan_govern = {
 				autonomy_state = autonomy_military_government
 			}
 		}
-		set_popularities = {
-			despotism = 53
-			liberalism = 18
-			socialist = 12
-			communist = 5
-			paternalism = 12
-		}
+		
 		add_ideas = {
 			MAR_UZB_coloniallike_govt 
 			MAR_UZB_national_conflicts
 		}
 		if = {
 			limit = { MAR = { has_government = despotism } }
-			set_cosmetic_tag = UZB_MAR_govern
+			set_cosmetic_tag = MTR_govern
 		}
 		if = {
 			limit = { MAR = { has_government = socialist } }
@@ -611,22 +561,17 @@ MAR_Turkestan_autonomy = {
 			}
 		}
 		set_party_name = {
-			ideology = progressivism
-			long_name = UZB_autonomy_party_long
-			name = UZB_autonomy_party
+			ideology = despotism
+			long_name = MTR_despotism_postmil_party_long
+			name = MTR_despotism_postmil_party
 		}
-		
 		econ_join_sphere_MAR = yes
 		MAR = {
 			set_country_flag = MAR_has_turkestan
 		}
-		set_popularities = {
-			despotism = 13
-			liberalism = 26
-			socialist = 18
-			communist = 6
-			paternalism = 11
-			progressivism = 26
+		add_popularity = {
+			ideology = progressivism
+			popularity = 0.45
 		}
 		add_ideas = {
 			#MAR_UZB_coloniallike_govt 
@@ -634,7 +579,7 @@ MAR_Turkestan_autonomy = {
 		}
 		if = {
 			limit = { MAR = { has_government = despotism } }
-			set_cosmetic_tag = UZB_MAR_autonomy
+			set_cosmetic_tag = MTR_autonomy
 		}
 		if = {
 			limit = { MAR = { has_government = socialist } }
@@ -897,6 +842,61 @@ first_every_day_script_TaS 	= {
 				scoped_play_song = "clock_move"
 			}
 		}
+		
+	}
+	RUS = {
+		if = {
+			limit = {
+				has_war_with = GER
+				VVV = { exists = yes }
+			}
+			if = {
+				limit = { is_neighbor_of = VVV }
+				annex_country = {
+					target = VVV
+					transfer_troops = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_war_with = GER
+				ORL = { exists = yes }
+			}
+			if = {
+				limit = { is_neighbor_of = ORL }
+				annex_country = {
+					target = ORL
+					transfer_troops = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_war_with = GER
+				SHI = { exists = yes }
+			}
+			if = {
+				limit = { is_neighbor_of = SHI }
+				annex_country = {
+					target = SHI
+					transfer_troops = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_war_with = GER
+				POV = { exists = yes }
+			}
+			if = {
+				limit = { is_neighbor_of = POV }
+				annex_country = {
+					target = POV
+					transfer_troops = yes
+				}
+			}
+		}
 	}
 }
 
@@ -906,23 +906,23 @@ TaS_dobrovoltsy_dynmod_victory = {
 	custom_effect_tooltip = TaS_dobrovoltsy_dynmod_victory_tt
 	add_to_variable = {
 		var = MAR_dobr_infantry_attack
-		value = 0.015
+		value = 0.010
 	}
 	add_to_variable = {
 		var = MAR_dobr_infantry_defence
-		value = 0.01
+		value = 0.005
 	}
 	add_to_variable = {
 		var = MAR_dobr_speed
-		value = 0.01
+		value = 0.005
 	}
 	add_to_variable = {
 		var = MAR_dobr_vertibird_attack
-		value = -0.005
+		value = -0.0025
 	}
 	add_to_variable = {
 		var = MAR_dobr_consumption
-		value = -0.005
+		value = -0.0025
 	}
 }
 
@@ -930,22 +930,22 @@ TaS_dobrovoltsy_dynmod_lose = {
 	custom_effect_tooltip = TaS_dobrovoltsy_dynmod_lose_tt
 	add_to_variable = {
 		var = MAR_dobr_infantry_attack
-		value = 0.005
+		value = 0.0025
 	}
 	add_to_variable = {
 		var = MAR_dobr_infantry_defence
-		value = 0.005
+		value = 0.0025
 	}
 	add_to_variable = {
 		var = MAR_dobr_speed
-		value = 0.005
+		value = 0.0025
 	}
 	add_to_variable = {
 		var = MAR_dobr_vertibird_attack
-		value = -0.002
+		value = -0.001
 	}
 	add_to_variable = {
 		var = MAR_dobr_consumption
-		value = -0.002
+		value = -0.001
 	}
 }

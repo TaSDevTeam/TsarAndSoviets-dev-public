@@ -4890,9 +4890,10 @@ MAR_SWRW_category = {
 	TaS_WRW2_activate_partisans = {
 		icon = GFX_decision_generic_assault
 		visible = {
-			check_variable = { WRW_deccat = 1 }
-			check_variable = { MAR_Sended_diversants = 1 }
-			check_variable = { TaS_swrw_stage = 2 }
+			#check_variable = { WRW_deccat = 1 }
+			#check_variable = { MAR_Sended_diversants = 1 }
+			#check_variable = { TaS_swrw_stage = 2 }
+			is_debug = yes
 		}
 		available = {
 			has_war = yes
@@ -4915,7 +4916,146 @@ MAR_SWRW_category = {
 			load_oob = MAR_diversants
 		}
 	}
-	
+	TaS_WRW2_activate_partisans_VVV = {
+		icon = GFX_decision_generic_assault
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+			check_variable = { MAR_Sended_diversants = 1 }
+			check_variable = { TaS_swrw_stage = 2 }
+			is_debug = yes
+		}
+		available = {
+			has_war = yes
+		}
+		custom_cost_trigger = {
+			has_political_power > 25.99
+			command_power > 24.99
+		}
+		custom_cost_text = decision_cost_25_cp_25_pp
+		days_remove = 14
+		fire_only_once = yes
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -25
+				add_political_power = -25
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		highlight_states = {
+			highlight_state_targets = {
+				state = 257
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_show_war_plans"
+			SWRW_start_rebellion_VVV = yes
+		}
+	}
+	TaS_WRW2_activate_partisans_ORL = {
+		icon = GFX_decision_generic_assault
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+			check_variable = { MAR_Sended_diversants = 1 }
+			check_variable = { TaS_swrw_stage = 2 }
+			is_debug = yes
+		}
+		available = {
+			has_war = yes
+		}
+		custom_cost_trigger = {
+			has_political_power > 25.99
+			command_power > 24.99
+		}
+		custom_cost_text = decision_cost_25_cp_25_pp
+		days_remove = 14
+		fire_only_once = yes
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -25
+				add_political_power = -25
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		highlight_states = {
+			highlight_state_targets = {
+				state = 222
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_show_war_plans"
+			SWRW_start_rebellion_ORL = yes
+		}
+	}
+	TaS_WRW2_activate_partisans_SHI = {
+		icon = GFX_decision_generic_assault
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+			check_variable = { MAR_Sended_diversants = 1 }
+			check_variable = { TaS_swrw_stage = 2 }
+			is_debug = yes
+		}
+		available = {
+			has_war = yes
+		}
+		custom_cost_trigger = {
+			has_political_power > 25.99
+			command_power > 24.99
+		}
+		custom_cost_text = decision_cost_25_cp_25_pp
+		days_remove = 14
+		fire_only_once = yes
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -25
+				add_political_power = -25
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1441
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_show_war_plans"
+			SWRW_start_rebellion_SHI = yes
+		}
+	}
+	TaS_WRW2_activate_partisans_POV = {
+		icon = GFX_decision_generic_assault
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+			check_variable = { MAR_Sended_diversants = 1 }
+			check_variable = { TaS_swrw_stage = 2 }
+			is_debug = yes
+		}
+		available = {
+			has_war = yes
+		}
+		custom_cost_trigger = {
+			has_political_power > 25.99
+			command_power > 24.99
+		}
+		custom_cost_text = decision_cost_25_cp_25_pp
+		days_remove = 14
+		fire_only_once = yes
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -25
+				add_political_power = -25
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		highlight_states = {
+			highlight_state_targets = {
+				state = 224
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_show_war_plans"
+			SWRW_start_rebellion_POV = yes
+		}
+	}
 	TaS_WRW2_raid_in_the_germany = {
 		icon = GFX_decision_generic_bombing
 		visible = {

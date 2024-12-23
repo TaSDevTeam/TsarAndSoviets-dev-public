@@ -12,6 +12,7 @@ on_actions = {
 				country_event = { id = reich.72 days = 17 } 		#Adler launch
 				country_event = { id = reich.27 days = 119 } 		#Senile Hitler speech
 				country_event = { id = reich.28 days = 142 } 		#Hitler art gallery
+				country_event = { id = MCW_Skeleton.1 days = 531 }  #Assassination of Generalkommissar of Twer
 				
 				#spy events that idk where to put
 				country_event = { id = speerflavor.106 days = 1251 }
@@ -553,6 +554,102 @@ on_actions = {
 				}
 				UKR_bb_regional_modifiers = yes # for state dynmods
 				UKR_bb_national_dynmod_setup_and_vars = yes # for the national dynmod
+				if = { #to approximate the AI doing stuff
+					limit = {
+						has_country_flag = UKR_play_RK
+					}
+					set_temp_variable = { temp_state_pool_0 = Volyn_region }
+					set_temp_variable = { temp_state_pool_1 = Kiev_region }
+					set_temp_variable = { temp_state_pool_2 = Kharkiv_region }
+					set_temp_variable = { temp_state_pool_3 = Chernihiv_region }
+					set_temp_variable = { temp_state_pool_4 = Mykolaiv_region }
+					set_temp_variable = { temp_state_pool_5 = Luhansk_region }
+					UKR_bb_D_R_select_a_random_region = yes
+
+					set_temp_variable = { temp_group = 0 }
+					set_temp_variable = { temp_value = 4.5 }
+					set_temp_variable = { temp_des = 1 }
+					set_temp_variable = { temp_dev = 5 }
+					set_temp_variable = { temp_exp = 0.5 }
+
+					UKR_bb_R_change_control = yes
+					UKR_bb_R_change_desolation = yes
+					UKR_bb_D_change_development_values = yes
+
+					UKR_bb_D_R_clear_random_region = yes
+				}
+				if = {
+					limit = {
+						has_country_flag = UKR_play_UKS
+					}
+					set_temp_variable = { temp_state_pool_0 = Volyn_region }
+					set_temp_variable = { temp_state_pool_1 = Kiev_region }
+					set_temp_variable = { temp_state_pool_2 = Kharkiv_region }
+					set_temp_variable = { temp_state_pool_3 = Chernihiv_region }
+					set_temp_variable = { temp_state_pool_4 = Mykolaiv_region }
+					set_temp_variable = { temp_state_pool_5 = Luhansk_region }
+					UKR_bb_D_R_select_a_random_region = yes
+
+					set_temp_variable = { temp_group = 1 }
+					set_temp_variable = { temp_value = 4.5 }
+					set_temp_variable = { temp_des = 1 }
+					set_temp_variable = { temp_dev = -2.5 }
+					set_temp_variable = { temp_exp = -1.5 }
+
+					UKR_bb_R_change_control = yes
+					UKR_bb_R_change_desolation = yes
+					UKR_bb_D_change_development_values = yes
+
+					UKR_bb_D_R_clear_random_region = yes
+				}
+				if = {
+					limit = {
+						has_country_flag = UKR_play_FUK
+					}
+					set_temp_variable = { temp_state_pool_0 = Volyn_region }
+					set_temp_variable = { temp_state_pool_1 = Kiev_region }
+					set_temp_variable = { temp_state_pool_2 = Kharkiv_region }
+					set_temp_variable = { temp_state_pool_3 = Chernihiv_region }
+					set_temp_variable = { temp_state_pool_4 = Mykolaiv_region }
+					set_temp_variable = { temp_state_pool_5 = Luhansk_region }
+					UKR_bb_D_R_select_a_random_region = yes
+
+					set_temp_variable = { temp_group = 2 }
+					set_temp_variable = { temp_value = 4.5 }
+					set_temp_variable = { temp_des = 1 }
+					set_temp_variable = { temp_dev = -2.5 }
+					set_temp_variable = { temp_exp = -1.5 }
+
+					UKR_bb_R_change_control = yes
+					UKR_bb_R_change_desolation = yes
+					UKR_bb_D_change_development_values = yes
+
+					UKR_bb_D_R_clear_random_region = yes
+				}
+				if = {
+					limit = {
+						has_country_flag = UKR_play_BOV
+					}
+					set_temp_variable = { temp_state_pool_0 = Volyn_region }
+					set_temp_variable = { temp_state_pool_1 = Kiev_region }
+					set_temp_variable = { temp_state_pool_2 = Kharkiv_region }
+					set_temp_variable = { temp_state_pool_3 = Chernihiv_region }
+					set_temp_variable = { temp_state_pool_4 = Mykolaiv_region }
+					set_temp_variable = { temp_state_pool_5 = Luhansk_region }
+					UKR_bb_D_R_select_a_random_region = yes
+
+					set_temp_variable = { temp_group = 3 }
+					set_temp_variable = { temp_value = 4.5 }
+					set_temp_variable = { temp_des = 1 }
+					set_temp_variable = { temp_dev = -2.5 }
+					set_temp_variable = { temp_exp = -1.5 }
+
+					UKR_bb_R_change_control = yes
+					UKR_bb_R_change_desolation = yes
+					UKR_bb_D_change_development_values = yes
+
+					UKR_bb_D_R_clear_random_region = yes
+				}
 			}
 		}
 	}

@@ -91,12 +91,12 @@ add_ideas = {
 	tno_education_public_education
 	tno_penal_system_politicized_penal_system
 	tno_gender_rights_traditional_roles
-	tno_security_regulated_police
+	tno_security_maintenance_of_order
 	tno_regulations_token_regulations
 
 	### ECONOMIC LAWS ###
 	tno_trade_laws_limited_exports
-	tno_income_taxation_elite_tax_exemptions
+	tno_income_taxation_no_income_taxation
 	tno_minimum_wage_trinket_minimum_wage
 	tno_max_workhours_12_hour_work_day
 	tno_pensions_trinket_pensions
@@ -129,7 +129,7 @@ set_country_flag = tno_defined_startup_effectiveness
 # ECONOMIC LAWS
 set_variable = { tno_trade_laws_effectiveness = 54 }
 set_variable = { tno_income_taxation_effectiveness = 57 }
-set_variable = { tno_minimum_wage_effectiveness = 38}
+set_variable = { tno_minimum_wage_effectiveness = 38 }
 set_variable = { tno_max_workhours_effectiveness = 43 }
 set_variable = { tno_pensions_effectiveness = 42 }
 set_variable = { tno_unemployment_effectiveness = 40 }
@@ -276,7 +276,7 @@ if = {
 		NSB_MBT_1945_modules_2 = 1
 		NSB_MBT_1950 = 1
 
-		NSB_Heavy_1945 = 1
+		NSB_heavy_1945 = 1
 		
 		NSB_AC_1945 = 1
 		NSB_AC_1950 = 1
@@ -312,7 +312,8 @@ set_popularities = {
 	communist = 0
 	socialist = 0
 	progressivism = 0
-	liberalism = 12
+	liberalism = 0
+	liberal_conservatism = 12
 	conservatism = 15
 	paternalism = 14
 	despotism = 49
@@ -322,8 +323,9 @@ set_popularities = {
 	
 }
 
-set_variable = {TNO_economy_type = token:Econ_Type_Capitalism }
-
+#econtype
+set_variable = { TNO_economy_subtype = token:Econ_Subtype_Dirigisme }
+set_variable = { TNO_economy_type = token:Econ_Type_Corporatism }
 
 # NSB #
 if = {
@@ -413,7 +415,6 @@ add_equipment_to_stockpile = {
 	amount = 2
 	producer = GER
 }
-
 set_autonomy = {
     target = MAR
     autonomy_state = autonomy_integrated_puppet

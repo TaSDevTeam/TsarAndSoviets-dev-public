@@ -3199,7 +3199,14 @@ country_event = {#General - Wehrmacht goes awol
 				limit = { has_template = "Motorisierte Infanterie-Division" }
 				delete_unit_template_and_units = { division_template = "Motorisierte Infanterie-Division" }
 			}
-			country_event = { id = TaS_GERCollapse.21 days = 7}
+			if = {
+				limit = { BRG = { exists = no } }
+				country_event = { id = TaS_GERCollapse.37 days = 7}
+				country_event = { id = TaS_GERCollapse.21 days = 42}
+			}
+			else = {
+				country_event = { id = TaS_GERCollapse.21 days = 10}
+			}
 		}
 	}
 }
@@ -3355,7 +3362,15 @@ country_event = {#General - Polish Home Army is back
 					remove_core_of = GGN
 				}
 			}
-			country_event = { id = TaS_GERCollapse.27 days = 7}
+			if = {
+				limit = { NOR = { is_in_faction_with = GER } }
+				country_event = { id = TaS_GERCollapse.27 days = 7}
+			}
+			else = {
+				RUS = {
+					country_event = { id = TaS_GERCollapse.28 days = 14}
+				}
+			}
 		}
 	}
 }
@@ -3979,6 +3994,132 @@ country_event = {#General - It has begun
 	}
 }
 
+country_event = {#General - Franco-German War
+	id = TaS_GERCollapse.37
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GERCollapse.37"}
+	title = TaS_GERCollapse.37.t
+	desc = TaS_GERCollapse.37.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = TaS_GERCollapse.37.a
+		ai_chance = { factor = 1 }	
+		add_political_power = -100
+		FRA = { 
+			declare_war_on = {
+				target = GER
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = GLC
+				type = annex_everything
+			}
+			leave_faction = yes
+			if = {
+				limit = { check_variable = { ECON_SPHERE_LEADER = GER } }
+				econ_leave_sphere = yes
+			}
+		}
+		hidden_effect = {	
+			every_country = {
+				limit = { is_ai = no }
+				news_event = { id = TaS_GERCollapse_news.37 }
+			}
+			division_template = {
+				name = "Infantry Division"
+				division_names_group = FRA_infantry_ger
+				is_locked = yes
+				regiments = {
+					APC = { x = 0 y = 0 }
+					APC = { x = 0 y = 1 }
+					APC = { x = 0 y = 2 }
+					APC = { x = 1 y = 0 }
+					APC = { x = 1 y = 1 }
+					APC = { x = 1 y = 2 }
+					APC = { x = 2 y = 0 }
+					APC = { x = 2 y = 1 }
+					APC = { x = 2 y = 2 }
+				}
+				support = {
+					IFV_recon = { x = 0 y = 0 }
+					anti_tank = { x = 0 y = 1 }
+					engineer = { x = 0 y = 2 }
+					artillery = { x = 0 y = 3 }
+					transport_helicopter_company = { x = 0 y = 4 }
+				}
+			}
+			division_template = {
+				name = "Armored Division"
+				division_names_group = FRA_armored_ger
+				is_locked = yes
+				regiments = {
+					APC = { x = 0 y = 0 }
+					APC = { x = 0 y = 1 }
+					APC = { x = 0 y = 2 }
+					APC = { x = 1 y = 0 }
+					APC = { x = 1 y = 1 }
+					MBT = { x = 2 y = 0 }
+					MBT = { x = 2 y = 1 }
+					MBT = { x = 2 y = 2 }
+					MBT = { x = 3 y = 0 }
+					MBT = { x = 3 y = 1 }
+					MBT = { x = 3 y = 2 }
+				}
+				support = {
+					IFV_recon = { x = 0 y = 0 }
+					signal_company = { x = 0 y = 1 }
+					engineer = { x = 0 y = 2 }
+					artillery = { x = 0 y = 3 }
+					transport_helicopter_company = { x = 0 y = 4 }
+				}
+			}
+			15 = {
+				create_unit = {
+					division = "division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					prioritize_location = 9434
+					owner = FRA
+					count = 6
+				}
+			}
+			16 = {
+				create_unit = {
+					division = "division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					prioritize_location = 11506
+					owner = FRA
+					count = 6
+				}
+			}
+			792 = {
+				create_unit = {
+					division = "division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = FRA
+					count = 6
+				}
+			}
+			27 = {
+				create_unit = {
+					division = "division_template = \"Armored Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = FRA
+					count = 6
+				}
+			}
+			1635 = {
+				create_unit = {
+					division = "division_template = \"Armored Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					owner = FRA
+					count = 6
+				}
+			}
+		}
+	}
+}
+
 country_event = {#General - Norway(Russian)coup
 	id = TaS_GERCollapse.36
 	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GERCollapse.36"}
@@ -4423,5 +4564,18 @@ news_event = { #GNR coup
 	
 	option = {
 		name = TaS_GERCollapse_news.36.a
+	}
+}
+
+news_event = { #Franco-Prussian War 2.0 electric boogaloo
+	id = TaS_GERCollapse_news.37
+	title = TaS_GERCollapse_news.37.t
+	desc = TaS_GERCollapse_news.37.d
+	picture = GFX_TaS_GERCollapse_news_037
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = TaS_GERCollapse_news.37.a
 	}
 }

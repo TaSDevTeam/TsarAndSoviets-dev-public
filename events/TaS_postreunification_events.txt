@@ -284,14 +284,14 @@ country_event = { #unconditional surrender
 			}
 		}
 		AFG = {
-			annex_country = {
-				target = KLT
-				transfer_troops = yes
-			}
-			annex_country = {
-				target = MFP
-				transfer_troops = yes
-			}
+			#annex_country = {
+			#	target = KLT
+			#	transfer_troops = yes
+			#}
+			#annex_country = {
+			#	target = MFP
+			#	transfer_troops = yes
+			#}
 			every_owned_state = {
 				remove_core_of = KLT
 				remove_core_of = MFP
@@ -344,52 +344,7 @@ country_event = { #Northern Rebellion #MAO/AMIN/ZAHIR
 		ai_chance = {
 			base = 10
 		}
-		XYZ = {
-			NAL_Mohammad_Najibullah = {
-				set_nationality = NAL
-			}
-		}
 		NAL = {
-			set_politics = {
-				ruling_party = liberal_conservatism
-				last_election = "1969.8.29"
-				election_frequency = 48
-				elections_allowed = no
-			}
-			set_popularities = {
-				liberal_conservatism = 40
-				conservatism = 25
-				liberalism = 25
-				progressivism = 10
-			}
-			set_party_name = {
-				ideology = liberal_conservatism
-				name = NAL_liberal_conservatism_party
-				long_name = NAL_liberal_conservatism_party_long
-			}
-			set_party_name = {
-				ideology = conservatism
-				name = NAL_conservatism_party
-				long_name = NAL_conservatism_party_long
-			}
-			set_party_name = {
-				ideology = liberalism
-				name = NAL_liberalism_party
-				long_name = NAL_liberalism_party_long
-			}
-			set_party_name = {
-				ideology = progressivism
-				name = NAL_progressivism_party
-				long_name = NAL_progressivism_party_long
-			}
-			add_country_leader_role = {
-				character = NAL_Mohammad_Najibullah
-				promote_leader = yes
-				country_leader = {
-					ideology = liberal_conservatism_big_tent_subtype
-					expire = "1999.1.1"
-				}
-			}
 			inherit_technology = AFG
 			load_oob = "NAL_acw"
 			transfer_state = 1474
@@ -745,46 +700,6 @@ country_event = { #Mujahideen
 			}
 		}
 		MUJ = {
-			set_politics = {
-				ruling_party = ultranationalism 
-				last_election = "1969.8.29"
-				election_frequency = 48
-				elections_allowed = no
-			}
-			set_popularities = {
-				ultranationalism  = 40
-				national_socialism = 25
-				fascism = 25
-				despotism = 10
-			}
-			set_party_name = {
-				ideology = ultranationalism
-				name = MUJ_ultranationalism_party
-				long_name = MUJ_ultranationalism_party_long
-			}
-			set_party_name = {
-				ideology = national_socialism
-				name = MUJ_national_socialism_party
-				long_name = MUJ_national_socialism_party_long
-			}
-			set_party_name = {
-				ideology = fascism
-				name = MUJ_fascism_party
-				long_name = MUJ_fascism_party_long
-			}
-			set_party_name = {
-				ideology = despotism
-				name = MUJ_despotism_party
-				long_name = MUJ_despotism_party_long
-			}
-			add_country_leader_role = {
-				character = MUJ_Gulbuddin_Hekmatyar
-				promote_leader = yes
-				country_leader = {
-					ideology = ultranationalism_fundamentalism_subtype
-					expire = "1999.1.1"
-				}
-			}
 			inherit_technology = AFG
 			load_oob = "MUJ_acw"
 			transfer_state = 929
@@ -951,7 +866,7 @@ country_event = { #Technical stuff no loc
 				promote_leader = yes
 				country_leader = {
 					desc = "POLITICS_HIROMICHI_YAHARA_ONE_MORE_DESC"
-					ideology = ultranationalism_ultramilitarism_subtype
+					ideology = ultranationalism_stratocratic_corporatism_subtype
 					expire = "1999.1.1"
 					traits = { one_more_chance }
 				}
@@ -1087,6 +1002,7 @@ country_event = { #Technical stuff no loc
 			set_cosmetic_tag = MJP_Second_CW
 			transfer_state = 810
 			add_state_core = 810
+			TNO_startup_nation = yes
 			set_politics = {
 				ruling_party = national_socialism
 				last_election = "1933.2.16"
@@ -1253,6 +1169,7 @@ country_event = { #Technical stuff no loc
 			transfer_state = 1638
 			transfer_state = 1637
 			transfer_state = 801
+			TNO_startup_nation = yes
 			load_oob = HAN_second_cw
 		}
 		MJP = {
@@ -2831,14 +2748,6 @@ country_event = { #TOTALEN surrender
 
 	option = { #yes
 	name = MAR_2WRW.6.a
-		TaS_WRW2_total_capitulation = yes
-		if = {
-			limit = { MAR = { has_government = despotism } }
-			TaS_WRW2_German_Collapse_Beloozersky = yes
-		}
-		else = {
-			TaS_WRW2_German_Collapse_Kosygin = yes
-		}
 		hidden_effect = {
 			every_country  = {
 				news_event = {
@@ -3887,6 +3796,15 @@ country_event = { #Baltics
 					set_nationality = MBP
 				}
 			}
+			MAR = {
+				transfer_state = 1402
+				transfer_state = 209
+				transfer_state = 1421
+				transfer_state = 257
+				transfer_state = 191
+				transfer_state = 1396
+				transfer_state = 943
+			}
 			MBP = {
 				every_owned_state = {
 					MBP = {
@@ -3897,24 +3815,6 @@ country_event = { #Baltics
 				#add_ideas = { MAR_military_administration }
 				if = {
 					limit = { MAR = { has_government = despotism } }
-					set_popularities = {
-						communist = 0
-						socialist = 0
-						progressivism = 0
-						liberalism = 2
-						conservatism = 7
-						liberal_conservatism = 9
-						paternalism = 17
-						despotism = 57
-						fascism = 8
-						national_socialism = 0
-						ultranationalism = 0
-					}
-					set_party_name = { 
-						ideology = despotism
-						long_name = MBP_autonomy_party_long
-						name = MBP_autonomy_party
-					}
 					retire_country_leader = yes
 					MBP_Aleksandrs_Drizulis = {
 						promote_character = yes
@@ -3926,23 +3826,18 @@ country_event = { #Baltics
 					set_politics = {
 						ruling_party = socialist
 					}
-					set_popularities = {
-						communist = 17
-						socialist = 64
-						progressivism = 0
-						liberalism = 0
-						conservatism = 0
-						liberal_conservatism = 0
-						paternalism = 0
-						despotism = 11
-						fascism = 0
-						national_socialism = 8
-						ultranationalism = 0
+					add_popularity = {
+						ideology = socialist
+						popularity = 0.35
+					}
+					add_popularity = {
+						ideology = despotism
+						popularity = -0.35
 					}
 					set_party_name = { 
-						ideology = socialist
-						long_name = MBP_autonomy_party_long
-						name = MBP_autonomy_party
+						ideology = despotism
+						long_name = MUK_despotism_postmil_party_long
+						name = MUK_despotism_postmil_party
 					}
 					retire_country_leader = yes
 					MBP_Aleksandrs_Drizulis = {
@@ -4044,6 +3939,10 @@ country_event = { #Belarus
 		}
 		custom_effect_tooltip = MAR_freedom_for_everyone_tt
 			hidden_effect = {
+			MAR = {
+				transfer_state = 2452
+				transfer_state = 241
+			}
 			XYZ = {
 				BLR_Zianon_Pazniak = {
 					set_nationality = MBL
@@ -4062,23 +3961,9 @@ country_event = { #Belarus
 				set_politics = {
 					ruling_party = paternalism
 				}
-				set_popularities = {
-					communist = 0
-					socialist = 0
-					progressivism = 0
-					liberalism = 3
-					conservatism = 17
-					liberal_conservatism = 9
-					paternalism = 64
-					despotism = 7
-					fascism = 0
-					national_socialism = 0
-					ultranationalism = 0
-				}
-				set_party_name = { 
-					ideology = paternalism 
-					long_name = BLR_free_party_long
-					name = BLR_free_party
+				add_popularity = {
+					ideology = paternalism
+					popularity = 0.45
 				}
 				BLR_Zianon_Pazniak = {
 					promote_character = yes
@@ -4092,6 +3977,13 @@ country_event = { #Belarus
 		ai_chance = { factor = 1 }
 		custom_effect_tooltip = MAR_autonomy_create_tt
 		hidden_effect = {
+			MAR = {
+				transfer_state = 2452
+				transfer_state = 241
+				transfer_state = 207
+				transfer_state = 206
+				transfer_state = 194
+			}
 			XYZ = {
 				MBL_Tikhon_Kiselyov = {
 					set_nationality = MBL
@@ -4110,8 +4002,8 @@ country_event = { #Belarus
 					limit = { MAR = { has_government = despotism } }
 					set_party_name = { 
 						ideology = despotism 
-						long_name = MBL_autonomy_party_long
-						name = MBL_autonomy_party
+						long_name = MBL_despotism_postmil_party_long
+						name = MBL_despotism_postmil_party
 					}
 					retire_country_leader = yes
 					MBL_Tikhon_Kiselyov = {
@@ -4123,11 +4015,6 @@ country_event = { #Belarus
 					limit = { MAR = { has_government = socialist } }
 					set_politics = {
 						ruling_party = communist
-					}
-					set_party_name = { 
-						ideology = communist 
-						long_name = MBL_autonomy_party_long
-						name = MBL_autonomy_party
 					}
 					add_popularity = {
 						ideology = communist
@@ -4192,6 +4079,12 @@ country_event = { #Ukraine
 		}
 		custom_effect_tooltip = MAR_freedom_for_everyone_tt
 		hidden_effect = {
+			MAR = {
+				transfer_state = 221
+				transfer_state = 227
+				transfer_state = 228
+				transfer_state = 218
+			}
 			XYZ = {
 				UKR_Viacheslav_Chornovil = {
 					set_nationality = MUK
@@ -4210,18 +4103,9 @@ country_event = { #Ukraine
 				set_politics = {
 					ruling_party = liberal_conservatism
 				}
-				set_popularities = {
-					communist = 0
-					socialist = 0
-					progressivism = 0
-					liberalism = 7
-					conservatism = 14
-					liberal_conservatism = 46
-					paternalism = 22
-					despotism = 11
-					fascism = 0
-					national_socialism = 0
-					ultranationalism = 0
+				add_popularity = {
+					ideology = liberal_conservatism
+					popularity = 0.45
 				}
 				set_party_name = { 
 					ideology = liberal_conservatism 
@@ -4248,6 +4132,17 @@ country_event = { #Ukraine
 		ai_chance = { factor = 1 }
 		custom_effect_tooltip = MAR_autonomy_create_tt
 		hidden_effect = {
+			MAR = {
+				transfer_state = 221
+				transfer_state = 227
+				transfer_state = 228
+				transfer_state = 218
+				transfer_state = 1426
+				transfer_state = 200
+				transfer_state = 259
+				transfer_state = 225
+				transfer_state = 1427
+			}
 			XYZ = {
 				MUK_Oleksandr_Moroz = {
 					set_nationality = MUK
@@ -4268,9 +4163,9 @@ country_event = { #Ukraine
 						ruling_party = paternalism
 					}
 					set_party_name = { 
-						ideology = paternalism 
-						long_name = MUK_autonomy_party_long
-						name = MUK_autonomy_party
+						ideology = despotism 
+						long_name = MUK_despotism_postmil_party
+						name = MUK_despotism_postmil_party
 					}
 					add_popularity = {
 						ideology = paternalism
@@ -4288,9 +4183,9 @@ country_event = { #Ukraine
 						ruling_party = socialist
 					}
 					set_party_name = { 
-						ideology = socialist 
-						long_name = MUK_autonomy_party_long
-						name = MUK_autonomy_party
+						ideology = despotism 
+						long_name = MUK_despotism_postmil_party
+						name = MUK_despotism_postmil_party
 					}
 					add_popularity = {
 						ideology = socialist
@@ -4363,6 +4258,9 @@ country_event = { #Crimnea
 		ai_chance = { factor = 1 }
 		custom_effect_tooltip = MAR_autonomy_create_tt
 		hidden_effect = {
+			#MAR = {
+			#	transfer_state = 196
+			#}
 			XYZ = {
 				MTV_Bruno_Reiter = {
 					set_nationality = MTV
@@ -4382,9 +4280,9 @@ country_event = { #Crimnea
 						ruling_party = paternalism
 					}
 					set_party_name = { 
-						ideology = paternalism 
-						long_name = MTV_autonomy_party_long
-						name = MTV_autonomy_party
+						ideology = despotism 
+						long_name = MTV_despotism_postmil_party_long
+						name = MTV_despotism_postmil_party
 					}
 					add_popularity = {
 						ideology = paternalism
@@ -4402,9 +4300,9 @@ country_event = { #Crimnea
 						ruling_party = socialist
 					}
 					set_party_name = { 
-						ideology = socialist 
-						long_name = MTV_autonomy_party_long
-						name = MTV_autonomy_party
+						ideology = despotism 
+						long_name = MTV_despotism_postmil_party_long
+						name = MTV_despotism_postmil_party
 					}
 					add_popularity = {
 						ideology = socialist
@@ -4477,6 +4375,11 @@ country_event = { #Caucasus
 		ai_chance = { factor = 1 }
 		custom_effect_tooltip = MAR_autonomy_create_tt
 		hidden_effect = {
+			MAR = {
+				transfer_state = 237
+				transfer_state = 234
+				transfer_state = 235
+			}
 			XYZ = {
 				MCS_Dzhokhar_Dudayev = {
 					set_nationality = MCS
@@ -4504,9 +4407,14 @@ country_event = { #Caucasus
 						long_name = MCS_autonomy_party_long
 						name = MCS_autonomy_party
 					}
+					set_party_name = { 
+						ideology = despotism 
+						long_name = MCS_despotism_postmil_party
+						name = MCS_despotism_postmil_party
+					}
 					add_popularity = {
 						ideology = ultranationalism
-						popularity = 0.45
+						popularity = 0.25
 					}
 					retire_country_leader = yes
 					MCS_Dzhokhar_Dudayev = {
@@ -4524,9 +4432,14 @@ country_event = { #Caucasus
 						long_name = MCS_autonomy_party_long
 						name = MCS_autonomy_party
 					}
+					set_party_name = { 
+						ideology = despotism 
+						long_name = MCS_despotism_postmil_party
+						name = MCS_despotism_postmil_party
+					}
 					add_popularity = {
 						ideology = communist
-						popularity = 0.55
+						popularity = 0.35
 					}
 					retire_country_leader = yes
 					GEO_Eduard_Shevardnadze = {
@@ -4571,6 +4484,8 @@ country_event = { #Caucasus
 			transfer_state = 1560
 			transfer_state = 1559
 			transfer_state = 1558
+			transfer_state = 237
+			transfer_state = 234
 			XYZ = {
 				AZR_Heydar_Aliyev = {
 					set_nationality = MCS
@@ -4590,7 +4505,7 @@ country_event = { #Caucasus
 				}
 				add_popularity = {
 					ideology = despotism
-					popularity = 0.45
+					popularity = 0.15
 				}
 				retire_country_leader = yes
 				AZR_Heydar_Aliyev = {

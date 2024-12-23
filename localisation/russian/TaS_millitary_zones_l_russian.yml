@@ -1,39 +1,298 @@
 ﻿l_russian:
- ### Country Names ###
- MTR:0 "Туркестанский Военный Округ"
- MTR_DEF:0 "Туркестанский Военный Округ"
- MTR_ADJ:0 "Туркестанск."
- 
- MBP:0 "Прибалтийский Военный Округ"
- MBP_DEF:0 "Прибалтийский Военный Округ"
- MBP_ADJ:0 "Прибалтийск."
- 
- MBL:0 "Белорусский Военный Округ"
- MBL_DEF:0 "Белорусский Военный Округ"
- MBL_ADJ:0 "Беларусск."
- 
- MUK:0 "Малороссийский Военный Округ"
- MUK_DEF:0 "Малороссийский Военный Округ"
- MUK_ADJ:0 "Малороссийск."
- 
- MCS:0 "Кавказский Военный Округ"
- MCS_DEF:0 "Кавказский Военный Округ"
- MCS_ADJ:0 "Кавказский Военный Округ"
- 
- MTV:0 "Таврический Военный Округ"
- MTV_DEF:0 "Таврический Военный Округ"
- MTV_ADJ:0 "Таврическ."
- 
- MKZ:0 "Казахстанский Военный Округ"
- MKZ_DEF:0 "Казахстанский Военный Округ"
- MKZ_ADJ:0 "Казахстанск."
-
+ ### Общее ###
  MAR_millitary_administration:0 "Военная администрация"
  
  MAR_military_administration:0 "Военная администрация"
  MAR_economic_recovery:0 "Восстановление эконимики"
- ### Прибалтика ###
  
+ ### Кавказ ###
+ MCS:0 "Кавказский Военный Округ"
+ MCS_DEF:0 "Кавказский Военный Округ"
+ MCS_ADJ:0 "Кавказский Военный Округ"
+ 
+ MCS_autonomy:0 "Кавказская Автономия"
+ MCS_autonomy_DEF:0 "Кавказская Автономия"
+ MCS_autonomy_ADJ:0 "Кавказск."
+ 
+ MCS_autonomy_Kosygin:0 "Кавказская Федеративная Автономная Респуллика"
+ MCS_autonomy_Kosygin_DEF:0 "Кавказская Федеративная Автономная Республика"
+ MCS_autonomy_Kosygin_ADJ:0 "Кавказск."
+ 
+ MCS_south_autonomy:0 "Закавказская Автономия"
+ MCS_south_autonomy_DEF:0 "Закавказская Автономия"
+ MCS_south_autonomy_ADJ:0 "Закавказск."
+ 
+ MCS_Dzhokhar_Dudayev:0 "Дхожар Дудаев"
+ 
+ MCS_communist_party:0 "КПК"
+ MCS_communist_party_long:0 "Коммунистическая Партия Кавказа"
+ 
+ MCS_ultranationalism_party:0 "Братья-мусульмане"
+ MCS_ultranationalism_party_long:0 "Братья-мусульмане Кавказа"
+ 
+ MCS_conservatism_party:0 "КНП"
+ MCS_conservatism_party_long:0 "Кавказская Народная Партия"
+ 
+ MCS_despotism_party:0 "ГУОТ"
+ MCS_despotism_party_long:0 "Главное управление по освобождённым территориям"
+ 
+ MCS_despotism_postmil_party:0 "СНК"
+ MCS_despotism_postmil_party_long:0 "Совет Народов Кавказа"
+ 
+ MCS_fascism_party:0 "ЛОК"
+ MCS_fascism_party_long:0 "Лига Освобождения Кавказа"
+ 
+ MCS_national_socialism_party:0 "Разрозненные коллаборационисты"
+ MCS_national_socialism_party_long:0 "Разрозненные коллаборационисты"
+ 
+ MCS_autonomy_party:0 "СНК"
+ MCS_autonomy_party_long:0 "Совет Народов Кавказа"
+ 
+ ### Казахстан ###
+ MKZ:0 "Казахстанский Военный Округ"
+ MKZ_DEF:0 "Казахстанский Военный Округ"
+ MKZ_ADJ:0 "Казахстанск."
+ 
+ MKZ_autonomy:0 "Казахская Автономия"
+ MKZ_autonomy_DEF:0 "Казахская Автономия"
+ MKZ_autonomy_ADJ:0 "Казахск."
+ 
+ MKZ_autonomy_Kosygin:0 "Казахская Автономия"
+ MKZ_autonomy_Kosygin_DEF:0 "Казахская Автономная Республика"
+ MKZ_autonomy_Kosygin_ADJ:0 "Казахск."
+ 
+ MKZ_Nursultan_Nazarbayev:0 "Нурсултан Назарбаев"
+  
+ MKZ_communist_party:0 "КПК"
+ MKZ_communist_party_long:0 "Коммунистическая Партия Казахстана"
+ 
+ MKZ_ultranationalism_party:0 "ДСК"
+ MKZ_ultranationalism_party_long:0 "Движение за Свободу Казахстана"
+ 
+ MKZ_liberalism_party:0 "ЛДПК"
+ MKZ_liberalism_party_long:0 "Либерально-Демократическая Партия Казахстана"
+ 
+ MKZ_paternalism_party:0 "Отан"
+ MKZ_paternalism_party_long:0 "Отан"
+ 
+ MKZ_paternalism_1_party:0 "Русская Лига Казахстана"
+ MKZ_paternalism_1_party_long:0 "Русская Лига Казахстана"
+ 
+ MKZ_despotism_party:0 "ГУОТ"
+ MKZ_despotism_party_long:0 "Главное управление по освобождённым территориям"
+ 
+ MKZ_despotism_postmil_party:0 "Отан"
+ MKZ_despotism_postmil_party_long:0 "Отан"
+ 
+ ### Туркестан ###
+ MTR:0 "Туркестанский Военный Округ"
+ MTR_DEF:0 "Туркестанский Военный Округ"
+ MTR_ADJ:0 "Туркестанск."
+ 
+ MTR_govern:0 "Туркестанское Генерал-Губернаторство"
+ MTR_govern_DEF:0 "Туркестанское Генерал-Губернаторство"
+ MTR_govern_ADJ:0 "Туркестанск."
+ 
+ MTR_autonomy:0 "Туркестанская Автономия"
+ MTR_autonomy_DEF:0 "Туркестанская Автономия"
+ MTR_autonomy_ADJ:0 "Туркестанск."
+ 
+ MTR_Kosygin_governate:0 "Туркестанское Генерал-Губернаторство"
+ MTR_Kosygin_governate_DEF:0 "Туркестанское Генерал-Губернаторство"
+ MTR_Kosygin_governate_ADJ:0 "Туркестанск."
+ 
+ MTR_Kosygin_autonomy:0 "Туркестанская Федеративная Автономная Республика"
+ MTR_Kosygin_autonomy:0 "Туркестанская Федеративная Автономная Республика"
+ MTR_Kosygin_autonomy_ADJ:0 "Туркестанск."
+ 
+ UZB_Alexander_Rutskoj:0 "Александр Руцкой"
+ UZB_Alexander_Rutskoj_desc:0 "Жизнь Александра Руцкого началась очень трагично. Надежды его семьи распались в прах с поражением Советского Союза, а отец чудом выжил в мясорубке русского междуцарствия. Руцкому рано пришлось научиться пользоваться автоматом, поэтому его способности быстро оказались признаны тем полевым командиром, которому он служил. "Саня Бешеный", капитан отряда наемников воевал не за идею, а тем, кто больше платил. Однако это изменилось, когда его ребята встретились с профессиональными войсками Белозерского в финальной войне за объединение всей России. После нескольких трибуналов и чистосердечного признания он поступил на службу в царскую армию, где оказался так же востребован. \n\nТеперь, с личного позволения царя, солдат тысячи войн нашел свой покой как устроитель русского порядка в Туркестанских степях."
+ 
+ UZB_Nuritdin_Mukhitdinov:0 "Нуритдин Мухитдинов"
+ UZB_Nuritdin_Mukhitdinov_desc:0 "Пласе холдер: пут сам текст ин хир"
+ 
+ MTR_communist_party:0 "КПТ"
+ MTR_communist_party_long:0 "Коммунистическая Партия Туркестана"
+ 
+ MTR_ultranationalism_party:0 "ДУМТ"
+ MTR_ultranationalism_party_long:0 "Духовное управление мусульман Туркестана"
+ 
+ MTR_liberalism_party:0 "ДПТ"
+ MTR_liberalism_party_long:0 "Демократическая партия Туркестана"
+ 
+ MTR_conservatism_party:0 "АНПТ"
+ MTR_conservatism_party_long:0 "Аграрно-Народная партия Туркестана"
+ 
+ MTR_paternalism_party:0 "КДТ"
+ MTR_paternalism_party_long:0 "Кемалисткое движение Туркестана"
+ 
+ MTR_despotism_party:0 "ГУОТ"
+ MTR_despotism_party_long:0 "Главное управление по освобождённым территориям"
+ 
+ MTR_despotism_postmil_party:0 "СНТ"
+ MTR_despotism_postmil_party_long:0 "Совет народов Туркестана"
+ 
+ MTR_fascism_party:0 "Остатки Туркестанского Легиона"
+ MTR_fascism_party_long:0 "Остатки Туркестанского Легиона"
+ 
+ MTR_national_socialism_party:0 "Остатки Туркестанского Легиона"
+ MTR_national_socialism_party_long:0 "Остатки Туркестанского Легиона"
+ 
+ MTR_progressivism_party:0 "СДП-"Адолат""
+ MTR_progressivism_party_long:0 "Социал-демократическая партия "Адолат""                                   
+ 
+ ### Таврида ###
+ MTV:0 "Таврический Военный Округ"
+ MTV_DEF:0 "Таврический Военный Округ"
+ MTV_ADJ:0 "Таврическ."
+ 
+ MTV_autonomy:0 "Крымская Автономия"
+ MTV_autonomy_DEF:0 "Крымско-Немецкая Автономия"
+ MTV_autonomy_ADJ:0 "Таврическ."
+ 
+ MTV_autonomy_Kosygin:0 "Таврическая Автономия"
+ MTV_autonomy_Kosygin_DEF:0 "Таврическая Немецкая Автономная Республика"
+ MTV_autonomy_Kosygin_ADJ:0 "Таврическ."
+ 
+ MTV_Bruno_Reiter:0 "Бруно Рейтер"
+ 
+ MTV_socialist_party:0 "РНБ"
+ MTV_socialist_party_long:0 "Русско-Немецкий Бунд"
+ 
+ MTV_despotism_party:0 "ГУОТ"
+ MTV_despotism_party_long:0 "Главное управление по освобождённым территориям"
+ 
+ MTV_despotism_postmil_party:0 "РДОК"
+ MTV_despotism_postmil_party_long:0 "Русское движение освободжения Крыма"
+ 
+ MTV_paternalism_party:0 "РНБ"
+ MTV_paternalism_party_long:0 "Русско-Немецкий Бунд"
+ 
+ MTV_national_socialism_party:0 "Разрозненные коллаборационисты"
+ MTV_national_socialism_party_long:0 "Разрозненные коллаборационисты"
+ 
+ ### Беларусь ###
+ MBL:0 "Белорусский Военный Округ"
+ MBL_DEF:0 "Белорусский Военный Округ"
+ MBL_ADJ:0 "Беларусск."
+ 
+ BLR_freedom:0 "Республика Беларусь"
+ BLR_freedom_DEF:0 "Республика Беларусь"
+ BLR_freedom_ADJ:0 "Беларуск."
+ 
+ MBL_autonomy:0 "Белорусская Автономия"
+ MBL_autonomy_DEF:0 "Белорусская Автономия"
+ MBL_autonomy_ADJ:0 "Белорусск."
+ 
+ MBL_autonomy_Kosygin:0 "Белорусская Автономная Республика"
+ MBL_autonomy_Kosygin_DEF:0 "Белорусская Автономная Республика"
+ MBL_autonomy_Kosygin_ADJ:0 "Белорусск."
+ 
+ BLR_Zianon_Pazniak:0 "Зенон Поздняк"
+ MBL_Tikhon_Kiselyov:0 "Тихон Киселёв"
+ 
+ MBL_communist_party:0 "РОО "Белая Русь""
+ MBL_communist_party_long:0 "Республиканское общественное объединение "Белая Русь""
+ 
+ MBL_conservatism_party:0 "БНФ - "Возрождение""
+ MBL_conservatism_party_long:0 "Белорусский народный фронт "Возрождение""
+ 
+ MBL_despotism_party:0 "ГУОТ"
+ MBL_despotism_party_long:0 "Главное управление по освобождённым территориям"
+ 
+ MBL_despotism_postmil_party:0 "РОО "Белая Русь""
+ MBL_despotism_postmil_party_long:0 "РОО "Белая Русь""
+ 
+ MBL_paternalism_party:0 "КХП-БНФ"
+ MBL_paternalism_party_long:0 "Консервативно-христианская партия — Беларуский национальный фронт"   
+
+ MBL_national_socialism_party:0 "Разрозненные коллаборационисты"
+ MBL_national_socialism_party_long:0 "Разрозненные коллаборационисты" 
+ 
+ ### Украина ###
+ MUK:0 "Малороссийский Военный Округ"
+ MUK_DEF:0 "Малороссийский Военный Округ"
+ MUK_ADJ:0 "Малороссийск."
+ 
+ MUK_freedom:0 "Республика Украина"
+ MUK_freedom_DEF:0 "Республика Украина"
+ MUK_freedom_ADJ:0 "Украинск."
+ 
+ MUK_autonomy:0 "Малороссийская Автономия"
+ MUK_autonomy_DEF:0 "Малороссийская Автономния"
+ MUK_autonomy_ADJ:0 "Малороссийск."
+ 
+ MUK_autonomy_Kosygin:0 "Украинская Автономная Республика"
+ MUK_autonomy_Kosygin_DEF:0 "Украинская Автономная Республика"
+ MUK_autonomy_Kosygin_ADJ:0 "Украинск."
+ 
+ UKR_Viacheslav_Chornovil:0 "Вячеслав Черновол"
+ MUK_Oleksandr_Moroz:0 "Александр Мороз"
+  
+ MUK_despotism_party:0 "ГУОТ"
+ MUK_despotism_party_long:0 "Главное управление по освобождённым территориям"
+ 
+ MUK_despotism_postmil_party:0 "РД - "Родина""
+ MUK_despotism_postmil_party_long:0 "Российское Движение - "Родина""
+ 
+ MUK_communist_party:0 "НОАУ"
+ MUK_communist_party_long:0 "Народно-освободительная армия Украины"
+ 
+ MUK_communist_1_party:0 "КПУ"
+ MUK_communist_1_party_long:0 "Коммунистическая партия Украины"
+ 
+ MUK_socialist_party:0 "НПУ"
+ MUK_socialist_party_long:0 "Народная партия Украины"
+ 
+ MUK_progressivism_party:0 "СДПУ"
+ MUK_progressivism_party_long:0 "Социал-демократическая партия Украины" 
+ 
+ MUK_liberal_conservatism_party:0 "НРУ"
+ MUK_liberal_conservatism_party_long:0 "Народный Рух Украины" 
+ 
+ MUK_paternalism_party:0 "ПР"
+ MUK_paternalism_party_long:0 "Партия Регионов" 
+ 
+ MUK_national_socialism_party:0 "Разрозненные коллаборационисты"
+ MUK_national_socialism_party_long:0 "Разрозненные коллаборационисты" 
+ 
+ MUK_national_socialism_1_party:0 "ОУН"
+ MUK_national_socialism_1_party_long:0 "Организация украинских националистов" 
+ 
+ MUK_ultranationalism_party:0 "ОУН-УПА"
+ MUK_ultranationalism_party_long:0 "Організація українських націоналістів - Українська повстанська армія"
+ 
+ ### Прибалтика ###
+ MBP:0 "Прибалтийский Военный Округ"
+ MBP_DEF:0 "Прибалтийский Военный Округ"
+ MBP_ADJ:0 "Прибалтийск."
+ 
+ MBP_autonomy:0 "Прибалтийская Автономия"
+ MBP_autonomy_DEF:0 "Прибалтийская Автономия"
+ MBP_autonomy_ADJ:0 "Прибалтийск."
+ 
+ MBP_autonomy_Kosygin:0 "Прибалтийская Федеративная Автономная Республика"
+ MBP_autonomy_Kosygin_DEF:0 "Прибалтийская Автономная Республика"
+ MBP_autonomy_Kosygin_ADJ:0 "Прибалтийск."
+  
+ MBP_Aleksandrs_Drizulis:0 "Александр Дризулис"
+ 
+ MBP_socialist_party:0 "ВНП"
+ MBP_socialist_party_long:0 "Воля народов Прибалтики"
+ 
+ MBP_despotism_party:0 "ГУОТ"
+ MBP_despotism_party_long:0 "Главное управление по освобождённым территориям"
+ 
+ MBP_despotism_postmil_party:0 "ВНП"
+ MUK_despotism_postmil_party_long:0 "Воля народов Прибалтики"
+ 
+ MBP_liberal_conservatism_party:0 "ДОБ"
+ MBP_liberal_conservatism_party_long:0 "Движение за освобождение Балтии"
+ 
+ MBP_national_socialism_party:0 "Разрозненные коллаборационисты"
+ MBP_national_socialism_party_long:0 "Разрозненные коллаборационисты" 
+
+ ### Прибалтика ###
  EST_freedom:0 "Эстония"
  EST_freedom_DEF:0 "Эстонская Республика"
  EST_freedom_ADJ:0 "Эстонск."
@@ -61,61 +320,6 @@
  LIT_free_party:0 "ЛДС"
  LIT_free_party_long:0 "Литовская Дипломатическая Служба"
  
- MBP_autonomy:0 "Прибалтийская Автономия"
- MBP_autonomy_DEF:0 "Прибалтийская Автономная Республика"
- MBP_autonomy_ADJ:0 "Прибалтийск."
- 
- MBP_Aleksandrs_Drizulis:0 "Александр Дризулис"
- 
- MBP_autonomy_party:0 "ВНП"
- MBP_autonomy_party_long:0 "Воля Народов Прибалтики"
- 
- ###Восточная Европа ###
- 
- BLR_freedom:0 "Беларусь"
- BLR_freedom_DEF:0 "Республика Беларусь"
- BLR_freedom_ADJ:0 "Беларуск."
- 
- BLR_Zianon_Pazniak:0 "Зенон Поздняк"
- 
- BLR_free_party:0 "КХП-БНФ"
- BLR_free_party_long:0 "Консервативно-Христианская Партия — БНФ"
- 
- MBL_autonomy:0 "Белорусская Автономия"
- MBL_autonomy_DEF:0 "Белорусская Автономная Республика"
- MBL_autonomy_ADJ:0 "Белорусск."
- 
- MBL_Tikhon_Kiselyov:0 "Тихон Киселёв"
- 
- MBL_autonomy_party:0 "РОО "Белая Русь""
- MBL_autonomy_party_long:0 "Республиканское общественное объединение «Белая Русь»"
- 
- MUK_freedom:0 "Украина"
- MUK_freedom_DEF:0 "Украина"
- MUK_freedom_ADJ:0 "Украинск."
- 
- UKR_Viacheslav_Chornovil:0 "Вячеслав Черновол"
- 
- UKR_free_party:0 "НРУ"
- UKR_free_party_long:0 "Народный Рух Украины"
- 
- MUK_autonomy:0 "Малороссийская Автономия"
- MUK_autonomy_DEF:0 "Малороссийская Автономная Республика"
- MUK_autonomy_ADJ:0 "Малороссийск."
- 
- MUK_Oleksandr_Moroz:0 "Александр Мороз"
- 
- MUK_autonomy_party:0 "ПР"
- MUK_autonomy_party_long:0 "Партия Регионов"
- 
- MTV_autonomy:0 "Таврическая Автономия"
- MTV_autonomy_DEF:0 "Таврическая Немецкая Автономная Республика"
- MTV_autonomy_ADJ:0 "Таврическ."
- 
- MTV_Bruno_Reiter:0 "Бруно Рейтер"
- 
- MTV_autonomy_party:0 "РНБ"
- MTV_autonomy_party_long:0 "Русско-Немецкий Бунд"
  ##кавказский пиздец
  CHY:0 "Чечня"
  CHY_DEF:0 "Чеченская Республика - Ичкерия"
@@ -189,54 +393,16 @@
  AZR_despotism_party:0 "Ени Азербайджан"
  AZR_despotism_party_long:0 "Ени Азербайджан"
  
- MCS_autonomy:0 "Кавказская Автономия"
- MCS_autonomy_DEF:0 "Кавказская Автономия"
- MCS_autonomy_ADJ:0 "Кавказск."
- 
- MCS_south_autonomy:0 "Закавказская Автономия"
- MCS_south_autonomy_DEF:0 "Закавказская Автономия"
- MCS_south_autonomy_ADJ:0 "Закавказск."
- 
- MCS_Dzhokhar_Dudayev:0 "Дхожар Дудаев"
- 
- MCS_autonomy_party:0 "СНК"
- MCS_autonomy_party_long:0 "Совет Народов Кавказа"
- 
- ###средняя азия
- MKZ_autonomy:0 "Казахская Автономия"
- MKZ_autonomy_DEF:0 "Казахская Автономная Республика"
- MKZ_autonomy_ADJ:0 "Казахск."
- 
- MKZ_Nursultan_Nazarbayev:0 "Нурсултан Назарбаев"
- 
- MKZ_paternalism_party:0 "Отан"
- MKZ_paternalism_party_long:0 "Отан"
  
  
  
- ##кососыгин
- MBL_autonomy_Kosygin:0 "Белорусская Автономия"
- MBL_autonomy_Kosygin_DEF:0 "Белорусская Автономная Республика"
- MBL_autonomy_Kosygin_ADJ:0 "Белорусск."
  
- MBP_autonomy_Kosygin:0 "Прибалтийская Автономия"
- MBP_autonomy_Kosygin_DEF:0 "Прибалтийская Автономная Республика"
- MBP_autonomy_Kosygin_ADJ:0 "Прибалтийск."
  
- MUK_autonomy_Kosygin:0 "Малороссийская Автономия"
- MUK_autonomy_Kosygin_DEF:0 "Малороссийская Автономная Республика"
- MUK_autonomy_Kosygin_ADJ:0 "Малороссийск."
  
- MTV_autonomy_Kosygin:0 "Таврическая Автономия"
- MTV_autonomy_Kosygin_DEF:0 "Таврическая Немецкая Автономная Республика"
- MTV_autonomy_Kosygin_ADJ:0 "Таврическ."
  
- MCS_autonomy_Kosygin:0 "Кавказская Автономия"
- MCS_autonomy_Kosygin_DEF:0 "Кавказская Автономная Республика"
- MCS_autonomy_Kosygin_ADJ:0 "Кавказск."
  
- MKZ_autonomy_Kosygin:0 "Казахская Автономия"
- MKZ_autonomy_Kosygin_DEF:0 "Казахская Автономная Республика"
- MKZ_autonomy_Kosygin_ADJ:0 "Казахск."
+
+ 
+
  
  

@@ -64,6 +64,12 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			TNO_anarchy_AAN_default = yes
+		}
+		localization_key = "GFX_Anarchy_Antarctica"
+	}
+	text = {
+		trigger = {
 			TNO_anarchy_ZZZ_remer = yes
 		}
 		localization_key = "GFX_Anarchy_ZZZ_remer"
@@ -73,7 +79,7 @@ defined_text = {
 			TNO_anarchy_Manchurian_Catastrophe = yes
 		}
 		localization_key = "GFX_MAN_Catastrophe"
-	}
+	}	
 }
 
 defined_text = {
@@ -134,9 +140,15 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			TNO_anarchy_AAN_default = yes
+		}
+		localization_key = TNO_anarchy_Antarctica_tt
+	}
+	text = {
+		trigger = {
 			original_tag = MDM
 		}
-		localization_key = "TNO_Anarchy_MDM_Collapsed_Authority_tt"
+		localization_key = TNO_Anarchy_MDM_Collapsed_Authority_tt
 	}
 	text = {
 		trigger = {
@@ -144,6 +156,12 @@ defined_text = {
 		}
 		localization_key = TNO_Anarchy_ZZZ_Remer_tt
 	}
+	text = {
+		trigger = {
+			TNO_anarchy_Manchurian_Catastrophe = yes
+		}
+		localization_key = TNO_anarchy_Manchurian_Catastrophe_tt
+	}	
 }
 
 defined_text = {
@@ -204,9 +222,15 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			TNO_anarchy_AAN_default = yes
+		}
+		localization_key = TNO_Anarchy_Antarctica_tt_delayed
+	}
+	text = {
+		trigger = {
 			original_tag = MDM
 		}
-		localization_key = "TNO_Anarchy_MDM_Collapsed_Authority_tt_delayed"
+		localization_key = TNO_Anarchy_MDM_Collapsed_Authority_tt_delayed
 	}
 	text = {
 		trigger = {

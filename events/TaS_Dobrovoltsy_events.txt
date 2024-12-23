@@ -21,7 +21,6 @@ country_event = { #god damn it finland
 	mean_time_to_happen = {
 		days = 2 
 	}
-	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = { #
@@ -1010,9 +1009,6 @@ country_event = { ### Iran victory
 	fire_only_once = yes
 	is_triggered_only = yes
 	
-	mean_time_to_happen = {
-		days = 2 
-	}
 	option = {
 		name = MAR_forpol.2.a
 		TNO_fopo_remove_iran_civil_war_tab = yes
@@ -1326,9 +1322,7 @@ country_event = { ### Iran victory
 
 	fire_only_once = yes
 	is_triggered_only = yes
-	mean_time_to_happen = {
-		days = 2 
-	}
+	
 	option = {
 		name = MAR_forpol.8.a
 		TNO_fopo_remove_iran_civil_war_tab = yes

@@ -35,7 +35,7 @@ TaS_SWRW_change_suspicion = {
 	}
 	if = {
 		limit = { check_variable = { SWRW_suspicion_var > 95 } }
-		set_temp_variable = { alert_id = token:GFX_TNO_Alert_SWRWGermanAttention }
+		set_temp_variable = { alert_id = token:Alert_SWRWGermanAttention }
 		add_TNO_alert = yes
 	}
 }
@@ -118,6 +118,37 @@ TaS_SWRW_start_the_war = {
 		hidden_effect = {
 			GER = { add_ideas = { TaS_2WRW_north_sea_problems } }
 		}
+		RUS = {
+			division_template = {
+				name = "Morskaya Desantnaya Brigada"
+				division_names_group = RUS_marines
+				is_locked = yes
+				regiments = {
+					marine = { x = 0 y = 0 }
+					marine = { x = 0 y = 1 }
+					marine = { x = 0 y = 2 }
+					marine = { x = 1 y = 0 }
+					marine = { x = 1 y = 1 }
+					marine = { x = 1 y = 2 }
+					marine = { x = 2 y = 0 }
+					marine = { x = 2 y = 1 }
+				}
+				support = {
+					signal_company = { x = 0 y = 0 }
+					engineer = { x = 0 y = 1 }
+					artillery = { x = 0 y = 2 }
+				}
+			}
+			2099 = {
+				create_unit = {
+					division = "division_template = \"Morskaya Desantnaya Brigada\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					prioritize_location = 11047
+					owner = RUS
+					count = 6 
+				}
+			}
+		}
 	}
 	GER = {
 		if = {
@@ -168,11 +199,12 @@ TaS_SWRW_american_germany = {
 		transfer_state = 42
 		transfer_state = 1811
 		transfer_state = 58
+		transfer_state = 8
 		remove_ideas = TaS_Post2WRW_BRL_ZNE_russian_army 
 		remove_ideas = TaS_Post2WRW_BRL_nazi_heartland_1
 		remove_ideas = TaS_Post2WRW_ZNE_exec_centre 	
 		set_politics = {
-			ruling_party = paternalism
+			ruling_party = despotism
 			last_election = "1933.3.5"
 			election_frequency = 48
 			elections_allowed = no
@@ -184,13 +216,13 @@ TaS_SWRW_american_germany = {
 			progressivism = 0
 			liberalism = 0
 			conservatism = 20
-			paternalism = 40
-			despotism = 10
+			paternalism = 10
+			despotism = 40
 			fascism = 20
 			national_socialism = 10
 		}
 		set_party_name = {
-			ideology = paternalism
+			ideology = despotism
 			long_name = ZNE_usa_party_long
 			name = ZNE_usa_party
 		}		
@@ -198,6 +230,7 @@ TaS_SWRW_american_germany = {
 		add_ideas = TaS_Post2WRW_werewolf_activity
 		add_ideas = TaS_Post2WRW_ZNE_strangers_among_own
 		add_ideas = TaS_Post2WRW_fast_denazification
+		TNO_startup_nation = yes
 		every_owned_state = {
 			ZNE = {
 				add_state_core = PREV
@@ -219,7 +252,7 @@ TaS_SWRW_american_germany = {
 			elections_allowed = no
 		}
 		set_party_name = {
-			ideology = paternalism
+			ideology = despotism
 			long_name = BRL_usa_party_long
 			name = BRL_usa_party
 		}	
@@ -230,8 +263,8 @@ TaS_SWRW_american_germany = {
 			progressivism = 0
 			liberalism = 0
 			conservatism = 20
-			paternalism = 40
-			despotism = 10
+			paternalism = 10
+			despotism = 40
 			fascism = 20
 			national_socialism = 10
 		}
@@ -246,6 +279,7 @@ TaS_SWRW_american_germany = {
 		add_ideas = TaS_Post2WRW_werewolf_activity
 		add_ideas = TaS_Post2WRW_GCZ_golden_city_liberated
 		add_ideas = TaS_Post2WRW_fast_denazification
+		TNO_startup_nation = yes
 		every_owned_state = {
 			GCZ = {
 				add_state_core = PREV
@@ -262,6 +296,7 @@ TaS_SWRW_american_germany = {
 		set_cosmetic_tag = GDN_usa
 		remove_ideas = TaS_Post2WRW_GDN_antimonarch_protests
 		remove_ideas = TaS_Post2WRW_GDN_GNR_scandinavian_liberation 
+		TNO_startup_nation = yes
 		every_owned_state = {
 			GDN = {
 				add_state_core = PREV
@@ -284,6 +319,7 @@ TaS_SWRW_american_germany = {
 		transfer_state = 62
 		transfer_state = 98
 		set_cosmetic_tag = GSG_usa
+		TNO_startup_nation = yes
 		every_owned_state = {
 			GSG = {
 				add_state_core = PREV
@@ -317,6 +353,7 @@ TaS_SWRW_american_germany = {
 		transfer_state = 89
 		transfer_state = 91
 		transfer_state = 85
+		TNO_startup_nation = yes
 		every_owned_state = {
 			GPL = {
 				add_state_core = PREV
@@ -324,24 +361,25 @@ TaS_SWRW_american_germany = {
 		}
 		remove_ideas = TaS_Post2WRW_commie_activity
 	}
-	if = {
-		limit = {
-			FRA = { is_in_faction_with = USA }
-		}
-		FRA = {
-			transfer_state = 8
-			transfer_state = 1812
-			transfer_state = 28
-		}
-	}
-	else = {
-		ZNE = {
-			transfer_state = 8
-			transfer_state = 1812
-			transfer_state = 28
-		}
-	}
+	#if = {
+	#	limit = {
+	#		FRA = { is_in_faction_with = USA }
+	#	}
+	#	FRA = {
+	#		transfer_state = 8
+	#		transfer_state = 1812
+	#		transfer_state = 28
+	#	}
+	#}
+	#else = {
+	#	ZNE = {
+	#		
+	#		transfer_state = 1812
+	#		transfer_state = 28
+	#	}
+	#}
 	PUS = {
+		TNO_startup_nation = yes
 		transfer_state = 5
 	}
 	RUS = {
@@ -352,6 +390,7 @@ TaS_SWRW_american_germany = {
 		transfer_state = 1762
 		transfer_state = 71
 		transfer_state = 1763
+		TNO_startup_nation = yes
 		every_owned_state = {
 			GSV = {
 				add_state_core = PREV
@@ -397,6 +436,7 @@ TaS_SWRW_american_germany = {
 		set_temp_variable = { TNO_economy_subtype_temp = token:Econ_Subtype_American_Capitalism }
 		econ_subtype_change = yes
 		add_ideas = OFN_Mandate
+		TNO_startup_nation = yes
 		every_owned_state = {
 			BRL = {
 				add_state_core = PREV
@@ -482,27 +522,13 @@ TaS_SWRW_american_germany = {
 				fascism = 10
 				national_socialism = 10
 			}
+			TNO_startup_nation = yes
 			add_ideas = OFN_Dependent_Member
 			set_cosmetic_tag = GFR_usa
 			promote_character = GFR
 			OFN_MANDATE_set_starting_laws = yes
 			inherit_technology = USA
 			econ_join_sphere_USA = yes
-		}
-		FRA = {
-			transfer_state = 15
-			transfer_state = 16
-			transfer_state = 788
-			transfer_state = 1625
-			transfer_state = 1626
-			transfer_state = 1635
-			transfer_state = 17
-			transfer_state = 18
-			transfer_state = 29
-			transfer_state = 1733
-			every_owned_state = {
-				add_core_of = FRA
-			}
 		}
 	}
 	USA = {
@@ -863,3 +889,276 @@ SWRW_remove_army_size_modifier = {
 		}
 	}
 }
+
+SWRW_start_rebellion_VVV = {
+	VVV = {
+		transfer_state = 257
+		add_state_core = 257
+		set_province_controller = 320
+		set_province_controller = 9386
+		set_province_controller = 11234
+		set_province_controller = 9242
+		set_province_controller = 18255
+		set_province_controller = 248
+		set_province_controller = 320
+		set_province_controller = 11234
+		set_province_controller = 9386
+		set_province_controller = 6242
+		OST = {
+			set_province_controller = 18288
+			set_province_controller = 11304
+			set_province_controller = 9331
+			set_province_controller = 207
+			set_province_controller = 9254
+
+		}
+		declare_war_on = {
+			target = MCW
+			type = annex_everything
+		}
+		declare_war_on = {
+			target = OST
+			type = annex_everything
+		}
+		load_oob = VVV_SWRW
+		diplomatic_relation = {
+			country = RUS
+			relation = guarantee
+			active = yes
+		}
+		diplomatic_relation = {
+			country = RUS
+			relation = non_aggression_pact
+			active = yes
+		}
+		diplomatic_relation = {
+			country = RUS
+			relation = military_access
+			active = yes
+		}
+	}
+	RUS = {
+		diplomatic_relation = {
+			country = VVV
+			relation = non_aggression_pact
+			active = yes
+		}
+		diplomatic_relation = {
+			country = VVV
+			relation = guarantee
+			active = yes
+		}
+		diplomatic_relation = {
+			country = VVV
+			relation = military_access
+			active = yes
+		}
+	}
+}	
+
+SWRW_start_rebellion_ORL = {
+	ORL = {
+		transfer_state = 222
+		add_state_core = 222
+		set_province_controller = 11244
+		set_province_controller = 9384
+		set_province_controller = 3364
+		set_province_controller = 11284
+		set_province_controller = 9411
+		set_province_controller = 236
+		set_province_controller = 11337
+		set_province_controller = 9384
+		set_province_controller = 6411
+		MCW = {
+			set_province_controller = 3226
+			set_province_controller = 3390
+			set_province_controller = 3346
+			set_province_controller = 3318
+			set_province_controller = 18309
+			set_province_controller = 356
+			set_province_controller = 3376
+			set_province_controller = 328
+			set_province_controller = 384
+			set_province_controller = 11242
+			set_province_controller = 3335	
+			set_province_controller = 288
+		}
+		declare_war_on = {
+			target = MCW
+			type = annex_everything
+		}
+		declare_war_on = {
+			target = OST
+			type = annex_everything
+		}
+		load_oob = ORL_SWRW
+		diplomatic_relation = {
+			country = RUS
+			relation = guarantee
+			active = yes
+		}
+		diplomatic_relation = {
+			country = RUS
+			relation = non_aggression_pact
+			active = yes
+		}
+		diplomatic_relation = {
+			country = RUS
+			relation = military_access
+			active = yes
+		}
+	}
+	RUS = {
+		diplomatic_relation = {
+			country = ORL
+			relation = non_aggression_pact
+			active = yes
+		}
+		diplomatic_relation = {
+			country = ORL
+			relation = guarantee
+			active = yes
+		}
+		diplomatic_relation = {
+			country = ORL
+			relation = military_access
+			active = yes
+		}
+	}
+}	
+
+SWRW_start_rebellion_SHI = {
+	SHI = {
+		transfer_state = 1441
+		add_state_core = 1441
+		set_province_controller = 275
+		set_province_controller = 9245
+		set_province_controller = 9422
+		set_province_controller = 18301
+		set_province_controller = 3389
+		set_province_controller = 11296
+		set_province_controller = 9367
+		set_province_controller = 11540
+		MCW = {
+			set_province_controller = 3332
+			set_province_controller = 313
+			set_province_controller = 340
+			set_province_controller = 367
+			set_province_controller = 396
+			set_province_controller = 11323
+			set_province_controller = 18269
+		}
+		
+		declare_war_on = {
+			target = MCW
+			type = annex_everything
+		}
+		declare_war_on = {
+			target = OST
+			type = annex_everything
+		}
+		load_oob = SHI_SWRW
+		diplomatic_relation = {
+			country = RUS
+			relation = guarantee
+			active = yes
+		}
+		diplomatic_relation = {
+			country = RUS
+			relation = non_aggression_pact
+			active = yes
+		}
+		diplomatic_relation = {
+			country = RUS
+			relation = military_access
+			active = yes
+		}
+	}
+	RUS = {
+		diplomatic_relation = {
+			country = SHI
+			relation = non_aggression_pact
+			active = yes
+		}
+		diplomatic_relation = {
+			country = SHI
+			relation = guarantee
+			active = yes
+		}
+		diplomatic_relation = {
+			country = SHI
+			relation = military_access
+			active = yes
+		}
+	}
+}	
+
+SWRW_start_rebellion_POV = {
+	POV = {
+		transfer_state = 224
+		add_state_core = 224
+		set_province_controller = 11476
+		set_province_controller = 579
+		set_province_controller = 14441
+		set_province_controller = 484
+		set_province_controller = 9516
+		set_province_controller = 3582
+		set_province_controller = 449
+		set_province_controller = 9540
+		set_province_controller = 3478
+		set_province_controller = 9565
+		MCW = {
+			set_province_controller = 3540
+			set_province_controller = 3431
+			set_province_controller = 18326
+			set_province_controller = 6566
+			set_province_controller = 3489
+			set_province_controller = 3582
+			set_province_controller = 9488
+			set_province_controller = 11459
+			set_province_controller = 11418
+			set_province_controller = 3519
+		}
+		declare_war_on = {
+			target = MCW
+			type = annex_everything
+		}
+		declare_war_on = {
+			target = UKR
+			type = annex_everything
+		}
+		load_oob = POV_SWRW
+		diplomatic_relation = {
+			country = RUS
+			relation = guarantee
+			active = yes
+		}
+		diplomatic_relation = {
+			country = RUS
+			relation = non_aggression_pact
+			active = yes
+		}
+		diplomatic_relation = {
+			country = RUS
+			relation = military_access
+			active = yes
+		}
+	}
+	RUS = {
+		diplomatic_relation = {
+			country = POV
+			relation = non_aggression_pact
+			active = yes
+		}
+		diplomatic_relation = {
+			country = POV
+			relation = guarantee
+			active = yes
+		}
+		diplomatic_relation = {
+			country = POV
+			relation = military_access
+			active = yes
+		}
+	}
+}	

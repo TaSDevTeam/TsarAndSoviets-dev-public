@@ -308,14 +308,14 @@ on_actions = {
 				#	id = LATAM_news.3
 				#	days = 738
 				#}
-				news_event = { # Ramfis' Wild Ride
-					id = LATAM_news.33
-					days = 387
-				}
-				news_event = { # Ancash Earthquake
-					id = LATAM_news.188
-					days = 3072
-				}
+				#news_event = { # Ramfis' Wild Ride
+				#	id = LATAM_news.33
+				#	days = 387
+				#}
+				#news_event = { # Ancash Earthquake
+				#	id = LATAM_news.188
+				#	days = 3072
+				#}
 			}
 			BLZ = {
 				country_event = { # Belmopan Plan
@@ -373,7 +373,7 @@ on_actions = {
 				country_event = { id = USA.66 days = 15 random_hours = 1440 }
 
 				#NIXON STARTS HIS WILD WILD RIDE YEE HAW
-				country_event = { id = USA.70 days = 9 }
+				country_event = { id = USA.125 days = 2 }
 				country_event = { id = USA.71 days = 31 }
 				country_event = { id = USA.73 days = 68 }
 				country_event = { id = USA.74 days = 109 }
@@ -504,6 +504,9 @@ on_actions = {
 				#Indonesia#
 				country_event = { id = USA_INS.100 days = 150 }
 				
+				#India
+				country_event = { id = USA_IND.6 days = 800 }
+				
 				#Flavor events
 				#country_event = { id = USA.culture.1 days = 2876 } #Death of Joseph Kennedy, event is all old lore
 				country_event = { id = USA.culture.5 days = 1571 }
@@ -585,7 +588,7 @@ on_actions = {
 				country_event = { id = OFN.20 days = 463 } #1963 Election
 				country_event = { id = OFN.21 days = 2138 } #1967 Election
 				news_event = { id = WORLD.18216 days = 1943 } #Expo 67 Montréal
-				news_event = { id = WORLD.18217 days = 2008 } #Canadian Centennial
+				#news_event = { id = WORLD.18217 days = 2008 } #Canadian Centennial
 			}
 			
 			AST = {
@@ -595,48 +598,6 @@ on_actions = {
 				country_event = { id = AST_scripted.5 days = 3381 } #1971 election
 				country_event = { id = AST_scripted.7 days = 930 } #the question of a republic
 				country_event = { id = AST_scripted.10 days = 2159 } #nuke trigger, late 1967
-			}
-
-
-			MEX = {
-				random_list = {
-					33 = { ### Madrazo
-						modifier = {
-							factor = 0
-							has_game_rule = { rule = MEX_PATH option = MEX_PATH_ORDAZ }
-						}
-						modifier = {
-							factor = 0
-							has_game_rule = { rule = MEX_PATH option = MEX_PATH_LOZANO }
-						}
-						country_event = { id = Mexico_Dummy.1 days = 1065 }
-					}
-
-					33 = { ### Lozano
-						modifier = {
-							factor = 0
-							has_game_rule = { rule = MEX_PATH option = MEX_PATH_MADRAZO }
-						}
-						modifier = {
-							factor = 0
-							has_game_rule = { rule = MEX_PATH option = MEX_PATH_ORDAZ }
-						}
-						country_event = { id = Mexico_Dummy.2 days = 1065 }
-					}
-
-					34 = { ### Ordaz
-						modifier = {
-							factor = 0
-							has_game_rule = { rule = MEX_PATH option = MEX_PATH_MADRAZO }
-						}
-						modifier = {
-							factor = 0
-							has_game_rule = { rule = MEX_PATH option = MEX_PATH_LOZANO }
-						}
-						country_event = { id = Mexico_Dummy.3 days = 1065 }
-					}
-				}
-				country_event = { id = Mexico_Dummy.4 days = 1057 }
 			}
 
 			PRU = {
@@ -746,9 +707,17 @@ on_actions = {
 				add_to_array = { global.OFN_members = HAI }
 			}
 
-			NZL = {
-				#RESOURCE RIGHTS
+			NZL = {		
+				# RESOURCE RIGHTS
 				give_resource_rights = { receiver = USA state = 723 resources = { oil aluminium rubber tungsten steel chromium uranium } }
+				
+				# National Spirits
+				set_variable = { NZL_Culture_War_var = 9 } # Anglo Dominance
+				set_variable = { NZL_World_Stage_var = 9 } # Bearer of the Torch
+				set_variable = { NZL_Social_Fabric_var = 9 } # Pristine
+				
+				# Skeleton PM Events
+				country_event = { id = new_zealand_pm_skeleton.1 days = 698 }
 			}
 
 			USA = {
@@ -1182,6 +1151,47 @@ on_actions = {
 					}
 				}
 				CCW_rubberband_update_effect = yes
+			}
+		}
+	}
+
+	on_monthly_IND = { 
+		effect = {
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier = IND_black_years_dynamic_modifier }
+				}
+				TNO_iwr_black_years_monthly_IND_effect = yes
+			}
+		}
+	}
+
+	on_monthly_NZL = {
+		effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_cosmetic_tag = NZL_Republic
+					}
+					OR = {
+						has_idea = NZL_Culture_War_4
+						has_idea = NZL_Culture_War_5
+					}
+				}
+				add_to_variable = {
+					NZL_republic_var = 1
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_cosmetic_tag = NZL_Republic
+					}
+					check_variable = {
+						NZL_republic_var > 23.99
+					}
+				}
+				country_event = new_zealand_pm_skeleton.8
 			}
 		}
 	}

@@ -12,6 +12,7 @@ TNO_is_anarchy_visible = {
 		TNO_anarchy_ZZZ_remer = yes
 		TNO_anarchy_Manchurian_Catastrophe = yes
 		original_tag = MDM
+		TNO_anarchy_AAN_default = yes
 	}
 }
 
@@ -68,6 +69,14 @@ TNO_anarchy_UZB = {
 TNO_anarchy_MCW_Dissapearance = {
 	original_tag = MCW
 	has_cosmetic_tag = MCW_Dissapearance
+}
+
+TNO_anarchy_AAN_default = {
+	original_tag = AAN
+	has_country_leader = {
+		character = AAN_No_Authority
+		ruling_only = yes
+	}
 }
 
 TNO_anarchy_ZZZ_remer = {

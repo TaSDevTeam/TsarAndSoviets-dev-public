@@ -36,8 +36,8 @@ defined_text = {
 		localization_key = "[Get_TNO_CountryClosing_picture_ENG]"
 	}
 	text = {
-		trigger = { original_tag = MAR }
-		localization_key = "[Get_TNO_CountryClosing_picture_MAR]"
+		trigger = { original_tag = MEX }
+		localization_key = "[Get_TNO_CountryClosing_picture_MEX]"
 	}
 	text = {
 		trigger = {
@@ -49,6 +49,22 @@ defined_text = {
 			}
 		}
 		localization_key = "[Get_TNO_CountryClosing_picture_UKR]"
+	}
+	text = {
+		trigger = { original_tag = AAA }
+		localization_key = "[Get_TNO_CountryClosing_picture_AAA]"
+	}
+	text = {
+		trigger = { original_tag = AAO }
+		localization_key = "[Get_TNO_CountryClosing_picture_AAO]"
+	}
+	text = {
+		trigger = { original_tag = AAG }
+		localization_key = "[Get_TNO_CountryClosing_picture_AAG]"
+	}
+	text = {
+		trigger = { original_tag = MAR }
+		localization_key = "[Get_TNO_CountryClosing_picture_MAR]"
 	}
 	text = {
 		localization_key = "GFX_TNO_CountryClosing_picture_generic"
@@ -76,6 +92,12 @@ defined_text = {
 	}
 	text = {
 		trigger = {
+			original_tag = MEX
+		}
+		localization_key = "[Get_TNO_CountryClosing_epilogue_MEX]"
+	}
+	text = {
+		trigger = {
 			OR = {
 				original_tag = UKR
 				original_tag = UKS
@@ -90,7 +112,19 @@ defined_text = {
 		localization_key = "[Get_TNO_CountryClosing_picture_UKS]"
 	}
 	text = {
-		localization_key = "TNO_CountryClosing_epilogue_generic"
+		trigger = { original_tag = AAA }
+		localization_key = "[Get_TNO_CountryClosing_epilogue_AAA]"
+	}
+	text = {
+		trigger = { original_tag = AAO }
+		localization_key = "[Get_TNO_CountryClosing_epilogue_AAO]"
+	}
+	text = {
+		trigger = { original_tag = AAG }
+		localization_key = "[Get_TNO_CountryClosing_epilogue_AAG]"
+	}
+	text = {
+		localization_key = TNO_CountryClosing_epilogue_generic
 	}
 }
 
@@ -398,6 +432,86 @@ defined_text = {
 		localization_key = "GFX_TNO_CountryClosing_picture_UKR_UNRA_Stus_Ending"
 	}
 }
+defined_text = {
+	name = Get_TNO_CountryClosing_picture_MEX
+	text = {
+		trigger = {
+			has_country_leader = {
+				character = MEX_Gustavo_Ordaz
+				ruling_only = yes
+			}
+		}
+		localization_key = "GFX_CountryClosing_picture_MEX_Demo_Ordaz"
+	}
+	text = {
+		trigger = {
+			has_country_leader = {
+				character = MEX_Raul_Lozano
+				ruling_only = yes
+			}
+		}
+		localization_key = "GFX_CountryClosing_picture_MEX_Demo_Lozano"
+	}
+	text = {
+		trigger = {
+			has_country_leader = {
+				character = MEX_Carlos_Madrazo
+				ruling_only = yes
+			}
+		}
+		localization_key = "GFX_CountryClosing_picture_MEX_Demo_Madrazo"
+	}
+}
+defined_text = {
+	name = Get_TNO_CountryClosing_picture_AAA
+	text = {
+		trigger = { has_country_flag = AAA_won }
+		localization_key = "GFX_CountryClosing_picture_AAA_Success"
+	}
+	text = {
+		localization_key = "GFX_CountryClosing_picture_AAA_Failure"
+	}
+}
+defined_text = {
+	name = Get_TNO_CountryClosing_picture_AAO
+	text = {
+		trigger = {
+			has_country_leader = {
+				character = AAO_Edmund_Hillary
+				ruling_only = yes
+			}
+		}
+		localization_key = "GFX_CountryClosing_picture_AAO_Hillary"
+	}
+	text = {
+		trigger = {
+			has_country_leader = {
+				character = AAO_Howard_Beale
+				ruling_only = yes
+			}
+		}
+		localization_key = "GFX_CountryClosing_picture_AAO_Beale"
+	}
+	text = {
+		trigger = {
+			has_country_leader = {
+				character = AAO_Hyman_Rickover
+				ruling_only = yes
+			}
+		}
+		localization_key = "GFX_CountryClosing_picture_AAO_Rickover"
+	}
+}
+defined_text = {
+	name = Get_TNO_CountryClosing_picture_AAG
+	text = {
+		trigger = { has_country_flag = AAG_won }
+		localization_key = "GFX_CountryClosing_picture_AAG_Success"
+	}
+	text = {
+		localization_key = "GFX_CountryClosing_picture_AAG_Failure"
+	}
+}
 
 defined_text = {
 	name = Get_TNO_CountryClosing_picture_MAR
@@ -423,8 +537,6 @@ defined_text = {
 		localization_key = "GFX_TNO_CountryClosing_picture_generic"
 	}
 }
-
-
 # / Tag-Specific Text
 defined_text = {
 	name = Get_TNO_CountryClosing_epilogue_USA
@@ -642,6 +754,77 @@ defined_text = { #### UKRAINE END SLIDES
 	text = {
 		trigger = { has_country_flag = UKR_Stus_Ending }
 		localization_key = "TNO_CountryClosing_epilogue_UNRA_Stus_victory_UCW"
+	}
+}
+defined_text = { #### Mexico Demo END SLIDES
+	name = Get_TNO_CountryClosing_epilogue_MEX
+	text = {
+		trigger = {
+			has_country_flag = TNO_MEX_ORD_SUC
+		}
+		localization_key = "TNO_CountryClosing_epilogue_MEX_Demo_Ordaz"
+	}
+	text = {
+		trigger = {
+			has_country_flag = TNO_MEX_LOZ_SUC
+		}
+		localization_key = "TNO_CountryClosing_epilogue_MEX_Demo_Lozano"
+	}
+	text = {
+		trigger = {
+			has_country_flag = TNO_MEX_MAD_SUC
+		}
+		localization_key = "TNO_CountryClosing_epilogue_MEX_Demo_Madrazo"
+	}
+}
+defined_text = {
+	name = Get_TNO_CountryClosing_epilogue_AAA
+	text = {
+		trigger = { has_country_flag = AAA_won }
+		localization_key = TNO_CountryClosing_epilogue_AAA_Success
+	}
+	text = {
+		localization_key = TNO_CountryClosing_epilogue_AAA_Failure
+	}
+}
+defined_text = {
+	name = Get_TNO_CountryClosing_epilogue_AAO
+	text = {
+		trigger = {
+			has_country_leader = {
+				character = AAO_Edmund_Hillary
+				ruling_only = yes
+			}
+		}
+		localization_key = TNO_CountryClosing_epilogue_AAO_Hillary
+	}
+	text = {
+		trigger = {
+			has_country_leader = {
+				character = AAO_Howard_Beale
+				ruling_only = yes
+			}
+		}
+		localization_key = TNO_CountryClosing_epilogue_AAO_Beale
+	}
+	text = {
+		trigger = {
+			has_country_leader = {
+				character = AAO_Hyman_Rickover
+				ruling_only = yes
+			}
+		}
+		localization_key = TNO_CountryClosing_epilogue_AAO_Rickover
+	}
+}
+defined_text = {
+	name = Get_TNO_CountryClosing_epilogue_AAG
+	text = {
+		trigger = { has_country_flag = AAG_won }
+		localization_key = TNO_CountryClosing_epilogue_AAG_Success
+	}
+	text = {
+		localization_key = TNO_CountryClosing_epilogue_AAG_Failure
 	}
 }
 

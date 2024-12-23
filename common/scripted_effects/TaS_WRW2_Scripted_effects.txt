@@ -98,8 +98,8 @@ TaS_2WRW_manchuria_spawn_states = {
 		load_oob = PFF_revolt
 		every_owned_state = {
 			set_demilitarized_zone = no
-	
 		}
+		TNO_startup_nation = yes
 	}	
 	PJP = {
 		promote_character = PJP_Hiromichi_Yahara
@@ -115,8 +115,8 @@ TaS_2WRW_manchuria_spawn_states = {
 		load_oob = MJP_revolt
 		every_owned_state = {
 			set_demilitarized_zone = no
-			
 		}
+		TNO_startup_nation = yes
 	}	
 }
 TaS_2WRW_manchuria_start_rebelion = {
@@ -1011,6 +1011,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 					add_state_core = PREV
 				}
 			}
+			TNO_startup_nation = yes
 		}
 		#GSI = {
 		#	econ_join_sphere_MAR = yes
@@ -1034,6 +1035,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 					add_state_core = PREV
 				}
 			}
+			TNO_startup_nation = yes
 		}
 		GRH = {
 			econ_join_sphere_MAR = yes
@@ -1053,6 +1055,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 					add_state_core = PREV
 				}
 			}
+			TNO_startup_nation = yes
 		}
 		GWS = {
 			econ_join_sphere_MAR = yes
@@ -1069,6 +1072,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 					add_state_core = PREV
 				}
 			}
+			TNO_startup_nation = yes
 		}
 		GHL = {
 			econ_join_sphere_MAR = yes
@@ -1078,11 +1082,18 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			transfer_state = 74
 			transfer_state = 309
 			transfer_state = 1886
+			if = {
+				limit = { BRG = { exists = no } }
+				transfer_state = 6
+				transfer_state = 1734
+				FRA = { transfer_state = 34 }
+			}
 			every_owned_state = {
 				GHL = {
 					add_state_core = PREV
 				}
 			}
+			TNO_startup_nation = yes
 		}
 		GCZ = {
 			econ_join_sphere_MAR = yes
@@ -1094,6 +1105,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 					add_state_core = PREV
 				}
 			}
+			TNO_startup_nation = yes
 		}
 		GBW = {
 			econ_join_sphere_MAR = yes
@@ -1104,6 +1116,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 					add_state_core = PREV
 				}
 			}
+			TNO_startup_nation = yes
 		}
 		GBV = {
 			econ_join_sphere_MAR = yes
@@ -1117,6 +1130,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 					add_state_core = PREV
 				}
 			}
+			TNO_startup_nation = yes
 		}
 		GSV = {
 			econ_join_sphere_MAR = yes
@@ -1130,6 +1144,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 					add_state_core = PREV
 				}
 			}
+			TNO_startup_nation = yes
 		}
 		GAU = {
 			econ_join_sphere_MAR = yes
@@ -1147,6 +1162,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 					add_state_core = PREV
 				}
 			}
+			TNO_startup_nation = yes
 		}
 		GNR = {
 			econ_join_sphere_MAR = yes
@@ -1164,6 +1180,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 					add_state_core = PREV
 				}
 			}
+			TNO_startup_nation = yes
 		}
 		ZNE = {
 			inherit_technology = MAR
@@ -1177,17 +1194,20 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			transfer_state = 1814
 			transfer_state = 1813
 			transfer_state = 744
+			TNO_startup_nation = yes
 		}
 		BRL = {
 			inherit_technology = MAR
 			econ_join_sphere_MAR = yes
 			transfer_state = 64
+			TNO_startup_nation = yes
 		}
 		PUS = {
 			inherit_technology = MAR
 			econ_join_sphere_MAR = yes
 			transfer_state = 5
 			transfer_state = 85
+			TNO_startup_nation = yes
 			every_owned_state = {
 				PUS = {
 					add_state_core = PREV
@@ -1207,27 +1227,36 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 				}
 			}	
 		}
-		GHU = {
-			if = {
-				limit = {
-					HUN = {
-					    is_in_faction_with = GER
-					}	
-				}	
+		if = {
+			limit = {
+				#HUN = {
+				#	is_in_faction_with = GER
+				#}	
+				is_debug = yes
+			}	
+			HUN = {
 				GHU = {
-				    annex_country = {
-				        target = HUN
-				        transfer_troops = no
-			        }
-					every_owned_state = {
-				        GHU = {
-					        add_state_core = PREV
-				        }       
-			        }
-					econ_join_sphere_MAR = yes
+					GHU_Istvan_Horthy = {
+						set_nationality = HUN
+					}
+				}
+				set_politics = {
+					ruling_party = paternalism
 				}	
-		
-			}
+				add_popularity = {
+					ideology = paternalism
+					popularity = 0.3
+				}
+				GHU_Istvan_Horthy = {
+					promote_character = yes
+				}
+				remove_ideas = HUN_German_Fist
+				remove_ideas = HUN_Social_Upheaval
+				remove_ideas = HUN_Transylvanian_Issue
+				set_cosmetic_tag = HUN_GHU
+				econ_leave_sphere = yes
+				econ_join_sphere_MAR = yes
+			}	
 		}
 		GSE = {
 			if = {
@@ -1248,7 +1277,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			        }
 					econ_join_sphere_MAR = yes
 				}	
-		
+				TNO_startup_nation = yes
 			}
 		}
 		GRM = {
@@ -1270,7 +1299,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			        }
 					econ_join_sphere_MAR = yes
 				}	
-		
+				TNO_startup_nation = yes
 			}
 		}
 		GBU = {
@@ -1292,7 +1321,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			        }
 					econ_join_sphere_MAR = yes
 				}	
-		
+				TNO_startup_nation = yes
 			}
 		}
 		every_country = {
@@ -1304,7 +1333,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			limit = { check_variable = { ECON_SPHERE_LEADER = GER } }
 			econ_leave_sphere = yes
 		}
-		TaS_2WRW_post_germany_econ_setup = yes
+		#TaS_2WRW_post_germany_econ_setup = yes
 		GER = {
 			dismantle_faction = yes
 		}
@@ -1328,6 +1357,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 				NOT = { GRO = { is_puppet_of = GER } }
 			}	
 			GEX = {
+				
 				annex_country = {
 					target = GER
 					transfer_troops = no
@@ -1341,6 +1371,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 						add_state_core = PREV
 					}       
 				}
+				TNO_startup_nation = yes
 				set_capital = { state = 945 }
 			}	
 		}
@@ -1369,6 +1400,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 						add_state_core = PREV
 					}       
 				}
+				TNO_startup_nation = yes
 				set_capital = { state = 295 }
 			}	
 		}
@@ -1404,6 +1436,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 						add_state_core = PREV
 					}       
 				}
+				TNO_startup_nation = yes
 			}	
 		}
 		else = {
@@ -1418,6 +1451,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 					    add_state_core = PREV
 				    }       
 			    }				
+				TNO_startup_nation = yes
 			}
 		}
 	}
@@ -1471,6 +1505,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 				TNO_economy_type = token:Econ_Type_Planned
 				TNO_economy_subtype = token:Econ_Subtype_War_Communism
 			}
+			TNO_startup_nation = yes
 		}
 		GPL = {
 			econ_join_sphere_MAR = yes
@@ -1511,6 +1546,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 				}
 			}
 			remove_ideas = TaS_Post2WRW_commie_activity
+			TNO_startup_nation = yes
 		}
 		GRH = {
 			econ_join_sphere_MAR = yes
@@ -1552,6 +1588,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 				TNO_economy_type = token:Econ_Type_Planned
 				TNO_economy_subtype = token:Econ_Subtype_Worker_Directed
 			}
+			TNO_startup_nation = yes
 		}
 		GBV = {
 			econ_join_sphere_MAR = yes
@@ -1583,6 +1620,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 				TNO_economy_type = token:Econ_Type_Planned
 				TNO_economy_subtype = token:Econ_Subtype_Worker_Directed
 			}
+			TNO_startup_nation = yes
 		}
 		GAU = {
 			econ_join_sphere_MAR = yes
@@ -1616,6 +1654,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 				TNO_economy_type = token:Econ_Type_Corporatism
 				TNO_economy_subtype = token:Econ_Subtype_Socialized_Economy
 			}
+			TNO_startup_nation = yes
 		}
 		GCZ = {
 			econ_join_sphere_MAR = yes
@@ -1650,6 +1689,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 			set_variable = {
 				TNO_economy_type = token:Econ_Type_Planned
 			}
+			TNO_startup_nation = yes
 		}
 		GDN = {
 			econ_join_sphere_MAR = yes
@@ -1696,6 +1736,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 				TNO_economy_type = token:Econ_Type_Planned
 				TNO_economy_subtype = token:Econ_Subtype_Worker_Directed
 			}
+			
 		}
 		GHU = {
 			if = {
@@ -1716,7 +1757,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 			        }
 					econ_join_sphere_MAR = yes
 				}	
-		
+				TNO_startup_nation = yes
 			}
 		}
 		GSE = {
@@ -1738,7 +1779,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 			        }
 					econ_join_sphere_MAR = yes
 				}	
-		
+				TNO_startup_nation = yes
 			}
 		}
 		GRM = {
@@ -1763,7 +1804,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 				        ruling_party = progressivism
 			        }
 				}	
-		
+				TNO_startup_nation = yes
 			}
 		}
 		GBU = {
@@ -1785,7 +1826,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 			        }
 					econ_join_sphere_MAR = yes
 				}	
-		
+				TNO_startup_nation = yes
 			}
 		}
 		GHL = {
@@ -1800,6 +1841,9 @@ TaS_WRW2_German_Collapse_Kosygin = {
 				limit = { BRG = { exists = no } }
 				transfer_state = 6
 				transfer_state = 1734
+			}
+			if = {
+				limit = { NOT = { FRA = { controls_state = 34 } } }
 				transfer_state = 34
 			}
 			set_politics = {
@@ -1820,6 +1864,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 				TNO_economy_type = token:Econ_Type_Planned
 				TNO_economy_subtype = token:Econ_Subtype_Worker_Directed
 			}
+			TNO_startup_nation = yes
 		}
 		set_global_flag = WRW2_german_collapse
 		set_global_flag = PostGER_kosygin_epilogue
@@ -1836,7 +1881,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 			limit = { check_variable = { ECON_SPHERE_LEADER = GER } }
 			econ_leave_sphere = yes
 		}
-		TaS_2WRW_post_germany_econ_setup = yes
+		#TaS_2WRW_post_germany_econ_setup = yes
 		GER = {
 			dismantle_faction = yes
 		}
@@ -1873,6 +1918,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 						add_state_core = PREV
 					}       
 				}
+				TNO_startup_nation = yes
 				set_capital = { state = 945 }
 			}	
 		}
@@ -1901,6 +1947,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 						add_state_core = PREV
 					}       
 				}
+				TNO_startup_nation = yes
 				set_capital = { state = 295 }
 			}	
 		}
@@ -1930,6 +1977,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 					target = MAD
 					transfer_troops = no
 				}
+				TNO_startup_nation = yes
 				set_capital = { state = 295 }
 				every_owned_state = {
 					GEX = {
@@ -1945,6 +1993,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 				    transfer_troops = no
 			    }
                 set_capital = { state = 707 }	
+				TNO_startup_nation = yes
                 every_owned_state = {
 				    GEX = {
 					    add_state_core = PREV
@@ -1955,31 +2004,6 @@ TaS_WRW2_German_Collapse_Kosygin = {
 	}
 }
 TaS_2WRW_form_ost_zones = {
-	XYZ = {
-		MBP_Military_Administration = {
-			set_nationality = MBP
-		}
-	}
-	XYZ = {
-		MBL_Military_Administration = {
-			set_nationality = MBL
-		}
-	}
-	XYZ = {
-		MUK_Military_Administration = {
-			set_nationality = MUK
-		}
-	}
-	XYZ = {
-		MTV_Military_Administration = {
-			set_nationality = MTV
-		}
-	}
-	XYZ = {
-		MCS_Military_Administration = {
-			set_nationality = MCS
-		}
-	}
 	if = {
 		limit = { MAR = { owns_state = 1397 } }
 		MBP = {
@@ -2000,25 +2024,14 @@ TaS_2WRW_form_ost_zones = {
 			transfer_state = 96
 			transfer_state = 11
 			transfer_state = 1401
+			transfer_state = 2451
+			transfer_state = 79
+			transfer_state = 2450
+			transfer_state = 209
+			transfer_state = 1421
+			transfer_state = 257
 			set_capital = { state = 1397 }
 			TaS_2WRW_set_zone_laws = yes
-			add_popularity = {
-				ideology = national_socialism
-				popularity = 0.12
-			}
-			set_party_name = { 
-				ideology = despotism 
-				long_name = Post_WRW2_Russian_Army_party
-				name = Post_WRW2_Russian_Army_party
-			}
-			set_party_name = { 
-				ideology = national_socialism 
-				long_name = Post_WRW2_Werewolf_party
-				name = Post_WRW2_Werewolf_party
-			}
-			MBP_Military_Administration = {
-				promote_character = yes
-			}
 			econ_join_sphere_MAR = yes
 		}
 		MBP = {
@@ -2049,25 +2062,10 @@ TaS_2WRW_form_ost_zones = {
 			transfer_state = 204
 			transfer_state = 206
 			transfer_state = 1404
+			transfer_state = 241
+			transfer_state = 2452
 			set_capital = { state = 1404 }
 			TaS_2WRW_set_zone_laws = yes
-			add_popularity = {
-				ideology = paternalism
-				popularity = 0.08
-			}
-			set_party_name = { 
-				ideology = despotism 
-				long_name = Post_WRW2_Russian_Army_party
-				name = Post_WRW2_Russian_Army_party
-			}
-			set_party_name = { 
-				ideology = national_socialism 
-				long_name = Post_WRW2_Werewolf_party
-				name = Post_WRW2_Werewolf_party
-			}
-			MBL_Military_Administration = {
-				promote_character = yes
-			}
 			econ_join_sphere_MAR = yes
 		}
 		MBL = {
@@ -2098,25 +2096,18 @@ TaS_2WRW_form_ost_zones = {
 			transfer_state = 202
 			transfer_state = 1428
 			transfer_state = 197
+			transfer_state = 1427
+			transfer_state = 225
+			transfer_state = 259
+			transfer_state = 226
+			transfer_state = 1426
+			transfer_state = 200
+			transfer_state = 221
+			transfer_state = 227
+			transfer_state = 228
+			transfer_state = 218
 			set_capital = { state = 1428 }
 			TaS_2WRW_set_zone_laws = yes
-			add_popularity = {
-				ideology = ultranationalism
-				popularity = 0.29
-			}
-			set_party_name = { 
-				ideology = despotism 
-				long_name = Post_WRW2_Russian_Army_party
-				name = Post_WRW2_Russian_Army_party
-			}
-			set_party_name = { 
-				ideology = national_socialism 
-				long_name = Post_WRW2_Werewolf_party
-				name = Post_WRW2_Werewolf_party
-			}
-			MUK_Military_Administration = {
-				promote_character = yes
-			}
 			econ_join_sphere_MAR = yes
 		}
 		MUK = {
@@ -2142,23 +2133,6 @@ TaS_2WRW_form_ost_zones = {
 			transfer_state = 1532
 			set_capital = { state = 1532 }
 			TaS_2WRW_set_zone_laws = yes
-			add_popularity = {
-				ideology = national_socialism
-				popularity = 0.33
-			}
-			set_party_name = { 
-				ideology = despotism 
-				long_name = Post_WRW2_Russian_Army_party
-				name = Post_WRW2_Russian_Army_party
-			}
-			set_party_name = { 
-				ideology = national_socialism 
-				long_name = Post_WRW2_Werewolf_party
-				name = Post_WRW2_Werewolf_party
-			}
-			MTV_Military_Administration = {
-				promote_character = yes
-			}
 			econ_join_sphere_MAR = yes
 		}
 		MTV = {
@@ -2191,25 +2165,14 @@ TaS_2WRW_form_ost_zones = {
 			transfer_state = 229
 			transfer_state = 1554
 			transfer_state = 1552
+			transfer_state = 234
+			transfer_state = 237
+			transfer_state = 1293
+			transfer_state = 244
+			transfer_state = 1730
+			transfer_state = 2131
 			set_capital = { state = 232 }
 			TaS_2WRW_set_zone_laws = yes
-			add_popularity = {
-				ideology = national_socialism
-				popularity = 0.16
-			}
-			set_party_name = { 
-				ideology = despotism 
-				long_name = Post_WRW2_Russian_Army_party
-				name = Post_WRW2_Russian_Army_party
-			}
-			set_party_name = { 
-				ideology = national_socialism 
-				long_name = Post_WRW2_Werewolf_party
-				name = Post_WRW2_Werewolf_party
-			}
-			MCS_Military_Administration = {
-				promote_character = yes
-			}
 			econ_join_sphere_MAR = yes
 		}
 		MCS = {
@@ -2249,110 +2212,14 @@ TaS_2WRW_form_ost_zones = {
 	}
 }
 TaS_2WRW_set_zone_laws = {
-	set_variable = { TNO_economy_type = token:Econ_Type_Planned }
-	set_variable = { TNO_economy_subtype = token:Econ_Subtype_Military_Directed }
+	inherit_technology = MAR
 	add_ideas = {
 		MAR_military_administration
-		MAR_economic_recovery
 	}
-	set_politics = {
-		ruling_party = despotism
+	add_timed_idea = {
+		idea = MAR_economic_recovery
+		days = 900
 	}
-	set_popularities = {
-		communist = 0
-		socialist = 7
-		progressivism = 0
-		liberalism = 0
-		conservatism = 0
-		paternalism = 14
-		despotism = 31
-		fascism = 7
-		national_socialism = 30
-		ultranationalism = 11
-	}
-	set_party_name = { 
-		ideology = despotism 
-		long_name = Post_WRW2_Russian_Army_party
-		name = Post_WRW2_Russian_Army_party
-	}
-	set_party_name = { 
-		ideology = national_socialism 
-		long_name = Post_WRW2_Werewolf_party
-		name = Post_WRW2_Werewolf_party
-	}
-	set_variable = { income_tax_rate = 0.30 }
-	set_variable = { business_tax_rate = 0.32 }
-	set_variable = { sales_tax_rate = 0.035 }
-	add_ideas = {
-		#economic#
-		tno_trade_laws_limited_exports
-		tno_income_taxation_flat_taxes
-		tno_minimum_wage_trinket_minimum_wage
-		tno_max_workhours_14_hour_work_day
-		tno_pensions_trinket_pensions
-		tno_unemployment_no_subsidies
-		#social#
-		tno_health_care_support_for_emergencies
-		tno_education_stratified_education
-		tno_penal_system_overt_oppression
-		tno_gender_rights_traditional_roles
-		tno_security_totalitarian_police
-		tno_regulations_token_regulations
-		#political#
-		tno_political_parties_nonpartisan_system
-		tno_religious_rights_pluralism
-		tno_trade_unions_illegal
-		tno_immigration_quota_immigration
-		tno_slavery_penal_labor
-		tno_public_meetings_outlawed
-		tno_press_rights_state_press_only
-		tno_vote_franchise_no_voting
-		#military#
-		tno_conscription_broadened_conscription
-		tno_military_supervision_rules_of_engagement
-		tno_training_basic_training
-		tno_draft_exemptions_none
-		#misc#
-		tno_child_labor_illegal
-		tno_safety_limited_regulations
-		tno_pollution_few_regulations
-		tno_lgbt_rights_lgbt_outlawed
-		tno_minorities_institutional_discrimination
-		tno_refugees_skilled
-		tno_women_banned
-		tno_racial_integration_integrated_military
-	}
-	# ECONOMIC LAWS
-	set_variable = { tno_trade_laws_effectiveness = 65 }
-	set_variable = { tno_income_taxation_effectiveness = 40 }
-	set_variable = { tno_minimum_wage_effectiveness = 35 }
-	set_variable = { tno_max_workhours_effectiveness = 35 }
-	set_variable = { tno_pensions_effectiveness = 80 }
-	set_variable = { tno_unemployment_effectiveness = 80 }
-
-	# SOCIAL LAWS
-	set_variable = { tno_health_care_effectiveness = 25 }
-	set_variable = { tno_education_effectiveness = 50 }
-	set_variable = { tno_penal_system_effectiveness = 40 }
-	set_variable = { tno_gender_rights_effectiveness = 65 }
-	set_variable = { tno_security_effectiveness = 45 }
-	set_variable = { tno_regulations_effectiveness = 40 }
-
-	# POLITICAL LAWS
-	set_variable = { tno_political_parties_effectiveness = 45 }
-	set_variable = { tno_religious_rights_effectiveness = 35 }
-	set_variable = { tno_trade_unions_effectiveness = 60 }
-	set_variable = { tno_immigration_effectiveness = 35 }
-	set_variable = { tno_slavery_effectiveness = 90 }
-	set_variable = { tno_public_meetings_effectiveness = 75 }
-	set_variable = { tno_press_rights_effectiveness = 55 }
-	set_variable = { tno_vote_franchise_effectiveness = 65 }
-
-	# MILITARY LAWS
-	set_variable = { tno_conscription_effectiveness = 75 }
-	set_variable = { tno_military_supervision_effectiveness = 50 }
-	set_variable = { tno_training_effectiveness = 60 }
-	set_variable = { tno_draft_exemptions_effectiveness = 55 }
 }
 
 TaS_2WRW_set_autonomy_laws = {
@@ -2375,7 +2242,7 @@ TaS_2WRW_set_autonomy_laws = {
 		tno_education_public_education
 		tno_penal_system_harsh_penal_code
 		tno_gender_rights_traditional_roles
-		tno_security_regulated_police
+		tno_security_crime_prevention
 		tno_regulations_token_regulations
 		#political#
 		tno_political_parties_one_party_state
@@ -2435,7 +2302,8 @@ TaS_2WRW_set_autonomy_laws = {
 }
 
 TaS_2WRW_set_free_laws = {
-	set_variable = { TNO_economy_type = token:Econ_Type_Capitalism }
+	set_variable = { TNO_economy_subtype = token:Econ_Subtype_Dirigisme }
+	set_variable = { TNO_economy_type = token:Econ_Type_Corporatism }
 	clear_variable = TNO_economy_subtype 
 	
 	set_variable = { income_tax_rate = 0.30 }
@@ -2454,7 +2322,7 @@ TaS_2WRW_set_free_laws = {
 		tno_education_public_education
 		tno_penal_system_incarceration
 		tno_gender_rights_gender_equality
-		tno_security_regulated_police
+		tno_security_crime_prevention
 		tno_regulations_moderate_regulations
 		#political#
 		tno_political_parties_multiparty_system
@@ -2513,300 +2381,45 @@ TaS_2WRW_set_free_laws = {
 	set_variable = { tno_draft_exemptions_effectiveness = 55 }
 }
 TaS_2WRW_post_germany_econ_setup = {
-	ZNE = {
-		set_variable = { GDP_growth = -3.4 } #as a percentage
-		set_variable = { base_inflation_rate = 2.3 }
-		set_variable = { income_tax_rate = 0.15 }
-		set_variable = { business_tax_rate = 0.25 }
-		set_variable = { poverty_rate = 64.6 }
-		set_variable = { poverty_monthly_change = 0.01 }
-		set_variable = { money_reserves = 0.0 } #in billions
-		set_variable = { national_debt = 0 } #in billions
-		set_variable = { misc_income = 0.0 }
-		set_variable = { misc_costs = 0.0 }
+	## Econ Variable Initiation
+	set_variable = { GDP_growth = 1.1 }
+	set_variable = { base_inflation_rate = 0.68 }
+	set_variable = { income_tax_rate = 0.42 }
+	set_variable = { business_tax_rate = 0.56 }
+	set_variable = { poverty_rate = 51.49 }
+	set_variable = { poverty_monthly_change = -0.12 }
 
-		set_variable = { economic_centralization = 72 }
 
-		set_temp_variable = { temp_credit_rating = 5 }
-		set_temp_variable = { temp_credit_rating_min = 3 }
-		set_temp_variable = { temp_credit_rating_max = 7 }
-		econ_initialize_credit_rating_system = yes
 
-		initiate_display_vars = yes
-	}
-	BRL = {
-		set_variable = { GDP_growth = -11.8 } #as a percentage
-		set_variable = { base_inflation_rate = 1.2 }
-		set_variable = { income_tax_rate = 0.15 }
-		set_variable = { business_tax_rate = 0.25 }
-		set_variable = { poverty_rate = 41.6 }
-		set_variable = { poverty_monthly_change = 0.01 }
-		set_variable = { money_reserves = 0.0 } #in billions
-		set_variable = { national_debt = 0 } #in billions
-		set_variable = { misc_income = 0.0 }
-		set_variable = { misc_costs = 0.0 }
+	initiate_display_vars = yes
 
-		set_variable = { economic_centralization = 67 }
+	## Slider Positions
+	army_funding_maximal_set_position_20 = yes
+	army_funding_minimal_set_position_0 = yes
 
-		set_temp_variable = { temp_credit_rating = 5 }
-		set_temp_variable = { temp_credit_rating_min = 3 }
-		set_temp_variable = { temp_credit_rating_max = 7 }
-		econ_initialize_credit_rating_system = yes
+	naval_funding_maximal_set_position_20 = yes
+	naval_funding_minimal_set_position_0 = yes
 
-		initiate_display_vars = yes
-	}
-	PUS = {
-		set_variable = { GDP_growth = 0.4 } #as a percentage
-		set_variable = { base_inflation_rate = 1.9 }
-		set_variable = { income_tax_rate = 0.15 }
-		set_variable = { business_tax_rate = 0.25 }
-		set_variable = { poverty_rate = 56.6 }
-		set_variable = { poverty_monthly_change = 0.01 }
-		set_variable = { money_reserves = 0.0 } #in billions
-		set_variable = { national_debt = 0 } #in billions
-		set_variable = { misc_income = 0.0 }
-		set_variable = { misc_costs = 0.0 }
+	social_funding_maximal_set_position_10 = yes
+	social_funding_minimal_set_position_0 = yes
 
-		set_variable = { economic_centralization = 57 }
+	admin_funding_maximal_set_position_10 = yes
+	admin_funding_minimal_set_position_0 = yes
 
-		set_temp_variable = { temp_credit_rating = 5 }
-		set_temp_variable = { temp_credit_rating_min = 3 }
-		set_temp_variable = { temp_credit_rating_max = 7 }
-		econ_initialize_credit_rating_system = yes
+	research_funding_maximal_set_position_10 = yes
+	research_funding_minimal_set_position_0 = yes
 
-		initiate_display_vars = yes
-	}
-	GPL = {
-		set_variable = { GDP_growth = 2.8 } #as a percentage
-		set_variable = { base_inflation_rate = 1.2 }
-		set_variable = { income_tax_rate = 0.15 }
-		set_variable = { business_tax_rate = 0.25 }
-		set_variable = { poverty_rate = 62.1 }
-		set_variable = { poverty_monthly_change = 0.0 }
-		set_variable = { money_reserves = 0.0 } #in billions
-		set_variable = { national_debt = 0 } #in billions
-		set_variable = { misc_income = 0.0 }
-		set_variable = { misc_costs = 0.0 }
+	consumer_goods_maximal_set_position_20 = yes
+	consumer_goods_minimal_set_position_0 = yes
 
-		set_variable = { economic_centralization = 33 }
+	## Credit Rating
+	set_temp_variable = { temp_credit_rating_min = 2 }
+	set_temp_variable = { temp_credit_rating_max = 6 }
+	set_temp_variable = { temp_credit_rating = 3 }
+	econ_initialize_credit_rating_system = yes
 
-		set_temp_variable = { temp_credit_rating = 4 }
-		set_temp_variable = { temp_credit_rating_min = 3 }
-		set_temp_variable = { temp_credit_rating_max = 6 }
-		econ_initialize_credit_rating_system = yes
-
-		initiate_display_vars = yes
-	}
-	GCZ = {
-		set_variable = { GDP_growth = 3.4 } #as a percentage
-		set_variable = { base_inflation_rate = 1.4 }
-		set_variable = { income_tax_rate = 0.15 }
-		set_variable = { business_tax_rate = 0.25 }
-		set_variable = { poverty_rate = 58.3 }
-		set_variable = { poverty_monthly_change = 0.0 }
-		set_variable = { money_reserves = 0.0 } #in billions
-		set_variable = { national_debt = 0 } #in billions
-		set_variable = { misc_income = 0.0 }
-		set_variable = { misc_costs = 0.0 }
-
-		set_variable = { economic_centralization = 43 }
-
-		set_temp_variable = { temp_credit_rating = 4 }
-		set_temp_variable = { temp_credit_rating_min = 3 }
-		set_temp_variable = { temp_credit_rating_max = 6 }
-		econ_initialize_credit_rating_system = yes
-
-		initiate_display_vars = yes
-	}
-	GAU = {
-		set_variable = { GDP_growth = 4.1 } #as a percentage
-		set_variable = { base_inflation_rate = 1.4 }
-		set_variable = { income_tax_rate = 0.15 }
-		set_variable = { business_tax_rate = 0.25 }
-		set_variable = { poverty_rate = 49.8 }
-		set_variable = { poverty_monthly_change = 0.0 }
-		set_variable = { money_reserves = 0.0 } #in billions
-		set_variable = { national_debt = 0 } #in billions
-		set_variable = { misc_income = 0.0 }
-		set_variable = { misc_costs = 0.0 }
-
-		set_variable = { economic_centralization = 39 }
-
-		set_temp_variable = { temp_credit_rating = 4 }
-		set_temp_variable = { temp_credit_rating_min = 3 }
-		set_temp_variable = { temp_credit_rating_max = 6 }
-		econ_initialize_credit_rating_system = yes
-
-		initiate_display_vars = yes
-	}
-	GBV = {
-		set_variable = { GDP_growth = 3.3 } #as a percentage
-		set_variable = { base_inflation_rate = 1.4 }
-		set_variable = { income_tax_rate = 0.15 }
-		set_variable = { business_tax_rate = 0.25 }
-		set_variable = { poverty_rate = 61.2 }
-		set_variable = { poverty_monthly_change = 0.0 }
-		set_variable = { money_reserves = 0.0 } #in billions
-		set_variable = { national_debt = 0 } #in billions
-		set_variable = { misc_income = 0.0 }
-		set_variable = { misc_costs = 0.0 }
-
-		set_variable = { economic_centralization = 45 }
-
-		set_temp_variable = { temp_credit_rating = 4 }
-		set_temp_variable = { temp_credit_rating_min = 3 }
-		set_temp_variable = { temp_credit_rating_max = 6 }
-		econ_initialize_credit_rating_system = yes
-
-		initiate_display_vars = yes
-	}
-	GRH = {
-		set_variable = { GDP_growth = 5.2 } #as a percentage
-		set_variable = { base_inflation_rate = 3.6 }
-		set_variable = { income_tax_rate = 0.15 }
-		set_variable = { business_tax_rate = 0.25 }
-		set_variable = { poverty_rate = 46.7 }
-		set_variable = { poverty_monthly_change = 0.0 }
-		set_variable = { money_reserves = 0.0 } #in billions
-		set_variable = { national_debt = 0 } #in billions
-		set_variable = { misc_income = 0.0 }
-		set_variable = { misc_costs = 0.0 }
-
-		set_variable = { economic_centralization = 27 }
-
-		set_temp_variable = { temp_credit_rating = 6 }
-		set_temp_variable = { temp_credit_rating_min = 3 }
-		set_temp_variable = { temp_credit_rating_max = 8 }
-		econ_initialize_credit_rating_system = yes
-
-		initiate_display_vars = yes
-	}
-	GBW = {
-		set_variable = { GDP_growth = 2.6 } #as a percentage
-		set_variable = { base_inflation_rate = 1.7 }
-		set_variable = { income_tax_rate = 0.15 }
-		set_variable = { business_tax_rate = 0.25 }
-		set_variable = { poverty_rate = 54.7 }
-		set_variable = { poverty_monthly_change = 0.0 }
-		set_variable = { money_reserves = 0.0 } #in billions
-		set_variable = { national_debt = 0 } #in billions
-		set_variable = { misc_income = 0.0 }
-		set_variable = { misc_costs = 0.0 }
-
-		set_variable = { economic_centralization = 44 }
-
-		set_temp_variable = { temp_credit_rating = 3 }
-		set_temp_variable = { temp_credit_rating_min = 2 }
-		set_temp_variable = { temp_credit_rating_max = 6 }
-		econ_initialize_credit_rating_system = yes
-
-		initiate_display_vars = yes
-	}
-	GWS = {
-		set_variable = { GDP_growth = 3.2 } #as a percentage
-		set_variable = { base_inflation_rate = 1.1 }
-		set_variable = { income_tax_rate = 0.15 }
-		set_variable = { business_tax_rate = 0.25 }
-		set_variable = { poverty_rate = 48.1 }
-		set_variable = { poverty_monthly_change = 0.0 }
-		set_variable = { money_reserves = 0.0 } #in billions
-		set_variable = { national_debt = 0 } #in billions
-		set_variable = { misc_income = 0.0 }
-		set_variable = { misc_costs = 0.0 }
-
-		set_variable = { economic_centralization = 39 }
-
-		set_temp_variable = { temp_credit_rating = 5 }
-		set_temp_variable = { temp_credit_rating_min = 2 }
-		set_temp_variable = { temp_credit_rating_max = 6 }
-		econ_initialize_credit_rating_system = yes
-
-		initiate_display_vars = yes
-	}
-	GHL = {
-		set_variable = { GDP_growth = 0.41 } #as a percentage
-		set_variable = { base_inflation_rate = 2.1 }
-		set_variable = { income_tax_rate = 0.15 }
-		set_variable = { business_tax_rate = 0.25 }
-		set_variable = { poverty_rate = 39.4 }
-		set_variable = { poverty_monthly_change = 0.0 }
-		set_variable = { money_reserves = 0.0 } #in billions
-		set_variable = { national_debt = 0 } #in billions
-		set_variable = { misc_income = 0.0 }
-		set_variable = { misc_costs = 0.0 }
-
-		set_variable = { economic_centralization = 26 }
-
-		set_temp_variable = { temp_credit_rating = 3 }
-		set_temp_variable = { temp_credit_rating_min = 2 }
-		set_temp_variable = { temp_credit_rating_max = 6 }
-		econ_initialize_credit_rating_system = yes
-
-		initiate_display_vars = yes
-	}
-	GDN = {
-		set_variable = { GDP_growth = 1.2 } #as a percentage
-		set_variable = { base_inflation_rate = 1.1 }
-		set_variable = { income_tax_rate = 0.15 }
-		set_variable = { business_tax_rate = 0.25 }
-		set_variable = { poverty_rate = 48.1 }
-		set_variable = { poverty_monthly_change = 0.0 }
-		set_variable = { money_reserves = 0.0 } #in billions
-		set_variable = { national_debt = 0 } #in billions
-		set_variable = { misc_income = 0.0 }
-		set_variable = { misc_costs = 0.0 }
-
-		set_variable = { economic_centralization = 41 }
-
-		set_temp_variable = { temp_credit_rating = 4 }
-		set_temp_variable = { temp_credit_rating_min = 2 }
-		set_temp_variable = { temp_credit_rating_max = 6 }
-		econ_initialize_credit_rating_system = yes
-
-		initiate_display_vars = yes
-	}
-	GNR = {
-		set_variable = { GDP_growth = 3.4 } #as a percentage
-		set_variable = { base_inflation_rate = 1.4 }
-		set_variable = { income_tax_rate = 0.15 }
-		set_variable = { business_tax_rate = 0.25 }
-		set_variable = { poverty_rate = 62.3 }
-		set_variable = { poverty_monthly_change = 0.0 }
-		set_variable = { money_reserves = 0.0 } #in billions
-		set_variable = { national_debt = 0 } #in billions
-		set_variable = { misc_income = 0.0 }
-		set_variable = { misc_costs = 0.0 }
-
-		set_variable = { economic_centralization = 56 }
-
-		set_temp_variable = { temp_credit_rating = 4 }
-		set_temp_variable = { temp_credit_rating_min = 2 }
-		set_temp_variable = { temp_credit_rating_max = 6 }
-		econ_initialize_credit_rating_system = yes
-
-		initiate_display_vars = yes
-	}
-	GSV = {
-		set_variable = { GDP_growth = 2.4 } #as a percentage
-		set_variable = { base_inflation_rate = 1.9 }
-		set_variable = { income_tax_rate = 0.15 }
-		set_variable = { business_tax_rate = 0.25 }
-		set_variable = { poverty_rate = 38.3 }
-		set_variable = { poverty_monthly_change = 0.0 }
-		set_variable = { money_reserves = 0.0 } #in billions
-		set_variable = { national_debt = 0 } #in billions
-		set_variable = { misc_income = 0.0 }
-		set_variable = { misc_costs = 0.0 }
-
-		set_variable = { economic_centralization = 37 }
-
-		set_temp_variable = { temp_credit_rating = 2 }
-		set_temp_variable = { temp_credit_rating_min = 2 }
-		set_temp_variable = { temp_credit_rating_max = 6 }
-		econ_initialize_credit_rating_system = yes
-
-		initiate_display_vars = yes
-	}
+	## Manpower boost so they don't start with 0
+	add_manpower = 30000
 }
 TaS_2WRW_free_baltics = {
 	XYZ = {
@@ -2830,6 +2443,7 @@ TaS_2WRW_free_baltics = {
 		transfer_state = 191
 		transfer_state = 1395
 		transfer_state = 1396
+		transfer_state = 2450
 		every_owned_state = {
 			EST = {
 				add_state_core = PREV
@@ -2864,6 +2478,7 @@ TaS_2WRW_free_baltics = {
 		}
 		set_cosmetic_tag = EST_freedom
 		econ_join_sphere_MAR = yes
+		TNO_startup_nation = yes
 	}
 	LAT = {
 		transfer_state = 12
@@ -2907,6 +2522,7 @@ TaS_2WRW_free_baltics = {
 		}
 		set_cosmetic_tag = LAT_freedom
 		econ_join_sphere_MAR = yes
+		TNO_startup_nation = yes
 	}
 	LIT = {
 		transfer_state = 96
@@ -2914,6 +2530,8 @@ TaS_2WRW_free_baltics = {
 		transfer_state = 189
 		transfer_state = 1401
 		transfer_state = 11
+		transfer_state = 2451
+		transfer_state = 79
 		every_owned_state = {
 			LIT = {
 				add_state_core = PREV
@@ -2949,6 +2567,7 @@ TaS_2WRW_free_baltics = {
 		}
 		set_cosmetic_tag = LIT_freedom
 		econ_join_sphere_MAR = yes
+		TNO_startup_nation = yes
 	}
 	1396 = {
 		add_manpower = -90870
@@ -2981,38 +2600,14 @@ TaS_2WRW_free_baltics = {
 	209 = {
 		add_manpower = 78120
 	}
+	MAR = {
+		transfer_state = 1402
+		transfer_state = 209
+		transfer_state = 1421
+		transfer_state = 257
+	}
 }
 TaS_2WRW_free_caucasus = { #god help us all
-	XYZ = {
-		KRC_Vladimir_Khubiylany = {
-			set_nationality = KRC
-		}
-	}
-	XYZ = {
-		KBR_Khachim_Karmokov = {
-			set_nationality = KBR
-		}
-	}
-	XYZ = {
-		OSS_Akhsarbek_Galazov = {
-			set_nationality = OSS
-		}
-	}
-	XYZ = {
-		ABZ_Valerian_Kobakhia = {
-			set_nationality = ABZ
-		}
-	}
-	XYZ = {
-		CHY_Salambek_Khadzhiyev = {
-			set_nationality = CHY
-		}
-	}
-	XYZ = {
-		DGS_Magomed_Yusupov = {
-			set_nationality = DGS
-		}
-	}
 	XYZ = {
 		GEO_Eduard_Shevardnadze = {
 			set_nationality = GEO
@@ -3025,70 +2620,26 @@ TaS_2WRW_free_caucasus = { #god help us all
 	}
 	MAR = {
 		transfer_state = 235
-		add_state_core = 235
+		transfer_state = 237
+		transfer_state = 234
 	}
 	KRC = {
 		transfer_state = 1559
 		add_state_core = 1559
-		TaS_2WRW_set_autonomy_laws = yes
-		#add_ideas = { MAR_military_administration }
-		set_politics = {
-			ruling_party = paternalism
-		}
-		set_popularities = {
-			communist = 0
-			socialist = 0
-			progressivism = 0
-			liberalism = 0
-			conservatism = 0
-			liberal_conservatism = 12
-			paternalism = 67
-			despotism = 21
-			fascism = 0
-			national_socialism = 0
-			ultranationalism = 0
-			
-		}
-		set_party_name = { 
-			ideology = paternalism 
-			long_name = KRC_paternalism_party_long
-			name = KRC_paternalism_party
-		}
-		KRC_Vladimir_Khubiylany = {
-			promote_character = yes
+		add_timed_idea = {
+			idea = MAR_economic_recovery
+			days = 900
 		}
 		econ_join_sphere_MAR = yes
 	}
 	KBR = {
 		transfer_state = 1560
 		add_state_core = 1560
-		TaS_2WRW_set_autonomy_laws = yes
-		#add_ideas = { MAR_military_administration }
-		set_politics = {
-			ruling_party = socialist
+		add_timed_idea = {
+			idea = MAR_economic_recovery
+			days = 900
 		}
-		set_popularities = {
-			communist = 17
-			socialist = 71
-			progressivism = 0
-			liberalism = 0
-			conservatism = 12
-			liberal_conservatism = 0
-			paternalism = 0
-			despotism = 0
-			fascism = 0
-			national_socialism = 0
-			ultranationalism = 0
-			
-		}
-		set_party_name = { 
-			ideology = socialist 
-			long_name = KBR_socialist_party_long
-			name = KBR_socialist_party
-		}
-		KBR_Khachim_Karmokov = {
-			promote_character = yes
-		}
+		
 		econ_join_sphere_MAR = yes
 	}
 	OSS = {
@@ -3096,136 +2647,49 @@ TaS_2WRW_free_caucasus = { #god help us all
 		add_state_core = 1561
 		transfer_state = 1556
 		add_state_core = 1556
-		TaS_2WRW_set_autonomy_laws = yes
-		#add_ideas = { MAR_military_administration }
-		set_politics = {
-			ruling_party = conservatism
-		}
-		set_popularities = {
-			communist = 0
-			socialist = 0
-			progressivism = 0
-			liberalism = 11
-			conservatism = 82
-			liberal_conservatism = 7
-			paternalism = 0
-			despotism = 0
-			fascism = 0
-			national_socialism = 0
-			ultranationalism = 0
-			
-		}
-		set_party_name = { 
-			ideology = conservatism 
-			long_name = OSS_conservatism_party_long
-			name = OSS_conservatism_party
-		}
-		OSS_Akhsarbek_Galazov = {
-			promote_character = yes
+		add_timed_idea = {
+			idea = MAR_economic_recovery
+			days = 900
 		}
 		econ_join_sphere_MAR = yes
 	}
 	CHY	= {
 		transfer_state = 232
 		add_state_core = 232
-		TaS_2WRW_set_autonomy_laws = yes
-		#add_ideas = { MAR_military_administration }
-		set_politics = {
-			ruling_party = progressivism
-		}
-		set_popularities = {
-			communist = 0
-			socialist = 22
-			progressivism = 63
-			liberalism = 0
-			conservatism = 0
-			liberal_conservatism = 0
-			paternalism = 15
-			despotism = 0
-			fascism = 0
-			national_socialism = 0
-			ultranationalism = 0
-			
-		}
-		set_party_name = { 
-			ideology = progressivism 
-			long_name = CHY_progressivism_party_long
-			name = CHY_progressivism_party
-		}
-		CHY_Salambek_Khadzhiyev = {
-			promote_character = yes
+		add_timed_idea = {
+			idea = MAR_economic_recovery
+			days = 900
 		}
 		econ_join_sphere_MAR = yes
 	}
 	DGS = {
 		transfer_state = 1564
 		add_state_core = 1564
-		TaS_2WRW_set_autonomy_laws = yes
-		#add_ideas = { MAR_military_administration }
-		set_politics = {
-			ruling_party = liberalism
-		}
-		set_popularities = {
-			communist = 0
-			socialist = 0
-			progressivism = 0
-			liberalism = 87
-			conservatism = 13
-			liberal_conservatism = 0
-			paternalism = 0
-			despotism = 0
-			fascism = 0
-			national_socialism = 0
-			ultranationalism = 0
-			
-		}
-		set_party_name = { 
-			ideology = liberalism 
-			long_name = DGS_liberalism_party_long
-			name = DGS_liberalism_party
-		}
-		DGS_Magomed_Yusupov = {
-			promote_character = yes
+		add_timed_idea = {
+			idea = MAR_economic_recovery
+			days = 900
 		}
 		econ_join_sphere_MAR = yes
 	}
 	ABZ = {
 		transfer_state = 1558
 		add_state_core = 1558
-		TaS_2WRW_set_autonomy_laws = yes
-		#add_ideas = { MAR_military_administration }
-		set_politics = {
-			ruling_party = progressivism
-		}
-		set_popularities = {
-			communist = 8
-			socialist = 20
-			progressivism = 65
-			liberalism = 0
-			conservatism = 0
-			liberal_conservatism = 0
-			paternalism = 7
-			despotism = 0
-			fascism = 0
-			national_socialism = 0
-			ultranationalism = 0
-			
-		}
-		set_party_name = { 
-			ideology = progressivism
-			long_name = ABZ_progressivism_party_long
-			name = ABZ_progressivism_party
-		}
-		ABZ_Valerian_Kobakhia = {
-			promote_character = yes
+		add_timed_idea = {
+			idea = MAR_economic_recovery
+			days = 900
 		}
 		econ_join_sphere_MAR = yes
 	}
 	GEO = {
 		transfer_state = 231
 		add_state_core = 231
+		transfer_state = 1293
+		add_state_core = 1293
 		TaS_2WRW_set_autonomy_laws = yes
-		#add_ideas = { MAR_military_administration }
+		add_timed_idea = {
+			idea = MAR_economic_recovery
+			days = 900
+		}
 		set_politics = {
 			ruling_party = progressivism
 		}
@@ -3260,6 +2724,7 @@ TaS_2WRW_free_caucasus = { #god help us all
 				id = -1
 			}
 		}
+		TNO_startup_nation = yes
 		econ_join_sphere_MAR = yes
 		set_cosmetic_tag = GEO_freedom
 	}
@@ -3268,8 +2733,17 @@ TaS_2WRW_free_caucasus = { #god help us all
 		add_state_core = 229
 		transfer_state = 1552
 		add_state_core = 1552
+		transfer_state = 244
+		add_state_core = 244
+		transfer_state = 1730
+		add_state_core = 1730
+		transfer_state = 2131
+		add_state_core = 2131
 		TaS_2WRW_set_autonomy_laws = yes
-		#add_ideas = { MAR_military_administration }
+		add_timed_idea = {
+			idea = MAR_economic_recovery
+			days = 900
+		}
 		set_politics = {
 			ruling_party = despotism
 		}
@@ -3295,10 +2769,16 @@ TaS_2WRW_free_caucasus = { #god help us all
 		AZR_Heydar_Aliyev = {
 			promote_character = yes
 		}
+		TNO_startup_nation = yes
 		econ_join_sphere_MAR = yes
 		set_cosmetic_tag = AZR_freedom
 	}
 	ARM = {
+		TNO_startup_nation = yes
+		add_timed_idea = {
+			idea = MAR_economic_recovery
+			days = 900
+		}
 		transfer_state = 1554
 		add_state_core = 1554
 		econ_join_sphere_MAR = yes
@@ -3422,6 +2902,7 @@ TaS_2WRW_spawn_France = {
 				transfer_troops = no
 			}
 		}
+		TNO_startup_nation = yes
 		econ_join_sphere_MAR = yes
 	}
 	set_global_flag = POSTGER_FRANCE

@@ -287,7 +287,44 @@ on_actions = {
 								white_peace = ROOT
 							}
 							TaS_SWRW_american_germany = yes
-						{
+						}
+					}
+				}
+				if = {
+					limit = {
+						FROM.FROM = {
+							state = 1811
+						}
+						
+					}
+					ROOT = {
+						if = {
+							limit = {
+								tag = FRA
+							}
+							set_global_flag = POSTGER_FRANCE
+							FROM = {
+								white_peace = ROOT
+							}
+							FRA = {
+								transfer_state = 15
+								transfer_state = 16
+								transfer_state = 788
+								transfer_state = 1625
+								transfer_state = 1626
+								transfer_state = 1635
+								transfer_state = 17
+								transfer_state = 18
+								transfer_state = 29
+								transfer_state = 1733
+								transfer_state = 8
+								transfer_state = 1812
+								transfer_state = 28
+								every_owned_state = {
+									add_core_of = FRA
+								}
+							}
+						}
 					}
 				}
 			}

@@ -10,6 +10,7 @@ scripted_gui = {
 			OR = {
 				has_country_flag = country_has_gui
 				has_country_flag = IBR_Terrorism_GUI
+				tag = MEX
 			}
 			if = {
 				limit = { tag = BRG }
@@ -113,6 +114,17 @@ scripted_gui = {
 			BRI_workshop_crt_icon_visible = {
 				original_tag = ENG
 				has_country_flag = BRI_WorkshopMechanic_Active
+			}
+			MEX_PRI_mechanic_crt_icon_visible = {
+				original_tag = MEX
+			}
+			antarctica_grid_gui_crt_icon_visible = {
+				is_antarctic_nation = yes
+			}
+			greater_china_crt_icon_visible = {
+				tag = YUN
+				check_variable = { YUN_introduce_admin = 1 }
+				NOT = { has_country_flag = YUN_NPA_despair_branch }
 			}
 			MAR_Prestol_GUI_Opener_visible = {
 				original_tag = MAR
@@ -340,6 +352,55 @@ scripted_gui = {
 				}
 				add_to_variable = { BRI_Workshop_Dirty = 1 }
 			}
+			MEX_PRI_mechanic_crt_icon_click = {
+				if = {
+					limit = { NOT = { has_country_flag = TNO_MEX_PRI_GUI_Open } }
+					set_country_flag = TNO_MEX_PRI_GUI_Open
+				}
+				else_if = {
+					limit = { has_country_flag = TNO_MEX_PRI_GUI_Open }
+					clr_country_flag = TNO_MEX_PRI_GUI_Open
+				}
+				clr_country_flag = gui_alert_visible_2
+			}
+			MEX_PRI_mechanic_crt_icon_right_click = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = TNO_MEX_PRI_GUI_Debug }
+						is_debug = yes
+					}
+					set_country_flag = TNO_MEX_PRI_GUI_Debug
+				}
+				else_if = {
+					limit = {
+						has_country_flag = TNO_MEX_PRI_GUI_Debug
+						is_debug = yes
+					}
+					clr_country_flag = TNO_MEX_PRI_GUI_Debug
+				}
+			}
+			antarctica_grid_gui_crt_icon_click = {
+				clr_country_flag = gui_alert_visible_2
+				if = {
+					limit = { NOT = { has_country_flag = Antarctica_GUI_Open_Flag } }
+					set_country_flag = Antarctica_GUI_Open_Flag
+				}
+				else = {
+					clr_country_flag = Antarctica_GUI_Open_Flag
+				}
+			}
+			greater_china_crt_icon_click = {
+				if = {
+					limit = { NOT = { has_country_flag = WI_GUI_map_open } }
+					set_country_flag = WI_GUI_map_open
+					greater_china_states_concesus = yes
+				}
+				else_if = {
+					limit = { has_country_flag = WI_GUI_map_open }
+					clr_country_flag = WI_GUI_map_open
+				}
+				clr_country_flag = gui_alert_visible_2
+			}
 			MAR_Prestol_GUI_Opener_click = {
 				if = {
 					limit = { has_country_flag = MAR_Prestol_GUI_visible }
@@ -378,6 +439,9 @@ scripted_gui = {
 			}
 			GNG_market_crt_icon_visible = {
 				tag = GNG
+			}
+			antarctica_pert_gui_crt_icon_visible = {
+				tag = AAO
 			}
 		}
 		effects = {
@@ -420,6 +484,16 @@ scripted_gui = {
 					clr_country_flag = GNG_arms_market_visible
 				}
 				else = { set_country_flag = GNG_arms_market_visible }
+			}
+			antarctica_pert_gui_crt_icon_click = {
+				if = {
+					limit = { NOT = { has_country_flag = Antarctica_GUI_AAO_PERT_Mechanic_Visible } }
+					set_country_flag = Antarctica_GUI_AAO_PERT_Mechanic_Visible
+				}
+				else_if = {
+					limit = { has_country_flag = Antarctica_GUI_AAO_PERT_Mechanic_Visible }
+					clr_country_flag = Antarctica_GUI_AAO_PERT_Mechanic_Visible
+				}
 			}
 		}
 	}
