@@ -438,57 +438,10 @@ on_actions = {
 						original_tag = TUR
 					}
 				}
-				FROM = {
-					white_peace = ROOT
+				ROOT = {
+					white_peace = FROM
 				}
-				if = {
-					limit = { RUS = { owns_state = 231 } }
-					RUS = {
-						transfer_state = 1565
-						transfer_state = 230
-						transfer_state = 1568
-						transfer_state = 1567
-						transfer_state = 1448
-						transfer_state = 353
-					}
-				}
-				else_if = {
-					limit = { MCS = { owns_state = 231 } }
-					MCS = {
-						transfer_state = 1565
-						transfer_state = 230
-						transfer_state = 1568
-						transfer_state = 1567
-						transfer_state = 1448
-						transfer_state = 353
-					}
-				}
-				else_if = {
-					limit = { GEO = { owns_state = 231 } }
-					GEO = {
-						transfer_state = 1565
-						add_state_core = 1565
-					}
-					AZR = {
-						transfer_state = 1567
-						add_state_core = 1567
-					}
-					ARM = {
-						transfer_state = 1554
-						add_state_core = 1554
-						transfer_state = 1568
-						add_state_core = 1568
-						transfer_state = 230
-						add_state_core = 230
-						transfer_state = 1448
-						add_state_core = 1448
-						transfer_state = 353
-						add_state_core = 353
-					}
-				}
-				TUR = {
-					econ_join_sphere_MAR = yes
-				}
+				SWRW_turkey_peacedeal = yes
 				set_global_flag = skip_default_capitulation
 			}
 			else_if = {
@@ -508,7 +461,7 @@ on_actions = {
 				FROM = {
 					white_peace = ROOT
 				}
-				MAR = {
+				RUS = {
 					transfer_state = 146
 					transfer_state = 1712
 					transfer_state = 147
@@ -1226,6 +1179,22 @@ on_actions = {
 					news_event = {
 						id = MAR_2WRW_world_news.28
 					}
+				}
+				set_global_flag = skip_default_capitulation
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						original_tag = MAR
+					}
+					ROOT = { 
+						original_tag = FIN
+					}
+					has_global_flag = RUS_FIN_second_war
+				}
+				ROOT = {
+					white_peace = FROM
+					set_cosmetic_tag = FIN_MIL
 				}
 				set_global_flag = skip_default_capitulation
 			}

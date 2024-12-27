@@ -157,10 +157,16 @@ TaS_WRW2_fate_and_coring_of_territories = {
 			owns_state = 405
 			NOT = {
 				AND = {
+					2194 = {
+						is_core_of = ROOT
+					}
 					750 = {
 						is_core_of = ROOT
 					}
 					585 = {
+						is_core_of = ROOT
+					}
+					2205 = {
 						is_core_of = ROOT
 					}
 					1468 = {
@@ -169,29 +175,43 @@ TaS_WRW2_fate_and_coring_of_territories = {
 					405 = {
 						is_core_of = ROOT
 					}
-					1466 = {
+					2195 = {
 						is_core_of = ROOT
 					}
 					1467 = {
+						is_core_of = ROOT
+					}
+					2196 = {
 						is_core_of = ROOT
 					}
 				}
 			}
 		}
 
+		
+
+		on_map_mode = map_and_decisions_view
 		highlight_states = {
-			state = 405
+			highlight_state_targets = {
+				state = 2194
+				state = 750
+				state = 585
+				state = 2205
+				state = 1468
+				state = 405
+				state = 2195
+				state = 1467
+				state = 2196
+			}
 		}
-
-		# on_map_mode = map_only
-
+		
 		modifier = {
 			stability_weekly = -0.0025
 			political_power_gain = -0.15
 			gdp_growth_modifier = -0.5
 		}
 
-		cost = 100
+		cost = 50
 
 		ai_will_do = {
 			factor = 100
@@ -201,14 +221,16 @@ TaS_WRW2_fate_and_coring_of_territories = {
 		fire_only_once = yes
 
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Uzbekistan remove"
+			add_state_core = 2194
 			add_state_core = 750
 			add_state_core = 585
-			add_state_core = 1469
-			add_state_core = 405
-			add_state_core = 1466
-			add_state_core = 1467
+			add_state_core = 2205
 			add_state_core = 1468
+			add_state_core = 405
+			add_state_core = 2195
+			add_state_core = 1467
+			add_state_core = 2196
 			add_stability = 0.025
 			set_temp_variable = { gdp_growth_temp = 0.01 }
 			econ_gdp_growth_change = yes
@@ -234,15 +256,21 @@ TaS_WRW2_fate_and_coring_of_territories = {
 					732 = {
 						is_core_of = ROOT
 					}
+					2197 = {
+						is_core_of = ROOT
+					}
 				}
 			}
 		}
 
+		on_map_mode = map_and_decisions_view
 		highlight_states = {
-			state = 586
+			highlight_state_targets = {
+				state = 2197
+				state = 586
+				state = 732
+			}
 		}
-
-		# on_map_mode = map_only
 
 		modifier = {
 			stability_weekly = -0.0025
@@ -250,7 +278,7 @@ TaS_WRW2_fate_and_coring_of_territories = {
 			gdp_growth_modifier = -0.5
 		}
 
-		cost = 100
+		cost = 50
 
 		ai_will_do = {
 			factor = 100
@@ -260,7 +288,8 @@ TaS_WRW2_fate_and_coring_of_territories = {
 		fire_only_once = yes
 
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Kyrgyzstan remove"
+			add_state_core = 2197
 			add_state_core = 586
 			add_state_core = 732
 			add_stability = 0.025
@@ -282,18 +311,35 @@ TaS_WRW2_fate_and_coring_of_territories = {
 			owns_state = 584
 			NOT = {
 				AND = {
+					2201 = {
+						is_core_of = ROOT
+					}
+					2202 = {
+						is_core_of = ROOT
+					}
+					2203 = {
+						is_core_of = ROOT
+					}
+					2204 = {
+						is_core_of = ROOT
+					}
 					584 = {
 						is_core_of = ROOT
 					}
-				}
+				}	
 			}
 		}
 
+		on_map_mode = map_and_decisions_view
 		highlight_states = {
-			state = 584
+			highlight_state_targets = {
+				state = 2201
+				state = 584
+				state = 2202
+				state = 2203
+				state = 2204
+			}
 		}
-
-		# on_map_mode = map_only
 
 		modifier = {
 			stability_weekly = -0.0025
@@ -301,7 +347,7 @@ TaS_WRW2_fate_and_coring_of_territories = {
 			gdp_growth_modifier = -0.5
 		}
 
-		cost = 100
+		cost = 50
 
 		ai_will_do = {
 			factor = 100
@@ -311,8 +357,12 @@ TaS_WRW2_fate_and_coring_of_territories = {
 		fire_only_once = yes
 
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Turkmenistan remove"
+			add_state_core = 2201
 			add_state_core = 584
+			add_state_core = 2202
+			add_state_core = 2203
+			add_state_core = 2204
 			add_stability = 0.025
 			set_temp_variable = { gdp_growth_temp = 0.01 }
 			econ_gdp_growth_change = yes
@@ -336,14 +386,40 @@ TaS_WRW2_fate_and_coring_of_territories = {
 						is_core_of = ROOT
 					}
 				}
+				AND = {
+					1466 = {
+						is_core_of = ROOT
+					}
+				}
+				AND = {
+					2198 = {
+						is_core_of = ROOT
+					}
+				}
+				AND = {
+					2199 = {
+						is_core_of = ROOT
+					}
+				}
+				AND = {
+					2200 = {
+						is_core_of = ROOT
+					}
+				}
 			}
 		}
 
+		on_map_mode = map_and_decisions_view
 		highlight_states = {
-			state = 742
+			highlight_state_targets = {
+				state = 1466
+				state = 2198
+				state = 742
+				state = 2200
+				state = 2199
+			}
 		}
 
-		# on_map_mode = map_only
 
 		modifier = {
 			stability_weekly = -0.0025
@@ -351,7 +427,7 @@ TaS_WRW2_fate_and_coring_of_territories = {
 			gdp_growth_modifier = -0.5
 		}
 
-		cost = 100
+		cost = 50
 
 		ai_will_do = {
 			factor = 100
@@ -361,9 +437,12 @@ TaS_WRW2_fate_and_coring_of_territories = {
 		fire_only_once = yes
 
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Tajikistan remove"
+			add_state_core = 1466
+			add_state_core = 2198
 			add_state_core = 742
-			add_state_core = 1465
+			add_state_core = 2200
+			add_state_core = 2199
 			add_stability = 0.025
 			set_temp_variable = { gdp_growth_temp = 0.01 }
 			econ_gdp_growth_change = yes
@@ -383,16 +462,22 @@ TaS_WRW2_fate_and_coring_of_territories = {
 			owns_state = 1885
 			NOT = {
 				AND = {
-					1885 = {
+					1471 = {
 						is_core_of = ROOT
 					}
-					1465 = {
+					2186 = {
 						is_core_of = ROOT
 					}
 					1470 = {
 						is_core_of = ROOT
 					}
-					1471 = {
+					1884 = {
+						is_core_of = ROOT
+					}
+					1885 = {
+						is_core_of = ROOT
+					}
+					2461 = {
 						is_core_of = ROOT
 					}
 				}
@@ -400,11 +485,17 @@ TaS_WRW2_fate_and_coring_of_territories = {
 			}
 		}
 
+		on_map_mode = map_and_decisions_view
 		highlight_states = {
-			state = 1885
+			highlight_state_targets = {
+				state = 1471
+				state = 2186
+				state = 1470
+				state = 1884
+				state = 1885
+				state = 2461
+			}
 		}
-
-		# on_map_mode = map_only
 
 		modifier = {
 			stability_weekly = -0.0025
@@ -412,7 +503,7 @@ TaS_WRW2_fate_and_coring_of_territories = {
 			gdp_growth_modifier = -0.5
 		}
 
-		cost = 100
+		cost = 50
 
 		ai_will_do = {
 			factor = 100
@@ -422,15 +513,15 @@ TaS_WRW2_fate_and_coring_of_territories = {
 		fire_only_once = yes
 
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Northern_Afghanistan remove"
+			add_state_core = 1471
+			add_state_core = 2186
+			add_state_core = 1470
+			add_state_core = 1884
 			add_state_core = 1885
-			if = {
-				limit = { owns_state = 1470 }
-				add_state_core = 1470
-				add_state_core = 1471
-			}
+			add_state_core = 2461
 			add_stability = 0.025
-			set_temp_variable = { gdp_growth_temp = 0.01 }
+			set_temp_variable = { gdp_growth_temp = 0.05 }
 			econ_gdp_growth_change = yes
 			TNO_improve_admin_efficiency_really_low = yes
 		}
@@ -467,11 +558,16 @@ TaS_WRW2_fate_and_coring_of_territories = {
 			}
 		}
 
+		on_map_mode = map_and_decisions_view
 		highlight_states = {
-			state = 809
+			highlight_state_targets = {
+				state = 809
+				state = 408
+				state = 1664
+				state = 409
+				state = 1646
+			}
 		}
-
-		# on_map_mode = map_only
 
 		modifier = {
 			stability_weekly = -0.0035
@@ -490,7 +586,7 @@ TaS_WRW2_fate_and_coring_of_territories = {
 		fire_only_once = yes
 
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Primorie remove"
 			if = {
 				limit = { RUS = { owns_state = 409 } }
 				add_state_core = 409
@@ -511,7 +607,7 @@ TaS_WRW2_fate_and_coring_of_territories = {
 			TNO_improve_admin_efficiency_really_low = yes
 		}
 	}
-	MAR_coring_integrate_Northern_Moscowien = {
+	MAR_coring_integrate_Sankt_Peterburg = {
 
 		icon = GFX_decision_generic_form_nation
 
@@ -527,56 +623,31 @@ TaS_WRW2_fate_and_coring_of_territories = {
 					195 = {
 						is_core_of = ROOT
 					}
-					1421 = {
-						is_core_of = ROOT
-					}
-					#208 = {
-					#	is_core_of = ROOT
-					#}
-					264 = {
-						is_core_of = ROOT
-					}
-					209 = {
-						is_core_of = ROOT
-					}
 					1434 = {
 						is_core_of = ROOT
 					}
-					#1477 = {
-					#	is_core_of = ROOT
-					#}
-					#220 = {
-					#	is_core_of = ROOT
-					#}
-					#1314 = {
-					#	is_core_of = ROOT
-					#}
-					257 = {
+					265 = {
 						is_core_of = ROOT
 					}
-					247 = {
-						is_core_of = ROOT
-					}
-					#1475 = {
-					#	is_core_of = ROOT
-					#}
 				}
 			}
 		}
 
+		on_map_mode = map_and_decisions_view
 		highlight_states = {
-			state = 195
+			highlight_state_targets = {
+				state = 195
+				state = 1434
+				state = 265
+			}
 		}
-
-		# on_map_mode = map_only
-
 		modifier = {
 			stability_weekly = -0.0035
 			political_power_gain = -0.25
-			gdp_growth_modifier = -0.5
+			gdp_growth_modifier = -0.25
 		}
 
-		cost = 150
+		cost = 75
 
 		ai_will_do = {
 			factor = 100
@@ -586,19 +657,10 @@ TaS_WRW2_fate_and_coring_of_territories = {
 		fire_only_once = yes
 
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Sankt_Peterburg remove"
 			add_state_core = 195
-			add_state_core = 1421
-			#add_state_core = 208
-			add_state_core = 264
-			add_state_core = 209
 			add_state_core = 1434
-			#add_state_core = 220
-			#add_state_core = 1477
-			#add_state_core = 1314
-			add_state_core = 257
-			add_state_core = 247
-			#add_state_core = 1475
+			add_state_core = 265
 			
 			add_stability = 0.025
 			set_temp_variable = { gdp_growth_temp = 1 }
@@ -606,7 +668,75 @@ TaS_WRW2_fate_and_coring_of_territories = {
 			TNO_improve_admin_efficiency_low = yes
 		}
 	}
-	MAR_coring_integrate_Central_Moscowien = {
+	MAR_coring_integrate_Yaroslavl = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 246
+		}
+
+		visible = {
+			owns_state = 246
+			has_country_flag = MCW_fate_is_done
+			NOT = {
+				AND = {
+					247 = {
+						is_core_of = ROOT
+					}
+					246 = {
+						is_core_of = ROOT
+					}
+					238 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		highlight_states = {
+			state = 247
+			state = 246
+			state = 238
+		}
+
+		on_map_mode = map_and_decisions_view
+		highlight_states = {
+			highlight_state_targets = {
+				state = 247
+				state = 246
+				state = 238
+			}
+		}
+
+		modifier = {
+			stability_weekly = -0.0035
+			political_power_gain = -0.25
+			gdp_growth_modifier = -0.25
+		}
+
+		cost = 75
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 45
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Yaroslavl remove"
+			add_state_core = 247
+			add_state_core = 246
+			add_state_core = 238
+			
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 1 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_low = yes
+		}
+	}
+	MAR_coring_integrate_Moscow = {
 
 		icon = GFX_decision_generic_form_nation
 
@@ -619,74 +749,42 @@ TaS_WRW2_fate_and_coring_of_territories = {
 			has_country_flag = MCW_fate_is_done
 			NOT = {
 				AND = {
-					#255 = {
-					#	is_core_of = ROOT
-					#}
-					#1478 = {
-					#	is_core_of = ROOT
-					#}
-					246 = {
+					242 = {
 						is_core_of = ROOT
 					}
-					238 = {
-						is_core_of = ROOT
-					}
-					#253 = {
-					#	is_core_of = ROOT
-					#}
-					#248 = {
-					#	is_core_of = ROOT
-					#}
-					#254 = {
-					#	is_core_of = ROOT
-					#}
-					1443 = {
-						is_core_of = ROOT
-					}
-					401 = {
-						is_core_of = ROOT
-					}
-					#205 = {
-					#	is_core_of = ROOT
-					#}
 					219 = {
 						is_core_of = ROOT
 					}
 					1442 = {
 						is_core_of = ROOT
 					}
-					#1476 = {
-					#	is_core_of = ROOT
-					#}
-					#1444 = {
-					#	is_core_of = ROOT
-					#}
-					242 = {
+					401 = {
 						is_core_of = ROOT
 					}
-					#223 = {
-					#	is_core_of = ROOT
-					#}
-					241 = {
+					1443 = {
 						is_core_of = ROOT
 					}
 				}
 			}
 		}
-
+		on_map_mode = map_and_decisions_view
 		highlight_states = {
-			state = 1442
+			highlight_state_targets = {
+				state = 242
+				state = 219
+				state = 1442
+				state = 401
+				state = 1443
+			}
 		}
-
-		# on_map_mode = map_only
 
 		modifier = {
 			stability_weekly = -0.0035
 			political_power_gain = -0.25
-			gdp_growth_modifier = -0.5
+			gdp_growth_modifier = -0.25
 		}
 
-		cost = 150
+		cost = 75
 
 		ai_will_do = {
 			factor = 100
@@ -696,24 +794,12 @@ TaS_WRW2_fate_and_coring_of_territories = {
 		fire_only_once = yes
 
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
-			#add_state_core = 255
-			#add_state_core = 1478
-			add_state_core = 246
-			add_state_core = 238
-			#add_state_core = 253
-			#add_state_core = 248
-			#add_state_core = 254
-			add_state_core = 1443
-			add_state_core = 401
-			#add_state_core = 205
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Moscow remove"
+			add_state_core = 242
 			add_state_core = 219
 			add_state_core = 1442
-			#add_state_core = 1476
-			#add_state_core = 1444
-			add_state_core = 242
-			#add_state_core = 223
-			add_state_core = 241
+			add_state_core = 401
+			add_state_core = 1443
 			
 			add_stability = 0.025
 			set_temp_variable = { gdp_growth_temp = 1 }
@@ -721,7 +807,69 @@ TaS_WRW2_fate_and_coring_of_territories = {
 			TNO_improve_admin_efficiency_low = yes
 		}
 	}
-	MAR_coring_integrate_Southern_Moscowien = {
+	MAR_coring_integrate_Tambov = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 1441
+		}
+
+		visible = {
+			owns_state = 1441
+			has_country_flag = MCW_fate_is_done
+			NOT = {
+				AND = {
+					1441 = {
+						is_core_of = ROOT
+					}
+					1436 = {
+						is_core_of = ROOT
+					}
+					263 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		on_map_mode = map_and_decisions_view
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1441
+				state = 263
+				state = 1436
+			}
+		}
+
+		modifier = {
+			stability_weekly = -0.0035
+			political_power_gain = -0.25
+			gdp_growth_modifier = -0.25
+		}
+
+		cost = 75
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 45
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Tambov remove"
+			add_state_core = 1441
+			add_state_core = 263
+			add_state_core = 1436
+			
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 1 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_low = yes
+		}
+	}
+	MAR_coring_integrate_Voronezh = {
 
 		icon = GFX_decision_generic_form_nation
 
@@ -737,56 +885,32 @@ TaS_WRW2_fate_and_coring_of_territories = {
 					210 = {
 						is_core_of = ROOT
 					}
-					#258 = {
-					#	is_core_of = ROOT
-					#}
 					222 = {
 						is_core_of = ROOT
 					}
 					1435 = {
 						is_core_of = ROOT
 					}
-					1441 = {
-						is_core_of = ROOT
-					}
-					1436 = {
-						is_core_of = ROOT
-					}
-					263 = {
-						is_core_of = ROOT
-					}
-					#240 = {
-					#	is_core_of = ROOT
-					#}
-					260 = {
-						is_core_of = ROOT
-					}
-					217 = {
-						is_core_of = ROOT
-					}
-					239 = {
-						is_core_of = ROOT
-					}
-					245 = {
-						is_core_of = ROOT
-					}
 				}
 			}
 		}
 
+		on_map_mode = map_and_decisions_view
 		highlight_states = {
-			state = 210
+			highlight_state_targets = {
+				state = 210
+				state = 222
+				state = 1435
+			}
 		}
-
-		# on_map_mode = map_only
-
+		
 		modifier = {
 			stability_weekly = -0.0035
 			political_power_gain = -0.25
-			gdp_growth_modifier = -0.5
+			gdp_growth_modifier = -0.25
 		}
 
-		cost = 150
+		cost = 75
 
 		ai_will_do = {
 			factor = 100
@@ -796,19 +920,10 @@ TaS_WRW2_fate_and_coring_of_territories = {
 		fire_only_once = yes
 
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Voronezh remove"
 			add_state_core = 210
 			add_state_core = 222
 			add_state_core = 1435
-			add_state_core = 1441
-			add_state_core = 1436
-			add_state_core = 263
-			#add_state_core = 240
-			add_state_core = 260
-			add_state_core = 217
-			add_state_core = 239
-			add_state_core = 245
-			#add_state_core = 258
 			
 			add_stability = 0.025
 			set_temp_variable = { gdp_growth_temp = 1 }
@@ -816,7 +931,7 @@ TaS_WRW2_fate_and_coring_of_territories = {
 			TNO_improve_admin_efficiency_low = yes
 		}
 	}
-	MAR_coring_integrate_Volgodon = {
+	MAR_coring_integrate_Volgograd = {
 
 		icon = GFX_decision_generic_form_nation
 
@@ -835,41 +950,29 @@ TaS_WRW2_fate_and_coring_of_territories = {
 					224 = {
 						is_core_of = ROOT
 					}
-					#236 = {
-					#	is_core_of = ROOT
-					#}
-					244 = {
-						is_core_of = ROOT
-					}
-					237 = {
-						is_core_of = ROOT
-					}
-					#265 = {
-					#	is_core_of = ROOT
-					#}
-					234 = {
-						is_core_of = ROOT
-					}
-					218 = {
+					217 = {
 						is_core_of = ROOT
 					}
 				}
 			}
 		}
 
+		on_map_mode = map_and_decisions_view
 		highlight_states = {
-			state = 243
+			highlight_state_targets = {
+				state = 243
+				state = 224
+				state = 217
+			}
 		}
-
-		# on_map_mode = map_only
 
 		modifier = {
 			stability_weekly = -0.0035
 			political_power_gain = -0.25
-			gdp_growth_modifier = -0.5
+			gdp_growth_modifier = -0.25
 		}
 
-		cost = 100
+		cost = 75
 
 		ai_will_do = {
 			factor = 100
@@ -879,15 +982,10 @@ TaS_WRW2_fate_and_coring_of_territories = {
 		fire_only_once = yes
 
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Volgograd remove"
 			add_state_core = 243
 			add_state_core = 224
-			#add_state_core = 236
-			add_state_core = 244
-			add_state_core = 237
-			#add_state_core = 265
-			add_state_core = 234
-			add_state_core = 218
+			add_state_core = 217
 			
 			add_stability = 0.025
 			set_temp_variable = { gdp_growth_temp = 1 }
@@ -895,7 +993,343 @@ TaS_WRW2_fate_and_coring_of_territories = {
 			TNO_improve_admin_efficiency_low = yes
 		}
 	}
-	MAR_coring_integrate_Eastern_Ukraine = {
+	MAR_coring_integrate_Saratov = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 260
+		}
+
+		visible = {
+			owns_state = 260
+			has_country_flag = MCW_fate_is_done
+			NOT = {
+				AND = {
+					260 = {
+						is_core_of = ROOT
+					}
+					245 = {
+						is_core_of = ROOT
+					}
+					239 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		on_map_mode = map_and_decisions_view
+		highlight_states = {
+			highlight_state_targets = {
+				state = 260
+				state = 245
+				state = 239
+			}
+		}
+
+		modifier = {
+			stability_weekly = -0.0035
+			political_power_gain = -0.25
+			gdp_growth_modifier = -0.25
+		}
+
+		cost = 75
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 45
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Saratov remove"
+			add_state_core = 260
+			add_state_core = 245
+			add_state_core = 239
+			
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 1 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_low = yes
+		}
+	}
+	MAR_coring_integrate_Yekaterinodar = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 234
+		}
+
+		visible = {
+			owns_state = 234
+			NOT = {
+				AND = {
+					234 = {
+						is_core_of = ROOT
+					}
+					235 = {
+						is_core_of = ROOT
+					}
+					237 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		on_map_mode = map_and_decisions_view
+		highlight_states = {
+			highlight_state_targets = {
+				state = 234
+				state = 235
+				state = 237
+			}
+		}
+
+		modifier = {
+			stability_weekly = -0.0035
+			political_power_gain = -0.25
+			gdp_growth_modifier = -0.25
+		}
+
+		cost = 75
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 45
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Yekaterinodar remove"
+			add_state_core = 234
+			add_state_core = 235
+			add_state_core = 237
+			
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 1 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_low = yes
+		}
+	}
+	MAR_coring_integrate_Northern_Caucasus = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 232
+		}
+
+		visible = {
+			owns_state = 232
+			NOT = {
+				AND = {
+					1564 = {
+						is_core_of = ROOT
+					}
+					232 = {
+						is_core_of = ROOT
+					}
+					1561 = {
+						is_core_of = ROOT
+					}
+					1560 = {
+						is_core_of = ROOT
+					}
+					1559 = {
+						is_core_of = ROOT
+					}
+					1558 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		on_map_mode = map_and_decisions_view
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1564
+				state = 232
+				state = 1561
+				state = 1560
+				state = 1559
+				state = 1558
+			}
+		}
+
+		modifier = {
+			stability_weekly = -0.0035
+			political_power_gain = -0.25
+			gdp_growth_modifier = -0.15
+		}
+
+		cost = 75
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 90
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Northern_Caucasus remove"
+			add_state_core = 1564
+			add_state_core = 232
+			add_state_core = 1561
+			add_state_core = 1560
+			add_state_core = 1559
+			add_state_core = 1558
+			
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 0.25 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_low = yes
+		}
+	}
+	MAR_coring_integrate_Georgia = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 231
+		}
+
+		visible = {
+			owns_state = 231
+			NOT = {
+				AND = {
+					231 = {
+						is_core_of = ROOT
+					}
+					1556 = {
+						is_core_of = ROOT
+					}
+					1293 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		on_map_mode = map_and_decisions_view
+		highlight_states = {
+			highlight_state_targets = {
+				state = 231
+				state = 1556
+				state = 1293
+			}
+		}
+
+		modifier = {
+			stability_weekly = -0.0035
+			political_power_gain = -0.25
+			gdp_growth_modifier = -0.15
+		}
+
+		cost = 75
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 90
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Georgia remove"
+			add_state_core = 231
+			add_state_core = 1556
+			add_state_core = 1293
+			
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 0.25 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_low = yes
+		}
+	}
+	MAR_coring_integrate_Azerbaijan = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 1552
+		}
+
+		visible = {
+			owns_state = 1552
+			NOT = {
+				AND = {
+					1552 = {
+						is_core_of = ROOT
+					}
+					229 = {
+						is_core_of = ROOT
+					}
+					2139 = {
+						is_core_of = ROOT
+					}
+					244 = {
+						is_core_of = ROOT
+					}
+					1730 = {
+						is_core_of = ROOT
+					}
+					1554 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+		
+		on_map_mode = map_and_decisions_view
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1552
+				state = 229
+				state = 2139
+				state = 244
+				state = 1730
+				state = 1554
+			}
+		}
+
+		modifier = {
+			stability_weekly = -0.0035
+			political_power_gain = -0.25
+			gdp_growth_modifier = -0.15
+		}
+
+		cost = 75
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 90
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Azerbaijan remove"
+			add_state_core = 1552
+			add_state_core = 229
+			add_state_core = 2139
+			add_state_core = 244
+			add_state_core = 1730
+			add_state_core = 1554
+			
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 0.25 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_low = yes
+		}
+	}
+	MAR_coring_integrate_Donbass = {
 
 		icon = GFX_decision_generic_form_nation
 
@@ -905,7 +1339,130 @@ TaS_WRW2_fate_and_coring_of_territories = {
 
 		visible = {
 			owns_state = 221
-			has_country_flag = MCW_fate_is_done
+			NOT = {
+				AND = {
+					221 = {
+						is_core_of = ROOT
+					}
+					228 = {
+						is_core_of = ROOT
+					}
+					227 = {
+						is_core_of = ROOT
+					}
+					218 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		on_map_mode = map_and_decisions_view
+		highlight_states = {
+			highlight_state_targets = {
+				state = 221
+				state = 228
+				state = 227
+				state = 218
+			}
+		}
+
+		modifier = {
+			stability_weekly = -0.0035
+			political_power_gain = -0.25
+			gdp_growth_modifier = -0.15
+		}
+
+		cost = 75
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 90
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Donbass remove"
+			add_state_core = 221
+			add_state_core = 228
+			add_state_core = 227
+			add_state_core = 218
+			
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 0.25 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_low = yes
+		}
+	}	
+	MAR_coring_integrate_Zaporozhye = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 200
+		}
+
+		visible = {
+			owns_state = 200
+			NOT = {
+				AND = {
+					200 = {
+						is_core_of = ROOT
+					}
+					1426 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		on_map_mode = map_and_decisions_view
+		highlight_states = {
+			highlight_state_targets = {
+				state = 200
+				state = 1426
+			}
+		}
+
+		on_map_mode = map_and_decisions_view
+
+		modifier = {
+			stability_weekly = -0.0035
+			political_power_gain = -0.25
+			gdp_growth_modifier = -0.15
+		}
+
+		cost = 75
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 90
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Zaporozhye remove"
+			add_state_core = 200
+			add_state_core = 1426
+			
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 0.25 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_low = yes
+		}
+	}	
+	MAR_coring_integrate_Chernigov = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 1427
+		}
+
+		visible = {
+			owns_state = 1427
 			NOT = {
 				AND = {
 					1427 = {
@@ -917,104 +1474,238 @@ TaS_WRW2_fate_and_coring_of_territories = {
 					259 = {
 						is_core_of = ROOT
 					}
-					226 = {
+				}
+			}
+		}
+	
+		on_map_mode = map_and_decisions_view
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1427
+				state = 225
+				state = 259
+			}
+		}
+
+		modifier = {
+			stability_weekly = -0.0035
+			political_power_gain = -0.25
+			gdp_growth_modifier = -0.15
+		}
+
+		cost = 75
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 90
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Chernigov remove"
+			add_state_core = 1427
+			add_state_core = 225
+			add_state_core = 259
+			
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 0.25 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_low = yes
+		}
+	}
+	MAR_coring_integrate_Kiev = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 1429
+		}
+
+		visible = {
+			owns_state = 1429
+			NOT = {
+				AND = {
+					1429 = {
 						is_core_of = ROOT
 					}
-					1426 = {
+					202 = {
 						is_core_of = ROOT
 					}
-					200 = {
-						is_core_of = ROOT
-					}
-					227 = {
-						is_core_of = ROOT
-					}
-					228 = {
-						is_core_of = ROOT
-					}
-					221 = {
+					1428 = {
 						is_core_of = ROOT
 					}
 				}
 			}
 		}
 
+		on_map_mode = map_and_decisions_view
 		highlight_states = {
-			state = 221
+			highlight_state_targets = {
+				state = 1429
+				state = 1428
+				state = 202
+			}
 		}
-
-		# on_map_mode = map_only
 
 		modifier = {
 			stability_weekly = -0.0035
 			political_power_gain = -0.25
-			gdp_growth_modifier = -0.5
+			gdp_growth_modifier = -0.15
 		}
 
-		cost = 100
+		cost = 75
 
 		ai_will_do = {
 			factor = 100
 		}
 
-		days_remove = 45
-
+		days_remove = 90
 		fire_only_once = yes
 
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
-			add_state_core = 1427
-			add_state_core = 225
-			add_state_core = 259
-			add_state_core = 226
-			add_state_core = 1426
-			add_state_core = 200
-			add_state_core = 227
-			add_state_core = 228
-			add_state_core = 221
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Kiev remove"
+			add_state_core = 1429
+			add_state_core = 1428
+			add_state_core = 202
 			
 			add_stability = 0.025
-			set_temp_variable = { gdp_growth_temp = 1 }
+			set_temp_variable = { gdp_growth_temp = 0.25 }
 			econ_gdp_growth_change = yes
 			TNO_improve_admin_efficiency_low = yes
 		}
 	}
-	MAR_coring_integrate_Western_Ukraine = {
+	MAR_coring_integrate_Nikolayev = {
 
 		icon = GFX_decision_generic_form_nation
 
 		available = {
-			controls_state = 1428
+			controls_state = 197
 		}
 
 		visible = {
-			owns_state = 1428
+			owns_state = 197
 			NOT = {
 				AND = {
-					1428 = {
-						is_core_of = ROOT
-					}
-					202 = {
-						is_core_of = ROOT
-					}
-					207 = {
-						is_core_of = ROOT
-					}
 					197 = {
 						is_core_of = ROOT
 					}
-					773 = {
+					226 = {
 						is_core_of = ROOT
 					}
+				}
+			}
+		}
+
+		on_map_mode = map_and_decisions_view
+		highlight_states = {
+			highlight_state_targets = {
+				state = 197
+				state = 226
+			}
+		}
+
+		on_map_mode = map_and_decisions_view
+
+		modifier = {
+			stability_weekly = -0.0035
+			political_power_gain = -0.25
+			gdp_growth_modifier = -0.15
+		}
+
+		cost = 75
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 90
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Nikolayev remove"
+			add_state_core = 197
+			add_state_core = 226
+			
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 0.25 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_low = yes
+		}
+	}
+	MAR_coring_integrate_Zhitomir = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 1430
+		}
+
+		visible = {
+			owns_state = 1430
+			NOT = {
+				AND = {
 					1430 = {
 						is_core_of = ROOT
 					}
 					201 = {
 						is_core_of = ROOT
 					}
-					1429 = {
+					773 = {
 						is_core_of = ROOT
 					}
+				}
+			}
+		}
+
+		on_map_mode = map_and_decisions_view
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1430
+				state = 201
+				state = 773
+			}
+		}
+
+		modifier = {
+			stability_weekly = -0.0035
+			political_power_gain = -0.25
+			gdp_growth_modifier = -0.15
+		}
+
+		cost = 75
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 90
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Zhitomir remove"
+			add_state_core = 1430
+			add_state_core = 201
+			add_state_core = 773
+			
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 0.25 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_low = yes
+		}
+	}
+	MAR_coring_integrate_Lutsk = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 93
+		}
+
+		visible = {
+			owns_state = 93
+			NOT = {
+				AND = {
 					93 = {
 						is_core_of = ROOT
 					}
@@ -1028,106 +1719,22 @@ TaS_WRW2_fate_and_coring_of_territories = {
 			}
 		}
 
+		on_map_mode = map_and_decisions_view
 		highlight_states = {
-			state = 1428
-		}
-
-		# on_map_mode = map_only
-
-		modifier = {
-			stability_weekly = -0.0035
-			political_power_gain = -0.25
-			gdp_growth_modifier = -0.5
-		}
-
-		cost = 100
-
-		ai_will_do = {
-			factor = 100
-		}
-
-		days_remove = 120
-		fire_only_once = yes
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
-			add_state_core = 1428
-			add_state_core = 202
-			add_state_core = 197
-			add_state_core = 773
-			add_state_core = 1430
-			add_state_core = 201
-			add_state_core = 1429
-			add_state_core = 93
-			add_state_core = 1431
-			add_state_core = 199
-
-			
-			add_stability = 0.025
-			set_temp_variable = { gdp_growth_temp = 0.5 }
-			econ_gdp_growth_change = yes
-			TNO_improve_admin_efficiency_low = yes
-		}
-	}
-	MAR_coring_integrate_Belarus = {
-
-		icon = GFX_decision_generic_form_nation
-
-		available = {
-			controls_state = 1404	
-		}
-
-		visible = {
-			owns_state = 1404
-			NOT = {
-				AND = {
-					1404 = {
-						is_core_of = ROOT
-					}
-					207 = {
-						is_core_of = ROOT
-					}
-					1405 = {
-						is_core_of = ROOT
-					}
-					206 = {
-						is_core_of = ROOT
-					}
-					204 = {
-						is_core_of = ROOT
-					}
-					1407 = {
-						is_core_of = ROOT
-					}
-					95 = {
-						is_core_of = ROOT
-					}
-					1406 = {
-						is_core_of = ROOT
-					}
-					1403 = {
-						is_core_of = ROOT
-					}
-					194 = {
-						is_core_of = ROOT
-					}
-				}
+			highlight_state_targets = {
+				state = 93
+				state = 1431
+				state = 199
 			}
 		}
 
-		highlight_states = {
-			state = 1404
-		}
-
-		# on_map_mode = map_only
-
 		modifier = {
 			stability_weekly = -0.0035
 			political_power_gain = -0.25
-			gdp_growth_modifier = -0.5
+			gdp_growth_modifier = -0.15
 		}
 
-		cost = 100
+		cost = 75
 
 		ai_will_do = {
 			factor = 100
@@ -1137,66 +1744,47 @@ TaS_WRW2_fate_and_coring_of_territories = {
 		fire_only_once = yes
 
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
-			add_state_core = 1404
-			add_state_core = 204
-			add_state_core = 1405
-			add_state_core = 206
-			add_state_core = 204
-			add_state_core = 1407
-			add_state_core = 95
-			add_state_core = 1406
-			add_state_core = 1403
-			add_state_core = 194
-			add_state_core = 207
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Lutsk remove"
+			add_state_core = 1431
+			add_state_core = 199
+			add_state_core = 93
 			
 			add_stability = 0.025
-			set_temp_variable = { gdp_growth_temp = 0.5 }
+			set_temp_variable = { gdp_growth_temp = 0.25 }
 			econ_gdp_growth_change = yes
 			TNO_improve_admin_efficiency_low = yes
 		}
 	}
-	MAR_coring_integrate_Estonia = {
+	MAR_coring_integrate_Kherson = {
 
 		icon = GFX_decision_generic_form_nation
 
 		available = {
-			controls_state = 13	
+			controls_state = 196
 		}
 
 		visible = {
-			owns_state = 13
+			owns_state = 196
 			NOT = {
 				AND = {
-					13 = {
-						is_core_of = ROOT
-					}
-					191 = {
-						is_core_of = ROOT
-					}
-					1396 = {
-						is_core_of = ROOT
-					}
-					1395 = {
-						is_core_of = ROOT
-					}
-					1440 = {
+					196 = {
 						is_core_of = ROOT
 					}
 				}
 			}
 		}
 
+		on_map_mode = map_and_decisions_view
 		highlight_states = {
-			state = 13
+			highlight_state_targets = {
+				state = 196
+			}
 		}
-
-		# on_map_mode = map_only
 
 		modifier = {
 			stability_weekly = -0.0035
 			political_power_gain = -0.25
-			gdp_growth_modifier = -0.5
+			gdp_growth_modifier = -0.05
 		}
 
 		cost = 75
@@ -1205,162 +1793,15 @@ TaS_WRW2_fate_and_coring_of_territories = {
 			factor = 100
 		}
 
-		days_remove = 120
-
+		days_remove = 90
 		fire_only_once = yes
 
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
-			add_state_core = 13
-			add_state_core = 191
-			add_state_core = 1396
-			add_state_core = 1395
-			add_state_core = 1440
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Kherson remove"
+			add_state_core = 196
 			
 			add_stability = 0.025
-			set_temp_variable = { gdp_growth_temp = 0.25 }
-			econ_gdp_growth_change = yes
-			TNO_improve_admin_efficiency_low = yes
-		}
-	}
-	MAR_coring_integrate_Latvia = {
-
-		icon = GFX_decision_generic_form_nation
-
-		available = {
-			controls_state = 1397	
-		}
-
-		visible = {
-			owns_state = 1397
-			NOT = {
-				AND = {
-					1397 = {
-						is_core_of = ROOT
-					}
-					12 = {
-						is_core_of = ROOT
-					}
-					1402 = {
-						is_core_of = ROOT
-					}
-					943 = {
-						is_core_of = ROOT
-					}
-					1398 = {
-						is_core_of = ROOT
-					}
-					190 = {
-						is_core_of = ROOT
-					}
-					1399 = {
-						is_core_of = ROOT
-					}
-				}
-			}
-		}
-
-		highlight_states = {
-			state = 1397
-		}
-
-		# on_map_mode = map_only
-
-		modifier = {
-			stability_weekly = -0.0035
-			political_power_gain = -0.25
-			gdp_growth_modifier = -0.5
-		}
-
-		cost = 75
-
-		ai_will_do = {
-			factor = 100
-		}
-
-		days_remove = 120
-
-		fire_only_once = yes
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
-			add_state_core = 1397
-			add_state_core = 12
-			add_state_core = 1402
-			add_state_core = 943
-			add_state_core = 1398
-			add_state_core = 190
-			add_state_core = 1399
-			
-			add_stability = 0.025
-			set_temp_variable = { gdp_growth_temp = 0.25 }
-			econ_gdp_growth_change = yes
-			TNO_improve_admin_efficiency_low = yes
-		}
-	}
-	MAR_coring_integrate_Lithuania = {
-
-		icon = GFX_decision_generic_form_nation
-
-		available = {
-			controls_state = 96	
-		}
-
-		visible = {
-			owns_state = 96
-			NOT = {
-				AND = {
-					96 = {
-						is_core_of = ROOT
-					}
-					1401 = {
-						is_core_of = ROOT
-					}
-					11 = {
-						is_core_of = ROOT
-					}
-					1400 = {
-						is_core_of = ROOT
-					}
-					189 = {
-						is_core_of = ROOT
-					}
-				}
-			}
-		}
-
-		highlight_states = {
-			state = 96
-		}
-
-		# on_map_mode = map_only
-
-		modifier = {
-			stability_weekly = -0.0035
-			political_power_gain = -0.25
-			gdp_growth_modifier = -0.5
-		}
-
-		cost = 75
-
-		ai_will_do = {
-			factor = 100
-		}
-
-		days_remove = 120
-
-		fire_only_once = yes
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
-			add_state_core = 96
-			add_state_core = 1401
-			add_state_core = 1400
-			add_state_core = 11
-			add_state_core = 189
-			
-			add_stability = 0.025
-			set_temp_variable = { gdp_growth_temp = 0.25 }
+			set_temp_variable = { gdp_growth_temp = 0.1 }
 			econ_gdp_growth_change = yes
 			TNO_improve_admin_efficiency_low = yes
 		}
@@ -1383,275 +1824,45 @@ TaS_WRW2_fate_and_coring_of_territories = {
 					137 = {
 						is_core_of = ROOT
 					}
-					196 = {
-						is_core_of = ROOT
-					}
 				}
 			}
 		}
 
+		on_map_mode = map_and_decisions_view
 		highlight_states = {
-			state = 1532
+			highlight_state_targets = {
+				state = 1532
+				state = 137
+			}
 		}
-
-		# on_map_mode = map_only
 
 		modifier = {
 			stability_weekly = -0.0035
 			political_power_gain = -0.25
-			gdp_growth_modifier = -0.5
+			gdp_growth_modifier = -0.05
 		}
 
-		cost = 50
+		cost = 75
 
 		ai_will_do = {
 			factor = 100
 		}
 
-		days_remove = 120
-
+		days_remove = 90
 		fire_only_once = yes
 
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Crimea remove"
 			add_state_core = 1532
 			add_state_core = 137
-			add_state_core = 196
 			
 			add_stability = 0.025
-			set_temp_variable = { gdp_growth_temp = 0.25 }
+			set_temp_variable = { gdp_growth_temp = 0.1 }
 			econ_gdp_growth_change = yes
 			TNO_improve_admin_efficiency_low = yes
 		}
 	}
-	MAR_coring_integrate_North_Caucasus = {
-
-		icon = GFX_decision_generic_form_nation
-
-		available = {
-			controls_state = 232
-		}
-
-		visible = {
-			owns_state = 232
-			NOT = {
-				AND = {
-					232 = {
-						is_core_of = ROOT
-					}
-					1564 = {
-						is_core_of = ROOT
-					}
-					1561 = {
-						is_core_of = ROOT
-					}
-					1560 = {
-						is_core_of = ROOT
-					}
-					1559 = {
-						is_core_of = ROOT
-					}
-					235 = {
-						is_core_of = ROOT
-					}
-				}
-			}
-		}
-
-		highlight_states = {
-			state = 232
-		}
-
-		# on_map_mode = map_only
-
-		modifier = {
-			stability_weekly = -0.0035
-			political_power_gain = -0.25
-			gdp_growth_modifier = -0.5
-		}
-
-		cost = 150
-
-		ai_will_do = {
-			factor = 100
-		}
-
-		days_remove = 120
-		fire_only_once = yes
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
-			add_state_core = 232
-			add_state_core = 1564
-			add_state_core = 1561
-			add_state_core = 1560
-			add_state_core = 1559
-			add_state_core = 235
-			
-			add_stability = 0.025
-			set_temp_variable = { gdp_growth_temp = 0.15 }
-			econ_gdp_growth_change = yes
-			TNO_improve_admin_efficiency_really_low = yes
-		}
-	}
-	MAR_coring_integrate_South_Caucasus = {
-
-		icon = GFX_decision_generic_form_nation
-
-		available = {
-			controls_state = 231
-		}
-
-		visible = {
-			owns_state = 231
-			NOT = {
-				AND = {
-					231 = {
-						is_core_of = ROOT
-					}
-					1558 = {
-						is_core_of = ROOT
-					}
-					1556 = {
-						is_core_of = ROOT
-					}
-					229 = {
-						is_core_of = ROOT
-					}
-					1554 = {
-						is_core_of = ROOT
-					}
-					1552 = {
-						is_core_of = ROOT
-					}
-				}
-			}
-		}
-
-		highlight_states = {
-			state = 231
-		}
-
-		# on_map_mode = map_only
-
-		modifier = {
-			stability_weekly = -0.0035
-			political_power_gain = -0.25
-			gdp_growth_modifier = -0.5
-		}
-
-		cost = 75
-
-		ai_will_do = {
-			factor = 100
-		}
-
-		days_remove = 120
-
-		fire_only_once = yes
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
-			add_state_core = 231
-			add_state_core = 1558
-			add_state_core = 1556
-			add_state_core = 229
-			add_state_core = 1554
-			add_state_core = 1552
-			
-			add_stability = 0.025
-			set_temp_variable = { gdp_growth_temp = 0.15 }
-			econ_gdp_growth_change = yes
-			TNO_improve_admin_efficiency_really_low = yes
-		}
-	}
-	MAR_coring_integrate_Galicia = {
-
-		icon = GFX_decision_generic_form_nation
-
-		available = {
-			controls_state = 1391
-		}
-
-		visible = {
-			owns_state = 1391
-			NOT = {
-				AND = {
-					91 = {
-						is_core_of = ROOT
-					}
-					89 = {
-						is_core_of = ROOT
-					}
-					1394 = {
-						is_core_of = ROOT
-					}
-					1393 = {
-						is_core_of = ROOT
-					}
-					1392 = {
-						is_core_of = ROOT
-					}
-					1391 = {
-						is_core_of = ROOT
-					}
-					1390 = {
-						is_core_of = ROOT
-					}
-					1389 = {
-						is_core_of = ROOT
-					}
-					1388 = {
-						is_core_of = ROOT
-					}
-					1387 = {
-						is_core_of = ROOT
-					}
-				}
-			}
-		}
-
-		highlight_states = {
-			state = 1391
-		}
-
-		# on_map_mode = map_only
-
-		modifier = {
-			stability_weekly = -0.0035
-			political_power_gain = -0.25
-			gdp_growth_modifier = -0.5
-		}
-
-		cost = 75
-
-		ai_will_do = {
-			factor = 100
-		}
-
-		days_remove = 120
-
-		fire_only_once = yes
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
-			add_state_core = 91
-			add_state_core = 89
-			add_state_core = 1394
-			add_state_core = 1393
-			add_state_core = 1392
-			add_state_core = 1391
-			add_state_core = 1390
-			add_state_core = 1389
-			add_state_core = 1388
-			add_state_core = 1387
-			
-			add_stability = 0.025
-			set_temp_variable = { gdp_growth_temp = 0.15 }
-			econ_gdp_growth_change = yes
-			TNO_improve_admin_efficiency_really_low = yes
-		}
-	}
+	
 	MAR_coring_integrate_Odessa = {
 
 		icon = GFX_decision_generic_form_nation
@@ -1667,244 +1878,602 @@ TaS_WRW2_fate_and_coring_of_territories = {
 					192 = {
 						is_core_of = ROOT
 					}
-					1282 = {
+					1966 = {
+						is_core_of = ROOT
+					}
+					1965 = {
 						is_core_of = ROOT
 					}
 					198 = {
 						is_core_of = ROOT
 					}
+					1282 = {
+						is_core_of = ROOT
+					}
 				}
 			}
 		}
 
+		on_map_mode = map_and_decisions_view
 		highlight_states = {
-			state = 192
+			highlight_state_targets = {
+				state = 192
+				state = 1966
+				state = 198
+				state = 1965
+				state = 1282
+			}
 		}
-
-		# on_map_mode = map_only
 
 		modifier = {
 			stability_weekly = -0.0035
 			political_power_gain = -0.25
-			gdp_growth_modifier = -0.5
+			gdp_growth_modifier = -0.05
 		}
 
-		cost = 50
+		cost = 75
 
 		ai_will_do = {
 			factor = 100
 		}
 
 		days_remove = 90
-
 		fire_only_once = yes
 
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Odessa remove"
 			add_state_core = 192
+			add_state_core = 1966
 			add_state_core = 198
+			add_state_core = 1965
 			add_state_core = 1282
 			
 			add_stability = 0.025
-			set_temp_variable = { gdp_growth_temp = 0.05 }
+			set_temp_variable = { gdp_growth_temp = 0.1 }
 			econ_gdp_growth_change = yes
-			TNO_improve_admin_efficiency_really_low = yes
+			TNO_improve_admin_efficiency_low = yes
 		}
 	}
-	MAR_coring_integrate_Moldova = {
+	MAR_coring_integrate_Pskov = {
 
 		icon = GFX_decision_generic_form_nation
 
 		available = {
-			controls_state = 78
+			controls_state = 1421
 		}
 
 		visible = {
-			owns_state = 78
+			owns_state = 1421
 			NOT = {
 				AND = {
-					78 = {
+					1421 = {
 						is_core_of = ROOT
 					}
-					1285 = {
+					209 = {
 						is_core_of = ROOT
 					}
-					1286 = {
+					1402 = {
 						is_core_of = ROOT
 					}
-					80 = {
+					257 = {
 						is_core_of = ROOT
 					}
 				}
 			}
 		}
 
+		on_map_mode = map_and_decisions_view
 		highlight_states = {
-			state = 78
+			highlight_state_targets = {
+				state = 1421
+				state = 209
+				state = 1402
+				state = 257
+			}
 		}
-
-		# on_map_mode = map_only
 
 		modifier = {
 			stability_weekly = -0.0035
 			political_power_gain = -0.25
-			gdp_growth_modifier = -0.5
+			gdp_growth_modifier = -0.25
 		}
 
-		cost = 50
+		cost = 75
 
 		ai_will_do = {
 			factor = 100
 		}
 
 		days_remove = 90
-
 		fire_only_once = yes
 
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
-			add_state_core = 78
-			add_state_core = 1285
-			add_state_core = 1286
-			if = { 
-				limit = { owns_state = 80 }
-				add_state_core = 80
-			}
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Pskov remove"
+			add_state_core = 1421
+			add_state_core = 209
+			add_state_core = 1402
+			add_state_core = 257
+			
 			add_stability = 0.025
-			set_temp_variable = { gdp_growth_temp = 0.05 }
+			set_temp_variable = { gdp_growth_temp = 0.5 }
 			econ_gdp_growth_change = yes
-			TNO_improve_admin_efficiency_really_low = yes
+			TNO_improve_admin_efficiency_low = yes
 		}
 	}
-	MAR_coring_integrate_Armenia = {
+	MAR_coring_integrate_Smolensk = {
 
 		icon = GFX_decision_generic_form_nation
 
 		available = {
-			controls_state = 230
+			controls_state = 241
 		}
 
 		visible = {
-			owns_state = 230
+			owns_state = 241
 			NOT = {
 				AND = {
-					230 = {
+					241 = {
 						is_core_of = ROOT
 					}
-					1568 = {
-						is_core_of = ROOT
-					}
-					1567 = {
-						is_core_of = ROOT
-					}
-					1448 = {
-						is_core_of = ROOT
-					}
-					1565 = {
+					2452 = {
 						is_core_of = ROOT
 					}
 				}
 			}
 		}
 
+		on_map_mode = map_and_decisions_view
 		highlight_states = {
-			state = 230
+			highlight_state_targets = {
+				state = 241
+				state = 2452
+			}
 		}
-
-		# on_map_mode = map_only
 
 		modifier = {
 			stability_weekly = -0.0035
 			political_power_gain = -0.25
-			gdp_growth_modifier = -0.5
+			gdp_growth_modifier = -0.25
 		}
 
-		cost = 50
+		cost = 75
 
 		ai_will_do = {
 			factor = 100
 		}
 
 		days_remove = 90
-
 		fire_only_once = yes
 
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
-			add_state_core = 230
-			add_state_core = 1568
-			add_state_core = 1567
-			add_state_core = 1565
-			if = { 
-				limit = { owns_state = 1448 }
-				add_state_core = 1448
-			}
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Smolensk remove"
+			add_state_core = 241
+			add_state_core = 2452
+			
 			add_stability = 0.025
-			set_temp_variable = { gdp_growth_temp = 0.05 }
+			set_temp_variable = { gdp_growth_temp = 0.5 }
 			econ_gdp_growth_change = yes
-			TNO_improve_admin_efficiency_really_low = yes
+			TNO_improve_admin_efficiency_low = yes
 		}
 	}
-	MAR_coring_integrate_Vyborg = {
+	MAR_coring_integrate_Mogilev = {
 
 		icon = GFX_decision_generic_form_nation
 
 		available = {
-			controls_state = 1712
+			controls_state = 207
 		}
 
 		visible = {
-			owns_state = 1712
+			owns_state = 207
 			NOT = {
 				AND = {
-					1712 = {
+					207 = {
 						is_core_of = ROOT
 					}
-					146 = {
+					206 = {
 						is_core_of = ROOT
 					}
-					147 = {
-						is_core_of = ROOT
-					}
-					722 = {
+					194 = {
 						is_core_of = ROOT
 					}
 				}
 			}
 		}
 
+		on_map_mode = map_and_decisions_view
 		highlight_states = {
-			state = 1712
+			highlight_state_targets = {
+				state = 207
+				state = 206
+				state = 194
+			}
 		}
-
-		# on_map_mode = map_only
 
 		modifier = {
 			stability_weekly = -0.0035
 			political_power_gain = -0.25
-			gdp_growth_modifier = -0.5
+			gdp_growth_modifier = -0.25
 		}
 
-		cost = 50
+		cost = 75
 
 		ai_will_do = {
 			factor = 100
 		}
 
 		days_remove = 90
-
 		fire_only_once = yes
 
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision RUS_coring_integrate_arkhangelsk remove"
-			add_state_core = 1712
-			add_state_core = 146
-			add_state_core = 147
-			add_state_core = 722
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Mogilev remove"
+			add_state_core = 207
+			add_state_core = 206
+			add_state_core = 194
+			
 			add_stability = 0.025
-			set_temp_variable = { gdp_growth_temp = 0.05 }
+			set_temp_variable = { gdp_growth_temp = 0.5 }
 			econ_gdp_growth_change = yes
-			TNO_improve_admin_efficiency_really_low = yes
+			TNO_improve_admin_efficiency_low = yes
+		}
+	}
+	MAR_coring_integrate_Minsk = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 1404
+		}
+
+		visible = {
+			owns_state = 1404
+			NOT = {
+				AND = {
+					1404 = {
+						is_core_of = ROOT
+					}
+					1405 = {
+						is_core_of = ROOT
+					}
+					1403 = {
+						is_core_of = ROOT
+					}
+					204 = {
+						is_core_of = ROOT
+					}
+					1406 = {
+						is_core_of = ROOT
+					}
+					95 = {
+						is_core_of = ROOT
+					}
+					1407 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		on_map_mode = map_and_decisions_view
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1404
+				state = 1405
+				state = 1403
+				state = 1407
+				state = 1406
+				state = 204
+				state = 95
+			}
+		}
+
+		modifier = {
+			stability_weekly = -0.0035
+			political_power_gain = -0.25
+			gdp_growth_modifier = -0.25
+		}
+
+		cost = 75
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 90
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Minsk remove"
+			add_state_core = 1404
+			add_state_core = 1405
+			add_state_core = 1403
+			add_state_core = 1407
+			add_state_core = 1406
+			add_state_core = 204
+			add_state_core = 95
+			
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 0.5 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_low = yes
+		}
+	}
+	MAR_coring_integrate_Narva = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 191
+		}
+
+		visible = {
+			owns_state = 191
+			NOT = {
+				AND = {
+					191 = {
+						is_core_of = ROOT
+					}
+					1396 = {
+						is_core_of = ROOT
+					}
+					943 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		on_map_mode = map_and_decisions_view
+		highlight_states = {
+			highlight_state_targets = {
+				state = 191
+				state = 1396
+				state = 943
+			}
+		}
+
+		modifier = {
+			stability_weekly = -0.0035
+			political_power_gain = -0.25
+			gdp_growth_modifier = -0.25
+		}
+
+		cost = 75
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 90
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Narva remove"
+			add_state_core = 191
+			add_state_core = 1396
+			add_state_core = 943
+			
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 0.5 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_low = yes
+		}
+	}
+	MAR_coring_integrate_Estonia = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 13
+		}
+
+		visible = {
+			owns_state = 13
+			NOT = {
+				AND = {
+					13 = {
+						is_core_of = ROOT
+					}
+					2450 = {
+						is_core_of = ROOT
+					}
+					1395 = {
+						is_core_of = ROOT
+					}
+					1440 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		on_map_mode = map_and_decisions_view
+		highlight_states = {
+			highlight_state_targets = {
+				state = 13
+				state = 2450
+				state = 1440
+				state = 1395
+			}
+		}
+		modifier = {
+			stability_weekly = -0.0035
+			political_power_gain = -0.25
+			gdp_growth_modifier = -0.25
+		}
+
+		cost = 75
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 90
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Estonia remove"
+			add_state_core = 13
+			add_state_core = 2450
+			add_state_core = 1395
+			add_state_core = 1440
+			
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 0.5 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_low = yes
+		}
+	}
+	MAR_coring_integrate_Latvia = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 1397
+		}
+
+		visible = {
+			owns_state = 1397
+			NOT = {
+				AND = {
+					1397 = {
+						is_core_of = ROOT
+					}
+					1398 = {
+						is_core_of = ROOT
+					}
+					12 = {
+						is_core_of = ROOT
+					}
+					190 = {
+						is_core_of = ROOT
+					}
+					1399 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		on_map_mode = map_and_decisions_view
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1397
+				state = 1398
+				state = 12
+				state = 190
+				state = 1399
+			}
+		}
+
+		modifier = {
+			stability_weekly = -0.0035
+			political_power_gain = -0.25
+			gdp_growth_modifier = -0.25
+		}
+
+		cost = 75
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 90
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Latvia remove"
+			add_state_core = 1397
+			add_state_core = 1398
+			add_state_core = 1399
+			add_state_core = 12
+			add_state_core = 190
+			
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 0.5 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_low = yes
+		}
+	}
+	MAR_coring_integrate_Lithuania = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 189
+		}
+
+		visible = {
+			owns_state = 189
+			NOT = {
+				AND = {
+					189 = {
+						is_core_of = ROOT
+					}
+					1401 = {
+						is_core_of = ROOT
+					}
+					2451 = {
+						is_core_of = ROOT
+					}
+					1400 = {
+						is_core_of = ROOT
+					}
+					11 = {
+						is_core_of = ROOT
+					}
+					96 = {
+						is_core_of = ROOT
+					}
+					79 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		on_map_mode = map_and_decisions_view
+		highlight_states = {
+			highlight_state_targets = {
+				state = 189
+				state = 1401
+				state = 2451
+				state = 1400
+				state = 11
+				state = 96
+				state = 79
+			}
+		}
+
+		modifier = {
+			stability_weekly = -0.0035
+			political_power_gain = -0.25
+			gdp_growth_modifier = -0.25
+		}
+
+		cost = 75
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 90
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Lithuania remove"
+			add_state_core = 189
+			add_state_core = 1401
+			add_state_core = 2451
+			add_state_core = 1400
+			add_state_core = 11
+			add_state_core = 96
+			add_state_core = 79
+			
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 0.5 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_low = yes
 		}
 	}
 }
@@ -2768,12 +3337,17 @@ TaS_WRW2_territorial_reclamation = {
 			hidden_effect = {
 				add_command_power = -25
 			}
+			add_state_claim = 213
+			add_state_claim = 216
+			add_state_claim = 215
+			add_state_claim = 1359
+			add_state_claim = 1887
 		}
 		days_remove = 14
 		remove_effect = {
 			custom_effect_tooltip = TaS_WRW2_Karelia_demands_tt
 			hidden_effect = {
-				FIN = { country_event = { id = MAR_ultimatums.1 } }
+				FIN = { country_event = { id = MAR_ultimatums.100 } }
 			}
 		}
 	}
@@ -3029,6 +3603,7 @@ TaS_WRW2_territorial_reclamation = {
 TaS_SWRW_far_eastern_negotiations = {
 	SWRW_FEnegotiations_mission = {
 		icon = GFX_decision_generic_handshake
+		priority = 300
 		allowed = {
 			tag = MAR
 		}			
@@ -3038,9 +3613,9 @@ TaS_SWRW_far_eastern_negotiations = {
 		activation = {
 			has_global_flag = FE_negotiations_start
 		}
-
+		
 		days_mission_timeout = SWRW_round_timeout
-		is_good = no
+		is_good = no 
 
 		timeout_effect = {
 			custom_effect_tooltip = SWRW_FEnegotiations_mission_tt
@@ -3112,9 +3687,76 @@ TaS_SWRW_far_eastern_negotiations = {
 			factor = 1
 		}
 	}
-	##Generic
+	
+	SWRW_FEnegotiations_generic_effigy = {
+		icon = GNG_yen_indent
+		visible = {
+			always = yes
+		}
+		fire_only_once = yes
+		available = {
+			always = no
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout SWRW_FEnegotiations_generic_effigy... wait that's wrong"
+		}
+	}
+	
 	SWRW_FEnegotiations_buy_diplomats = {
 		icon = GFX_decision_generic_corruption_yen
+		fire_only_once = no
+		custom_cost_trigger = { command_power > 24.99 }
+		custom_cost_text = decision_cost_50_million_25_cp
+		available = {
+			custom_trigger_tooltip = { 
+				check_variable = { swrw_fe_actions < 2 }
+				tooltip = SWRW_FEnegotiations_actions_limit_tt	
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -25
+			}
+			set_temp_variable = { temp_econ_spending_amount = 0.05 }
+			econ_spend_money_once_effect_raw_money = yes
+			add_to_variable = { swrw_fe_actions = 1 }
+		}
+		days_remove = 14
+		remove_effect = {
+			set_temp_variable = { swrw_diplo_temp = 5 }
+			TaS_SWRW_change_diplo_jap = yes
+			add_to_variable = { swrw_fe_actions = -1 }
+		}
+	}
+	SWRW_FEnegotiations_buy_corpos = {
+		icon = GFX_decision_generic_corruption_yen
+		fire_only_once = no
+		custom_cost_trigger = { has_political_power > 14.99 }
+		custom_cost_text = decision_cost_100_million_15_pp
+		available = {
+			custom_trigger_tooltip = { 
+				check_variable = { swrw_fe_actions < 2 }
+				tooltip = SWRW_FEnegotiations_actions_limit_tt	
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				add_political_power = -15
+			}
+			set_temp_variable = { temp_econ_spending_amount = 0.1 }
+			econ_spend_money_once_effect_raw_money = yes
+			add_to_variable = { swrw_fe_actions = 1 }
+		}
+		days_remove = 14
+		remove_effect = {
+			set_temp_variable = { swrw_corpo_temp = 5 }
+			TaS_SWRW_change_corpo_jap = yes
+			add_to_variable = { swrw_fe_actions = -1 }
+		}
+	}
+	SWRW_FEnegotiations_speedup_nego = {
+		icon = generic_clock
 		fire_only_once = no
 		custom_cost_trigger = { command_power > 24.99 }
 		custom_cost_text = decision_cost_50_million_25_cp
@@ -3124,15 +3766,20 @@ TaS_SWRW_far_eastern_negotiations = {
 			}
 			set_temp_variable = { temp_econ_spending_amount = 0.05 }
 			econ_spend_money_once_effect_raw_money = yes
-		}
-		days_remove = 14
-		remove_effect = {
-			set_temp_variable = { swrw_diplo_temp = 5 }
+			custom_effect_tooltip = SWRW_nego_speedup_tt
+			add_to_variable = { SWRW_round_timeout = -14 }
+			set_temp_variable = { swrw_corpo_temp = -2.5 }
+			TaS_SWRW_change_corpo_jap = yes
+			set_temp_variable = { swrw_diplo_temp = -2.5 }
 			TaS_SWRW_change_diplo_jap = yes
 		}
+		days_remove = 10
+		remove_effect = {
+			custom_effect_tooltip = SWRW_decision_now_available_tt
+		}
 	}
-	SWRW_FEnegotiations_buy_corpos = {
-		icon = GFX_decision_generic_corruption_yen
+	SWRW_FEnegotiations_slowdown_nego = {
+		icon = generic_clock_red
 		fire_only_once = no
 		custom_cost_trigger = { has_political_power > 14.99 }
 		custom_cost_text = decision_cost_100_million_15_pp
@@ -3142,14 +3789,34 @@ TaS_SWRW_far_eastern_negotiations = {
 			}
 			set_temp_variable = { temp_econ_spending_amount = 0.1 }
 			econ_spend_money_once_effect_raw_money = yes
-		}
-		days_remove = 14
-		remove_effect = {
-			set_temp_variable = { swrw_corpo_temp = 5 }
+			custom_effect_tooltip = SWRW_nego_slowdown_tt
+			add_to_variable = { SWRW_round_timeout = 14 }
+			set_temp_variable = { swrw_corpo_temp = -2.5 }
 			TaS_SWRW_change_corpo_jap = yes
+			set_temp_variable = { swrw_diplo_temp = -2.5 }
+			TaS_SWRW_change_diplo_jap = yes
+		}
+		days_remove = 10
+		remove_effect = {
+			custom_effect_tooltip = SWRW_decision_now_available_tt
 		}
 	}
-	##Blagoveshensk round
+	
+	SWRW_FEnegotiations_special_effigy = {
+		icon = generic_shake_hands_indent
+		visible = {
+			always = yes
+		}
+		fire_only_once = yes
+		available = {
+			always = no
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout SWRW_FEnegotiations_special_effigy... wait that's wrong"
+		}
+	}
+	#Blagoveschensk Round
 	SWRW_FEnegotiations_help_with_partisans = {
 		icon = GFX_decision_generic_assault
 		visible = {
@@ -3163,6 +3830,12 @@ TaS_SWRW_far_eastern_negotiations = {
 			}
 		}
 		custom_cost_text = decision_cost_50_pp_750_inf_eq
+		available = {
+			custom_trigger_tooltip = { 
+				check_variable = { swrw_fe_actions < 2 }
+				tooltip = SWRW_FEnegotiations_actions_limit_tt	
+			}
+		}
 		complete_effect = {
 			hidden_effect = {
 				add_equipment_to_stockpile = {
@@ -3173,6 +3846,7 @@ TaS_SWRW_far_eastern_negotiations = {
 			}
 			set_temp_variable = { temp_econ_spending_amount = 0.025 }
 			econ_spend_money_once_effect_raw_money = yes
+			add_to_variable = { swrw_fe_actions = 1 }
 		}
 		days_remove = 14
 		remove_effect = {
@@ -3188,6 +3862,7 @@ TaS_SWRW_far_eastern_negotiations = {
 			TaS_SWRW_change_diplo_jap = yes
 			set_temp_variable = { swrw_corpo_temp = 15 }
 			TaS_SWRW_change_corpo_jap = yes
+			add_to_variable = { swrw_fe_actions = -1 }
 		}
 	}
 	SWRW_FEnegotiations_defend_property = {
@@ -3198,12 +3873,19 @@ TaS_SWRW_far_eastern_negotiations = {
 		fire_only_once = yes
 		custom_cost_trigger = { has_political_power > 19.99 }
 		custom_cost_text = decision_cost_150_million_20_pp
+		available = {
+			custom_trigger_tooltip = { 
+				check_variable = { swrw_fe_actions < 2 }
+				tooltip = SWRW_FEnegotiations_actions_limit_tt	
+			}
+		}
 		complete_effect = {
 			hidden_effect = {
 				add_political_power = -20	
 			}
 			set_temp_variable = { temp_econ_spending_amount = 0.150 }
 			econ_spend_money_once_effect_raw_money = yes
+			add_to_variable = { swrw_fe_actions = 1 }
 		}
 		days_remove = 14
 		remove_effect = {
@@ -3215,6 +3897,7 @@ TaS_SWRW_far_eastern_negotiations = {
 			TaS_SWRW_change_corpo_jap = yes
 			set_temp_variable = { swrw_diplo_temp = 7.5 }
 			TaS_SWRW_change_diplo_jap = yes
+			add_to_variable = { swrw_fe_actions = -1 }
 		}
 	}
 	SWRW_FEnegotiations_demilitarize_amur = {
@@ -3228,11 +3911,18 @@ TaS_SWRW_far_eastern_negotiations = {
 			command_power > 24.99
 		}
 		custom_cost_text = decision_cost_50_pp_25_cp
+		available = {
+			custom_trigger_tooltip = { 
+				check_variable = { swrw_fe_actions < 2 }
+				tooltip = SWRW_FEnegotiations_actions_limit_tt	
+			}
+		}
 		complete_effect = {
 			hidden_effect = {
 				add_political_power = -50
 				add_command_power = -25
 			}
+			add_to_variable = { swrw_fe_actions = 1 }
 		}
 		days_remove = 14
 		remove_effect = {
@@ -3246,6 +3936,7 @@ TaS_SWRW_far_eastern_negotiations = {
 			TaS_SWRW_change_corpo_jap = yes
 			set_temp_variable = { swrw_diplo_temp = 10 }
 			TaS_SWRW_change_diplo_jap = yes
+			add_to_variable = { swrw_fe_actions = -1 }
 		}
 	}
 	##Khabarovsk round
@@ -3259,12 +3950,19 @@ TaS_SWRW_far_eastern_negotiations = {
 			has_political_power > 24.99
 		}
 		custom_cost_text = decision_cost_25_pp_60_m
+		available = {
+			custom_trigger_tooltip = { 
+				check_variable = { swrw_fe_actions < 2 }
+				tooltip = SWRW_FEnegotiations_actions_limit_tt	
+			}
+		}
 		complete_effect = {
 			hidden_effect = {
 				add_political_power = -25
 			}
 			set_temp_variable = { temp_econ_spending_amount = 0.06 }
 			econ_spend_money_once_effect_raw_money = yes
+			add_to_variable = { swrw_fe_actions = 1 }
 		}
 		days_remove = 14
 		remove_effect = {
@@ -3272,6 +3970,7 @@ TaS_SWRW_far_eastern_negotiations = {
 			TaS_SWRW_change_diplo_jap = yes
 			set_temp_variable = { swrw_corpo_temp = 15 }
 			TaS_SWRW_change_corpo_jap = yes
+			add_to_variable = { swrw_fe_actions = -1 }
 		}
 	}
 	SWRW_FEnegotiations_meet_in_guandong = {
@@ -3282,12 +3981,19 @@ TaS_SWRW_far_eastern_negotiations = {
 		fire_only_once = yes
 		custom_cost_trigger = { has_political_power > 19.99 }
 		custom_cost_text = decision_cost_150_million_20_pp
+		available = {
+			custom_trigger_tooltip = { 
+				check_variable = { swrw_fe_actions < 2 }
+				tooltip = SWRW_FEnegotiations_actions_limit_tt	
+			}
+		}
 		complete_effect = {
 			hidden_effect = {
 				add_political_power = -20	
 			}
 			set_temp_variable = { temp_econ_spending_amount = 0.150 }
 			econ_spend_money_once_effect_raw_money = yes
+			add_to_variable = { swrw_fe_actions = 1 }
 		}
 		days_remove = 14
 		remove_effect = {
@@ -3299,6 +4005,7 @@ TaS_SWRW_far_eastern_negotiations = {
 			TaS_SWRW_change_corpo_jap = yes
 			set_temp_variable = { swrw_diplo_temp = 7.5 }
 			TaS_SWRW_change_diplo_jap = yes
+			add_to_variable = { swrw_fe_actions = -1 }
 		}
 	}
 	SWRW_FEnegotiations_give_magadan = {
@@ -3312,11 +4019,18 @@ TaS_SWRW_far_eastern_negotiations = {
 			command_power > 24.99
 		}
 		custom_cost_text = decision_cost_50_pp_25_cp
+		available = {
+			custom_trigger_tooltip = { 
+				check_variable = { swrw_fe_actions < 2 }
+				tooltip = SWRW_FEnegotiations_actions_limit_tt	
+			}
+		}
 		complete_effect = {
 			hidden_effect = {
 				add_political_power = -50
 				add_command_power = -25
 			}
+			add_to_variable = { swrw_fe_actions = 1 }
 		}
 		days_remove = 14
 		remove_effect = {
@@ -3351,6 +4065,7 @@ TaS_SWRW_far_eastern_negotiations = {
 			TaS_SWRW_change_corpo_jap = yes
 			set_temp_variable = { swrw_diplo_temp = 10 }
 			TaS_SWRW_change_diplo_jap = yes
+			add_to_variable = { swrw_fe_actions = -1 }
 		}
 	}
 	SWRW_FEnegotiations_demonstrate_power = {
@@ -3387,7 +4102,12 @@ TaS_SWRW_far_eastern_negotiations = {
 				state = 562
 				size > 3
 			}
+			custom_trigger_tooltip = { 
+				check_variable = { swrw_fe_actions < 2 }
+				tooltip = SWRW_FEnegotiations_actions_limit_tt	
+			}
 		}
+		
 		fire_only_once = yes
 		custom_cost_trigger = {
 			command_power > 24.99
@@ -3417,6 +4137,7 @@ TaS_SWRW_far_eastern_negotiations = {
 				amount = -55
 				producer = MAR
 			}
+			add_to_variable = { swrw_fe_actions = 1 }
 		}
 		days_remove = 14
 		remove_effect = {
@@ -3433,6 +4154,7 @@ TaS_SWRW_far_eastern_negotiations = {
 			TaS_SWRW_change_corpo_jap = yes
 			set_temp_variable = { swrw_diplo_temp = 10 }
 			TaS_SWRW_change_diplo_jap = yes
+			add_to_variable = { swrw_fe_actions = -1 }
 		}
 	}
 	##Primorie round
@@ -3446,12 +4168,19 @@ TaS_SWRW_far_eastern_negotiations = {
 			has_political_power > 39.99
 		}
 		custom_cost_text = decision_cost_40_pp_150_m
+		available = {
+			custom_trigger_tooltip = { 
+				check_variable = { swrw_fe_actions < 2 }
+				tooltip = SWRW_FEnegotiations_actions_limit_tt	
+			}
+		}
 		complete_effect = {
 			hidden_effect = {
 				add_political_power = -40
 			}
 			set_temp_variable = { temp_econ_spending_amount = 0.15 }
 			econ_spend_money_once_effect_raw_money = yes
+			add_to_variable = { swrw_fe_actions = 1 }
 		}
 		days_remove = 14
 		remove_effect = {
@@ -3493,6 +4222,7 @@ TaS_SWRW_far_eastern_negotiations = {
 			TaS_SWRW_change_diplo_jap = yes
 			set_temp_variable = { swrw_corpo_temp = 15 }
 			TaS_SWRW_change_corpo_jap = yes
+			add_to_variable = { swrw_fe_actions = -1 }
 		}
 	}
 	SWRW_FEnegotiations_resource_trade = {
@@ -3503,12 +4233,19 @@ TaS_SWRW_far_eastern_negotiations = {
 		fire_only_once = yes
 		custom_cost_trigger = { has_political_power > 19.99 }
 		custom_cost_text = decision_cost_150_million_20_pp
+		available = {
+			custom_trigger_tooltip = { 
+				check_variable = { swrw_fe_actions < 2 }
+				tooltip = SWRW_FEnegotiations_actions_limit_tt	
+			}
+		}
 		complete_effect = {
 			hidden_effect = {
 				add_political_power = -20	
 			}
 			set_temp_variable = { temp_econ_spending_amount = 0.150 }
 			econ_spend_money_once_effect_raw_money = yes
+			add_to_variable = { swrw_fe_actions = 1 }
 		}
 		days_remove = 14
 		remove_effect = {
@@ -3518,6 +4255,7 @@ TaS_SWRW_far_eastern_negotiations = {
 			TaS_SWRW_change_corpo_jap = yes
 			set_temp_variable = { swrw_diplo_temp = 7.5 }
 			TaS_SWRW_change_diplo_jap = yes
+			add_to_variable = { swrw_fe_actions = -1 }
 		}
 	}
 	SWRW_FEnegotiations_russo_manchu_theatry = {
@@ -3531,11 +4269,18 @@ TaS_SWRW_far_eastern_negotiations = {
 			command_power > 24.99
 		}
 		custom_cost_text = decision_cost_50_pp_25_cp
+		available = {
+			custom_trigger_tooltip = { 
+				check_variable = { swrw_fe_actions < 2 }
+				tooltip = SWRW_FEnegotiations_actions_limit_tt	
+			}
+		}
 		complete_effect = {
 			hidden_effect = {
 				add_political_power = -50
 				add_command_power = -25
 			}
+			add_to_variable = { swrw_fe_actions = 1 }
 		}
 		days_remove = 14
 		remove_effect = {
@@ -3560,6 +4305,7 @@ TaS_SWRW_far_eastern_negotiations = {
 			TaS_SWRW_change_corpo_jap = yes
 			set_temp_variable = { swrw_diplo_temp = 10 }
 			TaS_SWRW_change_diplo_jap = yes
+			add_to_variable = { swrw_fe_actions = -1 }
 		}
 	}
 	SWRW_FEnegotiations_propose_korean_resettlement = {
@@ -3572,10 +4318,17 @@ TaS_SWRW_far_eastern_negotiations = {
 			command_power > 24.99
 		}
 		custom_cost_text = decision_cost_25_cp
+		available = {
+			custom_trigger_tooltip = { 
+				check_variable = { swrw_fe_actions < 2 }
+				tooltip = SWRW_FEnegotiations_actions_limit_tt	
+			}
+		}
 		complete_effect = {
 			hidden_effect = {
 				add_command_power = -25
 			}
+			add_to_variable = { swrw_fe_actions = 1 }
 		}
 		days_remove = 14
 		remove_effect = {
@@ -3585,6 +4338,7 @@ TaS_SWRW_far_eastern_negotiations = {
 			TaS_SWRW_change_corpo_jap = yes
 			set_temp_variable = { swrw_diplo_temp = 10 }
 			TaS_SWRW_change_diplo_jap = yes
+			add_to_variable = { swrw_fe_actions = -1 }
 		}
 	}
 	SWRW_FEnegotiations_china_talks = {
@@ -3598,12 +4352,19 @@ TaS_SWRW_far_eastern_negotiations = {
 			has_political_power > 24.99
 		}
 		custom_cost_text = decision_cost_100_m_25_pp
+		available = {
+			custom_trigger_tooltip = { 
+				check_variable = { swrw_fe_actions < 2 }
+				tooltip = SWRW_FEnegotiations_actions_limit_tt	
+			}
+		}
 		complete_effect = {
 			hidden_effect = {
 				add_political_power = -25
 			}
 			set_temp_variable = { temp_econ_spending_amount = 0.1 }
 			econ_spend_money_once_effect_raw_money = yes
+			add_to_variable = { swrw_fe_actions = 1 }
 		}
 		days_remove = 14
 		remove_effect = {
@@ -3632,6 +4393,7 @@ TaS_SWRW_far_eastern_negotiations = {
 			TaS_SWRW_change_corpo_jap = yes
 			set_temp_variable = { swrw_diplo_temp = 10 }
 			TaS_SWRW_change_diplo_jap = yes
+			add_to_variable = { swrw_fe_actions = -1 }
 		}
 	}
 	SWRW_FEnegotiations_legco_talks = {
@@ -3645,12 +4407,19 @@ TaS_SWRW_far_eastern_negotiations = {
 			has_political_power > 24.99
 		}
 		custom_cost_text = decision_cost_100_m_25_pp
+		available = {
+			custom_trigger_tooltip = { 
+				check_variable = { swrw_fe_actions < 2 }
+				tooltip = SWRW_FEnegotiations_actions_limit_tt	
+			}
+		}
 		complete_effect = {
 			hidden_effect = {
 				add_political_power = -25
 			}
 			set_temp_variable = { temp_econ_spending_amount = 0.1 }
 			econ_spend_money_once_effect_raw_money = yes
+			add_to_variable = { swrw_fe_actions = 1 }
 		}
 		days_remove = 14
 		remove_effect = {
@@ -3706,6 +4475,7 @@ TaS_SWRW_far_eastern_negotiations = {
 			TaS_SWRW_change_corpo_jap = yes
 			set_temp_variable = { swrw_diplo_temp = 10 }
 			TaS_SWRW_change_diplo_jap = yes
+			add_to_variable = { swrw_fe_actions = -1 }
 		}
 	}
 	##Vladivostok round
@@ -3719,12 +4489,19 @@ TaS_SWRW_far_eastern_negotiations = {
 			has_political_power > 39.99
 		}
 		custom_cost_text = decision_cost_40_pp_150_m
+		available = {
+			custom_trigger_tooltip = { 
+				check_variable = { swrw_fe_actions < 2 }
+				tooltip = SWRW_FEnegotiations_actions_limit_tt	
+			}
+		}
 		complete_effect = {
 			hidden_effect = {
 				add_political_power = -40
 			}
 			set_temp_variable = { temp_econ_spending_amount = 0.15 }
 			econ_spend_money_once_effect_raw_money = yes
+			add_to_variable = { swrw_fe_actions = 1 }
 		}
 		days_remove = 14
 		remove_effect = {
@@ -3756,6 +4533,7 @@ TaS_SWRW_far_eastern_negotiations = {
 			TaS_SWRW_change_diplo_jap = yes
 			set_temp_variable = { swrw_corpo_temp = 15 }
 			TaS_SWRW_change_corpo_jap = yes
+			add_to_variable = { swrw_fe_actions = -1 }
 		}
 	}
 	SWRW_FEnegotiations_european_ports = {
@@ -3766,12 +4544,19 @@ TaS_SWRW_far_eastern_negotiations = {
 		fire_only_once = yes
 		custom_cost_trigger = { has_political_power > 19.99 }
 		custom_cost_text = decision_cost_150_million_20_pp
+		available = {
+			custom_trigger_tooltip = { 
+				check_variable = { swrw_fe_actions < 2 }
+				tooltip = SWRW_FEnegotiations_actions_limit_tt	
+			}
+		}
 		complete_effect = {
 			hidden_effect = {
 				add_political_power = -20	
 			}
 			set_temp_variable = { temp_econ_spending_amount = 0.150 }
 			econ_spend_money_once_effect_raw_money = yes
+			add_to_variable = { swrw_fe_actions = 1 }
 		}
 		days_remove = 14
 		remove_effect = {
@@ -3832,6 +4617,7 @@ TaS_SWRW_far_eastern_negotiations = {
 			TaS_SWRW_change_corpo_jap = yes
 			set_temp_variable = { swrw_diplo_temp = 10 }
 			TaS_SWRW_change_diplo_jap = yes
+			add_to_variable = { swrw_fe_actions = -1 }
 		}
 	}
 	SWRW_FEnegotiations_demil_far_east = {
@@ -3845,11 +4631,18 @@ TaS_SWRW_far_eastern_negotiations = {
 			command_power > 24.99
 		}
 		custom_cost_text = decision_cost_50_pp_25_cp
+		available = {
+			custom_trigger_tooltip = { 
+				check_variable = { swrw_fe_actions < 2 }
+				tooltip = SWRW_FEnegotiations_actions_limit_tt	
+			}
+		}
 		complete_effect = {
 			hidden_effect = {
 				add_political_power = -50
 				add_command_power = -25
 			}
+			add_to_variable = { swrw_fe_actions = 1 }
 		}
 		days_remove = 14
 		remove_effect = {
@@ -3860,6 +4653,7 @@ TaS_SWRW_far_eastern_negotiations = {
 			TaS_SWRW_change_corpo_jap = yes
 			set_temp_variable = { swrw_diplo_temp = 10 }
 			TaS_SWRW_change_diplo_jap = yes
+			add_to_variable = { swrw_fe_actions = -1 }
 		}
 	}
 	SWRW_FEnegotiations_double_administrartion = {
@@ -3872,10 +4666,18 @@ TaS_SWRW_far_eastern_negotiations = {
 			command_power > 24.99
 		}
 		custom_cost_text = decision_cost_25_cp
+		available = {
+			custom_trigger_tooltip = { 
+				check_variable = { swrw_fe_actions < 2 }
+				tooltip = SWRW_FEnegotiations_actions_limit_tt	
+			}
+		}
 		complete_effect = {
 			hidden_effect = {
 				add_command_power = -25
 			}
+			add_stability = -0.05
+			add_to_variable = { swrw_fe_actions = 1 }
 		}
 		days_remove = 14
 		remove_effect = {
@@ -3886,6 +4688,7 @@ TaS_SWRW_far_eastern_negotiations = {
 			TaS_SWRW_change_corpo_jap = yes
 			set_temp_variable = { swrw_diplo_temp = 10 }
 			TaS_SWRW_change_diplo_jap = yes
+			add_to_variable = { swrw_fe_actions = -1 }
 		}
 	}
 	SWRW_FEnegotiations_give_ural = {
@@ -3898,10 +4701,17 @@ TaS_SWRW_far_eastern_negotiations = {
 			has_political_power > 24.99
 		}
 		custom_cost_text = decision_cost_100_m_25_pp
+		available = {
+			custom_trigger_tooltip = { 
+				check_variable = { swrw_fe_actions < 2 }
+				tooltip = SWRW_FEnegotiations_actions_limit_tt	
+			}
+		}
 		complete_effect = {
 			hidden_effect = {
 				add_political_power = -25
 			}
+			add_to_variable = { swrw_fe_actions = 1 }
 			set_temp_variable = { temp_econ_spending_amount = 0.1 }
 			econ_spend_money_once_effect_raw_money = yes
 		}
@@ -3919,6 +4729,7 @@ TaS_SWRW_far_eastern_negotiations = {
 			TaS_SWRW_change_corpo_jap = yes
 			set_temp_variable = { swrw_diplo_temp = 10 }
 			TaS_SWRW_change_diplo_jap = yes
+			add_to_variable = { swrw_fe_actions = -1 }
 		}
 	}
 	SWRW_FEnegotiations_russo_japanese_pact = {
@@ -3931,12 +4742,19 @@ TaS_SWRW_far_eastern_negotiations = {
 			has_political_power > 24.99
 		}
 		custom_cost_text = decision_cost_100_m_25_pp
+		available = {
+			custom_trigger_tooltip = { 
+				check_variable = { swrw_fe_actions < 2 }
+				tooltip = SWRW_FEnegotiations_actions_limit_tt	
+			}
+		}
 		complete_effect = {
 			hidden_effect = {
 				add_political_power = -25
 			}
 			set_temp_variable = { temp_econ_spending_amount = 0.1 }
 			econ_spend_money_once_effect_raw_money = yes
+			add_to_variable = { swrw_fe_actions = 1 }
 		}
 		days_remove = 14
 		remove_effect = {
@@ -3964,6 +4782,7 @@ TaS_SWRW_far_eastern_negotiations = {
 			TaS_SWRW_change_corpo_jap = yes
 			set_temp_variable = { swrw_diplo_temp = 10 }
 			TaS_SWRW_change_diplo_jap = yes
+			add_to_variable = { swrw_fe_actions = -1 }
 		}
 	}
 }

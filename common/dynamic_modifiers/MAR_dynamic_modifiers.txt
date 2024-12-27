@@ -142,3 +142,14 @@ MAR_MGB_double_agents_modifier = {
 	
 	political_power_factor = MAR_MGB_var_double_agents_pp
 }
+
+TaS_scorched_earth = {
+	icon = GFX_modifiers_OST_scorched_earth
+	enable = { always = yes }
+	attacker_modifier = yes
+
+	air_cas_present_factor = -0.15
+	army_attack_factor = -0.25
+	army_attack_speed_factor = -0.25
+	army_org_factor = -0.15
+}

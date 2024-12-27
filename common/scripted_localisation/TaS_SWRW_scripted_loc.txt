@@ -285,3 +285,68 @@ defined_text = {
 		localization_key = TaS_FE_status_over
 	}
 }
+
+defined_text = {
+	name = fenegotiations_round_result
+	text = { # 1
+		trigger = {
+			OR = {
+				check_variable = { fe_round = 1 }
+				check_variable = { fe_round = 2 }
+			}
+			OR = {
+				check_variable = { swrw_diplo_jap < 75 }
+				check_variable = { swrw_corpo_jap < 75 }
+			}
+		}
+		localization_key = SWRW_FEnegotiations_mission_fail
+	}
+	text = { # 1
+		trigger = {
+			OR = {
+				check_variable = { fe_round = 1 }
+				check_variable = { fe_round = 2 }
+			}
+			check_variable = { swrw_diplo_jap > 75 }
+			check_variable = { swrw_corpo_jap > 75 }
+		}
+		localization_key = SWRW_FEnegotiations_mission_succ
+	}
+	text = { # 1
+		trigger = {
+			check_variable = { fe_round = 3 }
+			OR = {
+				check_variable = { swrw_diplo_jap < 85 }
+				check_variable = { swrw_corpo_jap < 85 }
+			}
+		}
+		localization_key = SWRW_FEnegotiations_mission_fail
+	}
+	text = { # 1
+		trigger = {
+			check_variable = { fe_round = 3 }
+			check_variable = { swrw_corpo_jap > 85}
+			check_variable = { swrw_diplo_jap > 85}
+		}
+		localization_key = SWRW_FEnegotiations_mission_succ
+	}
+	text = { # 1
+		trigger = {
+			check_variable = { fe_round = 4 }
+			OR = {
+				check_variable = { swrw_diplo_jap < 95 }
+				check_variable = { swrw_corpo_jap < 95 }
+			}
+		}
+		localization_key = SWRW_FEnegotiations_mission_fail
+	}
+	text = { # 1
+		trigger = {
+			check_variable = { fe_round = 4 }
+			check_variable = { swrw_corpo_jap > 95}
+			check_variable = { swrw_diplo_jap > 95}
+		}
+		localization_key = SWRW_FEnegotiations_mission_succ
+	}
+	
+}

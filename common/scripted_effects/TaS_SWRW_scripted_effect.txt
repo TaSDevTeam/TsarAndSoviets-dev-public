@@ -640,10 +640,10 @@ TaS_SWRW_Manchu_CW_HAN_win = {
 		transfer_state = 810
 		transfer_state = 716
 		transfer_state = 1265
-		transfer_state = 717
-		transfer_state = 328
 		transfer_state = 1640
 		transfer_state = 610
+		transfer_state = 1713
+		transfer_state = 1641
 		
 		country_lock_all_division_template = yes
 		add_ideas = MJP_chained_forever
@@ -720,10 +720,13 @@ TaS_SWRW_Manchu_CW_PFF_win = {
 		transfer_state = 810
 		transfer_state = 716
 		transfer_state = 1265
-		transfer_state = 717
-		transfer_state = 328
 		transfer_state = 1640
 		transfer_state = 610
+		transfer_state = 1713
+		transfer_state = 1641
+		transfer_state = 1715
+		transfer_state = 328
+		transfer_state = 717
 		
 		country_lock_all_division_template = yes
 		add_ideas = MJP_chained_forever
@@ -800,10 +803,10 @@ TaS_SWRW_Manchu_CW_MAN_win = {
 		transfer_state = 810
 		transfer_state = 716
 		transfer_state = 1265
-		transfer_state = 717
-		transfer_state = 328
 		transfer_state = 1640
 		transfer_state = 610
+		transfer_state = 1713
+		transfer_state = 1641
 		
 		country_lock_all_division_template = yes
 		add_ideas = MJP_chained_forever
@@ -1162,3 +1165,142 @@ SWRW_start_rebellion_POV = {
 		}
 	}
 }	
+
+SWRW_turkey_peacedeal = {
+	RUS = {
+		white_peace = TUR
+	}	
+	every_country = {
+		limit = { is_puppet_of = TUR }
+		white_peace = RUS
+	}
+	XYZ = {
+		MTU_Military_Administration = {
+			set_nationality = TUR
+		}
+	}
+	TUR = {
+		set_politics = {
+			ruling_party = despotism
+		}
+		add_popularity = {
+			ideology = despotism
+			popularity = 0.45
+		}
+		set_party_name = {
+			ideology = despotism
+			long_name = TUR_MIL_despotism_party_long
+			name = TUR_MIL_despotism_party
+		}
+		kill_country_leader = yes
+		promote_character = MTU_Military_Administration
+		if = {
+			limit = { RUS = { has_government = socialist } }
+			set_cosmetic_tag = TUR_MIL_Kosygin
+		}
+		else = {
+			set_cosmetic_tag = TUR_MIL
+		}
+		econ_join_sphere_MAR = yes
+	} 
+	every_country = {
+		limit = { is_subject_of = TUR }
+		end_puppet = TUR
+	}
+	TUR = {
+		get_current_government_type = yes
+		save_party_popularities = yes
+	}
+	RUS = {
+		set_autonomy = {
+			target = TUR
+			autonomy_state = autonomy_occupied_territory
+		}	
+	}	
+	TUR = {
+		restore_previous_government_type = yes
+		apply_party_popularities = yes
+	}
+}
+SWRW_finland_peacedeal = {
+	RUS = {
+		white_peace = FIN
+	}	
+	XYZ = {
+		MFI_Military_Administration = {
+			set_nationality = FIN
+		}
+	}
+	FIN = {
+		set_politics = {
+			ruling_party = despotism
+		}
+		add_popularity = {
+			ideology = despotism
+			popularity = 0.45
+		}
+		set_party_name = {
+			ideology = despotism
+			long_name = FIN_MIL_despotism_party_long
+			name = FIN_MIL_despotism_party
+		}
+		kill_country_leader = yes
+		promote_character = MFI_Military_Administration
+		if = {
+			limit = { RUS = { has_government = socialist } }
+			set_cosmetic_tag = FIN_MIL_Kosygin
+		}
+		else = {
+			set_cosmetic_tag = FIN_MIL
+		}
+		econ_join_sphere_MAR = yes
+	} 
+	FIN = {
+		get_current_government_type = yes
+		save_party_popularities = yes
+	}
+	RUS = {
+		set_autonomy = {
+			target = FIN
+			autonomy_state = autonomy_occupied_territory
+		}	
+	}	
+	FIN = {
+		restore_previous_government_type = yes
+		apply_party_popularities = yes
+	}
+}
+SWRW_turkey_fail_peacedeal = {
+	RUS = {
+		white_peace = TUR
+	}
+	every_country = {
+		limit = { is_puppet_of = TUR }
+		white_peace = RUS
+	}
+	ARM = {
+		transfer_state = 1554
+		add_state_core = 1554
+	}
+	1293 = { set_demilitarized_zone = yes }
+	231 = { set_demilitarized_zone = yes }
+	244 = { set_demilitarized_zone = yes }
+	229 = { set_demilitarized_zone = yes }
+	2131 = { set_demilitarized_zone = yes }
+	1552 = { set_demilitarized_zone = yes }
+	1556 = { set_demilitarized_zone = yes }
+	1558 = { set_demilitarized_zone = yes }
+}
+
+ 
+SWRW_finland_fail_peacedeal = {
+	RUS = {
+		white_peace = FIN
+	}
+	FIN = {
+		transfer_state = 215
+		transfer_state = 1887
+		add_state_core = 215
+		add_state_core = 1887
+	}
+}

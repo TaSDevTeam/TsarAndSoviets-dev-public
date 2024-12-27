@@ -1006,6 +1006,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			transfer_state = 1393
 			transfer_state = 87
 			transfer_state = 67
+			transfer_state = 2261
 			every_owned_state = {
 				GPL = {
 					add_state_core = PREV
@@ -1030,6 +1031,11 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			transfer_state = 774
 			transfer_state = 58
 			transfer_state = 775
+			transfer_state = 990
+			transfer_state = 1372
+			transfer_state = 991
+			transfer_state = 2463
+			transfer_state = 744
 			every_owned_state = {
 				GDN = {
 					add_state_core = PREV
@@ -1139,6 +1145,8 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			#transfer_state = 664
 			transfer_state = 1762
 			transfer_state = 1763
+			transfer_state = 2211
+			transfer_state = 2212
 			every_owned_state = {
 				GSV = {
 					add_state_core = PREV
@@ -1175,6 +1183,18 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			transfer_state = 144
 			transfer_state = 896
 			transfer_state = 94
+			transfer_state = 2138
+			transfer_state = 2139
+			transfer_state = 2140
+			transfer_state = 2137
+			transfer_state = 2136
+			transfer_state = 2135
+			transfer_state = 2134
+			transfer_state = 2133
+			transfer_state = 2132
+			transfer_state = 2141
+			transfer_state = 2142
+			transfer_state = 2097
 			every_owned_state = {
 				GNR = {
 					add_state_core = PREV
@@ -1193,7 +1213,6 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			transfer_state = 66
 			transfer_state = 1814
 			transfer_state = 1813
-			transfer_state = 744
 			TNO_startup_nation = yes
 		}
 		BRL = {
@@ -1349,6 +1368,9 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 				transfer_state = 97
 			}
 		}
+		RUS = {
+			transfer_state = 2098
+		}
 		if = {
 			limit = {
 				MAD = {
@@ -1485,6 +1507,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 			transfer_state = 5
 			transfer_state = 188
 			transfer_state = 66
+			transfer_state = 58
 			set_politics = {
 				ruling_party = socialist
 			}
@@ -1524,6 +1547,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 			transfer_state = 1386
 			transfer_state = 1389
 			transfer_state = 1392
+			transfer_state = 2261
 			
 			transfer_state = 1390
 			transfer_state = 1391
@@ -1665,7 +1689,8 @@ TaS_WRW2_German_Collapse_Kosygin = {
 			transfer_state = 1762
 			transfer_state = 71
 			transfer_state = 1763
-			
+			transfer_state = 2211
+			transfer_state = 2212
 			#transfer_state = 664
 			#transfer_state = 73
 			
@@ -1693,10 +1718,14 @@ TaS_WRW2_German_Collapse_Kosygin = {
 		}
 		GDN = {
 			econ_join_sphere_MAR = yes
+			transfer_state = 37
 			transfer_state = 99
 			transfer_state = 774
-			transfer_state = 58
-			transfer_state = 37
+			transfer_state = 990
+			transfer_state = 1372
+			transfer_state = 991
+			transfer_state = 2463
+			transfer_state = 744
 			
 			set_politics = {
 				ruling_party = progressivism
@@ -1727,6 +1756,18 @@ TaS_WRW2_German_Collapse_Kosygin = {
 			transfer_state = 144
 			transfer_state = 896
 			transfer_state = 94
+			transfer_state = 2138
+			transfer_state = 2139
+			transfer_state = 2140
+			transfer_state = 2137
+			transfer_state = 2136
+			transfer_state = 2135
+			transfer_state = 2134
+			transfer_state = 2133
+			transfer_state = 2132
+			transfer_state = 2141
+			transfer_state = 2142
+			transfer_state = 2097
 			every_owned_state = {
 				GNR = {
 					add_state_core = PREV
@@ -1841,11 +1882,12 @@ TaS_WRW2_German_Collapse_Kosygin = {
 				limit = { BRG = { exists = no } }
 				transfer_state = 6
 				transfer_state = 1734
+				if = {
+					limit = { NOT = { FRA = { controls_state = 34 } } }
+					transfer_state = 34
+				}
 			}
-			if = {
-				limit = { NOT = { FRA = { controls_state = 34 } } }
-				transfer_state = 34
-			}
+			
 			set_politics = {
 				ruling_party = progressivism
 			}
@@ -1896,6 +1938,9 @@ TaS_WRW2_German_Collapse_Kosygin = {
 			RUS = {
 				transfer_state = 97
 			}
+		}
+		RUS = {
+			transfer_state = 2098
 		}
 		if = {
 			limit = {

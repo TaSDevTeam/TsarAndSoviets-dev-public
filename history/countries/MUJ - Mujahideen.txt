@@ -14,16 +14,16 @@ add_manpower = 75000
 load_focus_tree = ZZZ_blank_focus
 
 set_politics = {
-	ruling_party = ultranationalism
+	ruling_party = despotism
 	elections_allowed = no
 	last_election = "1935.12.17"
 	election_frequency = 48
 }
 set_popularities = {
-	ultranationalism  = 40
+	ultranationalism  = 10
 	national_socialism = 25
 	fascism = 25
-	despotism = 10
+	despotism = 40
 }
 
 add_ideas = {
@@ -46,7 +46,7 @@ add_ideas = {
 
 	#economic#
 	tno_trade_laws_export_focus
-	tno_income_taxation_tax_havens
+	tno_income_taxation_low_income_weighted
 	tno_minimum_wage_trinket_minimum_wage
 	tno_max_workhours_14_hour_work_day
 	tno_pensions_low_pensions
@@ -57,7 +57,7 @@ add_ideas = {
 	tno_education_public_education
 	tno_penal_system_harsh_penal_code
 	tno_gender_rights_traditional_roles
-	tno_security_oppressive_police
+	tno_security_crime_prevention
 	tno_regulations_token_regulations
 
 	#misc#

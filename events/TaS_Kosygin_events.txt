@@ -2665,10 +2665,10 @@ country_event = { #Rus win
 			}
 			UAR = {
 				set_politics = {
-					ruling_party = communist
+					ruling_party = socialist
 				}
 				add_popularity = {
-					ideology = communist
+					ideology = socialist
 					popularity = 0.45
 				}
 				retire_country_leader = yes
@@ -2676,7 +2676,7 @@ country_event = { #Rus win
 					character = UAR_Salah_Jadid
 					country_leader = {
 						desc = ""
-						ideology = communist_revolutionary_baathism_subtype 
+						ideology = socialist_baathism_subtype 
 						expire = "1999.1.1"
 						traits = { }
 					}
@@ -2764,10 +2764,10 @@ country_event = { #Ger win
 			}
 			UAR = {
 				set_politics = {
-					ruling_party = socialist
+					ruling_party = fascism
 				}
 				add_popularity = {
-					ideology = socialist
+					ideology = fascism
 					popularity = 0.45
 				}
 				retire_country_leader = yes
@@ -2775,7 +2775,7 @@ country_event = { #Ger win
 					character = UAR_Ahmed_Hassan_al_Bakr
 					country_leader = {
 						desc = ""
-						ideology = socialist_baathism_subtype 
+						ideology = fascism_baathism_subtype 
 						expire = "1999.1.1"
 						traits = { }
 					}
@@ -2861,7 +2861,7 @@ country_event = { #no win
 					character = UAR_Hafez_al_Assad
 					country_leader = {
 						desc = ""
-						ideology = despotism_neo_baathism_subtype 
+						ideology = despotism_baathism_subtype 
 						expire = "1999.1.1"
 						traits = { }
 					}

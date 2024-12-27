@@ -1278,7 +1278,7 @@ country_event = { #Turkestan breaks free
 			end_puppet = MAR
 			econ_leave_sphere = yes
 			set_politics = {
-				ruling_party = paternalism 
+				ruling_party = ultranationalism 
 				last_election = "1933.2.16"
 				election_frequency = 36
 				elections_allowed = no
@@ -1288,7 +1288,7 @@ country_event = { #Turkestan breaks free
 				promote_leader = yes
 				country_leader = {
 				   desc = "POLITICS_RUTSKOJ_COLLAPSE_DESC"
-					ideology = paternalism_stratocracy_subtype
+					ideology = ultranationalism_stratocracy_subtype
 					expire = "1999.1.1"
 					traits = { }	
 				}
@@ -2084,13 +2084,13 @@ country_event = { #F Ural
 				promote_leader = yes
 				country_leader = {
 					desc = "POLITICS_PRIMAKOV_COLLAPSE_DESC"
-					ideology = paternalism_controlled_democracy_subtype
+					ideology = paternalism_anocracy_subtype
 					expire = "1999.1.1"
 					traits = { }
 				}
 			}
 			MAR_Evgeny_Primakov = {
-				promote_character = paternalism_controlled_democracy_subtype
+				promote_character = paternalism_anocracy_subtype
 			}
 			set_party_name = {
 				ideology = paternalism
@@ -2211,7 +2211,7 @@ country_event = { #Total f
 				promote_leader = yes
 				country_leader = {
 					desc = "POLITICS_SHAYMIEV_COLLAPSE_DESC"
-					ideology = paternalism_controlled_democracy_subtype
+					ideology = paternalism_anocracy_subtype
 					expire = "1999.1.1"
 					traits = { }
 				}
@@ -3624,7 +3624,7 @@ country_event = {#General - It has begun
 			#}
 			division_template = {
 				name = "Infantry Division"
-				division_names_group = USA_infantry_ger
+				#division_names_group = USA_infantry_ger
 				is_locked = yes
 				regiments = {
 					APC = { x = 0 y = 0 }
@@ -3647,7 +3647,7 @@ country_event = {#General - It has begun
 			}
 			division_template = {
 				name = "Armored Division"
-				division_names_group = USA_armored_ger
+				#division_names_group = USA_armored_ger
 				is_locked = yes
 				regiments = {
 					APC = { x = 0 y = 0 }
@@ -3672,7 +3672,7 @@ country_event = {#General - It has begun
 			}
 			division_template = {
 				name = "Airborne Division"
-				division_names_group = USA_paratroopers_ger
+				#division_names_group = USA_paratroopers_ger
 				is_locked = yes
 				regiments = {
 					elite_infantry = { x = 0 y = 0 }
@@ -3692,7 +3692,7 @@ country_event = {#General - It has begun
 			}
 			division_template = {
 				name = "Marine Division"
-				division_names_group = USA_marines_ger
+				#division_names_group = USA_marines_ger
 				is_locked = yes
 				regiments = {
 					marine = { x = 0 y = 0 }
@@ -4028,7 +4028,7 @@ country_event = {#General - Franco-German War
 			}
 			division_template = {
 				name = "Infantry Division"
-				division_names_group = FRA_infantry_ger
+				#division_names_group = FRA_infantry_ger
 				is_locked = yes
 				regiments = {
 					APC = { x = 0 y = 0 }
@@ -4051,7 +4051,7 @@ country_event = {#General - Franco-German War
 			}
 			division_template = {
 				name = "Armored Division"
-				division_names_group = FRA_armored_ger
+				#division_names_group = FRA_armored_ger
 				is_locked = yes
 				regiments = {
 					APC = { x = 0 y = 0 }

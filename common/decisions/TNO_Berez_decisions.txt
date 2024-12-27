@@ -779,6 +779,25 @@ MAR_debug_category = {
 		}
 	}
 	
+	MAR_take_RUS_tag = {
+		icon = GFX_decision_generic_industry
+
+		allowed = {
+			original_tag = MAR
+		}
+		fire_only_once = no
+
+		complete_effect = { 
+			save_global_event_target_as = RUS_total_unifier
+			save_global_event_target_as = RUS_russian_unifier
+			save_global_event_target_as = RUS_siberian_unifier
+ 			save_global_event_target_as = RUS_western_unifier
+ 			save_global_event_target_as = RUS_west_siberia_unifier
+			save_global_event_target_as = RUS_central_siberia_unifier
+			save_global_event_target_as = RUS_far_east_unifier
+			save_global_event_target_as = RUS_southern_urals_unifier
+		}
+	}	
 	MAR_load_bop = {
 		icon = GFX_decision_generic_industry
 

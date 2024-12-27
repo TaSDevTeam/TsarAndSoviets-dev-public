@@ -23,6 +23,13 @@ characters = {
 				large = "gfx/leaders/AFG/Portrait_NAL_Mohammad_Najibullah.dds"
 			}
 		}
+		country_leader = {
+			desc = "NAL_Mohammad_Najibullah_DESC"
+			ideology = liberal_conservatism_big_tent_subtype
+			traits = { }
+			expire = "2222.2.2"
+			id = -1
+		}
 	}
 	MUJ_Gulbuddin_Hekmatyar = {
 		name = MUJ_Gulbuddin_Hekmatyar
@@ -30,6 +37,13 @@ characters = {
 			civilian = {
 				large = "gfx/leaders/AFG/Portrait_MUJ_Gulbuddin_Hekmatyar.dds"
 			}
+		}
+		country_leader = {
+			desc = "MUJ_Gulbuddin_Hekmatyar_DESC"
+			ideology = despotism_islamic_nationalism_subtype
+			traits = { }
+			expire = "2222.2.2"
+			id = -1
 		}
 	}
 }

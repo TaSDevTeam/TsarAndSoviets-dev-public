@@ -424,26 +424,36 @@ MAR_install_autonomy_kazakhstan = {
 
 MAR_install_mil_turkestan = {
 	MTR = {
-		add_state_core = 750
+		transfer_state = 2194
 		transfer_state = 750
-		add_state_core = 585
 		transfer_state = 585
-		add_state_core = 405
-		transfer_state = 405
-		add_state_core = 1466
-		transfer_state = 1466
-		add_state_core = 1467
-		transfer_state = 1467
-		add_state_core = 586
-		transfer_state = 586
-		add_state_core = 732
-		transfer_state = 732
-		add_state_core = 742
-		transfer_state = 742
-		add_state_core = 1468
+		transfer_state = 2205
 		transfer_state = 1468
-		add_state_core = 584
+		transfer_state = 405
+		transfer_state = 2195
+		transfer_state = 1467
+		transfer_state = 2196
+		
+		transfer_state = 2197
+		transfer_state = 586
+		transfer_state = 732
+		
+		transfer_state = 2201
 		transfer_state = 584
+		transfer_state = 2202
+		transfer_state = 2203
+		transfer_state = 2204
+		
+		transfer_state = 1466
+		transfer_state = 2198
+		transfer_state = 742
+		transfer_state = 2200
+		transfer_state = 2199
+		every_owned_state = {
+			MTR = {
+				add_state_core = PREV
+			}
+		} 
 		if = {
 			limit = { MAR = { has_government = socialist } }
 			set_cosmetic_tag = MilZones_Kosygin
@@ -452,6 +462,22 @@ MAR_install_mil_turkestan = {
 			idea = MAR_economic_recovery
 			days = 900
 		}
+		if = {
+			limit = { PER = { has_war = yes } }
+			transfer_state = 2125
+			add_state_core = 2125
+		}
+		if = {
+			limit = { 
+				OR = {
+					IRA = { check_variable = { econ_sphere_leader = MAR } }
+					IRC = { check_variable = { econ_sphere_leader = MAR } }
+				}
+			}
+			transfer_state = 2125
+			add_state_core = 2125
+		}
+		
 	}
 	MTR = {
 		get_current_government_type = yes
