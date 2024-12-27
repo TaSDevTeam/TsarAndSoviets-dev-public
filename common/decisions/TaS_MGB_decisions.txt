@@ -13,8 +13,8 @@ MAR_MGB_Okhranka_category = {
 				randomize_temp_variable = {
 					var = temp_connections_gained
 					distribution = uniform
-					min = 2
-					max = 6
+					min = 1
+					max = 3
 				}
 				round_temp_variable = temp_connections_gained
 				MAR_Okhranka_connections_change = yes
@@ -23,7 +23,7 @@ MAR_MGB_Okhranka_category = {
 					var = temp_agents_gained
 					distribution = uniform
 					min = 20
-					max = 60
+					max = 40
 				}
 				round_temp_variable = temp_agents_gained
 				MAR_Okhranka_agents_change = yes
@@ -84,7 +84,7 @@ MAR_MGB_Okhranka_category = {
 			custom_effect_tooltip = MAR_MGB_mission_collapsing_network_tt
 			hidden_effect = {
 				set_temp_variable = { temp_agents_gained = 500 }
-				set_temp_variable = { temp_connections_gained = 50 }
+				set_temp_variable = { temp_connections_gained = 10 }
 				MAR_Okhranka_agents_change = yes
 				MAR_Okhranka_connections_change = yes
 			}
@@ -111,7 +111,7 @@ MAR_MGB_Okhranka_category = {
 		}
 		timeout_effect = {
 			set_temp_variable = { temp_agents_gained = -150 }
-			set_temp_variable = { temp_connections_gained = 30 }
+			set_temp_variable = { temp_connections_gained = 40 }
 			MAR_Okhranka_agents_change = yes
 			MAR_Okhranka_connections_change = yes
 		}
@@ -280,7 +280,7 @@ MAR_MGB_Okhranka_category = {
 		
 		complete_effect = {
 			set_temp_variable = { temp_agents_gained = -75 }
-			set_temp_variable = { temp_connections_gained = 6 }
+			set_temp_variable = { temp_connections_gained = 5 }
 			MAR_Okhranka_agents_change = yes
 			MAR_Okhranka_connections_change = yes
 		}
@@ -309,7 +309,7 @@ MAR_MGB_Okhranka_category = {
 		
 		complete_effect = {
 			set_temp_variable = { temp_agents_gained = -120 }
-			set_temp_variable = { temp_connections_gained = 10 }
+			set_temp_variable = { temp_connections_gained = 8 }
 			MAR_Okhranka_agents_change = yes
 			MAR_Okhranka_connections_change = yes
 		}
@@ -376,7 +376,18 @@ MAR_MGB_Okhranka_category = {
 			hidden_effect = {
 				add_command_power = -20
 			}
-			set_temp_variable = { temp_connections_gained = -5 }
+			IF = {
+				limit = {
+					OR = {
+						has_completed_focus = MAR_homeland_expirience
+						has_completed_focus = MAR_old_collegues
+					}
+				}
+				set_temp_variable = { temp_connections_gained = -9 }
+			}
+			ELSE = {
+				set_temp_variable = { temp_connections_gained = -6 }
+			}
 			MAR_Okhranka_connections_change = yes
 		}
 		
@@ -405,7 +416,18 @@ MAR_MGB_Okhranka_category = {
 			hidden_effect = {
 				army_experience = -5
 			}
-			set_temp_variable = { temp_connections_gained = -3 }
+			IF = {
+				limit = {
+					OR = {
+						has_completed_focus = MAR_homeland_expirience
+						has_completed_focus = MAR_old_collegues
+					}
+				}
+				set_temp_variable = { temp_connections_gained = -5 }
+			}
+			ELSE = {
+				set_temp_variable = { temp_connections_gained = -3 }
+			}
 			MAR_Okhranka_connections_change = yes
 		}
 		
@@ -426,19 +448,30 @@ MAR_MGB_Okhranka_category = {
 		}
 		days_remove = 35
 		custom_cost_trigger = {
-			set_temp_variable = { t_pp_check = 30 }
+			set_temp_variable = { t_pp_check = 5 }
 			set_temp_variable = { t_m_check = 25 }
-			check_variable = { political_power > 29.99 }
+			check_variable = { political_power > 4.99 }
 		}
 		custom_cost_text = decision_cost_pp_m_dynamic
 		
 		complete_effect = {
 			hidden_effect = {
-				add_political_power = -30
+				add_political_power = -5
 			}
 			set_temp_variable = { temp_econ_spending_amount = 0.025 }
 			econ_spend_money_once_effect_raw_money = yes
-			set_temp_variable = { temp_connections_gained = -5 }
+			IF = {
+				limit = {
+					OR = {
+						has_completed_focus = MAR_peoples_love
+						has_completed_focus = MAR_we_and_the_proletariat
+					}
+				}
+				set_temp_variable = { temp_connections_gained = -9 }
+			}
+			ELSE = {
+				set_temp_variable = { temp_connections_gained = -6 }
+			}
 			MAR_Okhranka_connections_change = yes
 		}
 		
@@ -465,7 +498,18 @@ MAR_MGB_Okhranka_category = {
 		
 		complete_effect = {
 			subtract_from_variable = { loot_amount = 1 }
-			set_temp_variable = { temp_connections_gained = -3 }
+			IF = {
+				limit = {
+					OR = {
+						has_completed_focus = MAR_peoples_love
+						has_completed_focus = MAR_we_and_the_proletariat
+					}
+				}
+				set_temp_variable = { temp_connections_gained = -5 }
+			}
+			ELSE = {
+				set_temp_variable = { temp_connections_gained = -3 }
+			}
 			MAR_Okhranka_connections_change = yes
 		}
 		
@@ -511,7 +555,7 @@ MAR_MGB_Okhranka_category = {
 		remove_effect = {
 			IF = {
 				limit = { check_variable = { MAR_MGB_var_double_agents_count < 3 } }
-				set_temp_variable = { temp_connections_gained = -8 }
+				set_temp_variable = { temp_connections_gained = -10 }
 				add_to_variable = { MAR_MGB_var_double_agents_count = 1 }
 				add_to_variable = { MAR_MGB_var_double_agents_pp = -0.1 }
 				MAR_Okhranka_connections_change = yes
@@ -707,7 +751,7 @@ MAR_MGB_Okhranka_category = {
 		
 		complete_effect = {
 			hidden_effect = {
-				add_political_power = -30
+				add_political_power = -10
 			}
 			set_temp_variable = { temp_econ_spending_amount = 0.015 }
 			econ_spend_money_once_effect_raw_money = yes
@@ -734,7 +778,6 @@ MAR_MGB_Okhranka_category = {
 		}
 		days_remove = 14
 		days_re_enable = 60
-		cost = 15
 		
 		modifier = {
 			political_power_gain = -0.2
@@ -760,7 +803,10 @@ MAR_MGB_Okhranka_category = {
 			factor = 100
 		}
 		fire_only_once = yes
-		cost = 50
+		custom_cost_trigger = {
+			has_army_experience > 24.99
+		}
+		custom_cost_text = decision_cost_25_army_xp
 		
 		complete_effect = {
 			custom_effect_tooltip = MAR_MGB_decision_single_tt

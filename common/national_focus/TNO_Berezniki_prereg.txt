@@ -267,6 +267,7 @@ shared_focus = {
 		add_stability = -0.05
 		add_political_power = 15
 		country_event = { id = MAR_initial.33 days = 0 }
+		custom_effect_tooltip = MAR_MGB_improve_covert_actions_tt
 	}
 }
 shared_focus = {
@@ -308,6 +309,16 @@ shared_focus = {
 		country_event = { id = MAR_initial.36 days = 0 }
 		TNO_improve_academic_base_med = yes
 		TNO_improve_industrial_expertise_low = yes
+		IF = {
+			limit = {
+				has_country_flag = MAR_MGB_resources_operation_complete_flag
+			}
+			add_political_power = 30
+		}
+		ELSE = {
+			set_temp_variable = { temp_res_tr_gained = 5 }
+			MAR_resources_threshold_change = yes
+		}
 	}
 }
 
@@ -333,6 +344,7 @@ shared_focus = {
 	completion_reward = {
 		country_event = { id = MAR_initial.28 days = 0 }
 		TNO_improve_poverty_low = yes
+		custom_effect_tooltip = MAR_MGB_improve_covert_actions_tt
 	}
 }
 
@@ -352,6 +364,16 @@ shared_focus = {
 	completion_reward = {
 		country_event = { id = MAR_initial.29 days = 0 } 
 		tno_education_improve = yes
+		IF = {
+			limit = {
+				has_country_flag = MAR_MGB_resources_operation_complete_flag
+			}
+			add_political_power = 30
+		}
+		ELSE = {
+			set_temp_variable = { temp_res_tr_gained = 5 }
+			MAR_resources_threshold_change = yes
+		}
 	}
 }
 
@@ -743,6 +765,7 @@ shared_focus = {
 		}
 		country_event = { id = MAR_initial.40 days = 3 }
 		add_political_power = 30
+		custom_effect_tooltip = MAR_MGB_improve_covert_actions_tt
 	}
 }
 
@@ -846,6 +869,16 @@ shared_focus = {
 			category = special_forces_tech
 		}
 		TNO_improve_army_professionalism_med = yes
+		IF = {
+			limit = {
+				has_country_flag = MAR_MGB_advisors_operation_success_flag
+			}
+			add_political_power = 25
+		}
+		ELSE = {
+			set_temp_variable = { temp_adv_tr_gained = 5 }
+			MAR_advisors_threshold_change = yes
+		}
 	}
 }
 
@@ -877,6 +910,7 @@ shared_focus = {
 			uses = 1
 			category = land_doctrine
 		}
+		custom_effect_tooltip = MAR_MGB_improve_covert_actions_tt
 	}
 }
 
@@ -955,6 +989,16 @@ shared_focus = {
 			cost_reduction = 0.6
 			uses = 1
 			category = land_doctrine
+		}
+		IF = {
+			limit = {
+				has_country_flag = MAR_MGB_advisors_operation_success_flag
+			}
+			add_political_power = 25
+		}
+		ELSE = {
+			set_temp_variable = { temp_adv_tr_gained = 5 }
+			MAR_advisors_threshold_change = yes
 		}
 	}
 }
