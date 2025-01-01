@@ -95,7 +95,7 @@ on_actions = {
 										id = MAR_2WRW_world_news.7
 									}
 								}
-								ROOT = { country_event = { id = TaS_SWRW.10 } }
+								ROOT = { country_event = { id = RUS_SWRW_mech.10 } }
 							}
 							
 						}
@@ -113,7 +113,7 @@ on_actions = {
 							limit = {
 								is_russian_nation = yes
 							}
-							hidden_effect = { country_event = { id = TaS_SWRW.1 } }
+							hidden_effect = { country_event = { id = RUS_SWRW_mech.1 } }
 						}
 					}
 				}
@@ -129,7 +129,15 @@ on_actions = {
 							limit = {
 								is_russian_nation = yes
 							}
-							hidden_effect = { country_event = { id = TaS_SWRW.2 } }
+							hidden_effect = {
+								if = {
+									limit = { has_government = despotism }
+									country_event = { id = RUS_SWRW_mech.11 }
+								}
+								else = {
+									country_event = { id = RUS_SWRW_mech.2 }
+								}
+							}
 						}
 					}
 				}
@@ -145,7 +153,7 @@ on_actions = {
 							limit = {
 								is_russian_nation = yes
 							}
-							hidden_effect = { country_event = { id = TaS_SWRW.3 } }
+							hidden_effect = { country_event = { id = RUS_SWRW_mech.3 } }
 						}
 					}
 				}
@@ -161,7 +169,15 @@ on_actions = {
 							limit = {
 								is_russian_nation = yes
 							}
-							hidden_effect = { country_event = { id = TaS_SWRW.4 } }
+							hidden_effect = { 
+								if = {
+									limit = { has_government = despotism }
+									country_event = { id = RUS_SWRW_mech.12 }
+								}
+								else = {
+									country_event = { id = RUS_SWRW_mech.4 }
+								}
+							}
 						}
 					}
 				}
@@ -177,7 +193,15 @@ on_actions = {
 							limit = {
 								is_russian_nation = yes
 							}
-							hidden_effect = { country_event = { id = TaS_SWRW.5 } }
+							hidden_effect = {
+								if = {
+									limit = { has_government = despotism }
+									country_event = { id = RUS_SWRW_mech.14 }
+								}
+								else = {
+									country_event = { id = RUS_SWRW_mech.5 }
+								}
+							}
 						}
 					}
 				}
@@ -193,7 +217,15 @@ on_actions = {
 							limit = {
 								is_russian_nation = yes
 							}
-							hidden_effect = { country_event = { id = TaS_SWRW.6 } }
+							hidden_effect = {
+								if = {
+									limit = { has_government = despotism }
+									country_event = { id = RUS_SWRW_mech.15 }
+								}
+								else = {
+									country_event = { id = RUS_SWRW_mech.6 }
+								}
+							}
 						}
 					}
 				}
@@ -209,7 +241,15 @@ on_actions = {
 							limit = {
 								is_russian_nation = yes
 							}
-							hidden_effect = { country_event = { id = TaS_SWRW.7 } }
+							hidden_effect = {
+								if = {
+									limit = { has_government = despotism }
+									country_event = { id = RUS_SWRW_mech.16 }
+								}
+								else = {
+									country_event = { id = RUS_SWRW_mech.7 }
+								}
+							}
 						}
 					}
 				}
@@ -225,7 +265,15 @@ on_actions = {
 							limit = {
 								is_russian_nation = yes
 							}
-							hidden_effect = { country_event = { id = TaS_SWRW.8 } }
+							hidden_effect = { 
+								if = {
+									limit = { has_government = despotism }
+									country_event = { id = RUS_SWRW_mech.13 }
+								}
+								else = {
+									country_event = { id = RUS_SWRW_mech.8 }
+								}
+							}
 						}
 					}
 				}
@@ -241,7 +289,7 @@ on_actions = {
 							limit = {
 								is_russian_nation = yes
 							}
-							hidden_effect = { country_event = { id = TaS_SWRW.9 } }
+							hidden_effect = { country_event = { id = RUS_SWRW_mech.9 } }
 						}
 					}
 				}
@@ -281,12 +329,12 @@ on_actions = {
 						if = {
 							limit = {
 								tag = USA
-								has_global_flag = TaS_SWRW_democracy_time
+								has_global_flag = RUS_SWRW_mech_democracy_time
 							}
 							FROM = {
 								white_peace = ROOT
 							}
-							TaS_SWRW_american_germany = yes
+							RUS_SWRW_mech_american_germany = yes
 						}
 					}
 				}

@@ -121,7 +121,7 @@ country_event = { #
 	option = { #
 		name = RUS_SWRW_preparation.7.a
 		ai_chance = { factor = 1 }
-		
+		country_event = { id = RUS_SWRW_preparation.8 }
 	}
 }
 
@@ -601,174 +601,357 @@ country_event = { #Ostland: Carpet Bombing(of German soil)
 }
 
 country_event = { #Peterburg
-	id = TaS_SWRW.1
-	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.1" }
-	title = TaS_SWRW.1.t
-	desc = TaS_SWRW.1.d
+	id = RUS_SWRW_mech.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW_mech.1" }
+	title = RUS_SWRW_mech.1.t
+	desc = RUS_SWRW_mech.1.d
 	picture = GFX_swrw_event_1
 	
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = { #
-		name = TaS_SWRW.1.a
+		name = RUS_SWRW_mech.1.a
 		ai_chance = { factor = 1 }
-		
+		set_temp_variable = { temp_devastation_gained = -3 } 
+		TaS_WRW2_change_devastation = yes
+		GER = {
+			set_temp_variable = { temp_devastation_gained = 2 }
+			TaS_WRW2_change_devastation = yes
+		}
 	}
 }
 
 country_event = { #Volgograd
-	id = TaS_SWRW.2
-	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.2" }
-	title = TaS_SWRW.2.t
-	desc = TaS_SWRW.2.d
+	id = RUS_SWRW_mech.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW_mech.2" }
+	title = RUS_SWRW_mech.2.t
+	desc = RUS_SWRW_mech.2.d
 	picture = GFX_swrw_event_2
 	
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = { #
-		name = TaS_SWRW.2.a
+		name = RUS_SWRW_mech.2.a
 		ai_chance = { factor = 1 }
-		
+		set_temp_variable = { temp_devastation_gained = -3 } 
+		TaS_WRW2_change_devastation = yes
+		GER = {
+			set_temp_variable = { temp_devastation_gained = 2 }
+			TaS_WRW2_change_devastation = yes
+		}
 	}
 }
 
 country_event = { #Krasnodar
-	id = TaS_SWRW.3
-	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.3" }
-	title = TaS_SWRW.3.t
-	desc = TaS_SWRW.3.d
+	id = RUS_SWRW_mech.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW_mech.3" }
+	title = RUS_SWRW_mech.3.t
+	desc = RUS_SWRW_mech.3.d
 	#picture = 
 	
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = { #
-		name = TaS_SWRW.3.a
+		name = RUS_SWRW_mech.3.a
 		ai_chance = { factor = 1 }
-		
+		set_temp_variable = { temp_devastation_gained = -3 } 
+		TaS_WRW2_change_devastation = yes
+		GER = {
+			set_temp_variable = { temp_devastation_gained = 2 }
+			TaS_WRW2_change_devastation = yes
+		}
 	}
 }
 
 country_event = { #Baku
-	id = TaS_SWRW.4
-	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.4" }
-	title = TaS_SWRW.4.t
-	desc = TaS_SWRW.4.d
+	id = RUS_SWRW_mech.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW_mech.4" }
+	title = RUS_SWRW_mech.4.t
+	desc = RUS_SWRW_mech.4.d
 	#picture = 
 	
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = { #
-		name = TaS_SWRW.4.a
+		name = RUS_SWRW_mech.4.a
 		ai_chance = { factor = 1 }
-		
+		set_temp_variable = { temp_devastation_gained = -3 } 
+		TaS_WRW2_change_devastation = yes
+		GER = {
+			set_temp_variable = { temp_devastation_gained = 2 }
+			TaS_WRW2_change_devastation = yes
+		}
 	}
 }
 
 country_event = { #Kharkov
-	id = TaS_SWRW.5
-	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.5" }
-	title = TaS_SWRW.5.t
-	desc = TaS_SWRW.5.d
+	id = RUS_SWRW_mech.5
+	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW_mech.5" }
+	title = RUS_SWRW_mech.5.t
+	desc = RUS_SWRW_mech.5.d
 	#picture = 
 	
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = { #
-		name = TaS_SWRW.5.a
+		name = RUS_SWRW_mech.5.a
 		ai_chance = { factor = 1 }
-		
+		set_temp_variable = { temp_devastation_gained = -3 } 
+		TaS_WRW2_change_devastation = yes
+		GER = {
+			set_temp_variable = { temp_devastation_gained = 2 }
+			TaS_WRW2_change_devastation = yes
+		}
 	}
 }
 
 country_event = { #Kiev
-	id = TaS_SWRW.6
-	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.6" }
-	title = TaS_SWRW.6.t
-	desc = TaS_SWRW.6.d
+	id = RUS_SWRW_mech.6
+	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW_mech.6" }
+	title = RUS_SWRW_mech.6.t
+	desc = RUS_SWRW_mech.6.d
 	#picture = 
 	
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = { #
-		name = TaS_SWRW.6.a
+		name = RUS_SWRW_mech.6.a
 		ai_chance = { factor = 1 }
-		
+		set_temp_variable = { temp_devastation_gained = -3 } 
+		TaS_WRW2_change_devastation = yes
+		GER = {
+			set_temp_variable = { temp_devastation_gained = 2 }
+			TaS_WRW2_change_devastation = yes
+		}
 	}
 }
 
 country_event = { #Minsk
-	id = TaS_SWRW.7
-	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.7" }
-	title = TaS_SWRW.7.t
-	desc = TaS_SWRW.7.d
+	id = RUS_SWRW_mech.7
+	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW_mech.7" }
+	title = RUS_SWRW_mech.7.t
+	desc = RUS_SWRW_mech.7.d
 	#picture = 
 	
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = { #
-		name = TaS_SWRW.7.a
+		name = RUS_SWRW_mech.7.a
 		ai_chance = { factor = 1 }
-		
+		set_temp_variable = { temp_devastation_gained = -3 } 
+		TaS_WRW2_change_devastation = yes
+		GER = {
+			set_temp_variable = { temp_devastation_gained = 2 }
+			TaS_WRW2_change_devastation = yes
+		}
 	}
 }
 
 country_event = { #Sevastopol
-	id = TaS_SWRW.8
-	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.8" }
-	title = TaS_SWRW.8.t
-	desc = TaS_SWRW.8.d
+	id = RUS_SWRW_mech.8
+	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW_mech.8" }
+	title = RUS_SWRW_mech.8.t
+	desc = RUS_SWRW_mech.8.d
 	#picture = 
 	
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = { #
-		name = TaS_SWRW.8.a
+		name = RUS_SWRW_mech.8.a
 		ai_chance = { factor = 1 }
-		
+		set_temp_variable = { temp_devastation_gained = -3 } 
+		TaS_WRW2_change_devastation = yes
+		GER = {
+			set_temp_variable = { temp_devastation_gained = 2 }
+			TaS_WRW2_change_devastation = yes
+		}
 	}
 }
 
 country_event = { #Riga
-	id = TaS_SWRW.9
-	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.9" }
-	title = TaS_SWRW.9.t
-	desc = TaS_SWRW.9.d
+	id = RUS_SWRW_mech.9
+	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW_mech.9" }
+	title = RUS_SWRW_mech.9.t
+	desc = RUS_SWRW_mech.9.d
 	#picture = 
 	
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = { #
-		name = TaS_SWRW.9.a
+		name = RUS_SWRW_mech.9.a
 		ai_chance = { factor = 1 }
-		
+		set_temp_variable = { temp_devastation_gained = -3 } 
+		TaS_WRW2_change_devastation = yes
+		GER = {
+			set_temp_variable = { temp_devastation_gained = 2 }
+			TaS_WRW2_change_devastation = yes
+		}
 	}
 }
 
 country_event = { #Moscow
-	id = TaS_SWRW.10
-	immediate = { log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.10" }
-	title = TaS_SWRW.10.t
-	desc = TaS_SWRW.10.d
+	id = RUS_SWRW_mech.10
+	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW_mech.10" }
+	title = RUS_SWRW_mech.10.t
+	desc = RUS_SWRW_mech.10.d
 	#picture = 
 	
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = { #
-		name = TaS_SWRW.10.a
+		name = RUS_SWRW_mech.10.a
 		ai_chance = { factor = 1 }
-		
+		set_temp_variable = { temp_devastation_gained = -3 } 
+		TaS_WRW2_change_devastation = yes
+		GER = {
+			set_temp_variable = { temp_devastation_gained = 2 }
+			TaS_WRW2_change_devastation = yes
+		}
 	}
 }
+
+country_event = { #Volgograd Belozersky
+	id = RUS_SWRW_mech.11
+	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW_mech.11" }
+	title = RUS_SWRW_mech.11.t
+	desc = RUS_SWRW_mech.11.d
+	picture = GFX_swrw_event_1
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = RUS_SWRW_mech.11.a
+		ai_chance = { factor = 1 }
+		set_temp_variable = { temp_devastation_gained = -3 } 
+		TaS_WRW2_change_devastation = yes
+		GER = {
+			set_temp_variable = { temp_devastation_gained = 2 }
+			TaS_WRW2_change_devastation = yes
+		}
+	}
+}
+
+country_event = { #Baku Belozersky
+	id = RUS_SWRW_mech.12
+	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW_mech.12" }
+	title = RUS_SWRW_mech.12.t
+	desc = RUS_SWRW_mech.12.d
+	picture = GFX_swrw_event_1
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = RUS_SWRW_mech.12.a
+		ai_chance = { factor = 1 }
+		set_temp_variable = { temp_devastation_gained = -3 } 
+		TaS_WRW2_change_devastation = yes
+		GER = {
+			set_temp_variable = { temp_devastation_gained = 2 }
+			TaS_WRW2_change_devastation = yes
+		}
+	}
+}
+
+country_event = { #Simfer Belozersky
+	id = RUS_SWRW_mech.13
+	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW_mech.13" }
+	title = RUS_SWRW_mech.13.t
+	desc = RUS_SWRW_mech.13.d
+	picture = GFX_swrw_event_1
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = RUS_SWRW_mech.13.a
+		ai_chance = { factor = 1 }
+		set_temp_variable = { temp_devastation_gained = -3 } 
+		TaS_WRW2_change_devastation = yes
+		GER = {
+			set_temp_variable = { temp_devastation_gained = 2 }
+			TaS_WRW2_change_devastation = yes
+		}
+	}
+}
+
+country_event = { #Kharkov Belozersky
+	id = RUS_SWRW_mech.14
+	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW_mech.14" }
+	title = RUS_SWRW_mech.14.t
+	desc = RUS_SWRW_mech.14.d
+	picture = GFX_swrw_event_1
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = RUS_SWRW_mech.14.a
+		ai_chance = { factor = 1 }
+		set_temp_variable = { temp_devastation_gained = -3 } 
+		TaS_WRW2_change_devastation = yes
+		GER = {
+			set_temp_variable = { temp_devastation_gained = 2 }
+			TaS_WRW2_change_devastation = yes
+		}
+	}
+}
+
+country_event = { #Kiev Belozersky
+	id = RUS_SWRW_mech.15
+	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW_mech.15" }
+	title = RUS_SWRW_mech.15.t
+	desc = RUS_SWRW_mech.15.d
+	picture = GFX_swrw_event_1
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = RUS_SWRW_mech.15.a
+		ai_chance = { factor = 1 }
+		set_temp_variable = { temp_devastation_gained = -3 } 
+		TaS_WRW2_change_devastation = yes
+		GER = {
+			set_temp_variable = { temp_devastation_gained = 2 }
+			TaS_WRW2_change_devastation = yes
+		}
+	}
+}
+
+country_event = { #Minsk Belozersky
+	id = RUS_SWRW_mech.16
+	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW_mech.16" }
+	title = RUS_SWRW_mech.16.t
+	desc = RUS_SWRW_mech.16.d
+	picture = GFX_swrw_event_1
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = RUS_SWRW_mech.16.a
+		ai_chance = { factor = 1 }
+		set_temp_variable = { temp_devastation_gained = -3 } 
+		TaS_WRW2_change_devastation = yes
+		GER = {
+			set_temp_variable = { temp_devastation_gained = 2 }
+			TaS_WRW2_change_devastation = yes
+		}
+	}
+}
+
 
 country_event = { #Bulgaria wants to quit
 	id = TaS_SWRW.16
