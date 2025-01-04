@@ -3314,13 +3314,32 @@ TaS_WRW2_territorial_reclamation = {
 			set_country_flag = afg_ru_cap
 		}
 	}
-	
-	TaS_WRW2_Karelia_demands = {
+	TaS_WRW2_Antarctic_Rescue_Mission  = {
+		icon = GFX_antarctica
+		visible = {
+			has_global_flag = Antarctica_Germany_Rescued_NS
+			has_global_flag = TaS_WRW2_Russian_victory
+		}
+		fire_only_once = yes
+		custom_cost_trigger = { command_power > 24.99 }
+		custom_cost_text = decision_cost_25_cp
+		complete_effect = {
+			add_stability = -0.025
+			hidden_effect = {
+				add_command_power = -25
+			}
+		}
+		days_remove = 14
+		remove_effect = {
+			custom_effect_tooltip = TaS_WRW2_Antarctic_Rescue_Mission_tt
+			hidden_effect = {
+				
+			}
+		}
+	}
+	TaS_WRW2_Demands_to_Finland = {
 		icon = GFX_finland_rus
 		visible = {
-			NOT = {
-				owns_state = 216
-			}
 			has_global_flag = TaS_WRW2_Russian_victory
 		}
 		available = {
@@ -3337,54 +3356,28 @@ TaS_WRW2_territorial_reclamation = {
 			hidden_effect = {
 				add_command_power = -25
 			}
-			add_state_claim = 213
-			add_state_claim = 216
-			add_state_claim = 215
-			add_state_claim = 1359
-			add_state_claim = 1887
+			if = { 
+				limit = { controls_state = 215 } 
+				add_state_claim = 213
+				add_state_claim = 216
+			}
+			else = {
+				add_state_claim = 213
+				add_state_claim = 216
+				add_state_claim = 215
+				add_state_claim = 1887
+				add_state_claim = 1359
+			}
 		}
 		days_remove = 14
 		remove_effect = {
-			custom_effect_tooltip = TaS_WRW2_Karelia_demands_tt
+			custom_effect_tooltip = TaS_WRW2_Demands_to_Finland_tt
 			hidden_effect = {
 				FIN = { country_event = { id = MAR_ultimatums.100 } }
 			}
 		}
 	}
-	TaS_WRW2_Vyborg_question = {
-		icon = GFX_finland_rus
-		visible = {
-			owns_state = 216
-			owns_state = 195
-			NOT = {
-				owns_state = 1712
-			}
-			has_global_flag = TaS_WRW2_Russian_victory
-		}
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = MAR_all_fates_decided_tt
-				check_variable = { MAR_fates_done = 8 }
-			}
-		}
-		fire_only_once = yes
-		custom_cost_trigger = { command_power > 24.99 }
-		custom_cost_text = decision_cost_25_cp
-		complete_effect = {
-			add_war_support = 0.03
-			hidden_effect = {
-				add_command_power = -25
-			}
-		}
-		days_remove = 14
-		remove_effect = {
-			custom_effect_tooltip = TaS_WRW2_Vyborg_question_tt
-			hidden_effect = {
-				FIN = { country_event = { id = MAR_ultimatums.11 } }
-			}
-		}
-	}
-	TaS_WRW2_Batumi_Issue = {
+	TaS_WRW2_Demands_to_Turkey = {
 		icon = GFX_turkey_rus
 		visible = {
 			OR = {
@@ -3396,17 +3389,6 @@ TaS_WRW2_territorial_reclamation = {
 				}
 				owns_state = 231
 			}
-			NOT = {
-				OR = {
-					GEO = {
-						owns_state = 1565
-					}
-					MCS = {
-						owns_state = 1565
-					}
-					owns_state = 1565
-				}
-			}
 			has_global_flag = TaS_WRW2_Russian_victory
 		}
 		available = {
@@ -3423,90 +3405,27 @@ TaS_WRW2_territorial_reclamation = {
 			hidden_effect = {
 				add_command_power = -25
 			}
+			add_state_claim = 1565
 		}
 		days_remove = 14
 		remove_effect = {
-			custom_effect_tooltip = TaS_WRW2_Batumi_Issue_tt
+			custom_effect_tooltip = TaS_WRW2_Demands_to_Turkey_tt
 			hidden_effect = {
-				TUR = { country_event = { id = MAR_ultimatums.12 } }
+				TUR = { country_event = { id = MAR_ultimatums.103 } }
 			}
 		}
 	}
-	TaS_WRW2_Armenia_independent = {
-		icon = GFX_turkey_rus
-		visible = {
-			ARM = {
-				owns_state = 230
-			}
-			NOT = {
-				ARM = {
-					owns_state = 1554
-				}
-			}
-			has_global_flag = TaS_WRW2_Russian_victory
-		}
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = MAR_all_fates_decided_tt
-				check_variable = { MAR_fates_done = 8 }
-			}
-		}
-		fire_only_once = yes
-		custom_cost_trigger = { command_power > 24.99 }
-		custom_cost_text = decision_cost_25_cp
-		complete_effect = {
-			add_war_support = 0.03
-			hidden_effect = {
-				add_command_power = -25
-			}
-		}
-		days_remove = 14
-		remove_effect = {
-			custom_effect_tooltip = TaS_WRW2_Armenia_independent_tt
-			hidden_effect = {
-				ARM = { country_event = { id = MAR_ultimatums.16 } }
-			}
-		}
-	}
-	TaS_WRW2_Armenia_are_turkey = {
-		icon = GFX_turkey_rus
-		visible = {
-			TUR = {
-				owns_state = 230
-			}
-			has_global_flag = TaS_WRW2_Russian_victory
-		}
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = MAR_all_fates_decided_tt
-				check_variable = { MAR_fates_done = 8 }
-			}
-		}
-		fire_only_once = yes
-		custom_cost_trigger = { command_power > 24.99 }
-		custom_cost_text = decision_cost_25_cp
-		complete_effect = {
-			add_war_support = 0.03
-			hidden_effect = {
-				add_command_power = -25
-			}
-		}
-		days_remove = 14
-		remove_effect = {
-			custom_effect_tooltip = TaS_WRW2_Armenia_are_turkey_tt
-			hidden_effect = {
-				TUR = { country_event = { id = MAR_ultimatums.13 } }
-			}
-		}
-	}
-	TaS_WRW2_Odessa_demand  = {
+	TaS_WRW2_Demands_to_Romania = {
 		icon = GFX_romania_rus
 		visible = {
 			OR = {
-				MUK = {
-					owns_state = 197
+				GEO = {
+					owns_state = 231
 				}
-				owns_state = 197
+				MCS = {
+					owns_state = 231
+				}
+				owns_state = 231
 			}
 			has_global_flag = TaS_WRW2_Russian_victory
 		}
@@ -3515,6 +3434,14 @@ TaS_WRW2_territorial_reclamation = {
 				tooltip = MAR_all_fates_decided_tt
 				check_variable = { MAR_fates_done = 8 }
 			}
+			add_state_claim = 1285
+			add_state_claim = 1286
+			add_state_claim = 78
+			add_state_claim = 198
+			add_state_claim = 1965
+			add_state_claim = 1966
+			add_state_claim = 1285
+			add_state_claim = 192
 		}
 		fire_only_once = yes
 		custom_cost_trigger = { command_power > 24.99 }
@@ -3527,50 +3454,14 @@ TaS_WRW2_territorial_reclamation = {
 		}
 		days_remove = 14
 		remove_effect = {
-			custom_effect_tooltip = TaS_WRW2_Odessa_demand_tt
+			custom_effect_tooltip = TaS_WRW2_Demands_to_Turkey_tt
 			hidden_effect = {
-				ROM = { country_event = { id = MAR_ultimatums.14 } }
-				ITA = { end_puppet = ROM }
-				ROM = { leave_faction = yes }
+				ROM = { country_event = { id = MAR_ultimatums.112 } }
 			}
 		}
 	}
-	TaS_WRW2_Bessarabia_demand = {
-		icon = GFX_romania_rus
-		visible = {
-			OR = {
-				MUK = {
-					owns_state = 192
-				}
-				owns_state = 192
-			}
-			has_global_flag = TaS_WRW2_Russian_victory
-		}
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = MAR_all_fates_decided_tt
-				check_variable = { MAR_fates_done = 8 }
-			}
-		}
-		fire_only_once = yes
-		custom_cost_trigger = { command_power > 24.99 }
-		custom_cost_text = decision_cost_25_cp
-		complete_effect = {
-			add_war_support = 0.03
-			hidden_effect = {
-				add_command_power = -25
-			}
-		}
-		days_remove = 14
-		remove_effect = {
-			custom_effect_tooltip = TaS_WRW2_Bessarabia_demand_tt
-			hidden_effect = {
-				ROM = { country_event = { id = MAR_ultimatums.15 } }
-			}
-		}
-	}
-	TaS_WRW2_Galicia_issue = {
-		icon = GFX_romania_rus
+	TaS_WRW2_Demands_to_Poland = {
+		icon = GFX_poland_rus
 		visible = {
 			GPL = { exists = yes }
 			has_global_flag = TaS_WRW2_Russian_victory
@@ -3592,9 +3483,46 @@ TaS_WRW2_territorial_reclamation = {
 		}
 		days_remove = 14
 		remove_effect = {
-			custom_effect_tooltip = TaS_WRW2_Galicia_issue_tt
+			custom_effect_tooltip = TaS_WRW2_Demands_to_Poland_tt
 			hidden_effect = {
-				GPL = { country_event = { id = MAR_ultimatums.17 } }
+				country_event = { id = MAR_ultimatums.114 days = 3 }
+			}
+		}
+	}
+	TaS_WRW2_Demands_to_Iran = {
+		icon = GFX_iran_rus
+		visible = {
+			OR = {
+				GEO = {
+					owns_state = 231
+				}
+				MCS = {
+					owns_state = 231
+				}
+				owns_state = 231
+			}
+			has_global_flag = TaS_WRW2_Russian_victory
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAR_all_fates_decided_tt
+				check_variable = { MAR_fates_done = 8 }
+			}
+		}
+		fire_only_once = yes
+		custom_cost_trigger = { command_power > 24.99 }
+		custom_cost_text = decision_cost_25_cp
+		complete_effect = {
+			add_war_support = 0.01
+			hidden_effect = {
+				add_command_power = -25
+			}
+		}
+		days_remove = 14
+		remove_effect = {
+			custom_effect_tooltip = TaS_WRW2_Demands_to_Iran_tt
+			hidden_effect = {
+				country_event = { id = MAR_ultimatums.115 days = 3 }
 			}
 		}
 	}

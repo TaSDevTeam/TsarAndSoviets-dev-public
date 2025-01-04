@@ -11,7 +11,7 @@ country_event = { #
 	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW_preparation.1" }
 	title = RUS_SWRW_preparation.1.t
 	desc = RUS_SWRW_preparation.1.d
-	picture = GFX_swrw_event_1
+	picture = GFX_SWRW_preparation_1
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -28,7 +28,7 @@ country_event = { #
 	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW_preparation.2" }
 	title = RUS_SWRW_preparation.2.t
 	desc = RUS_SWRW_preparation.2.d
-	picture = GFX_swrw_event_2
+	picture = GFX_SWRW_preparation_2
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -952,6 +952,129 @@ country_event = { #Minsk Belozersky
 	}
 }
 
+country_event = { #VVV event
+	id = RUS_SWRW_mech.17
+	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW_mech.17" }
+	title = RUS_SWRW_mech.17.t
+	desc = RUS_SWRW_mech.17.d
+	picture = GFX_swrw_event_1
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = RUS_SWRW_mech.17.a
+		ai_chance = { factor = 1 }
+		set_temp_variable = { temp_devastation_gained = -2 } 
+		TaS_WRW2_change_devastation = yes
+		GER = {
+			set_temp_variable = { temp_devastation_gained = 1 }
+			TaS_WRW2_change_devastation = yes
+		}
+	}
+}
+
+country_event = { #ORL event
+	id = RUS_SWRW_mech.18
+	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW_mech.18" }
+	title = RUS_SWRW_mech.18.t
+	desc = RUS_SWRW_mech.18.d
+	picture = GFX_swrw_event_1
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = RUS_SWRW_mech.18.a
+		ai_chance = { factor = 1 }
+		set_temp_variable = { temp_devastation_gained = -2 } 
+		TaS_WRW2_change_devastation = yes
+		GER = {
+			set_temp_variable = { temp_devastation_gained = 1 }
+			TaS_WRW2_change_devastation = yes
+		}
+	}
+}
+
+country_event = { #SHI event 1
+	id = RUS_SWRW_mech.19
+	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW_mech.19" }
+	title = RUS_SWRW_mech.19.t
+	desc = RUS_SWRW_mech.19.d
+	picture = GFX_swrw_event_1
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #Yes thats good idea
+		name = RUS_SWRW_mech.19.a
+		ai_chance = { factor = 1 }
+		set_temp_variable = { temp_econ_spending_amount = 0.100 }
+		econ_spend_money_once_effect_raw_money = yes
+		country_event = { id = RUS_SWRW_mech.20 days = 180 }
+	}
+	option = { #nah we good
+		name = RUS_SWRW_mech.19.b
+		ai_chance = { factor = 1 }
+		add_political_power = -100
+	}
+}
+
+country_event = { #SHI event 2
+	id = RUS_SWRW_mech.20
+	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW_mech.20" }
+	title = RUS_SWRW_mech.20.t
+	desc = RUS_SWRW_mech.20.d
+	picture = GFX_swrw_event_1
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = RUS_SWRW_mech.20.a
+		ai_chance = { factor = 1 }
+		add_stability = -0.025
+	}
+}
+
+country_event = { #РOV event 1
+	id = RUS_SWRW_mech.21
+	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW_mech.21" }
+	title = RUS_SWRW_mech.21.t
+	desc = RUS_SWRW_mech.21.d
+	picture = GFX_swrw_event_1
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = RUS_SWRW_mech.21.a
+		ai_chance = { factor = 1 }
+		set_temp_variable = { temp_devastation_gained = -2 } 
+		TaS_WRW2_change_devastation = yes
+		GER = {
+			set_temp_variable = { temp_devastation_gained = 1 }
+			TaS_WRW2_change_devastation = yes
+		}
+	}
+}
+
+country_event = { #Hunt down the Oktan
+	id = RUS_SWRW_mech.22
+	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW_mech.22" }
+	title = RUS_SWRW_mech.22.t
+	desc = RUS_SWRW_mech.22.d
+	picture = GFX_swrw_event_1
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = RUS_SWRW_mech.22.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
 
 country_event = { #Bulgaria wants to quit
 	id = TaS_SWRW.16

@@ -2873,619 +2873,7 @@ country_event = { #RIP SWEET TSAR
 }
 ### ultimatums
 
-country_event = { #fin 1
-	id = MAR_ultimatums.1
-	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.1"}
-	title = MAR_ultimatums.1.t
-	desc = MAR_ultimatums.1.desc
-	picture = GFX_report_event_peace_deal
-
-	is_triggered_only = yes
-
-	option = { #kys lol
-		name = MAR_ultimatums.1.a 
-		ai_chance = {
-			factor = 1
-			modifier = {
-				factor = 100
-				ROOT = {
-					has_dictatorship_government = yes
-				}
-			}
-		}
-		MAR = {
-			country_event = { id = MAR_ultimatums.2 days = 2 }
-		}
-	}
-	option = { #ok
-		name = MAR_ultimatums.1.a 
-		ai_chance = {
-			factor = 1
-			modifier = {
-				factor = 100
-				ROOT = {
-					has_democratic_government = yes
-				}
-			}
-		}
-		MAR = {
-			country_event = { id = MAR_ultimatums.3 days = 2 }
-		}
-	}
-}
-country_event = { #refused
-	id = MAR_ultimatums.2
-	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.2"}
-	title = MAR_ultimatums.2.t
-	desc = MAR_ultimatums.2.d
-	picture = GFX_report_event_peace_deal
-
-	is_triggered_only = yes
-
-	option = { #their will
-		name = MAR_ultimatums.2.a
-		add_political_power = -50
-		add_stability = 0.02
-	}
-	option = { #their problems
-		name = MAR_ultimatums.2.b
-		declare_war_on = {
-			target = FROM
-			type = annex_everything
-		}
-		FROM = {
-			leave_faction = yes
-		}
-	}
-}
-country_event = { #karelia agreed
-	id = MAR_ultimatums.3
-	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.3"}
-	title = MAR_ultimatums.3.t
-	desc = MAR_ultimatums.3.d
-	picture = GFX_report_event_peace_deal
-
-	is_triggered_only = yes
-
-	option = { #nice
-		name = MAR_ultimatums.3.a
-		MAR = {
-			transfer_state = 216
-			transfer_state = 215
-			transfer_state = 1724
-			if = {
-				limit = { MAR = { NOT = { owns_state = 1359 } } }
-				transfer_state = 1359
-				transfer_state = 213
-			}
-		}
-	}
-}
-
-country_event = { #batumi agreed
-	id = MAR_ultimatums.4
-	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.4"}
-	title = MAR_ultimatums.4.t
-	desc = MAR_ultimatums.4.d
-	picture = GFX_report_event_peace_deal
-
-	is_triggered_only = yes
-
-	option = { #nice
-		name = MAR_ultimatums.4.a
-		if = {
-			limit = { MAR = { owns_state = 231 } }
-			MAR = {
-				transfer_state = 1565
-				add_state_core = 1565
-			}
-		}
-		if = {
-			limit = { MCS = { owns_state = 231 } }
-			MCS = {
-				transfer_state = 1565
-				add_state_core = 1565
-			}
-		}
-		if = {
-			limit = { GEO = { owns_state = 231 } }
-			GEO = {
-				transfer_state = 1565
-				add_state_core = 1565
-			}
-		}
-	}
-}
-country_event = { #armenia agreed
-	id = MAR_ultimatums.5
-	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.5"}
-	title = MAR_ultimatums.5.t
-	desc = MAR_ultimatums.5.d
-	picture = GFX_report_event_peace_deal
-
-	is_triggered_only = yes
-
-	option = { #nice
-		name = MAR_ultimatums.5.a
-		if = {
-			limit = { MAR = { owns_state = 231 } }
-			MAR = {
-				transfer_state = 230
-				add_state_core = 230
-				transfer_state = 1568
-				add_state_core = 1568
-				transfer_state = 1567
-				add_state_core = 1567
-			}
-		}
-		if = {
-			limit = { MCS = { owns_state = 231 } }
-			MCS = {
-				transfer_state = 230
-				add_state_core = 230
-				transfer_state = 1568
-				add_state_core = 1568
-				transfer_state = 1567
-				add_state_core = 1567
-			}
-		}
-		if = {
-			limit = { GEO = { owns_state = 231 } }
-			ARM = {
-				econ_join_sphere_MAR = yes
-				transfer_state = 1554
-				add_state_core = 1554
-			}
-			AZR = {
-				transfer_state = 1567
-				add_state_core = 1567
-			}
-		}
-	}
-}
-country_event = { #odesa agreed
-	id = MAR_ultimatums.6
-	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.6"}
-	title = MAR_ultimatums.6.t
-	desc = MAR_ultimatums.6.d
-	picture = GFX_report_event_peace_deal
-
-	is_triggered_only = yes
-
-	option = { #nice
-		name = MAR_ultimatums.6.a
-		if = {
-			limit = { MAR = { owns_state = 197 } }
-			MAR = {
-				transfer_state = 198
-				add_state_core = 189
-				transfer_state = 1282
-				add_state_core = 1282
-				transfer_state = 192
-				add_state_core = 192
-				transfer_state = 1965
-				transfer_state = 1966
-				add_state_core = 1965
-				add_state_core = 1966
-			}
-		}
-		if = {
-			limit = { MUK = { owns_state = 197 } }
-			MUK = {
-				transfer_state = 198
-				add_state_core = 189
-				transfer_state = 1282
-				add_state_core = 1282
-				transfer_state = 192
-				add_state_core = 192
-				transfer_state = 1965
-				transfer_state = 1966
-				add_state_core = 1965
-				add_state_core = 1966
-			}
-		}
-	}
-}
-country_event = { #Vyborg agreed
-	id = MAR_ultimatums.7
-	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.7"}
-	title = MAR_ultimatums.7.t
-	desc = MAR_ultimatums.7.d
-	picture = GFX_report_event_peace_deal
-
-	is_triggered_only = yes
-
-	option = { #nice
-		name = MAR_ultimatums.7.a
-		MAR = {
-			transfer_state = 146
-			transfer_state = 1712
-			transfer_state = 147
-			transfer_state = 722
-		}
-	}
-}
-
-country_event = { #armenia agreed
-	id = MAR_ultimatums.8
-	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.8"}
-	title = MAR_ultimatums.8.t
-	desc = MAR_ultimatums.8.d
-	picture = GFX_report_event_peace_deal
-
-	is_triggered_only = yes
-
-	option = { #nice
-		name = MAR_ultimatums.8.a
-		if = {
-			limit = { MAR = { owns_state = 231 } }
-			MAR = {
-				transfer_state = 230
-				transfer_state = 1568
-				transfer_state = 1567
-			}
-		}
-		if = {
-			limit = { MCS = { owns_state = 231 } }
-			MCS = {
-				transfer_state = 230
-				transfer_state = 1568
-				transfer_state = 1567
-				add_state_core = 1567
-				add_state_core = 1568
-				add_state_core = 230
-			}
-		}
-		if = {
-			limit = { GEO = { owns_state = 231 } }
-			AZR = {
-				transfer_state = 1567
-				add_state_core = 1567
-			}
-			ARM = {
-				transfer_state = 1554
-				add_state_core = 1554
-				transfer_state = 1568
-				add_state_core = 1568
-				transfer_state = 230
-				add_state_core = 230
-			}
-		}
-	}
-}
-country_event = { #moldova agreed
-	id = MAR_ultimatums.9
-	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.9"}
-	title = MAR_ultimatums.9.t
-	desc = MAR_ultimatums.9.d
-	picture = GFX_report_event_peace_deal
-
-	is_triggered_only = yes
-
-	option = { #nice
-		name = MAR_ultimatums.9.a
-		if = {
-			limit = { MAR = { owns_state = 1428 } }
-			MAR = {
-				transfer_state = 1285
-				transfer_state = 78
-				transfer_state = 1286
-			}
-		}
-		else = {
-			MUK = {
-				transfer_state = 1285
-				transfer_state = 78
-				transfer_state = 1286
-				add_state_core = 1285
-				add_state_core = 78
-				add_state_core = 1286
-			}
-		}
-	}
-}
-country_event = { #galicia
-	id = MAR_ultimatums.10
-	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.10"}
-	title = MAR_ultimatums.10.t
-	desc = MAR_ultimatums.10.d
-	picture = GFX_report_event_peace_deal
-
-	is_triggered_only = yes
-
-	option = { #nice
-		name = MAR_ultimatums.10.a
-		if = {
-			limit = { MAR = { owns_state = 1428 } }
-			MAR = {
-				transfer_state = 91
-				transfer_state = 89
-				transfer_state = 1394
-				transfer_state = 1393
-				transfer_state = 1392
-				transfer_state = 1391
-				transfer_state = 1390
-				transfer_state = 1388
-				transfer_state = 1387
-			}
-		}
-		else = {
-			MUK = {
-				transfer_state = 91
-				transfer_state = 89
-				transfer_state = 1394
-				transfer_state = 1393
-				transfer_state = 1392
-				transfer_state = 1391
-				transfer_state = 1390
-				transfer_state = 1388
-				transfer_state = 1387
-				
-				add_state_core = 91
-				add_state_core = 89
-				add_state_core = 1394
-				add_state_core = 1393
-				add_state_core = 1392
-				add_state_core = 1391
-				add_state_core = 1390
-				add_state_core = 1388
-				add_state_core = 1387
-			}
-		}
-	}
-}
-country_event = { #fin 2
-	id = MAR_ultimatums.11
-	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.11"}
-	title = MAR_ultimatums.11.t
-	desc = MAR_ultimatums.11.desc
-	picture = GFX_report_event_peace_deal
-
-	is_triggered_only = yes
-
-	option = { #kys lol
-		name = MAR_ultimatums.12.a 
-		ai_chance = {
-			factor = 50
-			modifier = {
-				factor = 100
-				ROOT = {
-					has_dictatorship_government = yes
-				}
-			}
-		}
-		MAR = {
-			country_event = { id = MAR_ultimatums.2 days = 2 }
-		}
-	}
-	option = { #ok
-		name = MAR_ultimatums.12.b 
-		ai_chance = {
-			factor = 20
-			modifier = {
-				factor = 50
-				ROOT = {
-					has_democratic_government = yes
-				}
-			}
-		}
-		MAR = {
-			country_event = { id = MAR_ultimatums.7 days = 2 }
-		}
-	}
-}
-country_event = { #tur
-	id = MAR_ultimatums.12
-	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.12"}
-	title = MAR_ultimatums.12.t
-	desc = MAR_ultimatums.12.desc
-	picture = GFX_report_event_peace_deal
-
-	is_triggered_only = yes
-
-		option = { #kys lol
-		name = MAR_ultimatums.12.a 
-		ai_chance = {
-			factor = 1
-			modifier = {
-				factor = 100
-				ROOT = {
-					has_dictatorship_government = yes
-				}
-			}
-		}
-		MAR = {
-			country_event = { id = MAR_ultimatums.2 days = 2 }
-		}
-	}
-	option = { #ok
-		name = MAR_ultimatums.12.a 
-		ai_chance = {
-			factor = 1
-			modifier = {
-				factor = 100
-				ROOT = {
-					has_democratic_government = yes
-				}
-			}
-		}
-		MAR = {
-			country_event = { id = MAR_ultimatums.4 days = 2 }
-		}
-	}
-}
-country_event = { #tur 2
-	id = MAR_ultimatums.13
-	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.13"}
-	title = MAR_ultimatums.13.t
-	desc = MAR_ultimatums.13.desc
-	picture = GFX_report_event_peace_deal
-
-	is_triggered_only = yes
-
-	option = { #kys lol
-		name = MAR_ultimatums.13.a 
-		ai_chance = {
-			factor = 50
-			modifier = {
-				factor = 100
-				ROOT = {
-					has_dictatorship_government = yes
-				}
-			}
-		}
-		MAR = {
-			country_event = { id = MAR_ultimatums.2 days = 2 }
-		}
-	}
-	option = { #ok
-		name = MAR_ultimatums.13.b 
-		ai_chance = {
-			factor = 20
-			modifier = {
-				factor = 50
-				ROOT = {
-					has_democratic_government = yes
-				}
-			}
-		}
-		MAR = {
-			country_event = { id = MAR_ultimatums.8 days = 2 }
-		}
-	}
-}
-country_event = { #rom
-	id = MAR_ultimatums.14
-	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.142"}
-	title = MAR_ultimatums.14.t
-	desc = MAR_ultimatums.14.desc
-	picture = GFX_report_event_peace_deal
-
-	is_triggered_only = yes
-
-		option = { #kys lol
-		name = MAR_ultimatums.14.a 
-		ai_chance = {
-			factor = 1
-			modifier = {
-				factor = 100
-				ROOT = {
-					has_dictatorship_government = yes
-				}
-			}
-		}
-		MAR = {
-			country_event = { id = MAR_ultimatums.2 days = 2 }
-		}
-	}
-	option = { #ok
-		name = MAR_ultimatums.12.a 
-		ai_chance = {
-			factor = 1
-			modifier = {
-				factor = 100
-				ROOT = {
-					has_democratic_government = yes
-				}
-			}
-		}
-		MAR = {
-			country_event = { id = MAR_ultimatums.6 days = 2 }
-		}
-	}
-}
-country_event = { #rom 2
-	id = MAR_ultimatums.15
-	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.15"}
-	title = MAR_ultimatums.15.t
-	desc = MAR_ultimatums.15.desc
-	picture = GFX_report_event_peace_deal
-
-	is_triggered_only = yes
-
-	option = { #kys lol
-		name = MAR_ultimatums.15.a 
-		ai_chance = {
-			factor = 50
-			modifier = {
-				factor = 100
-				ROOT = {
-					has_dictatorship_government = yes
-				}
-			}
-		}
-		MAR = {
-			country_event = { id = MAR_ultimatums.2 days = 2 }
-		}
-	}
-	option = { #ok
-		name = MAR_ultimatums.15.b 
-		ai_chance = {
-			factor = 20
-			modifier = {
-				factor = 50
-				ROOT = {
-					has_democratic_government = yes
-				}
-			}
-		}
-		MAR = {
-			country_event = { id = MAR_ultimatums.9 days = 2 }
-		}
-	}
-}
-country_event = { #armenia
-	id = MAR_ultimatums.16
-	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.16"}
-	title = MAR_ultimatums.16.t
-	desc = MAR_ultimatums.16.desc
-	picture = GFX_report_event_peace_deal
-
-	is_triggered_only = yes
-
-	option = { #ok
-		name = MAR_ultimatums.16.a
-		ai_chance = {
-			factor = 20
-			modifier = {
-				factor = 50
-				ROOT = {
-					has_democratic_government = yes
-				}
-			}
-		}
-		MAR = {
-			country_event = { id = MAR_ultimatums.5 days = 2 }
-		}
-	}
-}
-country_event = { #poland
-	id = MAR_ultimatums.17
-	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.16"}
-	title = MAR_ultimatums.17.t
-	desc = MAR_ultimatums.17.desc
-	picture = GFX_report_event_peace_deal
-
-	is_triggered_only = yes
-
-	option = { #ok
-		name = MAR_ultimatums.17.a
-		ai_chance = {
-			factor = 20
-			modifier = {
-				factor = 50
-				ROOT = {
-					has_democratic_government = yes
-				}
-			}
-		}
-		MAR = {
-			country_event = { id = MAR_ultimatums.10 days = 2 }
-		}
-	}
-}
-
-country_event = { #FIN: Russia requests Karelia
+country_event = { #FIN: Russia requests
 	id = MAR_ultimatums.100
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.100"}
 	title = MAR_ultimatums.100.t
@@ -3556,11 +2944,18 @@ country_event = { #FIN: They refused
 			factor = 1
 		}
 		RUS = {
-			remove_state_claim = 213
-			remove_state_claim = 216
-			remove_state_claim = 215
-			remove_state_claim = 1359
-			remove_state_claim = 1887
+			if = { 
+				limit = { controls_state = 215 } 
+				remove_state_claim = 213
+				remove_state_claim = 216
+			}
+			else = {
+				remove_state_claim = 213
+				remove_state_claim = 216
+				remove_state_claim = 215
+				remove_state_claim = 1887
+				remove_state_claim = 1359
+			}
 		}
 	}
 	option = { #oh, the misery
@@ -3634,6 +3029,9 @@ country_event = { #TUR: The deal
 				transfer_state = 1565
 				add_state_core = 1565
 			}
+			RUS = {
+				remove_state_claim = 1565
+			}
 		}
 		else_if = {
 			limit = { MCS = { owns_state = 231 } }
@@ -3641,11 +3039,17 @@ country_event = { #TUR: The deal
 				transfer_state = 1565
 				add_state_core = 1565
 			}
+			RUS = {
+				remove_state_claim = 1565
+			}
 		}
 		else = {
 			RUS = {
 				transfer_state = 1565
 				add_state_core = 1565
+			}
+			RUS = {
+				remove_state_claim = 1565
 			}
 		}
 	}
@@ -3776,6 +3180,9 @@ country_event = { #TUR: Batumi occupied what to do
 			news_event = { id = MAR_2WRW_world_news.45 }
 		}
 		1565 = { set_demilitarized_zone = no }
+		RUS = {
+			remove_state_claim = 1565
+		}
 	}
 	option = { #prepare to attack them
 		name = MAR_ultimatums.108.b 
@@ -3807,9 +3214,12 @@ country_event = { #TUR: Turkey gather troops
 		}
 		TUR = { transfer_state = 1565 }
 		1565 = { set_demilitarized_zone = no }
+		RUS = {
+			remove_state_claim = 1565
+		}
 	}
 	option = { #Wait for attack
-		name = MAR_ultimatums.108.b 
+		name = MAR_ultimatums.109.b 
 		ai_chance = {
 			factor = 1
 		}
@@ -3926,7 +3336,7 @@ country_event = { #TUR and FIN: Ceasefire
 	}
 }
 
-country_event = { #ROM: Odessa
+country_event = { #ROM: Russia Demands
 	id = MAR_ultimatums.112
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.112"}
 	title = MAR_ultimatums.112.t
@@ -3939,35 +3349,69 @@ country_event = { #ROM: Odessa
 		name = MAR_ultimatums.112.a 
 		if = {
 			limit = { MUK = { controls_state = 1428 } }
-			transfer_state = 198
-			transfer_state = 1965
-			transfer_state = 1282
-			transfer_state = 1966
-			transfer_state = 192
-			add_state_core = 198
-			add_state_core = 1965
-			add_state_core = 1282
-			add_state_core = 1966
-			add_state_core = 192
-		}
-		else = {
-			RUS = {
+			MUK = {
+				transfer_state = 1285
+				transfer_state = 1286
+				transfer_state = 78
+				add_state_core = 1285
+				add_state_core = 1286
+				add_state_core = 78
+				
 				transfer_state = 198
 				transfer_state = 1965
-				transfer_state = 1282
 				transfer_state = 1966
+				transfer_state = 1285
 				transfer_state = 192
 				add_state_core = 198
 				add_state_core = 1965
-				add_state_core = 1282
 				add_state_core = 1966
+				add_state_core = 1285
 				add_state_core = 192
+			}
+			RUS = {
+				remove_state_claim = 1285
+				remove_state_claim = 1286
+				remove_state_claim = 78
+				remove_state_claim = 198
+				remove_state_claim = 1965
+				remove_state_claim = 1966
+				remove_state_claim = 1285
+				remove_state_claim = 192
+			}
+		}
+		else = {
+			RUS = {
+				transfer_state = 1285
+				transfer_state = 1286
+				transfer_state = 78
+				add_state_core = 1285
+				add_state_core = 1286
+				add_state_core = 78
+				
+				transfer_state = 198
+				transfer_state = 1965
+				transfer_state = 1966
+				transfer_state = 1285
+				transfer_state = 192
+				
+				remove_state_claim = 1285
+				remove_state_claim = 1286
+				remove_state_claim = 78
+				remove_state_claim = 198
+				remove_state_claim = 1965
+				remove_state_claim = 1966
+				remove_state_claim = 1285
+				remove_state_claim = 192
 			}
 		}
 	}
+	option = { #well, no
+		name = MAR_ultimatums.112.b 
+		RUS = { country_event = { id = MAR_ultimatums.113 days = 21 } }
+	}
 }
 
-country_event = { #ROM: Bessarabia
+country_event = { #ROM: They Refused
 	id = MAR_ultimatums.113
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.113"}
 	title = MAR_ultimatums.113.t
@@ -3978,33 +3422,42 @@ country_event = { #ROM: Bessarabia
 
 	option = { #well, shit
 		name = MAR_ultimatums.113.a 
-		if = {
-			limit = { MUK = { controls_state = 1428 } }
-			transfer_state = 1285
-			transfer_state = 1286
-			transfer_state = 78
-			add_state_core = 1285
-			add_state_core = 1286
-			add_state_core = 78
-		}
-		else = {
-			RUS = {
-				transfer_state = 1285
-				transfer_state = 1286
-				transfer_state = 78
-				add_state_core = 1285
-				add_state_core = 1286
-				add_state_core = 78
-			}
-		}
+		remove_state_claim = 1285
+		remove_state_claim = 1286
+		remove_state_claim = 78
+		remove_state_claim = 198
+		remove_state_claim = 1965
+		remove_state_claim = 1966
+		remove_state_claim = 1285
+		remove_state_claim = 192
 	}
-	option = { #well, no
+	
+	option = { #well, war reeeeee
 		name = MAR_ultimatums.113.b 
-		RUS = { country_event = { id = MAR_ultimatums.114 days = 21 } }
+		remove_state_claim = 1285
+		remove_state_claim = 1286
+		remove_state_claim = 78
+		remove_state_claim = 198
+		remove_state_claim = 1965
+		remove_state_claim = 1966
+		remove_state_claim = 1285
+		remove_state_claim = 192
+		add_timed_idea = {
+			idea = SWRW_war_weariness
+			days = 120
+		}
+		declare_war_on = {
+			target = ROM
+			type = annex_everything
+		}
+		every_country = {
+			limit = { is_ai = no }
+			news_event = { id = MAR_2WRW_world_news.47 }
+		}
 	}
 }
 
-country_event = { #ROM: They Refused
+country_event = { #POL: Returnal of Galicia
 	id = MAR_ultimatums.114
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.114"}
 	title = MAR_ultimatums.114.t
@@ -4015,30 +3468,6 @@ country_event = { #ROM: They Refused
 
 	option = { #well, shit
 		name = MAR_ultimatums.114.a 
-		#FILLME
-	}
-	
-	option = { #well, war reeeeee
-		name = MAR_ultimatums.114.b 
-		#FILLME
-		every_country = {
-			limit = { is_ai = no }
-			news_event = { id = MAR_2WRW_world_news.47 }
-		}
-	}
-}
-
-country_event = { #POL: Returnal of Galicia
-	id = MAR_ultimatums.115
-	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.115"}
-	title = MAR_ultimatums.115.t
-	desc = MAR_ultimatums.115.desc
-	picture = GFX_report_event_peace_deal
-
-	is_triggered_only = yes
-
-	option = { #well, shit
-		name = MAR_ultimatums.115.a 
 		if = {
 			limit = { MUK = { owns_state = 1428 } }
 			MUK = {
@@ -4048,7 +3477,6 @@ country_event = { #POL: Returnal of Galicia
 				transfer_state = 1393
 				transfer_state = 1392
 				transfer_state = 1391
-				transfer_state = 1390
 				transfer_state = 1388
 				transfer_state = 1387
 				
@@ -4058,7 +3486,6 @@ country_event = { #POL: Returnal of Galicia
 				add_state_core = 1393
 				add_state_core = 1392
 				add_state_core = 1391
-				add_state_core = 1390
 				add_state_core = 1388
 				add_state_core = 1387
 			}
@@ -4071,10 +3498,114 @@ country_event = { #POL: Returnal of Galicia
 				transfer_state = 1393
 				transfer_state = 1392
 				transfer_state = 1391
-				transfer_state = 1390
 				transfer_state = 1388
 				transfer_state = 1387
 			}
+		}
+	}
+}
+
+country_event = { #IR*: Returnal of some state that borders turkmenistan
+	id = MAR_ultimatums.115
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.115"}
+	title = MAR_ultimatums.115.t
+	desc = MAR_ultimatums.115.desc
+	picture = GFX_report_event_peace_deal
+
+	is_triggered_only = yes
+
+	option = { #do we have a choice?
+		name = MAR_ultimatums.115.a 
+		if = {
+			limit = { MTR = { owns_state = 584 } }
+			MTR = {
+				transfer_state = 2125
+				add_state_core = 2125
+			}
+		}
+		else = {
+			RUS = {
+				transfer_state = 2125
+				add_state_core = 2125
+			}
+		}
+	}
+}
+
+country_event = { #AAG: Evacuation
+	id = MAR_ultimatums.116
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.116"}
+	title = MAR_ultimatums.116.t
+	desc = MAR_ultimatums.116.desc
+	picture = GFX_report_event_peace_deal
+
+	is_triggered_only = yes
+
+	option = { #huuuray!
+		name = MAR_ultimatums.116.a 
+		XYZ = {
+			AAG_Pavel_Senko = {
+				set_nationality = AAG
+			}
+		}
+		GER = { end_puppet = AAG }
+		AAG = {
+			remove_ideas = AAG_Precarious_Supply_Situation
+			remove_ideas = AAG_Alone_in_the_Cold
+			remove_ideas = AAG_Combat_Boost
+			remove_ideas = AAG_Aircraft_Testing_Site
+			remove_ideas = Pakt_Military_Authority
+			set_party_name = { 
+				ideology = paternalism
+				long_name = AAG_RUS_Party_long
+				name = AAG_RUS_Party
+			}
+			set_party_name = { 
+				ideology = socialist
+				long_name = AAG_RUS_Party_long
+				name = AAG_RUS_Party
+			}
+			leave_faction = yes
+			econ_join_sphere_MAR = yes
+			if = {
+				limit = { RUS = { has_government = socialist } }
+				set_politics = {
+					ruling_party = socialist
+				}
+				set_popularities = {
+					paternalism = 25
+					socialist = 75
+				}
+				retire_country_leader = yes
+				promote_character = AAG_Pavel_Senko
+				set_cosmetic_tag = AAG_RUS_Kosygin
+			}
+			else = {
+				set_politics = {
+					ruling_party = paternalism
+				}
+				set_popularities = {
+					paternalism = 75
+					socialist = 25
+				}
+				retire_country_leader = yes	
+				promote_character = AAG_Pavel_Senko
+				set_cosmetic_tag = AAG_RUS
+			}
+		}
+		AAG = {
+			get_current_government_type = yes
+			save_party_popularities = yes
+		}
+		RUS = {
+			set_autonomy = {
+				target = AAG
+				autonomy_state = autonomy_antarctic_territory
+			}	
+		}	
+		AAG = {
+			restore_previous_government_type = yes
+			apply_party_popularities = yes
 		}
 	}
 }
@@ -6100,5 +5631,18 @@ news_event = { #RUS-ROM war
 	
 	option = {
 		name = MAR_2WRW_world_news.47.a
+	}
+}
+
+news_event = { #AAG turns to Russia
+	id = MAR_2WRW_world_news.48
+	title = MAR_2WRW_world_news.48.t
+	desc = MAR_2WRW_world_news.48.d
+	picture = GFX_MAR_2WRW_world_news_048
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_2WRW_world_news.48.a
 	}
 }

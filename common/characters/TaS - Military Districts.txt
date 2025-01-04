@@ -465,4 +465,26 @@ characters = {
 			id = -1
 		}
 	}
+	AAG_Pavel_Senko = {
+		name = AAG_Pavel_Senko
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/MDISTRICTS/Portrait_Antartica_Pavel_Senko.dds"
+			}
+		}
+		country_leader = {
+			desc = "AAG_Pavel_Senko_DESC"
+			ideology = socialist_antarctic_administration_subtype 
+			traits = { }
+			expire = "2222.2.2"
+			id = -1
+		}
+		country_leader = {
+			desc = "AAG_Pavel_Senko_DESC"
+			ideology = paternalism_antarctic_administration_subtype 
+			traits = { }
+			expire = "2222.2.2"
+			id = -1
+		}
+	}
 }
