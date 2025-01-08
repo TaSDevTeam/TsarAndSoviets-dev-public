@@ -448,8 +448,8 @@ TaS_WRW2_GER_epilogue = {
     	days_mission_timeout = 7
 	
 		timeout_effect = {
-    		log = "[GetDateText]: [Root.GetName]: TaS_PostGER_secown_cw mission timer elapsed" 
-			custom_effect_tooltip = PostGER_secown_cw_started
+    		log = "[GetDateText]: [Root.GetName]: TaS_PostGER_second_cw mission timer elapsed" 
+			custom_effect_tooltip = PostGER_second_cw_started
 			hidden_effect = {
 				TaS_2WRW_start_westgerman_cw = yes
 				subtract_from_variable = { global.postgervisits = 10.5 }
@@ -458,7 +458,7 @@ TaS_WRW2_GER_epilogue = {
     	}
 	
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Mission TaS_PostGER_secown_cw Completed (Should never happen for this mission, please report if you see this in the log.)"
+			log = "[GetDateText]: [Root.GetName]: Mission TaS_PostGER_second_cw Completed (Should never happen for this mission, please report if you see this in the log.)"
     	}
   	}
 	TaS_PostGER_second_cw_looming_russian_invastion = {	
@@ -468,6 +468,7 @@ TaS_WRW2_GER_epilogue = {
 		}
     	activation = {
     		has_global_flag = PostGER_second_cw
+			NOT = { has_global_flag = PostGER_warsended }
 			is_ai = no
     	}
 		cancel_trigger = {
@@ -478,12 +479,12 @@ TaS_WRW2_GER_epilogue = {
     	days_mission_timeout = 365
 	
 		timeout_effect = {
-    		log = "[GetDateText]: [Root.GetName]: TaS_PostGER_secown_cw mission timer elapsed" 
+    		log = "[GetDateText]: [Root.GetName]: TaS_PostGER_second_cw mission timer elapsed" 
 			TaS_2WRW_start_guot_invasion = yes
     	}
 	
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Mission TaS_PostGER_secown_cw Completed (Should never happen for this mission, please report if you see this in the log.)"
+			log = "[GetDateText]: [Root.GetName]: Mission TaS_PostGER_second_cw Completed (Should never happen for this mission, please report if you see this in the log.)"
     	}
   	}
 	TaS_invade_czechia = {

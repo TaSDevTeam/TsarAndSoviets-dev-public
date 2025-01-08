@@ -1016,7 +1016,13 @@ TaS_2WRW_remove_schnitzel = {
 			transfer_state = 1811
 			transfer_state = 1810
 			transfer_state = 1809
+			transfer_state = 1815
 			set_cosmetic_tag = GWS_czech
+			set_party_name = { 
+				ideology = ultranationalism
+				long_name = GER_czech_party
+				name = GER_czech_party
+			}
 		}
 		GBW = {
 			remove_ideas = {
@@ -1036,6 +1042,11 @@ TaS_2WRW_remove_schnitzel = {
 			transfer_state = 1026
 			transfer_state = 53
 			set_cosmetic_tag = GBW_czech
+			set_party_name = { 
+				ideology = ultranationalism
+				long_name = GER_czech_party
+				name = GER_czech_party
+			}
 		}
 		GAU = {
 			remove_ideas = {
@@ -1056,6 +1067,11 @@ TaS_2WRW_remove_schnitzel = {
 			transfer_state = 62
 			transfer_state = 98 
 			set_cosmetic_tag = GAU_czech
+			set_party_name = { 
+				ideology = ultranationalism
+				long_name = GER_czech_party
+				name = GER_czech_party
+			}
 		}
 		GCZ = {
 			GAU = { save_party_popularities = yes }

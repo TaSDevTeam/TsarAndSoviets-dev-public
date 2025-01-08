@@ -76,6 +76,7 @@ country_event = {#GUOT denazify forever
 		ai_chance = { factor = 1 }	
 		custom_effect_tooltip = TaS_denazification_tt
 		hidden_effect = {
+			custom_effect_tooltip = TaS_next_state_please_tt
 			add_ideas = MAR_Denazify
 			every_owned_state = {
 				BRL = {
@@ -164,6 +165,7 @@ country_event = {#Garnizon czechia'
 		name = TaS_GEREpilogue.7.a
 		ai_chance = { factor = 1 }	
 		custom_effect_tooltip = TaS_czech_tt
+		custom_effect_tooltip = TaS_next_state_please_tt
 		hidden_effect = {		
 			65 = {
 				set_demilitarized_zone = yes
@@ -252,6 +254,7 @@ country_event = {#Czechia guot call
 		custom_effect_tooltip = TaS_czguot_tt
 		69 = { add_manpower = -14854 }
 		hidden_effect = {	
+			custom_effect_tooltip = TaS_next_state_please_tt
 			add_to_variable = { global.postgervisits = 1 }		
 			74 = { set_demilitarized_zone = yes	}
 			GSU = {
@@ -312,7 +315,8 @@ country_event = {#Westhalia baaders ultimatum
 	option = { 
 		name = TaS_GEREpilogue.14.a
 		ai_chance = { factor = 1 }	
-		custom_effect_tooltip = TaS_fmeinhoff_tt
+		custom_effect_tooltip = TaS_baadersdamn_tt
+		custom_effect_tooltip = TaS_next_state_please_tt
 		hidden_effect = {		
 			add_to_variable = { global.postgervisits = 1 }
 			55 = {
@@ -376,6 +380,7 @@ country_event = {#Baden werewolfs
 		name = TaS_GEREpilogue.17.a
 		ai_chance = { factor = 1 }	
 		custom_effect_tooltip = TaS_badenrevolt_tt
+		custom_effect_tooltip = TaS_next_state_please_tt
 		hidden_effect = {
 			add_to_variable = { global.postgervisits = 1 }
 			GWF = {
@@ -442,6 +447,7 @@ country_event = {#Rheinland werewolfs
 		name = TaS_GEREpilogue.20.a
 		ai_chance = { factor = 1 }	
 		custom_effect_tooltip = TaS_rheinrevolt_tt
+		custom_effect_tooltip = TaS_next_state_please_tt
 		hidden_effect = {	
 			add_to_variable = { global.postgervisits = 1 }
 			GWF = {
@@ -504,6 +510,7 @@ country_event = {#Bavaria commie
 		name = TaS_GEREpilogue.23.a
 		ai_chance = { factor = 1 }	
 		custom_effect_tooltip = TaS_bavariacommie_tt
+		custom_effect_tooltip = TaS_next_state_please_tt
 		hidden_effect = {		
 			add_to_variable = { global.postgervisits = 1 }
 			GRA = {
@@ -565,6 +572,7 @@ country_event = {#Austria revolt
 		name = TaS_GEREpilogue.26.a
 		ai_chance = { factor = 1 }	
 		custom_effect_tooltip = TaS_austriarevolt_tt
+		custom_effect_tooltip = TaS_next_state_please_tt
 		hidden_effect = {		
 			GRA = {
 				transfer_state = 152
@@ -588,6 +596,7 @@ country_event = {#Remer
 		name = TaS_GEREpilogue.27.a
 		ai_chance = { factor = 1 }	
 		custom_effect_tooltip = TaS_remerstate_tt
+		custom_effect_tooltip = TaS_next_state_please_tt
 		hidden_effect = {		
 			add_to_variable = { global.postgervisits = 1 }
 		}
@@ -606,6 +615,7 @@ country_event = {#baader
 		name = TaS_GEREpilogue.28.a
 		ai_chance = { factor = 1 }	
 		custom_effect_tooltip = TaS_baaderstate_tt
+		custom_effect_tooltip = TaS_next_state_please_tt
 		hidden_effect = {		
 			add_to_variable = { global.postgervisits = 1 }			
 		}
@@ -624,6 +634,7 @@ country_event = {#Sudeten
 		name = TaS_GEREpilogue.29.a
 		ai_chance = { factor = 1 }	
 		custom_effect_tooltip = TaS_sudeten_tt
+		custom_effect_tooltip = TaS_next_state_please_tt
 		hidden_effect = {		
 			add_to_variable = { global.postgervisits = 1 }
 		}
@@ -1251,12 +1262,42 @@ country_event = { #rip sphere 1
 			country_event ={
 				id = MAR_Collapse.8 days = 3
 			}
+			MAR_install_mil_turkestan = yes
+			if = {
+				limit = {
+					RUS = { 
+						controls_state = 1885
+					}
+				}
+				MTR = {
+					transfer_state = 1885
+					transfer_state = 1471
+					transfer_state = 1470
+					transfer_state = 1465
+					transfer_state = 2186
+					transfer_state = 1884
+					transfer_state = 2461
+				}
+			}
+			else_if = {
+				limit = {
+					RUS = { 
+						controls_state = 1465
+					}
+				}
+				MTR = {
+					transfer_state = 1465
+				}
+			}
+			else = {
+			
+			}
 		}
 	}
 }
 country_event = { #Turkestan breaks free
 	id = MAR_Collapse.7  
-	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Collapse.7"}
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Collapse.7" }
 	title = MAR_Collapse.7.t
 	desc = MAR_Collapse.7.d
 	picture = GFX_report_event_collapse7
@@ -1282,6 +1323,15 @@ country_event = { #Turkestan breaks free
 				last_election = "1933.2.16"
 				election_frequency = 36
 				elections_allowed = no
+			}
+			set_party_name = {
+				ideology = ultranationalism
+				long_name = MTR_despotism_party_long
+				name = MTR_despotism_party
+			}
+			add_popularity = {
+				ideology = ultranationalism
+				popularity = 0.45
 			}
 			add_country_leader_role = {
 				character = UZB_Alexander_Rutskoj
@@ -1348,6 +1398,10 @@ country_event = { #-kazakhstan
 			transfer_state = 1803
 			add_state_core = 1804
 			transfer_state = 1804
+			add_state_core = 1805
+			transfer_state = 1805
+			add_state_core = 1806
+			transfer_state = 1806
 			remove_ideas = PAV_idealistic_revolutionaries 
 			set_politics = {
 				ruling_party = paternalism
@@ -1591,19 +1645,14 @@ country_event = { #F tuva and zeya
 			}
 			hidden_effect = {
 				if = {
-					limit = { MJP = { exists = no } }
-					MJP = {
-						transfer_state = 809
-						transfer_state = 810
-						set_cosmetic_tag = MJP_JAP_autonomy
-						econ_join_sphere_JAP = yes
-						add_ideas = Sphere_Imp_Protectorate
-						add_ideas = MAN_Kwantung_Army
-						every_owned_state = {
-							MJP = {
-								add_state_core = PREV
-							}
+					limit = {
+						OR = {
+							HAN = { exists = yes }
+							MAN = { exists = yes }
+							PFF = { exists = yes }
 						}
+					}
+					MJP = {
 						if = { 
 							limit = { PFF = { exists = yes } }
 							declare_war_on = {
@@ -1624,9 +1673,6 @@ country_event = { #F tuva and zeya
 								type = annex_everything
 							}
 						}
-					}
-					JAP = {
-						add_to_faction = MJP
 					}
 				}
 			}
@@ -1669,6 +1715,10 @@ country_event = { #F dv 1
 			transfer_state = 561
 			add_state_core = 563
 			transfer_state = 563
+			add_state_core = 889
+			transfer_state = 889
+			add_state_core = 759
+			transfer_state = 759
 			add_ideas = {
 				OFN_Observer
 				TaS_Post2WRW_SIB_japanese_paranoia
@@ -1743,8 +1793,6 @@ country_event = { #F dv 2
 			retire_country_leader = yes
 			set_country_flag = RUS_cancel_all_ideas
 			set_cosmetic_tag = BRY_MAR_collapse
-			add_state_core = 760
-			transfer_state = 760
 			add_state_core = 565
 			transfer_state = 565
 			add_state_core = 564
@@ -1804,14 +1852,10 @@ country_event = { #F dv 2
 			set_cosmetic_tag = YAK_MAR_collapse
 			add_state_core = 574
 			transfer_state = 574
-			add_state_core = 759
-			transfer_state = 759
 			add_state_core = 644
 			transfer_state = 644
-			add_state_core = 889
-			transfer_state = 889
-			add_state_core = 890
-			transfer_state = 890
+			add_state_core = 760
+			transfer_state = 760
 			set_politics = {
 				ruling_party = liberalism
 				last_election = "1933.2.16"
@@ -1908,8 +1952,8 @@ country_event = { #F sibir
 			transfer_state = 570
 			transfer_state = 40
 			add_state_core = 40
-			#transfer_state = 654
-			#add_state_core = 654
+			transfer_state = 890
+			add_state_core = 890
 			transfer_state = 569
 			add_state_core = 569
 			add_state_core = 757
@@ -1925,8 +1969,7 @@ country_event = { #F sibir
 			add_state_core = 761
 			transfer_state = 761
 			add_state_core = 575
-			transfer_state = 575
-	
+			transfer_state = 575	
 			set_politics = { 
 				ruling_party = despotism
 				last_election = "1933.2.16"

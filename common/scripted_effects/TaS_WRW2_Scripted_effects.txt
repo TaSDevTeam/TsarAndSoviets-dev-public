@@ -90,8 +90,6 @@ TaS_2WRW_manchuria_spawn_states = {
 		add_state_core = 657
 		transfer_state = 1646
 		add_state_core = 1646
-		transfer_state = 1647
-		add_state_core = 1647
 		transfer_state = 409
 		add_state_core = 409
 		inherit_technology = MAR
@@ -103,8 +101,6 @@ TaS_2WRW_manchuria_spawn_states = {
 	}	
 	PJP = {
 		promote_character = PJP_Hiromichi_Yahara
-		transfer_state = 1645
-		add_state_core = 1645
 		transfer_state = 1644
 		add_state_core = 1644
 		transfer_state = 408
@@ -626,6 +622,9 @@ TaS_WRW2_total_capitulation = {
 	}
 	
 	TaS_2WRW_form_ost_zones = yes
+	GER = {
+		country_event = { id = TaS_GERCollapse.1 days = 7 }
+	}
 }
 
 TaS_2WRW_spawn_volunteers = {

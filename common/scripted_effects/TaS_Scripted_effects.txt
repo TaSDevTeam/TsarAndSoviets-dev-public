@@ -671,8 +671,8 @@ first_every_month_script_TaS = {
 	MJP = { 
 		if = {
 			limit = {
-				#NOT = { has_country_flag = MJP_reclamation_timeout }
-				#PJP = { has_country_flag = MAN_catastrophe }
+				NOT = { has_country_flag = MJP_reclamation_timeout }
+				PJP = { has_country_flag = MAN_catastrophe }
 			}
 			random_list = {
 				1 = {
