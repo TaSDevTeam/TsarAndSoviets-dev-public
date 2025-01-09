@@ -1167,60 +1167,104 @@ SWRW_start_rebellion_POV = {
 }	
 
 SWRW_turkey_peacedeal = {
+	TUR = { save_global_event_target_as = losing_country }
 	RUS = {
+		save_global_event_target_as = winning_country
 		white_peace = TUR
 	}	
 	every_country = {
 		limit = { is_puppet_of = TUR }
 		white_peace = RUS
 	}
-	XYZ = {
-		MTU_Military_Administration = {
-			set_nationality = TUR
+	if = {
+		limit = { MCS = { exists = yes } }
+		MCS = {
+			annex_country = {
+				target = ARM
+				transfer_troops = yes
+			}
 		}
 	}
-	TUR = {
-		set_politics = {
-			ruling_party = despotism
+	else_if = {
+		limit = { GEO = { exists = yes } }
+		ARM = {
+			econ_join_sphere_MAR = yes
 		}
-		add_popularity = {
-			ideology = despotism
-			popularity = 0.45
+	}
+	else = {
+		RUS = {
+			annex_country = {
+				target = ARM
+				transfer_troops = yes
+			}
 		}
-		set_party_name = {
-			ideology = despotism
-			long_name = TUR_MIL_despotism_party_long
-			name = TUR_MIL_despotism_party
-		}
-		kill_country_leader = yes
-		promote_character = MTU_Military_Administration
-		if = {
-			limit = { RUS = { has_government = socialist } }
-			set_cosmetic_tag = TUR_MIL_Kosygin
-		}
-		else = {
-			set_cosmetic_tag = TUR_MIL
-		}
-		econ_join_sphere_MAR = yes
-	} 
+	}	
+	every_country = {
+		limit = { controls_state = 231 }
+		transfer_state = 1565
+		transfer_state = 1448
+		
+		add_state_core = 1565
+		add_state_core = 1448
+	}
+	every_country = {
+		limit = { controls_state = 230 }
+		transfer_state = 1567
+		transfer_state = 353
+		transfer_state = 1990
+		
+		add_state_core = 1567
+		add_state_core = 353
+		add_state_core = 1990
+	}
+	every_country = {
+		limit = { controls_state = 554 }
+		transfer_state = 1449
+		transfer_state = 1988
+		transfer_state = 677
+		transfer_state = 1243
+		transfer_state = 2148
+		transfer_state = 1446
+		
+		add_state_core = 1449
+		add_state_core = 1988
+		add_state_core = 677
+		add_state_core = 1243
+		add_state_core = 2148
+		add_state_core = 1446
+	}
+	every_country = {
+		limit = { controls_state = 291 }
+		transfer_state = 1993
+		transfer_state = 1334
+		transfer_state = 1781
+		transfer_state = 1779
+		transfer_state = 1780
+		transfer_state = 781
+		
+		add_state_core = 1993
+		add_state_core = 1334
+		add_state_core = 1781
+		add_state_core = 1779
+		add_state_core = 1780
+		add_state_core = 781
+	}
+	GRE = {
+		transfer_state = 163
+		add_state_core = 163
+	}
+	RUS = {
+		transfer_state = 1267
+		transfer_state = 341
+		transfer_state = 347
+		transfer_state = 340
+		transfer_state = 345
+	}
 	every_country = {
 		limit = { is_subject_of = TUR }
 		end_puppet = TUR
 	}
-	TUR = {
-		get_current_government_type = yes
-		save_party_popularities = yes
-	}
-	RUS = {
-		set_autonomy = {
-			target = TUR
-			autonomy_state = autonomy_occupied_territory
-		}	
-	}	
-	TUR = {
-		restore_previous_government_type = yes
-		apply_party_popularities = yes
-	}
+	
 }
 SWRW_finland_peacedeal = {
 	RUS = {

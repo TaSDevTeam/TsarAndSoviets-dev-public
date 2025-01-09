@@ -2908,9 +2908,6 @@ MAR_SWRW_category = {
 			check_variable = { TaS_swrw_stage = 2 }
 		}
 		available = {
-			#controls_state = 253
-			#controls_state = 254
-			#controls_state = 248
 			controls_state = 246
 			controls_state = 238
 		}
@@ -2953,26 +2950,23 @@ MAR_SWRW_category = {
 		icon = generic_assault
 		priority = 50
 		available = {
+			controls_state = 1434
 			controls_state = 264
-			#controls_state = 208
-			#controls_state = 1475
 		}
 		activation = {
 			has_war_with = GER
 			check_variable = { TaS_swrw_stage = 2 }
 			NOT = {
+				controls_state = 1434
 				controls_state = 264
-				#controls_state = 208
-				#controls_state = 1475	
 			}
 		}
 		days_mission_timeout = 120
 		is_good = no
 		highlight_states = {
 			highlight_state_targets = {
+				state = 1434
 				state = 264
-				state = 208
-				#state = 1475
 			}
 		}
 		timeout_effect = {
@@ -2997,23 +2991,19 @@ MAR_SWRW_category = {
 		icon = generic_assault
 		priority = 49
 		available = {
-			#controls_state = 236
-			controls_state = 237
 			controls_state = 243
-			controls_state = 244
-			#controls_state = 265
 			controls_state = 217
+			controls_state = 237
+			controls_state = 239
 		}
 		activation = {
 			has_war_with = GER
 			check_variable = { TaS_swrw_stage = 2 }
 			NOT = {
-				#controls_state = 236
-				controls_state = 237
 				controls_state = 243
-				controls_state = 244
-				#controls_state = 265
 				controls_state = 217
+				controls_state = 237
+				controls_state = 239
 			}
 		}
 		days_mission_timeout = 150
@@ -3021,12 +3011,10 @@ MAR_SWRW_category = {
 		is_good = no
 		highlight_states = {
 			highlight_state_targets = {
-				#state = 236
-				state = 237
 				state = 243
-				state = 244
-				#state = 265
 				state = 217
+				state = 237
+				state = 239
 			}
 		}
 		timeout_effect = {
@@ -3053,7 +3041,7 @@ MAR_SWRW_category = {
 			controls_state = 1436
 			controls_state = 263
 			controls_state = 245
-			controls_state = 239
+			controls_state = 260
 		}
 		activation = {
 			has_war_with = GER
@@ -3062,7 +3050,7 @@ MAR_SWRW_category = {
 				controls_state = 1436
 				controls_state = 263
 				controls_state = 245
-				controls_state = 239
+				controls_state = 260
 			}
 		}
 		days_mission_timeout = 150
@@ -3073,7 +3061,7 @@ MAR_SWRW_category = {
 				state = 1436
 				state = 263
 				state = 245
-				state = 239
+				state = 260
 			}
 		}
 		timeout_effect = {
@@ -3099,25 +3087,21 @@ MAR_SWRW_category = {
 		}
 		available = {
 			controls_state = 224
-			controls_state = 260
-			#controls_state = 240
 			controls_state = 210
 			controls_state = 1441
+			controls_state = 1443
 		}
 		activation = {
 			has_war_with = GER
 			check_variable = { TaS_swrw_stage = 2 }
-			#controls_state = 265
-			controls_state = 243
 			controls_state = 217
 			controls_state = 245
 			controls_state = 1436
 			NOT = {
 				controls_state = 224
-				controls_state = 260
-				#controls_state = 240
 				controls_state = 210
 				controls_state = 1441
+				controls_state = 1443
 			}
 		}
 		days_mission_timeout = 150
@@ -3126,10 +3110,9 @@ MAR_SWRW_category = {
 		highlight_states = {
 			highlight_state_targets = {
 				state = 224
-				state = 260
-				#state = 240
 				state = 210
 				state = 1441
+				state = 1443
 			}
 		}
 		timeout_effect = {
@@ -3155,28 +3138,31 @@ MAR_SWRW_category = {
 		priority = 46
 		available = {
 			controls_state = 247
-			#controls_state = 1314
+			controls_state = 1442
 			controls_state = 219
+			controls_state = 401
 		}
 		activation = {
 			has_war_with = GER
 			check_variable = { TaS_swrw_stage = 2 }
-			#controls_state = 253
-			#controls_state = 254
 			controls_state = 238
+			controls_state = 246
+			controls_state = 1443
 			NOT = {
 				controls_state = 247
-				#controls_state = 1314
+				controls_state = 1442
 				controls_state = 219
+				controls_state = 401
 			}
 		}
 		days_mission_timeout = 60
 		is_good = no
 		highlight_states = {
 			highlight_state_targets = {
-				state = 219
+				state = 247
 				state = 1442
-				#state = 1478
+				state = 219
+				state = 401
 			}
 		}
 		timeout_effect = {
@@ -3193,7 +3179,7 @@ MAR_SWRW_category = {
 			add_war_support = 0.05
 		}
 	}
-	SWRW_take_novgorod = {
+	SWRW_onto_oryol = {
 		visible = {
 			check_variable = { WRW_deccat = 1 }
 			check_variable = { TaS_swrw_stage = 2 }
@@ -3201,35 +3187,32 @@ MAR_SWRW_category = {
 		icon = generic_assault
 		priority = 45
 		available = {
-			controls_state = 247
-			#controls_state = 1314
-			#controls_state = 1477
-			controls_state = 1434
-			#controls_state = 220
+			controls_state = 222
+			controls_state = 1435
+			controls_state = 242
 		}
 		activation = {
 			has_war_with = GER
 			check_variable = { TaS_swrw_stage = 2 }
-			#controls_state = 208
-			controls_state = 264
-			#controls_state = 1475
+			count_triggers = {
+			amount = 3
+				controls_state = 210
+				controls_state = 401
+				controls_state = 219
+			}
 			NOT = {
-				controls_state = 247
-				#controls_state = 1314
-				#controls_state = 1477
-				controls_state = 1434
-				#controls_state = 220
+				controls_state = 222
+				controls_state = 1435
+				controls_state = 242
 			}
 		}
 		days_mission_timeout = 80
 		is_good = no
 		highlight_states = {
 			highlight_state_targets = {
-				state = 247
-				#state = 1314
-				#state = 1477
-				state = 1434
-				#state = 220
+				state = 222
+				state = 143
+				state = 242
 			}
 		}
 		timeout_effect = {
@@ -3238,14 +3221,15 @@ MAR_SWRW_category = {
 		}
 		complete_effect = {
 			set_temp_variable = { temp_devastation_gained = -4 } 
-			TaS_WRW2_change_devastation = yes		
+			TaS_WRW2_change_devastation = yes			
 			GER = {
-				set_temp_variable = { temp_devastation_gained = 4 }
+				set_temp_variable = { temp_devastation_gained = 5 }
 				TaS_WRW2_change_devastation = yes
-			}	
+			}
 			add_war_support = 0.02
 		}
 	}
+	### RK Ostland
 	SWRW_push_to_petrograd = {
 		visible = {
 			check_variable = { WRW_deccat = 1 }
@@ -3254,7 +3238,6 @@ MAR_SWRW_category = {
 		icon = generic_assault
 		priority = 45
 		available = {
-			controls_state = 209
 			controls_state = 195
 			controls_state = 1421
 		}
@@ -3263,12 +3246,10 @@ MAR_SWRW_category = {
 			check_variable = { TaS_swrw_stage = 2 }
 			count_triggers = {
 			amount = 2
-				#controls_state = 208
 				controls_state = 1434
-				#controls_state = 220
+				controls_state = 247
 			}
 			NOT = {
-				controls_state = 209
 				controls_state = 195
 				controls_state = 1421
 			}
@@ -3277,7 +3258,6 @@ MAR_SWRW_category = {
 		is_good = no
 		highlight_states = {
 			highlight_state_targets = {
-				state = 209
 				state = 195
 				state = 1421
 			}
@@ -3296,6 +3276,52 @@ MAR_SWRW_category = {
 			add_war_support = 0.02
 		}
 	}
+	SWRW_take_pskov = {
+		visible = {
+			check_variable = { WRW_deccat = 1 }
+			check_variable = { TaS_swrw_stage = 2 }
+		}
+		icon = generic_assault
+		priority = 45
+		available = {
+			controls_state = 208
+			controls_state = 1402
+			controls_state = 257
+		}
+		activation = {
+			has_war_with = GER
+			check_variable = { TaS_swrw_stage = 2 }
+			controls_state = 195
+			controls_state = 1421
+			NOT = {
+				controls_state = 208
+				controls_state = 1402
+				controls_state = 257
+			}
+		}
+		days_mission_timeout = 80
+		is_good = no
+		highlight_states = {
+			highlight_state_targets = {
+				state = 208
+				state = 1402
+				state = 257
+			}
+		}
+		timeout_effect = {
+			set_temp_variable = { temp_devastation_gained = 4 } 
+			TaS_WRW2_change_devastation = yes			
+		}
+		complete_effect = {
+			set_temp_variable = { temp_devastation_gained = -4 } 
+			TaS_WRW2_change_devastation = yes		
+			GER = {
+				set_temp_variable = { temp_devastation_gained = 4 }
+				TaS_WRW2_change_devastation = yes
+			}	
+			add_war_support = 0.02
+		}
+	}
 	SWRW_storm_smolensk = {
 		visible = {
 			check_variable = { WRW_deccat = 1 }
@@ -3304,40 +3330,28 @@ MAR_SWRW_category = {
 		icon = generic_assault
 		priority = 45
 		available = {
-			controls_state = 257
-			#controls_state = 255
-			controls_state = 242
-			#controls_state = 1476
+			controls_state = 2452
+			controls_state = 241
 		}
 		activation = {
 			has_war_with = GER
 			check_variable = { TaS_swrw_stage = 2 }
 			count_triggers = {
-				amount = 3
-				controls_state = 209
-				#controls_state = 1477
-				#controls_state = 1314
-				#controls_state = 1478
-				controls_state = 219
-				#controls_state = 223
-				#controls_state = 205
-				#controls_state = 1444
+				amount = 2
+				controls_state = 242
+				controls_state = 222
 			}
 			NOT = {
-				controls_state = 257
-				#controls_state = 255
-				controls_state = 242
-				#controls_state = 1476
+				controls_state = 2452
+				controls_state = 241
 			}
 		}
 		days_mission_timeout = 70
 		is_good = no
 		highlight_states = {
 			highlight_state_targets = {
-				state = 257
-				#state = 255
-				state = 242
-				#state = 1476
+				state = 2452
+				state = 241
 			}
 		}
 		timeout_effect = {
@@ -3354,122 +3368,6 @@ MAR_SWRW_category = {
 			add_war_support = 0.017
 		}
 	}
-	SWRW_onto_oryol = {
-		visible = {
-			check_variable = { WRW_deccat = 1 }
-			check_variable = { TaS_swrw_stage = 2 }
-		}
-		icon = generic_assault
-		priority = 45
-		available = {
-			controls_state = 1435
-			controls_state = 222
-			#controls_state = 258
-			controls_state = 401
-			controls_state = 1443
-			#controls_state = 205
-		}
-		activation = {
-			has_war_with = GER
-			check_variable = { TaS_swrw_stage = 2 }
-			count_triggers = {
-			amount = 3
-				#controls_state = 1476
-				controls_state = 219
-				#controls_state = 248
-				#controls_state = 254
-				controls_state = 1441
-				controls_state = 210
-				#controls_state = 240
-			}
-			NOT = {
-				controls_state = 1435
-				controls_state = 222
-				#controls_state = 258
-				controls_state = 401
-				controls_state = 1443
-				#controls_state = 205
-			}
-		}
-		days_mission_timeout = 80
-		is_good = no
-		highlight_states = {
-			highlight_state_targets = {
-				state = 1435
-				state = 222
-				#state = 258
-				state = 401
-				state = 1443
-				#state = 205
-			}
-		}
-		timeout_effect = {
-			set_temp_variable = { temp_devastation_gained = 4 } 
-			TaS_WRW2_change_devastation = yes			
-		}
-		complete_effect = {
-			set_temp_variable = { temp_devastation_gained = -4 } 
-			TaS_WRW2_change_devastation = yes			
-			GER = {
-				set_temp_variable = { temp_devastation_gained = 5 }
-				TaS_WRW2_change_devastation = yes
-			}
-			add_war_support = 0.02
-		}
-	}
-	SWRW_home_sweet_homel = {
-		visible = {
-			check_variable = { WRW_deccat = 1 }
-			check_variable = { TaS_swrw_stage = 2 }
-		}
-		icon = generic_assault
-		priority = 45
-		available = {
-			controls_state = 241
-			#controls_state = 223
-			#controls_state = 1444
-		}
-		activation = {
-			has_war_with = GER
-			check_variable = { TaS_swrw_stage = 2 }
-			count_triggers = {
-			amount = 2
-				controls_state = 242
-				#controls_state = 1476
-				#controls_state = 205
-				controls_state = 222
-				controls_state = 1435
-			}
-			NOT = {
-				controls_state = 241
-				#controls_state = 223
-				#controls_state = 1444
-			}
-		}
-		days_mission_timeout = 80
-		is_good = no
-		highlight_states = {
-			highlight_state_targets = {
-				state = 241
-				#state = 223
-				#state = 1444
-			}
-		}
-		timeout_effect = {
-			set_temp_variable = { temp_devastation_gained = 3 } 
-			TaS_WRW2_change_devastation = yes			
-		}
-		complete_effect = {
-			set_temp_variable = { temp_devastation_gained = -3 } 
-			TaS_WRW2_change_devastation = yes			
-			GER = {
-				set_temp_variable = { temp_devastation_gained = 5 }
-				TaS_WRW2_change_devastation = yes
-			}
-			add_war_support = 0.015
-		}
-	}
-	
 	## RK CAUCASIA ##
 	
 	SWRW_charge_into_the_caucasus = {
@@ -3493,11 +3391,8 @@ MAR_SWRW_category = {
 			check_variable = { TaS_swrw_stage = 2 }
 			count_triggers = {
 				amount = 2
-				controls_state = 244
-				controls_state = 237
-				#controls_state = 265
 				controls_state = 224
-				controls_state = 218
+				controls_state = 237
 			}
 			NOT = {
 				controls_state = 232
@@ -3546,29 +3441,33 @@ MAR_SWRW_category = {
 		icon = generic_assault
 		priority = 44
 		available = {
-			controls_state = 232
-			controls_state = 234
-			controls_state = 235
-			controls_state = 1564
-			controls_state = 1561
+			controls_state = 1730
+			controls_state = 244
+			controls_state = 1554
+			controls_state = 229
+			controls_state = 1552
+			controls_state = 2131
 		}
 		activation = {
 			has_war_with = GER
 			check_variable = { TaS_swrw_stage = 2 }
 			count_triggers = {
-				amount = 2
+				amount = 3
 				controls_state = 232
 				controls_state = 234
 				controls_state = 235
 				controls_state = 1564
 				controls_state = 1561
+				controls_state = 1559
+				controls_state = 1560
 			}
 			NOT = {
-				controls_state = 232
-				controls_state = 234
-				controls_state = 235
-				controls_state = 1564
-				controls_state = 1561
+				controls_state = 1730
+				controls_state = 244
+				controls_state = 1554
+				controls_state = 229
+				controls_state = 1552
+				controls_state = 2131
 			}
 		}
 		days_mission_timeout = 25
@@ -3610,22 +3509,26 @@ MAR_SWRW_category = {
 			controls_state = 231
 			controls_state = 1556
 			controls_state = 1558
+			controls_state = 1293
 		}
 		activation = {
 			has_war_with = GER
 			check_variable = { TaS_swrw_stage = 2 }
 			count_triggers = {
-				amount = 2
+				amount = 3
 				controls_state = 232
 				controls_state = 234
 				controls_state = 235
 				controls_state = 1564
 				controls_state = 1561
+				controls_state = 1559
+				controls_state = 1560
 			}
 			NOT = {
 				controls_state = 231
 				controls_state = 1556
 				controls_state = 1558
+				controls_state = 1293
 			}
 		}
 		days_mission_timeout = 20
@@ -3636,6 +3539,7 @@ MAR_SWRW_category = {
 				state = 231
 				state = 1556
 				state = 1558
+				state = 1293
 			}
 		}
 		timeout_effect = {
@@ -3665,6 +3569,7 @@ MAR_SWRW_category = {
 		priority = 43
 		available = {
 			controls_state = 137
+			controls_state = 1532
 		}
 		activation = {
 			has_war_with = GER
@@ -3675,6 +3580,7 @@ MAR_SWRW_category = {
 			}
 			NOT = {
 				controls_state = 137
+				controls_state = 1532
 			}
 		}
 		days_mission_timeout = 100
@@ -3683,6 +3589,7 @@ MAR_SWRW_category = {
 		highlight_states = {
 			highlight_state_targets = {
 				state = 137
+				state = 1532
 			}
 		}
 		timeout_effect = {
@@ -3710,9 +3617,9 @@ MAR_SWRW_category = {
 		icon = generic_assault
 		priority = 41
 		available = {
+			controls_state = 221
 			controls_state = 225
 			controls_state = 259
-			controls_state = 221
 			controls_state = 1426
 		}
 		activation = {
@@ -3720,14 +3627,13 @@ MAR_SWRW_category = {
 			check_variable = { TaS_swrw_stage = 2 }
 			count_triggers = {
 				amount = 2
-				#controls_state = 1444
 				controls_state = 1435
-				#controls_state = 240
+				controls_state = 222
 			}
 			NOT = {
+				controls_state = 221
 				controls_state = 225
 				controls_state = 259
-				controls_state = 221
 				controls_state = 1426
 			}
 		}
@@ -3736,9 +3642,9 @@ MAR_SWRW_category = {
 		is_good = no
 		highlight_states = {
 			highlight_state_targets = {
+				state = 221
 				state = 225
 				state = 259
-				state = 221
 				state = 1426
 			}
 		}
@@ -3775,10 +3681,10 @@ MAR_SWRW_category = {
 			check_variable = { TaS_swrw_stage = 2 }
 			count_triggers = {
 				amount = 2
-				#controls_state = 240
+				controls_state = 221
 				controls_state = 224
 				controls_state = 234
-				controls_state = 137
+				controls_state = 210
 			}
 			NOT = {
 				controls_state = 196
@@ -3830,10 +3736,15 @@ MAR_SWRW_category = {
 			has_war_with = GER
 			check_variable = { TaS_swrw_stage = 2 }
 			OR = {
-				controls_state = 241
-				#controls_state = 1444
+				count_triggers = {
+					amount = 2
+					controls_state = 259
+					controls_state = 225
+					controls_state = 241
+					controls_state = 222
+				}
 				UKR = {
-					surrender_progress > 0.15
+					surrender_progress > 0.25
 				}
 			}
 			NOT = {
@@ -3993,44 +3904,38 @@ MAR_SWRW_category = {
 		icon = generic_assault
 		priority = 39
 		available = {
-			controls_state = 194
-			controls_state = 94
-			controls_state = 95
-			controls_state = 96
-			controls_state = 204
-			controls_state = 206
 			controls_state = 207
-			controls_state = 1407
-			controls_state = 1406
+			controls_state = 206
+			controls_state = 194
 			controls_state = 1405
 			controls_state = 1404
+			controls_state = 204
 			controls_state = 1403
+			controls_state = 1406
+			controls_state = 95
+			controls_state = 1407
 		}
 		activation = {
 			has_war_with = GER
 			check_variable = { TaS_swrw_stage = 2 }
 			count_triggers = {
-				amount = 3
-				controls_state = 1431
-				controls_state = 1429
+				amount = 2
+				controls_state = 2452
 				controls_state = 241
-				#controls_state = 223
-				controls_state = 242
-				controls_state = 257
+				controls_state = 1429	
+				controls_state = 1402
 			}
 			NOT = {
-				controls_state = 194
-				controls_state = 94
-				controls_state = 95
-				controls_state = 96
-				controls_state = 204
-				controls_state = 206
 				controls_state = 207
-				controls_state = 1407
-				controls_state = 1406
+				controls_state = 206
+				controls_state = 194
 				controls_state = 1405
 				controls_state = 1404
+				controls_state = 204
 				controls_state = 1403
+				controls_state = 1406
+				controls_state = 95
+				controls_state = 1407
 			}
 
 		}
@@ -4039,18 +3944,16 @@ MAR_SWRW_category = {
 		is_good = no
 		highlight_states = {
 			highlight_state_targets = {
-				state = 194
-				state = 94
-				state = 95
-				state = 96
-				state = 204
-				state = 206
 				state = 207
-				state = 1407
-				state = 1406
+				state = 206
+				state = 194
 				state = 1405
 				state = 1404
+				state = 204
 				state = 1403
+				state = 1406
+				state = 95
+				state = 1407
 			}
 		}
 		timeout_effect = {
@@ -4076,38 +3979,41 @@ MAR_SWRW_category = {
 		icon = generic_assault
 		priority = 38
 		available = {
-			controls_state = 190
-			controls_state = 12
-			controls_state = 13
 			controls_state = 191
-			controls_state = 943
-			controls_state = 1399
-			controls_state = 1398
-			controls_state = 1397
-			controls_state = 1396
+			controls_state = 1386
 			controls_state = 1395
-			controls_state = 1402
+			controls_state = 2450
+			controls_state = 13
+			controls_state = 1440
+			controls_state = 943
+			controls_state = 12
+			controls_state = 1398
+			controls_state = 190
+			controls_state = 1399
+			controls_state = 1397
 		}
 		activation = {
 			has_war_with = GER
 			check_variable = { TaS_swrw_stage = 2 }
-			OR = {
+			count_triggers = {
+				amount = 3
 				controls_state = 209
-				controls_state = 1421
-				controls_state = 257
+				controls_state = 1402
+				controls_state = 1421	
 			}
 			NOT = {
-				controls_state = 190
-				controls_state = 12
-				controls_state = 13
 				controls_state = 191
-				controls_state = 943
-				controls_state = 1399
-				controls_state = 1398
-				controls_state = 1397
-				controls_state = 1396
+				controls_state = 1386
 				controls_state = 1395
-				controls_state = 1402
+				controls_state = 2450
+				controls_state = 13
+				controls_state = 1440
+				controls_state = 943
+				controls_state = 12
+				controls_state = 1398
+				controls_state = 190
+				controls_state = 1399
+				controls_state = 1397
 			}
 		}
 		days_mission_timeout = 40
@@ -4115,17 +4021,18 @@ MAR_SWRW_category = {
 		is_good = no
 		highlight_states = {
 			highlight_state_targets = {
-				state = 190
-				state = 12
-				state = 13
 				state = 191
-				state = 943
-				state = 1399
-				state = 1398
-				state = 1397
-				state = 1396
+				state = 1386
 				state = 1395
-				state = 1402
+				state = 2450
+				state = 13
+				state = 1440
+				state = 943
+				state = 12
+				state = 1398
+				state = 190
+				state = 1399
+				state = 1397
 			}
 		}	
 		timeout_effect = {
@@ -4155,20 +4062,28 @@ MAR_SWRW_category = {
 			controls_state = 11
 			controls_state = 1400
 			controls_state = 1401
+			controls_state = 2451
+			controls_state = 79
+			controls_state = 96
 		}
 		activation = {
 			has_war_with = GER
 			check_variable = { TaS_swrw_stage = 2 }
-			OR = {
-				controls_state = 190
-				controls_state = 1398
-				controls_state = 96
+			count_triggers = {
+				amount = 2
+				controls_state = 1403
+				controls_state = 1406
+				controls_state = 190	
+				controls_state = 1389	
 			}
 			NOT = {
 				controls_state = 189
 				controls_state = 11
 				controls_state = 1400
 				controls_state = 1401
+				controls_state = 2451
+				controls_state = 79
+				controls_state = 96
 			}
 		}
 		days_mission_timeout = 40
@@ -4180,6 +4095,9 @@ MAR_SWRW_category = {
 				state = 11
 				state = 1400
 				state = 1401
+				state = 2451
+				state = 79
+				state = 96
 			}
 		}
 		timeout_effect = {
