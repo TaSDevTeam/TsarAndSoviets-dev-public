@@ -2040,11 +2040,10 @@ shared_focus = {
 	y = 1
 	
 	completion_reward = {
-		for_each_loop = {
-			array = MAR_ogas_dynomod_array_two
-			add_to_variable = { MAR_ogas_dynomod_array_two^0 = 0.5 }
-		}
-		MAR_calculate_ogas_dynmod_effects = yes
+		custom_effect_tooltip = MAR_kosrus_expanding_ogas_tt
+		add_to_variable = { MAR_ogas_dynomod_array_two^0 = 1 }
+		add_to_variable = { MAR_ogas_dynomod_array_two^2 = 3 }
+		add_to_variable = { MAR_ogas_dynomod_array_two^8 = 5 }
 		random_owned_state = {
 			add_state_modifier = {
 				modifier = {

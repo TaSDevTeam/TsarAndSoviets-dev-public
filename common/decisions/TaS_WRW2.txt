@@ -3627,10 +3627,10 @@ TaS_SWRW_far_eastern_negotiations = {
 							check_variable = { swrw_diplo_jap > 75 }
 							check_variable = { swrw_corpo_jap > 75 }
 						}
-						country_event = { id = MAR_Japan.21 days = 3}
+						country_event = { id = MAR_Japan.21 }
 					}
 					else = {
-						country_event = { id = MAR_Japan.25 days = 3}
+						country_event = { id = MAR_Japan.25 }
 					}
 				}
 				if = {
@@ -3642,10 +3642,10 @@ TaS_SWRW_far_eastern_negotiations = {
 							check_variable = { swrw_diplo_jap > 75 }
 							check_variable = { swrw_corpo_jap > 75 }
 						}
-						country_event = { id = MAR_Japan.22 days = 3}
+						country_event = { id = MAR_Japan.22 }
 					}
 					else = {
-						country_event = { id = MAR_Japan.25 days = 3}
+						country_event = { id = MAR_Japan.25 }
 					}
 				}
 				if = {
@@ -3657,10 +3657,10 @@ TaS_SWRW_far_eastern_negotiations = {
 							check_variable = { swrw_diplo_jap > 85 }
 							check_variable = { swrw_corpo_jap > 85 }
 						}
-						country_event = { id = MAR_Japan.23 days = 3}
+						country_event = { id = MAR_Japan.23 }
 					}
 					else = {
-						country_event = { id = MAR_Japan.25 days = 3}
+						country_event = { id = MAR_Japan.25 }
 					}
 				}
 				if = {
@@ -3672,10 +3672,10 @@ TaS_SWRW_far_eastern_negotiations = {
 							check_variable = { swrw_diplo_jap > 95 }
 							check_variable = { swrw_corpo_jap > 95 }
 						}
-						country_event = { id = MAR_Japan.24 days = 3}
+						country_event = { id = MAR_Japan.24 }
 					}
 					else = {
-						country_event = { id = MAR_Japan.26 days = 3}
+						country_event = { id = MAR_Japan.26 }
 					}
 				}
 			}
@@ -4756,6 +4756,7 @@ TaS_SWRW_far_eastern_negotiations = {
 		}
 		days_remove = 14
 		remove_effect = {
+			set_country_flag = SWRW_RUS_JAP_pact
 			diplomatic_relation = {
 				country = JAP
 				relation = non_aggression_pact

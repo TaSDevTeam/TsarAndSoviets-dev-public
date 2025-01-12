@@ -1151,6 +1151,7 @@ country_event = { # Question three: national question
 		ai_chance = { factor = 1 }	
 		custom_effect_tooltip = MAR_KAZ_talks_decrease_tt
 		add_to_variable = { MAR_KAZ_talks_fail = 1 }
+		TNO_improve_admin_efficiency_low = yes
 		MAR_KAZ_check_vars = yes
 	}
 	option = { #autonomy
@@ -1164,6 +1165,8 @@ country_event = { # Question three: national question
 		ai_chance = { factor = 1 }	
 		custom_effect_tooltip = MAR_KAZ_talks_increase_tt
 		add_to_variable = { MAR_KAZ_talks_success = 1 }
+		TNO_worsen_admin_efficiency_low = yes
+		TNO_improve_religious_rights_policy_effectiveness_med = yes
 		MAR_KAZ_check_vars = yes
 	}
 }

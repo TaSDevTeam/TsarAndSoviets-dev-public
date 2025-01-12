@@ -126,14 +126,43 @@ country_event = { #Kenes over - Turks/Americans - they didn't agree
 
 	option = { #ogey
 		name = MAR_Turkestan.5.a
-		annex_country = {
-			target = TRK
-			transfer_troops = no
+		#annex_country = {
+		#	target = TRK
+		#	transfer_troops = no
+		#}
+		TRK = {	
+			diplomatic_relation = {
+				country = RUS
+				relation = non_aggression_pact
+				active = yes
+			}
+			diplomatic_relation = {
+				country = RUS
+				relation = military_access
+				active = yes
+			}
+		}
+		RUS = {
+			diplomatic_relation = {
+				country = TRK
+				relation = non_aggression_pact
+				active = yes
+			}
+			diplomatic_relation = {
+				country = TRK
+				relation = guarantee
+				active = yes
+			}
+			diplomatic_relation = {
+				country = TRK
+				relation = military_access
+				active = yes
+			}
 		}
 		hidden_effect = {
 			every_country  = {
 				news_event = {
-					id = MAR_2WRW_world_news.1
+					#id = MAR_2WRW_world_news.1
 				}
 			}
 		}
@@ -1768,9 +1797,7 @@ country_event = { #3 round success
 			transfer_state = 657
 			transfer_state = 408
 			transfer_state = 409
-			transfer_state = 1645
 			transfer_state = 1644
-			transfer_state = 1646
 			transfer_state = 1647
 			if = {
 				limit = { has_country_flag = FE_demilitarize_amur }
@@ -1778,18 +1805,16 @@ country_event = { #3 round success
 				657 = { set_demilitarized_zone = yes }
 				408 = { set_demilitarized_zone = yes }
 				409 = { set_demilitarized_zone = yes }
-				1645 = { set_demilitarized_zone = yes }
 				1644 = { set_demilitarized_zone = yes }
-				1646 = { set_demilitarized_zone = yes }
 				1647 = { set_demilitarized_zone = yes }
 			}
 			if = {
 				limit = { has_country_flag = FE_korean_resettlement }
 				1646 = { set_variable = { nationality = 1000 } }
-				1647 = { set_variable = { nationality = 1000 } }
+				657 = { set_variable = { nationality = 1000 } }
 				
 				1646 = { add_manpower = 312423 }
-				1647 = { add_manpower = 434391 }
+				657 = { add_manpower = 434391 }
 				
 				963 = { add_manpower = -434391 }
 				655 = { add_manpower = -312423 }
@@ -1845,10 +1870,8 @@ country_event = { #4 round success
 			transfer_state = 809
 			transfer_state = 408
 			transfer_state = 409
-			transfer_state = 1645
 			transfer_state = 1644
 			transfer_state = 1646
-			transfer_state = 1647
 			if = {
 				limit = { has_country_flag = FE_demilitarize_amur }
 				1364 = { set_demilitarized_zone = yes }
@@ -1856,18 +1879,16 @@ country_event = { #4 round success
 				408 = { set_demilitarized_zone = yes }
 				409 = { set_demilitarized_zone = yes }
 				809 = { set_demilitarized_zone = yes }
-				1645 = { set_demilitarized_zone = yes }
 				1644 = { set_demilitarized_zone = yes }
 				1646 = { set_demilitarized_zone = yes }
-				1647 = { set_demilitarized_zone = yes }
 			}
 			if = {
 				limit = { has_country_flag = FE_korean_resettlement }
 				1646 = { set_variable = { nationality = 1000 } }
-				1647 = { set_variable = { nationality = 1000 } }
+				657 = { set_variable = { nationality = 1000 } }
 				
 				1646 = { add_manpower = 312423 }
-				1647 = { add_manpower = 434391 }
+				657 = { add_manpower = 434391 }
 				
 				963 = { add_manpower = -434391 }
 				655 = { add_manpower = -312423 }
@@ -1884,9 +1905,9 @@ country_event = { #4 round success
 				limit = { has_country_flag = FE_demilitarize_far_east }
 				637 = { set_demilitarized_zone = yes }
 				562 = { set_demilitarized_zone = yes }
-				886 = { set_demilitarized_zone = yes }
 				561 = { set_demilitarized_zone = yes }
 				563 = { set_demilitarized_zone = yes }
+				889 = { set_demilitarized_zone = yes }
 			}
 			if = {
 				limit = { has_country_flag = FE_double_administrartion }
@@ -1928,21 +1949,19 @@ country_event = { #1-3 round fail
 			transfer_state = 1364
 			transfer_state = 657
 			transfer_state = 1646
-			transfer_state = 1647
 			if = {
 				limit = { has_country_flag = FE_demilitarize_amur }
 				1364 = { set_demilitarized_zone = yes }
 				657 = { set_demilitarized_zone = yes }
 				1646 = { set_demilitarized_zone = yes }
-				1647 = { set_demilitarized_zone = yes }
 			}
 			if = {
 				limit = { has_country_flag = FE_korean_resettlement }
 				1646 = { set_variable = { nationality = 1000 } }
-				1647 = { set_variable = { nationality = 1000 } }
+				657 = { set_variable = { nationality = 1000 } }
 				
 				1646 = { add_manpower = 312423 }
-				1647 = { add_manpower = 434391 }
+				657 = { add_manpower = 434391 }
 				
 				963 = { add_manpower = -434391 }
 				655 = { add_manpower = -312423 }
