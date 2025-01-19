@@ -158,6 +158,7 @@ country_event = { #Kenes over - Turks/Americans - they didn't agree
 				relation = military_access
 				active = yes
 			}
+			set_country_flag = MAR_Turkestan_cucked
 		}
 		hidden_effect = {
 			every_country  = {
@@ -217,8 +218,8 @@ country_event = { #Offer ceasefire - yes
 			white_peace = AFG
 		}
 		RUS = {
-			1468 = { set_demilitarized_zone = yes }
-			742 = {	set_demilitarized_zone = yes }
+			2200 = { set_demilitarized_zone = yes }
+			2199 = { set_demilitarized_zone = yes }
 		}
 		hidden_effect = {
 			every_country  = {
@@ -261,7 +262,8 @@ country_event = { #conditional surrender
 		}
 		AFG = {
 			1885 = { set_demilitarized_zone = yes }
-			1470 = { set_demilitarized_zone = yes }
+			1884 = { set_demilitarized_zone = yes }
+			2461 = { set_demilitarized_zone = yes }
 		}
 		hidden_effect = {
 			every_country  = {
@@ -295,11 +297,7 @@ country_event = { #unconditional surrender
 			limit = { MTR = { exists = yes } } 
 			MTR = {
 				transfer_state = 1885
-				transfer_state = 1471
-				transfer_state = 1470
 				transfer_state = 1465
-				transfer_state = 2186
-				transfer_state = 1884
 				transfer_state = 2461
 				every_owned_state = {
 					remove_core_of = AFG
@@ -310,36 +308,29 @@ country_event = { #unconditional surrender
 		else = {
 			RUS = {
 				transfer_state = 1885
-				transfer_state = 1471
-				transfer_state = 1470
 				transfer_state = 1465
-				transfer_state = 2186
-				transfer_state = 1884
 				transfer_state = 2461
 			}
 		}
 		AFG = {
-			#annex_country = {
-			#	target = KLT
-			#	transfer_troops = yes
-			#}
-			#annex_country = {
-			#	target = MFP
-			#	transfer_troops = yes
-			#}
-			every_owned_state = {
-				remove_core_of = KLT
-				remove_core_of = MFP
-				add_core_of = AFG
-			}
 			if = {
 				limit = {
 					OR = {
 						has_cosmetic_tag = AFG_republic_amin
-						has_cosmetic_tag = AFG_mao
-						has_country_leader = {
-							character = AFG_Mohammed_Zahir_Shah
-							ruling_only = yes
+						has_cosmetic_tag = AFG_islamist
+						AND = {
+							has_country_leader = {
+								character = AFG_Mohammed_Zahir_Shah
+								ruling_only = yes
+							}
+							has_government = despotism
+						}
+						AND = {
+							has_cosmetic_tag = AFG_republic
+							or = {
+								has_government = fascism
+								has_government = national_socialism
+							}
 						}
 					}
 				}
@@ -364,7 +355,7 @@ country_event = { #unconditional surrender
 	}
 }
 
-country_event = { #Northern Rebellion #MAO/AMIN/ZAHIR
+country_event = { #Northern Rebellion #AMIN/ZAHIR NUP/FUNDAMENTALISTS/DAOUD PRO-GER/DAOUD PRO-JAP
 	id = MAR_AFG.4
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_AFG.4"}
 	title = MAR_AFG.4.t
@@ -382,9 +373,10 @@ country_event = { #Northern Rebellion #MAO/AMIN/ZAHIR
 		NAL = {
 			inherit_technology = AFG
 			load_oob = "NAL_acw"
-			transfer_state = 1474
-			transfer_state = 2185
-			transfer_state = 2187
+			transfer_state = 1469
+			transfer_state = 2190
+			transfer_state = 1884
+			transfer_state = 1470
 			every_owned_state = {
 				add_core_of = NAL
 			}
@@ -392,28 +384,14 @@ country_event = { #Northern Rebellion #MAO/AMIN/ZAHIR
 		if = {
 			limit = { has_global_flag = ACW_twoside }
 			country_event = { id = MAR_AFG.5 days = 11 }
-			if = {
-				limit = { MAR = { has_government = despotism } }
-				country_event = { id = MAR_AFG.9 days = 7 }
-			}
-			else = { 
-				country_event = { id = MAR_AFG.11 days = 7 }
-			}
 		}
 		else = {
 			country_event = { id = MAR_AFG.8 days = 7 }
 		}
-		hidden_effect = {
-			every_country  = {
-				news_event = {
-					id = MAR_2WRW_world_news.21
-				}
-			}
-		}
 	}	
 }
 
-country_event = { #Daoud pro-sphere coup #start of the CW
+country_event = { #Daoud pro-pakt coup #start of the CW
 	id = MAR_AFG.5
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_AFG.5"}
 	title = MAR_AFG.5.t
@@ -424,58 +402,76 @@ country_event = { #Daoud pro-sphere coup #start of the CW
 	is_triggered_only = yes
 	option = {
 		name = MAR_AFG.5.a
-		set_politics = {
-			ruling_party = fascism
-			last_election = "1969.8.29"
-			election_frequency = 48
-			elections_allowed = no
+		if = {
+			limit = { NOT = { has_government = national_socialism } }
+			set_politics = {
+				ruling_party = national_socialism
+				last_election = "1969.8.29"
+				election_frequency = 48
+				elections_allowed = no
+			}
+			ai_chance = {
+				base = 10
+			}
+			set_popularities = {
+				communist = 10
+				national_socialism = 65
+				despotism = 15
+				ultranationalism = 10
+			}
+			set_party_name = {
+				ideology = communist
+				name = AFG_communist_party_endgame
+				long_name = AFG_communist_party_endgame_long
+			}
+			set_party_name = {
+				ideology = despotism
+				name = AFG_despotism_party
+				long_name = AFG_despotism_party_long
+			}
+			set_party_name = {
+				ideology = ultranationalism
+				name = AFG_ultranationalism_party_endgame
+				long_name = AFG_ultranationalism_party_endgame_long
+			}
+			promote_character = AFG_Faiz_Ahmad
+			# promote_character = AFG_Burnahuddin_Rabbani
+			AFG_Ahmad_Shah_Khan = { promote_character = despotism_absolute_monarchy_subtype }
+			AFG_Mohammad_Daoud_Khan = { promote_character = national_socialism_subtype }
+			set_cosmetic_tag = AFG_republic
+			if = {
+				limit = { has_global_flag = german_civil_war_speervic }
+				join_zollverein = yes
+				every_country = {
+					limit = { is_subject_of = AFG }
+					join_zollverein = yes
+				}
+			}
+			econ_join_sphere_GER = yes
+			every_country = {
+				limit = { is_subject_of = AFG }
+				econ_join_sphere_GER = yes
+			}
 		}
-		ai_chance = {
-			base = 10
-		}
-		set_popularities = {
-			communist = 10
-			fascism = 65
-			despotism = 15
-			ultranationalism = 10
-		}
-		set_party_name = {
-			ideology = communist
-			name = AFG_communist_party_endgame
-			long_name = AFG_communist_party_endgame_long
-		}
-		set_party_name = {
-			ideology = despotism
-			name = AFG_despotism_party
-			long_name = AFG_despotism_party_long
-		}
-		set_party_name = {
-			ideology = fascism
-			name = AFG_national_socialism_party
-			long_name = AFG_national_socialism_party_long
-		}
-		set_party_name = {
-			ideology = ultranationalism
-			name = AFG_ultranationalism_party_endgame
-			long_name = AFG_ultranationalism_party_endgame_long
-		}
-		promote_character = AFG_Faiz_Ahmad
-		promote_character = AFG_Burnahuddin_Rabbani
-		AFG_Ahmad_Shah_Khan = { promote_character = despotism_absolute_monarchy_subtype }
-		AFG_Mohammad_Daoud_Khan = { promote_character = fascism_revolutionary_nationalism_subtype }
-		set_cosmetic_tag = AFG_republic
-		econ_join_sphere_JAP = yes
-		every_country = {
-			limit = { is_subject_of = AFG }
-			econ_join_sphere_JAP = yes
-		}
-		set_global_flag = AFG_DK_JAP
 		NAL = { declare_war_on = { target = AFG type = annex_everything } }
-		#country_event = { id = MAR_AFG.6 days = 7 }
+		if = {
+			limit = { 
+				MAR = { has_government = despotism }
+				OR = {
+					MAR = { has_country_flag = MAR_support_NAL }
+					MAR = { has_country_flag = MAR_support_AFG }
+				}
+			}
+			
+			country_event = { id = MAR_AFG.9 days = 3 }
+		}
+		else = { 
+			country_event = { id = MAR_AFG.11 days = 3 }
+		}
 		hidden_effect = {
 			every_country  = {
 				news_event = {
-					id = MAR_2WRW_world_news.22
+					id = MAR_2WRW_world_news.26
 				}
 			}
 		}
@@ -503,13 +499,6 @@ country_event = { #India occupies Kalat
 			transfer_state = 1891
 			transfer_state = 1533
 		}
-		hidden_effect = {
-			every_country  = {
-				news_event = {
-					id = MAR_2WRW_world_news.23
-				}
-			}
-		}
 	}	
 }
 
@@ -523,14 +512,14 @@ country_event = { #AFG revolution
 
 	fire_only_once = yes
 	is_triggered_only = yes
-	option = { #Sarwari
+	option = { #Taraki statcom
 		name = MAR_AFG.7.a
 		trigger = {
 			has_global_flag = TaS_WRW2_Russian_victory
 			MAR = { has_government = despotism } 
 		}
 		XYZ = {
-			AFG_Assadullah_Sarwari = {
+			AFG_Nur_Muhammad_Taraki = {
 				set_nationality = AFG
 			}
 		}
@@ -570,7 +559,7 @@ country_event = { #AFG revolution
 			long_name = AFG_ultranationalism_party_endgame_long
 		}
 		add_country_leader_role = {
-			character = AFG_Assadullah_Sarwari
+			character = AFG_Nur_Muhammad_Taraki
 			promote_leader = yes
 			country_leader = {
 				ideology = communist_stratocratic_communism_subtype
@@ -578,14 +567,8 @@ country_event = { #AFG revolution
 			}
 		}
 		set_cosmetic_tag = AFG_republic
+		MAR = { set_country_flag = MAR_support_NAL }
 		country_event = { id = MAR_AFG.4 days = 7 }
-		hidden_effect = {
-			every_country  = {
-				news_event = {
-					id = MAR_2WRW_world_news.25
-				}
-			}
-		}
 	}
 	option = { #Taraki commie
 		name = MAR_AFG.7.b
@@ -642,14 +625,8 @@ country_event = { #AFG revolution
 			}
 		}
 		set_cosmetic_tag = AFG_republic
+		MAR = { set_country_flag = MAR_support_AFG }
 		country_event = { id = MAR_AFG.4 days = 7 }
-		hidden_effect = {
-			every_country  = {
-				news_event = {
-					id = MAR_2WRW_world_news.25
-				}
-			}
-		}
 	}	
 	option = { #Taraki fascist
 		name = MAR_AFG.7.c
@@ -702,15 +679,9 @@ country_event = { #AFG revolution
 				expire = "1999.1.1"
 			}
 		}
+		MAR = { set_country_flag = MAR_support_AFG }
 		set_cosmetic_tag = AFG_republic
 		country_event = { id = MAR_AFG.4 days = 7 }
-		hidden_effect = {
-			every_country  = {
-				news_event = {
-					id = MAR_2WRW_world_news.25
-				}
-			}
-		}
 	}	
 }
 
@@ -738,6 +709,7 @@ country_event = { #Mujahideen
 			inherit_technology = AFG
 			load_oob = "MUJ_acw"
 			transfer_state = 2192
+			transfer_state = 2193
 			transfer_state = 1472
 			transfer_state = 415
 			every_owned_state = {
@@ -775,7 +747,7 @@ country_event = { #Mujahideen
 			}
 		}
 		#country_event = { id = MAR_AFG.6 days = 3 }
-		country_event = { id = MAR_AFG.10 days = 7 }
+		country_event = { id = MAR_AFG.9 days = 7 }
 		hidden_effect = {
 			every_country  = {
 				news_event = {
@@ -834,7 +806,7 @@ country_event = { #Threeside proxy starts
 	}
 }
 
-country_event = { #No proxy, Kosygin
+country_event = { #No proxy
 	id = MAR_AFG.11
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_AFG.11"}
 	title = MAR_AFG.11.t
@@ -1999,20 +1971,16 @@ country_event = { #4 round fail
 			transfer_state = 1364
 			transfer_state = 657
 			transfer_state = 409
-			transfer_state = 1645
 			transfer_state = 1644
 			transfer_state = 1646
-			transfer_state = 1647
 			if = {
 				limit = { has_country_flag = FE_demilitarize_amur }
 				1364 = { set_demilitarized_zone = yes }
 				657 = { set_demilitarized_zone = yes }
 				408 = { set_demilitarized_zone = yes }
 				409 = { set_demilitarized_zone = yes }
-				1645 = { set_demilitarized_zone = yes }
 				1644 = { set_demilitarized_zone = yes }
 				1646 = { set_demilitarized_zone = yes }
-				1647 = { set_demilitarized_zone = yes }
 			}
 			if = {
 				limit = { has_country_flag = FE_korean_resettlement }
@@ -2561,6 +2529,7 @@ country_event = { #Offer status quo
 					id = MAR_2WRW_world_news.9
 				}
 			}
+			SWRW_clear_war_stuff = yes
 		}
 	}
 	option = { #nope lol
@@ -2599,6 +2568,7 @@ country_event = { #Offer muscowy
 					id = MAR_2WRW_world_news.9
 				}
 			}
+			SWRW_clear_war_stuff = yes
 		}			
 	}
 	option = { #nope lol
@@ -2648,6 +2618,7 @@ country_event = { #Offer muscowy and caucasus
 						id = MAR_2WRW_world_news.9
 					}
 				}
+				SWRW_clear_war_stuff = yes
 				TaS_2WRW_form_ost_zones = yes
 			}			
 		}
@@ -2736,6 +2707,7 @@ country_event = { #Offer muscowy and caucasus and belarus and half of ukraine
 					id = MAR_2WRW_world_news.9
 				}
 			}
+			SWRW_clear_war_stuff = yes
 			TaS_2WRW_form_ost_zones = yes
 		}			
 	}
@@ -2769,6 +2741,7 @@ country_event = { #Offer surrender
 						id = MAR_2WRW_world_news.10
 					}
 				}
+				SWRW_clear_war_stuff = yes
 			}
 		}
 	option = { #no #goes nuke
@@ -2792,6 +2765,13 @@ country_event = { #TOTALEN surrender
 
 	option = { #yes
 	name = MAR_2WRW.6.a
+	if = {
+		limit = { has_government = socialist }
+		TaS_WRW2_German_Collapse_Kosygin = yes
+	}	
+	else = {
+		TaS_WRW2_German_Collapse_Beloozersky = yes
+	}
 		hidden_effect = {
 			every_country  = {
 				news_event = {
@@ -3243,6 +3223,25 @@ country_event = { #TUR: Turkey gather troops
 		}
 		TUR = { country_event = { id = MAR_ultimatums.110 days = 21 } }
 	}
+	option = { #Fuck let's goo
+		name = MAR_ultimatums.109.c 
+		ai_chance = {
+			factor = 1
+		}
+		add_timed_idea = {
+			idea = SWRW_war_weariness
+			days = 120
+		}
+		declare_war_on = {
+			target = TUR
+			type = annex_everything
+		}
+		every_country = {
+			limit = { is_ai = no }
+			news_event = { id = MAR_2WRW_world_news.46 }
+		}
+	}
+	
 }
 
 country_event = { #TUR: fuck let's goooooooo
@@ -3275,7 +3274,7 @@ country_event = { #TUR: fuck let's goooooooo
 	}
 }
 
-country_event = { #TUR and FIN: Ceasefire
+country_event = { #TUR: Ceasefire
 	id = MAR_ultimatums.111
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.111"}
 	title = MAR_ultimatums.111.t
@@ -3287,61 +3286,35 @@ country_event = { #TUR and FIN: Ceasefire
 
 	option = { #well, shit
 		name = MAR_ultimatums.111.a 
-		if = {
-			limit = { has_country_flag = TUR_ceasefire }
-			RUS = {
-				white_peace = TUR
-			}
-			every_country = {
-				limit = { is_subject_of = TUR }
-				white_peace = RUS
-			}
-			if = {
-				limit = { GEO = { owns_state = 231 } }
-				GEO = {
-					transfer_state = 1448
-					add_state_core = 1448
-				}
-			}
-			else_if = {
-				limit = { MCS = { owns_state = 231 } }
-				MCS = {
-					transfer_state = 1448
-					add_state_core = 1448
-				}
-			}
-			else = {
-				RUS = {
-					transfer_state = 1448
-					add_state_core = 1448
-				}
-			}
-			ARM = {
-				econ_join_sphere_MAR = yes
-			}
-			RUS = { clr_country_flag = TUR_ceasefire }
+		RUS = {
+			white_peace = TUR
+		}
+		every_country = {
+			limit = { is_subject_of = TUR }
+			white_peace = RUS
 		}
 		if = {
-			limit = { has_country_flag = FIN_ceasefire }
+			limit = { GEO = { owns_state = 231 } }
+			GEO = {
+				transfer_state = 1448
+				add_state_core = 1448
+			}
+		}
+		else_if = {
+			limit = { MCS = { owns_state = 231 } }
+			MCS = {
+				transfer_state = 1448
+				add_state_core = 1448
+			}
+		}
+		else = {
 			RUS = {
-				white_peace = FIN
+				transfer_state = 1448
+				add_state_core = 1448
 			}
-			RUS = {
-				transfer_state = 216
-				transfer_state = 213
-				transfer_state = 215
-				transfer_state = 1887
-				#transfer_state = 216
-				add_state_core = 216
-				add_state_core = 213
-				add_state_core = 215
-				add_state_core = 1887
-				#add_state_core = 216
-			}
-			FIN = {
-				econ_join_sphere_MAR = yes
-			}
-			RUS = { clr_country_flag = FIN_ceasefire }
+		}
+		ARM = {
+			econ_join_sphere_MAR = yes
 		}
 	}
 	option = { #not yet
@@ -3688,9 +3661,17 @@ country_event = { #Primorie
 	option = { #fuck 'em
 		name = MAR_territorial_fate.2.b
 		ai_chance = { factor = 1 }
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					character = MAR_advisor_Kosygin
+					ruling_only = yes
+				} 
+			}
+		}
 		set_country_flag = Primorie_fate_is_done
 		add_political_power = -50
-		409 = {
+		1644 = {
 			add_manpower = -62391
 			set_variable = { nationality = 151 }
 		}
@@ -3698,8 +3679,12 @@ country_event = { #Primorie
 			add_manpower = -127543
 			set_variable = { nationality = 151 }
 		}
-		809 = {
+		409 = {
 			add_manpower = -179190
+			set_variable = { nationality = 151 }
+		}
+		809 = {
+			add_manpower = -143314
 			set_variable = { nationality = 151 }
 		}
 		516 = {
@@ -3721,13 +3706,13 @@ country_event = { #Primorie
 			add_manpower = 15675
 		}
 		JAP = {
-			add_manpower = 72602
+			add_manpower = 82602
 		}
 		MAN = {
-			add_manpower = 40569
+			add_manpower = 70569
 		}			
 		CHI = {
-			add_manpower = 92536	
+			add_manpower = 82536	
 		}
 	}
 }
@@ -3746,47 +3731,32 @@ country_event = { #Moscowien
 		name = MAR_territorial_fate.3.a
 		ai_chance = { factor = 1 }
 		set_country_flag = MCW_fate_is_done
-		195 = {
-			add_manpower = -343970
-			set_variable = { nationality = 151 }
-		}
-		1421 = {
-			add_manpower = -741223
-			set_variable = { nationality = 151 }
-		}
-		209 = {
-			add_manpower = -121532
-			set_variable = { nationality = 151 }
-		}
-		243 = {
-			add_manpower = -412245
-			set_variable = { nationality = 151 }
-		}
-		239 = {
-			add_manpower = -679680
-			set_variable = { nationality = 151 }
-		}
-		260 = {
-			add_manpower = -234519
-			set_variable = { nationality = 151 }
-		}
-		5 = {
-			add_manpower = 345320
-		}
-		63 = {
-			add_manpower = 521980
-		}
-		776 = {
-			add_manpower = 436450
-		}
-		60 = {
-			add_manpower = 278920
-		}
-		85 = {
-			add_manpower = 312349
-		}
-		65 = {
-			add_manpower = 244412
+		custom_effect_tooltip = MCW_germs_away_tt
+		hidden_effect = {
+			195 = {
+				add_manpower = -343970
+				set_variable = { nationality = 151 }
+			}
+			260 = {
+				add_manpower = -141223
+				set_variable = { nationality = 151 }
+			}
+			239 = {
+				add_manpower = -412245
+				set_variable = { nationality = 151 }
+			}
+			5 = {
+				add_manpower = 112331
+			}
+			63 = {
+				add_manpower = 131622
+			}
+			776 = {
+				add_manpower = 199766
+			}
+			60 = {
+				add_manpower = 278920
+			}
 		}
 	}
 	option = { #do you know about siberia?
@@ -3809,114 +3779,109 @@ country_event = { #Moscowien
 				popularity = -0.15
 			}
 		}
-		195 = {
-			add_manpower = -283615
-			set_variable = { nationality = 151 }
-		}
-		1421 = {
-			add_manpower = -775238
-			set_variable = { nationality = 151 }
-		}
-		209 = {
-			add_manpower = -151173
-			set_variable = { nationality = 151 }
-		}
-		243 = {
-			add_manpower = -311412
-			set_variable = { nationality = 151 }
-		}
-		239 = {
-			add_manpower = -403687
-			set_variable = { nationality = 151 }
-		}
-		260 = {
-			add_manpower = -114755
-			set_variable = { nationality = 151 }
-		}
-		
-		862 = {
-			add_manpower = 10615
-		}
-		262 = {
-			add_manpower = 18338
-		}
-		863 = {
-			add_manpower = 44216
-		}
-		581 = {
-			add_manpower = 2326
-		}
-		756 = {
-			add_manpower = 29268
-		}
-		844 = {
-			add_manpower = 24539
-		}
-		579 = {
-			add_manpower = 19012
-		}
-		577 = {
-			add_manpower = 18246
-		}
-		516 = {
-			add_manpower = 34332
-		}
-		887 = {
-			add_manpower = 30958
-		}
-		888 = {
-			add_manpower = 40983
-		}
-		576 = {
-			add_manpower = 29509
-		}
-		575 = {
-			add_manpower = 34700
-		}
-		761 = {
-			add_manpower = 44880
-		}
-		890 = {
-			add_manpower = 49024
-		}
-		889 = {
-			add_manpower = 15115
-		}
-		759 = {
-			add_manpower = 19098
-		}
-		644 = {
-			add_manpower = 20972
-		}
-		891 = {
-			add_manpower = 40002
-		}
-		562 = {
-			add_manpower = 93233
-		}
-		637 = {
-			add_manpower = 38653
-		}
-		574 = {
-			add_manpower = 74541
-		}
-		1803 = {
-			add_manpower = 138960
-		}
-		404 = {
-			add_manpower = 159007
-		}
-		1804 = {
-			add_manpower = 226175
-		}
-		1805 = {
-			add_manpower = 81140
-		}
-		587 = {
-			add_manpower = 289495
-		}
-		571 = {
-			add_manpower = 120841
+		custom_effect_tooltip = MCW_germs_siberia_tt
+		hidden_effect = {
+			195 = {
+				add_manpower = -283615
+				set_variable = { nationality = 151 }
+			}
+			1421 = {
+				add_manpower = -75238
+				set_variable = { nationality = 151 }
+			}
+			239 = {
+				add_manpower = -151173
+				set_variable = { nationality = 151 }
+			}
+			260 = {
+				add_manpower = -114755
+				set_variable = { nationality = 151 }
+			}
+			
+			862 = {
+				add_manpower = 10615
+			}
+			262 = {
+				add_manpower = 18338
+			}
+			863 = {
+				add_manpower = 44216
+			}
+			581 = {
+				add_manpower = 2326
+			}
+			756 = {
+				add_manpower = 29268
+			}
+			844 = {
+				add_manpower = 24539
+			}
+			579 = {
+				add_manpower = 19012
+			}
+			577 = {
+				add_manpower = 18246
+			}
+			516 = {
+				add_manpower = 34332
+			}
+			887 = {
+				add_manpower = 30958
+			}
+			888 = {
+				add_manpower = 40983
+			}
+			576 = {
+				add_manpower = 29509
+			}
+			575 = {
+				add_manpower = 34700
+			}
+			761 = {
+				add_manpower = 44880
+			}
+			890 = {
+				add_manpower = 49024
+			}
+			889 = {
+				add_manpower = 15115
+			}
+			759 = {
+				add_manpower = 19098
+			}
+			644 = {
+				add_manpower = 20972
+			}
+			891 = {
+				add_manpower = 40002
+			}
+			562 = {
+				add_manpower = 93233
+			}
+			637 = {
+				add_manpower = 38653
+			}
+			574 = {
+				add_manpower = 74541
+			}
+			1803 = {
+				add_manpower = 38960
+			}
+			404 = {
+				add_manpower = 159007
+			}
+			1804 = {
+				add_manpower = 226175
+			}
+			1805 = {
+				add_manpower = 81140
+			}
+			587 = {
+				add_manpower = 89495
+			}
+			571 = {
+				add_manpower = 120841
+			}
 		}
 	}
 	option = { #they can stay
@@ -3951,6 +3916,7 @@ country_event = { #Baltics
 			}
 		}
 		custom_effect_tooltip = MAR_freedom_for_everyone_tt
+		custom_effect_tooltip = MBP_baltic_natmap_tt
 		hidden_effect = {
 			TaS_2WRW_free_baltics = yes
 		}
@@ -4016,36 +3982,55 @@ country_event = { #Baltics
 				}
 			}
 		}
-		1396 = {
-			add_manpower = -90870
-			set_variable = { nationality = 168 }
-		}
-		13 = {
-			add_manpower = -109860
-			set_variable = { nationality = 168 }
-		}
-		1397 = {
-			add_manpower = -156450
-			set_variable = { nationality = 169 }
-		}
-		190 = {
-			add_manpower = -67890
-			set_variable = { nationality = 169 }
-		}
-		1399 = {
-			add_manpower = -34330
-			set_variable = { nationality = 169 }
-		}
-		1402 = {
-			add_manpower = -78980
-			set_variable = { nationality = 169 }
-		}
-		1401 = {
-			add_manpower = -89760
-			set_variable = { nationality = 268 }
-		}
-		209 = {
-			add_manpower = 78120
+		custom_effect_tooltip = MBP_baltic_natmap_tt
+		hidden_effect = {
+			191 = {
+				add_manpower = -50870
+				set_variable = { nationality = 168 }
+			}
+			13 = {
+				add_manpower = -60986
+				set_variable = { nationality = 168 }
+			}
+			
+			1397 = {
+				add_manpower = -156450
+				set_variable = { nationality = 169 }
+			}
+			943 = {
+				add_manpower = -67890
+				set_variable = { nationality = 169 }
+			}
+			
+			1401 = {
+				add_manpower = -134330
+				set_variable = { nationality = 169 }
+			}
+			
+			1421 = {
+				add_manpower = -84755
+				set_variable = { nationality = 151 }
+			}
+			209 = {
+				add_manpower = -94755
+				set_variable = { nationality = 151 }
+			}
+			
+			257 = {
+				add_manpower = -44755
+				set_variable = { nationality = 151 }
+			}
+			1402 = {
+				add_manpower = -34755
+				set_variable = { nationality = 151 }
+			}
+			
+			5 = {
+				add_manpower = 178120
+			}
+			85 = {
+				add_manpower = 378120
+			}
 		}
 	}
 	option = { #annexation
@@ -4058,29 +4043,55 @@ country_event = { #Baltics
 				transfer_troops = yes
 			}
 		}
-		1396 = {
-			add_manpower = -90870
-			set_variable = { nationality = 168 }
-		}
-		13 = {
-			add_manpower = -109860
-			set_variable = { nationality = 168 }
-		}
-		1397 = {
-			add_manpower = -156450
-			set_variable = { nationality = 169 }
-		}
-		190 = {
-			add_manpower = -67890
-			set_variable = { nationality = 169 }
-		}
-		1399 = {
-			add_manpower = -34330
-			set_variable = { nationality = 169 }
-		}
-		1401 = {
-			add_manpower = -89760
-			set_variable = { nationality = 268 }
+		custom_effect_tooltip = MBP_baltic_natmap_tt
+		hidden_effect = {
+			191 = {
+				add_manpower = -50870
+				set_variable = { nationality = 168 }
+			}
+			13 = {
+				add_manpower = -60986
+				set_variable = { nationality = 168 }
+			}
+			
+			1397 = {
+				add_manpower = -156450
+				set_variable = { nationality = 169 }
+			}
+			943 = {
+				add_manpower = -67890
+				set_variable = { nationality = 169 }
+			}
+			
+			1401 = {
+				add_manpower = -134330
+				set_variable = { nationality = 169 }
+			}
+			
+			1421 = {
+				add_manpower = -84755
+				set_variable = { nationality = 151 }
+			}
+			209 = {
+				add_manpower = -94755
+				set_variable = { nationality = 151 }
+			}
+			
+			257 = {
+				add_manpower = -44755
+				set_variable = { nationality = 151 }
+			}
+			1402 = {
+				add_manpower = -34755
+				set_variable = { nationality = 151 }
+			}
+			
+			5 = {
+				add_manpower = 178120
+			}
+			85 = {
+				add_manpower = 378120
+			}
 		}
 	}
 }
@@ -4138,6 +4149,23 @@ country_event = { #Belarus
 					promote_character = yes
 				}
 				set_cosmetic_tag = BLR_freedom
+			}
+			hidden_effect = {
+				2452 = {
+					add_manpower = -70870
+					set_variable = { nationality = 151 }
+				}
+				241 = {
+					add_manpower = -60986
+					set_variable = { nationality = 151 }
+				}
+				
+				207 = {
+					add_manpower = 70870
+				}
+				206 = {
+					add_manpower = 60986
+				}
 			}
 		}
 	}
@@ -4210,6 +4238,23 @@ country_event = { #Belarus
 				restore_previous_government_type = yes
 				apply_party_popularities = yes
 			}
+			hidden_effect = {
+				2452 = {
+					add_manpower = -70870
+					set_variable = { nationality = 151 }
+				}
+				241 = {
+					add_manpower = -60986
+					set_variable = { nationality = 151 }
+				}
+				
+				207 = {
+					add_manpower = 70870
+				}
+				206 = {
+					add_manpower = 60986
+				}
+			}
 		}
 	}
 	option = { #soyuznoye gosudarstvo
@@ -4220,6 +4265,21 @@ country_event = { #Belarus
 			annex_country = {
 				target = MBL
 				transfer_troops = yes
+			}
+			2452 = {
+				add_manpower = -70870
+				set_variable = { nationality = 151 }
+			}
+			241 = {
+				add_manpower = -60986
+				set_variable = { nationality = 151 }
+			}
+			
+			207 = {
+				add_manpower = 70870
+			}
+			206 = {
+				add_manpower = 60986
 			}
 		}
 	}
@@ -4519,7 +4579,7 @@ country_event = { #Crimnea
 			set_variable = { nationality = 151 }
 		}
 		1532 = {
-			add_manpower = -103920
+			add_manpower = -73920
 			set_variable = { nationality = 151 }
 		}
 		200 = {
@@ -5309,7 +5369,7 @@ news_event = {
 	}
 }
 
-news_event = { #Northern Alliance revolt
+news_event = { #Free space
 	id = MAR_2WRW_world_news.21
 	title = MAR_2WRW_world_news.21.t
 	desc = MAR_2WRW_world_news.21.d
@@ -5322,7 +5382,7 @@ news_event = { #Northern Alliance revolt
 	}
 }
 
-news_event = { #Daoud coup (Pro-Sphere)
+news_event = { #Free space
 	id = MAR_2WRW_world_news.22
 	title = MAR_2WRW_world_news.22.t
 	desc = MAR_2WRW_world_news.22.d
@@ -5335,7 +5395,7 @@ news_event = { #Daoud coup (Pro-Sphere)
 	}
 }
 
-news_event = { #India takes Kalat
+news_event = { #Free space
 	id = MAR_2WRW_world_news.23
 	title = MAR_2WRW_world_news.23.t
 	desc = MAR_2WRW_world_news.23.d
@@ -5348,7 +5408,7 @@ news_event = { #India takes Kalat
 	}
 }
 
-news_event = { #Russia invades again
+news_event = { #Free space
 	id = MAR_2WRW_world_news.24
 	title = MAR_2WRW_world_news.24.t
 	desc = MAR_2WRW_world_news.24.d
@@ -5361,7 +5421,7 @@ news_event = { #Russia invades again
 	}
 }
 
-news_event = { #Afgani revolution
+news_event = { #Russia invades again
 	id = MAR_2WRW_world_news.25
 	title = MAR_2WRW_world_news.25.t
 	desc = MAR_2WRW_world_news.25.d
@@ -5374,7 +5434,7 @@ news_event = { #Afgani revolution
 	}
 }
 
-news_event = { #Mujahideen revolt - Start of the CW
+news_event = { #Afghan CW
 	id = MAR_2WRW_world_news.26
 	title = MAR_2WRW_world_news.26.t
 	desc = MAR_2WRW_world_news.26.d

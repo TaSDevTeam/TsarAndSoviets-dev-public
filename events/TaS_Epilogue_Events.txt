@@ -1366,12 +1366,24 @@ country_event = { #Novgorod Theatry
 		    transfer_state = 250
 		    transfer_state = 755
 		}
-		FIN = { 
-		    transfer_state = 213
-		    transfer_state = 1359
-		    transfer_state = 215
-		    transfer_state = 216
-			transfer_state = 1887
+		if = {
+			limit = { FIN = { exists = yes } }
+			FIN = { 
+				transfer_state = 213
+				transfer_state = 1359
+				transfer_state = 215
+				transfer_state = 216
+				transfer_state = 1887
+			}
+		}
+		else = {
+			MCW = {
+				transfer_state = 213
+				transfer_state = 1359
+				transfer_state = 215
+				transfer_state = 216
+				transfer_state = 1887
+			}
 		}
 		ai_chance = { factor = 1 }
 		if = {
@@ -2844,18 +2856,24 @@ country_event = { #Kosygin - Masquerade is failing lol
 	option = {
 		name = MAR_Collapse.20.a
 		ai_chance = { factor = 1 }
+		trigger = { has_country_flag = SWRW_RUS_JAP_pact }
 		add_political_power = -50
+		custom_effect_tooltip = MAR_collapse_kosygin_japan_tt
 		hidden_effect = {
-			if = {
-				limit = { has_country_flag = SWRW_RUS_JAP_pact }
-				country_event ={
-					id = MAR_Collapse.21 days = 3
-				}
+			country_event ={
+				id = MAR_Collapse.21 days = 3
 			}
-			else = {
-				country_event ={
-					id = MAR_Collapse.27 days = 5
-				}
+		}
+	}
+	option = {
+		name = MAR_Collapse.20.b
+		ai_chance = { factor = 1 }
+		trigger = { NOT = { has_country_flag = SWRW_RUS_JAP_pact } }
+		add_political_power = -50
+		custom_effect_tooltip = MAR_collapse_kosygin_mgb_tt
+		hidden_effect = {
+			country_event ={
+				id = MAR_Collapse.27 days = 5
 			}
 		}
 	}
@@ -2950,6 +2968,7 @@ country_event = { #Kosygin - JP - Price
 		name = MAR_Collapse.24.a
 		ai_chance = { factor = 1 }
 		add_political_power = -50
+		custom_effect_tooltip = MAR_collapse_kosygin_asia_tt
 		hidden_effect = {
 			MAR_install_autonomy_kazakhstan = yes
 			RUS = { end_puppet = MKZ }
@@ -2973,6 +2992,24 @@ country_event = { #Kosygin - JP - Price
 				set_cosmetic_tag = MTR_JAP
 				econ_join_sphere_JAP = yes
 				add_ideas = Sphere_Fully_Dependent
+				if = {
+					limit = { RUS = { controls_state = 2125 } }
+					transfer_state = 2125
+				}
+				if = {
+					limit = { RUS = { controls_state = 1884 } }
+					transfer_state = 1885
+					transfer_state = 1471
+					transfer_state = 1470
+					transfer_state = 1465
+					transfer_state = 2186
+					transfer_state = 1884
+					transfer_state = 2461
+				}
+				else_if = {
+					limit = { RUS = { controls_state = 1465 } }
+					transfer_state = 1465
+				}
 			}
 			JAP = {
 				add_to_faction = MKZ
@@ -3095,7 +3132,10 @@ country_event = { #Kosygin - MGB - Tsar is overthrown
 			country_event ={
 				id = MAR_Collapse.28 days = 17
 			}
-			
+			every_country = {
+				limit = { is_ai = no }
+				news_event = { id = TaS_RUSEpilogue_news.18 }
+			}
 		}
 	}
 }
@@ -3143,6 +3183,24 @@ country_event = { #Kosygin - MGB - Reaction
 			country_event ={
 				id = MAR_Collapse.30 days = 17
 			}
+			569 = {
+				set_demilitarized_zone = yes
+			}
+			566 = {
+				set_demilitarized_zone = yes
+			}
+			562 = {
+				set_demilitarized_zone = yes
+			}
+			589 = {
+				set_demilitarized_zone = yes
+			}
+			1467 = {
+				set_demilitarized_zone = yes
+			}
+			851 = {
+				set_demilitarized_zone = yes
+			}
 		}
 	}
 }
@@ -3164,6 +3222,13 @@ country_event = { #Kosygin - MGB - Rot
 			country_event ={
 				id = MAR_Collapse.31 days = 17
 			}
+			every_state = {
+				limit = {
+					MAR_collapse_will_be_gone_state = yes
+					is_owned_by = RUS
+				}
+				set_demilitarized_zone = yes
+			}
 		}
 	}
 }
@@ -3182,7 +3247,791 @@ country_event = { #Kosygin - MGB - King of the hill
 		ai_chance = { factor = 1 }
 		add_political_power = -50
 		hidden_effect = {
-			
+			MAR_install_autonomy_kazakhstan = yes
+			RUS = { end_puppet = MKZ }
+			MKZ = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = MKZ_JAP
+				every_owned_state = {
+					add_core_of = MTR
+					remove_core_of = RUS
+					set_demilitarized_zone = no
+				}
+			}
+			if = {
+				limit = { MTR = { exists = no } }
+				MAR_install_mil_turkestan = yes
+				MAR_Turkestan_autonomy = yes
+			}
+			else = {
+				MAR_Turkestan_autonomy = yes
+			}
+			RUS = { end_puppet = MTR }
+			MTR = {
+				drop_cosmetic_tag = yes
+				set_cosmetic_tag = MTR_JAP
+				if = {
+					limit = { RUS = { controls_state = 2125 } }
+					transfer_state = 2125
+				}
+				if = {
+					limit = { RUS = { controls_state = 1884 } }
+					transfer_state = 1885
+					transfer_state = 1471
+					transfer_state = 1470
+					transfer_state = 1465
+					transfer_state = 2186
+					transfer_state = 1884
+					transfer_state = 2461
+				}
+				else_if = {
+					limit = { RUS = { controls_state = 1465 } }
+					transfer_state = 1465
+				}
+				every_owned_state = {
+					add_core_of = MTR
+					remove_core_of = RUS
+					set_demilitarized_zone = no
+				}
+				retire_country_leader = yes
+				add_country_leader_role = {
+					character = MTR_Ziyauddinkhan_Babakhan
+					promote_leader = yes
+					country_leader = {
+						desc = "MTR_Ziyauddinkhan_Babakhan_DESC"
+						expire = "1999.1.1"
+						ideology = conservatism_islamic_conservatism_subtype 
+						traits = {
+						}
+						id = -1
+					}
+				}
+				set_politics = {
+					ruling_party = conservatism
+					last_election = "1933.2.16"
+					election_frequency = 36
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = conservatism
+					popularity = 0.45
+				}
+				set_party_name = {
+					ideology = conservatism
+					long_name = MTR_collapse_party_long
+					name = MTR_collapse_party
+				}
+			}
+			every_country = {
+				limit = { is_ai = no }
+				news_event = { id = TaS_RUSEpilogue_news.19 }
+			}
+			XYZ = {
+				MAR_Viktor_Glushkov = {
+					set_nationality = TAR
+				}
+				MAR_Aman_Tuleev = {
+					set_nationality = KRS
+				}
+			}
+			KRS = {	
+				transfer_state = 637
+				transfer_state = 891
+				transfer_state = 562
+				transfer_state = 644
+				transfer_state = 889
+				transfer_state = 574
+				transfer_state = 886
+				transfer_state = 561	
+				transfer_state = 760	
+				transfer_state = 890
+				transfer_state = 563
+				transfer_state = 565
+				transfer_state = 759	
+				transfer_state = 564	
+				transfer_state = 566
+				transfer_state = 567
+				transfer_state = 761
+				transfer_state = 575	
+				transfer_state = 758	
+				transfer_state = 568
+				transfer_state = 516
+				transfer_state = 576
+				transfer_state = 888	
+				transfer_state = 757	
+				transfer_state = 329
+				transfer_state = 577
+				transfer_state = 887
+				transfer_state = 569	
+				transfer_state = 624	
+				transfer_state = 578
+				transfer_state = 570
+				transfer_state = 40
+				transfer_state = 654	
+				transfer_state = 571	
+				if = {
+					limit = { RUS = { owns_state = 809 } }
+					transfer_state = 809
+					transfer_state = 408
+					transfer_state = 1644
+					transfer_state = 409
+					transfer_state = 1646
+					transfer_state = 657
+					transfer_state = 1364
+				}
+				else_if = {
+					limit = { RUS = { owns_state = 408 } }
+					transfer_state = 408
+					transfer_state = 1644
+					transfer_state = 409
+					transfer_state = 1646
+					transfer_state = 657
+					transfer_state = 1364
+				}
+				else_if = {
+					limit = { RUS = { owns_state = 1646 } }
+					transfer_state = 1646
+					transfer_state = 657
+					transfer_state = 1364
+				}
+				else_if = {
+					limit = { RUS = { owns_state = 1364 } }
+					transfer_state = 1364
+				}
+				else = {
+					add_political_power = 50
+				}
+				every_owned_state = {
+					add_core_of = KRS
+					remove_core_of = RUS
+					set_demilitarized_zone = no
+				}
+				retire_country_leader = yes
+				add_country_leader_role = {
+					character = MAR_Aman_Tuleev
+					promote_leader = yes
+					country_leader = {
+						desc = "MAR_Aman_Tuleev_DESC"
+						expire = "1999.1.1"
+						ideology = conservatism_paternalistic_conservatism_subtype 
+						traits = {
+						}
+						id = -1
+					}
+				}
+				add_country_leader_role = {
+					character = MAR_Aman_Tuleev
+					promote_leader = yes
+					country_leader = {
+						desc = "MAR_Aman_Tuleev_DESC"
+						expire = "1999.1.1"
+						ideology = despotism_civilian_dictatorship_subtype 
+						traits = {
+						}
+						id = -1
+					}
+				}
+				set_politics = {
+					ruling_party = conservatism
+					last_election = "1933.2.16"
+					election_frequency = 36
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = conservatism
+					popularity = 0.45
+				}
+				set_party_name = {
+					ideology = conservatism
+					long_name = KRS_collapse_party_long
+					name = KRS_collapse_party
+				}
+				set_party_name = {
+					ideology = despotism
+					long_name = KRS_collapse_party_long
+					name = KRS_collapse_party
+				}
+				set_cosmetic_tag = KRS_JAP
+				set_capital = { state = 569 remember_old_capital = no }
+				set_country_flag = RUS_cancel_all_ideas		
+			}	
+			TAR = {	
+				transfer_state = 249
+				transfer_state = 851
+				transfer_state = 850
+				transfer_state = 251
+				every_owned_state = {
+					add_core_of = TAR
+					remove_core_of = RUS
+					set_demilitarized_zone = no
+				}
+				retire_country_leader = yes
+				add_country_leader_role = {
+					character = MAR_Viktor_Glushkov
+					promote_leader = yes
+					country_leader = {
+						desc = "MAR_Viktor_Glushkov_DESC"
+						expire = "1999.1.1"
+						ideology = liberal_conservatism_moderate_technocracy_subtype 
+						traits = {
+						}
+						id = -1
+					}
+				}
+				add_country_leader_role = {
+					character = MAR_Viktor_Glushkov
+					promote_leader = yes
+					country_leader = {
+						desc = "MAR_Viktor_Glushkov_DESC"
+						expire = "1999.1.1"
+						ideology = liberalism_liberal_technocracy_subtype 
+						traits = {
+						}
+						id = -1
+					}
+				}
+				add_country_leader_role = {
+					character = MAR_Viktor_Glushkov
+					promote_leader = yes
+					country_leader = {
+						desc = "MAR_Viktor_Glushkov_DESC"
+						expire = "1999.1.1"
+						ideology = socialist_ultravisionary_socialism_pink_subtype 
+						traits = {
+						}
+						id = -1
+					}
+				}
+				add_country_leader_role = {
+					character = MAR_Viktor_Glushkov
+					promote_leader = yes
+					country_leader = {
+						desc = "MAR_Viktor_Glushkov_DESC"
+						expire = "1999.1.1"
+						ideology = national_socialism_technocratic_nazism_subtype 
+						traits = {
+						}
+						id = -1
+					}
+				}
+				set_politics = {
+					ruling_party = liberalism
+					last_election = "1933.2.16"
+					election_frequency = 36
+					elections_allowed = no
+				}
+				set_popularities = {
+					national_socialism = 14
+					socialist = 24
+					liberalism = 41
+					liberal_conservatism = 21
+				}
+				set_party_name = {
+					ideology = national_socialism
+					long_name = TAR_collapse_party_long
+					name = TAR_collapse_party
+				}
+				set_party_name = {
+					ideology = socialist
+					long_name = TAR_collapse_party_long
+					name = TAR_collapse_party
+				}
+				set_party_name = {
+					ideology = liberalism
+					long_name = TAR_collapse_party_long
+					name = TAR_collapse_party
+				}
+				set_party_name = {
+					ideology = liberal_conservatism
+					long_name = TAR_collapse_party_long
+					name = TAR_collapse_party
+				}
+				set_cosmetic_tag = TAR_JAP
+				set_capital = { state = 851 remember_old_capital = no }
+				set_country_flag = RUS_cancel_all_ideas		
+			}
+			RUS = {
+				every_owned_state = {
+					set_demilitarized_zone = no
+				}
+				862 = {
+					set_demilitarized_zone = yes
+				}
+				262 = {
+					set_demilitarized_zone = yes
+				}
+				854 = {
+					set_demilitarized_zone = yes
+				}
+				846 = {
+					set_demilitarized_zone = yes
+				}
+				579 = {
+					set_demilitarized_zone = yes
+				}
+				TNO_Country_Closing_Screen_Show = yes
+				set_country_flag = MAR_Bad_Ending
+			}
+		}
+	}
+}
+
+country_event = { #Kosygin - MGB - Japan goes to Siberia
+	id = MAR_Collapse.32
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Collapse.32"}
+	title = MAR_Collapse.32.t
+	desc = MAR_Collapse.32.d
+	picture = GFX_report_event_collapse32
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = MAR_Collapse.32.a
+		ai_chance = { factor = 1 }
+		add_political_power = -50
+		hidden_effect = {
+			XYZ = {
+				MAR_Mikhail_Nikolayev = {
+					set_nationality = YAK
+				}
+				MAR_Nikolay_Damdinov = {
+					set_nationality = BRY
+				}
+				MAR_Yuriy_Vitvitsky = {
+					set_nationality = AMR
+				}
+				MAR_Viktor_Starukhin = {
+					set_nationality = AMR
+				}
+			}
+			RUS = {
+				transfer_state = 571
+				transfer_state = 570
+				transfer_state = 40
+				every_owned_state = {
+					add_core_of = RUS
+					remove_core_of = KRS
+				}
+			}	
+			MAN = {
+				transfer_state = 806
+				transfer_state = 408
+				transfer_state = 1644
+				transfer_state = 409
+				every_owned_state = {
+					add_core_of = MAN
+					remove_core_of = KRS
+				}
+			}
+			MEN = {
+				transfer_state = 329
+				every_owned_state = {
+					add_core_of = MAN
+					remove_core_of = KRS
+				}
+			}
+			JAP = {
+				transfer_state = 637
+				transfer_state = 891
+				every_owned_state = {
+					remove_core_of = KRS
+				}
+			}
+			KRS = {
+				set_politics = {
+					ruling_party = despotism
+					last_election = "1933.2.16"
+					election_frequency = 36
+					elections_allowed = no
+				}
+				set_cosmetic_tag = KRS_JAP_dark
+				set_popularities = {
+					despotism = 61
+					conservatism = 39
+				}
+			}
+			AMR = {
+				transfer_state = 562
+				transfer_state = 889
+				transfer_state = 561
+				transfer_state = 886
+				transfer_state = 563
+				transfer_state = 759
+				transfer_state = 1364
+				transfer_state = 657
+				transfer_state = 1646
+				every_owned_state = {
+					add_core_of = AMR
+					remove_core_of = KRS
+				}
+				retire_country_leader = yes
+				add_country_leader_role = {
+					character = MAR_Yuriy_Vitvitsky
+					promote_leader = yes
+					country_leader = {
+						desc = "MAR_Yuriy_Vitvitsky_DESC"
+						expire = "1999.1.1"
+						ideology = fascism_fascist_populism_subtype 
+						traits = {
+						}
+						id = -1
+					}
+				}
+				add_country_leader_role = {
+					character = MAR_Viktor_Starukhin
+					promote_leader = yes
+					country_leader = {
+						desc = "MAR_Viktor_Starukhin_DESC"
+						expire = "1999.1.1"
+						ideology = conservatism_paternalistic_conservatism_subtype 
+						traits = {
+						}
+						id = -1
+					}
+				}
+				set_politics = {
+					ruling_party = fascism
+					last_election = "1933.2.16"
+					election_frequency = 36
+					elections_allowed = no
+				}
+				set_popularities = {
+					fascism = 53
+					conservatism = 47
+				}
+				set_party_name = {
+					ideology = fascism
+					long_name = AMR_collapse_party_1_long
+					name = AMR_collapse_party_1
+				}
+				set_party_name = {
+					ideology = conservatism
+					long_name = AMR_collapse_party_2_long
+					name = AMR_collapse_party_2
+				}
+				add_ideas = {
+					Sphere_Fully_Dependent
+				}
+				econ_join_sphere_JAP = yes
+				set_cosmetic_tag = AMR_JAP
+				set_capital = { state = 569 remember_old_capital = no }
+				set_country_flag = RUS_cancel_all_ideas		
+			}
+			BRY = {
+				transfer_state = 890
+				transfer_state = 566
+				transfer_state = 567
+				transfer_state = 564
+				transfer_state = 565
+				every_owned_state = {
+					add_core_of = BRY
+					remove_core_of = KRS
+				}
+				retire_country_leader = yes
+				add_country_leader_role = {
+					character = MAR_Nikolay_Damdinov
+					promote_leader = yes
+					country_leader = {
+						desc = "MAR_Nikolay_Damdinov_DESC"
+						expire = "1999.1.1"
+						ideology = paternalism_social_nationalism_subtype 
+						traits = {
+						}
+						id = -1
+					}
+				}
+				set_politics = {
+					ruling_party = paternalism
+					last_election = "1933.2.16"
+					election_frequency = 36
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = paternalism
+					popularity = 0.55
+				}
+				set_party_name = {
+					ideology = paternalism
+					long_name = BRY_collapse_party_long
+					name = BRY_collapse_party
+				}
+				add_ideas = {
+					Sphere_Fully_Dependent
+				}
+				econ_join_sphere_JAP = yes
+				set_cosmetic_tag = BRY_JAP
+				set_capital = { state = 566 remember_old_capital = no }
+				set_country_flag = RUS_cancel_all_ideas		
+			}
+			YAK = {
+				transfer_state = 760
+				transfer_state = 574
+				transfer_state = 644
+				every_owned_state = {
+					add_core_of = AMR
+					remove_core_of = KRS
+				}
+				
+				set_cosmetic_tag = YAK_JAP
+				set_politics = {
+					ruling_party = paternalism
+					last_election = "1933.2.16"
+					election_frequency = 36
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = paternalism
+					popularity = 0.45
+				}
+				set_country_flag = RUS_cancel_all_ideas			
+				add_country_leader_role = {
+					character = MAR_Mikhail_Nikolayev
+					promote_leader = yes
+					country_leader = {
+						desc = "MAR_Mikhail_Nikolayev_DESC"
+						ideology = paternalism_social_nationalism_subtype
+						expire = "1999.1.1"
+						traits = { }
+					}
+				}
+				set_party_name = {
+					ideology = paternalism
+					long_name = YAK_MAR_collapse_party_long
+					name = YAK_MAR_collapse_party
+				}
+				add_ideas = {
+					Sphere_Fully_Dependent
+					TaS_Post2WRW_YAK_earth_riches
+				}
+				econ_join_sphere_JAP = yes 
+				set_variable = {
+					TNO_economy_type = token:Econ_Type_Corporatism
+					TNO_economy_subtype = token:Econ_Subtype_Colonial_Economy_Corporatism
+				}
+			}
+			JAP = {
+				add_to_faction = AMR
+				add_to_faction = BRY
+				add_to_faction = YAK
+			}
+			every_country = {
+				limit = { is_ai = no }
+				news_event = { id = TaS_RUSEpilogue_news.20 }
+			}
+		}
+	}
+}
+
+country_event = { #Kosygin - MGB - Legion is back
+	id = MAR_Collapse.33
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Collapse.33"}
+	title = MAR_Collapse.33.t
+	desc = MAR_Collapse.33.d
+	picture = GFX_report_event_collapse33
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = MAR_Collapse.33.a
+		ai_chance = { factor = 1 }
+		add_political_power = -50
+		hidden_effect = {
+			MTR = {
+				add_country_leader_role = {
+					character = MTR_Amirkhan_Tleumagambetov
+					promote_leader = yes
+					country_leader = {
+						desc = "MTR_Amirkhan_Tleumagambetov_DESC"
+						expire = "1999.1.1"
+						ideology = fascism_revolutionary_nationalism_subtype 
+						traits = {
+						}
+						id = -1
+					}
+				}
+				set_politics = {
+					ruling_party = fascism
+					last_election = "1933.2.16"
+					election_frequency = 36
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.45
+				}
+				set_party_name = {
+					ideology = fascism
+					long_name = MTR_collapse_legion_party_long
+					name = MTR_collapse_legion_party
+				}
+				set_cosmetic_tag = MTR_JAP_Legion
+			}
+			country_event ={
+				id = MAR_Collapse.34 days = 21
+			}
+			every_country = {
+				limit = { is_ai = no }
+				news_event = { id = TaS_RUSEpilogue_news.21 }
+			}
+		}
+	}
+}
+
+country_event = { #Kosygin - MGB - Legion goes war with Kazakhstan
+	id = MAR_Collapse.34
+	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Collapse.34"}
+	title = MAR_Collapse.34.t
+	desc = MAR_Collapse.34.d
+	picture = GFX_report_event_collapse34
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = MAR_Collapse.34.a
+		ai_chance = { factor = 1 }
+		add_political_power = -50
+		hidden_effect = {
+			MTR = {
+				declare_war_on = {
+					target = MKZ
+					type = annex_everything
+				}
+			}
+			every_country = {
+				limit = {
+					OR = {
+						tag = MKZ
+						tag = MTR
+					}
+				}				
+				division_template = {
+					name = "Pekhotnaya Diviziya"
+					priority = 2
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+					}
+					support = {
+						recon = { x = 0 y = 0 }
+						artillery = { x = 0 y = 1 }
+						logistics_company = { x = 0 y = 2 }
+					}
+				}
+				division_template = {
+					name = "Opolcheniye"
+					priority = 2
+					regiments = {
+						light_infantry = { x = 0 y = 0 }
+						light_infantry = { x = 0 y = 1 }
+						light_infantry = { x = 0 y = 2 }
+						light_infantry = { x = 1 y = 0 }
+						light_infantry = { x = 1 y = 1 }
+					}
+					support = {
+						recon = { x = 0 y = 0 }
+					}
+				}
+				division_template = {
+					name = "Motostrelkovaya Diviziya"
+					regiments = {
+						motorized = { x = 0 y = 0 }
+						motorized = { x = 0 y = 1 }
+						motorized = { x = 1 y = 0 }
+						motorized = { x = 1 y = 1 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+					}
+				}
+			}
+			MKZ = {				
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
+						owner = MKZ
+					}
+					create_unit = {
+						division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
+						owner = MKZ
+					}
+					create_unit = {
+						division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
+						owner = MKZ
+					}
+					create_unit = {
+						division = "division_template = \"Opolcheniye\" start_experience_factor = 0.3 start_equipment_factor = 0.8"
+						owner = MKZ
+					}
+					create_unit = {
+						division = "division_template = \"Opolcheniye\" start_experience_factor = 0.3 start_equipment_factor = 0.8"
+						owner = MKZ
+					}
+					create_unit = {
+						division = "division_template = \"Opolcheniye\" start_experience_factor = 0.3 start_equipment_factor = 0.8"
+						owner = MKZ
+					}
+					create_unit = {
+						division = "division_template = \"Opolcheniye\" start_experience_factor = 0.3 start_equipment_factor = 0.7"
+						owner = MKZ
+					}
+					create_unit = {
+						division = "division_template = \"Opolcheniye\" start_experience_factor = 0.3 start_equipment_factor = 0.7"
+						owner = MKZ
+					}
+					create_unit = {
+						division = "division_template = \"Motostrelkovaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 0.7"
+						owner = MKZ
+					}
+					create_unit = {
+						division = "division_template = \"Motostrelkovaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 0.7"
+						owner = MKZ
+					}
+				}
+			}
+			MTR = {
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
+						owner = MTR
+					}
+					create_unit = {
+						division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
+						owner = MTR
+					}
+					create_unit = {
+						division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
+						owner = MTR
+					}
+					create_unit = {
+						division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.3 start_equipment_factor = 0.8"
+						owner = MTR
+					}
+					create_unit = {
+						division = "division_template = \"Opolcheniye\" start_experience_factor = 0.3 start_equipment_factor = 0.8"
+						owner = MTR
+					}
+					create_unit = {
+						division = "division_template = \"Opolcheniye\" start_experience_factor = 0.3 start_equipment_factor = 0.8"
+						owner = MTR
+					}
+					create_unit = {
+						division = "division_template = \"Opolcheniye\" start_experience_factor = 0.3 start_equipment_factor = 0.7"
+						owner = MTR
+					}
+					create_unit = {
+						division = "division_template = \"Motostrelkovaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 0.7"
+						owner = MTR
+					}
+				}
+			}
+			every_country = {
+				limit = { is_ai = no }
+				news_event = { id = TaS_RUSEpilogue_news.22 }
+			}
 		}
 	}
 }
@@ -3459,7 +4308,7 @@ news_event = { #Japan takes over the F-E
 	}
 }
 
-news_event = { #Militarbezirk Kazachstan established
+news_event = { #CA War
 	id = TaS_RUSEpilogue_news.21
 	title = TaS_RUSEpilogue_news.21.t
 	desc = TaS_RUSEpilogue_news.21.d
@@ -4189,7 +5038,9 @@ country_event = {#General - Wehrmacht goes awol
 				delete_unit_template_and_units = { division_template = "Motorisierte Infanterie-Division" }
 			}
 			if = {
-				limit = { BRG = { exists = no } }
+				limit = { 
+					BRG = { exists = no }	
+				}
 				country_event = { id = TaS_GERCollapse.37 days = 7}
 				country_event = { id = TaS_GERCollapse.21 days = 42}
 			}
@@ -4703,7 +5554,7 @@ country_event = {#General - It has begun
 			}
 			74 = {
 				create_unit = {
-					division = "division_template = \"Airborne Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 1 start_equipment_factor = 1"
 					allow_spawning_on_enemy_provs = yes
 					prioritize_location = 15981
 					owner = USA
@@ -4712,21 +5563,21 @@ country_event = {#General - It has begun
 			}
 			7 = {
 				create_unit = {
-					division = "division_template = \"Marine Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					division = "name = \"Infantry Division\" division_template = \"Marine Division\" start_experience_factor = 1 start_equipment_factor = 1"
 					allow_spawning_on_enemy_provs = yes
 					prioritize_location = 68
 					owner = USA
 					count = 2
 				}
 				create_unit = {
-					division = "division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					division = "name = \"Infantry Division\" division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
 					allow_spawning_on_enemy_provs = yes
 					prioritize_location = 3314
 					owner = USA
 					count = 1
 				}
 				create_unit = {
-					division = "division_template = \"Armored Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					division = "name = \"Armored Division\" division_template = \"Armored Division\" start_experience_factor = 1 start_equipment_factor = 1"
 					allow_spawning_on_enemy_provs = yes
 					prioritize_location = 15980
 					owner = USA
@@ -4735,7 +5586,7 @@ country_event = {#General - It has begun
 			}
 			36 = {
 				create_unit = {
-					division = "division_template = \"Marine Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					division = "name = \"Infantry Division\" division_template = \"Marine Division\" start_experience_factor = 1 start_equipment_factor = 1"
 					allow_spawning_on_enemy_provs = yes
 					prioritize_location = 6336
 					owner = USA
@@ -4744,7 +5595,7 @@ country_event = {#General - It has begun
 			}
 			56 = {
 				create_unit = {
-					division = "division_template = \"Airborne Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 1 start_equipment_factor = 1"
 					allow_spawning_on_enemy_provs = yes
 					prioritize_location = 11360
 					owner = USA
@@ -4753,14 +5604,14 @@ country_event = {#General - It has begun
 			}
 			188 = {
 				create_unit = {
-					division = "division_template = \"Airborne Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 1 start_equipment_factor = 1"
 					allow_spawning_on_enemy_provs = yes
 					prioritize_location = 6349
 					owner = USA
 					count = 2
 				}
 				create_unit = {
-					division = "division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					division = "name = \"Infantry Division\" division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
 					allow_spawning_on_enemy_provs = yes
 					prioritize_location = 374
 					owner = USA
@@ -4769,14 +5620,14 @@ country_event = {#General - It has begun
 			}
 			58 = {
 				create_unit = {
-					division = "division_template = \"Airborne Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 1 start_equipment_factor = 1"
 					allow_spawning_on_enemy_provs = yes
 					prioritize_location = 3231
 					owner = USA
 					count = 1
 				}
 				create_unit = {
-					division = "division_template = \"Armored Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					division = "name = \"Armored Division\" division_template = \"Armored Division\" start_experience_factor = 1 start_equipment_factor = 1"
 					allow_spawning_on_enemy_provs = yes
 					prioritize_location = 317
 					owner = USA
@@ -4785,7 +5636,7 @@ country_event = {#General - It has begun
 			}
 			774 = {
 				create_unit = {
-					division = "division_template = \"Marine Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					division = "name = \"Infantry Division\" division_template = \"Marine Division\" start_experience_factor = 1 start_equipment_factor = 1"
 					allow_spawning_on_enemy_provs = yes
 					prioritize_location = 11251
 					owner = USA
@@ -4794,14 +5645,14 @@ country_event = {#General - It has begun
 			}
 			99 = {
 				create_unit = {
-					division = "division_template = \"Airborne Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 1 start_equipment_factor = 1"
 					allow_spawning_on_enemy_provs = yes
 					prioritize_location = 399
 					owner = USA
 					count = 1
 				}
 				create_unit = {
-					division = "division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					division = "name = \"Infantry Division\" division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
 					allow_spawning_on_enemy_provs = yes
 					prioritize_location = 6235
 					owner = USA
@@ -4810,7 +5661,7 @@ country_event = {#General - It has begun
 			}
 			61 = {
 				create_unit = {
-					division = "division_template = \"Airborne Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 1 start_equipment_factor = 1"
 					allow_spawning_on_enemy_provs = yes
 					prioritize_location = 11305
 					owner = USA
@@ -4819,14 +5670,14 @@ country_event = {#General - It has begun
 			}
 			1886 = {
 				create_unit = {
-					division = "division_template = \"Marine Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					division = "name = \"Infantry Division\" division_template = \"Marine Division\" start_experience_factor = 1 start_equipment_factor = 1"
 					allow_spawning_on_enemy_provs = yes
 					prioritize_location = 6286
 					owner = USA
 					count = 1
 				}
 				create_unit = {
-					division = "division_template = \"Airborne Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 1 start_equipment_factor = 1"
 					allow_spawning_on_enemy_provs = yes
 					prioritize_location = 11456
 					owner = USA
@@ -4835,7 +5686,7 @@ country_event = {#General - It has begun
 			}
 			1373 = {
 				create_unit = {
-					division = "division_template = \"Airborne Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 1 start_equipment_factor = 1"
 					allow_spawning_on_enemy_provs = yes
 					prioritize_location = 9509
 					owner = USA
@@ -4844,7 +5695,7 @@ country_event = {#General - It has begun
 			}
 			59 = {
 				create_unit = {
-					division = "division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					division = "name = \"Infantry Division\" division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
 					allow_spawning_on_enemy_provs = yes
 					prioritize_location = 3234
 					owner = USA
@@ -4855,7 +5706,7 @@ country_event = {#General - It has begun
 				limit = { is_ai = yes }
 				56 = {
 					create_unit = {
-						division = "division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
+						division = "name = \"Infantry Division\" division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
 						allow_spawning_on_enemy_provs = yes
 						prioritize_location = 247
 						owner = USA
@@ -4864,7 +5715,7 @@ country_event = {#General - It has begun
 				}
 				188 = {
 					create_unit = {
-						division = "division_template = \"Marine Division\" start_experience_factor = 1 start_equipment_factor = 1"
+						division = "name = \"Infantry Division\" division_template = \"Marine Division\" start_experience_factor = 1 start_equipment_factor = 1"
 						allow_spawning_on_enemy_provs = yes
 						prioritize_location = 6218
 						owner = USA
@@ -4873,14 +5724,14 @@ country_event = {#General - It has begun
 				}
 				58 = {
 					create_unit = {
-						division = "division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
+						division = "name = \"Infantry Division\" division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
 						allow_spawning_on_enemy_provs = yes
 						prioritize_location = 9320
 						owner = USA
 						#count =
 					}
 					create_unit = {
-						division = "division_template = \"Armored Division\" start_experience_factor = 1 start_equipment_factor = 1"
+						division = "name = \"Armored Division\" division_template = \"Armored Division\" start_experience_factor = 1 start_equipment_factor = 1"
 						allow_spawning_on_enemy_provs = yes
 						prioritize_location = 6389
 						owner = USA
@@ -4889,7 +5740,7 @@ country_event = {#General - It has begun
 				}
 				776 = {
 					create_unit = {
-						division = "division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
+						division = "name = \"Infantry Division\" division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
 						allow_spawning_on_enemy_provs = yes
 						prioritize_location = 11219
 						owner = USA
@@ -4898,14 +5749,14 @@ country_event = {#General - It has begun
 				}
 				59 = {
 					create_unit = {
-						division = "division_template = \"Marine Division\" start_experience_factor = 1 start_equipment_factor = 1"
+						division = "name = \"Infantry Division\" division_template = \"Marine Division\" start_experience_factor = 1 start_equipment_factor = 1"
 						allow_spawning_on_enemy_provs = yes
 						prioritize_location = 3395
 						owner = USA
 						count = 1
 					}
 					create_unit = {
-						division = "division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
+						division = "name = \"Infantry Division\" division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
 						allow_spawning_on_enemy_provs = yes
 						prioritize_location = 6513
 						owner = USA
@@ -4914,7 +5765,7 @@ country_event = {#General - It has begun
 				}
 				1373 = {
 					create_unit = {
-						division = "division_template = \"Armored Division\" start_experience_factor = 1 start_equipment_factor = 1"
+						division = "name = \"Armored Division\" division_template = \"Armored Division\" start_experience_factor = 1 start_equipment_factor = 1"
 						allow_spawning_on_enemy_provs = yes
 						prioritize_location = 9509
 						owner = USA
@@ -4923,14 +5774,14 @@ country_event = {#General - It has begun
 				}
 				35 = {
 					create_unit = {
-						division = "division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
+						division = "name = \"Infantry Division\" division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
 						allow_spawning_on_enemy_provs = yes
 						prioritize_location = 6496
 						owner = USA
 						count = 1
 					}
 					create_unit = {
-						division = "division_template = \"Armored Division\" start_experience_factor = 1 start_equipment_factor = 1"
+						division = "name = \"Armored Division\" division_template = \"Armored Division\" start_experience_factor = 1 start_equipment_factor = 1"
 						allow_spawning_on_enemy_provs = yes
 						prioritize_location = 15983
 						owner = USA
@@ -4939,7 +5790,7 @@ country_event = {#General - It has begun
 				}
 				1810 = {
 					create_unit = {
-						division = "division_template = \"Airborne Division\" start_experience_factor = 1 start_equipment_factor = 1"
+						division = "name = \"Airborne Division\" division_template = \"Airborne Division\" start_experience_factor = 1 start_equipment_factor = 1"
 						allow_spawning_on_enemy_provs = yes
 						prioritize_location = 3512
 						owner = USA
@@ -4948,14 +5799,14 @@ country_event = {#General - It has begun
 				}
 				37 = {
 					create_unit = {
-						division = "division_template = \"Armored Division\" start_experience_factor = 1 start_equipment_factor = 1"
+						division = "name = \"Armored Division\" division_template = \"Armored Division\" start_experience_factor = 1 start_equipment_factor = 1"
 						allow_spawning_on_enemy_provs = yes
 						prioritize_location = 6287
 						owner = USA
 						count = 2
 					}
 					create_unit = {
-						division = "division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
+						division = "name = \"Infantry Division\" division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
 						allow_spawning_on_enemy_provs = yes
 						prioritize_location = 3374
 						owner = USA
@@ -4964,14 +5815,14 @@ country_event = {#General - It has begun
 				}
 				61 = {
 					create_unit = {
-						division = "division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
+						division = "name = \"Infantry Division\" division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
 						allow_spawning_on_enemy_provs = yes
 						prioritize_location = 321
 						owner = USA
 						count = 1
 					}
 					create_unit = {
-						division = "division_template = \"Armored Division\" start_experience_factor = 1 start_equipment_factor = 1"
+						division = "name = \"Armored Division\" division_template = \"Armored Division\" start_experience_factor = 1 start_equipment_factor = 1"
 						allow_spawning_on_enemy_provs = yes
 						prioritize_location = 3258
 						owner = USA
@@ -4996,6 +5847,11 @@ country_event = {#General - Franco-German War
 		ai_chance = { factor = 1 }	
 		add_political_power = -100
 		FRA = { 
+			leave_faction = yes
+			if = {
+				limit = { check_variable = { ECON_SPHERE_LEADER = GER } }
+				econ_leave_sphere = yes
+			}
 			declare_war_on = {
 				target = GER
 				type = annex_everything
@@ -5004,68 +5860,65 @@ country_event = {#General - Franco-German War
 				target = GLC
 				type = annex_everything
 			}
-			leave_faction = yes
-			if = {
-				limit = { check_variable = { ECON_SPHERE_LEADER = GER } }
-				econ_leave_sphere = yes
-			}
 		}
 		hidden_effect = {	
 			every_country = {
 				limit = { is_ai = no }
 				news_event = { id = TaS_GERCollapse_news.37 }
 			}
-			division_template = {
-				name = "Infantry Division"
-				#division_names_group = FRA_infantry_ger
-				is_locked = yes
-				regiments = {
-					APC = { x = 0 y = 0 }
-					APC = { x = 0 y = 1 }
-					APC = { x = 0 y = 2 }
-					APC = { x = 1 y = 0 }
-					APC = { x = 1 y = 1 }
-					APC = { x = 1 y = 2 }
-					APC = { x = 2 y = 0 }
-					APC = { x = 2 y = 1 }
-					APC = { x = 2 y = 2 }
+			FRA = {
+				division_template = {
+					name = "Infantry Division"
+					#division_names_group = FRA_infantry_ger
+					is_locked = yes
+					regiments = {
+						APC = { x = 0 y = 0 }
+						APC = { x = 0 y = 1 }
+						APC = { x = 0 y = 2 }
+						APC = { x = 1 y = 0 }
+						APC = { x = 1 y = 1 }
+						APC = { x = 1 y = 2 }
+						APC = { x = 2 y = 0 }
+						APC = { x = 2 y = 1 }
+						APC = { x = 2 y = 2 }
+					}
+					support = {
+						IFV_recon = { x = 0 y = 0 }
+						anti_tank = { x = 0 y = 1 }
+						engineer = { x = 0 y = 2 }
+						artillery = { x = 0 y = 3 }
+						transport_helicopter_company = { x = 0 y = 4 }
+					}
 				}
-				support = {
-					IFV_recon = { x = 0 y = 0 }
-					anti_tank = { x = 0 y = 1 }
-					engineer = { x = 0 y = 2 }
-					artillery = { x = 0 y = 3 }
-					transport_helicopter_company = { x = 0 y = 4 }
-				}
-			}
-			division_template = {
-				name = "Armored Division"
-				#division_names_group = FRA_armored_ger
-				is_locked = yes
-				regiments = {
-					APC = { x = 0 y = 0 }
-					APC = { x = 0 y = 1 }
-					APC = { x = 0 y = 2 }
-					APC = { x = 1 y = 0 }
-					APC = { x = 1 y = 1 }
-					MBT = { x = 2 y = 0 }
-					MBT = { x = 2 y = 1 }
-					MBT = { x = 2 y = 2 }
-					MBT = { x = 3 y = 0 }
-					MBT = { x = 3 y = 1 }
-					MBT = { x = 3 y = 2 }
-				}
-				support = {
-					IFV_recon = { x = 0 y = 0 }
-					signal_company = { x = 0 y = 1 }
-					engineer = { x = 0 y = 2 }
-					artillery = { x = 0 y = 3 }
-					transport_helicopter_company = { x = 0 y = 4 }
+				division_template = {
+					name = "Armored Division"
+					#division_names_group = FRA_armored_ger
+					is_locked = yes
+					regiments = {
+						APC = { x = 0 y = 0 }
+						APC = { x = 0 y = 1 }
+						APC = { x = 0 y = 2 }
+						APC = { x = 1 y = 0 }
+						APC = { x = 1 y = 1 }
+						MBT = { x = 2 y = 0 }
+						MBT = { x = 2 y = 1 }
+						MBT = { x = 2 y = 2 }
+						MBT = { x = 3 y = 0 }
+						MBT = { x = 3 y = 1 }
+						MBT = { x = 3 y = 2 }
+					}
+					support = {
+						IFV_recon = { x = 0 y = 0 }
+						signal_company = { x = 0 y = 1 }
+						engineer = { x = 0 y = 2 }
+						artillery = { x = 0 y = 3 }
+						transport_helicopter_company = { x = 0 y = 4 }
+					}
 				}
 			}
 			15 = {
 				create_unit = {
-					division = "division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					division = "name = \"Infantry Division\" division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
 					allow_spawning_on_enemy_provs = yes
 					prioritize_location = 9434
 					owner = FRA
@@ -5074,7 +5927,7 @@ country_event = {#General - Franco-German War
 			}
 			16 = {
 				create_unit = {
-					division = "division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					division = "name = \"Infantry Division\" division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
 					allow_spawning_on_enemy_provs = yes
 					prioritize_location = 11506
 					owner = FRA
@@ -5083,7 +5936,7 @@ country_event = {#General - Franco-German War
 			}
 			792 = {
 				create_unit = {
-					division = "division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					division = "name = \"Infantry Division\" division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
 					allow_spawning_on_enemy_provs = yes
 					owner = FRA
 					count = 6
@@ -5091,7 +5944,7 @@ country_event = {#General - Franco-German War
 			}
 			27 = {
 				create_unit = {
-					division = "division_template = \"Armored Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					division = "name = \"Armored Division\" division_template = \"Armored Division\" start_experience_factor = 1 start_equipment_factor = 1"
 					allow_spawning_on_enemy_provs = yes
 					owner = FRA
 					count = 6
@@ -5099,7 +5952,7 @@ country_event = {#General - Franco-German War
 			}
 			1635 = {
 				create_unit = {
-					division = "division_template = \"Armored Division\" start_experience_factor = 1 start_equipment_factor = 1"
+					division = "name = \"Armored Division\" division_template = \"Armored Division\" start_experience_factor = 1 start_equipment_factor = 1"
 					allow_spawning_on_enemy_provs = yes
 					owner = FRA
 					count = 6

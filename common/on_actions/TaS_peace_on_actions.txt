@@ -44,6 +44,25 @@ on_actions = {
 					}
 					set_global_flag = skip_default_capitulation
 				}
+				if = {
+					limit = {
+						FROM = {
+							original_tag = RUS
+						}
+						ROOT = { 
+							original_tag = UTL
+						}
+						AND = {
+							RUS = { has_war_with = GER }
+						}
+					}
+					FROM = {
+						MAR_install_mil_turkestan = yes
+						set_country_flag = MAR_has_central_asia
+						clr_country_flag = RUS_something_goes_wrong
+					}
+					set_global_flag = skip_default_capitulation
+				}
 				else_if = {
 					limit = {
 						FROM = {
@@ -353,9 +372,6 @@ on_actions = {
 					white_peace = ROOT
 				}
 				MAR = {
-					transfer_state = 146
-					transfer_state = 1712
-					transfer_state = 147
 					transfer_state = 722
 					transfer_state = 216
 					transfer_state = 215
@@ -462,9 +478,6 @@ on_actions = {
 					white_peace = ROOT
 				}
 				RUS = {
-					transfer_state = 146
-					transfer_state = 1712
-					transfer_state = 147
 					transfer_state = 722
 					transfer_state = 216
 					transfer_state = 215
@@ -659,11 +672,11 @@ on_actions = {
 					MAR = { country_event = { id = MAR_forpol.8 days = 2 } }
 				}
 				
-				if = { # MAR(not kosygin) Loses
+				if = { # MAR(kosygin) Loses
 					limit = { ROOT = { tag = IRA } MAR = { has_government = socialist } } 
 					MAR = { country_event = { id = MAR_forpol.3 days = 2 } }
 				}
-				else_if = { # MAR(not kosygin) Wins
+				else_if = { # MAR(kosygin) Wins
 					limit = {
 						FROM = {
 							tag = IRA

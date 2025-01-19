@@ -27,6 +27,10 @@ UAR_formation_category = {
 			}
 			create_faction = United_Arab_States
 			add_ideas = UAS_Member
+			every_country = {
+				limit = { is_subject_of = ROOT }
+				add_ideas = UAS_Member
+			}
 
 			#Then set important variables for the UAS.
 			set_global_flag = UAS_formed
@@ -62,6 +66,10 @@ UAR_formation_category = {
 			if = {
 				limit = { GER = { has_country_flag = uar_will_join_ger_econ_sphere } }
 				econ_join_sphere_GER = yes
+				if = {
+					limit = { has_global_flag = german_civil_war_speervic }
+					join_zollverein = yes
+				}
 			}
 		}
 	}
@@ -114,7 +122,7 @@ UAR_formation_category = {
 						add_country_leader_role = {
 							promote_leader = yes
 							country_leader = {
-								ideology = socialist_nasserism_subtype
+								ideology = socialist_left_wing_nationalism_subtype
 								expire = "1999.1.1"
 								traits = { }
 							}
@@ -130,6 +138,7 @@ UAR_formation_category = {
 						NOT = { is_in_faction_with = NYM }
 					}
 					set_politics = { ruling_party = communist }
+					set_capital = { state = 554 }
 				}
 			
 				#Then, the UAR gets to annex the country that spawned it.
@@ -156,7 +165,24 @@ UAR_formation_category = {
 				if = {
 					limit = { GER = { has_country_flag = uar_will_join_ger_econ_sphere } }
 					econ_join_sphere_GER = yes
+					if = {
+						limit = { has_global_flag = german_civil_war_speervic }
+						join_zollverein = yes
+					}
 				}
+				if = {
+					limit = {
+						has_global_flag = OC_over_in_middle_east
+						has_global_flag = german_civil_war_bormannvic
+					}
+					country_event = { id = bormann.1213 days = 4 }
+				}
+				
+			}
+			every_country = {
+				limit = { is_ai = no }
+				set_temp_variable = { TNO_temp_super_event = token:SE_ARAB_UNIFICATION }
+				TNO_fire_super_event = yes
 			}
 		}
 	}
@@ -216,3 +242,4 @@ UAR_formation_category = {
 		}
 	}
 }
+

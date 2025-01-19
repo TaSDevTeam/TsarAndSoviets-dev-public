@@ -337,5 +337,247 @@ ideas = {
 				army_defence_factor = 0.2
 			}
 		}
+		SWRW_GER_defensive_oper = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea SWRW_GER_defensive_oper"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = BLR_This_is_Our_Land
+			modifier = {
+				army_morale_factor = 0.2
+				army_defence_factor = 0.2
+			}
+		}
+		SWRW_GER_offensive_oper = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea SWRW_GER_offensive_oper"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = BLR_This_is_Our_Land
+			modifier = {
+				army_morale_factor = 0.15
+				army_attack_factor = 0.15
+				army_defence_factor = 0.05
+			}
+		}
+
+		SWRW_GER_oper_fail_1 = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea SWRW_GER_oper_fail_1"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = BRA_nationwide_chaos_med_idea
+			modifier = {
+				war_support_factor = -0.05
+				army_attack_factor = -0.05
+				army_defence_factor = -0.05
+				army_morale_factor = -0.05
+			}
+		}
+
+
+		SWRW_GER_oper_fail_2 = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea SWRW_GER_oper_fail_2"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = BRA_nationwide_chaos_medhigh_idea
+			modifier = {
+				war_support_factor = -0.1
+				army_attack_factor = -0.1
+				army_defence_factor = -0.1
+				army_morale_factor = -0.1
+				
+			}
+		}
+
+		SWRW_GER_oper_fail_3  = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea SWRW_GER_oper_fail_3"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = BRA_nationwide_chaos_high_idea
+			modifier = {
+				stability_factor = -0.15
+				war_support_factor = -0.15
+				army_attack_factor = -0.15
+				army_defence_factor = -0.15
+				army_morale_factor = -0.15
+				
+			}
+		}
+
+		SWRW_GER_oper_fail_4 = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea SWRW_GER_oper_fail_4"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = BRA_nationwide_chaos_high_idea
+			modifier = {
+				stability_factor = -0.2
+				war_support_factor = -0.2
+				army_attack_factor = -0.2
+				army_defence_factor = -0.2
+				army_morale_factor = -0.2
+				
+			}
+		}
+
+		SWRW_GER_oper_fail_5 = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea SWRW_GER_oper_fail_5"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = BRA_nationwide_chaos_max_idea
+			modifier = {
+				stability_factor = -0.25
+				war_support_factor = -0.25
+				army_attack_factor = -0.25
+				army_defence_factor = -0.25
+				army_morale_factor = -0.25
+				
+			}
+		}
+
+		SWRW_GER_oper_succ_1 = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea SWRW_GER_oper_succ_1"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = BRA_nationwide_chaos_med_idea
+			modifier = {
+				war_support_factor = 0.025
+				army_attack_factor = 0.025
+				army_defence_factor = 0.025
+				army_morale_factor = 0.025
+			}
+		}
+
+		SWRW_GER_oper_succ_2 = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea SWRW_GER_oper_succ_2"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = BRA_nationwide_chaos_lowmed_idea
+			modifier = {
+				war_support_factor = 0.05
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+				army_morale_factor = 0.05
+				
+			}
+		}
+
+		SWRW_GER_oper_succ_3  = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea SWRW_GER_oper_succ_3"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = BRA_nationwide_chaos_lowmed_idea
+			modifier = {
+				stability_factor = 0.75
+				war_support_factor = 0.75
+				army_attack_factor = 0.75
+				army_defence_factor = 0.75
+				army_morale_factor = 0.75
+				
+			}
+		}
+
+		SWRW_GER_oper_succ_4 = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea SWRW_GER_oper_succ_4"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = BRA_nationwide_chaos_lowmed_idea
+			modifier = {
+				stability_factor = 0.1
+				war_support_factor = 0.1
+				army_attack_factor = 0.1
+				army_defence_factor = 0.1
+				army_morale_factor = 0.1
+				
+			}
+		}
+
+		SWRW_GER_oper_succ_5 = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea SWRW_GER_oper_succ_5"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = BRA_nationwide_chaos_low_idea
+			modifier = {
+				stability_factor = 0.15
+				war_support_factor = 0.15
+				army_attack_factor = 0.15
+				army_defence_factor = 0.15
+				army_morale_factor = 0.15
+				
+			}
+		}
+
+		SWRW_GER_oper_zero = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea SWRW_GER_oper_zero"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = BRA_nationwide_chaos_med_idea
+			modifier = {
+			
+			}
+		}
+
 	}
 }

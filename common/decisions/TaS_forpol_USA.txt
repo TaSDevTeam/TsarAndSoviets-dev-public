@@ -157,7 +157,6 @@ USA_foreign_policy_category = {
 		icon = GFX_decision_handshake
 		visible = {
 			TNO_fopo_afghanistan_civil_war_selected = yes
-			NOT = { has_government = socialist }
 		}
 		ai_will_do = {
 			factor = 10
@@ -177,7 +176,6 @@ USA_foreign_policy_category = {
 		icon = GFX_decision_generic_bombing
 		visible = {
 			TNO_fopo_afghanistan_civil_war_selected = yes
-			NOT = { has_government = socialist }
 		}
 
 		days_re_enable = 120
@@ -203,7 +201,6 @@ USA_foreign_policy_category = {
 		icon = GFX_decision_generic_prepare_civil_war
 		visible = {
 			TNO_fopo_afghanistan_civil_war_selected = yes
-			NOT = { has_government = socialist }
 		}
 		days_re_enable = 30
 		ai_will_do = {
@@ -231,7 +228,6 @@ USA_foreign_policy_category = {
 		icon = GFX_decision_generic_military_parade
 		visible = {
 			TNO_fopo_afghanistan_civil_war_selected = yes
-			NOT = { has_government = socialist }
 		}
 
 		days_re_enable = 180
@@ -262,7 +258,6 @@ USA_foreign_policy_category = {
 		icon = GFX_decision_generic_industry
 		visible = {
 			TNO_fopo_afghanistan_civil_war_selected = yes
-			NOT = { has_government = socialist }
 		}
 
 		days_re_enable = 180
@@ -284,7 +279,6 @@ USA_foreign_policy_category = {
 		icon = GFX_decision_generic_ignite_civil_war
 		visible = {
 			TNO_fopo_afghanistan_civil_war_selected = yes
-			NOT = { has_government = socialist }
 		}
 
 		days_re_enable = 90

@@ -204,6 +204,10 @@ shared_focus = {
 		RUS_decrease_administrative_strain = yes
 		add_ideas = MAR_Kosygin_martial_law 
 		tno_penal_system_worsen = yes
+		swap_ideas = {
+			remove_idea = tno_security_crime_prevention
+			add_idea = tno_security_political_control	
+		}
 		TNO_improve_penal_system_policy_effectiveness_med = yes
 		country_event = {
 			id = MAR_Kosygin.61
@@ -489,6 +493,7 @@ shared_focus = {
 			id = MAR_Kosygin.16
 			days = 0
 		}
+		tno_income_taxation_improve = yes
 	}
 
 }
@@ -505,6 +510,11 @@ shared_focus = {
 		TNO_improve_industrial_expertise_high = yes
 		set_temp_variable = { pus_temp = 6 }
 		econ_pus_change = yes
+		tno_minimum_wage_improve = yes
+		swap_ideas = {
+			remove_idea = tno_max_workhours_14_hour_work_day
+			add_idea = tno_max_workhours_10_hour_work_day	
+		}
 	}
 
 }
@@ -1413,6 +1423,16 @@ shared_focus = {
 			id = MAR_Kosygin.45
 			days = 0
 		}
+		swap_ideas = {
+			remove_idea = tno_security_political_control
+			add_idea = tno_security_maintenance_of_order	
+		}
+		swap_ideas = {
+			remove_idea = tno_penal_system_politicized_penal_system
+			add_idea = tno_penal_system_harsh_penal_code	
+		}
+		TNO_improve_security_policy_effectiveness_monthly_low = yes
+		TNO_improve_penal_system_policy_effectiveness_monthly_med = yes
 	}
 }
 shared_focus = {
@@ -2041,9 +2061,9 @@ shared_focus = {
 	
 	completion_reward = {
 		custom_effect_tooltip = MAR_kosrus_expanding_ogas_tt
-		add_to_variable = { MAR_ogas_dynomod_array_two^0 = 1 }
-		add_to_variable = { MAR_ogas_dynomod_array_two^2 = 3 }
-		add_to_variable = { MAR_ogas_dynomod_array_two^8 = 5 }
+		add_to_variable = { MAR_ogas_dynomod_array_two^0 = 0.01 }
+		add_to_variable = { MAR_ogas_dynomod_array_two^2 = 0.05 }
+		add_to_variable = { MAR_ogas_dynomod_array_two^8 = 0.05 }
 		random_owned_state = {
 			add_state_modifier = {
 				modifier = {

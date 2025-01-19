@@ -7,22 +7,22 @@ fill_empty_minister_nochecks = yes
 
 # Chars
 
-recruit_character = NAL_Mohammad_Najibullah
+recruit_character = NAL_Ahmad_Shah_Massoud
 add_manpower = 75000
 
 load_focus_tree = ZZZ_blank_focus
 
 set_politics = {
-	ruling_party = liberal_conservatism
+	ruling_party = conservatism
 	last_election = "1969.8.29"
 	election_frequency = 48
 	elections_allowed = no
 }
 set_popularities = {
-	liberal_conservatism = 40
-	conservatism = 25
-	liberalism = 25
-	progressivism = 10
+	liberal_conservatism = 20
+	conservatism = 45
+	paternalism = 25
+	despotism = 10
 }
 
 add_ideas = {

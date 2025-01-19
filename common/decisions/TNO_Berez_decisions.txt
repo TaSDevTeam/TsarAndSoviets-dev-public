@@ -1078,7 +1078,7 @@ MAR_debug_category = {
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_load_MAR_Kazembek"
-			load_focus_tree = {	tree = MAR_Kazembek keep_completed = no }
+			#load_focus_tree = {	tree = MAR_Kazembek keep_completed = no }
 		}
 	}
 }
@@ -1872,6 +1872,10 @@ MAR_Order_category = {
 			add_war_support = -0.1
 			country_event = { id = MAR_Kosygin.66 }
 			custom_effect_tooltip = MAR_Order_open_new_decisions
+			swap_ideas = {
+				remove_idea = tno_religious_rights_state_religion
+				add_idea = tno_religious_rights_pluralism	
+			}
 		}
 	}
 	

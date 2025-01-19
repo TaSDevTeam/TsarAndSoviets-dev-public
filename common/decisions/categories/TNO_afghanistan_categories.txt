@@ -10,17 +10,12 @@ AFG_russian_invasion = {
 	}
 }
 
-FINTUR_russian_invasion = {
+TUR_russian_invasion = {
 	picture = GFX_decision_ENG_decision_rebellion
 	allowed = {
-		OR = {
-			tag = TUR
-			tag = FIN
-		}
+		tag = TUR
 	}
 	visible = {
-		OR = {
-			has_war_with = RUS
-		}
+		has_war_with = RUS
 	}
 }

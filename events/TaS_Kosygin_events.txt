@@ -755,10 +755,7 @@ country_event = {#thaw
 	option = {
 		name = MAR_Kosygin.45.a
 		ai_chance = { factor = 1 }	
-		add_stability = -0.03
-		#remove_ideas = { }
-		tno_security_worsen = yes
-		TNO_improve_security_policy_effectiveness_monthly_low = yes
+		add_stability = -0.03	
 	}
 }
 
@@ -2080,10 +2077,36 @@ country_event = { #success
 		remove_ideas = MAR_prestol_dynmod_dummy
 		clr_country_flag = MAR_prestol_active
 		set_country_flag = MAR_order_Kosygin
-		add_popularity = {
-			ideology = national_socialism
-			popularity = -0.25
-		}
+		hidden_effect = {
+			add_popularity = {
+				ideology = ultranationalism_2
+				popularity = -1
+			}
+			add_popularity = {
+				ideology = despotism_2
+				popularity = -1
+			}
+			add_popularity = {
+				ideology = ultranationalism_1
+				popularity = -1
+			}
+			add_popularity = {
+				ideology = communist_1
+				popularity = -1
+			}
+			add_popularity = {
+				ideology = national_socialism
+				popularity = -1
+			}
+			add_popularity = {
+				ideology = national_socialism_1
+				popularity = -1
+			}
+			add_popularity = {
+				ideology = national_socialism_2
+				popularity = -1
+			}
+		} 
 	}
 }
 

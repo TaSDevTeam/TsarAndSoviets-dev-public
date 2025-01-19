@@ -111,9 +111,9 @@ MAR_OGAS_switch_to_the_next_stage = {
 			limit = { check_variable = { MAR_ogas_current_stage > 5 } }
 			country_event = { id = MAR_Kosygin_OGAS.10 }
 		}
+		set_temp_variable = { alert_id = token:Alert_OGASUpgraded }
+		add_TNO_alert = yes
 	}
-	set_temp_variable = { alert_id = token:Alert_OGASUpgraded }
-	add_TNO_alert = yes
 }
 
 MAR_calculate_ogas_dynmod_effects = {

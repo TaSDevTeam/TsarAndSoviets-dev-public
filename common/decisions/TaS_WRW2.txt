@@ -30,7 +30,7 @@ TaS_WRW2_fate_and_coring_of_territories = {
 		}
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_fate_of_turkestan"
+			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_fate_of_primorie"
 			country_event = { id = MAR_territorial_fate.2 }
 			add_to_variable = { MAR_fates_done = 1 }
 		}
@@ -49,7 +49,7 @@ TaS_WRW2_fate_and_coring_of_territories = {
 		}
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_fate_of_turkestan"
+			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_fate_of_moskau"
 			country_event = { id = MAR_territorial_fate.3 }
 			add_to_variable = { MAR_fates_done = 1 }
 		}
@@ -67,7 +67,7 @@ TaS_WRW2_fate_and_coring_of_territories = {
 		}
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_fate_of_turkestan"
+			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_fate_of_baltics"
 			country_event = { id = MAR_territorial_fate.4 }
 			add_to_variable = { MAR_fates_done = 1 }
 		}
@@ -85,7 +85,7 @@ TaS_WRW2_fate_and_coring_of_territories = {
 		}
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_fate_of_turkestan"
+			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_fate_of_belarus"
 			country_event = { id = MAR_territorial_fate.7 }
 			add_to_variable = { MAR_fates_done = 1 }
 		}
@@ -103,7 +103,7 @@ TaS_WRW2_fate_and_coring_of_territories = {
 		}
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_fate_of_turkestan"
+			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_fate_of_ukraine"
 			country_event = { id = MAR_territorial_fate.8 }
 			add_to_variable = { MAR_fates_done = 1 }
 		}
@@ -121,7 +121,7 @@ TaS_WRW2_fate_and_coring_of_territories = {
 		}
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_fate_of_turkestan"
+			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_fate_of_taurida"
 			country_event = { id = MAR_territorial_fate.9 }
 			add_to_variable = { MAR_fates_done = 1 }
 		}
@@ -139,7 +139,7 @@ TaS_WRW2_fate_and_coring_of_territories = {
 		}
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_fate_of_turkestan"
+			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_fate_of_caucasus"
 			country_event = { id = MAR_territorial_fate.10 }
 			add_to_variable = { MAR_fates_done = 1 }
 		}
@@ -531,7 +531,7 @@ TaS_WRW2_fate_and_coring_of_territories = {
 		icon = GFX_decision_generic_form_nation
 
 		available = {
-			controls_state = 809
+			controls_state = 1644
 		}
 
 		visible = {
@@ -539,19 +539,16 @@ TaS_WRW2_fate_and_coring_of_territories = {
 			has_country_flag = Primorie_fate_is_done
 			NOT = { 
 				AND = {
-					809 = {
-						is_core_of = ROOT
-					}
-					408 = {
-						is_core_of = ROOT
-					}
-					1664 = {
+					1644 = {
 						is_core_of = ROOT
 					}
 					409 = {
 						is_core_of = ROOT
 					}
-					1645 = {
+					408 = {
+						is_core_of = ROOT
+					}
+					809 = {
 						is_core_of = ROOT
 					}
 				}
@@ -561,11 +558,10 @@ TaS_WRW2_fate_and_coring_of_territories = {
 		on_map_mode = map_and_decisions_view
 		highlight_states = {
 			highlight_state_targets = {
-				state = 809
-				state = 408
-				state = 1664
+				state = 1644
 				state = 409
-				state = 1646
+				state = 408
+				state = 809
 			}
 		}
 
@@ -591,7 +587,6 @@ TaS_WRW2_fate_and_coring_of_territories = {
 				limit = { RUS = { owns_state = 409 } }
 				add_state_core = 409
 				add_state_core = 1644
-				add_state_core = 1645
 			}
 			if = {
 				limit = { RUS = { owns_state = 408 } }
@@ -3411,6 +3406,9 @@ TaS_WRW2_territorial_reclamation = {
 		icon = GFX_finland_rus
 		visible = {
 			has_global_flag = TaS_WRW2_Russian_victory
+			NOT = {
+				FIN = { exists = no }
+			}
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -3489,29 +3487,26 @@ TaS_WRW2_territorial_reclamation = {
 		icon = GFX_romania_rus
 		visible = {
 			OR = {
-				GEO = {
-					owns_state = 231
+				MUK = {
+					owns_state = 197
 				}
-				MCS = {
-					owns_state = 231
-				}
-				owns_state = 231
+				owns_state = 197
 			}
 			has_global_flag = TaS_WRW2_Russian_victory
+			NOT = {
+				OR = {
+					MUK = {
+						owns_state = 1286
+					}
+					owns_state = 1286
+				}
+			}
 		}
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = MAR_all_fates_decided_tt
 				check_variable = { MAR_fates_done = 8 }
 			}
-			add_state_claim = 1285
-			add_state_claim = 1286
-			add_state_claim = 78
-			add_state_claim = 198
-			add_state_claim = 1965
-			add_state_claim = 1966
-			add_state_claim = 1285
-			add_state_claim = 192
 		}
 		fire_only_once = yes
 		custom_cost_trigger = { command_power > 24.99 }
@@ -3521,6 +3516,14 @@ TaS_WRW2_territorial_reclamation = {
 			hidden_effect = {
 				add_command_power = -25
 			}
+			add_state_claim = 1285
+			add_state_claim = 1286
+			add_state_claim = 78
+			add_state_claim = 198
+			add_state_claim = 1965
+			add_state_claim = 1966
+			add_state_claim = 1285
+			add_state_claim = 192
 		}
 		days_remove = 14
 		remove_effect = {
@@ -3563,13 +3566,14 @@ TaS_WRW2_territorial_reclamation = {
 		icon = GFX_iran_rus
 		visible = {
 			OR = {
-				GEO = {
-					owns_state = 231
+				MTR = { owns_state = 584 }
+				owns_state = 584
+			}
+			NOT = {
+				OR = {
+					MTR = { owns_state = 2125 }
+					owns_state = 2125
 				}
-				MCS = {
-					owns_state = 231
-				}
-				owns_state = 231
 			}
 			has_global_flag = TaS_WRW2_Russian_victory
 		}
@@ -3624,8 +3628,8 @@ TaS_SWRW_far_eastern_negotiations = {
 					}
 					if = { 
 						limit = {
-							check_variable = { swrw_diplo_jap > 75 }
-							check_variable = { swrw_corpo_jap > 75 }
+							check_variable = { swrw_diplo_jap > 74.9 }
+							check_variable = { swrw_corpo_jap > 74.9 }
 						}
 						country_event = { id = MAR_Japan.21 }
 					}
@@ -3639,8 +3643,8 @@ TaS_SWRW_far_eastern_negotiations = {
 					}
 					if = { 
 						limit = {
-							check_variable = { swrw_diplo_jap > 75 }
-							check_variable = { swrw_corpo_jap > 75 }
+							check_variable = { swrw_diplo_jap > 74.9 }
+							check_variable = { swrw_corpo_jap > 74.9 }
 						}
 						country_event = { id = MAR_Japan.22 }
 					}
@@ -3654,8 +3658,8 @@ TaS_SWRW_far_eastern_negotiations = {
 					}
 					if = { 
 						limit = {
-							check_variable = { swrw_diplo_jap > 85 }
-							check_variable = { swrw_corpo_jap > 85 }
+							check_variable = { swrw_diplo_jap > 84.9 }
+							check_variable = { swrw_corpo_jap > 84.9 }
 						}
 						country_event = { id = MAR_Japan.23 }
 					}
@@ -3669,8 +3673,8 @@ TaS_SWRW_far_eastern_negotiations = {
 					}
 					if = { 
 						limit = {
-							check_variable = { swrw_diplo_jap > 95 }
-							check_variable = { swrw_corpo_jap > 95 }
+							check_variable = { swrw_diplo_jap > 94.9 }
+							check_variable = { swrw_corpo_jap > 94.9 }
 						}
 						country_event = { id = MAR_Japan.24 }
 					}
@@ -3765,7 +3769,12 @@ TaS_SWRW_far_eastern_negotiations = {
 			set_temp_variable = { temp_econ_spending_amount = 0.05 }
 			econ_spend_money_once_effect_raw_money = yes
 			custom_effect_tooltip = SWRW_nego_speedup_tt
-			add_to_variable = { SWRW_round_timeout = -14 }
+			hidden_effect = {
+				add_days_mission_timeout = {
+					mission = SWRW_FEnegotiations_mission
+					days = -14
+				}
+			}
 			set_temp_variable = { swrw_corpo_temp = -2.5 }
 			TaS_SWRW_change_corpo_jap = yes
 			set_temp_variable = { swrw_diplo_temp = -2.5 }
@@ -3788,7 +3797,12 @@ TaS_SWRW_far_eastern_negotiations = {
 			set_temp_variable = { temp_econ_spending_amount = 0.1 }
 			econ_spend_money_once_effect_raw_money = yes
 			custom_effect_tooltip = SWRW_nego_slowdown_tt
-			add_to_variable = { SWRW_round_timeout = 14 }
+			hidden_effect = {
+				add_days_mission_timeout = {
+					mission = SWRW_FEnegotiations_mission
+					days = 14
+				}
+			}
 			set_temp_variable = { swrw_corpo_temp = -2.5 }
 			TaS_SWRW_change_corpo_jap = yes
 			set_temp_variable = { swrw_diplo_temp = -2.5 }
@@ -4721,7 +4735,7 @@ TaS_SWRW_far_eastern_negotiations = {
 			econ_gdp_growth_change = yes
 			TNO_worsen_trade_unions_policy_effectiveness_med = yes
 			TNO_worsen_regulations_policy_effectiveness_med = yes
-			TNO_worsen_safety_policy_effectiveness_med = yes
+			#TNO_worsen_safety_policy_effectiveness_med = yes
 			
 			set_temp_variable = { swrw_corpo_temp = 10 }
 			TaS_SWRW_change_corpo_jap = yes
@@ -4782,6 +4796,20 @@ TaS_SWRW_far_eastern_negotiations = {
 			set_temp_variable = { swrw_diplo_temp = 10 }
 			TaS_SWRW_change_diplo_jap = yes
 			add_to_variable = { swrw_fe_actions = -1 }
+		}
+	}
+	SWRW_FEnegotiations_unique_effigy = {
+		icon = generic_shake_hands_indent
+		visible = {
+			always = yes
+		}
+		fire_only_once = yes
+		available = {
+			always = no
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout SWRW_FEnegotiations_unique_effigy... wait that's wrong"
 		}
 	}
 }

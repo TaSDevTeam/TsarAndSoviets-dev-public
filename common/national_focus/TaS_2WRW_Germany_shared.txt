@@ -266,6 +266,15 @@ shared_focus = {
 	id = GER_graveyard_of_the_empires
 	icon = GFX_GER_graveyard_of_the_empires
 	cost = 3.58
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		NOT = {
+			MCW = { surrender_progress > 0.85 }
+		}
+	}
 	prerequisite = {focus = GER_fire_in_the_east}
 	relative_position_id = GER_fire_in_the_east
 	x = -3
@@ -288,6 +297,15 @@ shared_focus = {
 	id = GER_mountains_of_madness
 	icon = GFX_GER_mountains_of_madness
 	cost = 3.58
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		NOT = {
+			CAU = { surrender_progress > 0.85 }
+		}
+	}
 	prerequisite = {focus = GER_fire_in_the_east}
 	relative_position_id = GER_fire_in_the_east
 	x = -1
@@ -310,6 +328,15 @@ shared_focus = {
 	id = GER_burning_breadbasket
 	icon = GFX_GER_burning_breadbasket
 	cost = 3.58
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		NOT = {
+			UKR = { surrender_progress > 0.85 }
+		}
+	}
 	prerequisite = {focus = GER_fire_in_the_east}
 	relative_position_id = GER_fire_in_the_east
 	x = 1
@@ -332,6 +359,15 @@ shared_focus = {
 	id = GER_baltic_citadel
 	icon = GFX_GER_baltic_citadel
 	cost = 3.58
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	available = {
+		NOT = {
+			OST = { surrender_progress > 0.85 }
+		}
+	}
 	prerequisite = {focus = GER_fire_in_the_east}
 	relative_position_id = GER_fire_in_the_east
 	x = 3

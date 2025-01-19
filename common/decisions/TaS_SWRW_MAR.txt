@@ -19,7 +19,11 @@ MAR_SWRW_category = {
 			custom_trigger_tooltip = {
 				tooltip = SWRW_issues_done_tt
 				has_country_flag = MAR_has_primorie
-				has_country_flag = MAR_has_turkestan
+				OR = {
+					has_country_flag = MAR_has_turkestan
+					has_country_flag = MAR_Turkestan_German
+					has_country_flag = MAR_Turkestan_cucked
+				}
 			}
 		}
 		custom_cost_trigger = {
@@ -250,6 +254,10 @@ MAR_SWRW_category = {
 				artillery_equipment > 100
 			}
 			divisions_in_state = {
+				state = 567
+				size > 3
+			}
+			divisions_in_state = {
 				state = 566
 				size > 3
 			}
@@ -262,11 +270,15 @@ MAR_SWRW_category = {
 				size > 3
 			}
 			divisions_in_state = {
-				state = 563
+				state = 890
 				size > 3
 			}
 			divisions_in_state = {
-				state = 760
+				state = 759
+				size > 3
+			}
+			divisions_in_state = {
+				state = 563
 				size > 3
 			}
 		}
@@ -454,34 +466,93 @@ MAR_SWRW_category = {
 			econ_spend_money_once_effect_raw_money = yes
 			if = {
 				limit = {
-					owns_state = 216
+					FIN = { is_in_faction_with = GER }
+					owns_state = 1359
 				}
-				216 = {
+				1359 = {
 					add_building_construction = {
 						type = bunker
 						level = 3
 						instant_build = yes
-						province = 11153
+						province = 6117
 					}
 					add_building_construction = {
 						type = bunker
 						level = 3
 						instant_build = yes
-						province = 6057
+						province = 142
 					}
 					add_building_construction = {
 						type = bunker
 						level = 3
 						instant_build = yes
-						province = 3084
+						province = 9203
 					}
 					add_building_construction = {
 						type = bunker
 						level = 3
 						instant_build = yes
-						province = 6106
+						province = 74
 					}
 				}
+				if = {
+					limit = { NOT = { RUS = { owns_state = 215 } } }
+					1359 = {
+						add_building_construction = {
+							type = bunker
+							level = 3
+							instant_build = yes
+							province = 11128
+						}
+						add_building_construction = {
+							type = bunker
+							level = 3
+							instant_build = yes
+							province = 178
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					owns_state = 215 
+					FIN = { is_in_faction_with = GER }
+				}
+				215 = {
+					set_building_level = {
+						type = bunker
+						level = 3
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+						}
+						level < 3
+					}
+				}
+				1887 = {
+					set_building_level = {
+						type = bunker
+						level = 3
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+						}
+						level < 3
+					}
+				}
+			}
+			else = {
+				859 = {
+					set_building_level = {
+						type = bunker
+						level = 3
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+						}
+						level < 3
+					}
+				}	
 			}
 			858 = {
 				add_building_construction = {
@@ -494,29 +565,19 @@ MAR_SWRW_category = {
 					type = bunker
 					level = 3
 					instant_build = yes
-					province = 3160
+					province = 3190
 				}
 				add_building_construction = {
 					type = bunker
 					level = 3
 					instant_build = yes
-					province = 11103
+					province = 18295
 				}
-			}
-			859 = {
 				add_building_construction = {
 					type = bunker
 					level = 3
 					instant_build = yes
-					province = 6034
-				}
-			}
-			861 = {
-				add_building_construction = {
-					type = bunker
-					level = 3
-					instant_build = yes
-					province = 6075
+					province = 6017
 				}
 			}
 			857 = {
@@ -524,7 +585,13 @@ MAR_SWRW_category = {
 					type = bunker
 					level = 3
 					instant_build = yes
-					province = 3157
+					province = 163
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 9102
 				}
 				add_building_construction = {
 					type = bunker
@@ -654,108 +721,44 @@ MAR_SWRW_category = {
 			econ_pus_change = yes
 			set_temp_variable = { SWRW_suspicion_temp = 5 }
 			TaS_SWRW_change_suspicion = yes
-			755 = {
-				add_building_construction = {
-					type = bunker
-					level = 3
-					instant_build = yes
-					province = 13290
-				}
-				add_building_construction = {
-					type = bunker
-					level = 3
-					instant_build = yes
-					province = 9473
-				}
-				add_building_construction = {
-					type = bunker
-					level = 3
-					instant_build = yes
-					province = 452
-				}
-				add_building_construction = {
-					type = bunker
-					level = 3
-					instant_build = yes
-					province = 6502
-				}
-				add_building_construction = {
-					type = bunker
-					level = 3
-					instant_build = yes
-					province = 6339
-				}
-			}
-			251 = {
-				add_building_construction = {
-					type = bunker
-					level = 3
-					instant_build = yes
-					province = 9365
-				}
-			}
-			250 = {
-				add_building_construction = {
-					type = bunker
-					level = 3
-					instant_build = yes
-					province = 6394
-				}
-				add_building_construction = {
-					type = bunker
-					level = 3
-					instant_build = yes
-					province = 3246
-				}
-				add_building_construction = {
-					type = bunker
-					level = 3
-					instant_build = yes
-					province = 3196
-				}
-				add_building_construction = {
-					type = bunker
-					level = 3
-					instant_build = yes
-					province = 286
-				}
-				add_building_construction = {
-					type = bunker
-					level = 3
-					instant_build = yes
-					province = 11373
-				}
-				add_building_construction = {
-					type = bunker
-					level = 3
-					instant_build = yes
-					province = 3269
-				}
-				add_building_construction = {
-					type = bunker
-					level = 3
-					instant_build = yes
-					province = 345
-				}
-			}
+			
+			
 			252 = {
 				add_building_construction = {
 					type = bunker
 					level = 3
 					instant_build = yes
-					province = 3285
+					province = 9389
 				}
 				add_building_construction = {
 					type = bunker
 					level = 3
 					instant_build = yes
-					province = 297	
+					province = 6299	
 				}
 				add_building_construction = {
 					type = bunker
 					level = 3
 					instant_build = yes
-					province = 11277
+					province = 6392
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 6362
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 6410
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 18252
 				}
 				add_building_construction = {
 					type = bunker
@@ -767,31 +770,103 @@ MAR_SWRW_category = {
 					type = bunker
 					level = 3
 					instant_build = yes
-					province = 9298
+					province = 11394
 				}
 				add_building_construction = {
 					type = bunker
 					level = 3
 					instant_build = yes
-					province = 9360
+					province = 11324
+				}
+			}
+			250 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 345
 				}
 				add_building_construction = {
 					type = bunker
 					level = 3
 					instant_build = yes
-					province = 6299
+					province = 3269
 				}
 				add_building_construction = {
 					type = bunker
 					level = 3
 					instant_build = yes
-					province = 6295
+					province = 18280
 				}
 				add_building_construction = {
 					type = bunker
 					level = 3
 					instant_build = yes
-					province = 6370
+					province = 286
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 3196
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 3372
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 6394
+				}
+			}
+			251 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 9365
+				}
+			}
+			755 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 13296
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 6502
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 13292
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 452
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 6473
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 410
 				}
 			}
 			407 = {
@@ -811,7 +886,7 @@ MAR_SWRW_category = {
 					type = bunker
 					level = 3
 					instant_build = yes
-					province = 3467
+					province = 13286
 				}
 				add_building_construction = {
 					type = bunker
@@ -823,13 +898,7 @@ MAR_SWRW_category = {
 					type = bunker
 					level = 3
 					instant_build = yes
-					province = 6430
-				}
-				add_building_construction = {
-					type = bunker
-					level = 3
-					instant_build = yes
-					province = 9447
+					province = 3538
 				}
 				add_building_construction = {
 					type = bunker
@@ -849,14 +918,14 @@ MAR_SWRW_category = {
 					instant_build = yes
 					province = 545
 				}
-			}
-		406 = {
 				add_building_construction = {
 					type = bunker
 					level = 3
 					instant_build = yes
 					province = 6525
 				}
+			}
+			406 = {
 				add_building_construction = {
 					type = bunker
 					level = 3
@@ -941,7 +1010,7 @@ MAR_SWRW_category = {
 					type = bunker
 					level = 3
 					instant_build = yes
-					province = 10406
+					province = 4563
 				}
 				add_building_construction = {
 					type = bunker
@@ -959,13 +1028,27 @@ MAR_SWRW_category = {
 					type = bunker
 					level = 3
 					instant_build = yes
-					province = 10348
+					province = 10262
 				}
 				add_building_construction = {
 					type = bunker
 					level = 3
 					instant_build = yes
-					province = 7541
+					province = 13279
+				}
+			}
+			402 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 12163
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 10131
 				}
 			}
 			587 = {
@@ -985,7 +1068,7 @@ MAR_SWRW_category = {
 					type = bunker
 					level = 3
 					instant_build = yes
-					province = 7486
+					province = 13275
 				}
 				add_building_construction = {
 					type = bunker
@@ -997,13 +1080,13 @@ MAR_SWRW_category = {
 					type = bunker
 					level = 3
 					instant_build = yes
-					province = 10353
+					province = 13273
 				}
 				add_building_construction = {
 					type = bunker
 					level = 3
 					instant_build = yes
-					province = 4636
+					province = 13268
 				}
 			}
 			1802 = {
@@ -1011,7 +1094,7 @@ MAR_SWRW_category = {
 					type = bunker
 					level = 3
 					instant_build = yes
-					province = 7507
+					province = 7501
 				}
 				add_building_construction = {
 					type = bunker
@@ -1029,13 +1112,25 @@ MAR_SWRW_category = {
 					type = bunker
 					level = 3
 					instant_build = yes
+					province = 18669
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 13260
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
 					province = 10601
 				}
 				add_building_construction = {
 					type = bunker
 					level = 3
 					instant_build = yes
-					province = 13265
+					province = 14742
 				}
 				add_building_construction = {
 					type = bunker
@@ -1145,19 +1240,13 @@ MAR_SWRW_category = {
 					instant_build = yes
 					province = 11469
 				}
-				add_building_construction = {
-					type = bunker
-					level = 2
-					instant_build = yes
-					province = 11524
-				}
 			}
 			407 = {
 				add_building_construction = {
 					type = bunker
 					level = 2
 					instant_build = yes
-					province = 11552
+					province = 11524
 				}
 				add_building_construction = {
 					type = bunker
@@ -1176,7 +1265,7 @@ MAR_SWRW_category = {
 					level = 2
 					instant_build = yes
 					province = 9526
-				}
+				}	
 			}
 			850 = {
 				add_building_construction = {
@@ -1284,29 +1373,15 @@ MAR_SWRW_category = {
 					province = 9291
 				}
 			}
-			1887 = {
-				add_building_construction = {
-					type = bunker
-					level = 2
-					instant_build = yes
-					province = 9045
-				}
-				add_building_construction = {
-					type = bunker
-					level = 2
-					instant_build = yes
-					province = 3078
-				}
-				add_building_construction = {
-					type = bunker
-					level = 2
-					instant_build = yes
-					province = 11094
-				}
-			}
 			if = {
-				limit = { owns_state = 213 }
-				213 = {
+				limit = { owns_state = 1359 }
+				1359 = {
+					add_building_construction = {
+						type = bunker
+						level = 3
+						instant_build = yes
+						province = 3134
+					}
 					add_building_construction = {
 						type = bunker
 						level = 2
@@ -1326,12 +1401,71 @@ MAR_SWRW_category = {
 						province = 11117
 					}
 				}
-				1359 = {
+			}
+			if = {
+				limit = { owns_state = 215 }
+				215 = {
 					add_building_construction = {
 						type = bunker
-						level = 3
+						level = 2
 						instant_build = yes
-						province = 3134
+						province = 9045
+					}
+					add_building_construction = {
+						type = bunker
+						level = 2
+						instant_build = yes
+						province = 3078
+					}
+					add_building_construction = {
+						type = bunker
+						level = 2
+						instant_build = yes
+						province = 11094
+					}
+					add_building_construction = {
+						type = bunker
+						level = 2
+						instant_build = yes
+						province = 6090
+					}
+				}
+			}
+			else = {
+				859 = {
+					add_building_construction = {
+						type = bunker
+						level = 2
+						instant_build = yes
+						province = 9248
+					}
+				}
+				214 = {
+					add_building_construction = {
+						type = bunker
+						level = 2
+						instant_build = yes
+						province = 6102
+					}
+					add_building_construction = {
+						type = bunker
+						level = 2
+						instant_build = yes
+						province = 3130
+					}
+				}
+				859 = {
+					add_building_construction = {
+						type = bunker
+						level = 2
+						instant_build = yes
+						province = 9187
+					}
+					add_building_construction = {
+						type = bunker
+						level = 2
+						instant_build = yes
+						province = 6075
 					}
 				}
 			}
@@ -1479,7 +1613,7 @@ MAR_SWRW_category = {
 			}
 			set_temp_variable = { temp_econ_spending_amount = 0.3 }
 			econ_spend_money_once_effect_raw_money = yes
-			set_temp_variable = { SWRW_suspicion_temp = 7 }
+			set_temp_variable = { SWRW_suspicion_temp = 5 }
 			TaS_SWRW_change_suspicion = yes
 		}
 		remove_effect = {
@@ -1523,7 +1657,7 @@ MAR_SWRW_category = {
 			econ_pus_change = yes
 			set_temp_variable = { temp_econ_spending_amount = 0.450 }
 			econ_spend_money_once_effect_raw_money = yes
-			set_temp_variable = { SWRW_suspicion_temp = 7 }
+			set_temp_variable = { SWRW_suspicion_temp = 5 }
 			TaS_SWRW_change_suspicion = yes
 		}
 		modifier = {
@@ -1607,10 +1741,10 @@ MAR_SWRW_category = {
 		remove_effect = {
 			set_temp_variable = { SWRW_readiness_temp = 7 }
 			TaS_SWRW_change_readiness = yes 
-			set_temp_variable = { SWRW_suspicion_temp = 7 }
+			set_temp_variable = { SWRW_suspicion_temp = 5 }
 			TaS_SWRW_change_suspicion = yes
 			custom_effect_tooltip = TaS_WRW2_reserves_tt
-			add_manpower = 750000
+			add_manpower = 500000
 			tno_conscription_worsen = yes
 			TNO_improve_conscription_policy_effectiveness_high = yes
 		}
@@ -1913,7 +2047,7 @@ MAR_SWRW_category = {
 		remove_effect = {
 			set_temp_variable = { SWRW_readiness_temp = 7 }
 			TaS_SWRW_change_readiness = yes 
-			set_temp_variable = { SWRW_suspicion_temp = 10 }
+			set_temp_variable = { SWRW_suspicion_temp = 7 }
 			TaS_SWRW_change_suspicion = yes
 			custom_effect_tooltip = TaS_WRW2_industrial_centers_tt
 			set_temp_variable = { pus_temp = 6 }
@@ -1951,7 +2085,7 @@ MAR_SWRW_category = {
 			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_prepare_economics"
 			set_temp_variable = { gdp_growth_temp = -1 }
 			econ_gdp_growth_change = yes
-			set_temp_variable = { SWRW_suspicion_temp = 7 }
+			set_temp_variable = { SWRW_suspicion_temp = 6 }
 			TaS_SWRW_change_suspicion = yes
 		}
 		modifier = {
@@ -1962,7 +2096,7 @@ MAR_SWRW_category = {
 		remove_effect = {
 			set_temp_variable = { SWRW_readiness_temp = 5 }
 			TaS_SWRW_change_readiness = yes 
-			set_temp_variable = { SWRW_suspicion_temp = 7 }
+			set_temp_variable = { SWRW_suspicion_temp = 6 }
 			TaS_SWRW_change_suspicion = yes
 			custom_effect_tooltip = TaS_WRW2_economics_tt
 			set_temp_variable = { inflation_temp = -3 }
@@ -1996,7 +2130,7 @@ MAR_SWRW_category = {
 			econ_gdp_growth_change = yes
 			set_temp_variable = { temp_econ_spending_amount = 0.350 }
 			econ_spend_money_once_effect_raw_money = yes
-			set_temp_variable = { SWRW_suspicion_temp = 10 }
+			set_temp_variable = { SWRW_suspicion_temp = 5 }
 			TaS_SWRW_change_suspicion = yes
 		}
 		modifier = {
@@ -2011,7 +2145,7 @@ MAR_SWRW_category = {
 			TaS_SWRW_change_suspicion = yes
 			custom_effect_tooltip = TaS_WRW2_mobilize_tt
 			army_funding_minimal_increase_med = yes
-			army_funding_minimal_increase_high = yes
+			army_funding_maximal_increase_high = yes
 			admin_funding_minimal_decrease_med = yes
 			social_funding_minimal_decrease_high = yes
 		}
@@ -2106,7 +2240,7 @@ MAR_SWRW_category = {
 			custom_effect_tooltip = TaS_WRW2_partisans_tt
 			set_temp_variable = { SWRW_readiness_temp = 7 }
 			TaS_SWRW_change_readiness = yes 
-			set_temp_variable = { SWRW_suspicion_temp = 7 }
+			set_temp_variable = { SWRW_suspicion_temp = 5 }
 			TaS_SWRW_change_suspicion = yes
 			MCW = {
 				add_ideas = SWRW_war_partisans 
@@ -2182,6 +2316,7 @@ MAR_SWRW_category = {
 			#has_country_flag = SWRW_decisions_usa
 			check_variable = { TaS_swrw_stage = 1 }
 			check_variable = { swrw_preparation_category = 3 }
+			NOT = { has_completed_focus = MAR_warprep_chrysanthemum_friendship }
 		}
 		available = {
 			has_war = no
@@ -2203,7 +2338,7 @@ MAR_SWRW_category = {
 			custom_effect_tooltip = TaS_WRW2_guns_tt
 			set_temp_variable = { SWRW_readiness_temp = 5 }
 			TaS_SWRW_change_readiness = yes 
-			set_temp_variable = { SWRW_suspicion_temp = 10 }
+			set_temp_variable = { SWRW_suspicion_temp = 5 }
 			TaS_SWRW_change_suspicion = yes
 			add_equipment_to_stockpile = {
 				type = infantry_equipment
@@ -2273,6 +2408,7 @@ MAR_SWRW_category = {
 			#has_country_flag = SWRW_decisions_usa
 			check_variable = { TaS_swrw_stage = 1 }
 			check_variable = { swrw_preparation_category = 3 }
+			NOT = { has_completed_focus = MAR_warprep_chrysanthemum_friendship }
 		}
 		available = {
 			has_war = no
@@ -2295,7 +2431,7 @@ MAR_SWRW_category = {
 			custom_effect_tooltip = TaS_WRW2_tests_tt
 			set_temp_variable = { SWRW_readiness_temp = 3 }
 			TaS_SWRW_change_readiness = yes 
-			set_temp_variable = { SWRW_suspicion_temp = 10 }
+			set_temp_variable = { SWRW_suspicion_temp = 5 }
 			TaS_SWRW_change_suspicion = yes
 			add_tech_bonus = {
 				name = cas
@@ -2354,6 +2490,7 @@ MAR_SWRW_category = {
 			#has_country_flag = SWRW_decisions_jap
 			check_variable = { TaS_swrw_stage = 1 }
 			check_variable = { swrw_preparation_category = 3 }
+			NOT = { has_completed_focus = MAR_warprep_better_call_sam }
 		}
 		available = {
 			has_war = no
@@ -2375,7 +2512,7 @@ MAR_SWRW_category = {
 			custom_effect_tooltip = TaS_WRW2_guns_tt
 			set_temp_variable = { SWRW_readiness_temp = 5 }
 			TaS_SWRW_change_readiness = yes 
-			set_temp_variable = { SWRW_suspicion_temp = 10 }
+			set_temp_variable = { SWRW_suspicion_temp = 5 }
 			TaS_SWRW_change_suspicion = yes
 			add_equipment_to_stockpile = {
 				type = infantry_equipment
@@ -2445,6 +2582,7 @@ MAR_SWRW_category = {
 			#has_country_flag = SWRW_decisions_jap
 			check_variable = { TaS_swrw_stage = 1 }
 			check_variable = { swrw_preparation_category = 3 }
+			NOT = { has_completed_focus = MAR_warprep_better_call_sam }
 		}
 		available = {
 			has_war = no
@@ -2467,7 +2605,7 @@ MAR_SWRW_category = {
 			custom_effect_tooltip = TaS_WRW2_tests_tt
 			set_temp_variable = { SWRW_readiness_temp = 3 }
 			TaS_SWRW_change_readiness = yes 
-			set_temp_variable = { SWRW_suspicion_temp = 10 }
+			set_temp_variable = { SWRW_suspicion_temp = 5 }
 			TaS_SWRW_change_suspicion = yes
 			add_tech_bonus = {
 				name = cas
@@ -2544,7 +2682,7 @@ MAR_SWRW_category = {
 		remove_effect = {
 			set_temp_variable = { SWRW_readiness_temp = 5 }
 			TaS_SWRW_change_readiness = yes 
-			set_temp_variable = { SWRW_suspicion_temp = 15 }
+			set_temp_variable = { SWRW_suspicion_temp = 10 }
 			TaS_SWRW_change_suspicion = yes
 			custom_effect_tooltip = TaS_WRW2_international_tt
 			add_ideas = SWRW_international_recruiting
@@ -2588,7 +2726,7 @@ MAR_SWRW_category = {
 		remove_effect = {
 			set_temp_variable = { SWRW_readiness_temp = 5 }
 			TaS_SWRW_change_readiness = yes 
-			set_temp_variable = { SWRW_suspicion_temp = 20 }
+			set_temp_variable = { SWRW_suspicion_temp = 15 }
 			TaS_SWRW_change_suspicion = yes
 			custom_effect_tooltip = TaS_WRW2_suez_tt
 			965 = { set_demilitarized_zone = yes }
@@ -2666,7 +2804,7 @@ MAR_SWRW_category = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_chill_down_germs"
-			set_temp_variable = { SWRW_suspicion_temp = -5 }
+			set_temp_variable = { SWRW_suspicion_temp = -10 }
 			TaS_SWRW_change_suspicion = yes
 		}
 	}
@@ -2727,7 +2865,7 @@ MAR_SWRW_category = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision TaS_WRW2_chill_down_germs_little"
-			set_temp_variable = { SWRW_suspicion_temp = -3 }
+			set_temp_variable = { SWRW_suspicion_temp = -5 }
 			TaS_SWRW_change_suspicion = yes
 		}
 	}
@@ -2743,7 +2881,7 @@ MAR_SWRW_category = {
 		
     	is_good = no
 	
-    	days_mission_timeout = 60
+    	days_mission_timeout = 3
 		custom_cost_trigger = {
 			command_power > 39.99
 			has_political_power > 74.99
@@ -2768,6 +2906,39 @@ MAR_SWRW_category = {
 					type = annex_everything
 				}
 			}
+			hidden_effect = {
+				set_global_flag = nukes_disabled
+				add_ideas = { MAR_oper_zero }
+				set_variable = { WRW2_devastation_gain = 3 }
+				set_variable = { GER.WRW2_devastation_gain = 3 }
+				set_global_flag = TaS_2WRW_started
+				set_variable = { TaS_swrw_stage = 2 }
+				GER = {
+					set_temp_variable = { TabName = token:BoP_Tab_SWRW }
+					TNO_BoP_AddTab = yes
+					set_variable = { TaS_swrw_stage = 2 }
+				}
+				every_country  = {
+					news_event = {
+						id = MAR_2WRW_world_news.6
+					}
+				}
+				MCW = {
+					add_ideas = SWRW_reichskommisariat
+				}
+				OST = {
+					add_ideas = SWRW_reichskommisariat
+				}
+				UKR = {
+					add_ideas = SWRW_reichskommisariat
+				}
+				CAU = {
+					add_ideas = SWRW_reichskommisariat
+				}
+				set_variable = { SWRW_suspicion_var = 0 }
+				load_focus_tree = MAR_second_patriotic_war
+				mark_focus_tree_layout_dirty = yes
+			}
     	}
 	
 		complete_effect = {
@@ -2781,7 +2952,7 @@ MAR_SWRW_category = {
 			TNO_worsen_conscription_policy_effectiveness_med = yes
 			TNO_worsen_draft_exemptions_policy_effectiveness_high = yes
 			TNO_worsen_army_professionalism_med = yes
-			set_temp_variable = { SWRW_suspicion_temp = -15 }
+			set_temp_variable = { SWRW_suspicion_temp = -20 }
 			TaS_SWRW_change_suspicion = yes
     	}
   	}
@@ -4839,8 +5010,7 @@ MAR_SWRW_category = {
 		visible = {
 			check_variable = { WRW_deccat = 1 }
 			check_variable = { MAR_Sended_diversants = 1 }
-			check_variable = { TaS_swrw_stage = 2 }
-			is_debug = yes
+			check_variable = { TaS_swrw_stage = 2 }	
 		}
 		available = {
 			has_war = yes
@@ -4875,7 +5045,6 @@ MAR_SWRW_category = {
 			check_variable = { WRW_deccat = 1 }
 			check_variable = { MAR_Sended_diversants = 1 }
 			check_variable = { TaS_swrw_stage = 2 }
-			is_debug = yes
 		}
 		available = {
 			has_war = yes
@@ -4910,7 +5079,6 @@ MAR_SWRW_category = {
 			check_variable = { WRW_deccat = 1 }
 			check_variable = { MAR_Sended_diversants = 1 }
 			check_variable = { TaS_swrw_stage = 2 }
-			is_debug = yes
 		}
 		available = {
 			has_war = yes
@@ -4945,7 +5113,6 @@ MAR_SWRW_category = {
 			check_variable = { WRW_deccat = 1 }
 			check_variable = { MAR_Sended_diversants = 1 }
 			check_variable = { TaS_swrw_stage = 2 }
-			is_debug = yes
 		}
 		available = {
 			has_war = yes

@@ -3241,7 +3241,7 @@ MAR_foreign_policy_category = {
 		icon = GFX_decision_handshake
 		visible = {
 			TNO_fopo_afghanistan_civil_war_selected = yes
-			NOT = { has_government = socialist }
+			has_country_flag = MAR_support_NAL
 		}
 		ai_will_do = {
 			factor = 10
@@ -3261,7 +3261,7 @@ MAR_foreign_policy_category = {
 		icon = GFX_decision_generic_bombing
 		visible = {
 			TNO_fopo_afghanistan_civil_war_selected = yes
-			NOT = { has_government = socialist }
+			has_country_flag = MAR_support_NAL
 		}
 
 		days_re_enable = 120
@@ -3287,7 +3287,7 @@ MAR_foreign_policy_category = {
 		icon = GFX_decision_generic_prepare_civil_war
 		visible = {
 			TNO_fopo_afghanistan_civil_war_selected = yes
-			NOT = { has_government = socialist }
+			has_country_flag = MAR_support_NAL
 		}
 		days_re_enable = 30
 		ai_will_do = {
@@ -3315,7 +3315,7 @@ MAR_foreign_policy_category = {
 		icon = GFX_decision_generic_military_parade
 		visible = {
 			TNO_fopo_afghanistan_civil_war_selected = yes
-			NOT = { has_government = socialist }
+			has_country_flag = MAR_support_NAL
 		}
 
 		days_re_enable = 180
@@ -3346,7 +3346,7 @@ MAR_foreign_policy_category = {
 		icon = GFX_decision_generic_industry
 		visible = {
 			TNO_fopo_afghanistan_civil_war_selected = yes
-			NOT = { has_government = socialist }
+			has_country_flag = MAR_support_NAL
 		}
 
 		days_re_enable = 180
@@ -3368,7 +3368,7 @@ MAR_foreign_policy_category = {
 		icon = GFX_decision_generic_ignite_civil_war
 		visible = {
 			TNO_fopo_afghanistan_civil_war_selected = yes
-			NOT = { has_government = socialist }
+			has_country_flag = MAR_support_NAL
 		}
 
 		days_re_enable = 90
@@ -3400,7 +3400,7 @@ MAR_foreign_policy_category = {
 		icon = GFX_decision_handshake
 		visible = {
 			TNO_fopo_afghanistan_civil_war_selected = yes
-			has_government = socialist
+			has_country_flag = MAR_support_AFG
 		}
 		ai_will_do = {
 			factor = 10
@@ -3420,7 +3420,7 @@ MAR_foreign_policy_category = {
 		icon = GFX_decision_generic_bombing
 		visible = {
 			TNO_fopo_afghanistan_civil_war_selected = yes
-			has_government = socialist
+			has_country_flag = MAR_support_AFG
 		}
 
 		days_re_enable = 120
@@ -3446,7 +3446,7 @@ MAR_foreign_policy_category = {
 		icon = GFX_decision_generic_prepare_civil_war
 		visible = {
 			TNO_fopo_afghanistan_civil_war_selected = yes
-			has_government = socialist
+			has_country_flag = MAR_support_AFG
 		}
 		days_re_enable = 30
 		ai_will_do = {
@@ -3474,7 +3474,7 @@ MAR_foreign_policy_category = {
 		icon = GFX_decision_generic_military_parade
 		visible = {
 			TNO_fopo_afghanistan_civil_war_selected = yes
-			has_government = socialist
+			has_country_flag = MAR_support_AFG
 		}
 
 		days_re_enable = 180
@@ -3505,7 +3505,7 @@ MAR_foreign_policy_category = {
 		icon = GFX_decision_generic_industry
 		visible = {
 			TNO_fopo_afghanistan_civil_war_selected = yes
-			has_government = socialist
+			has_country_flag = MAR_support_AFG
 		}
 
 		days_re_enable = 180
@@ -3527,7 +3527,7 @@ MAR_foreign_policy_category = {
 		icon = GFX_decision_generic_ignite_civil_war
 		visible = {
 			TNO_fopo_afghanistan_civil_war_selected = yes
-			has_government = socialist
+			has_country_flag = MAR_support_AFG
 		}
 
 		days_re_enable = 90
