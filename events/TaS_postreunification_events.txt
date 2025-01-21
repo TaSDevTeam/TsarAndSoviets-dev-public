@@ -246,7 +246,9 @@ country_event = { #conditional surrender
 
 	option = {
 		name = MAR_AFG.2.a
+		AFG = { save_global_event_target_as = losing_country }
 		RUS = {
+			save_global_event_target_as = winning_country
 			white_peace = AFG
 		}
 		if = {
@@ -290,7 +292,9 @@ country_event = { #unconditional surrender
 
 	option = {
 		name = MAR_AFG.3.a
+		AFG = { save_global_event_target_as = losing_country }
 		RUS = {
+			save_global_event_target_as = winning_country
 			white_peace = AFG
 		}
 		if = {
@@ -3729,6 +3733,7 @@ country_event = { #Moscowien
 	
 	option = { #fuck germans
 		name = MAR_territorial_fate.3.a
+		trigger = { NOT = { has_global_flag = MCW_germans_gone } }
 		ai_chance = { factor = 1 }
 		set_country_flag = MCW_fate_is_done
 		custom_effect_tooltip = MCW_germs_away_tt
@@ -3761,6 +3766,7 @@ country_event = { #Moscowien
 	}
 	option = { #do you know about siberia?
 		name = MAR_territorial_fate.3.b
+		trigger = { NOT = { has_global_flag = MCW_germans_gone } }
 		ai_chance = { factor = 1 }
 		set_country_flag = MCW_fate_is_done
 		add_political_power = 250
@@ -3886,11 +3892,21 @@ country_event = { #Moscowien
 	}
 	option = { #they can stay
 		name = MAR_territorial_fate.3.c
+		trigger = { NOT = { has_global_flag = MCW_germans_gone } }
 		ai_chance = { factor = 1 }
 		set_country_flag = MCW_fate_is_done
 		add_political_power = 50
 		add_stability = -0.05
 		add_war_support = -0.05
+	}
+	
+	option = { #danm they leave already
+		name = MAR_territorial_fate.3.noger
+		trigger = { has_global_flag = MCW_germans_gone }
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = MCW_nogerms_tt
+		set_country_flag = MCW_fate_is_done
+		add_political_power = 50
 	}
 }
 

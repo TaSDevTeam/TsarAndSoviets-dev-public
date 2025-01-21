@@ -83,12 +83,12 @@ shared_focus = {
 	completion_reward = {
 		add_equipment_to_stockpile = {
 			type = infantry_equipment
-			amount = 5000
+			amount = 10000
 			producer = GER
 		}
 		add_equipment_to_stockpile = {
 			type = support_equipment
-			amount = 500
+			amount = 1500
 			producer = GER
 		}
 		set_temp_variable = { gdp_growth_temp = 1 }
@@ -282,6 +282,7 @@ shared_focus = {
 	completion_reward = { 
 		if = {
 			limit = { has_country_flag = GER_SWRW_defence_focus }
+			set_global_flag = MCW_germans_gone
 			country_event = { id = GER_SWRW.7 }
 		}
 		else_if = { 

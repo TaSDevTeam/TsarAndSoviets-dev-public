@@ -4046,7 +4046,7 @@ TaS_SWRW_far_eastern_negotiations = {
 		}
 		days_remove = 14
 		remove_effect = {
-			give_resource_rights = { receiver = JAP state = 562 resources = { oil aluminium rubber tungsten steel chromium uranium } }
+			give_resource_rights = { receiver = JAP state = 562 }
 			562 = {
 				add_building_construction = {
 					type = infrastructure
@@ -4152,8 +4152,13 @@ TaS_SWRW_far_eastern_negotiations = {
 			add_to_variable = { swrw_fe_actions = 1 }
 		}
 		days_remove = 14
+		modifier = {
+			command_power_gain = 1
+			war_support_weekly = -0.0025
+		}	
 		remove_effect = {
 			custom_effect_tooltip = Tas_WRW2_excersices_tt
+			army_experience = 25
 			TNO_improve_army_professionalism_high = yes
 			561 = {
 				add_building_construction = {
@@ -4261,8 +4266,8 @@ TaS_SWRW_far_eastern_negotiations = {
 		}
 		days_remove = 14
 		remove_effect = {
-			give_resource_rights = { receiver = JAP state = 574 resources = { oil aluminium rubber tungsten steel chromium uranium } }
-			give_resource_rights = { receiver = JAP state = 760 resources = { oil aluminium rubber tungsten steel chromium uranium } }
+			give_resource_rights = { receiver = JAP state = 574 }
+			give_resource_rights = { receiver = JAP state = 760 }
 			set_temp_variable = { swrw_corpo_temp = 10 }
 			TaS_SWRW_change_corpo_jap = yes
 			set_temp_variable = { swrw_diplo_temp = 7.5 }
@@ -4311,6 +4316,14 @@ TaS_SWRW_far_eastern_negotiations = {
 					country = RUS
 					relation = non_aggression_pact
 					active = yes
+				}
+				add_opinion_modifier = {
+					target = MAR
+					modifier = MAR_FEnegotiations_pact
+				}
+				reverse_add_opinion_modifier = {
+					target = MAR
+					modifier = MAR_FEnegotiations_pact	
 				}
 			}
 			set_temp_variable = { swrw_corpo_temp = 10 }
@@ -4396,6 +4409,14 @@ TaS_SWRW_far_eastern_negotiations = {
 					relation = non_aggression_pact
 					active = yes
 				}
+				add_opinion_modifier = {
+					target = MAR
+					modifier = MAR_FEnegotiations_pact
+				}
+				reverse_add_opinion_modifier = {
+					target = MAR
+					modifier = MAR_FEnegotiations_pact	
+				}
 				set_temp_variable = { gdp_growth_temp = 1 }
 				econ_gdp_growth_change = yes
 			}
@@ -4451,10 +4472,18 @@ TaS_SWRW_far_eastern_negotiations = {
 					relation = non_aggression_pact
 					active = yes
 				}
+				add_opinion_modifier = {
+					target = MAR
+					modifier = MAR_FEnegotiations_pact
+				}
+				reverse_add_opinion_modifier = {
+					target = MAR
+					modifier = MAR_FEnegotiations_pact	
+				}
 				set_temp_variable = { gdp_growth_temp = 1 }
 				econ_gdp_growth_change = yes
 			}
-			set_technology = { experimental_infantry_equipment_chimera = 1 }
+			#set_technology = { experimental_infantry_equipment_chimera = 1 }
 			if = {
 				limit = { has_global_flag = GNG_Fujitsu_Rifle_Global }
 				add_equipment_to_stockpile = {
@@ -4462,7 +4491,7 @@ TaS_SWRW_far_eastern_negotiations = {
 					amount = 1500
 					producer = GNG
 				}
-				set_technology = { experimental_infantry_equipment_fujitsu_0 = 1 }
+				#set_technology = { experimental_infantry_equipment_fujitsu_0 = 1 }
 			}
 			else_if = {
 				limit = { has_country_flag = GNG_Matsushita_Rifle_Global }
@@ -4471,7 +4500,7 @@ TaS_SWRW_far_eastern_negotiations = {
 					amount = 1500
 					producer = GNG
 				}
-				set_technology = { experimental_infantry_equipment_matsushita_0 = 1	}
+				#set_technology = { experimental_infantry_equipment_matsushita_0 = 1	}
 			}
 			else = {
 				add_equipment_to_stockpile = {
@@ -4479,7 +4508,7 @@ TaS_SWRW_far_eastern_negotiations = {
 					amount = 1500
 					producer = GNG
 				}
-				set_technology = { experimental_infantry_equipment_sony_0 = 1 }
+				#set_technology = { experimental_infantry_equipment_sony_0 = 1 }
 			}
 			set_temp_variable = { gdp_growth_temp = 1.5 }
 			econ_gdp_growth_change = yes
@@ -4517,9 +4546,9 @@ TaS_SWRW_far_eastern_negotiations = {
 		}
 		days_remove = 14
 		remove_effect = {
-			give_resource_rights = { receiver = JAP state = 566 resources = { oil aluminium rubber tungsten steel chromium uranium } }
-			give_resource_rights = { receiver = JAP state = 565 resources = { oil aluminium rubber tungsten steel chromium uranium } }
-			give_resource_rights = { receiver = JAP state = 563 resources = { oil aluminium rubber tungsten steel chromium uranium } }
+			give_resource_rights = { receiver = JAP state = 566 }
+			give_resource_rights = { receiver = JAP state = 565 }
+			give_resource_rights = { receiver = JAP state = 563 }
 			566 = {
 				add_building_construction = {
 					type = infrastructure
@@ -4782,6 +4811,14 @@ TaS_SWRW_far_eastern_negotiations = {
 					relation = non_aggression_pact
 					active = yes
 				}
+				add_opinion_modifier = {
+					target = MAR
+					modifier = MAR_FEnegotiations_pact
+				}
+				reverse_add_opinion_modifier = {
+					target = MAR
+					modifier = MAR_FEnegotiations_pact	
+				}
 				set_temp_variable = { target = RUS }
 				TNO_increase_volunteer_cap_10 = yes
 				set_temp_variable = { target = RUS }
@@ -4810,6 +4847,184 @@ TaS_SWRW_far_eastern_negotiations = {
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision timeout SWRW_FEnegotiations_unique_effigy... wait that's wrong"
+		}
+	}
+	SWRW_FEnegotiations_support_prorus_rebels = {
+		icon = GFX_decision_generic_building
+		visible = {
+			always = yes
+		}
+		fire_only_once = yes
+		custom_cost_trigger = {
+			command_power > 24.99
+		}
+		custom_cost_text = decision_cost_25_cp
+		available = {
+			custom_trigger_tooltip = { 
+				check_variable = { swrw_fe_actions < 2 }
+				tooltip = SWRW_FEnegotiations_actions_limit_tt	
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -25
+			}
+			add_war_support = 0.05
+			add_to_variable = { swrw_fe_actions = 1 }
+		}
+		days_remove = 14
+		remove_effect = {
+			MAN = {
+				every_controlled_state = {
+					limit = {
+						has_resistance = yes
+					}
+					add_compliance = -10
+					add_resistance = 15
+				}
+				set_temp_variable = { gdp_growth_temp = -0.25 }
+				econ_gdp_growth_change = yes
+				add_manpower = -10000
+			}
+			
+			set_temp_variable = { swrw_corpo_temp = 5 }
+			TaS_SWRW_change_corpo_jap = yes
+			set_temp_variable = { swrw_diplo_temp = 5 }
+			TaS_SWRW_change_diplo_jap = yes
+			add_to_variable = { swrw_fe_actions = -1 }
+		}
+	}
+	SWRW_FEnegotiations_ask_for_ofn_support = {
+		icon = GFX_decision_generic_building
+		visible = {
+			check_variable = { MAR_USA_relations_focus > 0 }
+		}
+		fire_only_once = yes
+		cost = 50
+		available = {
+			custom_trigger_tooltip = { 
+				check_variable = { swrw_fe_actions < 2 }
+				tooltip = SWRW_FEnegotiations_actions_limit_tt	
+			}
+		}
+		complete_effect = {
+			add_to_variable = { swrw_fe_actions = 1 }
+		}
+		modifier = {
+			political_power_gain = -0.15
+		}	
+		days_remove = 14
+		remove_effect = {
+			set_temp_variable = { temp_econ_spending_amount = 0.1 }
+			econ_spend_money_once_effect_raw_money = yes
+			
+			set_temp_variable = { swrw_corpo_temp = 2.5 }
+			multiply_temp_variable = { swrw_corpo_temp = MAR_USA_relations_focus }
+			TaS_SWRW_change_corpo_jap = yes
+			set_temp_variable = { swrw_diplo_temp = 2.5 }
+			multiply_temp_variable = { swrw_diplo_temp = MAR_USA_relations_focus }
+			TaS_SWRW_change_diplo_jap = yes
+			add_to_variable = { swrw_fe_actions = -1 }
+		}
+	}
+	SWRW_FEnegotiations_rely_on_consistency = {
+		icon = GFX_decision_generic_building
+		visible = {
+			check_variable = { MAR_JAP_relations_focus > 0 }
+		}
+		fire_only_once = yes
+		cost = 50
+		available = {
+			custom_trigger_tooltip = { 
+				check_variable = { swrw_fe_actions < 2 }
+				tooltip = SWRW_FEnegotiations_actions_limit_tt	
+			}
+		}
+		complete_effect = {
+			add_to_variable = { swrw_fe_actions = 1 }
+		}
+		modifier = {
+			political_power_gain = -0.15
+		}	
+		days_remove = 14
+		remove_effect = {
+			set_temp_variable = { temp_econ_spending_amount = 0.1 }
+			econ_spend_money_once_effect_raw_money = yes
+			
+			set_temp_variable = { swrw_corpo_temp = 2.5 }
+			multiply_temp_variable = { swrw_corpo_temp = MAR_JAP_relations_focus }
+			TaS_SWRW_change_corpo_jap = yes
+			set_temp_variable = { swrw_diplo_temp = 2.5 }
+			multiply_temp_variable = { swrw_diplo_temp = MAR_JAP_relations_focus }
+			TaS_SWRW_change_diplo_jap = yes
+			add_to_variable = { swrw_fe_actions = -1 }
+		}
+	}
+	SWRW_FEnegotiations_sea_excercises = {
+		icon = GFX_decision_category_generic_battleship
+		visible = {
+			always = yes
+		}
+		fire_only_once = yes
+		custom_cost_trigger = {
+			command_power > 24.99
+		}
+		custom_cost_text = decision_cost_25_cp
+		available = {
+			custom_trigger_tooltip = { 
+				check_variable = { swrw_fe_actions < 2 }
+				tooltip = SWRW_FEnegotiations_actions_limit_tt	
+			}
+			ships_in_area = {
+				area = 87
+				size > 11
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -25
+			}
+			add_war_support = 0.05
+			add_to_variable = { swrw_fe_actions = 1 }
+		}
+		modifier = {
+			command_power_gain = 0.5
+		}	
+		days_remove = 14
+		remove_effect = {
+			set_temp_variable = { temp_econ_spending_amount = 0.1 }
+			econ_spend_money_once_effect_raw_money = yes
+			
+			set_temp_variable = { swrw_corpo_temp = 2.5 }
+			TaS_SWRW_change_corpo_jap = yes
+			set_temp_variable = { swrw_diplo_temp = 7.5 }
+			TaS_SWRW_change_diplo_jap = yes
+			add_to_variable = { swrw_fe_actions = -1 }
+		}
+	}
+	SWRW_FEnegotiations_visit_showa = {
+		icon = GFX_decision_generic_building
+		visible = {
+			always = yes
+		}
+		fire_only_once = yes
+		cost = 30
+		available = {
+			custom_trigger_tooltip = { 
+				check_variable = { swrw_fe_actions < 2 }
+				tooltip = SWRW_FEnegotiations_actions_limit_tt	
+			}
+		}
+		complete_effect = {
+			add_to_variable = { swrw_fe_actions = 1 }
+		}
+		days_remove = 14
+		remove_effect = {
+			set_temp_variable = { swrw_corpo_temp = 5 }
+			TaS_SWRW_change_corpo_jap = yes
+			set_temp_variable = { swrw_diplo_temp = 5 }
+			TaS_SWRW_change_diplo_jap = yes
+			add_to_variable = { swrw_fe_actions = -1 }
 		}
 	}
 }

@@ -94,7 +94,10 @@ MAR_SWRW_category = {
 		custom_cost_text = decision_cost_40_cp
 		fire_only_once = yes
 		days_remove = 30
-		
+		modifier = {
+			command_power_gain = 1
+			war_support_weekly = -0.0025
+		}	
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: TaS_WRW2_zapad_excersices"
 			hidden_effect = {
@@ -125,6 +128,7 @@ MAR_SWRW_category = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision MAR_yug_do_excersices"
+			army_experience = 25
 			set_temp_variable = { SWRW_readiness_temp = 5 } 
 			TaS_SWRW_change_readiness = yes 
 			set_temp_variable = { SWRW_suspicion_temp = 5 }
@@ -186,7 +190,10 @@ MAR_SWRW_category = {
 		custom_cost_text = decision_cost_40_cp
 		fire_only_once = yes
 		days_remove = 30
-		
+		modifier = {
+			command_power_gain = 1
+			war_support_weekly = -0.0025
+		}	
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: TaS_WRW2_zapad_excersices"
 			hidden_effect = {
@@ -217,6 +224,7 @@ MAR_SWRW_category = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision MAR_yug_do_excersices"
+			army_experience = 25
 			set_temp_variable = { SWRW_readiness_temp = 5 } 
 			TaS_SWRW_change_readiness = yes 
 			set_temp_variable = { SWRW_suspicion_temp = 5 }
@@ -286,7 +294,10 @@ MAR_SWRW_category = {
 		custom_cost_text = decision_cost_40_cp
 		fire_only_once = yes
 		days_remove = 30
-		
+		modifier = {
+			command_power_gain = 1
+			war_support_weekly = -0.0025
+		}	
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: TaS_WRW2_zapad_excersices"
 			hidden_effect = {
@@ -317,6 +328,7 @@ MAR_SWRW_category = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision MAR_yug_do_excersices"
+			army_experience = 25
 			set_temp_variable = { SWRW_readiness_temp = 5 } 
 			TaS_SWRW_change_readiness = yes 
 			set_temp_variable = { SWRW_suspicion_temp = 3 }
@@ -378,7 +390,10 @@ MAR_SWRW_category = {
 		custom_cost_text = decision_cost_40_cp
 		fire_only_once = yes
 		days_remove = 30
-		
+		modifier = {
+			command_power_gain = 1
+			war_support_weekly = -0.0025
+		}	
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: TaS_WRW2_zapad_excersices"
 			hidden_effect = {
@@ -409,6 +424,7 @@ MAR_SWRW_category = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision MAR_yug_do_excersices"
+			army_experience = 25
 			set_temp_variable = { SWRW_readiness_temp = 5 } 
 			TaS_SWRW_change_readiness = yes 
 			set_temp_variable = { SWRW_suspicion_temp = 7 }
@@ -2244,30 +2260,16 @@ MAR_SWRW_category = {
 			TaS_SWRW_change_suspicion = yes
 			MCW = {
 				add_ideas = SWRW_war_partisans 
+				every_controlled_state = {
+					limit = {
+						has_resistance = yes
+					}
+					add_compliance = -30
+					add_resistance = 30
+				}
 			}
 			GER = {
 				add_ideas = SWRW_war_partisans 
-			}
-			264 = {
-				remove_core_of = MCW
-			}
-			246 = {
-				remove_core_of = MCW
-			}
-			238 = {
-				remove_core_of = MCW
-			}
-			263 = {
-				remove_core_of = MCW
-			}
-			1463 = {
-				remove_core_of = MCW
-			}
-			245 = {
-				remove_core_of = MCW
-			}
-			244 = {
-				remove_core_of = MCW
 			}
 			add_to_variable = { MAR_Sended_diversants = 1 }
 		}
@@ -2734,7 +2736,10 @@ MAR_SWRW_category = {
 			1786 = { set_demilitarized_zone = yes }
 			every_country = {
 				limit = { is_in_faction_with = GER }
-				add_ideas = SWRW_interrupted_trade
+				add_timed_idea = {
+					idea = SWRW_interrupted_trade
+					days = 360
+				}
 			}
 		}
 		ai_will_do = {

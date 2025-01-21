@@ -70,6 +70,7 @@ characters = {
 			}
 			army = {
 				large = "gfx/leaders/MAR/Portrait_Sergey_General_Belozerski.dds"
+				small = "GFX_idea_MAR_minister_Sergey_Belozersky"
 			}
 		}
 		advisor = {
@@ -86,6 +87,20 @@ characters = {
 			ledger = civilian
 			cost = -1
 			removal_cost = -1
+		}
+		advisor = {
+			slot = theorist
+			idea_token = MAR_Sergey_Belozerskiy_theorist
+			allowed = {
+				original_tag = MAR
+			}
+			traits = {
+				theorist
+			}
+			ledger = army
+			cost = -1
+			removal_cost = -1
+			ai_will_do = { factor = 0 }
 		}
 		field_marshal = {
 			skill = 3
@@ -340,7 +355,10 @@ characters = {
 	MAR_Anatoly_Vavilov = {
 		name = "MAR_Anatoly_Vavilov"
 		portraits = {
-			army = { large = "gfx/leaders/MAR/Portrait_Berezniki_Anatoly_Vavilov.dds" } 
+			army = {
+				small = "GFX_idea_MAR_minister_Anatoly_Vavilov"
+				large = "gfx/leaders/MAR/Portrait_Berezniki_Anatoly_Vavilov.dds"
+			} 
 			civilian = {
 				small = "GFX_idea_MAR_minister_Anatoly_Vavilov"
 				large = "gfx/leaders/MAR/Portrait_Berezniki_Anatoly_Vavilov.dds"
@@ -373,11 +391,27 @@ characters = {
 			cost = -1
 			removal_cost = -1
 		}
+		advisor = {
+			slot = high_command
+			idea_token = MAR_Anatoly_Vavilov_high_command
+			allowed = { original_tag = MAR }
+			traits = {
+				high_command
+				army_armored_1
+			}
+			ledger = army
+			cost = -1
+			can_be_fired = no
+			ai_will_do = { factor = 0 }
+		}
 	}
 	MAR_Valentin_Ardashev = {
 		name = "MAR_Valentin_Ardashev"
 		portraits = {
-			army = { large = "gfx/leaders/MAR/Portrait_Berezniki_Valentin_Ardashev.dds" } 
+			army = {
+				small = "GFX_idea_MAR_Valentin_Ardashev"
+				large = "gfx/leaders/MAR/Portrait_Berezniki_Valentin_Ardashev.dds"
+			} 
 		}
 		corps_commander = {
 			traits = {
@@ -390,6 +424,19 @@ characters = {
 			defense_skill = 2
 			planning_skill = 3
 			logistics_skill = 4
+		}
+		advisor = {
+			slot = high_command
+			idea_token = MAR_Valentin_Ardashev_high_command
+			allowed = { original_tag = MAR }
+			ledger = army
+			traits = {
+				high_command
+				army_infantry_2
+			}
+			cost = -1
+			can_be_fired = no
+			ai_will_do = { factor = 0 }
 		}
 	}
 	MAR_Nikolai_Volkov = {
@@ -412,7 +459,10 @@ characters = {
 	MAR_Joseph_Beyrle = {
 		name = "MAR_Joseph_Beyrle"
 		portraits = {
-			army = { large = "gfx/leaders/MAR/Portrait_Berezniki_Joseph_Beyrle.dds" } 
+			army = {
+				small = "GFX_idea_MAR_Joseph_Beyrle"
+				large = "gfx/leaders/MAR/Portrait_Berezniki_Joseph_Beyrle.dds"
+			}
 		}
 		corps_commander = {
 			traits = {
@@ -423,6 +473,33 @@ characters = {
 			defense_skill = 2
 			planning_skill = 1
 			logistics_skill = 1
+		}
+		advisor = {
+			slot = high_command
+			idea_token = MAR_Joseph_Beyrle_high_command
+			ledger = army
+			allowed = { original_tag = MAR }
+			traits = {
+				high_command
+				army_chief_drill_2
+			}
+			cost = -1
+			can_be_fired = no
+			ai_will_do = { factor = 0 }
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = MAR_Joseph_Beyrle_army_chief
+			allowed = { original_tag = MAR }
+			ledger = army
+			traits = {
+				army_chief
+				army_chief_organizational_2
+				army_chief_drill_2
+			}
+			cost = -1
+			can_be_fired = no
+			ai_will_do = { factor = 0 }
 		}
 	}
 	MAR_Semen_Gitler = {
@@ -483,6 +560,33 @@ characters = {
 			civilian = {
 				large = "gfx/leaders/UZB/Portrait_Uzbekistan_Alexander_Rutskoy.dds"
 			}
+		}
+		
+	}
+	MAR_Alexander_Rutskoj = {
+		name = "UZB_Alexander_Rutskoj"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/UZB/Portrait_Uzbekistan_Alexander_Rutskoy.dds"
+			}
+			army = {
+				small = "GFX_idea_MAR_Alexander_Rutskoj"
+				large = "gfx/leaders/UZB/Portrait_Uzbekistan_Alexander_Rutskoy.dds"
+			}
+		}
+		advisor = {
+			slot = air_chief
+			idea_token = MAR_Alexander_Rutskoj_air_chief
+			allowed = {
+				original_tag = MAR
+			}
+			traits = {
+				air_chief
+			}
+			ledger = air
+			cost = -1
+			removal_cost = -1
+			ai_will_do = { factor = 0 }
 		}
 	}
 	UZB_Nuritdin_Mukhitdinov = {

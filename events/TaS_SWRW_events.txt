@@ -428,11 +428,13 @@ country_event = { #	Fire in the East
 		name = GER_SWRW.6.a
 		ai_chance = { factor = 1 }
 		set_country_flag = GER_SWRW_defence_focus
+		add_stability = 0.05
 	}
 	option = { #Rely on burning everything lol
 		name = GER_SWRW.6.b
 		ai_chance = { factor = 1 }
 		set_country_flag = GER_SWRW_destruction_focus
+		add_war_support = 0.05
 	}
 }
 
@@ -450,6 +452,37 @@ country_event = { #Moscowien: Evacuation
 		name = GER_SWRW.7.a
 		ai_chance = { factor = 1 }
 		country_event = { id = GER_SWRW.8 }
+		195 = {
+			add_manpower = -343970
+			set_variable = { nationality = 151 }
+		}
+		260 = {
+			add_manpower = -141223
+			set_variable = { nationality = 151 }
+		}
+		239 = {
+			add_manpower = -412245
+			set_variable = { nationality = 151 }
+		}
+		5 = {
+			add_manpower = 112331
+		}
+		63 = {
+			add_manpower = 131622
+		}
+		776 = {
+			add_manpower = 199766
+		}
+		60 = {
+			add_manpower = 278920
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.41
+				}
+			}
+		}
 	}
 }
 
@@ -548,7 +581,13 @@ country_event = { #Moscowien: Panic in Koenigsberg
 	option = { #
 		name = GER_SWRW.13.a
 		ai_chance = { factor = 1 }
-
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.42
+				}
+			}
+		}
 	}
 }
 
@@ -565,6 +604,13 @@ country_event = { #Caucasus: Detonation
 	option = { #
 		name = GER_SWRW.14.a
 		ai_chance = { factor = 1 }
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.43
+				}
+			}
+		}
 	}
 }
 

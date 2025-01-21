@@ -14,6 +14,15 @@ shared_focus = {
 		set_variable = { swrw_preparation_category = 1 }
 		set_variable = { SWRW_suspicion_gain = -5 }
 		SWRW_add_army_size_modifier = yes
+		add_ideas = MAR_Anatoly_Vavilov_high_command
+		add_ideas = MAR_Valentin_Ardashev_high_command
+		add_ideas = MAR_Joseph_Beyrle_high_command
+		add_ideas = MAR_Joseph_Beyrle_army_chief
+		add_ideas = MAR_Alexander_Rutskoj_air_chief
+		if = {
+			limit = { has_government = despotism }
+			add_ideas = MAR_Sergey_Belozerskiy_theorist
+		}
 	}
 }
 shared_focus = {
@@ -27,7 +36,8 @@ shared_focus = {
 		custom_effect_tooltip = SWRW_decisions_mobilisation_tt
 		#set_country_flag = SWRW_decisions_mobilisation
 		country_event = { id = RUS_SWRW_preparation.2 }
-		add_manpower = 150000
+		add_manpower = 100000
+		add_war_support = 0.1
 	}
 }
 shared_focus = {
@@ -40,6 +50,10 @@ shared_focus = {
 	completion_reward = {
 		custom_effect_tooltip = SWRW_decisions_leviathan_tt
 		#set_country_flag = SWRW_decisions_leviathan
+		add_political_power = 150
+		add_command_power = 50
+		set_temp_variable = { pus_temp = 4 }
+		econ_pus_change = yes
 	}
 }
 shared_focus = {
@@ -53,6 +67,13 @@ shared_focus = {
 		country_event = { id = RUS_SWRW_preparation.3 }
 		custom_effect_tooltip = SWRW_decisions_bunkers_tt
 		#set_country_flag = SWRW_decisions_bunkers
+		TNO_improve_military_supervision_policy_effectiveness_monthly_high = yes
+		TNO_improve_military_supervision_policy_effectiveness_med = yes
+		TNO_improve_training_policy_effectiveness_monthly_high = yes
+		TNO_improve_training_policy_effectiveness_med = yes
+		tno_draft_exemptions_clear = yes
+		add_ideas = { tno_draft_exemptions_none }
+		TNO_improve_draft_exemptions_policy_effectiveness_low = yes		
 	}
 }
 shared_focus = {
@@ -65,6 +86,17 @@ shared_focus = {
 	completion_reward = {
 		custom_effect_tooltip = SWRW_decisions_logistics_tt
 		#set_country_flag = SWRW_decisions_logistics
+		hidden_effect = {
+			set_technology = { trains_1955 = 1 }
+			set_technology = { trains_1965 = 1 }
+			set_technology = { trains_1975 = 1 }
+			set_technology = { military_infrastructure1 = 1 }
+			set_technology = { military_infrastructure2 = 1 }
+			set_technology = { military_infrastructure3 = 1 }
+			set_technology = { command_and_control1 = 1 }
+			set_technology = { command_and_control2 = 1 }
+			set_technology = { command_and_control3 = 1 }
+		}
 	}
 }
 shared_focus = {
@@ -77,6 +109,96 @@ shared_focus = {
 	completion_reward = {
 		custom_effect_tooltip = SWRW_decisions_fopo_tt
 		#set_country_flag = SWRW_decisions_fopo
+		if = {
+			limit = { NOT = { SWE = { is_in_faction_with = GER } } }
+			SWE = {
+				add_opinion_modifier = {
+					target = RUS
+					modifier = MAR_SWRW_partner
+				}
+				reverse_add_opinion_modifier = {
+					target = RUS
+					modifier = MAR_SWRW_partner	
+				}
+				set_temp_variable = { target = RUS }
+				TNO_increase_volunteer_cap_2 = yes
+			}
+		}
+		if = {
+			limit = { NOT = { ITA = { is_in_faction_with = GER } } }
+			ITA = {
+				add_opinion_modifier = {
+					target = RUS
+					modifier = MAR_SWRW_partner
+				}
+				reverse_add_opinion_modifier = {
+					target = RUS
+					modifier = MAR_SWRW_partner	
+				}
+				set_temp_variable = { target = RUS }
+				TNO_increase_volunteer_cap_2 = yes
+			}
+		}
+		if = {
+			limit = { NOT = { IBR = { is_in_faction_with = GER } } }
+			IBR = {
+				add_opinion_modifier = {
+					target = RUS
+					modifier = MAR_SWRW_partner
+				}
+				reverse_add_opinion_modifier = {
+					target = RUS
+					modifier = MAR_SWRW_partner	
+				}
+				set_temp_variable = { target = RUS }
+				TNO_increase_volunteer_cap_2 = yes
+			}
+		}
+		if = {
+			limit = { NOT = { FEN = { is_in_faction_with = GER } } }
+			FEN = {
+				add_opinion_modifier = {
+					target = RUS
+					modifier = MAR_SWRW_partner
+				}
+				reverse_add_opinion_modifier = {
+					target = RUS
+					modifier = MAR_SWRW_partner	
+				}
+				set_temp_variable = { target = RUS }
+				TNO_increase_volunteer_cap_2 = yes
+			}
+		}
+		if = {
+			limit = { NOT = { BRA = { is_in_faction_with = GER } } }
+			BRA = {
+				add_opinion_modifier = {
+					target = RUS
+					modifier = MAR_SWRW_partner
+				}
+				reverse_add_opinion_modifier = {
+					target = RUS
+					modifier = MAR_SWRW_partner	
+				}
+				set_temp_variable = { target = RUS }
+				TNO_increase_volunteer_cap_2 = yes
+			}
+		}
+		if = {
+			limit = { NOT = { MEX = { is_in_faction_with = GER } } }
+			MEX = {
+				add_opinion_modifier = {
+					target = RUS
+					modifier = MAR_SWRW_partner
+				}
+				reverse_add_opinion_modifier = {
+					target = RUS
+					modifier = MAR_SWRW_partner	
+				}
+				set_temp_variable = { target = RUS }
+				TNO_increase_volunteer_cap_2 = yes
+			}
+		}
 	}
 }
 shared_focus = {
@@ -89,8 +211,19 @@ shared_focus = {
 	y = 2
 	completion_reward = {
 		country_event = { id = RUS_SWRW_preparation.4 }
+		add_to_variable = { MAR_USA_relations_focus = 1 }
 		custom_effect_tooltip = SWRW_decisions_usa_tt
 		#set_country_flag = SWRW_decisions_usa
+		USA = {
+			add_opinion_modifier = {
+				target = RUS
+				modifier = MAR_SWRW_partner
+			}
+			reverse_add_opinion_modifier = {
+				target = RUS
+				modifier = MAR_SWRW_partner	
+			}
+		}
 	}
 }
 shared_focus = {
@@ -103,8 +236,19 @@ shared_focus = {
 	y = 2
 	completion_reward = {
 		custom_effect_tooltip = SWRW_decisions_jap_tt
+		add_to_variable = { MAR_JAP_relations_focus = 1 }
 		#set_country_flag = SWRW_decisions_jap
 		country_event = { id = RUS_SWRW_preparation.5 }
+		JAP = {
+			add_opinion_modifier = {
+				target = RUS
+				modifier = MAR_SWRW_partner
+			}
+			reverse_add_opinion_modifier = {
+				target = RUS
+				modifier = MAR_SWRW_partner	
+			}
+		}
 
 	}
 }
@@ -124,6 +268,32 @@ shared_focus = {
 	completion_reward = {
 		custom_effect_tooltip = SWRW_decisions_ger_tt
 		#set_country_flag = SWRW_decisions_ger
+		264 = {
+			remove_core_of = MCW
+		}
+		246 = {
+			remove_core_of = MCW
+		}
+		238 = {
+			remove_core_of = MCW
+		}
+		263 = {
+			remove_core_of = MCW
+		}
+		1463 = {
+			remove_core_of = MCW
+		}
+		245 = {
+			remove_core_of = MCW
+		}
+		244 = {
+			remove_core_of = MCW
+		}
+		MCW = {
+			add_manpower = -50000
+			add_war_support = -0.3
+			add_stability = -0.3
+		}	
 		country_event = { id = RUS_SWRW_preparation.6 }
 	}
 }
@@ -137,6 +307,10 @@ shared_focus = {
 	completion_reward = {
 		#set_country_flag = TaSWRW2_War_Prep_Tree_Complete
 		country_event = { id = RUS_SWRW_preparation.7 }
+		GER = {
+			add_war_support = -0.15
+			add_stability = -0.15
+		}	
 	}
 }
 
