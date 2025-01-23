@@ -5659,7 +5659,12 @@ news_event = { #Koenigsberg on Quarantine
 	is_triggered_only = yes
 	
 	option = {
+		trigger = { NOT = { tag = RUS } }
 		name = MAR_2WRW_world_news.42.a
+	}
+	option = {
+		trigger = { tag = RUS }
+		name = MAR_2WRW_world_news.42.b
 	}
 }
 

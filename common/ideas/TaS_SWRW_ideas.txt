@@ -579,5 +579,36 @@ ideas = {
 			}
 		}
 
+		SWRW_influx_of_refugees = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea SWRW_influx_of_refugees"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = generic_nascent_refugee_crisis
+			modifier = {
+				army_attack_factor = -0.12
+				army_speed_factor = -0.12
+				attrition = 0.1
+			}
+		}
+		SWRW_epidemics = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea SWRW_epidemics"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = generic_burning_factory
+			modifier = {
+				stability_weekly = -0.0025
+				weekly_manpower = -1500
+			}
+		}
 	}
 }
