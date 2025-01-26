@@ -3147,7 +3147,9 @@ MAR_foreign_policy_category = {
 		days_remove = 10
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_Kosygin_FrenchReclamation_Decision_SendMotorizedEquipmentShipments"
-			add_timed_idea = { idea = MAR_technician_aid days = 180 }
+			FRV = {	
+				add_timed_idea = { idea = MAR_technician_aid days = 180 }
+			}
 		}
 		ai_will_do = {
 			base = 10
