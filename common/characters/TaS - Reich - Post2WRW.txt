@@ -383,7 +383,7 @@ characters = {
 		}
 		country_leader = {
 			desc = "POSTWRW2_Arthur_Axmann_DESC"
-			ideology = national_socialism_subtype
+			ideology = national_socialism_revolutionary_nazism_subtype
 			traits = { }
 			expire = "2222.2.2"
 			id = -1
@@ -673,6 +673,22 @@ characters = {
 			expire = "1999.1.23"
 			ideology = paternalism_semi_constitutional_monarchy_subtype 
 			traits = { }
+			id = -1
+		}
+	}
+	###GER post
+	GER_Hans_Kehrl = {
+		name = GER_Hans_Kehrl
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/POSTWRW2/Portrait_GER_Hans_Kehrl.dds"
+			}
+		}
+		country_leader = {
+			desc = "GER_Hans_Kehrl_DESC"
+			ideology = national_socialism_subtype
+			traits = { }
+			expire = "2222.2.2"
 			id = -1
 		}
 	}
