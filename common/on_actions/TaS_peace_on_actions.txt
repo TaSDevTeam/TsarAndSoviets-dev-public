@@ -321,7 +321,7 @@ on_actions = {
 					}
 				}
 				FROM = {
-				white_peace = ROOT
+					white_peace = ROOT
 				}
 				GSU = {
 					transfer_state = 9
@@ -667,8 +667,8 @@ on_actions = {
 							tag = IRC
 							has_war = no
 						}
+						has_global_flag = TNO_IRA_collapsed_coalition
 						MAR = { NOT = { has_government = socialist } }
-						check_variable = { global.PER_contenders^num = 2 }
 					}
 					MAR = { country_event = { id = MAR_forpol.8 days = 2 } }
 				}
@@ -683,8 +683,8 @@ on_actions = {
 							tag = IRA
 							has_war = no
 						}
+						has_global_flag = TNO_IRA_collapsed_coalition
 						MAR = { has_government = socialist }
-						check_variable = { global.PER_contenders^num = 2 }
 					}
 					MAR = { country_event = { id = MAR_forpol.2 days = 2 } }
 				}

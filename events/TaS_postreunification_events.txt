@@ -1693,6 +1693,10 @@ country_event = { #The olive branch
 		set_variable = { primorie_status = 1 }
 		set_variable = { vladivostok_status = 1 }
 		
+		set_variable = { swrw_fe_threshold = 74.9 }
+		set_variable = { swrw_fe_threshold_txt = swrw_fe_threshold }
+		round_variable = swrw_fe_threshold_txt
+		
 		set_variable = { swrw_diplo_jap = 55 }
 		set_variable = { swrw_corpo_jap = 45 }
 		set_variable = { SWRW_round_timeout = 60 }
@@ -1719,6 +1723,10 @@ country_event = { #First round success
 		set_variable = { primorie_status = 1 }
 		set_variable = { vladivostok_status = 1 }
 		
+		set_variable = { swrw_fe_threshold = 74.9 }
+		set_variable = { swrw_fe_threshold_txt = swrw_fe_threshold }
+		round_variable = swrw_fe_threshold_txt
+		
 		set_variable = { swrw_diplo_jap = 35 }
 		set_variable = { swrw_corpo_jap = 40 }
 		set_variable = { SWRW_round_timeout = 90 }
@@ -1744,6 +1752,10 @@ country_event = { #Second round success
 		set_variable = { khabarovsk_status = 3 }
 		set_variable = { primorie_status = 2 }
 		set_variable = { vladivostok_status = 1 }
+		
+		set_variable = { swrw_fe_threshold = 84.9 }
+		set_variable = { swrw_fe_threshold_txt = swrw_fe_threshold }
+		round_variable = swrw_fe_threshold_txt
 		
 		set_variable = { swrw_diplo_jap = 25 }
 		set_variable = { swrw_corpo_jap = 30 }
@@ -1816,6 +1828,10 @@ country_event = { #3 round success
 		set_variable = { khabarovsk_status = 3 }
 		set_variable = { primorie_status = 3 }
 		set_variable = { vladivostok_status = 2 }
+		
+		set_variable = { swrw_fe_threshold = 94.9 }
+		set_variable = { swrw_fe_threshold_txt = swrw_fe_threshold }
+		round_variable = swrw_fe_threshold_txt
 		
 		set_variable = { swrw_diplo_jap = 15 }
 		set_variable = { swrw_corpo_jap = 10 }

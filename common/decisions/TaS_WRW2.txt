@@ -3628,8 +3628,8 @@ TaS_SWRW_far_eastern_negotiations = {
 					}
 					if = { 
 						limit = {
-							check_variable = { swrw_diplo_jap > 74.9 }
-							check_variable = { swrw_corpo_jap > 74.9 }
+							check_variable = { swrw_diplo_jap > swrw_fe_threshold }
+							check_variable = { swrw_corpo_jap > swrw_fe_threshold }
 						}
 						country_event = { id = MAR_Japan.21 }
 					}
@@ -3643,8 +3643,8 @@ TaS_SWRW_far_eastern_negotiations = {
 					}
 					if = { 
 						limit = {
-							check_variable = { swrw_diplo_jap > 74.9 }
-							check_variable = { swrw_corpo_jap > 74.9 }
+							check_variable = { swrw_diplo_jap > swrw_fe_threshold }
+							check_variable = { swrw_corpo_jap > swrw_fe_threshold }
 						}
 						country_event = { id = MAR_Japan.22 }
 					}
@@ -3658,8 +3658,8 @@ TaS_SWRW_far_eastern_negotiations = {
 					}
 					if = { 
 						limit = {
-							check_variable = { swrw_diplo_jap > 84.9 }
-							check_variable = { swrw_corpo_jap > 84.9 }
+							check_variable = { swrw_diplo_jap > swrw_fe_threshold }
+							check_variable = { swrw_corpo_jap > swrw_fe_threshold }
 						}
 						country_event = { id = MAR_Japan.23 }
 					}
@@ -3673,8 +3673,8 @@ TaS_SWRW_far_eastern_negotiations = {
 					}
 					if = { 
 						limit = {
-							check_variable = { swrw_diplo_jap > 94.9 }
-							check_variable = { swrw_corpo_jap > 94.9 }
+							check_variable = { swrw_diplo_jap > swrw_fe_threshold }
+							check_variable = { swrw_corpo_jap > swrw_fe_threshold }
 						}
 						country_event = { id = MAR_Japan.24 }
 					}

@@ -291,62 +291,17 @@ defined_text = {
 	text = { # 1
 		trigger = {
 			OR = {
-				check_variable = { fe_round = 1 }
-				check_variable = { fe_round = 2 }
-			}
-			OR = {
-				check_variable = { swrw_diplo_jap < 74.9 }
-				check_variable = { swrw_corpo_jap < 74.9 }
+				check_variable = { swrw_diplo_jap < swrw_fe_threshold }
+				check_variable = { swrw_corpo_jap < swrw_fe_threshold }
 			}
 		}
 		localization_key = SWRW_FEnegotiations_mission_fail
 	}
 	text = { # 1
 		trigger = {
-			OR = {
-				check_variable = { fe_round = 1 }
-				check_variable = { fe_round = 2 }
-			}
-			check_variable = { swrw_diplo_jap > 74.9 }
-			check_variable = { swrw_corpo_jap > 74.9 }
+			check_variable = { swrw_diplo_jap > swrw_fe_threshold }
+			check_variable = { swrw_corpo_jap > swrw_fe_threshold }
 		}
 		localization_key = SWRW_FEnegotiations_mission_succ
-	}
-	text = { # 1
-		trigger = {
-			check_variable = { fe_round = 3 }
-			OR = {
-				check_variable = { swrw_diplo_jap < 84.9 }
-				check_variable = { swrw_corpo_jap < 84.9 }
-			}
-		}
-		localization_key = SWRW_FEnegotiations_mission_fail
-	}
-	text = { # 1
-		trigger = {
-			check_variable = { fe_round = 3 }
-			check_variable = { swrw_corpo_jap > 84.9 }
-			check_variable = { swrw_diplo_jap > 84.9 }
-		}
-		localization_key = SWRW_FEnegotiations_mission_succ
-	}
-	text = { # 1
-		trigger = {
-			check_variable = { fe_round = 4 }
-			OR = {
-				check_variable = { swrw_diplo_jap < 94.9 }
-				check_variable = { swrw_corpo_jap < 94.9 }
-			}
-		}
-		localization_key = SWRW_FEnegotiations_mission_fail
-	}
-	text = { # 1
-		trigger = {
-			check_variable = { fe_round = 4 }
-			check_variable = { swrw_corpo_jap > 94.9 }
-			check_variable = { swrw_diplo_jap > 94.9 }
-		}
-		localization_key = SWRW_FEnegotiations_mission_succ
-	}
-	
+	}	
 }
