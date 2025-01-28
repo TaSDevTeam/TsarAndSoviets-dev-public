@@ -3794,3 +3794,1189 @@ MAR_yug_excersices_category = {
 		}
 	}
 }
+
+RUS_nuke_development_category_facelift = {
+
+	### STAGE ONE ###
+
+	RUS_NEW_nukes_theory_develop_physics_institutes = {
+		icon = GFX_decision_generic_industry
+
+		visible = {
+			check_variable = { TaS_RUS_nuclear_program_phase = 1 }
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		cost = 25
+
+		days_remove = 180
+
+		fire_only_once = yes
+		
+		modifier = {
+			civilian_expenditures_factor = 0.1
+			political_power_gain = -0.1
+			research_speed_factor = -0.1
+			misc_costs_modifier = 0.05
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_NEW_nukes_theory_develop_physics_institutes"
+			set_temp_variable = { temp_econ_spending_amount = 0.3 }
+			econ_spend_money_once_effect_raw_money = yes
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_NEW_nukes_theory_develop_physics_institutes"
+			TNO_improve_academic_base_med = yes
+			set_temp_variable = { temp_progress_gained = 0.1 } 
+			TaS_nuke_development_progress_change = yes
+			set_temp_variable = { temp_monthly_progress_gained = 0.02 } 
+			TaS_nuke_development_monthly_progress_change = yes
+		}
+			
+	}
+	RUS_NEW_nukes_theory_issue_research_grants = {
+		icon = GFX_decision_generic_industry
+
+		visible = {
+			check_variable = { TaS_RUS_nuclear_program_phase = 1 }
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		cost = 50
+
+		days_remove = 90
+
+		fire_only_once = yes
+
+		modifier = {
+			civilian_expenditures_factor = 0.05
+			misc_costs_modifier = 0.05
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_NEW_nukes_theory_issue_research_grants"
+			set_temp_variable = { temp_econ_spending_amount = 0.05 }
+			econ_spend_money_once_effect_raw_money = yes
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_NEW_nukes_theory_issue_research_grants"
+			set_temp_variable = { temp_progress_gained = 0.1 } 
+			TaS_nuke_development_progress_change = yes
+		}
+	}
+	RUS_NEW_nukes_theory_approach_emigre_scientists = {
+		icon = GFX_decision_generic_industry
+
+		visible = {
+			check_variable = { TaS_RUS_nuclear_program_phase = 1 }
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		cost = 15
+
+		days_remove = 90
+
+		fire_only_once = yes
+	
+		modifier = {
+			misc_costs_modifier = 0.15
+			weekly_manpower = 300
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_NEW_nukes_theory_approach_emigre_scientists"
+			set_temp_variable = { temp_econ_spending_amount = 0.1 }
+			econ_spend_money_once_effect_raw_money = yes
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_NEW_nukes_theory_approach_emigre_scientists"
+			set_temp_variable = { temp_progress_gained = 0.1 } 
+			TaS_nuke_development_progress_change = yes
+			TNO_improve_education_policy_effectiveness_med = yes
+		}
+	}
+	RUS_NEW_nukes_theory_study_foreign_developments = {
+		icon = GFX_decision_generic_industry
+
+		visible = {
+			check_variable = { TaS_RUS_nuclear_program_phase = 1 }
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		cost = 50
+
+		days_remove = 90
+
+		days_re_enable = 90
+
+		fire_only_once = no
+		
+		modifier = {
+			research_speed_factor = -0.1
+			misc_costs_modifier = 0.05
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_NEW_nukes_theory_study_foreign_developments"
+			set_temp_variable = { temp_econ_spending_amount = 0.075 }
+			econ_spend_money_once_effect_raw_money = yes
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_NEW_nukes_theory_study_foreign_developments"
+			set_temp_variable = { temp_progress_gained = 0.1 } 
+			TaS_nuke_development_progress_change = yes
+			set_temp_variable = { temp_monthly_progress_gained = 0.02 } 
+			TaS_nuke_development_monthly_progress_change = yes
+			TNO_improve_research_facilities_low = yes
+		}
+	}
+
+	### STAGE TWO ###
+
+	RUS_NEW_nukes_mats_develop_material_extraction_techniques = {
+		icon = GFX_decision_generic_industry
+
+		visible = {
+			check_variable = { TaS_RUS_nuclear_program_phase = 2 }
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		cost = 25
+
+		days_remove = 180
+
+		fire_only_once = yes
+		
+		modifier = {
+			research_speed_factor = -0.05
+			misc_costs_modifier = 0.1
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_NEW_nukes_mats_develop_material_extraction_techniques"
+			set_temp_variable = { temp_econ_spending_amount = 0.05 }
+			econ_spend_money_once_effect_raw_money = yes
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_NEW_nukes_mats_develop_material_extraction_techniques"
+			set_temp_variable = { temp_progress_gained = 0.15 } 
+			TaS_nuke_development_progress_change = yes
+			add_tech_bonus = {
+				name = excavation_tech
+				bonus = 1
+				uses = 2
+				category = excavation_tech
+			}
+		}
+	}
+
+	RUS_NEW_nukes_mats_assemble_processing_facilities = {
+		icon = GFX_decision_generic_industry
+
+		visible = {
+			check_variable = { TaS_RUS_nuclear_program_phase = 2 }
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		cost = 50
+
+		days_remove = 210
+
+		fire_only_once = yes
+		
+		modifier = {
+			production_speed_buildings_factor = -0.1
+			misc_costs_modifier = 0.15
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_NEW_nukes_mats_assemble_processing_facilities"
+			set_temp_variable = { temp_econ_spending_amount = 0.45 }
+			econ_spend_money_once_effect_raw_money = yes
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_NEW_nukes_mats_assemble_processing_facilities"
+			set_temp_variable = { temp_progress_gained = 0.1 } 
+			TaS_nuke_development_progress_change = yes
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				set_temp_variable = { state_value_multiplier_temp = 1.025 }
+				econ_state_value_change_multiply_specified_state = yes
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				set_temp_variable = { state_value_multiplier_temp = 1.025 }
+				econ_state_value_change_multiply_specified_state = yes
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				set_temp_variable = { state_value_multiplier_temp = 1.025 }
+				econ_state_value_change_multiply_specified_state = yes
+			}
+		}
+	}
+
+	RUS_NEW_nukes_mats_expand_uranium_mining = {
+		icon = GFX_decision_generic_industry
+
+		visible = {
+			check_variable = { TaS_RUS_nuclear_program_phase = 2 }
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		cost = 35
+
+		days_remove = 180
+
+		days_re_enable = 180
+
+		fire_only_once = no
+		
+		modifier = {
+			consumer_goods_production_factor = 0.05
+			local_resources_factor = -0.025
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_NEW_nukes_mats_expand_uranium_mining"
+			set_temp_variable = { temp_econ_spending_amount = 0.5 }
+			econ_spend_money_once_effect_raw_money = yes
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_NEW_nukes_mats_expand_uranium_mining"
+			set_temp_variable = { temp_progress_gained = 0.15 } 
+			TaS_nuke_development_progress_change = yes
+			set_temp_variable = { temp_monthly_progress_gained = 0.03 } 
+			TaS_nuke_development_monthly_progress_change = yes
+			random_owned_controlled_state = {
+				limit = {
+					infrastructure > 4
+					has_resources_amount = {
+						resource = uranium
+						amount > 1
+					}
+				}
+				set_temp_variable = { state_value_multiplier_temp = 1.05 }
+				econ_state_value_change_multiply = yes
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_resource = {
+					type = uranium
+					amount = 15
+				}
+			}
+		}
+	}
+
+	RUS_NEW_nukes_mats_incentivize_skilled_laborers = {
+		icon = GFX_decision_generic_industry
+
+		visible = {
+			check_variable = { TaS_RUS_nuclear_program_phase = 2 }
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		cost = 25
+
+		days_remove = 90
+
+		days_re_enable = 180
+
+		fire_only_once = no
+		
+		modifier = {
+			consumer_goods_production_factor = 0.05
+			production_speed_buildings_factor = -0.05
+			production_factory_max_efficiency_factor = -0.05
+			weekly_manpower = -150
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_NEW_nukes_mats_incentivize_skilled_laborers"
+			set_temp_variable = { temp_econ_spending_amount = 0.05 }
+			econ_spend_money_once_effect_raw_money = yes
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_NEW_nukes_mats_incentivize_skilled_laborers"
+			set_temp_variable = { temp_progress_gained = 0.1 } 
+			TaS_nuke_development_progress_change = yes
+			set_temp_variable = { temp_monthly_progress_gained = 0.01 } 
+			TaS_nuke_development_monthly_progress_change = yes
+			TNO_improve_industrial_expertise_med = yes
+			set_temp_variable = { gdp_growth_temp = 0.01 }
+			econ_gdp_growth_change = yes
+			
+		}
+	}
+
+	### STAGE THREE ###
+
+	RUS_NEW_nukes_infra_accelerate_plant_approval_processes = {
+		icon = GFX_decision_generic_industry
+
+		visible = {
+			check_variable = { TaS_RUS_nuclear_program_phase = 3 }
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		cost = 50
+
+		days_remove = 45
+
+		fire_only_once = yes
+		
+		modifier = {
+			production_speed_buildings_factor = -0.05
+			stability_weekly = -0.0025
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_NEW_nukes_infra_accelerate_plant_approval_processes"
+			set_temp_variable = { temp_econ_spending_amount = 0.075 }
+			econ_spend_money_once_effect_raw_money = yes
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_NEW_nukes_infra_accelerate_plant_approval_processes"
+			set_temp_variable = { temp_progress_gained = 0.1 } 
+			TaS_nuke_development_progress_change = yes
+			TNO_improve_industrial_expertise_med = yes
+		}
+	}
+
+	RUS_NEW_nukes_infra_fund_power_station_construction = {
+		icon = GFX_decision_generic_industry
+
+		visible = {
+			check_variable = { TaS_RUS_nuclear_program_phase = 3 }
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		cost = 50
+
+		days_remove = 210
+
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_NEW_nukes_infra_fund_power_station_construction"
+			set_temp_variable = { temp_econ_spending_amount = 0.4 }
+			econ_spend_money_once_effect_raw_money = yes
+		}
+		
+		modifier = {
+			production_speed_buildings_factor = -0.1
+			misc_costs_modifier = 0.15
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_NEW_nukes_infra_fund_power_station_construction"
+			set_temp_variable = { temp_progress_gained = 0.1 } 
+			TaS_nuke_development_progress_change = yes
+			set_temp_variable = { temp_monthly_progress_gained = 0.02 } 
+			TaS_nuke_development_monthly_progress_change = yes
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				set_temp_variable = { state_value_multiplier_temp = 1.025 }
+				econ_state_value_change_multiply_specified_state = yes
+			}
+		}
+	}
+
+	RUS_NEW_nukes_infra_commission_additional_research_reactors = {
+		icon = GFX_decision_generic_industry
+
+		visible = {
+			check_variable = { TaS_RUS_nuclear_program_phase = 3 }
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		cost = 15
+
+		days_re_enable = 180
+
+		days_remove = 180
+
+		fire_only_once = no
+		
+		modifier = {
+			production_speed_buildings_factor = -0.05
+			misc_costs_modifier = 0.05
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_NEW_nukes_theory_study_foreign_developments"
+			set_temp_variable = { temp_econ_spending_amount = 0.5 }
+			econ_spend_money_once_effect_raw_money = yes
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_NEW_nukes_theory_study_foreign_developments"
+			set_temp_variable = { temp_progress_gained = 0.05 } 
+			TaS_nuke_development_progress_change = yes
+			set_temp_variable = { temp_monthly_progress_gained = 0.01 } 
+			TaS_nuke_development_monthly_progress_change = yes
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				set_temp_variable = { state_value_multiplier_temp = 1.025 }
+				econ_state_value_change_multiply_specified_state = yes
+			}
+		}
+	}
+
+	RUS_NEW_nukes_infra_study_foreign_reactor_designs = {
+		icon = GFX_decision_generic_industry
+
+		visible = {
+			check_variable = { TaS_RUS_nuclear_program_phase = 3 }
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		cost = 15
+
+		days_remove = 90
+
+		days_re_enable = 90
+
+		fire_only_once = no
+		
+		modifier = {
+			research_speed_factor = -0.1
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_NEW_nukes_theory_study_foreign_developments"
+			set_temp_variable = { temp_econ_spending_amount = 0.05 }
+			econ_spend_money_once_effect_raw_money = yes
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_NEW_nukes_theory_study_foreign_developments"
+			set_temp_variable = { temp_progress_gained = 0.1 } 
+			TaS_nuke_development_progress_change = yes
+			set_temp_variable = { temp_monthly_progress_gained = 0.01 } 
+			TaS_nuke_development_monthly_progress_change = yes
+		}
+	}
+
+	### STAGE FOUR ###
+
+	RUS_NEW_nukes_refine_construct_additional_centrifuges = {
+		icon = GFX_decision_generic_industry
+
+		visible = {
+			check_variable = { TaS_RUS_nuclear_program_phase = 4 }
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+
+		cost = 15
+
+		days_remove = 210
+
+		fire_only_once = yes
+		
+		modifier = {
+			production_speed_buildings_factor = -0.05
+			misc_costs_modifier = 0.15
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_NEW_nukes_refine_construct_additional_centrifuges"
+			set_temp_variable = { temp_econ_spending_amount = 0.5 }
+			econ_spend_money_once_effect_raw_money = yes
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_NEW_nukes_theory_incentivize_atomic_science"
+			set_temp_variable = { temp_progress_gained = 0.1 } 
+			TaS_nuke_development_progress_change = yes
+			set_temp_variable = { temp_monthly_progress_gained = 0.02 } 
+			TaS_nuke_development_monthly_progress_change = yes
+		}
+	}
+
+	RUS_NEW_nukes_refine_develop_isotope_separation_theory = {
+		icon = GFX_decision_generic_industry
+
+		visible = {
+			check_variable = { TaS_RUS_nuclear_program_phase = 4 }
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		cost = 15
+
+		days_remove = 180
+
+		modifier = {
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_NEW_nukes_refine_develop_isotope_separation_theory"
+			set_temp_variable = { temp_econ_spending_amount = 0.15 }
+			econ_spend_money_once_effect_raw_money = yes
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_NEW_nukes_refine_develop_isotope_separation_theory"
+			set_temp_variable = { temp_progress_gained = 0.1 } 
+			TaS_nuke_development_progress_change = yes
+		}
+	}
+
+	RUS_NEW_nukes_refine_expand_nuclear_reprocessing_infrastructure = {
+		icon = GFX_decision_generic_industry
+
+		visible = {
+			check_variable = { TaS_RUS_nuclear_program_phase = 4 }
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		cost = 15
+
+		days_remove = 180
+
+		days_re_enable = 210
+
+		fire_only_once = no
+
+		modifier = {
+			consumer_goods_production_factor = 0.05
+			local_resources_factor = -0.025
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_NEW_nukes_refine_expand_nuclear_reprocessing_infrastructure"
+			set_temp_variable = { temp_econ_spending_amount = 0.4 }
+			econ_spend_money_once_effect_raw_money = yes
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_NEW_nukes_refine_expand_nuclear_reprocessing_infrastructure"
+			set_temp_variable = { temp_progress_gained = 0.15 } 
+			TaS_nuke_development_progress_change = yes
+			random_owned_controlled_state = {
+				limit = {
+					infrastructure > 3
+					has_resources_amount = {
+						resource = uranium
+						amount > 1
+					}
+				}
+				set_temp_variable = { state_value_multiplier_temp = 1.05 }
+				econ_state_value_change_multiply = yes
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_resource = {
+					type = uranium
+					amount = 10
+				}
+			}
+		}
+	}
+	
+	RUS_NEW_nukes_refine_create_first_actual_nuclear_power_plant = {
+		icon = GFX_decision_generic_industry
+
+		visible = {
+			check_variable = { TaS_RUS_nuclear_program_phase = 4 }
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		cost = 15
+
+		days_remove = 210
+
+		modifier = {
+			production_speed_buildings_factor = -0.05
+			misc_costs_modifier = 0.25
+			free_production_units_modifier = -2
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_NEW_nukes_create_first_actual_nuclear_power_plant"
+			set_temp_variable = { temp_econ_spending_amount = 0.5 }
+			econ_spend_money_once_effect_raw_money = yes
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_NEW_nukes_create_first_actual_nuclear_power_plant"
+			set_temp_variable = { temp_progress_gained = 0.1 } 
+			TaS_nuke_development_progress_change = yes
+			set_temp_variable = { temp_monthly_progress_gained = 0.01 } 
+			TaS_nuke_development_monthly_progress_change = yes
+			random_owned_controlled_state = {
+				limit = {
+					infrastructure > 5
+				}
+				set_temp_variable = { state_value_multiplier_temp = 1.10 }
+				econ_state_value_change_multiply = yes
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = nuclear_reactor
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	### STAGE FIVE ###
+	
+	RUS_NEW_nukes_creation_test_the_bomb = {
+		icon = GFX_decision_generic_industry
+
+		visible = {
+			check_variable = { TaS_RUS_nuclear_program_phase = 5 }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RUS_NEW_nukes_creation_test_the_bomb_tt
+				check_variable = { TaS_nuke_development_array^TaS_nuke_development_array > 0.95 }
+			}
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		cost = 50
+
+		days_remove = 1
+
+		fire_only_once = yes
+		
+		modifier = {
+			research_speed_factor = -0.1
+			misc_costs_modifier = 0.05
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_NEW_nukes_creation_test_the_bomb"
+			set_temp_variable = { temp_econ_spending_amount = 0.025 }
+			econ_spend_money_once_effect_raw_money = yes
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_NEW_nukes_creation_test_the_bomb"
+			set_variable = { TaS_nuke_development_array^5 = 1 }
+			TNO_improve_research_facilities_low = yes
+			MAR_nuke = yes
+			hidden_effect = {
+				set_variable = { nuclear_stockpile = 2 }
+				set_variable = { nuclear_global_coverage = 0.15 }
+				add_to_variable = { nuclear_stockpile_change = 2 }
+				calculate_strike_capability = yes
+				TaS_nuke_development_switch_to_the_next_stage = yes
+				set_technology = {
+					ICBM = 1
+					MRBM = 1
+					SRBM = 1
+					nuclear_reactors = 1
+					nuclear_weapons = 1
+					popup = no
+				}
+			}
+		}
+	}
+	
+	RUS_NEW_nukes_creation_expand_npps = {
+		icon = GFX_decision_generic_industry
+
+		visible = {
+			check_variable = { TaS_RUS_nuclear_program_phase = 5 }
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		cost = 15
+
+		days_remove = 210
+
+		modifier = {
+			production_speed_buildings_factor = -0.15
+			misc_costs_modifier = 0.45
+			research_speed_factor = -0.1
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_NEW_weapon_expand_npps"
+			set_temp_variable = { temp_econ_spending_amount = 0.7 }
+			econ_spend_money_once_effect_raw_money = yes
+			free_production_units_modifier = -4
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_NEW_weapon_expand_npps"
+			set_temp_variable = { temp_progress_gained = 0.1 } 
+			TaS_nuke_development_progress_change = yes
+			set_temp_variable = { temp_monthly_progress_gained = 0.01 } 
+			TaS_nuke_development_monthly_progress_change = yes
+			random_owned_controlled_state = {
+				limit = {
+					infrastructure > 4
+				}
+				set_temp_variable = { state_value_multiplier_temp = 1.10 }
+				econ_state_value_change_multiply = yes
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = nuclear_reactor
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					infrastructure > 4
+				}
+				set_temp_variable = { state_value_multiplier_temp = 1.10 }
+				econ_state_value_change_multiply = yes
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = nuclear_reactor
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					infrastructure > 4
+				}
+				set_temp_variable = { state_value_multiplier_temp = 1.10 }
+				econ_state_value_change_multiply = yes
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = nuclear_reactor
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	RUS_NEW_nukes_creation_expand_infrastructure = {
+		icon = GFX_decision_generic_industry
+
+		visible = {
+			check_variable = { TaS_RUS_nuclear_program_phase = 5 }
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		cost = 15
+
+		days_remove = 210
+
+		fire_only_once = yes
+
+		modifier = {
+			consumer_goods_production_factor = 0.05
+			local_resources_factor = -0.025
+			free_production_units_modifier = -2
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_NEW_nukes_expand_infrastructure"
+			set_temp_variable = { temp_econ_spending_amount = 0.4 }
+			econ_spend_money_once_effect_raw_money = yes
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_NEW_nukes_expand_infrastructure"
+			set_temp_variable = { temp_progress_gained = 0.15 } 
+			TaS_nuke_development_progress_change = yes
+			random_owned_controlled_state = {
+				limit = {
+					infrastructure > 3
+					has_resources_amount = {
+						resource = uranium
+						amount > 1
+					}
+				}
+				set_temp_variable = { state_value_multiplier_temp = 1.05 }
+				econ_state_value_change_multiply = yes
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_resource = {
+					type = uranium
+					amount = 15
+				}
+			}
+		}
+	}
+	
+	RUS_NEW_nukes_creation_finalize_studies = {
+		icon = GFX_decision_generic_industry
+
+		visible = {
+			check_variable = { TaS_RUS_nuclear_program_phase = 5 }
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		cost = 50
+
+		days_remove = 90
+
+		days_re_enable = 90
+
+		fire_only_once = no
+		
+		modifier = {
+			research_speed_factor = -0.1
+			misc_costs_modifier = 0.05
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_NEW_nukes_creation_finalize_studies"
+			set_temp_variable = { temp_econ_spending_amount = 0.075 }
+			econ_spend_money_once_effect_raw_money = yes
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_NEW_nukes_creation_finalize_studies"
+			set_temp_variable = { temp_progress_gained = 0.1 } 
+			TaS_nuke_development_progress_change = yes
+			TNO_improve_research_facilities_low = yes
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = enrichment_plant
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	### STAGE SIX ###
+	RUS_NEW_nukes_expansion_make_rockets = {
+		icon = GFX_decision_generic_industry
+
+		visible = {
+			check_variable = { TaS_RUS_nuclear_program_phase = 6 }
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		cost = 25
+
+		days_remove = 30
+
+		days_re_enable = 90
+
+		fire_only_once = no
+		
+		modifier = {
+			consumer_goods_production_factor = 0.05
+			production_speed_buildings_factor = -0.05
+			production_factory_max_efficiency_factor = -0.05
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_NEW_nukes_expansion_make_rockets"
+			set_temp_variable = { temp_econ_spending_amount = 0.5 }
+			econ_spend_money_once_effect_raw_money = yes
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_NEW_nukes_expansion_make_rockets"
+			add_equipment_to_stockpile = {
+				type = ICBM_equipment
+				amount = 50
+				producer = RUS
+			}
+			add_equipment_to_stockpile = {
+				type = MRBM_equipment
+				amount = 100
+				producer = RUS
+			}
+			add_equipment_to_stockpile = {
+				type = SRBM_equipment
+				amount = 200
+				producer = RUS
+			}
+			
+			hidden_effect = {
+				#set_variable = { nuclear_stockpile = 2 }
+				#set_variable = { nuclear_global_coverage = 0.15 }
+				#add_to_variable = { nuclear_stockpile_change = 2 }
+				calculate_strike_capability = yes
+			}
+		}
+	}
+	
+	RUS_NEW_nukes_expansion_make_warheads = {
+		icon = GFX_decision_generic_industry
+
+		visible = {
+			check_variable = { TaS_RUS_nuclear_program_phase = 6 }
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		cost = 25
+
+		days_remove = 30
+
+		days_re_enable = 90
+
+		fire_only_once = no
+		
+		modifier = {
+			consumer_goods_production_factor = 0.05
+			production_speed_buildings_factor = -0.05
+			production_factory_max_efficiency_factor = -0.05
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_NEW_nukes_expansion_make_warheads"
+			set_temp_variable = { temp_econ_spending_amount = 0.5 }
+			econ_spend_money_once_effect_raw_money = yes
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_NEW_nukes_expansion_make_warheads"
+			custom_effect_tooltip = RUS_NEW_nukes_expansion_make_warheads_tt
+			hidden_effect = {
+				add_to_variable = { nuclear_stockpile = 10 }
+				add_to_variable = { nuclear_stockpile_change = 2 }
+				calculate_strike_capability = yes
+			}
+		}
+	}
+	
+	RUS_NEW_nukes_expansion_make_bombers = {
+		icon = GFX_decision_generic_industry
+
+		visible = {
+			check_variable = { TaS_RUS_nuclear_program_phase = 6 }
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		cost = 25
+
+		days_remove = 45
+
+		days_re_enable = 60
+
+		fire_only_once = no
+		
+		modifier = {
+			consumer_goods_production_factor = 0.05
+			production_speed_buildings_factor = -0.05
+			production_factory_max_efficiency_factor = -0.05
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_NEW_nukes_expansion_make_bombers"
+			set_temp_variable = { temp_econ_spending_amount = 0.25 }
+			econ_spend_money_once_effect_raw_money = yes
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_NEW_nukes_expansion_make_bombers"
+			add_equipment_to_stockpile = {
+				type = tac_bomber_equipment
+				amount = 100
+				producer = RUS
+			}
+			add_equipment_to_stockpile = {
+				type = strat_bomber_equipment
+				amount = 50
+				producer = RUS
+			}
+			hidden_effect = {
+				#set_variable = { nuclear_stockpile = 2 }
+				#set_variable = { nuclear_global_coverage = 0.15 }
+				#add_to_variable = { nuclear_stockpile_change = 2 }
+				calculate_strike_capability = yes
+			}
+		}
+	}
+	
+	RUS_NEW_nukes_expansion_make_submarines = {
+		icon = GFX_decision_generic_industry
+
+		visible = {
+			check_variable = { TaS_RUS_nuclear_program_phase = 6 }
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		cost = 25
+
+		days_remove = 60
+
+		days_re_enable = 120
+
+		fire_only_once = no
+		
+		modifier = {
+			consumer_goods_production_factor = 0.05
+			production_speed_buildings_factor = -0.05
+			production_factory_max_efficiency_factor = -0.05
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_NEW_nukes_expansion_make_submarines"
+			set_temp_variable = { temp_econ_spending_amount = 0.75 }
+			econ_spend_money_once_effect_raw_money = yes
+		}
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_NEW_nukes_expansion_make_submarines"
+			custom_effect_tooltip = RUS_NEW_nukes_expansion_make_submarines_tt
+			hidden_effect = {
+				RUS = {
+					create_equipment_variant = {
+						name = "Rus' Class"
+						type = ship_hull_submarine_1
+						parent_version = 0
+						modules = {
+							fixed_ship_engine_slot = sub_ship_engine_2
+							fixed_ship_torpedo_slot = ship_torpedo_sub_1
+							rear_1_custom_slot = ship_torpedo_sub_1
+						}
+					}
+				}
+				if = {
+					limit = { has_dlc = "Man the Guns" }
+					create_ship = { type = ship_hull_submarine_1 equipment_variant = "Rus' Class" creator = RUS name = "Rus' Class Submarine" }
+				}
+				else = {
+					create_ship = { type = submarine_1 equipment_variant = "Rus' Class" creator = RUS name = "Rus' Class Submarine" }
+				}
+				calculate_strike_capability = yes
+			}
+		}
+	}
+}

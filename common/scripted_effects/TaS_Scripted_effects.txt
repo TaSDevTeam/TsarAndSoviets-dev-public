@@ -979,3 +979,81 @@ TaS_dobrovoltsy_dynmod_lose = {
 		value = -0.001
 	}
 }
+
+TaS_nuke_development_start = {
+	clear_array = TaS_nuke_development_array
+	add_to_array = { TaS_nuke_development_array = 0 } # 0 don't use
+	add_to_array = { TaS_nuke_development_array = 0 } # 1
+	add_to_array = { TaS_nuke_development_array = 0 } # 2
+	add_to_array = { TaS_nuke_development_array = 0 } # 3
+	add_to_array = { TaS_nuke_development_array = 0 } # 4
+	add_to_array = { TaS_nuke_development_array = 0 } # 5
+	add_to_array = { TaS_nuke_development_array = 0 } # 6 wont be used but i guess it sshould be here
+	
+	set_variable = { TaS_nuke_dev_monthly_gain = 0.02 }
+	
+	set_variable = { TaS_RUS_nuclear_program_phase = 1 }
+	
+	set_country_flag = RUS_started_nukes_new
+}
+
+TaS_nuke_development_progress_change = {
+	set_temp_variable = { temp_progress_gained_txt = temp_progress_gained }
+	add_to_variable = { TaS_nuke_development_array^TaS_RUS_nuclear_program_phase = temp_progress_gained }
+	
+	clamp_variable = {
+		var = TaS_nuke_development_array^TaS_RUS_nuclear_program_phase
+		min = 0
+		max = 1
+	}
+	if = {
+		limit = { check_variable = { temp_progress_gained < 0 } }
+		multiply_temp_variable = { temp_progress_gained_txt = -1 }
+		custom_effect_tooltip = TaS_nuke_development_progress_decrease_tt
+	}
+	else = {
+		custom_effect_tooltip = TaS_nuke_development_progress_growth_tt
+	}
+}
+
+TaS_nuke_development_monthly_progress_change = {
+	set_temp_variable = { temp_monthly_progress_gained_txt = temp_monthly_progress_gained }
+	add_to_variable = { TaS_nuke_dev_monthly_gain = temp_monthly_progress_gained }
+	
+	clamp_variable = {
+		var = TaS_nuke_dev_monthly_gain
+		min = 0
+		max = 1
+	}
+	if = {
+		limit = { check_variable = { temp_monthly_progress_gained < 0 } }
+		multiply_temp_variable = { temp_monthly_progress_gained_txt = -1 }
+		custom_effect_tooltip = TaS_nuke_development_monthly_progress_decrease_tt
+	}
+	else = {
+		custom_effect_tooltip = TaS_nuke_development_monthly_progress_growth_tt
+	}
+}
+
+TaS_nuke_development_switch_to_the_next_stage = {
+	custom_effect_tooltip = TaS_nuke_development_do_the_check_tt
+	if = {
+		limit = { check_variable = { TaS_nuke_development_array^TaS_RUS_nuclear_program_phase = 1 } }
+		set_temp_variable = { temp_monthly_progress_gained = -0.03 } 
+		TaS_nuke_development_monthly_progress_change = yes
+		add_to_variable = { TaS_RUS_nuclear_program_phase = 1 }
+		set_temp_variable = { alert_id = token:Alert_NukeUpgraded }
+		add_TNO_alert = yes
+	}
+	if = {
+		limit = { check_variable = { TaS_RUS_nuclear_program_phase = 6 } }
+		#country_event = { id = MAR_Kosygin_OGAS.10 }
+		hidden_effect = {
+			every_country = {
+				news_event = { id = MAR_2WRW_world_news.49 }
+			}
+		}
+		set_variable = { TaS_nuke_dev_monthly_gain = 0 }
+		set_variable = { TaS_nuke_development_array^TaS_RUS_nuclear_program_phase = 0 }
+	}
+}

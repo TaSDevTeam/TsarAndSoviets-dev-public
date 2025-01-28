@@ -1592,13 +1592,14 @@ shared_focus = {
 		econ_spend_money_once_effect_raw_money = yes
 		custom_effect_tooltip = RUS_RWS_nukes_a_foundation_for_research_tt
 		TNO_improve_research_facilities_med = yes
-		if = {
-			limit = {
-				has_country_flag = RUS_nuclear_program_phase_1
+		hidden_effect = {
+			if = {	
+				limit = { check_variable = { TaS_RUS_nuclear_program_phase < 2 } }
+				add_to_variable = { TaS_nuke_development_array^1 = 0.15 }
 			}
-			add_to_variable = { RUSNukesTheoryProgress = 15 }
+			set_temp_variable = { temp_monthly_progress_gained = 0.03 } 
+			TaS_nuke_development_monthly_progress_change = yes
 		}
-		add_to_variable = { RUSNukesMonthlyProgress = 3 }
 	}
 }
 shared_focus = {
@@ -1628,17 +1629,16 @@ shared_focus = {
 				 amount = 8
 			}
 		}
-		if = {
-			limit = {
-				OR = {
-					has_country_flag = RUS_nuclear_program_phase_2
-					has_country_flag = RUS_nuclear_program_phase_1
-				}
+		hidden_effect = {
+			if = {	
+				limit = { check_variable = { TaS_RUS_nuclear_program_phase < 3 } }
+				add_to_variable = { TaS_nuke_development_array^2 = 0.15 }
 			}
-			add_to_variable = { RUSNukesMatsProgress = 10 }
+			set_temp_variable = { temp_monthly_progress_gained = 0.01 } 
+			TaS_nuke_development_monthly_progress_change = yes
 		}
-		add_to_variable = { RUSNukesMonthlyProgress = 1 }
-		add_to_variable = { national_debt = 0.35 } #already converted to billion
+		set_temp_variable = { temp_econ_spending_amount = 0.35 }
+		econ_spend_money_once_effect_raw_money = yes 
 	}
 }
 shared_focus = {
@@ -1654,16 +1654,16 @@ shared_focus = {
 		custom_effect_tooltip = RUS_RWS_nukes_source_foreign_materials_tt
 		add_stability = -0.03
 		add_political_power = -25
-		if = {
-			limit = {
-				OR = {
-					has_country_flag = RUS_nuclear_program_phase_2
-					has_country_flag = RUS_nuclear_program_phase_1
-				}
+		hidden_effect = {
+			if = {	
+				limit = { check_variable = { TaS_RUS_nuclear_program_phase < 3 } }
+				add_to_variable = { TaS_nuke_development_array^2 = 0.1 }
 			}
-			add_to_variable = { RUSNukesMatsProgress = 10 }
+			set_temp_variable = { temp_monthly_progress_gained = 0.03 } 
+			TaS_nuke_development_monthly_progress_change = yes
 		}
-		add_to_variable = { national_debt = 0.1 } #already converted to billion
+		set_temp_variable = { temp_econ_spending_amount = 0.1 }
+		econ_spend_money_once_effect_raw_money = yes 
 	}
 }
 shared_focus = {
@@ -1680,17 +1680,16 @@ shared_focus = {
 	y = 2
 	completion_reward = {
 		custom_effect_tooltip = RUS_RWS_nukes_address_the_uranium_problem_tt
-		if = {
-			limit = {
-				OR = {
-					has_country_flag = RUS_nuclear_program_phase_2
-					has_country_flag = RUS_nuclear_program_phase_1
-				}
+		hidden_effect = {
+			if = {	
+				limit = { check_variable = { TaS_RUS_nuclear_program_phase < 3 } }
+				add_to_variable = { TaS_nuke_development_array^2 = 0.05 }
 			}
-			add_to_variable = { RUSNukesMatsProgress = 5 }
+			set_temp_variable = { temp_monthly_progress_gained = 0.02 } 
+			TaS_nuke_development_monthly_progress_change = yes
 		}
-		add_to_variable = { RUSNukesMonthlyProgress = 2 }
-		add_to_variable = { national_debt = 0.15 } #already converted to billion
+		set_temp_variable = { temp_econ_spending_amount = 0.15 }
+		econ_spend_money_once_effect_raw_money = yes 
 	}
 }
 shared_focus = {
@@ -1712,7 +1711,10 @@ shared_focus = {
 		}
 		custom_effect_tooltip = RUS_RWS_nukes_chasing_the_sun_tt
 		add_timed_idea = { idea = RUS_RWS_nukes_chasing_the_sun_misc_costs days = 90 }
-		add_to_variable = { RUSNukesMonthlyProgress = 3 }
+		hidden_effect = {
+			set_temp_variable = { temp_monthly_progress_gained = 0.03 } 
+			TaS_nuke_development_monthly_progress_change = yes
+		}
 		TNO_improve_industrial_expertise_med = yes
 	}
 }

@@ -630,3 +630,288 @@ defined_text = {
 		localization_key = berez_kazahk_12_solomentsev_a
 	}
 }
+
+defined_text = {
+	name = RUSGetNuclearDesc
+	text = {
+		trigger = { check_variable = { TaS_RUS_nuclear_program_phase < 5.1 } }
+		localization_key = RUS_nuke_development_category_facelift_devdesc
+	}
+	text = {
+		trigger = { check_variable = { TaS_RUS_nuclear_program_phase = 6 } }
+		localization_key = RUS_nuke_development_category_facelift_expansion_desc
+	}
+}
+
+defined_text = {
+	name = RUSNewGetNuclearProgramStage
+	text = {
+		trigger = { check_variable = { TaS_RUS_nuclear_program_phase = 1 } }
+		localization_key = RUS_nuclear_program_phase_1
+	}
+	text = {
+		trigger = { check_variable = { TaS_RUS_nuclear_program_phase = 2 } }
+		localization_key = RUS_nuclear_program_phase_2
+	}
+	text = {
+		trigger = { check_variable = { TaS_RUS_nuclear_program_phase = 3 } }
+		localization_key = RUS_nuclear_program_phase_3
+	}
+	text = {
+		trigger = { check_variable = { TaS_RUS_nuclear_program_phase = 4 } }
+		localization_key = RUS_nuclear_program_phase_4
+	}
+	text = {
+		trigger = { check_variable = { TaS_RUS_nuclear_program_phase = 5 } }
+		localization_key = RUS_nuclear_program_phase_5
+	}
+}
+
+defined_text = {
+	name = RUSNewGetNuclearProgramProcess
+	text = {
+		trigger = {
+			check_variable = { RUSNukesMonthlyProgress < 0.03 }
+		}
+		localization_key = RUS_nuclear_program_process_slow
+	}
+	text = {
+		trigger = {
+			check_variable = { RUSNukesMonthlyProgress > 0.0299 }
+		}
+		localization_key = RUS_nuclear_program_process_moderate
+	}
+	text = {
+		trigger = {
+			check_variable = { RUSNukesMonthlyProgress > 0.0499 }
+		}
+		localization_key = RUS_nuclear_program_process_fast
+	}
+	text = {
+		trigger = {
+			check_variable = { RUSNukesMonthlyProgress > 0.0699 }
+		}
+		localization_key = RUS_nuclear_program_process_rapid
+	}
+}
+
+defined_text = {
+	name = RUSNewGetNuclearProgramName
+	text = {
+		trigger = {
+			original_tag = IRK
+		}
+		localization_key = RUS_nuclear_program_name_IRK
+	}
+	text = {
+		trigger = {
+			original_tag = OMS
+		}
+		localization_key = RUS_nuclear_program_name_OMS
+	}
+	text = {
+		trigger = {
+			original_tag = SVR
+		}
+		localization_key = RUS_nuclear_program_name_SVR
+	}
+	text = {
+		trigger = {
+			original_tag = AMR
+		}
+		localization_key = RUS_nuclear_program_name_AMR
+	}
+	text = {
+		trigger = {
+			original_tag = MAG
+		}
+		localization_key = RUS_nuclear_program_name_MAG
+	}
+	text = {
+		trigger = {
+			original_tag = KOM
+			has_country_leader = {
+				character = KOM_Lev_Gumilyov
+				ruling_only = yes
+			}
+		}
+		localization_key = RUS_nuclear_program_name_KOM_gummy
+	}
+	text = {
+		trigger = {
+			original_tag = PRM
+			has_country_leader = {
+				character =  PRM_Velimir
+				ruling_only = yes
+			}
+		}
+		localization_key = RUS_nuclear_program_name_PRM_hyperborea
+	}
+	text = {
+		trigger = {
+			original_tag = KEM
+		}
+		localization_key = RUS_nuclear_program_name_KEM
+	}
+	text = {
+		trigger = {
+			original_tag = SBA
+			has_government = socialist
+		}
+		localization_key = RUS_nuclear_program_name_SBA_LibSoc
+	}
+	text = {
+		trigger = {
+			original_tag = SBA
+			has_government = despotism
+		}
+		localization_key = RUS_nuclear_program_name_SBA_Despotist
+	}
+	text = {
+		trigger = {
+			original_tag = MAR
+			has_government = despotism
+		}
+		localization_key = RUS_nuclear_program_name_MAR_bel
+	}
+	text = {
+		trigger = {
+			original_tag = MAR
+			has_government = socialist
+		}
+		localization_key = RUS_nuclear_program_name_MAR_kos
+	}
+	text = {
+		trigger = {
+			is_russian_nation = yes
+		}
+		localization_key = RUS_nuclear_program_name_generic
+	}
+}
+
+defined_text = {
+	name = RUSNewGetUniqueName
+	text = {
+		trigger = {
+			OR = {
+				original_tag = IRK
+				original_tag = BRY
+				original_tag = WRS
+				original_tag = PRC
+				original_tag = TYM
+				AND = {
+					original_tag = KOM
+					has_country_leader = { character = KOM_Mikhail_Suslov ruling_only = yes }
+				}
+			}
+		}
+		localization_key = RUS_name_soviet
+	}
+	text = {
+		trigger = {
+			AND = {
+				original_tag = KOM
+				has_country_leader = { character = KOM_Svetlana_Bukharina ruling_only = yes }
+			}
+		}
+		localization_key = RUS_name_bukh
+	}
+	text = {
+		trigger = {
+			AND = {
+				original_tag = KOM
+				OR = {
+					has_country_leader = { character = KOM_Andrei_Zhdanov ruling_only = yes }
+					has_country_leader = { character = KOM_Vladimir_Chelomei ruling_only = yes }
+					has_country_leader = { character = KOM_Nikolai_Kardashev ruling_only = yes }
+				}
+			}
+		}
+		localization_key = RUS_name_ultravis
+	}
+	text = {
+		trigger = {
+			OR = {
+				original_tag = VYT
+				original_tag = CHT
+			}
+		}
+		localization_key = RUS_name_empire
+	}
+	text = {
+		trigger = {
+			original_tag = KOM
+			has_country_leader = {
+				character = KOM_Lev_Gumilyov
+				ruling_only = yes
+			}
+		}
+		localization_key = RUS_name_eurasia
+	}
+	text = {
+		trigger = {
+			original_tag = KOM
+			has_country_leader = {
+				character = KOM_Sergey_Taboritsky
+				ruling_only = yes
+			}
+		}
+		localization_key = RUS_name_tabby
+	}
+	text = {
+		trigger = {
+			original_tag = KOM
+			has_country_leader = {
+				character = KOM_Ivan_Serov
+				ruling_only = yes
+			}
+		}
+		localization_key = RUS_name_ordsoc
+	}
+	text = {
+		trigger = {
+			original_tag = PRM
+			has_country_leader = {
+				character =  PRM_Velimir
+				ruling_only = yes
+			}
+		}
+		localization_key = RUS_name_hyperborea
+	}
+	text = {
+		trigger = {
+			original_tag = PRM
+			has_country_leader = {
+				character =  PRM_Gutrum_Vagner
+				ruling_only = yes
+			}
+		}
+		localization_key = RUS_name_ab
+	}
+	text = {
+		trigger = {
+			original_tag = SBA
+		}
+		localization_key = RUS_name_SBA
+	}
+	text = {
+		trigger = {
+			original_tag = MAR
+			has_government = despotism
+		}
+		localization_key = RUS_name_MAR_bel
+	}
+	text = {
+		trigger = {
+			original_tag = MAR
+			has_government = socialist
+		}
+		localization_key = RUS_name_MAR_kos
+	}
+	text = {
+		trigger = {
+			is_russian_nation = yes
+		}
+		localization_key = RUS_name_generic
+	}
+}

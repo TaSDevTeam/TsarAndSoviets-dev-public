@@ -5761,3 +5761,16 @@ news_event = { #AAG turns to Russia
 		name = MAR_2WRW_world_news.48.a
 	}
 }
+
+news_event = { #Russia has nuclears now
+	id = MAR_2WRW_world_news.49
+	title = MAR_2WRW_world_news.49.t
+	desc = MAR_2WRW_world_news.49.d
+	picture = GFX_MAR_2WRW_world_news_049
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_2WRW_world_news.49.a
+	}
+}
