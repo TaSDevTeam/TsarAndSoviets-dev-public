@@ -1,0 +1,20 @@
+scripted_gui = {
+	TaS_nuke_gui = {
+		context_type = decision_category
+		window_name = "TaS_nuke_gui_window_container"
+		dirty = TaS_nuke_gui_dirty
+		
+		visible = {
+			check_variable = { TaS_RUS_nuclear_program_phase < 6 }
+		}
+		
+		ai_enabled = { always = no }
+
+		properties = {
+			nuke_progress_scale = { frame = TaS_nuke_development_array_frame }
+			current_stage_icon = {
+				image = "GFX_nuke_progress_stage_[?TaS_RUS_nuclear_program_phase]"
+			}
+		}
+	}
+}

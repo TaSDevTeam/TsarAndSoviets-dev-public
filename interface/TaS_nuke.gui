@@ -1,0 +1,43 @@
+guiTypes = {
+	containerWindowType = {
+		name = "TaS_nuke_gui_window_container"
+		size = { width = 482 height = 160 }
+		position = { x = 0 y = 35 }
+		
+		instantTextBoxType = {
+			name = "Nuke_gui_stage_Title"
+			position = { x = 15 y = 0 }
+			font = "aldrich_36_outline"
+			text = Nuke_gui_stage_Title
+			maxWidth = 496
+			maxHeight = 108
+			format = center
+			fixedsize = yes
+			alwaystransparent = yes
+		}
+			
+		iconType = {
+			name = "progress_scale_frame"
+			position = { x = 23 y = 75 }
+			quadtexturesprite = "GFX_nuke_progress_frame"
+			pdx_tooltip = "TaS_nuke_progress_tt"
+			pdx_tooltip_delayed = "TaS_nuke_progress_tt_delayed"
+		}
+		
+		iconType = {
+			name = "nuke_progress_scale"
+			position = { x = 94 y = 87 }
+			quadtexturesprite = "GFX_nuke_progress_scale"
+			pdx_tooltip = "TaS_nuke_progress_tt"
+			pdx_tooltip_delayed = "TaS_nuke_progress_tt_delayed"
+		}
+		
+		iconType = {
+			name = "current_stage_icon"
+			position = { x = 23 y = 75 }
+			quadtexturesprite = "GFX_nuke_progress_stage_1"
+			pdx_tooltip = "TaS_nuke_progress_tt"
+			pdx_tooltip_delayed = "TaS_nuke_progress_tt_delayed"
+		}
+	}
+}

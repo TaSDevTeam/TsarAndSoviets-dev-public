@@ -3796,11 +3796,26 @@ MAR_yug_excersices_category = {
 }
 
 RUS_nuke_development_category_facelift = {
+	
+	RUS_NEW_nukes_effigy = {
+		icon = GFX_decision_generic_nuclear_radiation
+		visible = {
+			check_variable = { TaS_RUS_nuclear_program_phase > 0 }
+		}
+		fire_only_once = yes
+		available = {
+			always = no
+		}
 
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout RUS_NEW_nukes_effigy"
+		}
+	}
+	
 	### STAGE ONE ###
 
 	RUS_NEW_nukes_theory_develop_physics_institutes = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_build_a_academy
 
 		visible = {
 			check_variable = { TaS_RUS_nuclear_program_phase = 1 }
@@ -3840,7 +3855,7 @@ RUS_nuke_development_category_facelift = {
 			
 	}
 	RUS_NEW_nukes_theory_issue_research_grants = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_generic_research_increase
 
 		visible = {
 			check_variable = { TaS_RUS_nuclear_program_phase = 1 }
@@ -3874,7 +3889,7 @@ RUS_nuke_development_category_facelift = {
 		}
 	}
 	RUS_NEW_nukes_theory_approach_emigre_scientists = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_generic_phone_call
 
 		visible = {
 			check_variable = { TaS_RUS_nuclear_program_phase = 1 }
@@ -3909,7 +3924,7 @@ RUS_nuke_development_category_facelift = {
 		}
 	}
 	RUS_NEW_nukes_theory_study_foreign_developments = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_generic_document_building
 
 		visible = {
 			check_variable = { TaS_RUS_nuclear_program_phase = 1 }
@@ -3951,7 +3966,7 @@ RUS_nuke_development_category_facelift = {
 	### STAGE TWO ###
 
 	RUS_NEW_nukes_mats_develop_material_extraction_techniques = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_generic_building
 
 		visible = {
 			check_variable = { TaS_RUS_nuclear_program_phase = 2 }
@@ -3992,7 +4007,7 @@ RUS_nuke_development_category_facelift = {
 	}
 
 	RUS_NEW_nukes_mats_assemble_processing_facilities = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_generic_factory_blue
 
 		visible = {
 			check_variable = { TaS_RUS_nuclear_program_phase = 2 }
@@ -4054,7 +4069,7 @@ RUS_nuke_development_category_facelift = {
 	}
 
 	RUS_NEW_nukes_mats_expand_uranium_mining = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_generic_mining
 
 		visible = {
 			check_variable = { TaS_RUS_nuclear_program_phase = 2 }
@@ -4114,7 +4129,7 @@ RUS_nuke_development_category_facelift = {
 	}
 
 	RUS_NEW_nukes_mats_incentivize_skilled_laborers = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_generic_workers
 
 		visible = {
 			check_variable = { TaS_RUS_nuclear_program_phase = 2 }
@@ -4161,7 +4176,7 @@ RUS_nuke_development_category_facelift = {
 	### STAGE THREE ###
 
 	RUS_NEW_nukes_infra_accelerate_plant_approval_processes = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_generic_political_action
 
 		visible = {
 			check_variable = { TaS_RUS_nuclear_program_phase = 3 }
@@ -4197,7 +4212,7 @@ RUS_nuke_development_category_facelift = {
 	}
 
 	RUS_NEW_nukes_infra_fund_power_station_construction = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_generic_investors
 
 		visible = {
 			check_variable = { TaS_RUS_nuclear_program_phase = 3 }
@@ -4243,7 +4258,7 @@ RUS_nuke_development_category_facelift = {
 	}
 
 	RUS_NEW_nukes_infra_commission_additional_research_reactors = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_generic_power
 
 		visible = {
 			check_variable = { TaS_RUS_nuclear_program_phase = 3 }
@@ -4291,7 +4306,7 @@ RUS_nuke_development_category_facelift = {
 	}
 
 	RUS_NEW_nukes_infra_study_foreign_reactor_designs = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_generic_political_discourse
 
 		visible = {
 			check_variable = { TaS_RUS_nuclear_program_phase = 3 }
@@ -4331,7 +4346,7 @@ RUS_nuke_development_category_facelift = {
 	### STAGE FOUR ###
 
 	RUS_NEW_nukes_refine_construct_additional_centrifuges = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_generic_research
 
 		visible = {
 			check_variable = { TaS_RUS_nuclear_program_phase = 4 }
@@ -4368,7 +4383,7 @@ RUS_nuke_development_category_facelift = {
 	}
 
 	RUS_NEW_nukes_refine_develop_isotope_separation_theory = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_generic_document
 
 		visible = {
 			check_variable = { TaS_RUS_nuclear_program_phase = 4 }
@@ -4401,7 +4416,7 @@ RUS_nuke_development_category_facelift = {
 	}
 
 	RUS_NEW_nukes_refine_expand_nuclear_reprocessing_infrastructure = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_generic_infrastructure
 
 		visible = {
 			check_variable = { TaS_RUS_nuclear_program_phase = 4 }
@@ -4459,7 +4474,7 @@ RUS_nuke_development_category_facelift = {
 	}
 	
 	RUS_NEW_nukes_refine_create_first_actual_nuclear_power_plant = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_generic_reactor
 
 		visible = {
 			check_variable = { TaS_RUS_nuclear_program_phase = 4 }
@@ -4495,7 +4510,7 @@ RUS_nuke_development_category_facelift = {
 			TaS_nuke_development_monthly_progress_change = yes
 			random_owned_controlled_state = {
 				limit = {
-					infrastructure > 5
+					infrastructure > 5      
 				}
 				set_temp_variable = { state_value_multiplier_temp = 1.10 }
 				econ_state_value_change_multiply = yes
@@ -4517,7 +4532,7 @@ RUS_nuke_development_category_facelift = {
 	### STAGE FIVE ###
 	
 	RUS_NEW_nukes_creation_test_the_bomb = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_generic_nuke
 
 		visible = {
 			check_variable = { TaS_RUS_nuclear_program_phase = 5 }
@@ -4574,7 +4589,7 @@ RUS_nuke_development_category_facelift = {
 	}
 	
 	RUS_NEW_nukes_creation_expand_npps = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_generic_reactor
 
 		visible = {
 			check_variable = { TaS_RUS_nuclear_program_phase = 5 }
@@ -4592,6 +4607,7 @@ RUS_nuke_development_category_facelift = {
 			production_speed_buildings_factor = -0.15
 			misc_costs_modifier = 0.45
 			research_speed_factor = -0.1
+			free_production_units_modifier = -4
 		}
 
 		fire_only_once = yes
@@ -4600,7 +4616,6 @@ RUS_nuke_development_category_facelift = {
 			log = "[GetDateText]: [Root.GetName]: Decision RUS_NEW_weapon_expand_npps"
 			set_temp_variable = { temp_econ_spending_amount = 0.7 }
 			econ_spend_money_once_effect_raw_money = yes
-			free_production_units_modifier = -4
 		}
 
 		remove_effect = {
@@ -4667,7 +4682,7 @@ RUS_nuke_development_category_facelift = {
 	}
 	
 	RUS_NEW_nukes_creation_expand_infrastructure = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_generic_mining
 
 		visible = {
 			check_variable = { TaS_RUS_nuclear_program_phase = 5 }
@@ -4724,7 +4739,7 @@ RUS_nuke_development_category_facelift = {
 	}
 	
 	RUS_NEW_nukes_creation_finalize_studies = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_generic_research_increase
 
 		visible = {
 			check_variable = { TaS_RUS_nuclear_program_phase = 5 }
@@ -4770,7 +4785,7 @@ RUS_nuke_development_category_facelift = {
 	}
 	### STAGE SIX ###
 	RUS_NEW_nukes_expansion_make_rockets = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_generic_rockets
 
 		visible = {
 			check_variable = { TaS_RUS_nuclear_program_phase = 6 }
@@ -4828,7 +4843,7 @@ RUS_nuke_development_category_facelift = {
 	}
 	
 	RUS_NEW_nukes_expansion_make_warheads = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_generic_nuclear_bomb_delivery
 
 		visible = {
 			check_variable = { TaS_RUS_nuclear_program_phase = 6 }
@@ -4870,7 +4885,7 @@ RUS_nuke_development_category_facelift = {
 	}
 	
 	RUS_NEW_nukes_expansion_make_bombers = {
-		icon = GFX_decision_generic_industry
+		icon = GFX_decision_generic_bombing
 
 		visible = {
 			check_variable = { TaS_RUS_nuclear_program_phase = 6 }
@@ -4921,8 +4936,8 @@ RUS_nuke_development_category_facelift = {
 		}
 	}
 	
-	RUS_NEW_nukes_expansion_make_submarines = {
-		icon = GFX_decision_generic_industry
+	RUS_NEW_nukes_expansion_make_aa_bunekers = {
+		icon = GFX_decision_generic_fort
 
 		visible = {
 			check_variable = { TaS_RUS_nuclear_program_phase = 6 }
@@ -4947,36 +4962,90 @@ RUS_nuke_development_category_facelift = {
 		}
 		
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision RUS_NEW_nukes_expansion_make_submarines"
-			set_temp_variable = { temp_econ_spending_amount = 0.75 }
+			log = "[GetDateText]: [Root.GetName]: Decision RUS_NEW_nukes_expansion_make_aa_bunekers"
+			set_temp_variable = { temp_econ_spending_amount = 0.35 }
 			econ_spend_money_once_effect_raw_money = yes
 		}
 
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_NEW_nukes_expansion_make_submarines"
-			custom_effect_tooltip = RUS_NEW_nukes_expansion_make_submarines_tt
-			hidden_effect = {
-				RUS = {
-					create_equipment_variant = {
-						name = "Rus' Class"
-						type = ship_hull_submarine_1
-						parent_version = 0
-						modules = {
-							fixed_ship_engine_slot = sub_ship_engine_2
-							fixed_ship_torpedo_slot = ship_torpedo_sub_1
-							rear_1_custom_slot = ship_torpedo_sub_1
-						}
+			log = "[GetDateText]: [Root.GetName]: Decision Remove RUS_NEW_nukes_expansion_make_aa_bunekers"
+			random_owned_controlled_state = {
+				limit = {
+					has_state_category = city
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = anti_air_building
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = {
+						all_provinces = no
+						limit_to_victory_point > 1
 					}
 				}
-				if = {
-					limit = { has_dlc = "Man the Guns" }
-					create_ship = { type = ship_hull_submarine_1 equipment_variant = "Rus' Class" creator = RUS name = "Rus' Class Submarine" }
+			}
+			random_owned_controlled_state = {
+				limit = {
+					has_state_category = city
 				}
-				else = {
-					create_ship = { type = submarine_1 equipment_variant = "Rus' Class" creator = RUS name = "Rus' Class Submarine" }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = anti_air_building
+					level = 1
+					instant_build = yes
 				}
-				calculate_strike_capability = yes
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = {
+						all_provinces = no
+						limit_to_victory_point > 1
+					}
+				}
 			}
 		}
 	}
+	
+	##
+	RUS_NEW_nukes_tick = {
+    	available = {
+			NOT = {
+				MAR = { has_country_flag = RUS_started_nukes_new }
+			}
+    	}
+	
+    	activation = {
+    		has_country_flag = RUS_started_nukes_new
+    	}
+		
+    	is_good = yes
+	
+    	days_mission_timeout = 30
+	
+		timeout_effect = { 
+    		log = "[GetDateText]: [Root.GetName]: RUS_NEW_nukes_tick mission timer elapsed" 
+			set_temp_variable = { temp_progress_gained = TaS_nuke_dev_monthly_gain } 
+			TaS_nuke_development_progress_change = yes
+			
+			TaS_nuke_development_switch_to_the_next_stage = yes
+			hidden_effect = {
+    			if = {
+    				limit = {
+    					has_country_flag = RUS_started_nukes_new
+    				}
+    				activate_mission = RUS_NEW_nukes_tick
+    			}
+    		}
+    	}
+	
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Mission RUS_NEW_nukes_tick Completed (Should never happen for this mission, please report if you see this in the log.)"
+    	}
+  	}
 }
