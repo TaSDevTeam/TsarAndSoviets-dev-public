@@ -70,3 +70,22 @@ MAR_yug_excersices_category = {
 		base = 40
 	}
 }
+
+MAR_hameru_anim_proofofconcept_category = {
+	icon = GFX_decision_generic_drug
+	#picture = GFX_MAR_YUG_70_category
+	scripted_gui = MAR_Homura_GUI 
+	allowed = {
+		tag = MAR
+	}
+	
+	visible = {
+		is_debug = yes
+	}
+	
+	visible_when_empty = yes
+	
+	priority = {
+		base = 40
+	}
+}
