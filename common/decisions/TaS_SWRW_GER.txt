@@ -3,7 +3,7 @@ GER_SWRW_category = {
 		priority = 100
     	available = {
 			NOT = {	
-				MAR = { has_war_with = GER }
+				RUS = { has_war_with = GER }
 			} 
     	}
 	
@@ -17,7 +17,7 @@ GER_SWRW_category = {
 	
 		timeout_effect = {
     		log = "[GetDateText]: [Root.GetName]: TaS_WRW2_devastation_tick_ger mission timer elapsed" 
-			custom_effect_tooltip = TaS_WRW2_devastation_tick_tt
+			custom_effect_tooltip = TaS_WRW2_devastation_tick_ger_tt
     		add_to_variable = {
     		    GER.WRW2_devastation = GER.WRW2_devastation_gain
     		}
@@ -27,7 +27,7 @@ GER_SWRW_category = {
     		hidden_effect = {
     			if = {
     				limit = {
-    					has_war_with = MAR 
+    					has_war_with = RUS 
     				}
     				activate_mission = TaS_WRW2_devastation_tick_ger
     			}

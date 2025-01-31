@@ -3009,7 +3009,7 @@ TaS_WRW2_recount_exhausion_modifier = {
 	#add_dynamic_modifier = { modifier = TaS_WRW2_exhausion_modifier } 
 	
 	set_temp_variable = { WRW2_devastation_TEMP = ROOT.WRW2_devastation }
-	add_to_temp_variable = { WRW2_devastation_TEMP = -30 }
+	add_to_temp_variable = { WRW2_devastation_TEMP = -20 }
 	
 	set_variable = { WRW2_exhausion_army_org_factor = -0.003 }
 	multiply_variable = { WRW2_exhausion_army_org_factor = WRW2_devastation_TEMP }
@@ -3050,7 +3050,7 @@ TaS_WRW2_recount_exhausion_modifier = {
 TaS_WRW2_check_the_exhausion = {
 	if = {
 		limit = {
-			check_variable = { ROOT.WRW2_devastation > 30 }
+			check_variable = { ROOT.WRW2_devastation > 20 }
 			NOT = {
 				OR = {
 					has_dynamic_modifier = { modifier = TaS_WRW2_exhausion_modifier_GER }
@@ -3094,7 +3094,7 @@ TaS_WRW2_check_the_exhausion = {
 	}
 	if = {
 		limit = {
-			check_variable = { ROOT.WRW2_devastation > 30 }
+			check_variable = { ROOT.WRW2_devastation > 20 }
 			OR = {
 				has_dynamic_modifier = { modifier = TaS_WRW2_exhausion_modifier_GER }
 				has_dynamic_modifier = { modifier = TaS_WRW2_exhausion_modifier_RUS }

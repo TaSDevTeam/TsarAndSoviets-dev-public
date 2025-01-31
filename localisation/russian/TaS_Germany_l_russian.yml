@@ -2,6 +2,56 @@ l_russian:
  TaS_newsheader_Iskra: "\n£custom_header_MAR_Iskra\n\n\n\n"
  TaS_newsheader_Bodrost: "\n£custom_header_MAR_Courage\n\n\n\n"
  TaS_newsheader_K_Rosii: "\n£custom_header_MAR_To_Young_Russia\n\n\n\n"
+ #Решения войны
+ TaS_WRW2_devastation_tick_ger:0 "Рост истощения!"
+ TaS_WRW2_devastation_tick_ger_tt:0 "§eИстощение§! §Rувеличится§! на §R[?GER.WRW2_devastation_gain]§!.\n"
+ 
+ SWRW_activate_defensive_plan_spb
+ 
+ SWRW_activate_defensive_plan_spb:0 "§CОперация 'а'§!"
+ SWRW_activate_defensive_plan_spb_desc:0 ""
+ SWRW_activate_defensive_plan_spb_tt:0 "В течении §Y90 дней§! мы должны не дать русским занять §CСанкт-Петербург§!. На время операции будет выдан §Yнациональный дух§!, §Gусиляющий оборону армии§!. §RПровал операции§! нанесёт §eсерьёзный удар§! по §Kбоеспособности§! §Dнашей армии§!."
+ SWRW_activate_defensive_plan_spb_mission:0 "Время для §CОперации 'Александр Невский'§!."
+ 
+ SWRW_activate_defensive_plan_msk:0 "§RОперация 'б'§!"
+ SWRW_activate_defensive_plan_msk_desc:0 ""
+ SWRW_activate_defensive_plan_msk_tt:0 "В течении §Y90 дней§! мы должны не дать русским занять §CМоскву§!. На время операции будет выдан §Yнациональный дух§!, §Gусиляющий оборону армии§!. §RПровал операции§! нанесёт §eсерьёзный удар§! по §Kбоеспособности§! §Dнашей армии§!."
+ SWRW_activate_defensive_plan_msk_mission:0 "Время для §RОперации 'Минин и Пожарский'§!."
+ 
+ SWRW_activate_defensive_plan_volga:0 "§YОперация 'в'§!"
+ SWRW_activate_defensive_plan_volga_desc:0 ""
+ SWRW_activate_defensive_plan_volga_tt:0 "В течении §Y90 дней§! мы должны не дать русским занять §CПаулюсбург§!. На время операции будет выдан §Yнациональный дух§!, §Gусиляющий оборону армии§!. §RПровал операции§! нанесёт §eсерьёзный удар§! по §Kбоеспособности§! §Dнашей армии§!."
+ SWRW_activate_defensive_plan_volga_mission:0 "Время для §YОперации 'Дмитрий Донской'§!."
+ 
+ SWRW_activate_offensive_plan_arkhangelsk:0 "§GОперация 'г'§!"
+ SWRW_activate_offensive_plan_arkhangelsk_desc:0 ""
+ SWRW_activate_offensive_plan_arkhangelsk_tt:0 "В течении §Y60 дней§! мы должны захватить §CАрхангельск§!. На время операции будет выдан §Yнациональный дух§!, §Gусиляющий наступление армии§!. §RПровал операции§! нанесёт §eсерьёзный удар§! по §Kбоеспособности§! §Dнашей армии§!."
+ SWRW_activate_offensive_plan_arkhangelsk_mission:0 "Время для §GОперации 'Святослав Игоревич'§!." 
+ 
+ SWRW_activate_offensive_plan_kazan:0 "§GОперация 'д'§!"
+ SWRW_activate_offensive_plan_kazan_desc:0 ""
+ SWRW_activate_offensive_plan_kazan_tt:0 "В течении §Y60 дней§! мы должны захватить §CКазань§!. На время операции будет выдан §Yнациональный дух§!, §Gусиляющий наступление армии§!. §RПровал операции§! нанесёт §eсерьёзный удар§! по §Kбоеспособности§! §Dнашей армии§!."
+ SWRW_activate_offensive_plan_kazan_mission:0 "Время для §GОперации 'Иван Грозный'§!."
+ 
+ SWRW_raid_western_russia:0 "Рейд в Западную Россию"
+ 
+ SWRW_activate_rebellion_central_asia:0 "Поднять восстание в [UTL.GetFlag] §YСредней Азии§!"
+ 
+ SWRW_GER_propaganda_campaign:0 "Агитационная кампания"
+ SWRW_GER_raise_war_taxes:0 "Поднять военный налог"
+ SWRW_GER_lease_private_arms_companies:0 "Привлечь частные компании к производству оружия"
+ SWRW_GER_expand_war_orders:0 "Увеличить военный заказ"
+ SWRW_GER_war_bonds:0 "Ввести военные займы"
+ SWRW_GER_general_staff_meeting:0 "Провести собрание высшего коммандования"
+ SWRW_GER_get_rid_of_traitors:0 "Провести чистки от ненадёжных элементов"
+ 
+ TaS_WRW2_offer_status_quo:0 "Предложить статус-кво"
+ TaS_WRW2_offer_muscowy:0 "Предложить Московиен"
+ TaS_WRW2_offer_muscowy_caucasus:0 "Предложить Московиен и Кавказ"
+ TaS_WRW2_offer_muscowy_caucasus_dnepr:0 "Предложить границу по Днепру"
+ TaS_WRW2_offer_total_cap:0 "Предложить полную капитуляцию"
+ TaS_WRW2_offer_russian_cap:0 "Предложить полную капитуляцию России"
+ SWRW_spread_anti_war_propaganda:0 "Распространять антивоенную пропаганду"
  
  #Фокусы Войны Германии
  GER_battle_of_civilizations:0 "Столкновение цивилизаций"
