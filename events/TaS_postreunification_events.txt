@@ -10,7 +10,7 @@ add_namespace = MAR_2WRW_world_news
 
 #MAR_Turkestan
 country_event = { #Kenes over - Germans
-	id = MAR_Turkestan.1
+	id = MAR_Turkestan.1 
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Turkestan.1"}
 	title = MAR_Turkestan.1.t
 	desc = MAR_Turkestan.1.d
@@ -37,9 +37,18 @@ country_event = { #Kenes over - Japs
 
 	option = { #cool, let's invade this dumpster fire
 		name = MAR_Turkestan.2.a
-		annex_country = {
-			target = TRK
-			transfer_troops = no
+		if = { 
+			limit = { TRK = { has_cosmetic_tag = TRK_anarchy } }
+			annex_country = {
+				target = TRK
+				transfer_troops = no
+			}
+		}
+		else = {
+			declare_war_on = {
+				target = TRK
+				type = annex_everything
+			}
 		}
 		declare_war_on = {
 			target = UTL
@@ -51,6 +60,14 @@ country_event = { #Kenes over - Japs
 		}
 		declare_war_on = {
 			target = KYR
+			type = annex_everything
+		}
+		declare_war_on = {
+			target = UZB
+			type = annex_everything
+		}
+		declare_war_on = {
+			target = KRK
 			type = annex_everything
 		}
 		hidden_effect = {
@@ -2926,7 +2943,7 @@ country_event = { #FIN: Return of Karelia
 	id = MAR_ultimatums.101
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.101"}
 	title = MAR_ultimatums.101.t
-	desc = MAR_ultimatums.101.desc
+	desc = MAR_ultimatums.101.d
 	picture = GFX_report_event_peace_deal
 
 	is_triggered_only = yes
@@ -2951,7 +2968,7 @@ country_event = { #FIN: They refused
 	id = MAR_ultimatums.102
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.102"}
 	title = MAR_ultimatums.102.t
-	desc = MAR_ultimatums.102.desc
+	desc = MAR_ultimatums.102.d
 	picture = GFX_report_event_peace_deal
 
 	is_triggered_only = yes
@@ -3001,7 +3018,7 @@ country_event = { #TUR: Russia requests to buy Batumi
 	id = MAR_ultimatums.103
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.103"}
 	title = MAR_ultimatums.103.t
-	desc = MAR_ultimatums.103.desc
+	desc = MAR_ultimatums.103.d
 	picture = GFX_report_event_peace_deal
 
 	is_triggered_only = yes
@@ -3031,7 +3048,7 @@ country_event = { #TUR: The deal
 	id = MAR_ultimatums.104
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.104"}
 	title = MAR_ultimatums.104.t
-	desc = MAR_ultimatums.104.desc
+	desc = MAR_ultimatums.104.d
 	picture = GFX_report_event_peace_deal
 
 	is_triggered_only = yes
@@ -3077,7 +3094,7 @@ country_event = { #TUR: The broken deal
 	id = MAR_ultimatums.105
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.105"}
 	title = MAR_ultimatums.105.t
-	desc = MAR_ultimatums.105.desc
+	desc = MAR_ultimatums.105.d
 	picture = GFX_report_event_peace_deal
 
 	is_triggered_only = yes
@@ -3123,7 +3140,7 @@ country_event = { #TUR: Batumi taken
 	id = MAR_ultimatums.106
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.106"}
 	title = MAR_ultimatums.106.t
-	desc = MAR_ultimatums.106.desc
+	desc = MAR_ultimatums.106.d
 	picture = GFX_report_event_peace_deal
 
 	is_triggered_only = yes
@@ -3163,7 +3180,7 @@ country_event = { #TUR: Batumi fail
 	id = MAR_ultimatums.107
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.107"}
 	title = MAR_ultimatums.107.t
-	desc = MAR_ultimatums.107.desc
+	desc = MAR_ultimatums.107.d
 	picture = GFX_report_event_peace_deal
 
 	is_triggered_only = yes
@@ -3183,7 +3200,7 @@ country_event = { #TUR: Batumi occupied what to do
 	id = MAR_ultimatums.108
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.108"}
 	title = MAR_ultimatums.108.t
-	desc = MAR_ultimatums.108.desc
+	desc = MAR_ultimatums.108.d
 	picture = GFX_report_event_peace_deal
 
 	is_triggered_only = yes
@@ -3216,7 +3233,7 @@ country_event = { #TUR: Turkey gather troops
 	id = MAR_ultimatums.109
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.109"}
 	title = MAR_ultimatums.109.t
-	desc = MAR_ultimatums.109.desc
+	desc = MAR_ultimatums.109.d
 	picture = GFX_report_event_peace_deal
 
 	is_triggered_only = yes
@@ -3268,7 +3285,7 @@ country_event = { #TUR: fuck let's goooooooo
 	id = MAR_ultimatums.110
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.110"}
 	title = MAR_ultimatums.110.t
-	desc = MAR_ultimatums.110.desc
+	desc = MAR_ultimatums.110.d
 	picture = GFX_report_event_peace_deal
 
 	is_triggered_only = yes
@@ -3298,7 +3315,7 @@ country_event = { #TUR: Ceasefire
 	id = MAR_ultimatums.111
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.111"}
 	title = MAR_ultimatums.111.t
-	desc = MAR_ultimatums.111.desc
+	desc = MAR_ultimatums.111.d
 	picture = GFX_report_event_peace_deal
  
 	is_triggered_only = yes
@@ -3351,7 +3368,7 @@ country_event = { #ROM: Russia Demands
 	id = MAR_ultimatums.112
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.112"}
 	title = MAR_ultimatums.112.t
-	desc = MAR_ultimatums.112.desc
+	desc = MAR_ultimatums.112.d
 	picture = GFX_report_event_peace_deal
 
 	is_triggered_only = yes
@@ -3426,7 +3443,7 @@ country_event = { #ROM: They Refused
 	id = MAR_ultimatums.113
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.113"}
 	title = MAR_ultimatums.113.t
-	desc = MAR_ultimatums.113.desc
+	desc = MAR_ultimatums.113.d
 	picture = GFX_report_event_peace_deal
 
 	is_triggered_only = yes
@@ -3472,7 +3489,7 @@ country_event = { #POL: Returnal of Galicia
 	id = MAR_ultimatums.114
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.114"}
 	title = MAR_ultimatums.114.t
-	desc = MAR_ultimatums.114.desc
+	desc = MAR_ultimatums.114.d
 	picture = GFX_report_event_peace_deal
 
 	is_triggered_only = yes
@@ -3520,7 +3537,7 @@ country_event = { #IR*: Returnal of some state that borders turkmenistan
 	id = MAR_ultimatums.115
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.115"}
 	title = MAR_ultimatums.115.t
-	desc = MAR_ultimatums.115.desc
+	desc = MAR_ultimatums.115.d
 	picture = GFX_report_event_peace_deal
 
 	is_triggered_only = yes
@@ -3547,7 +3564,7 @@ country_event = { #AAG: Evacuation
 	id = MAR_ultimatums.116
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.116"}
 	title = MAR_ultimatums.116.t
-	desc = MAR_ultimatums.116.desc
+	desc = MAR_ultimatums.116.d
 	picture = GFX_report_event_peace_deal
 
 	is_triggered_only = yes

@@ -1058,6 +1058,8 @@ TaS_nuke_development_switch_to_the_next_stage = {
 				news_event = { id = MAR_2WRW_world_news.49 }
 			}
 		}
+		clr_country_flag = RUS_started_nukes_new
+		set_country_flag = RUS_finished_nukes_new
 		set_variable = { TaS_nuke_dev_monthly_gain = 0 }
 		set_variable = { TaS_nuke_development_array^TaS_RUS_nuclear_program_phase = 0 }
 	}

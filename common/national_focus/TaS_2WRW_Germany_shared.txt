@@ -278,7 +278,7 @@ shared_focus = {
 	}
 	prerequisite = {focus = GER_fire_in_the_east}
 	relative_position_id = GER_fire_in_the_east
-	x = -3
+	x = 0
 	y = 1
 	completion_reward = { 
 		if = {
@@ -288,7 +288,7 @@ shared_focus = {
 		}
 		else_if = { 
 			limit = { has_country_flag = GER_SWRW_destruction_focus }
-			country_event = { id = GER_SWRW.12 }
+			country_event = { id = GER_SWRW.7 }
 		}
 		else = {
 			custom_effect_tooltip = G_SWRW_effect_depends_of_event_tt
@@ -308,18 +308,18 @@ shared_focus = {
 			CAU = { surrender_progress > 0.85 }
 		}
 	}
-	prerequisite = {focus = GER_fire_in_the_east}
-	relative_position_id = GER_fire_in_the_east
+	prerequisite = {focus = GER_graveyard_of_the_empires }
+	relative_position_id = GER_graveyard_of_the_empires
 	x = -1
 	y = 1
 	completion_reward = {
 		if = {
 			limit = { has_country_flag = GER_SWRW_defence_focus }
-			country_event = { id = GER_SWRW.9 }
+			country_event = { id = GER_SWRW.11 }
 		}
 		else_if = { 
 			limit = { has_country_flag = GER_SWRW_destruction_focus }
-			country_event = { id = GER_SWRW.14 }
+			country_event = { id = GER_SWRW.18 }
 		}
 		else = {
 			custom_effect_tooltip = G_SWRW_effect_depends_of_event_tt
@@ -339,18 +339,18 @@ shared_focus = {
 			UKR = { surrender_progress > 0.85 }
 		}
 	}
-	prerequisite = {focus = GER_fire_in_the_east}
-	relative_position_id = GER_fire_in_the_east
-	x = 1
+	prerequisite = {focus = GER_graveyard_of_the_empires }
+	relative_position_id = GER_graveyard_of_the_empires
+	x = 0
 	y = 1
 	completion_reward = {
 		if = {
 			limit = { has_country_flag = GER_SWRW_defence_focus }
-			country_event = { id = GER_SWRW.10 }
+			country_event = { id = GER_SWRW.12 }
 		}
 		else_if = { 
 			limit = { has_country_flag = GER_SWRW_destruction_focus }
-			country_event = { id = GER_SWRW.15 }
+			country_event = { id = GER_SWRW.20 }
 		}
 		else = {
 			custom_effect_tooltip = G_SWRW_effect_depends_of_event_tt
@@ -370,18 +370,18 @@ shared_focus = {
 			OST = { surrender_progress > 0.85 }
 		}
 	}
-	prerequisite = {focus = GER_fire_in_the_east}
-	relative_position_id = GER_fire_in_the_east
-	x = 3
+	prerequisite = {focus = GER_graveyard_of_the_empires }
+	relative_position_id = GER_graveyard_of_the_empires
+	x = 1
 	y = 1
 	completion_reward = {
 		if = {
 			limit = { has_country_flag = GER_SWRW_defence_focus }
-			country_event = { id = GER_SWRW.11 }
+			country_event = { id = GER_SWRW.13 }
 		}
 		else_if = { 
 			limit = { has_country_flag = GER_SWRW_destruction_focus }
-			country_event = { id = GER_SWRW.16 }
+			country_event = { id = GER_SWRW.21 }
 		}
 		else = {
 			custom_effect_tooltip = G_SWRW_effect_depends_of_event_tt

@@ -45,7 +45,7 @@ country_event = { #
 	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW_preparation.3" }
 	title = RUS_SWRW_preparation.3.t
 	desc = RUS_SWRW_preparation.3.d
-	#picture = 
+	picture = GFX_SWRW_preparation_3 
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -62,7 +62,7 @@ country_event = { #
 	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW_preparation.4" }
 	title = RUS_SWRW_preparation.4.t
 	desc = RUS_SWRW_preparation.4.d
-	#picture = 
+	picture = GFX_SWRW_preparation_4 
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -79,7 +79,7 @@ country_event = { #
 	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW_preparation.5" }
 	title = RUS_SWRW_preparation.5.t
 	desc = RUS_SWRW_preparation.5.d
-	#picture = 
+	picture = GFX_SWRW_preparation_5 
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -96,7 +96,7 @@ country_event = { #
 	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW_preparation.6" }
 	title = RUS_SWRW_preparation.6.t
 	desc = RUS_SWRW_preparation.6.d
-	#picture = 
+	picture = GFX_SWRW_preparation_6 
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -113,7 +113,7 @@ country_event = { #
 	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW_preparation.7" }
 	title = RUS_SWRW_preparation.7.t
 	desc = RUS_SWRW_preparation.7.d
-	#picture = 
+	picture = GFX_SWRW_preparation_7 
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -130,7 +130,7 @@ country_event = { #
 	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW_preparation.8" }
 	title = RUS_SWRW_preparation.8.t
 	desc = RUS_SWRW_preparation.8.d
-	#picture = 
+	picture = GFX_SWRW_preparation_8 
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -274,8 +274,8 @@ country_event = { #infux of refugees
 	option = { #
 		name = RUS_SWRW.8.a
 		ai_chance = { factor = 1 }
-		country_event = { id = RUS_SWRW.9 }
-		set_temp_variable = { temp_devastation_gained = 2.5 }
+		country_event = { id = RUS_SWRW.9 days = 13 }
+		set_temp_variable = { temp_devastation_gained = 4.5 }
 		TaS_WRW2_change_devastation = yes
 		set_temp_variable = { temp_devastation_gain_gained = 0.25 }
 		TaS_WRW2_change_devastation_gain = yes
@@ -303,7 +303,11 @@ country_event = { #now regulate it
 		remove_ideas = SWRW_influx_of_refugees
 		add_timed_idea = {
 			idea = SWRW_influx_of_refugees
-			days = 90
+			days = 45
+		}
+		add_timed_idea = {
+			idea = SWRW_epidemics
+			days = 60
 		}
 	}
 }
@@ -338,7 +342,26 @@ country_event = { #mountainous rebels
 	option = { #
 		name = RUS_SWRW.11.a
 		ai_chance = { factor = 1 }
-		
+		1565 = {
+			add_dynamic_modifier = {
+				modifier = CAU_muslim_resistance_modifier
+			}
+		}
+		232 = {
+			add_dynamic_modifier = {
+				modifier = CAU_muslim_resistance_modifier
+			}
+		}
+		1560 = {
+			add_dynamic_modifier = {
+				modifier = CAU_muslim_resistance_modifier
+			}
+		}
+		1559 = {
+			add_dynamic_modifier = {
+				modifier = CAU_muslim_resistance_modifier
+			}
+		}
 	}
 }
 
@@ -463,14 +486,16 @@ country_event = { #Moscowien: What to do
 	
 	option = { #Rely on RONA
 		name = GER_SWRW.7.a
+		trigger = { has_country_flag = GER_SWRW_defence_focus }
 		ai_chance = { factor = 1 }
-		country_event = { id = GER_SWRW.8 }
+		country_event = { id = GER_SWRW.8 days = 6 }
 		add_stability = 0.05
 	}
 	option = { #Rely on SS
 		name = GER_SWRW.7.b
+		trigger = { has_country_flag = GER_SWRW_destruction_focus }
 		ai_chance = { factor = 1 }
-		country_event = { id = GER_SWRW.14 }
+		country_event = { id = GER_SWRW.14 days = 3 }
 		add_war_support = 0.05
 	}
 }
@@ -489,6 +514,60 @@ country_event = { #Moscowien: Our Ivans
 		name = GER_SWRW.8.a
 		ai_chance = { factor = 1 }
 		country_event = { id = GER_SWRW.9 days = 14 }
+		XYZ = {
+			MCW_Bronislav_Kaminski = {
+				set_nationality = GER
+			}
+		}
+		GER = {
+			division_template = {
+				name = "Pekhotnaya Diviziya RONA"
+				priority = 2
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0}
+					infantry = { X = 1 y = 1}
+					infantry = { X = 1 y = 2}
+					infantry = { x = 2 y = 0}
+					artillery_brigade = { X = 2 y = 1}
+					artillery_brigade = { X = 2 y = 2}
+				}
+				support = {
+					recon = { x = 0 y = 0 }
+					artillery = { x = 0 y = 1 }
+					logistics_company = { x = 0 y = 2 }
+				}	
+			}
+			division_template = {
+				name = "Bronetankovaya Diviziya RONA"
+				priority = 2
+				regiments = {
+					MBT = { x = 0 y = 0 }
+					MBT = { x = 0 y = 1 }
+					MBT = { x = 1 y = 0}
+					MBT = { X = 1 y = 1}
+					APC = { x = 2 y = 0}
+					APC = { X = 2 y = 1}
+				}
+				support = {
+					maintenance_company = { x = 0 y = 0 }
+				}
+			}
+			97 = {
+				create_unit = {
+					division = "division_template = \"Bronetankovaya Diviziya RONA\" start_experience_factor = 0.6 start_equipment_factor = 1"
+					owner = GER
+					count = 2
+				}
+				create_unit = {
+					division = "division_template = \"Pekhotnaya Diviziya RONA\" start_experience_factor = 0.6 start_equipment_factor = 1"
+					owner = GER
+					count = 4
+				}
+			}
+		}
 	}
 }
 
@@ -530,6 +609,7 @@ country_event = { #Moscowien: Exodus
 		60 = {
 			add_manpower = 278920
 		}
+		add_manpower = 75000
 		hidden_effect = {
 			every_country  = {
 				news_event = {
@@ -553,6 +633,42 @@ country_event = { #Moscowien: Report
 	option = { #
 		name = GER_SWRW.10.a
 		ai_chance = { factor = 1 }
+		set_temp_variable = { temp_devastation_gained = -5 }
+		TaS_WRW2_change_devastation = yes
+		add_stability = 0.05
+		1442 = {
+			add_building_construction = {
+				type = bunker
+				level = 1
+				instant_build = yes
+				province = {
+					all_provinces = no
+					limit_to_victory_point > 3
+				}
+			}
+		}	
+		195 = {
+			add_building_construction = {
+				type = bunker
+				level = 1
+				instant_build = yes
+				province = {
+					all_provinces = no
+					limit_to_victory_point > 3
+				}
+			}
+		}
+		243 = {
+			add_building_construction = {
+				type = bunker
+				level = 1
+				instant_build = yes
+				province = {
+					all_provinces = no
+					limit_to_victory_point > 3
+				}
+			}
+		}
 	}
 }
 
@@ -569,6 +685,59 @@ country_event = { #Caucasus: Clans
 	option = { #
 		name = GER_SWRW.11.a
 		ai_chance = { factor = 1 }
+		CAU = {
+			add_ideas = SWRW_muslim_warriors
+			add_manpower = 15000
+			division_template = {
+				name = "Modzhahedy"
+				priority = 2
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 1 y = 0}
+					infantry = { X = 1 y = 1}
+					infantry = { X = 1 y = 2}
+					artillery_brigade = { X = 2 y = 1}
+				}
+				support = {
+					recon = { x = 0 y = 0 }
+					artillery = { x = 0 y = 1 }
+					logistics_company = { x = 0 y = 2 }
+				}	
+			}
+			1564 = {
+				create_unit = {
+					division = "division_template = \"Modzhahedy\" start_experience_factor = 0.6 start_equipment_factor = 0.9"
+					owner = CAU
+					count = 4
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = {
+						all_provinces = no
+						limit_to_victory_point > 3
+					}
+				}
+			}
+			232 = {
+				create_unit = {
+					division = "division_template = \"Modzhahedy\" start_experience_factor = 0.6 start_equipment_factor = 0.9"
+					owner = CAU
+					count = 4
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = {
+						all_provinces = no
+						limit_to_victory_point > 3
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -585,6 +754,58 @@ country_event = { #Ukraine: Honorary Aryans
 	option = { #
 		name = GER_SWRW.12.a
 		ai_chance = { factor = 1 }
+		UKR = {
+			add_manpower = 35000
+			division_template = {
+				name = "Diviziya Potuzhnosti"
+				priority = 2
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 1 y = 0}
+					infantry = { X = 1 y = 1}
+					infantry = { X = 1 y = 2}
+					artillery_brigade = { X = 2 y = 1}
+				}
+				support = {
+					recon = { x = 0 y = 0 }
+					artillery = { x = 0 y = 1 }
+					logistics_company = { x = 0 y = 2 }
+				}	
+			}
+			1428 = {
+				create_unit = {
+					division = "division_template = \"Diviziya Potuzhnosti\" start_experience_factor = 0.6 start_equipment_factor = 0.9"
+					owner = UKR
+					count = 5
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = {
+						all_provinces = no
+						limit_to_victory_point > 3
+					}
+				}
+			}
+			93 = {
+				create_unit = {
+					division = "division_template = \"Diviziya Potuzhnosti\" start_experience_factor = 0.6 start_equipment_factor = 0.9"
+					owner = UKR
+					count = 5
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = {
+						all_provinces = no
+						limit_to_victory_point > 2
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -601,6 +822,212 @@ country_event = { #Ostland: Volksdeutsche Volkssturm
 	option = { #
 		name = GER_SWRW.13.a
 		ai_chance = { factor = 1 }
+		if = {
+			limit = { OST = { exists = yes } }
+			OST = {
+				add_manpower = 35000
+				division_template = {
+					name = "Volkssturm"
+					priority = 2
+					regiments = {
+						light_infantry = { x = 0 y = 0 }
+						light_infantry = { x = 0 y = 1 }
+						light_infantry = { x = 1 y = 0}
+						light_infantry = { X = 1 y = 1}
+						light_infantry = { X = 1 y = 2}
+					}
+					support = {
+						recon = { x = 0 y = 0 }
+						artillery = { x = 0 y = 1 }
+						logistics_company = { x = 0 y = 2 }
+					}	
+				}
+				13 = {
+					create_unit = {
+						division = "division_template = \"Volkssturm\" start_experience_factor = 0.6 start_equipment_factor = 0.9"
+						owner = OST
+						count = 6
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = {
+							all_provinces = no
+							limit_to_victory_point > 3
+						}
+					}
+				}
+				1397 = {
+					create_unit = {
+						division = "division_template = \"Volkssturm\" start_experience_factor = 0.6 start_equipment_factor = 0.9"
+						owner = OST
+						count = 6
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = {
+							all_provinces = no
+							limit_to_victory_point > 3
+						}
+					}
+				}
+				79 = {
+					create_unit = {
+						division = "division_template = \"Volkssturm\" start_experience_factor = 0.6 start_equipment_factor = 0.9"
+						owner = OST
+						count = 6
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = {
+							all_provinces = no
+							limit_to_victory_point > 3
+						}
+					}
+				}
+				if = {
+					limit = { BLR = { exists = yes } }
+					add_manpower = 35000
+					division_template = {
+						name = "Volkssturm"
+						priority = 2
+						regiments = {
+							light_infantry = { x = 0 y = 0 }
+							light_infantry = { x = 0 y = 1 }
+							light_infantry = { x = 1 y = 0}
+							light_infantry = { X = 1 y = 1}
+							light_infantry = { X = 1 y = 2}
+						}
+						support = {
+							recon = { x = 0 y = 0 }
+							artillery = { x = 0 y = 1 }
+							logistics_company = { x = 0 y = 2 }
+						}	
+					}
+					1404 = {
+						create_unit = {
+							division = "division_template = \"Volkssturm\" start_experience_factor = 0.6 start_equipment_factor = 0.9"
+							owner = BLR
+							count = 6
+						}
+						add_building_construction = {
+							type = bunker
+							level = 1
+							instant_build = yes
+							province = {
+								all_provinces = no
+								limit_to_victory_point > 3
+							}
+						}
+					}
+				}
+				else = {
+					1404 = {
+						create_unit = {
+							division = "division_template = \"Volkssturm\" start_experience_factor = 0.6 start_equipment_factor = 0.9"
+							owner = OST
+							count = 6
+						}
+						add_building_construction = {
+							type = bunker
+							level = 1
+							instant_build = yes
+							province = {
+								all_provinces = no
+								limit_to_victory_point > 3
+							}
+						}
+					}
+				}
+			}
+		}
+		else = {
+			division_template = {
+				name = "Volkssturm"
+				priority = 2
+				regiments = {
+					light_infantry = { x = 0 y = 0 }
+					light_infantry = { x = 0 y = 1 }
+					light_infantry = { x = 1 y = 0}
+					light_infantry = { X = 1 y = 1}
+					light_infantry = { X = 1 y = 2}
+				}
+				support = {
+					recon = { x = 0 y = 0 }
+					artillery = { x = 0 y = 1 }
+					logistics_company = { x = 0 y = 2 }
+				}	
+			}
+			13 = {
+				create_unit = {
+					division = "division_template = \"Volkssturm\" start_experience_factor = 0.6 start_equipment_factor = 0.9"
+					owner = GER
+					count = 4
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = {
+						all_provinces = no
+						limit_to_victory_point > 3
+					}
+				}
+			}
+			1397 = {
+				create_unit = {
+					division = "division_template = \"Volkssturm\" start_experience_factor = 0.6 start_equipment_factor = 0.9"
+					owner = GER
+					count = 4
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = {
+						all_provinces = no
+						limit_to_victory_point > 3
+					}
+				}
+			}
+			79 = {
+				create_unit = {
+					division = "division_template = \"Volkssturm\" start_experience_factor = 0.6 start_equipment_factor = 0.9"
+					owner = GER
+					count = 4
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = {
+						all_provinces = no
+						limit_to_victory_point > 3
+					}
+				}
+			}
+			1404 = {
+				create_unit = {
+					division = "division_template = \"Volkssturm\" start_experience_factor = 0.6 start_equipment_factor = 0.9"
+					owner = GER
+					count = 4
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = {
+						all_provinces = no
+						limit_to_victory_point > 3
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -618,7 +1045,30 @@ country_event = { #Moscowien: Dead land
 		name = GER_SWRW.14.a
 		ai_chance = { factor = 1 }
 		country_event = { id = GER_SWRW.15 days = 14 }
-		#news_event = { id = }
+		MCW = {
+			every_controlled_state = {
+				limit = {
+					has_resistance = yes
+				}
+				add_compliance = 5
+				add_resistance = -15
+			}
+			random_owned_controlled_state = {
+				add_dynamic_modifier = {
+					modifier = SWRW_scorched_earth_modifier
+				}
+			}
+			random_owned_controlled_state = {
+				add_dynamic_modifier = {
+					modifier = SWRW_scorched_earth_modifier
+				}
+			}
+			random_owned_controlled_state = {
+				add_dynamic_modifier = {
+					modifier = SWRW_scorched_earth_modifier
+				}
+			}
+		}
 	}
 }
 
@@ -635,7 +1085,17 @@ country_event = { #Moscowien: Gigeya Phase 1
 	option = { #
 		name = GER_SWRW.15.a
 		ai_chance = { factor = 1 }
-		country_event = { id = GER_SWRW.16 days = 7 }
+		MCW = {
+			add_timed_ideas = {
+				idea = SWRW_epidemics
+				days = 90
+			}	
+			add_manpower = -15000
+		}
+		country_event = { id = GER_SWRW.16 days = 3 }
+		RUS = {
+			country_event = { id = RUS_SWRW.8 days = 3 }
+		}
 	}
 }
 
@@ -652,7 +1112,10 @@ country_event = { #Moscowien: Gigeya Phase 2
 	option = { #
 		name = GER_SWRW.16.a
 		ai_chance = { factor = 1 }
-		country_event = { id = GER_SWRW.17 days = 14 }
+		country_event = { id = GER_SWRW.17 days = 17 }
+		RUS = {
+			add_manpower = -15131
+		}
 	}
 }
 
@@ -669,6 +1132,14 @@ country_event = { #Moscowien: Damn that shit's backfiring
 	option = { #
 		name = GER_SWRW.17.a
 		ai_chance = { factor = 1 }
+		5 = {
+			add_manpower = -178549
+		}
+		add_manpower = -51331
+		add_timed_ideas = {
+			idea = SWRW_epidemics
+			days = 45
+		}
 		hidden_effect = {
 			every_country  = {
 				news_event = {
@@ -679,7 +1150,7 @@ country_event = { #Moscowien: Damn that shit's backfiring
 	}
 }
 
-country_event = { #Caucasus: Detonation
+country_event = { #Caucasus: let's invent islamic terrorism
 	id = GER_SWRW.18
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_SWRW.18" }
 	title = GER_SWRW.18.t
@@ -692,6 +1163,21 @@ country_event = { #Caucasus: Detonation
 	option = { #
 		name = GER_SWRW.18.a
 		ai_chance = { factor = 1 }
+		232 = {
+			damage_building = {
+				type = infrastructure
+				damage = 2
+			}
+			add_manpower = -214
+		}
+		CAU = { 
+			add_war_support = 0.2
+		}	
+		RUS = {
+			add_war_support = -0.05
+		}	
+		custom_effect_tooltip = SWRW_can_activate_volga_rebels_tt
+		set_country_flag = SWRW_can_activate_volga_rebels
 	}
 }
 
@@ -708,6 +1194,54 @@ country_event = { #Caucasus: Detonation
 	option = { #
 		name = GER_SWRW.19.a
 		ai_chance = { factor = 1 }
+		CAU = {
+			every_controlled_state = {
+				limit = {
+					has_resources_amount = {
+						resource = oil
+						amount > 1
+					}
+				}
+				set_temp_variable = { state_value_multiplier_temp = 0.85 }
+				econ_state_value_change_multiply = yes
+				damage_building = {
+					type = infrastructure
+					damage = 1
+				}
+				add_resource = {
+					type = oil
+					amount = -5
+				}
+				add_dynamic_modifier = {
+					modifier = SWRW_scorched_earth_modifier
+				}
+			}
+			1552 = {
+				add_resource = {
+					type = oil
+					amount = -35
+				}
+			}
+			244 = {
+				add_resource = {
+					type = oil
+					amount = -10
+				}
+			}
+			229 = {
+				add_resource = {
+					type = oil
+					amount = -10
+				}
+			}
+		}	
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.43
+				}
+			}
+		}
 	}
 }
 
@@ -724,6 +1258,36 @@ country_event = { #Ukraine: toten soil
 	option = { #
 		name = GER_SWRW.20.a
 		ai_chance = { factor = 1 }
+		197 = {
+			add_dynamic_modifier = {
+				modifier = SWRW_scorched_earth_modifier
+			}
+		}
+		226 = {
+			add_dynamic_modifier = {
+				modifier = SWRW_scorched_earth_modifier
+			}
+		}	
+		200 = {
+			add_dynamic_modifier = {
+				modifier = SWRW_scorched_earth_modifier
+			}
+		}
+		1426 = {
+			add_dynamic_modifier = {
+				modifier = SWRW_scorched_earth_modifier
+			}
+		}
+		259 = {
+			add_dynamic_modifier = {
+				modifier = SWRW_scorched_earth_modifier
+			}
+		}	
+		1427 = {
+			add_dynamic_modifier = {
+				modifier = SWRW_scorched_earth_modifier
+			}
+		}		
 	}
 }
 
@@ -740,6 +1304,26 @@ country_event = { #Ostland: let's burn the belarus
 	option = { #
 		name = GER_SWRW.21.a
 		ai_chance = { factor = 1 }
+		241 = {
+			add_dynamic_modifier = {
+				modifier = SWRW_scorched_earth_modifier
+			}
+		}
+		206 = {
+			add_dynamic_modifier = {
+				modifier = SWRW_scorched_earth_modifier
+			}
+		}
+		194 = {
+			add_dynamic_modifier = {
+				modifier = SWRW_scorched_earth_modifier
+			}
+		}
+		204 = {
+			add_dynamic_modifier = {
+				modifier = SWRW_scorched_earth_modifier
+			}
+		}
 	}
 }
 

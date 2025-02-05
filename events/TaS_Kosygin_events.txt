@@ -2,7 +2,7 @@ add_namespace = MAR_Kosygin
 add_namespace = MAR_Kosygin_Prestol
 add_namespace = MAR_Kosygin_OGAS
 add_namespace = MAR_Kosygin_UAR
-country_event = {#Dolzhnik
+country_event = {#Dolzhnik 
 	id = MAR_Kosygin.1
 	title = MAR_Kosygin.1.t
 	desc = MAR_Kosygin.1.d
@@ -836,11 +836,11 @@ country_event = {#nuke event numbero tres
 	option = {
 		name = MAR_Kosygin.51.a
 		ai_chance = { factor = 1 }	
-		set_country_flag = mar_has_nukes
-		set_variable = { nuclear_stockpile = 4 }
-		set_variable = { nuclear_global_coverage = 0.35 }
-		add_to_variable = { nuclear_stockpile_change = 7 }
-		calculate_strike_capability = yes
+		#set_country_flag = mar_has_nukes
+		#set_variable = { nuclear_stockpile = 4 }
+		#set_variable = { nuclear_global_coverage = 0.35 }
+		#add_to_variable = { nuclear_stockpile_change = 7 }
+		#calculate_strike_capability = yes
 	}
 }
 
@@ -2473,7 +2473,7 @@ country_event = { #
 }
 
 country_event = { #
-	id = MAR_Kosygin_OGAS.2
+	id = MAR_Kosygin_OGAS.2 
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin_OGAS.2" }
 	title = MAR_Kosygin_OGAS.2.t
 	desc = MAR_Kosygin_OGAS.2.d

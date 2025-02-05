@@ -610,5 +610,21 @@ ideas = {
 				weekly_manpower = -1500
 			}
 		}
+		SWRW_muslim_warriors = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea SWRW_muslim_warriors"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = generic_soldiers_marching
+			modifier = {
+				army_attack_factor = 0.15
+				army_speed_factor = 0.15
+				weekly_manpower = 500
+			}
+		}
 	}
 }
