@@ -5411,7 +5411,23 @@ country_event = {#General - Russia - Opportunities ahead
 	
 	option = { #Let's go 
 		name = TaS_GERCollapse.28.a
-		ai_chance = { factor = 1 }	
+		ai_chance = {
+			factor = 6	
+			modifier = {
+				factor = 100
+				has_game_rule = {
+					rule = SWRW_GER_COLLAPSE_INTERVENTION
+					option = SWRW_GER_COLLAPSE_INTERVENTION_RUS
+				}
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = SWRW_GER_COLLAPSE_INTERVENTION
+					option = SWRW_GER_COLLAPSE_INTERVENTION_USA
+				}
+			}
+		}	
 		set_global_flag = nukes_disabled  
 		set_global_flag = GER_its_joever
 		declare_war_on = {
@@ -5431,7 +5447,23 @@ country_event = {#General - Russia - Opportunities ahead
 	}
 	option = { #Nah 
 		name = TaS_GERCollapse.28.b
-		ai_chance = { factor = 1 }	
+		ai_chance = {
+			factor = 4	
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = SWRW_GER_COLLAPSE_INTERVENTION
+					option = SWRW_GER_COLLAPSE_INTERVENTION_RUS
+				}
+			}
+			modifier = {
+				factor = 100
+				has_game_rule = {
+					rule = SWRW_GER_COLLAPSE_INTERVENTION
+					option = SWRW_GER_COLLAPSE_INTERVENTION_USA
+				}
+			}
+		}
 		hidden_effect = {
 			GER = {
 				country_event = { id = TaS_GERCollapse.29 days = 7}

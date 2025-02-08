@@ -966,6 +966,13 @@ GER_SWRW_category = {
 		}
 		ai_will_do = {
 			factor = 20
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = SWRW_WAR_RESULT
+					option = SWRW_WAR_RESULT_QUO
+				}
+			}	
 		}
 	}
 	TaS_WRW2_offer_muscowy = {
@@ -1013,7 +1020,14 @@ GER_SWRW_category = {
 			}
 		}
 		ai_will_do = {
-			factor = 20
+			factor = 40
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = SWRW_WAR_RESULT
+					option = SWRW_WAR_RESULT_MCW
+				}
+			}	
 		}
 	}
 	TaS_WRW2_offer_muscowy_caucasus = {
@@ -1059,6 +1073,13 @@ GER_SWRW_category = {
 		}
 		ai_will_do = {
 			factor = 20
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = SWRW_WAR_RESULT
+					option = SWRW_WAR_RESULT_MCW_CAU
+				}
+			}	
 		}
 	}
 	TaS_WRW2_offer_muscowy_caucasus_dnepr = {
@@ -1113,6 +1134,13 @@ GER_SWRW_category = {
 		}
 		ai_will_do = {
 			factor = 20
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = SWRW_WAR_RESULT
+					option = SWRW_WAR_RESULT_MCW_CAU_BLR
+				}
+			}	
 		}
 	}
 	TaS_WRW2_offer_total_cap = {
@@ -1155,7 +1183,14 @@ GER_SWRW_category = {
 			}
 		}
 		ai_will_do = {
-			factor = 20
+			factor = 50
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = SWRW_WAR_RESULT
+					option = SWRW_WAR_RESULT_RUS_TOTAL_WIN
+				}
+			}	
 		}
 	}
 	TaS_WRW2_offer_russian_cap = {
@@ -1195,7 +1230,14 @@ GER_SWRW_category = {
 			}
 		}
 		ai_will_do = {
-			factor = 20
+			factor = 100
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = SWRW_WAR_RESULT
+					option = SWRW_WAR_RESULT_GER_WIN
+				}
+			}
 		}
 	}
 	SWRW_spread_anti_war_propaganda = {

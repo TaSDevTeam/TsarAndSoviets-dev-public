@@ -38,6 +38,17 @@ TaS_SWRW_change_suspicion = {
 		set_temp_variable = { alert_id = token:Alert_SWRWGermanAttention }
 		add_TNO_alert = yes
 	}
+	hidden_effect = {
+		if = {
+			limit = {
+				has_game_rule = { 
+					rule = SWRW_SWRW_PREPARATION
+					option = SWRW_SWRW_PREPARATION_PREEMPTIVE_ATTACK
+				}
+			}
+			set_variable = { SWRW_suspicion_var = 99 }
+		}
+	}
 }
 TaS_SWRW_change_suspicion_gain = { 
 	set_temp_variable = { temp_suspicion_gain_gained_txt = SWRW_suspicion_gain_temp }
@@ -164,6 +175,36 @@ TaS_SWRW_start_the_war = {
 			set_variable = { ger_div_limit = 250 }
 		}
 		load_focus_tree = GER_second_patriotic_war
+	}
+	if = {
+		limit = {
+			has_game_rule = {
+				rule = SWRW_SWRW_BOOST
+				option = SWRW_SWRW_BOOST_RUS
+			}
+		}
+		RUS = {
+			apply_war_buff_with_75_divisions = yes
+			add_timed_idea = {
+				idea = war_cheat
+				days = 45
+			}
+		}
+	}
+	if = {
+		limit = {
+			has_game_rule = {
+				rule = SWRW_SWRW_BOOST
+				option = SWRW_SWRW_BOOST_GER
+			}
+		}
+		GER = {
+			apply_war_buff_with_75_divisions = yes
+			add_timed_idea = {
+				idea = war_cheat
+				days = 45
+			}
+		}
 	}
 }
 TaS_SWRW_american_germany = {

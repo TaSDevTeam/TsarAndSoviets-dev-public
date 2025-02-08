@@ -291,6 +291,23 @@ country_event = { #Kurds 1
 	picture = GFX_event_MAR_dobr17
 	option = { #Zhirik
 		name = berez_dobrovoltsy.17.a
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 100
+				has_game_rule = {
+					rule = BELOZERSKY_IRAQ_FATE
+					option = BELOZERSKY_IRAQ_FATE_ZHIRINOVSKY
+				}
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = BELOZERSKY_IRAQ_FATE
+					option = BELOZERSKY_IRAQ_FATE_SADDAM
+				}
+			}
+		}
 		hidden_effect = {
 		    MAR = {
 				country_event = {
@@ -303,6 +320,23 @@ country_event = { #Kurds 1
 	}
 	option = { #Saddam
 		name = berez_dobrovoltsy.17.b
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = BELOZERSKY_IRAQ_FATE
+					option = BELOZERSKY_IRAQ_FATE_ZHIRINOVSKY
+				}
+			}
+			modifier = {
+				factor = 100
+				has_game_rule = {
+					rule = BELOZERSKY_IRAQ_FATE
+					option = BELOZERSKY_IRAQ_FATE_SADDAM
+				}
+			}
+		}
 		set_temp_variable = { debt_temp = 0.035 }
 		econ_national_debt_change = yes
 		hidden_effect = {

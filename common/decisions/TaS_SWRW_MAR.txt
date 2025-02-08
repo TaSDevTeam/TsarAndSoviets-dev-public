@@ -2894,7 +2894,7 @@ MAR_SWRW_category = {
 		
     	is_good = no
 	
-    	days_mission_timeout = 3
+    	days_mission_timeout = 30
 		custom_cost_trigger = {
 			command_power > 39.99
 			has_political_power > 74.99
@@ -2933,7 +2933,7 @@ MAR_SWRW_category = {
 				}
 				every_country  = {
 					news_event = {
-						id = MAR_2WRW_world_news.6
+						id = MAR_2WRW_world_news.50
 					}
 				}
 				MCW = {
@@ -2951,6 +2951,36 @@ MAR_SWRW_category = {
 				set_variable = { SWRW_suspicion_var = 0 }
 				load_focus_tree = MAR_second_patriotic_war
 				mark_focus_tree_layout_dirty = yes
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = SWRW_SWRW_BOOST
+							option = SWRW_SWRW_BOOST_RUS
+						}
+					}
+					RUS = {
+						apply_war_buff_with_75_divisions = yes
+						add_timed_idea = {
+							idea = war_cheat
+							days = 45
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = SWRW_SWRW_BOOST
+							option = SWRW_SWRW_BOOST_GER
+						}
+					}
+					GER = {
+						apply_war_buff_with_75_divisions = yes
+						add_timed_idea = {
+							idea = war_cheat
+							days = 45
+						}
+					}
+				}
 			}
     	}
 	

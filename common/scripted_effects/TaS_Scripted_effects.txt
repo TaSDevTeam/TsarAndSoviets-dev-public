@@ -707,6 +707,36 @@ first_every_month_script_TaS = {
 			set_temp_variable = { SWRW_suspicion_temp = SWRW_suspicion_gain }
 			TaS_SWRW_change_suspicion = yes
 		}
+		if = {
+			limit = {
+				has_game_rule = { 
+					rule = SWRW_SWRW_PREPARATION
+					option = SWRW_SWRW_PREPARATION_PREEMPTIVE_ATTACK
+				}
+			}
+			set_variable = { SWRW_suspicion_var = 99 }
+			activate_mission = TaS_SWRW_germs_panick
+			add_days_mission_timeout = {
+				mission = TaS_SWRW_germs_panick
+				days = 120
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = MAR_started_volunteer_sending
+				OR = {
+					has_game_rule = {
+						rule = BELOZERSKY_FOPO_CHEAT
+						option = BELOZERSKY_FOPO_CHEAT_ENABLED
+					}
+					has_game_rule = {
+						rule = KOSYGIN_FOPO_CHEAT
+						option = KOSYGIN_FOPO_CHEAT_ENABLED
+					}
+				}
+			}
+			MAR_apply_fopo_buff = yes
+		}
 	}
 	MJP = { 
 		if = {
@@ -820,6 +850,7 @@ first_every_day_script_TaS 	= {
 			limit = {
 				has_country_flag = MAR_prestol_active
 			}
+			MAR_prestol_gamerules = yes
 			MAR_prestol_calc_nationwide_strength = yes
 			add_to_variable = { MAR_prestol_clock_time = -1 }
 			add_to_variable = { MAR_prestol_update_time = -1 }
@@ -876,8 +907,19 @@ first_every_day_script_TaS 	= {
 				if = {
 					limit = {
 						check_variable = { ROOT.insurgency_strength < 15 }
-						check_variable = { ROOT.rebelous_states_total < 3 }
+						check_variable = { ROOT.rebelous_states_total < 4 }
+						NOT = {
+							has_game_rule = {
+								rule = KOSYGIN_PRESTOL_TABORITSKY_SEARCH_CHEAT
+								option = KOSYGIN_PRESTOL_TABORITSKY_SEARCH_CHEAT_QUICK
+							}
+						}
 					}
+					country_event = {
+						id = MAR_Kosygin_Prestol.29 days = 1
+					}
+				}
+				else = {
 					country_event = {
 						id = MAR_Kosygin_Prestol.29 days = 1
 					}
@@ -1221,5 +1263,132 @@ MAR_adjust_okhranka_to_game_rules = {
 			}
 		}
 		set_variable = { MAR_MGB_var_liberation_threshold = -100 }
+	}
+}
+MAR_apply_fopo_buff = {
+	every_country = {
+		limit = {
+			has_volunteers_amount_from = { tag = MAR count > 0 }
+			NOT = { has_country_flag = fopo_cheat_done }
+		}
+		set_country_flag = fopo_cheat_done
+		apply_war_buff_with_10_divisions = yes
+		add_timed_idea = {
+			idea = war_cheat
+			days = 90
+		}
+	}
+}
+MAR_prestol_gamerules = {
+	if = {
+		limit = {
+			has_game_rule = {
+				rule = KOSYGIN_PRESTOL_ONEGA_STATUS
+				option = KOSYGIN_PRESTOL_ONEGA_STATUS_CLEAN
+			}
+		}
+		214 = { set_variable = { kosygin_reception = 1 } }
+	}
+	else_if = {
+		limit = {
+			has_game_rule = {
+				rule = KOSYGIN_PRESTOL_ONEGA_STATUS
+				option = KOSYGIN_PRESTOL_ONEGA_STATUS_NEVER_CLEAN
+			}
+		}
+		214 = { set_variable = { kosygin_reception = 2 } }
+	}
+	else_if = {
+		limit = {
+			has_game_rule = {
+				rule = KOSYGIN_PRESTOL_NARYANMAR_STATUS
+				option = KOSYGIN_PRESTOL_NARYANMAR_STATUS_CLEAN
+			}
+		}
+		262 = { set_variable = { kosygin_reception = 1 } }
+	}
+	else_if = {
+		limit = {
+			has_game_rule = {
+				rule = KOSYGIN_PRESTOL_NARYANMAR_STATUS
+				option = KOSYGIN_PRESTOL_NARYANMAR_STATUS_NEVER_CLEAN
+			}
+		}
+		262 = { set_variable = { kosygin_reception = 2 } }
+	}
+	else_if = {
+		limit = {
+			has_game_rule = {
+				rule = KOSYGIN_PRESTOL_KOMI_STATUS
+				option = KOSYGIN_PRESTOL_KOMI_STATUS_CLEAN
+			}
+		}
+		397 = { set_variable = { kosygin_reception = 1 } }
+	}
+	else_if = {
+		limit = {
+			has_game_rule = {
+				rule = KOSYGIN_PRESTOL_KOMI_STATUS
+				option = KOSYGIN_PRESTOL_KOMI_STATUS_NEVER_CLEAN
+			}
+		}
+		397 = { set_variable = { kosygin_reception = 2 } }
+	}
+	else_if = {
+		limit = {
+			has_game_rule = {
+				rule = KOSYGIN_PRESTOL_GORKY_STATUS
+				option = KOSYGIN_PRESTOL_GORKY_STATUS_CLEAN
+			}
+		}
+		252 = { set_variable = { kosygin_reception = 1 } }
+	}
+	else_if = {
+		limit = {
+			has_game_rule = {
+				rule = KOSYGIN_PRESTOL_GORKY_STATUS
+				option = KOSYGIN_PRESTOL_GORKY_STATUS_NEVER_CLEAN
+			}
+		}
+		252 = { set_variable = { kosygin_reception = 2 } }
+	}
+	else_if = {
+		limit = {
+			has_game_rule = {
+				rule = KOSYGIN_PRESTOL_GORKY_STATUS
+				option = KOSYGIN_PRESTOL_GORKY_STATUS_CLEAN
+			}
+		}
+		753 = { set_variable = { kosygin_reception = 1 } }
+	}
+	else_if = {
+		limit = {
+			has_game_rule = {
+				rule = KOSYGIN_PRESTOL_PERM_STATUS
+				option = KOSYGIN_PRESTOL_PERM_STATUS_NEVER_CLEAN
+			}
+		}
+		753 = { set_variable = { kosygin_reception = 2 } }
+	}
+	else_if = {
+		limit = {
+			has_game_rule = {
+				rule = KOSYGIN_PRESTOL_SAMARA_STATUS
+				option = KOSYGIN_PRESTOL_SAMARA_STATUS_CLEAN
+			}
+		}
+		850 = { set_variable = { kosygin_reception = 1 } }
+	}
+	else_if = {
+		limit = {
+			has_game_rule = {
+				rule = KOSYGIN_PRESTOL_SAMARA_STATUS
+				option = KOSYGIN_PRESTOL_SAMARA_STATUS_NEVER_CLEAN
+			}
+		}
+		850 = { set_variable = { kosygin_reception = 2 } }
+	}
+	else = {
+		
 	}
 }

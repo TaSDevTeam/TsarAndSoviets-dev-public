@@ -207,6 +207,19 @@ TaS_2WRW_manchuria_start_rebelion = {
 				TaS_war_partisans
 			}
 		}
+		if = {
+			limit = {
+				has_game_rule = {
+					rule = BELOZERSKY_FE_REBELLION_RESULT
+					option = BELOZERSKY_FE_REBELLION_RESULT_PJP
+				}
+			}
+			apply_war_buff_with_15_divisions = yes
+			add_timed_idea = {
+				idea = war_cheat
+				days = 90
+			}
+		}
 	}
 	PFF = {
 		if = {
@@ -296,6 +309,19 @@ TaS_2WRW_manchuria_start_rebelion = {
 			}
 			add_ideas = {
 				TaS_KOR_JAP_saboteurs
+			}
+		}
+		if = {
+			limit = {
+				has_game_rule = {
+					rule = BELOZERSKY_FE_REBELLION_RESULT
+					option = BELOZERSKY_FE_REBELLION_RESULT_PFF
+				}
+			}
+			apply_war_buff_with_15_divisions = yes
+			add_timed_idea = {
+				idea = war_cheat
+				days = 90
 			}
 		}
 	}

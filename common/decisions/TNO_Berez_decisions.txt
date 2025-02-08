@@ -3461,12 +3461,34 @@ MAR_ogas_deccat = {
 			hidden_effect = {
 				set_temp_variable = { temp_progress_gained = MAR_ogas_gain } 
 				MAR_OGAS_progress_change = yes
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = KOSYGIN_OGAS_CHEAT
+							option = KOSYGIN_OGAS_CHEAT_SOVIET_MAGIC
+						}
+					}
+					set_temp_variable = { temp_progress_gained = 1 } 
+					MAR_OGAS_progress_change = yes
+					MAR_OGAS_switch_to_the_next_stage = yes
+				}
 			}
 			
 			for_each_loop = {
 				array = MAR_ogas_characteristics_array
 				add_to_variable = { MAR_ogas_characteristics_array^i = MAR_ogas_char_gain }
 			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = KOSYGIN_OGAS_CHEAT
+						option = KOSYGIN_OGAS_CHEAT_SOVIET_MAGIC
+					}
+				}
+				set_variable = { MAR_ogas_characteristics_array^1 = 1 }
+				set_variable = { MAR_ogas_characteristics_array^2 = 1 }
+				set_variable = { MAR_ogas_characteristics_array^3 = 0 }
+			}	
 			MAR_OGAS_switch_to_the_next_stage = yes
 			hidden_effect = {
     			if = {
@@ -5188,6 +5210,16 @@ RUS_nuke_development_category_facelift = {
     				}
     				activate_mission = RUS_NEW_nukes_tick
     			}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = SWRW_NUKE_CHEAT
+							option = SWRW_NUKE_CHEAT_SOVIET_MAGIC
+						}
+					}
+					set_variable = { TaS_nuke_development_array^TaS_RUS_nuclear_program_phase = 1 }
+					TaS_nuke_development_switch_to_the_next_stage = yes
+				}	
     		}
     	}
 	

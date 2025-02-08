@@ -3724,6 +3724,17 @@ TaS_SWRW_far_eastern_negotiations = {
 			econ_spend_money_once_effect_raw_money = yes
 			add_to_variable = { swrw_fe_actions = 1 }
 		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0 
+				check_variable = { swrw_diplo_jap > swrw_fe_threshold }
+			}
+			modifier = {
+				factor = 30 
+				check_variable = { swrw_diplo_jap < swrw_fe_threshold }
+			}
+		}
 		days_remove = 14
 		remove_effect = {
 			set_temp_variable = { swrw_diplo_temp = 5 }
@@ -3750,6 +3761,17 @@ TaS_SWRW_far_eastern_negotiations = {
 			econ_spend_money_once_effect_raw_money = yes
 			add_to_variable = { swrw_fe_actions = 1 }
 		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0 
+				check_variable = { swrw_corpo_jap > swrw_fe_threshold }
+			}
+			modifier = {
+				factor = 30 
+				check_variable = { swrw_corpo_jap < swrw_fe_threshold }
+			}
+		}
 		days_remove = 14
 		remove_effect = {
 			set_temp_variable = { swrw_corpo_temp = 5 }
@@ -3762,6 +3784,16 @@ TaS_SWRW_far_eastern_negotiations = {
 		fire_only_once = no
 		custom_cost_trigger = { command_power > 24.99 }
 		custom_cost_text = decision_cost_50_million_25_cp
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 100 
+				OR = {
+					check_variable = { swrw_corpo_jap > 95 }
+					check_variable = { swrw_diplo_jap > 95 }
+				}
+			}
+		}
 		complete_effect = {
 			hidden_effect = {
 				add_command_power = -25
@@ -3790,6 +3822,17 @@ TaS_SWRW_far_eastern_negotiations = {
 		fire_only_once = no
 		custom_cost_trigger = { has_political_power > 14.99 }
 		custom_cost_text = decision_cost_100_million_15_pp
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 100 
+				OR = {
+					check_variable = { swrw_corpo_jap < swrw_fe_threshold }
+					check_variable = { swrw_diplo_jap < swrw_fe_threshold }
+				}
+				check_variable = { days_mission_timeout@SWRW_FEnegotiations_mission < 12 }
+			}
+		}
 		complete_effect = {
 			hidden_effect = {
 				add_political_power = -15
@@ -3848,6 +3891,16 @@ TaS_SWRW_far_eastern_negotiations = {
 				tooltip = SWRW_FEnegotiations_actions_limit_tt	
 			}
 		}
+		ai_will_do = {
+			factor = 20
+			modifier = {
+				factor = 0 
+				OR = {
+					check_variable = { swrw_corpo_jap > swrw_fe_threshold }
+					check_variable = { swrw_diplo_jap > swrw_fe_threshold }
+				}
+			}
+		}
 		complete_effect = {
 			hidden_effect = {
 				add_equipment_to_stockpile = {
@@ -3891,6 +3944,16 @@ TaS_SWRW_far_eastern_negotiations = {
 				tooltip = SWRW_FEnegotiations_actions_limit_tt	
 			}
 		}
+		ai_will_do = {
+			factor = 30
+			modifier = {
+				factor = 0 
+				OR = {
+					check_variable = { swrw_corpo_jap > swrw_fe_threshold }
+					check_variable = { swrw_diplo_jap > swrw_fe_threshold }
+				}
+			}
+		}
 		complete_effect = {
 			hidden_effect = {
 				add_political_power = -20	
@@ -3927,6 +3990,16 @@ TaS_SWRW_far_eastern_negotiations = {
 			custom_trigger_tooltip = { 
 				check_variable = { swrw_fe_actions < 2 }
 				tooltip = SWRW_FEnegotiations_actions_limit_tt	
+			}
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0 
+				OR = {
+					check_variable = { swrw_corpo_jap > swrw_fe_threshold }
+					check_variable = { swrw_diplo_jap > swrw_fe_threshold }
+				}
 			}
 		}
 		complete_effect = {
@@ -3968,6 +4041,16 @@ TaS_SWRW_far_eastern_negotiations = {
 				tooltip = SWRW_FEnegotiations_actions_limit_tt	
 			}
 		}
+		ai_will_do = {
+			factor = 45
+			modifier = {
+				factor = 0 
+				OR = {
+					check_variable = { swrw_corpo_jap > swrw_fe_threshold }
+					check_variable = { swrw_diplo_jap > swrw_fe_threshold }
+				}
+			}
+		}
 		complete_effect = {
 			hidden_effect = {
 				add_political_power = -25
@@ -3997,6 +4080,16 @@ TaS_SWRW_far_eastern_negotiations = {
 			custom_trigger_tooltip = { 
 				check_variable = { swrw_fe_actions < 2 }
 				tooltip = SWRW_FEnegotiations_actions_limit_tt	
+			}
+		}
+		ai_will_do = {
+			factor = 25
+			modifier = {
+				factor = 0 
+				OR = {
+					check_variable = { swrw_corpo_jap > swrw_fe_threshold }
+					check_variable = { swrw_diplo_jap > swrw_fe_threshold }
+				}
 			}
 		}
 		complete_effect = {
@@ -4035,6 +4128,16 @@ TaS_SWRW_far_eastern_negotiations = {
 			custom_trigger_tooltip = { 
 				check_variable = { swrw_fe_actions < 2 }
 				tooltip = SWRW_FEnegotiations_actions_limit_tt	
+			}
+		}
+		ai_will_do = {
+			factor = 15
+			modifier = {
+				factor = 0 
+				OR = {
+					check_variable = { swrw_corpo_jap > swrw_fe_threshold }
+					check_variable = { swrw_diplo_jap > swrw_fe_threshold }
+				}
 			}
 		}
 		complete_effect = {
@@ -4125,6 +4228,16 @@ TaS_SWRW_far_eastern_negotiations = {
 			command_power > 24.99
 		}
 		custom_cost_text = decision_cost_25_cp
+		ai_will_do = {
+			factor = 50
+			modifier = {
+				factor = 0 
+				OR = {
+					check_variable = { swrw_corpo_jap > swrw_fe_threshold }
+					check_variable = { swrw_diplo_jap > swrw_fe_threshold }
+				}
+			}
+		}
 		complete_effect = {
 			hidden_effect = {
 				add_command_power = -25
@@ -4189,6 +4302,16 @@ TaS_SWRW_far_eastern_negotiations = {
 			custom_trigger_tooltip = { 
 				check_variable = { swrw_fe_actions < 2 }
 				tooltip = SWRW_FEnegotiations_actions_limit_tt	
+			}
+		}
+		ai_will_do = {
+			factor = 25
+			modifier = {
+				factor = 0 
+				OR = {
+					check_variable = { swrw_corpo_jap > swrw_fe_threshold }
+					check_variable = { swrw_diplo_jap > swrw_fe_threshold }
+				}
 			}
 		}
 		complete_effect = {
@@ -4256,6 +4379,16 @@ TaS_SWRW_far_eastern_negotiations = {
 				tooltip = SWRW_FEnegotiations_actions_limit_tt	
 			}
 		}
+		ai_will_do = {
+			factor = 15
+			modifier = {
+				factor = 0 
+				OR = {
+					check_variable = { swrw_corpo_jap > swrw_fe_threshold }
+					check_variable = { swrw_diplo_jap > swrw_fe_threshold }
+				}
+			}
+		}
 		complete_effect = {
 			hidden_effect = {
 				add_political_power = -20	
@@ -4290,6 +4423,16 @@ TaS_SWRW_far_eastern_negotiations = {
 			custom_trigger_tooltip = { 
 				check_variable = { swrw_fe_actions < 2 }
 				tooltip = SWRW_FEnegotiations_actions_limit_tt	
+			}
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0 
+				OR = {
+					check_variable = { swrw_corpo_jap > swrw_fe_threshold }
+					check_variable = { swrw_diplo_jap > swrw_fe_threshold }
+				}
 			}
 		}
 		complete_effect = {
@@ -4349,6 +4492,16 @@ TaS_SWRW_far_eastern_negotiations = {
 				tooltip = SWRW_FEnegotiations_actions_limit_tt	
 			}
 		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0 
+				OR = {
+					check_variable = { swrw_corpo_jap > swrw_fe_threshold }
+					check_variable = { swrw_diplo_jap > swrw_fe_threshold }
+				}
+			}
+		}
 		complete_effect = {
 			hidden_effect = {
 				add_command_power = -25
@@ -4381,6 +4534,16 @@ TaS_SWRW_far_eastern_negotiations = {
 			custom_trigger_tooltip = { 
 				check_variable = { swrw_fe_actions < 2 }
 				tooltip = SWRW_FEnegotiations_actions_limit_tt	
+			}
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0 
+				OR = {
+					check_variable = { swrw_corpo_jap > swrw_fe_threshold }
+					check_variable = { swrw_diplo_jap > swrw_fe_threshold }
+				}
 			}
 		}
 		complete_effect = {
@@ -4444,6 +4607,16 @@ TaS_SWRW_far_eastern_negotiations = {
 			custom_trigger_tooltip = { 
 				check_variable = { swrw_fe_actions < 2 }
 				tooltip = SWRW_FEnegotiations_actions_limit_tt	
+			}
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0 
+				OR = {
+					check_variable = { swrw_corpo_jap > swrw_fe_threshold }
+					check_variable = { swrw_diplo_jap > swrw_fe_threshold }
+				}
 			}
 		}
 		complete_effect = {
@@ -4540,9 +4713,19 @@ TaS_SWRW_far_eastern_negotiations = {
 			hidden_effect = {
 				add_political_power = -40
 			}
-			set_temp_variable = { temp_econ_spending_amount = 0.15 }
+			set_temp_variable = { temp_econ_spending_amount = 0.150 }
 			econ_spend_money_once_effect_raw_money = yes
 			add_to_variable = { swrw_fe_actions = 1 }
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0 
+				OR = {
+					check_variable = { swrw_corpo_jap > swrw_fe_threshold }
+					check_variable = { swrw_diplo_jap > swrw_fe_threshold }
+				}
+			}
 		}
 		days_remove = 14
 		remove_effect = {
@@ -4591,11 +4774,21 @@ TaS_SWRW_far_eastern_negotiations = {
 				tooltip = SWRW_FEnegotiations_actions_limit_tt	
 			}
 		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0 
+				OR = {
+					check_variable = { swrw_corpo_jap > swrw_fe_threshold }
+					check_variable = { swrw_diplo_jap > swrw_fe_threshold }
+				}
+			}
+		}
 		complete_effect = {
 			hidden_effect = {
 				add_political_power = -20	
 			}
-			set_temp_variable = { temp_econ_spending_amount = 0.150 }
+			set_temp_variable = { temp_econ_spending_amount = 0.450 }
 			econ_spend_money_once_effect_raw_money = yes
 			add_to_variable = { swrw_fe_actions = 1 }
 		}
@@ -4678,6 +4871,16 @@ TaS_SWRW_far_eastern_negotiations = {
 				tooltip = SWRW_FEnegotiations_actions_limit_tt	
 			}
 		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0 
+				OR = {
+					check_variable = { swrw_corpo_jap > swrw_fe_threshold }
+					check_variable = { swrw_diplo_jap > swrw_fe_threshold }
+				}
+			}
+		}
 		complete_effect = {
 			hidden_effect = {
 				add_political_power = -50
@@ -4713,6 +4916,16 @@ TaS_SWRW_far_eastern_negotiations = {
 				tooltip = SWRW_FEnegotiations_actions_limit_tt	
 			}
 		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0 
+				OR = {
+					check_variable = { swrw_corpo_jap > swrw_fe_threshold }
+					check_variable = { swrw_diplo_jap > swrw_fe_threshold }
+				}
+			}
+		}
 		complete_effect = {
 			hidden_effect = {
 				add_command_power = -25
@@ -4746,6 +4959,16 @@ TaS_SWRW_far_eastern_negotiations = {
 			custom_trigger_tooltip = { 
 				check_variable = { swrw_fe_actions < 2 }
 				tooltip = SWRW_FEnegotiations_actions_limit_tt	
+			}
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0 
+				OR = {
+					check_variable = { swrw_corpo_jap > swrw_fe_threshold }
+					check_variable = { swrw_diplo_jap > swrw_fe_threshold }
+				}
 			}
 		}
 		complete_effect = {
@@ -4787,6 +5010,27 @@ TaS_SWRW_far_eastern_negotiations = {
 			custom_trigger_tooltip = { 
 				check_variable = { swrw_fe_actions < 2 }
 				tooltip = SWRW_FEnegotiations_actions_limit_tt	
+			}
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0 
+				OR = {
+					check_variable = { swrw_corpo_jap > swrw_fe_threshold }
+					check_variable = { swrw_diplo_jap > swrw_fe_threshold }
+					has_game_rule = {
+						rule = KOSYGIN_FE_NEGOTIATIONS_RUSJAP_PACT
+						option = KOSYGIN_FE_NEGOTIATIONS_RUSJAP_PACT_NOT_SIGNED
+					}
+				}
+			}
+			modifier = {
+				factor = 100 
+				has_game_rule = {
+					rule = KOSYGIN_FE_NEGOTIATIONS_RUSJAP_PACT
+					option = KOSYGIN_FE_NEGOTIATIONS_RUSJAP_PACT_SIGNED
+				}
 			}
 		}
 		complete_effect = {
@@ -4865,6 +5109,16 @@ TaS_SWRW_far_eastern_negotiations = {
 				tooltip = SWRW_FEnegotiations_actions_limit_tt	
 			}
 		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0 
+				OR = {
+					check_variable = { swrw_corpo_jap > swrw_fe_threshold }
+					check_variable = { swrw_diplo_jap > swrw_fe_threshold }
+				}
+			}
+		}
 		complete_effect = {
 			hidden_effect = {
 				add_command_power = -25
@@ -4907,6 +5161,16 @@ TaS_SWRW_far_eastern_negotiations = {
 				tooltip = SWRW_FEnegotiations_actions_limit_tt	
 			}
 		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0 
+				OR = {
+					check_variable = { swrw_corpo_jap > swrw_fe_threshold }
+					check_variable = { swrw_diplo_jap > swrw_fe_threshold }
+				}
+			}
+		}
 		complete_effect = {
 			add_to_variable = { swrw_fe_actions = 1 }
 		}
@@ -4938,6 +5202,16 @@ TaS_SWRW_far_eastern_negotiations = {
 			custom_trigger_tooltip = { 
 				check_variable = { swrw_fe_actions < 2 }
 				tooltip = SWRW_FEnegotiations_actions_limit_tt	
+			}
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0 
+				OR = {
+					check_variable = { swrw_corpo_jap > swrw_fe_threshold }
+					check_variable = { swrw_diplo_jap > swrw_fe_threshold }
+				}
 			}
 		}
 		complete_effect = {
@@ -4980,6 +5254,16 @@ TaS_SWRW_far_eastern_negotiations = {
 				size > 11
 			}
 		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0 
+				OR = {
+					check_variable = { swrw_corpo_jap > swrw_fe_threshold }
+					check_variable = { swrw_diplo_jap > swrw_fe_threshold }
+				}
+			}
+		}
 		complete_effect = {
 			hidden_effect = {
 				add_command_power = -25
@@ -5013,6 +5297,16 @@ TaS_SWRW_far_eastern_negotiations = {
 			custom_trigger_tooltip = { 
 				check_variable = { swrw_fe_actions < 2 }
 				tooltip = SWRW_FEnegotiations_actions_limit_tt	
+			}
+		}
+		ai_will_do = {
+			factor = 5
+			modifier = {
+				factor = 0 
+				OR = {
+					check_variable = { swrw_corpo_jap > swrw_fe_threshold }
+					check_variable = { swrw_diplo_jap > swrw_fe_threshold }
+				}
 			}
 		}
 		complete_effect = {

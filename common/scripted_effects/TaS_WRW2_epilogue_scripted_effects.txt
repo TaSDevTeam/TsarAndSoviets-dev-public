@@ -93,6 +93,19 @@ TaS_2WRW_start_westgerman_cw = {
 					owner = GWS
 				}
 			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = SWRW_GER_COLLAPSE_SECOND_CW_RESULT
+						option = SWRW_GER_COLLAPSE_SECOND_CW_RESULT_GWS
+					}
+				}
+				apply_war_buff_with_15_divisions = yes
+				add_timed_idea = {
+					idea = war_cheat
+					days = 90
+				}
+			}
 		}
 		GRH = {
 			random_owned_controlled_state = {
@@ -129,6 +142,19 @@ TaS_2WRW_start_westgerman_cw = {
 					owner = GRH
 				}
 			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = SWRW_GER_COLLAPSE_SECOND_CW_RESULT
+						option = SWRW_GER_COLLAPSE_SECOND_CW_RESULT_GRH
+					}
+				}
+				apply_war_buff_with_15_divisions = yes
+				add_timed_idea = {
+					idea = war_cheat
+					days = 90
+				}
+			}
 		}
 		GBW = {
 			random_owned_controlled_state = {
@@ -156,7 +182,20 @@ TaS_2WRW_start_westgerman_cw = {
 					division = "division_template = \"Motorisierte Infanterie\" start_experience_factor = 0.6 start_equipment_factor = 0.8"
 					owner = GBW
 				}
-			}				
+			}	
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = SWRW_GER_COLLAPSE_SECOND_CW_RESULT
+						option = SWRW_GER_COLLAPSE_SECOND_CW_RESULT_GBW
+					}
+				}
+				apply_war_buff_with_15_divisions = yes
+				add_timed_idea = {
+					idea = war_cheat
+					days = 90
+				}
+			}			
 		}
 		GBV = {
 			random_owned_controlled_state = {
@@ -200,7 +239,20 @@ TaS_2WRW_start_westgerman_cw = {
 					division = "division_template = \"Motorisierte Infanterie\" start_experience_factor = 0.6 start_equipment_factor = 1"
 					owner = GBV
 				}
-			}				
+			}	
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = SWRW_GER_COLLAPSE_SECOND_CW_RESULT
+						option = SWRW_GER_COLLAPSE_SECOND_CW_RESULT_GBV
+					}
+				}
+				apply_war_buff_with_15_divisions = yes
+				add_timed_idea = {
+					idea = war_cheat
+					days = 90
+				}
+			}			
 		}
 		GAU = {
 			random_owned_controlled_state = {
@@ -232,7 +284,20 @@ TaS_2WRW_start_westgerman_cw = {
 					division = "division_template = \"Motorisierte Infanterie\" start_experience_factor = 0.6 start_equipment_factor = 1"
 					owner = GAU
 				}
-			}				
+			}	
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = SWRW_GER_COLLAPSE_SECOND_CW_RESULT
+						option = SWRW_GER_COLLAPSE_SECOND_CW_RESULT_GAU
+					}
+				}
+				apply_war_buff_with_15_divisions = yes
+				add_timed_idea = {
+					idea = war_cheat
+					days = 90
+				}
+			}	
 		}
 		GCZ = {
 			random_owned_controlled_state = {
@@ -264,7 +329,20 @@ TaS_2WRW_start_westgerman_cw = {
 					division = "division_template = \"Motorisierte Infanterie\" start_experience_factor = 0.6 start_equipment_factor = 1"
 					owner = GCZ
 				}
-			}				
+			}		
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = SWRW_GER_COLLAPSE_SECOND_CW_RESULT
+						option = SWRW_GER_COLLAPSE_SECOND_CW_RESULT_GCZ
+					}
+				}
+				apply_war_buff_with_15_divisions = yes
+				add_timed_idea = {
+					idea = war_cheat
+					days = 290
+				}
+			}
 		}
 		GSU = {
 			random_owned_controlled_state = {
@@ -288,7 +366,20 @@ TaS_2WRW_start_westgerman_cw = {
 					division = "division_template = \"Volkssturm\" start_experience_factor = 0.3 start_equipment_factor = 0.7"
 					owner = GSU
 				}
-			}					
+			}	
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = SWRW_GER_COLLAPSE_SECOND_CW_RESULT
+						option = SWRW_GER_COLLAPSE_SECOND_CW_RESULT_GSU
+					}
+				}
+				apply_war_buff_with_15_divisions = yes
+				add_timed_idea = {
+					idea = war_cheat
+					days = 90
+				}
+			}	
 		}
 		GRA = {
 			random_owned_controlled_state = {
@@ -332,7 +423,20 @@ TaS_2WRW_start_westgerman_cw = {
 					division = "division_template = \"Volkssturm\" start_experience_factor = 0.3 start_equipment_factor = 0.7"
 					owner = GRA
 				}
-			}				
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = SWRW_GER_COLLAPSE_SECOND_CW_RESULT
+						option = SWRW_GER_COLLAPSE_SECOND_CW_RESULT_GRA
+					}
+				}
+				apply_war_buff_with_15_divisions = yes
+				add_timed_idea = {
+					idea = war_cheat
+					days = 90
+				}
+			}
 		}
 		GWF = {
 			random_owned_controlled_state = {
@@ -361,6 +465,19 @@ TaS_2WRW_start_westgerman_cw = {
 					owner = GWF
 				}								
 			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = SWRW_GER_COLLAPSE_SECOND_CW_RESULT
+						option = SWRW_GER_COLLAPSE_SECOND_CW_RESULT_GWF
+					}
+				}
+				apply_war_buff_with_15_divisions = yes
+				add_timed_idea = {
+					idea = war_cheat
+					days = 90
+				}
+			}	
 		}
 		GWF = {
 			declare_war_on = {
@@ -550,6 +667,27 @@ TaS_2WRW_start_westgerman_cw = {
 				type = annex_everything
 			}
 		}
+		if = {
+			limit = {
+				has_game_rule = {
+					rule = SWRW_GER_COLLAPSE_SECOND_CW_RESULT
+					option = SWRW_GER_COLLAPSE_SECOND_CW_RESULT_GUOT
+				}
+			}
+			ZNE = {
+				apply_war_buff_with_15_divisions = yes
+				add_timed_idea = {
+					idea = war_cheat
+					days = 290
+				}
+			}
+			add_days_mission_timeout = {
+				mission = TaS_PostGER_second_cw_looming_russian_invastion
+				days = -300
+			}
+		}
+		
+		
 	}
 }
 GER_select_unified_cosmotag = {

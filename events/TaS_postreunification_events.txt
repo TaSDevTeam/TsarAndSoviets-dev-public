@@ -231,6 +231,16 @@ country_event = { #Offer ceasefire - yes
 
 	option = {
 		name = MAR_AFG.1.a
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = SWRW_AFGHAN_WAR_RESULT
+					option = SWRW_AFGHAN_WAR_RESULT_QUO
+				}
+			}
+		}
 		RUS = {
 			white_peace = AFG
 		}
@@ -249,6 +259,16 @@ country_event = { #Offer ceasefire - yes
 	option = {
 		name = MAR_AFG.1.b
 		trigger = { NOT = { has_country_flag = afg_ru_cap } }
+		ai_chance = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = SWRW_AFGHAN_WAR_RESULT
+					option = SWRW_AFGHAN_WAR_RESULT_QUO
+				}
+			}
+		}
 	}
 }
 country_event = { #conditional surrender
@@ -263,6 +283,16 @@ country_event = { #conditional surrender
 
 	option = {
 		name = MAR_AFG.2.a
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = SWRW_AFGHAN_WAR_RESULT
+					option = SWRW_AFGHAN_WAR_RESULT_PARTWIN
+				}
+			}
+		}
 		AFG = { save_global_event_target_as = losing_country }
 		RUS = {
 			save_global_event_target_as = winning_country
@@ -294,6 +324,16 @@ country_event = { #conditional surrender
 	}
 	option = {
 		name = MAR_AFG.2.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = SWRW_AFGHAN_WAR_RESULT
+					option = SWRW_AFGHAN_WAR_RESULT_WIN
+				}
+			}
+		}
 	}
 }
 
@@ -473,8 +513,36 @@ country_event = { #Daoud pro-pakt coup #start of the CW
 				limit = { is_subject_of = AFG }
 				econ_join_sphere_GER = yes
 			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = SWRW_AFGHAN_CW_RESULT
+						option = SWRW_AFGHAN_CW_RESULT_AFG
+					}
+				}
+				apply_war_buff_with_15_divisions = yes
+				add_timed_idea = {
+					idea = war_cheat
+					days = 90
+				}
+			}
 		}
-		NAL = { declare_war_on = { target = AFG type = annex_everything } }
+		NAL = {
+			declare_war_on = { target = AFG type = annex_everything }
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = SWRW_AFGHAN_CW_RESULT
+						option = SWRW_AFGHAN_CW_RESULT_NAL
+					}
+				}
+				apply_war_buff_with_15_divisions = yes
+				add_timed_idea = {
+					idea = war_cheat
+					days = 90
+				}
+			}
+		}
 		if = {
 			limit = { 
 				MAR = { has_government = despotism }
@@ -746,6 +814,19 @@ country_event = { #Mujahideen
 				target = MUJ
 				type = annex_everything
 			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = SWRW_AFGHAN_CW_RESULT
+						option = SWRW_AFGHAN_CW_RESULT_AFG
+					}
+				}
+				apply_war_buff_with_15_divisions = yes
+				add_timed_idea = {
+					idea = war_cheat
+					days = 90
+				}
+			}
 		}
 		NAL = {
 			declare_war_on = {
@@ -756,6 +837,19 @@ country_event = { #Mujahideen
 				target = MUJ
 				type = annex_everything
 			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = SWRW_AFGHAN_CW_RESULT
+						option = SWRW_AFGHAN_CW_RESULT_NAL
+					}
+				}
+				apply_war_buff_with_15_divisions = yes
+				add_timed_idea = {
+					idea = war_cheat
+					days = 90
+				}
+			}
 		}
 		MUJ = {
 			declare_war_on = {
@@ -765,6 +859,19 @@ country_event = { #Mujahideen
 			declare_war_on = {
 				target = NAL
 				type = annex_everything
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = SWRW_AFGHAN_CW_RESULT
+						option = SWRW_AFGHAN_CW_RESULT_MUJ
+					}
+				}
+				apply_war_buff_with_15_divisions = yes
+				add_timed_idea = {
+					idea = war_cheat
+					days = 90
+				}
 			}
 		}
 		#country_event = { id = MAR_AFG.6 days = 3 }
@@ -1229,6 +1336,19 @@ country_event = { #Technical stuff no loc
 				long_name = PFF_communist_party_long
 				name = PFF_communist_party
 			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = BELOZERSKY_MANCHU_CW_RESULT
+						option = BELOZERSKY_MANCHU_CW_RESULT_PFF
+					}
+				}
+				apply_war_buff_with_15_divisions = yes
+				add_timed_idea = {
+					idea = war_cheat
+					days = 90
+				}
+			}
 			load_oob = PFF_second_cw
 		}
 		
@@ -1245,6 +1365,19 @@ country_event = { #Technical stuff no loc
 				target = PFF
 				type = annex_everything
 			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = BELOZERSKY_MANCHU_CW_RESULT
+						option = BELOZERSKY_MANCHU_CW_RESULT_HAN
+					}
+				}
+				apply_war_buff_with_15_divisions = yes
+				add_timed_idea = {
+					idea = war_cheat
+					days = 90
+				}
+			}
 		}
 		MJP = {
 			declare_war_on = {
@@ -1258,6 +1391,19 @@ country_event = { #Technical stuff no loc
 			declare_war_on = {
 				target = PFF
 				type = annex_everything
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = BELOZERSKY_MANCHU_CW_RESULT
+						option = BELOZERSKY_MANCHU_CW_RESULT_MJP
+					}
+				}
+				apply_war_buff_with_15_divisions = yes
+				add_timed_idea = {
+					idea = war_cheat
+					days = 90
+				}
 			}
 		}
 		MAN = {
@@ -1275,6 +1421,19 @@ country_event = { #Technical stuff no loc
 				type = annex_everything
 			}
 			load_oob = MAN_second_cw
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = BELOZERSKY_MANCHU_CW_RESULT
+						option = BELOZERSKY_MANCHU_CW_RESULT_MAN
+					}
+				}
+				apply_war_buff_with_15_divisions = yes
+				add_timed_idea = {
+					idea = war_cheat
+					days = 90
+				}
+			}
 		}
 		CHI = { end_puppet = MEN }
 		MEN = { leave_faction = yes }
@@ -1295,7 +1454,18 @@ country_event = { #Technical stuff no loc
 			country_event = { id = MAR_Japan.9 days = 3 }
 		}
 		ZZZ = {
-			country_event = { id = MAR_Japan.6 days = 210 }
+			if = {
+				limit = { 
+					has_game_rule = {
+						rule = BELOZERSKY_MANCHU_CW_RESULT
+						option = BELOZERSKY_MANCHU_CW_RESULT_ANARCHY
+					}
+				}
+				country_event = { id = MAR_Japan.6 days = 90 }
+			}
+			else = {
+				country_event = { id = MAR_Japan.6 days = 210 }
+			}
 		}
 		#set_country_flag = RUS_something_goes_wrong 
 	}
@@ -1777,6 +1947,20 @@ country_event = { #Second round success
 		set_variable = { swrw_diplo_jap = 25 }
 		set_variable = { swrw_corpo_jap = 30 }
 		set_variable = { SWRW_round_timeout = 90 }
+		
+		if = {
+			limit = { 
+				has_game_rule = {
+					rule = KOSYGIN_FE_NEGOTIATIONS_RESULT
+					option = KOSYGIN_FE_NEGOTIATIONS_FAIL
+				}
+			}
+			set_variable = { swrw_fe_threshold = 109.9 }
+			set_variable = { swrw_fe_threshold_txt = swrw_fe_threshold }
+			round_variable = swrw_fe_threshold_txt
+			set_variable = { swrw_diplo_jap = 0 }
+			set_variable = { swrw_corpo_jap = 0 }
+		}
 	}
 }
 
@@ -1791,7 +1975,29 @@ country_event = { #3 round success
 	
 	option = { #it's over, over
 		name = MAR_Japan.23.a 
-		ai_chance = { factor = 1 }
+		ai_chance = { 
+			factor = 4
+			modifier = {
+				factor = 100
+				has_game_rule = {
+					rule = KOSYGIN_FE_NEGOTIATIONS_RESULT
+					option = KOSYGIN_FE_NEGOTIATIONS_RESULT_SUCCESS_LEAVE_THIRD
+				}	
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = {
+						rule = KOSYGIN_FE_NEGOTIATIONS_RESULT
+						option = KOSYGIN_FE_NEGOTIATIONS_RESULT_FAIL_FOURTH
+					}	
+					has_game_rule = {
+						rule = KOSYGIN_FE_NEGOTIATIONS_RESULT
+						option = KOSYGIN_FE_NEGOTIATIONS_RESULT_TOTAL_SUCCESS
+					}	
+				}
+			}
+		}
 		set_country_flag = MAR_has_primorie
 		clr_global_flag = FE_negotiations_start
 		custom_effect_tooltip = FE_primorie_success_tt
@@ -1836,7 +2042,29 @@ country_event = { #3 round success
 	}
 	option = { #let's try
 		name = MAR_Japan.23.b 
-		ai_chance = { factor = 1 }
+		ai_chance = { 
+			factor = 2
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = KOSYGIN_FE_NEGOTIATIONS_RESULT
+					option = KOSYGIN_FE_NEGOTIATIONS_RESULT_SUCCESS_LEAVE_THIRD
+				}	
+			}
+			modifier = {
+				factor = 100
+				OR = {
+					has_game_rule = {
+						rule = KOSYGIN_FE_NEGOTIATIONS_RESULT
+						option = KOSYGIN_FE_NEGOTIATIONS_RESULT_FAIL_FOURTH
+					}	
+					has_game_rule = {
+						rule = KOSYGIN_FE_NEGOTIATIONS_RESULT
+						option = KOSYGIN_FE_NEGOTIATIONS_RESULT_TOTAL_SUCCESS
+					}	
+				}
+			}
+		}
 		set_country_flag = MAR_has_primorie
 		custom_effect_tooltip = FE_next_round_tt
 		set_variable = { fe_round = 4 }
@@ -1845,14 +2073,44 @@ country_event = { #3 round success
 		set_variable = { khabarovsk_status = 3 }
 		set_variable = { primorie_status = 3 }
 		set_variable = { vladivostok_status = 2 }
-		
-		set_variable = { swrw_fe_threshold = 94.9 }
-		set_variable = { swrw_fe_threshold_txt = swrw_fe_threshold }
-		round_variable = swrw_fe_threshold_txt
-		
-		set_variable = { swrw_diplo_jap = 15 }
-		set_variable = { swrw_corpo_jap = 10 }
 		set_variable = { SWRW_round_timeout = 120 }
+		
+		if = {
+			limit = { 
+				has_game_rule = {
+					rule = KOSYGIN_FE_NEGOTIATIONS_RESULT
+					option = KOSYGIN_FE_NEGOTIATIONS_RESULT_FAIL_FOURTH
+				}
+			}
+			set_variable = { swrw_fe_threshold = 109.9 }
+			set_variable = { swrw_fe_threshold_txt = swrw_fe_threshold }
+			round_variable = swrw_fe_threshold_txt
+			
+			set_variable = { swrw_diplo_jap = 0 }
+			set_variable = { swrw_corpo_jap = 0 }
+		}
+		else_if = {
+			limit = { 
+				has_game_rule = {
+					rule = KOSYGIN_FE_NEGOTIATIONS_RESULT
+					option = KOSYGIN_FE_NEGOTIATIONS_RESULT_TOTAL_SUCCESS
+				}
+			}
+			set_variable = { swrw_fe_threshold = 69.9 }
+			set_variable = { swrw_fe_threshold_txt = swrw_fe_threshold }
+			round_variable = swrw_fe_threshold_txt
+			
+			set_variable = { swrw_diplo_jap = 45 }
+			set_variable = { swrw_corpo_jap = 45 }
+		}
+		else = {
+			set_variable = { swrw_fe_threshold = 94.9 }
+			set_variable = { swrw_fe_threshold_txt = swrw_fe_threshold }
+			round_variable = swrw_fe_threshold_txt
+			
+			set_variable = { swrw_diplo_jap = 15 }
+			set_variable = { swrw_corpo_jap = 10 }
+		}
 	}
 }
 
@@ -2559,6 +2817,16 @@ country_event = { #Offer status quo
 
 	option = { #yes
 		name = MAR_2WRW.1.a
+		ai_chance = {
+			factor = 0
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = SWRW_WAR_RESULT
+					option = SWRW_WAR_RESULT_QUO
+				}
+			}	
+		}
 		TaS_WRW2_Peace_Yall = yes
 		hidden_effect = {
 			every_country  = {
@@ -2571,6 +2839,9 @@ country_event = { #Offer status quo
 	}
 	option = { #nope lol
 		name = MAR_2WRW.1.b
+		ai_chance = {
+			factor = 100	
+		}
 	}
 }
 country_event = { #Offer muscowy
@@ -2585,6 +2856,16 @@ country_event = { #Offer muscowy
 
 	option = { #yes
 		name = MAR_2WRW.2.a
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = SWRW_WAR_RESULT
+					option = SWRW_WAR_RESULT_MCW
+				}
+			}	
+		}
 		TaS_WRW2_Peace_Yall = yes
 		MAR = {
 			annex_country = {
@@ -2610,6 +2891,9 @@ country_event = { #Offer muscowy
 	}
 	option = { #nope lol
 		name = MAR_2WRW.2.b
+		ai_chance = {
+			factor = 95	
+		}
 	}
 }
 country_event = { #Offer muscowy and caucasus
@@ -2624,43 +2908,56 @@ country_event = { #Offer muscowy and caucasus
 
 	option = { #yes
 		name = MAR_2WRW.3.a
-			TaS_WRW2_Peace_Yall = yes
-			MAR = {
-				annex_country = {
-					target = MCW
-					transfer_troops = no
+		ai_chance = {
+			factor = 15
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = SWRW_WAR_RESULT
+					option = SWRW_WAR_RESULT_MCW_CAU
 				}
-				annex_country = {
-					target = CAU
-					transfer_troops = no
-				}				
-				every_state = {
-					limit = {
-						is_core_of = MCW
-					}
-					#add_core_of = RUS
-					hidden_effect = { remove_core_of = MCW }
+			}	
+		}
+		TaS_WRW2_Peace_Yall = yes
+		MAR = {
+			annex_country = {
+				target = MCW
+				transfer_troops = no
+			}
+			annex_country = {
+				target = CAU
+				transfer_troops = no
+			}				
+			every_state = {
+				limit = {
+					is_core_of = MCW
 				}
-				every_state = {
-					limit = {
-						is_core_of = CAU
-					}
-					#add_core_of = RUS
-					hidden_effect = { remove_core_of = CAU }
+				#add_core_of = RUS
+				hidden_effect = { remove_core_of = MCW }
+			}
+			every_state = {
+				limit = {
+					is_core_of = CAU
+				}
+				#add_core_of = RUS
+				hidden_effect = { remove_core_of = CAU }
+			}
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.9
 				}
 			}
-			hidden_effect = {
-				every_country  = {
-					news_event = {
-						id = MAR_2WRW_world_news.9
-					}
-				}
-				SWRW_clear_war_stuff = yes
-				TaS_2WRW_form_ost_zones = yes
-			}			
-		}
+			SWRW_clear_war_stuff = yes
+			TaS_2WRW_form_ost_zones = yes
+		}			
+	}
 	option = { #nope lol
 		name = MAR_2WRW.3.b
+		ai_chance = {
+			factor = 85	
+		}
 	}
 }
 country_event = { #Offer muscowy and caucasus and belarus and half of ukraine
@@ -2675,69 +2972,79 @@ country_event = { #Offer muscowy and caucasus and belarus and half of ukraine
 
 	option = { #yes
 		name = MAR_2WRW.4.a
-			TaS_WRW2_Peace_Yall = yes
-			MAR = {
-				annex_country = {
-					target = MCW
-					transfer_troops = no
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = SWRW_WAR_RESULT
+					option = SWRW_WAR_RESULT_MCW_CAU_BLR
 				}
-				annex_country = {
-					target = CAU
-					transfer_troops = no
-				}				
-				every_state = {
-					limit = {
-						is_core_of = MCW
-					}
-					#add_core_of = RUS
-					hidden_effect = { remove_core_of = MCW }
-				}
-				every_state = {
-					limit = {
-						is_core_of = CAU
-					}
-					#add_core_of = RUS
-					hidden_effect = { remove_core_of = CAU }
-				}
-				transfer_state = 218 
-				transfer_state = 228 
-				transfer_state = 227 
-				transfer_state = 221
-				transfer_state = 225 
-				transfer_state = 193 
-				
-				transfer_state = 207
-				transfer_state = 206 
-				transfer_state = 204
-				transfer_state = 1405
-				transfer_state = 194 
-				transfer_state = 1404
-				transfer_state = 1403 
-				transfer_state = 95 
-				transfer_state = 1407
-				transfer_state = 1406
-				
-				transfer_state = 1421
-				transfer_state = 257
-				
-				transfer_state = 209
-				transfer_state = 1402
-				
-				every_owned_state = {
-					limit = {
-						is_core_of = UKR
-					}
-					#add_core_of = RUS
-					hidden_effect = { remove_core_of = UKR }
-				}
-				every_owned_state = {
-					limit = {
-						is_core_of = OST
-					}
-					#add_core_of = RUS
-					hidden_effect = { remove_core_of = OST }
-				}
+			}	
+		}
+		TaS_WRW2_Peace_Yall = yes
+		MAR = {
+			annex_country = {
+				target = MCW
+				transfer_troops = no
 			}
+			annex_country = {
+				target = CAU
+				transfer_troops = no
+			}				
+			every_state = {
+				limit = {
+					is_core_of = MCW
+				}
+				#add_core_of = RUS
+				hidden_effect = { remove_core_of = MCW }
+			}
+			every_state = {
+				limit = {
+					is_core_of = CAU
+				}
+				#add_core_of = RUS
+				hidden_effect = { remove_core_of = CAU }
+			}
+			transfer_state = 218 
+			transfer_state = 228 
+			transfer_state = 227 
+			transfer_state = 221
+			transfer_state = 225 
+			transfer_state = 193 
+			
+			transfer_state = 207
+			transfer_state = 206 
+			transfer_state = 204
+			transfer_state = 1405
+			transfer_state = 194 
+			transfer_state = 1404
+			transfer_state = 1403 
+			transfer_state = 95 
+			transfer_state = 1407
+			transfer_state = 1406
+			
+			transfer_state = 1421
+			transfer_state = 257
+			
+			transfer_state = 209
+			transfer_state = 1402
+			
+			every_owned_state = {
+				limit = {
+					is_core_of = UKR
+				}
+				#add_core_of = RUS
+				hidden_effect = { remove_core_of = UKR }
+			}
+			every_owned_state = {
+				limit = {
+					is_core_of = OST
+				}
+				#add_core_of = RUS
+				hidden_effect = { remove_core_of = OST }
+			}
+		}
 		hidden_effect = {
 			every_country  = {
 				news_event = {
@@ -2750,6 +3057,9 @@ country_event = { #Offer muscowy and caucasus and belarus and half of ukraine
 	}
 	option = { #nope lol
 		name = MAR_2WRW.4.b
+		ai_chance = {
+			factor = 75	
+		}
 	}
 }
 country_event = { #Offer surrender
@@ -2764,25 +3074,59 @@ country_event = { #Offer surrender
 
 	option = { #yes
 		name = MAR_2WRW.5.a
-			MAR = {
-				white_peace = GER
-			}
-			every_country = {
-				limit = { is_in_faction_with = GER }
-				white_peace = MAR
-			}
-			TaS_WRW2_total_capitulation = yes
-			hidden_effect = {
-				every_country  = {
-					news_event = {
-						id = MAR_2WRW_world_news.10
-					}
+		ai_chance = {
+			factor = 80
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = SWRW_WAR_RESULT
+					option = SWRW_WAR_RESULT_TOTAL_WIN
 				}
-				SWRW_clear_war_stuff = yes
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = SWRW_WAR_RESULT
+					option = SWRW_WAR_RESULT_RUS_NUCLEAR_CUCKED
+				}
 			}
 		}
+		MAR = {
+			white_peace = GER
+		}
+		every_country = {
+			limit = { is_in_faction_with = GER }
+			white_peace = MAR
+		}
+		TaS_WRW2_total_capitulation = yes
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.10
+				}
+			}
+			SWRW_clear_war_stuff = yes
+		}
+	}
 	option = { #no #goes nuke
 		name = MAR_2WRW.5.b
+		ai_chance = {
+			factor = 20	
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = SWRW_WAR_RESULT
+					option = SWRW_WAR_RESULT_TOTAL_WIN
+				}
+			}
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = SWRW_WAR_RESULT
+					option = SWRW_WAR_RESULT_RUS_NUCLEAR_CUCKED
+				}
+			}
+		}
 		custom_effect_tooltip = MAR_2WRW_gone_wrong_tt
 		hidden_effect = {
 			country_event = { id = MAR_2WRW.7 days = 3 }
@@ -2801,14 +3145,14 @@ country_event = { #TOTALEN surrender
 	is_triggered_only = yes
 
 	option = { #yes
-	name = MAR_2WRW.6.a
-	if = {
-		limit = { has_government = socialist }
-		TaS_WRW2_German_Collapse_Kosygin = yes
-	}	
-	else = {
-		TaS_WRW2_German_Collapse_Beloozersky = yes
-	}
+		name = MAR_2WRW.6.a
+		if = {
+			limit = { has_government = socialist }
+			TaS_WRW2_German_Collapse_Kosygin = yes
+		}	
+		else = {
+			TaS_WRW2_German_Collapse_Beloozersky = yes
+		}
 		hidden_effect = {
 			every_country  = {
 				news_event = {
@@ -2831,42 +3175,63 @@ country_event = { #german nuclear ultimatum
 
 	option = { #yes
 		name = MAR_2WRW.7.a
-			TaS_WRW2_Peace_Yall = yes
-			MAR = {
-				annex_country = {
-					target = MCW
-					transfer_troops = no
-				}
-				annex_country = {
-					target = CAU
-					transfer_troops = no
-				}				
-				every_state = {
-					limit = {
-						is_core_of = MCW
-					}
-					#add_core_of = RUS
-					hidden_effect = { remove_core_of = MCW }
-				}
-				every_state = {
-					limit = {
-						is_core_of = CAU
-					}
-					#add_core_of = RUS
-					hidden_effect = { remove_core_of = CAU }
+		TaS_WRW2_Peace_Yall = yes
+		ai_chance = {
+			factor = 90	
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = SWRW_WAR_RESULT
+					option = SWRW_WAR_RESULT_RUS_NUCLEAR_CUCKED
 				}
 			}
-			hidden_effect = {
-				every_country  = {
-					news_event = {
-						id = MAR_2WRW_world_news.20
-					}
-				}
-				TaS_2WRW_form_ost_zones = yes
-			}			
 		}
+		MAR = {
+			annex_country = {
+				target = MCW
+				transfer_troops = no
+			}
+			annex_country = {
+				target = CAU
+				transfer_troops = no
+			}				
+			every_state = {
+				limit = {
+					is_core_of = MCW
+				}
+				#add_core_of = RUS
+				hidden_effect = { remove_core_of = MCW }
+			}
+			every_state = {
+				limit = {
+					is_core_of = CAU
+				}
+				#add_core_of = RUS
+				hidden_effect = { remove_core_of = CAU }
+			}
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.20
+				}
+			}
+			TaS_2WRW_form_ost_zones = yes
+		}			
+	}
 	option = { #boom
 		name = MAR_2WRW.7.b
+		ai_chance = {
+			factor = 10	
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = SWRW_WAR_RESULT
+					option = SWRW_WAR_RESULT_RUS_NUCLEAR_CUCKED
+				}
+			}
+		}
+		clr_global_flag = nukes_disabled
 	}
 }
 
@@ -2921,7 +3286,20 @@ country_event = { #FIN: Russia requests
 		name = MAR_ultimatums.100.a 
 		ai_chance = {
 			factor = 1
-			
+			modifier = {
+				factor = 100
+				has_game_rule = {
+					rule = SWRW_RUS_ULTIMATUM_FIN
+					option = SWRW_RUS_ULTIMATUM_FIN_ACCEPT
+				}	
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = SWRW_RUS_ULTIMATUM_FIN
+					option = SWRW_RUS_ULTIMATUM_FIN_DECLINE
+				}	
+			}
 		}
 		RUS = {
 			country_event = { id = MAR_ultimatums.101 days = 2 }
@@ -2930,8 +3308,21 @@ country_event = { #FIN: Russia requests
 	option = { #Not okay
 		name = MAR_ultimatums.100.b 
 		ai_chance = {
-			factor = 1
-			
+			factor = 2
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = SWRW_RUS_ULTIMATUM_FIN
+					option = SWRW_RUS_ULTIMATUM_FIN_ACCEPT
+				}	
+			}
+			modifier = {
+				factor = 100
+				has_game_rule = {
+					rule = SWRW_RUS_ULTIMATUM_FIN
+					option = SWRW_RUS_ULTIMATUM_FIN_DECLINE
+				}	
+			}
 		}
 		RUS = {
 			country_event = { id = MAR_ultimatums.102 days = 2 }
@@ -3026,7 +3417,21 @@ country_event = { #TUR: Russia requests to buy Batumi
 	option = { #Okay
 		name = MAR_ultimatums.103.a 
 		ai_chance = {
-			factor = 1
+			factor = 2
+			modifier = {
+				factor = 100
+				has_game_rule = {
+					rule = SWRW_RUS_ULTIMATUM_TUR
+					option = SWRW_RUS_ULTIMATUM_TUR_ACCEPT
+				}	
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = SWRW_RUS_ULTIMATUM_TUR
+					option = SWRW_RUS_ULTIMATUM_TUR_DECLINE
+				}	
+			}
 		}
 		RUS = {
 			country_event = { id = MAR_ultimatums.104 days = 2 }
@@ -3035,8 +3440,21 @@ country_event = { #TUR: Russia requests to buy Batumi
 	option = { #Not okay
 		name = MAR_ultimatums.100.b 
 		ai_chance = {
-			factor = 1
-			
+			factor = 4
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = SWRW_RUS_ULTIMATUM_TUR
+					option = SWRW_RUS_ULTIMATUM_TUR_ACCEPT
+				}	
+			}
+			modifier = {
+				factor = 100
+				has_game_rule = {
+					rule = SWRW_RUS_ULTIMATUM_TUR
+					option = SWRW_RUS_ULTIMATUM_TUR_DECLINE
+				}	
+			}
 		}
 		RUS = {
 			country_event = { id = MAR_ultimatums.105 days = 2 }
@@ -3375,6 +3793,23 @@ country_event = { #ROM: Russia Demands
 
 	option = { #well, shit
 		name = MAR_ultimatums.112.a 
+		ai_chance = {
+			factor = 4
+			modifier = {
+				factor = 100
+				has_game_rule = {
+					rule = SWRW_RUS_ULTIMATUM_ROM
+					option = SWRW_RUS_ULTIMATUM_ROM_ACCEPT
+				}	
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = SWRW_RUS_ULTIMATUM_ROM
+					option = SWRW_RUS_ULTIMATUM_ROM_DECLINE
+				}	
+			}
+		}
 		if = {
 			limit = { MUK = { controls_state = 1428 } }
 			MUK = {
@@ -3435,6 +3870,23 @@ country_event = { #ROM: Russia Demands
 	}
 	option = { #well, no
 		name = MAR_ultimatums.112.b 
+		ai_chance = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = SWRW_RUS_ULTIMATUM_ROM
+					option = SWRW_RUS_ULTIMATUM_ROM_ACCEPT
+				}	
+			}
+			modifier = {
+				factor = 100
+				has_game_rule = {
+					rule = SWRW_RUS_ULTIMATUM_ROM
+					option = SWRW_RUS_ULTIMATUM_ROM_DECLINE
+				}	
+			}
+		}
 		RUS = { country_event = { id = MAR_ultimatums.113 days = 21 } }
 	}
 }
@@ -5789,5 +6241,68 @@ news_event = { #Russia has nuclears now
 	
 	option = {
 		name = MAR_2WRW_world_news.49.a
+	}
+}
+
+news_event = { #Germany attacks Russia again.. wait its really preemptive attack?
+	id = MAR_2WRW_world_news.50
+	title = MAR_2WRW_world_news.50.t
+	desc = MAR_2WRW_world_news.50.d
+	picture = GFX_MAR_2WRW_world_news_006
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_2WRW_world_news.50.a
+		trigger = {
+			NOT = {
+				OR = {
+					original_tag = MAR
+					original_tag = GER
+				}
+			}
+		}
+		if = {
+			limit = { MAR = { has_government = despotism } }
+			set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_BEGINNING_BELOZERSKY }
+			TNO_fire_super_event = yes
+		}
+		else_if = {
+			limit = { MAR = { has_government = socialist } }
+			set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_BEGINNING_KOSYGIN }
+			TNO_fire_super_event = yes
+		}
+	}
+	option = {
+		name = MAR_2WRW_world_news.50.b
+		trigger = {
+			original_tag = GER
+		}
+		if = {
+			limit = { MAR = { has_government = despotism } }
+			set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_BEGINNING_BELOZERSKY }
+			TNO_fire_super_event = yes
+		}
+		else_if = {
+			limit = { MAR = { has_government = socialist } }
+			set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_BEGINNING_KOSYGIN }
+			TNO_fire_super_event = yes
+		}
+	}
+	option = {
+		name = MAR_2WRW_world_news.50.c
+		trigger = {
+			original_tag = MAR
+		}
+		if = {
+			limit = { MAR = { has_government = despotism } }
+			set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_BEGINNING_BELOZERSKY }
+			TNO_fire_super_event = yes
+		}
+		else_if = {
+			limit = { MAR = { has_government = socialist } }
+			set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_BEGINNING_KOSYGIN }
+			TNO_fire_super_event = yes
+		}
 	}
 }

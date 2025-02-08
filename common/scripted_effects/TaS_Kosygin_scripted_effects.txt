@@ -178,8 +178,31 @@ MAR_Prestol_start = {
 	#set_variable = { AVAILABLE_BASES = 2 }
 	#set_variable = { OMS_batov_base_effectiveness = 0.05 }
 	#set_variable = { OMS_our_base_effectiveness = -0.05 }
-	set_variable = { MAR_tabby_timeout = 500 }
-	set_variable = { MAR_prestol_clock_time = 500 }
+	if = {
+		limit = { 
+			has_game_rule = {
+				rule = KOSYGIN_PRESTOL_TIMER
+				option = KOSYGIN_PRESTOL_TIMER_SHORT
+			}
+		}
+		set_variable = { MAR_tabby_timeout = 30 }
+		set_variable = { MAR_prestol_clock_time = 30 }
+	}
+	else_if = {
+		limit = { 
+			has_game_rule = {
+				rule = KOSYGIN_PRESTOL_TIMER
+				option = RULE_OPTION_KOSYGIN_PRESTOL_TIMER_DISABLED
+			}
+		}
+		set_variable = { MAR_tabby_timeout = 3000 }
+		set_variable = { MAR_prestol_clock_time = 3000 }
+	}
+	else = {
+		set_variable = { MAR_tabby_timeout = 500 }
+		set_variable = { MAR_prestol_clock_time = 500 }
+	}
+	
 	set_variable = { MAR_prestol_update_time = 14 }
 	hidden_effect = {
 		add_popularity = {
@@ -1488,6 +1511,30 @@ UAR_Influence_Increase_Change = {
 		}
 
 		hidden_effect = {
+			if = {
+				has_game_rule = {
+					rule = KOSYGIN_UAR_BIG_GAME_RESULT
+					option = KOSYGIN_UAR_BIG_GAME_RESULT_RUS
+				}
+				set_variable = { UAR.UAR_faction_influence_gain_array^1 = 101 }
+			}
+			else_if = {
+				has_game_rule = {
+					rule = KOSYGIN_UAR_BIG_GAME_RESULT
+					option = KOSYGIN_UAR_BIG_GAME_RESULT_GER
+				}
+				set_variable = { UAR.UAR_faction_influence_gain_array^2 = 101 }
+			}
+			else_if = {
+				has_game_rule = {
+					rule = KOSYGIN_UAR_BIG_GAME_RESULT
+					option = KOSYGIN_UAR_BIG_GAME_RESULT_UAR
+				}
+				set_variable = { UAR.UAR_faction_influence_gain_array^0 = 101 }
+			}
+			else = {
+				UAR = { add_political_power = 1 }
+			}
 			UAR = {
 				UAR_Faction_Influence_Calc = yes
 			}
