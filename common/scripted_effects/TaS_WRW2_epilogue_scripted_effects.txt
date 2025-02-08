@@ -1370,3 +1370,118 @@ RUS_select_re_reunification_news_event = {
 		}
 	}
 }
+
+reichsland_in_moscowien = {
+	XYZ = {
+		MCW_Mikhail_Oktan_70s = {
+			set_nationality = MCW
+		}
+	}
+	puppet = MCW
+	MCW = {
+		set_cosmetic_tag = MCW_SGR_reichsland
+		GER_alexis_von_roenne = {
+			set_nationality = GER
+		}
+		set_politics = {
+			ruling_party = fascism
+		}
+		retire_country_leader = yes
+		add_country_leader_role = {
+			character = MCW_Mikhail_Oktan_70s
+			country_leader = {
+				ideology = fascism_fascist_populism_subtype
+				expire = "1999.3.4"
+				id = -1
+			}
+		}
+		promote_character = MCW_Mikhail_Oktan_70s
+		set_popularities = {
+			fascism = 50
+			national_socialism_2 = 15
+			paternalism = 20
+			conservatism = 15
+		}
+		remove_all_ministers = yes
+		set_party_name = {
+			ideology = national_socialism_2
+			long_name = MCW_collab_national_socialism_long
+			name = MCW_collab_national_socialism
+		}
+		set_party_name = {
+			ideology = fascism
+			long_name = MCW_collab_fascism_long
+			name = MCW_collab_fascism
+		}
+		remove_faction_status = yes
+		add_ideas = Pakt_Reichsland
+		join_zollverein = yes
+		set_variable = { national_debt = 0 }
+	}
+
+}
+
+collab_regime_in_moscowien = {
+	ORL = {
+		MSK_Ivan_Bessonov = {
+			set_nationality = MCW
+		}
+	}
+	GER = {
+		set_autonomy = {
+			target = MCW
+			autonomy_state = autonomy_collaborator_puppet_state
+		}
+	}
+	MCW = {
+		clr_country_flag = german_names
+		set_cosmetic_tag = MCW_SGR_collab
+		GER_alexis_von_roenne = {
+			set_nationality = GER
+		}
+		set_politics = {
+			ruling_party = paternalism
+		}
+		add_country_leader_role = {
+			character = MSK_Ivan_Bessonov
+			country_leader = {
+				ideology = paternalism_national_conservatism_subtype
+				expire = "1999.3.4"
+				id = -1
+			}
+		}
+		promote_character = MSK_Ivan_Bessonov
+		remove_all_ministers = yes
+		remove_ideas = {
+			Pakt_Autonomous_Reichskommissariat
+			Pakt_Integrated_Reichskommissariat
+		}
+		add_ideas = {
+			Pakt_Marionettenstaat
+		}
+		join_zollverein = yes
+		set_popularities = {
+			fascism = 30
+			national_socialism = 20
+			paternalism = 34
+			conservatism = 16
+		}
+		set_party_name = {
+			ideology = national_socialism
+			long_name = MCW_collab_national_socialism_long
+			name = MCW_collab_national_socialism
+		}
+		set_party_name = {
+			ideology = fascism
+			long_name = MCW_collab_fascism_long
+			name = MCW_collab_fascism
+		}
+		set_party_name = {
+			ideology = paternalism
+			long_name = MCW_collab_paternalism_long
+			name = MCW_collab_paternalism
+		}
+		set_variable = { national_debt = 0 }
+		#state_control_effect_1431 = yes
+	}
+}

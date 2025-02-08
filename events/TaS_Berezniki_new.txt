@@ -495,6 +495,7 @@ country_event = { #battle at the railway
 		name = MAR_initial.25.a
 		ai_chance = { factor = 1 }
 		country_event = { id = MAR_initial.26 days = 3 }
+		MAR_update_cosmotag = yes
 		
 	}
 }
@@ -526,6 +527,7 @@ country_event = { #vyatka is agry
 		set_temp_variable = { temp_connections_gained = 7 }
 		MAR_Okhranka_agents_change = yes
 		MAR_Okhranka_connections_change = yes
+		MAR_update_cosmotag = yes
 	}
 }
 
@@ -949,6 +951,7 @@ country_event = { #Redhead Cuckoo total victory
 			}
 		}
 		remove_ideas = { MAR_military_instructors_of_vyatka }
+		MAR_update_cosmotag = yes
 	}
 }
 
@@ -976,6 +979,7 @@ country_event = { #Redhead Cuckoo partial victory
 		set_temp_variable = { temp_connections_gained = 7 }
 		MAR_Okhranka_agents_change = yes
 		MAR_Okhranka_connections_change = yes
+		MAR_update_cosmotag = yes
 	}
 }
 
@@ -1075,6 +1079,7 @@ country_event = { #fuck you vlad
 		set_country_flag = MAR_freed_from_VYT
 		add_ideas = MAR_okhranka_leftovers
 		TNO_improve_admin_efficiency_low = yes
+		drop_cosmetic_tag = yes
 	}
 }
 
@@ -1172,7 +1177,7 @@ country_event = { #Yurla total victory
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_initial.57" }
 	title = MAR_initial.57.t
 	desc = MAR_initial.57.d
-	picture = GFX_report_event_soviet_russian_officers_4
+	picture = GFX_event_MAR_Initial_57
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -1190,6 +1195,7 @@ country_event = { #Yurla total victory
 		add_state_core = 865
 		set_temp_variable = { temp_econ_GDP_boost_flat = 0.015 }
 		econ_GDP_boost_once_flat = yes
+		MAR_update_cosmotag = yes
 	}
 }
 
@@ -1198,7 +1204,7 @@ country_event = { #Yurla partial victory
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_initial.58" }
 	title = MAR_initial.58.t
 	desc = MAR_initial.58.d
-	picture = GFX_report_event_soviet_russian_officers_4
+	picture = GFX_event_MAR_Initial_58
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -1220,6 +1226,7 @@ country_event = { #Yurla partial victory
 		set_temp_variable = { temp_connections_gained = 7 }
 		MAR_Okhranka_agents_change = yes
 		MAR_Okhranka_connections_change = yes
+		MAR_update_cosmotag = yes
 	}
 }
 
@@ -1228,7 +1235,7 @@ country_event = { #Yurla fail
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_initial.59" }
 	title = MAR_initial.59.t
 	desc = MAR_initial.59.d
-	picture = GFX_report_event_soviet_russian_officers_4
+	picture = GFX_event_MAR_Initial_59
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -1252,7 +1259,7 @@ country_event = { #Bye, Peps
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_initial.60" }
 	title = MAR_initial.60.t
 	desc = MAR_initial.60.d
-	#picture = 
+	picture = GFX_event_MAR_Initial_60
 	
 	is_triggered_only = yes
 	fire_only_once = yes

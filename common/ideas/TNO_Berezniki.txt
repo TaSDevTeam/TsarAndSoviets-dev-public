@@ -1712,7 +1712,7 @@ ideas = {
 				always = yes
 			}
 			cancel = { has_country_flag = RUS_cancel_all_ideas }
-			picture = MAR_dohlaya_armia
+			picture = generic_international_diplomacy
 			
 			removal_cost = -1
 			
@@ -1735,7 +1735,7 @@ ideas = {
 				always = yes
 			}
 			cancel = { has_country_flag = RUS_cancel_all_ideas }
-			picture = MAR_dohlaya_armia
+			picture = KAZ_orda_without_alash
 			
 			removal_cost = -1
 			
@@ -1823,6 +1823,34 @@ ideas = {
 				tag = MAR
 				attack_bonus_against = -0.1
 				defense_bonus_against = -0.1
+			}
+		}
+	}
+	
+	country = {
+		war_cheat = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: war_cheat"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			available = {
+				always = yes
+			}
+			cancel = {
+				has_country_flag = RUS_cancel_all_ideas
+			}
+			picture = BRL_ZNE_russian_army
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_org_factor = 0.5
+				army_attack_factor = 0.5
+				army_defence_factor = 0.5
+				army_speed_factor = 0.5
 			}
 		}
 	}

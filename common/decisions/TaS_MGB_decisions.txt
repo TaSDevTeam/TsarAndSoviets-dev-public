@@ -27,6 +27,7 @@ MAR_MGB_Okhranka_category = {
 				}
 				round_temp_variable = temp_agents_gained
 				MAR_Okhranka_agents_change = yes
+				MAR_adjust_okhranka_to_game_rules = yes
 			}
 		}
 		cancel_trigger = { hidden_trigger = { NOT = { country_exists = VYT } } }

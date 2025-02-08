@@ -64,12 +64,6 @@ characters = {
 				large = "gfx/leaders/SWRWMCW/Portrait_MSK_Ivan_Bessonov.dds"
 			}
 		}
-		country_leader = {
-			desc = "MSK_Ivan_Bessonov_desc"
-			ideology = fascism_fascist_populism_subtype
-			expire = "2222.2.2"
-			id = -1
-		}
 	}
 
 	MSK_Dmitry_Medvedev = {
@@ -153,6 +147,17 @@ characters = {
 			defense_skill = 1
 			planning_skill = 2
 			logistics_skill = 3
+		}
+	}
+	MCW_Mikhail_Oktan_70s = {
+		name = MCW_Mikhail_Oktan
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SWRWMCW/Portrait_MCW_Mikhail_Oktan.dds"
+			}
+			army = {
+				large = "gfx/leaders/SWRWMCW/Portrait_MCW_Mikhail_Oktan.dds"
+			}
 		}
 	}
 }

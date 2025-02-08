@@ -14,7 +14,7 @@ country_event = { #Kenes over - Germans
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Turkestan.1"}
 	title = MAR_Turkestan.1.t
 	desc = MAR_Turkestan.1.d
-	#picture = GFX_report_event_peace_deal
+	#picture = GFX_report_event_generic_command_table
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -30,7 +30,7 @@ country_event = { #Kenes over - Japs
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Turkestan.2"}
 	title = MAR_Turkestan.2.t
 	desc = MAR_Turkestan.2.d
-	#picture = GFX_report_event_peace_deal
+	#picture = GFX_report_event_generic_command_table
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -98,7 +98,7 @@ country_event = { #Kenes over - Turks/Americans
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Turkestan.3"}
 	title = MAR_Turkestan.3.t
 	desc = MAR_Turkestan.3.d
-	#picture = GFX_report_event_peace_deal
+	picture = GFX_report_event_generic_command_table
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -120,7 +120,7 @@ country_event = { #Kenes over - Turks/Americans - they agreed
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Turkestan.4"}
 	title = MAR_Turkestan.4.t
 	desc = MAR_Turkestan.4.d
-	#picture = GFX_report_event_peace_deal
+	picture = GFX_report_event_generic_sign_treaty1
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -136,7 +136,7 @@ country_event = { #Kenes over - Turks/Americans - they didn't agree
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Turkestan.5"}
 	title = MAR_Turkestan.5.t
 	desc = MAR_Turkestan.5.d
-	#picture = GFX_report_event_peace_deal
+	picture = report_event_generic_sign_treaty2
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -423,6 +423,9 @@ country_event = { #Daoud pro-pakt coup #start of the CW
 	is_triggered_only = yes
 	option = {
 		name = MAR_AFG.5.a
+		ai_chance = {
+			base = 10
+		}
 		if = {
 			limit = { NOT = { has_government = national_socialism } }
 			set_politics = {
@@ -430,9 +433,6 @@ country_event = { #Daoud pro-pakt coup #start of the CW
 				last_election = "1969.8.29"
 				election_frequency = 48
 				elections_allowed = no
-			}
-			ai_chance = {
-				base = 10
 			}
 			set_popularities = {
 				communist = 10
@@ -784,7 +784,7 @@ country_event = { #Twoside proxy starts
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_AFG.9"}
 	title = MAR_AFG.9.t
 	desc = MAR_AFG.9.d
-	picture = GFX_report_event_peace_deal
+	picture = GFX_report_event_RUS_letter
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -808,7 +808,7 @@ country_event = { #Threeside proxy starts
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_AFG.10"}
 	title = MAR_AFG.10.t
 	desc = MAR_AFG.10.d
-	picture = GFX_report_event_peace_deal
+	picture = GFX_report_event_RUS_letter
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -832,7 +832,7 @@ country_event = { #No proxy
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_AFG.11"}
 	title = MAR_AFG.11.t
 	desc = MAR_AFG.11.d
-	picture = GFX_report_event_peace_deal
+	picture = GFX_report_event_generic_desert_tank
 	is_triggered_only = yes
 	fire_only_once = yes
 	
@@ -2824,7 +2824,7 @@ country_event = { #german nuclear ultimatum
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_2WRW.7"}
 	title = MAR_2WRW.7.t
 	desc = MAR_2WRW.7.d
-	picture = GFX_report_event_peace_deal
+	picture = GFX_report_event_generic_missile
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -2944,7 +2944,7 @@ country_event = { #FIN: Return of Karelia
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.101"}
 	title = MAR_ultimatums.101.t
 	desc = MAR_ultimatums.101.d
-	picture = GFX_report_event_peace_deal
+	picture = GFX_report_event_generic_sign_treaty3
 
 	is_triggered_only = yes
 
@@ -2969,7 +2969,7 @@ country_event = { #FIN: They refused
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.102"}
 	title = MAR_ultimatums.102.t
 	desc = MAR_ultimatums.102.d
-	picture = GFX_report_event_peace_deal
+	picture = GFX_report_event_generic_winter_soldiers
 
 	is_triggered_only = yes
 
@@ -3049,7 +3049,7 @@ country_event = { #TUR: The deal
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.104"}
 	title = MAR_ultimatums.104.t
 	desc = MAR_ultimatums.104.d
-	picture = GFX_report_event_peace_deal
+	picture = GFX_report_event_generic_handshake_2
 
 	is_triggered_only = yes
 
@@ -3095,7 +3095,7 @@ country_event = { #TUR: The broken deal
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.105"}
 	title = MAR_ultimatums.105.t
 	desc = MAR_ultimatums.105.d
-	picture = GFX_report_event_peace_deal
+	picture = GFX_report_event_generic_gun_by_phone
 
 	is_triggered_only = yes
 
@@ -3141,7 +3141,7 @@ country_event = { #TUR: Batumi taken
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.106"}
 	title = MAR_ultimatums.106.t
 	desc = MAR_ultimatums.106.d
-	picture = GFX_report_event_peace_deal
+	picture = GFX_report_event_RUS_soviet_mech_infantry_4
 
 	is_triggered_only = yes
 
@@ -3181,7 +3181,7 @@ country_event = { #TUR: Batumi fail
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.107"}
 	title = MAR_ultimatums.107.t
 	desc = MAR_ultimatums.107.d
-	picture = GFX_report_event_peace_deal
+	picture = GFX_report_event_generic_riot
 
 	is_triggered_only = yes
 
@@ -3234,7 +3234,7 @@ country_event = { #TUR: Turkey gather troops
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.109"}
 	title = MAR_ultimatums.109.t
 	desc = MAR_ultimatums.109.d
-	picture = GFX_report_event_peace_deal
+	picture = GFX_report_event_TUR_victory_day_parade
 
 	is_triggered_only = yes
 
@@ -3316,7 +3316,7 @@ country_event = { #TUR: Ceasefire
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.111"}
 	title = MAR_ultimatums.111.t
 	desc = MAR_ultimatums.111.d
-	picture = GFX_report_event_peace_deal
+	picture = GFX_report_event_generic_peace_deal
  
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -3369,7 +3369,7 @@ country_event = { #ROM: Russia Demands
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.112"}
 	title = MAR_ultimatums.112.t
 	desc = MAR_ultimatums.112.d
-	picture = GFX_report_event_peace_deal
+	picture = GFX_report_event_generic_apc_crew
 
 	is_triggered_only = yes
 
@@ -3444,7 +3444,7 @@ country_event = { #ROM: They Refused
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.113"}
 	title = MAR_ultimatums.113.t
 	desc = MAR_ultimatums.113.d
-	picture = GFX_report_event_peace_deal
+	picture = GFX_report_event_generic_apc_crew
 
 	is_triggered_only = yes
 
@@ -3490,7 +3490,7 @@ country_event = { #POL: Returnal of Galicia
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.114"}
 	title = MAR_ultimatums.114.t
 	desc = MAR_ultimatums.114.d
-	picture = GFX_report_event_peace_deal
+	picture = GFX_report_event_generic_sign_treaty1
 
 	is_triggered_only = yes
 
@@ -3538,7 +3538,7 @@ country_event = { #IR*: Returnal of some state that borders turkmenistan
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.115"}
 	title = MAR_ultimatums.115.t
 	desc = MAR_ultimatums.115.d
-	picture = GFX_report_event_peace_deal
+	picture = GFX_report_event_generic_handshake_2
 
 	is_triggered_only = yes
 
@@ -3565,7 +3565,7 @@ country_event = { #AAG: Evacuation
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_ultimatums.116"}
 	title = MAR_ultimatums.116.t
 	desc = MAR_ultimatums.116.d
-	picture = GFX_report_event_peace_deal
+	picture = GFX_report_event_usa_helicopter_ship
 
 	is_triggered_only = yes
 

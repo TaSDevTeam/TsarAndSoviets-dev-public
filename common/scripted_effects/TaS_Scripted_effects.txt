@@ -2,6 +2,46 @@ TaS_Global_Conflicts_Initalize = {
 	set_temp_variable = { TabName = token:BoP_Tab_GlobalConflicts }
 	TNO_BoP_AddTab = yes
 }
+MAR_update_cosmotag = {
+	custom_effect_tooltip = MAR_update_cosmotag_tt
+	hidden_effect = {
+		if = {
+			limit = { has_cosmetic_tag = MAR_VYT_1 }
+			drop_cosmetic_tag = yes
+			set_cosmetic_tag = MAR_VYT_2
+			
+			get_current_government_type = yes
+			save_party_popularities = yes
+			VYT = {
+				set_autonomy = {
+					target = MAR
+					autonomy_state = autonomy_puppet
+				}
+			}
+			restore_previous_government_type = yes
+			apply_party_popularities = yes
+		}
+		else_if = {
+			limit = { has_cosmetic_tag = MAR_VYT_2 }
+			drop_cosmetic_tag = yes
+			set_cosmetic_tag = MAR_VYT_3
+			
+			get_current_government_type = yes
+			save_party_popularities = yes
+			VYT = {
+				set_autonomy = {
+					target = MAR
+					autonomy_state = autonomy_satellite
+				}
+			}
+			restore_previous_government_type = yes
+			apply_party_popularities = yes
+		}
+		else = {
+			drop_cosmetic_tag = yes
+		}	
+	}
+}
 MAR_Maldorossi_epilogue = {
 	country_event = {id = MAR_epilogue.1 days = 0}
 	set_politics = {
@@ -1062,5 +1102,124 @@ TaS_nuke_development_switch_to_the_next_stage = {
 		set_country_flag = RUS_finished_nukes_new
 		set_variable = { TaS_nuke_dev_monthly_gain = 0 }
 		set_variable = { TaS_nuke_development_array^TaS_RUS_nuclear_program_phase = 0 }
+	}
+}
+
+MAR_adjust_okhranka_to_game_rules = {
+	if = {
+		limit = {
+			has_game_rule = {
+				rule = MGB_POWER_CHEAT
+				option = MGB_POWER_CHEAT_ENABLED
+			}
+		}
+		set_variable = { MAR.MAR_Okhranka_agents = 1 }	
+		set_variable = { MAR.MAR_Okhranka_connections = 1 }
+		MAR_Okhranka_recount = yes
+	}
+	if = {
+		limit = {
+			has_game_rule = {
+				rule = MGB_OPERATION_GRAY_FALCON_STATUS
+				option = MGB_OPERATION_GRAY_FALCON_SUCCESS
+			}
+		}
+		set_variable = { MAR_MGB_var_yurla_second_threshold = 200 }
+	}
+	if = {
+		limit = {
+			has_game_rule = {
+				rule = MGB_OPERATION_GRAY_FALCON_STATUS
+				option = MGB_OPERATION_GRAY_FALCON_PARTIAL_SUCCESS
+			}
+		}
+		set_variable = { MAR_MGB_var_yurla_second_threshold = -100 }
+		set_variable = { MAR_MGB_var_yurla_threshold = 200 }
+	}
+	if = {
+		limit = {
+			has_game_rule = {
+				rule = MGB_OPERATION_GRAY_FALCON_STATUS
+				option = MGB_OPERATION_GRAY_FALCON_FAIL
+			}
+		}
+		set_variable = { MAR_MGB_var_yurla_second_threshold = -100 }
+		set_variable = { MAR_MGB_var_yurla_threshold = -100 }
+	}
+	if = {
+		limit = {
+			has_game_rule = {
+				rule = MGB_OPERATION_BLACK_SWAN_STATUS
+				option = MGB_OPERATION_BLACK_SWAN_SUCCESS
+			}
+		}
+		set_variable = { MAR_MGB_var_resources_second_threshold = 200 }
+	}
+	if = {
+		limit = {
+			has_game_rule = {
+				rule = MGB_OPERATION_BLACK_SWAN_STATUS
+				option = MGB_OPERATION_BLACK_SWAN_PARTIAL_SUCCESS
+			}
+		}
+		set_variable = { MAR_MGB_var_resources_second_threshold = -100 }
+		set_variable = { MAR_MGB_var_resources_threshold = 200 }
+	}
+	if = {
+		limit = {
+			has_game_rule = {
+				rule = MGB_OPERATION_BLACK_SWAN_STATUS
+				option = MGB_OPERATION_BLACK_SWAN_FAIL
+			}
+		}
+		set_variable = { MAR_MGB_var_resources_second_threshold = -100 }
+		set_variable = { MAR_MGB_var_resources_threshold = -100 }
+	}
+	if = {
+		limit = {
+			has_game_rule = {
+				rule = MGB_OPERATION_RED_CUCKOO_STATUS
+				option = MGB_OPERATION_RED_CUCKOO_SUCCESS
+			}
+		}
+		set_variable = { MAR_MGB_var_advisors_second_threshold = 200 }
+	}
+	if = {
+		limit = {
+			has_game_rule = {
+				rule = MGB_OPERATION_RED_CUCKOO_STATUS
+				option = MGB_OPERATION_RED_CUCKOO_PARTIAL_SUCCESS
+			}
+		}
+		set_variable = { MAR_MGB_var_advisors_second_threshold = -100 }
+		set_variable = { MAR_MGB_var_advisors_threshold = 200 }
+	}
+	if = {
+		limit = {
+			has_game_rule = {
+				rule = MGB_OPERATION_RED_CUCKOO_STATUS
+				option = MGB_OPERATION_RED_CUCKOO_FAIL
+			}
+		}
+		set_variable = { MAR_MGB_var_advisors_second_threshold = -100 }
+		set_variable = { MAR_MGB_var_advisors_threshold = -100 }
+	}
+	if = {
+		limit = {
+			has_game_rule = {
+				rule = MGB_OPERATION_CRYSTAL_MOON_STATUS
+				option = MGB_OPERATION_CRYSTAL_MOON_SUCCESS
+			}
+		}
+		set_variable = { MAR_MGB_var_liberation_threshold = 200 }
+	}
+	if = {
+		limit = {
+			has_game_rule = {
+				rule = MGB_OPERATION_CRYSTAL_MOON_STATUS
+				option = MGB_OPERATION_CRYSTAL_MOON_FAIL
+			}
+		}
+		set_variable = { MAR_MGB_var_liberation_threshold = -100 }
 	}
 }

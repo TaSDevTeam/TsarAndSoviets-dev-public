@@ -1247,9 +1247,11 @@ country_event = {#Speer Event Mosk
 			transfer_state = 237
 			if = {
 				limit = { has_country_flag = SGR_reichslander }
+				reichsland_in_moscowien = yes
 			}
 			if = {
 				limit = { has_country_flag = SGR_collab_regimes }
+				collab_regime_in_moscowien = yes
 			}
 			every_owned_state = {
 				add_core_of = MCW
@@ -1267,7 +1269,7 @@ news_event = { # Bormann - Klopher is next fuhrer
 	id = TaS_GEREpilogue_news.13
 	title = TaS_GEREpilogue_news.13.t
 	desc = TaS_GEREpilogue_news.13.d
-	picture = GFX_postger_world_news_013
+	picture = GFX_TaS_GERCollapse_news_003
 	
 	is_triggered_only = yes
 	
@@ -1355,7 +1357,7 @@ news_event = { # Bormann is dead tho
 	id = TaS_GEREpilogue_news.17
 	title = TaS_GEREpilogue_news.17.t
 	desc = TaS_GEREpilogue_news.17.d
-	picture = GFX_postger_world_news_017
+	picture = GFX_TaS_GERCollapse_news_002
 	
 	is_triggered_only = yes
 	
@@ -4428,7 +4430,7 @@ news_event = { #Japan takes over the F-E
 	id = TaS_RUSEpilogue_news.20
 	title = TaS_RUSEpilogue_news.20.t
 	desc = TaS_RUSEpilogue_news.20.d
-	picture = GFX_TaS_RUSEpilogue_news_020
+	picture = GFX_TaS_RUSEpilogue_news_015
 	
 	is_triggered_only = yes
 	
@@ -6196,7 +6198,7 @@ news_event = { #Oberlander coup
 	id = TaS_GERCollapse_news.7
 	title = TaS_GERCollapse_news.7.t
 	desc = TaS_GERCollapse_news.7.d
-	picture = GFX_TaS_GERCollapse_news_007
+	picture = GFX_postger_world_news_014
 	
 	is_triggered_only = yes
 	
