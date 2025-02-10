@@ -702,6 +702,16 @@ TaS_WRW2_total_capitulation = {
 		
 		transfer_state = 2099
 		add_state_core = 2099
+		if = {
+			limit = { 
+				TNS = { exists = yes }
+				TNS = { is_puppet_of = GER }
+			}
+			annex_country = {
+				target = TNS
+				transfer_troops = no
+			}
+		}
 	}
 	if = {
 		limit = {
@@ -1115,33 +1125,115 @@ TaS_WRW2_Peace_Yall = {
 				econ_gdp_growth_change = yes
 			}
 			if = {
-				limit = { RUS = { owns_state = 197 } }
-				RUS = {
-					transfer_state = 198
-					add_state_core = 189
-					transfer_state = 1282
-					add_state_core = 1282
-					transfer_state = 192
-					add_state_core = 192
-					transfer_state = 1965
-					transfer_state = 1966
-					add_state_core = 1965
-					add_state_core = 1966
+				limit = { 
+					TNS = { exists = yes }
+					TNS = { is_puppet_of = ROM }
+				}
+				if = {
+					limit = { MUK = { exists = yes } }
+					MUK = {
+						annex_country = {
+							target = TNS
+							transfer_troops = no
+						}
+						add_state_core = 198
+						add_state_core = 1965
+						add_state_core = 1966
+						if = {
+							limit = { MUK = { owns_state = 1282 } }
+							add_state_core = 1282
+							add_state_core = 192
+						}
+						else_if = {
+							limit = { MUK = { owns_state = 192 } }
+							add_state_core = 192
+						}
+						transfer_state = 80
+						transfer_state = 1286
+						transfer_state = 78
+						transfer_state = 1285
+						transfer_state = 1282
+						transfer_state = 192
+						
+						add_state_core = 80
+						add_state_core = 1286
+						add_state_core = 78
+						add_state_core = 1285
+						add_state_core = 1282
+						add_state_core = 192
+					}
+					
+				}
+				else = {
+					RUS = {
+						annex_country = {
+							target = TNS
+							transfer_troops = no
+						}
+						add_state_core = 198
+						add_state_core = 1965
+						add_state_core = 1966
+						if = {
+							limit = { MUK = { owns_state = 1282 } }
+							add_state_core = 1282
+							add_state_core = 192
+						}
+						else_if = {
+							limit = { MUK = { owns_state = 192 } }
+							add_state_core = 192
+						}
+						transfer_state = 80
+						transfer_state = 1286
+						transfer_state = 78
+						transfer_state = 1285
+						transfer_state = 1282
+						transfer_state = 192
+						
+						add_state_core = 80
+						add_state_core = 1286
+						add_state_core = 78
+						add_state_core = 1285
+						add_state_core = 1282
+						add_state_core = 192
+					}
 				}
 			}
-			if = {
-				limit = { MUK = { owns_state = 197 } }
-				MUK = {
-					transfer_state = 198
-					add_state_core = 189
-					transfer_state = 1282
-					add_state_core = 1282
-					transfer_state = 192
-					add_state_core = 192
-					transfer_state = 1965
-					transfer_state = 1966
-					add_state_core = 1965
-					add_state_core = 1966
+			else = {
+				if = {
+					limit = { MUK = { exists = yes } }
+					MUK = {
+						transfer_state = 80
+						transfer_state = 1286
+						transfer_state = 78
+						transfer_state = 1285
+						transfer_state = 1282
+						transfer_state = 192
+						
+						add_state_core = 80
+						add_state_core = 1286
+						add_state_core = 78
+						add_state_core = 1285
+						add_state_core = 1282
+						add_state_core = 192
+					}
+					
+				}
+				else = {
+					RUS = {
+						transfer_state = 80
+						transfer_state = 1286
+						transfer_state = 78
+						transfer_state = 1285
+						transfer_state = 1282
+						transfer_state = 192
+						
+						add_state_core = 80
+						add_state_core = 1286
+						add_state_core = 78
+						add_state_core = 1285
+						add_state_core = 1282
+						add_state_core = 192
+					}
 				}
 			}
 		}
@@ -1352,36 +1444,6 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			}
 			TNO_startup_nation = yes
 		}
-		GNR = {
-			econ_join_sphere_MAR = yes
-			transfer_state = 897
-			transfer_state = 110
-			transfer_state = 142
-			transfer_state = 899
-			transfer_state = 898
-			transfer_state = 143
-			transfer_state = 144
-			transfer_state = 896
-			transfer_state = 94
-			transfer_state = 2138
-			transfer_state = 2139
-			transfer_state = 2140
-			transfer_state = 2137
-			transfer_state = 2136
-			transfer_state = 2135
-			transfer_state = 2134
-			transfer_state = 2133
-			transfer_state = 2132
-			transfer_state = 2141
-			transfer_state = 2142
-			transfer_state = 2097
-			every_owned_state = {
-				GNR = {
-					add_state_core = PREV
-				}
-			}
-			TNO_startup_nation = yes
-		}
 		ZNE = {
 			inherit_technology = MAR
 			econ_join_sphere_MAR = yes
@@ -1426,103 +1488,6 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 				}
 			}	
 		}
-		if = {
-			limit = {
-				#HUN = {
-				#	is_in_faction_with = GER
-				#}	
-				is_debug = yes
-			}	
-			HUN = {
-				GHU = {
-					GHU_Istvan_Horthy = {
-						set_nationality = HUN
-					}
-				}
-				set_politics = {
-					ruling_party = paternalism
-				}	
-				add_popularity = {
-					ideology = paternalism
-					popularity = 0.3
-				}
-				GHU_Istvan_Horthy = {
-					promote_character = yes
-				}
-				remove_ideas = HUN_German_Fist
-				remove_ideas = HUN_Social_Upheaval
-				remove_ideas = HUN_Transylvanian_Issue
-				set_cosmetic_tag = HUN_GHU
-				econ_leave_sphere = yes
-				econ_join_sphere_MAR = yes
-			}	
-		}
-		GSE = {
-			if = {
-				limit = {
-					SER = {
-					    is_in_faction_with = GER
-					}	
-				}	
-				GSE = {
-				    annex_country = {
-				        target = SER
-				        transfer_troops = no
-			        }
-					every_owned_state = {
-				        GSE = {
-					        add_state_core = PREV
-				        }       
-			        }
-					econ_join_sphere_MAR = yes
-				}	
-				TNO_startup_nation = yes
-			}
-		}
-		GRM = {
-			if = {
-				limit = {
-					ROM = {
-					    is_in_faction_with = GER
-					}	
-				}	
-				GRM = {
-				    annex_country = {
-				        target = ROM
-				        transfer_troops = no
-			        }
-					every_owned_state = {
-				        GRM = {
-					        add_state_core = PREV
-				        }       
-			        }
-					econ_join_sphere_MAR = yes
-				}	
-				TNO_startup_nation = yes
-			}
-		}
-		GBU = {
-			if = {
-				limit = {
-					BUL = {
-					    is_in_faction_with = GER
-					}	
-				}	
-				GBU = {
-				    annex_country = {
-				        target = BUL
-				        transfer_troops = no
-			        }
-					every_owned_state = {
-				        GBU = {
-					        add_state_core = PREV
-				        }       
-			        }
-					econ_join_sphere_MAR = yes
-				}	
-				TNO_startup_nation = yes
-			}
-		}
 		every_country = {
 			limit = { is_in_faction_with = GER }
 			leave_faction = yes
@@ -1548,9 +1513,6 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 				transfer_state = 97
 			}
 		}
-		RUS = {
-			transfer_state = 2098
-		}
 		if = {
 			limit = {
 				MAD = {
@@ -1559,7 +1521,6 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 				NOT = { GRO = { is_puppet_of = GER } }
 			}	
 			GEX = {
-				
 				annex_country = {
 					target = GER
 					transfer_troops = no
@@ -1925,131 +1886,6 @@ TaS_WRW2_German_Collapse_Kosygin = {
 				TNO_economy_subtype = token:Econ_Subtype_Worker_Directed
 			}
 		}
-		GNR = {
-			econ_join_sphere_MAR = yes
-			transfer_state = 897
-			transfer_state = 110
-			transfer_state = 142
-			transfer_state = 899
-			transfer_state = 898
-			transfer_state = 143
-			transfer_state = 144
-			transfer_state = 896
-			transfer_state = 94
-			transfer_state = 2138
-			transfer_state = 2139
-			transfer_state = 2140
-			transfer_state = 2137
-			transfer_state = 2136
-			transfer_state = 2135
-			transfer_state = 2134
-			transfer_state = 2133
-			transfer_state = 2132
-			transfer_state = 2141
-			transfer_state = 2142
-			transfer_state = 2097
-			every_owned_state = {
-				GNR = {
-					add_state_core = PREV
-				}
-			}
-			set_variable = {
-				TNO_economy_type = token:Econ_Type_Planned
-				TNO_economy_subtype = token:Econ_Subtype_Worker_Directed
-			}
-			
-		}
-		GHU = {
-			if = {
-				limit = {
-					HUN = {
-					    is_in_faction_with = GER
-					}	
-				}	
-				GHU = {
-				    annex_country = {
-				        target = HUN
-				        transfer_troops = no
-			        }
-					every_owned_state = {
-				        GHU = {
-					        add_state_core = PREV
-				        }       
-			        }
-					econ_join_sphere_MAR = yes
-				}	
-				TNO_startup_nation = yes
-			}
-		}
-		GSE = {
-			if = {
-				limit = {
-					SER = {
-					    is_in_faction_with = GER
-					}	
-				}	
-				GSE = {
-				    annex_country = {
-				        target = SER
-				        transfer_troops = no
-			        }
-					every_owned_state = {
-				        GSE = {
-					        add_state_core = PREV
-				        }       
-			        }
-					econ_join_sphere_MAR = yes
-				}	
-				TNO_startup_nation = yes
-			}
-		}
-		GRM = {
-			if = {
-				limit = {
-					ROM = {
-					    is_in_faction_with = GER
-					}	
-				}	
-				GRM = {
-				    annex_country = {
-				        target = ROM
-				        transfer_troops = no
-			        }
-					every_owned_state = {
-				        GRM = {
-					        add_state_core = PREV
-				        }       
-			        }
-					econ_join_sphere_MAR = yes
-					set_politics = {
-				        ruling_party = progressivism
-			        }
-				}	
-				TNO_startup_nation = yes
-			}
-		}
-		GBU = {
-			if = {
-				limit = {
-					BUL = {
-					    is_in_faction_with = GER
-					}	
-				}	
-				GBU = {
-				    annex_country = {
-				        target = BUL
-				        transfer_troops = no
-			        }
-					every_owned_state = {
-				        GBU = {
-					        add_state_core = PREV
-				        }       
-			        }
-					econ_join_sphere_MAR = yes
-				}	
-				TNO_startup_nation = yes
-			}
-		}
 		GHL = {
 			econ_join_sphere_MAR = yes
 			transfer_state = 36
@@ -2336,6 +2172,50 @@ TaS_2WRW_form_ost_zones = {
 				set_capital = { state = 1428 }
 				TaS_2WRW_set_zone_laws = yes
 				econ_join_sphere_MAR = yes
+				if = {
+					limit = {
+						MAR = { owns_state = 1286 }
+					}
+					transfer_state = 80
+					transfer_state = 1286
+					transfer_state = 78
+					transfer_state = 1285
+					transfer_state = 1282
+					transfer_state = 198
+					transfer_state = 1965
+					transfer_state = 1966
+					transfer_state = 192
+				}
+				else_if = {
+					limit = {
+						MAR = { owns_state = 1292 }
+					}
+					transfer_state = 1282
+					transfer_state = 198
+					transfer_state = 1965
+					transfer_state = 1966
+					transfer_state = 192
+				}
+				else_if = {
+					limit = {
+						MAR = { owns_state = 192 }
+					}
+					transfer_state = 198
+					transfer_state = 1965
+					transfer_state = 1966
+					transfer_state = 192
+				}
+				else_if = {
+					limit = {
+						MAR = { owns_state = 1965 }
+					}
+					transfer_state = 198
+					transfer_state = 1965
+					transfer_state = 1966
+				}
+				else = {
+					log = "otsosi"
+				}
 			}
 			MUK = {
 				get_current_government_type = yes

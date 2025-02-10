@@ -7,12 +7,13 @@ characters = {
 				large = "gfx/leaders/POSTWRW2/Portrait_Petar_Dertliev.dds"
 			}
 		}
-		country_leader = {
-			#desc = "POLITICS_BORIS_III_DESC"
-			ideology = progressivism_subtype
-			traits = { }
-			expire = "1999.1.1.1"
-			id = -1
+	}
+	GBU_Todor_Zhivkov = {
+		name = GBU_Todor_Zhivkov
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/POSTWRW2/Portrait_Todor_Zhivkov.dds"
+			}
 		}
 	}
 	### ROMANIA
@@ -23,27 +24,13 @@ characters = {
 				large = "gfx/leaders/POSTWRW2/Portrait_Ion_Iliescu.dds"
 			}
 		}
-		country_leader = {
-			#desc = "POLITICS_BORIS_III_DESC"
-			ideology = progressivism_subtype
-			traits = { }
-			expire = "1999.1.1.1"
-			id = -1
-		}
 	}
-	GRM_Mihai_I = {
-		name = GRM_Mihai_I
+	GRM_Radu_Ciuceanu = {
+		name = GRM_Radu_Ciuceanu
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/ROM/Portrait_Romania_Michael_I.dds"
+				large = "gfx/leaders/POSTWRW2/Portrait_Radu_Ciuceanu.dds"
 			}
-		}
-		country_leader = {
-			desc = "POLITICS_MICHAEL_I_DESC"
-			ideology = despotism_mladorossi_autocracy_subtype
-			traits = { }
-			expire = "1975.1.1.1"
-			id = -1
 		}
 	}
 	### HUNGARY
@@ -54,25 +41,79 @@ characters = {
 				large = "gfx/leaders/POSTWRW2/Portrait_Istvan_Horthy.dds"
 			}
 		}
-		country_leader = {
-			#desc = "POLITICS_ISTVAN_HORTHY_DESC"
-			expire = "1999.1.1.1"
-			ideology = paternalism_semi_constitutional_monarchy_subtype
-			traits = { }
-			id = -1
+	}
+	GHU_Geraldine = {
+		name = GHU_Geraldine
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/POSTWRW2/Portrait_Geraldine.dds"
+			}
 		}
 	}
 	### YUGOSLAVIA
-	GSE_Josip_Broz_Tito = {
-		name = GSE_Josip_Broz_Tito
+	GSE_Petar_Stambolic = {
+		name = GSE_Petar_Stambolic
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/POSTWRW2/Portrait_Josip_Broz_Tito.dds"
+				large = "gfx/leaders/POSTWRW2/Portrait_Petar_Stambolic.dds"
+			}
+		}
+	}
+	GSE_Petar_Karadordevic = {
+		name = GSE_Petar_Karadordevic
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/POSTWRW2/Portrait_Petar_Karadordevic.dds"
+			}
+		}
+	}
+	### FINLAND
+	MFI_Urho_Kekkonen = {
+		name = MFI_Urho_Kekkonen
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/POSTWRW2/Portrait_Urho_Kekkonen.dds"
 			}
 		}
 		country_leader = {
 			#desc = "POLITICS_JOSIP_BROZ_TITO_DESC"
-			ideology = communist_subtype
+			ideology = conservatism_agrarianism_subtype
+			traits = { }
+			expire = "1990.1.1.1"
+			id = -1
+		}
+	}
+	MTU_Ahmet_Isvan = {
+		name = MTU_Ahmet_Isvan
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/POSTWRW2/Portrait_Ahmet_Isvan.dds"
+			}
+		}
+		country_leader = {
+			#desc = "POLITICS_JOSIP_BROZ_TITO_DESC"
+			ideology = despotism_colonial_government_subtype
+			traits = { }
+			expire = "1990.1.1.1"
+			id = -1
+		}
+		country_leader = {
+			#desc = "POLITICS_JOSIP_BROZ_TITO_DESC"
+			ideology = paternalism_kemalism_subtype
+			traits = { }
+			expire = "1990.1.1.1"
+			id = -1
+		}
+		country_leader = {
+			#desc = "POLITICS_JOSIP_BROZ_TITO_DESC"
+			ideology = conservatism_paternalistic_conservatism_subtype
+			traits = { }
+			expire = "1990.1.1.1"
+			id = -1
+		}
+		country_leader = {
+			#desc = "POLITICS_JOSIP_BROZ_TITO_DESC"
+			ideology = progressivism_left_kemalism_subtype
 			traits = { }
 			expire = "1990.1.1.1"
 			id = -1

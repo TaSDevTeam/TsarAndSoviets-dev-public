@@ -192,7 +192,7 @@ MAR_Prestol_start = {
 		limit = { 
 			has_game_rule = {
 				rule = KOSYGIN_PRESTOL_TIMER
-				option = RULE_OPTION_KOSYGIN_PRESTOL_TIMER_DISABLED
+				option = KOSYGIN_PRESTOL_TIMER_DISABLED
 			}
 		}
 		set_variable = { MAR_tabby_timeout = 3000 }
@@ -1512,23 +1512,29 @@ UAR_Influence_Increase_Change = {
 
 		hidden_effect = {
 			if = {
-				has_game_rule = {
-					rule = KOSYGIN_UAR_BIG_GAME_RESULT
-					option = KOSYGIN_UAR_BIG_GAME_RESULT_RUS
+				limit = {
+					has_game_rule = {
+						rule = KOSYGIN_UAR_BIG_GAME_RESULT
+						option = KOSYGIN_UAR_BIG_GAME_RESULT_RUS
+					}
 				}
 				set_variable = { UAR.UAR_faction_influence_gain_array^1 = 101 }
 			}
 			else_if = {
-				has_game_rule = {
-					rule = KOSYGIN_UAR_BIG_GAME_RESULT
-					option = KOSYGIN_UAR_BIG_GAME_RESULT_GER
+				limit = {
+					has_game_rule = {
+						rule = KOSYGIN_UAR_BIG_GAME_RESULT
+						option = KOSYGIN_UAR_BIG_GAME_RESULT_GER
+					}
 				}
 				set_variable = { UAR.UAR_faction_influence_gain_array^2 = 101 }
 			}
 			else_if = {
-				has_game_rule = {
-					rule = KOSYGIN_UAR_BIG_GAME_RESULT
-					option = KOSYGIN_UAR_BIG_GAME_RESULT_UAR
+				limit = {
+					has_game_rule = {
+						rule = KOSYGIN_UAR_BIG_GAME_RESULT
+						option = KOSYGIN_UAR_BIG_GAME_RESULT_UAR
+					}
 				}
 				set_variable = { UAR.UAR_faction_influence_gain_array^0 = 101 }
 			}
