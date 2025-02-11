@@ -142,6 +142,9 @@ MAR_foreign_policy_category = {
 			
 			clr_country_flag = MARFE_doing_stuff
 		}
+		ai_will_do = {
+			factor = 50
+		}
 	}
 	MAR_send_motorized_rebels = {
 		icon = GFX_decision_black_market_arms_trade_increase
@@ -241,6 +244,9 @@ MAR_foreign_policy_category = {
 			add_to_variable = { MAR_FErebels_mbt_equipment = 35 }
 			clr_country_flag = MARFE_doing_stuff
 		}
+		ai_will_do = {
+			factor = 25
+		}
 	}
 	MAR_send_volunteer_corps_rebels = {
 		icon = decision_generic_military_hat
@@ -269,6 +275,9 @@ MAR_foreign_policy_category = {
 		remove_effect = {
 			add_to_variable = { MAR_FErebels_adddivisions = 2 }
 			clr_country_flag = MARFE_doing_stuff
+		}
+		ai_will_do = {
+			factor = 100
 		}
 	}
 	MAR_send_partisans_rebels = {
@@ -299,6 +308,9 @@ MAR_foreign_policy_category = {
 		remove_effect = {
 			add_to_variable = { MAR_FErebels_addpartisans = 1 }
 			clr_country_flag = MARFE_doing_stuff
+		}
+		ai_will_do = {
+			factor = 100
 		}
 	}
 	MAR_FE_increase_commitment = {
@@ -542,6 +554,9 @@ MAR_foreign_policy_category = {
 					days = 90
 				}
 			}
+		}
+		ai_will_do = {
+			factor = 100
 		}
 	}
 
@@ -1060,6 +1075,9 @@ MAR_foreign_policy_category = {
 			custom_effect_tooltip = "TNO_increase_volunteers_IRL_1"
 			set_country_flag = MAR_IRCW_volunteers_sent
 		}
+		ai_will_do = {
+			factor = 100
+		}
 	}
 
 	MAR_IRCW_increase_the_volunteers = {
@@ -1097,6 +1115,9 @@ MAR_foreign_policy_category = {
 				}
 			}
 		}
+		ai_will_do = {
+			factor = 100
+		}
 	}
 
 	MAR_IRCW_max_volunteers = {
@@ -1131,6 +1152,9 @@ MAR_foreign_policy_category = {
 					load_oob = USA_Iranian_Advisors
 				}
 			}
+		}
+		ai_will_do = {
+			factor = 100
 		}
 	}
 	
@@ -1279,6 +1303,9 @@ MAR_foreign_policy_category = {
 				}
 			}
 		}
+		ai_will_do = {
+			factor = 100
+		}
 	}
 
 	MAR_IRCW_anti_air = {
@@ -1307,6 +1334,9 @@ MAR_foreign_policy_category = {
 				}
 			}
 		}
+		ai_will_do = {
+			factor = 100
+		}
 	}
 
 	MAR_IRCW_artillery = {
@@ -1334,6 +1364,9 @@ MAR_foreign_policy_category = {
 					target = IRC
 				}
 			}
+		}
+		ai_will_do = {
+			factor = 100
 		}
 	}
 	MAR_IRCW_loosening_regulations = {
@@ -1383,6 +1416,9 @@ MAR_foreign_policy_category = {
 			TNO_increase_volunteer_cap_1 = yes
 			custom_effect_tooltip = "TNO_increase_volunteers_IRL_1"
 			set_country_flag = MAR_IRCW_volunteers_sent
+		}
+		ai_will_do = {
+			factor = 100
 		}
 	}
 
@@ -1456,6 +1492,9 @@ MAR_foreign_policy_category = {
 				}
 			}
 		}
+		ai_will_do = {
+			factor = 100
+		}
 	}
 	
 	MAR_IRCW_authorize_equipment_send_kosygin = {
@@ -1474,6 +1513,9 @@ MAR_foreign_policy_category = {
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision MAR_IRCW_send_guns"
 			set_country_flag = MAR_IRCW_arming_IRA
+		}
+		ai_will_do = {
+			factor = 100
 		}
 	}
 	
@@ -1495,6 +1537,9 @@ MAR_foreign_policy_category = {
 			IRA = {
 				set_country_flag = IRC_russian_sales
 			}	
+		}
+		ai_will_do = {
+			factor = 100
 		}
 	}
 	
@@ -1522,6 +1567,9 @@ MAR_foreign_policy_category = {
 					target = IRA
 				}
 			}
+		}
+		ai_will_do = {
+			factor = 100
 		}
 	}
 
@@ -1551,6 +1599,9 @@ MAR_foreign_policy_category = {
 			}
 
 		}
+		ai_will_do = {
+			factor = 100
+		}
 	}
 
 	MAR_IRCW_loans_kosygin = {
@@ -1572,6 +1623,9 @@ MAR_foreign_policy_category = {
 			log = "[GetDateText]: [Root.GetName]: Decision MAR_IRCW_loans"
 			set_temp_variable = { temp_econ_spending_amount = 0.01 }
 			econ_spend_money_once_effect_raw_money = yes
+		}
+		ai_will_do = {
+			factor = 100
 		}
 	}
 
@@ -1602,6 +1656,9 @@ MAR_foreign_policy_category = {
 				}
 			}
 		}
+		ai_will_do = {
+			factor = 100
+		}
 	}
 
 	MAR_IRCW_anti_air_kosygin = {
@@ -1630,6 +1687,9 @@ MAR_foreign_policy_category = {
 				}
 			}
 		}
+		ai_will_do = {
+			factor = 100
+		}
 	}
 
 	MAR_IRCW_artillery_kosygin = {
@@ -1657,6 +1717,9 @@ MAR_foreign_policy_category = {
 					target = IRA
 				}
 			}
+		}
+		ai_will_do = {
+			factor = 100
 		}
 	}
 	

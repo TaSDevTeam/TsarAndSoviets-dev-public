@@ -137,12 +137,6 @@ RUS_urals_set_malenkov_receptiveness = {
 		}
 		if = {
 			limit = {
-				original_tag = MAR
-			}
-			set_variable = { RUS_urals_receptiveness^0 = 0.25 }
-		}
-		if = {
-			limit = {
 				original_tag = KOM
 			}
 			if = {
@@ -279,6 +273,12 @@ RUS_urals_set_malenkov_receptiveness = {
 				}
 				set_variable = { RUS_urals_receptiveness^0 = 0.3 }
 			}
+		}
+		if = {
+			limit = {
+				original_tag = MAR
+			}
+			set_variable = { RUS_urals_receptiveness^0 = 0.25 }
 		}
 		if = {
 			limit = {
