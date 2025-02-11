@@ -613,6 +613,7 @@ TaS_Kosygin_westrussian_collapse = {
 	if = {
 		limit = {
 			country_exists = RFI	
+			NOT = { country_exists = FIN }	
 			MAR = { controls_state = 213 }
 		}
 		RFI = {

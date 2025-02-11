@@ -319,10 +319,10 @@ TaS_2WRW_manchuria_start_rebelion = {
 				}
 			}
 			apply_war_buff_with_15_divisions = yes
-			add_timed_idea = {
-				idea = war_cheat
-				days = 90
-			}
+			#add_timed_idea = {
+			#	idea = war_cheat
+			#	days = 90
+			#}
 		}
 	}
 	PJP = {
@@ -2104,7 +2104,7 @@ TaS_2WRW_form_ost_zones = {
 			RUS = {
 				set_autonomy = {
 					target = MBP
-					autonomy_state = autonomy_military_district
+					autonomy_state = autonomy_military_government
 				}	
 			}	
 			MBP = {
@@ -2138,7 +2138,7 @@ TaS_2WRW_form_ost_zones = {
 			RUS = {
 				set_autonomy = {
 					target = MBL
-					autonomy_state = autonomy_military_district
+					autonomy_state = autonomy_military_government
 				}	
 			}	
 			MBL = {
@@ -2224,7 +2224,7 @@ TaS_2WRW_form_ost_zones = {
 			RUS = {
 				set_autonomy = {
 					target = MUK
-					autonomy_state = autonomy_military_district
+					autonomy_state = autonomy_military_government
 				}	
 			}	
 			MUK = {
@@ -2249,7 +2249,7 @@ TaS_2WRW_form_ost_zones = {
 			RUS = {
 				set_autonomy = {
 					target = MTV
-					autonomy_state = autonomy_military_district
+					autonomy_state = autonomy_military_government
 				}	
 			}	
 			MTV = {
@@ -2289,7 +2289,7 @@ TaS_2WRW_form_ost_zones = {
 			RUS = {
 				set_autonomy = {
 					target = MCS
-					autonomy_state = autonomy_military_district
+					autonomy_state = autonomy_military_government
 				}	
 			}	
 			MCS = {

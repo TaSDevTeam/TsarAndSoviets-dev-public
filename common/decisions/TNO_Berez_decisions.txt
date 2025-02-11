@@ -1105,6 +1105,14 @@ MAR_experiments_category = {
 			has_country_flag = MAR_started_experiments
 		}
 		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				check_variable = { debt_to_GDP_ratio > 0.95 }
+				factor = 0
+			}
+		}
+		
 		cost = 50
 		
 		complete_effect = {
@@ -1161,9 +1169,6 @@ MAR_experiments_category = {
 			}
 			custom_effect_tooltip = MAR_EXP_RESULTS_IN_TT
 		}
-		ai_will_do = {
-			factor = 50
-		}
 	}
 	
 	MAR_EXP_third_eye_dec = {
@@ -1184,6 +1189,14 @@ MAR_experiments_category = {
 		
 		visible = {
 			has_country_flag = MAR_started_experiments
+		}
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				check_variable = { debt_to_GDP_ratio > 0.95 }
+				factor = 0
+			}
 		}
 		
 		cost = 75
@@ -1243,9 +1256,6 @@ MAR_experiments_category = {
 			}
 			custom_effect_tooltip = MAR_EXP_RESULTS_IN_TT
 		}
-		ai_will_do = {
-			factor = 50
-		}
 	}
 	
 	MAR_EXP_flying_cabin_dec = {
@@ -1266,6 +1276,14 @@ MAR_experiments_category = {
 		
 		visible = {
 			has_country_flag = MAR_started_experiments
+		}
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				check_variable = { debt_to_GDP_ratio > 0.95 }
+				factor = 0
+			}
 		}
 		
 		cost = 75
@@ -1320,9 +1338,6 @@ MAR_experiments_category = {
 			}
 			custom_effect_tooltip = MAR_EXP_RESULTS_IN_TT
 		}
-		ai_will_do = {
-			factor = 50
-		}
 	}
 	
 	MAR_EXP_low_start_dec = {
@@ -1343,6 +1358,14 @@ MAR_experiments_category = {
 		
 		visible = {
 			has_country_flag = MAR_started_experiments
+		}
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				check_variable = { debt_to_GDP_ratio > 0.95 }
+				factor = 0
+			}
 		}
 		
 		cost = 100
@@ -1397,9 +1420,6 @@ MAR_experiments_category = {
 			}
 			custom_effect_tooltip = MAR_EXP_RESULTS_IN_TT
 		}
-		ai_will_do = {
-			factor = 50
-		}
 	}
 	
 	MAR_EXP_thunder_fury_dec = {
@@ -1420,6 +1440,14 @@ MAR_experiments_category = {
 		
 		visible = {
 			has_country_flag = MAR_started_experiments
+		}
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				check_variable = { debt_to_GDP_ratio > 0.95 }
+				factor = 0
+			}
 		}
 		
 		cost = 150
@@ -1479,9 +1507,6 @@ MAR_experiments_category = {
 			}
 			custom_effect_tooltip = MAR_EXP_RESULTS_IN_TT
 		}
-		ai_will_do = {
-			factor = 50
-		}
 	}
 	
 	MAR_EXP_edem_dec = {
@@ -1502,6 +1527,14 @@ MAR_experiments_category = {
 		
 		visible = {
 			has_country_flag = MAR_started_experiments
+		}
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				check_variable = { debt_to_GDP_ratio > 0.95 }
+				factor = 0
+			}
 		}
 		
 		cost = 75
@@ -1561,9 +1594,6 @@ MAR_experiments_category = {
 			}
 			custom_effect_tooltip = MAR_EXP_RESULTS_IN_TT
 		}
-		ai_will_do = {
-			factor = 50
-		}
 	}
 	
 	MAR_EXP_Nine_lives_dec = {
@@ -1584,6 +1614,14 @@ MAR_experiments_category = {
 		
 		visible = {
 			has_country_flag = MAR_started_experiments
+		}
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				check_variable = { debt_to_GDP_ratio > 0.95 }
+				factor = 0
+			}
 		}
 		
 		cost = 25
@@ -1651,6 +1689,10 @@ MAR_Order_category = {
 		visible = {
 			always = yes
 		}
+	
+		ai_will_do = {
+			factor = 100
+		}
 		cost = 30
 		
 		days_remove = 5
@@ -1672,11 +1714,15 @@ MAR_Order_category = {
 			always = yes
 		}
 		
-		custom_cost_trigger = { command_power > 24.99 }
-		custom_cost_text = decision_cost_25_cp
+		ai_will_do = {
+			factor = 100
+		}
+		
+		custom_cost_trigger = { command_power > 9.99 }
+		custom_cost_text = decision_cost_10_cp
 		
 		days_remove = 5
-		complete_effect = { add_command_power = -25 }
+		complete_effect = { add_command_power = -10 }
 		remove_effect = {
 			hidden_effect = {
 				every_possible_country = {
@@ -1726,7 +1772,11 @@ MAR_Order_category = {
 		visible = {
 			always = yes
 		}
-		cost = 100
+		cost = 50
+		
+		ai_will_do = {
+			factor = 100
+		}
 		
 		days_remove = 5
 		remove_effect = {
@@ -1759,6 +1809,11 @@ MAR_Order_category = {
 			}
 			has_country_flag = W_RUSSIA_UNIFIED
 		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
 		cost = 50
 		
 		days_remove = 5
@@ -1781,7 +1836,11 @@ MAR_Order_category = {
 			}
 			has_country_flag = W_RUSSIA_UNIFIED
 		}
-		cost = 125
+		
+		ai_will_do = {
+			factor = 100
+		}
+		cost = 75
 		
 		days_remove = 5
 		remove_effect = {
@@ -1804,10 +1863,15 @@ MAR_Order_category = {
 			}
 			has_country_flag = W_RUSSIA_UNIFIED
 		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
 		days_remove = 5
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
-		complete_effect = { add_command_power = -20 }
+		custom_cost_trigger = { command_power > 4.99 }
+		custom_cost_text = decision_cost_5_cp
+		complete_effect = { add_command_power = -5 }
 		remove_effect = {
 			add_war_support = 0.1
 			TNO_improve_army_professionalism_low = yes
@@ -1824,6 +1888,11 @@ MAR_Order_category = {
 			}
 			has_country_flag = W_RUSSIA_UNIFIED
 		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
 		days_remove = 5
 		cost = 40
 		complete_effect = { country_event = {id = berez_belozerski.43 days = 90} }
@@ -1850,6 +1919,11 @@ MAR_Order_category = {
 			}
 			has_country_flag = W_RUSSIA_UNIFIED
 		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = MAR_must_control_all_of_Southern_Urals
@@ -1947,6 +2021,11 @@ MAR_Order_category = {
 			}
 			has_country_flag = RUS_RUSSIA_UNIFIED
 		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
 		days_remove = 5
 		cost = 50
 		remove_effect = {
@@ -1971,6 +2050,11 @@ MAR_Order_category = {
 			}
 			has_country_flag = RUS_RUSSIA_UNIFIED
 		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
 		days_remove = 5
 		cost = 50
 		remove_effect = {
@@ -1992,6 +2076,11 @@ MAR_Order_category = {
 		visible = {
 			has_completed_focus = MAR_return_to_steppe
 		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
 		days_remove = 5
 		cost = 50
 		remove_effect = {
@@ -2012,6 +2101,10 @@ MAR_Order_category = {
 			has_country_flag = MAR_order_Kosygin
 		}
 		cost = 50
+		
+		ai_will_do = {
+			factor = 100
+		}
 		
 		days_remove = 5
 		remove_effect = {
@@ -2037,7 +2130,12 @@ MAR_Order_category = {
 			has_country_flag = W_RUSSIA_UNIFIED
 			has_country_flag = MAR_order_Kosygin
 		}
-		cost = 50
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		cost = 100
 		
 		days_remove = 5
 		remove_effect = {
@@ -2069,7 +2167,12 @@ MAR_Order_category = {
 			has_country_flag = W_RUSSIA_UNIFIED
 			has_country_flag = MAR_order_Kosygin
 		}
-		cost = 50
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		cost = 75
 		
 		days_remove = 5
 		remove_effect = {
@@ -2096,6 +2199,11 @@ MAR_Order_category = {
 			has_country_flag = W_RUSSIA_UNIFIED
 			has_country_flag = MAR_order_Kosygin
 		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
 		cost = 50
 		
 		days_remove = 5
@@ -2122,7 +2230,12 @@ MAR_Order_category = {
 			has_country_flag = RUS_RUSSIA_UNIFIED
 			has_country_flag = MAR_order_Kosygin
 		}
-		cost = 50
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		cost = 25
 		
 		days_remove = 5
 		remove_effect = {
@@ -2150,7 +2263,12 @@ MAR_Order_category = {
 			has_country_flag = RUS_RUSSIA_UNIFIED
 			has_country_flag = MAR_order_Kosygin
 		}
-		cost = 50
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		cost = 40
 		
 		days_remove = 5
 		remove_effect = {
@@ -2229,6 +2347,389 @@ MAR_category_prestol_terrorists = {
 		}
 	}
 	
+	MAR_AI_prestol_decision_one = {
+		icon = GFX_decision_revolt
+		visible = {
+			OR = {
+				is_ai = yes
+				is_debug = yes
+			}
+		}
+		available = {
+			has_manpower > 10000
+			has_equipment = { infantry_equipment > 1500 }
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		cost = 5
+		days_remove = 7
+
+		days_re_enable = 14
+
+		fire_only_once = no
+		complete_effect = {
+			add_manpower = -3000
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -500
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_AI_prestol_decision_one"
+			if = {
+				limit = {
+					check_variable = { v:kosygin_reception = 1 }
+				}
+				var:v = {
+					set_temp_variable = { change_strenghth_temp = -0.02 }
+					add_to_variable = { insurgency_strength = change_strenghth_temp }
+					
+					custom_effect_tooltip = MAR_prestol_power_change
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = { v:kosygin_reception > 1 }
+				}
+				var:v = {
+					set_temp_variable = { change_strenghth_temp = -0.05 }
+					set_temp_variable = { change_strenghth_trend_temp = 0.001 }
+					
+					add_to_variable = { insurgency_strengthTrend = change_strenghth_trend_temp }
+					add_to_variable = { insurgency_strength = change_strenghth_temp }
+					
+					custom_effect_tooltip = MAR_prestol_power_change
+					custom_effect_tooltip = MAR_prestol_power_trend_change
+				}
+			}
+		}
+	}
+	MAR_AI_prestol_decision_two = {
+		icon = GFX_decision_revolt
+		visible = {
+			OR = {
+				is_ai = yes
+				is_debug = yes
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		
+		cost = 150
+		days_remove = 7
+
+		days_re_enable = 14
+
+		fire_only_once = no
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_AI_prestol_decision_one"
+			if = {
+				limit = {
+					check_variable = { v:kosygin_reception = 1 }
+				}
+				var:v = {
+					set_temp_variable = { change_strenghth_temp = -0.01 }
+					add_to_variable = { insurgency_strength = change_strenghth_temp }
+					
+					custom_effect_tooltip = MAR_prestol_power_change
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = { v:kosygin_reception > 1 }
+				}
+				var:v = {
+					set_temp_variable = { change_strenghth_temp = -0.005 }
+					set_temp_variable = { change_strenghth_trend_temp = -0.005 }
+					
+					add_to_variable = { insurgency_strengthTrend = change_strenghth_trend_temp }
+					add_to_variable = { insurgency_strength = change_strenghth_temp }
+					
+					custom_effect_tooltip = MAR_prestol_power_change
+					custom_effect_tooltip = MAR_prestol_power_trend_change
+				}
+			}
+		}
+	}
+	MAR_AI_prestol_decision_three = {
+		icon = GFX_decision_revolt
+		visible = {
+			OR = {
+				is_ai = yes
+				is_debug = yes
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		
+		cost = 150
+		
+		days_remove = 7
+
+		days_re_enable = 14
+
+		fire_only_once = no
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_AI_prestol_decision_one"
+			if = {
+				limit = {
+					check_variable = { v:kosygin_reception = 1 }
+				}
+				var:v = {
+					set_temp_variable = { change_strenghth_temp = -0.02 }
+					add_to_variable = { insurgency_strength = change_strenghth_temp }
+					
+					custom_effect_tooltip = MAR_prestol_power_change
+					custom_effect_tooltip = MAR_prestol_power_trend_change
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = { v:kosygin_reception > 1 }
+				}
+				var:v = {
+					set_temp_variable = { change_strenghth_temp = -0.03 }
+					set_temp_variable = { change_strenghth_trend_temp = -0.003 }
+					
+					add_to_variable = { insurgency_strengthTrend = change_strenghth_trend_temp }
+					add_to_variable = { insurgency_strength = change_strenghth_temp }
+					
+					custom_effect_tooltip = MAR_prestol_power_change
+					custom_effect_tooltip = MAR_prestol_power_trend_change
+				}
+			}
+		}
+	}
+	MAR_AI_prestol_decision_onega = {
+		icon = GFX_decision_revolt
+		visible = {
+			OR = {
+				is_ai = yes
+				is_debug = yes
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = onega_control_tt
+				controls_state = 859
+			}
+			214 = {
+				check_variable = { insurgency_strength < 0.15 }
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		
+		cost = 30
+		
+		days_remove = 15
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Complete MAR_AI_prestol_decision_onega"
+			set_variable = { insurgency_state_selected = 214 }
+			MAR_Prestol_set_the_event_one = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_AI_prestol_decision_onega"
+			set_variable = { insurgency_state_selected = 214 } 
+			MAR_Prestol_set_the_event_two = yes
+		}
+	}
+	MAR_AI_prestol_decision_naryanmar = {
+		icon = GFX_decision_revolt
+		visible = {
+			OR = {
+				is_ai = yes
+				is_debug = yes
+			}
+		}
+		available = {
+			262 = {
+				check_variable = { insurgency_strength < 0.15 }
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		
+		cost = 30
+		
+		days_remove = 15
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Complete MAR_AI_prestol_decision_naryanmar"
+			set_variable = { insurgency_state_selected = 262 }
+			MAR_Prestol_set_the_event_one = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_AI_prestol_decision_naryanmar"
+			set_variable = { insurgency_state_selected = 262 } 
+			MAR_Prestol_set_the_event_two = yes
+		}
+	}
+	MAR_AI_prestol_decision_komi = {
+		icon = GFX_decision_revolt
+		visible = {
+			OR = {
+				is_ai = yes
+				is_debug = yes
+			}
+		}
+		available = {
+			397 = {
+				check_variable = { insurgency_strength < 0.15 }
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		
+		cost = 30
+		
+		days_remove = 15
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Complete MAR_AI_prestol_decision_komi"
+			set_variable = { insurgency_state_selected = 397 }
+			MAR_Prestol_set_the_event_one = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_AI_prestol_decision_komi"
+			set_variable = { insurgency_state_selected = 397 } 
+			MAR_Prestol_set_the_event_two = yes
+		}
+	}
+	MAR_AI_prestol_decision_gorky = {
+		icon = GFX_decision_revolt
+		visible = {
+			OR = {
+				is_ai = yes
+				is_debug = yes
+			}
+		}
+		available = {
+			252 = {
+				check_variable = { insurgency_strength < 0.15 }
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		
+		cost = 30
+		
+		days_remove = 15
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Complete MAR_AI_prestol_decision_komi"
+			set_variable = { insurgency_state_selected = 252 }
+			MAR_Prestol_set_the_event_one = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_AI_prestol_decision_komi"
+			set_variable = { insurgency_state_selected = 252 } 
+			MAR_Prestol_set_the_event_two = yes
+		}
+	}
+	MAR_AI_prestol_decision_perm = {
+		icon = GFX_decision_revolt
+		visible = {
+			OR = {
+				is_ai = yes
+				is_debug = yes
+			}
+		}
+		available = {
+			753 = {
+				check_variable = { insurgency_strength < 0.15 }
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		
+		cost = 30
+		
+		days_remove = 15
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Complete MAR_AI_prestol_decision_komi"
+			set_variable = { insurgency_state_selected = 753 }
+			MAR_Prestol_set_the_event_one = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_AI_prestol_decision_komi"
+			set_variable = { insurgency_state_selected = 753 } 
+			MAR_Prestol_set_the_event_two = yes
+		}
+	}
+	MAR_AI_prestol_decision_samara = {
+		icon = GFX_decision_revolt
+		visible = {
+			OR = {
+				is_ai = yes
+				is_debug = yes
+			}
+		}
+		available = {
+			850 = {
+				check_variable = { insurgency_strength < 0.15 }
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		
+		cost = 30
+		
+		days_remove = 15
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Complete MAR_AI_prestol_decision_komi"
+			set_variable = { insurgency_state_selected = 850 }
+			MAR_Prestol_set_the_event_one = yes
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_AI_prestol_decision_komi"
+			set_variable = { insurgency_state_selected = 850 } 
+			MAR_Prestol_set_the_event_two = yes
+		}
+	}
+	MAR_AI_prestol_decision_berezniki = {
+		icon = GFX_decision_revolt
+		visible = {
+			OR = {
+				is_ai = yes
+				is_debug = yes
+			}
+			398 = {
+				check_variable = { operation_available = 1 }
+			}
+		}
+		available = {
+			398 = {
+				check_variable = { operation_available = 1 }
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		
+		cost = 15
+		
+		days_remove = 7
+		fire_only_once = yes
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_AI_prestol_decision_berezniki"
+			set_variable = { insurgency_state_selected = 398 } 
+			MAR_Prestol_set_the_event_two = yes
+		}
+	}
 	#MAR_biweekly_prestol_tick = {
 	#	icon = GFX_decision_generic_ignite_civil_war
 	#	activation = { always = no }
@@ -2325,6 +2826,13 @@ MAR_ogas_deccat = {
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 1 }
 		}
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				check_variable = { debt_to_GDP_ratio > 0.95 }
+				factor = 0
+			}
+		}
 		cost = 25
 		days_remove = 90
 		fire_only_once = yes
@@ -2386,6 +2894,13 @@ MAR_ogas_deccat = {
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 1 }
 		}
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				check_variable = { debt_to_GDP_ratio > 0.95 }
+				factor = 0
+			}
+		}
 		cost = 25
 		days_remove = 45
 		fire_only_once = yes
@@ -2423,6 +2938,13 @@ MAR_ogas_deccat = {
 		icon = GFX_build_a_academy
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 1 }
+		}
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				check_variable = { debt_to_GDP_ratio > 0.95 }
+				factor = 0
+			}
 		}
 		cost = 25
 		days_remove = 90
@@ -2482,7 +3004,14 @@ MAR_ogas_deccat = {
 		icon = GFX_decision_category_KOM_ultravisionary_socialism
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 1 }
-		} 
+		}
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				check_variable = { debt_to_GDP_ratio > 0.95 }
+				factor = 0
+			}
+		}		
 		cost = 25
 		days_remove = 45
 		fire_only_once = yes
@@ -2518,6 +3047,13 @@ MAR_ogas_deccat = {
 		icon = GFX_decision_GNG_data
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 1 }
+		}
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				check_variable = { debt_to_GDP_ratio > 0.95 }
+				factor = 0
+			}
 		}
 		cost = 25
 		days_remove = 60
@@ -2569,6 +3105,13 @@ MAR_ogas_deccat = {
 		icon = GFX_ibm
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 2 }
+		}
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				check_variable = { debt_to_GDP_ratio > 0.95 }
+				factor = 0
+			}
 		}
 		cost = 25
 		days_remove = 45
@@ -2624,6 +3167,13 @@ MAR_ogas_deccat = {
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 2 }
 		}
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				check_variable = { debt_to_GDP_ratio > 0.95 }
+				factor = 0
+			}
+		}
 		cost = 25
 		days_remove = 90
 		fire_only_once = yes
@@ -2667,6 +3217,13 @@ MAR_ogas_deccat = {
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 2 }
 		}
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				check_variable = { debt_to_GDP_ratio > 0.95 }
+				factor = 0
+			}
+		}
 		cost = 25
 		days_remove = 60
 		fire_only_once = yes
@@ -2698,6 +3255,13 @@ MAR_ogas_deccat = {
 		icon = GFX_decision_generic_propaganda_off
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 2 }
+		}
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				check_variable = { debt_to_GDP_ratio > 0.95 }
+				factor = 0
+			}
 		}
 		cost = 25
 		days_remove = 45
@@ -2738,6 +3302,13 @@ MAR_ogas_deccat = {
 		icon = GFX_glushkov
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 2 }
+		}
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				check_variable = { debt_to_GDP_ratio > 0.95 }
+				factor = 0
+			}
 		}
 		cost = 25
 		days_remove = 75
@@ -2790,6 +3361,13 @@ MAR_ogas_deccat = {
 		icon = GFX_decision_terrain_urban
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 3 }	
+		}
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				check_variable = { debt_to_GDP_ratio > 0.95 }
+				factor = 0
+			}
 		}
 		cost = 25
 		days_remove = 180
@@ -2858,6 +3436,13 @@ MAR_ogas_deccat = {
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 3 }	
 		}
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				check_variable = { debt_to_GDP_ratio > 0.95 }
+				factor = 0
+			}
+		}
 		cost = 25
 		days_remove = 60
 		fire_only_once = yes
@@ -2901,6 +3486,13 @@ MAR_ogas_deccat = {
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 3 }	
 		}
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				check_variable = { debt_to_GDP_ratio > 0.95 }
+				factor = 0
+			}
+		}
 		cost = 25
 		days_remove = 90
 		fire_only_once = yes
@@ -2940,6 +3532,13 @@ MAR_ogas_deccat = {
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 3 }	
 		}
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				check_variable = { debt_to_GDP_ratio > 0.95 }
+				factor = 0
+			}
+		}
 		cost = 25
 		days_remove = 75
 		fire_only_once = yes
@@ -2975,6 +3574,13 @@ MAR_ogas_deccat = {
 		icon = GFX_decision_generic_supply
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 3 }	
+		}
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				check_variable = { debt_to_GDP_ratio > 0.95 }
+				factor = 0
+			}
 		}
 		cost = 25
 		days_remove = 60
@@ -3036,6 +3642,13 @@ MAR_ogas_deccat = {
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 4 }
 		}
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				check_variable = { debt_to_GDP_ratio > 0.95 }
+				factor = 0
+			}
+		}
 		cost = 25
 		days_remove = 90
 		fire_only_once = yes
@@ -3086,6 +3699,13 @@ MAR_ogas_deccat = {
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 4 }
 		}
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				check_variable = { debt_to_GDP_ratio > 0.95 }
+				factor = 0
+			}
+		}
 		cost = 25
 		days_remove = 60
 		fire_only_once = yes
@@ -3125,6 +3745,13 @@ MAR_ogas_deccat = {
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 4 }
 		}
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				check_variable = { debt_to_GDP_ratio > 0.95 }
+				factor = 0
+			}
+		}
 		cost = 25
 		days_remove = 75
 		fire_only_once = yes
@@ -3160,6 +3787,13 @@ MAR_ogas_deccat = {
 		icon = GFX_build_a_academy
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 4 }
+		}
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				check_variable = { debt_to_GDP_ratio > 0.95 }
+				factor = 0
+			}
 		}
 		cost = 25
 		days_remove = 60
@@ -3199,6 +3833,13 @@ MAR_ogas_deccat = {
 		icon = GFX_decision_generic_industry
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 4 }
+		}
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				check_variable = { debt_to_GDP_ratio > 0.95 }
+				factor = 0
+			}
 		}
 		cost = 25
 		days_remove = 45
@@ -3252,6 +3893,13 @@ MAR_ogas_deccat = {
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 5 }
 		}
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				check_variable = { debt_to_GDP_ratio > 0.95 }
+				factor = 0
+			}
+		}
 		cost = 25
 		days_remove = 60
 		fire_only_once = yes
@@ -3291,6 +3939,13 @@ MAR_ogas_deccat = {
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 5 }
 		}
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				check_variable = { debt_to_GDP_ratio > 0.95 }
+				factor = 0
+			}
+		}
 		cost = 25
 		days_remove = 75
 		fire_only_once = yes
@@ -3323,6 +3978,13 @@ MAR_ogas_deccat = {
 		icon = GFX_decision_generic_military_hat
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 5 }
+		}
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				check_variable = { debt_to_GDP_ratio > 0.95 }
+				factor = 0
+			}
 		}
 		modifier = {
 			research_speed_factor = -0.05
@@ -3361,6 +4023,13 @@ MAR_ogas_deccat = {
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 5 }
 		}
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				check_variable = { debt_to_GDP_ratio > 0.95 }
+				factor = 0
+			}
+		}
 		cost = 25
 		days_remove = 45
 		fire_only_once = yes
@@ -3397,6 +4066,13 @@ MAR_ogas_deccat = {
 		icon = GFX_decision_generic_building
 		visible = {
 			check_variable = { MAR_ogas_current_stage = 5 }
+		}
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				check_variable = { debt_to_GDP_ratio > 0.95 }
+				factor = 0
+			}
 		}
 		cost = 25
 		days_remove = 120
@@ -3513,6 +4189,9 @@ MAR_dolina_primirenya_category = {
 		visible = {
 			has_country_flag = MAR_dolina_primireniya
 		}
+		ai_will_do = {
+			factor = 100
+		}
 		days_remove = 120
 		cost = 100
 		complete_effect = {
@@ -3544,7 +4223,7 @@ MAR_greater_good_category = {
 		}
 
 		ai_will_do = {
-			factor = 10
+			factor = 100
 			modifier = {
 				check_variable = { debt_to_GDP_ratio > 0.95 }
 				factor = 0
@@ -3598,7 +4277,7 @@ MAR_greater_good_category = {
 		}
 
 		ai_will_do = {
-			factor = 10
+			factor = 100
 			modifier = {
 				check_variable = { debt_to_GDP_ratio > 0.95 }
 				factor = 0
@@ -3683,7 +4362,7 @@ MAR_greater_good_category = {
 		}
 
 		ai_will_do = {
-			factor = 10
+			factor = 100
 			modifier = {
 				check_variable = { debt_to_GDP_ratio > 0.95 }
 				factor = 0
@@ -3767,7 +4446,7 @@ MAR_greater_good_category = {
 		}
 
 		ai_will_do = {
-			factor = 10
+			factor = 100
 			modifier = {
 				check_variable = { debt_to_GDP_ratio > 0.95 }
 				factor = 0
@@ -3857,7 +4536,7 @@ MAR_greater_good_category = {
 		}
 
 		ai_will_do = {
-			factor = 10
+			factor = 100
 			modifier = {
 				check_variable = { debt_to_GDP_ratio > 0.95 }
 				factor = 0
@@ -3920,6 +4599,10 @@ MAR_yug_excersices_category = {
 				state = 754
 				size > 3
 			}
+		}
+		
+		ai_will_do = {
+			factor = 100
 		}
 		priority = 300
 		days_mission_timeout = 21

@@ -23,10 +23,6 @@ shared_focus = {
 					}
 				}
 				apply_war_buff_with_15_divisions = yes
-				add_timed_idea = {
-					idea = war_cheat
-					days = 365
-				}
 			}
 		}
 	}
@@ -876,6 +872,18 @@ shared_focus = {
 			country_event = {
 				id = MAR_zemsky_sobor.22
 				days = 1
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = MAR_SMUTA_CHEAT
+						option = MAR_SMUTA_CHEAT_ENABLED
+					}
+				}
+				remove_war_buff = yes
+				#remove_ideas = war_cheat
 			}
 		}
 	}

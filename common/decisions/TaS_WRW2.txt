@@ -3333,6 +3333,16 @@ TaS_WRW2_territorial_reclamation = {
 		}
 		ai_will_do = {
 			factor = 100
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_country_flag = MAR_has_turkestan
+						has_country_flag = MAR_Turkestan_German
+						has_country_flag = MAR_Turkestan_cucked
+					}
+				}
+			}
 		}
 		complete_effect = {
 			add_war_support = 0.03
@@ -3364,6 +3374,16 @@ TaS_WRW2_territorial_reclamation = {
 		}
 		ai_will_do = {
 			factor = 100
+			modifier = {
+				factor = 0
+				NOT = {
+					OR = {
+						has_country_flag = MAR_has_turkestan
+						has_country_flag = MAR_Turkestan_German
+						has_country_flag = MAR_Turkestan_cucked
+					}
+				}
+			}
 		}
 		complete_effect = {
 			add_war_support = 0.03
@@ -3392,6 +3412,17 @@ TaS_WRW2_territorial_reclamation = {
 		}
 		ai_will_do = {
 			factor = 100
+			modifier = {
+				factor = 0
+				NOT = {
+					has_country_flag = MAR_has_primorie
+					OR = {
+						has_country_flag = MAR_has_turkestan
+						has_country_flag = MAR_Turkestan_German
+						has_country_flag = MAR_Turkestan_cucked
+					}
+				}
+			}
 		}
 		complete_effect = {
 			add_war_support = 0.03
@@ -3422,6 +3453,10 @@ TaS_WRW2_territorial_reclamation = {
 		fire_only_once = yes
 		ai_will_do = {
 			factor = 100
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
 		}
 		custom_cost_trigger = { command_power > 24.99 }
 		custom_cost_text = decision_cost_25_cp

@@ -134,7 +134,9 @@ scripted_gui = {
 						check_variable = { MAR_Had_RecentAction = 0 }
 					}
 				}
-				has_political_power > 24.99
+				has_manpower > 1000
+				has_equipment = { infantry_equipment > 150 }
+				
 			}
 			MAR_antiprestol_decision_two_click_enabled = {
 				custom_trigger_tooltip = {
@@ -143,7 +145,8 @@ scripted_gui = {
 						check_variable = { MAR_Had_RecentAction = 0 }
 					}
 				}
-				command_power > 19.99
+				has_political_power > 24.99
+				
 			}
 			MAR_antiprestol_decision_three_click_enabled = {
 				custom_trigger_tooltip = {
@@ -152,8 +155,7 @@ scripted_gui = {
 						check_variable = { MAR_Had_RecentAction = 0 }
 					}
 				}
-				has_manpower > 1000
-				has_equipment = { infantry_equipment > 150 }
+				command_power > 4.99
 			}
 			MAR_antiprestol_decision_operation_one_click_enabled = {
 				custom_trigger_tooltip = {
@@ -174,7 +176,7 @@ scripted_gui = {
 						check_variable = { kosygin_reception > 1 }
 					}
 				}
-				command_power > 19.9
+				command_power > 4.99
 			}
 			MAR_antiprestol_decision_operation_two_click_enabled = {
 				custom_trigger_tooltip = {
@@ -196,7 +198,7 @@ scripted_gui = {
 						controls_state = 859
 					}
 				}
-				command_power > 14.9
+				command_power > 9.99
 			}
 			MAR_antiprestol_decision_operation_one_visible = {
 				var:insurgency_state_selected = {
@@ -250,7 +252,11 @@ scripted_gui = {
 					add_to_variable = { MAR_Had_RecentAction = 1 }
 					MAR_clamp_insurgency_strength = yes
 				}
-				add_political_power = -25
+				add_manpower = -500
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = -100
+				}
 				add_to_variable = { MAR_prestol_dirty_var = 1 }
 			}
 			MAR_antiprestol_decision_two_click = {
@@ -266,7 +272,7 @@ scripted_gui = {
 					custom_effect_tooltip = MAR_prestol_power_trend_change
 					MAR_clamp_insurgency_strength = yes
 				}
-				add_command_power = -20
+				add_political_power = -25
 				add_to_variable = { MAR_prestol_dirty_var = 1 }
 			}
 			MAR_antiprestol_decision_three_click = {
@@ -282,16 +288,12 @@ scripted_gui = {
 					custom_effect_tooltip = MAR_prestol_power_trend_change
 					MAR_clamp_insurgency_strength = yes
 				}
-				add_manpower = -500
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = -100
-				}
+				add_command_power = -5
 				add_to_variable = { MAR_prestol_dirty_var = 1 }
 			}
 			MAR_antiprestol_decision_operation_one_click = {
 				MAR_Prestol_set_the_event_one = yes
-				add_command_power = -20
+				add_command_power = -5
 				var:insurgency_state_selected = {
 					add_to_variable = { MAR_Had_RecentAction = 1 }
 				}
@@ -299,7 +301,7 @@ scripted_gui = {
 			}
 			MAR_antiprestol_decision_operation_two_click = {
 				MAR_Prestol_set_the_event_two = yes				
-				add_command_power = -15
+				add_command_power = -10
 				var:insurgency_state_selected = {
 					add_to_variable = { MAR_Had_RecentAction = 1 }
 				}

@@ -167,7 +167,32 @@ MAR_MGB_Okhranka_category = {
 		}
 		
 		ai_will_do = {
-			factor = 50
+			factor = 10
+			modifier = {
+				factor = 100
+				check_variable = {
+					MAR.MAR_Okhranka_power < MAR.MAR_MGB_var_yurla_second_threshold
+				}
+			}
+			modifier = {
+				factor = 30
+				NOT = {
+					check_variable = {
+						MAR.MAR_Okhranka_power < MAR.MAR_MGB_var_yurla_second_threshold
+					}
+				}
+				check_variable = {
+					MAR.MAR_Okhranka_power < MAR.MAR_MGB_var_yurla_threshold
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					check_variable = {
+						MAR.MAR_Okhranka_power < MAR.MAR_MGB_var_yurla_threshold
+					}
+				}
+			}
 		}
 		fire_only_once = yes
 		cost = var:MAR_decision_cost_three	
@@ -446,6 +471,10 @@ MAR_MGB_Okhranka_category = {
 		
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				check_variable = { debt_to_GDP_ratio > 0.95 }
+				factor = 0
+			}
 		}
 		days_remove = 35
 		custom_cost_trigger = {
@@ -594,6 +623,12 @@ MAR_MGB_Okhranka_category = {
 		
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 0
+				check_variable = {
+					MAR.MAR_Okhranka_power < MAR.MAR_MGB_var_liberation_threshold
+				}
+			}
 		}
 		days_remove = 30
 		days_re_enable = 60
@@ -670,6 +705,17 @@ MAR_MGB_Okhranka_category = {
 		
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				factor = 0
+				OR = {
+					check_variable = {
+						MAR.MAR_Okhranka_power < MAR.MAR_MGB_var_advisors_second_threshold
+					}
+					check_variable = {
+						MAR.MAR_Okhranka_power < MAR.MAR_MGB_var_liberation_threshold
+					}
+				}
+			}
 		}
 		days_remove = 30
 		days_re_enable = 60
@@ -731,6 +777,16 @@ MAR_MGB_Okhranka_category = {
 		
 		ai_will_do = {
 			factor = 50
+			modifier = {
+				check_variable = { debt_to_GDP_ratio > 0.95 }
+				factor = 0
+			}
+			modifier = {
+				factor = 0
+				check_variable = {
+					MAR.MAR_Okhranka_power < MAR.MAR_MGB_var_yurla_second_threshold
+				}
+			}
 		}
 		days_remove = 30
 		days_re_enable = 60

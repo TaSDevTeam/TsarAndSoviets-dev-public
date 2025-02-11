@@ -698,6 +698,9 @@ shared_focus = {
 	cost = 3.00
 	x = 22
 	y = 0
+	available = {
+		has_completed_focus = MAR_first_congress_of_soviets
+	}
 	completion_reward = {
 		army_experience = 25	
 		country_event = { 
@@ -917,6 +920,9 @@ shared_focus = {
 	cost = 3.58
 	x = 30
 	y = 0
+	available = {
+		has_completed_focus = MAR_first_congress_of_soviets
+	}
 	completion_reward = {
 		country_event = { 
 			id = berez_belozerski.10 

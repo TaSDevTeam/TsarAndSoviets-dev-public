@@ -688,16 +688,16 @@
  power_check_prestol_two_tt:0 "§YСила престола в этом регионе - ниже§! §R15%§!"
  onega_control_tt:0 "§YНам необходимо контролировать Онегу, чтобы мы смогли уничтожить Престольников в данном регионе§!"
  we_can_search_here_prestol_tt:0 "§YНам есть что искать в этом регионе§!"
- MAR_antiprestol_decision_one:0 "Разгромить базу Престольников\n£political_power_texticon  §Y25§!"
+ MAR_antiprestol_decision_one:0 "Разгромить базу Престольников\n£manpower_texticon §Y500§! £weapon_icon §Y100§!"
  MAR_antiprestol_decision_one_tt:0 "Мы устроим рейд на лагерь бандитов. Успешное проведение этой операции приведёт к уменьшению влияния "Престола" в этом регионе, но важно помнить, что слишком жестокие методы отпугнут людей.\n[!MAR_antiprestol_decision_one_click_enabled]\n[!MAR_antiprestol_decision_one_click]"
- MAR_antiprestol_decision_two:0 "Провести пропагандисткую кампанию против Престольников\n£command_power §Y20§!"
+ MAR_antiprestol_decision_two:0 "Провести пропагандисткую кампанию против Престольников\n£political_power_texticon  §Y25§!"
  MAR_antiprestol_decision_two_tt:0 "Мы провёдем пропагандисткую кампанию в этом регионе по дискредитации "Престола". Это не приведёт к моментальному эффекту, но это снизит рост популярности "Престола".\n[!MAR_antiprestol_decision_two_click_enabled]\n[!MAR_antiprestol_decision_two_click]"
- MAR_antiprestol_decision_three:0 "Ликвидировать агентов Престола\n£manpower_texticon  §Y500§! £weapon_icon §Y100§!"
+ MAR_antiprestol_decision_three:0 "Ликвидировать агентов Престола\n£command_power §Y5§!"
  MAR_antiprestol_decision_three_tt:0 "Мы устроим ликвидацию крупных агентов "Престола", уничтожение этих агентов сильно ударит по силам бандитов в этом регионе, чем поможет нам в дальнейшем.\n[!MAR_antiprestol_decision_three_click_enabled]\n[!MAR_antiprestol_decision_three_click]"
  
- MAR_antiprestol_decision_operation_one:0 "Сбор Информации\n£command_power §Y20§!"
+ MAR_antiprestol_decision_operation_one:0 "Сбор Информации\n£command_power §Y5§!"
  MAR_antiprestol_decision_operation_one_tt:0 "[!MAR_antiprestol_decision_operation_one_click_enabled]\n[!MAR_antiprestol_decision_operation_one_click]"
- MAR_antiprestol_decision_operation_two:0 "Операция [MAR_GET_OPERATION_NAME]\n£command_power §Y15§!"
+ MAR_antiprestol_decision_operation_two:0 "Операция [MAR_GET_OPERATION_NAME]\n£command_power §Y10§!"
  MAR_antiprestol_decision_operation_two_tt:0 "[MAR_GET_OPERATION_DESC]\n[!MAR_antiprestol_decision_operation_two_click_enabled]\n[!MAR_antiprestol_decision_operation_two_click]"
  
  MAR_NARIENMAR_OPERATION:0 "§Y"Ледокол"§!"
@@ -1267,8 +1267,6 @@
  MAR_UAR_fail:0 "Разрыв дипломатический отношений"
  MAR_UAR_victory:0 "Русско-Арабский договор о дружбе"
  MAR_UAR_victory_other_commies:0 "Красная Сила"
- 
- MAR_GNG_ties:0 "Взаимовыгодные договоры"
  
  MAR_Kosygin_UAR.1.t:0 "Ближневосточное танго"
  MAR_Kosygin_UAR.1.d:0 "Этот вечер Министерство Иностранных Дел запомнит надолго, как и несколько тех, что предшествовали ему. Неприятности начались ещё когда оказалось, что русские добровольцы оказались на одной стороне с немцами в ближневосточных войнах. Это негативно сказалось на отношениях с нашими союзниками в Америке и Азии, так как кроме этого мы выступили и против их интересов. \n\nТеперь сердца всех в Министерстве замерли, ожидая депеши из недавно созданной Объединённой Арабской Республики с предложениями о взаимном сотрудничестве. Она не приходила. И неизвестно пришла ли она немцам, потому что бюрократы Берлина прекрасно играли в покер. \n\n-Хватит, пора брать инициативу в свои руки. Пока не поздно. Я выдвигаюсь в Дамаск сейчас же. - таким было решение изнемождённого от недосыпа Демичева. Несколько следующих часов прошли за телефоном и диктовкой телеграмм и писем. Уснул он только в самолёте."

@@ -1874,20 +1874,40 @@ country_event = { #The olive branch
 		custom_effect_tooltip = FE_negotiations_start_tt
 		
 		set_global_flag = FE_negotiations_start
-		set_variable = { fe_round = 1 }
+		
+		if = {
+			limit = { RUS = { controls_state = 1646 } }
+			set_variable = { fe_round = 2 }
 			
-		set_variable = { blagoveshensk_status = 2 }
-		set_variable = { khabarovsk_status = 1 }
-		set_variable = { primorie_status = 1 }
-		set_variable = { vladivostok_status = 1 }
-		
-		set_variable = { swrw_fe_threshold = 74.9 }
-		set_variable = { swrw_fe_threshold_txt = swrw_fe_threshold }
-		round_variable = swrw_fe_threshold_txt
-		
-		set_variable = { swrw_diplo_jap = 55 }
-		set_variable = { swrw_corpo_jap = 45 }
-		set_variable = { SWRW_round_timeout = 60 }
+			set_variable = { blagoveshensk_status = 3 }
+			set_variable = { khabarovsk_status = 2 }
+			set_variable = { primorie_status = 1 }
+			set_variable = { vladivostok_status = 1 }
+			
+			set_variable = { swrw_fe_threshold = 74.9 }
+			set_variable = { swrw_fe_threshold_txt = swrw_fe_threshold }
+			round_variable = swrw_fe_threshold_txt
+			
+			set_variable = { swrw_diplo_jap = 35 }
+			set_variable = { swrw_corpo_jap = 40 }
+			set_variable = { SWRW_round_timeout = 90 }
+		}
+		else = {
+			set_variable = { fe_round = 1 }
+				
+			set_variable = { blagoveshensk_status = 2 }
+			set_variable = { khabarovsk_status = 1 }
+			set_variable = { primorie_status = 1 }
+			set_variable = { vladivostok_status = 1 }
+			
+			set_variable = { swrw_fe_threshold = 74.9 }
+			set_variable = { swrw_fe_threshold_txt = swrw_fe_threshold }
+			round_variable = swrw_fe_threshold_txt
+			
+			set_variable = { swrw_diplo_jap = 55 }
+			set_variable = { swrw_corpo_jap = 45 }
+			set_variable = { SWRW_round_timeout = 60 }
+		}
 	}
 }
 
@@ -5289,6 +5309,75 @@ country_event = { #Caucasus
 				transfer_troops = yes
 			}
 		}
+	}
+}
+
+country_event = { #Finland 
+	id = MAR_territorial_fate.11
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_territorial_fate.11" }
+	title = MAR_territorial_fate.11.t
+	desc = MAR_territorial_fate.11.d
+	picture = GFX_event_MAR_territorial_fate_11 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #Satelite Finland
+		name = MAR_territorial_fate.11.a
+		ai_chance = { factor = 1 }
+		hidden_effect = {
+			XYZ = {
+				MFI_Urho_Kekkonen = {
+					set_nationality = FIN
+				}
+			}
+			FIN = {
+				drop_cosmetic_tag = yes
+				#set
+			}
+		}
+	}
+	option = { #Velikoye Knyazestvo Finlyandskoye
+		name = MAR_territorial_fate.11.b
+		ai_chance = { factor = 1 }
+		
+	}
+	option = { #A zachem nezavisimost
+		name = MAR_territorial_fate.11.c
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Turkish Straits 
+	id = MAR_territorial_fate.12
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_territorial_fate.12" }
+	title = MAR_territorial_fate.12.t
+	desc = MAR_territorial_fate.12.d
+	picture = GFX_event_MAR_territorial_fate_12 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #Satelite Turkey
+		name = MAR_territorial_fate.11.a
+		ai_chance = { factor = 1 }
+		
+	}
+	option = { #Indepence
+		name = MAR_territorial_fate.11.b
+		ai_chance = { factor = 1 }
+		
+	}
+	option = { #Autonomy
+		name = MAR_territorial_fate.11.c
+		ai_chance = { factor = 1 }
+		
+	}
+	option = { #Direct rule
+		name = MAR_territorial_fate.11.e
+		ai_chance = { factor = 1 }
+		
 	}
 }
 

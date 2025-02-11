@@ -188,10 +188,10 @@ TaS_SWRW_start_the_war = {
 			apply_war_buff_with_20_divisions = yes
 			apply_war_buff_with_20_divisions = yes
 			apply_war_buff_with_20_divisions = yes
-			add_timed_idea = {
-				idea = war_cheat
-				days = 45
-			}
+			#add_timed_idea = {
+			#	idea = war_cheat
+			#	days = 45
+			#}
 		}
 	}
 	if = {
@@ -206,10 +206,10 @@ TaS_SWRW_start_the_war = {
 			apply_war_buff_with_20_divisions = yes
 			apply_war_buff_with_20_divisions = yes
 			apply_war_buff_with_20_divisions = yes
-			add_timed_idea = {
-				idea = war_cheat
-				days = 45
-			}
+			#add_timed_idea = {
+			#	idea = war_cheat
+			#	days = 45
+			#}
 		}
 	}
 }
@@ -1749,16 +1749,48 @@ SWRW_turkey_peacedeal = {
 		add_state_core = 1780
 		add_state_core = 781
 	}
-	GRE = {
-		transfer_state = 163
-		add_state_core = 163
-	}
-	RUS = {
-		transfer_state = 1267
+	GRM = {
 		transfer_state = 341
 		transfer_state = 347
 		transfer_state = 340
 		transfer_state = 345
+	}
+	if = {
+		limit = { TUR = { controls_state = 183 } }
+		GRM = {
+			transfer_state = 183
+			transfer_state = 2322
+			transfer_state = 2323
+			transfer_state = 1328
+		}
+	}
+	if = {
+		limit = { TUR = { controls_state = 163 } }
+		GRM = {
+			transfer_state = 163
+		}
+	}
+	if = {
+		limit = { TUR = { controls_state = 164 } }
+		GRM = {
+			transfer_state = 164
+		}
+	}
+	if = {
+		limit = { 
+			OR = {
+				BUL = { has_cosmetic_tag = BUL_GBU_Belooz }
+				BUL = { has_cosmetic_tag = BUL_GBU_Kosygin }
+			}
+		}
+		BUL = { 
+			transfer_state = 1267
+		}
+	}
+	else = {
+		GRM = { 
+			transfer_state = 1267
+		}
 	}
 	every_country = {
 		limit = { is_subject_of = TUR }
