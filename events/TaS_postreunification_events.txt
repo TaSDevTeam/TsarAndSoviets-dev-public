@@ -1005,11 +1005,12 @@ country_event = { #Technical stuff no loc
 					traits = { one_more_chance }
 				}
 			}
-			remove_ideas = Sphere_Fully_Dependent
+			swap_ideas = {
+			    remove_idea = Sphere_Core_Member
+			    add_idea = Sphere_Imp_Protectorate
+		    }
 			remove_ideas = MAN_Partisans_In_East
-			
 			set_cosmetic_tag = MJP_JAP_autonomy
-			add_ideas = Sphere_Imp_Protectorate
 			
 			country_event = {
 				id = MAR_Japan.2 days = 26
@@ -2730,7 +2731,10 @@ country_event = { #Technical stuff no loc
 			}
 			set_cosmetic_tag = MJP_JAP_autonomy
 			econ_join_sphere_JAP = yes
-			add_ideas = Sphere_Imp_Protectorate
+			swap_ideas = {
+			    remove_idea = Sphere_Core_Member
+			    add_idea = Sphere_Imp_Protectorate
+		    }
 			add_ideas = MAN_Kwantung_Army
 			every_owned_state = {
 				MJP = {
