@@ -1220,6 +1220,11 @@ shared_focus = {
 		focus = MAR_kosfor_from_America_with_love
 		focus = MAR_kosfor_tokyo_embassy
 	}
+	bypass = {
+		IND = {
+		    country_exists = no 
+		}	
+	}
 	x = 34
 	y = 4
 	completion_reward = {
