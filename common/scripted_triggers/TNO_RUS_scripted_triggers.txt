@@ -99,6 +99,7 @@ is_race_for_the_urals_player = {
 		original_tag = OMS
 		original_tag = TYM
 		original_tag = SVR
+		original_tag = MAR
 	}
 }
 
@@ -535,7 +536,7 @@ WSR_WSB_is_compatible = {
 				OR = {
 					WSB = {
 						original_tag = SVR
-						has_government = paternalism
+						has_government = despotism
 					}
 					WSB = {
 						original_tag = TYM
@@ -552,7 +553,7 @@ WSR_WSB_is_compatible = {
 				OR = {
 					WSB = {
 						original_tag = SVR
-						has_government = paternalism
+						has_government = despotism
 					}
 					WSB = {
 						original_tag = TYM
@@ -583,7 +584,7 @@ WSR_WSB_is_compatible = {
 					WSB = {
 						AND = {
 							original_tag = SVR
-							has_government = paternalism
+							has_government = despotism
 						}
 					}
 				}
@@ -595,7 +596,7 @@ WSR_WSB_is_compatible = {
 				}
 				WSB = {
 					original_tag = SVR
-					has_government = paternalism
+					has_government = despotism
 				}
 			}
 			AND = {
@@ -605,7 +606,7 @@ WSR_WSB_is_compatible = {
 				}
 				WSB = {
 					original_tag = SVR
-					has_government = paternalism
+					has_government = despotism
 				}
 			}
 		}
