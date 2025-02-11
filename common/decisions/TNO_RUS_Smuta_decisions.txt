@@ -865,6 +865,41 @@ RUS_DecisionCategory_Smuta = {
 		ai_will_do = { factor = 1000 }
 
 	}
+	
+	RUS_Decision_Smuta_Occupation_MAR = {
+
+		icon = GFX_decision_generic_document_building
+		visible = {
+			MAR = { exists = no }
+			any_owned_state = { is_core_of = MAR }
+		}
+		available = {
+			NOT = { has_decision = RUS_Decision_Smuta_Chaos_Decrease_FuckFuckFUck }
+		}
+		cost = var:Smuta_CoringCost
+
+		fire_only_once = yes
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision Complete RUS_Decision_Smuta_Occupation_MAR"
+			set_temp_variable = { TargetTag = MAR }
+			custom_effect_tooltip = RUS_Smuta_Occupation_TargetTag_Tt
+			add_command_power = MAR.command_power
+			hidden_effect = {
+				FROM = {
+					every_owned_state = {
+						limit = { is_core_of = MAR }
+						add_core_of = PREV
+						remove_core_of = MAR
+					}
+				}
+			}
+			RUS_Smuta_Occupation_Generic = yes
+			#RUS_Smuta_Occupation_Unique_BKR = yes
+		}
+
+		ai_will_do = { factor = 1000 }
+
+	}
 
 	############################
 	# {===| WEST SIBERIA |===} #

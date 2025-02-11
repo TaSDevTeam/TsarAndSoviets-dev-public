@@ -355,7 +355,7 @@ MAR_MGB_Okhranka_category = {
 		}
 		
 		ai_will_do = {
-			factor = 100
+			factor = 75
 		}
 		fire_only_once = yes
 		cost = var:MAR_decision_cost_two
@@ -471,7 +471,7 @@ MAR_MGB_Okhranka_category = {
 		
 		ai_will_do = {
 			factor = 50
-			modifier = {
+			modifier = { 
 				check_variable = { debt_to_GDP_ratio > 0.95 }
 				factor = 0
 			}
