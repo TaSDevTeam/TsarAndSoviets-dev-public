@@ -46,7 +46,7 @@ MAR_SWRW_category = {
 			clr_country_flag = TaS_starting_war
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 			modifier = {
 				factor = 10
 				check_variable = { SWRW_readiness_var < 79.99 } 
@@ -56,7 +56,7 @@ MAR_SWRW_category = {
 				check_variable = { SWRW_readiness_var < 84.99 } 
 			}
 			modifier = {
-				factor = 50
+				factor = 200
 				check_variable = { SWRW_readiness_var < 89.99 } 
 			}
 			modifier = {
@@ -64,7 +64,7 @@ MAR_SWRW_category = {
 				check_variable = { SWRW_readiness_var < 94.99 } 
 			}
 			modifier = {
-				factor = 100
+				factor = 200
 				check_variable = { SWRW_readiness_var > 94.99 } 
 			}
 		}
@@ -166,7 +166,7 @@ MAR_SWRW_category = {
 			}
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 			modifier = {
 				factor = 0
 				check_variable = { SWRW_suspicion_var > 84.99 } 
@@ -269,7 +269,7 @@ MAR_SWRW_category = {
 			}
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 			modifier = {
 				factor = 0
 				check_variable = { SWRW_suspicion_var > 84.99 } 
@@ -380,7 +380,7 @@ MAR_SWRW_category = {
 			}
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 			modifier = {
 				factor = 0
 				check_variable = { SWRW_suspicion_var > 84.99 } 
@@ -483,7 +483,7 @@ MAR_SWRW_category = {
 			}
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 			modifier = {
 				factor = 0
 				check_variable = { SWRW_suspicion_var > 84.99 } 
@@ -744,7 +744,7 @@ MAR_SWRW_category = {
 			}
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 			modifier = {
 				factor = 0
 				check_variable = { SWRW_suspicion_var > 84.99 } 
@@ -1035,7 +1035,7 @@ MAR_SWRW_category = {
 			}
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 			modifier = {
 				factor = 0
 				check_variable = { SWRW_suspicion_var > 84.99 } 
@@ -1258,7 +1258,7 @@ MAR_SWRW_category = {
 			}
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 			modifier = {
 				factor = 0
 				check_variable = { SWRW_suspicion_var > 84.99 } 
@@ -1555,7 +1555,7 @@ MAR_SWRW_category = {
 			}
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 			modifier = {
 				factor = 0
 				check_variable = { SWRW_suspicion_var > 84.99 } 
@@ -1651,7 +1651,7 @@ MAR_SWRW_category = {
 			}
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 			modifier = {
 				factor = 0
 				check_variable = { SWRW_suspicion_var > 84.99 } 
@@ -1723,7 +1723,7 @@ MAR_SWRW_category = {
 			}
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 			modifier = {
 				factor = 0
 				check_variable = { SWRW_suspicion_var > 84.99 } 
@@ -1803,7 +1803,7 @@ MAR_SWRW_category = {
 			}
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 			modifier = {
 				factor = 0
 				check_variable = { SWRW_suspicion_var > 84.99 } 
@@ -1824,7 +1824,7 @@ MAR_SWRW_category = {
 			has_completed_focus = MAR_warprep_rise_up_people_of_russia
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 			modifier = {
 				factor = 0
 				check_variable = { SWRW_suspicion_var > 84.99 } 
@@ -1875,7 +1875,7 @@ MAR_SWRW_category = {
 			has_completed_focus = MAR_warprep_rise_up_people_of_russia
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 			modifier = {
 				factor = 0
 				check_variable = { SWRW_suspicion_var > 84.99 } 
@@ -1926,7 +1926,7 @@ MAR_SWRW_category = {
 			has_completed_focus = MAR_warprep_modern_warfare_logistics
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 			modifier = {
 				factor = 0
 				check_variable = { SWRW_suspicion_var > 84.99 } 
@@ -2043,7 +2043,7 @@ MAR_SWRW_category = {
 			has_completed_focus = MAR_warprep_modern_warfare_logistics
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 			modifier = {
 				factor = 0
 				check_variable = { SWRW_suspicion_var > 84.99 } 
@@ -2155,7 +2155,7 @@ MAR_SWRW_category = {
 			has_completed_focus = MAR_warprep_leviathan_of_eurasia
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 			modifier = {
 				factor = 0
 				check_variable = { SWRW_suspicion_var > 84.99 } 
@@ -2205,7 +2205,7 @@ MAR_SWRW_category = {
 			has_war = no
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 			modifier = {
 				factor = 0
 				check_variable = { SWRW_suspicion_var > 84.99 } 
@@ -2252,7 +2252,7 @@ MAR_SWRW_category = {
 			has_completed_focus = MAR_warprep_rise_up_people_of_russia
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 			modifier = {
 				factor = 0
 				check_variable = { SWRW_suspicion_var > 84.99 } 
@@ -2298,7 +2298,7 @@ MAR_SWRW_category = {
 			has_war = no
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 			modifier = {
 				factor = 0
 				check_variable = { SWRW_suspicion_var > 84.99 } 
@@ -2349,7 +2349,7 @@ MAR_SWRW_category = {
 			has_completed_focus = MAR_warprep_dance_on_the_ravaged_land
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 			modifier = {
 				factor = 0
 				check_variable = { SWRW_suspicion_var > 84.99 } 
@@ -2415,7 +2415,7 @@ MAR_SWRW_category = {
 			has_completed_focus = MAR_warprep_dance_on_the_ravaged_land
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 			modifier = {
 				factor = 0
 				check_variable = { SWRW_suspicion_var > 84.99 } 
@@ -2544,7 +2544,7 @@ MAR_SWRW_category = {
 			has_completed_focus = MAR_warprep_better_call_sam
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 			modifier = {
 				factor = 0
 				check_variable = { SWRW_suspicion_var > 84.99 } 
@@ -2630,7 +2630,7 @@ MAR_SWRW_category = {
 			has_completed_focus = MAR_warprep_chrysanthemum_friendship
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 			modifier = {
 				factor = 0
 				check_variable = { SWRW_suspicion_var > 84.99 } 
@@ -2726,7 +2726,7 @@ MAR_SWRW_category = {
 			has_completed_focus = MAR_warprep_chrysanthemum_friendship
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 			modifier = {
 				factor = 0
 				check_variable = { SWRW_suspicion_var > 84.99 } 
@@ -2811,7 +2811,7 @@ MAR_SWRW_category = {
 			has_war = no
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 			modifier = {
 				factor = 0
 				check_variable = { SWRW_suspicion_var > 84.99 } 
@@ -2860,7 +2860,7 @@ MAR_SWRW_category = {
 			has_war = no
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 			modifier = {
 				factor = 0
 				check_variable = { SWRW_suspicion_var > 84.99 } 
@@ -2947,7 +2947,7 @@ MAR_SWRW_category = {
 		ai_will_do = {
 			factor = 0
 			modifier = {
-				factor = 100
+				factor = 200
 				check_variable = { SWRW_suspicion_var > 84.99 } 
 			}
 		}
@@ -3019,7 +3019,7 @@ MAR_SWRW_category = {
 		ai_will_do = {
 			factor = 0
 			modifier = {
-				factor = 100
+				factor = 200
 				check_variable = { SWRW_suspicion_var > 84.99 } 
 			}
 		}
@@ -3049,7 +3049,7 @@ MAR_SWRW_category = {
 		ai_will_do = {
 			factor = 0
 			modifier = {
-				factor = 100
+				factor = 200
 				check_variable = { SWRW_suspicion_var > 94.99 } 
 			}
 		}
@@ -5226,7 +5226,7 @@ MAR_SWRW_category = {
 			has_war = yes
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 		}
 		custom_cost_trigger = {
 			has_political_power > 25.99
@@ -5263,7 +5263,7 @@ MAR_SWRW_category = {
 			has_war = yes
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 		}
 		custom_cost_trigger = {
 			has_political_power > 25.99
@@ -5300,7 +5300,7 @@ MAR_SWRW_category = {
 			has_war = yes
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 		}
 		custom_cost_trigger = {
 			has_political_power > 25.99
@@ -5337,7 +5337,7 @@ MAR_SWRW_category = {
 			has_war = yes
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 		}
 		custom_cost_trigger = {
 			has_political_power > 25.99
@@ -5381,7 +5381,7 @@ MAR_SWRW_category = {
 			}
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 		}
 		custom_cost_trigger = {
 			has_political_power > 49.99
@@ -5634,7 +5634,7 @@ MAR_SWRW_category = {
 			TAS_WRW2_ScriptedTrigger_GER_Devastation_MoreThanY = yes
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 		}
 		custom_cost_trigger = { command_power > 19.99 }
 		custom_cost_text = decision_cost_20_cp
@@ -5666,7 +5666,7 @@ MAR_SWRW_category = {
 			has_war = yes
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 		}
 		cost = 100
 		days_remove = 60
@@ -5693,7 +5693,7 @@ MAR_SWRW_category = {
 			has_war = yes
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 		}
 		cost = 100
 		days_remove = 60
@@ -5758,7 +5758,7 @@ MAR_SWRW_category = {
 			has_war = yes
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 		}
 		cost = 100
 		days_remove = 28
@@ -5798,7 +5798,7 @@ MAR_SWRW_category = {
 			check_variable = { TaS_swrw_stage = 2 }
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 		}
 		days_remove = 28
 		days_re_enable = 140
@@ -5833,7 +5833,7 @@ MAR_SWRW_category = {
 			check_variable = { TaS_swrw_stage = 2 }
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -5878,7 +5878,7 @@ MAR_SWRW_category = {
 			}
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 		}
 		complete_effect = {
 			set_country_flag = RUS_2WRW_propaganda_campaign_running
@@ -5903,7 +5903,7 @@ MAR_SWRW_category = {
 			check_variable = { TaS_swrw_stage = 2 }
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 		}
 		modifier = {
 			income_tax_rate_modifier_factor = 0.1
@@ -5923,7 +5923,7 @@ MAR_SWRW_category = {
 			check_variable = { TaS_swrw_stage = 2 }
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 		}
 		complete_effect = {
 			set_temp_variable = { temp_month_income_spent = 3 }
@@ -5947,7 +5947,7 @@ MAR_SWRW_category = {
 			has_war = yes
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 		}
 		cost = 150
 		days_remove = 120
@@ -6019,7 +6019,7 @@ MAR_SWRW_category = {
 			check_variable = { TaS_swrw_stage = 2 }
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 		}
 		modifier = {
 			military_expenditures_factor = -0.15
@@ -6036,7 +6036,7 @@ MAR_SWRW_category = {
 		icon = GFX_decision_generic_phone_call
 		cost = 75
 		ai_will_do = {
-			factor = 100
+			factor = 200
 		}
 		visible = {
 			is_russian_nation = yes
@@ -6061,7 +6061,7 @@ MAR_SWRW_category = {
 			has_war = yes
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 		}
 		cost = 0
 		days_remove = 28
@@ -6132,7 +6132,7 @@ MAR_SWRW_category = {
 			}
 		}
 		ai_will_do = {
-			factor = 100
+			factor = 200
 		}
 		modifier = {
 			stability_weekly = -0.025

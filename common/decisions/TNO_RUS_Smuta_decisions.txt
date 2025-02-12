@@ -233,7 +233,7 @@ RUS_DecisionCategory_Smuta = {
 			add_stability = 0.02
 		}
 		days_remove = 50
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 	}
 
 	RUS_Decision_Smuta_Chaos_Decrease_CP = {
@@ -272,7 +272,7 @@ RUS_DecisionCategory_Smuta = {
 			}
 		}
 		days_remove = 40
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 	}
 
 	RUS_Decision_Smuta_Chaos_Decrease_Supplies = {
@@ -347,7 +347,7 @@ RUS_DecisionCategory_Smuta = {
 			add_stability = -0.02
 		}
 		days_remove = 20
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 		cancel_trigger = { hidden_trigger = { NOT = { has_country_flag = RUS_Smuta_Enabled } } }
 	}
 
@@ -373,7 +373,7 @@ RUS_DecisionCategory_Smuta = {
 			add_stability = -0.02
 		}
 		days_remove = 20
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 		cancel_trigger = { hidden_trigger = { NOT = { has_country_flag = RUS_Smuta_Enabled } } }
 	}
 
@@ -412,7 +412,7 @@ RUS_DecisionCategory_Smuta = {
 			}
 		}
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 
@@ -547,7 +547,7 @@ RUS_DecisionCategory_Smuta = {
 			RUS_Smuta_Occupation_Unique_WRS = yes
 		}
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 
@@ -582,7 +582,7 @@ RUS_DecisionCategory_Smuta = {
 			RUS_Smuta_Occupation_Unique_KOM = yes
 		}
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 
@@ -617,7 +617,7 @@ RUS_DecisionCategory_Smuta = {
 			RUS_Smuta_Occupation_Unique_SAM = yes
 		}
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 
@@ -652,7 +652,7 @@ RUS_DecisionCategory_Smuta = {
 			RUS_Smuta_Occupation_Unique_GOR = yes
 		}
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 
@@ -687,7 +687,7 @@ RUS_DecisionCategory_Smuta = {
 			RUS_Smuta_Occupation_Unique_VOL = yes
 		}
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 
@@ -722,7 +722,7 @@ RUS_DecisionCategory_Smuta = {
 			RUS_Smuta_Occupation_Unique_VYT = yes
 		}
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 
@@ -757,7 +757,7 @@ RUS_DecisionCategory_Smuta = {
 			RUS_Smuta_Occupation_Unique_TAR = yes
 		}
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 
@@ -792,7 +792,7 @@ RUS_DecisionCategory_Smuta = {
 			RUS_Smuta_Occupation_Unique_PRM = yes
 		}
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 
@@ -827,7 +827,7 @@ RUS_DecisionCategory_Smuta = {
 			RUS_Smuta_Occupation_Unique_GAY = yes
 		}
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 
@@ -862,7 +862,7 @@ RUS_DecisionCategory_Smuta = {
 			RUS_Smuta_Occupation_Unique_BKR = yes
 		}
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 	
@@ -897,7 +897,7 @@ RUS_DecisionCategory_Smuta = {
 			#RUS_Smuta_Occupation_Unique_BKR = yes
 		}
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 
@@ -936,7 +936,7 @@ RUS_DecisionCategory_Smuta = {
 			RUS_Smuta_Occupation_Unique_OMS = yes
 		}
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { factor = 200 }
 
 	}
 
@@ -971,7 +971,7 @@ RUS_DecisionCategory_Smuta = {
 			RUS_Smuta_Occupation_Unique_FAV = yes
 		}
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { factor = 200 }
 
 	}
 
@@ -1006,7 +1006,7 @@ RUS_DecisionCategory_Smuta = {
 			RUS_Smuta_Occupation_Unique_ZLT = yes
 		}
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { factor = 200 }
 
 	}
 
@@ -1041,7 +1041,7 @@ RUS_DecisionCategory_Smuta = {
 			RUS_Smuta_Occupation_Unique_SVR = yes
 		}
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { factor = 200 }
 
 	}
 
@@ -1076,7 +1076,7 @@ RUS_DecisionCategory_Smuta = {
 			RUS_Smuta_Occupation_Unique_TYM = yes
 		}
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { factor = 200 }
 
 	}
 
@@ -1111,7 +1111,7 @@ RUS_DecisionCategory_Smuta = {
 			RUS_Smuta_Occupation_Unique_YGR = yes
 		}
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { factor = 200 }
 
 	}
 
@@ -1146,7 +1146,7 @@ RUS_DecisionCategory_Smuta = {
 			RUS_Smuta_Occupation_Unique_VOR = yes
 		}
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { factor = 200 }
 
 	}
 
@@ -1185,7 +1185,7 @@ RUS_DecisionCategory_Smuta = {
 			RUS_Smuta_Occupation_Unique_TOM = yes
 		}
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { factor = 200 }
 
 	}
 
@@ -1220,7 +1220,7 @@ RUS_DecisionCategory_Smuta = {
 			RUS_Smuta_Occupation_Unique_SBA = yes
 		}
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { factor = 200 }
 
 	}
 
@@ -1255,7 +1255,7 @@ RUS_DecisionCategory_Smuta = {
 			RUS_Smuta_Occupation_Unique_ALT = yes
 		}
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { factor = 200 }
 
 	}
 
@@ -1290,7 +1290,7 @@ RUS_DecisionCategory_Smuta = {
 			RUS_Smuta_Occupation_Unique_KEM = yes
 		}
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { factor = 200 }
 
 	}
 
@@ -1325,7 +1325,7 @@ RUS_DecisionCategory_Smuta = {
 			RUS_Smuta_Occupation_Unique_NOV = yes
 		}
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { factor = 200 }
 
 	}
 
@@ -1360,7 +1360,7 @@ RUS_DecisionCategory_Smuta = {
 			RUS_Smuta_Occupation_Unique_PRC = yes
 		}
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { factor = 200 }
 
 	}
 
@@ -1395,7 +1395,7 @@ RUS_DecisionCategory_Smuta = {
 			RUS_Smuta_Occupation_Unique_KRS = yes
 		}
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { factor = 200 }
 
 	}
 
@@ -1434,7 +1434,7 @@ RUS_DecisionCategory_Smuta = {
 			RUS_Smuta_Occupation_Unique_MAG = yes
 		}
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { factor = 200 }
 
 	}
 
@@ -1469,7 +1469,7 @@ RUS_DecisionCategory_Smuta = {
 			RUS_Smuta_Occupation_Unique_KMC = yes
 		}
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { factor = 200 }
 
 	}
 
@@ -1505,7 +1505,7 @@ RUS_DecisionCategory_Smuta = {
 			RUS_Smuta_Occupation_Unique_IRK = yes
 		}
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { factor = 200 }
 
 	}
 
@@ -1541,7 +1541,7 @@ RUS_DecisionCategory_Smuta = {
 			RUS_Smuta_Occupation_Unique_BRY = yes
 		}
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { factor = 200 }
 
 	}
 
@@ -1576,7 +1576,7 @@ RUS_DecisionCategory_Smuta = {
 			RUS_Smuta_Occupation_Unique_CHT = yes
 		}
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { factor = 200 }
 
 	}
 
@@ -1612,7 +1612,7 @@ RUS_DecisionCategory_Smuta = {
 			econ_civilian_costs_tooltip = yes
 		}
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { factor = 200 }
 
 	}
 
@@ -1647,7 +1647,7 @@ RUS_DecisionCategory_Smuta = {
 			RUS_Smuta_Occupation_Unique_AMR = yes
 		}
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { factor = 200 }
 
 	}
 
@@ -1682,7 +1682,7 @@ RUS_DecisionCategory_Smuta = {
 			RUS_Smuta_Occupation_Unique_OMO = yes
 		}
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { factor = 200 }
 
 	}
 
@@ -1717,7 +1717,7 @@ RUS_DecisionCategory_Smuta = {
 			RUS_Smuta_Occupation_Unique_YAK = yes
 		}
 
-		ai_will_do = { factor = 100 }
+		ai_will_do = { factor = 200 }
 
 	}
 
@@ -1920,7 +1920,7 @@ RUS_DecisionCategory_Smuta = {
 		}
 
 		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
-			factor = 100 # Same as non-unifier, VYT goes south, WRRF attacks with no preference
+			factor = 200 # Same as non-unifier, VYT goes south, WRRF attacks with no preference
 			modifier = {
 				factor = 0
 				has_country_flag = RUS_Smuta_preparing_expansion
@@ -2096,7 +2096,7 @@ RUS_DecisionCategory_Smuta = {
 		}
 
 		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
-			factor = 100
+			factor = 200
 			modifier = {
 				factor = 0
 				has_country_flag = RUS_Smuta_preparing_expansion
@@ -2203,7 +2203,7 @@ RUS_DecisionCategory_Smuta = {
 		}
 
 		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
-			factor = 100
+			factor = 200
 			modifier = {
 				factor = 0
 				has_country_flag = RUS_Smuta_preparing_expansion
@@ -2623,7 +2623,7 @@ RUS_DecisionCategory_Smuta = {
 		}
 
 		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
-			factor = 100
+			factor = 200
 			modifier = {
 				factor = 0
 				has_country_flag = RUS_Smuta_preparing_expansion
@@ -2786,7 +2786,7 @@ RUS_DecisionCategory_Smuta = {
 
 		cancel_trigger = { hidden_trigger = { NOT = { country_exists = GOR } } }
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 
@@ -3032,7 +3032,7 @@ RUS_DecisionCategory_Smuta = {
 			hidden_trigger = { NOT = { has_country_flag = RUS_Smuta_Enabled } }
 		}
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 
@@ -3067,7 +3067,7 @@ RUS_DecisionCategory_Smuta = {
 			hidden_trigger = { NOT = { has_country_flag = RUS_Smuta_Enabled } }
 		}
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 
@@ -3254,7 +3254,7 @@ RUS_DecisionCategory_Smuta = {
 		cancel_trigger = { hidden_trigger = { NOT = { country_exists = WRS } } }
 
 		ai_will_do = {
-			factor = 1000
+			factor = 2000
 		}
 	}
 
@@ -3295,7 +3295,7 @@ RUS_DecisionCategory_Smuta = {
 
 		cancel_trigger = { hidden_trigger = { NOT = { country_exists = VOL } } }
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 	}
 
 	RUS_Decision_Smuta_Expansion_TAR_KOM_Propose_Union = {
@@ -3341,7 +3341,7 @@ RUS_DecisionCategory_Smuta = {
 
 		cancel_trigger = { hidden_trigger = { NOT = { country_exists = TAR } } }
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 
@@ -3388,7 +3388,7 @@ RUS_DecisionCategory_Smuta = {
 
 		cancel_trigger = { hidden_trigger = { NOT = { country_exists = BKR } } }
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 	
@@ -3426,7 +3426,7 @@ RUS_DecisionCategory_Smuta = {
 			VOL = { country_event = MAR_smuta.15 }
 		}
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 
@@ -3466,7 +3466,7 @@ RUS_DecisionCategory_Smuta = {
 			KOM = { country_event = MAR_smuta.19 }
 		}
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 
@@ -3500,7 +3500,7 @@ RUS_DecisionCategory_Smuta = {
 			BKR = { country_event = MAR_smuta.11 }
 		}
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 
@@ -3634,7 +3634,7 @@ RUS_DecisionCategory_Smuta = {
 		}
 
 		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
-			factor = 100
+			factor = 200
 			modifier = {
 				factor = 0
 				has_country_flag = RUS_Smuta_preparing_expansion
@@ -3701,7 +3701,7 @@ RUS_DecisionCategory_Smuta = {
 		}
 
 		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
-			factor = 100
+			factor = 200
 			modifier = {
 				factor = 0
 				has_country_flag = RUS_Smuta_preparing_expansion
@@ -3898,7 +3898,7 @@ RUS_DecisionCategory_Smuta = {
 		}
 
 		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
-			factor = 100
+			factor = 200
 			modifier = {
 				factor = 0
 				has_country_flag = RUS_Smuta_preparing_expansion
@@ -3965,7 +3965,7 @@ RUS_DecisionCategory_Smuta = {
 		}
 
 		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
-			factor = 100
+			factor = 200
 			modifier = {
 				factor = 0
 				has_country_flag = RUS_Smuta_preparing_expansion
@@ -4022,7 +4022,7 @@ RUS_DecisionCategory_Smuta = {
 
 		cancel_trigger = { hidden_trigger = { NOT = { country_exists = VOR } } }
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 
@@ -4060,7 +4060,7 @@ RUS_DecisionCategory_Smuta = {
 
 		cancel_trigger = { hidden_trigger = { NOT = { country_exists = FAV } } }
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 
@@ -4098,7 +4098,7 @@ RUS_DecisionCategory_Smuta = {
 
 		cancel_trigger = { hidden_trigger = { NOT = { country_exists = FAV } } }
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 
@@ -4134,7 +4134,7 @@ RUS_DecisionCategory_Smuta = {
 
 		cancel_trigger = { hidden_trigger = { NOT = { country_exists = ZLT } } }
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 	}
 
 	RUS_Decision_Smuta_Expansion_NOV_SVR_FuckOmsk = {
@@ -4167,7 +4167,7 @@ RUS_DecisionCategory_Smuta = {
 			hidden_trigger = { NOT = { country_exists = NOV } }
 		}
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 	}
 
 	###################
@@ -4204,7 +4204,7 @@ RUS_DecisionCategory_Smuta = {
 
 		cancel_trigger = { hidden_trigger = { NOT = { country_exists = FAV } } }
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 
@@ -4271,7 +4271,7 @@ RUS_DecisionCategory_Smuta = {
 		}
 
 		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
-			factor = 100
+			factor = 200
 			modifier = {
 				factor = 0
 				has_country_flag = RUS_Smuta_preparing_expansion
@@ -4405,7 +4405,7 @@ RUS_DecisionCategory_Smuta = {
 		}
 
 		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
-			factor = 100
+			factor = 200
 			modifier = {
 				factor = 0
 				has_country_flag = RUS_Smuta_preparing_expansion
@@ -4606,7 +4606,7 @@ RUS_DecisionCategory_Smuta = {
 		}
 
 		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
-			factor = 100
+			factor = 200
 			modifier = {
 				factor = 0
 				has_country_flag = RUS_Smuta_preparing_expansion
@@ -5169,7 +5169,7 @@ RUS_DecisionCategory_Smuta = {
 		}
 
 		ai_will_do = { #AI can't prepare multiple wars, players can cause more if they want
-			factor = 100
+			factor = 200
 			modifier = {
 				factor = 0
 				has_country_flag = RUS_Smuta_preparing_expansion
@@ -5436,7 +5436,7 @@ RUS_DecisionCategory_Smuta = {
 
 		cancel_trigger = { hidden_trigger = { NOT = { country_exists = KMC } } }
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 	}
 
 	RUS_Decision_Smuta_OMO_Deactivation = {
@@ -5454,7 +5454,7 @@ RUS_DecisionCategory_Smuta = {
 			RUS_Smuta_Disable = yes
 		}
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 	}
 
 
@@ -5509,7 +5509,7 @@ RUS_DecisionCategory_Smuta = {
 
 		cancel_trigger = { has_war = no }
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 
@@ -5546,7 +5546,7 @@ RUS_DecisionCategory_Smuta = {
 
 		cancel_trigger = { has_war = no }
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 
@@ -5582,7 +5582,7 @@ RUS_DecisionCategory_Smuta = {
 
 		cancel_trigger = { has_war = no }
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 
@@ -5617,7 +5617,7 @@ RUS_DecisionCategory_Smuta = {
 
 		cancel_trigger = { has_war = no }
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 
@@ -5649,7 +5649,7 @@ RUS_DecisionCategory_Smuta = {
 
 		cancel_trigger = { has_war = no }
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 
@@ -5682,7 +5682,7 @@ RUS_DecisionCategory_Smuta = {
 
 		cancel_trigger = { has_war = no }
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 
@@ -5725,7 +5725,7 @@ RUS_DecisionCategory_Smuta = {
 
 		cancel_trigger = { has_war = no }
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 
@@ -5768,7 +5768,7 @@ RUS_DecisionCategory_Smuta = {
 
 		cancel_trigger = { has_war = no }
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 
@@ -5810,7 +5810,7 @@ RUS_DecisionCategory_Smuta = {
 
 		cancel_trigger = { has_war = no }
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 
@@ -5854,7 +5854,7 @@ RUS_DecisionCategory_Smuta = {
 
 		cancel_trigger = { has_war = no }
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 
@@ -5897,7 +5897,7 @@ RUS_DecisionCategory_Smuta = {
 
 		cancel_trigger = { has_war = no }
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 
@@ -5941,7 +5941,7 @@ RUS_DecisionCategory_Smuta = {
 
 		cancel_trigger = { has_war = no }
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 
@@ -5984,7 +5984,7 @@ RUS_DecisionCategory_Smuta = {
 
 		cancel_trigger = { has_war = no }
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 
@@ -6233,7 +6233,7 @@ RUS_DecisionCategory_Smuta = {
 
 		cancel_trigger = { has_war = no }
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 
@@ -6266,7 +6266,7 @@ RUS_DecisionCategory_Smuta = {
 
 		cancel_trigger = { has_war = no }
 
-		ai_will_do = { factor = 1000 }
+		ai_will_do = { factor = 2000 }
 
 	}
 
