@@ -673,6 +673,29 @@ SWRW_NUKE_CHEAT = {
 	}
 }
 
+SWRW_USA_OR_JAP_CHOICE = { 
+	name = SWRW_USA_OR_JAP_CHOICE
+	group = "RULE_GROUP_TAS_BEREZNIKI_SWRW"
+	option = {
+		name = DEFAULT
+		text = "RULE_OPTION_SWRW_USA_OR_JAP_CHOICE"
+		desc = "RULE_OPTION_SWRW_USA_OR_JAP_CHOICE_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = SWRW_USA_OR_JAP_CHOICE_USA
+		text = "RULE_OPTION_SWRW_USA_OR_JAP_CHOICE_USA"
+		desc = "RULE_OPTION_SWRW_USA_OR_JAP_CHOICE_USA_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = SWRW_USA_OR_JAP_CHOICE_JAP
+		text = "RULE_OPTION_SWRW_USA_OR_JAP_CHOICE_JAP"
+		desc = "RULE_OPTION_SWRW_USA_OR_JAP_CHOICE_JAP_DESC"
+		allow_achievements = yes
+	}
+}
+
 SWRW_AFGHAN_WAR_RESULT = { 
 	name = SWRW_AFGHAN_WAR_RESULT
 	group = "RULE_GROUP_TAS_BEREZNIKI_SWRW"

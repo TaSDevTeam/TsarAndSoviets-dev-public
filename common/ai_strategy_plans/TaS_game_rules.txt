@@ -49,3 +49,55 @@ MAR_kosygin_japan_plan = {
 		}
 	}
 }
+
+MAR_SWRW_japan_plan = {
+	name = ""
+	desc = ""
+
+	allowed = {
+		original_tag = MAR
+	}
+	enable = {
+		has_game_rule = {
+			rule = SWRW_USA_OR_JAP_CHOICE
+			option = SWRW_USA_OR_JAP_CHOICE_JAP
+		}
+	}
+
+	focus_factors = {
+		MAR_warprep_better_call_sam = 0
+	}
+
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+}
+
+MAR_SWRW_usa_plan = {
+	name = ""
+	desc = ""
+
+	allowed = {
+		original_tag = MAR
+	}
+	enable = {
+		has_game_rule = {
+			rule = SWRW_USA_OR_JAP_CHOICE
+			option = SWRW_USA_OR_JAP_CHOICE_USA
+		}
+	}
+
+	focus_factors = {
+		MAR_warprep_chrysanthemum_friendship = 0
+	}
+
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+}
