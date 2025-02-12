@@ -1667,13 +1667,11 @@ SWRW_start_rebellion_ALT = {
 	}
 }
 SWRW_turkey_peacedeal = {
-	TUR = { save_global_event_target_as = losing_country }
 	RUS = {
-		save_global_event_target_as = winning_country
 		white_peace = TUR
 	}	
 	every_country = {
-		limit = { is_puppet_of = TUR }
+		limit = { is_subject_of = TUR }
 		white_peace = RUS
 	}
 	if = {
@@ -1754,6 +1752,28 @@ SWRW_turkey_peacedeal = {
 		transfer_state = 347
 		transfer_state = 340
 		transfer_state = 345
+		set_party_name = {
+			ideology = despotism
+			long_name = GRM_MIL_despotism_party_long
+			name = GRM_MIL_despotism_party
+		}
+		if = {
+			limit = { RUS = { has_government = socialist } }
+			set_cosmetic_tag = GRM_Kosygin
+		}
+		econ_join_sphere_MAR = yes
+		get_current_government_type = yes
+		save_party_popularities = yes
+	}
+	RUS = {
+		set_autonomy = {
+			target = GRM
+			autonomy_state = autonomy_occupied_territory
+		}	
+	}	
+	GRM = {
+		restore_previous_government_type = yes
+		apply_party_popularities = yes
 	}
 	if = {
 		limit = { TUR = { controls_state = 183 } }
@@ -1851,7 +1871,7 @@ SWRW_turkey_fail_peacedeal = {
 		white_peace = TUR
 	}
 	every_country = {
-		limit = { is_puppet_of = TUR }
+		limit = { is_subject_of = TUR }
 		white_peace = RUS
 	}
 	ARM = {

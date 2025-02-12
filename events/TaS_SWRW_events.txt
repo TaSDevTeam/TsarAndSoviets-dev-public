@@ -1835,6 +1835,20 @@ country_event = { #Bulgaria wants to quit
 			white_peace = RUS 
 			leave_faction = yes
 			econ_leave_sphere = yes
+			if = {
+				limit = { has_idea = SGR_zollverein_basic }
+				leave_zollverein = yes
+			}
+		}
+		every_country = {
+			limit = { is_subject_of = BUL }
+			white_peace = RUS 
+			leave_faction = yes
+			econ_leave_sphere = yes
+			if = {
+				limit = { has_idea = SGR_zollverein_basic }
+				leave_zollverein = yes
+			}
 		}
 		hidden_effect = {
 			every_country  = {
@@ -1854,6 +1868,20 @@ country_event = { #Bulgaria wants to quit
 					white_peace = RUS 
 					leave_faction = yes
 					econ_leave_sphere = yes
+					if = {
+						limit = { has_idea = SGR_zollverein_basic }
+						leave_zollverein = yes
+					}
+				}
+				every_country = {
+					limit = { is_subject_of = BUL }
+					white_peace = RUS 
+					leave_faction = yes
+					econ_leave_sphere = yes
+					if = {
+						limit = { has_idea = SGR_zollverein_basic }
+						leave_zollverein = yes
+					}
 				}
 				hidden_effect = {
 					every_country  = {
@@ -1888,9 +1916,21 @@ country_event = { #Serbia wants to quit
 	option = { #yes, without anything
 		name = TaS_SWRW.11.a
 		SER = {
+			hidden_effect = {
+				if = {
+					limit = { SER = { is_subject_of = GER } }
+					GER = {
+						end_puppet = SER
+					}
+				}
+			}
 			white_peace = RUS 
 			leave_faction = yes
 			econ_leave_sphere = yes
+			if = {
+				limit = { has_idea = SGR_zollverein_basic }
+				leave_zollverein = yes
+			}
 		}
 		hidden_effect = {
 			every_country  = {
@@ -1907,9 +1947,21 @@ country_event = { #Serbia wants to quit
 				custom_effect_tooltip = SWRW_DEMANDS_tt
 				set_country_flag = SER_demands
 				SER = {
+					hidden_effect = {
+						if = {
+							limit = { SER = { is_subject_of = GER } }
+							GER = {
+								end_puppet = SER
+							}
+						}
+					}
 					white_peace = RUS 
 					leave_faction = yes
 					econ_leave_sphere = yes
+					if = {
+						limit = { has_idea = SGR_zollverein_basic }
+						leave_zollverein = yes
+					}
 				}
 				hidden_effect = {
 					every_country  = {
@@ -1947,6 +1999,10 @@ country_event = { #Hungary wants to quit
 			white_peace = RUS 
 			leave_faction = yes
 			econ_leave_sphere = yes
+			if = {
+				limit = { has_idea = SGR_zollverein_basic }
+				leave_zollverein = yes
+			}
 		}
 		hidden_effect = {
 			every_country  = {
@@ -1966,6 +2022,10 @@ country_event = { #Hungary wants to quit
 					white_peace = RUS 
 					leave_faction = yes
 					econ_leave_sphere = yes
+					if = {
+						limit = { has_idea = SGR_zollverein_basic }
+						leave_zollverein = yes
+					}
 				}
 				hidden_effect = {
 					every_country  = {
@@ -2003,6 +2063,10 @@ country_event = { #UK wants to quit
 			white_peace = RUS 
 			leave_faction = yes
 			econ_leave_sphere = yes
+			if = {
+				limit = { has_idea = SGR_zollverein_basic }
+				leave_zollverein = yes
+			}
 		}
 		hidden_effect = {
 			every_country  = {
@@ -2030,6 +2094,10 @@ country_event = { #Romania wants to quit
 			white_peace = RUS 
 			leave_faction = yes
 			econ_leave_sphere = yes
+			if = {
+				limit = { has_idea = SGR_zollverein_basic }
+				leave_zollverein = yes
+			}
 		}
 		hidden_effect = {
 			every_country  = {
@@ -2049,6 +2117,10 @@ country_event = { #Romania wants to quit
 					white_peace = RUS 
 					leave_faction = yes
 					econ_leave_sphere = yes
+					if = {
+						limit = { has_idea = SGR_zollverein_basic }
+						leave_zollverein = yes
+					}
 				}
 				hidden_effect = {
 					every_country  = {

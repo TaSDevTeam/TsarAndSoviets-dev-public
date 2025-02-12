@@ -111,7 +111,7 @@ shared_focus = {
 		hidden_effect = {
 			country_event = { id = MAR_initial.21 days = 30 }
 		}
-        set_temp_variable = { gdp_growth_temp = 1.50 }
+        set_temp_variable = { gdp_growth_temp = 0.50 }
         econ_gdp_growth_change = yes
 	}
 }
@@ -145,7 +145,7 @@ shared_focus = {
 		}
 		set_temp_variable = { inflation_temp = 0.25 }
 		econ_inflation_change = yes
-		set_temp_variable = { gdp_growth_temp = 1.20 }
+		set_temp_variable = { gdp_growth_temp = 0.75 }
         econ_gdp_growth_change = yes
 		set_temp_variable = { pus_temp = 1 }
 		econ_pus_change = yes
@@ -419,7 +419,7 @@ shared_focus = {
 	x = 2
 	y = 7
 	completion_reward = {
-		set_temp_variable = { gdp_growth_temp = 2.50 }
+		set_temp_variable = { gdp_growth_temp = 1.50 }
         econ_gdp_growth_change = yes
 		if = {
 			limit = { has_completed_focus = MAR_peoples_love }

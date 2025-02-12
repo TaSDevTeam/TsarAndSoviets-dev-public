@@ -669,8 +669,7 @@ Tas_WRW2_increase_depression = {
 TaS_WRW2_total_capitulation = {
 	custom_effect_tooltip = TaS_WRW2_total_capitulation_tt
 	set_global_flag = TaS_WRW2_Russian_victory
-	TaS_WRW2_Peace_Yall = yes
-	MAR = {
+	RUS = {
 		annex_country = {
 			target = MCW
 			transfer_troops = no
@@ -705,7 +704,7 @@ TaS_WRW2_total_capitulation = {
 		if = {
 			limit = { 
 				TNS = { exists = yes }
-				TNS = { is_puppet_of = GER }
+				TNS = { is_subject_of = GER }
 			}
 			annex_country = {
 				target = TNS
@@ -1079,7 +1078,7 @@ TaS_WRW2_Peace_Yall = {
 		every_country = {
 			limit = {
 				OR = { 
-					is_puppet_of = GER
+					is_subject_of = GER
 					is_in_faction_with = GER
 				}
 			}
@@ -1127,15 +1126,17 @@ TaS_WRW2_Peace_Yall = {
 			if = {
 				limit = { 
 					TNS = { exists = yes }
-					TNS = { is_puppet_of = ROM }
+					TNS = { is_subject_of = ROM }
 				}
+				log = "Транснистрия марионетка Румынии"
 				if = {
 					limit = { MUK = { exists = yes } }
 					MUK = {
 						annex_country = {
 							target = TNS
-							transfer_troops = no
+							transfer_troops = yes
 						}
+						
 						add_state_core = 198
 						add_state_core = 1965
 						add_state_core = 1966
@@ -1168,8 +1169,9 @@ TaS_WRW2_Peace_Yall = {
 					RUS = {
 						annex_country = {
 							target = TNS
-							transfer_troops = no
+							transfer_troops = yes
 						}
+						
 						add_state_core = 198
 						add_state_core = 1965
 						add_state_core = 1966
@@ -1199,6 +1201,7 @@ TaS_WRW2_Peace_Yall = {
 				}
 			}
 			else = {
+				log = "Транснистрия не марионетка Румынии"
 				if = {
 					limit = { MUK = { exists = yes } }
 					MUK = {
@@ -1516,9 +1519,9 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 		if = {
 			limit = {
 				MAD = {
-					is_puppet_of = GER
+					is_subject_of = GER
 				}	
-				NOT = { GRO = { is_puppet_of = GER } }
+				NOT = { GRO = { is_subject_of = GER } }
 			}	
 			GEX = {
 				annex_country = {
@@ -1541,9 +1544,9 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 		if = {
 			limit = {
 				GRO = {
-					is_puppet_of = GER
+					is_subject_of = GER
 				}	
-				NOT = { MAD = { is_puppet_of = GER } }	
+				NOT = { MAD = { is_subject_of = GER } }	
 			}	
 			GEX = {
 				annex_country = {
@@ -1570,10 +1573,10 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 		if = {
 			limit = {
 				MAD = {
-					is_puppet_of = GER
+					is_subject_of = GER
 				}
 				GRO = {
-					is_puppet_of = GER
+					is_subject_of = GER
 				}	
 			}	
 			GEX = {
@@ -1961,9 +1964,9 @@ TaS_WRW2_German_Collapse_Kosygin = {
 		if = {
 			limit = {
 				MAD = {
-					is_puppet_of = GER
+					is_subject_of = GER
 				}	
-				NOT = { GRO = { is_puppet_of = GER } }
+				NOT = { GRO = { is_subject_of = GER } }
 			}	
 			GEX = {
 				annex_country = {
@@ -1986,9 +1989,9 @@ TaS_WRW2_German_Collapse_Kosygin = {
 		if = {
 			limit = {
 				GRO = {
-					is_puppet_of = GER
+					is_subject_of = GER
 				}	
-				NOT = { MAD = { is_puppet_of = GER } }	
+				NOT = { MAD = { is_subject_of = GER } }	
 			}	
 			GEX = {
 				annex_country = {
@@ -2015,10 +2018,10 @@ TaS_WRW2_German_Collapse_Kosygin = {
 		if = {
 			limit = {
 				MAD = {
-					is_puppet_of = GER
+					is_subject_of = GER
 				}
 				GRO = {
-					is_puppet_of = GER
+					is_subject_of = GER
 				}	
 			}	
 			GEX = {
@@ -2115,18 +2118,31 @@ TaS_2WRW_form_ost_zones = {
 		if = { 
 			limit = { MAR = { owns_state = 1404 } }
 			MBL = {
-				transfer_state = 1406
-				transfer_state = 1403
-				transfer_state = 207
-				transfer_state = 1405
-				transfer_state = 95
-				transfer_state = 1407
-				transfer_state = 194
-				transfer_state = 204
-				transfer_state = 206
-				transfer_state = 1404
-				transfer_state = 241
-				transfer_state = 2452
+				if = {
+					limit = { MAR = { has_country_flag = limited_ost_zones } }
+					transfer_state = 207
+					transfer_state = 1405
+					transfer_state = 194
+					transfer_state = 204
+					transfer_state = 206
+					transfer_state = 1404
+					transfer_state = 241
+					transfer_state = 2452
+				}
+				else = {
+					transfer_state = 1406
+					transfer_state = 1403
+					transfer_state = 207
+					transfer_state = 1405
+					transfer_state = 95
+					transfer_state = 1407
+					transfer_state = 194
+					transfer_state = 204
+					transfer_state = 206
+					transfer_state = 1404
+					transfer_state = 241
+					transfer_state = 2452
+				}
 				set_capital = { state = 1404 }
 				TaS_2WRW_set_zone_laws = yes
 				econ_join_sphere_MAR = yes
@@ -2147,28 +2163,38 @@ TaS_2WRW_form_ost_zones = {
 			}
 		}
 		if = {
-			limit = { MAR = { owns_state = 1428 } }
+			limit = { MAR = { owns_state = 221 } }
 			MUK = {
-				transfer_state = 1431
-				transfer_state = 1429
-				transfer_state = 93
-				transfer_state = 199
-				transfer_state = 201
-				transfer_state = 1430
-				transfer_state = 773
-				transfer_state = 202
-				transfer_state = 1428
-				transfer_state = 197
-				transfer_state = 1427
-				transfer_state = 225
-				transfer_state = 259
-				transfer_state = 226
-				transfer_state = 1426
-				transfer_state = 200
-				transfer_state = 221
-				transfer_state = 227
-				transfer_state = 228
-				transfer_state = 218
+				if = {
+					limit = { MAR = { has_country_flag = limited_ost_zones } }
+					transfer_state = 225
+					transfer_state = 221
+					transfer_state = 228
+					transfer_state = 227
+					transfer_state = 218
+				}
+				else = {
+					transfer_state = 1431
+					transfer_state = 1429
+					transfer_state = 93
+					transfer_state = 199
+					transfer_state = 201
+					transfer_state = 1430
+					transfer_state = 773
+					transfer_state = 202
+					transfer_state = 1428
+					transfer_state = 197
+					transfer_state = 1427
+					transfer_state = 225
+					transfer_state = 259
+					transfer_state = 226
+					transfer_state = 1426
+					transfer_state = 200
+					transfer_state = 221
+					transfer_state = 227
+					transfer_state = 228
+					transfer_state = 218
+				}
 				set_capital = { state = 1428 }
 				TaS_2WRW_set_zone_laws = yes
 				econ_join_sphere_MAR = yes

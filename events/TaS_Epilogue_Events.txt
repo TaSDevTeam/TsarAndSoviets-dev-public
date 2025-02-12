@@ -5333,20 +5333,12 @@ country_event = {#General - Polish Home Army is back
 					remove_core_of = GGN
 				}
 			}
-			if = {
-				limit = { NOR = { is_in_faction_with = GER } }
-				country_event = { id = TaS_GERCollapse.27 days = 7}
-			}
-			else = {
-				RUS = {
-					country_event = { id = TaS_GERCollapse.28 days = 14}
-				}
-			}
+			country_event = { id = TaS_GERCollapse.27 days = 7}
 		}
 	}
 }
 
-country_event = {#General - Norway leaves pakt
+country_event = {#General - Pakt collapses
 	id = TaS_GERCollapse.27
 	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GERCollapse.27"}
 	title = TaS_GERCollapse.27.t
@@ -5364,36 +5356,67 @@ country_event = {#General - Norway leaves pakt
 					id = TaS_GERCollapse_news.27
 				}
 			}
-			NOR = {
-				remove_faction_status = yes
-				leave_faction = yes
-				econ_leave_sphere = yes
-				drop_cosmetic_tag = yes
-				transfer_state = 94
-				add_state_core = 94
-				if = {
-					limit = { has_government = national_socialism }
-					set_politics = {
-						ruling_party = liberal_conservatism
-						elections_allowed = yes
-						election_frequency = 48
-					}
-					add_popularity = {
-						add_popularity = {
-							ideology = liberal_conservatism
-							popularity = 0.45
+			if = {
+				limit = { NOR = { is_in_faction_with = GER } }
+				NOR = {
+					remove_faction_status = yes
+					leave_faction = yes
+					econ_leave_sphere = yes
+					drop_cosmetic_tag = yes
+					transfer_state = 94
+					add_state_core = 94
+					if = {
+						limit = { has_government = national_socialism }
+						set_politics = {
+							ruling_party = liberal_conservatism
+							elections_allowed = yes
+							election_frequency = 48
 						}
 						add_popularity = {
-							ideology = liberalism
-							popularity = 0.15
-						}
-						add_popularity = {
-							ideology = progressivism
-							popularity = 0.2
+							add_popularity = {
+								ideology = liberal_conservatism
+								popularity = 0.45
+							}
+							add_popularity = {
+								ideology = liberalism
+								popularity = 0.15
+							}
+							add_popularity = {
+								ideology = progressivism
+								popularity = 0.2
+							}
 						}
 					}
 				}
 			}
+			every_country = {
+				limit = {
+					is_in_faction_with = GER 
+					NOT = { is_subject_of = GER }
+				}
+				econ_leave_sphere = yes
+				leave_faction = yes
+				if = {
+					limit = { has_idea = SGR_zollverein_basic }
+					leave_zollverein = yes
+				}
+			}
+			every_country = {
+				limit = {
+					check_variable = { econ_sphere_leader = GER }
+					NOT = { is_subject_of = GER }
+					NOT = { tag = GER }
+				}
+				econ_leave_sphere = yes
+				if = {
+					limit = { has_idea = SGR_zollverein_basic }
+					leave_zollverein = yes
+				}
+			}
+			GER = {
+				dismantle_faction = yes
+			}
+			
 			RUS = {
 				country_event = { id = TaS_GERCollapse.28 days = 7}
 			}
@@ -6444,7 +6467,7 @@ news_event = { #Polish Home Army is back
 	}
 }
 
-news_event = { #Norway leaves Pakt
+news_event = { #Pakt collapses
 	id = TaS_GERCollapse_news.27
 	title = TaS_GERCollapse_news.27.t
 	desc = TaS_GERCollapse_news.27.d

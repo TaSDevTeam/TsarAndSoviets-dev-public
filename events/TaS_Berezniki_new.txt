@@ -90,7 +90,6 @@ country_event = { #welcome to berezniki
 		}
 		set_temp_variable = { temp_econ_GDP_boost_percentage = 0.02 }
 		econ_GDP_boost_once_percentage = yes
-		#add some vyatka inf here # Ne vyidet -_-
 	}
 }
 
@@ -109,7 +108,6 @@ country_event = { #letter to tsar
 		ai_chance = { factor = 1 }
 		set_temp_variable = { temp_econ_GDP_boost_percentage = 0.15 }
 		econ_GDP_boost_once_percentage = yes
-		#take some vyt inf
 	}
 }
 
@@ -1308,7 +1306,7 @@ country_event = { #MAR_get_the_factories
 	option = { #
 		name = MAR_postbomb.2.a
 		ai_chance = { factor = 1 }
-		set_temp_variable = { gdp_growth_temp = 1.50 }
+		set_temp_variable = { gdp_growth_temp = 0.50 }
         econ_gdp_growth_change = yes
 		set_temp_variable = { pus_temp = 2 }
 		econ_pus_change = yes

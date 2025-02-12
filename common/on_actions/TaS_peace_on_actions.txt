@@ -840,7 +840,7 @@ on_actions = {
 						if = {
 							limit = { 
 								TNS = { exists = yes }
-								TNS = { is_puppet_of = ROM }
+								TNS = { is_subject_of = ROM }
 							}
 							if = {
 								limit = { MUK = { exists = yes } }

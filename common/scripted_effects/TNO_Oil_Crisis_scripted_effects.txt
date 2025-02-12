@@ -165,7 +165,7 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 			}
 		}
 		else_if = { #Saudis won the Yemeni-Saudi War
-			limit = { YEM = { is_puppet_of = SAU } }
+			limit = { YEM = { is_subject_of = SAU } }
 			#Saudis leave the Italian sphere if they have to crush Yemen themselves.
 			SAU = { econ_leave_sphere = yes }
 			YEM = { econ_leave_sphere = yes }
@@ -567,13 +567,13 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 				econ_join_sphere_GER = yes
 				if = {
 					limit = {
-						NOT = { is_puppet_of = ITA }
+						NOT = { is_subject_of = ITA }
 						has_global_flag = german_civil_war_speervic
 					}
 					join_zollverein = yes
 				}
 				else_if = {
-					limit = { is_puppet_of = ITA }
+					limit = { is_subject_of = ITA }
 					econ_leave_sphere = yes 
 					econ_join_sphere_ITA = yes
 				}
@@ -587,7 +587,7 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 			SYR = {
 				econ_join_sphere_MAR = yes
 				if = {
-					limit = { is_puppet_of = ITA }
+					limit = { is_subject_of = ITA }
 					econ_leave_sphere = yes 
 					econ_join_sphere_ITA = yes
 				}

@@ -1091,7 +1091,7 @@ TaS_nuke_development_progress_change = {
 	
 	set_variable = { TaS_nuke_development_array_frame =  TaS_nuke_development_array^TaS_RUS_nuclear_program_phase }
 	multiply_variable = { TaS_nuke_development_array_frame = 100 }
-	add_to_variable = { TaS_nuke_gui_dirty = 0.01 } 
+	add_to_variable = { TaS_nuke_gui_dirty = 1 } 
 	
 	if = {
 		limit = { check_variable = { temp_progress_gained < 0 } }

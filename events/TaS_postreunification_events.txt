@@ -348,6 +348,7 @@ country_event = { #unconditional surrender
 	is_triggered_only = yes
 
 	option = {
+		ai_chance = { factor = 1 }
 		name = MAR_AFG.3.a
 		AFG = { save_global_event_target_as = losing_country }
 		RUS = {
@@ -1973,7 +1974,7 @@ country_event = { #Second round success
 			limit = { 
 				has_game_rule = {
 					rule = KOSYGIN_FE_NEGOTIATIONS_RESULT
-					option = KOSYGIN_FE_NEGOTIATIONS_FAIL
+					option = KOSYGIN_FE_NEGOTIATIONS_RESULT_FAIL
 				}
 			}
 			set_variable = { swrw_fe_threshold = 109.9 }
@@ -2851,7 +2852,6 @@ country_event = { #Offer status quo
 				}
 			}	
 		}
-		TaS_WRW2_Peace_Yall = yes
 		hidden_effect = {
 			every_country  = {
 				news_event = {
@@ -2860,6 +2860,7 @@ country_event = { #Offer status quo
 			}
 			SWRW_clear_war_stuff = yes
 		}
+		TaS_WRW2_Peace_Yall = yes
 	}
 	option = { #nope lol
 		name = MAR_2WRW.1.b
@@ -2890,8 +2891,9 @@ country_event = { #Offer muscowy
 				}
 			}	
 		}
-		TaS_WRW2_Peace_Yall = yes
 		MAR = {
+			transfer_state = 2099
+			add_state_core = 2099
 			annex_country = {
 				target = MCW
 				transfer_troops = no
@@ -2911,7 +2913,16 @@ country_event = { #Offer muscowy
 				}
 			}
 			SWRW_clear_war_stuff = yes
-		}			
+			clr_country_flag = ROM_demands
+			clr_country_flag = ROM_refuse
+			clr_country_flag = HUN_demands
+			clr_country_flag = HUN_refuse
+			clr_country_flag = SER_demands
+			clr_country_flag = SER_refuse
+			clr_country_flag = BUL_demands
+			clr_country_flag = BUL_refuse
+		}	
+		TaS_WRW2_Peace_Yall = yes	
 	}
 	option = { #nope lol
 		name = MAR_2WRW.2.b
@@ -2942,8 +2953,9 @@ country_event = { #Offer muscowy and caucasus
 				}
 			}	
 		}
-		TaS_WRW2_Peace_Yall = yes
 		MAR = {
+			transfer_state = 2099
+			add_state_core = 2099
 			annex_country = {
 				target = MCW
 				transfer_troops = no
@@ -2975,7 +2987,16 @@ country_event = { #Offer muscowy and caucasus
 			}
 			SWRW_clear_war_stuff = yes
 			TaS_2WRW_form_ost_zones = yes
-		}			
+			clr_country_flag = ROM_demands
+			clr_country_flag = ROM_refuse
+			clr_country_flag = HUN_demands
+			clr_country_flag = HUN_refuse
+			clr_country_flag = SER_demands
+			clr_country_flag = SER_refuse
+			clr_country_flag = BUL_demands
+			clr_country_flag = BUL_refuse
+		}	
+		TaS_WRW2_Peace_Yall = yes		
 	}
 	option = { #nope lol
 		name = MAR_2WRW.3.b
@@ -3006,8 +3027,9 @@ country_event = { #Offer muscowy and caucasus and belarus and half of ukraine
 				}
 			}	
 		}
-		TaS_WRW2_Peace_Yall = yes
 		MAR = {
+			transfer_state = 2099
+			add_state_core = 2099
 			annex_country = {
 				target = MCW
 				transfer_troops = no
@@ -3030,12 +3052,13 @@ country_event = { #Offer muscowy and caucasus and belarus and half of ukraine
 				#add_core_of = RUS
 				hidden_effect = { remove_core_of = CAU }
 			}
+			set_country_flag = limited_ost_zones
 			transfer_state = 218 
 			transfer_state = 228 
 			transfer_state = 227 
 			transfer_state = 221
 			transfer_state = 225 
-			transfer_state = 193 
+			#transfer_state = 193 
 			
 			transfer_state = 207
 			transfer_state = 206 
@@ -3043,10 +3066,10 @@ country_event = { #Offer muscowy and caucasus and belarus and half of ukraine
 			transfer_state = 1405
 			transfer_state = 194 
 			transfer_state = 1404
-			transfer_state = 1403 
-			transfer_state = 95 
-			transfer_state = 1407
-			transfer_state = 1406
+			#transfer_state = 1403 
+			#transfer_state = 95 
+			#transfer_state = 1407
+			#transfer_state = 1406
 			
 			transfer_state = 1421
 			transfer_state = 257
@@ -3075,9 +3098,18 @@ country_event = { #Offer muscowy and caucasus and belarus and half of ukraine
 					id = MAR_2WRW_world_news.9
 				}
 			}
+			clr_country_flag = ROM_demands
+			clr_country_flag = ROM_refuse
+			clr_country_flag = HUN_demands
+			clr_country_flag = HUN_refuse
+			clr_country_flag = SER_demands
+			clr_country_flag = SER_refuse
+			clr_country_flag = BUL_demands
+			clr_country_flag = BUL_refuse
 			SWRW_clear_war_stuff = yes
 			TaS_2WRW_form_ost_zones = yes
-		}			
+		}	
+		TaS_WRW2_Peace_Yall = yes		
 	}
 	option = { #nope lol
 		name = MAR_2WRW.4.b
@@ -3104,7 +3136,7 @@ country_event = { #Offer surrender
 				factor = 1000
 				has_game_rule = {
 					rule = SWRW_WAR_RESULT
-					option = SWRW_WAR_RESULT_TOTAL_WIN
+					option = SWRW_WAR_RESULT_RUS_TOTAL_WIN
 				}
 			}
 			modifier = {
@@ -3115,13 +3147,7 @@ country_event = { #Offer surrender
 				}
 			}
 		}
-		MAR = {
-			white_peace = GER
-		}
-		every_country = {
-			limit = { is_in_faction_with = GER }
-			white_peace = MAR
-		}
+		TaS_WRW2_Peace_Yall = yes
 		TaS_WRW2_total_capitulation = yes
 		hidden_effect = {
 			every_country  = {
@@ -3140,7 +3166,7 @@ country_event = { #Offer surrender
 				factor = 0
 				has_game_rule = {
 					rule = SWRW_WAR_RESULT
-					option = SWRW_WAR_RESULT_TOTAL_WIN
+					option = SWRW_WAR_RESULT_RUS_TOTAL_WIN
 				}
 			}
 			modifier = {
@@ -3199,7 +3225,6 @@ country_event = { #german nuclear ultimatum
 
 	option = { #yes
 		name = MAR_2WRW.7.a
-		TaS_WRW2_Peace_Yall = yes
 		ai_chance = {
 			factor = 90	
 			modifier = {
@@ -3241,7 +3266,16 @@ country_event = { #german nuclear ultimatum
 				}
 			}
 			TaS_2WRW_form_ost_zones = yes
+			clr_country_flag = ROM_demands
+			clr_country_flag = ROM_refuse
+			clr_country_flag = HUN_demands
+			clr_country_flag = HUN_refuse
+			clr_country_flag = SER_demands
+			clr_country_flag = SER_refuse
+			clr_country_flag = BUL_demands
+			clr_country_flag = BUL_refuse
 		}			
+		TaS_WRW2_Peace_Yall = yes
 	}
 	option = { #boom
 		name = MAR_2WRW.7.b
@@ -4648,11 +4682,6 @@ country_event = { #Belarus
 				transfer_state = 2452
 				transfer_state = 241
 			}
-			XYZ = {
-				BLR_Zianon_Pazniak = {
-					set_nationality = MBL
-				}
-			}
 			RUS = { end_puppet = MBL } 
 			MBL = {
 				every_owned_state = {
@@ -4696,6 +4725,11 @@ country_event = { #Belarus
 	}
 	option = { #Avtonomna Kraina
 		name = MAR_territorial_fate.7.b
+		trigger = {
+			NOT = {
+				has_country_flag = limited_ost_zones
+			}
+		}
 		ai_chance = { factor = 1 }
 		custom_effect_tooltip = MAR_autonomy_create_tt
 		hidden_effect = {
@@ -4705,11 +4739,6 @@ country_event = { #Belarus
 				transfer_state = 207
 				transfer_state = 206
 				transfer_state = 194
-			}
-			XYZ = {
-				MBL_Tikhon_Kiselyov = {
-					set_nationality = MBL
-				}
 			}
 			MBL = {
 				every_owned_state = {
@@ -4825,10 +4854,13 @@ country_event = { #Ukraine
 		ai_chance = { factor = 1 }
 		trigger = {
 			NOT = {
-				has_country_leader = {
-					character = MAR_advisor_Kosygin
-					ruling_only = yes
-				} 
+				OR = {
+					has_country_leader = {
+						character = MAR_advisor_Kosygin
+						ruling_only = yes
+					} 
+					has_country_flag = limited_ost_zones
+				}
 			}
 		}
 		custom_effect_tooltip = MAR_freedom_for_everyone_tt
@@ -4838,11 +4870,6 @@ country_event = { #Ukraine
 				transfer_state = 227
 				transfer_state = 228
 				transfer_state = 218
-			}
-			XYZ = {
-				UKR_Viacheslav_Chornovil = {
-					set_nationality = MUK
-				}
 			}
 			RUS = { end_puppet = MUK } 
 			MUK = {
@@ -4861,11 +4888,6 @@ country_event = { #Ukraine
 					ideology = liberal_conservatism
 					popularity = 0.45
 				}
-				set_party_name = { 
-					ideology = liberal_conservatism 
-					long_name = UKR_free_party_long
-					name = UKR_free_party
-				}
 				UKR_Viacheslav_Chornovil = {
 					promote_character = yes
 				}
@@ -4883,6 +4905,11 @@ country_event = { #Ukraine
 	}
 	option = { #Avtonomna Kraina
 		name = MAR_territorial_fate.8.b
+		trigger = {
+			NOT = {
+				has_country_flag = limited_ost_zones
+			}
+		}
 		ai_chance = { factor = 1 }
 		custom_effect_tooltip = MAR_autonomy_create_tt
 		hidden_effect = {
@@ -4896,11 +4923,6 @@ country_event = { #Ukraine
 				transfer_state = 259
 				transfer_state = 225
 				transfer_state = 1427
-			}
-			XYZ = {
-				MUK_Oleksandr_Moroz = {
-					set_nationality = MUK
-				}
 			}
 			MUK = {
 				every_owned_state = {
@@ -4925,7 +4947,6 @@ country_event = { #Ukraine
 						ideology = paternalism
 						popularity = 0.45
 					}
-					retire_country_leader = yes
 					MUK_Oleksandr_Moroz = {
 						promote_character = yes
 					}
@@ -4945,7 +4966,6 @@ country_event = { #Ukraine
 						ideology = socialist
 						popularity = 0.55
 					}
-					retire_country_leader = yes
 					MUK_Oleksandr_Moroz = {
 						promote_character = yes
 					}
@@ -5015,11 +5035,6 @@ country_event = { #Crimnea
 			#MAR = {
 			#	transfer_state = 196
 			#}
-			XYZ = {
-				MTV_Bruno_Reiter = {
-					set_nationality = MTV
-				}
-			}
 			MTV = {
 				every_owned_state = {
 					MTV = {
@@ -5042,7 +5057,6 @@ country_event = { #Crimnea
 						ideology = paternalism
 						popularity = 0.45
 					}
-					retire_country_leader = yes
 					MTV_Bruno_Reiter = {
 						promote_character = yes
 					}
@@ -5062,7 +5076,6 @@ country_event = { #Crimnea
 						ideology = socialist
 						popularity = 0.55
 					}
-					retire_country_leader = yes
 					MTV_Bruno_Reiter = {
 						promote_character = yes
 					}
@@ -5135,11 +5148,6 @@ country_event = { #Caucasus
 				transfer_state = 235
 			}
 			XYZ = {
-				MCS_Dzhokhar_Dudayev = {
-					set_nationality = MCS
-				}
-			}
-			XYZ = {
 				GEO_Eduard_Shevardnadze = {
 					set_nationality = MCS
 				}
@@ -5154,25 +5162,25 @@ country_event = { #Caucasus
 				if = {
 					limit = { MAR = { has_government = despotism } }
 					set_politics = {
-						ruling_party = ultranationalism
+						ruling_party = despotism
 					}
 					set_party_name = { 
-						ideology = ultranationalism 
+						ideology = despotism 
 						long_name = MCS_autonomy_party_long
 						name = MCS_autonomy_party
 					}
 					set_party_name = { 
-						ideology = despotism 
+						ideology = paternalism 
 						long_name = MCS_despotism_postmil_party
 						name = MCS_despotism_postmil_party
 					}
 					add_popularity = {
-						ideology = ultranationalism
+						ideology = despotism
 						popularity = 0.25
 					}
 					retire_country_leader = yes
 					MCS_Dzhokhar_Dudayev = {
-						promote_character = yes
+						promote_leader = yes
 					}
 					set_cosmetic_tag = MCS_autonomy
 				}
@@ -5195,9 +5203,8 @@ country_event = { #Caucasus
 						ideology = communist
 						popularity = 0.35
 					}
-					retire_country_leader = yes
 					GEO_Eduard_Shevardnadze = {
-						promote_character = yes
+						promote_leader = yes
 					}
 					set_cosmetic_tag = MCS_autonomy_Kosygin
 				}

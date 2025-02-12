@@ -5884,7 +5884,7 @@ RUS_nuke_development_category_facelift = {
     		log = "[GetDateText]: [Root.GetName]: RUS_NEW_nukes_tick mission timer elapsed" 
 			set_temp_variable = { temp_progress_gained = TaS_nuke_dev_monthly_gain } 
 			TaS_nuke_development_progress_change = yes
-			
+			 
 			TaS_nuke_development_switch_to_the_next_stage = yes
 			hidden_effect = {
     			if = {

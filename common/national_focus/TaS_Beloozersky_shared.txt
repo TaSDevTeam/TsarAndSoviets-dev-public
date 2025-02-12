@@ -1574,6 +1574,12 @@ shared_focus = {
 			}
 			add_extra_state_shared_building_slots = 3
 		}
+		MKZ = {
+			set_temp_variable = { gdp_growth_temp = 1.5 }
+			econ_gdp_growth_change = yes
+			set_temp_variable = { temp_econ_GDP_boost_flat = 1.5 }
+			econ_GDP_boost_once_flat = yes	
+		}
 		country_event = { 
 			id = berez_kazahk.4
 			days = 0
@@ -1771,6 +1777,12 @@ shared_focus = {
 					}
 				}
 			}
+			MKZ = {
+				set_temp_variable = { gdp_growth_temp = 4.5 }
+				econ_gdp_growth_change = yes
+				set_temp_variable = { temp_econ_GDP_boost_flat = 1 }
+				econ_GDP_boost_once_flat = yes	
+			}	
 		}
 		custom_effect_tooltip = MAR_Belozerskiy_add_2_inf_in_Kazakhstan
 	}
@@ -1790,6 +1802,10 @@ shared_focus = {
 		country_event = { 
 			id = berez_kazahk.5
 			days = 0
+		}
+		MKZ = {
+			set_temp_variable = { temp_econ_GDP_boost_flat = 2.5 }
+			econ_GDP_boost_once_flat = yes	
 		}
 	}
 }	
@@ -2145,27 +2161,30 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		country_event = { id = MAR_epilogue.5 days = 3 }
-		NOV = {
-			NOV_Mikhail_Baganov = {
-				set_nationality = MAR
+		custom_effect_tooltip = MAR_siberian_amnesty_tt
+		hidden_effect = {
+			NOV = {
+				NOV_Mikhail_Baganov = {
+					set_nationality = MAR
+				}
+				NOV_Nestor_Kozin = {
+					set_nationality = MAR
+				}
 			}
-			NOV_Nestor_Kozin = {
-				set_nationality = MAR
+			TOM = {
+				TOM_Nikolai_Batyuk = {
+					set_nationality = MAR
+				}
 			}
-		}
-		TOM = {
-			TOM_Nikolai_Batyuk = {
-				set_nationality = MAR
+			KEM = {
+				KEM_Alexander_Shevtsov = {
+					set_nationality = MAR
+				}
 			}
-		}
-		KEM = {
-			KEM_Alexander_Shevtsov = {
-				set_nationality = MAR
-			}
-		}
-		IRK = {
-			IRK_Genrikh_Lyushkov = {
-				set_nationality = MAR
+			IRK = {
+				IRK_Genrikh_Lyushkov = {
+					set_nationality = MAR
+				}
 			}
 		}
 	}
@@ -2185,7 +2204,7 @@ shared_focus = {
 	x = 10
 	y = 2
 	completion_reward = {
-		country_event = { id = MAR_epilogue.6 days = 3 }
+		#country_event = { id = MAR_epilogue.6 days = 3 }
 		set_temp_variable = { gdp_growth_temp = 1.55 }
         econ_gdp_growth_change = yes
 		every_country = {
