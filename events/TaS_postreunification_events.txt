@@ -4168,7 +4168,16 @@ country_event = { #Turkestan
 	
 	option = { #governship
 		name = MAR_territorial_fate.1.a
-		ai_chance = { factor = 1 }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = RUS_FATE_OF_TURKESTAN
+					option = RUS_FATE_OF_TURKESTAN_GOVERNSHIP
+				}
+			}
+		}
 		custom_effect_tooltip = MAR_annex_em_all_tt
 		hidden_effect = {
 			MAR_Turkestan_govern = yes
@@ -4176,7 +4185,16 @@ country_event = { #Turkestan
 	}
 	option = { #autonomy
 		name = MAR_territorial_fate.1.b
-		ai_chance = { factor = 1 }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = RUS_FATE_OF_TURKESTAN
+					option = RUS_FATE_OF_TURKESTAN_AUTONOMY
+				}
+			}
+		}
 		custom_effect_tooltip = MAR_autonomy_create_tt
 		hidden_effect = {
 			MAR_Turkestan_autonomy = yes
@@ -4184,7 +4202,16 @@ country_event = { #Turkestan
 	}
 	option = { #direct_rule
 		name = MAR_territorial_fate.1.c
-		ai_chance = { factor = 1 }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = RUS_FATE_OF_TURKESTAN
+					option = RUS_FATE_OF_TURKESTAN_ANNEX
+				}
+			}
+		}
 		custom_effect_tooltip = MAR_annex_em_all_tt
 		hidden_effect = {
 			set_country_flag = MAR_has_turkestan
@@ -5339,7 +5366,16 @@ country_event = { #Finland
 	
 	option = { #Satelite Finland
 		name = MAR_territorial_fate.11.a
-		ai_chance = { factor = 1 }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = RUS_FATE_OF_FINLAND
+					option = RUS_FATE_OF_FINLAND_PUPPET_STATE
+				}
+			}
+		}
 		custom_effect_tooltip = MAR_freedom_for_everyone_tt
 		hidden_effect = {
 			XYZ = {
@@ -5387,7 +5423,16 @@ country_event = { #Finland
 	}
 	option = { #Velikoye Knyazestvo Finlyandskoye
 		name = MAR_territorial_fate.11.b
-		ai_chance = { factor = 1 }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = RUS_FATE_OF_FINLAND
+					option = RUS_FATE_OF_FINLAND_KNYAZZZ
+				}
+			}
+		}
 		custom_effect_tooltip = MAR_autonomy_create_tt
 		hidden_effect = {
 			MAR = {
@@ -5441,7 +5486,16 @@ country_event = { #Finland
 	}
 	option = { #A zachem nezavisimost
 		name = MAR_territorial_fate.11.c
-		ai_chance = { factor = 1 }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = RUS_FATE_OF_FINLAND
+					option = RUS_FATE_OF_FINLAND_JUST_ANNEX
+				}
+			}
+		}
 		custom_effect_tooltip = MAR_annex_em_all_tt
 		hidden_effect = {
 			annex_country = {
@@ -5464,7 +5518,16 @@ country_event = { #Turkish Straits
 	
 	option = { #Satelite Turkey
 		name = MAR_territorial_fate.12.a
-		ai_chance = { factor = 1 }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = RUS_FATE_OF_TURKEY
+					option = RUS_FATE_OF_TURKEY_PUPPET
+				}
+			}
+		}
 		custom_effect_tooltip = MAR_freedom_for_everyone_tt
 		hidden_effect = {
 			GRM = {
@@ -5485,6 +5548,7 @@ country_event = { #Turkish Straits
 					ideology = paternalism
 					popularity = 0.15
 				}
+				econ_join_sphere_MAR = yes
 				retire_country_leader = yes
 				promote_character = GRM_Ahmet_Isvan
 				add_country_leader_role = {
@@ -5512,7 +5576,16 @@ country_event = { #Turkish Straits
 	}
 	option = { #Indepence
 		name = MAR_territorial_fate.12.b
-		ai_chance = { factor = 1 }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = RUS_FATE_OF_TURKEY
+					option = RUS_FATE_OF_TURKEY_PUPPET_INDEP
+				}
+			}
+		}
 		custom_effect_tooltip = MAR_freedom_for_everyone_tt
 		hidden_effect = {
 			GRM = {
@@ -5524,6 +5597,7 @@ country_event = { #Turkish Straits
 					ideology = conservatism
 					popularity = 0.45
 				}
+				econ_join_sphere_MAR = yes
 				add_country_leader_role = {
 					character = GRM_Ahmet_Isvan
 					promote_leader = yes
@@ -5549,7 +5623,16 @@ country_event = { #Turkish Straits
 	}
 	option = { #Autonomy
 		name = MAR_territorial_fate.12.c
-		ai_chance = { factor = 1 }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = RUS_FATE_OF_TURKEY
+					option = RUS_FATE_OF_TURKEY_AUTONOMY
+				}
+			}
+		}
 		custom_effect_tooltip = MAR_autonomy_create_tt
 		hidden_effect = {
 			MAR = {
@@ -5572,6 +5655,7 @@ country_event = { #Turkish Straits
 					ideology = despotism
 					popularity = 0.25
 				}
+				econ_join_sphere_MAR = yes
 				add_country_leader_role = {
 					character = MAR_Timur_Frunze
 					promote_leader = yes
@@ -5602,7 +5686,16 @@ country_event = { #Turkish Straits
 	}
 	option = { #Direct rule
 		name = MAR_territorial_fate.12.e
-		ai_chance = { factor = 1 }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = RUS_FATE_OF_TURKEY
+					option = RUS_FATE_OF_TURKEY_ANNEX
+				}
+			}
+		}
 		custom_effect_tooltip = MAR_annex_em_all_tt
 		hidden_effect = {
 			annex_country = {
