@@ -651,6 +651,10 @@ MAR_Turkestan_autonomy = {
 			limit = { MAR = { has_government = socialist } }
 			set_cosmetic_tag = MTR_Kosygin_autonomy
 		}
+		set_variable = {
+			TNO_economy_type = token:Econ_Type_Corporatism
+			TNO_economy_subtype = token:Econ_Subtype_Dirigisme
+		}
 	}
 	MTR = {
 		get_current_government_type = yes

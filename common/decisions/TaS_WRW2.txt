@@ -8,7 +8,10 @@ TaS_WRW2_fate_and_coring_of_territories = {
 			MTR = { exists = yes }
 		}
 		available = {
-			NOT = { has_war_with = AFG }
+			OR = {
+				NOT = { has_war_with = AFG }
+				NOT = { has_war_with = GER }
+			}
 		}
 		
 		ai_will_do = {
@@ -471,6 +474,13 @@ TaS_WRW2_fate_and_coring_of_territories = {
 			add_state_core = 742
 			add_state_core = 2200
 			add_state_core = 2199
+			if = {
+				limit = {
+					controls_state = 1465
+					NOT = { controls_state = 1885 }
+				}
+				add_state_core = 1465
+			}	
 			add_stability = 0.025
 			set_temp_variable = { gdp_growth_temp = 0.01 }
 			econ_gdp_growth_change = yes
@@ -490,16 +500,7 @@ TaS_WRW2_fate_and_coring_of_territories = {
 			owns_state = 1885
 			NOT = {
 				AND = {
-					1471 = {
-						is_core_of = ROOT
-					}
-					2186 = {
-						is_core_of = ROOT
-					}
-					1470 = {
-						is_core_of = ROOT
-					}
-					1884 = {
+					1465 = {
 						is_core_of = ROOT
 					}
 					1885 = {
@@ -516,10 +517,7 @@ TaS_WRW2_fate_and_coring_of_territories = {
 		on_map_mode = map_and_decisions_view
 		highlight_states = {
 			highlight_state_targets = {
-				state = 1471
-				state = 2186
-				state = 1470
-				state = 1884
+				state = 1465
 				state = 1885
 				state = 2461
 			}
@@ -542,10 +540,7 @@ TaS_WRW2_fate_and_coring_of_territories = {
 
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Northern_Afghanistan remove"
-			add_state_core = 1471
-			add_state_core = 2186
-			add_state_core = 1470
-			add_state_core = 1884
+			add_state_core = 1465
 			add_state_core = 1885
 			add_state_core = 2461
 			add_stability = 0.025

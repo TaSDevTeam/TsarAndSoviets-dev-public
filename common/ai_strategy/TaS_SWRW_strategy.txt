@@ -22,6 +22,100 @@ GER_Panic_strat = {
 		value = 1000
 	}
 }
+MAR_zapad_71 = {
+	allowed = {
+		tag = RUS
+	}
+	enable = {
+		date > 1971.9.01
+		date < 1971.11.01
+		has_decision = TaS_WRW2_zapad_excersices
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = put_unit_buffers
+		ratio = 0.4
+		states = {
+			400
+			399
+			752
+			753
+			864
+		}
+	}
+}
+MAR_sever_72 = {
+	allowed = {
+		tag = RUS
+	}
+	enable = {
+		date > 1972.9.01
+		date < 1972.12.01
+		has_decision = TaS_WRW2_sever_excersices
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = put_unit_buffers
+		ratio = 0.4
+		states = {
+			262
+			863
+			844
+			579
+			756
+		}
+	}
+}
+MAR_vostok_73 = {
+	allowed = {
+		tag = RUS
+	}
+	enable = {
+		date > 1973.6.01
+		date < 1973.8.01
+		has_decision = TaS_WRW2_vostok_excersices
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = put_unit_buffers
+		ratio = 0.4
+		states = {
+			567
+			566
+			565
+			564
+			890
+			759
+			563
+		}
+	}
+}
+MAR_volga_74 = {
+	allowed = {
+		tag = RUS
+	}
+	enable = {
+		date > 1973.3.01
+		date < 1973.6.01
+		has_decision = TaS_WRW2_volga_excersices
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = put_unit_buffers
+		ratio = 0.4
+		states = {
+			252
+			256
+			250
+			251
+			755
+		}
+	}
+}
 GER_war_strat = {
 	allowed = {
 		OR = {

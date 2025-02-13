@@ -372,12 +372,11 @@ on_actions = {
 					white_peace = ROOT
 				}
 				MAR = {
-					transfer_state = 722
 					transfer_state = 216
 					transfer_state = 215
-					transfer_state = 1724
 					transfer_state = 1359
 					transfer_state = 213
+					transfer_state = 1887
 				}
 				FIN = {
 					econ_join_sphere_MAR = yes
@@ -480,22 +479,15 @@ on_actions = {
 					white_peace = ROOT
 				}
 				RUS = {
-					transfer_state = 722
 					transfer_state = 216
 					transfer_state = 215
-					transfer_state = 1724
 					transfer_state = 1359
 					transfer_state = 213
+					transfer_state = 1887
 				}
 				FIN = {
 					leave_faction = yes
-				}
-				RFI = {
-					annex_country = {
-						target = FIN
-						transfer_troops = yes
-					} 
-					econ_join_sphere_MAR = yes
+					set_country_flag = oh_fuck_the_russians_are_coming
 				}
 				set_global_flag = skip_default_capitulation
 			}

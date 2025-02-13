@@ -1507,13 +1507,60 @@ country_event = { #Novgorod Theatry
 				transfer_state = 1887
 			}
 		}
+		if = {
+			limit = { 
+				MAR = { has_country_flag = MAR_Turkestan_German }
+				MTR = { exists = yes }
+			}
+			UTL = {
+				annex_country = {
+					target = MTR
+					transfer_troops = no
+				}
+			}
+		}
 		else = {
 			MCW = {
-				transfer_state = 213
-				transfer_state = 1359
-				transfer_state = 215
-				transfer_state = 216
-				transfer_state = 1887
+				if = {
+					limit = { RUS = { controls_state = 213 } }
+					transfer_state = 213
+					transfer_state = 1359
+					transfer_state = 215
+					transfer_state = 216
+					transfer_state = 1887
+					
+					add_state_core = 213
+					add_state_core = 1359
+					add_state_core = 215
+					add_state_core = 216
+					add_state_core = 1887
+				}
+				else_if = {
+					limit = { RUS = { controls_state = 215 } }
+					transfer_state = 1359
+					transfer_state = 215
+					transfer_state = 1887
+					
+					add_state_core = 1359
+					add_state_core = 215
+					add_state_core = 1887
+				}
+				else_if = {
+					limit = { RUS = { controls_state = 1887 } }
+					transfer_state = 1359
+					transfer_state = 1887
+					
+					add_state_core = 1359
+					add_state_core = 1887
+				}
+				else_if = {
+					limit = { RUS = { controls_state = 1359 } }
+					transfer_state = 1359
+					add_state_core = 1359
+				}
+				else = {
+					add_political_power = -10
+				}
 			}
 		}
 		ai_chance = { factor = 1 }
@@ -1565,7 +1612,18 @@ country_event = { #Novgorod Theatry
 					id = MAR_2WRW_world_news.12
 				}
 			}
+			SWRW_clear_war_stuff = yes
+			clr_country_flag = ROM_demands
+			clr_country_flag = ROM_refuse
+			clr_country_flag = HUN_demands
+			clr_country_flag = HUN_refuse
+			clr_country_flag = SER_demands
+			clr_country_flag = SER_refuse
+			clr_country_flag = BUL_demands
+			clr_country_flag = BUL_refuse
+			FIN = { clr_country_flag = oh_fuck_the_russians_are_coming }
 		}
+		TaS_WRW2_Peace_Yall = yes
 		add_political_power = -100
 		add_stability = -0.25
 	}
@@ -1769,18 +1827,8 @@ country_event = { #capital infightings continue demil zones on far east and kaza
 		ai_chance = { factor = 1 }
 		add_stability = -0.05
 		hidden_effect = {
-			if = {
-				limit = {
-					has_country_flag = MAR_has_turkestan
-				}
-				country_event = {
-					id = MAR_Collapse.7 days = 0
-				} 
-			}
-		}
-		hidden_effect = {
 			country_event ={
-				id = MAR_Collapse.6 days = 20
+				id = MAR_Collapse.6 days = 7
 			}
 		}
 	}
@@ -1797,65 +1845,48 @@ country_event = { #rip sphere 1
 		name = MAR_Collapse.6.a
 		ai_chance = { factor = 1 }
 		add_stability = -0.05
-		YEM = {
-			econ_leave_sphere = yes
-			econ_join_sphere_ITA = yes
+		if = {
+			limit = { YEM = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+			YEM = {
+				econ_leave_sphere = yes
+			}
 		}
-		OMA = {
-			econ_leave_sphere = yes
-			econ_join_sphere_ITA = yes
+		if = {
+			limit = { OMA = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+			OMA = {
+				econ_leave_sphere = yes
+			}
 		}
-		SDF = {
-			econ_leave_sphere = yes
-			econ_join_sphere_JAP = yes
+		if = {
+			limit = { SDF = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+			SDF = {
+				econ_leave_sphere = yes
+			}
 		}
-		AZD = {
-			econ_leave_sphere = yes
-			econ_join_sphere_JAP = yes
+		if = {
+			limit = { AZD = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+			AZD = {
+				econ_leave_sphere = yes
+			}
 		}									
-		AZA = {
-			econ_leave_sphere = yes
+		if = {
+			limit = { AZA = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+			AZA = {
+				econ_leave_sphere = yes
+			}
 		}
 		hidden_effect = {
 			country_event ={
-				id = MAR_Collapse.8 days = 3
-			}
-			MAR_install_mil_turkestan = yes
-			if = {
-				limit = {
-					RUS = { 
-						controls_state = 1885
-					}
-				}
-				MTR = {
-					transfer_state = 1885
-					transfer_state = 1471
-					transfer_state = 1470
-					transfer_state = 1465
-					transfer_state = 2186
-					transfer_state = 1884
-					transfer_state = 2461
-				}
-			}
-			else_if = {
-				limit = {
-					RUS = { 
-						controls_state = 1465
-					}
-				}
-				MTR = {
-					transfer_state = 1465
-				}
-			}
-			else = {
-			
+				id = MAR_Collapse.7 days = 7
 			}
 		}
 	}
 }
 country_event = { #Turkestan breaks free
 	id = MAR_Collapse.7  
-	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Collapse.7" }
+	immediate = { 
+		log = "[GetDateText]: [Root.GetName]: event MAR_Collapse.7"
+	}
 	title = MAR_Collapse.7.t
 	desc = MAR_Collapse.7.d
 	picture = GFX_report_event_collapse7
@@ -1872,6 +1903,39 @@ country_event = { #Turkestan breaks free
 				}
 				set_nationality = MTR
 			} 
+		}
+		if = {
+			limit = { has_country_flag = MAR_has_turkestan }
+			MAR_install_mil_turkestan = yes
+			MTR = {
+				remove_ideas = MAR_economic_recovery
+				if = {
+					limit = { RUS = { controls_state = 1885 } }
+					transfer_state = 1885
+					transfer_state = 1465
+					transfer_state = 2461
+					
+					add_state_core = 1885
+					add_state_core = 1465
+					add_state_core = 2461
+				}
+				else_if = {
+					limit = { RUS = { controls_state = 1465 } }
+					transfer_state = 1465
+					add_state_core = 1465
+				}
+				if = {
+					limit = { RUS = { controls_state = 2125 } }
+					transfer_state = 2125
+				}
+			}
+		}
+		else = {
+			MTR = { 
+				transfer_state = 406
+				add_state_core = 406
+				set_cosmetic_tag = MTR_caspian
+			}
 		}
 		MTR = {
 			end_puppet = MAR
@@ -1902,6 +1966,11 @@ country_event = { #Turkestan breaks free
 				}
 			}
 		}
+		hidden_effect = {
+			country_event ={
+				id = MAR_Collapse.8 days = 11
+			}
+		}
 	}	
 }
 country_event = { #-kazakhstan
@@ -1928,6 +1997,7 @@ country_event = { #-kazakhstan
 		}
 		KZR = {
 			set_cosmetic_tag = PAV_MAR_collapse
+			set_country_flag = RUS_cancel_all_ideas
 			add_state_core = 587
 			transfer_state = 587
 			add_state_core = 402
@@ -1967,6 +2037,10 @@ country_event = { #-kazakhstan
 				election_frequency = 36
 				elections_allowed = no
 			}
+			add_popularity = {
+				ideology = paternalism
+				popularity = 0.45
+			}
 			add_country_leader_role = {
 				character = MAR_Vitaliy_Mukha 
 				promote_leader = yes
@@ -1993,8 +2067,12 @@ country_event = { #-kazakhstan
 		}
 		KAZ  = {
 			set_cosmetic_tag = NPL_MAR_collapse
-			add_state_core = 406
-			transfer_state = 406
+			set_country_flag = RUS_cancel_all_ideas
+			if = {
+				limit = { NOT = { MTR = { owns_state = 406 } } }
+				add_state_core = 406
+				transfer_state = 406
+			}
 			add_state_core = 407
 			transfer_state = 407
 			MAR_Wojciech_Jaruzelski = {
@@ -2008,6 +2086,10 @@ country_event = { #-kazakhstan
 				election_frequency = 36
 				elections_allowed = no
 			} 
+			add_popularity = {
+				ideology = paternalism
+				popularity = 0.45
+			}
 			add_country_leader_role = {
 				character = MAR_Wojciech_Jaruzelski
 				promote_leader = yes
@@ -2042,6 +2124,181 @@ country_event = { #-kazakhstan
 		hidden_effect = {
 			country_event ={
 				id = MAR_Collapse.9 days = 2
+			}
+			every_country = {
+				limit = {
+					OR = {
+						tag = KAZ
+						tag = KZR
+						tag = MTR
+					}
+				}				
+				division_template = {
+					name = "Pekhotnaya Diviziya"
+					priority = 2
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+					}
+					support = {
+						recon = { x = 0 y = 0 }
+						artillery = { x = 0 y = 1 }
+						logistics_company = { x = 0 y = 2 }
+					}
+				}
+				division_template = {
+					name = "Opolcheniye"
+					priority = 2
+					regiments = {
+						light_infantry = { x = 0 y = 0 }
+						light_infantry = { x = 0 y = 1 }
+						light_infantry = { x = 0 y = 2 }
+						light_infantry = { x = 1 y = 0 }
+						light_infantry = { x = 1 y = 1 }
+					}
+					support = {
+						recon = { x = 0 y = 0 }
+					}
+				}
+				division_template = {
+					name = "Motostrelkovaya Diviziya"
+					regiments = {
+						motorized = { x = 0 y = 0 }
+						motorized = { x = 0 y = 1 }
+						motorized = { x = 1 y = 0 }
+						motorized = { x = 1 y = 1 }
+						motorized = { x = 2 y = 0 }
+						motorized = { x = 2 y = 1 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+					}
+				}
+				division_template = {
+					name = "Bronetankovaya Diviviya"
+					priority = 2
+					regiments = {
+						MBT = { x = 0 y = 0 }
+						MBT = { x = 0 y = 1 }
+						MBT = { x = 1 y = 0}
+						MBT = { X = 1 y = 1}
+						APC = { x = 2 y = 0}
+						APC = { X = 2 y = 1}
+					}
+					support = {
+						maintenance_company = { x = 0 y = 0 }
+					}
+				}
+			}
+			MTR = {
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						owner = MTR
+						count = 3
+					}
+					create_unit = {
+						division = "division_template = \"Opolcheniye\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						owner = MTR
+						count = 1
+					}
+					create_unit = {
+						division = "division_template = \"Motostrelkovaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						owner = MTR
+						count = 4
+					}
+					create_unit = {
+						division = "division_template = \"Bronetankovaya Diviviya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						owner = MTR
+						count = 2
+					}
+				}
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						owner = MTR
+						count = 4
+					}
+					create_unit = {
+						division = "division_template = \"Opolcheniye\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						owner = MTR
+						count = 1
+					}
+					create_unit = {
+						division = "division_template = \"Motostrelkovaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						owner = MTR
+						count = 3
+					}
+					create_unit = {
+						division = "division_template = \"Bronetankovaya Diviviya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						owner = MTR
+						count = 1
+					}
+				}
+			}
+			KAZ = {
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						owner = KAZ
+						count = 2
+					}
+					create_unit = {
+						division = "division_template = \"Opolcheniye\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						owner = KAZ
+						count = 3
+					}
+					create_unit = {
+						division = "division_template = \"Motostrelkovaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						owner = KAZ
+						count = 2
+					}
+					create_unit = {
+						division = "division_template = \"Bronetankovaya Diviviya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						owner = KAZ
+						count = 1
+					}
+				}
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						owner = KAZ
+						count = 2
+					}
+					create_unit = {
+						division = "division_template = \"Opolcheniye\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						owner = KAZ
+						count = 5
+					}
+					create_unit = {
+						division = "division_template = \"Motostrelkovaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						owner = KAZ
+						count = 1
+					}
+				}
+			}
+			KZR = {
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						owner = KZR
+						count = 3
+					}
+					create_unit = {
+						division = "division_template = \"Opolcheniye\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						owner = KZR
+						count = 7
+					}
+					create_unit = {
+						division = "division_template = \"Motostrelkovaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						owner = KZR
+						count = 1
+					}
+				}
 			}
 		}
 	}
@@ -2126,18 +2383,9 @@ country_event = { #F sphere
 		ai_chance = { factor = 1 }
 		add_stability = -0.05
 		hidden_effect = {
-			EGQ = {
-			    econ_leave_sphere = yes
-			    econ_join_sphere_JAP = yes
-			}
-			KUR = {
-			    econ_leave_sphere = yes
-			}
-			IRC = {
-			    econ_leave_sphere = yes
-			}
-			MAR = {
-			    econ_leave_sphere = yes
+			every_country = {
+				limit = { check_variable = { ECON_SPHERE_LEADER = MAR } }
+				econ_leave_sphere = yes
 			}
 		}
 		hidden_effect = {
@@ -2160,15 +2408,18 @@ country_event = { #F iraq
 		ai_chance = { factor = 1 }
 		add_stability = -0.05
 		hidden_effect = {
-			 MAR_Iraq_Kurdistan_saddam = yes
-			 KUR = {
-				econ_leave_sphere = yes
-				end_puppet = MAR
-			 }
+			if = {
+				limit = { KUR = { is_subject_of = MAR } }
+				MAR_Iraq_Kurdistan_saddam = yes
+				KUR = {
+					econ_leave_sphere = yes
+					end_puppet = MAR
+				}
+			}
 		}
 		hidden_effect = {
 			country_event ={
-				id = MAR_Collapse.12 days = 0
+				id = MAR_Collapse.12 days = 5
 			}
 		}
 	}
@@ -2188,18 +2439,29 @@ country_event = { #F tuva and zeya
 		hidden_effect = {
 			MEN = {
 			    transfer_state = 329
-			    transfer_state = 654
+			    add_state_core = 329
+				every_owned_state = {
+					set_demilitarized_zone = no
+				}
+			}
+			JAP = {
+			    transfer_state = 809
+			    add_state_core = 809
+				every_owned_state = {
+					set_demilitarized_zone = no
+				}
 			}
 			every_other_country = {
 				limit = { controls_state = 801 }
 				transfer_state = 1364
 				transfer_state = 657
 				transfer_state = 1646
-				transfer_state = 1647
-				transfer_state = 1645
 				transfer_state = 409
 				transfer_state = 1644
 				transfer_state = 408
+				every_owned_state = {
+					set_demilitarized_zone = no
+				}
 				
 			}
 			hidden_effect = {
@@ -2212,6 +2474,30 @@ country_event = { #F tuva and zeya
 						}
 					}
 					MJP = {
+						division_template = {
+							name = "Infantry Division"
+							priority = 2
+							regiments = {
+								infantry = { x = 0 y = 0 }
+								infantry = { x = 0 y = 1 }
+								infantry = { x = 0 y = 2 }
+								infantry = { x = 1 y = 0 }
+								infantry = { x = 1 y = 1 }
+								infantry = { x = 1 y = 2 }
+							}
+							support = {
+								recon = { x = 0 y = 0 }
+								artillery = { x = 0 y = 1 }
+								logistics_company = { x = 0 y = 2 }
+							}
+						}
+						random_owned_controlled_state = {
+							create_unit = {
+								division = "division_template = \"Infantry Division\" start_experience_factor = 0.6 start_equipment_factor = 1"
+								owner = MJP
+								count = 12
+							}
+						}	
 						if = { 
 							limit = { PFF = { exists = yes } }
 							declare_war_on = {
@@ -2232,6 +2518,7 @@ country_event = { #F tuva and zeya
 								type = annex_everything
 							}
 						}
+						
 					}
 				}
 			}
@@ -2245,7 +2532,17 @@ country_event = { #F tuva and zeya
 }
 country_event = { #F dv 1
 	id = MAR_Collapse.13
-	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Collapse.13"}
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event MAR_Collapse.13"
+		hidden_effect = {
+			XYZ = {
+				MAR_Vladimir_Zhirinovsky = {
+					set_nationality = MAG
+				}
+			}
+		}
+	}
+		
 	title = MAR_Collapse.13.t
 	desc = MAR_Collapse.13.d
 	picture = GFX_report_event_collapse13
@@ -2255,11 +2552,6 @@ country_event = { #F dv 1
 		name = MAR_Collapse.13.a
 		ai_chance = { factor = 1 }
 		add_stability = -0.05
-		XYZ = {
-			MAR_Vladimir_Zhirinovsky = {
-				set_nationality = MAG
-			}
-		}
 		MAG = {
 			set_cosmetic_tag = MAG_MAR_collapse
 			add_state_core = 637
@@ -2286,13 +2578,13 @@ country_event = { #F dv 1
 			set_country_flag = RUS_cancel_all_ideas
 			econ_join_sphere_USA = yes 			
 			set_politics = {
-				ruling_party = liberalism
+				ruling_party = despotism
 				last_election = "1933.2.16"
 				election_frequency = 36
 				elections_allowed = no
 			}
 			add_popularity = {
-				ideology = liberalism
+				ideology = despotism
 				popularity = 0.45
 			}
 			load_focus_tree = ZZZ_blank_focus
@@ -2301,13 +2593,13 @@ country_event = { #F dv 1
 				promote_leader = yes
 				country_leader = {
 					desc = "POLITICS_ZHIRIK_COLLAPSE_DESC"
-					ideology = liberalism_liberal_radicalism_subtype
+					ideology = despotism_military_junta_subtype
 					expire = "1999.1.1"
 					traits = { }
 				}
 			}
 			set_party_name = {
-				ideology = liberalism
+				ideology = despotism
 				long_name = MAG_MAR_collapse_party_long
 				name = MAG_MAR_collapse_party
 			}
@@ -2371,10 +2663,10 @@ country_event = { #F dv 2
 				}
 			}				
 			set_politics = {
-				ruling_party = socialist
+				ruling_party = progressivism
 			}
 			add_popularity = {
-				ideology = socialist
+				ideology = progressivism
 				popularity = 0.65
 			}
 			add_country_leader_role = {
@@ -2382,13 +2674,13 @@ country_event = { #F dv 2
 				promote_leader = yes
 				country_leader = {
 					desc = "POLITICS_PECHURO_COLLAPSE_DESC"
-					ideology = socialist_subtype
+					ideology = progressivism_left_wing_populism_subtype
 					expire = "1999.1.1"
 					traits = { }
 				}
 			}
 			set_party_name = {
-				ideology = socialist
+				ideology = progressivism
 				long_name = BRY_MAR_collapse_party_long
 				name = BRY_MAR_collapse_party
 			}
@@ -2404,7 +2696,7 @@ country_event = { #F dv 2
 			}
 			set_variable = {
 				TNO_economy_type = token:Econ_Type_Corporatism
-				TNO_economy_subtype = token:Econ_Subtype_Colonial_Economy_Corporatism
+				TNO_economy_subtype = token:Econ_Subtype_Dirigisme
 			}
 		}
 		YAK = {
@@ -2415,36 +2707,36 @@ country_event = { #F dv 2
 			transfer_state = 644
 			add_state_core = 760
 			transfer_state = 760
-			set_politics = {
-				ruling_party = liberalism
-				last_election = "1933.2.16"
-				election_frequency = 36
-				elections_allowed = no
-			}
-			add_popularity = {
-				ideology = liberalism
-				popularity = 0.45
-			}
-			set_country_flag = RUS_cancel_all_ideas
 			MAG = {
 				YAK = { save_party_popularities = yes }
 				set_autonomy = {
 					target = YAK
 					autonomy_state = autonomy_military_government
 				}
-			}			
+			}	
+			set_politics = {
+				ruling_party = paternalism
+				last_election = "1933.2.16"
+				election_frequency = 36
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = paternalism
+				popularity = 0.45
+			}
+			set_country_flag = RUS_cancel_all_ideas		
 			add_country_leader_role = {
 				character = MAR_Mikhail_Nikolayev
 				promote_leader = yes
 				country_leader = {
 					desc = "POLITICS_NIKOLAYEV_COLLAPSE_DESC"
-					ideology = liberalism_national_liberal_subtype
+					ideology = paternalism_anocracy_subtype
 					expire = "1999.1.1"
 					traits = { }
 				}
 			}
 			set_party_name = {
-				ideology = liberalism
+				ideology = paternalism
 				long_name = YAK_MAR_collapse_party_long
 				name = YAK_MAR_collapse_party
 			}
@@ -2461,7 +2753,7 @@ country_event = { #F dv 2
 			}
 			set_variable = {
 				TNO_economy_type = token:Econ_Type_Corporatism
-				TNO_economy_subtype = token:Econ_Subtype_Colonial_Economy_Corporatism
+				TNO_economy_subtype = token:Econ_Subtype_Dirigisme
 			}
 
 		}
@@ -2529,19 +2821,24 @@ country_event = { #F sibir
 			transfer_state = 761
 			add_state_core = 575
 			transfer_state = 575	
+			add_state_core = 654
+			transfer_state = 654
+			every_owned_state = {
+				set_demilitarized_zone = no
+			}
 			set_politics = { 
-				ruling_party = despotism
+				ruling_party = ultranationalism
 				last_election = "1933.2.16"
 				election_frequency = 36
 				elections_allowed = no
 			}
 			MAR_Joseph_Beyrle = {
 				promote_character = {
-					ideology = despotism_mladorossi_autocracy_subtype
+					ideology = ultranationalism_reactionary_nationalism_subtype
 				}
 			}
 			add_popularity = {
-				ideology = despotism
+				ideology = ultranationalism
 				popularity = 0.45
 			}
 			load_focus_tree = ZZZ_blank_focus
@@ -2550,7 +2847,7 @@ country_event = { #F sibir
 				promote_leader = yes
 				country_leader = {
 					desc = "POLITICS_BEYRLE_COLLAPSE_DESC"
-					ideology = despotism_mladorossi_autocracy_subtype
+					ideology = ultranationalism_reactionary_nationalism_subtype
 					expire = "1999.1.1"
 					traits = { }
 				}
@@ -2561,7 +2858,7 @@ country_event = { #F sibir
 				}
 			}
 			set_party_name = {
-				ideology = despotism
+				ideology = ultranationalism	
 				long_name = NOV_MAR_collapse_party_long
 				name = NOV_MAR_collapse_party
 			}
@@ -2619,7 +2916,9 @@ country_event = { #F Ural
 			transfer_state = 653
 			transfer_state = 754
 			add_state_core = 754
-
+			every_owned_state = {
+				set_demilitarized_zone = no
+			}
 			set_politics = {
 				ruling_party = fascism
 				last_election = "1933.2.16"
@@ -2686,13 +2985,13 @@ country_event = { #F Ural
 				promote_leader = yes
 				country_leader = {
 					desc = "POLITICS_PRIMAKOV_COLLAPSE_DESC"
-					ideology = paternalism_anocracy_subtype
+					ideology = paternalism_oligarchy_subtype
 					expire = "1999.1.1"
 					traits = { }
 				}
 			}
 			MAR_Evgeny_Primakov = {
-				promote_character = paternalism_anocracy_subtype
+				promote_character = paternalism_oligarchy_subtype
 			}
 			set_party_name = {
 				ideology = paternalism
@@ -2702,6 +3001,9 @@ country_event = { #F Ural
 			set_variable = {
 				TNO_economy_type = token:Econ_Type_Capitalism
 				TNO_economy_subtype = token:Econ_Subtype_Corporate_Oligopoly
+			}
+			every_owned_state = {
+				set_demilitarized_zone = no
 			}
 		}
 		OMS = {
@@ -2713,6 +3015,157 @@ country_event = { #F Ural
 		hidden_effect = {
 			country_event ={
 				id = MAR_Collapse.17 days = 14
+			}
+			every_country = {
+				limit = {
+					OR = {
+						tag = TYM
+						tag = OMS
+						tag = MTR
+					}
+				}				
+				division_template = {
+					name = "Pekhotnaya Stelkovaya Diviziya"
+					priority = 2
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+					}
+					support = {
+						recon = { x = 0 y = 0 }
+						artillery = { x = 0 y = 1 }
+						logistics_company = { x = 0 y = 2 }
+					}
+				}
+				division_template = {
+					name = "Opolcheniye"
+					priority = 2
+					regiments = {
+						light_infantry = { x = 0 y = 0 }
+						light_infantry = { x = 0 y = 1 }
+						light_infantry = { x = 0 y = 2 }
+						light_infantry = { x = 1 y = 0 }
+						light_infantry = { x = 1 y = 1 }
+					}
+					support = {
+						recon = { x = 0 y = 0 }
+					}
+				}
+				division_template = {
+					name = "Motostrelkovaya Lechkaya Diviziya"
+					regiments = {
+						motorized = { x = 0 y = 0 }
+						motorized = { x = 0 y = 1 }
+						motorized = { x = 1 y = 0 }
+						motorized = { x = 1 y = 1 }
+						motorized = { x = 2 y = 0 }
+						motorized = { x = 2 y = 1 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+					}
+				}
+				division_template = {
+					name = "Bronetankovaya Lechkaya Diviviya"
+					priority = 2
+					regiments = {
+						MBT = { x = 0 y = 0 }
+						MBT = { x = 0 y = 1 }
+						MBT = { x = 1 y = 0}
+						MBT = { X = 1 y = 1}
+						APC = { x = 2 y = 0}
+						APC = { X = 2 y = 1}
+					}
+					support = {
+						maintenance_company = { x = 0 y = 0 }
+					}
+				}
+			}
+			OMS = {
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "division_template = \"Pekhotnaya Stelkovaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						owner = OMS
+						count = 4
+					}
+					create_unit = {
+						division = "division_template = \"Opolcheniye\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						owner = OMS
+						count = 1
+					}
+					create_unit = {
+						division = "division_template = \"Motostrelkovaya Lechkaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						owner = OMS
+						count = 3
+					}
+				}
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "division_template = \"Pekhotnaya Stelkovaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						owner = OMS
+						count = 3
+					}
+					create_unit = {
+						division = "division_template = \"Opolcheniye\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						owner = OMS
+						count = 2
+					}
+					create_unit = {
+						division = "division_template = \"Motostrelkovaya Lechkaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						owner = OMS
+						count = 2
+					}
+					create_unit = {
+						division = "division_template = \"Bronetankovaya Lechkaya Diviviya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						owner = OMS
+						count = 3
+					}
+				}
+			}
+			TYM = {
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "division_template = \"Pekhotnaya Stelkovaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						owner = TYM
+						count = 4
+					}
+					create_unit = {
+						division = "division_template = \"Opolcheniye\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						owner = TYM
+						count = 5
+					}
+					create_unit = {
+						division = "division_template = \"Motostrelkovaya Lechkaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						owner = TYM
+						count = 1
+					}
+				}
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "division_template = \"Pekhotnaya Stelkovaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						owner = TYM
+						count = 3
+					}
+					create_unit = {
+						division = "division_template = \"Opolcheniye\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						owner = TYM
+						count = 4
+					}
+					create_unit = {
+						division = "division_template = \"Motostrelkovaya Lechkaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						owner = TYM
+						count = 2
+					}
+					create_unit = {
+						division = "division_template = \"Bronetankovaya Lechkaya Diviviya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						owner = TYM
+						count = 1
+					}
+				}
 			}
 		}
 	}
@@ -2794,6 +3247,9 @@ country_event = { #Total f
 				TNO_economy_type = token:Econ_Type_Corporatism
 				TNO_economy_subtype = token:Econ_Subtype_Dirigisme
 			}
+			every_owned_state = {
+				set_demilitarized_zone = no
+			}
 		}
 		TAR = {
 			set_country_flag = RUS_cancel_all_ideas
@@ -2813,7 +3269,7 @@ country_event = { #Total f
 				promote_leader = yes
 				country_leader = {
 					desc = "POLITICS_SHAYMIEV_COLLAPSE_DESC"
-					ideology = paternalism_anocracy_subtype
+					ideology = paternalism_national_conservatism_subtype
 					expire = "1999.1.1"
 					traits = { }
 				}
@@ -2834,6 +3290,9 @@ country_event = { #Total f
 			set_variable = {
 				TNO_economy_type = token:Econ_Type_Corporatism
 				TNO_economy_subtype = token:Econ_Subtype_Dirigisme
+			}
+			every_owned_state = {
+				set_demilitarized_zone = no
 			}
 		}
 		MAR = {
@@ -2863,6 +3322,9 @@ country_event = { #Total f
 		TNO_Country_Closing_Screen_Show = yes
 		set_country_flag = MAR_Bad_Ending
 		set_global_flag = WRW2_russian_collapse
+		every_owned_state = {
+			set_demilitarized_zone = no
+		}
 		hidden_effect = {
 			every_country  = {
 				news_event = {
@@ -3110,41 +3572,51 @@ country_event = { #Kosygin - JP - Price
 				add_ideas = Sphere_Economic_Dependent
 			}
 			if = {
-				limit = { MTR = { exists = no } }
+				limit = { 
+					MTR = { exists = no }
+					has_country_flag = MAR_has_turkestan
+				}
 				MAR_install_mil_turkestan = yes
 				MAR_Turkestan_autonomy = yes
 			}
-			else = {
+			else_if = {
+				limit = { has_country_flag = MAR_has_turkestan }
 				MAR_Turkestan_autonomy = yes
 			}
-			RUS = { end_puppet = MTR }
-			MTR = {
-				drop_cosmetic_tag = yes
-				set_cosmetic_tag = MTR_JAP
-				econ_join_sphere_JAP = yes
-				add_ideas = Sphere_Fully_Dependent
-				if = {
-					limit = { RUS = { controls_state = 2125 } }
-					transfer_state = 2125
-				}
-				if = {
-					limit = { RUS = { controls_state = 1884 } }
-					transfer_state = 1885
-					transfer_state = 1471
-					transfer_state = 1470
-					transfer_state = 1465
-					transfer_state = 2186
-					transfer_state = 1884
-					transfer_state = 2461
-				}
-				else_if = {
-					limit = { RUS = { controls_state = 1465 } }
-					transfer_state = 1465
+			else = {
+				add_political_power = -25
+			}
+			if = {
+				limit = { MTR = { exists = yes } }
+				RUS = { end_puppet = MTR }
+				MTR = {
+					drop_cosmetic_tag = yes
+					set_cosmetic_tag = MTR_JAP
+					econ_join_sphere_JAP = yes
+					remove_ideas = MAR_economic_recovery
+					add_ideas = Sphere_Fully_Dependent
+					if = {
+						limit = { RUS = { controls_state = 2125 } }
+						transfer_state = 2125
+					}
+					if = {
+						limit = { RUS = { controls_state = 1885 } }
+						transfer_state = 1885
+						transfer_state = 1465
+						transfer_state = 2461
+					}
+					else_if = {
+						limit = { RUS = { controls_state = 1465 } }
+						transfer_state = 1465
+					}
 				}
 			}
 			JAP = {
 				add_to_faction = MKZ
-				add_to_faction = MTR
+				if = {
+					limit = { MTR = { exists = yes } }
+					add_to_faction = MTR
+				}
 			}	
 			country_event ={
 				id = MAR_Collapse.25 days = 21
@@ -3383,74 +3855,85 @@ country_event = { #Kosygin - MGB - King of the hill
 			MKZ = {
 				drop_cosmetic_tag = yes
 				set_cosmetic_tag = MKZ_JAP
+				econ_leave_sphere = yes
 				every_owned_state = {
 					add_core_of = MTR
 					remove_core_of = RUS
 					set_demilitarized_zone = no
 				}
+				set_variable = { TNO_economy_subtype = token:Econ_Subtype_Dirigisme }
 			}
 			if = {
-				limit = { MTR = { exists = no } }
+				limit = { 
+					MTR = { exists = no }
+					has_country_flag = MAR_has_turkestan
+				}
 				MAR_install_mil_turkestan = yes
 				MAR_Turkestan_autonomy = yes
 			}
-			else = {
+			else_if = {
+				limit = { has_country_flag = MAR_has_turkestan }
 				MAR_Turkestan_autonomy = yes
 			}
-			RUS = { end_puppet = MTR }
-			MTR = {
-				drop_cosmetic_tag = yes
-				set_cosmetic_tag = MTR_JAP
-				if = {
-					limit = { RUS = { controls_state = 2125 } }
-					transfer_state = 2125
-				}
-				if = {
-					limit = { RUS = { controls_state = 1884 } }
-					transfer_state = 1885
-					transfer_state = 1471
-					transfer_state = 1470
-					transfer_state = 1465
-					transfer_state = 2186
-					transfer_state = 1884
-					transfer_state = 2461
-				}
-				else_if = {
-					limit = { RUS = { controls_state = 1465 } }
-					transfer_state = 1465
-				}
-				every_owned_state = {
-					add_core_of = MTR
-					remove_core_of = RUS
-					set_demilitarized_zone = no
-				}
-				retire_country_leader = yes
-				add_country_leader_role = {
-					character = MTR_Ziyauddinkhan_Babakhan
-					promote_leader = yes
-					country_leader = {
-						desc = "MTR_Ziyauddinkhan_Babakhan_DESC"
-						expire = "1999.1.1"
-						ideology = conservatism_islamic_conservatism_subtype 
-						traits = {
-						}
-						id = -1
+			else = {
+				add_political_power = -25
+			}
+			if = {
+				limit = { MTR = { exists = yes } }
+				RUS = { end_puppet = MTR }
+				MTR = {
+					set_variable = { TNO_economy_subtype = token:Econ_Subtype_Corporate_Oligopoly }
+					drop_cosmetic_tag = yes
+					set_cosmetic_tag = MTR_JAP
+					remove_ideas = MAR_economic_recovery
+					econ_leave_sphere = yes
+					if = {
+						limit = { RUS = { controls_state = 2125 } }
+						transfer_state = 2125
 					}
-				}
-				set_politics = {
-					ruling_party = conservatism
-					last_election = "1933.2.16"
-					election_frequency = 36
-					elections_allowed = no
-				}
-				add_popularity = {
-					ideology = conservatism
-					popularity = 0.45
-				}
-				set_party_name = {
-					ideology = conservatism
-					long_name = MTR_collapse_party_long
-					name = MTR_collapse_party
+					if = {
+						limit = { RUS = { controls_state = 1885 } }
+						transfer_state = 1885
+						transfer_state = 1465
+						transfer_state = 2461
+					}
+					else_if = {
+						limit = { RUS = { controls_state = 1465 } }
+						transfer_state = 1465
+					}
+					every_owned_state = {
+						add_core_of = MTR
+						remove_core_of = RUS
+						set_demilitarized_zone = no
+					}
+					retire_country_leader = yes
+					add_country_leader_role = {
+						character = MTR_Ziyauddinkhan_Babakhan
+						promote_leader = yes
+						country_leader = {
+							desc = "MTR_Ziyauddinkhan_Babakhan_DESC"
+							expire = "1999.1.1"
+							ideology = conservatism_islamic_conservatism_subtype 
+							traits = {
+							}
+							id = -1
+						}
+					}
+					set_politics = {
+						ruling_party = conservatism
+						last_election = "1933.2.16"
+						election_frequency = 36
+						elections_allowed = no
+					}
+					add_popularity = {
+						ideology = conservatism
+						popularity = 0.45
+					}
+					set_party_name = {
+						ideology = conservatism
+						long_name = MTR_collapse_party_long
+						name = MTR_collapse_party
+					}
 				}
 			}
 			every_country = {
@@ -3494,7 +3977,7 @@ country_event = { #Kosygin - MGB - King of the hill
 				transfer_state = 577
 				transfer_state = 887
 				transfer_state = 569	
-				transfer_state = 624	
+				#transfer_state = 624	
 				transfer_state = 578
 				transfer_state = 570
 				transfer_state = 40
@@ -3646,15 +4129,15 @@ country_event = { #Kosygin - MGB - King of the hill
 					}
 				}
 				set_politics = {
-					ruling_party = liberalism
+					ruling_party = socialist
 					last_election = "1933.2.16"
 					election_frequency = 36
 					elections_allowed = no
 				}
 				set_popularities = {
 					national_socialism = 14
-					socialist = 24
-					liberalism = 41
+					socialist = 41
+					liberalism = 24
 					liberal_conservatism = 21
 				}
 				set_party_name = {
@@ -3737,18 +4220,20 @@ country_event = { #Kosygin - MGB - Japan goes to Siberia
 			}
 			RUS = {
 				transfer_state = 571
-				transfer_state = 570
-				transfer_state = 40
 				every_owned_state = {
 					add_core_of = RUS
 					remove_core_of = KRS
 				}
+				571 = { set_demilitarized_zone = yes }
 			}	
 			MAN = {
 				transfer_state = 806
 				transfer_state = 408
 				transfer_state = 1644
 				transfer_state = 409
+				transfer_state = 657
+				transfer_state = 1646
+				transfer_state = 1364
 				every_owned_state = {
 					add_core_of = MAN
 					remove_core_of = KRS
@@ -3788,9 +4273,6 @@ country_event = { #Kosygin - MGB - Japan goes to Siberia
 				transfer_state = 886
 				transfer_state = 563
 				transfer_state = 759
-				transfer_state = 1364
-				transfer_state = 657
-				transfer_state = 1646
 				every_owned_state = {
 					add_core_of = AMR
 					remove_core_of = KRS
@@ -3820,15 +4302,32 @@ country_event = { #Kosygin - MGB - Japan goes to Siberia
 						id = -1
 					}
 				}
-				set_politics = {
-					ruling_party = fascism
-					last_election = "1933.2.16"
-					election_frequency = 36
-					elections_allowed = no
+				if = {
+					limit = {
+						JAP = { has_government = conservatism }
+					}
+					set_politics = {
+						ruling_party = conservatism
+						last_election = "1933.2.16"
+						election_frequency = 36
+						elections_allowed = no
+					}
+					set_popularities = {
+						fascism = 44
+						conservatism = 56
+					}
 				}
-				set_popularities = {
-					fascism = 53
-					conservatism = 47
+				else = {
+					set_politics = {
+						ruling_party = fascism
+						last_election = "1933.2.16"
+						election_frequency = 36
+						elections_allowed = no
+					}
+					set_popularities = {
+						fascism = 54
+						conservatism = 46
+					}
 				}
 				set_party_name = {
 					ideology = fascism
@@ -3937,8 +4436,9 @@ country_event = { #Kosygin - MGB - Japan goes to Siberia
 				econ_join_sphere_JAP = yes 
 				set_variable = {
 					TNO_economy_type = token:Econ_Type_Corporatism
-					TNO_economy_subtype = token:Econ_Subtype_Colonial_Economy_Corporatism
+					TNO_economy_subtype = token:Econ_Subtype_Corporate_Oligopoly
 				}
+				set_country_flag = RUS_cancel_all_ideas		
 			}
 			JAP = {
 				add_to_faction = AMR
@@ -3953,7 +4453,7 @@ country_event = { #Kosygin - MGB - Japan goes to Siberia
 	}
 }
 
-country_event = { #Kosygin - MGB - Legion is back
+country_event = { #Kosygin - MGB - Islamist CA and Nationalist Kazakhstan
 	id = MAR_Collapse.33
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Collapse.33"}
 	title = MAR_Collapse.33.t
@@ -3967,35 +4467,73 @@ country_event = { #Kosygin - MGB - Legion is back
 		ai_chance = { factor = 1 }
 		add_political_power = -50
 		hidden_effect = {
-			MTR = {
+			MKZ = {
 				add_country_leader_role = {
 					character = MTR_Amirkhan_Tleumagambetov
 					promote_leader = yes
 					country_leader = {
 						desc = "MTR_Amirkhan_Tleumagambetov_DESC"
 						expire = "1999.1.1"
-						ideology = fascism_revolutionary_nationalism_subtype 
+						ideology = despotism_military_junta_subtype 
 						traits = {
 						}
 						id = -1
 					}
 				}
 				set_politics = {
-					ruling_party = fascism
+					ruling_party = despotism
 					last_election = "1933.2.16"
 					election_frequency = 36
 					elections_allowed = no
 				}
 				add_popularity = {
-					ideology = fascism
+					ideology = despotism
 					popularity = 0.45
 				}
 				set_party_name = {
-					ideology = fascism
+					ideology = despotism
 					long_name = MTR_collapse_legion_party_long
 					name = MTR_collapse_legion_party
 				}
 				set_cosmetic_tag = MTR_JAP_Legion
+			}
+			if = {
+				limit = { MTR = { exists = yes } }
+				TAJ = {
+					TAJ_Mawlawi_Hindustoni = {
+						set_nationality = MTR
+					}
+				}
+				MTR = {
+					add_country_leader_role = {
+						character = TAJ_Mawlawi_Hindustoni
+						promote_leader = yes
+						country_leader = {
+							desc = "TAJ_Mawlawi_Hindustoni_DESC"
+							expire = "1999.1.1"
+							ideology = national_socialism_clerical_fascism_subtype 
+							traits = {
+							}
+							id = -1
+						}
+					}
+					set_politics = {
+						ruling_party = national_socialism
+						last_election = "1933.2.16"
+						election_frequency = 36
+						elections_allowed = no
+					}
+					add_popularity = {
+						ideology = national_socialism
+						popularity = 0.45
+					}
+					set_party_name = {
+						ideology = national_socialism
+						long_name = MTR_collapse_party_long
+						name = MTR_collapse_party
+					}
+					set_cosmetic_tag = MTR_JAP_Islamist
+				}
 			}
 			country_event ={
 				id = MAR_Collapse.34 days = 21
@@ -4008,7 +4546,7 @@ country_event = { #Kosygin - MGB - Legion is back
 	}
 }
 
-country_event = { #Kosygin - MGB - Legion goes war with Kazakhstan
+country_event = { #Kosygin - MGB - CA war
 	id = MAR_Collapse.34
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Collapse.34"}
 	title = MAR_Collapse.34.t
@@ -4022,10 +4560,31 @@ country_event = { #Kosygin - MGB - Legion goes war with Kazakhstan
 		ai_chance = { factor = 1 }
 		add_political_power = -50
 		hidden_effect = {
-			MTR = {
-				declare_war_on = {
-					target = MKZ
-					type = annex_everything
+			if = {
+				limit = { MTR = { exists = yes } }
+				MTR = {
+					declare_war_on = {
+						target = MKZ
+						type = annex_everything
+					}
+				}
+				every_country = {
+					limit = { is_ai = no }
+					news_event = { id = TaS_RUSEpilogue_news.22 }
+				}
+			}
+			else_if = {
+				limit = { MAR = { has_country_flag = MAR_Turkestan_German } }
+				UTL = {
+					leave_faction = yes
+					declare_war_on = {
+						target = MKZ
+						type = annex_everything
+					}
+				}
+				every_country = {
+					limit = { is_ai = no }
+					news_event = { id = TaS_RUSEpilogue_news.23 }
 				}
 			}
 			every_country = {
@@ -4082,86 +4641,43 @@ country_event = { #Kosygin - MGB - Legion goes war with Kazakhstan
 			MKZ = {				
 				random_owned_controlled_state = {
 					create_unit = {
-						division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
+						division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
 						owner = MKZ
+						count = 4
 					}
 					create_unit = {
-						division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
+						division = "division_template = \"Opolcheniye\" start_experience_factor = 0.6 start_equipment_factor = 1"
 						owner = MKZ
+						count = 7
 					}
 					create_unit = {
-						division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
+						division = "division_template = \"Motostrelkovaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
 						owner = MKZ
-					}
-					create_unit = {
-						division = "division_template = \"Opolcheniye\" start_experience_factor = 0.3 start_equipment_factor = 0.8"
-						owner = MKZ
-					}
-					create_unit = {
-						division = "division_template = \"Opolcheniye\" start_experience_factor = 0.3 start_equipment_factor = 0.8"
-						owner = MKZ
-					}
-					create_unit = {
-						division = "division_template = \"Opolcheniye\" start_experience_factor = 0.3 start_equipment_factor = 0.8"
-						owner = MKZ
-					}
-					create_unit = {
-						division = "division_template = \"Opolcheniye\" start_experience_factor = 0.3 start_equipment_factor = 0.7"
-						owner = MKZ
-					}
-					create_unit = {
-						division = "division_template = \"Opolcheniye\" start_experience_factor = 0.3 start_equipment_factor = 0.7"
-						owner = MKZ
-					}
-					create_unit = {
-						division = "division_template = \"Motostrelkovaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 0.7"
-						owner = MKZ
-					}
-					create_unit = {
-						division = "division_template = \"Motostrelkovaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 0.7"
-						owner = MKZ
+						count = 3
 					}
 				}
 			}
-			MTR = {
-				random_owned_controlled_state = {
-					create_unit = {
-						division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
-						owner = MTR
-					}
-					create_unit = {
-						division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
-						owner = MTR
-					}
-					create_unit = {
-						division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
-						owner = MTR
-					}
-					create_unit = {
-						division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.3 start_equipment_factor = 0.8"
-						owner = MTR
-					}
-					create_unit = {
-						division = "division_template = \"Opolcheniye\" start_experience_factor = 0.3 start_equipment_factor = 0.8"
-						owner = MTR
-					}
-					create_unit = {
-						division = "division_template = \"Opolcheniye\" start_experience_factor = 0.3 start_equipment_factor = 0.8"
-						owner = MTR
-					}
-					create_unit = {
-						division = "division_template = \"Opolcheniye\" start_experience_factor = 0.3 start_equipment_factor = 0.7"
-						owner = MTR
-					}
-					create_unit = {
-						division = "division_template = \"Motostrelkovaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 0.7"
-						owner = MTR
+			if = {
+				limit = { MTR = { exists = yes } }
+				MTR = {
+					random_owned_controlled_state = {
+						create_unit = {
+							division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+							owner = MTR
+							count = 5
+						}
+						create_unit = {
+							division = "division_template = \"Opolcheniye\" start_experience_factor = 0.6 start_equipment_factor = 1"
+							owner = MKZ
+							count = 6
+						}
+						create_unit = {
+							division = "division_template = \"Motostrelkovaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+							owner = MKZ
+							count = 4
+						}
 					}
 				}
-			}
-			every_country = {
-				limit = { is_ai = no }
-				news_event = { id = TaS_RUSEpilogue_news.22 }
 			}
 		}
 	}
@@ -4439,7 +4955,7 @@ news_event = { #Japan takes over the F-E
 	}
 }
 
-news_event = { #CA War
+news_event = { #CA revolutions
 	id = TaS_RUSEpilogue_news.21
 	title = TaS_RUSEpilogue_news.21.t
 	desc = TaS_RUSEpilogue_news.21.d
@@ -4452,7 +4968,7 @@ news_event = { #CA War
 	}
 }
 
-news_event = { #Legion is back in CA
+news_event = { #CA War MTR vs MKZ
 	id = TaS_RUSEpilogue_news.22
 	title = TaS_RUSEpilogue_news.22.t
 	desc = TaS_RUSEpilogue_news.22.d
@@ -4462,6 +4978,19 @@ news_event = { #Legion is back in CA
 	
 	option = {
 		name = TaS_RUSEpilogue_news.22.a
+	}
+}
+
+news_event = { #CA War UTL vs MKZ
+	id = TaS_RUSEpilogue_news.23
+	title = TaS_RUSEpilogue_news.23.t
+	desc = TaS_RUSEpilogue_news.23.d
+	picture = GFX_TaS_RUSEpilogue_news_022
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = TaS_RUSEpilogue_news.23.a
 	}
 }
 
@@ -5358,6 +5887,12 @@ country_event = {#General - Pakt collapses
 			}
 			if = {
 				limit = { NOR = { is_in_faction_with = GER } }
+				if = {
+					limit = { NOR = { is_subject_of = GER } }
+					GER = {
+						end_puppet = GER
+					}
+				}
 				NOR = {
 					remove_faction_status = yes
 					leave_faction = yes

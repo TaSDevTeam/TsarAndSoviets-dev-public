@@ -1044,6 +1044,10 @@ TaS_WRW2_Peace_Yall = {
 	custom_effect_tooltip = TaS_WRW2_Peace_Yall_tt
 	hidden_effect = {
 		if = {
+			limit = { FIN = { has_country_flag = oh_fuck_the_russians_are_coming } }
+			SWRW_finland_peacedeal = yes
+		}
+		if = {
 			limit = { has_country_flag = BUL_refuse }
 			BUL = { leave_faction = yes }
 			declare_war_on = {

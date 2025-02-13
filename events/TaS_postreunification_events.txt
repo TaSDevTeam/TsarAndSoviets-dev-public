@@ -1437,8 +1437,6 @@ country_event = { #Technical stuff no loc
 				}
 			}
 		}
-		CHI = { end_puppet = MEN }
-		MEN = { leave_faction = yes }
 		hidden_effect = {
 			every_country  = {
 				news_event = {
@@ -1631,6 +1629,7 @@ country_event = { #Technical stuff no loc
 			econ_join_sphere_JAP = yes
 			add_ideas = Sphere_Imp_Protectorate
 			add_ideas = MAN_Kwantung_Army
+			remove_ideas = MAN_civil_war
 			every_owned_state = {
 				MJP = {
 					add_state_core = PREV
@@ -2859,6 +2858,15 @@ country_event = { #Offer status quo
 				}
 			}
 			SWRW_clear_war_stuff = yes
+			clr_country_flag = ROM_demands
+			clr_country_flag = ROM_refuse
+			clr_country_flag = HUN_demands
+			clr_country_flag = HUN_refuse
+			clr_country_flag = SER_demands
+			clr_country_flag = SER_refuse
+			clr_country_flag = BUL_demands
+			clr_country_flag = BUL_refuse
+			FIN = { clr_country_flag = oh_fuck_the_russians_are_coming }
 		}
 		TaS_WRW2_Peace_Yall = yes
 	}

@@ -39,9 +39,12 @@ GER_SWRW_category = {
     	}
   	}
 	SWRW_activate_defensive_plan_spb = {
-		icon = GFX_nevsky
+		icon = GFX_jungingen
 		visible = {
-			check_variable = { WRW_deccat = 1 }
+			OR = {
+				is_ai = yes
+				check_variable = { WRW_deccat = 1 }
+			}
 			check_variable = { TaS_swrw_stage = 2 }
 		}
 		available = {
@@ -51,14 +54,14 @@ GER_SWRW_category = {
 		allowed = {
 			tag = GER
 		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
+		custom_cost_trigger = { command_power > 9.99 }
+		custom_cost_text = decision_cost_10_cp
 		fire_only_once = yes
 		days_remove = 14
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision SWRW_activate_defensive_plan_spb "
 			hidden_effect = {
-				add_command_power = -20
+				add_command_power = -10
 			}
 		}
 		remove_effect = {
@@ -111,9 +114,12 @@ GER_SWRW_category = {
 		}
 	}
 	SWRW_activate_defensive_plan_msk = {
-		icon = GFX_pozharskiy_minin
+		icon = GFX_hohenzollern
 		visible = {
-			check_variable = { WRW_deccat = 1 }
+			OR = {
+				is_ai = yes
+				check_variable = { WRW_deccat = 1 }
+			}
 			check_variable = { TaS_swrw_stage = 2 }
 		}
 		available = {
@@ -123,14 +129,14 @@ GER_SWRW_category = {
 		allowed = {
 			tag = GER
 		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
+		custom_cost_trigger = { command_power > 9.99 }
+		custom_cost_text = decision_cost_10_cp
 		fire_only_once = yes
 		days_remove = 14
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision SWRW_activate_defensive_plan_msk "
 			hidden_effect = {
-				add_command_power = -20
+				add_command_power = -10
 			}
 		}
 		remove_effect = {
@@ -186,9 +192,12 @@ GER_SWRW_category = {
 		}
 	}
 	SWRW_activate_defensive_plan_volga = {
-		icon = GFX_donskoy
+		icon = GFX_germanarih
 		visible = {
-			check_variable = { WRW_deccat = 1 }
+			OR = {
+				is_ai = yes
+				check_variable = { WRW_deccat = 1 }
+			}
 			check_variable = { TaS_swrw_stage = 2 }
 		}
 		available = {
@@ -198,14 +207,14 @@ GER_SWRW_category = {
 		allowed = {
 			tag = GER
 		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
+		custom_cost_trigger = { command_power > 9.99 }
+		custom_cost_text = decision_cost_10_cp
 		fire_only_once = yes
 		days_remove = 14
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision SWRW_activate_defensive_plan_volga"
 			hidden_effect = {
-				add_command_power = -20
+				add_command_power = -10
 			}
 		}
 		remove_effect = {
@@ -261,9 +270,12 @@ GER_SWRW_category = {
 		}
 	}
 	SWRW_activate_offensive_plan_arkhangelsk = {
-		icon = GFX_svyatoslav
+		icon = GFX_barbarossa
 		visible = {
-			check_variable = { WRW_deccat = 1 }
+			OR = {
+				is_ai = yes
+				check_variable = { WRW_deccat = 1 }
+			}
 			check_variable = { TaS_swrw_stage = 2 }
 		}
 		available = {
@@ -273,14 +285,14 @@ GER_SWRW_category = {
 		allowed = {
 			tag = GER
 		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
+		custom_cost_trigger = { command_power > 9.99 }
+		custom_cost_text = decision_cost_10_cp
 		fire_only_once = yes
 		days_remove = 14
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision SWRW_activate_offensive_plan_arkhangelsk "
 			hidden_effect = {
-				add_command_power = -20
+				add_command_power = -10
 			}
 		}
 		remove_effect = {
@@ -336,9 +348,12 @@ GER_SWRW_category = {
 		}
 	}
 	SWRW_activate_offensive_plan_kazan = {
-		icon = GFX_grozny
+		icon = GFX_atilla
 		visible = {
-			check_variable = { WRW_deccat = 1 }
+			OR = {
+				is_ai = yes
+				check_variable = { WRW_deccat = 1 }
+			}
 			check_variable = { TaS_swrw_stage = 2 }
 		}
 		available = {
@@ -348,14 +363,14 @@ GER_SWRW_category = {
 		allowed = {
 			tag = GER
 		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
+		custom_cost_trigger = { command_power > 9.99 }
+		custom_cost_text = decision_cost_10_cp
 		fire_only_once = yes
 		days_remove = 14
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision SWRW_activate_offensive_plan_kazan "
 			hidden_effect = {
-				add_command_power = -20
+				add_command_power = -10
 			}
 		}
 		remove_effect = {
@@ -413,7 +428,10 @@ GER_SWRW_category = {
 	SWRW_raid_western_russia = {
 		icon = GFX_decision_generic_bombing
 		visible = {
-			check_variable = { WRW_deccat = 1 }
+			OR = {
+				is_ai = yes
+				check_variable = { WRW_deccat = 1 }
+			}
 			check_variable = { TaS_swrw_stage = 2 }
 			tag = GER 
 		}
@@ -427,16 +445,16 @@ GER_SWRW_category = {
 			}
 		}
 		custom_cost_trigger = {
-			has_political_power > 49.99
-			command_power > 24.99
+			has_political_power > 39.99
+			command_power > 4.99
 		}
-		custom_cost_text = decision_cost_25_cp_50_pp
+		custom_cost_text =  decision_cost_5_cp_40_pp
 		days_remove = 7
 		days_re_enable = 180
 		complete_effect = {
 			hidden_effect = {
-				add_command_power = -25
-				add_political_power = -50
+				add_command_power = -5
+				add_political_power = -40
 			}
 		}
 		remove_effect = {
@@ -663,11 +681,17 @@ GER_SWRW_category = {
 				}
 			}
 		}
+		ai_will_do = {
+			factor = 1
+		}
 	}
 	SWRW_activate_rebellion_central_asia = {
 		icon = GFX_decision_generic_assault
 		visible = {
-			check_variable = { WRW_deccat = 1 }
+			OR = {
+				is_ai = yes
+				check_variable = { WRW_deccat = 1 }
+			}
 			check_variable = { TaS_swrw_stage = 2 }
 			UTL = { exists = no }
 			OR = { 
@@ -679,16 +703,16 @@ GER_SWRW_category = {
 			has_war = yes
 		}
 		custom_cost_trigger = {
-			has_political_power > 25.99
-			command_power > 24.99
+			has_political_power > 39.99
+			command_power > 4.99
 		}
-		custom_cost_text = decision_cost_25_cp_25_pp
+		custom_cost_text =  decision_cost_5_cp_40_pp
 		days_remove = 14
 		fire_only_once = yes
 		complete_effect = {
 			hidden_effect = {
-				add_command_power = -25
-				add_political_power = -25
+				add_command_power = -5
+				add_political_power = -40
 			}
 		}
 		on_map_mode = map_and_decisions_view
@@ -699,7 +723,10 @@ GER_SWRW_category = {
 		}
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision SWRW_activate_rebellion_central_asia"
-			SWRW_start_rebellion_POV = yes
+			load_oob = UTL_SWRW
+		}
+		ai_will_do = {
+			factor = 1
 		}
 	}
 	### Homo front
@@ -709,7 +736,10 @@ GER_SWRW_category = {
 		cost = 50
 		visible = {
 			tag = GER
-			check_variable = { WRW_deccat = 2 }
+			OR = {
+				is_ai = yes
+				check_variable = { WRW_deccat = 2 }
+			}
 			check_variable = { TaS_swrw_stage = 2 }
 		}
 		cost = 50
@@ -726,6 +756,9 @@ GER_SWRW_category = {
 			set_temp_variable = { temp_devastation_gained = -1.5 }
 			TaS_WRW2_change_devastation = yes
 		}
+		ai_will_do = {
+			factor = 1
+		}
 	}
 	SWRW_GER_raise_war_taxes = {
 		priority = 70
@@ -733,7 +766,10 @@ GER_SWRW_category = {
 		cost = 50
 		visible = {
 			tag = GER
-			check_variable = { WRW_deccat = 2 }
+			OR = {
+				is_ai = yes
+				check_variable = { WRW_deccat = 2 }
+			}
 			check_variable = { TaS_swrw_stage = 2 }
 		}
 		modifier = {
@@ -743,6 +779,9 @@ GER_SWRW_category = {
 		}
 		days_remove = 240
 		days_re_enable = 120
+		ai_will_do = {
+			factor = 1
+		}
 	}
 	SWRW_GER_lease_private_arms_companies = {
 		priority = 70
@@ -750,7 +789,10 @@ GER_SWRW_category = {
 		cost = 50
 		visible = {
 			tag = GER
-			check_variable = { WRW_deccat = 2 }
+			OR = {
+				is_ai = yes
+				check_variable = { WRW_deccat = 2 }
+			}
 			check_variable = { TaS_swrw_stage = 2 }
 		}
 		complete_effect = {
@@ -762,13 +804,19 @@ GER_SWRW_category = {
 		}
 		days_remove = 180
 		days_re_enable = 60
+		ai_will_do = {
+			factor = 1
+		}
 	}
 	SWRW_GER_expand_war_orders = {
 		priority = 70
 		icon = GFX_decision_generic_supply
 		visible = {
 			tag = GER
-			check_variable = { WRW_deccat = 2 }
+			OR = {
+				is_ai = yes
+				check_variable = { WRW_deccat = 2 }
+			}
 			check_variable = { TaS_swrw_stage = 2 }
 		}
 		available = {
@@ -833,6 +881,9 @@ GER_SWRW_category = {
 					}
 				}
 		}
+		ai_will_do = {
+			factor = 1
+		}
 	}
 	SWRW_GER_war_bonds = {
 		priority = 60
@@ -852,6 +903,9 @@ GER_SWRW_category = {
 			set_temp_variable = { inflation_temp = 1.2 }
 			econ_inflation_change = yes
 		}
+		ai_will_do = {
+			factor = 1
+		}
 	}
 	SWRW_GER_general_staff_meeting = {
 		priority = 60
@@ -859,7 +913,10 @@ GER_SWRW_category = {
 		cost = 75
 		visible = {
 			tag = GER
-			check_variable = { WRW_deccat = 2 }
+			OR = {
+				is_ai = yes
+				check_variable = { WRW_deccat = 2 }
+			}
 			check_variable = { TaS_swrw_stage = 2 }
 		}
 		days_remove = 14
@@ -873,7 +930,10 @@ GER_SWRW_category = {
 		icon = GFX_decision_generic_building_prisons
 		visible = {
 			tag = GER
-			check_variable = { WRW_deccat = 2 }
+			OR = {
+				is_ai = yes
+				check_variable = { WRW_deccat = 2 }
+			}
 			check_variable = { TaS_swrw_stage = 2 }
 		}
 		available = {
@@ -916,14 +976,20 @@ GER_SWRW_category = {
 				}
 			}
 		}
+		ai_will_do = {
+			factor = 1
+		}
 	}
 	##Diplomacy
 	TaS_WRW2_offer_status_quo = {
 		icon = GFX_decision_generic_military_parade
 		visible = {
 			tag = GER
-			check_variable = { WRW_deccat = 3 }
 			check_variable = { TaS_swrw_stage = 2 }
+			OR = {
+				is_ai = yes
+				check_variable = { WRW_deccat = 3 }
+			}
 		}
 		available = {
 			OR = {
@@ -949,15 +1015,11 @@ GER_SWRW_category = {
 				}
 			}
 		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
+		cost = 50
 		fire_only_once = yes
 		days_remove = 14
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision 	TaS_WRW2_offer_status_quo"
-			hidden_effect = {
-				add_command_power = -20
-			}
 		}
 		remove_effect = {
 			MAR = {
@@ -979,7 +1041,10 @@ GER_SWRW_category = {
 		icon = GFX_decision_generic_military_parade
 		visible = {
 			tag = GER
-			check_variable = { WRW_deccat = 3 }
+			OR = {
+				is_ai = yes
+				check_variable = { WRW_deccat = 3 }
+			}
 			check_variable = { TaS_swrw_stage = 2 }
 		}
 		available = {
@@ -1004,15 +1069,11 @@ GER_SWRW_category = {
 				}
 			}
 		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
+		cost = 50
 		fire_only_once = yes
 		days_remove = 14
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision 	TaS_WRW2_offer_muscowy"
-			hidden_effect = {
-				add_command_power = -20
-			}
 		}
 		remove_effect = {
 			MAR = {
@@ -1034,7 +1095,10 @@ GER_SWRW_category = {
 		icon = GFX_decision_generic_military_parade
 		visible = {
 			tag = GER
-			check_variable = { WRW_deccat = 3 }
+			OR = {
+				is_ai = yes
+				check_variable = { WRW_deccat = 3 }
+			}
 			check_variable = { TaS_swrw_stage = 2 }
 		}
 		available = {
@@ -1056,15 +1120,11 @@ GER_SWRW_category = {
 			}
 		}
 		
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
+		cost = 50
 		fire_only_once = yes
 		days_remove = 14
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision 	TaS_WRW2_offer_muscowy"
-			hidden_effect = {
-				add_command_power = -20
-			}
 		}
 		remove_effect = {
 			MAR = {
@@ -1086,7 +1146,10 @@ GER_SWRW_category = {
 		icon = GFX_decision_generic_military_parade
 		visible = {
 			tag = GER
-			check_variable = { WRW_deccat = 3 }
+			OR = {
+				is_ai = yes
+				check_variable = { WRW_deccat = 3 }
+			}
 			check_variable = { TaS_swrw_stage = 2 }
 		}
 		available = {
@@ -1117,15 +1180,11 @@ GER_SWRW_category = {
 				}
 			}
 		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
+		cost = 50
 		fire_only_once = yes
 		days_remove = 14
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision 	TaS_WRW2_offer_muscowy"
-			hidden_effect = {
-				add_command_power = -20
-			}
 		}
 		remove_effect = {
 			MAR = {
@@ -1147,7 +1206,10 @@ GER_SWRW_category = {
 		icon = GFX_decision_generic_military_parade
 		visible = {
 			tag = GER
-			check_variable = { WRW_deccat = 3 }
+			OR = {
+				is_ai = yes
+				check_variable = { WRW_deccat = 3 }
+			}
 			check_variable = { TaS_swrw_stage = 2 }
 		}
 		available = {
@@ -1167,15 +1229,11 @@ GER_SWRW_category = {
 				}
 			}
 		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
+		cost = 50
 		fire_only_once = yes
 		days_remove = 14
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision 	TaS_WRW2_offer_status_quo"
-			hidden_effect = {
-				add_command_power = -20
-			}
 		}
 		remove_effect = {
 			MAR = {
@@ -1197,7 +1255,10 @@ GER_SWRW_category = {
 		icon = GFX_decision_generic_military_parade
 		visible = {
 			tag = GER
-			check_variable = { WRW_deccat = 3 }
+			OR = {
+				is_ai = yes
+				check_variable = { WRW_deccat = 3 }
+			}
 			check_variable = { TaS_swrw_stage = 2 }
 		}
 		available = {
@@ -1214,15 +1275,11 @@ GER_SWRW_category = {
 				}
 			}
 		}
-		custom_cost_trigger = { command_power > 19.99 }
-		custom_cost_text = decision_cost_20_cp
+		cost = 50
 		fire_only_once = yes
 		days_remove = 14
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision 	TaS_WRW2_offer_status_quo"
-			hidden_effect = {
-				add_command_power = -20
-			}
 		}
 		remove_effect = {
 			MAR = {
@@ -1245,7 +1302,10 @@ GER_SWRW_category = {
 		cost = 50
 		visible = {
 			tag = GER
-			check_variable = { WRW_deccat = 3 }
+			OR = {
+				is_ai = yes
+				check_variable = { WRW_deccat = 3 }
+			}
 			check_variable = { TaS_swrw_stage = 2 }
 		}
 		days_remove = 28

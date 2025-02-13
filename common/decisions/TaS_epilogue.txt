@@ -742,7 +742,7 @@ TaS_WRW2_RUS_post_collapse = {
 			factor = 200
 		}
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision west_german_reunification"
+			log = "[GetDateText]: [Root.GetName]: Decision TaS_russian_re_reunification"
 			set_global_flag = RUS_re_reunification
 			add_research_slot = 1
 			custom_effect_tooltip = GER_unification_tt
