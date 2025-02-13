@@ -1118,15 +1118,10 @@ country_event = { #congo cw
 	immediate = {log = "[GetDateText]: [Root.GetName]: MAR_forpol.5"}
 	title = MAR_forpol.5.t
 	desc = MAR_forpol.5.d
-	trigger = {
-		tag = MAR
-		has_global_flag = CONGO_PW_HAPPENING
-		has_country_flag = MAR_started_volunteer_sending
-	}
-	mean_time_to_happen = {
-		days = 2 
-	}
+	
 	fire_only_once = yes
+	is_triggered_only = yes
+	
 	picture = GFX_MAR_forpol_5
 	option = { #yes
 		name = MAR_forpol.5.a

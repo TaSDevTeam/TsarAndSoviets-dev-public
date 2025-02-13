@@ -1766,6 +1766,9 @@ SWRW_turkey_peacedeal = {
 		transfer_state = 347
 		transfer_state = 340
 		transfer_state = 345
+		MTU_Military_Administration = {
+			promote_character = yes
+		}
 		set_party_name = {
 			ideology = despotism
 			long_name = GRM_MIL_despotism_party_long
@@ -1881,6 +1884,9 @@ SWRW_finland_peacedeal = {
 			set_cosmetic_tag = FIN_MIL
 		}
 		econ_join_sphere_MAR = yes
+		remove_ideas = FIN_An_Unsatisfactory_Answer
+		remove_ideas = FIN_Second_Crisis_Of_Democracy
+		remove_ideas = FIN_The_Growth_Regime
 	} 
 	FIN = {
 		get_current_government_type = yes

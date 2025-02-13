@@ -1795,6 +1795,60 @@ on_actions = {
 				}
 				set_global_flag = skip_default_capitulation
 			}
+			else_if = {##Belozersky collapse: MTR vs KAZ
+				limit = {
+					FROM = {
+						original_tag = MTR
+					}
+					ROOT = { 
+						original_tag = KAZ
+					}
+				}
+				FROM = {
+					annex_country = {
+						target = ROOT
+						transfer_troops = no
+					}
+					if = {
+						limit = { UTL = { exists = no }	}
+						declare_war_on = {
+							target = RKZ
+							type = annex_everything
+						} 
+					}
+					else = {
+						UTL = {
+							leave_faction = yes
+							declare_war_on = {
+								target = RKZ
+								type = annex_everything
+							} 
+						}
+					}
+				}
+				set_global_flag = skip_default_capitulation
+			}
+			else_if = { ##RUS collapse: UTL vs Kazakhstan
+				limit = {
+					FROM = {
+						original_tag = UTL
+					}
+					ROOT = { 
+						OR = {
+							original_tag = MKZ
+							original_tag = MTR
+						}
+					}
+				}
+				FROM = {
+					annex_country = {
+						target = ROOT
+						transfer_troops = no
+					}
+					GER = { add_to_faction = UTL }
+				}
+				set_global_flag = skip_default_capitulation
+			}
 			#clr_global_flag = skip_default_capitulation
 		}
 	}

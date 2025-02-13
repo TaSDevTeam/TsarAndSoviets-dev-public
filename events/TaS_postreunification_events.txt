@@ -5340,27 +5340,115 @@ country_event = { #Finland
 	option = { #Satelite Finland
 		name = MAR_territorial_fate.11.a
 		ai_chance = { factor = 1 }
+		custom_effect_tooltip = MAR_freedom_for_everyone_tt
 		hidden_effect = {
 			XYZ = {
 				MFI_Urho_Kekkonen = {
 					set_nationality = FIN
 				}
-			}
+			}	
 			FIN = {
 				drop_cosmetic_tag = yes
-				#set
+				set_politics = {
+					ruling_party = conservatism
+				}
+				add_popularity = {
+					ideology = conservatism
+					popularity = 0.45
+				}
+				add_country_leader_role = {
+					character = MFI_Urho_Kekkonen
+					promote_leader = yes
+					country_leader = {
+						desc = "MFI_Urho_Kekkonen_DESC"
+						ideology = conservatism_agrarianism_subtype
+						expire = "1999.1.1"
+						traits = { }
+					}
+				}
+				promote_character = MFI_Urho_Kekkonen
+				set_party_name = {
+					ideology = conservatism
+					long_name = FIN_RUS_conservative_party_long
+					name = FIN_RUS_conservative_party
+				}
+				get_current_government_type = yes
+				save_party_popularities = yes
+				RUS = {
+					set_autonomy = {
+						target = FIN
+						autonomy_state = autonomy_satellite
+					}	
+				}	
+				restore_previous_government_type = yes
+				apply_party_popularities = yes
 			}
 		}
 	}
 	option = { #Velikoye Knyazestvo Finlyandskoye
 		name = MAR_territorial_fate.11.b
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = MAR_autonomy_create_tt
+		hidden_effect = {
+			MAR = {
+				MAR_Semen_Gitler = {
+					set_nationality = FIN
+				}
+			}	
+			FIN = {
+				drop_cosmetic_tag = yes
+				if = {
+					limit = { RUS = { has_government = socialist } }
+					set_cosmetic_tag = FIN_autonomy_Kosygin
+				}
+				else = {
+					set_cosmetic_tag = FIN_autonomy
+				}
+				set_politics = {
+					ruling_party = despotism
+				}
+				add_popularity = {
+					ideology = despotism
+					popularity = 0.25
+				}
+				add_country_leader_role = {
+					character = MAR_Semen_Gitler
+					promote_leader = yes
+					country_leader = {
+						desc = "MAR_Semen_Gitler_DESC"
+						ideology = despotism_colonial_government_subtype
+						expire = "1999.1.1"
+						traits = { }
+					}
+				}
+				set_party_name = {
+					ideology = despotism
+					long_name = FIN_POSTMIL_despotism_party_long
+					name = FIN_POSTMIL_despotism_party
+				}
+				get_current_government_type = yes
+				save_party_popularities = yes
+				RUS = {
+					set_autonomy = {
+						target = FIN
+						autonomy_state = autonomy_military_government
+					}	
+				}	
+				restore_previous_government_type = yes
+				apply_party_popularities = yes
+			}
+		}
 	}
 	option = { #A zachem nezavisimost
 		name = MAR_territorial_fate.11.c
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = MAR_annex_em_all_tt
+		hidden_effect = {
+			annex_country = {
+				target = FIN
+				transfer_troops = yes
+			}
+		}
 	}
 }
 
@@ -5375,24 +5463,153 @@ country_event = { #Turkish Straits
 	fire_only_once = yes
 	
 	option = { #Satelite Turkey
-		name = MAR_territorial_fate.11.a
+		name = MAR_territorial_fate.12.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = MAR_freedom_for_everyone_tt
+		hidden_effect = {
+			GRM = {
+				GRM_Ahmet_Isvan = {
+					set_nationality = TUR
+				}
+			}	
+			TUR = {
+				annex_country = {
+					target = GRM
+					transfer_troops = yes
+				}
+				drop_cosmetic_tag = yes
+				set_politics = {
+					ruling_party = paternalism
+				}
+				add_popularity = {
+					ideology = paternalism
+					popularity = 0.15
+				}
+				retire_country_leader = yes
+				promote_character = GRM_Ahmet_Isvan
+				add_country_leader_role = {
+					character = GRM_Ahmet_Isvan
+					promote_leader = yes
+					country_leader = {
+						desc = "GRM_Ahmet_Isvan_DESC"
+						ideology = paternalism_kemalism_subtype
+						expire = "1999.1.1"
+						traits = { }
+					}
+				}
+				get_current_government_type = yes
+				save_party_popularities = yes
+				RUS = {
+					set_autonomy = {
+						target = TUR
+						autonomy_state = autonomy_satellite
+					}	
+				}	
+				restore_previous_government_type = yes
+				apply_party_popularities = yes
+			}
+		}
 	}
 	option = { #Indepence
-		name = MAR_territorial_fate.11.b
+		name = MAR_territorial_fate.12.b
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = MAR_freedom_for_everyone_tt
+		hidden_effect = {
+			GRM = {
+				set_cosmetic_tag = GRM_Independence
+				set_politics = {
+					ruling_party = conservatism
+				}
+				add_popularity = {
+					ideology = conservatism
+					popularity = 0.45
+				}
+				add_country_leader_role = {
+					character = GRM_Ahmet_Isvan
+					promote_leader = yes
+					country_leader = {
+						desc = "GRM_Ahmet_Isvan_DESC"
+						ideology = conservatism_right_kemalism_subtype
+						expire = "1999.1.1"
+						traits = { }
+					}
+				}
+				get_current_government_type = yes
+				save_party_popularities = yes
+				RUS = {
+					set_autonomy = {
+						target = GRM
+						autonomy_state = autonomy_satellite
+					}	
+				}	
+				restore_previous_government_type = yes
+				apply_party_popularities = yes
+			}
+		}
 	}
 	option = { #Autonomy
-		name = MAR_territorial_fate.11.c
+		name = MAR_territorial_fate.12.c
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = MAR_autonomy_create_tt
+		hidden_effect = {
+			MAR = {
+				MAR_Timur_Frunze = {
+					set_nationality = GRM
+				}
+			}	
+			GRM = {
+				if = {
+					limit = { RUS = { has_government = socialist } }
+					set_cosmetic_tag = GRM_autonomy_Kosygin
+				}
+				else = {
+					set_cosmetic_tag = GRM_autonomy
+				}
+				set_politics = {
+					ruling_party = despotism
+				}
+				add_popularity = {
+					ideology = despotism
+					popularity = 0.25
+				}
+				add_country_leader_role = {
+					character = MAR_Timur_Frunze
+					promote_leader = yes
+					country_leader = {
+						desc = "MAR_Timur_Frunze_DESC"
+						ideology = despotism_colonial_government_subtype
+						expire = "1999.1.1"
+						traits = { }
+					}
+				}
+				set_party_name = {
+					ideology = despotism
+					long_name = GRM_POSTMIL_despotism_party_long
+					name = GRM_POSTMIL_despotism_party
+				}
+				get_current_government_type = yes
+				save_party_popularities = yes
+				RUS = {
+					set_autonomy = {
+						target = GRM
+						autonomy_state = autonomy_military_government
+					}	
+				}	
+				restore_previous_government_type = yes
+				apply_party_popularities = yes
+			}
+		}
 	}
 	option = { #Direct rule
-		name = MAR_territorial_fate.11.e
+		name = MAR_territorial_fate.12.e
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = MAR_annex_em_all_tt
+		hidden_effect = {
+			annex_country = {
+				target = GRM
+				transfer_troops = yes
+			}
+		}
 	}
 }
 
