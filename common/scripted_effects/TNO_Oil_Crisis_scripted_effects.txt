@@ -185,6 +185,10 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 					limit = { is_subject_of = SAU }
 					econ_join_sphere_MAR = yes
 				}
+				if = {
+					limit = { GUL = { has_government = despotism } } #Emirates
+					GUL = { econ_join_sphere_MAR = yes }
+				}
 				SAU = { econ_join_sphere_MAR = yes }
 			}
 		}
