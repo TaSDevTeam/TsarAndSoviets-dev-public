@@ -5867,8 +5867,11 @@ RUS_nuke_development_category_facelift = {
 	##
 	RUS_NEW_nukes_tick = {
     	available = {
-			NOT = {
-				MAR = { has_country_flag = RUS_started_nukes_new }
+			custom_trigger_tooltip = {
+				tooltip = MAR_nuclear_program_finished
+				NOT = {
+					MAR = { has_country_flag = RUS_started_nukes_new }
+				}
 			}
     	}
 	
