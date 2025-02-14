@@ -67,11 +67,12 @@ TaS_OIL_get_supported_factions = {
 	if = {
 		limit = { MAR = { NOT = { has_government = socialist } } }
 		add_to_array = { global.OIL_supported_by_MAR = YEM }
-		add_to_array = { global.OIL_supported_by_MAR = OMA }
+		add_to_array = { global.OIL_supported_by_MAR = OMI }
 		add_to_array = { global.OIL_supported_by_MAR = KUR }
 		add_to_array = { global.OIL_supported_by_MAR = EGQ }
 		add_to_array = { global.OIL_supported_by_MAR = SDF }
 		add_to_array = { global.OIL_supported_by_MAR = AZA }
+		add_to_array = { global.OIL_supported_by_MAR = SAU }
 	}
 	else = {
 		add_to_array = { global.OIL_supported_by_MAR = NYM }
@@ -1475,6 +1476,14 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			econ_join_sphere_MAR = yes
 			transfer_state = 5
 			transfer_state = 85
+			5 = { set_state_name = STATE_5_rus }
+			set_province_name = { id = 6332 name = VICTORY_POINTS_6332_rus }
+			set_province_name = { id = 6375 name = VICTORY_POINTS_6375_rus }
+			set_province_name = { id = 3288 name = VICTORY_POINTS_3288_rus }
+			set_province_name = { id = 348 name = VICTORY_POINTS_348_rus }
+			set_province_name = { id = 3384 name = VICTORY_POINTS_3384_rus }
+			set_province_name = { id = 6259 name = VICTORY_POINTS_6259_rus }
+			set_province_name = { id = 3254 name = VICTORY_POINTS_3254_rus }
 			TNO_startup_nation = yes
 			every_owned_state = {
 				PUS = {
@@ -1513,12 +1522,20 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			MBL = {
 				transfer_state = 97
 			}
+			97 = { set_state_name = STATE_97_rus }
+			set_province_name = { id = 11301 name = VICTORY_POINTS_11301_rus }
+			set_province_name = { id = 11329 name = VICTORY_POINTS_11329_rus }
+			set_province_name = { id = 15685 name = VICTORY_POINTS_15685_rus }
 		}
 		if = {
 			limit = { MBL = { exists = no } }
 			RUS = {
 				transfer_state = 97
 			}
+			97 = { set_state_name = STATE_97_rus }
+			set_province_name = { id = 11301 name = VICTORY_POINTS_11301_rus }
+			set_province_name = { id = 11329 name = VICTORY_POINTS_11329_rus }
+			set_province_name = { id = 15685 name = VICTORY_POINTS_15685_rus }
 		}
 		if = {
 			limit = {
@@ -1955,12 +1972,20 @@ TaS_WRW2_German_Collapse_Kosygin = {
 			MBL = {
 				transfer_state = 97
 			}
+			97 = { set_state_name = STATE_97_rus }
+			set_province_name = { id = 11301 name = VICTORY_POINTS_11301_rus }
+			set_province_name = { id = 11329 name = VICTORY_POINTS_11329_rus }
+			set_province_name = { id = 15685 name = VICTORY_POINTS_15685_rus }
 		}
 		if = {
 			limit = { MBL = { exists = no } }
 			RUS = {
 				transfer_state = 97
 			}
+			97 = { set_state_name = STATE_97_rus }
+			set_province_name = { id = 11301 name = VICTORY_POINTS_11301_rus }
+			set_province_name = { id = 11329 name = VICTORY_POINTS_11329_rus }
+			set_province_name = { id = 15685 name = VICTORY_POINTS_15685_rus }
 		}
 		RUS = {
 			transfer_state = 2098

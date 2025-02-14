@@ -173,6 +173,16 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 				limit = { GUL = { has_government = despotism } } #Emirates
 				GUL = { econ_leave_sphere = yes }
 			}
+			if = {
+				limit = {
+					check_variable = { MAR.MAR_OC_participation > 49 }
+					is_in_array = {
+						array = global.OIL_supported_by_MAR
+						value = SAU
+					}
+				}
+				SAU = { econ_join_sphere_MAR = yes }
+			}
 		}
 		else_if = { #Yemen won its civil war
 		 	limit = {
@@ -199,7 +209,21 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 		}
 
 		#Oman outcomes
-		if = { #Imamate
+		if = {
+			limit = { 
+				is_in_array = {
+					array = global.OIL_supported_by_MAR
+					value = OMI
+				}
+				OR = {
+					check_variable = { MAR.MAR_OC_participation > 19 }
+					check_variable = { MAR.MAR_OC_participation > JAP.JAP_OC_participation }
+					check_variable = { MAR.MAR_OC_participation = JAP.JAP_OC_participation }
+				}
+			}
+			OMI = {	econ_join_sphere_MAR = yes }
+		}
+		else_if = { #Imamate
 			limit = {
 				OMI = { exists = yes }
 				is_in_array = {
@@ -218,19 +242,6 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 					value = OMA
 				}
 				check_variable = { MAR.MAR_OC_participation > 49 }
-			}
-			ITA = { end_puppet = OMA }
-			OMA = {
-				leave_faction = yes 
-				econ_join_sphere_MAR = yes
-				if = {
-					limit = { has_idea = Sphere_Economic_Dependent }
-					remove_ideas = Sphere_Economic_Dependent
-				}
-				else_if = {
-					limit = { has_idea = OFN_Independent_Member }
-					remove_ideas = OFN_Independent_Member
-				}
 			}
 		 	#Handled in the event OMA.6 # да поебать мне
 		}
@@ -973,12 +984,12 @@ OIL_OMA_win_oman = {
 			limit = {
 				is_in_array = {
 					array = global.OIL_supported_by_MAR
-					value = OMA
+					value = OMI
 				}
 			} 
 			TaS_dobrovoltsy_dynmod_victory = yes
 			if = {
-				limit = { check_variable = { MAR.MAR_OC_participation > 49 } }
+				limit = { check_variable = { MAR.MAR_OC_participation > 25 } }
 				country_event = {
 					id = berez_dobrovoltsy.13 days = 3
 				}

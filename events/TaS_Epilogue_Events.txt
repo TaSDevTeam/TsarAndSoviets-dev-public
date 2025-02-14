@@ -6712,8 +6712,11 @@ country_event = {#General - Norway(Russian)coup
 				transfer_state = 2097
 				transfer_state = 2098
 				add_state_core = 2097
-				add_state_core = 2097
+				add_state_core = 2098
 			}
+			2097 = { set_state_name = STATE_2097_rus }
+			2098 = { set_state_name = STATE_2098_rus }
+			set_province_name = { id = 16826 name = VICTORY_POINTS_16826_rus }
 		}
 	}
 }

@@ -5481,6 +5481,32 @@ country_event = { #Finland
 				}	
 				restore_previous_government_type = yes
 				apply_party_popularities = yes
+				111 = { set_state_name = STATE_111_rus }
+				145 = { set_state_name = STATE_145_rus }
+				147 = { set_state_name = STATE_147_rus }
+				148 = { set_state_name = STATE_148_rus }
+				150 = { set_state_name = STATE_150_rus }
+				1712 = { set_state_name = STATE_1712_rus }
+				1716 = { set_state_name = STATE_1716_rus }
+				1717 = { set_state_name = STATE_1717_rus }
+				1718 = { set_state_name = STATE_1718_rus }
+				1723 = { set_state_name = STATE_1723_rus }
+				213 = { set_state_name = STATE_213_rus }
+				216 = { set_state_name = STATE_216_rus }
+				set_province_name = { id = 11105 name = VICTORY_POINTS_11105_rus }
+				set_province_name = { id = 9228 name = VICTORY_POINTS_9228_rus }
+				set_province_name = { id = 6186 name = VICTORY_POINTS_6186_rus }
+				set_province_name = { id = 18441 name = VICTORY_POINTS_18441_rus }
+				set_province_name = { id = 3187 name = VICTORY_POINTS_3187_rus }
+				set_province_name = { id = 9105 name = VICTORY_POINTS_9105_rus }
+				set_province_name = { id = 3122 name = VICTORY_POINTS_3122_rus }
+				set_province_name = { id = 11126 name = VICTORY_POINTS_11126_rus }
+				set_province_name = { id = 169 name = VICTORY_POINTS_169_rus }
+				set_province_name = { id = 3083 name = VICTORY_POINTS_3083_rus }
+				set_province_name = { id = 3137 name = VICTORY_POINTS_3137_rus }
+				set_province_name = { id = 139 name = VICTORY_POINTS_139_rus }
+				set_province_name = { id = 9195 name = VICTORY_POINTS_9195_rus }
+				set_province_name = { id = 11159 name = VICTORY_POINTS_11159_rus }
 			}
 		}
 	}
@@ -5502,6 +5528,32 @@ country_event = { #Finland
 				target = FIN
 				transfer_troops = yes
 			}
+			111 = { set_state_name = STATE_111_rus }
+			145 = { set_state_name = STATE_145_rus }
+			147 = { set_state_name = STATE_147_rus }
+			148 = { set_state_name = STATE_148_rus }
+			150 = { set_state_name = STATE_150_rus }
+			1712 = { set_state_name = STATE_1712_rus }
+			1716 = { set_state_name = STATE_1716_rus }
+			1717 = { set_state_name = STATE_1717_rus }
+			1718 = { set_state_name = STATE_1718_rus }
+			1723 = { set_state_name = STATE_1723_rus }
+			213 = { set_state_name = STATE_213_rus }
+			216 = { set_state_name = STATE_216_rus }
+			set_province_name = { id = 11105 name = VICTORY_POINTS_11105_rus }
+			set_province_name = { id = 9228 name = VICTORY_POINTS_9228_rus }
+			set_province_name = { id = 6186 name = VICTORY_POINTS_6186_rus }
+			set_province_name = { id = 18441 name = VICTORY_POINTS_18441_rus }
+			set_province_name = { id = 3187 name = VICTORY_POINTS_3187_rus }
+			set_province_name = { id = 9105 name = VICTORY_POINTS_9105_rus }
+			set_province_name = { id = 3122 name = VICTORY_POINTS_3122_rus }
+			set_province_name = { id = 11126 name = VICTORY_POINTS_11126_rus }
+			set_province_name = { id = 169 name = VICTORY_POINTS_169_rus }
+			set_province_name = { id = 3083 name = VICTORY_POINTS_3083_rus }
+			set_province_name = { id = 3137 name = VICTORY_POINTS_3137_rus }
+			set_province_name = { id = 139 name = VICTORY_POINTS_139_rus }
+			set_province_name = { id = 9195 name = VICTORY_POINTS_9195_rus }
+			set_province_name = { id = 11159 name = VICTORY_POINTS_11159_rus }
 		}
 	}
 }
@@ -5682,6 +5734,40 @@ country_event = { #Turkish Straits
 				restore_previous_government_type = yes
 				apply_party_popularities = yes
 			}
+			353 = { set_state_name = STATE_353_rus }
+			347 = { set_state_name = STATE_347_rus }
+			345 = { set_state_name = STATE_345_rus }
+			if = {
+				limit = {
+					MAR = { has_government = despotism }
+					
+				}
+				341 = { set_state_name = STATE_341_rusalt }
+				set_province_name = { id = 9833 name = VICTORY_POINTS_9833_rusalt }
+			}
+			else = {
+				341 = { set_state_name = STATE_341_rus }
+				set_province_name = { id = 9833 name = VICTORY_POINTS_9833_rusalt }
+			}
+			
+			set_province_name = { id = 16207 name = VICTORY_POINTS_16207_rus }
+			set_province_name = { id = 16209 name = VICTORY_POINTS_16209_rus }
+			set_province_name = { id = 11811 name = VICTORY_POINTS_11811_rus }
+			set_province_name = { id = 3786 name = VICTORY_POINTS_3786_rus }
+			set_province_name = { id = 16253 name = VICTORY_POINTS_16253_rus }
+			set_province_name = { id = 16208 name = VICTORY_POINTS_16208_rus }
+			set_province_name = { id = 11867 name = VICTORY_POINTS_11867_rus }
+			set_province_name = { id = 11778 name = VICTORY_POINTS_11778_rus }
+			set_province_name = { id = 6912 name = VICTORY_POINTS_6912_rus }
+			set_province_name = { id = 6864 name = VICTORY_POINTS_6864_rus }
+			set_province_name = { id = 9799 name = VICTORY_POINTS_9799_rus }
+			set_province_name = { id = 849 name = VICTORY_POINTS_849_rus }
+			set_province_name = { id = 6895 name = VICTORY_POINTS_6895_rus }
+			set_province_name = { id = 3879 name = VICTORY_POINTS_3879_rus }
+			set_province_name = { id = 3893 name = VICTORY_POINTS_3893_rus }
+			set_province_name = { id = 16205 name = VICTORY_POINTS_16205_rus }
+			set_province_name = { id = 11842 name = VICTORY_POINTS_11842_rus }
+			set_province_name = { id = 16206 name = VICTORY_POINTS_16206_rus }
 		}
 	}
 	option = { #Direct rule
@@ -5702,6 +5788,40 @@ country_event = { #Turkish Straits
 				target = GRM
 				transfer_troops = yes
 			}
+			353 = { set_state_name = STATE_353_rus }
+			347 = { set_state_name = STATE_347_rus }
+			345 = { set_state_name = STATE_345_rus }
+			if = {
+				limit = {
+					MAR = { has_government = despotism }
+					
+				}
+				341 = { set_state_name = STATE_341_rusalt }
+				set_province_name = { id = 9833 name = VICTORY_POINTS_9833_rusalt }
+			}
+			else = {
+				341 = { set_state_name = STATE_341_rus }
+				set_province_name = { id = 9833 name = VICTORY_POINTS_9833_rusalt }
+			}
+			
+			set_province_name = { id = 16207 name = VICTORY_POINTS_16207_rus }
+			set_province_name = { id = 16209 name = VICTORY_POINTS_16209_rus }
+			set_province_name = { id = 11811 name = VICTORY_POINTS_11811_rus }
+			set_province_name = { id = 3786 name = VICTORY_POINTS_3786_rus }
+			set_province_name = { id = 16253 name = VICTORY_POINTS_16253_rus }
+			set_province_name = { id = 16208 name = VICTORY_POINTS_16208_rus }
+			set_province_name = { id = 11867 name = VICTORY_POINTS_11867_rus }
+			set_province_name = { id = 11778 name = VICTORY_POINTS_11778_rus }
+			set_province_name = { id = 6912 name = VICTORY_POINTS_6912_rus }
+			set_province_name = { id = 6864 name = VICTORY_POINTS_6864_rus }
+			set_province_name = { id = 9799 name = VICTORY_POINTS_9799_rus }
+			set_province_name = { id = 849 name = VICTORY_POINTS_849_rus }
+			set_province_name = { id = 6895 name = VICTORY_POINTS_6895_rus }
+			set_province_name = { id = 3879 name = VICTORY_POINTS_3879_rus }
+			set_province_name = { id = 3893 name = VICTORY_POINTS_3893_rus }
+			set_province_name = { id = 16205 name = VICTORY_POINTS_16205_rus }
+			set_province_name = { id = 11842 name = VICTORY_POINTS_11842_rus }
+			set_province_name = { id = 16206 name = VICTORY_POINTS_16206_rus }
 		}
 	}
 }

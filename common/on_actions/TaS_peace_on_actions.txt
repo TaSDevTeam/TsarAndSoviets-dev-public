@@ -386,69 +386,6 @@ on_actions = {
 			else_if = {
 				limit = {
 					FROM = {
-						original_tag = MAR
-						MAR = { has_global_flag = TaS_WRW2_Russian_victory }
-					}
-					ROOT = { 
-						original_tag = ROM
-					}
-				}
-				FROM = {
-					white_peace = ROOT
-				}
-				GRM = {
-					transfer_state = 83
-					transfer_state = 82
-					transfer_state = 81
-					transfer_state = 46
-					transfer_state = 1281
-					transfer_state = 1283
-					transfer_state = 79
-					transfer_state = 1284
-					transfer_state = 84
-					transfer_state = 1287
-					every_owned_state = {
-						remove_core_of = RON
-						add_core_of = GRN
-					}
-				}
-				if = {
-					limit = { MAR = { owns_state = 1428 } }
-					MAR = {
-						transfer_state = 198
-						add_state_core = 189
-						transfer_state = 1282
-						add_state_core = 1282
-						transfer_state = 192
-						add_state_core = 192
-						transfer_state = 1965
-						transfer_state = 1966
-						add_state_core = 1965
-						add_state_core = 1966
-					}
-				}
-				else = {
-					MUK = {
-						transfer_state = 198
-						add_state_core = 189
-						transfer_state = 1282
-						add_state_core = 1282
-						transfer_state = 192
-						add_state_core = 192
-						transfer_state = 1965
-						transfer_state = 1966
-						add_state_core = 1965
-						add_state_core = 1966
-					}
-				}
-				GRM = {
-					econ_join_sphere_MAR = yes
-				}
-				set_global_flag = skip_default_capitulation
-			}
-			else_if = {
-				limit = {
-					FROM = {
 						original_tag = RUS
 					}
 					ROOT = { 

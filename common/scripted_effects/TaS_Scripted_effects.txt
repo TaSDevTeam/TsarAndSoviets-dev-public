@@ -1396,3 +1396,15 @@ MAR_prestol_gamerules = {
 		
 	}
 }
+
+state_control_effect_2099 = {
+	if = {
+		limit = {
+			controller = { has_country_flag = german_names }
+		}
+		set_state_name = STATE_2099_ger
+	}
+	else = {
+		reset_state_name = yes
+	}
+}

@@ -176,40 +176,42 @@ TaS_SWRW_start_the_war = {
 		}
 		load_focus_tree = GER_second_patriotic_war
 	}
-	if = {
-		limit = {
-			has_game_rule = {
-				rule = SWRW_SWRW_BOOST
-				option = SWRW_SWRW_BOOST_RUS
+	hidden_effect = {
+		if = {
+			limit = {
+				has_game_rule = {
+					rule = SWRW_SWRW_BOOST
+					option = SWRW_SWRW_BOOST_RUS
+				}
+			}
+			RUS = {
+				apply_war_buff_with_20_divisions = yes
+				apply_war_buff_with_20_divisions = yes
+				apply_war_buff_with_20_divisions = yes
+				apply_war_buff_with_20_divisions = yes
+				#add_timed_idea = {
+				#	idea = war_cheat
+				#	days = 45
+				#}
 			}
 		}
-		RUS = {
-			apply_war_buff_with_20_divisions = yes
-			apply_war_buff_with_20_divisions = yes
-			apply_war_buff_with_20_divisions = yes
-			apply_war_buff_with_20_divisions = yes
-			#add_timed_idea = {
-			#	idea = war_cheat
-			#	days = 45
-			#}
-		}
-	}
-	if = {
-		limit = {
-			has_game_rule = {
-				rule = SWRW_SWRW_BOOST
-				option = SWRW_SWRW_BOOST_GER
+		if = {
+			limit = {
+				has_game_rule = {
+					rule = SWRW_SWRW_BOOST
+					option = SWRW_SWRW_BOOST_GER
+				}
 			}
-		}
-		GER = {
-			apply_war_buff_with_20_divisions = yes
-			apply_war_buff_with_20_divisions = yes
-			apply_war_buff_with_20_divisions = yes
-			apply_war_buff_with_20_divisions = yes
-			#add_timed_idea = {
-			#	idea = war_cheat
-			#	days = 45
-			#}
+			GER = {
+				apply_war_buff_with_20_divisions = yes
+				apply_war_buff_with_20_divisions = yes
+				apply_war_buff_with_20_divisions = yes
+				apply_war_buff_with_20_divisions = yes
+				#add_timed_idea = {
+				#	idea = war_cheat
+				#	days = 45
+				#}
+			}
 		}
 	}
 }
@@ -432,9 +434,33 @@ TaS_SWRW_american_germany = {
 	PUS = {
 		TNO_startup_nation = yes
 		transfer_state = 5
+		5 = { set_state_name = STATE_5_rus }
+		set_province_name = { id = 6332 name = VICTORY_POINTS_6332_rus }
+		set_province_name = { id = 6375 name = VICTORY_POINTS_6375_rus }
+		set_province_name = { id = 3288 name = VICTORY_POINTS_3288_rus }
+		set_province_name = { id = 348 name = VICTORY_POINTS_348_rus }
+		set_province_name = { id = 3384 name = VICTORY_POINTS_3384_rus }
+		set_province_name = { id = 6259 name = VICTORY_POINTS_6259_rus }
+		set_province_name = { id = 3254 name = VICTORY_POINTS_3254_rus }
 	}
-	RUS = {
-		transfer_state = 97
+	if = {
+		limit = { MBL = { exists = yes } }
+		MBL = {
+			transfer_state = 97
+		}
+		97 = { set_state_name = STATE_97_rus }
+		set_province_name = { id = 11301 name = VICTORY_POINTS_11301_rus }
+		set_province_name = { id = 11329 name = VICTORY_POINTS_11329_rus }
+		set_province_name = { id = 15685 name = VICTORY_POINTS_15685_rus }
+	}
+	else = {
+		RUS = {
+			transfer_state = 97
+		}
+		97 = { set_state_name = STATE_97_rus }
+		set_province_name = { id = 11301 name = VICTORY_POINTS_11301_rus }
+		set_province_name = { id = 11329 name = VICTORY_POINTS_11329_rus }
+		set_province_name = { id = 15685 name = VICTORY_POINTS_15685_rus }
 	}
 	GSV = {
 		transfer_state = 70

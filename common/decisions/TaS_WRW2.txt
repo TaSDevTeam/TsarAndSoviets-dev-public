@@ -2,8 +2,6 @@ TaS_WRW2_fate_and_coring_of_territories = {
 	MAR_fate_of_turkestan = {
 		icon = GFX_decision_generic_assault
 		fire_only_once = yes
-		custom_cost_trigger = { command_power > 9.99 }
-		custom_cost_text = decision_cost_10_cp
 		visible = {
 			MTR = { exists = yes }
 		}
@@ -27,8 +25,6 @@ TaS_WRW2_fate_and_coring_of_territories = {
 	MAR_fate_of_primorie = {
 		icon = GFX_decision_generic_assault
 		fire_only_once = yes
-		custom_cost_trigger = { command_power > 9.99 }
-		custom_cost_text = decision_cost_10_cp
 		visible = {
 			controls_state = 809
 		}
@@ -49,8 +45,8 @@ TaS_WRW2_fate_and_coring_of_territories = {
 	MAR_fate_of_moskau = {
 		icon = GFX_decision_generic_assault
 		fire_only_once = yes
-		custom_cost_trigger = { command_power > 9.99 }
-		custom_cost_text = decision_cost_10_cp
+		
+		
 		visible = {
 			controls_state = 1442
 			NOT = { has_war_with = GER }
@@ -72,8 +68,8 @@ TaS_WRW2_fate_and_coring_of_territories = {
 	MAR_fate_of_baltics = {
 		icon = GFX_decision_generic_assault
 		fire_only_once = yes
-		custom_cost_trigger = { command_power > 9.99 }
-		custom_cost_text = decision_cost_10_cp
+		
+		
 		visible = {
 			MBP = { exists = yes }
 		}
@@ -94,8 +90,8 @@ TaS_WRW2_fate_and_coring_of_territories = {
 	MAR_fate_of_belarus = {
 		icon = GFX_decision_generic_assault
 		fire_only_once = yes
-		custom_cost_trigger = { command_power > 9.99 }
-		custom_cost_text = decision_cost_10_cp
+		
+		
 		visible = {
 			MBL = { exists = yes }
 		}
@@ -112,8 +108,8 @@ TaS_WRW2_fate_and_coring_of_territories = {
 	MAR_fate_of_ukraine = {
 		icon = GFX_decision_generic_assault
 		fire_only_once = yes
-		custom_cost_trigger = { command_power > 9.99 }
-		custom_cost_text = decision_cost_10_cp
+		
+		
 		visible = {
 			MUK = { exists = yes }
 		}
@@ -134,8 +130,8 @@ TaS_WRW2_fate_and_coring_of_territories = {
 	MAR_fate_of_taurida = {
 		icon = GFX_decision_generic_assault
 		fire_only_once = yes
-		custom_cost_trigger = { command_power > 9.99 }
-		custom_cost_text = decision_cost_10_cp
+		
+		
 		visible = {
 			MTV = { exists = yes }
 		}
@@ -156,8 +152,8 @@ TaS_WRW2_fate_and_coring_of_territories = {
 	MAR_fate_of_caucasus = {
 		icon = GFX_decision_generic_assault
 		fire_only_once = yes
-		custom_cost_trigger = { command_power > 9.99 }
-		custom_cost_text = decision_cost_10_cp
+		
+		
 		visible = {
 			MCS = { exists = yes }
 		}
@@ -172,6 +168,50 @@ TaS_WRW2_fate_and_coring_of_territories = {
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_fate_of_caucasus"
 			country_event = { id = MAR_territorial_fate.10 }
+			add_to_variable = { MAR_fates_done = 1 }
+		}
+	}
+	MAR_fate_of_finland = {
+		icon = GFX_decision_generic_assault
+		fire_only_once = yes
+		
+		
+		visible = {
+			FIN = { is_subject_of = RUS }
+		}
+		available = {
+		
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_fate_of_finland"
+			country_event = { id = MAR_territorial_fate.11 }
+			add_to_variable = { MAR_fates_done = 1 }
+		}
+	}
+	MAR_fate_of_turkish_straits = {
+		icon = GFX_decision_generic_assault
+		fire_only_once = yes
+		
+		
+		visible = {
+			GRM = { exists = yes }
+		}
+		available = {
+		
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_fate_of_turkish_straits"
+			country_event = { id = MAR_territorial_fate.12 }
 			add_to_variable = { MAR_fates_done = 1 }
 		}
 	}
