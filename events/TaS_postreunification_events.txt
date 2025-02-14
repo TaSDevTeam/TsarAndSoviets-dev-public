@@ -4235,14 +4235,32 @@ country_event = { #Primorie
 	
 	option = { #japonese can stay
 		name = MAR_territorial_fate.2.a
-		ai_chance = { factor = 1 }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = RUS_FATE_OF_PRIMORIE
+					option = RUS_FATE_OF_PRIMORIE_JAPANESE_STAY
+				}
+			}
+		}
 		set_country_flag = Primorie_fate_is_done
 		add_political_power = 50
 		add_stability = -0.03
 	}
 	option = { #fuck 'em
 		name = MAR_territorial_fate.2.b
-		ai_chance = { factor = 1 }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = RUS_FATE_OF_PRIMORIE
+					option = RUS_FATE_OF_PRIMORIE_FUCK_JAPANESE
+				}
+			}
+		}
 		trigger = {
 			NOT = {
 				has_country_leader = {
@@ -4312,7 +4330,16 @@ country_event = { #Moscowien
 	option = { #fuck germans
 		name = MAR_territorial_fate.3.a
 		trigger = { NOT = { has_global_flag = MCW_germans_gone } }
-		ai_chance = { factor = 1 }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = RUS_FATE_OF_MOSKVABAD
+					option = RUS_FATE_OF_MOSKVABAD_FUCK_GERMAN
+				}
+			}
+		}
 		set_country_flag = MCW_fate_is_done
 		custom_effect_tooltip = MCW_germs_away_tt
 		hidden_effect = {
@@ -4345,7 +4372,16 @@ country_event = { #Moscowien
 	option = { #do you know about siberia?
 		name = MAR_territorial_fate.3.b
 		trigger = { NOT = { has_global_flag = MCW_germans_gone } }
-		ai_chance = { factor = 1 }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = RUS_FATE_OF_MOSKVABAD
+					option = RUS_FATE_OF_MOSKVABAD_STAY_GERMAN_BUT_SIBERIA
+				}
+			}
+		}
 		set_country_flag = MCW_fate_is_done
 		add_political_power = 250
 		add_stability = -0.15
@@ -4471,7 +4507,16 @@ country_event = { #Moscowien
 	option = { #they can stay
 		name = MAR_territorial_fate.3.c
 		trigger = { NOT = { has_global_flag = MCW_germans_gone } }
-		ai_chance = { factor = 1 }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = RUS_FATE_OF_MOSKVABAD
+					option = RUS_FATE_OF_MOSKVABAD_STAY_GERMAN
+				}
+			}
+		}
 		set_country_flag = MCW_fate_is_done
 		add_political_power = 50
 		add_stability = -0.05
@@ -4500,7 +4545,16 @@ country_event = { #Baltics
 	
 	option = { #Freedom
 		name = MAR_territorial_fate.4.a
-		ai_chance = { factor = 1 }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = RUS_FATE_OF_BALTIC
+					option = RUS_FATE_OF_BALTIC_PUPPET
+				}
+			}
+		}
 		trigger = {
 			NOT = {
 				has_country_leader = {
@@ -4517,7 +4571,16 @@ country_event = { #Baltics
 	}
 	option = { #Joint autonomy
 		name = MAR_territorial_fate.4.b
-		ai_chance = { factor = 1 }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = RUS_FATE_OF_BALTIC
+					option = RUS_FATE_OF_BALTIC_AUTONOMY
+				}
+			}
+		}
 		custom_effect_tooltip = MAR_autonomy_create_tt
 		hidden_effect = {
 			XYZ = {
@@ -4629,7 +4692,16 @@ country_event = { #Baltics
 	}
 	option = { #annexation
 		name = MAR_territorial_fate.4.c
-		ai_chance = { factor = 1 }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = RUS_FATE_OF_BALTIC
+					option = RUS_FATE_OF_BALTIC_ANNEX
+				}
+			}
+		}
 		custom_effect_tooltip = MAR_annex_em_all_tt
 		hidden_effect = {
 			annex_country = {
@@ -4702,7 +4774,16 @@ country_event = { #Belarus
 	
 	option = { #Vilna Kraina
 		name = MAR_territorial_fate.7.a
-		ai_chance = { factor = 1 }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = RUS_FATE_OF_BELARUS
+					option = RUS_FATE_OF_BELARUS_PUPPET
+				}
+			}
+		}
 		trigger = {
 			NOT = {
 				has_country_leader = {
@@ -4765,7 +4846,16 @@ country_event = { #Belarus
 				has_country_flag = limited_ost_zones
 			}
 		}
-		ai_chance = { factor = 1 }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = RUS_FATE_OF_BELARUS
+					option = RUS_FATE_OF_BELARUS_AUTONOMY
+				}
+			}
+		}
 		custom_effect_tooltip = MAR_autonomy_create_tt
 		hidden_effect = {
 			MAR = {
@@ -4848,7 +4938,16 @@ country_event = { #Belarus
 	}
 	option = { #soyuznoye gosudarstvo
 		name = MAR_territorial_fate.7.c
-		ai_chance = { factor = 1 }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = RUS_FATE_OF_BELARUS
+					option = RUS_FATE_OF_BELARUS_ANNEX
+				}
+			}
+		}
 		custom_effect_tooltip = MAR_annex_em_all_tt
 		hidden_effect = {
 			annex_country = {
@@ -4886,7 +4985,16 @@ country_event = { #Ukraine
 	
 	option = { #Vilna Kraina
 		name = MAR_territorial_fate.8.a
-		ai_chance = { factor = 1 }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = RUS_FATE_OF_UKRAINE
+					option = RUS_FATE_OF_UKRAINE_PUPPET
+				}
+			}
+		}
 		trigger = {
 			NOT = {
 				OR = {
@@ -4945,7 +5053,16 @@ country_event = { #Ukraine
 				has_country_flag = limited_ost_zones
 			}
 		}
-		ai_chance = { factor = 1 }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = RUS_FATE_OF_UKRAINE
+					option = RUS_FATE_OF_UKRAINE_AUTONOMY
+				}
+			}
+		}
 		custom_effect_tooltip = MAR_autonomy_create_tt
 		hidden_effect = {
 			MAR = {
@@ -5033,7 +5150,16 @@ country_event = { #Ukraine
 	}
 	option = { #SLOVNO HUY DROCHENNY V ZHOPY PIDORA
 		name = MAR_territorial_fate.8.c
-		ai_chance = { factor = 1 }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = RUS_FATE_OF_UKRAINE
+					option = RUS_FATE_OF_UKRAINE_ANNEX
+				}
+			}
+		}
 		custom_effect_tooltip = MAR_annex_em_all_tt
 		hidden_effect = {
 			annex_country = {
@@ -5064,7 +5190,16 @@ country_event = { #Crimnea
 	
 	option = { #deutsche autonomien ew
 		name = MAR_territorial_fate.9.a
-		ai_chance = { factor = 1 }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = RUS_FATE_OF_CRIMEA
+					option = RUS_FATE_OF_CRIMEA_AUTONOMY
+				}
+			}
+		}
 		custom_effect_tooltip = MAR_autonomy_create_tt
 		hidden_effect = {
 			#MAR = {
@@ -5135,7 +5270,16 @@ country_event = { #Crimnea
 	}
 	option = { #0 people in crimea left
 		name = MAR_territorial_fate.9.b
-		ai_chance = { factor = 1 }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = RUS_FATE_OF_CRIMEA
+					option = RUS_FATE_OF_CRIMEA_FUCK_GERMAN
+				}
+			}
+		}
 		custom_effect_tooltip = MAR_annex_em_all_tt
 		hidden_effect = {
 			annex_country = {
@@ -5174,7 +5318,16 @@ country_event = { #Caucasus
 	
 	option = { #all autonomy
 		name = MAR_territorial_fate.10.a
-		ai_chance = { factor = 1 }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = RUS_FATE_OF_CAUCASUS
+					option = RUS_FATE_OF_CAUCASUS_AUTONOMY_FOR_ALL
+				}
+			}
+		}
 		custom_effect_tooltip = MAR_autonomy_create_tt
 		hidden_effect = {
 			MAR = {
@@ -5262,7 +5415,16 @@ country_event = { #Caucasus
 	}
 	option = { #south autonomy
 		name = MAR_territorial_fate.10.b
-		ai_chance = { factor = 1 }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = RUS_FATE_OF_CAUCASUS
+					option = RUS_FATE_OF_CAUCASUS_AUTONOMY_FOR_SOUTH
+				}
+			}
+		}
 		custom_effect_tooltip = MAR_autonomy_create_tt
 		trigger = {
 			NOT = {
@@ -5335,7 +5497,16 @@ country_event = { #Caucasus
 				} 
 			}
 		}
-		ai_chance = { factor = 1 }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = RUS_FATE_OF_CAUCASUS
+					option = RUS_FATE_OF_CAUCASUS_PUPPETS
+				}
+			}
+		}
 		custom_effect_tooltip = MAR_freedom_for_everyone_tt
 		hidden_effect = {
 			TaS_2WRW_free_caucasus = yes
@@ -5343,7 +5514,16 @@ country_event = { #Caucasus
 	}
 	option = { #direct rule
 		name = MAR_territorial_fate.10.e
-		ai_chance = { factor = 1 }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = RUS_FATE_OF_CAUCASUS
+					option = RUS_FATE_OF_CAUCASUS_ANNEX
+				}
+			}
+		}
 		custom_effect_tooltip = MAR_annex_em_all_tt
 		hidden_effect = {
 			annex_country = {
