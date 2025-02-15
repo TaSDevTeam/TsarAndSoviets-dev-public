@@ -1077,7 +1077,16 @@ country_event = { # Question one: elites
 
 	option = { #fuck 'em
 		name = berez_kazahk.14.a
-		ai_chance = { factor = 1 }	
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = RUS_KAZAKH_NEGOTIATION
+					option = RUS_KAZAKH_NEGOTIATION_FAIL
+				}
+			}
+		}
 		custom_effect_tooltip = MAR_KAZ_talks_decrease_tt
 		add_to_variable = { MAR_KAZ_talks_fail = 1 }
 		TNO_improve_admin_efficiency_low = yes
@@ -1094,7 +1103,16 @@ country_event = { # Question one: elites
 	}
 	option = { #pro-kz
 		name = berez_kazahk.14.c
-		ai_chance = { factor = 1 }	
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = RUS_KAZAKH_NEGOTIATION
+					option = RUS_KAZAKH_NEGOTIATION_SUCCESS
+				}
+			}
+		}	
 		custom_effect_tooltip = MAR_KAZ_talks_increase_tt
 		add_to_variable = { MAR_KAZ_talks_success = 1 }
 		TNO_worsen_admin_efficiency_low = yes
@@ -1114,7 +1132,16 @@ country_event = { # Question two: muscle-play
 
 	option = { #don't do anything
 		name = berez_kazahk.15.a
-		ai_chance = { factor = 1 }	
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = RUS_KAZAKH_NEGOTIATION
+					option = RUS_KAZAKH_NEGOTIATION_FAIL
+				}
+			}
+		}
 		custom_effect_tooltip = MAR_KAZ_talks_decrease_tt
 		add_to_variable = { MAR_KAZ_talks_fail = 1 }
 		country_event = { id = berez_kazahk.16 days = 3 }
@@ -1129,7 +1156,16 @@ country_event = { # Question two: muscle-play
 	}
 	option = { #YUG-70
 		name = berez_kazahk.15.c
-		ai_chance = { factor = 1 }	
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = RUS_KAZAKH_NEGOTIATION
+					option = RUS_KAZAKH_NEGOTIATION_SUCCESS
+				}
+			}
+		}
 		set_country_flag = MAR_yug_70_excercises
 		custom_effect_tooltip = MAR_KAZ_yug_70_tt
 		activate_mission = MAR_yug_do_excersices
@@ -1148,7 +1184,16 @@ country_event = { # Question three: national question
 
 	option = { #integration
 		name = berez_kazahk.16.a
-		ai_chance = { factor = 1 }	
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = RUS_KAZAKH_NEGOTIATION
+					option = RUS_KAZAKH_NEGOTIATION_FAIL
+				}
+			}
+		}
 		custom_effect_tooltip = MAR_KAZ_talks_decrease_tt
 		add_to_variable = { MAR_KAZ_talks_fail = 1 }
 		TNO_improve_admin_efficiency_low = yes
@@ -1162,7 +1207,16 @@ country_event = { # Question three: national question
 	}
 	option = { #positive discrimination
 		name = berez_kazahk.16.c
-		ai_chance = { factor = 1 }	
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = RUS_KAZAKH_NEGOTIATION
+					option = RUS_KAZAKH_NEGOTIATION_SUCCESS
+				}
+			}
+		}	
 		custom_effect_tooltip = MAR_KAZ_talks_increase_tt
 		add_to_variable = { MAR_KAZ_talks_success = 1 }
 		TNO_worsen_admin_efficiency_low = yes
