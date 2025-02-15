@@ -1044,7 +1044,7 @@ country_event = {#Bormann Event 3
 				country_leader = {
 					desc = ""
 					expire = "1999.1.1"
-					ideology = national_socialism_subtype
+					ideology = national_socialism_idiosyncratic_nazism_subtype
 					traits = {
 					}
 					id = -1
@@ -1056,27 +1056,46 @@ country_event = {#Bormann Event 3
 		name = TaS_GEREpilogue.33.c
 		ai_chance = { factor = 1 }	
 		hidden_effect = {
-			XYZ = {
-				GEX_Arthur_Axmann = {
-					set_nationality = GER
-				}
-			}
-			every_country  = {
-				news_event = {
-					id = TaS_GEREpilogue_news.15
-				}
-			}
 			retire_country_leader = yes
-			promote_character = GEX_Arthur_Axmann
+			add_country_leader_role = {
+				character = GER_artur_axmann
+				promote_leader = yes
+				country_leader = {
+					desc = "GER_artur_axmann_POSTWRW2_DESC"
+					expire = "1999.1.1"
+					ideology = national_socialism_revolutionary_nazism_subtype
+					traits = {
+					}
+					id = -1
+				}
+			}
+			GER_artur_axmann = {
+				set_portraits = {
+					civilian = { large = "gfx/leaders/POSTWRW2/Portrait_GER_artur_axmann.dds" }
+				}
+			}
 		}
 	}
-	option = { #Kehrl
+	option = { #Biedenkopf
 		name = TaS_GEREpilogue.33.e
 		ai_chance = { factor = 1 }	
 		hidden_effect = {
 			XYZ = {
-				GER_emergency_council = {
+				GER_Kurt_Biedenkopf = {
 					set_nationality = GER
+				}
+			}
+			retire_country_leader = yes
+			add_country_leader_role = {
+				character = GER_Kurt_Biedenkopf
+				promote_leader = yes
+				country_leader = {
+					desc = "GER_Kurt_Biedenkopf_POSTWRW2_DESC"
+					expire = "1999.1.1"
+					ideology = national_socialism_technocratic_nazism_subtype
+					traits = {
+					}
+					id = -1
 				}
 			}
 			every_country  = {
@@ -1084,8 +1103,6 @@ country_event = {#Bormann Event 3
 					id = TaS_GEREpilogue_news.16
 				}
 			}
-			retire_country_leader = yes
-			promote_character = GER_emergency_council
 		}
 	}
 }
@@ -6024,6 +6041,19 @@ country_event = {#General - Pakt collapses
 					GER = {
 						end_puppet = GER
 					}
+					NOR = {
+						remove_ideas = Pakt_Leader
+						remove_ideas = Pakt_Military_Authority
+						remove_ideas = Pakt_Protektorat
+						remove_ideas = Pakt_Integrated_Reichskommissariat
+						remove_ideas = Pakt_Autonomous_Reichskommissariat
+						remove_ideas = Pakt_Reichsland
+						remove_ideas = Pakt_Marionettenstaat
+						remove_ideas = Pakt_Mitstreiter
+						remove_ideas = Pakt_Bundnispartner
+						remove_ideas = Pakt_Ordensstaat
+						remove_ideas = Pakt_Observer
+					}
 				}
 				NOR = {
 					remove_faction_status = yes
@@ -6056,13 +6086,60 @@ country_event = {#General - Pakt collapses
 					}
 				}
 			}
+			ENG = {
+				if = {
+					limit = {
+						has_country_leader = {
+							character = ENG_William_Joyce
+							ruling_only = yes
+						}	
+					}
+					country_event = { id = TaS_GERCollapse.38 days = 41}
+				}
+			}
+			FZL = {
+				if = {
+					limit = { is_in_faction_with = GER }
+					country_event = { id = TaS_GERCollapse.39 days = 63}
+				}
+			}
+			PAK = {
+				if = {
+					limit = { is_in_faction_with = GER }
+					country_event = { id = TaS_GERCollapse.40 days = 54}
+					IND = {
+						add_ai_strategy = {
+							type = prepare_for_war
+							id = PAK
+							value = 200
+						}
+					}
+				}
+			}
+			GRO = {
+				if = {
+					limit = { is_in_faction_with = GER }
+					country_event = { id = TaS_GERCollapse.41 days = 15}
+				}
+			}
 			every_country = {
 				limit = {
 					is_in_faction_with = GER 
 					NOT = { is_subject_of = GER }
 				}
 				econ_leave_sphere = yes
-				leave_faction = yes
+				leave_faction = yes	
+				remove_ideas = Pakt_Leader
+				remove_ideas = Pakt_Military_Authority
+				remove_ideas = Pakt_Protektorat
+				remove_ideas = Pakt_Integrated_Reichskommissariat
+				remove_ideas = Pakt_Autonomous_Reichskommissariat
+				remove_ideas = Pakt_Reichsland
+				remove_ideas = Pakt_Marionettenstaat
+				remove_ideas = Pakt_Mitstreiter
+				remove_ideas = Pakt_Bundnispartner
+				remove_ideas = Pakt_Ordensstaat
+				remove_ideas = Pakt_Observer
 				if = {
 					limit = { has_idea = SGR_zollverein_basic }
 					leave_zollverein = yes
@@ -6080,19 +6157,14 @@ country_event = {#General - Pakt collapses
 					leave_zollverein = yes
 				}
 			}
+			every_country = {
+				limit = {
+					has_idea = Pakt_Observer
+				}
+				remove_ideas = Pakt_Observer
+			}
 			GER = {
 				dismantle_faction = yes
-			}
-			ENG = {
-				if = {
-					limit = {
-						has_country_leader = {
-							character = ENG_William_Joyce
-							ruling_only = yes
-						}	
-					}
-					country_event = { id = TaS_GERCollapse.38 days = 41}
-				}
 			}
 			RUS = {
 				country_event = { id = TaS_GERCollapse.28 days = 7}
@@ -6917,6 +6989,148 @@ country_event = {#General - British Anarchy
 		}
 	}
 }
+
+country_event = {#General - Iberian Spring
+	id = TaS_GERCollapse.39
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GERCollapse.39"}
+	title = TaS_GERCollapse.39.t
+	desc = TaS_GERCollapse.39.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = TaS_GERCollapse.39.a
+		ai_chance = { factor = 1 }	
+		add_political_power = -100
+		hidden_effect = {
+			XYZ = {
+				FZL_military_council = {
+					set_nationality = FZL
+				}
+				GNS_peoples_assembly = {
+					set_nationality = GNS
+				}
+			}
+			FZL = {
+				set_cosmetic_tag = FZL_Iberian_spring
+				add_country_leader_role = {
+					character = FZL_military_council
+					promote_leader = yes
+					country_leader = {
+						desc = "FZL_military_council_DESC"
+						expire = "1999.1.1"
+						ideology = despotism_military_junta_subtype
+						traits = {
+						}
+						id = -1
+					}
+				}
+				set_politics = {
+					ruling_party = despotism
+					last_election = "1933.2.16"
+					election_frequency = 36
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = despotism
+					popularity = 0.35
+				}
+				set_party_name = {
+					ideology = despotism
+					long_name = FZL_IS_despotism_party
+					name = FZL_IS_despotism_party
+				}
+				end_puppet = GNS
+			}
+			GNS = {
+				set_cosmetic_tag = GNS_Iberian_spring
+				add_country_leader_role = {
+					character = GNS_peoples_assembly
+					promote_leader = yes
+					country_leader = {
+						desc = "GNS_peoples_assembly_DESC"
+						expire = "1999.1.1"
+						ideology = progressivism_popular_front_subtype
+						traits = {
+						}
+						id = -1
+					}
+				}
+				set_politics = {
+					ruling_party = progressivism
+					last_election = "1933.2.16"
+					election_frequency = 36
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = progressivism
+					popularity = 0.35
+				}
+				set_party_name = {
+					ideology = progressivism
+					long_name = GNS_IS_progressivism_party_long
+					name = GNS_IS_progressivism_party
+				}
+			}
+			every_country  = {
+				news_event = {
+					id = TaS_GERCollapse_news.39
+				}
+			}
+		}
+	}
+}
+
+country_event = {#General - Second PAK-IND war
+	id = TaS_GERCollapse.40
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GERCollapse.40"}
+	title = TaS_GERCollapse.40.t
+	desc = TaS_GERCollapse.40.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = TaS_GERCollapse.40.a
+		ai_chance = { factor = 1 }	
+		add_political_power = -100
+		hidden_effect = {
+			IND = {
+				declare_war_on = {
+					target = PAK
+					type = annex_everything
+				}
+			}
+			every_country  = {
+				news_event = {
+					id = TaS_GERCollapse_news.40
+				}
+			}
+		}
+	}
+}
+
+country_event = {#General - German evacuation from Africa
+	id = TaS_GERCollapse.41
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GERCollapse.41"}
+	title = TaS_GERCollapse.41.t
+	desc = TaS_GERCollapse.41.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = TaS_GERCollapse.41.a
+		ai_chance = { factor = 1 }	
+		add_political_power = -100
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = TaS_GERCollapse_news.41
+				}
+			}
+		}
+	}
+}
+
 news_event = { #germany chaos growths
 	id = TaS_GERCollapse_news.1
 	title = TaS_GERCollapse_news.1.t
@@ -7358,5 +7572,44 @@ news_event = { #British anarchy
 	
 	option = {
 		name = TaS_GERCollapse_news.38.a
+	}
+}
+
+news_event = { #Iberian Spring
+	id = TaS_GERCollapse_news.39
+	title = TaS_GERCollapse_news.39.t
+	desc = TaS_GERCollapse_news.39.d
+	picture = GFX_TaS_GERCollapse_news_039
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = TaS_GERCollapse_news.39.a
+	}
+}
+
+news_event = { #Second PAK-IND war
+	id = TaS_GERCollapse_news.40
+	title = TaS_GERCollapse_news.40.t
+	desc = TaS_GERCollapse_news.40.d
+	picture = GFX_TaS_GERCollapse_news_040
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = TaS_GERCollapse_news.40.a
+	}
+}
+
+news_event = { #Evacuation from Africa
+	id = TaS_GERCollapse_news.41
+	title = TaS_GERCollapse_news.41.t
+	desc = TaS_GERCollapse_news.41.d
+	picture = GFX_TaS_GERCollapse_news_041
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = TaS_GERCollapse_news.41.a
 	}
 }
