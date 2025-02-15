@@ -2162,24 +2162,49 @@ shared_focus = {
 	completion_reward = {
 		country_event = { id = MAR_epilogue.5 days = 3 }
 		custom_effect_tooltip = MAR_siberian_amnesty_tt
-		hidden_effect = {
+		if = {
+			limit = {
+				NOT = { has_character = NOV_Mikhail_Baganov }
+			}
 			NOV = {
 				NOV_Mikhail_Baganov = {
 					set_nationality = MAR
 				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_character = NOV_Nestor_Kozin }
+			}
+			NOV = {
 				NOV_Nestor_Kozin = {
 					set_nationality = MAR
 				}
 			}
+		}
+		if = {
+			limit = {
+				NOT = { has_character = TOM_Nikolai_Batyuk }
+			}
 			TOM = {
 				TOM_Nikolai_Batyuk = {
-					set_nationality = MAR
+					set_nationality = TOM
 				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_character = KEM_Alexander_Shevtsov }
 			}
 			KEM = {
 				KEM_Alexander_Shevtsov = {
 					set_nationality = MAR
 				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_character = IRK_Genrikh_Lyushkov }
 			}
 			IRK = {
 				IRK_Genrikh_Lyushkov = {

@@ -446,7 +446,41 @@ country_event = { #
 	option = { #
 		name = GER_SWRW.5.a
 		ai_chance = { factor = 1 }
-		
+		if = {
+			limit = {
+				GER = {
+					has_country_leader = {
+						character = GER_martin_bormann 
+						ruling_only = yes
+					}
+				}
+			}
+			country_event = { id = TaS_GEREpilogue.31 days = 7} 
+		}
+		if = {
+			limit = {
+				GER = {
+					has_country_flag = SGR_oberlander_takeover
+				}
+			}
+			country_event = { id = TaS_GEREpilogue.37 days = 7} 
+		}
+		if = {
+			limit = {
+				GER = {
+					has_country_flag = SGR_SR_fash_outcome
+				}
+			}
+			country_event = { id = TaS_GEREpilogue.34 days = 7} 
+		}
+		if = {
+			limit = {
+				GER = {
+					has_country_flag = SGR_SR_authdem_outcome
+				}
+			}
+			country_event = { id = TaS_GEREpilogue.40 days = 7} 
+		}
 	}
 }
 
