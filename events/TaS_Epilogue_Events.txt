@@ -6116,11 +6116,8 @@ country_event = {#General - Pakt collapses
 					}
 				}
 			}
-			GRO = {
-				if = {
-					limit = { is_in_faction_with = GER }
-					country_event = { id = TaS_GERCollapse.41 days = 15}
-				}
+			ZZZ = {
+				country_event = { id = TaS_GERCollapse.41 days = 15}
 			}
 			every_country = {
 				limit = {
@@ -7100,6 +7097,7 @@ country_event = {#General - Second PAK-IND war
 					type = annex_everything
 				}
 			}
+			set_global_flag = PAK_rip_bozo_ger_no_more
 			every_country  = {
 				news_event = {
 					id = TaS_GERCollapse_news.40
@@ -7122,6 +7120,102 @@ country_event = {#General - German evacuation from Africa
 		ai_chance = { factor = 1 }	
 		add_political_power = -100
 		hidden_effect = {
+			if = {
+				limit = { GRO = { exists = yes } }
+				COG = {
+					COG_USA_Joseph_Ileo = {
+						set_nationality = GRO
+					}
+				}
+				GRO = {
+					set_cosmetic_tag = GRO_Free
+					promote_character = COG_USA_Joseph_Ileo
+					set_popularities = {
+						progressivism = 13
+						liberalism = 20
+						conservatism = 41
+						paternalism = 15
+						despotism = 11
+					}
+					set_party_name = {
+						ideology = progressivism
+						long_name = GRO_Free_progressivism_party_long
+						name = GRO_Free_progressivism_party
+					}
+					set_party_name = {
+						ideology = liberalism
+						long_name = GRO_Free_liberalism_party_long
+						name = GRO_Free_liberalism_party
+					}
+					set_party_name = {
+						ideology = conservatism
+						long_name = GRO_Free_conservatism_party_long
+						name = GRO_Free_conservatism_party
+					}
+					set_party_name = {
+						ideology = paternalism
+						long_name = GRO_Free_paternalism_party_long
+						name = GRO_Free_paternalism_party
+					}
+					set_party_name = {
+						ideology = despotism
+						long_name = GRO_Free_despotism_party_long
+						name = GRO_Free_despotism_party
+					}
+					meta_effect = { #sets up next election date in country ui
+						text = {
+							set_politics = {
+								ruling_party = conservatism
+								last_election = "[current_election_date]"
+								elections_allowed = yes
+								election_frequency = 48
+							}
+						}
+						current_election_date = "[?global.date.GetDateStringNoHour]"
+					}
+
+					hidden_effect = {
+						set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
+						econ_type_change = yes
+						TNO_startup_nation = yes
+					}
+				}
+			}
+			if = {
+				limit = { MDG = { exists = yes } }
+				MAD = {
+					annex_country = {
+						target = MDG
+						transfer_troops = no
+					}
+					transfer_state = 706
+					transfer_state = 707
+					every_owned_state = {
+						remove_core_of = MDG
+						remove_core_of = GER
+						add_core_of = MAD
+					}
+					set_party_name = {
+						ideology = communist
+						long_name = MAD_communist_oc_party_long
+						name = MAD_communist_oc_party
+					}
+					set_politics = {
+						ruling_party = communist
+						elections_allowed = no
+					}
+					promote_character = {
+						character = MAD_Didier_Ratsiraka
+						ideology = communist_marxism_leninism_subtype
+					}
+					set_popularities = {
+						communist = 100
+					}
+					set_cosmetic_tag = MAD_arema
+					set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Planned }
+					econ_type_change = yes
+				}
+			}
 			every_country  = {
 				news_event = {
 					id = TaS_GERCollapse_news.41
