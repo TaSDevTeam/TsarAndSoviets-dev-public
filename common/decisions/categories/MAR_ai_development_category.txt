@@ -1,0 +1,49 @@
+MAR_warlord_development_decision_category = {
+	icon = GFX_decision_category_generic_supply
+	picture = GFX_decision_image_RUS_warlord_development
+
+	allowed = {
+		tag = MAR
+        is_ai = yes
+	}
+	visible = {
+		has_country_flag = is_warlord
+		NOT = {
+			has_global_flag = AFTER_MIDNIGHT_COMMENCED
+		}
+		NOT = {
+			has_completed_focus = TYM_the_five_year_plan
+		}
+		NOT = {
+			has_country_flag = RUS_regional_stage
+		}
+		NOT = {
+			has_country_flag = OMS_Lock_Warlord
+		}
+		econ_can_use_economy_system = yes
+	}
+	visible_when_empty = yes
+}
+
+MAR_regional_development_decision_category = {
+	icon = GFX_decision_category_generic_industry
+	picture = GFX_decision_image_RUS_regional_development
+
+	allowed = {
+		tag = MAR
+        is_ai = yes
+	}
+	visible = {
+		has_country_flag = RUS_regional_stage
+		NOT = {
+			has_global_flag = AFTER_MIDNIGHT_COMMENCED
+		}
+		NOT = {
+			has_country_flag = RUS_superregional_stage
+		}
+		NOT = {
+			has_country_flag = OMS_Lock_Regional
+		}
+	}
+	visible_when_empty = yes
+}
