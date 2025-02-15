@@ -80,6 +80,12 @@ defined_text = {
 		}
 		localization_key = "GFX_MAN_Catastrophe"
 	}	
+	text = {
+		trigger = {
+			TNO_anarchy_ENG_Dissapearance = yes
+		}
+		localization_key = "GFX_Anarchy_ENG_Dissapearance"
+	}
 }
 
 defined_text = {
@@ -161,6 +167,12 @@ defined_text = {
 			TNO_anarchy_Manchurian_Catastrophe = yes
 		}
 		localization_key = TNO_anarchy_Manchurian_Catastrophe_tt
+	}
+	text = {
+		trigger = {
+			TNO_anarchy_ENG_Dissapearance = yes
+		}
+		localization_key = TNO_anarchy_ENG_Dissapearance_tt
 	}	
 }
 
@@ -243,5 +255,11 @@ defined_text = {
 			TNO_anarchy_Manchurian_Catastrophe = yes
 		}
 		localization_key = TNO_anarchy_MAN_tt_delayed
+	}
+	text = {
+		trigger = {
+			TNO_anarchy_ENG_Dissapearance = yes
+		}
+		localization_key = TNO_anarchy_ENG_Dissapearance_tt_delayed
 	}
 }

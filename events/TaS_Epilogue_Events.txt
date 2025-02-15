@@ -6083,7 +6083,17 @@ country_event = {#General - Pakt collapses
 			GER = {
 				dismantle_faction = yes
 			}
-			
+			ENG = {
+				if = {
+					limit = {
+						has_country_leader = {
+							character = ENG_William_Joyce
+							ruling_only = yes
+						}	
+					}
+					country_event = { id = TaS_GERCollapse.38 days = 41}
+				}
+			}
 			RUS = {
 				country_event = { id = TaS_GERCollapse.28 days = 7}
 			}
@@ -6687,6 +6697,44 @@ country_event = {#General - It has begun
 	}
 }
 
+country_event = {#General - Norway(Russian)coup
+	id = TaS_GERCollapse.36
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GERCollapse.36"}
+	title = TaS_GERCollapse.36.t
+	desc = TaS_GERCollapse.36.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = TaS_GERCollapse.36.a
+		ai_chance = { factor = 1 }	
+		add_political_power = -100
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = TaS_GERCollapse_news.36
+				}
+			}
+			GNR = {	
+				annex_country = {
+					target = NOR
+					transfer_troops = yes
+				}
+				econ_join_sphere_MAR = yes
+			}
+			RUS = {
+				transfer_state = 2097
+				transfer_state = 2098
+				add_state_core = 2097
+				add_state_core = 2098
+			}
+			2097 = { set_state_name = STATE_2097_rus }
+			2098 = { set_state_name = STATE_2098_rus }
+			set_province_name = { id = 16826 name = VICTORY_POINTS_16826_rus }
+		}
+	}
+}
+
 country_event = {#General - Franco-German War
 	id = TaS_GERCollapse.37
 	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GERCollapse.37"}
@@ -6815,44 +6863,60 @@ country_event = {#General - Franco-German War
 	}
 }
 
-country_event = {#General - Norway(Russian)coup
-	id = TaS_GERCollapse.36
-	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GERCollapse.36"}
-	title = TaS_GERCollapse.36.t
-	desc = TaS_GERCollapse.36.d
+country_event = {#General - British Anarchy
+	id = TaS_GERCollapse.38
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GERCollapse.38"}
+	title = TaS_GERCollapse.38.t
+	desc = TaS_GERCollapse.38.d
 	is_triggered_only = yes
 	fire_only_once = yes
 	
 	option = {
-		name = TaS_GERCollapse.36.a
+		name = TaS_GERCollapse.38.a
 		ai_chance = { factor = 1 }	
 		add_political_power = -100
 		hidden_effect = {
 			every_country  = {
 				news_event = {
-					id = TaS_GERCollapse_news.36
+					id = TaS_GERCollapse_news.38
 				}
 			}
-			GNR = {	
-				econ_join_sphere_MAR = yes
-				annex_country = {
-					target = NOR
-					transfer_troops = yes
+			ENG = {
+				set_cosmetic_tag = ENG_Dissapearance
+				econ_leave_sphere = yes
+				delete_unit_template_and_units = { division_template = "Infanterie-Division" disband = yes }
+				delete_unit_template_and_units = { division_template = "Panzer-Division" disband = yes }
+				delete_unit_template_and_units = { division_template = "Panzergrenadier-Division" disband = yes }
+				delete_unit_template_and_units = { division_template = "Marine-Abteilung Unit" disband = yes }
+				delete_unit_template_and_units = { division_template = "Infantry Division" disband = yes }
+				delete_unit_template_and_units = { division_template = "National Militia" disband = yes }
+				remove_ideas = ENG_The_British_Catastrophe
+				remove_ideas = ENG_Those_Who_Would_Fight_Time	
+				remove_ideas = ENG_British_Free_Corps	
+				remove_ideas = Pakt_Marionettenstaat
+				GER = {
+					set_autonomy = {
+						target = ENG
+						autonomous_state = autonomy_free
+					}
 				}
+				leave_faction = yes
+				1300 = { set_demilitarized_zone = yes }
+				2000 = { set_demilitarized_zone = yes }
+				132 = { set_demilitarized_zone = yes }
+				2001 = { set_demilitarized_zone = yes }
+				130 = { set_demilitarized_zone = yes }
+				338 = { set_demilitarized_zone = yes }
+				122 = { set_demilitarized_zone = yes }
+				2014 = { set_demilitarized_zone = yes }
+				121 = { set_demilitarized_zone = yes }	
+				1998 = { set_demilitarized_zone = yes }	
+				set_temp_variable = { TNO_economy_subtype_temp = token:Econ_Subtype_Anarchic }
+				econ_subtype_change = yes
 			}
-			RUS = {
-				transfer_state = 2097
-				transfer_state = 2098
-				add_state_core = 2097
-				add_state_core = 2098
-			}
-			2097 = { set_state_name = STATE_2097_rus }
-			2098 = { set_state_name = STATE_2098_rus }
-			set_province_name = { id = 16826 name = VICTORY_POINTS_16826_rus }
 		}
 	}
 }
-
 news_event = { #germany chaos growths
 	id = TaS_GERCollapse_news.1
 	title = TaS_GERCollapse_news.1.t
@@ -7281,5 +7345,18 @@ news_event = { #Franco-Prussian War 2.0 electric boogaloo
 	
 	option = {
 		name = TaS_GERCollapse_news.37.a
+	}
+}
+
+news_event = { #British anarchy
+	id = TaS_GERCollapse_news.38
+	title = TaS_GERCollapse_news.38.t
+	desc = TaS_GERCollapse_news.38.d
+	picture = GFX_TaS_GERCollapse_news_038
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = TaS_GERCollapse_news.38.a
 	}
 }
