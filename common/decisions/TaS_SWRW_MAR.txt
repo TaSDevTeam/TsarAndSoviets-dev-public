@@ -5880,7 +5880,10 @@ MAR_SWRW_category = {
 			random_list = {
 				25 = { #big legion
 					every_country = {
-						limit = { is_in_faction_with = USA }
+						limit = { 
+							is_in_faction_with = USA
+							is_major = yes
+						}
 						set_temp_variable = { target = MAR }
 						TNO_increase_volunteer_cap_2 = yes
 					}
@@ -5897,7 +5900,10 @@ MAR_SWRW_category = {
 				50 = { #small legion
 					custom_effect_tooltip = TaS_2WRW_small_w_tt
 					every_country = {
-						limit = { is_in_faction_with = USA }
+						limit = {
+							is_in_faction_with = USA
+							is_major = yes
+						}
 						set_temp_variable = { target = MAR }
 						TNO_increase_volunteer_cap_1 = yes
 					}
