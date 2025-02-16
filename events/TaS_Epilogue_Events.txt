@@ -5705,7 +5705,16 @@ country_event = {#Patenalist Speer specific - Elections
 	
 	option = {
 		name = TaS_GERCollapse.15.a
-		ai_chance = { factor = 1 }	
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = GER_SPEER_ELECTIONS
+					option = GER_SPEER_ELECTIONS_VOGEL
+				}
+			}
+		}
 		add_political_power = -100
 		hidden_effect = {
 			XYZ = {
@@ -5749,7 +5758,16 @@ country_event = {#Patenalist Speer specific - Elections
 	}
 	option = {
 		name = TaS_GERCollapse.15.b
-		ai_chance = { factor = 1 }	
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = GER_SPEER_ELECTIONS
+					option = GER_SPEER_ELECTIONS_DREGGER
+				}
+			}
+		}
 		add_political_power = -100
 		hidden_effect = {
 			XYZ = {
