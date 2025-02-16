@@ -4146,6 +4146,7 @@ TaS_WRW2_territorial_reclamation = {
 					MTR = { owns_state = 2125 }
 					owns_state = 2125
 				}
+				PER = { exists = yes }
 			}
 			has_global_flag = TaS_WRW2_Russian_victory
 		}
@@ -4168,6 +4169,41 @@ TaS_WRW2_territorial_reclamation = {
 			custom_effect_tooltip = TaS_WRW2_Demands_to_Iran_tt
 			hidden_effect = {
 				country_event = { id = MAR_ultimatums.115 days = 3 }
+			}
+		}
+	}
+	TaS_WRW2_operation_Griboyedov = {
+		icon = GFX_griboyedov
+		visible = {
+			PER = { exists = yes }
+			has_global_flag = TaS_WRW2_Russian_victory
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAR_all_fates_decided_tt
+				check_variable = { MAR_fates_done = 8 }
+			}
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		fire_only_once = yes
+		cost = 25
+		complete_effect = {
+			add_war_support = 0.01
+		}
+		days_remove = 14
+		remove_effect = {
+			custom_effect_tooltip = TaS_WRW2_operation_Griboyedov_tt
+			declare_war_on = {
+				target = PER
+				type = annex_everything
+			}
+			hidden_effect = {
+				every_country = {
+					limit = { is_ai = no }
+					news_event = { id = MAR_2WRW_world_news.51 }
+				}
 			}
 		}
 	}

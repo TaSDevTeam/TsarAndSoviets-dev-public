@@ -6968,7 +6968,12 @@ news_event = { #Russia has nuclears now
 	is_triggered_only = yes
 	
 	option = {
+		trigger = { NOT = { tag = RUS } }
 		name = MAR_2WRW_world_news.49.a
+	}
+	option = {
+		trigger = { tag = RUS }
+		name = MAR_2WRW_world_news.49.b
 	}
 }
 
@@ -7032,5 +7037,18 @@ news_event = { #Germany attacks Russia again.. wait its really preemptive attack
 			set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_BEGINNING_KOSYGIN }
 			TNO_fire_super_event = yes
 		}
+	}
+}
+
+news_event = { #Russo-Persian war
+	id = MAR_2WRW_world_news.51
+	title = MAR_2WRW_world_news.51.t
+	desc = MAR_2WRW_world_news.51.d
+	picture = GFX_MAR_2WRW_world_news_051
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = MAR_2WRW_world_news.51.a
 	}
 }

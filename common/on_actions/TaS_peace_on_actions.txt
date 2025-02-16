@@ -1,6 +1,6 @@
 on_actions = {
 	on_capitulation = {
-			effect = {
+		effect = {
 				if = {
 					limit = {
 						FROM = {
@@ -296,7 +296,7 @@ on_actions = {
 					}
 				}
 				FROM = {
-				white_peace = ROOT
+					white_peace = ROOT
 				}
 				MON = {
 					transfer_state = 814
@@ -356,31 +356,6 @@ on_actions = {
 					}
 				}
 				
-				set_global_flag = skip_default_capitulation
-			}
-			else_if = {
-				limit = {
-					FROM = {
-						original_tag = MAR
-						MAR = { has_global_flag = TaS_WRW2_Russian_victory }
-					}
-					ROOT = { 
-						original_tag = FIN
-					}
-				}
-				FROM = {
-					white_peace = ROOT
-				}
-				MAR = {
-					transfer_state = 216
-					transfer_state = 215
-					transfer_state = 1359
-					transfer_state = 213
-					transfer_state = 1887
-				}
-				FIN = {
-					econ_join_sphere_MAR = yes
-				}
 				set_global_flag = skip_default_capitulation
 			}
 			else_if = {
@@ -768,7 +743,7 @@ on_actions = {
 					ROM = {	
 						if = {
 							limit = { 
-								TNS = { exists = yes }
+								country_exists = TNS
 								TNS = { is_subject_of = ROM }
 							}
 							if = {
@@ -842,7 +817,7 @@ on_actions = {
 						}
 						else = {
 							if = {
-								limit = { MUK = { exists = yes } }
+								limit = { country_exists = MUK }
 								MUK = {
 									transfer_state = 80
 									transfer_state = 1286
@@ -1826,8 +1801,91 @@ on_actions = {
 				}
 				set_global_flag = skip_default_capitulation
 			}
-			
-			#clr_global_flag = skip_default_capitulation
+			else_if = { ##Operation Griboyedov
+				limit = {
+					FROM = {
+						original_tag = RUS
+					}
+					ROOT = { 
+						original_tag = PER
+					}
+				}
+				FROM = {
+					white_peace = ROOT
+					transfer_state = 2125
+					add_state_core = 2125
+					PER = {	
+						XYZ = {
+							PER_regency_council = {
+								set_nationality = PER
+							}
+						}
+						promote_character = PER_regency_council
+						add_popularity = {
+							ideology = despotism
+							popularity = 0.35
+						}
+						add_popularity = {
+							ideology = despotism_1
+							popularity = 0.15
+						}
+						retire_country_leader = yes
+						add_country_leader_role = {
+							character = PER_regency_council
+							promote_leader = yes
+							country_leader = {
+								#desc = "PER_regency_council_DESC"
+								ideology = despotism_interim_government_subtype
+								traits = { }
+								expire = "1999.1.1.1"
+							}
+						}
+						set_cosmetic_tag = PER_RUS
+						
+						set_party_name = {
+							ideology = despotism
+							long_name = PER_despotism_party_rus_long
+							name = PER_despotism_party_rus
+						}	
+						set_party_name = {
+							ideology = despotism_1
+							long_name = PER_despotism_party_rus1_long
+							name = PER_despotism_party_rus1
+						}	
+						econ_join_sphere_MAR = yes
+						get_current_government_type = yes
+						save_party_popularities = yes
+						RUS = {
+							set_autonomy = {
+								target = PER
+								autonomy_state = autonomy_satellite
+							}	
+						}	
+						restore_previous_government_type = yes
+						apply_party_popularities = yes
+					}
+					every_country = {
+						limit = {
+							controls_state = 291
+							check_variable = { ECON_SPHERE_LEADER = RUS }
+						}
+						transfer_state = 2126
+						transfer_state = 413
+						add_state_core = 2126
+						add_state_core = 413
+					}
+					if = {
+						limit = { AZR = { exists = yes } }
+						AZR = {
+							transfer_state = 419
+							transfer_state = 973
+							add_state_core = 419
+							add_state_core = 973
+						}
+					}
+				}
+				set_global_flag = skip_default_capitulation
+			}
 		}
 	}
 }
