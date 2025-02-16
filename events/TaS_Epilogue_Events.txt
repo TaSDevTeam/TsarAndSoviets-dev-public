@@ -1001,7 +1001,16 @@ country_event = {#Bormann Event 3
 	
 	option = { #Klopher
 		name = TaS_GEREpilogue.33.a 
-		ai_chance = { factor = 1 }	
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = GER_BORINGMAN_SUCCESSOR
+					option = GER_BORINGMAN_SUCCESSOR_KLOPHER
+				}
+			}
+		}
 		hidden_effect = {
 			every_country  = {
 				news_event = {
@@ -1030,7 +1039,16 @@ country_event = {#Bormann Event 3
 	}
 	option = { #Oberlander
 		name = TaS_GEREpilogue.33.b
-		ai_chance = { factor = 1 }	
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = GER_BORINGMAN_SUCCESSOR
+					option = GER_BORINGMAN_SUCCESSOR_OBERLANDER
+				}
+			}
+		}	
 		hidden_effect = {
 			every_country  = {
 				news_event = {
@@ -1054,7 +1072,16 @@ country_event = {#Bormann Event 3
 	}
 	option = { #Axmann
 		name = TaS_GEREpilogue.33.c
-		ai_chance = { factor = 1 }	
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = GER_BORINGMAN_SUCCESSOR
+					option = GER_BORINGMAN_SUCCESSOR_AXMANN
+				}
+			}
+		}	
 		hidden_effect = {
 			retire_country_leader = yes
 			add_country_leader_role = {
@@ -1078,7 +1105,16 @@ country_event = {#Bormann Event 3
 	}
 	option = { #Biedenkopf
 		name = TaS_GEREpilogue.33.e
-		ai_chance = { factor = 1 }	
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = GER_BORINGMAN_SUCCESSOR
+					option = GER_BORINGMAN_SUCCESSOR_BIEDENKOPF
+				}
+			}
+		}
 		hidden_effect = {
 			XYZ = {
 				GER_Kurt_Biedenkopf = {
@@ -1214,9 +1250,17 @@ country_event = {#Oberlander Speer Event 2
 		else = {
 			random_list = {
 				7 = {
+				    modifier = {
+						factor = 0
+						has_game_rule = { rule = GER_SPEER_OBERLANDER_ENDING option = GER_SPEER_OBERLANDER_ENDING_OBERLANDAR_STAY }
+					}
 					country_event = { id = TaS_GEREpilogue.39 days = 7}
 				}	
 				3 = {
+                    modifier = {
+						factor = 0
+						has_game_rule = { rule = GER_SPEER_OBERLANDER_ENDING option = GER_SPEER_OBERLANDER_ENDING_SCHOENER_COUP }
+					}				
 					country_event = { id = TaS_GEREpilogue.44 days = 7}
 				}
 			}
@@ -5661,7 +5705,16 @@ country_event = {#Patenalist Speer specific - Elections
 	
 	option = {
 		name = TaS_GERCollapse.15.a
-		ai_chance = { factor = 1 }	
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = GER_SPEER_ELECTIONS
+					option = GER_SPEER_ELECTIONS_VOGEL
+				}
+			}
+		}
 		add_political_power = -100
 		hidden_effect = {
 			XYZ = {
@@ -5705,7 +5758,16 @@ country_event = {#Patenalist Speer specific - Elections
 	}
 	option = {
 		name = TaS_GERCollapse.15.b
-		ai_chance = { factor = 1 }	
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = GER_SPEER_ELECTIONS
+					option = GER_SPEER_ELECTIONS_DREGGER
+				}
+			}
+		}
 		add_political_power = -100
 		hidden_effect = {
 			XYZ = {

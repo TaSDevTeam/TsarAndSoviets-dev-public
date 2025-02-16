@@ -4604,6 +4604,7 @@ country_event = { #Baltics
 					}
 				}
 				TaS_2WRW_set_autonomy_laws = yes
+				econ_join_sphere_MAR = yes
 				#add_ideas = { MAR_military_administration }
 				if = {
 					limit = { MAR = { has_government = despotism } }
@@ -4805,6 +4806,7 @@ country_event = { #Belarus
 						add_state_core = PREV
 					}
 				}
+				econ_join_sphere_MAR = yes
 				TaS_2WRW_set_free_laws = yes
 				#add_ideas = { MAR_military_administration }
 				remove_ideas = { MAR_military_administration }
@@ -4871,6 +4873,7 @@ country_event = { #Belarus
 						add_state_core = PREV
 					}
 				}
+				econ_join_sphere_MAR = yes
 				TaS_2WRW_set_autonomy_laws = yes
 				#add_ideas = { MAR_military_administration }
 				remove_ideas = { MAR_military_administration }
@@ -5021,6 +5024,7 @@ country_event = { #Ukraine
 						add_state_core = PREV
 					}
 				}
+				econ_join_sphere_MAR = yes
 				TaS_2WRW_set_free_laws = yes
 				#add_ideas = { MAR_military_administration }
 				remove_ideas = { MAR_military_administration }
@@ -5085,6 +5089,7 @@ country_event = { #Ukraine
 				TaS_2WRW_set_autonomy_laws = yes
 				#add_ideas = { MAR_military_administration }
 				remove_ideas = { MAR_military_administration }
+				econ_join_sphere_MAR = yes
 				if = {
 					limit = { MAR = { has_government = despotism } }
 					set_politics = {
@@ -5211,6 +5216,7 @@ country_event = { #Crimnea
 						add_state_core = PREV
 					}
 				}
+				econ_join_sphere_MAR = yes
 				TaS_2WRW_set_autonomy_laws = yes
 				#add_ideas = { MAR_military_administration }
 				if = {
@@ -5346,6 +5352,7 @@ country_event = { #Caucasus
 						add_state_core = PREV
 					}
 				}
+				econ_join_sphere_MAR = yes
 				#add_ideas = { MAR_military_administration }
 				if = {
 					limit = { MAR = { has_government = despotism } }
@@ -5455,6 +5462,7 @@ country_event = { #Caucasus
 						add_state_core = PREV
 					}
 				}
+				econ_join_sphere_MAR = yes
 				#add_ideas = { MAR_military_administration }
 				set_party_name = { 
 					ideology = despotism 
