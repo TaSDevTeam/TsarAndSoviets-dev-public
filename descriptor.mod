@@ -6,8 +6,8 @@ tags={
 	"Alternative History"
 }
 dependencies={
-	"The New Order: Last Days Of Europe (RUSSIAN)"
 	"The New Order: Last Days of Europe"
+	"The New Order: Last Days Of Europe (RUSSIAN)"
 }
 name="Tsar and Soviets Development Edition"
 supported_version="1.15.*"

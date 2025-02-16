@@ -383,67 +383,6 @@ on_actions = {
 			else_if = {
 				limit = {
 					FROM = {
-						original_tag = FIN
-					}
-				}
-				if = {
-					limit = {
-						FROM.FROM = {
-							state = 111
-						}
-						has_global_flag = RUS_FIN_second_war
-					}
-					ROOT = {
-						if = {
-							limit = {
-								is_russian_nation = yes
-							}
-							hidden_effect = {
-								#every_country  = {
-								#	news_event = {
-								#		id = MAR_2WRW_world_news.7
-								#	}
-								#}
-								SWRW_finland_peacedeal = yes
-							}
-							
-						}
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					FROM = {
-						original_tag = TUR
-					}
-				}
-				if = {
-					limit = {
-						FROM.FROM = {
-							state = 49
-						}
-					}
-					ROOT = {
-						if = {
-							limit = {
-								is_russian_nation = yes
-							}
-							hidden_effect = {
-								#every_country  = {
-								#	news_event = {
-								#		id = MAR_2WRW_world_news.7
-								#	}
-								#}
-								SWRW_turkey_peacedeal = yes
-							}
-							
-						}
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					FROM = {
 						OR = {
 							original_tag = RUS
 							original_tag = GEO

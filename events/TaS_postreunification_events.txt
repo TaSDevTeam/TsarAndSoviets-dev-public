@@ -5773,7 +5773,7 @@ country_event = { #Turkish Straits
 		custom_effect_tooltip = MAR_freedom_for_everyone_tt
 		hidden_effect = {
 			GRM = {
-				GRM_Ahmet_Isvan = {
+				MTU_Ahmet_Isvan = {
 					set_nationality = TUR
 				}
 			}	
@@ -5792,12 +5792,12 @@ country_event = { #Turkish Straits
 				}
 				econ_join_sphere_MAR = yes
 				retire_country_leader = yes
-				promote_character = GRM_Ahmet_Isvan
+				promote_character = MTU_Ahmet_Isvan
 				add_country_leader_role = {
-					character = GRM_Ahmet_Isvan
+					character = MTU_Ahmet_Isvan
 					promote_leader = yes
 					country_leader = {
-						desc = "GRM_Ahmet_Isvan_DESC"
+						desc = "MTU_Ahmet_Isvan_DESC"
 						ideology = paternalism_kemalism_subtype
 						expire = "1999.1.1"
 						traits = { }
@@ -5841,10 +5841,10 @@ country_event = { #Turkish Straits
 				}
 				econ_join_sphere_MAR = yes
 				add_country_leader_role = {
-					character = GRM_Ahmet_Isvan
+					character = MTU_Ahmet_Isvan
 					promote_leader = yes
 					country_leader = {
-						desc = "GRM_Ahmet_Isvan_DESC"
+						desc = "MTU_Ahmet_Isvan_DESC"
 						ideology = conservatism_right_kemalism_subtype
 						expire = "1999.1.1"
 						traits = { }
