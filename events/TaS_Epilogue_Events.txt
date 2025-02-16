@@ -6107,13 +6107,26 @@ country_event = {#General - Pakt collapses
 				if = {
 					limit = { is_in_faction_with = GER }
 					country_event = { id = TaS_GERCollapse.40 days = 54}
-					IND = {
-						add_ai_strategy = {
-							type = prepare_for_war
-							id = PAK
-							value = 200
+					if = {
+						limit = { IND = { exists = yes } }
+						IND = {
+							add_ai_strategy = {
+								type = prepare_for_war
+								id = PAK
+								value = 200
+							}
 						}
 					}
+					else = {
+						AZH = {
+							add_ai_strategy = {
+								type = prepare_for_war
+								id = PAK
+								value = 200
+							}
+						}	
+					}
+					
 				}
 			}
 			ZZZ = {
@@ -7091,10 +7104,23 @@ country_event = {#General - Second PAK-IND war
 		ai_chance = { factor = 1 }	
 		add_political_power = -100
 		hidden_effect = {
-			IND = {
-				declare_war_on = {
-					target = PAK
-					type = annex_everything
+			if = {
+				limit = { IND = { exists = yes } }
+				IND = {
+					leave_faction = yes
+					declare_war_on = {
+						target = PAK
+						type = annex_everything
+					}
+				}
+			}
+			else = {
+				AZH = {
+					leave_faction = yes
+					declare_war_on = {
+						target = PAK
+						type = annex_everything
+					}
 				}
 			}
 			set_global_flag = PAK_rip_bozo_ger_no_more
@@ -7121,7 +7147,10 @@ country_event = {#General - German evacuation from Africa
 		add_political_power = -100
 		hidden_effect = {
 			if = {
-				limit = { GRO = { exists = yes } }
+				limit = { 
+					GRO = { exists = yes }
+					COG = { exists = no }
+				}
 				COG = {
 					COG_USA_Joseph_Ileo = {
 						set_nationality = GRO
@@ -7178,6 +7207,18 @@ country_event = {#General - German evacuation from Africa
 						set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
 						econ_type_change = yes
 						TNO_startup_nation = yes
+					}
+				}
+			}
+			else = {
+				COG = {
+					annex_country = {
+						target = GRO
+						transfer_troops = no
+					}
+					every_owned_state = {
+						remove_core_of = GRO
+						add_core_of = COG
 					}
 				}
 			}

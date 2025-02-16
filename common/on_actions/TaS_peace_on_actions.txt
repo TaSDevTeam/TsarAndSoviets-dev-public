@@ -1777,7 +1777,10 @@ on_actions = {
 			else_if = { ##Second IND-PAK war
 				limit = {
 					FROM = {
-						original_tag = IND
+						OR = {
+							original_tag = IND
+							original_tag = AZH
+						}
 					}
 					ROOT = { 
 						original_tag = PAK
@@ -1799,7 +1802,7 @@ on_actions = {
 					every_owned_state = {
 						add_core_of = FROM
 					}
-				}
+				}	
 				FROM = {
 					annex_country = {
 						target = ROOT
@@ -1807,6 +1810,18 @@ on_actions = {
 					}
 					every_owned_state = {
 						add_core_of = FROM
+					}
+					if = {
+						limit = { has_idea = Sphere_Coequal }
+						JAP = {
+							add_to_faction = FROM
+						}
+					}
+					if = {
+						limit = { has_idea = OFN_Independent_Member }
+						USA = {
+							add_to_faction = FROM
+						}
 					}
 				}
 				set_global_flag = skip_default_capitulation
