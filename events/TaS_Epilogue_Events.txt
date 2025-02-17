@@ -5638,6 +5638,7 @@ country_event = { #Patenalist Speer specific - Brandt killed
 				}
 			}
 			retire_character = GER_willy_brandt
+			set_global_flag = GER_brandt_is_kil
 			country_event = { id = TaS_GERCollapse.14 days = 7} 
 		}
 	}
@@ -5661,6 +5662,7 @@ country_event = { #Patenalist Speer specific - GO4 interim government
 					id = TaS_GERCollapse_news.14
 				}
 			}
+			drop_cosmetic_tag = yes
 			set_cosmetic_tag = GER_DEM
 			retire_country_leader = yes
 			add_country_leader_role = {
@@ -5731,9 +5733,7 @@ country_event = {#Patenalist Speer specific - Elections
 			promote_character = GER_Hans_Jochen_Vogel
 			set_politics = {
 				ruling_party = progressivism 
-				last_election = "1933.2.16"
-				election_frequency = 36
-				elections_allowed = no
+				elections_allowed = yes
 			}
 			add_popularity = {
 				ideology = progressivism
@@ -5752,6 +5752,17 @@ country_event = {#Patenalist Speer specific - Elections
 				ideology = conservatism
 				long_name = GER_conservatism_elections_long
 				name = GER_conservatism_elections
+			}
+			meta_effect = { #sets up next election date in country ui
+				text = {
+					set_politics = {
+						ruling_party = progressivism
+						last_election = "[current_election_date]"
+						elections_allowed = yes
+						election_frequency = 48
+					}
+				}
+				current_election_date = "[?global.date.GetDateStringNoHour]"
 			}
 			country_event = { id = TaS_GERCollapse.16 days = 25}
 		}
@@ -5784,9 +5795,7 @@ country_event = {#Patenalist Speer specific - Elections
 			promote_character = GER_Alfred_Dregger
 			set_politics = {
 				ruling_party = conservatism
-				last_election = "1933.2.16"
-				election_frequency = 36
-				elections_allowed = no
+				elections_allowed = yes
 			}
 			add_popularity = {
 				ideology = conservatism
@@ -5805,6 +5814,17 @@ country_event = {#Patenalist Speer specific - Elections
 				ideology = conservatism
 				long_name = GER_conservatism_elections_long
 				name = GER_conservatism_elections
+			}
+			meta_effect = { #sets up next election date in country ui
+				text = {
+					set_politics = {
+						ruling_party = conservatism
+						last_election = "[current_election_date]"
+						elections_allowed = yes
+						election_frequency = 48
+					}
+				}
+				current_election_date = "[?global.date.GetDateStringNoHour]"
 			}
 			country_event = { id = TaS_GERCollapse.16 days = 25}
 		}
@@ -5839,8 +5859,6 @@ country_event = {#Patenalist Speer specific - Veterans March
 			promote_character = GER_Adolf_von_Thadden
 			set_politics = {
 				ruling_party = fascism 
-				last_election = "1933.2.16"
-				election_frequency = 36
 				elections_allowed = no
 			}
 			add_popularity = {
@@ -6192,6 +6210,18 @@ country_event = {#General - Pakt collapses
 				}
 			}
 			ZZZ = {
+				if = {
+					limit = {
+						OR = {
+							country_exists = GRO
+							country_exists = MDG
+							GER = {
+								controls_state = 706
+								controls_state = 707
+							}
+						}	
+					}
+				}
 				country_event = { id = TaS_GERCollapse.41 days = 15}
 			}
 			every_country = {
@@ -6864,6 +6894,16 @@ country_event = {#General - Norway(Russian)coup
 					target = NOR
 					transfer_troops = yes
 				}
+				every_owned_state = {
+					limit = {
+						NOT = {
+							state = 2097
+							state = 2098
+						}
+					}
+					add_core_of = GNR
+					remove_core_of = NOR
+				}
 				econ_join_sphere_MAR = yes
 			}
 			RUS = {
@@ -6872,8 +6912,15 @@ country_event = {#General - Norway(Russian)coup
 				add_state_core = 2097
 				add_state_core = 2098
 			}
-			2097 = { set_state_name = STATE_2097_rus }
-			2098 = { set_state_name = STATE_2098_rus }
+			2097 = {
+				set_state_name = STATE_2097_rus
+				set_variable = { nationality = 151 }
+			}
+			2098 = { 
+				set_state_name = STATE_2098_rus
+				set_variable = { nationality = 151 }
+			}
+			
 			set_province_name = { id = 16826 name = VICTORY_POINTS_16826_rus }
 		}
 	}
@@ -7317,6 +7364,17 @@ country_event = {#General - German evacuation from Africa
 					set_cosmetic_tag = MAD_arema
 					set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Planned }
 					econ_type_change = yes
+				}
+			}
+			else = {
+				MAD = {
+					transfer_state = 706
+					transfer_state = 707
+					every_owned_state = {
+						remove_core_of = MDG
+						remove_core_of = GER
+						add_core_of = MAD
+					}
 				}
 			}
 			every_country  = {

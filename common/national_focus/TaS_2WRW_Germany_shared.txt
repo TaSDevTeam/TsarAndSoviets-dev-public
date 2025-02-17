@@ -310,7 +310,7 @@ shared_focus = {
 	}
 	prerequisite = {focus = GER_graveyard_of_the_empires }
 	relative_position_id = GER_graveyard_of_the_empires
-	x = -2
+	x = -4
 	y = 1
 	completion_reward = {
 		if = {
@@ -372,9 +372,9 @@ shared_focus = {
 	}
 	prerequisite = {focus = GER_graveyard_of_the_empires }
 	relative_position_id = GER_graveyard_of_the_empires
-	x = 2
+	x = 4
 	y = 1
-	completion_reward = {
+	completion_reward = {	
 		if = {
 			limit = { has_country_flag = GER_SWRW_defence_focus }
 			country_event = { id = GER_SWRW.13 }

@@ -1968,15 +1968,37 @@ SWRW_clear_war_stuff = {
 	clr_global_flag = TaS_2WRW_started
 	GER = {
 		set_temp_variable = { TabName = token:BoP_Tab_SWRW }
-		set_variable = { WRW2_devastation = 0 }
 		TNO_BoP_RemoveTab = yes
+		set_variable = { WRW2_devastation = 0 }
 		remove_dynamic_modifier = { modifier = TaS_WRW2_exhausion_modifier_GER } 
 		remove_ideas = SWRW_war_partisans 
 		remove_ideas = TaS_2WRW_sanctions
+		remove_ideas = TaS_2WRW_north_sea_problems
 		remove_ideas = SWRW_interrupted_trade
 		remove_ideas = SWRW_last_stand
 		remove_ideas = SWRW_mass_strikes
 		remove_ideas = SWRW_offensive_against_rus
+		remove_ideas = SWRW_GER_defensive_oper
+		remove_ideas = SWRW_GER_offensive_oper
+		remove_ideas = SWRW_GER_oper_fail_5
+		remove_ideas = SWRW_GER_oper_fail_4
+		remove_ideas = SWRW_GER_oper_fail_3
+		remove_ideas = SWRW_GER_oper_fail_2
+		remove_ideas = SWRW_GER_oper_fail_1
+		remove_ideas = SWRW_GER_oper_zero
+		remove_ideas = SWRW_GER_oper_succ_1
+		remove_ideas = SWRW_GER_oper_succ_2
+		remove_ideas = SWRW_GER_oper_succ_3
+		remove_ideas = SWRW_GER_oper_succ_4
+		remove_ideas = SWRW_GER_oper_succ_5
+		remove_ideas = SWRW_epidemics
+		every_country = {
+			limit = { is_subject_of = GER }
+			remove_ideas = SWRW_reichskommisariat
+		}
+		CAU = {
+			remove_ideas = SWRW_muslim_warriors
+		}
 	}
 	RUS = {
 		set_temp_variable = { TabName = token:BoP_Tab_SWRW }
@@ -1984,8 +2006,10 @@ SWRW_clear_war_stuff = {
 		set_variable = { WRW2_devastation = 0 }
 		remove_dynamic_modifier = { modifier = TaS_WRW2_exhausion_modifier_RUS }
 		remove_ideas = SWRW_free_money
+		remove_ideas = SWRW_draft_propaganda
 		remove_ideas = SWRW_increased_arms_prodution
 		remove_ideas = SWRW_international_recruiting
+		remove_ideas = SWRW_broken_plans
 		remove_ideas = TaS_2WRW_ofn_advisors
 		remove_ideas = MAR_oper_fail_5
 		remove_ideas = MAR_oper_fail_4
@@ -2000,6 +2024,8 @@ SWRW_clear_war_stuff = {
 		remove_ideas = MAR_oper_succ_5
 		remove_ideas = SWRW_last_stand
 		remove_ideas = SWRW_offensive_against_ger
+		remove_ideas = SWRW_influx_of_refugees
+		remove_ideas = SWRW_epidemics
 		delete_unit_template_and_units = {
 			division_template = "OFN Infantry Volunteers"
 			disband = no

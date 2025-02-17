@@ -1867,21 +1867,54 @@ country_event = { #Bulgaria wants to quit
 		name = TaS_SWRW.16.a
 		BUL = {
 			white_peace = RUS 
-			leave_faction = yes
-			econ_leave_sphere = yes
-			if = {
-				limit = { has_idea = SGR_zollverein_basic }
+			hidden_effect = {
+				leave_faction = yes
 				leave_zollverein = yes
+				econ_leave_sphere = yes
+				if = {
+					limit = { has_idea = SGR_zollverein_basic }
+					leave_zollverein = yes
+				}
+				remove_ideas = Pakt_Leader
+				remove_ideas = Pakt_Military_Authority
+				remove_ideas = Pakt_Protektorat
+				remove_ideas = Pakt_Integrated_Reichskommissariat
+				remove_ideas = Pakt_Autonomous_Reichskommissariat
+				remove_ideas = Pakt_Reichsland
+				remove_ideas = Pakt_Marionettenstaat
+				remove_ideas = Pakt_Mitstreiter
+				remove_ideas = Pakt_Bundnispartner
+				remove_ideas = Pakt_Ordensstaat
+				remove_ideas = Pakt_Observer
 			}
 		}
 		every_country = {
-			limit = { is_subject_of = BUL }
+			limit = {
+				OR = {
+					is_subject_of = BUL
+					tag = MAC
+				}	
+			}
 			white_peace = RUS 
-			leave_faction = yes
-			econ_leave_sphere = yes
-			if = {
-				limit = { has_idea = SGR_zollverein_basic }
+			hidden_effect = {
+				leave_faction = yes
 				leave_zollverein = yes
+				econ_leave_sphere = yes
+				if = {
+					limit = { has_idea = SGR_zollverein_basic }
+					leave_zollverein = yes
+				}
+				remove_ideas = Pakt_Leader
+				remove_ideas = Pakt_Military_Authority
+				remove_ideas = Pakt_Protektorat
+				remove_ideas = Pakt_Integrated_Reichskommissariat
+				remove_ideas = Pakt_Autonomous_Reichskommissariat
+				remove_ideas = Pakt_Reichsland
+				remove_ideas = Pakt_Marionettenstaat
+				remove_ideas = Pakt_Mitstreiter
+				remove_ideas = Pakt_Bundnispartner
+				remove_ideas = Pakt_Ordensstaat
+				remove_ideas = Pakt_Observer
 			}
 		}
 		hidden_effect = {
@@ -1900,21 +1933,54 @@ country_event = { #Bulgaria wants to quit
 				set_country_flag = BUL_demands
 				BUL = {
 					white_peace = RUS 
-					leave_faction = yes
-					econ_leave_sphere = yes
-					if = {
-						limit = { has_idea = SGR_zollverein_basic }
+					hidden_effect = {
+						leave_faction = yes
 						leave_zollverein = yes
+						econ_leave_sphere = yes
+						if = {
+							limit = { has_idea = SGR_zollverein_basic }
+							leave_zollverein = yes
+						}
+						remove_ideas = Pakt_Leader
+						remove_ideas = Pakt_Military_Authority
+						remove_ideas = Pakt_Protektorat
+						remove_ideas = Pakt_Integrated_Reichskommissariat
+						remove_ideas = Pakt_Autonomous_Reichskommissariat
+						remove_ideas = Pakt_Reichsland
+						remove_ideas = Pakt_Marionettenstaat
+						remove_ideas = Pakt_Mitstreiter
+						remove_ideas = Pakt_Bundnispartner
+						remove_ideas = Pakt_Ordensstaat
+						remove_ideas = Pakt_Observer
 					}
 				}
 				every_country = {
-					limit = { is_subject_of = BUL }
+					limit = {
+						OR = {
+							is_subject_of = BUL
+							tag = MAC
+						}	
+					}
 					white_peace = RUS 
-					leave_faction = yes
-					econ_leave_sphere = yes
-					if = {
-						limit = { has_idea = SGR_zollverein_basic }
+					hidden_effect = {
+						leave_faction = yes
 						leave_zollverein = yes
+						econ_leave_sphere = yes
+						if = {
+							limit = { has_idea = SGR_zollverein_basic }
+							leave_zollverein = yes
+						}
+						remove_ideas = Pakt_Leader
+						remove_ideas = Pakt_Military_Authority
+						remove_ideas = Pakt_Protektorat
+						remove_ideas = Pakt_Integrated_Reichskommissariat
+						remove_ideas = Pakt_Autonomous_Reichskommissariat
+						remove_ideas = Pakt_Reichsland
+						remove_ideas = Pakt_Marionettenstaat
+						remove_ideas = Pakt_Mitstreiter
+						remove_ideas = Pakt_Bundnispartner
+						remove_ideas = Pakt_Ordensstaat
+						remove_ideas = Pakt_Observer
 					}
 				}
 				hidden_effect = {
@@ -1957,14 +2023,26 @@ country_event = { #Serbia wants to quit
 						end_puppet = SER
 					}
 				}
+				leave_faction = yes
+				leave_zollverein = yes
+				econ_leave_sphere = yes
+				if = {
+					limit = { has_idea = SGR_zollverein_basic }
+					leave_zollverein = yes
+				}
+				remove_ideas = Pakt_Leader
+				remove_ideas = Pakt_Military_Authority
+				remove_ideas = Pakt_Protektorat
+				remove_ideas = Pakt_Integrated_Reichskommissariat
+				remove_ideas = Pakt_Autonomous_Reichskommissariat
+				remove_ideas = Pakt_Reichsland
+				remove_ideas = Pakt_Marionettenstaat
+				remove_ideas = Pakt_Mitstreiter
+				remove_ideas = Pakt_Bundnispartner
+				remove_ideas = Pakt_Ordensstaat
+				remove_ideas = Pakt_Observer
 			}
 			white_peace = RUS 
-			leave_faction = yes
-			econ_leave_sphere = yes
-			if = {
-				limit = { has_idea = SGR_zollverein_basic }
-				leave_zollverein = yes
-			}
 		}
 		hidden_effect = {
 			every_country  = {
@@ -1988,14 +2066,26 @@ country_event = { #Serbia wants to quit
 								end_puppet = SER
 							}
 						}
+						leave_faction = yes
+						leave_zollverein = yes
+						econ_leave_sphere = yes
+						if = {
+							limit = { has_idea = SGR_zollverein_basic }
+							leave_zollverein = yes
+						}
+						remove_ideas = Pakt_Leader
+						remove_ideas = Pakt_Military_Authority
+						remove_ideas = Pakt_Protektorat
+						remove_ideas = Pakt_Integrated_Reichskommissariat
+						remove_ideas = Pakt_Autonomous_Reichskommissariat
+						remove_ideas = Pakt_Reichsland
+						remove_ideas = Pakt_Marionettenstaat
+						remove_ideas = Pakt_Mitstreiter
+						remove_ideas = Pakt_Bundnispartner
+						remove_ideas = Pakt_Ordensstaat
+						remove_ideas = Pakt_Observer
 					}
 					white_peace = RUS 
-					leave_faction = yes
-					econ_leave_sphere = yes
-					if = {
-						limit = { has_idea = SGR_zollverein_basic }
-						leave_zollverein = yes
-					}
 				}
 				hidden_effect = {
 					every_country  = {
@@ -2031,11 +2121,25 @@ country_event = { #Hungary wants to quit
 		name = TaS_SWRW.12.a
 		HUN = {
 			white_peace = RUS 
-			leave_faction = yes
-			econ_leave_sphere = yes
-			if = {
-				limit = { has_idea = SGR_zollverein_basic }
+			hidden_effect = {
+				leave_faction = yes
 				leave_zollverein = yes
+				econ_leave_sphere = yes
+				if = {
+					limit = { has_idea = SGR_zollverein_basic }
+					leave_zollverein = yes
+				}
+				remove_ideas = Pakt_Leader
+				remove_ideas = Pakt_Military_Authority
+				remove_ideas = Pakt_Protektorat
+				remove_ideas = Pakt_Integrated_Reichskommissariat
+				remove_ideas = Pakt_Autonomous_Reichskommissariat
+				remove_ideas = Pakt_Reichsland
+				remove_ideas = Pakt_Marionettenstaat
+				remove_ideas = Pakt_Mitstreiter
+				remove_ideas = Pakt_Bundnispartner
+				remove_ideas = Pakt_Ordensstaat
+				remove_ideas = Pakt_Observer
 			}
 		}
 		hidden_effect = {
@@ -2054,11 +2158,25 @@ country_event = { #Hungary wants to quit
 				set_country_flag = HUN_demands
 				HUN = {
 					white_peace = RUS 
-					leave_faction = yes
-					econ_leave_sphere = yes
-					if = {
-						limit = { has_idea = SGR_zollverein_basic }
+					hidden_effect = {
+						leave_faction = yes
 						leave_zollverein = yes
+						econ_leave_sphere = yes
+						if = {
+							limit = { has_idea = SGR_zollverein_basic }
+							leave_zollverein = yes
+						}
+						remove_ideas = Pakt_Leader
+						remove_ideas = Pakt_Military_Authority
+						remove_ideas = Pakt_Protektorat
+						remove_ideas = Pakt_Integrated_Reichskommissariat
+						remove_ideas = Pakt_Autonomous_Reichskommissariat
+						remove_ideas = Pakt_Reichsland
+						remove_ideas = Pakt_Marionettenstaat
+						remove_ideas = Pakt_Mitstreiter
+						remove_ideas = Pakt_Bundnispartner
+						remove_ideas = Pakt_Ordensstaat
+						remove_ideas = Pakt_Observer
 					}
 				}
 				hidden_effect = {
@@ -2095,11 +2213,25 @@ country_event = { #UK wants to quit
 		name = TaS_SWRW.13.a
 		ENG = {
 			white_peace = RUS 
-			leave_faction = yes
-			econ_leave_sphere = yes
-			if = {
-				limit = { has_idea = SGR_zollverein_basic }
+			hidden_effect = {
+				leave_faction = yes
 				leave_zollverein = yes
+				econ_leave_sphere = yes
+				if = {
+					limit = { has_idea = SGR_zollverein_basic }
+					leave_zollverein = yes
+				}
+				remove_ideas = Pakt_Leader
+				remove_ideas = Pakt_Military_Authority
+				remove_ideas = Pakt_Protektorat
+				remove_ideas = Pakt_Integrated_Reichskommissariat
+				remove_ideas = Pakt_Autonomous_Reichskommissariat
+				remove_ideas = Pakt_Reichsland
+				remove_ideas = Pakt_Marionettenstaat
+				remove_ideas = Pakt_Mitstreiter
+				remove_ideas = Pakt_Bundnispartner
+				remove_ideas = Pakt_Ordensstaat
+				remove_ideas = Pakt_Observer
 			}
 		}
 		hidden_effect = {
@@ -2126,11 +2258,25 @@ country_event = { #Romania wants to quit
 		name = TaS_SWRW.14.a
 		ROM = {
 			white_peace = RUS 
-			leave_faction = yes
-			econ_leave_sphere = yes
-			if = {
-				limit = { has_idea = SGR_zollverein_basic }
+			hidden_effect = {
+				leave_faction = yes
 				leave_zollverein = yes
+				econ_leave_sphere = yes
+				if = {
+					limit = { has_idea = SGR_zollverein_basic }
+					leave_zollverein = yes
+				}
+				remove_ideas = Pakt_Leader
+				remove_ideas = Pakt_Military_Authority
+				remove_ideas = Pakt_Protektorat
+				remove_ideas = Pakt_Integrated_Reichskommissariat
+				remove_ideas = Pakt_Autonomous_Reichskommissariat
+				remove_ideas = Pakt_Reichsland
+				remove_ideas = Pakt_Marionettenstaat
+				remove_ideas = Pakt_Mitstreiter
+				remove_ideas = Pakt_Bundnispartner
+				remove_ideas = Pakt_Ordensstaat
+				remove_ideas = Pakt_Observer
 			}
 		}
 		hidden_effect = {
@@ -2149,11 +2295,25 @@ country_event = { #Romania wants to quit
 				set_country_flag = ROM_demands
 				ROM = {
 					white_peace = RUS 
-					leave_faction = yes
-					econ_leave_sphere = yes
-					if = {
-						limit = { has_idea = SGR_zollverein_basic }
+					hidden_effect = {
+						leave_faction = yes
 						leave_zollverein = yes
+						econ_leave_sphere = yes
+						if = {
+							limit = { has_idea = SGR_zollverein_basic }
+							leave_zollverein = yes
+						}
+						remove_ideas = Pakt_Leader
+						remove_ideas = Pakt_Military_Authority
+						remove_ideas = Pakt_Protektorat
+						remove_ideas = Pakt_Integrated_Reichskommissariat
+						remove_ideas = Pakt_Autonomous_Reichskommissariat
+						remove_ideas = Pakt_Reichsland
+						remove_ideas = Pakt_Marionettenstaat
+						remove_ideas = Pakt_Mitstreiter
+						remove_ideas = Pakt_Bundnispartner
+						remove_ideas = Pakt_Ordensstaat
+						remove_ideas = Pakt_Observer
 					}
 				}
 				hidden_effect = {

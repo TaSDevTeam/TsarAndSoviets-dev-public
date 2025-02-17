@@ -98,7 +98,9 @@ TaS_WRW2_fate_and_coring_of_territories = {
 		available = {
 		
 		}
-
+		ai_will_do = {
+			factor = 200
+		}
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_fate_of_belarus"
 			country_event = { id = MAR_territorial_fate.7 }

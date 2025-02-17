@@ -68,23 +68,6 @@ OIL_get_supported_factions = {
 	#oman
 	if = {
 		limit = {
-			#ITA = {
-			#	is_in_faction_with = USA
-			#}
-			NOT = {
-				ITA = {
-					is_in_faction_with = JAP
-				}
-			}
-			#USA supports Italian Oman so they have someone to support in Oman
-		}
-		add_to_array = { global.OIL_supported_by_USA = OMA }
-	}
-	else = {
-		#no one
-	}
-	if = {
-		limit = {
 			ITA = {
 				is_in_faction_with = JAP
 			}
@@ -94,6 +77,7 @@ OIL_get_supported_factions = {
 	}
 	else = {
 		add_to_array = { global.OIL_supported_by_JAP = OMI }
+		add_to_array = { global.OIL_supported_by_USA = OMA }
 	}
 
 	#setup how many cold war points each nation is worth
@@ -102,6 +86,7 @@ OIL_get_supported_factions = {
 	set_variable = { global.sudan_OC_points = 20 }
 	set_variable = { global.egypt_OC_points = 40 }
 	set_variable = { global.iraq_OC_points = 35 }
+	TaS_OIL_get_supported_factions = yes
 }
 
 OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars are over
@@ -118,6 +103,13 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 
 		USA = {
 			TNO_fopo_remove_baathism_support_tab = yes
+			clr_country_flag = USA_back_italy
+			clr_country_flag = USA_back_saudi
+			mark_focus_tree_layout_dirty = yes
+			remove_ideas = {
+				USA_OilCrisis_Saudi_Ooooh_Ra
+				USA_OilCrisis_Saudi_Ghost_Divisions
+			}
 		}
 		JAP = {
 			TNO_fopo_remove_baathism_support_tab = yes
@@ -128,9 +120,19 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 		GER = {
 			TNO_fopo_remove_baathism_support_tab = yes
 		}
+		SAU = {
+			remove_ideas = {
+				USA_OilCrisis_Operation_Mongoose
+				USA_OilCrisis_Saudi_Operation_Eagle_Eye_1
+				USA_OilCrisis_Saudi_Operation_Eagle_Eye_2
+				USA_OilCrisis_Saudi_Refugee_Army
+				USA_OilCrisis_Saudi_Blockade
+			}
+		}
 		MAR = {
 			TaS_fopo_remove_oil_crisis_tab = yes
 		}
+
 		# log = "OIL CRISIS HAS CONCLUDED IN THE MIDDLE EAST"
 		# log = "US participation: [?USA.USA_OC_participation|0]"
 		# log = "Japanese participation: [?JAP.JAP_OC_participation|0]"
@@ -192,42 +194,19 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 				SAU = { econ_join_sphere_MAR = yes }
 			}
 		}
-		else_if = { #Yemen won its civil war
-		 	limit = {
-				YEM = { exists = yes }
-				is_in_array = {
-					array = global.OIL_supported_by_MAR
-					value = OMA
-				}
-				check_variable = { MAR.MAR_OC_participation > 49 }
-			}
-			ITA = { end_puppet = YEM }
-			YEM = {
-				leave_faction = yes 
-				econ_join_sphere_MAR = yes
-				if = {
-					limit = { has_idea = Sphere_Economic_Dependent }
-					remove_ideas = Sphere_Economic_Dependent
-				}
-				else_if = {
-					limit = { has_idea = OFN_Independent_Member }
-					remove_ideas = OFN_Independent_Member
-				}
-			}
-		}
+		# else = { #Yemen won its civil war
+		# 	#N/A. Remains in the Italian Sphere.
+		# }
 
 		#Oman outcomes
 		if = {
 			limit = { 
+				OMI = { exists = yes }
 				is_in_array = {
 					array = global.OIL_supported_by_MAR
 					value = OMI
 				}
-				OR = {
-					check_variable = { MAR.MAR_OC_participation > 19 }
-					check_variable = { MAR.MAR_OC_participation > JAP.JAP_OC_participation }
-					check_variable = { MAR.MAR_OC_participation = JAP.JAP_OC_participation }
-				}
+				check_variable = { MAR.MAR_OC_participation > 39 }
 			}
 			OMI = {	econ_join_sphere_MAR = yes }
 		}
@@ -242,17 +221,24 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 			}
 			OMI = { econ_join_sphere_JAP = yes }
 		}
-		else_if = { #Italians
+		else_if = {
 			limit = {
-				OMA = { exists = yes }
+				OMI = { exists = yes }
 				is_in_array = {
-					array = global.OIL_supported_by_MAR
-					value = OMA
+					array = global.OIL_supported_by_USA
+					value = OMI
 				}
-				check_variable = { MAR.MAR_OC_participation > 49 }
+				check_variable = { USA.USA_OC_participation > 39 }
 			}
-		 	#Handled in the event OMA.6 # да поебать мне
+			OMI = {
+				econ_join_sphere_USA = yes
+				add_ideas = OFN_Observer
+			}
 		}
+		# else_if = { #Italians
+		# 	limit = { OMA = { exists = yes } }
+		# 	#Handled in the event OMA.6
+		# }
 		else_if = { #Dhofar victory
 			limit = { OMB = { exists = yes } }
 			if = {
@@ -290,20 +276,30 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 					value = EGQ
 				}
 			}
-			if = { 
-				limit = { check_variable = { JAP.JAP_OC_participation > MAR.MAR_OC_participation } }
-				EGQ = { econ_join_sphere_JAP = yes }
-			}
-			else_if = {
+			if = {
 				limit = {
-					check_variable = { JAP.JAP_OC_participation < MAR.MAR_OC_participation }
 					is_in_array = {
 						array = global.OIL_supported_by_MAR
 						value = EGQ
 					}
+					check_variable = { MAR.MAR_OC_participation > 69 }
 				}
 				EGQ = { econ_join_sphere_MAR = yes }
 			}
+			else = {
+				EGQ = { econ_join_sphere_JAP = yes }
+			}
+		}
+		else_if = { #Qutb! but not supported by JAP
+			limit = {
+				EGQ = { exists = yes }
+				is_in_array = {
+					array = global.OIL_supported_by_MAR
+					value = EGQ
+				}
+				check_variable = { MAR.MAR_OC_participation > 29 }
+			}
+			EGQ = { econ_join_sphere_MAR = yes }
 		}
 		else_if = { #Nasser!!!
 			if = {
@@ -333,7 +329,7 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 		}
 		# else_if = { #Italians
 		# 	limit = { EGY = { exists = yes } }
-		# 	#Handled in the event egy.11
+		# 	#Handled in the event EGY.11
 		# }
 
 		#Sudan outcomes
@@ -378,8 +374,10 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 					}
 					check_variable = { JAP.JAP_OC_participation > 39 }
 				}
-				JAP = { add_to_faction = SDF }
-				SDF = { add_ideas = Sphere_Economic_Dependent }
+				JAP = {
+					add_to_faction = SDF
+				}
+				SDF = { add_ideas = Sphere_Independent }
 				if = {
 					limit = { EGY = { is_in_faction_with = JAP } }
 					SDF = { econ_join_sphere_ITA = yes }
@@ -388,8 +386,7 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 			}
 			else_if = { #Otherwise, it'll join at most as an observer.
 				limit = {
-					check_variable = { JAP.JAP_OC_participation > 69 }
-					check_variable = { JAP.JAP_OC_participation > MAR.MAR_OC_participation }
+					check_variable = { JAP.JAP_OC_participation > 59 }
 				}
 				SDF = {
 					econ_join_sphere_JAP = yes
@@ -399,7 +396,7 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 			else_if = {
 				limit = {
 					check_variable = { MAR.MAR_OC_participation > 59 }
-					check_variable = { JAP.JAP_OC_participation < MAR.MAR_OC_participation }
+					check_variable = { MAR.MAR_OC_participation > JAP.JAP_OC_participation }
 					is_in_array = {
 						array = global.OIL_supported_by_MAR
 						value = SDF
@@ -499,12 +496,23 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 			}
 			if = {
 				limit = { check_variable = { JAP.JAP_OC_participation > 99 } }
-				JAP = { add_to_faction = SNI }
+				JAP = {
+					add_to_faction = SNI
+				}
 				SNI = {
-					add_ideas = Sphere_Economic_Dependent
-
+					add_ideas = Sphere_Coequal
 					econ_join_sphere_JAP = yes
 				}
+			}
+			else_if = {
+				limit = {
+					check_variable = { MAR.MAR_OC_participation > 29 }
+					is_in_array = {
+						array = global.OIL_supported_by_MAR
+						value = SNI
+					}
+				}
+				SNI = { econ_join_sphere_MAR = yes }
 			}
 			else_if = {
 				limit = { check_variable = { JAP.JAP_OC_participation > 79 } }
@@ -516,7 +524,7 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 			else_if = {
 				limit = { check_variable = { JAP.JAP_OC_participation > 59 } }
 				SNI = { econ_join_sphere_JAP = yes }
-			}
+			}	
 		}
 		else_if = { #Ba'athist Victory
 			limit = { BIR = { exists = yes } }
@@ -549,6 +557,7 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 		# 	limit = { IRQ = { exists = yes } }
 		# 	#Dealt with in IraqCW.10
 		# }
+		#Block for the kurds not included. #пососи
 		else_if = { #Kurdish Victory
 			limit = { KUR = { exists = yes } }
 			if = {
@@ -560,17 +569,34 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 					}
 				}
 				KUR = { econ_join_sphere_MAR = yes }
+				KUR = {
+					country_event = {
+						id = KUR_CW.20 days = 5
+					}
+					country_event = {
+						id = KUR_CW.21 days = 12
+					}
+					country_event = {
+						id = KUR_CW.22 days = 19
+					}
+					country_event = {
+						id = KUR_CW.23 days = 27
+					}
+				}
+				MAR = {
+					country_event = {
+						id = berez_dobrovoltsy.17 days = 30
+					}
+				}
 			}
 		}
 
 		#Syria Outcomes
 		if = {
 			limit = {
+				NOT = { NOT = { SYR = { has_government = paternalism } } }
 				OR = {
-					AND = {
-						check_variable = { GER.BOR_OC_participation > 79 }
-						check_variable = { GER.BOR_OC_participation > MAR.MAR_OC_participation }
-					}
+					check_variable = { GER.BOR_OC_participation > 79 }
 					AND = {
 						NOT = { SYR = { has_government = communist } }
 						check_variable = { GER.BOR_OC_participation > 59 }
@@ -600,7 +626,7 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 		}
 		else_if = {
 			limit = {
-				check_variable = { MAR.MAR_OC_participation > 79 }
+				check_variable = { MAR.MAR_OC_participation > 59 }
 				check_variable = { GER.BOR_OC_participation < MAR.MAR_OC_participation }
 			}
 			SYR = {
@@ -612,39 +638,30 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 				}
 			}
 		}
+		
 		#UAR outcomes
 		if = {
-			limit = {
-				check_variable = { GER.BOR_OC_participation > 79 }
-				check_variable = { GER.BOR_OC_participation > MAR.MAR_OC_participation }
-			}
+			limit = { check_variable = { GER.BOR_OC_participation > 79 } }
 			UAR = {
-				GER = { set_country_flag = uar_will_join_ger_econ_sphere }
-				if = { 
+				if = {
 					limit = { exists = yes }
 					econ_join_sphere_GER = yes
-					add_to_variable = { UAR_faction_influence_array^2 = 20 }
+					if = {
+						limit = { has_global_flag = german_civil_war_speervic }
+						join_zollverein = yes
+					}
 				}
-				else = {
-					set_country_flag = GER_leads_uar
+				if = {
+					limit = {
+						MAR = { has_government = socialist }
+						check_variable = { MAR.MAR_OC_participation > 79 }
+					}
+					GER = { clr_country_flag = uar_will_join_ger_econ_sphere }
 				}
+				GER = { set_country_flag = uar_will_join_ger_econ_sphere }
 			}
 		}
-		else_if = {
-			limit = {
-				check_variable = { MAR.MAR_OC_participation > 79 }
-				check_variable = { GER.BOR_OC_participation < MAR.MAR_OC_participation }
-			}
-			UAR = {
-				if = { 
-					limit = { exists = yes }
-					add_to_variable = { UAR_faction_influence_array^2 = 20 }
-				}
-				else = {
-					set_country_flag = MAR_leads_uar
-				}
-			}
-		}
+
 		#JAP.JAP_OC_participation
 		#USA.USA_OC_participation
 		#GER.BOR_OC_participation
@@ -663,11 +680,6 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 		# 	target = CRO
 		# 	autonomous_state = autonomy_italy_hefty_influence
 		# }
-		# autonomy_italy_associate:0 "Associated State"
-		# autonomy_italy_governate:0 "Colonial Government"
-		# autonomy_italy_hefty_influence:0 "Heavily Associated State"
-		# autonomy_italy_antiimperialist:0 "Nation in Opposition"
-		# autonomy_italy_reliant:0 "Reliant State"
 
 		#These effects were originally attached to the UAR's formation.
 		ITA = {
@@ -684,7 +696,6 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 		hidden_effect = {
 			GER = { # Clearing intervention stuff for Germany
 				clr_country_flag = GER_OC_intervention
-				TNO_fopo_remove_baathism_support_tab = yes
 				clr_global_flag = OC_Oman_CW
 				clr_global_flag = OC_Iraq_CW
 				clr_global_flag = OC_Egypt_CW
@@ -694,10 +705,10 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 					GER_Bormann_OC_heat_of_the_desert
 					GER_Bormann_OC_intervention
 				}
-				remove_dynamic_modifier = { modifier = GER_BOR_OC_intervention_dynamic_modifier }
 				clear_variable = BOR_OC_send_volunteer_size
 				if = { # Giving the bonuses for supporting the Ba'aths
 					limit = { has_global_flag = german_civil_war_bormannvic }
+					remove_dynamic_modifier = { modifier = GER_BOR_OC_intervention_dynamic_modifier }
 					country_event = { id = bormann.1213 days = 4 }
 				}
 			}
@@ -705,8 +716,16 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 				limit = { has_idea = GER_Bormann_OC_bombing_runs }
 				remove_ideas = GER_Bormann_OC_bombing_runs
 			}
+			every_country = { # America stops its fuckery
+				limit = { has_idea = USA_OilCrisis_UAR_Leaders_Targeted_1 }
+				remove_ideas = USA_OilCrisis_UAR_Leaders_Targeted_1
+			}
+			every_country = {
+				limit = { has_idea = USA_OilCrisis_UAR_Leaders_Targeted_2 }
+				remove_ideas = USA_OilCrisis_UAR_Leaders_Targeted_2
+			}
 			# every_country = { # Hidden event to clear the Oil Cisis modifier for nations that don't have specific content to remove it yet
-			# 	limit = { has_idea = TNO_Oil_Crisis }
+			# 	limit = { has_dynamic_modifier = { modifier = TNO_Oil_Crisis_dynamic_modifier } }
 			# 	country_event = { id = OIL.601 days = 120 }
 			# }
 			# Clearing German AI volunteers
@@ -719,7 +738,7 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 
 		JAP = {
 			set_temp_variable = { Victory_ID = 9 }
-			set_temp_variable = { points = OC_JAP_points  }
+			set_temp_variable = { points = OC_JAP_points }
 			OIL_get_outcome_for_super = yes
 			set_temp_variable = { Victory_Outcome = outcome }
 			set_temp_variable = { Victory_Points = OC_JAP_points }
@@ -727,7 +746,7 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 		}
 		USA = {
 			set_temp_variable = { Victory_ID = 9 }
-			set_temp_variable = { points = OC_USA_points  }
+			set_temp_variable = { points = OC_USA_points }
 			OIL_get_outcome_for_super = yes
 			set_temp_variable = { Victory_Outcome = outcome }
 			set_temp_variable = { Victory_Points = OC_USA_points }
@@ -735,7 +754,7 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 		}
 		GER = {
 			set_temp_variable = { Victory_ID = 9 }
-			set_temp_variable = { points = OC_GER_points  }
+			set_temp_variable = { points = OC_GER_points }
 			OIL_get_outcome_for_super = yes
 			set_temp_variable = { Victory_Outcome = outcome }
 			set_temp_variable = { Victory_Points = OC_GER_points }
@@ -755,12 +774,19 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 				TNO_clear_num_volunteers = yes
 			}
 		}
-		for_each_scope_loop = {
-			array = global.OIL_supported_by_MAR
-			MAR = {
-				set_temp_variable = { target = PREV }
-				TNO_clear_num_volunteers = yes
-			}
+		ITA = {
+			set_temp_variable = { target = YEM }
+			TNO_clear_num_volunteers = yes
+			set_temp_variable = { target = OMA }
+			TNO_clear_num_volunteers = yes
+			set_temp_variable = { target = IRQ }
+			TNO_clear_num_volunteers = yes
+			set_temp_variable = { target = EGY }
+			TNO_clear_num_volunteers = yes
+			set_temp_variable = { target = SAU }
+			TNO_clear_num_volunteers = yes
+			set_temp_variable = { target = SDF }
+			TNO_clear_num_volunteers = yes
 		}
 		GER = {
 			set_temp_variable = { target = NYM }

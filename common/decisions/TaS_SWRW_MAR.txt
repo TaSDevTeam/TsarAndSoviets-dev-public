@@ -3301,6 +3301,14 @@ MAR_SWRW_category = {
 							surrender_progress > 0.8
 						}
 						has_war_with = ENG
+						NOT = {
+							ENG = {
+								has_country_leader = {
+									character = ENG_William_Joyce
+									ruling_only = yes
+								}
+							}	
+						}
 					}
 					country_event = { id = TaS_SWRW.13 }
 				}
@@ -3316,6 +3324,19 @@ MAR_SWRW_category = {
 						}
 					}
 					country_event = { id = TaS_SWRW.14 }
+				}
+				hidden_effect = {
+					if = {
+						limit = {
+							RUS = {
+								controls_state = 1397
+								controls_state = 1428
+							}
+						}
+						GER = {
+							load_focus_tree = GER_second_patriotic_war_fail
+						}
+					}
 				}
 				#if = {
 				#	limit = {

@@ -873,15 +873,28 @@ on_actions = {
 						ROOT = { 
 							original_tag = ROM
 						}
-						NOT = { ROM = { is_in_faction_with = GER } }
+						#NOT = { ROM = { is_in_faction_with = GER } }
 					}
 					FROM = {
 						white_peace = ROOT
 						ROM = {	
+							leave_faction = yes
+							leave_zollverein = yes
+							remove_ideas = Pakt_Leader
+							remove_ideas = Pakt_Military_Authority
+							remove_ideas = Pakt_Protektorat
+							remove_ideas = Pakt_Integrated_Reichskommissariat
+							remove_ideas = Pakt_Autonomous_Reichskommissariat
+							remove_ideas = Pakt_Reichsland
+							remove_ideas = Pakt_Marionettenstaat
+							remove_ideas = Pakt_Mitstreiter
+							remove_ideas = Pakt_Bundnispartner
+							remove_ideas = Pakt_Ordensstaat
+							remove_ideas = Pakt_Observer
 							if = {
 								limit = { 
 									country_exists = TNS
-									#TNS = { is_subject_of = ROM } #очевидно если Приднестровье не сожралось при капитуляции германии значит оно румынское
+									NOT = { TNS = { is_subject_of = GER } } #очевидно если Приднестровье не сожралось при капитуляции германии значит оно румынское #а вот теперь хуй
 								}
 								if = {
 									limit = { MUK = { exists = yes } }
@@ -1077,11 +1090,24 @@ on_actions = {
 						ROOT = { 
 							original_tag = HUN
 						}
-						NOT = { HUN = { is_in_faction_with = GER } }
-					}
+						#NOT = { HUN = { is_in_faction_with = GER } } #чёт думаю не должно быть принципиально
+					} 
 					FROM = {
 						white_peace = ROOT
 						HUN = {	
+							leave_faction = yes
+							leave_zollverein = yes
+							remove_ideas = Pakt_Leader
+							remove_ideas = Pakt_Military_Authority
+							remove_ideas = Pakt_Protektorat
+							remove_ideas = Pakt_Integrated_Reichskommissariat
+							remove_ideas = Pakt_Autonomous_Reichskommissariat
+							remove_ideas = Pakt_Reichsland
+							remove_ideas = Pakt_Marionettenstaat
+							remove_ideas = Pakt_Mitstreiter
+							remove_ideas = Pakt_Bundnispartner
+							remove_ideas = Pakt_Ordensstaat
+							remove_ideas = Pakt_Observer
 							if = {
 								limit = { FROM = { has_government = socialist } }
 								GAU = {
@@ -1175,10 +1201,29 @@ on_actions = {
 						ROOT = { 
 							original_tag = SER
 						}
-						NOT = { SER = { is_in_faction_with = GER } }
+						#NOT = { SER = { is_in_faction_with = GER } }
 					}
 					FROM = {
 						white_peace = ROOT
+						leave_faction = yes
+						leave_zollverein = yes
+						remove_ideas = Pakt_Leader
+						remove_ideas = Pakt_Military_Authority
+						remove_ideas = Pakt_Protektorat
+						remove_ideas = Pakt_Integrated_Reichskommissariat
+						remove_ideas = Pakt_Autonomous_Reichskommissariat
+						remove_ideas = Pakt_Reichsland
+						remove_ideas = Pakt_Marionettenstaat
+						remove_ideas = Pakt_Mitstreiter
+						remove_ideas = Pakt_Bundnispartner
+						remove_ideas = Pakt_Ordensstaat
+						remove_ideas = Pakt_Observer
+						if = {
+							limit = { is_subject_of = GER }
+							GER = {
+								end_puppet = SER
+							}
+						}
 						SER = {	
 							if = {
 								limit = { FROM = { has_government = socialist } }
@@ -1267,9 +1312,22 @@ on_actions = {
 						ROOT = { 
 							original_tag = BUL
 						}
-						NOT = { BUL = { is_in_faction_with = GER } }
+						#NOT = { BUL = { is_in_faction_with = GER } }
 					}
 					FROM = {
+						leave_faction = yes
+						leave_zollverein = yes
+						remove_ideas = Pakt_Leader
+						remove_ideas = Pakt_Military_Authority
+						remove_ideas = Pakt_Protektorat
+						remove_ideas = Pakt_Integrated_Reichskommissariat
+						remove_ideas = Pakt_Autonomous_Reichskommissariat
+						remove_ideas = Pakt_Reichsland
+						remove_ideas = Pakt_Marionettenstaat
+						remove_ideas = Pakt_Mitstreiter
+						remove_ideas = Pakt_Bundnispartner
+						remove_ideas = Pakt_Ordensstaat
+						remove_ideas = Pakt_Observer
 						white_peace = ROOT
 						BUL = {	
 							every_owned_state = {
@@ -1354,6 +1412,46 @@ on_actions = {
 							restore_previous_government_type = yes
 							apply_party_popularities = yes
 						}
+					}
+					every_country = {
+						limit = {
+							OR = {
+								is_subject_of = BUL
+								tag = MAC
+							}	
+						}
+						white_peace = RUS 
+						hidden_effect = {
+							leave_faction = yes
+							leave_zollverein = yes
+							econ_leave_sphere = yes
+							if = {
+								limit = { has_idea = SGR_zollverein_basic }
+								leave_zollverein = yes
+							}
+							remove_ideas = Pakt_Leader
+							remove_ideas = Pakt_Military_Authority
+							remove_ideas = Pakt_Protektorat
+							remove_ideas = Pakt_Integrated_Reichskommissariat
+							remove_ideas = Pakt_Autonomous_Reichskommissariat
+							remove_ideas = Pakt_Reichsland
+							remove_ideas = Pakt_Marionettenstaat
+							remove_ideas = Pakt_Mitstreiter
+							remove_ideas = Pakt_Bundnispartner
+							remove_ideas = Pakt_Ordensstaat
+							remove_ideas = Pakt_Observer
+						}
+						econ_join_sphere_MAR = yes
+						get_current_government_type = yes
+						save_party_popularities = yes
+						RUS = {
+							set_autonomy = {
+								target = BUL
+								autonomy_state = autonomy_satellite
+							}	
+						}	
+						restore_previous_government_type = yes
+						apply_party_popularities = yes
 					}
 					set_global_flag = skip_default_capitulation	
 				}

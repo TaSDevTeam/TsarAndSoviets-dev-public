@@ -59,6 +59,31 @@ is_german_unifier = {
 		original_tag = GSU
 	}
 }
+is_postgerman_nation = {
+	OR = {
+		original_tag = GWS
+		original_tag = GRH
+		original_tag = GBW
+		original_tag = GBV
+		original_tag = GAU
+		original_tag = GCZ
+		original_tag = GWF
+		original_tag = GRA
+		original_tag = GSU
+		original_tag = BRL
+		original_tag = ZNE
+		original_tag = GPL
+		#
+		original_tag = GRM
+		#
+		original_tag = MKZ
+		original_tag = MTR
+		original_tag = MUK
+		original_tag = MCS
+		original_tag = MBP
+		original_tag = MBL
+	}
+}
 
 is_european_major = {
 	OR = {

@@ -819,29 +819,10 @@ country_event = { #KUR_CW End- Kurdish Victory (Real)
 				MAR_KUR_zeroaproval
 			}
 		}
-		hidden_effect = {
-		    KUR = {
-			    country_event = {
-				    id = KUR_CW.20 days = 5
-			    }
-			    country_event = {
-				    id = KUR_CW.21 days = 12
-			    }
-			    country_event = {
-				    id = KUR_CW.22 days = 19
-			    }
-			    country_event = {
-				    id = KUR_CW.23 days = 27
-			    }
-			}	
+		hidden_effect = {	
 			every_country = {
 				news_event = { id = berez_dobrovoltsy_world_news.10 days = 1 }
 			}	
-		}
-		MAR = {
-			country_event = {
-				id = berez_dobrovoltsy.17 days = 30
-			}
 		}
 	}
 }

@@ -66,13 +66,20 @@ TaS_fopo_remove_afghanistan_civil_war_tab = {
 TaS_OIL_get_supported_factions = {
 	if = {
 		limit = { MAR = { NOT = { has_government = socialist } } }
-		add_to_array = { global.OIL_supported_by_MAR = YEM }
 		add_to_array = { global.OIL_supported_by_MAR = OMI }
-		add_to_array = { global.OIL_supported_by_MAR = KUR }
 		add_to_array = { global.OIL_supported_by_MAR = EGQ }
 		add_to_array = { global.OIL_supported_by_MAR = SDF }
 		add_to_array = { global.OIL_supported_by_MAR = AZA }
 		add_to_array = { global.OIL_supported_by_MAR = SAU }
+		if = {
+			limit = {
+				has_country_flag = IRQ_kurds_in_the_IraqCW
+			}
+			add_to_array = { global.OIL_supported_by_MAR = KUR }
+		}
+		else = {
+			add_to_array = { global.OIL_supported_by_MAR = SNI }
+		}
 	}
 	else = {
 		add_to_array = { global.OIL_supported_by_MAR = NYM }
@@ -702,15 +709,23 @@ TaS_WRW2_total_capitulation = {
 		
 		transfer_state = 2099
 		add_state_core = 2099
+		2099 = { set_variable = { nationality = 151 } }
 		if = {
 			limit = { 
-				TNS = { exists = yes }
+				country_exists = TNS
 				TNS = { is_subject_of = GER }
 			}
 			annex_country = {
 				target = TNS
 				transfer_troops = no
 			}
+		}
+		if = {
+			limit = { 
+				country_exists = UTL
+				UTL = { is_in_faction_with = GER }
+			}
+			MAR_install_mil_turkestan = yes
 		}
 	}
 	if = {
@@ -736,7 +751,7 @@ TaS_WRW2_total_capitulation = {
 			transfer_state = 18
 			transfer_state = 29
 			transfer_state = 1733
-			
+			transfer_state = 1994
 			every_owned_state = {
 				add_core_of = FRV
 			}
@@ -1085,9 +1100,18 @@ TaS_WRW2_Peace_Yall = {
 				OR = { 
 					is_subject_of = GER
 					is_in_faction_with = GER
+					tag = AAG
 				}
 			}
 			white_peace = RUS
+			if = { ##на всякий закину
+				limit = { country_exists = MKZ }
+				white_peace = MKZ
+			}
+			if = {
+				limit = { country_exists = MTR }
+				white_peace = MTR
+			}
 		}	
 		if = {
 			limit = { has_country_flag = BUL_demands }
@@ -1685,6 +1709,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 					add_state_core = PREV
 				}
 			}
+			set_capital = { state = 64 remember_old_capital = no }
 			remove_ideas = TaS_Post2WRW_BRL_ZNE_russian_army 
 			remove_ideas = TaS_Post2WRW_BRL_nazi_heartland_1
 			remove_ideas = TaS_Post2WRW_ZNE_exec_centre 	
@@ -1971,6 +1996,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 			limit = { MBL = { exists = yes } }
 			MBL = {
 				transfer_state = 97
+				add_state_core = 97
 			}
 			97 = { set_state_name = STATE_97_rus }
 			set_province_name = { id = 11301 name = VICTORY_POINTS_11301_rus }
@@ -1981,6 +2007,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 			limit = { MBL = { exists = no } }
 			RUS = {
 				transfer_state = 97
+				add_state_core = 97
 			}
 			97 = { set_state_name = STATE_97_rus }
 			set_province_name = { id = 11301 name = VICTORY_POINTS_11301_rus }
@@ -2100,7 +2127,7 @@ TaS_2WRW_form_ost_zones = {
 	custom_effect_tooltip = TaS_2WRW_form_ost_zones_tt
 	hidden_effect = {
 		if = {
-			limit = { MAR = { owns_state = 1397 } }
+			limit = { RUS = { owns_state = 1397 } }
 			MBP = {
 				transfer_state = 1440
 				transfer_state = 13

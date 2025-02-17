@@ -1054,6 +1054,9 @@ shared_focus = {
 shared_focus = {
 	id = MAR_we_shall_all_go_to_heaven
 	icon = GFX_MAR_we_shall_all_go_to_heaven
+	available = { #нет, ИИ не будет устраивать ядерный апокалипсис
+		is_ai = no
+	}
 	prerequisite = {focus = MAR_melty_blood}
 	prerequisite = {focus = MAR_golden_fantasia}
 	prerequisite = {focus = MAR_avesta_of_black_and_white}

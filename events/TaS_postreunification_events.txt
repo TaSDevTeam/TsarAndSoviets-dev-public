@@ -1908,6 +1908,26 @@ country_event = { #The olive branch
 			set_variable = { swrw_corpo_jap = 45 }
 			set_variable = { SWRW_round_timeout = 60 }
 		}
+		if = {
+			limit = { 
+				OR = {
+					has_game_rule = {
+						rule = KOSYGIN_FE_NEGOTIATIONS_RESULT
+						option = KOSYGIN_FE_NEGOTIATIONS_RESULT_TOTAL_SUCCESS
+					}
+					has_game_rule = {
+						rule = KOSYGIN_FE_NEGOTIATIONS_RESULT
+						option = KOSYGIN_FE_NEGOTIATIONS_RESULT_SUCCESS_LEAVE_THIRD
+					}
+				}
+			}
+			set_variable = { swrw_fe_threshold = 44.9 }
+			set_variable = { swrw_fe_threshold_txt = swrw_fe_threshold }
+			round_variable = swrw_fe_threshold_txt
+			
+			set_variable = { swrw_diplo_jap = 50 }
+			set_variable = { swrw_corpo_jap = 50 }
+		}
 	}
 }
 
@@ -1938,6 +1958,26 @@ country_event = { #First round success
 		set_variable = { swrw_diplo_jap = 35 }
 		set_variable = { swrw_corpo_jap = 40 }
 		set_variable = { SWRW_round_timeout = 90 }
+		if = {
+			limit = { 
+				OR = {
+					has_game_rule = {
+						rule = KOSYGIN_FE_NEGOTIATIONS_RESULT
+						option = KOSYGIN_FE_NEGOTIATIONS_RESULT_TOTAL_SUCCESS
+					}
+					has_game_rule = {
+						rule = KOSYGIN_FE_NEGOTIATIONS_RESULT
+						option = KOSYGIN_FE_NEGOTIATIONS_RESULT_SUCCESS_LEAVE_THIRD
+					}
+				}
+			}
+			set_variable = { swrw_fe_threshold = 44.9 }
+			set_variable = { swrw_fe_threshold_txt = swrw_fe_threshold }
+			round_variable = swrw_fe_threshold_txt
+			
+			set_variable = { swrw_diplo_jap = 50 }
+			set_variable = { swrw_corpo_jap = 50 }
+		}
 	}
 }
 
@@ -1981,6 +2021,26 @@ country_event = { #Second round success
 			round_variable = swrw_fe_threshold_txt
 			set_variable = { swrw_diplo_jap = 0 }
 			set_variable = { swrw_corpo_jap = 0 }
+		}
+		if = {
+			limit = { 
+				OR = {
+					has_game_rule = {
+						rule = KOSYGIN_FE_NEGOTIATIONS_RESULT
+						option = KOSYGIN_FE_NEGOTIATIONS_RESULT_TOTAL_SUCCESS
+					}
+					has_game_rule = {
+						rule = KOSYGIN_FE_NEGOTIATIONS_RESULT
+						option = KOSYGIN_FE_NEGOTIATIONS_RESULT_SUCCESS_LEAVE_THIRD
+					}
+				}
+			}
+			set_variable = { swrw_fe_threshold = 44.9 }
+			set_variable = { swrw_fe_threshold_txt = swrw_fe_threshold }
+			round_variable = swrw_fe_threshold_txt
+			
+			set_variable = { swrw_diplo_jap = 50 }
+			set_variable = { swrw_corpo_jap = 50 }
 		}
 	}
 }
@@ -2117,12 +2177,12 @@ country_event = { #3 round success
 					option = KOSYGIN_FE_NEGOTIATIONS_RESULT_TOTAL_SUCCESS
 				}
 			}
-			set_variable = { swrw_fe_threshold = 69.9 }
+			set_variable = { swrw_fe_threshold = 44.9 }
 			set_variable = { swrw_fe_threshold_txt = swrw_fe_threshold }
 			round_variable = swrw_fe_threshold_txt
 			
-			set_variable = { swrw_diplo_jap = 45 }
-			set_variable = { swrw_corpo_jap = 45 }
+			set_variable = { swrw_diplo_jap = 50 }
+			set_variable = { swrw_corpo_jap = 50 }
 		}
 		else = {
 			set_variable = { swrw_fe_threshold = 94.9 }
@@ -2902,6 +2962,7 @@ country_event = { #Offer muscowy
 		MAR = {
 			transfer_state = 2099
 			add_state_core = 2099
+			2099 = { set_variable = { nationality = 151 } }
 			annex_country = {
 				target = MCW
 				transfer_troops = no
@@ -2964,6 +3025,7 @@ country_event = { #Offer muscowy and caucasus
 		MAR = {
 			transfer_state = 2099
 			add_state_core = 2099
+			2099 = { set_variable = { nationality = 151 } }
 			annex_country = {
 				target = MCW
 				transfer_troops = no
@@ -3038,6 +3100,7 @@ country_event = { #Offer muscowy and caucasus and belarus and half of ukraine
 		MAR = {
 			transfer_state = 2099
 			add_state_core = 2099
+			2099 = { set_variable = { nationality = 151 } }
 			annex_country = {
 				target = MCW
 				transfer_troops = no
@@ -4899,7 +4962,6 @@ country_event = { #Belarus
 						ideology = communist
 						popularity = 0.45
 					}
-					retire_country_leader = yes
 					MBL_Tikhon_Kiselyov = {
 						promote_character = yes
 					}
