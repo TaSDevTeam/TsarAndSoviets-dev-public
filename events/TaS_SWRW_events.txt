@@ -1742,6 +1742,7 @@ country_event = { #VVV event
 	option = { #
 		name = RUS_SWRW_mech.17.a
 		ai_chance = { factor = 1 }
+		add_to_variable = { swrw_oktan = 1 }
 		set_temp_variable = { temp_devastation_gained = -2 } 
 		TaS_WRW2_change_devastation = yes
 		GER = {
@@ -1764,6 +1765,7 @@ country_event = { #ORL event
 	option = { #
 		name = RUS_SWRW_mech.18.a
 		ai_chance = { factor = 1 }
+		add_to_variable = { swrw_oktan = 1 }
 		set_temp_variable = { temp_devastation_gained = -2 } 
 		TaS_WRW2_change_devastation = yes
 		GER = {
@@ -1786,6 +1788,7 @@ country_event = { #SHI event 1
 	option = { #Yes thats good idea
 		name = RUS_SWRW_mech.19.a
 		ai_chance = { factor = 1 }
+		add_to_variable = { swrw_oktan = 1 }
 		set_temp_variable = { temp_econ_spending_amount = 0.100 }
 		econ_spend_money_once_effect_raw_money = yes
 		country_event = { id = RUS_SWRW_mech.20 days = 180 }
@@ -1793,6 +1796,7 @@ country_event = { #SHI event 1
 	option = { #nah we good
 		name = RUS_SWRW_mech.19.b
 		ai_chance = { factor = 1 }
+		add_to_variable = { swrw_oktan = 1 }
 		add_political_power = -100
 	}
 }
@@ -1827,6 +1831,7 @@ country_event = { #РOV event 1
 	option = { #
 		name = RUS_SWRW_mech.21.a
 		ai_chance = { factor = 1 }
+		add_to_variable = { swrw_oktan = 1 }
 		set_temp_variable = { temp_devastation_gained = -2 } 
 		TaS_WRW2_change_devastation = yes
 		GER = {
@@ -1843,7 +1848,12 @@ country_event = { #Hunt down the Oktan
 	desc = RUS_SWRW_mech.22.d
 	#picture = GFX_swrw_event_1
 	
-	is_triggered_only = yes
+	trigger = {
+		check_variable = { swrw_oktan > 1 }
+	}
+	mean_time_to_happen = {
+		days = 7
+	}
 	fire_only_once = yes
 	
 	option = { #

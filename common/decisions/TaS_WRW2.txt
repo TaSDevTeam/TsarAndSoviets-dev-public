@@ -4720,6 +4720,9 @@ TaS_SWRW_far_eastern_negotiations = {
 			set_temp_variable = { swrw_diplo_temp = 7.5 }
 			TaS_SWRW_change_diplo_jap = yes
 			add_to_variable = { swrw_fe_actions = -1 }
+			hidden_effect = {
+				country_event = { id = MAR_Japan.27 days = 7 }
+			}	
 		}
 	}
 	SWRW_FEnegotiations_give_magadan = {
@@ -5199,6 +5202,9 @@ TaS_SWRW_far_eastern_negotiations = {
 			set_temp_variable = { swrw_diplo_temp = 10 }
 			TaS_SWRW_change_diplo_jap = yes
 			add_to_variable = { swrw_fe_actions = -1 }
+			hidden_effect = {
+				country_event = { id = MAR_Japan.29 days = 7 }
+			}	
 		}
 	}
 	SWRW_FEnegotiations_legco_talks = {
@@ -5603,6 +5609,9 @@ TaS_SWRW_far_eastern_negotiations = {
 			set_temp_variable = { swrw_diplo_temp = 10 }
 			TaS_SWRW_change_diplo_jap = yes
 			add_to_variable = { swrw_fe_actions = -1 }
+			hidden_effect = {
+				country_event = { id = MAR_Japan.28 days = 7 }
+			}	
 		}
 	}
 	SWRW_FEnegotiations_russo_japanese_pact = {
@@ -5928,6 +5937,9 @@ TaS_SWRW_far_eastern_negotiations = {
 			set_temp_variable = { swrw_diplo_temp = 5 }
 			TaS_SWRW_change_diplo_jap = yes
 			add_to_variable = { swrw_fe_actions = -1 }
+			hidden_effect = {
+				country_event = { id = MAR_Japan.30 days = 7 }
+			}	
 		}
 	}
 }
