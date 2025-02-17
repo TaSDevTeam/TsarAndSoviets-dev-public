@@ -4,9 +4,9 @@ MAR_warlord_development_decision_category = {
 
 	allowed = {
 		tag = MAR
-        is_ai = yes
 	}
 	visible = {
+		is_ai = yes
 		has_country_flag = is_warlord
 		NOT = {
 			has_global_flag = AFTER_MIDNIGHT_COMMENCED
@@ -31,9 +31,9 @@ MAR_regional_development_decision_category = {
 
 	allowed = {
 		tag = MAR
-        is_ai = yes
 	}
 	visible = {
+		is_ai = yes
 		has_country_flag = RUS_regional_stage
 		NOT = {
 			has_global_flag = AFTER_MIDNIGHT_COMMENCED
