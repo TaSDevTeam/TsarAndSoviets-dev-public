@@ -14,12 +14,6 @@ load_focus_tree = ZZZ_blank_focus
 set_variable = {TNO_economy_type = token:Econ_Type_Corporatism }
 set_variable = {TNO_economy_subtype = token:Econ_Subtype_Dirigisme }
 set_politics = {
-	ruling_party = paternalism
-	elections_allowed = no
-	last_election = "1935.12.17"
-	election_frequency = 48
-}
-set_politics = {
 	ruling_party = despotism
 	elections_allowed = no
 	last_election = "1935.12.17"
@@ -27,32 +21,18 @@ set_politics = {
 }
 set_popularities = {
 	communist = 0
-	ultranationalism = 0
+	ultranationalism = 19
 	socialist = 0
 	progressivism = 0
 	liberalism = 0
 	conservatism = 0
-	paternalism = 5
+	paternalism = 18
 	despotism = 32
-	fascism = 3
-	national_socialism = 60
+	fascism = 0
+	national_socialism = 31
 	
 }
-set_party_name = { 
-	ideology = despotism
-	long_name = Post_WRW2_Monarchist_party
-	name = Post_WRW2_Monarchist_party
-}
-set_party_name = { 
-	ideology = national_socialism 
-	long_name = Post_WRW2_Werewolf_party
-	name = Post_WRW2_Werewolf_party
-}
-set_party_name = { 
-	ideology = communist 
-	long_name = Post_WRW2_KPG_party
-	name = Post_WRW2_KPG_party
-}
+
 # Leaders
 recruit_character = GBW_Max_von_Baden
 recruit_character =	GBW_integration_committee

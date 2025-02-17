@@ -20,32 +20,18 @@ set_politics = {
 	election_frequency = 48
 }
 set_popularities = {
-	communist = 0
-	ultranationalism = 0
+	communist = 11
+	ultranationalism = 12
 	socialist = 0
-	progressivism = 0
+	progressivism = 9
 	liberalism = 0
 	conservatism = 0
 	paternalism = 33
-	despotism = 7
+	despotism = 9
 	fascism = 0
-	national_socialism = 60
+	national_socialism = 26
 }
-set_party_name = { 
-	ideology = despotism 
-	long_name = Post_WRW2_Russian_Army_party
-	name = Post_WRW2_Russian_Army_party
-}
-set_party_name = { 
-	ideology = national_socialism 
-	long_name = Post_WRW2_Werewolf_party
-	name = Post_WRW2_Werewolf_party
-}
-set_party_name = { 
-	ideology = communist 
-	long_name = Post_WRW2_KPG_party
-	name = Post_WRW2_KPG_party
-}
+
 # Leaders
 recruit_character = GAU_Otto_Von_Habsburg
 recruit_character = GAU_Bruno_Krajskiy		

@@ -1140,22 +1140,13 @@ country_event = { #Technical stuff no loc
 			add_state_core = 810
 			TNO_startup_nation = yes
 			set_politics = {
-				ruling_party = national_socialism
+				ruling_party = ultranationalism
 				last_election = "1933.2.16"
 				election_frequency = 36
 				elections_allowed = no
 			}
-			add_popularity = {
-				ideology = national_socialism
-				popularity = 0.33
-			}
 			MJP_Katakura_Tadashi = {
 				promote_character = yes
-			}
-			set_party_name = { 
-				ideology = national_socialism
-				long_name = MJP_national_socialism_party_long
-				name = MJP_national_socialism_party
 			}
 		}
 		
@@ -1289,9 +1280,17 @@ country_event = { #Technical stuff no loc
 				election_frequency = 36
 				elections_allowed = no
 			}
-			add_popularity = {
-				ideology = despotism
-				popularity = 0.29
+			set_popularities = {
+				communist = 0
+				ultranationalism = 13
+				socialist = 0
+				progressivism = 0
+				liberalism = 0
+				conservatism = 7
+				paternalism = 10
+				despotism = 53
+				fascism = 0
+				national_socialism = 17
 			}
 			HAN_Pujie = {
 				promote_character = yes
