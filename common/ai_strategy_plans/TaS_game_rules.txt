@@ -50,6 +50,58 @@ MAR_kosygin_japan_plan = {
 	}
 }
 
+MAR_kosygin_ofn_dva_plan = {
+	name = ""
+	desc = ""
+
+	allowed = {
+		original_tag = MAR
+	}
+	enable = {
+		has_game_rule = {
+			rule = KOSYGIN_BEST_ALLY_DVA
+			option = KOSYGIN_BEST_ALLY_DVA_AMERICAN_BOY
+		}
+	}
+
+	focus_factors = {
+		MAR_kosrus_neon_sphere = 0
+	}
+
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+}
+
+MAR_kosygin_japan_dva_plan = {
+	name = ""
+	desc = ""
+
+	allowed = {
+		original_tag = MAR
+	}
+	enable = {
+		has_game_rule = {
+			rule = KOSYGIN_BEST_ALLY_DVA
+			option = KOSYGIN_BEST_ALLY_DVA_JAPAN
+		}
+	}
+
+	focus_factors = {
+		MAR_kosrus_sunny_america = 0
+	}
+
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+}
+
 MAR_SWRW_japan_plan = {
 	name = ""
 	desc = ""
