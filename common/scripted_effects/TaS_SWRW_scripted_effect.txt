@@ -2067,3 +2067,25 @@ SWRW_clear_war_stuff = {
 	}
 	SWRW_remove_army_size_modifier = yes
 }
+SWRW_add_RUS_coldwar_GUI = {
+	custom_effect_tooltip = SWRW_Add_Russia_To_Cold_War_GUI_tt
+	hidden_effect = {
+		RUS = {
+			set_superpower = yes 
+
+			add_to_array = { CW_SeaZone_Status = 0 } # 0; East Pacific
+			add_to_array = { CW_SeaZone_Status = 1 } # 1; West Pacific
+			add_to_array = { CW_SeaZone_Status = 0 } # 2; South Atlantic
+			add_to_array = { CW_SeaZone_Status = 0 } # 3; North Atlantic
+			add_to_array = { CW_SeaZone_Status = 0 } # 4; North Sea
+			add_to_array = { CW_SeaZone_Status = 0 } # 5; Mediterranean
+			add_to_array = { CW_SeaZone_Status = 0 } # 6; Indian Ocean
+			Cold_War_GUI_PowerProjection_CalculateBonuses = yes
+			
+			# This only exists because scripted loc is a fuck
+			add_to_array = { global.PowerProjection_Tags = THIS.id }
+			add_to_array = { global.PowerProjection_X = 299 }
+			add_to_array = { global.PowerProjection_Y = 8 }
+		}
+	}
+}

@@ -1534,8 +1534,14 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			econ_leave_sphere = yes
 		}	
 		every_country = {
-			limit = { check_variable = { ECON_SPHERE_LEADER = GER } }
+			limit = {
+				check_variable = { econ_sphere_leader = GER }
+			}
 			econ_leave_sphere = yes
+			if = {
+				limit = { has_idea = SGR_zollverein_basic }
+				leave_zollverein = yes
+			}
 		}
 		#TaS_2WRW_post_germany_econ_setup = yes
 		GER = {

@@ -216,6 +216,12 @@ defined_text = {
 		trigger = { check_variable = { Cold_War_GUI_Selected_Superpower.TNO_Cold_War_GUI_Victory_Outcome_Display^TNO_Cold_War_GUI_Victories_i = 5 } }
 		localization_key = "TNO_Cold_War_Victory_Outcome_Total_Victory"
 	}
+	### 2WRW ###
+	text = {
+		trigger = { check_variable = { Cold_War_GUI_Selected_Superpower.TNO_Cold_War_GUI_Victory_Outcome_Display^TNO_Cold_War_GUI_Victories_i = 6 } }
+		localization_key = "TNO_Cold_War_Victory_Outcome_Death_of_a_Titan"
+	}
+	### END 2WRW ###
 	text = {
 		localization_key = "TNO_Cold_War_Victory_Outcome_Error"
 	}
@@ -498,10 +504,6 @@ defined_text = { #Add more Diplo Incidents Here
 		trigger = { check_variable = { global.TNO_Cold_War_GUI_Tension_Tab_Incidents_List^TNO_Cold_War_GUI_Tension_Incidents_i = 55 } }
 		localization_key = "TNO_Cold_War_GUI_Tension_ID_WW3"
 	}
-	text = {
-		trigger = { check_variable = { global.TNO_Cold_War_GUI_Tension_Tab_Incidents_List^TNO_Cold_War_GUI_Tension_Incidents_i = 58 } }
-		localization_key = "TNO_Cold_War_GUI_Tension_ID_Operation_Big_Stick"
-	}
 }
 
 defined_text = {
@@ -539,7 +541,7 @@ defined_text = {
 		localization_key = "TNO_Cold_War_GUI_Tension_Involved_Superpower_JAP"
 	}
 	text = {
-		trigger = { check_variable = { global.TNO_Cold_War_GUI_Tension_Incidents_Involved_Superpower_1^TNO_Cold_War_GUI_Tension_Incidents_i = JAP } }
+		trigger = { check_variable = { global.TNO_Cold_War_GUI_Tension_Incidents_Involved_Superpower_2^TNO_Cold_War_GUI_Tension_Incidents_i = ALL } }
 		localization_key = "TNO_Cold_War_GUI_Tension_Involved_Superpower_ALL"
 	}
 }
@@ -765,6 +767,12 @@ defined_text = {
 		trigger = { check_variable = { global.PowerProjection_Tags^PP_i = ITA.id } }
 		localization_key = "GFX_Cold_War_GUI_Italy"
 	}
+	### 2WRW ###
+	text = {
+		trigger = { check_variable = { global.PowerProjection_Tags^PP_i = RUS.id } }
+		localization_key = "GFX_Cold_War_GUI_Russia"
+	}
+	### END 2WRW ###
 }
 
 defined_text = {
