@@ -109,423 +109,422 @@ shared_focus = {
 	completion_reward = {
 		custom_effect_tooltip = SWRW_decisions_fopo_tt
 		#set_country_flag = SWRW_decisions_fopo
-		if = {
-			limit = { NOT = { SWE = { has_idea = Pakt_Observer } } }
-			SWE = {
-				add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner
-				}
-				reverse_add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner	
-				}
-				set_temp_variable = { target = RUS }
-				TNO_increase_volunteer_cap_2 = yes
-			}
-		}
-		if = {
-			limit = { NOT = { ITA = { is_in_faction_with = GER } } }
-			ITA = {
-				add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner
-				}
-				reverse_add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner	
-				}
-				set_temp_variable = { target = RUS }
-				TNO_increase_volunteer_cap_2 = yes
-			}
-		}
-		if = {
-			limit = { NOT = { IBR = { is_in_faction_with = GER } } }
-			IBR = {
-				add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner
-				}
-				reverse_add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner	
-				}
-				set_temp_variable = { target = RUS }
-				TNO_increase_volunteer_cap_2 = yes
-			}
-		}
-		if = {
-			limit = { NOT = { FEN = { is_in_faction_with = GER } } }
-			ENG = {
-				add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner
-				}
-				reverse_add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner	
-				}
-				set_temp_variable = { target = RUS }
-				TNO_increase_volunteer_cap_2 = yes
-			}
-		}
-		if = {
-			limit = { NOT = { BRA = { is_in_faction_with = GER } } }
-			BRA = {
-				add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner
-				}
-				reverse_add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner	
-				}
-				set_temp_variable = { target = RUS }
-				TNO_increase_volunteer_cap_2 = yes
-			}
-		}
-		if = {
-			limit = { NOT = { MEX = { is_in_faction_with = GER } } }
-			MEX = {
-				add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner
-				}
-				reverse_add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner	
-				}
-				set_temp_variable = { target = RUS }
-				TNO_increase_volunteer_cap_2 = yes
-			}
-		}
-		if = {
-			limit = { NOT = { BUL = { is_in_faction_with = GER } } }
-			BUL = {
-				add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner
-				}
-				reverse_add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner	
-				}
-				set_temp_variable = { target = RUS }
-				TNO_increase_volunteer_cap_2 = yes
-			}
-		}
-		if = {
-			limit = { NOT = { FIN = { is_in_faction_with = GER } } }
-			FIN = {
-				add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner
-				}
-				reverse_add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner	
-				}
-				set_temp_variable = { target = RUS }
-				TNO_increase_volunteer_cap_2 = yes
-			}
-		}
-		if = {
-			limit = { NOT = { BUL = { is_in_faction_with = GER } } }
-			BUL = {
-				add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner
-				}
-				reverse_add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner	
-				}
-				set_temp_variable = { target = RUS }
-				TNO_increase_volunteer_cap_2 = yes
-			}
-		}
-		if = {
-			limit = { NOT = { SER = { is_in_faction_with = GER } } }
-			SER = {
-				add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner
-				}
-				reverse_add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner	
-				}
-				set_temp_variable = { target = RUS }
-				TNO_increase_volunteer_cap_2 = yes
-			}
-		}
-		if = {
-			limit = { NOT = { AST = { is_in_faction_with = GER } } }
-			AST = {
-				add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner
-				}
-				reverse_add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner	
-				}
-				set_temp_variable = { target = RUS }
-				TNO_increase_volunteer_cap_2 = yes
-			}
-		}
-		if = {
-			limit = { NOT = { CAN = { is_in_faction_with = GER } } }
-			CAN = {
-				add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner
-				}
-				reverse_add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner	
-				}
-				set_temp_variable = { target = RUS }
-				TNO_increase_volunteer_cap_2 = yes
-			}
-		}
-		if = {
-			limit = { NOT = { SAF = { is_in_faction_with = GER } } }
-			SAF = {
-				add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner
-				}
-				reverse_add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner	
-				}
-				set_temp_variable = { target = RUS }
-				TNO_increase_volunteer_cap_2 = yes
-			}
-		}
-		if = {
-			limit = { SPA = { exists = yes } }
-			SPA = {
-				add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner
-				}
-				reverse_add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner	
-				}
-				set_temp_variable = { target = RUS }
-				TNO_increase_volunteer_cap_2 = yes
-			}
-		}
-		if = {
-			limit = { NOT = { IRE = { has_idea = Pakt_Observer } } }
-			IRE = {
-				add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner
-				}
-				reverse_add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner	
-				}
-				set_temp_variable = { target = RUS }
-				TNO_increase_volunteer_cap_2 = yes
-			}
-		}
-		if = {
-			limit = { NOT = { GRE = { is_in_faction_with = GER } } }
-			GRE = {
-				add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner
-				}
-				reverse_add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner	
-				}
-				set_temp_variable = { target = RUS }
-				TNO_increase_volunteer_cap_2 = yes
-			}
-		}
-		if = {
-			limit = { NOT = { SWI = { is_in_faction_with = GER } } }
-			SWI = {
-				add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner
-				}
-				reverse_add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner	
-				}
-				set_temp_variable = { target = RUS }
-				TNO_increase_volunteer_cap_2 = yes
-			}
-		}
-		if = {
-			limit = { SPR = { exists = yes } }
-			SPR = {
-				add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner
-				}
-				reverse_add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner	
-				}
-				set_temp_variable = { target = RUS }
-				TNO_increase_volunteer_cap_2 = yes
-			}
-		}
-		if = {
-			limit = { CTL = { exists = yes } }
-			CTL = {
-				add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner
-				}
-				reverse_add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner	
-				}
-				set_temp_variable = { target = RUS }
-				TNO_increase_volunteer_cap_2 = yes
-			}
-		}
-		if = {
-			limit = { GAL = { exists = yes } }
-			GAL = {
-				add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner
-				}
-				reverse_add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner	
-				}
-				set_temp_variable = { target = RUS }
-				TNO_increase_volunteer_cap_2 = yes
-			}
-		}
-		if = {
-			limit = { IND = { exists = yes } }
-			IND = {
-				add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner
-				}
-				reverse_add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner	
-				}
-				set_temp_variable = { target = RUS }
-				TNO_increase_volunteer_cap_2 = yes
-			}
-		}
-		if = {
-			limit = {
-			    NOT = {
-				    OR = {
-			            POR = {
-					        is_in_faction_with = GER 
-							has_idea = Pakt_Observer
-							exists = no
-						}
-				    }
-				} 
-			}
-			POR = {
-				add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner
-				}
-				reverse_add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner	
-				}
-				set_temp_variable = { target = RUS }
-				TNO_increase_volunteer_cap_2 = yes
-			}
-		}
-		if = {
-			limit = {
-			    NOT = {
-				    OR = {
-			            ARG = {
-					        is_in_faction_with = GER 
-							has_idea = Pakt_Observer
-							has_government = national_socialism
-						}
-				    }
-				}
-				exists = yes 
-			}
-			ARG = {
-				add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner
-				}
-				reverse_add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner	
-				}
-				set_temp_variable = { target = RUS }
-				TNO_increase_volunteer_cap_2 = yes
-			}
-		}
-		if = {
-			limit = {
-			    NOT = {
-				    OR = {
-			            NZL = {
-					        is_in_faction_with = GER 
-							has_idea = Pakt_Observer
-							has_government = paternalism
-						}
-				    }
-				}
-				exists = yes 
-			}
-			NZL = {
-				add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner
-				}
-				reverse_add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner	
-				}
-				set_temp_variable = { target = RUS }
-				TNO_increase_volunteer_cap_2 = yes
-			}
-		}
-		if = {
-			limit = {
-			    NOT = {
-				    OR = {
-			            TUR = {
-					        is_in_faction_with = GER 
-							has_idea = Pakt_Observer
-						}
-				    }
-				}
-				exists = yes 
-			}
-			TUR = {
-				add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner
-				}
-				reverse_add_opinion_modifier = {
-					target = RUS
-					modifier = MAR_SWRW_partner	
-				}
-				set_temp_variable = { target = RUS }
-				TNO_increase_volunteer_cap_2 = yes
-			}
-		}
+		#if = {
+		#	limit = { NOT = { SWE = { has_idea = Pakt_Observer } } }
+		#	SWE = {
+		#		add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner
+		#		}
+		#		reverse_add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner	
+		#		}
+		#		set_temp_variable = { target = RUS }
+		#		TNO_increase_volunteer_cap_2 = yes
+		#	}
+		#}
+		#if = {
+		#	limit = { NOT = { ITA = { is_in_faction_with = GER } } }
+		#	ITA = {
+		#		add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner
+		#		}
+		#		reverse_add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner	
+		#		}
+		#		set_temp_variable = { target = RUS }
+		#		TNO_increase_volunteer_cap_2 = yes
+		#	}
+		#}
+		#if = {
+		#	limit = { NOT = { IBR = { is_in_faction_with = GER } } }
+		#	IBR = {
+		#		add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner
+		#		}
+		#		reverse_add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner	
+		#		}
+		#		set_temp_variable = { target = RUS }
+		#		TNO_increase_volunteer_cap_2 = yes
+		#	}
+		#}
+		#if = {
+		#	limit = { NOT = { FEN = { is_in_faction_with = GER } } }
+		#	ENG = {
+		#		add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner
+		#		}
+		#		reverse_add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner	
+		#		}
+		#		set_temp_variable = { target = RUS }
+		#		TNO_increase_volunteer_cap_2 = yes
+		#	}
+		#}
+		#if = {
+		#	limit = { NOT = { BRA = { is_in_faction_with = GER } } }
+		#	BRA = {
+		#		add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner
+		#		}
+		#		reverse_add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner	
+		#		}
+		#		set_temp_variable = { target = RUS }
+		#		TNO_increase_volunteer_cap_2 = yes
+		#	}
+		#}
+		#if = {
+		#	limit = { NOT = { MEX = { is_in_faction_with = GER } } }
+		#	MEX = {
+		#		add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner
+		#		}
+		#		reverse_add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner	
+		#		}
+		#		set_temp_variable = { target = RUS }
+		#		TNO_increase_volunteer_cap_2 = yes
+		#	}
+		#}
+		#if = {
+		#	limit = { NOT = { BUL = { is_in_faction_with = GER } } }
+		#	BUL = {
+		#		add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner
+		#		}
+		#		reverse_add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner	
+		#		}
+		#		set_temp_variable = { target = RUS }
+		#		TNO_increase_volunteer_cap_2 = yes
+		#	}
+		#}
+		#if = {
+		#	limit = { NOT = { FIN = { is_in_faction_with = GER } } }
+		#	FIN = {
+		#		add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner
+		#		}
+		#		reverse_add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner	
+		#		}
+		#		set_temp_variable = { target = RUS }
+		#		TNO_increase_volunteer_cap_2 = yes
+		#	}
+		#}
+		#if = {
+		#	limit = { NOT = { BUL = { is_in_faction_with = GER } } }
+		#	BUL = {
+		#		add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner
+		#		}
+		#		reverse_add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner	
+		#		}
+		#		set_temp_variable = { target = RUS }
+		#		TNO_increase_volunteer_cap_2 = yes
+		#	}
+		#}
+		#if = {
+		#	limit = { NOT = { SER = { is_in_faction_with = GER } } }
+		#	SER = {
+		#		add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner
+		#		}
+		#		reverse_add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner	
+		#		}
+		#		set_temp_variable = { target = RUS }
+		#		TNO_increase_volunteer_cap_2 = yes
+		#	}
+		#}
+		#if = {
+		#	limit = { NOT = { AST = { is_in_faction_with = GER } } }
+		#	AST = {
+		#		add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner
+		#		}
+		#		reverse_add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner	
+		#		}
+		#		set_temp_variable = { target = RUS }
+		#		TNO_increase_volunteer_cap_2 = yes
+		#	}
+		#}
+		#if = {
+		#	limit = { NOT = { CAN = { is_in_faction_with = GER } } }
+		#	CAN = {
+		#		add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner
+		#		}
+		#		reverse_add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner	
+		#		}
+		#		set_temp_variable = { target = RUS }
+		#		TNO_increase_volunteer_cap_2 = yes
+		#	}
+		#}
+		#if = {
+		#	limit = { NOT = { SAF = { is_in_faction_with = GER } } }
+		#	SAF = {
+		#		add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner
+		#		}
+		#		reverse_add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner	
+		#		}
+		#		set_temp_variable = { target = RUS }
+		#		TNO_increase_volunteer_cap_2 = yes
+		#	}
+		#}
+		#if = {
+		#	limit = { SPA = { exists = yes } }
+		#	SPA = {
+		#		add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner
+		#		}
+		#		reverse_add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner	
+		#		}
+		#		set_temp_variable = { target = RUS }
+		#		TNO_increase_volunteer_cap_2 = yes
+		#	}
+		#}
+		#if = {
+		#	limit = { NOT = { IRE = { has_idea = Pakt_Observer } } }
+		#	IRE = {
+		#		add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner
+		#		}
+		#		reverse_add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner	
+		#		}
+		#		set_temp_variable = { target = RUS }
+		#		TNO_increase_volunteer_cap_2 = yes
+		#	}
+		#}
+		#if = {
+		#	limit = { NOT = { GRE = { is_in_faction_with = GER } } }
+		#	GRE = {
+		#		add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner
+		#		}
+		#		reverse_add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner	
+		#		}
+		#		set_temp_variable = { target = RUS }
+		#		TNO_increase_volunteer_cap_2 = yes
+		#	}
+		#}
+		#if = {
+		#	limit = { NOT = { SWI = { is_in_faction_with = GER } } }
+		#	SWI = {
+		#		add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner
+		#		}
+		#		reverse_add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner	
+		#		}
+		#		set_temp_variable = { target = RUS }
+		#		TNO_increase_volunteer_cap_2 = yes
+		#	}
+		#}
+		#if = {
+		#	limit = { SPR = { exists = yes } }
+		#	SPR = {
+		#		add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner
+		#		}
+		#		reverse_add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner	
+		#		}
+		#		set_temp_variable = { target = RUS }
+		#		TNO_increase_volunteer_cap_2 = yes
+		#	}
+		#}
+		#if = {
+		#	limit = { CTL = { exists = yes } }
+		#	CTL = {
+		#		add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner
+		#		}
+		#		reverse_add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner	
+		#		}
+		#		set_temp_variable = { target = RUS }
+		#		TNO_increase_volunteer_cap_2 = yes
+		#	}
+		#}
+		#if = {
+		#	limit = { GAL = { exists = yes } }
+		#	GAL = {
+		#		add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner
+		#		}
+		#		reverse_add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner	
+		#		}
+		#		set_temp_variable = { target = RUS }
+		#		TNO_increase_volunteer_cap_2 = yes
+		#	}
+		#}
+		#if = {
+		#	limit = { IND = { exists = yes } }
+		#	IND = {
+		#		add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner
+		#		}
+		#		reverse_add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner	
+		#		}
+		#		set_temp_variable = { target = RUS }
+		#		TNO_increase_volunteer_cap_2 = yes
+		#	}
+		#}
+		#if = {
+		#	limit = {
+		#	    NOT = {
+		#		    OR = {
+		#	            POR = {
+		#			        is_in_faction_with = GER 
+		#					has_idea = Pakt_Observer
+		#					exists = no
+		#				}
+		#		    }
+		#		} 
+		#	}
+		#	POR = {
+		#		add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner
+		#		}
+		#		reverse_add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner	
+		#		}
+		#		set_temp_variable = { target = RUS }
+		#		TNO_increase_volunteer_cap_2 = yes
+		#	}
+		#}
+		#if = {
+		#	limit = {
+		#	    NOT = {
+		#		    OR = {
+		#	            ARG = {
+		#			        is_in_faction_with = GER 
+		#					has_idea = Pakt_Observer
+		#					has_government = national_socialism
+		#				}
+		#		    }
+		#		}
+		#		exists = yes 
+		#	}
+		#	ARG = {
+		#		add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner
+		#		}
+		#		reverse_add_opinion_modifier = {
+		#			modifier = MAR_SWRW_partner	
+		#		}
+		#		set_temp_variable = { target = RUS }
+		#		TNO_increase_volunteer_cap_2 = yes
+		#	}
+		#}
+		#if = {
+		#	limit = {
+		#	    NOT = {
+		#		    OR = {
+		#				NZL = {
+		#					is_in_faction_with = GER 
+		#					has_idea = Pakt_Observer
+		#					has_government = paternalism
+		#				}
+		#			}
+		#		}
+		#		exists = yes 
+		#	}
+		#	NZL = {
+		#		add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner
+		#		}
+		#		reverse_add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner	
+		#		}
+		#		set_temp_variable = { target = RUS }
+		#		TNO_increase_volunteer_cap_2 = yes
+		#	}
+		#}
+		#if = {
+		#	limit = {
+		#	    NOT = {
+		#		    OR = {
+		#	            TUR = {
+		#			        is_in_faction_with = GER 
+		#					has_idea = Pakt_Observer
+		#				}
+		#		    }
+		#		}
+		#		exists = yes 
+		#	}
+		#	TUR = {
+		#		add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner
+		#		}
+		#		reverse_add_opinion_modifier = {
+		#			target = RUS
+		#			modifier = MAR_SWRW_partner	
+		#		}
+		#		set_temp_variable = { target = RUS }
+		#		TNO_increase_volunteer_cap_2 = yes
+		#	}
+		#}
 	}
 }
 shared_focus = {

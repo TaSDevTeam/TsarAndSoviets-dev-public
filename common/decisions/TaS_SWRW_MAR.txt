@@ -11,7 +11,12 @@ MAR_SWRW_category = {
 			check_variable = { TaS_swrw_stage = 1 }
 		}
 		available = {
-			NOT = { country_exists = SRT }
+			GER = {
+				OR ={
+					has_completed_focus = SGR_koalition_der_nationen
+					has_completed_focus = BOR_autumn_in_germany
+				}
+			}
 			has_completed_focus = MAR_warprep_so_kill_him
 			custom_trigger_tooltip = {
 				tooltip = SWRW_readiness_tt
@@ -595,8 +600,8 @@ MAR_SWRW_category = {
 						province = {
 							all_provinces = yes
 							limit_to_border = yes
+							level < 2
 						}
-						level < 22
 					}
 				}
 				1887 = {
@@ -606,8 +611,8 @@ MAR_SWRW_category = {
 						province = {
 							all_provinces = yes
 							limit_to_border = yes
+							level < 2
 						}
-						level < 2
 					}
 				}
 			}
@@ -619,8 +624,8 @@ MAR_SWRW_category = {
 						province = {
 							all_provinces = yes
 							limit_to_border = yes
+							level < 2
 						}
-						level < 2
 					}
 				}	
 			}
@@ -5880,9 +5885,11 @@ MAR_SWRW_category = {
 			random_list = {
 				25 = { #big legion
 					every_country = {
-						limit = { 
+						limit = {
 							is_in_faction_with = USA
-							is_major = yes
+							has_army_manpower = {
+								size > 250000
+							}
 						}
 						set_temp_variable = { target = MAR }
 						TNO_increase_volunteer_cap_2 = yes
@@ -5902,7 +5909,9 @@ MAR_SWRW_category = {
 					every_country = {
 						limit = {
 							is_in_faction_with = USA
-							is_major = yes
+							has_army_manpower = {
+								size > 250000
+							}
 						}
 						set_temp_variable = { target = MAR }
 						TNO_increase_volunteer_cap_1 = yes
