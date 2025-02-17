@@ -427,7 +427,7 @@ shared_focus = {
 	completion_reward = {
 		add_equipment_to_stockpile = {
 			type = infantry_equipment_1
-			amount = 25000
+			amount = 35000
 			producer = GER
 		}
 		add_equipment_to_stockpile = {
@@ -506,6 +506,9 @@ shared_focus = {
 shared_focus = {
 	id = GER_GOTTERDAMMERUNG
 	icon = GFX_GER_GOTTERDAMMERUNG
+	available = { #нет, ИИ не будет устраивать ядерный апокалипсис
+		is_ai = no
+	}
 	prerequisite = {focus = GER_stay_night}
 	prerequisite = {focus = GER_when_they_cry}
 	prerequisite = {focus = GER_dies_irae}
