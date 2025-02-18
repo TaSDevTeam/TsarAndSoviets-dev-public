@@ -1092,7 +1092,10 @@ on_actions = {
 				else_if = {
 					limit = {
 						FROM = {
-							original_tag = RUS
+							OR = {
+								original_tag = RUS
+								is_in_faction_with = RUS
+							}
 						}
 						ROOT = { 
 							original_tag = HUN
