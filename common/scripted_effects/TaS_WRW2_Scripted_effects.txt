@@ -1547,6 +1547,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			add_to_faction = GDN
 			add_to_faction = ZNE
 			add_to_faction = BRL
+			SWRW_add_RUS_coldwar_GUI = yes
 		}
 		if = {
 			limit = {
@@ -2030,6 +2031,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 			add_to_faction = GAU
 			add_to_faction = GCZ
 			add_to_faction = GHL
+			SWRW_add_RUS_coldwar_GUI = yes
 		}
 		every_country = {
 			news_event = { id = MAR_2WRW_world_news.11 hours = 6}
