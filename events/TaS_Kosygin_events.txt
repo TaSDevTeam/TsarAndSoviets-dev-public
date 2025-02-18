@@ -2661,6 +2661,13 @@ country_event = { #Rus win
 			set_temp_variable = { gdp_growth_temp = 0.15 }
 			econ_gdp_growth_change = yes
 			TaS_fopo_remove_uar_influence_battle_tab = yes
+			if = {
+				limit = { RUS = { is_faction_leader = yes } }
+				add_ideas = RUSAlliance_Observer
+			}
+			else = {
+				set_country_flag = UAR_join_rus_when_created
+			}
 		}
 		MAR = {
 			set_temp_variable = { gdp_growth_temp = 0.45 }

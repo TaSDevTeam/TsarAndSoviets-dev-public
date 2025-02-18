@@ -118,6 +118,7 @@ IBRWarsCheckPeace = {
 			if = {
 				limit = { has_country_flag = MAR_supported_PPR }
 				econ_join_sphere_MAR = yes
+				add_ideas = RUSAlliance_Observer
 				MAR = {
 					country_event = { id = berez_dobrovoltsy.26 days = 3 }
 					TaS_dobrovoltsy_dynmod_victory = yes

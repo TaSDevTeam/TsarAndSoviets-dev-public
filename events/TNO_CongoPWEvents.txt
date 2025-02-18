@@ -1409,6 +1409,10 @@ country_event = { # CAF is defeated by CPR
 			}
 			econ_leave_sphere = yes
 			remove_ideas = OFN_Observer
+			if = {
+				limit = { CPR = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+				econ_join_sphere_MAR = yes
+			}
 		}
 	}
 }

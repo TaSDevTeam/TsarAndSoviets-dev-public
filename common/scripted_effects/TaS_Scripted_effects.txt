@@ -517,7 +517,8 @@ MAR_install_mil_turkestan = {
 			transfer_state = 2125
 			add_state_core = 2125
 		}
-		
+		add_ideas = RUSAlliance_Military_Government
+		econ_join_sphere_MAR = yes
 	}
 	MTR = {
 		get_current_government_type = yes
@@ -528,6 +529,7 @@ MAR_install_mil_turkestan = {
 			target = MTR
 			autonomy_state = autonomy_military_government
 		}	
+		add_to_faction = MTR
 	}	
 	MTR = {
 		restore_previous_government_type = yes
@@ -570,7 +572,6 @@ MAR_Turkestan_govern = {
 			ideology = despotism
 			popularity = 0.15
 		}
-		econ_join_sphere_MAR = yes
 		MAR = {
 			set_country_flag = MAR_has_turkestan
 			MTR = { save_party_popularities = yes }
@@ -655,6 +656,7 @@ MAR_Turkestan_autonomy = {
 			TNO_economy_type = token:Econ_Type_Corporatism
 			TNO_economy_subtype = token:Econ_Subtype_Dirigisme
 		}
+		TaS_2WRW_set_autonomy_laws = yes
 	}
 	MTR = {
 		get_current_government_type = yes

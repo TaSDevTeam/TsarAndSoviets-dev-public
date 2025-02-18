@@ -1060,11 +1060,13 @@ on_actions = {
 							econ_join_sphere_MAR = yes
 							get_current_government_type = yes
 							save_party_popularities = yes
+							add_ideas = RUSAlliance_Dependent_Member
 							RUS = {
 								set_autonomy = {
 									target = ROM
 									autonomy_state = autonomy_satellite
 								}	
+								add_to_faction = ROM
 							}	
 							restore_previous_government_type = yes
 							apply_party_popularities = yes
@@ -1161,11 +1163,13 @@ on_actions = {
 							econ_join_sphere_MAR = yes
 							get_current_government_type = yes
 							save_party_popularities = yes
+							add_ideas = RUSAlliance_Dependent_Member
 							RUS = {
 								set_autonomy = {
 									target = HUN
 									autonomy_state = autonomy_satellite
 								}	
+								add_to_faction = HUN
 							}	
 							restore_previous_government_type = yes
 							apply_party_popularities = yes
@@ -1262,11 +1266,13 @@ on_actions = {
 							econ_join_sphere_MAR = yes
 							get_current_government_type = yes
 							save_party_popularities = yes
+							add_ideas = RUSAlliance_Dependent_Member
 							RUS = {
 								set_autonomy = {
 									target = SER
 									autonomy_state = autonomy_satellite
 								}	
+								add_to_faction = SER
 							}	
 							restore_previous_government_type = yes
 							apply_party_popularities = yes
@@ -1363,12 +1369,14 @@ on_actions = {
 							econ_join_sphere_MAR = yes
 							get_current_government_type = yes
 							save_party_popularities = yes
+							add_ideas = RUSAlliance_Dependent_Member
 							RUS = {
 								set_autonomy = {
 									target = BUL
 									autonomy_state = autonomy_satellite
 								}	
-							}	
+								add_to_faction = BUL
+							}		
 							restore_previous_government_type = yes
 							apply_party_popularities = yes
 						}
@@ -1394,11 +1402,13 @@ on_actions = {
 						econ_join_sphere_MAR = yes
 						get_current_government_type = yes
 						save_party_popularities = yes
+						add_ideas = RUSAlliance_Dependent_Member
 						RUS = {
 							set_autonomy = {
-								target = BUL
+								target = MAC
 								autonomy_state = autonomy_satellite
 							}	
+							add_to_faction = MAC
 						}	
 						restore_previous_government_type = yes
 						apply_party_popularities = yes
@@ -1488,6 +1498,18 @@ on_actions = {
 							}
 							set_cosmetic_tag = AFG_republic
 							econ_join_sphere_MAR = yes
+							get_current_government_type = yes
+							save_party_popularities = yes
+							add_ideas = RUSAlliance_Dependent_Member
+							RUS = {
+								set_autonomy = {
+									target = AFG
+									autonomy_state = autonomy_satellite
+								}	
+								add_to_faction = AFG
+							}		
+							restore_previous_government_type = yes
+							apply_party_popularities = yes
 						}
 					}	
 					
@@ -1687,6 +1709,7 @@ on_actions = {
 						NAL = {
 							set_cosmetic_tag = NAL_Victory
 							econ_join_sphere_MAR = yes 
+							add_ideas = RUSAlliance_Observer
 							every_owned_state = {
 								remove_core_of = AFG
 								add_core_of = NAL
@@ -1776,6 +1799,7 @@ on_actions = {
 						if = {
 							limit = { MAR = { has_country_flag = MAR_support_NAL } }
 							econ_join_sphere_MAR = yes
+							add_ideas = RUSAlliance_Observer
 						}
 						else = {
 							econ_join_sphere_USA = yes
@@ -1969,11 +1993,13 @@ on_actions = {
 							econ_join_sphere_MAR = yes
 							get_current_government_type = yes
 							save_party_popularities = yes
+							add_ideas = RUSAlliance_Dependent_Member
 							RUS = {
 								set_autonomy = {
 									target = PER
 									autonomy_state = autonomy_satellite
 								}	
+								add_to_faction = PER
 							}	
 							restore_previous_government_type = yes
 							apply_party_popularities = yes

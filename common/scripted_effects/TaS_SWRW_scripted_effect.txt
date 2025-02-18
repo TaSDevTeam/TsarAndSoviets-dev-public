@@ -789,7 +789,11 @@ TaS_SWRW_Manchu_CW_HAN_win = {
 		TaS_fopo_remove_manchurian_civil_war_tab = yes
 		if = {
 			limit = { NOT = { has_government = socialist } }
-			FROM = { econ_join_sphere_MAR = yes }
+			HAN = { 
+				econ_join_sphere_MAR = yes 
+				add_ideas = RUSAlliance_Independent_Member
+			}
+			add_to_faction = HAN
 		}
 		clr_country_flag = RUS_something_goes_wrong
 		set_temp_variable = { target = PFF }
@@ -1727,6 +1731,10 @@ SWRW_turkey_peacedeal = {
 		limit = { GEO = { exists = yes } }
 		ARM = {
 			econ_join_sphere_MAR = yes
+			add_ideas = RUSAlliance_Dependent_Member
+		}
+		RUS = {
+			add_to_faction = ARM
 		}
 	}
 	else = {
@@ -1807,12 +1815,14 @@ SWRW_turkey_peacedeal = {
 		econ_join_sphere_MAR = yes
 		get_current_government_type = yes
 		save_party_popularities = yes
+		add_ideas = RUSAlliance_Military_Government
 	}
 	RUS = {
 		set_autonomy = {
 			target = GRM
 			autonomy_state = autonomy_occupied_territory
 		}	
+		add_to_faction = GRM
 	}	
 	GRM = {
 		restore_previous_government_type = yes
@@ -1917,12 +1927,14 @@ SWRW_finland_peacedeal = {
 	FIN = {
 		get_current_government_type = yes
 		save_party_popularities = yes
+		add_ideas = RUSAlliance_Military_Government
 	}
 	RUS = {
 		set_autonomy = {
 			target = FIN
 			autonomy_state = autonomy_occupied_territory
 		}	
+		add_to_faction = FIN
 	}	
 	FIN = {
 		restore_previous_government_type = yes

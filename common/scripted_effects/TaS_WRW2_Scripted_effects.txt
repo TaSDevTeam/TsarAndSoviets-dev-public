@@ -1117,6 +1117,7 @@ TaS_WRW2_Peace_Yall = {
 			limit = { has_country_flag = BUL_demands }
 			BUL = {
 				econ_join_sphere_MAR = yes
+				add_ideas = RUSAlliance_Observer
 			}
 			RUS = { 
 				set_temp_variable = { gdp_growth_temp = 0.75 }
@@ -1127,6 +1128,7 @@ TaS_WRW2_Peace_Yall = {
 			limit = { has_country_flag = SER_demands }
 			SER = {
 				econ_join_sphere_MAR = yes
+				add_ideas = RUSAlliance_Observer
 			}
 			RUS = { 
 				set_temp_variable = { gdp_growth_temp = 0.75 }
@@ -1137,6 +1139,7 @@ TaS_WRW2_Peace_Yall = {
 			limit = { has_country_flag = HUN_demands }
 			HUN = {
 				econ_join_sphere_MAR = yes
+				add_ideas = RUSAlliance_Observer
 			}
 			RUS = { 
 				set_temp_variable = { gdp_growth_temp = 0.75 }
@@ -1147,6 +1150,7 @@ TaS_WRW2_Peace_Yall = {
 			limit = { has_country_flag = ROM_demands }
 			ROM = {
 				econ_join_sphere_MAR = yes
+				add_ideas = RUSAlliance_Observer
 			}
 			RUS = { 
 				set_temp_variable = { gdp_growth_temp = 0.75 }
@@ -1317,6 +1321,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 				}
 			}
 			TNO_startup_nation = yes
+			add_ideas = RUSAlliance_Independent_Member
 		}
 		#GSI = {
 		#	econ_join_sphere_MAR = yes
@@ -1346,6 +1351,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 				}
 			}
 			TNO_startup_nation = yes
+			add_ideas = RUSAlliance_Independent_Member
 		}
 		GRH = {
 			econ_join_sphere_MAR = yes
@@ -1366,6 +1372,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 				}
 			}
 			TNO_startup_nation = yes
+			add_ideas = RUSAlliance_Observer
 		}
 		GWS = {
 			econ_join_sphere_MAR = yes
@@ -1383,6 +1390,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 				}
 			}
 			TNO_startup_nation = yes
+			add_ideas = RUSAlliance_Observer
 		}
 		GHL = {
 			econ_join_sphere_MAR = yes
@@ -1404,6 +1412,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 				}
 			}
 			TNO_startup_nation = yes
+			add_ideas = RUSAlliance_Observer
 		}
 		GCZ = {
 			econ_join_sphere_MAR = yes
@@ -1416,6 +1425,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 				}
 			}
 			TNO_startup_nation = yes
+			add_ideas = RUSAlliance_Observer
 		}
 		GBW = {
 			econ_join_sphere_MAR = yes
@@ -1427,6 +1437,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 				}
 			}
 			TNO_startup_nation = yes
+			add_ideas = RUSAlliance_Observer
 		}
 		GBV = {
 			econ_join_sphere_MAR = yes
@@ -1441,6 +1452,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 				}
 			}
 			TNO_startup_nation = yes
+			add_ideas = RUSAlliance_Observer
 		}
 		GSV = {
 			econ_join_sphere_MAR = yes
@@ -1457,6 +1469,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 				}
 			}
 			TNO_startup_nation = yes
+			add_ideas = RUSAlliance_Independent_Member
 		}
 		GAU = {
 			econ_join_sphere_MAR = yes
@@ -1475,6 +1488,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 				}
 			}
 			TNO_startup_nation = yes
+			add_ideas = RUSAlliance_Observer
 		}
 		ZNE = {
 			inherit_technology = MAR
@@ -1488,12 +1502,14 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			transfer_state = 1814
 			transfer_state = 1813
 			TNO_startup_nation = yes
+			add_ideas = RUSAlliance_Military_Government
 		}
 		BRL = {
 			inherit_technology = MAR
 			econ_join_sphere_MAR = yes
 			transfer_state = 64
 			TNO_startup_nation = yes
+			add_ideas = RUSAlliance_Military_Government
 		}
 		PUS = {
 			inherit_technology = MAR
@@ -1514,6 +1530,14 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 					add_state_core = PREV
 				}
 			}
+			add_ideas = RUSAlliance_Dependent_Member
+		}
+		RUS = {
+			add_to_faction = GPL
+			add_to_faction = GSV
+			add_to_faction = GDN
+			add_to_faction = ZNE
+			add_to_faction = BRL
 		}
 		if = {
 			limit = {
@@ -1725,6 +1749,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 				TNO_economy_subtype = token:Econ_Subtype_War_Communism
 			}
 			TNO_startup_nation = yes
+			add_ideas = RUSAlliance_Dependent_Member
 		}
 		GPL = {
 			econ_join_sphere_MAR = yes
@@ -1767,6 +1792,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 			}
 			remove_ideas = TaS_Post2WRW_commie_activity
 			TNO_startup_nation = yes
+			add_ideas = RUSAlliance_Independent_Member
 		}
 		GRH = {
 			econ_join_sphere_MAR = yes
@@ -1809,6 +1835,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 				TNO_economy_subtype = token:Econ_Subtype_Worker_Directed
 			}
 			TNO_startup_nation = yes
+			add_ideas = RUSAlliance_Independent_Member
 		}
 		GBV = {
 			econ_join_sphere_MAR = yes
@@ -1841,6 +1868,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 				TNO_economy_subtype = token:Econ_Subtype_Worker_Directed
 			}
 			TNO_startup_nation = yes
+			add_ideas = RUSAlliance_Independent_Member
 		}
 		GAU = {
 			econ_join_sphere_MAR = yes
@@ -1875,6 +1903,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 				TNO_economy_subtype = token:Econ_Subtype_Socialized_Economy
 			}
 			TNO_startup_nation = yes
+			add_ideas = RUSAlliance_Independent_Member
 		}
 		GCZ = {
 			econ_join_sphere_MAR = yes
@@ -1911,6 +1940,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 				TNO_economy_type = token:Econ_Type_Planned
 			}
 			TNO_startup_nation = yes
+			add_ideas = RUSAlliance_Independent_Member
 		}
 		GDN = {
 			econ_join_sphere_MAR = yes
@@ -1940,6 +1970,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 				TNO_economy_type = token:Econ_Type_Planned
 				TNO_economy_subtype = token:Econ_Subtype_Worker_Directed
 			}
+			add_ideas = RUSAlliance_Independent_Member
 		}
 		GHL = {
 			econ_join_sphere_MAR = yes
@@ -1978,9 +2009,19 @@ TaS_WRW2_German_Collapse_Kosygin = {
 				TNO_economy_subtype = token:Econ_Subtype_Worker_Directed
 			}
 			TNO_startup_nation = yes
+			add_ideas = RUSAlliance_Independent_Member
 		}
 		set_global_flag = WRW2_german_collapse
 		set_global_flag = PostGER_kosygin_epilogue
+		RUS = {
+			add_to_faction = ZNE
+			add_to_faction = GDN
+			add_to_faction = GRH
+			add_to_faction = GBV
+			add_to_faction = GAU
+			add_to_faction = GCZ
+			add_to_faction = GHL
+		}
 		every_country = {
 			news_event = { id = MAR_2WRW_world_news.11 hours = 6}
 		}
@@ -2165,12 +2206,14 @@ TaS_2WRW_form_ost_zones = {
 			MBP = {
 				get_current_government_type = yes
 				save_party_popularities = yes
+				add_ideas = RUSAlliance_Military_Government
 			}
 			RUS = {
 				set_autonomy = {
 					target = MBP
 					autonomy_state = autonomy_military_government
 				}	
+				add_to_faction = MBP
 			}	
 			MBP = {
 				restore_previous_government_type = yes
@@ -2212,13 +2255,15 @@ TaS_2WRW_form_ost_zones = {
 			MBL = {
 				get_current_government_type = yes
 				save_party_popularities = yes
+				add_ideas = RUSAlliance_Military_Government
 			}
 			RUS = {
 				set_autonomy = {
 					target = MBL
 					autonomy_state = autonomy_military_government
 				}	
-			}	
+				add_to_faction = MBL
+			}
 			MBL = {
 				restore_previous_government_type = yes
 				apply_party_popularities = yes
@@ -2308,12 +2353,14 @@ TaS_2WRW_form_ost_zones = {
 			MUK = {
 				get_current_government_type = yes
 				save_party_popularities = yes
+				add_ideas = RUSAlliance_Military_Government
 			}
 			RUS = {
 				set_autonomy = {
 					target = MUK
 					autonomy_state = autonomy_military_government
 				}	
+				add_to_faction = MUK
 			}	
 			MUK = {
 				restore_previous_government_type = yes
@@ -2333,13 +2380,15 @@ TaS_2WRW_form_ost_zones = {
 			MTV = {
 				get_current_government_type = yes
 				save_party_popularities = yes
+				add_ideas = RUSAlliance_Military_Government
 			}
 			RUS = {
 				set_autonomy = {
 					target = MTV
 					autonomy_state = autonomy_military_government
 				}	
-			}	
+				add_to_faction = MTV
+			}
 			MTV = {
 				restore_previous_government_type = yes
 				apply_party_popularities = yes
@@ -2373,13 +2422,15 @@ TaS_2WRW_form_ost_zones = {
 			MCS = {
 				get_current_government_type = yes
 				save_party_popularities = yes
+				add_ideas = RUSAlliance_Military_Government
 			}
 			RUS = {
 				set_autonomy = {
 					target = MCS
 					autonomy_state = autonomy_military_government
 				}	
-			}	
+				add_to_faction = MCS
+			}
 			MCS = {
 				restore_previous_government_type = yes
 				apply_party_popularities = yes
@@ -2425,6 +2476,11 @@ TaS_2WRW_set_autonomy_laws = {
 	set_variable = { income_tax_rate = 0.30 }
 	set_variable = { business_tax_rate = 0.32 }
 	set_variable = { sales_tax_rate = 0.035 }
+	
+	swap_ideas = {
+		remove_idea = RUSAlliance_Military_Government
+		add_idea = RUSAlliance_Dependent_Member
+	}
 	add_ideas = {
 		#economic#
 		tno_trade_laws_limited_exports
@@ -2505,6 +2561,10 @@ TaS_2WRW_set_free_laws = {
 	set_variable = { income_tax_rate = 0.30 }
 	set_variable = { business_tax_rate = 0.32 }
 	set_variable = { sales_tax_rate = 0.035 }
+	swap_ideas = {
+		remove_idea = RUSAlliance_Military_Government
+		add_idea = RUSAlliance_Dependent_Member
+	}
 	add_ideas = {
 		#economic#
 		tno_trade_laws_free_trade
@@ -2647,6 +2707,7 @@ TaS_2WRW_free_baltics = {
 		}
 		set_capital = { state = 13 }
 		TaS_2WRW_set_free_laws = yes
+		add_ideas = RUSAlliance_Dependent_Member
 		#add_ideas = { MAR_military_administration }
 		set_politics = {
 			ruling_party = paternalism
@@ -2691,6 +2752,7 @@ TaS_2WRW_free_baltics = {
 		}
 		set_capital = { state = 1397 }
 		TaS_2WRW_set_free_laws = yes
+		add_ideas = RUSAlliance_Dependent_Member
 		#add_ideas = { MAR_military_administration }
 		set_politics = {
 			ruling_party = liberal_conservatism
@@ -2735,6 +2797,7 @@ TaS_2WRW_free_baltics = {
 		}
 		set_capital = { state = 96 }
 		TaS_2WRW_set_free_laws = yes
+		add_ideas = RUSAlliance_Dependent_Member
 		#add_ideas = { MAR_military_administration }
 		set_politics = {
 			ruling_party = conservatism
@@ -2764,6 +2827,11 @@ TaS_2WRW_free_baltics = {
 		set_cosmetic_tag = LIT_freedom
 		econ_join_sphere_MAR = yes
 		TNO_startup_nation = yes
+	}
+	RUS = {
+		add_to_faction = EST
+		add_to_faction = LIT
+		add_to_faction = LAT
 	}
 	hidden_effect = {
 		191 = {
@@ -2845,6 +2913,7 @@ TaS_2WRW_free_caucasus = { #god help us all
 			days = 900
 		}
 		econ_join_sphere_MAR = yes
+		add_ideas = RUSAlliance_Dependent_Member
 	}
 	KBR = {
 		transfer_state = 1560
@@ -2855,6 +2924,7 @@ TaS_2WRW_free_caucasus = { #god help us all
 		}
 		
 		econ_join_sphere_MAR = yes
+		add_ideas = RUSAlliance_Dependent_Member
 	}
 	OSS = {
 		transfer_state = 1561
@@ -2866,6 +2936,7 @@ TaS_2WRW_free_caucasus = { #god help us all
 			days = 900
 		}
 		econ_join_sphere_MAR = yes
+		add_ideas = RUSAlliance_Dependent_Member
 	}
 	CHY	= {
 		transfer_state = 232
@@ -2875,6 +2946,7 @@ TaS_2WRW_free_caucasus = { #god help us all
 			days = 900
 		}
 		econ_join_sphere_MAR = yes
+		add_ideas = RUSAlliance_Dependent_Member
 	}
 	DGS = {
 		transfer_state = 1564
@@ -2884,6 +2956,7 @@ TaS_2WRW_free_caucasus = { #god help us all
 			days = 900
 		}
 		econ_join_sphere_MAR = yes
+		add_ideas = RUSAlliance_Dependent_Member
 	}
 	ABZ = {
 		transfer_state = 1558
@@ -2893,6 +2966,7 @@ TaS_2WRW_free_caucasus = { #god help us all
 			days = 900
 		}
 		econ_join_sphere_MAR = yes
+		add_ideas = RUSAlliance_Dependent_Member
 	}
 	GEO = {
 		transfer_state = 231
@@ -2900,6 +2974,7 @@ TaS_2WRW_free_caucasus = { #god help us all
 		transfer_state = 1293
 		add_state_core = 1293
 		TaS_2WRW_set_autonomy_laws = yes
+		add_ideas = RUSAlliance_Dependent_Member
 		add_timed_idea = {
 			idea = MAR_economic_recovery
 			days = 900
@@ -2954,6 +3029,7 @@ TaS_2WRW_free_caucasus = { #god help us all
 		transfer_state = 2131
 		add_state_core = 2131
 		TaS_2WRW_set_autonomy_laws = yes
+		add_ideas = RUSAlliance_Dependent_Member
 		add_timed_idea = {
 			idea = MAR_economic_recovery
 			days = 900
@@ -2996,6 +3072,15 @@ TaS_2WRW_free_caucasus = { #god help us all
 		transfer_state = 1554
 		add_state_core = 1554
 		econ_join_sphere_MAR = yes
+	}
+	RUS = {
+		add_to_faction = KRC
+		add_to_faction = KBR
+		add_to_faction = OSS
+		add_to_faction = CHY
+		add_to_faction = DGS
+		add_to_faction = GEO
+		add_to_faction = AZR
 	}
 }
 

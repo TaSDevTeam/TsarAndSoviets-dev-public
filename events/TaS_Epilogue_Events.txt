@@ -6910,12 +6910,14 @@ country_event = {#General - Norway(Russian)coup
 					remove_core_of = NOR
 				}
 				econ_join_sphere_MAR = yes
+				add_ideas = RUSAlliance_Independent_Member
 			}
 			RUS = {
 				transfer_state = 2097
 				transfer_state = 2098
 				add_state_core = 2097
 				add_state_core = 2098
+				add_to_faction = GNR
 			}
 			2097 = {
 				set_state_name = STATE_2097_rus
