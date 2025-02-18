@@ -4241,7 +4241,18 @@ country_event = { #AAG: Evacuation
 				name = AAG_RUS_Party
 			}
 			leave_faction = yes
+			remove_faction_status = yes
 			econ_join_sphere_MAR = yes
+			annex_country = {
+				target = AAB
+				transfer_troops = no
+			}
+			transfer_state = 2089
+			transfer_state = 2063
+			transfer_state = 2076
+			add_state_core = 2089
+			add_state_core = 2063
+			add_state_core = 2076
 			if = {
 				limit = { RUS = { has_government = socialist } }
 				set_politics = {
@@ -4267,7 +4278,6 @@ country_event = { #AAG: Evacuation
 				promote_character = AAG_Pavel_Senko
 				set_cosmetic_tag = AAG_RUS
 			}
-			econ_join_sphere_MAR = yes
 		}
 		AAG = {
 			get_current_government_type = yes
