@@ -3884,8 +3884,8 @@ country_event = { #Kosygin - JP - Epilogue
 		ai_chance = { factor = 1 }
 		add_political_power = -50
 		hidden_effect = {
-			TNO_Country_Closing_Screen_Show = yes
 			set_country_flag = MAR_Bad_Ending
+			TNO_Country_Closing_Screen_Show = yes
 		}
 	}
 }
@@ -4388,8 +4388,9 @@ country_event = { #Kosygin - MGB - King of the hill
 				579 = {
 					set_demilitarized_zone = yes
 				}
-				TNO_Country_Closing_Screen_Show = yes
 				set_country_flag = MAR_Bad_Ending
+				set_country_flag = MAR_Kosygin_KGB
+				TNO_Country_Closing_Screen_Show = yes
 			}
 		}
 	}
