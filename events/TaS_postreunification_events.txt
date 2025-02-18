@@ -4267,16 +4267,19 @@ country_event = { #AAG: Evacuation
 				promote_character = AAG_Pavel_Senko
 				set_cosmetic_tag = AAG_RUS
 			}
+			econ_join_sphere_MAR = yes
 		}
 		AAG = {
 			get_current_government_type = yes
 			save_party_popularities = yes
+			add_ideas = RUSAlliance_Military_Government
 		}
 		RUS = {
 			set_autonomy = {
 				target = AAG
 				autonomy_state = autonomy_antarctic_territory
 			}	
+			add_to_faction = AAG
 		}	
 		AAG = {
 			restore_previous_government_type = yes
