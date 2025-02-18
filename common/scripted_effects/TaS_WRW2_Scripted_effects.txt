@@ -1113,6 +1113,15 @@ TaS_WRW2_Peace_Yall = {
 				white_peace = MTR
 			}
 		}	
+		every_country = {
+			limit = {
+				OR = { 
+					is_subject_of = RUS
+					is_in_faction_with = RUS
+				}
+			}
+			white_peace = GER
+		}	
 		if = {
 			limit = { has_country_flag = BUL_demands }
 			BUL = {

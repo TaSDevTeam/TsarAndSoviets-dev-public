@@ -1671,6 +1671,18 @@ country_event = { #Novgorod Theatry
 			limit = { has_war_with = MAR }
 			white_peace = MAR
 		}
+		every_country = {
+			limit = { has_war_with = GER }
+			white_peace = GER
+			leave_faction = yes
+			remove_ideas = RUSAlliance_Independent_Member
+			remove_ideas = RUSAlliance_Dependent_Member
+			remove_ideas = RUSAlliance_Military_Government
+		}
+		every_country = {
+			limit = { has_idea = RUSAlliance_Observer }
+			remove_ideas = RUSAlliance_Observer
+		}
 		MCW = {
 		    transfer_state = 858
 		    transfer_state = 859

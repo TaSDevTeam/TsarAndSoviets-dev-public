@@ -131,7 +131,10 @@ on_actions = {
 				else_if = {
 					limit = {
 						FROM = {
-							original_tag = RUS
+							OR = {
+								original_tag = RUS
+								is_in_faction_with = RUS
+							}
 						}
 						ROOT = { 
 							original_tag = AFG
@@ -209,7 +212,10 @@ on_actions = {
 				else_if = {
 					limit = {
 						FROM = {
-							original_tag = RUS
+							OR = {
+								original_tag = RUS
+								is_in_faction_with = RUS
+							}
 						}
 						ROOT = { 
 							original_tag = UTL
@@ -498,7 +504,10 @@ on_actions = {
 				else_if = {
 					limit = {
 						FROM = {
-							original_tag = RUS
+							OR = {
+								original_tag = RUS
+								is_in_faction_with = RUS
+							}
 						}
 						ROOT = { 
 							original_tag = TUR
@@ -824,7 +833,10 @@ on_actions = {
 				else_if = {
 					limit = {
 						FROM = {
-							original_tag = MAR
+							OR = {
+								original_tag = RUS
+								is_in_faction_with = RUS
+							}
 						}
 						ROOT = { 
 							original_tag = GER
@@ -868,7 +880,10 @@ on_actions = {
 				else_if = {
 					limit = {
 						FROM = {
-							original_tag = MAR
+							OR = {
+								original_tag = RUS
+								is_in_faction_with = RUS
+							}
 						}
 						ROOT = { 
 							original_tag = ROM
@@ -1077,7 +1092,10 @@ on_actions = {
 				else_if = {
 					limit = {
 						FROM = {
-							original_tag = MAR
+							OR = {
+								original_tag = RUS
+								is_in_faction_with = RUS
+							}
 						}
 						ROOT = { 
 							original_tag = HUN
@@ -1180,7 +1198,10 @@ on_actions = {
 				else_if = {
 					limit = {
 						FROM = {
-							original_tag = MAR
+							OR = {
+								original_tag = RUS
+								is_in_faction_with = RUS
+							}
 						}
 						ROOT = { 
 							original_tag = SER
@@ -1283,7 +1304,10 @@ on_actions = {
 				else_if = {
 					limit = {
 						FROM = {
-							original_tag = MAR
+							OR = {
+								original_tag = RUS
+								is_in_faction_with = RUS
+							}
 						}
 						ROOT = { 
 							original_tag = BUL
@@ -1819,7 +1843,10 @@ on_actions = {
 				else_if = {
 					limit = {
 						FROM = {
-							original_tag = RUS
+							OR = {
+								original_tag = RUS
+								is_in_faction_with = RUS
+							}
 						}
 						ROOT = { 
 							original_tag = FIN
@@ -1941,7 +1968,10 @@ on_actions = {
 				else_if = { ##Operation Griboyedov
 					limit = {
 						FROM = {
-							original_tag = RUS
+							OR = {
+								original_tag = RUS
+								is_in_faction_with = RUS
+							}
 						}
 						ROOT = { 
 							original_tag = PER
