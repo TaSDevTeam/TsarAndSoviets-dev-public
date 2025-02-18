@@ -2101,3 +2101,633 @@ SWRW_add_RUS_coldwar_GUI = {
 		}
 	}
 }
+SWRW_force_effects_for_capitulated = {
+	if = {
+		limit = { HUN = { has_capitulated = yes } }
+		RUS = {
+			HUN = {
+				leave_faction = yes
+			}
+			white_peace = HUN
+			HUN = {	
+				leave_zollverein = yes
+				remove_faction_status = yes
+				if = {
+					limit = { RUS = { has_government = socialist } }
+					GAU = {
+						GAU_Otto_Von_Habsburg = {
+							set_nationality = HUN
+						}
+					}
+					promote_character = GAU_Otto_Von_Habsburg
+					set_politics = {
+						ruling_party = socialist
+					}
+					add_popularity = {
+						ideology = socialist
+						popularity = 0.35
+					}
+					retire_country_leader = yes
+					add_country_leader_role = {
+						character = GAU_Otto_Von_Habsburg
+						promote_leader = yes
+						country_leader = {
+							#desc = "POLITICS_Otto_Von_Habsburg_DESC"
+							ideology = socialist_social_democracy_subtype
+							traits = { }
+							expire = "1999.1.1.1"
+						}
+					}
+					set_cosmetic_tag = HUN_GHU_Kosygin
+				}
+				else = {
+					GHU = {
+						GHU_Istvan_Horthy = {
+							set_nationality = HUN
+						}
+						GHU_Geraldine = {
+							set_nationality = HUN
+						}
+					}
+					promote_character = GHU_Istvan_Horthy
+					promote_character = GHU_Geraldine
+					set_politics = {
+						ruling_party = paternalism
+					}
+					add_popularity = {
+						ideology = paternalism
+						popularity = 0.35
+					}
+
+					add_country_leader_role = {
+						character = GHU_Istvan_Horthy
+						promote_leader = yes
+						country_leader = {
+							#desc = "POLITICS_Istvan_Horthy_DESC"
+							ideology = paternalism_semi_constitutional_monarchy_subtype
+							traits = { }
+							expire = "1999.1.1.1"
+						}
+					}
+					set_cosmetic_tag = HUN_GHU_Belooz
+					
+				}
+				set_party_name = {
+					ideology = socialist
+					long_name = HUN_GHU_socialist_party_long
+					name = HUN_GHU_socialist_party
+				}	
+				set_party_name = {
+					ideology = paternalism
+					long_name = HUN_GHU_paternalism_party_long
+					name = HUN_GHU_paternalism_party
+				}	
+				econ_join_sphere_MAR = yes
+				get_current_government_type = yes
+				save_party_popularities = yes
+				add_ideas = RUSAlliance_Dependent_Member
+				RUS = {
+					set_autonomy = {
+						target = HUN
+						autonomy_state = autonomy_satellite
+					}	
+					add_to_faction = HUN
+				}	
+				restore_previous_government_type = yes
+				apply_party_popularities = yes
+			}
+		}
+	}
+	if = {
+		limit = { ROM = { has_capitulated = yes } }
+		RUS = {
+			white_peace = ROM
+			ROM = {	
+				leave_faction = yes
+				leave_zollverein = yes
+				remove_faction_status = yes
+				if = {
+					limit = { 
+						country_exists = TNS
+						NOT = { TNS = { is_subject_of = GER } } #очевидно если Приднестровье не сожралось при капитуляции германии значит оно румынское #а вот теперь хуй
+					}
+					if = {
+						limit = { MUK = { exists = yes } }
+						MUK = {
+							annex_country = {
+								target = TNS
+								transfer_troops = no
+							}
+							add_state_core = 198
+							add_state_core = 1965
+							add_state_core = 1966
+							if = {
+								limit = { MUK = { owns_state = 1282 } }
+								add_state_core = 1282
+								add_state_core = 192
+							}
+							else_if = {
+								limit = { MUK = { owns_state = 192 } }
+								add_state_core = 192
+							}
+							transfer_state = 80
+							transfer_state = 1286
+							transfer_state = 78
+							transfer_state = 1285
+							transfer_state = 1282
+							transfer_state = 192
+							
+							add_state_core = 80
+							add_state_core = 1286
+							add_state_core = 78
+							add_state_core = 1285
+							add_state_core = 1282
+							add_state_core = 192
+						}
+						
+					}
+					else = {
+						RUS = {
+							annex_country = {
+								target = TNS
+								transfer_troops = no
+							}
+							add_state_core = 198
+							add_state_core = 1965
+							add_state_core = 1966
+							if = {
+								limit = { MUK = { owns_state = 1282 } }
+								add_state_core = 1282
+								add_state_core = 192
+							}
+							else_if = {
+								limit = { MUK = { owns_state = 192 } }
+								add_state_core = 192
+							}
+							transfer_state = 80
+							transfer_state = 1286
+							transfer_state = 78
+							transfer_state = 1285
+							transfer_state = 1282
+							transfer_state = 192
+							
+							add_state_core = 80
+							add_state_core = 1286
+							add_state_core = 78
+							add_state_core = 1285
+							add_state_core = 1282
+							add_state_core = 192
+						}
+					}
+				}
+				else = {
+					if = {
+						limit = { country_exists = MUK }
+						MUK = {
+							transfer_state = 80
+							transfer_state = 1286
+							transfer_state = 78
+							transfer_state = 1285
+							transfer_state = 1282
+							transfer_state = 192
+							
+							add_state_core = 80
+							add_state_core = 1286
+							add_state_core = 78
+							add_state_core = 1285
+							add_state_core = 1282
+							add_state_core = 192
+						}
+						
+					}
+					else = {
+						RUS = {
+							transfer_state = 80
+							transfer_state = 1286
+							transfer_state = 78
+							transfer_state = 1285
+							transfer_state = 1282
+							transfer_state = 192
+							
+							add_state_core = 80
+							add_state_core = 1286
+							add_state_core = 78
+							add_state_core = 1285
+							add_state_core = 1282
+							add_state_core = 192
+						}
+					}
+				}
+				if = {
+					limit = { RUS = { has_government = socialist } }
+					GRM = {
+						GRM_Ion_Iliescu = {
+							set_nationality = ROM
+						}
+					}
+					promote_character = GRM_Ion_Iliescu
+					set_politics = {
+						ruling_party = progressivism
+					}
+					add_popularity = {
+						ideology = progressivism
+						popularity = 0.35
+					}
+					add_country_leader_role = {
+						character = GRM_Ion_Iliescu
+						promote_leader = yes
+						country_leader = {
+							#desc = "POLITICS_Ion_Iliescu_DESC"
+							ideology = progressivism_left_wing_populism_subtype
+							traits = { }
+							expire = "1999.1.1.1"
+						}
+					}
+					set_cosmetic_tag = ROM_GRM_Kosygin
+				}
+				else = {
+					GRM = {
+						GRM_Radu_Ciuceanu = {
+							set_nationality = ROM
+						}
+					}
+					promote_character = GRM_Radu_Ciuceanu
+					set_politics = {
+						ruling_party = liberalism
+					}
+					add_popularity = {
+						ideology = liberalism
+						popularity = 0.35
+					}
+					add_country_leader_role = {
+						character = GRM_Radu_Ciuceanu
+						promote_leader = yes
+						country_leader = {
+							#desc = "POLITICS_Radu_Ciuceanu_DESC"
+							ideology = liberalism_national_liberal_subtype
+							traits = { }
+							expire = "1999.1.1.1"
+						}
+					}
+					set_cosmetic_tag = ROM_GRM_Belooz
+					
+				}
+				set_party_name = {
+					ideology = progressivism
+					long_name = ROM_GRM_progressivism_party_long
+					name = ROM_GRM_progressivism_party
+				}	
+				set_party_name = {
+					ideology = liberalism
+					long_name = ROM_GRM_liberalism_party_long
+					name = ROM_GRM_liberalism_party
+				}	
+				econ_join_sphere_MAR = yes
+				get_current_government_type = yes
+				save_party_popularities = yes
+				add_ideas = RUSAlliance_Dependent_Member
+				RUS = {
+					set_autonomy = {
+						target = ROM
+						autonomy_state = autonomy_satellite
+					}	
+					add_to_faction = ROM
+				}	
+				restore_previous_government_type = yes
+				apply_party_popularities = yes
+			}
+		}
+	}
+	if = {
+		limit = { SER = { has_capitulated = yes } }
+		RUS = {
+			white_peace = SER
+			leave_faction = yes
+			leave_zollverein = yes
+			remove_faction_status = yes
+			if = {
+				limit = { is_subject_of = GER }
+				GER = {
+					end_puppet = SER
+				}
+			}
+			SER = {	
+				if = {
+					limit = { RUS = { has_government = socialist } }
+					GSE = {
+						GSE_Petar_Stambolic = {
+							set_nationality = SER
+						}
+					}
+					promote_character = GSE_Petar_Stambolic
+					set_politics = {
+						ruling_party = socialist
+					}
+					add_popularity = {
+						ideology = socialist
+						popularity = 0.35
+					}
+					add_country_leader_role = {
+						character = GSE_Petar_Stambolic
+						promote_leader = yes
+						country_leader = {
+							#desc = "POLITICS_Petar_Stambolic_DESC"
+							ideology = socialist_left_wing_nationalism_subtype
+							traits = { }
+							expire = "1999.1.1.1"
+						}
+					}
+					set_cosmetic_tag = SER_GSE_Kosygin
+				}
+				else = {
+					GSE = {
+						GSE_Petar_Karadordevic = {
+							set_nationality = SER
+						}
+					}
+					promote_character = GSE_Petar_Karadordevic
+					set_politics = {
+						ruling_party = despotism
+					}
+					add_popularity = {
+						ideology = despotism
+						popularity = 0.35
+					}
+					add_country_leader_role = {
+						character = GSE_Petar_Karadordevic
+						promote_leader = yes
+						country_leader = {
+							#desc = "POLITICS_Petar_Karadordevic_DESC"
+							ideology = despotism_absolute_monarchy_subtype
+							traits = { }
+							expire = "1999.1.1.1"
+						}
+					}
+					set_cosmetic_tag = SER_GSE_Belooz
+					
+				}
+				set_party_name = {
+					ideology = socialist
+					long_name = SER_GSE_socialist_party_long
+					name = SER_GSE_socialist_party
+				}	
+				set_party_name = {
+					ideology = despotism
+					long_name = SER_GSE_despotism_party_long
+					name = SER_GSE_despotism_party
+				}	
+				econ_join_sphere_MAR = yes
+				get_current_government_type = yes
+				save_party_popularities = yes
+				add_ideas = RUSAlliance_Dependent_Member
+				RUS = {
+					set_autonomy = {
+						target = SER
+						autonomy_state = autonomy_satellite
+					}	
+					add_to_faction = SER
+				}	
+				restore_previous_government_type = yes
+				apply_party_popularities = yes
+			}
+		}
+	}
+	if = {
+		limit = { BUL = { has_capitulated = yes } }
+		RUS = {
+			leave_faction = yes
+			leave_zollverein = yes
+			remove_faction_status = yes
+			white_peace = BUL
+			BUL = {	
+				every_owned_state = {
+					limit = { is_core_of = BUL }
+					BUL = { transfer_state = PREV }
+				}	
+				if = {
+					limit = { RUS = { has_government = socialist } }
+					GBU = {
+						GBU_Todor_Zhivkov = {
+							set_nationality = BUL
+						}
+					}
+					promote_character = GBU_Todor_Zhivkov
+					set_politics = {
+						ruling_party = communist
+					}
+					add_popularity = {
+						ideology = communist
+						popularity = 0.35
+					}
+					retire_country_leader = yes
+					add_country_leader_role = {
+						character = GBU_Todor_Zhivkov
+						promote_leader = yes
+						country_leader = {
+							#desc = "POLITICS_Todor_Zhivkov_DESC"
+							ideology = communist_bolshevism_subtype
+							traits = { }
+							expire = "1999.1.1.1"
+						}
+					}
+					set_cosmetic_tag = BUL_GBU_Kosygin
+				}
+				else = {
+					GBU = {
+						GBU_Petar_Dertliev = {
+							set_nationality = BUL
+						}
+					}
+					promote_character = GBU_Petar_Dertliev
+					set_politics = {
+						ruling_party = socialist
+					}
+					add_popularity = {
+						ideology = socialist
+						popularity = 0.35
+					}
+					retire_country_leader = yes
+					add_country_leader_role = {
+						character = GBU_Petar_Dertliev
+						promote_leader = yes
+						country_leader = {
+							#desc = "POLITICS_Petar_Dertliev_DESC"
+							ideology = socialist_social_democracy_subtype
+							traits = { }
+							expire = "1999.1.1.1"
+						}
+					}
+					set_cosmetic_tag = BUL_GBU_Belooz
+					
+				}
+				set_party_name = {
+					ideology = socialist
+					long_name = BUL_GBU_socialist_party_long
+					name = BUL_GBU_socialist_party
+				}	
+				set_party_name = {
+					ideology = communist
+					long_name = BUL_GBU_communist_party_long
+					name = BUL_GBU_communist_party
+				}	
+				econ_join_sphere_MAR = yes
+				get_current_government_type = yes
+				save_party_popularities = yes
+				add_ideas = RUSAlliance_Dependent_Member
+				RUS = {
+					set_autonomy = {
+						target = BUL
+						autonomy_state = autonomy_satellite
+					}	
+					add_to_faction = BUL
+				}		
+				restore_previous_government_type = yes
+				apply_party_popularities = yes
+			}
+		}
+		every_country = {
+			limit = {
+				OR = {
+					is_subject_of = BUL
+					tag = MAC
+				}	
+			}
+			white_peace = RUS 
+			hidden_effect = {
+				leave_faction = yes
+				leave_zollverein = yes
+				econ_leave_sphere = yes
+				if = {
+					limit = { has_idea = SGR_zollverein_basic }
+					leave_zollverein = yes
+				}
+				remove_faction_status = yes
+			}
+			econ_join_sphere_MAR = yes
+			get_current_government_type = yes
+			save_party_popularities = yes
+			add_ideas = RUSAlliance_Dependent_Member
+			RUS = {
+				set_autonomy = {
+					target = MAC
+					autonomy_state = autonomy_satellite
+				}	
+				add_to_faction = MAC
+			}	
+			restore_previous_government_type = yes
+			apply_party_popularities = yes
+		}
+	}
+	if = {
+		limit = { FIN = { has_capitulated = yes } }
+		RUS = {
+			transfer_state = 216
+			transfer_state = 215
+			transfer_state = 1359
+			transfer_state = 213
+			transfer_state = 1887
+		}
+		FIN = {
+			leave_faction = yes
+			set_country_flag = oh_fuck_the_russians_are_coming
+		}
+	}
+	if = {
+		limit = { PER = { has_capitulated = yes } }
+		RUS = {
+			white_peace = PER
+			PER = {	
+				XYZ = {
+					PER_regency_council = {
+						set_nationality = PER
+					}
+				}
+				promote_character = PER_regency_council
+				set_politics = {
+					ruling_party = despotism
+				}
+				add_popularity = {
+					ideology = despotism
+					popularity = 0.35
+				}
+				add_popularity = {
+					ideology = despotism_1
+					popularity = 0.15
+				}
+				retire_country_leader = yes
+				add_country_leader_role = {
+					character = PER_regency_council
+					promote_leader = yes
+					country_leader = {
+						#desc = "PER_regency_council_DESC"
+						ideology = despotism_interim_government_subtype
+						traits = { }
+						expire = "1999.1.1.1"
+					}
+				}
+				set_cosmetic_tag = PER_RUS
+				
+				set_party_name = {
+					ideology = despotism
+					long_name = PER_despotism_party_rus_long
+					name = PER_despotism_party_rus
+				}	
+				set_party_name = {
+					ideology = despotism_1
+					long_name = PER_despotism_party_rus1_long
+					name = PER_despotism_party_rus1
+				}	
+				remove_faction_status = yes
+				econ_join_sphere_MAR = yes
+				get_current_government_type = yes
+				save_party_popularities = yes
+				add_ideas = RUSAlliance_Dependent_Member
+				RUS = {
+					set_autonomy = {
+						target = PER
+						autonomy_state = autonomy_satellite
+					}	
+					add_to_faction = PER
+				}	
+				restore_previous_government_type = yes
+				apply_party_popularities = yes
+			}
+			if = {
+				limit = { country_exists = MTR }
+				transfer_state = 2125
+				add_state_core = 2125
+			}	
+			else = {
+				transfer_state = 2125
+				add_state_core = 2125
+			}
+			every_country = {
+				limit = {
+					controls_state = 291
+					check_variable = { ECON_SPHERE_LEADER = RUS }
+				}
+				transfer_state = 2126
+				transfer_state = 413
+				add_state_core = 2126
+				add_state_core = 413
+			}
+			if = {
+				limit = { AZR = { exists = yes } }
+				AZR = {
+					transfer_state = 419
+					transfer_state = 973
+					add_state_core = 419
+					add_state_core = 973
+				}
+			}
+		}
+	}
+	if = {
+		limit = { UTL = { has_capitulated = yes } }
+		RUS = {
+			MAR_install_mil_turkestan = yes
+			set_country_flag = MAR_has_central_asia
+			clr_country_flag = RUS_something_goes_wrong
+		}
+	}
+}

@@ -594,16 +594,33 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 		#Syria Outcomes
 		if = {
 			limit = {
-				NOT = { NOT = { SYR = { has_government = paternalism } } }
+				NOT = { SYR = { has_government = paternalism } }
 				OR = {
-					check_variable = { GER.BOR_OC_participation > 79 }
 					AND = {
-						NOT = { SYR = { has_government = communist } }
+						SYR = {
+							has_country_leader = {
+								character = SYR_Hafez_al_Assad 
+								ruling_only = yes
+							}
+						}
+						check_variable = { GER.BOR_OC_participation > 39 }
+					}
+					AND = {
+						SYR = {
+							has_country_leader = {
+								character = SYR_Salah_Jadid 
+								ruling_only = yes
+							}
+						}
 						check_variable = { GER.BOR_OC_participation > 59 }
 					}
 					AND = {
-						NOT = { SYR = { has_government = communist } }
-						NOT = { SYR = { has_government = socialist } }
+						SYR = {
+							has_country_leader = {
+								character = SYR_Michel_Aflaq 
+								ruling_only = yes
+							}
+						}
 						check_variable = { GER.BOR_OC_participation > 19 }
 					}
 				}
@@ -635,6 +652,69 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 					limit = { is_subject_of = ITA }
 					econ_leave_sphere = yes 
 					econ_join_sphere_ITA = yes
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				OR = {
+					country_exists = SLB
+					AND = {
+						LEB = {
+							has_country_leader = {
+								character = LEB_Rashid_Karami 
+								ruling_only = yes
+							}
+						}
+					}
+				}
+				check_variable = { GER.BOR_OC_participation > 39 }
+			}
+			if = {
+				limit = { country_exists = SLB }
+				SLB = {
+					if = {
+						limit = {
+							NOT = { is_subject_of = ITA }
+							has_global_flag = german_civil_war_speervic
+						}
+						join_zollverein = yes
+					}	
+					else = {
+						econ_join_sphere_GER = yes
+					}
+				}
+			}
+			else = {
+				LEB = {
+					if = {
+						limit = {
+							NOT = { is_subject_of = ITA }
+							has_global_flag = german_civil_war_speervic
+						}
+						join_zollverein = yes
+					}	
+					else = {
+						econ_join_sphere_GER = yes
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { MAR.MAR_OC_participation > 59 }
+				check_variable = { GER.BOR_OC_participation < MAR.MAR_OC_participation }
+			}
+			if = {
+				limit = { country_exists = SLB }
+				SLB = {
+					econ_join_sphere_MAR = yes
+				}
+			}
+			else = {
+				LEB = {
+					econ_join_sphere_MAR = yes
 				}
 			}
 		}

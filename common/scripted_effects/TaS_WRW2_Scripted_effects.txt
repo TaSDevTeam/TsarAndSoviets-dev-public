@@ -828,6 +828,10 @@ TaS_WRW2_total_capitulation = {
 	TaS_2WRW_form_ost_zones = yes
 	GER = {
 		country_event = { id = TaS_GERCollapse.1 days = 7 }
+		set_temp_variable = { Victory_ID = 53 }
+		set_temp_variable = { Victory_Outcome = 1 }
+		set_temp_variable = { Victory_Points = -500 }
+		Cold_War_GUI_ManipulateVictory = yes
 	}
 }
 
@@ -1548,6 +1552,10 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			add_to_faction = ZNE
 			add_to_faction = BRL
 			SWRW_add_RUS_coldwar_GUI = yes
+			set_temp_variable = { Victory_ID = 53 }
+			set_temp_variable = { Victory_Outcome = 5 }
+			set_temp_variable = { Victory_Points = 500 }
+			Cold_War_GUI_ManipulateVictory = yes
 		}
 		if = {
 			limit = {
