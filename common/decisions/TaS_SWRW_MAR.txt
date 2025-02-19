@@ -3107,6 +3107,13 @@ MAR_SWRW_category = {
 				factor = 200
 				check_variable = { SWRW_suspicion_var > 94.99 } 
 			}
+			modifier = {
+				factor = 0
+				has_game_rule = { 
+					rule = SWRW_SWRW_PREPARATION
+					option = SWRW_SWRW_PREPARATION_PREEMPTIVE_ATTACK
+				}
+			}
 		}
 		selectable_mission = yes
 		

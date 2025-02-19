@@ -1024,48 +1024,50 @@ TaS_dobrovoltsy_dynmod_victory = {
 	custom_effect_tooltip = TaS_dobrovoltsy_dynmod_victory_tt
 	add_to_variable = {
 		var = MAR_dobr_infantry_attack
-		value = 0.010
+		value = 0.01
 	}
 	add_to_variable = {
 		var = MAR_dobr_infantry_defence
-		value = 0.005
+		value = 0.01
 	}
 	add_to_variable = {
 		var = MAR_dobr_speed
-		value = 0.005
+		value = 0.01
 	}
 	add_to_variable = {
 		var = MAR_dobr_vertibird_attack
-		value = -0.0025
+		value = -0.0005
 	}
 	add_to_variable = {
 		var = MAR_dobr_consumption
-		value = -0.0025
+		value = -0.0005
 	}
+	force_update_dynamic_modifier = yes
 }
 
 TaS_dobrovoltsy_dynmod_lose = {
 	custom_effect_tooltip = TaS_dobrovoltsy_dynmod_lose_tt
 	add_to_variable = {
 		var = MAR_dobr_infantry_attack
-		value = 0.0025
+		value = 0.005
 	}
 	add_to_variable = {
 		var = MAR_dobr_infantry_defence
-		value = 0.0025
+		value = 0.005
 	}
 	add_to_variable = {
 		var = MAR_dobr_speed
-		value = 0.0025
+		value = 0.005
 	}
 	add_to_variable = {
 		var = MAR_dobr_vertibird_attack
-		value = -0.001
+		value = -0.00025
 	}
 	add_to_variable = {
 		var = MAR_dobr_consumption
-		value = -0.001
+		value = -0.00025
 	}
+	force_update_dynamic_modifier = yes
 }
 
 TaS_nuke_development_start = {
