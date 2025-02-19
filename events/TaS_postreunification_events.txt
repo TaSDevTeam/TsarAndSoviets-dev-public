@@ -2955,6 +2955,11 @@ country_event = { #Offer status quo
 			}	
 		}
 		hidden_effect = {
+			RUS = {
+				load_focus_tree = ZZZ_blank_focus
+				has_country_flag = MAR_Good_Ending
+				TNO_Country_Closing_Screen_Show = yes
+			}
 			every_country  = {
 				news_event = {
 					id = MAR_2WRW_world_news.9
@@ -3093,6 +3098,9 @@ country_event = { #Offer muscowy and caucasus
 			}
 		}
 		hidden_effect = {
+			GER = {
+				load_focus_tree = ZZZ_blank_focus
+			}
 			every_country  = {
 				news_event = {
 					id = MAR_2WRW_world_news.9
@@ -3207,6 +3215,9 @@ country_event = { #Offer muscowy and caucasus and belarus and half of ukraine
 			}
 		}
 		hidden_effect = {
+			GER = {
+				load_focus_tree = ZZZ_blank_focus
+			}
 			every_country  = {
 				news_event = {
 					id = MAR_2WRW_world_news.9
@@ -6437,18 +6448,48 @@ news_event = {
 				}
 			}
 		}
+		if = {
+			limit = { MAR = { has_government = despotism } }
+			set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_VICTORY_BELOZERSKY }
+			TNO_fire_super_event = yes
+		}
+		else_if = {
+			limit = { MAR = { has_government = socialist } }
+			set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_VICTORY_KOSYGIN }
+			TNO_fire_super_event = yes
+		}
 	}
 	option = {
 		name = MAR_2WRW_world_news.10.b
-			trigger = {
-				tag = GER
-			}
+		trigger = {
+			tag = GER
+		}
+		if = {
+			limit = { MAR = { has_government = despotism } }
+			set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_VICTORY_BELOZERSKY }
+			TNO_fire_super_event = yes
+		}
+		else_if = {
+			limit = { MAR = { has_government = socialist } }
+			set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_VICTORY_KOSYGIN }
+			TNO_fire_super_event = yes
+		}
 	}
 	option = {
 		name = MAR_2WRW_world_news.10.c
-			trigger = {
-				tag = MAR
-			}
+		trigger = {
+			tag = MAR
+		}
+		if = {
+			limit = { MAR = { has_government = despotism } }
+			set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_VICTORY_BELOZERSKY }
+			TNO_fire_super_event = yes
+		}
+		else_if = {
+			limit = { MAR = { has_government = socialist } }
+			set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_VICTORY_KOSYGIN }
+			TNO_fire_super_event = yes
+		}
 	}
 }
 
@@ -6467,31 +6508,11 @@ news_event = {
 				tag = MAR
 			}
 		}
-		if = {
-			limit = { MAR = { has_government = despotism } }
-			set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_VICTORY_BELOZERSKY }
-			TNO_fire_super_event = yes
-		}
-		else_if = {
-			limit = { MAR = { has_government = socialist } }
-			set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_VICTORY_KOSYGIN }
-			TNO_fire_super_event = yes
-		}
 	}
 	option = {
 		name = MAR_2WRW_world_news.11.b
 		trigger = {
 			tag = MAR
-		}
-		if = {
-			limit = { MAR = { has_government = despotism } }
-			set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_VICTORY_BELOZERSKY }
-			TNO_fire_super_event = yes
-		}
-		else_if = {
-			limit = { MAR = { has_government = socialist } }
-			set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_VICTORY_KOSYGIN }
-			TNO_fire_super_event = yes
 		}
 	}
 }
@@ -6509,12 +6530,32 @@ news_event = {
 			NOT = { tag = GER }
 		}
 		name = MAR_2WRW_world_news.12.a
+		if = {
+			limit = { MAR = { has_government = despotism } }
+			set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_DEFEAT_BELOZERSKY }
+			TNO_fire_super_event = yes
+		}
+		else_if = {
+			limit = { MAR = { has_government = socialist } }
+			set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_DEFEAT_KOSYGIN }
+			TNO_fire_super_event = yes
+		}	
 	}
 	option = {
 		trigger = {
 			tag = GER
 		}
 		name = MAR_2WRW_world_news.12.b
+		if = {
+			limit = { MAR = { has_government = despotism } }
+			set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_DEFEAT_BELOZERSKY }
+			TNO_fire_super_event = yes
+		}
+		else_if = {
+			limit = { MAR = { has_government = socialist } }
+			set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_DEFEAT_KOSYGIN }
+			TNO_fire_super_event = yes
+		}
 	}
 }
 
@@ -7159,48 +7200,24 @@ news_event = { #Germany attacks Russia again.. wait its really preemptive attack
 				}
 			}
 		}
-		if = {
-			limit = { MAR = { has_government = despotism } }
-			set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_BEGINNING_BELOZERSKY }
-			TNO_fire_super_event = yes
-		}
-		else_if = {
-			limit = { MAR = { has_government = socialist } }
-			set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_BEGINNING_KOSYGIN }
-			TNO_fire_super_event = yes
-		}
+		set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_BEGINNING_GERMANY }
+		TNO_fire_super_event = yes
 	}
 	option = {
 		name = MAR_2WRW_world_news.50.b
 		trigger = {
 			original_tag = GER
 		}
-		if = {
-			limit = { MAR = { has_government = despotism } }
-			set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_BEGINNING_BELOZERSKY }
-			TNO_fire_super_event = yes
-		}
-		else_if = {
-			limit = { MAR = { has_government = socialist } }
-			set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_BEGINNING_KOSYGIN }
-			TNO_fire_super_event = yes
-		}
+		set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_BEGINNING_GERMANY }
+		TNO_fire_super_event = yes
 	}
 	option = {
 		name = MAR_2WRW_world_news.50.c
 		trigger = {
 			original_tag = MAR
 		}
-		if = {
-			limit = { MAR = { has_government = despotism } }
-			set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_BEGINNING_BELOZERSKY }
-			TNO_fire_super_event = yes
-		}
-		else_if = {
-			limit = { MAR = { has_government = socialist } }
-			set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_BEGINNING_KOSYGIN }
-			TNO_fire_super_event = yes
-		}
+		set_temp_variable = { TNO_temp_super_event = token:SE_WRW2_BEGINNING_GERMANY }
+		TNO_fire_super_event = yes
 	}
 }
 

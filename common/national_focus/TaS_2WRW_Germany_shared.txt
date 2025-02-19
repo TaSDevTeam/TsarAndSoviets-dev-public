@@ -15,6 +15,7 @@ shared_focus = {
 	id = GER_their_bestial_nature
 	icon = GFX_GER_their_bestial_nature
 	cost = 3.58
+	bypass = { NOT = { has_war_with = RUS } }
 	prerequisite = {focus = GER_battle_of_civilizations}
 	relative_position_id = GER_battle_of_civilizations
 	x = -2
@@ -28,6 +29,7 @@ shared_focus = {
 	id = GER_collosus_with_feet_of_clay
 	icon = GFX_GER_collosus_with_feet_of_clay
 	cost = 3.58
+	bypass = { NOT = { has_war_with = RUS } }
 	prerequisite = {focus = GER_their_bestial_nature}
 	relative_position_id = GER_their_bestial_nature
 	x = -3
@@ -44,6 +46,7 @@ shared_focus = {
 	id = GER_for_our_existence
 	icon = GFX_GER_for_our_existence
 	cost = 3.58
+	bypass = { NOT = { has_war_with = RUS } }
 	prerequisite = {focus = GER_battle_of_civilizations}
 	relative_position_id = GER_battle_of_civilizations
 	x = 2
@@ -62,6 +65,7 @@ shared_focus = {
 	id = GER_arbeit_macht_frei
 	icon = GFX_GER_arbeit_macht_frei
 	cost = 3.58
+	bypass = { NOT = { has_war_with = RUS } }
 	prerequisite = {focus = GER_for_our_existence}
 	relative_position_id = GER_for_our_existence
 	x = 3
@@ -75,6 +79,7 @@ shared_focus = {
 	id = GER_european_brotherhood
 	icon = GFX_GER_european_brotherhood
 	cost = 3.58
+	bypass = { NOT = { has_war_with = RUS } }
 	prerequisite = {focus = GER_battle_of_civilizations}
 	relative_position_id = GER_battle_of_civilizations
 	x = 0
@@ -98,6 +103,7 @@ shared_focus = {
 	id = GER_united_in_blood
 	icon = GFX_GER_united_in_blood
 	cost = 3.58
+	bypass = { NOT = { has_war_with = RUS } }
 	prerequisite = {focus = GER_european_brotherhood}
 	relative_position_id = GER_european_brotherhood
 	x = 0
@@ -111,6 +117,7 @@ shared_focus = {
 	id = GER_gott_mit_uns
 	icon = GFX_GER_gott_mit_uns
 	cost = 3.58
+	bypass = { NOT = { has_war_with = RUS } }
 	prerequisite = {focus = GER_united_in_blood}
 	relative_position_id = GER_united_in_blood
 	x = -2
@@ -125,6 +132,7 @@ shared_focus = {
 	id = GER_subjugate_the_zeitgeist
 	icon = GFX_GER_subjugate_the_zeitgeist
 	cost = 3.58
+	bypass = { NOT = { has_war_with = RUS } }
 	prerequisite = {focus = GER_collosus_with_feet_of_clay}
 	prerequisite = {focus = GER_gott_mit_uns}
 	relative_position_id = GER_gott_mit_uns
@@ -166,6 +174,7 @@ shared_focus = {
 	id = GER_european_volunteers
 	icon = GFX_GER_european_volunteers
 	cost = 3.58
+	bypass = { NOT = { has_war_with = RUS } }
 	prerequisite = {focus = GER_united_in_blood}
 	relative_position_id = GER_united_in_blood
 	x = 2
@@ -183,6 +192,7 @@ shared_focus = {
 	id = GER_blood_for_the_machine
 	icon = GFX_GER_blood_for_the_machine
 	cost = 3.58
+	bypass = { NOT = { has_war_with = RUS } }
 	prerequisite = {focus = GER_arbeit_macht_frei}
 	prerequisite = {focus = GER_european_volunteers}
 	relative_position_id = GER_european_volunteers
@@ -207,6 +217,7 @@ shared_focus = {
 	id = GER_united_in_purpose
 	icon = GFX_GER_united_in_purpose
 	cost = 3.58
+	bypass = { NOT = { has_war_with = RUS } }
 	prerequisite = {focus = GER_united_in_blood}
 	relative_position_id = GER_united_in_blood
 	x = 0
@@ -241,6 +252,7 @@ shared_focus = {
 	id = GER_ultimate_victory
 	icon = GFX_GER_ultimate_victory
 	cost = 3.58
+	bypass = { NOT = { has_war_with = RUS } }
 	prerequisite = {focus = GER_united_in_purpose}
 	prerequisite = {focus = GER_blood_for_the_machine}
 	prerequisite = {focus = GER_subjugate_the_zeitgeist}
@@ -256,6 +268,7 @@ shared_focus = {
 	id = GER_fire_in_the_east
 	icon = GFX_GER_fire_in_the_east
 	cost = 3.58
+	bypass = { NOT = { has_war_with = RUS } }
 	x = 16
 	y = 0
 	completion_reward = {
@@ -267,6 +280,7 @@ shared_focus = {
 	id = GER_graveyard_of_the_empires
 	icon = GFX_GER_graveyard_of_the_empires
 	cost = 3.58
+	bypass = { NOT = { has_war_with = RUS } }
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1
@@ -299,6 +313,7 @@ shared_focus = {
 	id = GER_mountains_of_madness
 	icon = GFX_GER_mountains_of_madness
 	cost = 3.58
+	bypass = { NOT = { has_war_with = RUS } }
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1
@@ -330,6 +345,7 @@ shared_focus = {
 	id = GER_burning_breadbasket
 	icon = GFX_GER_burning_breadbasket
 	cost = 3.58
+	bypass = { NOT = { has_war_with = RUS } }
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1
@@ -361,6 +377,7 @@ shared_focus = {
 	id = GER_baltic_citadel
 	icon = GFX_GER_baltic_citadel
 	cost = 3.58
+	bypass = { NOT = { has_war_with = RUS } }
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1
@@ -395,6 +412,7 @@ shared_focus = {
 	id = GER_daseinkampf
 	icon = GFX_GER_daseinkampf
 	cost = 3.58
+	bypass = { NOT = { has_war_with = RUS } }
 	x = 4
 	y = 0
 	completion_reward = {
@@ -422,6 +440,7 @@ shared_focus = {
 	prerequisite = {focus = GER_daseinkampf}
 	relative_position_id = GER_daseinkampf
 	cost = 3.58
+	bypass = { NOT = { has_war_with = RUS } }
 	x = 0
 	y = 1
 	completion_reward = {
@@ -475,6 +494,7 @@ shared_focus = {
 	prerequisite = {focus = GER_daseinkampf}
 	relative_position_id = GER_daseinkampf
 	cost = 3.58
+	bypass = { NOT = { has_war_with = RUS } }
 	x = -2
 	y = 2
 	completion_reward = {
@@ -494,6 +514,7 @@ shared_focus = {
 	prerequisite = {focus = GER_daseinkampf}
 	relative_position_id = GER_daseinkampf
 	cost = 3.58
+	bypass = { NOT = { has_war_with = RUS } }
 	x = 2
 	y = 2
 	completion_reward = {
@@ -514,9 +535,11 @@ shared_focus = {
 	prerequisite = {focus = GER_dies_irae}
 	relative_position_id = GER_daseinkampf
 	cost = 3.58
+	bypass = { NOT = { has_war_with = RUS } }
 	x = 0
 	y = 3
 	completion_reward = {
 		country_event = { id = nuclearwar.1 }
+		load_focus_tree = ZZZ_blank_focus
 	}
 }

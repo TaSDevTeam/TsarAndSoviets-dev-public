@@ -1791,6 +1791,7 @@ country_event = { #Novgorod Theatry
 				country_event ={
 					id = MAR_Collapse.1 days = 14
 				}
+				load_focus_tree = ZZZ_blank_focus
 			}
 		}
 		else_if = {
@@ -1809,6 +1810,7 @@ country_event = { #Novgorod Theatry
 				country_event ={
 					id = MAR_Collapse.18 days = 14
 				}
+				load_focus_tree = ZZZ_blank_focus
 			}
 		}
 		hidden_effect = {
@@ -6134,19 +6136,6 @@ country_event = {#General - Pakt collapses
 					GER = {
 						end_puppet = GER
 					}
-					NOR = {
-						remove_ideas = Pakt_Leader
-						remove_ideas = Pakt_Military_Authority
-						remove_ideas = Pakt_Protektorat
-						remove_ideas = Pakt_Integrated_Reichskommissariat
-						remove_ideas = Pakt_Autonomous_Reichskommissariat
-						remove_ideas = Pakt_Reichsland
-						remove_ideas = Pakt_Marionettenstaat
-						remove_ideas = Pakt_Mitstreiter
-						remove_ideas = Pakt_Bundnispartner
-						remove_ideas = Pakt_Ordensstaat
-						remove_ideas = Pakt_Observer
-					}
 				}
 				NOR = {
 					remove_faction_status = yes
@@ -6245,19 +6234,9 @@ country_event = {#General - Pakt collapses
 				}
 				econ_leave_sphere = yes
 				leave_faction = yes	
-				remove_ideas = Pakt_Leader
-				remove_ideas = Pakt_Military_Authority
-				remove_ideas = Pakt_Protektorat
-				remove_ideas = Pakt_Integrated_Reichskommissariat
-				remove_ideas = Pakt_Autonomous_Reichskommissariat
-				remove_ideas = Pakt_Reichsland
-				remove_ideas = Pakt_Marionettenstaat
-				remove_ideas = Pakt_Mitstreiter
-				remove_ideas = Pakt_Bundnispartner
-				remove_ideas = Pakt_Ordensstaat
-				remove_ideas = Pakt_Observer
+				remove_faction_status = yes
 				if = {
-					limit = { has_idea = SGR_zollverein_basic }
+					limit = { has_global_flag = german_civil_war_speervic }
 					leave_zollverein = yes
 				}
 			}
@@ -6269,7 +6248,7 @@ country_event = {#General - Pakt collapses
 				}
 				econ_leave_sphere = yes
 				if = {
-					limit = { has_idea = SGR_zollverein_basic }
+					limit = { has_global_flag = german_civil_war_speervic }
 					leave_zollverein = yes
 				}
 			}
