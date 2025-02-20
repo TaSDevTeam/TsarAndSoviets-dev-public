@@ -13,6 +13,30 @@ shared_focus = {
 		set_variable = { TaS_swrw_stage = 1 }
 		set_variable = { swrw_preparation_category = 1 }
 		set_variable = { SWRW_suspicion_gain = -5 }
+		if = {
+			limit = { is_ai = yes }
+			hidden_effect = { #заставляю ИИ переключитm
+				for_each_loop = {
+					array = TNO_BoP_Tabs_Frames
+					set_variable = { TNO_BoP_Tabs_Frames^i = 0 }
+				}
+				set_variable = { TNO_BoP_Tabs_Frames^Tab_i = 2 }
+
+				# Set tab decision
+				meta_effect = {
+					text = {
+						remove_power_balance = { id = [OLD_TAB]_[TAG] }
+						set_power_balance = { id = BoP_Tab_SWRW_MAR }
+					}
+					TAG = MAR
+					OLD_TAB = "[?TNO_BoP_SelectedTab.GetTokenKey]"
+					TAB_TYPE = "[?Tab_v.GetTokenKey]"
+				}
+
+				# Set tab GUI
+				set_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_SWRW }
+			}
+		}
 		SWRW_add_army_size_modifier = yes
 		add_ideas = MAR_Anatoly_Vavilov_high_command
 		add_ideas = MAR_Valentin_Ardashev_high_command

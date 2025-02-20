@@ -957,6 +957,7 @@ country_event = {#Bormann Event 1
 		ai_chance = { factor = 1 }	
 		add_political_power = 300
 		add_stability = 0.15
+		remove_ideas = GER_BOR_Herbst
 	}
 }
 
@@ -1667,156 +1668,188 @@ country_event = { #Novgorod Theatry
 	
 	option = {
 		name = MAR_Collapse.1941.a
+		set_global_flag = SWRW_GER_victory
+		ai_chance = { factor = 1 }
 		every_country = {
 			limit = { has_war_with = MAR }
 			white_peace = MAR
 		}
-		every_country = {
-			limit = { has_war_with = GER }
-			white_peace = GER
-			leave_faction = yes
-			remove_ideas = RUSAlliance_Independent_Member
-			remove_ideas = RUSAlliance_Dependent_Member
-			remove_ideas = RUSAlliance_Military_Government
-		}
-		every_country = {
-			limit = { has_idea = RUSAlliance_Observer }
-			remove_ideas = RUSAlliance_Observer
-		}
-		MCW = {
-		    transfer_state = 858
-		    transfer_state = 859
-		    transfer_state = 214
-		    transfer_state = 861
-		    transfer_state = 860
-		    transfer_state = 857
-		    transfer_state = 351
-		    transfer_state = 856
-		    transfer_state = 855
-		    transfer_state = 252
-		    transfer_state = 256
-		    transfer_state = 250
-		    transfer_state = 755
-			every_owned_state = {
-				add_core_of = MCW
-				set_demilitarized_zone = no
+		hidden_effect = {
+			every_country = {
+				limit = { has_war_with = GER }
+				white_peace = GER
+				leave_faction = yes
+				remove_ideas = RUSAlliance_Independent_Member
+				remove_ideas = RUSAlliance_Dependent_Member
+				remove_ideas = RUSAlliance_Military_Government
 			}
-		}
-		if = {
-			limit = { FIN = { exists = yes } }
-			FIN = { 
-				transfer_state = 213
-				transfer_state = 1359
-				transfer_state = 215
-				transfer_state = 216
-				transfer_state = 1887
-			}
-		}
-		if = {
-			limit = { 
-				MAR = { has_country_flag = MAR_Turkestan_German }
-				MTR = { exists = yes }
-			}
-			UTL = {
-				annex_country = {
-					target = MTR
-					transfer_troops = no
+			MAR = {
+				disband_faction = yes
+				remove_ideas = RUSAlliance_Leader
+				every_country = {
+					if = {
+						limit = { MAR = { has_wargoal_against = PREV } }
+						MAR = { remove_wargoal = { target = PREV type = all } }
+					}
 				}
 			}
-		}
-		else = {
+			GER = {
+				set_temp_variable = { Victory_ID = 53 }
+				set_temp_variable = { Victory_Outcome = 1 }
+				set_temp_variable = { Victory_Points = -500 }
+				Cold_War_GUI_ManipulateVictory = yes
+			}
+			every_country = {
+				limit = { has_idea = RUSAlliance_Observer }
+				remove_ideas = RUSAlliance_Observer
+			}
 			MCW = {
-				if = {
-					limit = { RUS = { controls_state = 213 } }
+				transfer_state = 858
+				transfer_state = 859
+				transfer_state = 214
+				transfer_state = 861
+				transfer_state = 860
+				transfer_state = 857
+				transfer_state = 351
+				transfer_state = 856
+				transfer_state = 855
+				transfer_state = 252
+				transfer_state = 256
+				transfer_state = 250
+				transfer_state = 755
+				every_owned_state = {
+					add_core_of = MCW
+					set_demilitarized_zone = no
+				}
+			}
+			if = {
+				limit = { FIN = { exists = yes } }
+				FIN = { 
 					transfer_state = 213
 					transfer_state = 1359
 					transfer_state = 215
 					transfer_state = 216
 					transfer_state = 1887
-					
-					add_state_core = 213
-					add_state_core = 1359
-					add_state_core = 215
-					add_state_core = 216
-					add_state_core = 1887
-				}
-				else_if = {
-					limit = { RUS = { controls_state = 215 } }
-					transfer_state = 1359
-					transfer_state = 215
-					transfer_state = 1887
-					
-					add_state_core = 1359
-					add_state_core = 215
-					add_state_core = 1887
-				}
-				else_if = {
-					limit = { RUS = { controls_state = 1887 } }
-					transfer_state = 1359
-					transfer_state = 1887
-					
-					add_state_core = 1359
-					add_state_core = 1887
-				}
-				else_if = {
-					limit = { RUS = { controls_state = 1359 } }
-					transfer_state = 1359
-					add_state_core = 1359
-				}
-				else = {
-					add_political_power = -10
 				}
 			}
-		}
-		ai_chance = { factor = 1 }
-		if = {
-			limit = { has_government = despotism }
-			MAR = { 
-				set_country_leader_description = {
-					desc = "POLITICS_SERGEY_BELOZERSKI_F_DESC"
+			if = {
+				limit = { 
+					MAR = { has_country_flag = MAR_Turkestan_German }
+					MTR = { exists = yes }
 				}
-				add_ideas = TaS_Post2WRW_WSR_fourth_time_a_row
-			}
-			MAR_Sergey_Belozerskiy = {
-				set_portraits = {
-					civilian = { large = "gfx/leaders/MAR/Collapse/Portrait_Berezniki_Belozerskid_70S.dds" }
-				}
-				swap_country_leader_traits = {
-					remove = char_objedinitel
-					add = char_projebavshij
-					ideology = despotism_mladorossi_autocracy_subtype
+				UTL = {
+					annex_country = {
+						target = MTR
+						transfer_troops = no
+					}
 				}
 			}
-			hidden_effect = {
-				country_event ={
-					id = MAR_Collapse.1 days = 14
+			else = {
+				MCW = {
+					if = {
+						limit = { RUS = { controls_state = 213 } }
+						transfer_state = 213
+						transfer_state = 1359
+						transfer_state = 215
+						transfer_state = 216
+						transfer_state = 1887
+						
+						add_state_core = 213
+						add_state_core = 1359
+						add_state_core = 215
+						add_state_core = 216
+						add_state_core = 1887
+					}
+					else_if = {
+						limit = { RUS = { controls_state = 215 } }
+						transfer_state = 1359
+						transfer_state = 215
+						transfer_state = 1887
+						
+						add_state_core = 1359
+						add_state_core = 215
+						add_state_core = 1887
+					}
+					else_if = {
+						limit = { RUS = { controls_state = 1887 } }
+						transfer_state = 1359
+						transfer_state = 1887
+						
+						add_state_core = 1359
+						add_state_core = 1887
+					}
+					else_if = {
+						limit = { RUS = { controls_state = 1359 } }
+						transfer_state = 1359
+						add_state_core = 1359
+					}
+					else = {
+						add_political_power = -10
+					}
 				}
-				load_focus_tree = ZZZ_blank_focus
 			}
-		}
-		else_if = {
-			limit = { has_government = socialist }
-			MAR_advisor_Kosygin = {
-				set_portraits = {
-					civilian = { large = "gfx/leaders/MAR/Collapse/Portrait_Berezniki_Kosygind_70s.dds" }
+			if = {
+				limit = { has_government = despotism }
+				MAR = { 
+					set_country_leader_description = {
+						desc = "POLITICS_SERGEY_BELOZERSKI_F_DESC"
+					}
+					add_ideas = TaS_Post2WRW_WSR_fourth_time_a_row
 				}
-				swap_country_leader_traits = {
-					remove = char_reformator
-					add = char_projebavshij
-					ideology = socialist_social_monarchist_but_worse_subtype
+				MAR_Sergey_Belozerskiy = {
+					set_portraits = {
+						civilian = { large = "gfx/leaders/MAR/Collapse/Portrait_Berezniki_Belozerskid_70S.dds" }
+					}
+					swap_country_leader_traits = {
+						remove = char_objedinitel
+						add = char_projebavshij
+						ideology = despotism_mladorossi_autocracy_subtype
+					}
+				}
+				hidden_effect = {
+					country_event ={
+						id = MAR_Collapse.1 days = 14
+					}
+					load_focus_tree = ZZZ_blank_focus
 				}
 			}
-			hidden_effect = {
-				country_event ={
-					id = MAR_Collapse.18 days = 14
+			else_if = {
+				limit = { has_government = socialist }
+				MAR_advisor_Kosygin = {
+					set_portraits = {
+						civilian = { large = "gfx/leaders/MAR/Collapse/Portrait_Berezniki_Kosygind_70s.dds" }
+					}
+					swap_country_leader_traits = {
+						remove = char_reformator
+						add = char_projebavshij
+						ideology = socialist_social_monarchist_but_worse_subtype
+					}
 				}
-				load_focus_tree = ZZZ_blank_focus
+				hidden_effect = {
+					country_event ={
+						id = MAR_Collapse.18 days = 14
+					}
+					load_focus_tree = ZZZ_blank_focus
+				}
 			}
-		}
-		hidden_effect = {
 			every_country  = {
 				news_event = {
 					id = MAR_2WRW_world_news.12
+				}
+			}
+			if = {
+				limit = { IRA = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+				PER = {
+					annex_country = {
+						target = IRA
+						transfer_troops = no
+					}
+					if = {
+						limit = { has_global_flag = german_civil_war_speervic }
+						leave_zollverein = yes
+					}
+					else = { econ_join_sphere_GER = yes }
+					GER = { add_to_faction = PER }
 				}
 			}
 			SWRW_clear_war_stuff = yes
@@ -1841,6 +1874,7 @@ country_event = { #Novgorod Theatry
 				surrender_progress > 0.4
 			}
 		}
+		ai_chance = { factor = 1 }
 		load_focus_tree = MAR_second_patriotic_war_fail
 
 	}
@@ -2103,73 +2137,75 @@ country_event = { #Turkestan breaks free
 		name = MAR_Collapse.7.a
 		ai_chance = { factor = 1 }
 		add_stability = -0.05
-		XYZ = {
-			UZB_Alexander_Rutskoj = {
-				set_portraits = {
-					civilian = { large = "gfx/leaders/UZB/Portrait_Uzbekistan_Alexander_Rutskoy_ALT.dds" }
+		hidden_effect = {
+			XYZ = {
+				UZB_Alexander_Rutskoj = {
+					set_portraits = {
+						civilian = { large = "gfx/leaders/UZB/Portrait_Uzbekistan_Alexander_Rutskoy_ALT.dds" }
+					}
+					set_nationality = MTR
+				} 
+			}
+			if = {
+				limit = { has_country_flag = MAR_has_turkestan }
+				MAR_install_mil_turkestan = yes
+				MTR = {
+					remove_ideas = MAR_economic_recovery
+					if = {
+						limit = { RUS = { controls_state = 1885 } }
+						transfer_state = 1885
+						transfer_state = 1465
+						transfer_state = 2461
+						
+						add_state_core = 1885
+						add_state_core = 1465
+						add_state_core = 2461
+					}
+					else_if = {
+						limit = { RUS = { controls_state = 1465 } }
+						transfer_state = 1465
+						add_state_core = 1465
+					}
+					if = {
+						limit = { RUS = { controls_state = 2125 } }
+						transfer_state = 2125
+					}
 				}
-				set_nationality = MTR
-			} 
-		}
-		if = {
-			limit = { has_country_flag = MAR_has_turkestan }
-			MAR_install_mil_turkestan = yes
+			}
+			else = {
+				MTR = { 
+					transfer_state = 406
+					add_state_core = 406
+					set_cosmetic_tag = MTR_caspian
+				}
+			}
 			MTR = {
-				remove_ideas = MAR_economic_recovery
-				if = {
-					limit = { RUS = { controls_state = 1885 } }
-					transfer_state = 1885
-					transfer_state = 1465
-					transfer_state = 2461
-					
-					add_state_core = 1885
-					add_state_core = 1465
-					add_state_core = 2461
+				end_puppet = MAR
+				econ_leave_sphere = yes
+				set_politics = {
+					ruling_party = ultranationalism 
+					last_election = "1933.2.16"
+					election_frequency = 36
+					elections_allowed = no
 				}
-				else_if = {
-					limit = { RUS = { controls_state = 1465 } }
-					transfer_state = 1465
-					add_state_core = 1465
+				set_party_name = {
+					ideology = ultranationalism
+					long_name = MTR_despotism_party_long
+					name = MTR_despotism_party
 				}
-				if = {
-					limit = { RUS = { controls_state = 2125 } }
-					transfer_state = 2125
+				add_popularity = {
+					ideology = ultranationalism
+					popularity = 0.45
 				}
-			}
-		}
-		else = {
-			MTR = { 
-				transfer_state = 406
-				add_state_core = 406
-				set_cosmetic_tag = MTR_caspian
-			}
-		}
-		MTR = {
-			end_puppet = MAR
-			econ_leave_sphere = yes
-			set_politics = {
-				ruling_party = ultranationalism 
-				last_election = "1933.2.16"
-				election_frequency = 36
-				elections_allowed = no
-			}
-			set_party_name = {
-				ideology = ultranationalism
-				long_name = MTR_despotism_party_long
-				name = MTR_despotism_party
-			}
-			add_popularity = {
-				ideology = ultranationalism
-				popularity = 0.45
-			}
-			add_country_leader_role = {
-				character = UZB_Alexander_Rutskoj
-				promote_leader = yes
-				country_leader = {
-				   desc = "POLITICS_RUTSKOJ_COLLAPSE_DESC"
-					ideology = ultranationalism_stratocracy_subtype
-					expire = "1999.1.1"
-					traits = { }	
+				add_country_leader_role = {
+					character = UZB_Alexander_Rutskoj
+					promote_leader = yes
+					country_leader = {
+					   desc = "POLITICS_RUTSKOJ_COLLAPSE_DESC"
+						ideology = ultranationalism_stratocracy_subtype
+						expire = "1999.1.1"
+						traits = { }	
+					}
 				}
 			}
 		}
@@ -2192,143 +2228,138 @@ country_event = { #-kazakhstan
 		name = MAR_Collapse.8.a
 		ai_chance = { factor = 1 }
 		add_stability = -0.05
-		retire_character = MAR_Wojciech_Jaruzelski
-		retire_character = MAR_Cheslav_Kischak
-		MAR_Wojciech_Jaruzelski = {
-			set_nationality = KAZ
-		}
-		XYZ = {
-			MAR_Vitaliy_Mukha = {
-				set_nationality = KZR
-			}
-		}
-		KZR = {
-			set_cosmetic_tag = PAV_MAR_collapse
-			set_country_flag = RUS_cancel_all_ideas
-			add_state_core = 587
-			transfer_state = 587
-			add_state_core = 402
-			transfer_state = 402
-			add_state_core = 404
-			transfer_state = 404
-			add_state_core = 589
-			transfer_state = 589
-			add_state_core = 588
-			transfer_state = 588
-			add_state_core = 590
-			transfer_state = 590
-			add_state_core = 583
-			transfer_state = 583
-			add_state_core = 846
-			transfer_state = 846
-			add_state_core = 652
-			transfer_state = 652
-			add_state_core = 1808
-			transfer_state = 1808
-			add_state_core = 1807
-			transfer_state = 1807
-			add_state_core = 1802
-			transfer_state = 1802
-			add_state_core = 1803
-			transfer_state = 1803
-			add_state_core = 1804
-			transfer_state = 1804
-			add_state_core = 1805
-			transfer_state = 1805
-			add_state_core = 1806
-			transfer_state = 1806
-			remove_ideas = PAV_idealistic_revolutionaries 
-			set_politics = {
-				ruling_party = paternalism
-				last_election = "1933.2.16"
-				election_frequency = 36
-				elections_allowed = no
-			}
-			add_popularity = {
-				ideology = paternalism
-				popularity = 0.45
-			}
-			add_country_leader_role = {
-				character = MAR_Vitaliy_Mukha 
-				promote_leader = yes
-				country_leader = {
-					desc = "POLITICS_MUKHA_COLLAPSE_DESC"
-					ideology = paternalism_social_nationalism_subtype
-					expire = "1999.1.1"
-					traits = { }		
-				}
-			}
-			every_owned_state = {
-				set_demilitarized_zone = no
-			}			
-			set_party_name = {
-				ideology = paternalism
-				long_name = PAV_MAR_collapse_party_long
-				name = PAV_MAR_collapse_party
-			}			
-			add_ideas = TaS_Post2WRW_PAV_steppe_riches
-			set_variable = {
-				TNO_economy_type = token:Econ_Type_Corporatism
-				TNO_economy_subtype = token:Econ_Subtype_Dirigisme
-			}
-		}
-		KAZ  = {
-			set_cosmetic_tag = NPL_MAR_collapse
-			set_country_flag = RUS_cancel_all_ideas
-			if = {
-				limit = { NOT = { MTR = { owns_state = 406 } } }
-				add_state_core = 406
-				transfer_state = 406
-			}
-			add_state_core = 407
-			transfer_state = 407
-			MAR_Wojciech_Jaruzelski = {
-				promote_character = {
-					ideology = paternalism_social_nationalism_subtype
-				}
-			}			
-			set_politics = {
-			    ruling_party = paternalism
-				last_election = "1933.2.16"
-				election_frequency = 36
-				elections_allowed = no
-			} 
-			add_popularity = {
-				ideology = paternalism
-				popularity = 0.45
-			}
-			add_country_leader_role = {
-				character = MAR_Wojciech_Jaruzelski
-				promote_leader = yes
-				country_leader = {
-					desc = "POLITICS_JARUZELSKI_COLLAPSE_DESC"
-					ideology = paternalism_social_nationalism_subtype
-					expire = "1999.1.1"
-					traits = { }
-				}
-			}	
-			set_party_name = {
-				ideology = paternalism
-				long_name = NPL_MAR_collapse_party_long
-				name = NPL_MAR_collapse_party
-			}
-			every_owned_state = {
-				set_demilitarized_zone = no
-			}	
-			add_ideas = TaS_Post2WRW_NPL_last_bastion
-			set_variable = {
-				TNO_economy_type = token:Econ_Type_Corporatism
-				TNO_economy_subtype = token:Econ_Subtype_Socialized_Economy
-			}
-		}
-		MTR = {
-			declare_war_on = {
-				target = KZR
-				type = annex_everything
-			}
-			add_ideas = TaS_Post2WRW_MTR_march_north
-		}
 		hidden_effect = {
+			retire_character = MAR_Wojciech_Jaruzelski
+			retire_character = MAR_Cheslav_Kischak
+			MAR_Wojciech_Jaruzelski = {
+				set_nationality = KAZ
+			}
+			XYZ = {
+				MAR_Vitaliy_Mukha = {
+					set_nationality = KZR
+				}
+			}
+			KZR = {
+				set_variable = { national_debt = 0 } # clear debt for successor
+				set_cosmetic_tag = PAV_MAR_collapse
+				set_country_flag = RUS_cancel_all_ideas
+				add_state_core = 587
+				transfer_state = 587
+				add_state_core = 402
+				transfer_state = 402
+				add_state_core = 404
+				transfer_state = 404
+				add_state_core = 589
+				transfer_state = 589
+				add_state_core = 588
+				transfer_state = 588
+				add_state_core = 590
+				transfer_state = 590
+				add_state_core = 583
+				transfer_state = 583
+				add_state_core = 846
+				transfer_state = 846
+				add_state_core = 652
+				transfer_state = 652
+				add_state_core = 1808
+				transfer_state = 1808
+				add_state_core = 1807
+				transfer_state = 1807
+				add_state_core = 1802
+				transfer_state = 1802
+				add_state_core = 1803
+				transfer_state = 1803
+				add_state_core = 1804
+				transfer_state = 1804
+				add_state_core = 1805
+				transfer_state = 1805
+				add_state_core = 1806
+				transfer_state = 1806
+				remove_ideas = PAV_idealistic_revolutionaries 
+				set_politics = {
+					ruling_party = paternalism
+					last_election = "1933.2.16"
+					election_frequency = 36
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = paternalism
+					popularity = 0.45
+				}
+				add_country_leader_role = {
+					character = MAR_Vitaliy_Mukha 
+					promote_leader = yes
+					country_leader = {
+						desc = "POLITICS_MUKHA_COLLAPSE_DESC"
+						ideology = paternalism_social_nationalism_subtype
+						expire = "1999.1.1"
+						traits = { }		
+					}
+				}
+				every_owned_state = {
+					set_demilitarized_zone = no
+				}			
+				set_party_name = {
+					ideology = paternalism
+					long_name = PAV_MAR_collapse_party_long
+					name = PAV_MAR_collapse_party
+				}			
+				add_ideas = TaS_Post2WRW_PAV_steppe_riches
+				set_variable = {
+					TNO_economy_type = token:Econ_Type_Corporatism
+					TNO_economy_subtype = token:Econ_Subtype_Dirigisme
+				}
+			}
+			KAZ = {
+				set_variable = { national_debt = 0 } # clear debt for successor
+				set_cosmetic_tag = NPL_MAR_collapse
+				set_country_flag = RUS_cancel_all_ideas
+				if = {
+					limit = { NOT = { MTR = { owns_state = 406 } } }
+					add_state_core = 406
+					transfer_state = 406
+				}
+				add_state_core = 407
+				transfer_state = 407
+				MAR_Wojciech_Jaruzelski = {
+					promote_character = {
+						ideology = paternalism_social_nationalism_subtype
+					}
+				}			
+				set_politics = {
+					ruling_party = paternalism
+					last_election = "1933.2.16"
+					election_frequency = 36
+					elections_allowed = no
+				} 
+				add_popularity = {
+					ideology = paternalism
+					popularity = 0.45
+				}
+				add_country_leader_role = {
+					character = MAR_Wojciech_Jaruzelski
+					promote_leader = yes
+					country_leader = {
+						desc = "POLITICS_JARUZELSKI_COLLAPSE_DESC"
+						ideology = paternalism_social_nationalism_subtype
+						expire = "1999.1.1"
+						traits = { }
+					}
+				}	
+				set_party_name = {
+					ideology = paternalism
+					long_name = NPL_MAR_collapse_party_long
+					name = NPL_MAR_collapse_party
+				}
+				every_owned_state = {
+					set_demilitarized_zone = no
+				}	
+				add_ideas = TaS_Post2WRW_NPL_last_bastion
+				set_variable = {
+					TNO_economy_type = token:Econ_Type_Corporatism
+					TNO_economy_subtype = token:Econ_Subtype_Socialized_Economy
+				}
+			}
 			country_event ={
 				id = MAR_Collapse.9 days = 2
 			}
@@ -2341,7 +2372,7 @@ country_event = { #-kazakhstan
 					}
 				}				
 				division_template = {
-					name = "Pekhotnaya Diviziya"
+					name = "Pekhotnaya Strekovaya Diviziya"
 					priority = 2
 					regiments = {
 						infantry = { x = 0 y = 0 }
@@ -2404,7 +2435,7 @@ country_event = { #-kazakhstan
 			MTR = {
 				random_owned_controlled_state = {
 					create_unit = {
-						division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						division = "division_template = \"Pekhotnaya Strekovaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
 						owner = MTR
 						count = 3
 					}
@@ -2426,7 +2457,7 @@ country_event = { #-kazakhstan
 				}
 				random_owned_controlled_state = {
 					create_unit = {
-						division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						division = "division_template = \"Pekhotnaya Strekovaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
 						owner = MTR
 						count = 4
 					}
@@ -2450,14 +2481,14 @@ country_event = { #-kazakhstan
 			KAZ = {
 				random_owned_controlled_state = {
 					create_unit = {
-						division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						division = "division_template = \"Pekhotnaya Strekovaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
 						owner = KAZ
-						count = 2
+						count = 3
 					}
 					create_unit = {
 						division = "division_template = \"Opolcheniye\" start_experience_factor = 0.6 start_equipment_factor = 1"
 						owner = KAZ
-						count = 3
+						count = 4
 					}
 					create_unit = {
 						division = "division_template = \"Motostrelkovaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
@@ -2472,14 +2503,14 @@ country_event = { #-kazakhstan
 				}
 				random_owned_controlled_state = {
 					create_unit = {
-						division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+						division = "division_template = \"Pekhotnaya Strekovaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
 						owner = KAZ
 						count = 2
 					}
 					create_unit = {
 						division = "division_template = \"Opolcheniye\" start_experience_factor = 0.6 start_equipment_factor = 1"
 						owner = KAZ
-						count = 5
+						count = 7
 					}
 					create_unit = {
 						division = "division_template = \"Motostrelkovaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
@@ -2508,6 +2539,13 @@ country_event = { #-kazakhstan
 				}
 			}
 		}
+		MTR = {
+			declare_war_on = {
+				target = KZR
+				type = annex_everything
+			}
+			add_ideas = TaS_Post2WRW_MTR_march_north
+		}
 	}
 }	
 country_event = { #bek won, but at what cost
@@ -2533,6 +2571,7 @@ country_event = { #bek won, but at what cost
 			election_frequency = 36
 			elections_allowed = no
 		}
+		retire_character = MAR_Vladimir_Gil
 		add_country_leader_role = {
 			character = MAR_Kazem_Bek
 			promote_leader = yes
@@ -2668,10 +2707,12 @@ country_event = { #F tuva and zeya
 				transfer_state = 408
 				every_owned_state = {
 					set_demilitarized_zone = no
+					add_core_of = FROM
 				}
 				
 			}
 			hidden_effect = {
+				set_global_flag = MJP_retakes_Manchuria
 				if = {
 					limit = {
 						OR = {
@@ -2702,7 +2743,7 @@ country_event = { #F tuva and zeya
 							create_unit = {
 								division = "division_template = \"Infantry Division\" start_experience_factor = 0.6 start_equipment_factor = 1"
 								owner = MJP
-								count = 12
+								count = 18
 							}
 						}	
 						if = { 
@@ -2759,65 +2800,71 @@ country_event = { #F dv 1
 		name = MAR_Collapse.13.a
 		ai_chance = { factor = 1 }
 		add_stability = -0.05
-		MAG = {
-			set_cosmetic_tag = MAG_MAR_collapse
-			add_state_core = 637
-			transfer_state = 637
-			add_state_core = 891
-			transfer_state = 891
-			add_state_core = 562
-			transfer_state = 562
-			add_state_core = 886
-			transfer_state = 886
-			add_state_core = 561
-			transfer_state = 561
-			add_state_core = 563
-			transfer_state = 563
-			add_state_core = 889
-			transfer_state = 889
-			add_state_core = 759
-			transfer_state = 759
-			add_ideas = {
-				OFN_Observer
-				TaS_Post2WRW_SIB_japanese_paranoia
-				TaS_Post2WRW_MAG_other_side_of_ocean
-			}
-			set_country_flag = RUS_cancel_all_ideas
-			econ_join_sphere_USA = yes 			
-			set_politics = {
-				ruling_party = despotism
-				last_election = "1933.2.16"
-				election_frequency = 36
-				elections_allowed = no
-			}
-			add_popularity = {
-				ideology = despotism
-				popularity = 0.45
-			}
-			load_focus_tree = ZZZ_blank_focus
-			add_country_leader_role = {
-				character = MAR_Vladimir_Zhirinovsky
-				promote_leader = yes
-				country_leader = {
-					desc = "POLITICS_ZHIRIK_COLLAPSE_DESC"
-					ideology = despotism_military_junta_subtype
-					expire = "1999.1.1"
-					traits = { }
+		hidden_effect = {
+			MAG = {
+				set_variable = { national_debt = 0 } # clear debt for successor
+				set_cosmetic_tag = MAG_MAR_collapse
+				add_state_core = 637
+				transfer_state = 637
+				add_state_core = 891
+				transfer_state = 891
+				add_state_core = 562
+				transfer_state = 562
+				add_state_core = 886
+				transfer_state = 886
+				add_state_core = 561
+				transfer_state = 561
+				add_state_core = 563
+				transfer_state = 563
+				add_state_core = 889
+				transfer_state = 889
+				add_state_core = 759
+				transfer_state = 759
+				add_ideas = {
+					OFN_Observer
+					TaS_Post2WRW_SIB_japanese_paranoia
+					TaS_Post2WRW_MAG_other_side_of_ocean
 				}
+				set_country_flag = RUS_cancel_all_ideas
+				econ_join_sphere_USA = yes 			
+				set_politics = {
+					ruling_party = despotism
+					last_election = "1933.2.16"
+					election_frequency = 36
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = despotism
+					popularity = 0.45
+				}
+				load_focus_tree = ZZZ_blank_focus
+				add_country_leader_role = {
+					character = MAR_Vladimir_Zhirinovsky
+					promote_leader = yes
+					country_leader = {
+						desc = "POLITICS_ZHIRIK_COLLAPSE_DESC"
+						ideology = despotism_military_junta_subtype
+						expire = "1999.1.1"
+						traits = { }
+					}
+				}
+				set_party_name = {
+					ideology = despotism
+					long_name = MAG_MAR_collapse_party_long
+					name = MAG_MAR_collapse_party
+				}
+				every_owned_state = {
+					set_demilitarized_zone = no
+				}
+				set_variable = {
+					TNO_economy_type = token:Econ_Type_Corporatism
+					TNO_economy_subtype = token:Econ_Subtype_Dirigisme
+				}
+			}	
+			MAR = {
+				transfer_navy = { target = MAG }
 			}
-			set_party_name = {
-				ideology = despotism
-				long_name = MAG_MAR_collapse_party_long
-				name = MAG_MAR_collapse_party
-			}
-			every_owned_state = {
-				set_demilitarized_zone = no
-			}
-			set_variable = {
-				TNO_economy_type = token:Econ_Type_Corporatism
-				TNO_economy_subtype = token:Econ_Subtype_Dirigisme
-			}
-		}	
+		}
 		hidden_effect = {
 			country_event ={
 				id = MAR_Collapse.14 days = 2
@@ -2837,134 +2884,129 @@ country_event = { #F dv 2
 		name = MAR_Collapse.14.a
 		ai_chance = { factor = 1 }
 		add_stability = -0.05
-		XYZ = {
-			MAR_Mikhail_Nikolayev = {
-				set_nationality = YAK
-			}
-		}
-		XYZ = {
-			MAR_Susanna_Pechuro = {	
-				set_nationality = IRK
-			}
-		}
-		IRK = {
-			retire_country_leader = yes
-			set_country_flag = RUS_cancel_all_ideas
-			set_cosmetic_tag = BRY_MAR_collapse
-			add_state_core = 565
-			transfer_state = 565
-			add_state_core = 564
-			transfer_state = 564
-			set_politics = {
-				ruling_party = socialist
-				last_election = "1933.2.16"
-				election_frequency = 36
-				elections_allowed = no
-			}
-			load_focus_tree = ZZZ_blank_focus
-			MAG = {
-				IRK = { save_party_popularities = yes }
-				set_autonomy = {
-					target = IRK
-					autonomy_state = autonomy_military_government
-				}
-			}				
-			set_politics = {
-				ruling_party = progressivism
-			}
-			add_popularity = {
-				ideology = progressivism
-				popularity = 0.65
-			}
-			add_country_leader_role = {
-				character = MAR_Susanna_Pechuro
-				promote_leader = yes
-				country_leader = {
-					desc = "POLITICS_PECHURO_COLLAPSE_DESC"
-					ideology = progressivism_left_wing_populism_subtype
-					expire = "1999.1.1"
-					traits = { }
+		hidden_effect = { 
+			XYZ = {
+				MAR_Mikhail_Nikolayev = {
+					set_nationality = YAK
 				}
 			}
-			set_party_name = {
-				ideology = progressivism
-				long_name = BRY_MAR_collapse_party_long
-				name = BRY_MAR_collapse_party
-			}
-			add_ideas = {
-				OFN_Observer
-				TaS_Post2WRW_SIB_japanese_paranoia
-				TaS_Post2WRW_IRK_red_light
-			}
-			econ_join_sphere_USA = yes
-			apply_party_popularities = yes
-			every_owned_state = {
-				set_demilitarized_zone = no
-			}
-			set_variable = {
-				TNO_economy_type = token:Econ_Type_Corporatism
-				TNO_economy_subtype = token:Econ_Subtype_Dirigisme
-			}
-		}
-		YAK = {
-			set_cosmetic_tag = YAK_MAR_collapse
-			add_state_core = 574
-			transfer_state = 574
-			add_state_core = 644
-			transfer_state = 644
-			add_state_core = 760
-			transfer_state = 760
-			MAG = {
-				YAK = { save_party_popularities = yes }
-				set_autonomy = {
-					target = YAK
-					autonomy_state = autonomy_military_government
-				}
-			}	
-			set_politics = {
-				ruling_party = paternalism
-				last_election = "1933.2.16"
-				election_frequency = 36
-				elections_allowed = no
-			}
-			add_popularity = {
-				ideology = paternalism
-				popularity = 0.45
-			}
-			set_country_flag = RUS_cancel_all_ideas		
-			add_country_leader_role = {
-				character = MAR_Mikhail_Nikolayev
-				promote_leader = yes
-				country_leader = {
-					desc = "POLITICS_NIKOLAYEV_COLLAPSE_DESC"
-					ideology = paternalism_anocracy_subtype
-					expire = "1999.1.1"
-					traits = { }
+			XYZ = {
+				MAR_Susanna_Pechuro = {	
+					set_nationality = IRK
 				}
 			}
-			set_party_name = {
-				ideology = paternalism
-				long_name = YAK_MAR_collapse_party_long
-				name = YAK_MAR_collapse_party
+			IRK = {
+				set_variable = { national_debt = 0 } # clear debt for successor
+				retire_country_leader = yes
+				set_country_flag = RUS_cancel_all_ideas
+				set_cosmetic_tag = BRY_MAR_collapse
+				add_state_core = 565
+				transfer_state = 565
+				add_state_core = 564
+				load_focus_tree = ZZZ_blank_focus
+				MAG = {
+					IRK = { save_party_popularities = yes }
+					set_autonomy = {
+						target = IRK
+						autonomy_state = autonomy_military_government
+					}
+				}	
+				apply_party_popularities = yes		
+				set_politics = {
+					ruling_party = progressivism
+				}
+				add_popularity = {
+					ideology = progressivism
+					popularity = 0.65
+				}
+				add_country_leader_role = {
+					character = MAR_Susanna_Pechuro
+					promote_leader = yes
+					country_leader = {
+						desc = "POLITICS_PECHURO_COLLAPSE_DESC"
+						ideology = progressivism_left_wing_populism_subtype
+						expire = "1999.1.1"
+						traits = { }
+					}
+				}
+				set_party_name = {
+					ideology = progressivism
+					long_name = BRY_MAR_collapse_party_long
+					name = BRY_MAR_collapse_party
+				}
+				add_ideas = {
+					OFN_Observer
+					TaS_Post2WRW_SIB_japanese_paranoia
+					TaS_Post2WRW_IRK_red_light
+				}
+				econ_join_sphere_USA = yes
+				every_owned_state = {
+					set_demilitarized_zone = no
+				}
+				set_variable = {
+					TNO_economy_type = token:Econ_Type_Corporatism
+					TNO_economy_subtype = token:Econ_Subtype_Dirigisme
+				}
 			}
-			add_ideas = {
-				OFN_Observer
-				TaS_Post2WRW_SIB_japanese_paranoia
-				TaS_Post2WRW_YAK_earth_riches
+			YAK = {
+				set_variable = { national_debt = 0 }
+				set_cosmetic_tag = YAK_MAR_collapse
+				add_state_core = 574
+				transfer_state = 574
+				add_state_core = 644
+				transfer_state = 644
+				add_state_core = 760
+				transfer_state = 760
+				MAG = {
+					YAK = { save_party_popularities = yes }
+					set_autonomy = {
+						target = YAK
+						autonomy_state = autonomy_military_government
+					}
+				}	
+				set_politics = {
+					ruling_party = paternalism
+					last_election = "1933.2.16"
+					election_frequency = 36
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = paternalism
+					popularity = 0.45
+				}
+				set_country_flag = RUS_cancel_all_ideas		
+				add_country_leader_role = {
+					character = MAR_Mikhail_Nikolayev
+					promote_leader = yes
+					country_leader = {
+						desc = "POLITICS_NIKOLAYEV_COLLAPSE_DESC"
+						ideology = paternalism_anocracy_subtype
+						expire = "1999.1.1"
+						traits = { }
+					}
+				}
+				set_party_name = {
+					ideology = paternalism
+					long_name = YAK_MAR_collapse_party_long
+					name = YAK_MAR_collapse_party
+				}
+				add_ideas = {
+					OFN_Observer
+					TaS_Post2WRW_SIB_japanese_paranoia
+					TaS_Post2WRW_YAK_earth_riches
+				}
+				econ_join_sphere_USA = yes 
+				load_focus_tree = ZZZ_blank_focus
+				apply_party_popularities = yes
+				every_owned_state = {
+					set_demilitarized_zone = no
+				}
+				set_variable = {
+					TNO_economy_type = token:Econ_Type_Corporatism
+					TNO_economy_subtype = token:Econ_Subtype_Dirigisme
+				}
 			}
-			econ_join_sphere_USA = yes 
-			load_focus_tree = ZZZ_blank_focus
-			apply_party_popularities = yes
-			every_owned_state = {
-				set_demilitarized_zone = no
-			}
-			set_variable = {
-				TNO_economy_type = token:Econ_Type_Corporatism
-				TNO_economy_subtype = token:Econ_Subtype_Dirigisme
-			}
-
 		}
-		
 		hidden_effect = {
 			country_event ={
 				id = MAR_Collapse.15 days = 6
@@ -2988,92 +3030,98 @@ country_event = { #F sibir
 		retire_character = MAR_Nikolai_Volkov
 		retire_character = MAR_Valentin_Ardashev
 		retire_character = MAR_Vladimir_Gil
-		MAR_Joseph_Beyrle = {
-			set_nationality = NOV
-		}
-		NOV = {
-			set_country_flag = RUS_cancel_all_ideas
-			set_cosmetic_tag = NOV_MAR_collapse
-			add_state_core = 516
-			transfer_state = 516
-			add_state_core = 577
-			transfer_state = 577
-			add_state_core = 888
-			transfer_state = 888
-			add_state_core = 576
-			transfer_state = 576
-			add_state_core = 887
-			transfer_state = 887
-			add_state_core = 578
-			transfer_state = 578
-			add_state_core = 570
-			transfer_state = 570
-			transfer_state = 40
-			add_state_core = 40
-			transfer_state = 890
-			add_state_core = 890
-			transfer_state = 569
-			add_state_core = 569
-			add_state_core = 757
-			transfer_state = 757
-			add_state_core = 568
-			transfer_state = 568
-			add_state_core = 567
-			transfer_state = 567
-			transfer_state = 758
-			add_state_core = 758
-			transfer_state = 566
-			add_state_core = 566
-			add_state_core = 761
-			transfer_state = 761
-			add_state_core = 575
-			transfer_state = 575	
-			add_state_core = 654
-			transfer_state = 654
-			every_owned_state = {
-				set_demilitarized_zone = no
-			}
-			set_politics = { 
-				ruling_party = ultranationalism
-				last_election = "1933.2.16"
-				election_frequency = 36
-				elections_allowed = no
-			}
+		hidden_effect = {
 			MAR_Joseph_Beyrle = {
-				promote_character = {
-					ideology = ultranationalism_reactionary_nationalism_subtype
+				set_nationality = NOV
+			}
+			NOV = {
+				set_variable = { national_debt = 0 }
+				set_country_flag = RUS_cancel_all_ideas
+				set_cosmetic_tag = NOV_MAR_collapse
+				add_state_core = 516
+				transfer_state = 516
+				add_state_core = 577
+				transfer_state = 577
+				add_state_core = 888
+				transfer_state = 888
+				add_state_core = 576
+				transfer_state = 576
+				add_state_core = 887
+				transfer_state = 887
+				add_state_core = 578
+				transfer_state = 578
+				add_state_core = 570
+				transfer_state = 570
+				transfer_state = 40
+				add_state_core = 40
+				transfer_state = 890
+				add_state_core = 890
+				transfer_state = 569
+				add_state_core = 569
+				add_state_core = 757
+				transfer_state = 757
+				add_state_core = 568
+				transfer_state = 568
+				add_state_core = 567
+				transfer_state = 567
+				transfer_state = 758
+				add_state_core = 758
+				transfer_state = 566
+				add_state_core = 566
+				add_state_core = 761
+				transfer_state = 761
+				add_state_core = 575
+				transfer_state = 575	
+				add_state_core = 654
+				transfer_state = 654
+				every_owned_state = {
+					set_demilitarized_zone = no
 				}
-			}
-			add_popularity = {
-				ideology = ultranationalism
-				popularity = 0.45
-			}
-			load_focus_tree = ZZZ_blank_focus
-			add_country_leader_role = {
-				character = MAR_Joseph_Beyrle
-				promote_leader = yes
-				country_leader = {
-					desc = "POLITICS_BEYRLE_COLLAPSE_DESC"
-					ideology = ultranationalism_reactionary_nationalism_subtype
-					expire = "1999.1.1"
-					traits = { }
+				set_politics = { 
+					ruling_party = ultranationalism
+					last_election = "1933.2.16"
+					election_frequency = 36
+					elections_allowed = no
 				}
-			}
-			MAR_Joseph_Beyrle = {
-				set_portraits = {
-					civilian = { large = "gfx/leaders/MAR/Collapse/Portrait_Joseph_Beyrle.dds" }
+				MAR_Joseph_Beyrle = {
+					promote_character = {
+						ideology = ultranationalism_reactionary_nationalism_subtype
+					}
 				}
-			}
-			set_party_name = {
-				ideology = ultranationalism	
-				long_name = NOV_MAR_collapse_party_long
-				name = NOV_MAR_collapse_party
-			}
-			load_focus_tree = ZZZ_blank_focus
-			add_ideas = TaS_Post2WRW_NOV_feet_of_clay
-			set_variable = {
-				TNO_economy_type = token:Econ_Type_Planned
-				TNO_economy_subtype = token:Econ_Subtype_Military_Directed
+				add_popularity = {
+					ideology = ultranationalism
+					popularity = 0.45
+				}
+				load_focus_tree = ZZZ_blank_focus
+				add_country_leader_role = {
+					character = MAR_Joseph_Beyrle
+					promote_leader = yes
+					country_leader = {
+						desc = "POLITICS_BEYRLE_COLLAPSE_DESC"
+						ideology = ultranationalism_reactionary_nationalism_subtype
+						expire = "1999.1.1"
+						traits = { }
+					}
+				}
+				MAR_Joseph_Beyrle = {
+					set_portraits = {
+						civilian = { large = "gfx/leaders/MAR/Collapse/Portrait_Joseph_Beyrle.dds" }
+					}
+				}
+				set_party_name = {
+					ideology = ultranationalism	
+					long_name = NOV_MAR_collapse_party_long
+					name = NOV_MAR_collapse_party
+				}
+				load_focus_tree = ZZZ_blank_focus
+				add_ideas = TaS_Post2WRW_NOV_feet_of_clay
+				remove_dynamic_modifier = { modifier = RUS_Far_East_Mining }
+				remove_dynamic_modifier = { modifier = NOV_rnd_modifier }
+				econ_leave_sphere = yes
+				set_variable = {
+					TNO_economy_type = token:Econ_Type_Planned
+					TNO_economy_subtype = token:Econ_Subtype_Military_Directed
+				}
 			}
 		}
 		hidden_effect = {
@@ -3104,113 +3152,117 @@ country_event = { #F Ural
 				set_nationality = TYM
 			}
 		}
- 		OMS = {
-			set_country_flag = RUS_cancel_all_ideas
-			set_cosmetic_tag = OMS_MAR_collapse
-			add_state_core = 844
-			transfer_state = 844
-			add_state_core = 756
-			transfer_state = 756
-			add_state_core = 579
-			transfer_state = 579
-			add_state_core = 845
-			transfer_state = 845
-			add_state_core = 871
-			transfer_state = 871
-			add_state_core = 573
-			transfer_state = 573
-			add_state_core = 653
-			transfer_state = 653
-			transfer_state = 754
-			add_state_core = 754
-			every_owned_state = {
-				set_demilitarized_zone = no
-			}
-			set_politics = {
-				ruling_party = fascism
-				last_election = "1933.2.16"
-				election_frequency = 36
-				elections_allowed = no
-			}
-			MAR_Vladimir_Gil = {
-				promote_character = {
-					ideology = fascism_revolutionary_nationalism_subtype
+		hidden_effect = {
+			OMS = {
+				set_variable = { national_debt = 0 }
+				set_country_flag = RUS_cancel_all_ideas
+				set_cosmetic_tag = OMS_MAR_collapse
+				add_state_core = 844
+				transfer_state = 844
+				add_state_core = 756
+				transfer_state = 756
+				add_state_core = 579
+				transfer_state = 579
+				add_state_core = 845
+				transfer_state = 845
+				add_state_core = 871
+				transfer_state = 871
+				add_state_core = 573
+				transfer_state = 573
+				add_state_core = 653
+				transfer_state = 653
+				transfer_state = 754
+				add_state_core = 754
+				every_owned_state = {
+					set_demilitarized_zone = no
+				}
+				set_politics = {
+					ruling_party = fascism
+					last_election = "1933.2.16"
+					election_frequency = 36
+					elections_allowed = no
+				}
+				MAR_Vladimir_Gil = {
+					promote_character = {
+						ideology = fascism_revolutionary_nationalism_subtype
+					}
+				}
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.45
+				}
+				add_ideas = TaS_Post2WRW_OMS_mountain_king
+				load_focus_tree = ZZZ_blank_focus
+				add_country_leader_role = {
+					character = MAR_Vladimir_Gil
+					promote_leader = yes
+					country_leader = {
+						desc = "POLITICS_GIL_COLLAPSE_DESC"
+						ideology = fascism_revolutionary_nationalism_subtype
+						expire = "1999.1.1"
+						traits = { }
+					}
+				}
+				set_party_name = {
+					ideology = fascism
+					long_name = OMS_MAR_collapse_party_long
+					name = OMS_MAR_collapse_party
+				}
+				set_variable = {
+					TNO_economy_type = token:Econ_Type_Planned
+					TNO_economy_subtype = token:Econ_Subtype_Military_Directed
 				}
 			}
-			add_popularity = {
-				ideology = fascism
-				popularity = 0.45
-			}
-			add_ideas = TaS_Post2WRW_OMS_mountain_king
-			load_focus_tree = ZZZ_blank_focus
-			add_country_leader_role = {
-				character = MAR_Vladimir_Gil
-				promote_leader = yes
-				country_leader = {
-					desc = "POLITICS_GIL_COLLAPSE_DESC"
-					ideology = fascism_revolutionary_nationalism_subtype
-					expire = "1999.1.1"
-					traits = { }
-				}
-			}
-			set_party_name = {
-				ideology = fascism
-				long_name = OMS_MAR_collapse_party_long
-				name = OMS_MAR_collapse_party
-			}
-			set_variable = {
-				TNO_economy_type = token:Econ_Type_Planned
-				TNO_economy_subtype = token:Econ_Subtype_Military_Directed
-			}
-		}
-		TYM = {
-			set_country_flag = RUS_cancel_all_ideas
-			set_cosmetic_tag = SVR_MAR_collapse
-			add_state_core = 572
-			transfer_state = 572
-			add_state_core = 580
-			transfer_state = 580
-			add_state_core = 403
-			transfer_state = 403
-			add_state_core = 571
-			transfer_state = 571
+			TYM = {
+				set_variable = { national_debt = 0 }
+				set_country_flag = RUS_cancel_all_ideas
+				set_cosmetic_tag = SVR_MAR_collapse
+				add_state_core = 572
+				transfer_state = 572
+				add_state_core = 580
+				transfer_state = 580
+				add_state_core = 403
+				transfer_state = 403
+				add_state_core = 571
+				transfer_state = 571
 
-			set_politics = {
-				ruling_party = paternalism
-				last_election = "1933.2.16"
-				election_frequency = 36
-				elections_allowed = no
-			}
-			add_popularity = {
-				ideology = paternalism
-				popularity = 0.45
-			}
-			add_ideas = TaS_Post2WRW_TYM_cornered_by_madmen
-			load_focus_tree = ZZZ_blank_focus
-			add_country_leader_role = {
-				character = MAR_Evgeny_Primakov
-				promote_leader = yes
-				country_leader = {
-					desc = "POLITICS_PRIMAKOV_COLLAPSE_DESC"
-					ideology = paternalism_oligarchy_subtype
-					expire = "1999.1.1"
-					traits = { }
+				set_politics = {
+					ruling_party = paternalism
+					last_election = "1933.2.16"
+					election_frequency = 36
+					elections_allowed = no
 				}
-			}
-			MAR_Evgeny_Primakov = {
-				promote_character = paternalism_oligarchy_subtype
-			}
-			set_party_name = {
-				ideology = paternalism
-				long_name = SVR_MAR_collapse_party_long
-				name = SVR_MAR_collapse_party
-			}
-			set_variable = {
-				TNO_economy_type = token:Econ_Type_Capitalism
-				TNO_economy_subtype = token:Econ_Subtype_Corporate_Oligopoly
-			}
-			every_owned_state = {
-				set_demilitarized_zone = no
+				add_popularity = {
+					ideology = paternalism
+					popularity = 0.45
+				}
+				add_ideas = TaS_Post2WRW_TYM_cornered_by_madmen
+				load_focus_tree = ZZZ_blank_focus
+				add_country_leader_role = {
+					character = MAR_Evgeny_Primakov
+					promote_leader = yes
+					country_leader = {
+						desc = "POLITICS_PRIMAKOV_COLLAPSE_DESC"
+						ideology = paternalism_oligarchy_subtype
+						expire = "1999.1.1"
+						traits = { }
+					}
+				}
+				MAR_Evgeny_Primakov = {
+					promote_character = paternalism_oligarchy_subtype
+				}
+				set_party_name = {
+					ideology = paternalism
+					long_name = SVR_MAR_collapse_party_long
+					name = SVR_MAR_collapse_party
+				}
+				set_variable = {
+					TNO_economy_type = token:Econ_Type_Capitalism
+					TNO_economy_subtype = token:Econ_Subtype_Corporate_Oligopoly
+				}
+				every_owned_state = {
+					set_demilitarized_zone = no
+				}
 			}
 		}
 		OMS = {
@@ -3397,137 +3449,142 @@ country_event = { #Total f
 				set_nationality = TAR
 			}
 		}
-		KOM = {
-			set_country_flag = RUS_cancel_all_ideas
-			set_cosmetic_tag = KOM_MAR_collapse
-			add_state_core = 862
-			transfer_state = 862
-			add_state_core = 262
-			transfer_state = 262
-			add_state_core = 863
-			transfer_state = 863
-			add_state_core = 581
-			transfer_state = 581
-			add_state_core = 869
-			transfer_state = 869
-			add_state_core = 870
-			transfer_state = 870
-			add_state_core = 866
-			transfer_state = 866
-			transfer_state = 397
-			add_state_core = 397
-			transfer_state = 868
-			add_state_core = 868
-			transfer_state = 867
-
-			set_politics = {
-				ruling_party = national_socialism
-				last_election = "1933.2.16"
-				election_frequency = 36
-				elections_allowed = no
-			}
-			add_popularity = {
-				ideology = national_socialism
-				popularity = 0.45
-			}
-			load_focus_tree = ZZZ_blank_focus
-			add_country_leader_role = {
-				character = MAR_Dmitry_Vasilyev 
-				promote_leader = yes
-				country_leader = {
-					desc = "POLITICS_VASILYEV_COLLAPSE_DESC"
-					ideology = national_socialism_clerical_fascism_subtype
-					expire = "1999.1.1"
-					traits = { }
+		hidden_effect = {
+			KOM = {
+				set_variable = { national_debt = 0 }
+				set_country_flag = RUS_cancel_all_ideas
+				set_cosmetic_tag = KOM_MAR_collapse
+				add_state_core = 862
+				transfer_state = 862
+				add_state_core = 262
+				transfer_state = 262
+				add_state_core = 863
+				transfer_state = 863
+				add_state_core = 581
+				transfer_state = 581
+				add_state_core = 869
+				transfer_state = 869
+				add_state_core = 870
+				transfer_state = 870
+				add_state_core = 866
+				transfer_state = 866
+				transfer_state = 397
+				add_state_core = 397
+				transfer_state = 868
+				add_state_core = 868
+				transfer_state = 867
+				add_state_core = 868
+				
+				set_politics = {
+					ruling_party = national_socialism
+					last_election = "1933.2.16"
+					election_frequency = 36
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = national_socialism
+					popularity = 0.45
+				}
+				load_focus_tree = ZZZ_blank_focus
+				add_country_leader_role = {
+					character = MAR_Dmitry_Vasilyev 
+					promote_leader = yes
+					country_leader = {
+						desc = "POLITICS_VASILYEV_COLLAPSE_DESC"
+						ideology = national_socialism_clerical_fascism_subtype
+						expire = "1999.1.1"
+						traits = { }
+					}
+				}
+				set_party_name = {
+					ideology = national_socialism
+					long_name = KOM_MAR_collapse_party_long
+					name = KOM_MAR_collapse_party
+				}
+				add_ideas = {
+					TaS_Post2WRW_WSR_fourth_time_a_row
+					TaS_Post2WRW_KOM_bandit_oprichina
+				}
+				set_variable = {
+					TNO_economy_type = token:Econ_Type_Corporatism
+					TNO_economy_subtype = token:Econ_Subtype_Dirigisme
+				}
+				every_owned_state = {
+					set_demilitarized_zone = no
 				}
 			}
-			set_party_name = {
-				ideology = national_socialism
-				long_name = KOM_MAR_collapse_party_long
-				name = KOM_MAR_collapse_party
-			}
-			add_ideas = {
-				TaS_Post2WRW_WSR_fourth_time_a_row
-				TaS_Post2WRW_KOM_bandit_oprichina
-			}
-			set_variable = {
-				TNO_economy_type = token:Econ_Type_Corporatism
-				TNO_economy_subtype = token:Econ_Subtype_Dirigisme
-			}
-			every_owned_state = {
-				set_demilitarized_zone = no
-			}
-		}
-		TAR = {
-			set_country_flag = RUS_cancel_all_ideas
-			set_cosmetic_tag = TAR_MAR_collapse
-			add_state_core = 249
-			transfer_state = 249
-			add_state_core = 854
-			transfer_state = 854
-			set_politics = {
-				ruling_party = paternalism
-				last_election = "1933.2.16"
-				election_frequency = 36
-				elections_allowed = no
-			}
-			add_country_leader_role = {
-				character = MAR_Mintimer_Shaymiev
-				promote_leader = yes
-				country_leader = {
-					desc = "POLITICS_SHAYMIEV_COLLAPSE_DESC"
-					ideology = paternalism_national_conservatism_subtype
-					expire = "1999.1.1"
-					traits = { }
+			TAR = {
+				set_variable = { national_debt = 0 }
+				set_country_flag = RUS_cancel_all_ideas
+				set_cosmetic_tag = TAR_MAR_collapse
+				add_state_core = 249
+				transfer_state = 249
+				add_state_core = 854
+				transfer_state = 854
+				set_politics = {
+					ruling_party = paternalism
+					last_election = "1933.2.16"
+					election_frequency = 36
+					elections_allowed = no
+				}
+				add_country_leader_role = {
+					character = MAR_Mintimer_Shaymiev
+					promote_leader = yes
+					country_leader = {
+						desc = "POLITICS_SHAYMIEV_COLLAPSE_DESC"
+						ideology = paternalism_national_conservatism_subtype
+						expire = "1999.1.1"
+						traits = { }
+					}
+				}
+				set_party_name = {
+					ideology = paternalism
+					long_name = TAR_MAR_collapse_party_long
+					name = TAR_MAR_collapse_party
+				}
+				add_popularity = {
+					ideology = paternalism
+					popularity = 0.45
+				}
+				add_ideas = {
+					TaS_Post2WRW_WSR_fourth_time_a_row
+					TaS_Post2WRW_TAR_union_of_enemies
+				}
+				set_variable = {
+					TNO_economy_type = token:Econ_Type_Corporatism
+					TNO_economy_subtype = token:Econ_Subtype_Dirigisme
+				}
+				every_owned_state = {
+					set_demilitarized_zone = no
 				}
 			}
-			set_party_name = {
-				ideology = paternalism
-				long_name = TAR_MAR_collapse_party_long
-				name = TAR_MAR_collapse_party
+			MAR = {
+				add_ideas = TaS_Post2WRW_MAR_capital_of_broken_hopes
 			}
-			add_popularity = {
-				ideology = paternalism
-				popularity = 0.45
-			}
-			add_ideas = {
-				TaS_Post2WRW_WSR_fourth_time_a_row
-				TaS_Post2WRW_TAR_union_of_enemies
-			}
-			set_variable = {
-				TNO_economy_type = token:Econ_Type_Corporatism
-				TNO_economy_subtype = token:Econ_Subtype_Dirigisme
-			}
-			every_owned_state = {
-				set_demilitarized_zone = no
-			}
+			clear_global_event_target = RUS_western_unifier
+			clear_global_event_target = RUS_west_siberia_unifier
+			clear_global_event_target = RUS_central_siberia_unifier
+			clear_global_event_target = RUS_far_east_unifier
+			clear_global_event_target = RUS_southern_urals_unifier
+			clear_global_event_target = RUS_kazakhstan_unifier
+			clear_global_event_target = RUS_russian_unifier
+			clear_global_event_target = RUS_siberian_unifier
+			clear_global_event_target = RUS_total_unifierэ
+		
+			clear_array = global.PostRus_collapse 
+			add_to_array = { global.PostRus_collapse = KOM }
+			add_to_array = { global.PostRus_collapse = TAR }
+			add_to_array = { global.PostRus_collapse = MAR }
+			add_to_array = { global.PostRus_collapse = OMS }
+			add_to_array = { global.PostRus_collapse = TYM }
+			add_to_array = { global.PostRus_collapse = NOV }
+			add_to_array = { global.PostRus_collapse = IRK }
+			add_to_array = { global.PostRus_collapse = YAK }
+			add_to_array = { global.PostRus_collapse = MAG }
+			clr_global_flag = RUS_national_unification
 		}
-		MAR = {
-			add_ideas = TaS_Post2WRW_MAR_capital_of_broken_hopes
-		}
-		clear_global_event_target = RUS_western_unifier
-		clear_global_event_target = RUS_west_siberia_unifier
-		clear_global_event_target = RUS_central_siberia_unifier
-		clear_global_event_target = RUS_far_east_unifier
-		clear_global_event_target = RUS_southern_urals_unifier
-		clear_global_event_target = RUS_kazakhstan_unifier
-		clear_global_event_target = RUS_russian_unifier
-		clear_global_event_target = RUS_siberian_unifier
-		clear_global_event_target = RUS_total_unifierэ
-	
-		clear_array = global.PostRus_collapse 
-		add_to_array = { global.PostRus_collapse = KOM }
-		add_to_array = { global.PostRus_collapse = TAR }
-		add_to_array = { global.PostRus_collapse = MAR }
-		add_to_array = { global.PostRus_collapse = OMS }
-		add_to_array = { global.PostRus_collapse = TYM }
-		add_to_array = { global.PostRus_collapse = NOV }
-		add_to_array = { global.PostRus_collapse = IRK }
-		add_to_array = { global.PostRus_collapse = YAK }
-		add_to_array = { global.PostRus_collapse = MAG }
-		clr_global_flag = RUS_national_unification
-		TNO_Country_Closing_Screen_Show = yes
 		set_country_flag = MAR_Bad_Ending
+		TNO_Country_Closing_Screen_Show = yes
 		set_global_flag = WRW2_russian_collapse
 		every_owned_state = {
 			set_demilitarized_zone = no
@@ -4156,6 +4213,7 @@ country_event = { #Kosygin - MGB - King of the hill
 				}
 			}
 			KRS = {	
+				set_variable = { national_debt = 0 }
 				transfer_state = 637
 				transfer_state = 891
 				transfer_state = 562
@@ -4277,6 +4335,7 @@ country_event = { #Kosygin - MGB - King of the hill
 				set_country_flag = RUS_cancel_all_ideas		
 			}	
 			TAR = {	
+				set_variable = { national_debt = 0 }
 				transfer_state = 249
 				transfer_state = 851
 				transfer_state = 850
@@ -4475,6 +4534,7 @@ country_event = { #Kosygin - MGB - Japan goes to Siberia
 				}
 			}
 			AMR = {
+				set_variable = { national_debt = 0 }
 				transfer_state = 562
 				transfer_state = 889
 				transfer_state = 561
@@ -4556,6 +4616,7 @@ country_event = { #Kosygin - MGB - Japan goes to Siberia
 				set_country_flag = RUS_cancel_all_ideas		
 			}
 			BRY = {
+				set_variable = { national_debt = 0 }
 				transfer_state = 890
 				transfer_state = 566
 				transfer_state = 567
@@ -4602,6 +4663,7 @@ country_event = { #Kosygin - MGB - Japan goes to Siberia
 				set_country_flag = RUS_cancel_all_ideas		
 			}
 			YAK = {
+				set_variable = { national_debt = 0 }
 				transfer_state = 760
 				transfer_state = 574
 				transfer_state = 644

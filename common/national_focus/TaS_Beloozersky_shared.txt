@@ -2340,6 +2340,7 @@ shared_focus = {
 		TNO_improve_admin_efficiency_med = yes
 		custom_effect_tooltip = SWRW_we_will_create_alliance_tt
 		hidden_effect = {
+			remove_faction_status = yes
 			create_faction = RUSAlliance_MAR
 			add_ideas = RUSAlliance_Leader
 			if = {

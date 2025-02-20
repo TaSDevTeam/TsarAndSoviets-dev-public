@@ -1832,8 +1832,13 @@ TaS_WRW2_German_Collapse_Kosygin = {
 				transfer_state = 1812
 				transfer_state = 28
 			}
+			
 			set_politics = {
 				ruling_party = progressivism
+			}
+			if = {
+				limit = { has_global_flag = GER_brandt_is_kil }
+				kill_country_leader = yes
 			}
 			add_popularity = {
 				ideology = progressivism

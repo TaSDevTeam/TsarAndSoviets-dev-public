@@ -356,6 +356,10 @@ country_event = { #CFS Victory
 				set_temp_variable = { Victory_Points = -125 }
 				Cold_War_GUI_ManipulateVictory = yes
 			}
+			MAR = {
+				TaS_dobrovoltsy_dynmod_lose = yes
+				TaS_fopo_remove_congo_cw_tab = yes
+			}
 			CFS = {
 				if = {
 					limit = {
@@ -660,6 +664,10 @@ country_event = { #GRO Victory - Abwehrfront
 				set_temp_variable = { Victory_Points = -125 }
 				Cold_War_GUI_ManipulateVictory = yes
 			}
+			MAR = {
+				TaS_dobrovoltsy_dynmod_lose = yes
+				TaS_fopo_remove_congo_cw_tab = yes
+			}
 		}
 	}
 }
@@ -868,6 +876,10 @@ country_event = { #GRO Victory - Cabal
 				set_temp_variable = { Victory_Points = -125 }
 				Cold_War_GUI_ManipulateVictory = yes
 			}
+			MAR = {
+				TaS_dobrovoltsy_dynmod_lose = yes
+				TaS_fopo_remove_congo_cw_tab = yes
+			}
 		}
 	}
 }
@@ -945,6 +957,21 @@ country_event = { #KSI-KTG Last Remaining
 				set_temp_variable = { Victory_Outcome = 1 }
 				set_temp_variable = { Victory_Points = -125 }
 				Cold_War_GUI_ManipulateVictory = yes
+			}
+			MAR = {
+				if = {
+					limit = {
+						NOT = { has_government = socialist }
+						has_country_flag = MAR_aid_KSI
+					}
+					TaS_dobrovoltsy_dynmod_victory = yes
+					country_event = { id = berez_dobrovoltsy.23 days = 3 }
+					TaS_fopo_remove_congo_cw_tab = yes
+				}
+				else = {
+					TaS_dobrovoltsy_dynmod_lose = yes
+					TaS_fopo_remove_congo_cw_tab = yes
+				}
 			}
 		}
 	}
@@ -1073,6 +1100,10 @@ country_event = { #AZD - backed by japan now
 				set_temp_variable = { Victory_Points = 125 }
 				Cold_War_GUI_ManipulateVictory = yes
 			}
+			MAR = {
+				TaS_dobrovoltsy_dynmod_lose = yes
+				TaS_fopo_remove_congo_cw_tab = yes
+			}
 		}
 	}
 }
@@ -1162,6 +1193,10 @@ country_event = { #Federal Republic of the Congo Winning
 				set_temp_variable = { Victory_Points = -125 }
 				Cold_War_GUI_ManipulateVictory = yes
 			}
+			MAR = {
+				TaS_dobrovoltsy_dynmod_lose = yes
+				TaS_fopo_remove_congo_cw_tab = yes
+			}
 			if = {
 				limit = {
 					country_exists = CAF
@@ -1208,6 +1243,10 @@ country_event = { #CFS Victory - but anti-Mandate CFS
 			set_temp_variable = { Victory_Outcome = 1 }
 			set_temp_variable = { Victory_Points = -125 }
 			Cold_War_GUI_ManipulateVictory = yes
+		}
+		MAR = {
+			TaS_dobrovoltsy_dynmod_lose = yes
+			TaS_fopo_remove_congo_cw_tab = yes
 		}
 		CFS = {
 			hidden_effect = {

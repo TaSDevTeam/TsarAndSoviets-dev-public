@@ -31,7 +31,7 @@ ideas = {
 			modifier = {
 				stability_factor = -0.15
 				war_support_factor = -0.15
-				national_socialism_drift = -0.005
+				#national_socialism_drift = -0.005
 			}
 		}
 		MJP_reconstruction_programm = {
@@ -117,7 +117,7 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = placeholder
+			picture = generic_black_market_payments
 			modifier = {
 				gdp_growth_modifier = 1.5
 				production_speed_buildings_factor = 0.1
@@ -145,7 +145,7 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = placeholder
+			picture = CHI_army_1
 			modifier = {
 				gdp_growth_modifier = 1.5
 				production_speed_buildings_factor = 0.1
@@ -153,7 +153,7 @@ ideas = {
 			}
 			targeted_modifier = { tag = QIN trade_opinion_factor = 0.5 }
 			targeted_modifier = { tag = XIN trade_opinion_factor = 0.5 }
-			targeted_modifier = { tag = XIK trade_opinion_factor = 0.5 }
+			#targeted_modifier = { tag = XIK trade_opinion_factor = 0.5 }
 		}
 		#HAN
 		PFF_surrounded_by_fear = {
@@ -165,7 +165,7 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = placeholder
+			picture = generic_idealistic_revolutionaries
 			modifier = {
 				army_attack_factor = 0.15
 				army_org_factor = 0.15

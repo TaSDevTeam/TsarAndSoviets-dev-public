@@ -1,6 +1,23 @@
 TaS_Global_Conflicts_Initalize = {
 	set_temp_variable = { TabName = token:BoP_Tab_GlobalConflicts }
 	TNO_BoP_AddTab = yes
+	hidden_effect = {
+		for_each_scope_loop = {
+			array = global.countries
+
+			meta_effect = {
+				text = {
+					add_ai_strategy = {
+						id = "[Target_tag]"
+						type = send_volunteers_desire
+						value = 500
+					}
+				}
+				Target_tag = "[THIS.GetTag]"
+			}
+			#log = "Added ai_strategy: send_volunteers_desire to [THIS.GetTag]"
+		}
+	}
 }
 MAR_update_cosmotag = {
 	custom_effect_tooltip = MAR_update_cosmotag_tt

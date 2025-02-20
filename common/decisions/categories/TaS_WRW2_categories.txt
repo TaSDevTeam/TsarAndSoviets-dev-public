@@ -9,6 +9,7 @@ TaS_WRW2_territorial_reclamation = {
 	visible = {
 		#has_global_flag = RUS_national_unification
 		has_country_flag = RUS_postreunification_tree_completed
+		NOT = { has_global_flag = SWRW_GER_victory }
 	}
 	
 	visible_when_empty = no
@@ -38,6 +39,7 @@ TaS_WRW2_fate_and_coring_of_territories = {
 	
 	visible = {
 		has_global_flag = RUS_national_unification
+		NOT = { has_global_flag = SWRW_GER_victory }
 	}
 	on_map_area = {
 		target_array = owned_states
@@ -173,9 +175,8 @@ RUS_nuke_development_category_facelift = {
 
 	}
 	visible = {
-		NOT = {
-			has_global_flag = AFTER_MIDNIGHT_COMMENCED
-		}
+		NOT = { has_global_flag = AFTER_MIDNIGHT_COMMENCED }
+		NOT = { has_global_flag = SWRW_GER_victory }
 		OR = {
 			has_country_flag = RUS_started_nukes_new
 			has_country_flag = RUS_finished_nukes_new

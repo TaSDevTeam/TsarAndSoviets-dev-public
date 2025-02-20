@@ -1,6 +1,12 @@
 ideas = {
 	hidden_ideas = {
 		BoP_Tab_SWRW = {}
+		SWRW_cant_join = {
+			modifier = {
+				ai_join_ally_desire_factor = -10000
+				ai_call_ally_desire_factor = -10000
+			}
+		}
 	}
 	country = { 
 		SWRW_increased_arms_prodution = {

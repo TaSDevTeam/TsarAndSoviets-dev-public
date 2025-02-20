@@ -98,10 +98,36 @@ TaS_SWRW_start_the_war = {
 		set_variable = { GER.WRW2_devastation_gain = 3 }
 		set_global_flag = TaS_2WRW_started
 		set_variable = { TaS_swrw_stage = 2 }
+		set_variable = { WRW_deccat = 1 }
 		GER = {
 			set_temp_variable = { TabName = token:BoP_Tab_SWRW }
 			TNO_BoP_AddTab = yes
 			set_variable = { TaS_swrw_stage = 2 }
+			set_variable = { WRW_deccat = 1 }
+			if = {
+				limit = { is_ai = yes }
+				hidden_effect = { #заставляю ИИ переключитm
+					for_each_loop = {
+						array = TNO_BoP_Tabs_Frames
+						set_variable = { TNO_BoP_Tabs_Frames^i = 0 }
+					}
+					set_variable = { TNO_BoP_Tabs_Frames^Tab_i = 2 }
+
+					# Set tab decision
+					meta_effect = {
+						text = {
+							remove_power_balance = { id = [OLD_TAB]_[TAG] }
+							set_power_balance = { id = BoP_Tab_SWRW_GER }
+						}
+						TAG = GER
+						OLD_TAB = "[?TNO_BoP_SelectedTab.GetTokenKey]"
+						TAB_TYPE = "[?Tab_v.GetTokenKey]"
+					}
+
+					# Set tab GUI
+					set_variable = { TNO_BoP_SelectedTab = token:BoP_Tab_SWRW }
+				}
+			}
 		}
 		every_country  = {
 			news_event = {
@@ -119,6 +145,18 @@ TaS_SWRW_start_the_war = {
 		}
 		CAU = {
 			add_ideas = SWRW_reichskommisariat
+		}
+		every_country = {
+			limit = { 
+				is_in_faction_with = RUS
+				NOT = { tag = MKZ }
+				NOT = { tag = MTR }
+				NOT = { tag = RFI }
+				NOT = { tag = IRA }
+				NOT = { tag = IRC }
+				NOT = { tag = KUR }
+			}
+			add_ideas = SWRW_cant_join
 		}
 		load_focus_tree = MAR_second_patriotic_war
 		mark_focus_tree_layout_dirty = yes		
@@ -156,7 +194,7 @@ TaS_SWRW_start_the_war = {
 					allow_spawning_on_enemy_provs = yes
 					prioritize_location = 11047
 					owner = RUS
-					count = 6 
+					count = 3
 				}
 			}
 		}
@@ -686,15 +724,15 @@ TaS_SWRW_Manchu_CW_MJP_win = {
 			id = MAR_2WRW_world_news.38
 		}
 	}
-	USA = {
-		set_temp_variable = { Victory_ID = 50 }
-		set_temp_variable = { Victory_Outcome = 2 }
-		set_temp_variable = { Victory_Points = -50 }
-		Cold_War_GUI_ManipulateVictory = yes
-		TaS_fopo_remove_manchurian_civil_war_tab = yes
-		set_temp_variable = { target = MAN }
-		TNO_clear_and_recall_volunteers = yes	
-	}
+	#USA = {
+	#	set_temp_variable = { Victory_ID = 50 }
+	#	set_temp_variable = { Victory_Outcome = 2 }
+	#	set_temp_variable = { Victory_Points = -50 }
+	#	Cold_War_GUI_ManipulateVictory = yes
+	#	TaS_fopo_remove_manchurian_civil_war_tab = yes
+	#	set_temp_variable = { target = MAN }
+	#	TNO_clear_and_recall_volunteers = yes	
+	#}
 	JAP = {
 		set_temp_variable = { Victory_ID = 50 }
 		set_temp_variable = { Victory_Outcome = 4 }
@@ -767,15 +805,15 @@ TaS_SWRW_Manchu_CW_HAN_win = {
 			id = MAR_2WRW_world_news.36
 		}
 	}
-	USA = {
-		set_temp_variable = { Victory_ID = 52 }
-		set_temp_variable = { Victory_Outcome = 2 }
-		set_temp_variable = { Victory_Points = -50 }
-		Cold_War_GUI_ManipulateVictory = yes
-		TaS_fopo_remove_manchurian_civil_war_tab = yes
-		set_temp_variable = { target = MAN }
-		TNO_clear_and_recall_volunteers = yes
-	}
+	#USA = {
+	#	set_temp_variable = { Victory_ID = 50 }
+	#	set_temp_variable = { Victory_Outcome = 2 }
+	#	set_temp_variable = { Victory_Points = -50 }
+	#	Cold_War_GUI_ManipulateVictory = yes
+	#	TaS_fopo_remove_manchurian_civil_war_tab = yes
+	#	set_temp_variable = { target = MAN }
+	#	TNO_clear_and_recall_volunteers = yes
+	#}
 	JAP = {
 		set_temp_variable = { Victory_ID = 50 }
 		set_temp_variable = { Victory_Outcome = 1 }
@@ -858,15 +896,15 @@ TaS_SWRW_Manchu_CW_PFF_win = {
 			id = MAR_2WRW_world_news.39
 		}
 	}
-	USA = {
-		set_temp_variable = { Victory_ID = 50 }
-		set_temp_variable = { Victory_Outcome = 2 }
-		set_temp_variable = { Victory_Points = -50 }
-		Cold_War_GUI_ManipulateVictory = yes
-		TaS_fopo_remove_manchurian_civil_war_tab = yes
-		set_temp_variable = { target = MAN }
-		TNO_clear_and_recall_volunteers = yes	
-	}
+	#USA = {
+	#	set_temp_variable = { Victory_ID = 50 }
+	#	set_temp_variable = { Victory_Outcome = 2 }
+	#	set_temp_variable = { Victory_Points = -50 }
+	#	Cold_War_GUI_ManipulateVictory = yes
+	#	TaS_fopo_remove_manchurian_civil_war_tab = yes
+	#	set_temp_variable = { target = MAN }
+	#	TNO_clear_and_recall_volunteers = yes	
+	#}
 	JAP = {
 		set_temp_variable = { Victory_ID = 50 }
 		set_temp_variable = { Victory_Outcome = 1 }
@@ -943,15 +981,15 @@ TaS_SWRW_Manchu_CW_MAN_win = {
 			id = MAR_2WRW_world_news.37
 		}
 	}
-	USA = {
-		set_temp_variable = { Victory_ID = 50 }
-		set_temp_variable = { Victory_Outcome = 5 }
-		set_temp_variable = { Victory_Points = 150 }
-		Cold_War_GUI_ManipulateVictory = yes
-		TaS_fopo_remove_manchurian_civil_war_tab = yes
-		set_temp_variable = { target = MAN }
-		TNO_clear_and_recall_volunteers = yes
-	}
+	#USA = {
+	#	set_temp_variable = { Victory_ID = 50 }
+	#	set_temp_variable = { Victory_Outcome = 5 }
+	#	set_temp_variable = { Victory_Points = 150 }
+	#	Cold_War_GUI_ManipulateVictory = yes
+	#	TaS_fopo_remove_manchurian_civil_war_tab = yes
+	#	set_temp_variable = { target = MAN }
+	#	TNO_clear_and_recall_volunteers = yes
+	#}
 	JAP = {
 		set_temp_variable = { Victory_ID = 50 }
 		set_temp_variable = { Victory_Outcome = 1 }
@@ -1981,6 +2019,7 @@ SWRW_clear_war_stuff = {
 	GER = {
 		set_temp_variable = { TabName = token:BoP_Tab_SWRW }
 		TNO_BoP_RemoveTab = yes
+		SWRW_remove_army_size_modifier = yes
 		set_variable = { WRW2_devastation = 0 }
 		remove_dynamic_modifier = { modifier = TaS_WRW2_exhausion_modifier_GER } 
 		remove_ideas = SWRW_war_partisans 
@@ -2015,6 +2054,7 @@ SWRW_clear_war_stuff = {
 	RUS = {
 		set_temp_variable = { TabName = token:BoP_Tab_SWRW }
 		TNO_BoP_RemoveTab = yes
+		SWRW_remove_army_size_modifier = yes
 		set_variable = { WRW2_devastation = 0 }
 		remove_dynamic_modifier = { modifier = TaS_WRW2_exhausion_modifier_RUS }
 		remove_ideas = SWRW_free_money

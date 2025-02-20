@@ -2360,7 +2360,12 @@ MAR_foreign_policy_category = {
 			hidden_effect = { add_command_power = -15 }
 			log = "[GetDateText]: [Root.GetName]: Decision MAR_bombing_runs"
 			every_country = {
-				limit = { has_war_with = KSI }
+				limit = {
+					OR = {
+						has_war_with = KSI
+						has_war_with = KTG
+					}
+				}
 				add_timed_idea = {
 					idea = MAR_Plane_Bombing
 					days = 90
@@ -2393,6 +2398,16 @@ MAR_foreign_policy_category = {
 				amount = 500
 				target = KSI
 			}
+			send_equipment = {
+				type = infantry_equipment
+				amount = 1000
+				target = KTG
+			}
+			send_equipment = {
+				type = support_equipment
+				amount = 500
+				target = KTG
+			}
 		}
 	}
 
@@ -2423,6 +2438,9 @@ MAR_foreign_policy_category = {
 			KSI = {
 				add_timed_idea = { idea = MAR_military_advisors days = 180 }
 			}
+			KTG = {
+				add_timed_idea = { idea = MAR_military_advisors days = 180 }
+			}
 
 		}
 	}
@@ -2444,6 +2462,9 @@ MAR_foreign_policy_category = {
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision MAR_technician_aid"
 			KSI = {
+				add_timed_idea = { idea = MAR_technician_aid days = 180 }
+			}
+			KTG = {
 				add_timed_idea = { idea = MAR_technician_aid days = 180 }
 			}
 		}
@@ -2475,7 +2496,12 @@ MAR_foreign_policy_category = {
 				add_political_power = -25
 			}
 			every_country = {
-				limit = { has_war_with = KSI }
+				limit = {
+					OR = {
+						has_war_with = KSI
+						has_war_with = KTG
+					}
+				}
 				add_timed_idea = { idea = MAR_sabotage_effort days = 90 }
 			}
 		}

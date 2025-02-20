@@ -381,10 +381,17 @@ on_actions = {
 								original_tag = PFF
 							}
 						}
-						HAN = { exists = no }
-						PFF = { exists = no }
-						MJP = { exists = no }
-						
+						AND = {
+							NOT = {
+								country_exists = PFF
+							}
+							NOT = {
+								country_exists = HAN
+							}
+							NOT = {
+								country_exists = MJP
+							}
+						}
 						NOT = { PJP = { has_country_flag = MAN_katastrophe } }
 					}
 					TaS_SWRW_Manchu_CW_MAN_win = yes
@@ -402,9 +409,17 @@ on_actions = {
 								original_tag = PFF
 							}
 						}
-						PFF = { exists = no }
-						MAN = { exists = no }
-						MJP = { exists = no }
+						AND = {
+							NOT = {
+								country_exists = PFF
+							}
+							NOT = {
+								country_exists = MAN
+							}
+							NOT = {
+								country_exists = MJP
+							}
+						}
 						
 						NOT = { PJP = { has_country_flag = MAN_katastrophe } }
 					}
@@ -423,9 +438,17 @@ on_actions = {
 								original_tag = PFF
 							}
 						}
-						HAN = { exists = no }
-						MAN = { exists = no }
-						MJP = { exists = no }
+						AND = {
+							NOT = {
+								country_exists = PFF
+							}
+							NOT = {
+								country_exists = HAN
+							}
+							NOT = {
+								country_exists = MAN
+							}
+						}
 						
 						NOT = { PJP = { has_country_flag = MAN_katastrophe } }
 					}
@@ -445,9 +468,17 @@ on_actions = {
 								original_tag = MJP
 							}
 						}
-						HAN = { exists = no }
-						MAN = { exists = no }
-						MJP = { exists = no }
+						AND = {
+							NOT = {
+								country_exists = MAN
+							}
+							NOT = {
+								country_exists = HAN
+							}
+							NOT = {
+								country_exists = MJP
+							}
+						}
 						
 						NOT = { PJP = { has_country_flag = MAN_katastrophe } }
 					}
@@ -1916,6 +1947,40 @@ on_actions = {
 							transfer_troops = no
 						}
 						GER = { add_to_faction = UTL }
+					}
+					set_global_flag = skip_default_capitulation
+				}
+				else_if = { ##RUS collapse: MJP vs Northern Manchuria
+					limit = {
+						FROM = {
+							OR = {
+								original_tag = MJP
+								is_in_faction_with = JAP
+							}
+						}
+						ROOT = { 
+							OR = {
+								original_tag = PFF
+								original_tag = MAN
+								original_tag = MJP
+							}
+						}
+						has_global_flag = MJP_retakes_Manchuria
+					}
+					FROM = {
+						white_peace = ROOT
+					}
+					MJP = {
+						annex_country = {
+							target = ROOT
+							transfer_troops = no
+						}
+						remove_ideas = MJP_lost_north
+						set_capital = { state = 328 remember_old_capital = no }
+						every_owned_state = {
+							add_core_of = FROM
+							remove_core_of = ROOT
+						}
 					}
 					set_global_flag = skip_default_capitulation
 				}

@@ -1636,15 +1636,15 @@ country_event = { #Technical stuff no loc
 				transfer_troops = no
 			}
 		}
-		USA = {
-			set_temp_variable = { Victory_ID = 50 }
-			set_temp_variable = { Victory_Outcome = 2 }
-			set_temp_variable = { Victory_Points = -50 }
-			Cold_War_GUI_ManipulateVictory = yes
-			TaS_fopo_remove_manchurian_civil_war_tab = yes
-			set_temp_variable = { target = MAN }
-			TNO_clear_and_recall_volunteers = yes	
-		}
+		#USA = {
+		#	set_temp_variable = { Victory_ID = 50 }
+		#	set_temp_variable = { Victory_Outcome = 2 }
+		#	set_temp_variable = { Victory_Points = -50 }
+		#	Cold_War_GUI_ManipulateVictory = yes
+		#	TaS_fopo_remove_manchurian_civil_war_tab = yes
+		#	set_temp_variable = { target = MAN }
+		#	TNO_clear_and_recall_volunteers = yes	
+		#}
 		JAP = {
 			set_temp_variable = { Victory_ID = 50 }
 			set_temp_variable = { Victory_Outcome = 1 }
@@ -1711,13 +1711,13 @@ country_event = { #MANCHU CW STARTS GET UP GUYS
 		name = MAR_Japan.9.a
 		ai_chance = { factor = 1 }
 		TaS_fopo_add_manchurian_civil_war_tab = yes
-		USA = {
-			set_temp_variable = { Victory_ID = 50 }
-			set_temp_variable = { Victory_Outcome = 0 }
-			set_temp_variable = { Victory_Points = 0}
-			Cold_War_GUI_ManipulateVictory = yes
-			TaS_fopo_add_manchurian_civil_war_tab = yes
-		}
+		#USA = {
+		#	set_temp_variable = { Victory_ID = 50 }
+		#	set_temp_variable = { Victory_Outcome = 0 }
+		#	set_temp_variable = { Victory_Points = 0}
+		#	Cold_War_GUI_ManipulateVictory = yes
+		#	TaS_fopo_add_manchurian_civil_war_tab = yes
+		#}
 		JAP = {
 			set_temp_variable = { Victory_ID = 50 }
 			set_temp_variable = { Victory_Outcome = 0 }
