@@ -1,6 +1,7 @@
 ﻿l_russian:
  ### General ###
  MAR_millitary_administration:0 "Military Administration"
+  MAR_Military_Administration_DESC:0 "In the recently liberated territories, military administrations - temporary authorities to establish order and begin reconstruction - need to be established. The duration of the administration may vary, of course, but necessity is necessity. \n\nOur soldiers and generals will bring order wherever they are."
  MAR_military_administration:0 "Military Administration"
  MAR_economic_recovery:0 "Economic Recovery"
  
@@ -391,8 +392,9 @@
  
  AZR_despotism_party:0 "Yeni Azerbaijan"
  AZR_despotism_party_long:0 "Yeni Azerbaijan"
- 
+
  ### Finland
+  
  FIN_MIL:0 "Military Administration of Finland"
  FIN_MIL_DEF:0 "Military Administration of Finland"
  FIN_MIL_ADJ:0 "Finnish"
@@ -401,25 +403,77 @@
  FIN_MIL_Kosygin_DEF:0 "Military Administration of Finland"
  FIN_MIL_Kosygin_ADJ:0 "Finnish"
  
- FIN_autonomy:0 "Grand Duchy of Finland"
- FIN_autonomy_DEF:0 "Grand Duchy of Finland"
+ FIN_autonomy:0 "Grand Principality of Finland"
+ FIN_autonomy_DEF:0 "Grand Principality of Finland"
  FIN_autonomy_ADJ:0 "Finnish"
  
- FIN_autonomy_Kosygin:0 "Grand Duchy of Finland"
- FIN_autonomy_Kosygin_DEF:0 "Grand Duchy of Finland"
+ FIN_autonomy_Kosygin:0 "Grand Principality of Finland"
+ FIN_autonomy_Kosygin_DEF:0 "Grand Principality of Finland"
  FIN_autonomy_Kosygin_ADJ:0 "Finnish"
- 
+
  FIN_MIL_despotism_party:0 "Military Administration"
- FIN_MIL_despotism_party_long:0 "Main Administration of the Supreme Command of the Russian Armed Forces in Finland"
+ FIN_MIL_despotism_party_long:0 "Main Directorate of the Supreme Command of the Russian Armed Forces for the Territory of Finland"
  
+ FIN_POSTMIL_despotism_party:0 "General-Governorate"
+ FIN_POSTMIL_despotism_party_long:0 "General-Governorate"
+ 
+ FIN_RUS_conservative_party:0 "CP"
+ FIN_RUS_conservative_party_long:0 "Center Party"
+ 
+ MFI_Urho_Kekkonen:0 "Urho Kekkonen"
+
  ### Turkey
- TUR_MIL:0 "Military Administration of Turkey"
- TUR_MIL_DEF:0 "Military Administration of Turkey"
- TUR_MIL_ADJ:0 "Turkish"
  
- TUR_MIL_Kosygin:0 "Military Administration of Turkey"
- TUR_MIL_Kosygin_DEF:0 "Military Administration of Turkey"
- TUR_MIL_Kosygin_ADJ:0 "Turkish"
+ GRM:0 "Straits Commission"
+ GRM_DEF:0 "Commission for Bosphorus and Dardanelles Territories"
+ GRM_ADJ:0 "Constantinopolitan"
  
- TUR_MIL_despotism_party:0 "Military Administration"
- TUR_MIL_despotism_party_long:0 "Main Administration of the Supreme Command of the Russian Armed Forces in Turkey"
+ GRM_Kosygin:0 "Straits Commission"
+ GRM_Kosygin_DEF:0 "Commission for Bosphorus and Dardanelles Territories"
+ GRM_Kosygin_ADJ:0 "Constantinopolitan"
+ 
+ GRM_autonomy:0 "Tsargrad Autonomy"
+ GRM_autonomy_DEF:0 "Tsargrad Autonomy"
+ GRM_autonomy_ADJ:0 "Tsargrad"
+ 
+ GRM_autonomy_Kosygin:0 "Constantinople Autonomous Republic"
+ GRM_autonomy_Kosygin_DEF:0 "Constantinople Autonomous Republic"
+ GRM_autonomy_Kosygin_ADJ:0 "Constantinopolitan"
+ 
+ GRM_Independence:0 "Bosporus Republic"
+ GRM_Independence_DEF:0 "Bosporus Republic"
+ GRM_Independence_ADJ:0 "Bosporan"
+ 
+ GRM_MIL_despotism_party:0 "Military Administration"
+ GRM_MIL_despotism_party_long:0 "Main Directorate of the Supreme Command of the Russian Armed Forces for the Territory of Turkey"
+ 
+ GRM_POSTMIL_despotism_party:0 "General-Governorate" 
+ GRM_POSTMIL_despotism_party_long:0 "General-Governorate"
+ 
+ GRM_conservative_party:0 "RNP - Bosporus"
+ GRM_conservative_party_long:0 "Republican People's Party - Bosporus Branch"
+ 
+ GRM_paternalism_party:0 "RNP - Bosporus"
+ GRM_paternalism_party_long:0 "Republican People's Party - Bosporus Branch"
+ 
+ GRM_progressivism_party:0 "SDP"
+ GRM_progressivism_party_long:0 "Social Democratic Platform"
+ 
+ GRM_fascism_party:0 "YW"
+ GRM_fascism_party_long:0 "Young Wolves"
+ 
+ GRM_Ahmet_Isvan:0 "Ahmet İşvan"
+
+### Iran
+ 
+ PER_RUS:0 "Iran Regency"
+ PER_RUS_DEF:0 "Iran Regency"
+ PER_RUS_ADJ:0 "Iranian"
+ 
+ PER_regency_council:0 "Regency Council"
+ 
+ PER_despotism_party_rus:0 "Regency Assembly"
+ PER_despotism_party_rus_long:0 "Regency Assembly"
+ 
+ PER_despotism_party_rus1:0 "MC RFGI"
+ PER_despotism_party_rus1_long:0 "Military Command of the Russian Forces Group in Iran"
