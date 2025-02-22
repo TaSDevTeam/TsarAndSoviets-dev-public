@@ -1760,6 +1760,8 @@ SWRW_start_rebellion_ALT = {
 SWRW_turkey_peacedeal = {
 	RUS = {
 		white_peace = TUR
+		set_variable = { CW_SeaZone_Status^5 = 1 }
+		Cold_War_GUI_PowerProjection_CalculateBonuses = yes	
 	}	
 	every_country = {
 		limit = { is_subject_of = TUR }
@@ -2171,13 +2173,15 @@ SWRW_add_RUS_coldwar_calculate_victories = {
 				limit = { 
 					OR = {
 						CPR = { check_variable = { ECON_SPHERE_LEADER = MAR } }
-						KSI = { check_variable = { ECON_SPHERE_LEADER = MAR } }
+						KTG = { check_variable = { ECON_SPHERE_LEADER = MAR } }
 					}
 				}
 				set_temp_variable = { Victory_ID = 24 }
 				set_temp_variable = { Victory_Outcome = 4 }
 				set_temp_variable = { Victory_Points = 150 }
 				Cold_War_GUI_ManipulateVictory = yes
+				set_variable = { CW_SeaZone_Status^6 = 1 }
+				Cold_War_GUI_PowerProjection_CalculateBonuses = yes
 			}
 			else_if = {
 				limit = {
@@ -2187,7 +2191,7 @@ SWRW_add_RUS_coldwar_calculate_victories = {
 							MAR = { has_government = socialist }
 						}
 						AND = {
-							NOT = { country_exists = KSI }
+							NOT = { country_exists = KTG }
 							MAR = { has_government = despotism }
 						}
 					}
