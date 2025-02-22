@@ -130,6 +130,7 @@ TaS_SWRW_start_the_war = {
 			}
 		}
 		every_country  = {
+			limit = { is_ai = no }
 			news_event = {
 				id = MAR_2WRW_world_news.6
 			}
@@ -473,6 +474,7 @@ TaS_SWRW_american_germany = {
 		TNO_startup_nation = yes
 		transfer_state = 5
 		5 = { set_state_name = STATE_5_rus }
+		add_ideas = RUSAlliance_Dependent_Member
 		set_province_name = { id = 6332 name = VICTORY_POINTS_6332_rus }
 		set_province_name = { id = 6375 name = VICTORY_POINTS_6375_rus }
 		set_province_name = { id = 3288 name = VICTORY_POINTS_3288_rus }
@@ -656,6 +658,11 @@ TaS_SWRW_american_germany = {
 		add_to_faction = GSG
 		add_to_faction = GCZ
 		add_to_faction = BRL
+	}
+	RUS = {
+		add_to_faction = PUS
+		SWRW_add_RUS_coldwar_GUI = yes
+		
 	}
 }
 
@@ -2129,7 +2136,7 @@ SWRW_add_RUS_coldwar_GUI = {
 			add_to_array = { CW_SeaZone_Status = 1 } # 1; West Pacific
 			add_to_array = { CW_SeaZone_Status = 0 } # 2; South Atlantic
 			add_to_array = { CW_SeaZone_Status = 0 } # 3; North Atlantic
-			add_to_array = { CW_SeaZone_Status = 0 } # 4; North Sea
+			add_to_array = { CW_SeaZone_Status = 1 } # 4; North Sea
 			add_to_array = { CW_SeaZone_Status = 0 } # 5; Mediterranean
 			add_to_array = { CW_SeaZone_Status = 0 } # 6; Indian Ocean
 			Cold_War_GUI_PowerProjection_CalculateBonuses = yes
@@ -2138,6 +2145,186 @@ SWRW_add_RUS_coldwar_GUI = {
 			add_to_array = { global.PowerProjection_Tags = THIS.id }
 			add_to_array = { global.PowerProjection_X = 299 }
 			add_to_array = { global.PowerProjection_Y = 8 }
+		}
+		SWRW_add_RUS_coldwar_calculate_victories = yes
+	}
+}
+
+SWRW_add_RUS_coldwar_calculate_victories = {
+	hidden_effect = {
+		RUS = {
+			if = { #Congo CW
+				limit = { 
+					OR = {
+						CPR = { check_variable = { ECON_SPHERE_LEADER = MAR } }
+						KSI = { check_variable = { ECON_SPHERE_LEADER = MAR } }
+					}
+				}
+				set_temp_variable = { Victory_ID = 24 }
+				set_temp_variable = { Victory_Outcome = 4 }
+				set_temp_variable = { Victory_Points = 150 }
+				Cold_War_GUI_ManipulateVictory = yes
+			}
+			else_if = {
+				limit = {
+					OR = {
+						AND = {
+							NOT = { country_exists = CPR }
+							MAR = { has_government = socialist }
+						}
+						AND = {
+							NOT = { country_exists = KSI }
+							MAR = { has_government = despotism }
+						}
+					}
+				}
+				set_temp_variable = { Victory_ID = 24 }
+				set_temp_variable = { Victory_Outcome = 2 }
+				set_temp_variable = { Victory_Points = -150 }
+				Cold_War_GUI_ManipulateVictory = yes
+			}
+			else = {
+				add_political_power = 1
+			}
+			
+			#oil crisis
+			set_temp_variable = { Victory_ID = 9 }
+			set_temp_variable = { points = OC_MAR_points }
+			OIL_get_outcome_for_super = yes
+			set_temp_variable = { Victory_Outcome = outcome }
+			set_temp_variable = { Victory_Points = OC_MAR_points }
+			Cold_War_GUI_ManipulateVictory = yes
+			
+			
+			if = { #Iranian CW
+				limit = { 
+					OR = {
+						IRC = { check_variable = { ECON_SPHERE_LEADER = MAR } }
+						IRA = { check_variable = { ECON_SPHERE_LEADER = MAR } }
+					}
+				}
+				set_temp_variable = { Victory_ID = 12 }
+				set_temp_variable = { Victory_Outcome = 4 }
+				set_temp_variable = { Victory_Points = 150 }
+				Cold_War_GUI_ManipulateVictory = yes
+			}
+			else_if = {
+				limit = {
+					OR = {
+						AND = {
+							NOT = { country_exists = IRA }
+							MAR = { has_government = socialist }
+						}
+						AND = {
+							NOT = { country_exists = IRC }
+							MAR = { has_government = despotism }
+						}
+					}
+				}
+				set_temp_variable = { Victory_ID = 12 }
+				set_temp_variable = { Victory_Outcome = 2 }
+				set_temp_variable = { Victory_Points = -150 }
+				Cold_War_GUI_ManipulateVictory = yes
+			}
+			else = {
+				add_political_power = 1
+			}
+			
+			if = { #FE Revolt
+				limit = { 
+					controls_state = 809
+				}
+				set_temp_variable = { Victory_ID = 49 }
+				set_temp_variable = { Victory_Outcome = 4 }
+				set_temp_variable = { Victory_Points = 100 }
+				Cold_War_GUI_ManipulateVictory = yes
+			}
+			else_if = {
+				limit = { MAR = { has_government = despotism } }
+				set_temp_variable = { Victory_ID = 49 }
+				set_temp_variable = { Victory_Outcome = 2 }
+				set_temp_variable = { Victory_Points = -100 }
+				Cold_War_GUI_ManipulateVictory = yes
+			}
+			else = {
+				add_political_power = 1
+			}
+			if = { #Manchu CW
+				limit = { 
+					country_exists = HAN
+					has_country_flag = MAR_has_primorie
+				}
+				set_temp_variable = { Victory_ID = 50 }
+				set_temp_variable = { Victory_Outcome = 4 }
+				set_temp_variable = { Victory_Points = 100 }
+				Cold_War_GUI_ManipulateVictory = yes
+			}
+			else_if = {
+				limit = { 
+					MAR = { has_government = despotism }
+					has_country_flag = MAR_has_primorie
+				}
+				set_temp_variable = { Victory_ID = 50 }
+				set_temp_variable = { Victory_Outcome = 2 }
+				set_temp_variable = { Victory_Points = -100 }
+				Cold_War_GUI_ManipulateVictory = yes
+			}
+			else = {
+				add_political_power = 1
+			}
+			if = { #UAR big game
+				limit = { 
+					UAR = { check_variable = { ECON_SPHERE_LEADER = MAR } }
+				}
+				set_temp_variable = { Victory_ID = 51 }
+				set_temp_variable = { Victory_Outcome = 4 }
+				set_temp_variable = { Victory_Points = 100 }
+				Cold_War_GUI_ManipulateVictory = yes
+			}
+			else_if = {
+				limit = { MAR = { has_government = socialist } }
+				set_temp_variable = { Victory_ID = 51 }
+				set_temp_variable = { Victory_Outcome = 2 }
+				set_temp_variable = { Victory_Points = -150 }
+				Cold_War_GUI_ManipulateVictory = yes
+			}
+			else = {
+				add_political_power = 1
+			}
+			if = { #afghan CW
+				limit = { 
+					OR = {
+						AND = {
+							NAL = { has_war = no }
+							NAL = { has_cosmetic_tag = NAL_victory }
+							RUS = { has_country_flag = MAR_support_NAL }
+						}
+						AND = {
+							AFG = { has_war = no }
+							OR = {
+								AFG = { check_variable = { ECON_SPHERE_LEADER = MAR } }
+								AFG = { is_subject_of = RUS }
+							}
+							AFG = { has_country_flag = MAR_support_AFG }
+						}
+					}
+				}
+				set_temp_variable = { Victory_ID = 52 }
+				set_temp_variable = { Victory_Outcome = 4 }
+				set_temp_variable = { Victory_Points = 100 }
+				Cold_War_GUI_ManipulateVictory = yes
+			}
+			else = {
+				set_temp_variable = { Victory_ID = 52 }
+				set_temp_variable = { Victory_Outcome = 2 }
+				set_temp_variable = { Victory_Points = -50 }
+				Cold_War_GUI_ManipulateVictory = yes
+			}
+			#swrw - obviously
+			set_temp_variable = { Victory_ID = 53 }
+			set_temp_variable = { Victory_Outcome = 5 }
+			set_temp_variable = { Victory_Points = 500 }
+			Cold_War_GUI_ManipulateVictory = yes
 		}
 	}
 }

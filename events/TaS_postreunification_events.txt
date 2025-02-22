@@ -159,7 +159,7 @@ country_event = { #Kenes over - Turks/Americans - they agreed
 			set_country_flag = MAR_Turkestan_cucked
 			add_to_faction = TRK
 		}
-		
+		set_country_flag = MAR_allied_turkestan
 		#MAR_install_mil_turkestan = yes
 	}	
 }
@@ -360,6 +360,20 @@ country_event = { #conditional surrender
 			limit = { MTR = { exists = yes } } 
 			MTR = {
 				transfer_state = 1465
+				1465 = {
+					remove_core_of = AFG
+					add_core_of = MTR
+				}
+			}
+		}
+		else_if = {
+			limit = { TRK = { is_in_faction_with = RUS } } 
+			TRK = {
+				transfer_state = 1465
+				1465 = {
+					remove_core_of = AFG
+					add_core_of = TRK
+				}
 			}
 		}
 		else = {
@@ -416,6 +430,19 @@ country_event = { #unconditional surrender
 		if = {
 			limit = { MTR = { exists = yes } } 
 			MTR = {
+				transfer_state = 1885
+				transfer_state = 1465
+				transfer_state = 2461
+				every_owned_state = {
+					remove_core_of = AFG
+					add_core_of = MTR
+				}
+			}
+		}
+		else_if = {
+			limit = { TRK = { is_in_faction_with = RUS } } 
+			TRK = {
+				transfer_state = 1465
 				transfer_state = 1885
 				transfer_state = 1465
 				transfer_state = 2461
@@ -4219,16 +4246,32 @@ country_event = { #IR*: Returnal of some state that borders turkmenistan
 	option = { #do we have a choice?
 		name = MAR_ultimatums.115.a 
 		if = {
-			limit = { MTR = { owns_state = 584 } }
+			limit = { MTR = { exists = yes } } 
 			MTR = {
-				transfer_state = 2125
-				add_state_core = 2125
+				transfer_state = 1465
+				1465 = {
+					remove_core_of = PER
+					add_core_of = MTR
+				}
+			}
+		}
+		else_if = {
+			limit = { TRK = { is_in_faction_with = RUS } } 
+			TRK = {
+				transfer_state = 1465
+				2125 = {
+					remove_core_of = PER
+					add_core_of = TRK
+				}
 			}
 		}
 		else = {
 			RUS = {
 				transfer_state = 2125
-				add_state_core = 2125
+				2125 = {
+					remove_core_of = PER
+					add_core_of = RUS
+				}
 			}
 		}
 	}

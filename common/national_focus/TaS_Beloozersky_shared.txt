@@ -2450,6 +2450,14 @@ shared_focus = {
 				CAF = {	add_ideas = RUSAlliance_Observer }
 			}
 			if = {
+				limit = { KSI = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+				KSI = {	add_ideas = RUSAlliance_Observer }
+			}
+			if = {
+				limit = { KTG = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+				KTG = {	add_ideas = RUSAlliance_Observer }
+			}
+			if = {
 				limit = { 
 					CPR = { check_variable = { ECON_SPHERE_LEADER = MAR } }
 					GAB = { is_subject_of = CPR }

@@ -1072,7 +1072,7 @@ MAR_foreign_policy_category = {
 			log = "[GetDateText]: [Root.GetName]: Decision MAR_IRCW_send_the_volunteers"
 			set_temp_variable = { target = IRC }
 			TNO_increase_volunteer_cap_1 = yes
-			custom_effect_tooltip = "TNO_increase_volunteers_IRL_1"
+			#custom_effect_tooltip = "TNO_increase_volunteers_IRL_1"
 			set_country_flag = MAR_IRCW_volunteers_sent
 		}
 		ai_will_do = {
@@ -1107,7 +1107,7 @@ MAR_foreign_policy_category = {
 
 				set_temp_variable = { target = IRC }
 				TNO_increase_volunteer_cap_1 = yes
-				custom_effect_tooltip = "TNO_increase_volunteers_IRL_1"
+				#custom_effect_tooltip = "TNO_increase_volunteers_IRL_1"
 			}
 			else = {
 				IRC = {
@@ -1145,7 +1145,7 @@ MAR_foreign_policy_category = {
 				}
 				set_temp_variable = { target = IRC }
 				TNO_increase_volunteer_cap_1 = yes
-				custom_effect_tooltip = "TNO_increase_volunteers_IRL_1"
+				#custom_effect_tooltip = "TNO_increase_volunteers_IRL_1"
 			}
 			else = {
 				IRC = {
@@ -1414,7 +1414,7 @@ MAR_foreign_policy_category = {
 			log = "[GetDateText]: [Root.GetName]: Decision MAR_IRCW_send_the_volunteers"
 			set_temp_variable = { target = IRA }
 			TNO_increase_volunteer_cap_1 = yes
-			custom_effect_tooltip = "TNO_increase_volunteers_IRL_1"
+			#custom_effect_tooltip = "TNO_increase_volunteers_IRL_1"
 			set_country_flag = MAR_IRCW_volunteers_sent
 		}
 		ai_will_do = {
@@ -1449,7 +1449,7 @@ MAR_foreign_policy_category = {
 
 				set_temp_variable = { target = IRA }
 				TNO_increase_volunteer_cap_1 = yes
-				custom_effect_tooltip = "TNO_increase_volunteers_IRL_1"
+				#custom_effect_tooltip = "TNO_increase_volunteers_IRL_1"
 			}
 			else = {
 				IRA = {
@@ -1484,7 +1484,7 @@ MAR_foreign_policy_category = {
 				}
 				set_temp_variable = { target = IRA }
 				TNO_increase_volunteer_cap_1 = yes
-				custom_effect_tooltip = "TNO_increase_volunteers_IRL_1"
+				#custom_effect_tooltip = "TNO_increase_volunteers_IRL_1"
 			}
 			else = {
 				IRA = {

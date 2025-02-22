@@ -1110,13 +1110,13 @@ country_event = { #congo cw
 			limit = { has_government = socialist }
 			set_country_flag = MAR_aid_CPR
 			set_temp_variable = { target = CPR }
-			TNO_increase_volunteer_cap_1 = yes
+			TNO_increase_volunteer_cap_2 = yes
 		}
 		else_if = {
 			limit = { has_government = despotism }
 			set_country_flag = MAR_aid_KSI
 			set_temp_variable = { target = KSI }
-			TNO_increase_volunteer_cap_1 = yes
+			TNO_increase_volunteer_cap_2 = yes
 		}
 		TaS_fopo_add_congo_cw_tab = yes
 	}
@@ -1178,8 +1178,11 @@ country_event = { #france CW BEL win
 		FRM  = {
 			clr_country_flag = MAR_aid_FRM
 			econ_join_sphere_MAR = yes
+			leave_faction = yes #тноиды идите нахуй
 		}
 		add_popularity = { ideology = despotism popularity = 0.02 }
+		set_temp_variable = { target = FRM }
+		TNO_clear_num_volunteers = yes
 		TaS_dobrovoltsy_dynmod_victory = yes
 	}
 }
@@ -1218,6 +1221,8 @@ country_event = { #france CW BEL lose
 		add_war_support = -0.03
 		FRM = { clr_country_flag = MAR_aid_FRM }
 		add_popularity = { ideology = despotism popularity = -0.02 }
+		set_temp_variable = { target = FRM }
+		TNO_clear_num_volunteers = yes
 		TaS_dobrovoltsy_dynmod_lose = yes
 	}
 }
@@ -1279,6 +1284,8 @@ country_event = { #france CW KOS win
 			econ_join_sphere_MAR = yes
 		}
 		add_popularity = { ideology = socialist popularity = 0.02 }
+		set_temp_variable = { target = FRV }
+		TNO_clear_num_volunteers = yes
 		TaS_dobrovoltsy_dynmod_victory = yes
 	}
 }
@@ -1318,6 +1325,8 @@ country_event = { #france CW KOS lose
 		add_war_support = -0.03
 		FRV  = { clr_country_flag = MAR_aid_FRV }
 		add_popularity = { ideology = socialist popularity = -0.02 }
+		set_temp_variable = { target = FRV }
+		TNO_clear_num_volunteers = yes
 		TaS_dobrovoltsy_dynmod_lose = yes
 	}
 }
@@ -1342,6 +1351,8 @@ country_event = { ### Iran victory
 		clr_country_flag = MAR_IR_CW_ACTIVE
 		add_popularity = { ideology = despotism popularity = 0.02 }
 		country_event = { id = berez_dobrovoltsy.24 }
+		set_temp_variable = { target = IRC }
+		TNO_clear_num_volunteers = yes
 		TaS_dobrovoltsy_dynmod_victory = yes
 	}
 }

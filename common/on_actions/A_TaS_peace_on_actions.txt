@@ -372,6 +372,38 @@ on_actions = {
 				else_if = {
 					limit = {
 						FROM = {
+							OR = {
+								original_tag = MAN
+								original_tag = MJP
+								original_tag = HAN
+								original_tag = PFF
+							}
+						}
+						ROOT = { 
+							OR = {
+								original_tag = MAN
+								original_tag = MJP
+								original_tag = HAN
+								original_tag = PFF
+							}
+						}
+						NOT = { PJP = { has_country_flag = MAN_katastrophe } }
+					}
+					FROM = {
+						annex_country = {
+							target = ROOT
+							transfer_state = no
+						}
+						every_owned_state = {
+							limit = { is_core_of = ROOT }
+							remove_core_of = ROOT
+						}
+					}
+					set_global_flag = skip_default_capitulation
+				}	
+				else_if = {
+					limit = {
+						FROM = {
 							original_tag = MAN
 						}
 						ROOT = { 

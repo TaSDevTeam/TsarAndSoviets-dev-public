@@ -73,7 +73,7 @@ TaS_OIL_get_supported_factions = {
 		add_to_array = { global.OIL_supported_by_MAR = SAU }
 		if = {
 			limit = {
-				has_country_flag = IRQ_kurds_in_the_IraqCW
+				IRQ = { has_country_flag = IRQ_kurds_in_the_IraqCW }
 			}
 			add_to_array = { global.OIL_supported_by_MAR = KUR }
 		}
@@ -730,13 +730,13 @@ TaS_WRW2_total_capitulation = {
 	}
 	if = {
 		limit = {
-			FRV = {	check_variable = { ECON_SPHERE_LEADER = MAR } }
+			FRA = {	check_variable = { ECON_SPHERE_LEADER = MAR } }
 			OR = {
 				GER = { owns_state = 17 }
 				GLC = { owns_state = 17 }
 			}
 		}
-		FRV = {
+		FRA = {
 			annex_country = {
 				target = GLC
 				transfer_troops = no
@@ -752,56 +752,11 @@ TaS_WRW2_total_capitulation = {
 			transfer_state = 29
 			transfer_state = 1733
 			transfer_state = 1994
-			every_owned_state = {
-				add_core_of = FRV
-			}
-		}
-		if = {
-			limit = {
-				HOL = { exists = yes }
-			}
-			HOL = {
-				transfer_state = 1734
-				transfer_state = 6
-				
-				every_owned_state = {
-					add_core_of = HOL
-				}
-			}
-		}
-		else = {
-			GER = {
-				transfer_state = 1734
-				transfer_state = 6
-			}
-		}
-	}
-	if = {
-		limit = {
-			FRM = {	check_variable = { ECON_SPHERE_LEADER = MAR } }
-			OR = {
-				GER = { owns_state = 17 }
-				GLC = { owns_state = 17 }
-			}
-		}
-		FRM = {
-			annex_country = {
-				target = GLC
-				transfer_troops = no
-			}
-			transfer_state = 15
-			transfer_state = 16
-			transfer_state = 788
-			transfer_state = 1625
-			transfer_state = 1626
-			transfer_state = 1635
-			transfer_state = 17
-			transfer_state = 18
-			transfer_state = 29
-			transfer_state = 1733
 			
 			every_owned_state = {
-				add_core_of = FRM
+				remove_core_of = GLC
+				remove_core_of = GER
+				add_core_of = FRA
 			}
 		}
 		if = {
@@ -1133,6 +1088,11 @@ TaS_WRW2_Peace_Yall = {
 				econ_join_sphere_MAR = yes
 				add_ideas = RUSAlliance_Observer
 			}
+			if = {
+				limit = { country_exists = MAC } 
+				econ_join_sphere_MAR = yes
+				add_ideas = RUSAlliance_Observer
+			}
 			RUS = { 
 				set_temp_variable = { gdp_growth_temp = 0.75 }
 				econ_gdp_growth_change = yes
@@ -1412,7 +1372,6 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			transfer_state = 7
 			transfer_state = 35
 			transfer_state = 74
-			transfer_state = 309
 			transfer_state = 1886
 			if = {
 				limit = { BRG = { exists = no } }
@@ -1420,6 +1379,23 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 				transfer_state = 1734
 				FRA = { transfer_state = 34 }
 			}
+			if = {
+				limit = { SUR = { has_idea = SUR_queen_juliana } }
+				GHL = {
+					annex_country = {
+						target = SUR
+						transfer_troops = yes
+					}
+				}
+			}
+			else = {
+				GHL = {
+					annex_country = {
+						target = CUR
+						transfer_troops = yes
+					}
+				}
+			}	
 			every_owned_state = {
 				GHL = {
 					add_state_core = PREV
@@ -1515,6 +1491,11 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			transfer_state = 66
 			transfer_state = 1814
 			transfer_state = 1813
+			every_owned_state = {
+				ZNE = {
+					add_state_core = PREV
+				}
+			}
 			TNO_startup_nation = yes
 			add_ideas = RUSAlliance_Military_Government
 		}
@@ -1522,6 +1503,11 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			inherit_technology = MAR
 			econ_join_sphere_MAR = yes
 			transfer_state = 64
+			every_owned_state = {
+				BRL = {
+					add_state_core = PREV
+				}
+			}
 			TNO_startup_nation = yes
 			add_ideas = RUSAlliance_Military_Government
 		}
@@ -1552,6 +1538,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			add_to_faction = GDN
 			add_to_faction = ZNE
 			add_to_faction = BRL
+			add_to_faction = PUS
 			SWRW_add_RUS_coldwar_GUI = yes
 			set_temp_variable = { Victory_ID = 53 }
 			set_temp_variable = { Victory_Outcome = 5 }
