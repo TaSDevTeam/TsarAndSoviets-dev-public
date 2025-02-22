@@ -1216,22 +1216,52 @@ on_actions = {
 								}
 								promote_character = GHU_Istvan_Horthy
 								promote_character = GHU_Geraldine
-								set_politics = {
-									ruling_party = paternalism
+								if = {
+									limit = {
+										NOT = {
+											HUN = {
+												has_country_leader = {
+													character = GHU_Istvan_Horthy 
+													ruling_only = yes
+												}
+											}
+										}
+									}
+									set_politics = {
+										ruling_party = paternalism
+									}
+									add_popularity = {
+										ideology = paternalism
+										popularity = 0.35
+									}
+									add_country_leader_role = {
+										character = GHU_Istvan_Horthy
+										promote_leader = yes
+										country_leader = {
+											#desc = "POLITICS_Istvan_Horthy_DESC"
+											ideology = paternalism_semi_constitutional_monarchy_subtype
+											traits = { }
+											expire = "1999.1.1.1"
+										}
+									}
 								}
-								add_popularity = {
-									ideology = paternalism
-									popularity = 0.35
-								}
-
-								add_country_leader_role = {
-									character = GHU_Istvan_Horthy
-									promote_leader = yes
-									country_leader = {
-										#desc = "POLITICS_Istvan_Horthy_DESC"
-										ideology = paternalism_semi_constitutional_monarchy_subtype
-										traits = { }
-										expire = "1999.1.1.1"
+								else = {
+									set_politics = {
+										ruling_party = paternalism
+									}
+									add_popularity = {
+										ideology = paternalism
+										popularity = 0.35
+									}
+									add_country_leader_role = {
+										character = GHU_Geraldine
+										promote_leader = yes
+										country_leader = {
+											#desc = "POLITICS_Istvan_Horthy_DESC"
+											ideology = paternalism_semi_constitutional_monarchy_subtype
+											traits = { }
+											expire = "1999.1.1.1"
+										}
 									}
 								}
 								set_cosmetic_tag = HUN_GHU_Belooz
