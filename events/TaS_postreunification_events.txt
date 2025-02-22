@@ -4348,6 +4348,57 @@ country_event = { #AAG: Evacuation
 				promote_character = AAG_Pavel_Senko
 				set_cosmetic_tag = AAG_RUS
 			}
+			if = {
+				limit = { controls_state = 2027 }
+				2027 = { set_state_name = STATE_2027_rus }
+				set_province_name = { id = 17800 name = VICTORY_POINTS_17800_rus }
+			}
+			if = {
+				limit = { controls_state = 2028 }
+				2028 = { set_state_name = STATE_2028_rus }
+				set_province_name = { id = 17794 name = VICTORY_POINTS_17794_rus }
+				set_province_name = { id = 17807 name = VICTORY_POINTS_17807_rus }
+				set_province_name = { id = 17810 name = VICTORY_POINTS_17810_rus }
+			}
+			if = {
+				limit = { controls_state = 2029 }
+				2029 = { set_state_name = STATE_2029_rus }
+			}
+			if = {
+				limit = { controls_state = 2030 }
+				2030 = { set_state_name = STATE_2030_rus }
+				set_province_name = { id = 17785 name = VICTORY_POINTS_17785_rus }
+			}
+			if = {
+				limit = { controls_state = 2056 }
+				2056 = { set_state_name = STATE_2056_rus }
+				set_province_name = { id = 17799 name = VICTORY_POINTS_17799_rus }
+				set_province_name = { id = 17792 name = VICTORY_POINTS_17792_rus }
+			}
+			if = {
+				limit = { controls_state = 2057 }
+				2057 = { set_state_name = STATE_2057_rus }
+				set_province_name = { id = 17804 name = VICTORY_POINTS_17804_rus }
+			}
+			if = {
+				limit = { controls_state = 2062 }
+				2062 = { set_state_name = STATE_2062_rus }
+				set_province_name = { id = 17742 name = VICTORY_POINTS_17742_rus }
+				set_province_name = { id = 17695 name = VICTORY_POINTS_17695_rus }
+			}
+			if = {
+				limit = { controls_state = 2076 }
+				2076 = { set_state_name = STATE_2076_rus }
+				set_province_name = { id = 17772 name = VICTORY_POINTS_17772_rus }
+			}
+			if = {
+				limit = { controls_state = 2453 }
+				2453 = { set_state_name = STATE_2453_rus }
+			}
+			if = {
+				limit = { controls_state = 2424 }
+				2424 = { set_state_name = STATE_2424_rus }
+			}
 		}
 		AAG = {
 			get_current_government_type = yes
@@ -7283,7 +7334,7 @@ news_event = { #Russo-Persian war
 	id = MAR_2WRW_world_news.51
 	title = MAR_2WRW_world_news.51.t
 	desc = MAR_2WRW_world_news.51.d
-	picture = GFX_MAR_2WRW_world_news_051
+	picture = GFX_MAR_2WRW_world_news_001
 	
 	is_triggered_only = yes
 	

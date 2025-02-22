@@ -288,6 +288,8 @@ TaS_SWRW_american_germany = {
 		transfer_state = 1811
 		transfer_state = 58
 		transfer_state = 8
+		64 = { set_state_name = STATE_64_rus }
+		set_province_name = { id = 6521 name = VICTORY_POINTS_6521_rus }
 		remove_ideas = TaS_Post2WRW_BRL_ZNE_russian_army 
 		remove_ideas = TaS_Post2WRW_BRL_nazi_heartland_1
 		remove_ideas = TaS_Post2WRW_ZNE_exec_centre 	
@@ -2123,6 +2125,18 @@ SWRW_clear_war_stuff = {
 	CHI = {
 		set_temp_variable = { target = RUS }
 		TNO_decrease_volunteer_cap_4 = yes
+	}
+	every_state = {
+		limit = { has_dynamic_modifier = { modifier = SWRW_scorched_earth_modifier } }
+		remove_dynamic_modifier = {
+			modifier = SWRW_scorched_earth_modifier
+		}
+	}
+	every_state = {
+		limit = { has_dynamic_modifier = { modifier = CAU_muslim_resistance_modifier } }
+		remove_dynamic_modifier = {
+			modifier = CAU_muslim_resistance_modifier
+		}
 	}
 	SWRW_remove_army_size_modifier = yes
 }

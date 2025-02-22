@@ -856,212 +856,6 @@ country_event = { #Ostland: Volksdeutsche Volkssturm
 	option = { #
 		name = GER_SWRW.13.a
 		ai_chance = { factor = 1 }
-		if = {
-			limit = { OST = { exists = yes } }
-			OST = {
-				add_manpower = 35000
-				division_template = {
-					name = "Volkssturm"
-					priority = 2
-					regiments = {
-						light_infantry = { x = 0 y = 0 }
-						light_infantry = { x = 0 y = 1 }
-						light_infantry = { x = 1 y = 0}
-						light_infantry = { X = 1 y = 1}
-						light_infantry = { X = 1 y = 2}
-					}
-					support = {
-						recon = { x = 0 y = 0 }
-						artillery = { x = 0 y = 1 }
-						logistics_company = { x = 0 y = 2 }
-					}	
-				}
-				13 = {
-					create_unit = {
-						division = "division_template = \"Volkssturm\" start_experience_factor = 0.6 start_equipment_factor = 0.9"
-						owner = OST
-						count = 6
-					}
-					add_building_construction = {
-						type = bunker
-						level = 1
-						instant_build = yes
-						province = {
-							all_provinces = no
-							limit_to_victory_point > 3
-						}
-					}
-				}
-				1397 = {
-					create_unit = {
-						division = "division_template = \"Volkssturm\" start_experience_factor = 0.6 start_equipment_factor = 0.9"
-						owner = OST
-						count = 6
-					}
-					add_building_construction = {
-						type = bunker
-						level = 1
-						instant_build = yes
-						province = {
-							all_provinces = no
-							limit_to_victory_point > 3
-						}
-					}
-				}
-				79 = {
-					create_unit = {
-						division = "division_template = \"Volkssturm\" start_experience_factor = 0.6 start_equipment_factor = 0.9"
-						owner = OST
-						count = 6
-					}
-					add_building_construction = {
-						type = bunker
-						level = 1
-						instant_build = yes
-						province = {
-							all_provinces = no
-							limit_to_victory_point > 3
-						}
-					}
-				}
-				if = {
-					limit = { BLR = { exists = yes } }
-					add_manpower = 35000
-					division_template = {
-						name = "Volkssturm"
-						priority = 2
-						regiments = {
-							light_infantry = { x = 0 y = 0 }
-							light_infantry = { x = 0 y = 1 }
-							light_infantry = { x = 1 y = 0}
-							light_infantry = { X = 1 y = 1}
-							light_infantry = { X = 1 y = 2}
-						}
-						support = {
-							recon = { x = 0 y = 0 }
-							artillery = { x = 0 y = 1 }
-							logistics_company = { x = 0 y = 2 }
-						}	
-					}
-					1404 = {
-						create_unit = {
-							division = "division_template = \"Volkssturm\" start_experience_factor = 0.6 start_equipment_factor = 0.9"
-							owner = BLR
-							count = 6
-						}
-						add_building_construction = {
-							type = bunker
-							level = 1
-							instant_build = yes
-							province = {
-								all_provinces = no
-								limit_to_victory_point > 3
-							}
-						}
-					}
-				}
-				else = {
-					1404 = {
-						create_unit = {
-							division = "division_template = \"Volkssturm\" start_experience_factor = 0.6 start_equipment_factor = 0.9"
-							owner = OST
-							count = 6
-						}
-						add_building_construction = {
-							type = bunker
-							level = 1
-							instant_build = yes
-							province = {
-								all_provinces = no
-								limit_to_victory_point > 3
-							}
-						}
-					}
-				}
-			}
-		}
-		else = {
-			division_template = {
-				name = "Volkssturm"
-				priority = 2
-				regiments = {
-					light_infantry = { x = 0 y = 0 }
-					light_infantry = { x = 0 y = 1 }
-					light_infantry = { x = 1 y = 0}
-					light_infantry = { X = 1 y = 1}
-					light_infantry = { X = 1 y = 2}
-				}
-				support = {
-					recon = { x = 0 y = 0 }
-					artillery = { x = 0 y = 1 }
-					logistics_company = { x = 0 y = 2 }
-				}	
-			}
-			13 = {
-				create_unit = {
-					division = "division_template = \"Volkssturm\" start_experience_factor = 0.6 start_equipment_factor = 0.9"
-					owner = GER
-					count = 4
-				}
-				add_building_construction = {
-					type = bunker
-					level = 1
-					instant_build = yes
-					province = {
-						all_provinces = no
-						limit_to_victory_point > 3
-					}
-				}
-			}
-			1397 = {
-				create_unit = {
-					division = "division_template = \"Volkssturm\" start_experience_factor = 0.6 start_equipment_factor = 0.9"
-					owner = GER
-					count = 4
-				}
-				add_building_construction = {
-					type = bunker
-					level = 1
-					instant_build = yes
-					province = {
-						all_provinces = no
-						limit_to_victory_point > 3
-					}
-				}
-			}
-			79 = {
-				create_unit = {
-					division = "division_template = \"Volkssturm\" start_experience_factor = 0.6 start_equipment_factor = 0.9"
-					owner = GER
-					count = 4
-				}
-				add_building_construction = {
-					type = bunker
-					level = 1
-					instant_build = yes
-					province = {
-						all_provinces = no
-						limit_to_victory_point > 3
-					}
-				}
-			}
-			1404 = {
-				create_unit = {
-					division = "division_template = \"Volkssturm\" start_experience_factor = 0.6 start_equipment_factor = 0.9"
-					owner = GER
-					count = 4
-				}
-				add_building_construction = {
-					type = bunker
-					level = 1
-					instant_build = yes
-					province = {
-						all_provinces = no
-						limit_to_victory_point > 3
-					}
-				}
-			}
-		}
 	}
 }
 
@@ -1338,26 +1132,6 @@ country_event = { #Ostland: let's burn the belarus
 	option = { #
 		name = GER_SWRW.21.a
 		ai_chance = { factor = 1 }
-		241 = {
-			add_dynamic_modifier = {
-				modifier = SWRW_scorched_earth_modifier
-			}
-		}
-		206 = {
-			add_dynamic_modifier = {
-				modifier = SWRW_scorched_earth_modifier
-			}
-		}
-		194 = {
-			add_dynamic_modifier = {
-				modifier = SWRW_scorched_earth_modifier
-			}
-		}
-		204 = {
-			add_dynamic_modifier = {
-				modifier = SWRW_scorched_earth_modifier
-			}
-		}
 	}
 }
 
@@ -1593,6 +1367,13 @@ country_event = { #Moscow
 		GER = {
 			set_temp_variable = { temp_devastation_gained = 2 }
 			TaS_WRW2_change_devastation = yes
+		}
+		if = {
+			limit = { has_government = despotism }
+			country_event = { id = RUS_SWRW_mech.24 days = 15 }
+		}
+		else = {
+			country_event = { id = RUS_SWRW_mech.23 days = 15 }
 		}
 	}
 }
@@ -1862,6 +1643,41 @@ country_event = { #Hunt down the Oktan
 		
 	}
 }
+
+country_event = { #Moscow Kosygin
+	id = RUS_SWRW_mech.23
+	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW_mech.23" }
+	title = RUS_SWRW_mech.23.t
+	desc = RUS_SWRW_mech.23.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = RUS_SWRW_mech.23.a
+		ai_chance = { factor = 1 }
+		add_war_support = 0.05
+	}
+}
+
+country_event = { #Moscow Belozersky
+	id = RUS_SWRW_mech.24
+	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW_mech.24" }
+	title = RUS_SWRW_mech.24.t
+	desc = RUS_SWRW_mech.24.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = RUS_SWRW_mech.24.a
+		ai_chance = { factor = 1 }
+		add_war_support = 0.05
+	}
+}
+
 
 country_event = { #Bulgaria wants to quit
 	id = TaS_SWRW.16

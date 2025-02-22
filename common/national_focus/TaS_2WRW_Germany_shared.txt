@@ -395,10 +395,236 @@ shared_focus = {
 		if = {
 			limit = { has_country_flag = GER_SWRW_defence_focus }
 			country_event = { id = GER_SWRW.13 }
+			if = {
+				limit = { OST = { exists = yes } }
+				OST = {
+					add_manpower = 35000
+					division_template = {
+						name = "Volkssturm"
+						priority = 2
+						regiments = {
+							light_infantry = { x = 0 y = 0 }
+							light_infantry = { x = 0 y = 1 }
+							light_infantry = { x = 1 y = 0}
+							light_infantry = { X = 1 y = 1}
+							light_infantry = { X = 1 y = 2}
+						}
+						support = {
+							recon = { x = 0 y = 0 }
+							artillery = { x = 0 y = 1 }
+							logistics_company = { x = 0 y = 2 }
+						}	
+					}
+					13 = {
+						create_unit = {
+							division = "division_template = \"Volkssturm\" start_experience_factor = 0.6 start_equipment_factor = 0.9"
+							owner = OST
+							count = 6
+						}
+						add_building_construction = {
+							type = bunker
+							level = 1
+							instant_build = yes
+							province = {
+								all_provinces = no
+								limit_to_victory_point > 3
+							}
+						}
+					}
+					1397 = {
+						create_unit = {
+							division = "division_template = \"Volkssturm\" start_experience_factor = 0.6 start_equipment_factor = 0.9"
+							owner = OST
+							count = 6
+						}
+						add_building_construction = {
+							type = bunker
+							level = 1
+							instant_build = yes
+							province = {
+								all_provinces = no
+								limit_to_victory_point > 3
+							}
+						}
+					}
+					79 = {
+						create_unit = {
+							division = "division_template = \"Volkssturm\" start_experience_factor = 0.6 start_equipment_factor = 0.9"
+							owner = OST
+							count = 6
+						}
+						add_building_construction = {
+							type = bunker
+							level = 1
+							instant_build = yes
+							province = {
+								all_provinces = no
+								limit_to_victory_point > 3
+							}
+						}
+					}
+					if = {
+						limit = { BLR = { exists = yes } }
+						add_manpower = 35000
+						division_template = {
+							name = "Volkssturm"
+							priority = 2
+							regiments = {
+								light_infantry = { x = 0 y = 0 }
+								light_infantry = { x = 0 y = 1 }
+								light_infantry = { x = 1 y = 0}
+								light_infantry = { X = 1 y = 1}
+								light_infantry = { X = 1 y = 2}
+							}
+							support = {
+								recon = { x = 0 y = 0 }
+								artillery = { x = 0 y = 1 }
+								logistics_company = { x = 0 y = 2 }
+							}	
+						}
+						1404 = {
+							create_unit = {
+								division = "division_template = \"Volkssturm\" start_experience_factor = 0.6 start_equipment_factor = 0.9"
+								owner = BLR
+								count = 6
+							}
+							add_building_construction = {
+								type = bunker
+								level = 1
+								instant_build = yes
+								province = {
+									all_provinces = no
+									limit_to_victory_point > 3
+								}
+							}
+						}
+					}
+					else = {
+						1404 = {
+							create_unit = {
+								division = "division_template = \"Volkssturm\" start_experience_factor = 0.6 start_equipment_factor = 0.9"
+								owner = OST
+								count = 6
+							}
+							add_building_construction = {
+								type = bunker
+								level = 1
+								instant_build = yes
+								province = {
+									all_provinces = no
+									limit_to_victory_point > 3
+								}
+							}
+						}
+					}
+				}
+			}
+			else = {
+				division_template = {
+					name = "Volkssturm"
+					priority = 2
+					regiments = {
+						light_infantry = { x = 0 y = 0 }
+						light_infantry = { x = 0 y = 1 }
+						light_infantry = { x = 1 y = 0}
+						light_infantry = { X = 1 y = 1}
+						light_infantry = { X = 1 y = 2}
+					}
+					support = {
+						recon = { x = 0 y = 0 }
+						artillery = { x = 0 y = 1 }
+						logistics_company = { x = 0 y = 2 }
+					}	
+				}
+				13 = {
+					create_unit = {
+						division = "division_template = \"Volkssturm\" start_experience_factor = 0.6 start_equipment_factor = 0.9"
+						owner = GER
+						count = 4
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = {
+							all_provinces = no
+							limit_to_victory_point > 3
+						}
+					}
+				}
+				1397 = {
+					create_unit = {
+						division = "division_template = \"Volkssturm\" start_experience_factor = 0.6 start_equipment_factor = 0.9"
+						owner = GER
+						count = 4
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = {
+							all_provinces = no
+							limit_to_victory_point > 3
+						}
+					}
+				}
+				79 = {
+					create_unit = {
+						division = "division_template = \"Volkssturm\" start_experience_factor = 0.6 start_equipment_factor = 0.9"
+						owner = GER
+						count = 4
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = {
+							all_provinces = no
+							limit_to_victory_point > 3
+						}
+					}
+				}
+				1404 = {
+					create_unit = {
+						division = "division_template = \"Volkssturm\" start_experience_factor = 0.6 start_equipment_factor = 0.9"
+						owner = GER
+						count = 4
+					}
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = {
+							all_provinces = no
+							limit_to_victory_point > 3
+						}
+					}
+				}
+			}
 		}
 		else_if = { 
 			limit = { has_country_flag = GER_SWRW_destruction_focus }
-			country_event = { id = GER_SWRW.21 }
+			#country_event = { id = GER_SWRW.21 }
+			241 = {
+				add_dynamic_modifier = {
+					modifier = SWRW_scorched_earth_modifier
+				}
+			}
+			206 = {
+				add_dynamic_modifier = {
+					modifier = SWRW_scorched_earth_modifier
+				}
+			}
+			194 = {
+				add_dynamic_modifier = {
+					modifier = SWRW_scorched_earth_modifier
+				}
+			}
+			204 = {
+				add_dynamic_modifier = {
+					modifier = SWRW_scorched_earth_modifier
+				}
+			}
 		}
 		else = {
 			custom_effect_tooltip = G_SWRW_effect_depends_of_event_tt

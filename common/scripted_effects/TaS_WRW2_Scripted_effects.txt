@@ -1503,6 +1503,8 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			inherit_technology = MAR
 			econ_join_sphere_MAR = yes
 			transfer_state = 64
+			64 = { set_state_name = STATE_64_rus }
+			set_province_name = { id = 6521 name = VICTORY_POINTS_6521_rus }
 			every_owned_state = {
 				BRL = {
 					add_state_core = PREV
@@ -1733,6 +1735,8 @@ TaS_WRW2_German_Collapse_Kosygin = {
 			transfer_state = 188
 			transfer_state = 66
 			transfer_state = 58
+			64 = { set_state_name = STATE_64_rus }
+			set_province_name = { id = 6521 name = VICTORY_POINTS_6521_rus }
 			set_politics = {
 				ruling_party = socialist
 			}
