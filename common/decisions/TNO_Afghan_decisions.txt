@@ -42,6 +42,20 @@ AFG_russian_invasion = {
 
 		ai_will_do = {
 			factor = 200
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = SWRW_AFGHAN_WAR_RESULT
+					option = SWRW_AFGHAN_WAR_RESULT_PARTWIN
+				}
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = SWRW_AFGHAN_WAR_RESULT
+					option = SWRW_AFGHAN_WAR_RESULT_WIN
+				}
+			}
 		}
 	}
 
@@ -78,6 +92,20 @@ AFG_russian_invasion = {
 
 		ai_will_do = {
 			factor = 200
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = SWRW_AFGHAN_WAR_RESULT
+					option = SWRW_AFGHAN_WAR_RESULT_QUO
+				}
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = SWRW_AFGHAN_WAR_RESULT
+					option = SWRW_AFGHAN_WAR_RESULT_WIN
+				}
+			}
 		}
 	}
 
@@ -113,6 +141,20 @@ AFG_russian_invasion = {
 
 		ai_will_do = {
 			factor = 200
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = SWRW_AFGHAN_WAR_RESULT
+					option = SWRW_AFGHAN_WAR_RESULT_QUO
+				}
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = SWRW_AFGHAN_WAR_RESULT
+					option = SWRW_AFGHAN_WAR_RESULT_PARTWIN
+				}
+			}
 		}
 	}
 }
