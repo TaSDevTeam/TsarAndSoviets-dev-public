@@ -282,7 +282,7 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 						array = global.OIL_supported_by_MAR
 						value = EGQ
 					}
-					check_variable = { MAR.MAR_OC_participation > 69 }
+					check_variable = { MAR.MAR_OC_participation > 49 }
 				}
 				EGQ = { econ_join_sphere_MAR = yes }
 			}
@@ -395,8 +395,8 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 			}
 			else_if = {
 				limit = {
-					check_variable = { MAR.MAR_OC_participation > 59 }
-					check_variable = { MAR.MAR_OC_participation > JAP.JAP_OC_participation }
+					check_variable = { MAR.MAR_OC_participation > 59 } 
+					#check_variable = { MAR.MAR_OC_participation > JAP.JAP_OC_participation } #похуй цап-царап
 					is_in_array = {
 						array = global.OIL_supported_by_MAR
 						value = SDF
@@ -422,7 +422,6 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 			else_if = {
 				limit = {
 					check_variable = { MAR.MAR_OC_participation > 49 }
-					check_variable = { GER.BOR_OC_participation < MAR.MAR_OC_participation }
 					is_in_array = {
 						array = global.OIL_supported_by_MAR
 						value = SDS
