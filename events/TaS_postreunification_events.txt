@@ -237,6 +237,13 @@ country_event = { #Kenes over - Turks/Americans -
 				add = 20
 				NOT = { has_government = paternalism }
 			}
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = MAR_NEGOT_WITH_TURKESTAN
+					option = MAR_NEGOT_WITH_TURKESTAN_SUCCESSFUL
+				}
+			}
 		}
 		MAR = {
 			country_event = {
@@ -251,6 +258,13 @@ country_event = { #Kenes over - Turks/Americans -
 			modifier = {
 				add = -20
 				NOT = { has_government = paternalism }
+			}
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = MAR_NEGOT_WITH_TURKESTAN
+					option = MAR_NEGOT_WITH_TURKESTAN_FAILURE
+				}
 			}
 		}
 		MAR = {
