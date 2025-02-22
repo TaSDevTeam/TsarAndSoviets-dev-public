@@ -1000,10 +1000,7 @@ country_event = { # RU Kazakhstan annexation
 	option = {
 		name = berez_kazahk.10.a
 		ai_chance = { factor = 1 }	
-		annex_country = {
-			target = KZR
-			transfer_troops = yes
-		}
+		MAR_install_mil_kazakhstan = yes
 		news_event = { id = berez_kazahk_news.2 days = 1 }
 	}	
 }
