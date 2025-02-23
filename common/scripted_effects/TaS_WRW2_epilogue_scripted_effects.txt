@@ -93,6 +93,19 @@ TaS_2WRW_start_westgerman_cw = {
 					owner = GWS
 				}
 			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = SWRW_GER_COLLAPSE_SECOND_CW_RESULT
+						option = SWRW_GER_COLLAPSE_SECOND_CW_RESULT_GWS
+					}
+				}
+				apply_war_buff_with_15_divisions = yes
+				add_timed_idea = {
+					idea = war_cheat
+					days = 90
+				}
+			}
 		}
 		GRH = {
 			random_owned_controlled_state = {
@@ -129,6 +142,19 @@ TaS_2WRW_start_westgerman_cw = {
 					owner = GRH
 				}
 			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = SWRW_GER_COLLAPSE_SECOND_CW_RESULT
+						option = SWRW_GER_COLLAPSE_SECOND_CW_RESULT_GRH
+					}
+				}
+				apply_war_buff_with_15_divisions = yes
+				add_timed_idea = {
+					idea = war_cheat
+					days = 90
+				}
+			}
 		}
 		GBW = {
 			random_owned_controlled_state = {
@@ -156,7 +182,20 @@ TaS_2WRW_start_westgerman_cw = {
 					division = "division_template = \"Motorisierte Infanterie\" start_experience_factor = 0.6 start_equipment_factor = 0.8"
 					owner = GBW
 				}
-			}				
+			}	
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = SWRW_GER_COLLAPSE_SECOND_CW_RESULT
+						option = SWRW_GER_COLLAPSE_SECOND_CW_RESULT_GBW
+					}
+				}
+				apply_war_buff_with_15_divisions = yes
+				add_timed_idea = {
+					idea = war_cheat
+					days = 90
+				}
+			}			
 		}
 		GBV = {
 			random_owned_controlled_state = {
@@ -200,7 +239,20 @@ TaS_2WRW_start_westgerman_cw = {
 					division = "division_template = \"Motorisierte Infanterie\" start_experience_factor = 0.6 start_equipment_factor = 1"
 					owner = GBV
 				}
-			}				
+			}	
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = SWRW_GER_COLLAPSE_SECOND_CW_RESULT
+						option = SWRW_GER_COLLAPSE_SECOND_CW_RESULT_GBV
+					}
+				}
+				apply_war_buff_with_15_divisions = yes
+				add_timed_idea = {
+					idea = war_cheat
+					days = 90
+				}
+			}			
 		}
 		GAU = {
 			random_owned_controlled_state = {
@@ -232,7 +284,20 @@ TaS_2WRW_start_westgerman_cw = {
 					division = "division_template = \"Motorisierte Infanterie\" start_experience_factor = 0.6 start_equipment_factor = 1"
 					owner = GAU
 				}
-			}				
+			}	
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = SWRW_GER_COLLAPSE_SECOND_CW_RESULT
+						option = SWRW_GER_COLLAPSE_SECOND_CW_RESULT_GAU
+					}
+				}
+				apply_war_buff_with_15_divisions = yes
+				add_timed_idea = {
+					idea = war_cheat
+					days = 90
+				}
+			}	
 		}
 		GCZ = {
 			random_owned_controlled_state = {
@@ -264,7 +329,20 @@ TaS_2WRW_start_westgerman_cw = {
 					division = "division_template = \"Motorisierte Infanterie\" start_experience_factor = 0.6 start_equipment_factor = 1"
 					owner = GCZ
 				}
-			}				
+			}		
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = SWRW_GER_COLLAPSE_SECOND_CW_RESULT
+						option = SWRW_GER_COLLAPSE_SECOND_CW_RESULT_GCZ
+					}
+				}
+				apply_war_buff_with_15_divisions = yes
+				add_timed_idea = {
+					idea = war_cheat
+					days = 290
+				}
+			}
 		}
 		GSU = {
 			random_owned_controlled_state = {
@@ -288,7 +366,20 @@ TaS_2WRW_start_westgerman_cw = {
 					division = "division_template = \"Volkssturm\" start_experience_factor = 0.3 start_equipment_factor = 0.7"
 					owner = GSU
 				}
-			}					
+			}	
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = SWRW_GER_COLLAPSE_SECOND_CW_RESULT
+						option = SWRW_GER_COLLAPSE_SECOND_CW_RESULT_GSU
+					}
+				}
+				apply_war_buff_with_15_divisions = yes
+				add_timed_idea = {
+					idea = war_cheat
+					days = 90
+				}
+			}	
 		}
 		GRA = {
 			random_owned_controlled_state = {
@@ -332,7 +423,20 @@ TaS_2WRW_start_westgerman_cw = {
 					division = "division_template = \"Volkssturm\" start_experience_factor = 0.3 start_equipment_factor = 0.7"
 					owner = GRA
 				}
-			}				
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = SWRW_GER_COLLAPSE_SECOND_CW_RESULT
+						option = SWRW_GER_COLLAPSE_SECOND_CW_RESULT_GRA
+					}
+				}
+				apply_war_buff_with_15_divisions = yes
+				add_timed_idea = {
+					idea = war_cheat
+					days = 90
+				}
+			}
 		}
 		GWF = {
 			random_owned_controlled_state = {
@@ -361,6 +465,19 @@ TaS_2WRW_start_westgerman_cw = {
 					owner = GWF
 				}								
 			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = SWRW_GER_COLLAPSE_SECOND_CW_RESULT
+						option = SWRW_GER_COLLAPSE_SECOND_CW_RESULT_GWF
+					}
+				}
+				apply_war_buff_with_15_divisions = yes
+				add_timed_idea = {
+					idea = war_cheat
+					days = 90
+				}
+			}	
 		}
 		GWF = {
 			declare_war_on = {
@@ -550,6 +667,27 @@ TaS_2WRW_start_westgerman_cw = {
 				type = annex_everything
 			}
 		}
+		if = {
+			limit = {
+				has_game_rule = {
+					rule = SWRW_GER_COLLAPSE_SECOND_CW_RESULT
+					option = SWRW_GER_COLLAPSE_SECOND_CW_RESULT_GUOT
+				}
+			}
+			ZNE = {
+				apply_war_buff_with_15_divisions = yes
+				add_timed_idea = {
+					idea = war_cheat
+					days = 290
+				}
+			}
+			add_days_mission_timeout = {
+				mission = TaS_PostGER_second_cw_looming_russian_invastion
+				days = -300
+			}
+		}
+		
+		
 	}
 }
 GER_select_unified_cosmotag = {
@@ -1013,7 +1151,16 @@ TaS_2WRW_remove_schnitzel = {
 			transfer_state = 55
 			transfer_state = 42
 			transfer_state = 8
+			transfer_state = 1811
+			transfer_state = 1810
+			transfer_state = 1809
+			transfer_state = 1815
 			set_cosmetic_tag = GWS_czech
+			set_party_name = { 
+				ideology = ultranationalism
+				long_name = GER_czech_party
+				name = GER_czech_party
+			}
 		}
 		GBW = {
 			remove_ideas = {
@@ -1029,7 +1176,15 @@ TaS_2WRW_remove_schnitzel = {
 			transfer_state = 54
 			transfer_state = 52
 			transfer_state = 153
+			transfer_state = 68
+			transfer_state = 1026
+			transfer_state = 53
 			set_cosmetic_tag = GBW_czech
+			set_party_name = { 
+				ideology = ultranationalism
+				long_name = GER_czech_party
+				name = GER_czech_party
+			}
 		}
 		GAU = {
 			remove_ideas = {
@@ -1045,7 +1200,16 @@ TaS_2WRW_remove_schnitzel = {
 			transfer_state = 4
 			transfer_state = 1025
 			transfer_state = 770
+			transfer_state = 86
+			transfer_state = 1772
+			transfer_state = 62
+			transfer_state = 98 
 			set_cosmetic_tag = GAU_czech
+			set_party_name = { 
+				ideology = ultranationalism
+				long_name = GER_czech_party
+				name = GER_czech_party
+			}
 		}
 		GCZ = {
 			GAU = { save_party_popularities = yes }
@@ -1111,11 +1275,13 @@ TaS_2WRW_remove_schnitzel = {
 			limit = { BRG = { exists = yes } }
 			BRG = {
 				transfer_state = 28
+				transfer_state = 1812
 			}
 		}
 		else = {
 			FRA = {
 				transfer_state = 28
+				transfer_state = 1812
 			}
 		}
 	}	
@@ -1194,6 +1360,12 @@ RUS_select_re_reunified_cosmotag = {
 			original_tag = NPL
 		}
 		set_cosmetic_tag = NPL_MAR_collapse_reunified
+	}
+	if = {
+		limit = {
+			original_tag = SAM
+		}
+		set_cosmetic_tag = SAM_MAR_collapse_reunified
 	}
 }
 RUS_select_re_reunification_news_event = {
@@ -1340,5 +1512,120 @@ RUS_select_re_reunification_news_event = {
 				}
 			}
 		}
+	}
+}
+
+reichsland_in_moscowien = {
+	XYZ = {
+		MCW_Mikhail_Oktan_70s = {
+			set_nationality = MCW
+		}
+	}
+	puppet = MCW
+	MCW = {
+		set_cosmetic_tag = MCW_SGR_reichsland
+		GER_alexis_von_roenne = {
+			set_nationality = GER
+		}
+		set_politics = {
+			ruling_party = fascism
+		}
+		retire_country_leader = yes
+		add_country_leader_role = {
+			character = MCW_Mikhail_Oktan_70s
+			country_leader = {
+				ideology = fascism_fascist_populism_subtype
+				expire = "1999.3.4"
+				id = -1
+			}
+		}
+		promote_character = MCW_Mikhail_Oktan_70s
+		set_popularities = {
+			fascism = 50
+			national_socialism_2 = 15
+			paternalism = 20
+			conservatism = 15
+		}
+		remove_all_ministers = yes
+		set_party_name = {
+			ideology = national_socialism_2
+			long_name = MCW_collab_national_socialism_long
+			name = MCW_collab_national_socialism
+		}
+		set_party_name = {
+			ideology = fascism
+			long_name = MCW_collab_fascism_long
+			name = MCW_collab_fascism
+		}
+		remove_faction_status = yes
+		add_ideas = Pakt_Reichsland
+		join_zollverein = yes
+		set_variable = { national_debt = 0 }
+	}
+
+}
+
+collab_regime_in_moscowien = {
+	ORL = {
+		MSK_Ivan_Bessonov = {
+			set_nationality = MCW
+		}
+	}
+	GER = {
+		set_autonomy = {
+			target = MCW
+			autonomy_state = autonomy_collaborator_puppet_state
+		}
+	}
+	MCW = {
+		clr_country_flag = german_names
+		set_cosmetic_tag = MCW_SGR_collab
+		GER_alexis_von_roenne = {
+			set_nationality = GER
+		}
+		set_politics = {
+			ruling_party = paternalism
+		}
+		add_country_leader_role = {
+			character = MSK_Ivan_Bessonov
+			country_leader = {
+				ideology = paternalism_national_conservatism_subtype
+				expire = "1999.3.4"
+				id = -1
+			}
+		}
+		promote_character = MSK_Ivan_Bessonov
+		remove_all_ministers = yes
+		remove_ideas = {
+			Pakt_Autonomous_Reichskommissariat
+			Pakt_Integrated_Reichskommissariat
+		}
+		add_ideas = {
+			Pakt_Marionettenstaat
+		}
+		join_zollverein = yes
+		set_popularities = {
+			fascism = 30
+			national_socialism = 20
+			paternalism = 34
+			conservatism = 16
+		}
+		set_party_name = {
+			ideology = national_socialism
+			long_name = MCW_collab_national_socialism_long
+			name = MCW_collab_national_socialism
+		}
+		set_party_name = {
+			ideology = fascism
+			long_name = MCW_collab_fascism_long
+			name = MCW_collab_fascism
+		}
+		set_party_name = {
+			ideology = paternalism
+			long_name = MCW_collab_paternalism_long
+			name = MCW_collab_paternalism
+		}
+		set_variable = { national_debt = 0 }
+		#state_control_effect_1431 = yes
 	}
 }

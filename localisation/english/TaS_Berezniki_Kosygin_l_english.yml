@@ -579,20 +579,62 @@ MAR_Kosygin.59.a:0 "Plunderers of public property!"
  MAR_Kosygin.91.d: "The old building in the center of Koksay, built during the late Russian Empire, had not undergone any major reconstruction during the Soviet period, and later it was completely forgotten. However, on the occasion of the visit of Emperor Alexei II to the city, it was decided to begin a major reconstruction three days before his official visit. The chairman of the party committee and his deputy were whitewashing the walls in the main corridor while the rest of the party members were engaged in other activities to renovate the house.\n\n- Sergey Sergeyevich, couldn't we hire local workers?\n\n- We couldn't, Yevgeny Yevgenyevich. At the previous meeting, we decided that we would do the reconstruction ourselves. Besides, work turns a monkey into a man! So we too will achieve something decent.\n\n- Well, do you think we'll manage in time? His Majesty is coming the day after tomorrow, and we still need to polish the roof and install new gates.\n\n- As for the exterior, we hired people. As I heard, even the Archangelsk proletariat is not thrilled by the local heat, and we are even more likely to faint.\n\n- Oh no! Sergey Sergeyevich, please open the window, or else we'll be poisoned by this paint.\n\nAt that moment, a young party member burst through the main door and reported anxiously.\n\n- Sergey Sergeyevich, Yevgeny Yevgenyevich! They just called from the government. They said that His Majesty the Emperor will arrive not the day after tomorrow evening, but tomorrow morning!"
  MAR_Kosygin.91.a: "It seems that the repair will continue until late at night."
 
- MAR_Kosygin.92.t: ""
- MAR_Kosygin.92.d: ""
- MAR_Kosygin.92.a: ""
- 
  #престол
  #вы не представляете как я заебался
- MAR_category_prestol_terrorists:0 "§eFighting the 'Prеstol'§!"
+ MAR_category_prestol_terrorists:0 "§eStruggle Against 'Prestol'§!"
+ MAR_gui_title:0 "§eStruggle Against 'Prestol'§!"
+ MAR_Prestol_GUI_Opener_TT:0 "Open the §e'Prestol'§! countermeasures menu"
+ MAR_days_left_text:0 "Time remaining: [? MAR_prestol_clock_time]"
+ MAR_situation_change:0 "Situation update in: [? MAR_prestol_update_time] days"
+
+ MAR_gui_prestol_clock_tt:0 "[ MAR_PRESTOL_GET_CLOCK_TOOLTIP]"
+ MAR_Prestol_Clock_one_tt:0 "§YBe watchful, and strengthen the things which remain, that are ready to die: for I have not found thy works perfect before God.§!"
+ MAR_Prestol_Clock_two_tt:0 "§YAnd when the thousand years are expired, Satan shall be loosed out of his prison, and shall go out to deceive the nations.§!"
+ MAR_Prestol_Clock_three_tt:0 "§YAnd the kings of the earth, and the great men, and the rich men, and the chief captains, and the mighty men, hid themselves in the dens and in the rocks of the mountains.§!"
+ MAR_Prestol_Clock_four_tt:0 "§YAnd no man in heaven, nor in earth, neither under the earth, was able to open the book, neither to look thereon.§!"
+ MAR_Prestol_Clock_five_tt:0 "§YAnd a voice came out of the throne, saying, Praise our God, all ye his servants, and ye that fear him, both small and great.§!"
+ MAR_Prestol_Clock_six_tt:0 "§YAnd I saw when the Lamb opened one of the seals, and I heard one of the four living creatures saying as with a voice of thunder, Come and see.§!"
+ MAR_Prestol_Clock_seven_tt:0 "§YHe that hath an ear, let him hear what the Spirit saith unto the churches; To him that overcometh will I give to eat of the tree of life, which is in the midst of the paradise of God.§!"
+ MAR_Prestol_Clock_eight_tt:0 "§YRemember therefore how thou hast received and heard, and hold fast, and repent.§!"
+ MAR_Prestol_Clock_nine_tt:0 "§YAnd he that overcometh, and keepeth my works unto the end, to him will I give power over the nations.§!"
+ MAR_Prestol_Clock_ten_tt:0 "§YBehold, he cometh with clouds; and every eye shall see him, and they also which pierced him: and all kindreds of the earth shall wail because of him. Even so, Amen.§!"
+ MAR_Prestol_Clock_eleven_tt:0 "§YI am Alpha and Omega, the beginning and the ending, saith the Lord, which is, and which was, and which is to come, the Almighty.§!"
+ MAR_Prestol_Clock_twelve_tt:0 "§YAnd I looked, and behold §Wa pale horse§!: and his name that sat on him was §e'Death'§!, and §eHell§! followed with him.§!"
+
+ MAR_put_down_taboritskys_bandits:0 "Eliminate Taboritsky's Bandits"
+ MAR_biweekly_prestol_tick:0 "Situation Shift"
+
+ MAR_prestol_start_tt:0 "Thus begins our struggle against the Throne claimants"
+
+ MAR_national_socialism_prestol_party:0 "Prestol"
+ MAR_national_socialism_prestol_party_long:0 "Organization for Restoring Rus' True Throne"
+ MAR_national_socialism_1_prestol_party:0 "Aryan Brotherhood"
+ MAR_national_socialism_1_prestol_party_long:0 "Aryan Brotherhood"
+ MAR_national_socialism_2_prestol_party:0 "ROA-M"
+ MAR_national_socialism_2_prestol_party_long:0 "Russian Liberation Army-Maltsevites"
+ MAR_ultranationalism_1_prestol_party:0 "SRI"
+ MAR_ultranationalism_1_prestol_party_long:0 "Society for Imperial Restoration"
+ MAR_ultranationalism_2_prestol_party:0 "Black Hundred"
+ MAR_ultranationalism_2_prestol_party_long:0 "Black Hundred"
+ MAR_despotism_2_prestol_party:0 "Anti-Communist Guard"
+ MAR_despotism_2_prestol_party_long:0 "Anti-Communist Guard"
+ MAR_communist_1_prestol_party:0 "PRA"
+ MAR_communist_1_prestol_party_long:0 "People's Red Army"
+
+ MAR_Taboritsky_dummy:0 "Sergey Taboritsky"
+ MAR_Amozov_dummy:0 "Ioann Amozov"
+ MAR_Dikiy_dummy:0 "Andrey Dikiy"
+ MAR_Goltz_dummy:0 "Baldur Goltz"
+ MAR_Kirpichnikov_dummy:0 "Vladimir Kirpichnikov"
+ MAR_Maltsev_dummy:0 "Viktor Maltsev"
+ MAR_Lashenko_dummy:0 "Pyotr Lashenko"
 
  MAR_put_down_taboritskys_bandits:0 "Destroy Taboritsky's bandits"
  MAR_biweekly_prestol_tick:0 "Situation update"
 
  MAR_prestol_start_tt:0 "So, we will start the fight against the 'Prеstol' sect."
 
- MAR_esoteric_nazism_taboritsky_party:0 "Prеstolniks"
+ MAR_esoteric_nazism_taboritsky_party:0 "Prestol"
  MAR_esoteric_nazism_taboritsky_party_long:0 "Organization for the Restoration of the True Throne of Russia"
 
  MAR_Taboritsky_dummy:0 "Sergei Taboritsky"
@@ -667,7 +709,7 @@ MAR_Kosygin.59.a:0 "Plunderers of public property!"
  MAR_ARKHANGELSK_OPERATION:0 "§W"Opium"!"
 
  MAR_SYKTYVKAR_OPERATION:0 "§B"Democracy"!"
- MAR_SYKTYVKAR_OPERATION_DESC:0 "§BHumilyov and Shafarevich are potential associates of Taboritsky, even though they are currently in prison. Our operation is somewhat atypical compared to others. Our operation is an intellectual game with these people. No matter how fierce our opponents they are, they represent a significant interest to us and can tell us anything and everything that is profitable to us. If we interrogate them or convince them to cooperate, they will provide us with extremely valuable help in the fight against "Prestol".§!"
+ MAR_SYKTYVKAR_OPERATION_DESC:0 "§BGumilyov and Shafarevich are potential associates of Taboritsky, even though they are currently in prison. Our operation is somewhat atypical compared to others. Our operation is an intellectual game with these people. No matter how fierce our opponents they are, they represent a significant interest to us and can tell us anything and everything that is profitable to us. If we interrogate them or convince them to cooperate, they will provide us with extremely valuable help in the fight against "Prestol".§!"
 
  MAR_GORKY_OPERATION:0 "§u"Poet"!"
  MAR_PERM_OPERATION:0 "§o"Swastika"!"

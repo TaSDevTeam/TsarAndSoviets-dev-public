@@ -11,7 +11,7 @@
 ###intro tree
 shared_focus = {
 	id = MAR_start_from_scratch
-	icon = GFX_MAR_Kazem_Begining_Berezniki
+	icon = GFX_MAR_start_from_scratch
 	cost = 5
 	available_if_capitulated = no
 	ai_will_do = {
@@ -30,7 +30,7 @@ shared_focus = {
 
 shared_focus = { 
 	id = MAR_the_last_convoy
-	icon = GFX_MAR_Posilka_Is_Vyatki
+	icon = GFX_MAR_the_last_convoy
 	cost = 3
 	available_if_capitulated = no
 	ai_will_do = {
@@ -48,7 +48,7 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_start_of_the_hunt
-	icon = GFX_MAR_Start_of_the_hunt
+	icon = GFX_MAR_start_of_the_hunt
 	cost = 3
 	available_if_capitulated = no
 	ai_will_do = {
@@ -68,8 +68,8 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = MAR_talk_with_the_magistr
-	icon = GFX_MAR_Talk_with_magistr
+	id = MAR_audience_with_the_magister
+	icon = GFX_MAR_audience_with_the_magister
 	cost = 3
 	available_if_capitulated = no
 	ai_will_do = {
@@ -91,14 +91,14 @@ shared_focus = {
 ###econ tree
 shared_focus = {
 	id = MAR_road_to_prosperity
-	icon = GFX_MAR_Prozvetanie
+	icon = GFX_MAR_road_to_prosperity
 	cost = 4
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1
 	}
 	prerequisite = {
-		focus = MAR_talk_with_the_magistr
+		focus = MAR_audience_with_the_magister
 	}
 	prerequisite = {
 		focus = MAR_start_of_the_hunt
@@ -111,14 +111,14 @@ shared_focus = {
 		hidden_effect = {
 			country_event = { id = MAR_initial.21 days = 30 }
 		}
-        set_temp_variable = { gdp_growth_temp = 1.50 }
+        set_temp_variable = { gdp_growth_temp = 0.50 }
         econ_gdp_growth_change = yes
 	}
 }
 
 shared_focus = {
 	id = MAR_thru_blood
-	icon = GFX_MAR_Krovui_And
+	icon = GFX_MAR_thru_blood
 	cost = 4
 	available_if_capitulated = no
 	ai_will_do = {
@@ -145,7 +145,7 @@ shared_focus = {
 		}
 		set_temp_variable = { inflation_temp = 0.25 }
 		econ_inflation_change = yes
-		set_temp_variable = { gdp_growth_temp = 1.20 }
+		set_temp_variable = { gdp_growth_temp = 0.75 }
         econ_gdp_growth_change = yes
 		set_temp_variable = { pus_temp = 1 }
 		econ_pus_change = yes
@@ -157,7 +157,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_and_thru_sweat
-	icon = GFX_MAR_And_Potom
+	icon = GFX_MAR_and_thru_sweat
 	cost = 4
 	available_if_capitulated = no
 	ai_will_do = {
@@ -184,8 +184,8 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = MAR_we_need_it_more
-	icon = GFX_MAR_Nam_Eto_Nuzhnee
+	id = MAR_to_take_what_is_ours
+	icon = GFX_MAR_to_take_what_is_ours
 	cost = 3
 	available_if_capitulated = no
 	ai_will_do = {
@@ -197,45 +197,55 @@ shared_focus = {
 	x = 2
 	y = 4
 	completion_reward = {
-		custom_effect_tooltip = MAR_check_vyatka_vibe_tt
-		if = { 
-			limit = { check_variable = { MAR_Okhranka_power < 25 } }
-			custom_effect_tooltip = MAR_vyt_oper_total_w_tt
-		}
-		if = { 
-			limit = {
-				check_variable = { MAR_Okhranka_power < 75 }
-				NOT = { check_variable = { MAR_Okhranka_power < 25 } }
-			}
-			custom_effect_tooltip = MAR_vyt_oper_small_w_tt
-		}
-		if = { 
-			limit = { check_variable = { MAR_Okhranka_power > 75 } }
-			custom_effect_tooltip = MAR_vyt_oper_fail_tt
-		}
 		hidden_effect = {
-			if = { 
-				limit = { check_variable = { MAR_Okhranka_power < 25 } }
-				country_event = { id = MAR_initial.24 days = 3 }
-			}
-			if = { 
+			IF = {
 				limit = {
-					check_variable = { MAR_Okhranka_power < 75 }
-					NOT = { check_variable = { MAR_Okhranka_power < 25 } }
+					check_variable = {
+						MAR.MAR_Okhranka_power < MAR.MAR_MGB_var_resources_second_threshold
+					}
 				}
-				country_event = { id = MAR_initial.25 days = 4 }
+				country_event = {
+					id = MAR_initial.24
+				}
+				set_country_flag = MAR_MGB_resources_operation_success_flag
 			}
-			if = { 
-				limit = { check_variable = { MAR_Okhranka_power > 75 } }
-				country_event = { id = MAR_initial.27 days = 6 }
+			IF = {
+				limit = {
+					NOT = {
+						check_variable = {
+							MAR.MAR_Okhranka_power < MAR.MAR_MGB_var_resources_second_threshold
+						}
+					}
+					check_variable = {
+						MAR.MAR_Okhranka_power < MAR.MAR_MGB_var_resources_threshold
+					}
+				}
+				country_event = {
+					id = MAR_initial.25
+				}
+				set_country_flag = MAR_MGB_resources_operation_success_flag
+			}
+			IF = {
+				limit = {
+					NOT = {
+						check_variable = {
+							MAR.MAR_Okhranka_power < MAR.MAR_MGB_var_resources_threshold
+						}
+					}
+				}
+				country_event = {
+					id = MAR_initial.27
+				}
 			}
 		}
+		set_country_flag = MAR_MGB_resources_operation_complete_flag
+		custom_effect_tooltip = MAR_MGB_resources_operation_status_tt
 	}
 }
 
 shared_focus = {
 	id = MAR_we_and_the_proletariat
-	icon = GFX_MAR_Slava_Proletariatu
+	icon = GFX_MAR_we_and_the_proletariat
 	cost = 4
 	available_if_capitulated = no
 	ai_will_do = {
@@ -257,11 +267,12 @@ shared_focus = {
 		add_stability = -0.05
 		add_political_power = 15
 		country_event = { id = MAR_initial.33 days = 0 }
+		custom_effect_tooltip = MAR_MGB_improve_covert_actions_tt
 	}
 }
 shared_focus = {
 	id = MAR_the_new_equipment
-	icon = GFX_MAR_Novoe_Oborudovanie
+	icon = GFX_MAR_the_new_equipment
 	cost = 4
 	available_if_capitulated = no
 	ai_will_do = {
@@ -283,7 +294,7 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_rabfaki
-	icon = GFX_MAR_Slave_Factory
+	icon = GFX_MAR_rabfaki
 	cost = 4
 	available_if_capitulated = no
 	ai_will_do = {
@@ -298,12 +309,22 @@ shared_focus = {
 		country_event = { id = MAR_initial.36 days = 0 }
 		TNO_improve_academic_base_med = yes
 		TNO_improve_industrial_expertise_low = yes
+		IF = {
+			limit = {
+				has_country_flag = MAR_MGB_resources_operation_complete_flag
+			}
+			add_political_power = 30
+		}
+		ELSE = {
+			set_temp_variable = { temp_res_tr_gained = 5 }
+			MAR_resources_threshold_change = yes
+		}
 	}
 }
 
 shared_focus = {
 	id = MAR_peoples_love
-	icon = GFX_MAR_Odobrenie_Ot_Naroda
+	icon = GFX_MAR_peoples_love
 	cost = 4
 	available_if_capitulated = no
 	ai_will_do = {
@@ -323,12 +344,13 @@ shared_focus = {
 	completion_reward = {
 		country_event = { id = MAR_initial.28 days = 0 }
 		TNO_improve_poverty_low = yes
+		custom_effect_tooltip = MAR_MGB_improve_covert_actions_tt
 	}
 }
 
 shared_focus = {
-	id = MAR_right_on_the_future
-	icon = GFX_MAR_Pravo_Na_Live
+	id = MAR_right_to_future
+	icon = GFX_MAR_right_to_future
 	cost = 4
 	available_if_capitulated = no
 	ai_will_do = {
@@ -342,12 +364,22 @@ shared_focus = {
 	completion_reward = {
 		country_event = { id = MAR_initial.29 days = 0 } 
 		tno_education_improve = yes
+		IF = {
+			limit = {
+				has_country_flag = MAR_MGB_resources_operation_complete_flag
+			}
+			add_political_power = 30
+		}
+		ELSE = {
+			set_temp_variable = { temp_res_tr_gained = 5 }
+			MAR_resources_threshold_change = yes
+		}
 	}
 }
 
 shared_focus = {
-	id = MAR_in_one_row_with_man
-	icon = GFX_MAR_Row_Wtih_Man
+	id = MAR_alongside_with_men
+	icon = GFX_MAR_alongside_with_men
 	cost = 4
 	available_if_capitulated = no
 	ai_will_do = {
@@ -366,8 +398,8 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = MAR_into_light_future
-	icon = GFX_MAR_Vsvetloe_Budushee
+	id = MAR_economic_miracle
+	icon = GFX_MAR_economic_miracle
 	cost = 3
 	available_if_capitulated = no
 	ai_will_do = {
@@ -375,19 +407,19 @@ shared_focus = {
 	}
 	prerequisite = {
 		focus = MAR_rabfaki
-		focus = MAR_in_one_row_with_man
+		focus = MAR_alongside_with_men
 	}
 	prerequisite = {
 		focus = MAR_the_new_equipment
-		focus = MAR_right_on_the_future
+		focus = MAR_right_to_future
 	}
 	prerequisite = {
-		focus = MAR_we_need_it_more
+		focus = MAR_to_take_what_is_ours
 	}
 	x = 2
 	y = 7
 	completion_reward = {
-		set_temp_variable = { gdp_growth_temp = 2.50 }
+		set_temp_variable = { gdp_growth_temp = 1.50 }
         econ_gdp_growth_change = yes
 		if = {
 			limit = { has_completed_focus = MAR_peoples_love }
@@ -412,8 +444,8 @@ shared_focus = {
 
 ###tsar tree
 shared_focus = {
-	id = MAR_searches_of_best_candidate
-	icon = GFX_MAR_Two_Storoni
+	id = MAR_look_for_the_best_candidate
+	icon = GFX_MAR_look_for_the_best_candidate
 	cost = 4
 	available_if_capitulated = no
 	ai_will_do = {
@@ -423,7 +455,7 @@ shared_focus = {
 		focus = MAR_start_of_the_hunt
 	}
 	prerequisite = {
-		focus = MAR_talk_with_the_magistr
+		focus = MAR_audience_with_the_magister
 	}
 	x = 9
 	y = 3
@@ -439,14 +471,14 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_the_star_general
-	icon = GFX_MAR_Beloozero_Rurika
+	icon = GFX_MAR_the_star_general
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1
 	}
 	prerequisite = {
-		focus = MAR_searches_of_best_candidate
+		focus = MAR_look_for_the_best_candidate
 	}
 	x = 7
 	y = 4
@@ -457,7 +489,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_and_his_blue_blood
-	icon = GFX_MAR_Belooz_blue_blood
+	icon = GFX_MAR_and_his_blue_blood
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
@@ -475,14 +507,14 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_fathers_sins
-	icon = GFX_MAR_Tsarist_Doch
+	icon = GFX_MAR_fathers_sins
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1
 	}
 	prerequisite = {
-		focus = MAR_searches_of_best_candidate
+		focus = MAR_look_for_the_best_candidate
 	}
 	x = 9
 	y = 4
@@ -496,8 +528,8 @@ shared_focus = {
 	}
 }
 shared_focus = {
-	id = MAR_children_can_redempt
-	icon = GFX_MAR_Maria_can_redempt
+	id = MAR_children_can_redeem
+	icon = GFX_MAR_children_can_redeem
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
@@ -510,12 +542,13 @@ shared_focus = {
 	y = 5
 	completion_reward = {
 		country_event = { id = MAR_initial.14 days = 0 }
+		custom_effect_tooltip = MAR_children_can_redeem_decision_tt
 	}
 }
 
 shared_focus = {
-	id = MAR_wiseness_of_kosygin
-	icon = GFX_MAR_Kosygin_tsar
+	id = MAR_wisdom_of_kosygin
+	icon = GFX_MAR_wisdom_of_kosygin
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
@@ -528,7 +561,7 @@ shared_focus = {
 		}
 	}
 	prerequisite = {
-		focus = MAR_searches_of_best_candidate
+		focus = MAR_look_for_the_best_candidate
 	}
 	x = 11
 	y = 4
@@ -553,15 +586,15 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = MAR_and_gossips_around_him
-	icon = GFX_MAR_Weird_Novost
+	id = MAR_and_rumors_about_him
+	icon = GFX_MAR_and_rumors_about_him
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1
 	}
 	prerequisite = {
-		focus = MAR_wiseness_of_kosygin
+		focus = MAR_wisdom_of_kosygin
 	}
 	x = 11
 	y = 5
@@ -571,21 +604,21 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = MAR_call_the_council
-	icon = GFX_MAR_Stranni_Razgovor
+	id = MAR_special_meeting
+	icon = GFX_MAR_special_meeting
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1
 	}
 	prerequisite = {
-		focus = MAR_and_gossips_around_him
+		focus = MAR_and_rumors_about_him
 	}
 	prerequisite = {
 		focus = MAR_and_his_blue_blood
 	}
 	prerequisite = {
-		focus = MAR_children_can_redempt
+		focus = MAR_children_can_redeem
 	}
 	x = 9
 	y = 6
@@ -596,46 +629,49 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = MAR_destroy_okhranka_cells
-	icon = GFX_MAR_Shlezhka_Za
+	id = MAR_break_okhranka_network
+	icon = GFX_MAR_break_okhranka_network
 	cost = 4
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1
 	}
 	prerequisite = {
-		focus = MAR_call_the_council
+		focus = MAR_special_meeting
 	}
 	x = 7
 	y = 7
 	completion_reward = {
 		country_event = { id = MAR_initial.19 days = 2 }
-		set_temp_variable = { temp_connections_gained = -12 }
+		custom_effect_tooltip = MAR_break_okhranka_network_decision_tt
+		set_temp_variable = { temp_connections_gained = -10 }
 		MAR_Okhranka_connections_change = yes
-		set_temp_variable = { temp_agents_gained = -120 }
-		MAR_Okhranka_agents_change = yes
-		add_popularity = {
-			ideology = paternalism_1
-			popularity = -0.06
+		custom_effect_tooltip = MAR_break_okhranka_network_popularity_tt
+		hidden_effect = {
+			add_popularity = {
+				ideology = paternalism_1
+				popularity = -0.06
+			}
 		}
 	}
 }
 
 shared_focus = {
-	id = MAR_defend_the_populace
-	icon = GFX_MAR_Linia_Ot_Ab
+	id = MAR_defend_the_people
+	icon = GFX_MAR_defend_the_people
 	cost = 3
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1
 	}
 	prerequisite = {
-		focus = MAR_call_the_council
+		focus = MAR_special_meeting
 	}
 	x = 11
 	y = 7
 	completion_reward = {
 		country_event = { id = MAR_initial.20 days = 2 }
+		custom_effect_tooltip = MAR_defend_the_people_decision_tt
 		custom_effect_tooltip = MAR_defend_aganist_ariev
 		hidden_effect = { 
 			398 = {
@@ -666,9 +702,11 @@ shared_focus = {
 	}
 }
 
+###Military tree###
+
 shared_focus = {
-	id = MAR_army_condition
-	icon = GFX_MAR_Isskusto_Voini
+	id = MAR_weak_army
+	icon = GFX_MAR_weak_army
 	cost = 4
 	available_if_capitulated = no
 	ai_will_do = {
@@ -678,37 +716,39 @@ shared_focus = {
 		focus = MAR_start_of_the_hunt
 	}
 	prerequisite = {
-		focus = MAR_talk_with_the_magistr
+		focus = MAR_audience_with_the_magister
 	}
 	x = 16
 	y = 3
 	completion_reward = {
 		country_event = { id = MAR_initial.39 days = 2 }
+		hidden_effect = {
+			country_event = {
+				id = MAR_initial.60
+				days = 14
+			}
+		}
 		custom_effect_tooltip = MAR_army_upgrade_tt
 	}
 }
 
 shared_focus = {
 	id = MAR_old_collegues
-	icon = GFX_MAR_Cia_Frients
+	icon = GFX_MAR_old_collegues
 	cost = 4
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1
 	}
 	prerequisite = {
-		focus = MAR_army_condition
+		focus = MAR_weak_army
 	}
 	mutually_exclusive = {
-		focus = MAR_our_motherland_expirience
+		focus = MAR_homeland_expirience
 	}
 	x = 14
 	y = 4
 	completion_reward = {
-		swap_ideas = {
-			remove_idea = MAR_oldfashion_army_1
-			add_idea = MAR_oldfashion_army_2
-		}
 		add_opinion_modifier = {
 			target = USA
 			modifier = MAR_old_svyazi
@@ -719,14 +759,19 @@ shared_focus = {
 				modifier = MAR_old_svyazi
 			}
 		}
+		swap_ideas = {
+			remove_idea = MAR_oldfashion_army_1
+			add_idea = MAR_oldfashion_army_2
+		}
 		country_event = { id = MAR_initial.40 days = 3 }
 		add_political_power = 30
+		custom_effect_tooltip = MAR_MGB_improve_covert_actions_tt
 	}
 }
 
 shared_focus = {
 	id = MAR_fortune_gentlemen
-	icon = GFX_MAR_Genetalii_Udachi
+	icon = GFX_MAR_fortune_gentlemen
 	cost = 4
 	available_if_capitulated = no
 	ai_will_do = {
@@ -739,12 +784,43 @@ shared_focus = {
 	y = 5
 	completion_reward = {
 		country_event = { id = MAR_initial.41 days = 7 }
+		hidden_effect = {
+			division_template = {
+				name = "Dzhentelmeni Udachi"
+				is_locked = yes
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 2 y = 0 }
+					artillery_brigade = {x = 2 y = 1}
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+				}
+			}
+			398 = {
+				create_unit = {
+					division = "division_template = \"Dzhentelmeni Udachi\" start_experience_factor = 0.5 start_equipment_factor = 1.0"
+					owner = MAR
+				}
+				create_unit = {
+					division = "division_template = \"Dzhentelmeni Udachi\" start_experience_factor = 0.5 start_equipment_factor = 1.0"
+					owner = MAR
+				}
+			}
+		}
+		custom_effect_tooltip = MAR_fortune_gentlemen_tt
 	}
 }
 
 shared_focus = {
-	id = MAR_humanitarian_supplies
-	icon = GFX_MAR_Spasibo_Sha
+	id = MAR_humanitarian_aid
+	icon = GFX_MAR_humanitarian_aid
 	cost = 4
 	available_if_capitulated = no
 	ai_will_do = {
@@ -757,12 +833,24 @@ shared_focus = {
 	y = 6
 	completion_reward = {
 		country_event = { id = MAR_initial.42 days = 0 }
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 550
+		}
+		add_equipment_to_stockpile = { 
+			type = support_equipment 
+			amount = 200
+		}
+		add_equipment_to_stockpile = { 
+			type = anti_tank_equipment 
+			amount = 200
+		}
 	}
 }
 
 shared_focus = {
-	id = MAR_russian_spec_ops
-	icon = GFX_MAR_Speznax_Porusski
+	id = MAR_russian_spetsnaz
+	icon = GFX_MAR_russian_spetsnaz
 	cost = 4
 	available_if_capitulated = no
 	ai_will_do = {
@@ -775,27 +863,35 @@ shared_focus = {
 	y = 6
 	completion_reward = {
 		country_event = { id = MAR_initial.43 days = 0 }
-		tno_training_improve = yes
-		set_variable = { tno_training_effectiveness = 39 } 
-		TNO_update_policy_effectiveness = yes
 		add_tech_bonus = {
 			bonus = 0.5
 			uses = 2
 			category = special_forces_tech
 		}
+		TNO_improve_army_professionalism_med = yes
+		IF = {
+			limit = {
+				has_country_flag = MAR_MGB_advisors_operation_success_flag
+			}
+			add_political_power = 25
+		}
+		ELSE = {
+			set_temp_variable = { temp_adv_tr_gained = 5 }
+			MAR_advisors_threshold_change = yes
+		}
 	}
 }
 
 shared_focus = {
-	id = MAR_our_motherland_expirience
-	icon = GFX_MAR_Opit_Rodini
+	id = MAR_homeland_expirience
+	icon = GFX_MAR_homeland_expirience
 	cost = 4
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1
 	}
 	prerequisite = {
-		focus = MAR_army_condition
+		focus = MAR_weak_army
 	}
 	mutually_exclusive = {
 		focus = MAR_old_collegues
@@ -809,52 +905,57 @@ shared_focus = {
 			add_idea = MAR_oldfashion_army_2
 		}
 		add_doctrine_cost_reduction = {
-				name = land_doc_bonus
-				cost_reduction = 0.6
-				uses = 1
-				category = land_doctrine
-			}
+			name = land_doc_bonus
+			cost_reduction = 0.6
+			uses = 1
+			category = land_doctrine
+		}
+		custom_effect_tooltip = MAR_MGB_improve_covert_actions_tt
 	}
 }
 
 shared_focus = {
-	id = MAR_cossacks_brigades
-	icon = GFX_MAR_Cockzaki
+	id = MAR_cossack_brigades
+	icon = GFX_MAR_cossack_brigades
 	cost = 4
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1
 	}
 	prerequisite = {
-		focus = MAR_our_motherland_expirience
+		focus = MAR_homeland_expirience
 	}
 	x = 18
 	y = 5
 	completion_reward = {
 		country_event = { id = MAR_initial.45 days = 0 }
-		add_political_power = 5
-		add_corps_commander_role = {
-			character = MAR_Anatoliy_Pepelyayev
-			traits = { old_guard }
-			skill = 4
-			attack_skill = 4
-			defense_skill = 3
-			planning_skill = 4
-			logistics_skill = 3
+		add_political_power = 25
+		custom_effect_tooltip = MAR_cossack_brigades_tt
+		hidden_effect = {
+			398 = {
+				create_unit = {
+					division = "division_template = \"Motorizovannaya Kazachya Brigada\" start_experience_factor = 0.9 start_equipment_factor = 0.75"
+					owner = MAR
+				}
+				create_unit = {
+					division = "division_template = \"Motorizovannaya Kazachya Brigada\" start_experience_factor = 0.9 start_equipment_factor = 0.75"
+					owner = MAR
+				}
+			}
 		}
 	}
 }
 
 shared_focus = {
 	id = MAR_tsarist_comissars
-	icon = GFX_MAR_Tsar_Comissars
+	icon = GFX_MAR_tsarist_comissars
 	cost = 4
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1
 	}
 	prerequisite = {
-		focus = MAR_cossacks_brigades
+		focus = MAR_cossack_brigades
 	}
 	x = 17
 	y = 6
@@ -863,158 +964,184 @@ shared_focus = {
 		add_ideas = {
 			MAR_komissars_in_army
 		}
+		TNO_improve_army_professionalism_low = yes
 	}
 }
 
 shared_focus = {
 	id = MAR_veterans_of_wrw
-	icon = GFX_MAR_Red_Veterans
+	icon = GFX_MAR_veterans_of_wrw
 	cost = 4
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1
 	}
 	prerequisite = {
-		focus = MAR_cossacks_brigades
+		focus = MAR_cossack_brigades
 	}
 	x = 19
 	y = 6
 	completion_reward = {
 		country_event = { id = MAR_initial.46 days = 0 }
 		army_experience = 5
+		add_doctrine_cost_reduction = {
+			name = land_doc_bonus
+			cost_reduction = 0.6
+			uses = 1
+			category = land_doctrine
+		}
+		IF = {
+			limit = {
+				has_country_flag = MAR_MGB_advisors_operation_success_flag
+			}
+			add_political_power = 25
+		}
+		ELSE = {
+			set_temp_variable = { temp_adv_tr_gained = 5 }
+			MAR_advisors_threshold_change = yes
+		}
 	}
 }
 
 shared_focus = {
-	id = MAR_arest_vyatkatard_instructors
-	icon = GFX_MAR_arrest_vyt_intructors
+	id = MAR_arest_vyatka_instructors
+	icon = GFX_MAR_arest_vyatka_instructors
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1
 	}
 	prerequisite = {
-		focus = MAR_army_condition
+		focus = MAR_weak_army
 	}
 	x = 16
 	y = 5
 	completion_reward = {
-		custom_effect_tooltip = MAR_check_vyatka_vibe_tt
-		if = { 
-			limit = { check_variable = { MAR_Okhranka_power < 25 } }
-			custom_effect_tooltip = MAR_vyt_oper_total_w_tt
-		}
-		if = { 
-			limit = {
-				check_variable = { MAR_Okhranka_power < 75 }
-				NOT = { check_variable = { MAR_Okhranka_power < 25 } }
-			}
-			custom_effect_tooltip = MAR_vyt_oper_small_w_tt
-		}
-		if = { 
-			limit = { check_variable = { MAR_Okhranka_power > 75 } }
-			custom_effect_tooltip = MAR_vyt_oper_fail_tt
-		}
 		hidden_effect = {
-			if = { 
-				limit = { check_variable = { MAR_Okhranka_power < 25 } }
-				country_event = { id = MAR_initial.48 days = 3 }
-			}
-			if = { 
+			IF = {
 				limit = {
-					check_variable = { MAR_Okhranka_power < 75 } 
-					NOT = { check_variable = { MAR_Okhranka_power < 25 } } 
+					check_variable = {
+						MAR.MAR_Okhranka_power < MAR.MAR_MGB_var_advisors_second_threshold
+					}
 				}
-				country_event = { id = MAR_initial.49 days = 4 }
+				country_event = {
+					id = MAR_initial.48
+					days = 0
+				}
+				set_country_flag = MAR_MGB_advisors_operation_success_flag
 			}
-			if = { 
-				limit = { check_variable = { MAR_Okhranka_power > 75 } }
-				country_event = { id = MAR_initial.50 days = 6 }
+			IF = {
+				limit = {
+					NOT = {
+						check_variable = {
+							MAR.MAR_Okhranka_power < MAR.MAR_MGB_var_advisors_second_threshold
+						}
+					}
+					check_variable = {
+						MAR.MAR_Okhranka_power < MAR.MAR_MGB_var_advisors_threshold
+					}
+				}
+				country_event = {
+					id = MAR_initial.49
+					days = 0
+				}
+				set_country_flag = MAR_MGB_advisors_operation_success_flag
+			}
+			IF = {
+				limit = {
+					NOT = {
+						check_variable = {
+							MAR.MAR_Okhranka_power < MAR.MAR_MGB_var_advisors_threshold
+						}
+					}
+				}
+				country_event = {
+					id = MAR_initial.50
+					days = 0
+				}
 			}
 		}
+		set_country_flag = MAR_MGB_advisors_operation_complete_flag
+		custom_effect_tooltip = MAR_MGB_advisors_operation_status_tt
 	}
 }
 shared_focus = {
-	id = MAR_new_model_army
-	icon = GFX_MAR_Novya_Armia
+	id = MAR_new_mladorossian_army
+	icon = GFX_MAR_new_mladorossian_army
 	cost = 3
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1
 	}
 	prerequisite = {
-		focus = MAR_humanitarian_supplies
+		focus = MAR_arest_vyatka_instructors
+	}
+	prerequisite = {
 		focus = MAR_veterans_of_wrw
+		focus = MAR_humanitarian_aid
 	}
 	prerequisite = {
-		focus = MAR_russian_spec_ops
 		focus = MAR_tsarist_comissars
-	}
-	prerequisite = {
-		focus = MAR_arest_vyatkatard_instructors
+		focus = MAR_russian_spetsnaz
 	}
 	x = 16
 	y = 7
 	completion_reward = {
 		country_event = { id = MAR_initial.51 days = 0 }
+		swap_ideas = {
+			add_idea = MAR_renewed_army
+			remove_idea = MAR_oldfashion_army_2
+		}
+		tno_training_improve = yes
+		set_variable = { tno_training_effectiveness = 39 } 
+		TNO_update_policy_effectiveness = yes
 	}	
 }
 
 shared_focus = {
 	id = MAR_clear_sky
-	icon = GFX_MAR_Chistoe_Nebo
+	icon = GFX_MAR_clear_sky
 	cost = 1
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1
 	}
 	prerequisite = {
-		focus = MAR_into_light_future
+		focus = MAR_economic_miracle
 	}
 	prerequisite = {
-		focus = MAR_new_model_army
+		focus = MAR_new_mladorossian_army
 	}
 	prerequisite = {
-		focus = MAR_destroy_okhranka_cells
+		focus = MAR_break_okhranka_network
 	}
 	prerequisite = {
-		focus = MAR_defend_the_populace
+		focus = MAR_defend_the_people
 	}	
 	x = 9
 	y = 8
 	completion_reward = {
-		TNO_improve_admin_efficiency_low = yes
-		if = {
-			limit = { check_variable = { MAR_MGB_vyatka_angry = 2 } }
-			if = {
-				limit = { check_variable = { MAR_Okhranka_power < 15 } }
-				country_event = { id = MAR_initial.52 days = 2 }
+		hidden_effect = {
+			IF = {
+				limit = {
+					check_variable = {
+						MAR.MAR_Okhranka_power < MAR.MAR_MGB_var_liberation_threshold
+					}
+				}
+				country_event = {
+					id = MAR_initial.52
+					days = 0
+				}
 			}
-			else = {
-				country_event = { id = MAR_initial.53 days = 2 }
-			}
-		}
-		if = {
-			limit = { check_variable = { MAR_MGB_vyatka_angry = 1 } }
-			if = {
-				limit = { check_variable = { MAR_Okhranka_power < 35 } }
-				country_event = { id = MAR_initial.52 days = 2 }
-			}
-			else = {
-				country_event = { id = MAR_initial.53 days = 2 }
+			ELSE = {
+				country_event = {
+					id = MAR_initial.53
+					days = 0
+				}
 			}
 		}
-		if = {
-			limit = { check_variable = { MAR_MGB_vyatka_angry = 0 } }
-			if = {
-				limit = { check_variable = { MAR_Okhranka_power < 60 } }
-				country_event = { id = MAR_initial.52 days = 2 }
-			}
-			else = {
-				country_event = { id = MAR_initial.53 days = 2 }
-			}
-		}
-		clr_country_flag = MAR_MGB_available
+		custom_effect_tooltip = MAR_MGB_liberation_operation_status_tt
+		MAR_MGB_clear_flags = yes
 	}
 }
 
@@ -1022,7 +1149,7 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_our_time_has_come
-	icon = GFX_MAR_The_end_no
+	icon = GFX_MAR_our_time_has_come
 	cost = 1
 	available_if_capitulated = no
 	bypass = {
@@ -1038,8 +1165,8 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = MAR_emrace_workers
-	icon = GFX_MAR_voodushivit_rabochih
+	id = MAR_embrace_workers
+	icon = GFX_MAR_embrace_workers
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
@@ -1057,14 +1184,14 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_get_the_factories
-	icon = GFX_MAR_Venesti_zavod
+	icon = GFX_MAR_get_the_factories
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 1
 	}
 	prerequisite = {
-		focus = MAR_emrace_workers
+		focus = MAR_embrace_workers
 	}
 	x = 4
 	y = 2
@@ -1075,7 +1202,7 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_all_for_front
-	icon = GFX_MAR_Help_to_Front
+	icon = GFX_MAR_all_for_front
 	cost = 1
 	available_if_capitulated = no
 	available = {
@@ -1102,11 +1229,11 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_kosygin_plan
-	icon = GFX_MAR_Kosygin_Plan
+	icon = GFX_MAR_kosygin_plan
 	cost = 1
 	available_if_capitulated = no
 	available = {
-		NOT = { has_completed_focus = MAR_tore_everything_apart }
+		NOT = { has_completed_focus = MAR_turn_everything_upside_down }
 	}
 	ai_will_do = {
 		factor = 1
@@ -1129,7 +1256,7 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_secure_party_stability
-	icon = GFX_MAR_Stabilnos_partit
+	icon = GFX_MAR_secure_party_stability
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
@@ -1147,7 +1274,7 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_new_faces_in_party
-	icon = GFX_MAR_Berez_novie_lica
+	icon = GFX_MAR_new_faces_in_party
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
@@ -1165,7 +1292,7 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_endspiel
-	icon = GFX_MAR_peshki
+	icon = GFX_MAR_endspiel
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
@@ -1187,7 +1314,7 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_berezniki_awakens
-	icon = GFX_MAR_Za_Stalina
+	icon = GFX_MAR_berezniki_awakens
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
@@ -1205,7 +1332,7 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_mass_trainings
-	icon = GFX_MAR_mass_trenning
+	icon = GFX_MAR_mass_trainings
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
@@ -1222,8 +1349,8 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = MAR_tore_everything_apart
-	icon = GFX_MAR_Vse_Vverh_Dnom
+	id = MAR_turn_everything_upside_down
+	icon = GFX_MAR_turn_everything_upside_down
 	cost = 1
 	available_if_capitulated = no
 	available = {
@@ -1266,7 +1393,7 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_everyone_for_front
-	icon = GFX_MAR_Vse_Vverh_Dnom
+	icon = GFX_MAR_vse_dly_fronta
 	cost = 1
 	available_if_capitulated = no
 	available = {
@@ -1279,7 +1406,7 @@ shared_focus = {
 		focus = MAR_mass_trainings
 	}
     mutually_exclusive = {
-        focus = MAR_tore_everything_apart
+        focus = MAR_turn_everything_upside_down
     }
 	x = 7
 	y = 3
@@ -1291,7 +1418,7 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_alea_iacta_est
-	icon = GFX_MAR_zhrebi_broshen
+	icon = GFX_MAR_alea_iacta_est
 	cost = 1
 	available_if_capitulated = no
 	ai_will_do = {
@@ -1306,7 +1433,7 @@ shared_focus = {
     }
     prerequisite = {
         focus = MAR_everyone_for_front
-        focus = MAR_tore_everything_apart
+        focus = MAR_turn_everything_upside_down
     }
 	x = 6
 	y = 4

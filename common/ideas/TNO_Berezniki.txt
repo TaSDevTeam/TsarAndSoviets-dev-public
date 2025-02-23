@@ -310,7 +310,7 @@ ideas = {
 			
 			modifier = {
 				political_power_gain = 0.1
-				consumer_goods_factor = 0.05
+				consumer_goods_production_factor = 0.05
 			}
 		}
 	}
@@ -424,7 +424,7 @@ ideas = {
 				always = yes
 			}
 			cancel = { has_country_flag = RUS_cancel_all_ideas }
-			picture = MAR_help_workers
+			picture = generic_armor_expertise
 			
 			removal_cost = -1
 			
@@ -455,7 +455,7 @@ ideas = {
 			
 			modifier = {
 				stability_factor = -0.1
-				consumer_goods_factor = -0.1
+				consumer_goods_use_modifier = -0.1
 			}
 		}
 	}
@@ -657,8 +657,8 @@ ideas = {
 		}
 	}	
 	country = {
-		MAR_naykograd = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAR_naykograd"}
+		MAR_naukograds_idea = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAR_naukograds_idea"}
 			allowed = {
 				always = no
 			}
@@ -679,8 +679,8 @@ ideas = {
 		}
 	}
 	country = {
-		MAR_epoxa_prosvet = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAR_epoxa_prosvet"}
+		MAR_age_of_prosperity_idea = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAR_age_of_prosperity_idea"}
 			allowed = {
 				always = no
 			}
@@ -703,8 +703,8 @@ ideas = {
 		}
 	}
 	country = {
-		MAR_orel_back = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAR_orel_back"}
+		MAR_return_of_the_eagle_idea = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAR_return_of_the_eagle_idea"}
 			allowed = {
 				always = no
 			}
@@ -715,7 +715,7 @@ ideas = {
 				always = yes
 			}
 			cancel = { has_country_flag = RUS_cancel_all_ideas }
-			picture = MAR_orel_back
+			picture = MAR_return_of_the_eagle_idea
 			
 			removal_cost = -1
 			
@@ -854,8 +854,8 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				army_attack_factor = -0.2
-				army_defence_factor = -0.2
+				army_attack_factor = -0.025
+				army_defence_factor = -0.025
 			}
 		}
 	}
@@ -945,7 +945,7 @@ ideas = {
 			traits = {
 				foreign_minister
 				#fascism
-				for_iron_fisted_brute
+				for_ideological_crusader
 			}
 			cancel_if_invalid = no
 			ledger = civilian
@@ -1282,7 +1282,7 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = BRA_nationwide_chaos_med_idea
+			picture = generic_volunteer_army
 			modifier = {
 				war_support_factor = -0.03
 				army_attack_factor = -0.03
@@ -1301,7 +1301,7 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = BRA_nationwide_chaos_medhigh_idea
+			picture = generic_volunteer_army
 			modifier = {
 				war_support_factor = -0.05
 				army_attack_factor = -0.05
@@ -1321,7 +1321,7 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = BRA_nationwide_chaos_high_idea
+			picture = generic_volunteer_army
 			modifier = {
 				stability_factor = -0.1
 				war_support_factor = -0.1
@@ -1342,7 +1342,7 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = BRA_nationwide_chaos_high_idea
+			picture = generic_fleeing_soldier
 			modifier = {
 				stability_factor = -0.15
 				war_support_factor = -0.15
@@ -1363,7 +1363,7 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = BRA_nationwide_chaos_max_idea
+			picture = generic_fleeing_soldier
 			modifier = {
 				stability_factor = -0.25
 				war_support_factor = -0.25
@@ -1384,7 +1384,7 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = BRA_nationwide_chaos_med_idea
+			picture = generic_volunteer_army
 			modifier = {
 				war_support_factor = 0.03
 				army_attack_factor = 0.03
@@ -1403,7 +1403,7 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = BRA_nationwide_chaos_lowmed_idea
+			picture = generic_volunteer_army
 			modifier = {
 				war_support_factor = 0.05
 				army_attack_factor = 0.05
@@ -1423,7 +1423,7 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = BRA_nationwide_chaos_lowmed_idea
+			picture = generic_volunteer_army
 			modifier = {
 				stability_factor = 0.1
 				war_support_factor = 0.1
@@ -1444,7 +1444,7 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = BRA_nationwide_chaos_lowmed_idea
+			picture = generic_soldiers_marching
 			modifier = {
 				stability_factor = 0.15
 				war_support_factor = 0.15
@@ -1465,7 +1465,7 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = BRA_nationwide_chaos_low_idea
+			picture = generic_soldiers_marching
 			modifier = {
 				stability_factor = 0.2
 				war_support_factor = 0.2
@@ -1486,7 +1486,7 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = BRA_nationwide_chaos_med_idea
+			picture = generic_volunteer_army
 			modifier = {
 			
 			}
@@ -1524,24 +1524,6 @@ ideas = {
 			modifier = {
 				army_attack_factor = 0.05
 				army_defence_factor = 0.05
-			}
-		}
-	}
-	country = {
-		TaS_2WRW_last_stand = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea TaS_2WRW_last_stand"}
-			allowed = {
-				always = no
-			}
-			allowed_civil_war = {
-					always = yes
-			}
-			removal_cost = -1
-			picture = BRT_bezen_perrot_integrated
-			modifier = {
-				army_attack_factor = 0.25
-				army_defence_factor = 0.25
-				army_org_factor = -0.2
 			}
 		}
 	}
@@ -1605,6 +1587,26 @@ ideas = {
 		}
 	}
 	country = {
+		MAR_economic_recovery = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAR_economic_recovery"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = generic_economic_plan
+			modifier = {
+				gdp_growth_modifier = 7
+				production_factory_efficiency_gain_factor = 0.1
+				production_factory_max_efficiency_factor = 0.15
+				production_speed_buildings_factor = 0.15
+				misc_income_modifier = 0.5
+			}
+		}
+	}
+	country = {
 		TaS_RUS_shattered_ambitions = {
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea RUS_shattered_ambitions"}
 			allowed = {
@@ -1638,7 +1640,7 @@ ideas = {
 				always = yes
 			}
 			cancel = { has_country_flag = RUS_cancel_all_ideas }
-			picture = idea_MAR_Gil_Broken_Economy
+			picture = generic_social_rights_2
 			
 			removal_cost = -1
 			
@@ -1710,7 +1712,7 @@ ideas = {
 				always = yes
 			}
 			cancel = { has_country_flag = RUS_cancel_all_ideas }
-			picture = MAR_dohlaya_armia
+			picture = generic_international_diplomacy
 			
 			removal_cost = -1
 			
@@ -1733,7 +1735,7 @@ ideas = {
 				always = yes
 			}
 			cancel = { has_country_flag = RUS_cancel_all_ideas }
-			picture = MAR_dohlaya_armia
+			picture = KAZ_orda_without_alash
 			
 			removal_cost = -1
 			
@@ -1763,6 +1765,93 @@ ideas = {
 			cancel = { has_country_flag = RUS_cancel_all_ideas }
 			removal_cost = -1
 			picture = MAR_ogas
+		}
+	}
+	country = {
+		MAR_VYT_Network_bozo = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: MAR_VYT_Network_bozo"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			available = {
+				always = yes
+			}
+			cancel = {
+				OR = {
+					has_country_flag = RUS_cancel_all_ideas
+					MAR = { NOT = { has_country_flag = MAR_MGB_available } }
+					NOT = { country_exists = MAR }
+				}
+			}
+			picture = MAR_dohlaya_armia #TODO
+			
+			removal_cost = -1
+			
+			modifier = {
+				misc_costs_modifier = 0.12
+				command_power_gain_mult = -0.15
+				political_power_factor = -0.15
+			}
+		}
+	}
+	country = {
+		MAR_VYT_counterspies = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: MAR_VYT_counterspies"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			available = {
+				always = yes
+			}
+			cancel = {
+				OR = {
+					has_country_flag = RUS_cancel_all_ideas
+					NOT = { country_exists = MAR }
+				}
+			}
+			picture = MAR_dohlaya_armia #TODO
+			
+			removal_cost = -1
+			
+			targeted_modifier = {
+				tag = MAR
+				attack_bonus_against = -0.1
+				defense_bonus_against = -0.1
+			}
+		}
+	}
+	
+	hidden_ideas = {
+		war_cheat = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: war_cheat"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			available = {
+				always = yes
+			}
+			cancel = {
+				has_country_flag = RUS_cancel_all_ideas
+			}
+			picture = BRL_ZNE_russian_army
+			
+			removal_cost = -1
+			
+			modifier = {
+				army_org_factor = 0.01
+				army_attack_factor = 0.01
+				army_defence_factor = 0.01
+				army_speed_factor = 0.01
+			}
 		}
 	}
 }	

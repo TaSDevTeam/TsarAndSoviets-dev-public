@@ -4,12 +4,10 @@ autonomy_state = {
 	is_puppet = yes
 
 	min_freedom_level = 0.0
+	manpower_influence = 0
 
 	rule = {
 		desc = "RULE_DESC_IS_A_SUBJECT"
-
-		can_not_declare_war = no
-		can_decline_call_to_war = no
 	}
 
 	modifier = {
@@ -34,8 +32,12 @@ autonomy_state = {
 	}
 
 	allowed = {
-		is_subject_of = GER
-		is_subject_of = GCZ
+		OR = {
+			is_subject_of = GER
+			is_subject_of = FZL
+			is_subject_of = GCZ
+			is_subject_of = RUS
+		}
 	}
 
 	can_take_level = {
@@ -46,3 +48,4 @@ autonomy_state = {
 		always = no
 	}
 }
+

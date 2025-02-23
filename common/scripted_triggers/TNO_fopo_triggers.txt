@@ -20,6 +20,7 @@ TNO_fopo_MADCW_War_Stage_3 = {
 TNO_fopo_MAD_controls_state = {
 	custom_trigger_tooltip = {
 		tooltip = MADCW_FOPO_MAD_controls_state_tt
+		NOT = { check_variable = { Madagascar_selected_city = 0 } } # This prevents the game from throwing errors in the log due to the check below -Lam
 		var:Madagascar_selected_city = {
 			is_controlled_by = MAD
 		}
@@ -29,6 +30,7 @@ TNO_fopo_MAD_controls_state = {
 TNO_fopo_MDM_controls_state = {
 	custom_trigger_tooltip = {
 		tooltip = MADCW_FOPO_MDM_controls_state_tt
+		NOT = { check_variable = { Madagascar_selected_city = 0 } } # This prevents the game from throwing errors in the log due to the check below -Lam
 		var:Madagascar_selected_city = {
 			is_controlled_by = MDM
 		}
@@ -38,6 +40,7 @@ TNO_fopo_MDM_controls_state = {
 TNO_fopo_MDG_controls_state = {
 	custom_trigger_tooltip = {
 		tooltip = MADCW_FOPO_MDG_controls_state_tt
+		NOT = { check_variable = { Madagascar_selected_city = 0 } } # This prevents the game from throwing errors in the log due to the check below -Lam
 		var:Madagascar_selected_city = {
 			is_controlled_by = MDG
 		}
@@ -349,11 +352,9 @@ TNO_fopo_should_display_homefront = {
 }
 
 TNO_fopo_show_info_tab = {
-	OR = {
-		AND = {
-			tag = USA
-			check_variable = { selected_conflict_id = token:GC_WAC }
-		}
+	AND = {
+		tag = USA
+		check_variable = { selected_conflict_id = token:GC_WAC }
 	}
 }
 
@@ -718,6 +719,36 @@ TNO_fopo_channel_crisis_selected = {
 	}
 }
 
+TNO_fopo_indian_civil_war_selected = {
+	OR = {
+		check_variable = { selected_conflict_id = token:GC_IndianCW }
+		AND = {
+			is_in_array = { TNO_active_conflicts = token:GC_IndianCW }
+			is_ai = yes
+		}
+	}
+}
+
+TNO_fopo_operation_bin_qasim_selected = {
+	OR = {
+		check_variable = { selected_conflict_id = token:GC_OperationBQ }
+		AND = {
+			is_in_array = { TNO_active_conflicts = token:GC_OperationBQ }
+			is_ai = yes
+		}
+	}
+}
+
+TNO_fopo_subcontinental_crisis_selected = {
+	OR = {
+		check_variable = { selected_conflict_id = token:GC_SubcontinentalCrisis }
+		AND = {
+			is_in_array = { TNO_active_conflicts = token:GC_SubcontinentalCrisis }
+			is_ai = yes
+		}
+	}
+}
+
 TNO_fopo_saw_withdrawal_selected_bormann = {
 	TNO_fopo_saw_withdrawal_selected = yes
 	has_global_flag = german_civil_war_bormannvic
@@ -725,6 +756,24 @@ TNO_fopo_saw_withdrawal_selected_bormann = {
 TNO_fopo_saw_withdrawal_selected_speer = {
 	TNO_fopo_saw_withdrawal_selected = yes
 	has_global_flag = german_civil_war_speervic
+}
+
+TNO_FrenchReclamation_ScriptedTrigger_Focus_X_MoreThanOrEquals_Y = {
+	custom_trigger_tooltip = {
+		tooltip = TNO_FrenchReclamation_ScriptedTrigger_Focus_X_MoreThanOrEquals_Y_tt
+		check_variable = {
+			var = FFR.FrenchReclamation_Focus^X
+			value = Y
+			compare = greater_than_or_equals
+		}
+	}
+}
+
+TNO_FrenchReclamation_ScriptedTrigger_Focus_X_Less_Y = {
+	custom_trigger_tooltip = {
+		tooltip = TNO_FrenchReclamation_ScriptedTrigger_Focus_X_Less_Y_Tt
+		check_variable = { FFR.FrenchReclamation_Focus^X < Y }
+	}
 }
 
 ## Conflict ##
@@ -756,12 +805,17 @@ TNO_France_Burgundy_Iberia_has_conflict = {
 TNO_Ostland_Moscow_has_conflict = {
 	OR = {
 		has_global_flag = Ostland_war
-		has_global_flag = MSK_Dissolution_Ongoing
 		CAU = { has_war = yes }
 		UKR = { has_war = yes }
 		UKS = { has_war = yes }
 		FUK = { has_war = yes }
 		BOV = { has_war = yes }
+		
+		ORL = { has_war = yes }
+		VVV = { has_war = yes }
+		SHI = { has_war = yes }
+		POV = { has_war = yes }
+		MCW = { has_war = yes }
 	}
 }
 
@@ -790,6 +844,8 @@ TNO_West_Russia_has_conflict = {
 		SVR = { has_war = yes }
 		TYM = { has_war = yes }
 		OMS = { has_war = yes }
+		
+		MAR = { has_war = yes }
 	}
 }
 
@@ -803,6 +859,14 @@ TNO_Central_Asia_has_conflict = {
 		TAJ = { has_war = yes }
 		KYR = { has_war = yes }
 		UTL = { has_war = yes }
+		
+		MKZ = { has_war = yes }
+		MTR = { has_war = yes }
+		AFG = { has_war = yes }
+		
+		NAL = { has_war = yes }
+		MKZ = { has_war = yes }
+		MUJ = { has_war = yes }
 	}
 }
 
@@ -934,7 +998,8 @@ TNO_China_has_conflict = {
 		YUN = { has_war = yes }
 		CHI = { has_war_with = JAP }
 		MEN = { has_war = yes }
-		MAN = { has_war = yes }
+		
+		PJP = { has_war = yes }
 		MJP = { has_war = yes }
 		PFF = { has_war = yes }
 		HAN = { has_war = yes }
@@ -1442,7 +1507,7 @@ TNO_mandates_can_support_MZB = {
 }
 
 TNO_mandates_can_support_USC = {
-	USC = { has_country_leader = { character = MZB_USA_William_Westmoreland ruling_only = yes } }
+	USC = { has_country_leader = { character = USC_USA_William_Westmoreland ruling_only = yes } }
 	has_global_flag = CAR_FORMED
 }
 
@@ -1624,6 +1689,16 @@ CC_very_severe_concession_active = {
 	}
 }
 
+SC_mild_concession_active = {
+	#FIXME
+}
+SC_mild_concession_active = {
+	#FIXME
+}
+SC_moderate_concession_active = {
+	#FIXME
+}
+
 ###TAS STUFF
 TNO_fopo_far_eastern_revolt_selected = {
 	OR = {
@@ -1653,4 +1728,14 @@ TNO_fopo_uar_influence_battle_selected = {
 			is_ai = yes
 		}
 	}
-}	
+}
+
+TNO_fopo_afghanistan_civil_war_selected = {
+	OR = {
+		check_variable = { selected_conflict_id = token:GC_AfghanistanCivilWar }
+		AND = {
+			is_in_array = { TNO_active_conflicts = token:GC_AfghanistanCivilWar }
+			is_ai = yes
+		}
+	}
+}		

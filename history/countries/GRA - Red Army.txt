@@ -34,21 +34,6 @@ set_popularities = {
 	national_socialism = 0
 	
 }
-set_party_name = { 
-	ideology = communist
-	long_name = SSN_Revolt_communist_party
-	name = SSN_Revolt_communist_party
-}
-set_party_name = { 
-	ideology = socialist
-	long_name = SSN_Revolt_communist_party
-	name = SSN_Revolt_communist_party
-}
-set_party_name = { 
-	ideology = progressivism
-	long_name = SSN_Revolt_communist_party
-	name = SSN_Revolt_communist_party
-}
 # Leaders
 recruit_character = GRA_Andreas_Baader
 
@@ -77,7 +62,7 @@ add_ideas = {
 	tno_education_public_education
 	tno_penal_system_politicized_penal_system
 	tno_gender_rights_women_in_the_workplace
-	tno_security_regulated_police
+	tno_security_crime_prevention
 	tno_regulations_token_regulations
 
 	##ECONOMIC LAWS##
@@ -108,3 +93,5 @@ add_ideas = {
 	tno_academic_base_primary_schooling
 	tno_admin_efficiency_illegitimate_administration
 }
+
+TNO_startup_nation = yes

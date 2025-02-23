@@ -11,7 +11,7 @@ characters = {
 		}
 		country_leader = {
 			desc = "POLITICS_HIROMICHI_YAHARA_DESC"
-			ideology = ultranationalism_ultramilitarism_subtype
+			ideology = ultranationalism_stratocracy_subtype
 			expire = "1999.1.1.1"
 			id = -1
 		}
@@ -75,7 +75,7 @@ characters = {
 		}
 		country_leader = {
 			desc = "POLITICS_KATAKURA_TADASHI_DESC"
-			ideology = national_socialism_stratocratic_corporatism_subtype
+			ideology = ultranationalism_stratocratic_corporatism_subtype
 			expire = "1999.1.1.1"
 			id = -1
 		}
@@ -86,7 +86,6 @@ characters = {
 			defense_skill = 2
 			planning_skill = 3
 			logistics_skill = 3
-			legacy_id = 2202
 		}
 	}
 	HAN_Pujie = {
@@ -98,7 +97,7 @@ characters = {
 		}
 		country_leader = {
 			desc = "POLITICS_PUJIE_DESC"
-			ideology = despotism_aristocratic_conservatism_subtype
+			ideology = despotism_absolute_monarchy_subtype 
 			expire = "1999.1.1.1"
 			id = -1
 		}
@@ -129,7 +128,7 @@ characters = {
 		}
 		country_leader = {
 			desc = "POLITICS_KIM_IL_SUNG_DESC"
-			ideology = communist_marxism_leninism_subtype
+			ideology = communist_stratocratic_communism_subtype
 			expire = "1999.1.1.1"
 			id = -1
 		}
@@ -140,7 +139,6 @@ characters = {
 			defense_skill = 1
 			planning_skill = 1
 			logistics_skill = 3
-			legacy_id = 2202
 		}
 	}	
 }

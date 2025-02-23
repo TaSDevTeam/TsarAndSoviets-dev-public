@@ -20,32 +20,18 @@ set_politics = {
 	election_frequency = 48
 }
 set_popularities = {
-	communist = 0
-	ultranationalism = 0
+	communist = 11
+	ultranationalism = 12
 	socialist = 0
-	progressivism = 0
+	progressivism = 9
 	liberalism = 0
 	conservatism = 0
 	paternalism = 33
-	despotism = 7
+	despotism = 9
 	fascism = 0
-	national_socialism = 60
+	national_socialism = 26
 }
-set_party_name = { 
-	ideology = despotism 
-	long_name = Post_WRW2_Russian_Army_party
-	name = Post_WRW2_Russian_Army_party
-}
-set_party_name = { 
-	ideology = national_socialism 
-	long_name = Post_WRW2_Werewolf_party
-	name = Post_WRW2_Werewolf_party
-}
-set_party_name = { 
-	ideology = communist 
-	long_name = Post_WRW2_KPG_party
-	name = Post_WRW2_KPG_party
-}
+
 # Leaders
 recruit_character = GAU_Otto_Von_Habsburg
 recruit_character = GAU_Bruno_Krajskiy		
@@ -60,7 +46,7 @@ add_ideas = {
 	
 	### Economic Laws ###
 	tno_trade_laws_limited_exports
-	tno_income_taxation_elite_tax_exemptions
+	tno_income_taxation_high_income_weighted
 	tno_minimum_wage_no_minimum_wage
 	tno_max_workhours_unlimited_work_day
 	tno_pensions_no_pensions
@@ -71,7 +57,7 @@ add_ideas = {
 	tno_education_public_education
 	tno_penal_system_politicized_penal_system
 	tno_gender_rights_traditional_roles
-	tno_security_oppressive_police
+	tno_security_crime_prevention
 	tno_regulations_token_regulations
 	
 	### Political Laws ###
@@ -110,3 +96,5 @@ add_ideas = {
 	tno_academic_base_primary_schooling
 	tno_admin_efficiency_functional_administrative_systems
 }
+
+TNO_startup_nation = yes

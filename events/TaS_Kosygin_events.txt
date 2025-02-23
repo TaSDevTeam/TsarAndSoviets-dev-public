@@ -2,7 +2,7 @@ add_namespace = MAR_Kosygin
 add_namespace = MAR_Kosygin_Prestol
 add_namespace = MAR_Kosygin_OGAS
 add_namespace = MAR_Kosygin_UAR
-country_event = {#Dolzhnik
+country_event = {#Dolzhnik 
 	id = MAR_Kosygin.1
 	title = MAR_Kosygin.1.t
 	desc = MAR_Kosygin.1.d
@@ -280,6 +280,7 @@ country_event = {#Aftermaths
 					}
 				}
 			}
+			add_popularity = { ideology = despotism_1 popularity = -1 }
 			set_country_flag = MAR_prestol_focus_tree
 			mark_focus_tree_layout_dirty = yes
 		}
@@ -478,6 +479,12 @@ country_event = {#mfa
 		name = MAR_Kosygin.28.a
 		ai_chance = { factor = 1 }	
 		hidden_effect = {
+			if = {
+				limit = { has_country_flag = MAR_RFI_alliance }
+				RFI = {
+					econ_join_sphere_MAR = yes
+				}
+			}
 		    MAR = {
 				econ_join_sphere_MAR = yes
 			}
@@ -573,10 +580,6 @@ country_event = {#india trip
 	option = {
 		name = MAR_Kosygin.34.a
 		ai_chance = { factor = 1 }	
-		reverse_add_opinion_modifier = {
-			target = IND
-			modifier = RUS_recognition
-		}
 		set_temp_variable = { gdp_growth_temp = 0.2 }
 		econ_gdp_growth_change = yes
 		IND = {
@@ -752,10 +755,7 @@ country_event = {#thaw
 	option = {
 		name = MAR_Kosygin.45.a
 		ai_chance = { factor = 1 }	
-		add_stability = -0.03
-		#remove_ideas = { }
-		tno_security_worsen = yes
-		TNO_improve_security_policy_effectiveness_monthly_low = yes
+		add_stability = -0.03	
 	}
 }
 
@@ -836,11 +836,11 @@ country_event = {#nuke event numbero tres
 	option = {
 		name = MAR_Kosygin.51.a
 		ai_chance = { factor = 1 }	
-		set_country_flag = mar_has_nukes
-		set_variable = { nuclear_stockpile = 4 }
-		set_variable = { nuclear_global_coverage = 0.35 }
-		add_to_variable = { nuclear_stockpile_change = 7 }
-		calculate_strike_capability = yes
+		#set_country_flag = mar_has_nukes
+		#set_variable = { nuclear_stockpile = 4 }
+		#set_variable = { nuclear_global_coverage = 0.35 }
+		#add_to_variable = { nuclear_stockpile_change = 7 }
+		#calculate_strike_capability = yes
 	}
 }
 
@@ -909,6 +909,46 @@ country_event = {#akmola celebration
 		name = MAR_Kosygin.56.a
 		ai_chance = { factor = 1 }	
 		add_ideas = MAR_Kosygin_kaz_legions
+		if = {
+			limit = {
+				MKZ = {
+					exists = yes
+					has_government = despotism
+				}
+			}
+			custom_effect_tooltip = KAZ_mil_annexation_tt
+			hidden_effect = {
+				MKZ = {
+					every_owned_state = {
+						remove_core_of = MKZ
+						remove_core_of = KAZ
+						remove_core_of = KZR
+					}
+				}
+				annex_country = {
+					target = MKZ
+					transfer_troops = yes
+				}
+				RWS = {
+					add_state_core = 407
+					add_state_core = 406
+					add_state_core = 402
+					add_state_core = 583
+					add_state_core = 587
+					add_state_core = 404
+					add_state_core = 1807
+					add_state_core = 590
+					add_state_core = 1808
+					add_state_core = 1802
+					add_state_core = 1803
+					add_state_core = 1804
+					add_state_core = 1805
+					add_state_core = 1806
+					add_state_core = 589
+					add_state_core = 588
+				}
+			}
+		}
 	}
 }
 
@@ -922,12 +962,7 @@ country_event = {#future, forward!
 	option = {
 		name = MAR_Kosygin.57.a
 		ai_chance = { factor = 1 }	
-		MAR_advisor_Kosygin = {
-			set_portraits = {
-				civilian = { large = "gfx/leaders/MAR/Portrait_Berezniki_Kosygind_70s.dds" }
-			}
-		}
-		#load_focus_tree = { tree = MAR_Kosygin_post_unification keep_completed = no }
+		load_focus_tree = { tree = MAR_Kosygin_post_unification keep_completed = no }
 	}
 }
 
@@ -1486,7 +1521,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #Alexei, tsar of all russias
 	id = MAR_Kosygin.92
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.92" }
 	title = MAR_Kosygin.92.t
@@ -1503,6 +1538,87 @@ country_event = { #
 	}
 }
 
+country_event = { #Training
+	id = MAR_Kosygin.93
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.93" }
+	title = MAR_Kosygin.93.t
+	desc = MAR_Kosygin.93.d
+	picture = GFX_event_MAR_Kosygin_93
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin.93.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+country_event = { #Building the F-E
+	id = MAR_Kosygin.94
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.94" }
+	title = MAR_Kosygin.94.t
+	desc = MAR_Kosygin.94.d
+	picture = GFX_event_MAR_Kosygin_94
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin.94.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+country_event = { #On the beaches of California
+	id = MAR_Kosygin.95
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.95" }
+	title = MAR_Kosygin.95.t
+	desc = MAR_Kosygin.95.d
+	picture = GFX_event_MAR_Kosygin_95
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin.95.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+country_event = { #In the mounts of Kanto
+	id = MAR_Kosygin.96
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.96" }
+	title = MAR_Kosygin.96.t
+	desc = MAR_Kosygin.96.d
+	picture = GFX_event_MAR_Kosygin_96
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin.96.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+country_event = { #Tsars speech
+	id = MAR_Kosygin.97
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.97" }
+	title = MAR_Kosygin.97.t
+	desc = MAR_Kosygin.97.d
+	picture = GFX_event_MAR_Kosygin_97
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_Kosygin.97.a
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = RUS_territorial_reclamation_available_tt
+		set_country_flag = RUS_postreunification_tree_completed
+	}
+}
 country_event = {#valley of peace
 	id = MAR_Kosygin.100
 	title = MAR_Kosygin.100.t
@@ -1936,6 +2052,7 @@ country_event = { #400 event 2
 	
 	option = { #
 		name = MAR_Kosygin_Prestol.14.a
+		set_country_flag = MAR_prestol_tabby_ded
 		ai_chance = { factor = 1 }
 		add_manpower = -1
 		country_event = { id = MAR_Kosygin_Prestol.15 days = 3 }
@@ -1960,16 +2077,47 @@ country_event = { #success
 		remove_ideas = MAR_prestol_dynmod_dummy
 		clr_country_flag = MAR_prestol_active
 		set_country_flag = MAR_order_Kosygin
-		add_popularity = {
-			ideology = national_socialism
-			popularity = -0.25
-		}
+		hidden_effect = {
+			add_popularity = {
+				ideology = ultranationalism_2
+				popularity = -1
+			}
+			add_popularity = {
+				ideology = despotism_2
+				popularity = -1
+			}
+			add_popularity = {
+				ideology = ultranationalism_1
+				popularity = -1
+			}
+			add_popularity = {
+				ideology = communist_1
+				popularity = -1
+			}
+			add_popularity = {
+				ideology = national_socialism
+				popularity = -1
+			}
+			add_popularity = {
+				ideology = national_socialism_1
+				popularity = -1
+			}
+			add_popularity = {
+				ideology = national_socialism_2
+				popularity = -1
+			}
+		} 
 	}
 }
 
 country_event = { #fail 1
 	id = MAR_Kosygin_Prestol.16
-	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin_Prestol.16" }
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin_Prestol.16"
+		hidden_effect = {
+			scoped_play_song = "clock_over"
+		}
+	}
 	title = MAR_Kosygin_Prestol.16.t
 	desc = MAR_Kosygin_Prestol.16.d
 	picture = GFX_event_MAR_Kosygin_Prestol_16
@@ -2325,7 +2473,7 @@ country_event = { #
 }
 
 country_event = { #
-	id = MAR_Kosygin_OGAS.2
+	id = MAR_Kosygin_OGAS.2 
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin_OGAS.2" }
 	title = MAR_Kosygin_OGAS.2.t
 	desc = MAR_Kosygin_OGAS.2.d
@@ -2499,7 +2647,7 @@ country_event = { #Rus win
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin_UAR.2" }
 	title = MAR_Kosygin_UAR.2.t
 	desc = MAR_Kosygin_UAR.2.d
-	#picture = 
+	picture = GFX_event_MAR_Kosygin_UAR_2
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -2513,6 +2661,13 @@ country_event = { #Rus win
 			set_temp_variable = { gdp_growth_temp = 0.15 }
 			econ_gdp_growth_change = yes
 			TaS_fopo_remove_uar_influence_battle_tab = yes
+			if = {
+				limit = { RUS = { is_faction_leader = yes } }
+				add_ideas = RUSAlliance_Observer
+			}
+			else = {
+				set_country_flag = UAR_join_rus_when_created
+			}
 		}
 		MAR = {
 			set_temp_variable = { gdp_growth_temp = 0.45 }
@@ -2540,10 +2695,10 @@ country_event = { #Rus win
 			}
 			UAR = {
 				set_politics = {
-					ruling_party = communist
+					ruling_party = socialist
 				}
 				add_popularity = {
-					ideology = communist
+					ideology = socialist
 					popularity = 0.45
 				}
 				retire_country_leader = yes
@@ -2551,7 +2706,7 @@ country_event = { #Rus win
 					character = UAR_Salah_Jadid
 					country_leader = {
 						desc = ""
-						ideology = communist_revolutionary_baathism_subtype 
+						ideology = socialist_baathism_subtype 
 						expire = "1999.1.1"
 						traits = { }
 					}
@@ -2599,7 +2754,7 @@ country_event = { #Ger win
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin_UAR.3" }
 	title = MAR_Kosygin_UAR.3.t
 	desc = MAR_Kosygin_UAR.3.d
-	#picture = 
+	picture = GFX_event_MAR_Kosygin_UAR_3
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -2639,10 +2794,10 @@ country_event = { #Ger win
 			}
 			UAR = {
 				set_politics = {
-					ruling_party = socialist
+					ruling_party = fascism
 				}
 				add_popularity = {
-					ideology = socialist
+					ideology = fascism
 					popularity = 0.45
 				}
 				retire_country_leader = yes
@@ -2650,7 +2805,7 @@ country_event = { #Ger win
 					character = UAR_Ahmed_Hassan_al_Bakr
 					country_leader = {
 						desc = ""
-						ideology = socialist_baathism_subtype 
+						ideology = fascism_baathism_subtype 
 						expire = "1999.1.1"
 						traits = { }
 					}
@@ -2687,7 +2842,7 @@ country_event = { #no win
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin_UAR.4" }
 	title = MAR_Kosygin_UAR.4.t
 	desc = MAR_Kosygin_UAR.4.d
-	#picture = 
+	picture = GFX_event_MAR_Kosygin_UAR_4
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -2736,7 +2891,7 @@ country_event = { #no win
 					character = UAR_Hafez_al_Assad
 					country_leader = {
 						desc = ""
-						ideology = despotism_neo_baathism_subtype 
+						ideology = despotism_baathism_subtype 
 						expire = "1999.1.1"
 						traits = { }
 					}

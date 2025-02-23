@@ -1,7 +1,7 @@
 MAR_experiments_modifier = {
 	icon = GFX_dynamic_modifier_MAR_Experimental_KB
 	enable = {
-		tag = MAR
+		original_tag = MAR
 	}
 	
 	army_attack_factor = MAR_exp_infantry_attack
@@ -17,7 +17,7 @@ MAR_experiments_modifier = {
 MAR_dobrovoltsy_modifier = {
 	icon = GFX_dynamic_modifier_MAR_Dobrovoltsy
 	enable = {
-		tag = MAR
+		original_tag = MAR
 	}
 	
 	army_attack_factor = MAR_dobr_infantry_attack
@@ -30,7 +30,7 @@ MAR_dobrovoltsy_modifier = {
 MAR_military_order_modifier = {
 	icon = GFX_dynamic_modifier_MAR_Order_of_Saint_George
 	enable = {
-		tag = MAR
+		original_tag = MAR
 	}
 	
 	army_org_factor = MAR_ord_army_org_factor
@@ -49,7 +49,7 @@ MAR_military_order_modifier = {
 MAR_civilian_order_modifier = {
 	icon = GFX_dynamic_modifier_MAR_Order_of_Saint_George
 	enable = {
-		tag = MAR
+		original_tag = MAR
 	}
 	
 	monthly_population = MAR_ord_monthly_population
@@ -133,4 +133,23 @@ TaS_WRW2_exhausion_modifier_RUS = {
 	production_speed_buildings_factor = WRW2_exhausion_production_speed_buildings_factor
 	taxable_population_modifier = WRW2_exhausion_taxable_population_modifier
 	recruitable_population_factor = WRW2_exhausion_recruitable_population_factor
-}	
+}
+
+MAR_MGB_double_agents_modifier = {
+	enable = {
+		original_tag = MAR
+	}
+	
+	political_power_factor = MAR_MGB_var_double_agents_pp
+}
+
+TaS_scorched_earth = {
+	icon = GFX_modifiers_OST_scorched_earth
+	enable = { always = yes }
+	attacker_modifier = yes
+
+	air_cas_present_factor = -0.15
+	army_attack_factor = -0.25
+	army_attack_speed_factor = -0.25
+	army_org_factor = -0.15
+}

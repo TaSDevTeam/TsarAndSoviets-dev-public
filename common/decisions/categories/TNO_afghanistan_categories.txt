@@ -9,3 +9,13 @@ AFG_russian_invasion = {
 		}
 	}
 }
+
+TUR_russian_invasion = {
+	picture = GFX_decision_ENG_decision_rebellion
+	allowed = {
+		tag = TUR
+	}
+	visible = {
+		has_war_with = RUS
+	}
+}

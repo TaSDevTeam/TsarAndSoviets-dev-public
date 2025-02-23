@@ -33,26 +33,6 @@ set_popularities = {
 	national_socialism = 0
 	
 }
-set_party_name = { 
-	ideology = despotism 
-	long_name = Post_WRW2_Russian_Army_party
-	name = Post_WRW2_Russian_Army_party
-}
-set_party_name = { 
-	ideology = national_socialism 
-	long_name = Post_WRW2_Werewolf_party
-	name = Post_WRW2_Werewolf_party
-}
-set_party_name = { 
-	ideology = communist 
-	long_name = Post_WRW2_KPG_party
-	name = Post_WRW2_KPG_party
-}
-set_party_name = { 
-	ideology = paternalism 
-	long_name = GSG_paternalism_party
-	name = GSG_paternalism_party
-}
 # Leaders
 recruit_character = GSG_Rudi_Dutschke
 
@@ -85,7 +65,7 @@ add_ideas = {
 	tno_education_public_education
 	tno_penal_system_incarceration
 	tno_gender_rights_women_in_the_workplace
-	tno_security_regulated_police
+	tno_security_crime_prevention
 	tno_regulations_token_regulations
 	#misc#
 	tno_refugees_open
@@ -107,3 +87,5 @@ add_ideas = {
 	tno_academic_base_primary_schooling
 	tno_admin_efficiency_functional_administrative_systems
 }
+
+TNO_startup_nation = yes

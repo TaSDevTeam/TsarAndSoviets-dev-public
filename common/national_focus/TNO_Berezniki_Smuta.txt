@@ -1,6 +1,6 @@
 shared_focus = {
 	id = MAR_return_to_antipin
-	icon = GFX_MAR_For_your_faith
+	icon = GFX_MAR_return_to_antipin
 	cost = 1
 	available_if_capitulated = no
 	ai_will_do = {
@@ -14,12 +14,23 @@ shared_focus = {
 				id = MAR_smuta.1
 				days = 1
 			}
+		hidden_effect = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = MAR_SMUTA_CHEAT
+						option = MAR_SMUTA_CHEAT_ENABLED
+					}
+				}
+				apply_war_buff_with_15_divisions = yes
+			}
+		}
 	}
 }
 
 shared_focus = {
 	id = MAR_ordens_corps
-	icon = GFX_MAR_Those_who_took_the_sword
+	icon = GFX_MAR_ordens_corps
 	cost = 1
 	available_if_capitulated = no
 	ai_will_do = {
@@ -75,7 +86,7 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_expand_cooperation
-	icon = GFX_MAR_old_Friends
+	icon = GFX_MAR_expand_cooperation
 	cost = 1
 	available_if_capitulated = no
 	ai_will_do = {
@@ -96,7 +107,7 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_mladorossi_manifesto
-	icon = GFX_MAR_new_revolution
+	icon = GFX_MAR_mladorossi_manifesto
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
@@ -144,7 +155,7 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_struggle_for_the_russian_spirit
-	icon = GFX_MAR_Tank_miracle
+	icon = GFX_MAR_struggle_for_the_russian_spirit
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
@@ -168,7 +179,7 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_fire_that_will_forge_nation
-	icon = GFX_MAR_Light_of_salvation
+	icon = GFX_MAR_fire_that_will_forge_nation
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
@@ -193,7 +204,7 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_evolution_before_revolution
-	icon = GFX_MAR_save_the_south
+	icon = GFX_MAR_evolution_before_revolution
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
@@ -218,7 +229,7 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_idea_of_tsar_and_soviets
-	icon = GFX_MAR_letter_of_will
+	icon = GFX_MAR_idea_of_tsar_and_soviets
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
@@ -238,7 +249,7 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_enemies_by_situation
-	icon = GFX_MAR_northern
+	icon = GFX_MAR_enemies_by_situation
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
@@ -265,7 +276,7 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_virtue_of_mercy
-	icon = GFX_MAR_Voina_18
+	icon = GFX_MAR_virtue_of_mercy
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
@@ -298,7 +309,7 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_obstacle_is_obstacle
-	icon = GFX_MAR_Border_1
+	icon = GFX_MAR_obstacle_is_obstacle
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
@@ -323,7 +334,7 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_our_cause_is_right
-	icon = GFX_MAR_Judge_Traitors
+	icon = GFX_MAR_our_cause_is_right
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
@@ -343,7 +354,7 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_call_to_the_base
-	icon = GFX_MAR_Allign_burocrats
+	icon = GFX_MAR_call_to_the_base
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
@@ -363,15 +374,15 @@ shared_focus = {
 		set_temp_variable = { gdp_growth_temp = 0.5 }
 		econ_gdp_growth_change = yes
 		country_event = {
-				id = MAR_smuta.5
-				days = 1
-			}
+			id = MAR_smuta.5
+			days = 1
+		}
 	}
 }
 
 shared_focus = {
 	id = MAR_prepare_to_zemsky_sobor
-	icon = GFX_MAR_new_managers
+	icon = GFX_MAR_prepare_to_zemsky_sobor
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
@@ -475,7 +486,7 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_zemsky_candidates
-	icon = GFX_MAR_kandidati
+	icon = GFX_MAR_zemsky_candidates
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
@@ -500,7 +511,7 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_zemsky_voters
-	icon = GFX_MAR_izbirateli
+	icon = GFX_MAR_zemsky_voters
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
@@ -528,11 +539,25 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_every_man_is_a_tsar
-	icon = GFX_MAR_as_Tsar
+	icon = GFX_MAR_every_man_is_a_tsar
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
-		factor = 1
+		factor = 10
+		modifier = {
+			factor = 1000
+			has_game_rule = {
+				rule = MAR_ZEMSKY_SOBOR_CHOICE
+				option = MAR_ZEMSKY_SOBOR_CHOICE_KOSYGIN
+			}
+		}
+		modifier = {
+			factor = 0
+			has_game_rule = {
+				rule = MAR_ZEMSKY_SOBOR_CHOICE
+				option = MAR_ZEMSKY_SOBOR_CHOICE_BELOZERSKY
+			}
+		}
 	}
 	mutually_exclusive = {
         focus = MAR_meeting_with_bourgeoisie
@@ -567,7 +592,7 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_technologies_of_future
-	icon = GFX_MAR_Technologies_of_the_future
+	icon = GFX_MAR_technologies_of_future
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
@@ -590,7 +615,7 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_people_for_peoples_tsar
-	icon = GFX_MAR_Char_ot_naroda
+	icon = GFX_MAR_people_for_peoples_tsar
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
@@ -615,11 +640,11 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_meeting_with_bourgeoisie
-	icon = GFX_MAR_vstrecha_s_daunami
+	icon = GFX_MAR_meeting_with_bourgeoisie
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
-		factor = 1
+		factor = 0
 	}
 	mutually_exclusive = {
         focus = MAR_every_man_is_a_tsar
@@ -655,7 +680,7 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_donations_to_poor
-	icon = GFX_MAR_help_bednim
+	icon = GFX_MAR_donations_to_poor
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
@@ -679,7 +704,7 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_party_for_tsarina_and_regent
-	icon = GFX_MAR_Char_and_Regent
+	icon = GFX_MAR_party_for_tsarina_and_regent
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
@@ -707,11 +732,25 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_ancestors_blessing
-	icon = GFX_MAR_Our_Ancestors
+	icon = GFX_MAR_ancestors_blessing
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
-		factor = 1
+		factor = 10
+		modifier = {
+			factor = 0
+			has_game_rule = {
+				rule = MAR_ZEMSKY_SOBOR_CHOICE
+				option = MAR_ZEMSKY_SOBOR_CHOICE_KOSYGIN
+			}
+		}
+		modifier = {
+			factor = 1000
+			has_game_rule = {
+				rule = MAR_ZEMSKY_SOBOR_CHOICE
+				option = MAR_ZEMSKY_SOBOR_CHOICE_BELOZERSKY
+			}
+		}
 	}
 	mutually_exclusive = {
         focus = MAR_every_man_is_a_tsar
@@ -742,7 +781,7 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_connection_with_the_past
-	icon = GFX_MAR_Past_Connections
+	icon = GFX_MAR_connection_with_the_past
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
@@ -767,7 +806,7 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_army_for_tsar_general
-	icon = GFX_MAR_Tsarist_Army
+	icon = GFX_MAR_army_for_tsar_general
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
@@ -791,7 +830,7 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_sobor_is_voting_now
-	icon = GFX_MAR_Elections_funny_shit
+	icon = GFX_MAR_sobor_is_voting_now
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {	
@@ -835,12 +874,24 @@ shared_focus = {
 				days = 1
 			}
 		}
+		hidden_effect = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = MAR_SMUTA_CHEAT
+						option = MAR_SMUTA_CHEAT_ENABLED
+					}
+				}
+				remove_war_buff = yes
+				#remove_ideas = war_cheat
+			}
+		}
 	}
 }
 
 shared_focus = {
 	id = MAR_mladorossi_dream
-	icon = GFX_MAR_Voina_20
+	icon = GFX_MAR_mladorossi_dream
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {

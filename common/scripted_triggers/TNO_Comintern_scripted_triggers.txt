@@ -1,0 +1,34 @@
+comintern_disabled = {
+	OR = {
+		tag = ZZZ
+		tag = USA
+		tag = GER
+		is_in_faction_with = USA
+		is_in_faction_with = GER
+		is_in_faction_with = JAP
+		tag = SBA
+		tag = OMO
+		tag = ENG
+		tag = NRL
+		tag = ITA
+		tag = RPY
+		tag = ULS
+		tag = HAC
+		AND = {
+			is_west_african_nation = yes
+			NOT = { tag = CHF }
+		}
+		tag = NOR
+		tag = NZL
+		tag = AST
+		tag = BRA
+		tag = ARG
+		tag = FAR
+		tag = TUR
+		tag = SRT #Slave Revolt
+		tag = FUK
+		tag = MAR
+		is_Antarctic_nation = yes
+		is_postgerman_nation = yes
+	}
+}

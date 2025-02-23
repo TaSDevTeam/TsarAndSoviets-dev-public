@@ -1,5 +1,6 @@
 capital = 398
 set_country_flag = is_russian_nation
+set_cosmetic_tag = MAR_VYT_1
 
 oob = "MAR_1962"
 set_air_oob = "MAR_1962_air"
@@ -14,7 +15,7 @@ recruit_character = MAR_Vladimir_Gil
 recruit_character = MAR_Maria_Romanova
 recruit_character = MAR_Regent_council
 recruit_character = MAR_the_throne
-recruit_character = MAR_Alexander_Solzenitsyn
+recruit_character = MAR_Boris_Smyslovskiy
 #ministers
 recruit_character = MAR_Yelita_Velchkovskiy
 recruit_character = MAR_Dmitriy_Alexandrovich
@@ -35,6 +36,8 @@ recruit_character = MAR_Georgey_Zagainov
 recruit_character = MAR_Anatoliy_Pepelyayev
 recruit_character = MAR_Semen_Gitler
 recruit_character = MAR_Timur_Frunze
+recruit_character = MAR_Kessler_Heinz
+recruit_character = MAR_Alexander_Rutskoj
 #huesosy
 recruit_character = MAR_Taboritsky_dummy
 recruit_character = MAR_Amozov_dummy
@@ -80,14 +83,14 @@ add_ideas = {
 	tno_draft_exemptions_educational_deferment
 	##SOCIAL LAWS##
 	tno_health_care_support_for_emergencies
-	tno_education_restricted_education
-	tno_penal_system_politicized_penal_system
+	tno_education_stratified_education
+	tno_penal_system_harsh_penal_code
 	tno_gender_rights_traditional_roles
-	tno_security_oppressive_police
+	tno_security_crime_prevention
 	tno_regulations_token_regulations
 	##ECONOMIC LAWS##
 	tno_trade_laws_limited_exports
-	tno_income_taxation_tax_havens
+	tno_income_taxation_flat_taxes
 	tno_minimum_wage_trinket_minimum_wage
 	tno_max_workhours_12_hour_work_day 
 	tno_pensions_low_pensions

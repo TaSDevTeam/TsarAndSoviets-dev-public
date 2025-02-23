@@ -11,7 +11,9 @@ TNO_is_anarchy_visible = {
 		TNO_anarchy_MCW_Dissapearance = yes
 		TNO_anarchy_ZZZ_remer = yes
 		TNO_anarchy_Manchurian_Catastrophe = yes
+		TNO_anarchy_ENG_Dissapearance = yes
 		original_tag = MDM
+		TNO_anarchy_AAN_default = yes
 	}
 }
 
@@ -70,6 +72,14 @@ TNO_anarchy_MCW_Dissapearance = {
 	has_cosmetic_tag = MCW_Dissapearance
 }
 
+TNO_anarchy_AAN_default = {
+	original_tag = AAN
+	has_country_leader = {
+		character = AAN_No_Authority
+		ruling_only = yes
+	}
+}
+
 TNO_anarchy_ZZZ_remer = {
 	original_tag = GWF
 	has_country_leader = {
@@ -79,6 +89,10 @@ TNO_anarchy_ZZZ_remer = {
 	NOT = { has_global_flag = TNO_my_world_is_on_fire_how_about_yours }
 }
 TNO_anarchy_Manchurian_Catastrophe = {
-	original_tag = HAN
+	original_tag = PJP
 	has_cosmetic_tag = MAN_katastrophe
+}
+TNO_anarchy_ENG_Dissapearance = {
+	original_tag = ENG
+	has_cosmetic_tag = ENG_Dissapearance
 }

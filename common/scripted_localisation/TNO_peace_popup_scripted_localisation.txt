@@ -155,7 +155,6 @@ defined_text = {
 					original_tag = FUK
 					original_tag = BOV
 					original_tag = UKS
-					original_tag = HEE
 				}
 			}
 			event_target:losing_country = {
@@ -164,7 +163,6 @@ defined_text = {
 					original_tag = FUK
 					original_tag = BOV
 					original_tag = UKS
-					original_tag = HEE
 				}
 			}
 		}
@@ -185,29 +183,6 @@ defined_text = {
 			}
 		}
 		localization_key = TNO_PEACE_POPUP_WAR_CONCLUSION_SAF_WIN
-	}
-	text = {
-		trigger = {
-			event_target:winning_country = {
-				OR = {
-					original_tag = UKR
-					original_tag = FUK
-					original_tag = BOV
-					original_tag = UKS
-					original_tag = HEE
-				}
-			}
-			event_target:losing_country = {
-				OR = {
-					original_tag = UKR
-					original_tag = FUK
-					original_tag = BOV
-					original_tag = UKS
-					original_tag = HEE
-				}
-			}
-		}
-		localization_key = TNO_PEACE_POPUP_WAR_CONCLUSION_UKRAINE
 	}
 	text = {
 		trigger = {
@@ -391,7 +366,6 @@ defined_text = {
 					original_tag = GGR
 					original_tag = SGR
 					original_tag = HGR
-					original_tag = RNW
 					original_tag = GER
 				}
 			}
@@ -401,7 +375,6 @@ defined_text = {
 					original_tag = GGR
 					original_tag = SGR
 					original_tag = HGR
-					original_tag = RNW
 					original_tag = GER
 				}
 			}
@@ -762,62 +735,6 @@ defined_text = {
 		localization_key = TNO_PEACE_POPUP_WAR_CONCLUSION_PRC_MEN
 	}
 
-	## Moskowien's Dissolution
-	text = {
-		trigger = {
-			event_target:winning_country = {
-				OR = {
-					original_tag = TVR
-					original_tag = LUF
-					original_tag = RZH
-					original_tag = NTI
-					original_tag = OZM
-					original_tag = SNP
-					original_tag = OZL
-					original_tag = VVV
-					original_tag = PSK
-					original_tag = PFT
-					original_tag = SHI
-					original_tag = OZT
-					original_tag = NTA
-					original_tag = ORL
-					original_tag = RFS
-					original_tag = OZO
-					original_tag = POV
-					original_tag = POP
-					original_tag = OZP
-					original_tag = OZA
-					original_tag = PAU
-				}
-			}
-			event_target:losing_country = {
-				OR = {
-					original_tag = TVR
-					original_tag = LUF
-					original_tag = RZH
-					original_tag = NTI
-					original_tag = OZM
-					original_tag = SNP
-					original_tag = OZL
-					original_tag = VVV
-					original_tag = PSK
-					original_tag = PFT
-					original_tag = SHI
-					original_tag = OZT
-					original_tag = NTA
-					original_tag = ORL
-					original_tag = RFS
-					original_tag = OZO
-					original_tag = POV
-					original_tag = POP
-					original_tag = OZP
-					original_tag = OZA
-					original_tag = PAU
-				}
-			}
-		}
-		localization_key = TNO_PEACE_POPUP_WAR_CONSLUSION_DISSOLUTION
-	}
 	#Western Insurrection
 	text = {
 		trigger = {
@@ -2377,10 +2294,7 @@ defined_text = {
 				original_tag = GER
 			}
 			event_target:winning_country = {
-				OR = {
-					tag = HGR
-					tag = RNW
-				}
+				tag = HGR
 			}
 		}
 		localization_key = TNO_PEACE_POPUP_FLAVOR_SPEIDEL
@@ -2408,14 +2322,6 @@ defined_text = {
 			}
 		}
 		localization_key = TNO_PEACE_POPUP_FLAVOR_UKS
-	}
-	text = {
-		trigger = {
-			event_target:losing_country = {
-				original_tag = HEE
-			}
-		}
-		localization_key = TNO_PEACE_POPUP_FLAVOR_HEE
 	}
 	text = {
 		trigger = {
@@ -3517,6 +3423,110 @@ defined_text = {
 			}
 		}
 		localization_key = TNO_PEACE_POPUP_FLAVOR_SHO
+	}
+	
+	text = {
+		trigger = {
+			event_target:winning_country = {
+				original_tag = VIC
+			}
+			event_target:losing_country = {
+				original_tag = CAM
+			}
+		}
+		localization_key = TNO_PEACE_POPUP_FLAVOR_CAM_VIC
+	}
+	
+	text = {
+		trigger = {
+			event_target:winning_country = {
+				is_in_faction_with = JAP
+			}
+			event_target:losing_country = {
+				original_tag = CAM
+			}
+		}
+		localization_key = TNO_PEACE_POPUP_FLAVOR_CAM_JAP
+	}
+	
+	text = {
+		trigger = {
+			event_target:losing_country = {
+				original_tag = VIC
+			}
+		}
+		localization_key = TNO_PEACE_POPUP_FLAVOR_VIC
+	}
+	
+	text = {
+		trigger = {
+			event_target:losing_country = {
+				original_tag = LAO
+			}
+		}
+		localization_key = TNO_PEACE_POPUP_FLAVOR_LAO
+	}
+
+	text = {
+		trigger = {
+			event_target:winning_country = {
+				original_tag = IND
+			}
+			event_target:losing_country = {
+				original_tag = PAK
+			}
+		}
+		localization_key = TNO_PEACE_POPUP_FLAVOR_PAK_IND
+	}
+
+	text = {
+		trigger = {
+			event_target:winning_country = {
+				NOT = { original_tag = IND }
+			}
+			event_target:losing_country = {
+				original_tag = PAK
+			}
+		}
+		localization_key = TNO_PEACE_POPUP_FLAVOR_PAK_AZH
+	}
+
+	text = {
+		trigger = {
+			event_target:losing_country = {
+				original_tag = IND
+			}
+		}
+		localization_key = TNO_PEACE_POPUP_FLAVOR_IND
+	}
+
+	text = {
+		trigger = {
+			event_target:losing_country = {
+				original_tag = AZH
+			}
+		}
+		localization_key = TNO_PEACE_POPUP_FLAVOR_AZH
+	}
+
+	text = {
+		trigger = {
+			event_target:winning_country = {
+				original_tag = SAF
+				original_tag = SLF
+				original_tag = BOR
+				original_tag = SFG
+			}
+			event_target:losing_country = {
+				OR = {
+					original_tag = SAF
+					original_tag = SLF
+					original_tag = BOR
+					original_tag = SFG
+				}
+			}
+		}
+		localization_key = TNO_PEACE_POPUP_WAR_CONCLUSION_2SACW
 	}
 	###TAS STUFF
 	text = {

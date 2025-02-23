@@ -33,10 +33,10 @@ focus_tree = {
 		factor = 0
 	}
 	default = no
-	shared_focus = MAR_pervii_ukaz
-	shared_focus = MAR_reanim_eco
-	shared_focus = MAR_voen_prikaz
-	shared_focus = MAR_posol_prikaz
+	shared_focus = MAR_the_first_decrees
+	shared_focus = MAR_reanimating_the_economy
+	shared_focus = MAR_military_prikaz
+	shared_focus = MAR_embassy_prikaz
 }
 
 focus_tree = {
@@ -45,9 +45,9 @@ focus_tree = {
 		factor = 0
 	}
 	default = no
-	shared_focus = MAR_vne_sesd
-	shared_focus = MAR_Grozni
-	shared_focus = MAR_comeback_step
+	shared_focus = MAR_extracurricular_congress
+	shared_focus = MAR_project_grozny
+	shared_focus = MAR_return_to_steppe
 }
 
 focus_tree = {
@@ -80,7 +80,8 @@ focus_tree = {
 		factor = 0
 	}
 	default = no
-	shared_focus = MAR_united_russia
+	shared_focus = MAR_united_and_indivisible
+	#shared_focus = MAR_warprep_calm_before_the_storm
 }
 
 focus_tree = {
@@ -89,5 +90,48 @@ focus_tree = {
 		factor = 0
 	}
 	default = no
-	shared_focus = return_of_empire
+	shared_focus = MAR_kosrus_return_of_empire
+	#shared_focus = MAR_warprep_calm_before_the_storm
+}
+
+focus_tree = {
+	id = MAR_second_patriotic_war
+	country = {
+		factor = 0
+	}
+	default = no
+	shared_focus = MAR_the_second_patriotic_war
+}
+focus_tree = {
+	id = MAR_second_patriotic_war_fail
+	country = {
+		factor = 0
+	}
+	default = no
+	shared_focus = MAR_cold_world
+}
+focus_tree = {
+	id = GER_second_patriotic_war
+	country = {
+		factor = 0
+	}
+	default = no
+	shared_focus = GER_battle_of_civilizations
+	shared_focus = GER_fire_in_the_east
+}
+focus_tree = {
+	id = GER_second_patriotic_war_fail
+	country = {
+		factor = 0
+	}
+	default = no
+	shared_focus = GER_daseinkampf
+}
+focus_tree = {
+	id = MAR_war_preparation_tree
+	country = {
+		factor = 0
+	}
+	default = no
+	shared_focus = MAR_warprep_calm_before_the_storm
 }

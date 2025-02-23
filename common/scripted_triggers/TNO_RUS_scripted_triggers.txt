@@ -71,6 +71,7 @@ is_central_siberian_nation = {
 		original_tag = KRS
 		original_tag = KAL
 		original_tag = TAN
+		original_tag = NRL
 	}
 }
 
@@ -84,6 +85,7 @@ is_far_eastern_nation = {
 		original_tag = AMR
 		original_tag = OMO
 		original_tag = YAK
+		original_tag = VIL
 	}
 }
 
@@ -97,6 +99,7 @@ is_race_for_the_urals_player = {
 		original_tag = OMS
 		original_tag = TYM
 		original_tag = SVR
+		original_tag = MAR
 	}
 }
 
@@ -104,20 +107,19 @@ is_wasteland = {
 	OR = {
 		AND = {
 			original_tag = OMO
-			OMO = {
-				NOT = {
-					has_country_leader = {
-						character = OMO_Alexander_Men
-						ruling_only = yes
-					}
-					has_country_leader = {
-						character = OMO_2022_Nikolai_Buckharin
-						ruling_only = yes
-					}
-				}
+			has_country_leader = {
+				character = OMO_No_Authority
+				ruling_only = yes
 			}
 		}
-		original_tag = VIL
+		AND = {
+			original_tag = VIL
+			has_country_leader = {
+				character = VIL_No_Authority
+				ruling_only = yes
+			}
+		}
+		original_tag = NRL
 	}
 }
 
@@ -162,7 +164,6 @@ is_southern_urals_nation = {
 is_moskowien_splits = {
 	OR = {
 		tag = TVR
-		tag = LUF
 		tag = RZH
 		tag = NTI
 		tag = OZM
@@ -291,7 +292,7 @@ can_form_west_siberia = {
 can_form_central_siberia = {
 	AND = {
 		owns_state = 40
-		owns_state = 329
+		#owns_state = 329
 		owns_state = 568
 		owns_state = 569
 		owns_state = 570
@@ -433,7 +434,7 @@ is_west_siberia_state = {
 is_central_siberia_state = {
 	OR = {
 		state = 40
-		state = 329
+		#state = 329
 		state = 516
 		state = 567
 		state = 568
@@ -448,6 +449,8 @@ is_central_siberia_state = {
 		state = 814
 		state = 887
 		state = 888
+		state = 565
+		state = 761
 	}
 }
 
@@ -460,13 +463,11 @@ is_far_east_state = {
 		state = 565
 		state = 566
 		state = 574
-		state = 575
 		state = 637
 		state = 644
 		state = 657
 		state = 759
 		state = 760
-		state = 761
 		state = 886
 		state = 889
 		state = 890
@@ -535,7 +536,7 @@ WSR_WSB_is_compatible = {
 				OR = {
 					WSB = {
 						original_tag = SVR
-						has_government = paternalism
+						has_government = despotism
 					}
 					WSB = {
 						original_tag = TYM
@@ -552,7 +553,7 @@ WSR_WSB_is_compatible = {
 				OR = {
 					WSB = {
 						original_tag = SVR
-						has_government = paternalism
+						has_government = despotism
 					}
 					WSB = {
 						original_tag = TYM
@@ -583,7 +584,7 @@ WSR_WSB_is_compatible = {
 					WSB = {
 						AND = {
 							original_tag = SVR
-							has_government = paternalism
+							has_government = despotism
 						}
 					}
 				}
@@ -595,7 +596,7 @@ WSR_WSB_is_compatible = {
 				}
 				WSB = {
 					original_tag = SVR
-					has_government = paternalism
+					has_government = despotism
 				}
 			}
 			AND = {
@@ -605,7 +606,7 @@ WSR_WSB_is_compatible = {
 				}
 				WSB = {
 					original_tag = SVR
-					has_government = paternalism
+					has_government = despotism
 				}
 			}
 		}
@@ -1163,7 +1164,7 @@ is_russian_state = {
 		state = 568
 		state = 567
 		state = 758
-		state = 329
+		#state = 329
 		state = 814
 		state = 566
 		state = 565
@@ -1398,7 +1399,6 @@ RUS_can_diplomatize_with_finland_or_whatever = {
 }
 
 RUS_consider_communist_regime = {
-	is_russian_nation = yes
 	OR = {
 		has_government = communist
 		AND = {
@@ -1415,7 +1415,7 @@ RUS_consider_communist_regime = {
 			ruling_only = yes
 		}
 		AND = {
-			tag = SVR
+			original_tag = SVR
 			has_government = paternalism
 		}
 	}
@@ -1445,4 +1445,49 @@ RUS_consider_aryan_regime = {
 			ruling_only = yes
 		}
 	}
+}
+
+RUS_consider_fascist_regime = {
+	OR = {
+		has_government = fascism
+		AND = {
+			has_government = national_socialism
+			NOT = {
+				has_country_leader = {
+					character = KOM_Sergey_Taboritsky
+					ruling_only = yes
+				}
+			}
+		}
+		AND = {
+			has_government = ultranationalism
+			NOT = {
+				has_country_leader = {
+					character = KOM_Lev_Gumilyov
+					ruling_only = yes
+				}
+			}
+		}
+		has_country_leader = {
+			character = KOM_Ivan_Serov
+			ruling_only = yes
+		}
+	}	
+}
+
+RUS_consider_monarchist_regime = {
+	OR = {
+		original_tag = CHT
+		original_tag = GAY
+		original_tag = TMD
+		original_tag = TMG
+		original_tag = TMU
+		original_tag = TMV
+		original_tag = TMY
+		original_tag = VYT
+		has_country_leader = {
+			character = KOM_Sergey_Taboritsky
+			ruling_only = yes
+		}
+	}	
 }

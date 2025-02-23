@@ -137,7 +137,7 @@ shared_focus = {
 				icon = "GFX_intelligence_agency_logo_sov"
 			}
 		}
-		#custom_effect_tooltip = MAR_prestol_all_states_drop_tt
+		custom_effect_tooltip = MAR_prestol_fivedecrease_tt
 		for_each_loop = {
 			array = MAR_map_grid_array
 			if = {
@@ -177,6 +177,7 @@ shared_focus = {
 	x = 4
 	y = 2
 	completion_reward = {
+		custom_effect_tooltip = MAR_prestol_fivedecrease_tt
 		for_each_loop = {
 			array = MAR_map_grid_array
 			if = {
@@ -203,6 +204,10 @@ shared_focus = {
 		RUS_decrease_administrative_strain = yes
 		add_ideas = MAR_Kosygin_martial_law 
 		tno_penal_system_worsen = yes
+		swap_ideas = {
+			remove_idea = tno_security_crime_prevention
+			add_idea = tno_security_political_control	
+		}
 		TNO_improve_penal_system_policy_effectiveness_med = yes
 		country_event = {
 			id = MAR_Kosygin.61
@@ -220,6 +225,7 @@ shared_focus = {
 	x = 6
 	y = 2
 	completion_reward = {
+		custom_effect_tooltip = MAR_prestol_fivedecrease_tt
 		for_each_loop = {
 			array = MAR_map_grid_array
 			if = {
@@ -265,6 +271,7 @@ shared_focus = {
 	x = 2
 	y = 1
 	completion_reward = {
+		custom_effect_tooltip = MAR_prestol_fivedecrease_tt
 		for_each_loop = {
 			array = MAR_map_grid_array
 			if = {
@@ -305,6 +312,7 @@ shared_focus = {
 	x = 8
 	y = 1
 	completion_reward = {
+		custom_effect_tooltip = MAR_prestol_fivedecrease_tt
 		for_each_loop = {
 			array = MAR_map_grid_array
 			if = {
@@ -485,6 +493,7 @@ shared_focus = {
 			id = MAR_Kosygin.16
 			days = 0
 		}
+		tno_income_taxation_improve = yes
 	}
 
 }
@@ -501,6 +510,11 @@ shared_focus = {
 		TNO_improve_industrial_expertise_high = yes
 		set_temp_variable = { pus_temp = 6 }
 		econ_pus_change = yes
+		tno_minimum_wage_improve = yes
+		swap_ideas = {
+			remove_idea = tno_max_workhours_14_hour_work_day
+			add_idea = tno_max_workhours_10_hour_work_day	
+		}
 	}
 
 }
@@ -727,6 +741,7 @@ shared_focus = {
 	x = 13
 	y = 4
 	completion_reward = {
+		add_ideas = Sphere_Observer
 		TNO_improve_industrial_equipment_high = yes	
 		set_temp_variable = { temp_econ_spending_amount = 0.15 }
         econ_spend_money_once_effect_raw_money = yes
@@ -746,6 +761,7 @@ shared_focus = {
 	x = 15
 	y = 4
 	completion_reward = {
+		add_ideas = OFN_Observer
 		TNO_improve_poverty_med = yes
 		set_temp_variable = { pus_temp = 1 }
 		econ_pus_change = yes
@@ -1102,9 +1118,15 @@ shared_focus = {
 	x = 33
 	y = 2
 	completion_reward = {
-		add_opinion_modifier = {
-			target = USA
-			modifier = MAR_usa_friend
+		USA = {
+			add_opinion_modifier = {
+				target = MAR
+				modifier = RUS_recognition
+			}
+			reverse_add_opinion_modifier = {
+				target = MAR
+				modifier = RUS_recognition	
+			}
 		}
 		country_event = {
 			id = MAR_Kosygin.30
@@ -1127,6 +1149,7 @@ shared_focus = {
 		TNO_improve_poverty_low = yes	
 		TNO_improve_health_care_policy_effectiveness_med = yes
 		TNO_improve_health_care_policy_effectiveness_monthly_low = yes
+		add_to_variable = { MAR_USA_relations_focus = 1 }
 		country_event = {
 			id = MAR_Kosygin.31
 			days = 0
@@ -1150,9 +1173,15 @@ shared_focus = {
 	x = 35
 	y = 2
 	completion_reward = {
-		add_opinion_modifier = {
-			target = JAP
-			modifier = RUS_recognition
+		JAP = {
+			add_opinion_modifier = {
+				target = MAR
+				modifier = RUS_recognition
+			}
+			reverse_add_opinion_modifier = {
+				target = MAR
+				modifier = RUS_recognition	
+			}
 		}
 		country_event = {
 			id = MAR_Kosygin.32
@@ -1178,6 +1207,7 @@ shared_focus = {
 		set_temp_variable = { gdp_growth_temp = 0.5 }
         econ_gdp_growth_change = yes
 		TNO_improve_industrial_equipment_med = yes	
+		add_to_variable = { MAR_JAP_relations_focus = 1 }
 		country_event = {
 			id = MAR_Kosygin.33
 			days = 0
@@ -1192,9 +1222,24 @@ shared_focus = {
 		focus = MAR_kosfor_from_America_with_love
 		focus = MAR_kosfor_tokyo_embassy
 	}
+	bypass = {
+		IND = {
+		    country_exists = no 
+		}	
+	}
 	x = 34
 	y = 4
 	completion_reward = {
+		IND = {
+			add_opinion_modifier = {
+				target = MAR
+				modifier = RUS_recognition
+			}
+			reverse_add_opinion_modifier = {
+				target = MAR
+				modifier = RUS_recognition	
+			}
+		}
 		country_event = {
 			id = MAR_Kosygin.34
 			days = 0
@@ -1387,6 +1432,16 @@ shared_focus = {
 			id = MAR_Kosygin.45
 			days = 0
 		}
+		swap_ideas = {
+			remove_idea = tno_security_political_control
+			add_idea = tno_security_maintenance_of_order	
+		}
+		swap_ideas = {
+			remove_idea = tno_penal_system_politicized_penal_system
+			add_idea = tno_penal_system_harsh_penal_code	
+		}
+		TNO_improve_security_policy_effectiveness_monthly_low = yes
+		TNO_improve_penal_system_policy_effectiveness_monthly_med = yes
 	}
 }
 shared_focus = {
@@ -1544,13 +1599,14 @@ shared_focus = {
 		econ_spend_money_once_effect_raw_money = yes
 		custom_effect_tooltip = RUS_RWS_nukes_a_foundation_for_research_tt
 		TNO_improve_research_facilities_med = yes
-		if = {
-			limit = {
-				has_country_flag = RUS_nuclear_program_phase_1
+		hidden_effect = {
+			if = {	
+				limit = { check_variable = { TaS_RUS_nuclear_program_phase < 2 } }
+				add_to_variable = { TaS_nuke_development_array^1 = 0.15 }
 			}
-			add_to_variable = { RUSNukesTheoryProgress = 15 }
+			set_temp_variable = { temp_monthly_progress_gained = 0.03 } 
+			TaS_nuke_development_monthly_progress_change = yes
 		}
-		add_to_variable = { RUSNukesMonthlyProgress = 3 }
 	}
 }
 shared_focus = {
@@ -1580,17 +1636,16 @@ shared_focus = {
 				 amount = 8
 			}
 		}
-		if = {
-			limit = {
-				OR = {
-					has_country_flag = RUS_nuclear_program_phase_2
-					has_country_flag = RUS_nuclear_program_phase_1
-				}
+		hidden_effect = {
+			if = {	
+				limit = { check_variable = { TaS_RUS_nuclear_program_phase < 3 } }
+				add_to_variable = { TaS_nuke_development_array^2 = 0.15 }
 			}
-			add_to_variable = { RUSNukesMatsProgress = 10 }
+			set_temp_variable = { temp_monthly_progress_gained = 0.01 } 
+			TaS_nuke_development_monthly_progress_change = yes
 		}
-		add_to_variable = { RUSNukesMonthlyProgress = 1 }
-		add_to_variable = { national_debt = 0.35 } #already converted to billion
+		set_temp_variable = { temp_econ_spending_amount = 0.35 }
+		econ_spend_money_once_effect_raw_money = yes 
 	}
 }
 shared_focus = {
@@ -1606,16 +1661,16 @@ shared_focus = {
 		custom_effect_tooltip = RUS_RWS_nukes_source_foreign_materials_tt
 		add_stability = -0.03
 		add_political_power = -25
-		if = {
-			limit = {
-				OR = {
-					has_country_flag = RUS_nuclear_program_phase_2
-					has_country_flag = RUS_nuclear_program_phase_1
-				}
+		hidden_effect = {
+			if = {	
+				limit = { check_variable = { TaS_RUS_nuclear_program_phase < 3 } }
+				add_to_variable = { TaS_nuke_development_array^2 = 0.1 }
 			}
-			add_to_variable = { RUSNukesMatsProgress = 10 }
+			set_temp_variable = { temp_monthly_progress_gained = 0.03 } 
+			TaS_nuke_development_monthly_progress_change = yes
 		}
-		add_to_variable = { national_debt = 0.1 } #already converted to billion
+		set_temp_variable = { temp_econ_spending_amount = 0.1 }
+		econ_spend_money_once_effect_raw_money = yes 
 	}
 }
 shared_focus = {
@@ -1632,17 +1687,16 @@ shared_focus = {
 	y = 2
 	completion_reward = {
 		custom_effect_tooltip = RUS_RWS_nukes_address_the_uranium_problem_tt
-		if = {
-			limit = {
-				OR = {
-					has_country_flag = RUS_nuclear_program_phase_2
-					has_country_flag = RUS_nuclear_program_phase_1
-				}
+		hidden_effect = {
+			if = {	
+				limit = { check_variable = { TaS_RUS_nuclear_program_phase < 3 } }
+				add_to_variable = { TaS_nuke_development_array^2 = 0.05 }
 			}
-			add_to_variable = { RUSNukesMatsProgress = 5 }
+			set_temp_variable = { temp_monthly_progress_gained = 0.02 } 
+			TaS_nuke_development_monthly_progress_change = yes
 		}
-		add_to_variable = { RUSNukesMonthlyProgress = 2 }
-		add_to_variable = { national_debt = 0.15 } #already converted to billion
+		set_temp_variable = { temp_econ_spending_amount = 0.15 }
+		econ_spend_money_once_effect_raw_money = yes 
 	}
 }
 shared_focus = {
@@ -1664,7 +1718,10 @@ shared_focus = {
 		}
 		custom_effect_tooltip = RUS_RWS_nukes_chasing_the_sun_tt
 		add_timed_idea = { idea = RUS_RWS_nukes_chasing_the_sun_misc_costs days = 90 }
-		add_to_variable = { RUSNukesMonthlyProgress = 3 }
+		hidden_effect = {
+			set_temp_variable = { temp_monthly_progress_gained = 0.03 } 
+			TaS_nuke_development_monthly_progress_change = yes
+		}
 		TNO_improve_industrial_expertise_med = yes
 	}
 }
@@ -1679,24 +1736,27 @@ shared_focus = {
 		if = {
 			limit = {
 				country_exists = KZR
+				country_exists = KAZ
+				KZR = { has_war = yes }
+			}
+			custom_effect_tooltip = Civil_War_Kazakhstan_Berezniki_tt
+			country_event = { id = berez_kazahk.11 days = 3 }
+		}
+		if = {
+			limit = {
+				country_exists = KZR
 				KZR = { has_war = no }
 			}
 			custom_effect_tooltip = Russian_Kazakhstan_Berezniki_tt
-			country_event = { id = berez_kazahk.10 days = 7 }
+			country_event = { id = berez_kazahk.12 days = 3 }
 		}
-		else = {
-			declare_war_on = {
-				target = KAZ
-				type = annex_everything
+		if = {
+			limit = {
+				country_exists = KAZ
+				KAZ = { has_war = no }
 			}
-			declare_war_on = {
-				target = KZR
-				type = annex_everything
-			}
-			declare_war_on = {
-				target = KZK
-				type = annex_everything
-			}	
+			custom_effect_tooltip = Kazakh_Kazakhstan_Berezniki_tt
+			country_event = { id = berez_kazahk.13 days = 3 }
 		}
 	}
 }
@@ -1705,8 +1765,16 @@ shared_focus = {
 	icon = GFX_MAR_koskaz_soviet_imams
 	cost = 3
 	available = { 
-		406 = { 
-			is_owned_and_controlled_by = MAR
+		custom_trigger_tooltip = {
+			tooltip = MAR_KAZ_ours
+			OR = {
+				406 = { 
+					is_owned_and_controlled_by = MAR
+				}
+				406 = { 
+					is_owned_and_controlled_by = MKZ
+				}
+			}
 		}
 	}
 	prerequisite = {
@@ -1737,8 +1805,16 @@ shared_focus = {
 	icon = GFX_MAR_koskaz_terminate_opposition
 	cost = 3
 	available = { 
-		406 = { 
-			is_owned_and_controlled_by = MAR
+		custom_trigger_tooltip = {
+			tooltip = MAR_KAZ_ours
+			OR = {
+				406 = { 
+					is_owned_and_controlled_by = MAR
+				}
+				406 = { 
+					is_owned_and_controlled_by = MKZ
+				}
+			}
 		}
 	}
 	prerequisite = {
@@ -1760,8 +1836,16 @@ shared_focus = {
 	icon = GFX_MAR_koskaz_Kazakh_autobahn
 	cost = 3
 	available = { 
-		406 = { 
-			is_owned_and_controlled_by = MAR
+		custom_trigger_tooltip = {
+			tooltip = MAR_KAZ_ours
+			OR = {
+				406 = { 
+					is_owned_and_controlled_by = MAR
+				}
+				406 = { 
+					is_owned_and_controlled_by = MKZ
+				}
+			}
 		}
 	}
 	prerequisite = {
@@ -1780,6 +1864,12 @@ shared_focus = {
 				}
 			}
 		}
+		MKZ = {
+			set_temp_variable = { gdp_growth_temp = 4.5 }
+			econ_gdp_growth_change = yes
+			set_temp_variable = { temp_econ_GDP_boost_flat = 1 }
+			econ_GDP_boost_once_flat = yes	
+		}	
 		custom_effect_tooltip = MAR_Belozerskiy_add_2_inf_in_Kazakhstan
 	}
 }
@@ -1822,6 +1912,12 @@ shared_focus = {
 				 type = oil
 				 amount = 12
 			}
+		}
+		MKZ = {
+			set_temp_variable = { gdp_growth_temp = 1.5 }
+			econ_gdp_growth_change = yes
+			set_temp_variable = { temp_econ_GDP_boost_flat = 1.5 }
+			econ_GDP_boost_once_flat = yes	
 		}
 		country_event = {
 			id = MAR_Kosygin.54
@@ -1878,6 +1974,10 @@ shared_focus = {
 			}
 			add_extra_state_shared_building_slots = 3
 		}
+		MKZ = {
+			set_temp_variable = { temp_econ_GDP_boost_flat = 2.5 }
+			econ_GDP_boost_once_flat = yes	
+		}
 	}
 }
 shared_focus = {
@@ -1917,6 +2017,424 @@ shared_focus = {
 		country_event = {
 			id = MAR_Kosygin.56
 			days = 0
+		}
+	}
+}
+###Post-Unification Intro
+shared_focus = {
+	id = MAR_kosrus_return_of_empire
+	icon = GFX_MAR_rebirth_of_empire
+	cost = 4.00
+	x = 9
+	y = -1
+	
+	completion_reward = {
+	    add_stability = 0.1
+		add_political_power = 200
+		econ_raise_max_credit_rating = yes
+	}
+
+}	
+
+shared_focus = {
+	id = MAR_kosrus_new_coronation
+	icon = GFX_MAR_new_coronation
+	cost = 4.00
+	prerequisite = {
+		focus = MAR_kosrus_return_of_empire
+	}
+	x = 9
+	y = 0
+	
+	completion_reward = {
+		country_event = { id = MAR_Kosygin.92 days = 3 }
+		MAR_advisor_Kosygin = {
+			set_portraits = {
+				civilian = { large = "gfx/leaders/MAR/Portrait_Berezniki_Kosygind_70s.dds" }
+			}
+		}
+	    add_popularity = { ideology = socialist popularity = 0.05 }
+		TNO_improve_admin_efficiency_med = yes
+		RUS_integration_cost_days_decrease = yes
+	}
+
+}
+
+shared_focus = {
+	id = MAR_kosrus_expanding_ogas
+	icon = GFX_MAR_expanding_OGAS
+	cost = 4.00
+	prerequisite = {
+		focus = MAR_kosrus_new_coronation
+	}
+	x = 7
+	y = 1
+	
+	completion_reward = {
+		custom_effect_tooltip = MAR_kosrus_expanding_ogas_tt
+		add_to_variable = { MAR_ogas_dynomod_array_two^0 = 0.01 }
+		add_to_variable = { MAR_ogas_dynomod_array_two^2 = 0.05 }
+		add_to_variable = { MAR_ogas_dynomod_array_two^8 = 0.05 }
+		random_owned_state = {
+			add_state_modifier = {
+				modifier = {
+					state_GDP_growth_factor_modifier = 0.1
+				}
+			}
+		}
+		random_owned_state = {
+			add_state_modifier = {
+				modifier = {
+					state_GDP_growth_factor_modifier = 0.1
+				}
+			}
+		}
+		random_owned_state = {
+			add_state_modifier = {
+				modifier = {
+					state_GDP_growth_factor_modifier = 0.1
+				}
+			}
+		}
+		random_owned_state = {
+			add_state_modifier = {
+				modifier = {
+					state_GDP_growth_factor_modifier = 0.1
+				}
+			}
+		}
+		random_owned_state = {
+			add_state_modifier = {
+				modifier = {
+					state_GDP_growth_factor_modifier = 0.1
+				}
+			}
+		}
+	    set_temp_variable = { temp_econ_spending_amount = 0.2 }
+		econ_spend_money_once_effect_raw_money = yes
+	}
+
+}
+
+shared_focus = {
+	id = MAR_kosrus_cerberous_squad
+	icon = GFX_MAR_cerberuses_squad
+	cost = 4.00
+	prerequisite = {
+		focus = MAR_kosrus_new_coronation
+	}
+	x = 9
+	y = 1
+	
+	completion_reward = {
+		set_temp_variable = { temp_econ_spending_amount = 0.1 }
+		econ_spend_money_once_effect_raw_money = yes
+		add_manpower = -15000
+		division_template = {
+			name = "Brigada Tserbery"
+			is_locked = yes
+			regiments = {
+				motorized = { x = 0 y = 0 }
+				motorized = { x = 0 y = 1 }
+				motorized = { x = 0 y = 2 }
+				motorized = { x = 0 y = 3 }
+				motorized = { x = 1 y = 0 }
+				motorized = { x = 1 y = 1 }
+				motorized = { x = 1 y = 2 }
+				motorized = { x = 1 y = 3 }
+				APC = { x = 2 y = 0 }
+				APC = { x = 2 y = 1 }
+				APC = { x = 2 y = 2 }
+				APC = { x = 2 y = 3 }
+				MBT = { x = 3 y = 0 }
+				MBT = { x = 3 y = 1 }
+				MBT = { x = 3 y = 2 }
+				MBT = { x = 3 y = 3 }
+				artillery_brigade = { x = 4 y = 0 }
+				artillery_brigade = { x = 4 y = 1 }
+				artillery_brigade = { x = 4 y = 2 }
+				artillery_brigade = { x = 4 y = 3 }
+			}
+			support = {
+				MBT_recon = { x = 0 y = 0 }
+				engineer = { x = 0 y = 1 }
+				signal_company = { x = 0 y = 2 }
+				transport_helicopter_company = { x = 0 y = 3 }
+				artillery = { x = 0 y = 4 }
+			}
+		}
+		capital_scope = {
+			create_unit = {
+				division = "name = \"1-ya Brigada Tserbery\" division_template = \"Brigada Tserbery\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+			create_unit = {
+				division = "name = \"2-ya Brigada Tserbery\" division_template = \"Brigada Tserbery\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+			create_unit = {
+				division = "name = \"3-ya Brigada Tserbery\" division_template = \"Brigada Tserbery\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+			create_unit = {
+				division = "name = \"4-ya Brigada Tserbery\" division_template = \"Brigada Tserbery\" start_experience_factor = 1 start_equipment_factor = 1"
+				owner = PREV
+			}
+		}
+		country_event = { id = MAR_Kosygin.93 days = 3 }
+	    add_war_support = 0.05
+	}
+
+}
+
+shared_focus = {
+	id = MAR_kosrus_rebuilding_pacific_portrs
+	icon = GFX_MAR_rebuilding_of_pacific_ports
+	cost = 4.00
+	prerequisite = {
+		focus = MAR_kosrus_new_coronation
+	}
+	x = 11
+	y = 1
+	
+	completion_reward = {
+		country_event = { id = MAR_Kosygin.94 days = 3 }
+	    562 = { 
+			add_building_construction = {
+				type = dockyard
+				level = 5
+				instant_build = yes
+			}
+			add_state_modifier = {
+				modifier = {
+					state_GDP_growth_factor_modifier = 0.05
+				}
+			}
+		}
+		set_temp_variable = { temp_econ_spending_amount = 0.150 }
+		econ_spend_money_once_effect_raw_money = yes
+	}
+
+}
+
+shared_focus = {
+	id = MAR_kosrus_sunny_america
+	icon = GFX_MAR_Sunny_America
+	cost = 4.00
+	prerequisite = {
+		focus = MAR_kosrus_expanding_ogas
+	}
+	prerequisite = {
+		focus = MAR_kosrus_cerberous_squad
+	}
+	prerequisite = {
+		focus = MAR_kosrus_rebuilding_pacific_portrs
+	}
+	mutually_exclusive = {
+		focus = MAR_kosrus_neon_sphere
+	}
+	x = 8
+	y = 2
+	
+	completion_reward = {
+		USA = {
+			add_opinion_modifier = {
+				target = MAR
+				modifier = MAR_unifier_of_russia
+			}
+			reverse_add_opinion_modifier = {
+				target = MAR
+				modifier = MAR_unifier_of_russia	
+			}
+		}
+		add_to_variable = { MAR_USA_relations_focus = 1 }
+		country_event = { id = MAR_Kosygin.95 days = 3 }
+		give_resource_rights = { receiver = USA state = 887 }
+		give_resource_rights = { receiver = USA state = 570 }
+		set_temp_variable = { gdp_growth_temp = 2 }
+		econ_gdp_growth_change = yes
+	}
+
+}
+
+shared_focus = {
+	id = MAR_kosrus_neon_sphere
+	icon = GFX_MAR_Neon_Sphere
+	cost = 4.00
+	prerequisite = {
+		focus = MAR_kosrus_expanding_ogas
+	}
+	prerequisite = {
+		focus = MAR_kosrus_cerberous_squad
+	}
+	prerequisite = {
+		focus = MAR_kosrus_rebuilding_pacific_portrs
+	}
+	mutually_exclusive = {
+		focus = MAR_kosrus_sunny_america
+	}
+	x = 10
+	y = 2
+	
+	completion_reward = {
+		JAP = {
+			add_opinion_modifier = {
+				target = MAR
+				modifier = MAR_unifier_of_russia
+			}
+			reverse_add_opinion_modifier = {
+				target = MAR
+				modifier = MAR_unifier_of_russia	
+			}
+		}
+		add_to_variable = { MAR_JAP_relations_focus = 1 }
+		country_event = { id = MAR_Kosygin.96 days = 3 }
+	    give_resource_rights = { receiver = JAP state = 563 }
+		give_resource_rights = { receiver = JAP state = 564 }
+		set_temp_variable = { gdp_growth_temp = 2 }
+		econ_gdp_growth_change = yes
+	}
+
+} 
+shared_focus = {
+	id = MAR_kosrus_tsar_speech
+	icon = GFX_MAR_tsar_speech
+	cost = 4.00
+	prerequisite = {
+		focus = MAR_kosrus_sunny_america
+		focus = MAR_kosrus_neon_sphere
+	}
+	x = 9
+	y = 3
+	
+	completion_reward = {
+		add_popularity = {
+			ideology = socialist
+			popularity = 0.05
+		}
+	    add_war_support = 0.1
+		country_event = { id = MAR_Kosygin.97 days = 3 }
+		custom_effect_tooltip = SWRW_we_will_create_alliance_tt
+		hidden_effect = {
+			remove_faction_status = yes
+			create_faction = RUSAlliance_MAR
+			add_ideas = RUSAlliance_Leader
+			if = {
+				limit = { 
+					MKZ = {
+						has_country_leader = {
+							character = MKZ_Military_Administration 
+							ruling_only = yes
+						}
+					}
+				}
+				MKZ = { add_ideas = RUSAlliance_Military_Government }
+				add_to_faction = MKZ
+			}
+			else_if = {
+				limit = { 
+					MKZ = {
+						has_country_leader = {
+							character = MKZ_Nursultan_Nazarbayev
+							ruling_only = yes
+						}
+					}
+					
+				}
+				MKZ = { add_ideas = RUSAlliance_Dependent_Member }
+				add_to_faction = MKZ
+			}
+			if = {
+				limit = { UAR = { has_country_flag = UAR_join_rus_when_created } }
+				UAR = { add_ideas = RUSAlliance_Observer }
+			}
+			if = {
+				limit = { has_country_flag = MAR_RFI_alliance }
+				RFI = {
+					add_ideas = RUSAlliance_Independent_Member
+				}
+				add_to_faction = MKZ
+			}
+			if = {
+				limit = { IRA = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+				IRA = {	add_ideas = RUSAlliance_Independent_Member }
+				add_to_faction = IRA
+			}
+			if = {
+				limit = { IRC = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+				IRC = { add_ideas = RUSAlliance_Independent_Member }
+				add_to_faction = IRC
+			}
+			if = {
+				limit = { SAU = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+				SAU = {	add_ideas = RUSAlliance_Observer }
+			}
+			if = {
+				limit = { OMI = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+				OMI = {	add_ideas = RUSAlliance_Observer }
+			}
+			if = {
+				limit = { EGQ = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+				EGQ = {	add_ideas = RUSAlliance_Observer }
+			}
+			if = {
+				limit = { SDF = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+				SDF = {	add_ideas = RUSAlliance_Observer }
+			}
+			if = {
+				limit = { AZA = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+				AZA = {	add_ideas = RUSAlliance_Observer }
+			}
+			if = {
+				limit = { SNI = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+				SNI = {	add_ideas = RUSAlliance_Observer }
+			}
+			if = {
+				limit = { KUR = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+				if = {
+					limit = { KUR = { has_government = despotism } }
+					KUR = { add_ideas = RUSAlliance_Military_Government }
+					add_to_faction = KUR
+				}
+				else = {
+					KUR = { add_ideas = RUSAlliance_Dependent_Member }
+					add_to_faction = KUR
+				}	
+			}
+			if = {
+				limit = { KSI = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+				KSI = {	add_ideas = RUSAlliance_Observer }
+			}
+			if = {
+				limit = { KTG = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+				KTG = {	add_ideas = RUSAlliance_Observer }
+			}
+			if = {
+				limit = { FRM = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+				FRM = {	add_ideas = RUSAlliance_Observer }
+			}
+			if = {
+				limit = { FRV = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+				FRV = {	add_ideas = RUSAlliance_Observer }
+			}
+			if = {
+				limit = { CPR = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+				CPR = {	add_ideas = RUSAlliance_Observer }
+			}
+			if = {
+				limit = { CAF = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+				CAF = {	add_ideas = RUSAlliance_Observer }
+			}
+			if = {
+				limit = { 
+					CPR = { check_variable = { ECON_SPHERE_LEADER = MAR } }
+					GAB = { is_subject_of = CPR }
+				}
+				GAB = { #я ебал в рот в on_peace лезть
+					econ_join_sphere_MAR = yes
+					add_ideas = RUSAlliance_Observer
+				}
+			}
 		}
 	}
 }

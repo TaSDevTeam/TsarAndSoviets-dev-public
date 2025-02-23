@@ -61,9 +61,10 @@ bookmarks = {
 			focuses = {
 				MAR_the_star_general
 				MAR_fathers_sins
-				MAR_wiseness_of_kosygin
+				MAR_wisdom_of_kosygin
 			}
 		}
+		
 		"VOR" = {
 			history = ""
 			ideology = despotism
@@ -214,10 +215,18 @@ bookmarks = {
 
 		"MEX" = {
 			minor = yes
-			history = ""
+			history = "MEX_THENEWORDER_DESC"
 			ideology = paternalism
-			ideas = {}
-			focuses = {}
+			ideas = {
+				MEX_the_imperfect_dictatorship_initial
+				MEX_mexican_miracle_startscreen
+				MEX_the_leviathan_4
+			}
+			focuses = {
+				MEX_visiting_the_east
+				MEX_the_olympic_dream
+				MEX_a_friendly_visit
+			}
 		}
 
 		"SAF" = {
@@ -256,12 +265,20 @@ bookmarks = {
 			}
 		}
 
-		"MCW" = {
+		"UKR" = {
 			minor = yes
-			history = ""
+			history = "UKR_THENEWORDER_DESC"
 			ideology = national_socialism
-			ideas = {}
-			focuses = {}
+			ideas = {
+				UKR_breadbasket_of_the_reich
+				UKR_land_of_contrasts
+				UKR_paradise_undone
+			}
+			focuses = {
+				UKR_the_melt_of_rot
+				FUK_the_new_hruchevsky
+				UKS_the_longest_war
+			}
 		}
 
 		"BRG" = {
@@ -279,6 +296,7 @@ bookmarks = {
 				BRG_the_last_hope_for_germania
 			}
 		}
+
 		## PAKT ##
 
 		## RUSSIA ##
@@ -441,37 +459,58 @@ bookmarks = {
 		## OFN ##
 
 		## PAKT ##
-		"GGN" = {
-			minor = yes
-			history = ""
-			ideology = national_socialism
-			ideas = {}
-			focuses = {}
-		}
 
-		"UKR" = {
+		"ANG" = {
 			minor = yes
-			history = "UKR_THENEWORDER_DESC"
+			history = "ANG_THENEWORDER_DESC"
 			ideology = national_socialism
-			ideas = {
-				UKR_breadbasket_of_the_reich
-				UKR_land_of_contrasts
-				UKR_paradise_undone
+
+			ideas={
+				ANG_Afrikaner_Airstrip
+				ANG_Away_In_The_Clouds
+				ANG_Incoherent_Bookkeeping
 			}
 			focuses = {
-				UKR_the_melt_of_rot
-				FUK_the_new_hruchevsky
-				UKS_the_longest_war
+				ANG_the_air_empire
+				ANG_keepingourheadsdown
+				ANG_pushforabettertomorrow
 			}
 		}
 
-		"OST" = {
+		"COG" = {
 			minor = yes
-			history = ""
+			history = "COG_THENEWORDER_DESC"
 			ideology = national_socialism
-			ideas = {}
-			focuses = {}
+
+			ideas={
+				COG_Heart_Of_Afrika_7
+				COG_Hands_Off_Administration
+				COG_Soldiers_Of_Fortune
+			}
+			focuses = {
+				COG_the_pride_of_afrika
+				COG_a_corporate_empire
+				COG_the_safari_beckons
+			}
 		}
+
+		"GRO" = {
+			minor = yes
+			history = "GRO_THENEWORDER_DESC"
+			ideology = national_socialism
+
+			ideas={
+				GRO_Just_Another_Camp
+				GRO_Aryan_Only_SS
+				GRO_The_Unending_War
+			}
+			focuses = {
+				GRO_the_guardians_of_afrika
+				GRO_prepare_the_werewolves
+				GRO_be_happy_or_else
+			}
+		}
+
 		## PAKT ##
 
 		## RUSSIA ##
@@ -584,7 +623,7 @@ bookmarks = {
 		## TRIUM ##
 		"ZZZ" = { minor = yes history = "" }
 
-		"ARG" = { minor = yes history = "" }
+		"ARG" = { minor = yes history = "ARG_THENEWORDER_DESC" }
 
 		"ZZZ" = { minor = yes history = "" }
 		## TRIUM ##
@@ -598,64 +637,68 @@ bookmarks = {
 		"ZZZ" = { minor = yes history = "" }
 
 		## OFN ##
-		"ZZZ" = { minor = yes history = "" }
+		"AAC" = {
+			minor = yes
+			history = "AAC_THENEWORDER_DESC"
+			ideology = paternalism
+			ideas = {
+				Antarctica_Territory_Generic_Idea
+				AAC_Unrecognized_Antarctic_Claims
+				AAC_Jealous_Defence
+			}
+			focuses = {
+
+			}
+		}
 
 		"ZZZ" = { minor = yes history = "" }
 
-		"ZZZ" = { minor = yes history = "" }
+		"AAO" = {
+			minor = yes
+			history = "AAO_THENEWORDER_DESC"
+			ideology = paternalism
+			ideas = {
+				Antarctica_Territory_Generic_Idea
+				AAO_McMurdo_Station
+				AAO_OFN_Tensions
+			}
+			focuses = {
+
+			}
+		}
 		## OFN ##
 
 		## PAKT ##
-		"ANG" = {
+		"AAG" = {
 			minor = yes
-			history = "ANG_THENEWORDER_DESC"
+			history = "AAG_THENEWORDER_DESC"
 			ideology = national_socialism
-
-			ideas={
-				ANG_Afrikaner_Airstrip
-				ANG_Away_In_The_Clouds
-				ANG_Incoherent_Bookkeeping
+			ideas = {
+				Antarctica_Territory_Generic_Idea
+				AAG_Aircraft_Testing_Site
+				AAG_Precarious_Supply_Situation
 			}
 			focuses = {
-				ANG_the_air_empire
-				ANG_keepingourheadsdown
-				ANG_pushforabettertomorrow
+
 			}
 		}
 
-		"COG" = {
+		"OST" = {
 			minor = yes
-			history = "COG_THENEWORDER_DESC"
+			history = ""
 			ideology = national_socialism
-
-			ideas={
-				COG_Heart_Of_Afrika_7
-				COG_Hands_Off_Administration
-				COG_Soldiers_Of_Fortune
-			}
-			focuses = {
-				COG_the_pride_of_afrika
-				COG_a_corporate_empire
-				COG_the_safari_beckons
-			}
+			ideas = {}
+			focuses = {}
 		}
 
-		"GRO" = {
+		"MCW" = {
 			minor = yes
-			history = "GRO_THENEWORDER_DESC"
+			history = ""
 			ideology = national_socialism
-
-			ideas={
-				GRO_Just_Another_Camp
-				GRO_Aryan_Only_SS
-				GRO_The_Unending_War
-			}
-			focuses = {
-				GRO_the_guardians_of_afrika
-				GRO_prepare_the_werewolves
-				GRO_be_happy_or_else
-			}
+			ideas = {}
+			focuses = {}
 		}
+		
 		## PAKT ##
 
 		## RUSSIA ##
@@ -739,19 +782,52 @@ bookmarks = {
 			}
 		}
 
+		"ZZZ" = { minor = yes history = "" }
 		## RUSSIA ##
 
 		## CPS ##
+		"ZZZ" = { minor = yes history = "" }
 
+		"AAJ" = {
+			minor = yes
+			history = "AAJ_THENEWORDER_DESC"
+			ideology = despotism
+			ideas = {
+				Antarctica_Territory_Generic_Idea
+				AAJ_Nobu_Shirase_Land
+				AAJ_Nissui
+			}
+			focuses = {
+
+			}
+		}
+
+		"ZZZ" = { minor = yes history = "" }
 		## CPS ##
 
 		## TRIUM ##
+		"ZZZ" = { minor = yes history = "" }
 
+		"AAA" = {
+			minor = yes
+			history = "AAA_THENEWORDER_DESC"
+			ideology = paternalism
+			ideas = {
+				Antarctica_Territory_Generic_Idea
+				AAA_Dreams_Of_The_South_Pole
+				AAA_War_Legacy
+			}
+			focuses = {
+
+			}
+		}
+		
+		"ZZZ" = { minor = yes history = "" }
 		## TRIUM ##
 
 		# Buffer
+		"ZZZ" = { minor = yes history = "" }
 
 		### ROW 3 ###
-		#### MINORS ####
 	}
 }

@@ -1,0 +1,34 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_nuke_progress_frame"
+		textureFile = "gfx/interface/nuke_gui/prog_frame.dds"
+	}
+	progressbartype = {
+		name = "GFX_nuke_progress_scale"  
+		texturefile1 = "gfx/interface/nuke_gui/prog_scale.dds"
+		texturefile2 = "gfx/interface/blank.dds"
+		size = { x = 403 y = 44 }
+		effectfile = "gfx/FX/progress.lua"
+		horizontal = yes
+	}
+	spriteType = {
+		name = "GFX_nuke_progress_stage_1"  
+		textureFile = "gfx/interface/nuke_gui/stage_one.dds"
+	}
+	spriteType = {
+		name = "GFX_nuke_progress_stage_2" 
+		textureFile = "gfx/interface/nuke_gui/stage_two.dds"
+	}
+	spriteType = {
+		name = "GFX_nuke_progress_stage_3" 
+		textureFile = "gfx/interface/nuke_gui/stage_three.dds"
+	}
+	spriteType = {
+		name = "GFX_nuke_progress_stage_4" 
+		textureFile = "gfx/interface/nuke_gui/stage_four.dds"
+	}
+	spriteType = {
+		name = "GFX_nuke_progress_stage_5" 
+		textureFile = "gfx/interface/nuke_gui/stage_five.dds"
+	}
+} 

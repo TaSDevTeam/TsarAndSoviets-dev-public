@@ -2,7 +2,9 @@
 
 # Vacant
 recruit_character = GRM_Generic_Vacant
-	
+recruit_character = MTU_Military_Administration
+recruit_character = MTU_Ahmet_Isvan
+
 fill_empty_minister_nochecks = yes 
 
 set_country_flag = is_postger_nation
@@ -22,12 +24,12 @@ set_popularities = {
 	communist = 0
 	ultranationalism = 0
 	socialist = 0
-	paternalism = 0
+	paternalism = 24
 	liberalism = 0
-	conservatism = 0
-	progressivism = 50
-	despotism = 50
-	fascism = 0
+	conservatism = 13
+	progressivism = 12
+	despotism = 43
+	fascism = 8
 	national_socialism = 0
 	
 }
@@ -48,15 +50,14 @@ set_party_name = {
 }
 # Leaders
 recruit_character = GRM_Ion_Iliescu
-recruit_character = GRM_Mihai_I
-
+recruit_character = GRM_Radu_Ciuceanu
 
 add_ideas = {
 	### Standard ###
 	
 	### Economic Laws ###
 	tno_trade_laws_limited_exports
-	tno_income_taxation_elite_tax_exemptions
+	tno_income_taxation_high_income_weighted
 	tno_minimum_wage_no_minimum_wage
 	tno_max_workhours_unlimited_work_day
 	tno_pensions_no_pensions
@@ -67,7 +68,7 @@ add_ideas = {
 	tno_education_public_education
 	tno_penal_system_politicized_penal_system
 	tno_gender_rights_traditional_roles
-	tno_security_oppressive_police
+	tno_security_crime_prevention
 	tno_regulations_token_regulations
 	
 	### Political Laws ###
@@ -106,3 +107,5 @@ add_ideas = {
 	tno_academic_base_primary_schooling
 	tno_admin_efficiency_functional_administrative_systems
 }
+
+TNO_startup_nation = yes

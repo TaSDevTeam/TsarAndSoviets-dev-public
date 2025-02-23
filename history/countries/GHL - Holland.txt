@@ -34,21 +34,6 @@ set_popularities = {
 	national_socialism = 20
 	
 }
-set_party_name = { 
-	ideology = despotism 
-	long_name = Post_WRW2_Russian_Army_party
-	name = Post_WRW2_Russian_Army_party
-}
-set_party_name = { 
-	ideology = national_socialism 
-	long_name = Post_WRW2_Werewolf_party
-	name = Post_WRW2_Werewolf_party
-}
-set_party_name = { 
-	ideology = communist 
-	long_name = Post_WRW2_KPG_party
-	name = Post_WRW2_KPG_party
-}
 
 set_technology = {
 	infantry_weapons_1 = 1
@@ -93,12 +78,12 @@ add_ideas = {
 	tno_education_public_education
 	tno_penal_system_harsh_penal_code
 	tno_gender_rights_traditional_roles
-	tno_security_regulated_police
+	tno_security_crime_prevention
 	tno_regulations_token_regulations
 
 	#ECONOMIC
 	tno_trade_laws_free_trade
-	tno_income_taxation_tax_havens
+	tno_income_taxation_low_income_weighted
 	tno_minimum_wage_low_minimum_wage
 	tno_max_workhours_8_hour_work_day
 	tno_pensions_trinket_pensions
@@ -125,3 +110,4 @@ add_ideas = {
 	tno_admin_efficiency_deficient_administrative_systems
 }
 set_research_slots = 3
+TNO_startup_nation = yes

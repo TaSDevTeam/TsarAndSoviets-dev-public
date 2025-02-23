@@ -4,6 +4,105 @@ add_namespace =	KUR_CW
 add_namespace = MAR_forpol
 ###dobrovoltsy zone
 
+country_event = { #god damn it finland
+	id = MAR_forpol.100
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_forpol.100" }
+	title = MAR_forpol.100.t
+	desc = MAR_forpol.100.d
+	picture = GFX_report_event_lithuania_army
+	trigger = {
+		tag = MAR
+		AND = { 
+			NOT = { country_exists = FIN }
+			country_exists = RFI
+			country_exists = MPR
+		}
+	}
+	mean_time_to_happen = {
+		days = 2 
+	}
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_forpol.100.a
+		ai_chance = { factor = 1 }
+		add_political_power = 50
+		custom_effect_tooltip = MAR_RFI_alliance_tt
+		set_country_flag = MAR_RFI_alliance
+		FROM = {
+			white_peace = FIN
+			add_state_core = 215
+			add_state_core = 216
+			add_state_core = 147
+			add_state_core = 722
+			add_state_core = 1724
+			transfer_state = 215
+			transfer_state = 216
+			transfer_state = 147
+			transfer_state = 722
+			transfer_state = 1724
+			add_state_core = 859
+			add_state_core = 858
+			add_state_core = 1887
+			transfer_state = 859
+			transfer_state = 858
+			transfer_state = 1887
+			save_global_event_target_as = winning_country
+			set_temp_variable = { target = MPR }
+			TNO_clear_num_volunteers = yes
+			if = {
+				limit = {
+					country_exists = MPR
+				}
+				annex_country = {
+					target = MPR
+					transfer_troops = yes
+				}
+				MPR = {
+					every_unit_leader = {
+						set_nationality = WSR
+					}
+				}
+			}
+			else = {
+				transfer_state = 1359
+				transfer_state = 213
+			}
+			if = {
+				limit = {
+					OR = {
+						MPR = {
+							controls_state = 1724
+						}
+						WSR = {
+							controls_state = 1724
+						}
+					}
+				}
+				add_state_core = 1724
+				transfer_state = 1724
+			}
+		}
+		RFI = {
+			hidden_effect = {
+				every_country = {
+					limit = { is_ai = no }
+					news_event = {
+						id = FIN_WORLD.14
+						days = 1
+					}
+				}
+			}
+			save_global_event_target_as = losing_country
+		}
+		set_global_flag = war_won
+		set_global_flag = show_peace_popup_alert
+		add_to_variable = { global.peace_popup_dirty = 1 }
+		WSR = { RUS_reset_war_weariness = yes }
+		clr_global_flag = MURMANSK_CRISIS
+	}
+}
+
 country_event = { #any help? 
 	id = berez_dobrovoltsy.1
 	immediate = {log = "[GetDateText]: [Root.GetName]: berez_dobrovoltsy.1"}
@@ -152,7 +251,6 @@ country_event = { #Egypt 1
 	option = { #very cool
 		name = berez_dobrovoltsy.15.a
 		EGQ = {
-			econ_join_sphere_MAR = yes
 			set_temp_variable = { gdp_growth_temp = 0.05 }
 			econ_gdp_growth_change = yes
 		}
@@ -192,6 +290,23 @@ country_event = { #Kurds 1
 	picture = GFX_event_MAR_dobr17
 	option = { #Zhirik
 		name = berez_dobrovoltsy.17.a
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 100
+				has_game_rule = {
+					rule = BELOZERSKY_IRAQ_FATE
+					option = BELOZERSKY_IRAQ_FATE_ZHIRINOVSKY
+				}
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = BELOZERSKY_IRAQ_FATE
+					option = BELOZERSKY_IRAQ_FATE_SADDAM
+				}
+			}
+		}
 		hidden_effect = {
 		    MAR = {
 				country_event = {
@@ -204,6 +319,23 @@ country_event = { #Kurds 1
 	}
 	option = { #Saddam
 		name = berez_dobrovoltsy.17.b
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = BELOZERSKY_IRAQ_FATE
+					option = BELOZERSKY_IRAQ_FATE_ZHIRINOVSKY
+				}
+			}
+			modifier = {
+				factor = 100
+				has_game_rule = {
+					rule = BELOZERSKY_IRAQ_FATE
+					option = BELOZERSKY_IRAQ_FATE_SADDAM
+				}
+			}
+		}
 		set_temp_variable = { debt_temp = 0.035 }
 		econ_national_debt_change = yes
 		hidden_effect = {
@@ -271,7 +403,7 @@ country_event = { #Sudan 1
 	option = { #very cool
 		name = berez_dobrovoltsy.20.a
 		SDF = {
-			econ_join_sphere_MAR = yes
+			#econ_join_sphere_MAR = yes
 			set_temp_variable = { gdp_growth_temp = 0.1 }
 			econ_gdp_growth_change = yes
 		}
@@ -331,7 +463,12 @@ country_event = { #Congo 1
 	picture = GFX_event_MAR_dobr23
 	option = { #very cool
 		name = berez_dobrovoltsy.23.a
-		AZD = {
+		KSI = {
+			econ_join_sphere_MAR = yes
+			set_temp_variable = { gdp_growth_temp = 0.15 }
+			econ_gdp_growth_change = yes
+		}
+		KTG = {
 			econ_join_sphere_MAR = yes
 			set_temp_variable = { gdp_growth_temp = 0.15 }
 			econ_gdp_growth_change = yes
@@ -339,6 +476,7 @@ country_event = { #Congo 1
 		MAR = {
 			set_temp_variable = { gdp_growth_temp = 0.04 }
 			econ_gdp_growth_change = yes
+			TaS_fopo_remove_congo_cw_tab = yes
 		}
 	}
 }
@@ -681,29 +819,10 @@ country_event = { #KUR_CW End- Kurdish Victory (Real)
 				MAR_KUR_zeroaproval
 			}
 		}
-		hidden_effect = {
-		    KUR = {
-			    country_event = {
-				    id = KUR_CW.20 days = 5
-			    }
-			    country_event = {
-				    id = KUR_CW.21 days = 12
-			    }
-			    country_event = {
-				    id = KUR_CW.22 days = 19
-			    }
-			    country_event = {
-				    id = KUR_CW.23 days = 27
-			    }
-			}	
+		hidden_effect = {	
 			every_country = {
 				news_event = { id = berez_dobrovoltsy_world_news.10 days = 1 }
 			}	
-		}
-		MAR = {
-			country_event = {
-				id = berez_dobrovoltsy.17 days = 30
-			}
 		}
 	}
 }
@@ -882,6 +1001,9 @@ country_event = { #iran
 		has_global_flag = Iranian_Civil_War
 		has_country_flag = MAR_started_volunteer_sending
 	}
+	mean_time_to_happen = {
+		days = 2 
+	}
 	fire_only_once = yes
 	picture = GFX_MAR_forpol_1
 	option = { #yes
@@ -900,8 +1022,7 @@ country_event = { ### Iran victory
 
 	fire_only_once = yes
 	is_triggered_only = yes
-	trigger = { PER = { has_war = no } }
-
+	
 	option = {
 		name = MAR_forpol.2.a
 		TNO_fopo_remove_iran_civil_war_tab = yes
@@ -959,6 +1080,9 @@ country_event = { #oil crisis
 		has_global_flag = OC_Yemen_CW
 		has_country_flag = MAR_started_volunteer_sending
 	}
+	mean_time_to_happen = {
+		days = 1 
+	}
 	fire_only_once = yes
 	picture = GFX_MAR_forpol_4
 	option = { #yes
@@ -975,12 +1099,10 @@ country_event = { #congo cw
 	immediate = {log = "[GetDateText]: [Root.GetName]: MAR_forpol.5"}
 	title = MAR_forpol.5.t
 	desc = MAR_forpol.5.d
-	trigger = {
-		tag = MAR
-		has_global_flag = CONGO_PW_HAPPENING
-		has_country_flag = MAR_started_volunteer_sending
-	}
+	
 	fire_only_once = yes
+	is_triggered_only = yes
+	
 	picture = GFX_MAR_forpol_5
 	option = { #yes
 		name = MAR_forpol.5.a
@@ -988,13 +1110,13 @@ country_event = { #congo cw
 			limit = { has_government = socialist }
 			set_country_flag = MAR_aid_CPR
 			set_temp_variable = { target = CPR }
-			TNO_increase_volunteer_cap_1 = yes
+			TNO_increase_volunteer_cap_2 = yes
 		}
 		else_if = {
 			limit = { has_government = despotism }
 			set_country_flag = MAR_aid_KSI
 			set_temp_variable = { target = KSI }
-			TNO_increase_volunteer_cap_1 = yes
+			TNO_increase_volunteer_cap_2 = yes
 		}
 		TaS_fopo_add_congo_cw_tab = yes
 	}
@@ -1013,6 +1135,9 @@ country_event = { #france CW BEL join
 			has_global_flag = FRA_civil_war_poujade
 		}
 		has_country_flag = MAR_started_volunteer_sending
+	}
+	mean_time_to_happen = {
+		days = 2 
 	}
 	fire_only_once = yes
 	picture = GFX_event_MAR_dobr2
@@ -1041,7 +1166,9 @@ country_event = { #france CW BEL win
 		country_exists = FRM
 		has_global_flag = FRA_civil_war_over
 	}
-
+	mean_time_to_happen = {
+		days = 2 
+	}
 	option = {
 		name = MAR_forpol.701.a
 		TaS_fopo_remove_france_civil_war_tab = yes
@@ -1051,8 +1178,11 @@ country_event = { #france CW BEL win
 		FRM  = {
 			clr_country_flag = MAR_aid_FRM
 			econ_join_sphere_MAR = yes
+			leave_faction = yes #тноиды идите нахуй
 		}
 		add_popularity = { ideology = despotism popularity = 0.02 }
+		set_temp_variable = { target = FRM }
+		TNO_clear_num_volunteers = yes
 		TaS_dobrovoltsy_dynmod_victory = yes
 	}
 }
@@ -1080,7 +1210,9 @@ country_event = { #france CW BEL lose
 		}
 		has_government = despotism
 	}
-
+	mean_time_to_happen = {
+		days = 2 
+	}
 	option = {
 		name = MAR_forpol.702.a
 		TaS_fopo_remove_france_civil_war_tab = yes
@@ -1089,6 +1221,8 @@ country_event = { #france CW BEL lose
 		add_war_support = -0.03
 		FRM = { clr_country_flag = MAR_aid_FRM }
 		add_popularity = { ideology = despotism popularity = -0.02 }
+		set_temp_variable = { target = FRM }
+		TNO_clear_num_volunteers = yes
 		TaS_dobrovoltsy_dynmod_lose = yes
 	}
 }
@@ -1104,11 +1238,15 @@ country_event = { #france CW KOS join
 		has_global_flag = FRA_civil_war_sidos
 		has_country_flag = MAR_started_volunteer_sending
 	}
+	mean_time_to_happen = {
+		days = 2 
+	}	
 	fire_only_once = yes
 	picture = GFX_event_MAR_dobr2
 	option = { #yes
 		name = MAR_forpol.710.a
 		TaS_fopo_add_france_civil_war_tab = yes
+		set_country_flag = MAR_aid_FRV
 		FRV  = { set_country_flag = MAR_aid_FRV }
 		set_temp_variable = { target = FRV }
 		set_temp_variable = { number = 4 }
@@ -1130,8 +1268,11 @@ country_event = { #france CW KOS win
 		has_government = socialist
 		country_exists = FRV
 		has_global_flag = FRA_civil_war_over
+		has_country_flag = MAR_aid_FRV
 	}
-
+	mean_time_to_happen = {
+		days = 2 
+	}
 	option = {
 		name = MAR_forpol.711.a
 		TaS_fopo_remove_france_civil_war_tab = yes
@@ -1143,6 +1284,8 @@ country_event = { #france CW KOS win
 			econ_join_sphere_MAR = yes
 		}
 		add_popularity = { ideology = socialist popularity = 0.02 }
+		set_temp_variable = { target = FRV }
+		TNO_clear_num_volunteers = yes
 		TaS_dobrovoltsy_dynmod_victory = yes
 	}
 }
@@ -1159,6 +1302,7 @@ country_event = { #france CW KOS lose
 	trigger = {
 		tag = MAR
 		has_government = socialist
+		has_country_flag = MAR_aid_FRV
 		OR = {
 			AND = { 
 				NOT = { country_exists = FRV }
@@ -1170,7 +1314,9 @@ country_event = { #france CW KOS lose
 			}
 		}
 	}
-
+	mean_time_to_happen = {
+		days = 2 
+	}
 	option = {
 		name = MAR_forpol.712.a
 		TaS_fopo_remove_france_civil_war_tab = yes
@@ -1179,6 +1325,8 @@ country_event = { #france CW KOS lose
 		add_war_support = -0.03
 		FRV  = { clr_country_flag = MAR_aid_FRV }
 		add_popularity = { ideology = socialist popularity = -0.02 }
+		set_temp_variable = { target = FRV }
+		TNO_clear_num_volunteers = yes
 		TaS_dobrovoltsy_dynmod_lose = yes
 	}
 }
@@ -1192,8 +1340,7 @@ country_event = { ### Iran victory
 
 	fire_only_once = yes
 	is_triggered_only = yes
-	trigger = { PER = { has_war = no } }
-
+	
 	option = {
 		name = MAR_forpol.8.a
 		TNO_fopo_remove_iran_civil_war_tab = yes
@@ -1204,6 +1351,8 @@ country_event = { ### Iran victory
 		clr_country_flag = MAR_IR_CW_ACTIVE
 		add_popularity = { ideology = despotism popularity = 0.02 }
 		country_event = { id = berez_dobrovoltsy.24 }
+		set_temp_variable = { target = IRC }
+		TNO_clear_num_volunteers = yes
 		TaS_dobrovoltsy_dynmod_victory = yes
 	}
 }
@@ -1217,7 +1366,7 @@ country_event = { ### Iran defeat
 
 	fire_only_once = yes
 	is_triggered_only = yes
-
+	
 	option = {
 		name = MAR_forpol.9.a
 		TNO_fopo_remove_iran_civil_war_tab = yes
