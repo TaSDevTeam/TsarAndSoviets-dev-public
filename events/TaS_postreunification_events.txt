@@ -323,7 +323,14 @@ country_event = { #Offer ceasefire - yes
 				factor = 0
 				has_game_rule = {
 					rule = SWRW_AFGHAN_WAR_RESULT
-					option = SWRW_AFGHAN_WAR_RESULT_QUO
+					option = SWRW_AFGHAN_WAR_RESULT_PARTWIN
+				}
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = SWRW_AFGHAN_WAR_RESULT
+					option = SWRW_AFGHAN_WAR_RESULT_WIN
 				}
 			}
 		}
@@ -398,6 +405,13 @@ country_event = { #conditional surrender
 		name = MAR_AFG.2.b
 		ai_chance = {
 			factor = 1
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = SWRW_AFGHAN_WAR_RESULT
+					option = SWRW_AFGHAN_WAR_RESULT_QUO
+				}
+			}
 			modifier = {
 				factor = 0
 				has_game_rule = {
