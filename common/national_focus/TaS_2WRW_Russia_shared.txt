@@ -957,7 +957,7 @@ shared_focus = {
 				add_manpower = -112
 			}
 		}
-		country_event = { id = RUS_SWRW.5 }
+		#country_event = { id = RUS_SWRW.5 }
 	}
 }
 shared_focus = {
@@ -1074,6 +1074,7 @@ shared_focus = {
 		add_ideas = { tno_training_none }			
 		tno_draft_exemptions_clear = yes
 		add_ideas = { tno_draft_exemptions_none }	
+		country_event = { id = RUS_SWRW.12 days = 3 }
 	}
 }
 shared_focus = {
@@ -1090,6 +1091,7 @@ shared_focus = {
 			idea = SWRW_last_stand
 			days = 120
 		}
+		country_event = { id = RUS_SWRW.13 days = 3 }
 	}
 }
 shared_focus = {

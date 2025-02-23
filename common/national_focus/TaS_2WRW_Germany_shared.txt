@@ -22,7 +22,7 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		add_war_support = 0.15
-		country_event = { id = GER_SWRW.1 }
+		country_event = { id = GER_SWRW.1 days = 3 }
 	}
 }
 shared_focus = {
@@ -260,7 +260,7 @@ shared_focus = {
 	x = 0
 	y = 2
 	completion_reward = {
-		country_event = { id = GER_SWRW.5 }
+		country_event = { id = GER_SWRW.5 days = 3 }
 	}
 }
 
@@ -732,6 +732,7 @@ shared_focus = {
 		add_ideas = { tno_training_none }			
 		tno_draft_exemptions_clear = yes
 		add_ideas = { tno_draft_exemptions_none }	
+		country_event = { id = GER_SWRW.22 days = 3}
 	}
 }
 shared_focus = {

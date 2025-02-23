@@ -241,6 +241,12 @@ country_event = { #
 		name = RUS_SWRW.6.a
 		ai_chance = { factor = 1 }
 		TNO_Country_Closing_Screen_Show = yes
+		if = {
+			limit = { has_government = despotism }
+			set_country_leader_description = {
+				desc = "POLITICS_SERGEY_BELOZERSKI_VICTORY_DESC"
+			}
+		}	
 	}
 }
 
@@ -365,6 +371,39 @@ country_event = { #mountainous rebels
 	}
 }
 
+country_event = { #
+	id = RUS_SWRW.12
+	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW.12" }
+	title = RUS_SWRW.12.t
+	desc = RUS_SWRW.12.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = RUS_SWRW.12.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #
+	id = RUS_SWRW.13
+	immediate = { log = "[GetDateText]: [Root.GetName]: event RUS_SWRW.13" }
+	title = RUS_SWRW.13.t
+	desc = RUS_SWRW.13.d
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = RUS_SWRW.13.a
+		ai_chance = { factor = 1 }
+		
+	}
+}
 country_event = { #
 	id = GER_SWRW.1
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_SWRW.1" }
@@ -1135,7 +1174,7 @@ country_event = { #Ostland: let's burn the belarus
 	}
 }
 
-country_event = { #Caucasus: one more event
+country_event = { #Farewell
 	id = GER_SWRW.22
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_SWRW.22" }
 	title = GER_SWRW.22.t

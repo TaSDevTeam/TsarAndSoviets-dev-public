@@ -3013,7 +3013,7 @@ country_event = { #Offer status quo
 		hidden_effect = {
 			RUS = {
 				load_focus_tree = ZZZ_blank_focus
-				has_country_flag = MAR_Good_Ending
+				set_country_flag = MAR_Good_Ending
 				TNO_Country_Closing_Screen_Show = yes
 			}
 			every_country  = {
