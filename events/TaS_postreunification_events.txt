@@ -2201,8 +2201,8 @@ country_event = { #3 round success
 			}
 			if = {
 				limit = { has_country_flag = FE_korean_resettlement }
-				1646 = { set_variable = { nationality = 1000 } }
-				657 = { set_variable = { nationality = 1000 } }
+				1646 = { set_variable = { nationality = 10000 } }
+				657 = { set_variable = { nationality = 10000 } }
 				
 				1646 = { add_manpower = 312423 }
 				657 = { add_manpower = 434391 }
@@ -2331,8 +2331,8 @@ country_event = { #4 round success
 			}
 			if = {
 				limit = { has_country_flag = FE_korean_resettlement }
-				1646 = { set_variable = { nationality = 1000 } }
-				657 = { set_variable = { nationality = 1000 } }
+				1646 = { set_variable = { nationality = 10000 } }
+				657 = { set_variable = { nationality = 10000 } }
 				
 				1646 = { add_manpower = 312423 }
 				657 = { add_manpower = 434391 }
@@ -2358,7 +2358,7 @@ country_event = { #4 round success
 			}
 			if = {
 				limit = { has_country_flag = FE_double_administrartion }
-				809 = { set_variable = { nationality = 1001 } }
+				809 = { set_variable = { nationality = 10001 } }
 				809 = { add_compliance = 0.95 }
 				809 = {
 					add_province_modifier = {
@@ -2404,8 +2404,8 @@ country_event = { #1-3 round fail
 			}
 			if = {
 				limit = { has_country_flag = FE_korean_resettlement }
-				1646 = { set_variable = { nationality = 1000 } }
-				657 = { set_variable = { nationality = 1000 } }
+				1646 = { set_variable = { nationality = 10000 } }
+				657 = { set_variable = { nationality = 10000 } }
 				
 				1646 = { add_manpower = 312423 }
 				657 = { add_manpower = 434391 }
@@ -2459,8 +2459,8 @@ country_event = { #4 round fail
 			}
 			if = {
 				limit = { has_country_flag = FE_korean_resettlement }
-				1646 = { set_variable = { nationality = 1000 } }
-				1647 = { set_variable = { nationality = 1000 } }
+				1646 = { set_variable = { nationality = 10000 } }
+				1647 = { set_variable = { nationality = 10000 } }
 				
 				1646 = { add_manpower = 312423 }
 				1647 = { add_manpower = 434391 }

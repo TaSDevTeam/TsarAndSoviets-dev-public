@@ -8971,7 +8971,17 @@ scripted_map_modes = {
 				else_if = {
 					limit = {
 						FROM = {
-							check_variable = { nationality = 999 } #Czech
+							check_variable = { nationality = 972 } #Jamtlandsk
+						}
+					}
+					set_temp_variable = { red = 0.251 }
+					set_temp_variable = { green = 0.251 }
+					set_temp_variable = { blue = 0.577 }
+				}
+				else_if = {
+					limit = {
+						FROM = {
+							check_variable = { nationality = 9999 } #Czech
 						}
 					}
 					set_temp_variable = { red = 0.34 }
@@ -8981,7 +8991,7 @@ scripted_map_modes = {
 				else_if = {
 					limit = {
 						FROM = {
-							check_variable = { nationality = 1000 } #Russian, with Korean resettlement
+							check_variable = { nationality = 10000 } #Russian, with Korean resettlement
 						}
 					}
 					set_temp_variable = { red = 0.333 }
@@ -8991,7 +9001,7 @@ scripted_map_modes = {
 				else_if = {
 					limit = {
 						FROM = {
-							check_variable = { nationality = 1001 } #Russo-Dongbei, with Japanese minority
+							check_variable = { nationality = 10001 } #Russo-Dongbei, with Japanese minority
 						}
 					}
 					set_temp_variable = { red = 0.333 }

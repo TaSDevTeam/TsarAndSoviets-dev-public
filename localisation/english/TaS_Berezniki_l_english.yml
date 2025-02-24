@@ -301,13 +301,13 @@
  MAR_MGB_yurla_operation_predicted_tt: "§YExpected outcome:§! [MAR_MGB_yurla_operation_prediction]"
  
  MAR_MGB_resources_operation_status_tt: "[MAR_MGB_resources_operation_status]"
- MAR_MGB_resources_operation_name_tt: "§YOperation '§!§qBLACK SWAN§!§Y'§!"
+ MAR_MGB_resources_operation_name_tt: "§YOperation '§!§uREDHEAD CUCKOO§!§Y'§!"
  MAR_MGB_resources_operation_desc_tt: "§YWe will attempt to§! §fhalt§! §oresource shipments§! §Yto§! §KVyatka.§!"
  MAR_MGB_resources_operation_tr_tt: "§YNetwork strength threshold for this operation: §d[?MAR.MAR_MGB_var_resources_threshold]§!.§!"
  MAR_MGB_resources_operation_predicted_tt: "§YExpected outcome:§! [MAR_MGB_resources_operation_prediction]"
  
  MAR_MGB_advisors_operation_status_tt: "[MAR_MGB_advisors_operation_status]"
- MAR_MGB_advisors_operation_name_tt: "§YOperation '§!§uRED CUCKOO§!§Y'§!"
+ MAR_MGB_advisors_operation_name_tt: "§YOperation '§!§qBLACK SWAN§!§Y'§!"
  MAR_MGB_advisors_operation_desc_tt: "§YWe will attempt to§! §farrest§! §KVyatka’s§! §omilitary mission.§!"
  MAR_MGB_advisors_operation_tr_tt: "§YNetwork strength threshold for this operation: §d[?MAR.MAR_MGB_var_advisors_threshold]§!.§!"
  MAR_MGB_advisors_operation_predicted_tt: "§YExpected outcome:§! [MAR_MGB_advisors_operation_prediction]"
@@ -390,8 +390,8 @@
  
  MAR_MGB_liberation_threshold_growth_tt: "This §Gincreases§! §gnetwork strength threshold§! for §fOperation§! '§MCRYSTAL MOON§!' by §M[?temp_lib_tr_gained_txt]§!."
  MAR_MGB_liberation_threshold_decrease_tt: "This §Rdecreases§! §gnetwork strength threshold§! for §fOperation§! '§MCRYSTAL MOON§!' by §M[?temp_lib_tr_gained_txt]§!."
- MAR_MGB_resources_threshold_growth_tt: "This §Gincreases§! §gnetwork strength threshold§! for §fOperation§! '§qBLACK SWAN§!' by §M[?temp_res_tr_gained_txt]§!."
- MAR_MGB_advisors_threshold_growth_tt: "This §Gincreases§! §gnetwork strength threshold§! for §fOperation§! '§uRED CUCKOO§!' by §M[?temp_adv_tr_gained_txt]§!."
+ MAR_MGB_advisors_threshold_growth_tt: "This §Gincreases§! §gnetwork strength threshold§! for §fOperation§! '§qBLACK SWAN§!' by §M[?temp_res_tr_gained_txt]§!."
+ MAR_MGB_resources_threshold_growth_tt: "This §Gincreases§! §gnetwork strength threshold§! for §fOperation§! '§uRED CUCKOO§!' by §M[?temp_adv_tr_gained_txt]§!."
  MAR_MGB_yurla_threshold_growth_tt: "This §Gincreases§! §gnetwork strength threshold§! for §fOperation§! '§<GRAY FALCON§!' by §M[?temp_yrl_tr_gained_txt]§!."
  
  MAR_vytnetwork_tt: "Current §YOkhranka§! strength: [?MAR.MAR_Okhranka_power]"
@@ -1116,6 +1116,7 @@ TaS_dobrovoltsy_dynmod_lose_tt: "Despite our §Rfailure§! in foreign campaigns,
  MAR_zemsky_sobor.17.a:0 "It sounds convincing."
 
  MAR_meeting_with_bourgeoisie_desc:0 "The people have been swayed to our side, but we must not forget the 'elite' who hold great levers of power. With a snap of their fingers, Maria could be removed... or worse. But let’s not dwell on such grim thoughts!\n\nToday, Kazem-Bek organized a modest 'ball' — or rather, a gathering of all officials, entrepreneurs, and high-ranking figures of the state — to introduce them to Maria. If they take a liking to her, we might secure a few votes in her favor."
+ MAR_Maria_unavailable_tt:0 "§KAt the moment, Maria path is unavailable for play§!"
  MAR_zemsky_sobor.11.t:0 "Waltz, Waltz, Waltz!"
  MAR_zemsky_sobor.11.d:0 "Kazem-Bek sipped red wine imported from Italy with his generals, discussing political matters. Though the generals were loyal allies and friends, an 'opposition' had emerged among them. Some deemed the elections unnecessary, and if held, they would certainly support Belozersky. A heated argument might have erupted, but SHE interrupted.\n\nMaria Vladimirovna appeared before the assembled high society. Dressed in an ivory-colored gown, white gloves, and a modest yet enchanting hairstyle that revealed her neck and shoulders, she descended from the balcony into the hall — as if 'from heaven to earth.' Greeting the attendees, she conversed effortlessly, and judging by their expressions, they were thoroughly charmed.\n\nThe ball lasted an hour. Some guests departed early, others slumped drunkenly at their tables, while most danced. It began with a polonaise where 'gentlemen' chose their 'ladies.' Maria’s simple, graceful movements captivated all. Gentlemen swept their partners across the floor, and soon the hall swirled with waltzes. Even during the traditional cotillion finale, the waltz prevailed!\n\nAs the hall emptied, only Maria, Kazem-Bek, and the generals remained. Maria broke the silence:\n\n- Well, Uncle Sasha! Didn’t you enjoy the ball? I wasn’t just having fun — I spoke with the elite. They’re a bit repulsive, but they believed me. They’ll vote for me and funnel money into our campaign...\n\n- Ah... yes... Your Highness. I was just lost in thought, but... you did splendidly! — He patted her shoulder lightly.\n\n- Alright, I’ll go change. This dress is lovely but suffocating! — Maria hurried upstairs.\n\n- Something troubles you...? — Ardashaev asked gravely.\n\n- Both yes and no... It’s personal. — Kazem-Bek replied, draining his wineglass."
  MAR_zemsky_sobor.11.a:0 "A fine ball indeed."

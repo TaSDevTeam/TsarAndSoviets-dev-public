@@ -646,6 +646,12 @@ shared_focus = {
 	ai_will_do = {
 		factor = 0
 	}
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = MAR_Maria_unavailable_tt
+			Always = false
+		}
+	}
 	mutually_exclusive = {
         focus = MAR_every_man_is_a_tsar
 		focus = MAR_ancestors_blessing
