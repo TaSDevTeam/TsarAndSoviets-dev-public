@@ -1081,6 +1081,37 @@ MAR_debug_category = {
 			#load_focus_tree = {	tree = MAR_Kazembek keep_completed = no }
 		}
 	}
+	
+	MAR_load_Maria = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			#check_variable = { MAR_debug_cat = 3 }
+		}
+		allowed = {
+			original_tag = MAR
+		}
+		fire_only_once = no
+ 
+		complete_effect = {
+			load_focus_tree = MAR_Maria_Regional
+		}
+	}
+	
+	MAR_Maria_say_sike = {
+		icon = GFX_decision_generic_industry
+		visible = {
+			#check_variable = { MAR_debug_cat = 3 }
+		}
+		allowed = {
+			original_tag = MAR
+		}
+		fire_only_once = no
+ 
+		complete_effect = {
+			#load_focus_tree = MAR_Maria_Regional
+		}
+	}
+	
 }
 
 

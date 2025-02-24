@@ -1826,6 +1826,29 @@ ideas = {
 			}
 		}
 	}
+	country = {
+		MAR_shattered_order = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea MAR_shattered_order"}
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			available = {
+				always = yes
+			}
+			cancel = { has_country_flag = RUS_cancel_all_ideas }
+			picture = MAR_regent_ne_car
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_gain = -0.1
+				stability_factor = -0.05
+			}
+		}
+	}
 	
 	hidden_ideas = {
 		war_cheat = {

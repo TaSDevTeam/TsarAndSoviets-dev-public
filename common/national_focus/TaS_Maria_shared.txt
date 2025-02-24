@@ -1,0 +1,168 @@
+shared_focus = {
+	id = MAR_the_true_heir
+	icon = GFX_goal_unknown
+	cost = 3
+	x = 8
+	y = 0
+	completion_reward = {
+		add_political_power = 50
+		country_event = { id = MAR_maria.5 days = 3 }
+	}
+}	
+shared_focus = {
+	id = MAR_golden_cage
+	icon = GFX_goal_unknown
+	cost = 3
+	prerequisite = {focus = MAR_the_true_heir}
+	relative_position_id = MAR_the_true_heir
+	x = -1
+	y = 1
+	completion_reward = {
+		add_political_power = 50
+		set_temp_variable = { temp_econ_spending_amount = 0.005 }
+		econ_spend_money_once_effect_raw_money = yes
+		country_event = { id = MAR_maria.6 days = 3 }
+	}
+}	
+shared_focus = {
+	id = MAR_and_the_keybearer
+	icon = GFX_goal_unknown
+	cost = 3
+	prerequisite = {focus = MAR_the_true_heir}
+	relative_position_id = MAR_the_true_heir
+	x = 1
+	y = 1
+	completion_reward = {
+		TNO_improve_admin_efficiency_low = yes
+		country_event = { id = MAR_maria.7 days = 3 }
+	}
+}	
+shared_focus = {
+	id = MAR_all_royal_court
+	icon = GFX_goal_unknown
+	cost = 3
+	prerequisite = {focus = MAR_golden_cage}
+	prerequisite = {focus = MAR_and_the_keybearer}
+	relative_position_id = MAR_the_true_heir
+	x = 0
+	y = 2
+	completion_reward = {
+		custom_effect_tooltip = MAR_russian_kartenhouse_mech_activate_tt
+		RUS_decrease_administrative_strain = yes
+	}
+}	
+shared_focus = {
+	id = MAR_kazembeks_people
+	icon = GFX_goal_unknown
+	cost = 3
+	prerequisite = {focus = MAR_all_royal_court}
+	relative_position_id = MAR_all_royal_court
+	x = -1
+	y = 1
+	completion_reward = {
+		add_political_power = 25
+		custom_effect_tooltip = MAR_russian_kartenhouse_mech_add_gil_and_belozersky_tt
+		hidden_effect = {
+			country_event = { id = MAR_maria.8 days = 3 }
+			country_event = { id = MAR_maria.9 days = 7 }
+		}
+	}
+}	
+shared_focus = {
+	id = MAR_old_bosses
+	icon = GFX_goal_unknown
+	cost = 3
+	prerequisite = {focus = MAR_all_royal_court}
+	relative_position_id = MAR_all_royal_court
+	x = 1
+	y = 1
+	completion_reward = {
+		custom_effect_tooltip = MAR_russian_kartenhouse_mech_add_shulgin_smyslovsky_and_solzhenitsyn_tt
+		hidden_effect = {
+			country_event = { id = MAR_maria.13 days = 4 }
+			country_event = { id = MAR_maria.14 days = 9 }
+			country_event = { id = MAR_maria.15 days = 9 }
+		}
+	}
+}
+shared_focus = {
+	id = MAR_the_functionary
+	icon = GFX_goal_unknown
+	cost = 3
+	prerequisite = {focus = MAR_kazembeks_people}
+	relative_position_id = MAR_kazembeks_people
+	x = -1
+	y = 1
+	completion_reward = {
+		add_ideas = MAR_Pyotr_Demichev_for
+		custom_effect_tooltip = MAR_russian_kartenhouse_mech_add_demichev_tt
+		hidden_effect = {
+			country_event = { id = MAR_maria.10 days = 5 }
+		}
+	}
+}	
+shared_focus = {
+	id = MAR_vox_populi
+	icon = GFX_goal_unknown
+	cost = 3
+	prerequisite = {focus = MAR_all_royal_court}
+	relative_position_id = MAR_all_royal_court
+	x = 0
+	y = 2
+	completion_reward = {
+		custom_effect_tooltip = MAR_russian_kartenhouse_mech_add_brodsky_and_talantov_tt
+		add_popularity = {
+			ideology = liberalism
+			popularity = 0.12
+		}
+		add_popularity = {
+			ideology = conservatism
+			popularity = 0.15
+		}
+		add_popularity = {
+			ideology = progressivism
+			popularity = 0.04
+		}
+		hidden_effect = {
+			country_event = { id = MAR_maria.11 days = 4 }
+			country_event = { id = MAR_maria.12 days = 9 }
+		}
+	}
+}
+shared_focus = {
+	id = MAR_judas_will_be_in_heaven
+	icon = GFX_goal_unknown
+	cost = 3
+	prerequisite = {focus = MAR_old_bosses}
+	relative_position_id = MAR_old_bosses
+	x = 1
+	y = 1
+	completion_reward = {
+		custom_effect_tooltip = MAR_russian_kartenhouse_mech_add_vladimir_tt
+		add_popularity = {
+			ideology = despotism
+			popularity = 0.05
+		}
+		hidden_effect = {
+			country_event = { id = MAR_maria.16 days = 3 }
+		}
+	}
+}	
+
+shared_focus = {
+	id = MAR_to_urgent_matters
+	icon = GFX_goal_unknown
+	cost = 10
+	prerequisite = {focus = MAR_the_functionary}
+	prerequisite = {focus = MAR_vox_populi }
+	prerequisite = {focus = MAR_judas_will_be_in_heaven }
+	relative_position_id = MAR_all_royal_court
+	x = 0
+	y = 3
+	completion_reward = { ##starting maria early teenager depression arc  ／人◕ ‿‿ ◕人＼
+		custom_effect_tooltip = MAR_russian_kartenhouse_mech_now_the_figures_is_placed_tt
+		hidden_effect = {
+			country_event = { id = MAR_maria.17 }
+		}
+	}
+}			

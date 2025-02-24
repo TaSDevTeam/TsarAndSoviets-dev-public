@@ -1,22 +1,22 @@
 #|===============| TNO Game Rules |===============|#
 
 ### April Fools content
-#april_fools_content_status = {
-#	name = "APRIL_FOOLS_STATUS"
-#	group = "RULE_GROUP_GAME_SETUP"
-#	default = {
-#		name = APRIL_FOOLS_DISABLED
-#		text = "RULE_OPTION_DEFAULT_APRFOOLS"
-#		desc = "RULE_OPTION_DEFAULT_APRFOOLS_DESC"
-#		allow_achievements = yes
-#	}
-#	option = {
-#		name = APRIL_FOOLS_ENABLED
-#		text = "RULE_OPTION_ENABLE_APRFOOLS"
-#		desc = "RULE_OPTION_ENABLE_APRFOOLS_DESC"
-#		allow_achievements = yes
-#	}
-#}
+april_fools_content_status = {
+	name = "APRIL_FOOLS_STATUS"
+	group = "RULE_GROUP_GAME_SETUP"
+	default = {
+		name = APRIL_FOOLS_DISABLED
+		text = "RULE_OPTION_DEFAULT_APRFOOLS"
+		desc = "RULE_OPTION_DEFAULT_APRFOOLS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = APRIL_FOOLS_ENABLED
+		text = "RULE_OPTION_ENABLE_APRFOOLS"
+		desc = "RULE_OPTION_ENABLE_APRFOOLS_DESC"
+		allow_achievements = yes
+	}
+}
 
 
 ######################################
