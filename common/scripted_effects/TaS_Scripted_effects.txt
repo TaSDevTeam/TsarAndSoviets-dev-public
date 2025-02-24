@@ -935,18 +935,18 @@ first_every_day_script_TaS 	= {
 					limit = {
 						check_variable = { ROOT.insurgency_strength < 15 }
 						check_variable = { ROOT.rebelous_states_total < 4 }
-						NOT = {
-							has_game_rule = {
-								rule = KOSYGIN_PRESTOL_TABORITSKY_SEARCH_CHEAT
-								option = KOSYGIN_PRESTOL_TABORITSKY_SEARCH_CHEAT_QUICK
-							}
-						}
 					}
 					country_event = {
 						id = MAR_Kosygin_Prestol.29 days = 1
 					}
 				}
-				else = {
+				else_if = {
+					limit = {
+						has_game_rule = {
+							rule = KOSYGIN_PRESTOL_TABORITSKY_SEARCH_CHEAT
+							option = KOSYGIN_PRESTOL_TABORITSKY_SEARCH_CHEAT_QUICK
+						}
+					}
 					country_event = {
 						id = MAR_Kosygin_Prestol.29 days = 1
 					}
