@@ -14,13 +14,13 @@ scripted_gui = {
 				NOT = { has_country_flag = MAR_Maria_balatro_Opener_Clear }
 				has_country_flag = MAR_Maria_balatro
 			}
-			MAR_Prestol_GUI_Opener_visible = {
+			MAR_Maria_GUI_Opener_visible = {
 				has_country_flag = MAR_Maria_balatro
 			}
 		}
 
 		effects = {
-			MAR_Prestol_GUI_Opener_click = {
+			MAR_Maria_GUI_Opener_click = {
 				if = {
 					limit = { has_country_flag = MAR_Maria_balatro_visible }
 					clr_country_flag = MAR_Maria_balatro_visible
@@ -39,11 +39,25 @@ scripted_gui = {
 	MAR_Maria_GUI = {
 		context_type = player_context
 		window_name = "MAR_Maria_GUI"
-		dirty = MAR_prestol_dirty_var
+		dirty = MAR_Maria_GUI_dirty_var
 		visible = {
 			has_country_flag = MAR_Maria_balatro_visible
 		}
+		triggers = {
+			card_one_not_active_visible = { check_variable = { test_test_test = 1 } }
+			card_one_button_visible = { check_variable = { test_test_test = 2 } }
+		}
+		effects = {
+			card_one_button_click = {
+				if = {
+					limit = { has_country_flag = MAR_Maria_balatro_interaction_visible }
+					clr_country_flag = MAR_Maria_balatro_interaction_visible
+				}
+				else = { set_country_flag = MAR_Maria_balatro_interaction_visible }
+			}
+		}
 	}
+	
 	MAR_Maria_GUI_interaction_menu = {
 		context_type = player_context
 		window_name = "MAR_Maria_GUI_interaction_menu"

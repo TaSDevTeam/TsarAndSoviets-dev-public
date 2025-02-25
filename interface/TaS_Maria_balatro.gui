@@ -20,7 +20,7 @@ guiTypes = {
 	}
 	containerWindowType = {
 		name = "MAR_Maria_GUI"
-		size = { width = 1000 height = 600 }
+		size = { width = 1060 height = 600 }
 		position = { x = 190 y = 28 }
 		moveable = yes
 		
@@ -35,11 +35,226 @@ guiTypes = {
 			instantTextBoxType = {
 				name = "gui_window_title"
 				position = { x = 0 y = 8 }
-				maxWidth = 600
+				maxWidth = 1060
 				maxHeight = 40
 				format = center
 				font = "aldrich_36_outline"
-				text = MAR_gui_title
+				text = "Rasstanovka sil"
+			}
+		}
+
+		buttonType = {
+			name = "gui_close_button"
+			position = { x = -29 y = 10 }
+			quadTextureSprite ="GFX_crt_closebutton"
+			shortcut = "ESCAPE"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+			pdx_tooltip = "CLOSE"
+		}
+		
+		containerWindowType = {
+			name = "cards_one"
+			size = { width = 200 height = 200 }
+			position = { x = 30 y = 100 }
+			instantTextBoxType = {
+				name = "card_text"
+				position = { x = 0 y = 160 }
+				maxWidth = 200
+				maxHeight = 40
+				format = center
+				font = "aldrich_24_outline"
+				text = "huy"
+			}
+			iconType = {
+				name = "card_one_not_active"
+				spriteType = "GFX_MAR_Maria_GUI_card_not_opened"
+				position = { x = 10 y = 0 }
+			}
+			buttonType = {
+				name = "card_one_button"
+				position = { x = 10 y = 0 }
+				quadTextureSprite = "GFX_MAR_Maria_GUI_card_bek"
+			}
+		}
+		
+		containerWindowType = {
+			name = "cards_two"
+			size = { width = 200 height = 200 }
+			position = { x = 230 y = 100 }
+			instantTextBoxType = {
+				name = "card_text"
+				position = { x = 0 y = 160 }
+				maxWidth = 200
+				maxHeight = 40
+				format = center
+				font = "aldrich_24_outline"
+				text = "huy"
+			}
+			buttonType = {
+				name = "card_button"
+				position = { x = 10 y = 0 }
+				quadTextureSprite = "GFX_MAR_Maria_GUI_card_demichev"
+			}
+		}
+		
+		containerWindowType = {
+			name = "cards_three"
+			size = { width = 200 height = 200 }
+			position = { x = 430 y = 100 }
+			instantTextBoxType = {
+				name = "card_text"
+				position = { x = 0 y = 160 }
+				maxWidth = 200
+				maxHeight = 40
+				format = center
+				font = "aldrich_24_outline"
+				text = "huy"
+			}
+			buttonType = {
+				name = "card_button"
+				position = { x = 10 y = 0 }
+				quadTextureSprite = "GFX_MAR_Maria_GUI_card_belozersky"
+			}
+		}
+		
+		containerWindowType = {
+			name = "cards_four"
+			size = { width = 200 height = 200 }
+			position = { x = 630 y = 100 }
+			instantTextBoxType = {
+				name = "card_text"
+				position = { x = 0 y = 160 }
+				maxWidth = 200
+				maxHeight = 40
+				format = center
+				font = "aldrich_24_outline"
+				text = "huy"
+			}
+			buttonType = {
+				name = "card_button"
+				position = { x = 10 y = 0 }
+				quadTextureSprite = "GFX_MAR_Maria_GUI_card_gil"
+			}
+		}
+		
+		containerWindowType = {
+			name = "cards_five"
+			size = { width = 200 height = 200 }
+			position = { x = 830 y = 100 }
+			instantTextBoxType = {
+				name = "card_text"
+				position = { x = 0 y = 160 }
+				maxWidth = 200
+				maxHeight = 40
+				format = center
+				font = "aldrich_24_outline"
+				text = "huy"
+			}
+			buttonType = {
+				name = "card_button"
+				position = { x = 10 y = 0 }
+				quadTextureSprite = "GFX_MAR_Maria_GUI_card_brodsky"
+			}
+		}
+		
+		containerWindowType = {
+			name = "cards_six"
+			size = { width = 200 height = 200 }
+			position = { x = 30 y = 350 }
+			instantTextBoxType = {
+				name = "card_text"
+				position = { x = 0 y = 160 }
+				maxWidth = 200
+				maxHeight = 40
+				format = center
+				font = "aldrich_24_outline"
+				text = "huy"
+			}
+			buttonType = {
+				name = "card_button"
+				position = { x = 10 y = 0 }
+				quadTextureSprite = "GFX_MAR_Maria_GUI_card_vladimir"
+			}
+		}
+		
+		containerWindowType = {
+			name = "cards_seven"
+			size = { width = 200 height = 200 }
+			position = { x = 230 y = 350 }
+			instantTextBoxType = {
+				name = "card_text"
+				position = { x = 0 y = 160 }
+				maxWidth = 200
+				maxHeight = 40
+				format = center
+				font = "aldrich_24_outline"
+				text = "huy"
+			}
+			buttonType = {
+				name = "card_button"
+				position = { x = 10 y = 0 }
+				quadTextureSprite = "GFX_MAR_Maria_GUI_card_smyslovsky"
+			}
+		}
+		
+		containerWindowType = {
+			name = "cards_eight"
+			size = { width = 200 height = 200 }
+			position = { x = 430 y = 350 }
+			instantTextBoxType = {
+				name = "card_text"
+				position = { x = 0 y = 160 }
+				maxWidth = 200
+				maxHeight = 40
+				format = center
+				font = "aldrich_24_outline"
+				text = "huy"
+			}
+			buttonType = {
+				name = "card_button"
+				position = { x = 10 y = 0 }
+				quadTextureSprite = "GFX_MAR_Maria_GUI_card_shulgin"
+			}
+		}
+		
+		containerWindowType = {
+			name = "cards_nine"
+			size = { width = 200 height = 200 }
+			position = { x = 630 y = 350 }
+			instantTextBoxType = {
+				name = "card_text"
+				position = { x = 0 y = 160 }
+				maxWidth = 200
+				maxHeight = 40
+				format = center
+				font = "aldrich_24_outline"
+				text = "huy"
+			}
+			buttonType = {
+				name = "card_button"
+				position = { x = 10 y = 0 }
+				quadTextureSprite = "GFX_MAR_Maria_GUI_card_solzhenitsyn"
+			}
+		}
+		
+		containerWindowType = {
+			name = "cards_ten"
+			size = { width = 200 height = 200 }
+			position = { x = 830 y = 350 }
+			instantTextBoxType = {
+				name = "card_text"
+				position = { x = 0 y = 160 }
+				maxWidth = 200
+				maxHeight = 40
+				format = center
+				font = "aldrich_24_outline"
+				text = "huy"
+			}
+			buttonType = {
+				name = "card_button"
+				position = { x = 10 y = 0 }
+				quadTextureSprite = "GFX_MAR_Maria_GUI_card_talantov"
 			}
 		}
 	}
