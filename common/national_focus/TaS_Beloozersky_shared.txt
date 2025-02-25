@@ -448,7 +448,7 @@ shared_focus = {
 		}
 		set_temp_variable = { pus_temp = 3 }
 		econ_pus_change = yes
-		set_temp_variable = { gdp_growth_temp = 2.5 }
+		set_temp_variable = { gdp_growth_temp = 1.5 }
         econ_gdp_growth_change = yes
 	}
 }
@@ -504,7 +504,7 @@ shared_focus = {
 	y = 4
 	completion_reward = {
 		TNO_improve_poverty_med = yes
-		set_temp_variable = { gdp_growth_temp = 1.15 }
+		set_temp_variable = { gdp_growth_temp = 1.0 }
         econ_gdp_growth_change = yes
 		hidden_effect = {
 			country_event = {
@@ -661,7 +661,7 @@ shared_focus = {
 			id = berez_belozerski.21
 			days = 0
 		}
-		set_temp_variable = { pus_temp = 5 }
+		set_temp_variable = { pus_temp = 3 }
 		econ_pus_change = yes
 		set_temp_variable = { inflation_temp = 0.20 }
 		econ_inflation_change = yes

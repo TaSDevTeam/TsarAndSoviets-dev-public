@@ -750,6 +750,9 @@ TaS_WRW2_fate_and_coring_of_territories = {
 					238 = {
 						is_core_of = ROOT
 					}
+					264 = {
+						is_core_of = ROOT
+					}
 				}
 			}
 		}
@@ -758,6 +761,7 @@ TaS_WRW2_fate_and_coring_of_territories = {
 			state = 247
 			state = 246
 			state = 238
+			state = 264
 		}
 
 		on_map_mode = map_and_decisions_view
@@ -766,6 +770,7 @@ TaS_WRW2_fate_and_coring_of_territories = {
 				state = 247
 				state = 246
 				state = 238
+				state = 264
 			}
 		}
 
@@ -789,6 +794,7 @@ TaS_WRW2_fate_and_coring_of_territories = {
 			add_state_core = 247
 			add_state_core = 246
 			add_state_core = 238
+			add_state_core = 264
 			
 			add_stability = 0.025
 			set_temp_variable = { gdp_growth_temp = 1 }
@@ -1343,6 +1349,9 @@ TaS_WRW2_fate_and_coring_of_territories = {
 					1554 = {
 						is_core_of = ROOT
 					}
+					2131 = {
+						is_core_of = ROOT
+					}
 				}
 			}
 		}
@@ -1356,6 +1365,7 @@ TaS_WRW2_fate_and_coring_of_territories = {
 				state = 244
 				state = 1730
 				state = 1554
+				state = 2131
 			}
 		}
 
@@ -1382,6 +1392,7 @@ TaS_WRW2_fate_and_coring_of_territories = {
 			add_state_core = 244
 			add_state_core = 1730
 			add_state_core = 1554
+			add_state_core = 2131
 			
 			add_stability = 0.025
 			set_temp_variable = { gdp_growth_temp = 0.25 }
@@ -2725,7 +2736,7 @@ TaS_WRW2_fate_and_coring_of_territories = {
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_eastern_Karelia remove"
 			add_state_core = 213
-			add_state_core = 214
+			add_state_core = 216
 			add_stability = 0.025
 			set_temp_variable = { gdp_growth_temp = 0.1 }
 			econ_gdp_growth_change = yes
@@ -2966,6 +2977,9 @@ TaS_WRW2_fate_and_coring_of_territories = {
 					1717 = {
 						is_core_of = ROOT
 					}
+					145 = {
+						is_core_of = ROOT
+					}
 				}
 			}
 		}
@@ -2975,6 +2989,7 @@ TaS_WRW2_fate_and_coring_of_territories = {
 			highlight_state_targets = {
 				state = 1716
 				state = 1717
+				state = 145
 			}
 		}
 		modifier = {
@@ -2996,6 +3011,7 @@ TaS_WRW2_fate_and_coring_of_territories = {
 			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Turku remove"
 			add_state_core = 1716
 			add_state_core = 1717
+			add_state_core = 145
 			add_stability = 0.025
 			set_temp_variable = { gdp_growth_temp = 0.1 }
 			econ_gdp_growth_change = yes
@@ -3995,7 +4011,7 @@ TaS_WRW2_territorial_reclamation = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = MAR_all_fates_decided_tt
-				check_variable = { MAR_fates_done = 8 }
+				check_variable = { MAR_fates_done > 6 }
 			}
 		}
 		ai_will_do = {
@@ -4048,7 +4064,7 @@ TaS_WRW2_territorial_reclamation = {
 			has_war = no
 			custom_trigger_tooltip = {
 				tooltip = MAR_all_fates_decided_tt
-				check_variable = { MAR_fates_done = 8 }
+				check_variable = { MAR_fates_done > 6  }
 			}
 		}
 		ai_will_do = {
@@ -4090,7 +4106,7 @@ TaS_WRW2_territorial_reclamation = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = MAR_all_fates_decided_tt
-				check_variable = { MAR_fates_done = 8 }
+				check_variable = { MAR_fates_done > 6  }
 			}
 		}
 		ai_will_do = {
@@ -4130,7 +4146,7 @@ TaS_WRW2_territorial_reclamation = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = MAR_all_fates_decided_tt
-				check_variable = { MAR_fates_done = 8 }
+				check_variable = { MAR_fates_done > 6  }
 			}
 		}
 		fire_only_once = yes
@@ -4168,7 +4184,7 @@ TaS_WRW2_territorial_reclamation = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = MAR_all_fates_decided_tt
-				check_variable = { MAR_fates_done = 8 }
+				check_variable = { MAR_fates_done > 6  }
 			}
 		}
 		ai_will_do = {
@@ -4196,7 +4212,7 @@ TaS_WRW2_territorial_reclamation = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = MAR_all_fates_decided_tt
-				check_variable = { MAR_fates_done = 8 }
+				check_variable = { MAR_fates_done > 6  }
 			}
 		}
 		ai_will_do = {

@@ -646,12 +646,8 @@ country_event = { #Daoud pro-pakt coup #start of the CW
 		if = {
 			limit = { 
 				MAR = { has_government = despotism }
-				OR = {
-					MAR = { has_country_flag = MAR_support_NAL }
-					MAR = { has_country_flag = MAR_support_AFG }
-				}
 			}
-			
+			MAR = { set_country_flag = MAR_support_AFG }
 			country_event = { id = MAR_AFG.9 days = 3 }
 		}
 		else = { 
@@ -4313,6 +4309,7 @@ country_event = { #AAG: Evacuation
 			remove_ideas = AAG_Alone_in_the_Cold
 			remove_ideas = AAG_Combat_Boost
 			remove_ideas = AAG_Aircraft_Testing_Site
+			remove_ideas = GER_SGR_safe_seas
 			remove_ideas = Pakt_Military_Authority
 			set_party_name = { 
 				ideology = paternalism
@@ -4870,9 +4867,6 @@ country_event = { #Baltics
 				transfer_state = 209
 				transfer_state = 1421
 				transfer_state = 257
-				transfer_state = 191
-				transfer_state = 1396
-				transfer_state = 943
 			}
 			MBP = {
 				every_owned_state = {
@@ -5014,7 +5008,7 @@ country_event = { #Baltics
 			
 			1421 = {
 				add_manpower = -84755
-				set_variable = { nationality = 151 }
+				set_variable = { nationality = 268 }
 			}
 			209 = {
 				add_manpower = -94755
@@ -5071,7 +5065,7 @@ country_event = { #Belarus
 			}
 		}
 		custom_effect_tooltip = MAR_freedom_for_everyone_tt
-			hidden_effect = {
+		hidden_effect = {
 			MAR = {
 				transfer_state = 2452
 				transfer_state = 241
@@ -5140,9 +5134,6 @@ country_event = { #Belarus
 			MAR = {
 				transfer_state = 2452
 				transfer_state = 241
-				transfer_state = 207
-				transfer_state = 206
-				transfer_state = 194
 			}
 			MBL = {
 				every_owned_state = {
@@ -5229,6 +5220,13 @@ country_event = { #Belarus
 		}
 		custom_effect_tooltip = MAR_annex_em_all_tt
 		hidden_effect = {
+			if = {
+				limit = { MBL = { controls_state = 97 } }
+				add_state_core = 97
+				97 = {
+					remove_core_of = MBL
+				}
+			}
 			annex_country = {
 				target = MBL
 				transfer_troops = yes
