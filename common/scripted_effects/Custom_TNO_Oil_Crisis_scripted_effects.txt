@@ -887,6 +887,22 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 			set_temp_variable = { target = SDS }
 			TNO_clear_num_volunteers = yes
 		}
+		MAR = {
+			if = {
+				limit = {
+					SAU = { check_variable = { ECON_SPHERE_LEADER = MAR } }
+					OMI = { check_variable = { ECON_SPHERE_LEADER = MAR } }
+					EGQ = { check_variable = { ECON_SPHERE_LEADER = MAR } }
+					SDF = { check_variable = { ECON_SPHERE_LEADER = MAR } }
+					AZA = { check_variable = { ECON_SPHERE_LEADER = MAR } }
+					OR = {
+						SNI = { check_variable = { ECON_SPHERE_LEADER = MAR } }
+						KUR = { check_variable = { ECON_SPHERE_LEADER = MAR } }
+					}
+				}
+				set_country_flag = MAR_middle_east_total_win
+			}
+		}
 	}
 }
 

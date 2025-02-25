@@ -1254,6 +1254,8 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 	hidden_effect = {
 		set_global_flag = WRW2_german_collapse
 		set_global_flag = PostGER_belooz_epilogue
+		set_country_flag = MAR_total_victory_belozersky
+		
 		if = {
 			limit = {
 				OR = {
@@ -1708,6 +1710,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 TaS_WRW2_German_Collapse_Kosygin = {
 	custom_effect_tooltip = TaS_WRW2_German_Collapse_Kosygin_tt
 	hidden_effect = {
+		set_country_flag = MAR_total_victory_kosygin
 		if = {
 			limit = {
 				OR = {

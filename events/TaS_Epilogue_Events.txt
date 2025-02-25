@@ -3648,6 +3648,7 @@ country_event = { #Total f
 		}
 		set_country_flag = MAR_Bad_Ending
 		set_country_flag = MAR_collapsed
+		set_country_flag = MAR_collapse_belozersky
 		TNO_Country_Closing_Screen_Show = yes
 		set_global_flag = WRW2_russian_collapse
 		every_owned_state = {
@@ -4020,6 +4021,7 @@ country_event = { #Kosygin - JP - Epilogue
 		add_political_power = -50
 		hidden_effect = {
 			set_country_flag = MAR_Bad_Ending
+			set_country_flag = MAR_collapse_kosygin_japan
 			TNO_Country_Closing_Screen_Show = yes
 		}
 	}
@@ -4527,6 +4529,7 @@ country_event = { #Kosygin - MGB - King of the hill
 				}
 				set_country_flag = MAR_Bad_Ending
 				set_country_flag = MAR_Kosygin_KGB
+				set_country_flag = MAR_collapse_kosygin_gil
 				TNO_Country_Closing_Screen_Show = yes
 			}
 		}

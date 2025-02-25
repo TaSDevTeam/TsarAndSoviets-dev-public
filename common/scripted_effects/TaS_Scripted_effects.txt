@@ -982,8 +982,7 @@ first_every_day_script_TaS 	= {
 	RUS = {
 		if = {
 			limit = {
-				has_war_with = GER
-				VVV = { exists = yes }
+				country_exists = VVV
 			}
 			if = {
 				limit = { is_neighbor_of = VVV }
@@ -991,13 +990,16 @@ first_every_day_script_TaS 	= {
 					target = VVV
 					transfer_troops = yes
 				}
+				every_state = {
+					limit = { is_core_of = VVV } 
+					remove_core_of = VVV 
+				}
 				country_event = { id = RUS_SWRW_mech.17 days = 14 }
 			}
 		}
 		if = {
 			limit = {
-				has_war_with = GER
-				ORL = { exists = yes }
+				country_exists = ORL
 			}
 			if = {
 				limit = { is_neighbor_of = ORL }
@@ -1005,13 +1007,16 @@ first_every_day_script_TaS 	= {
 					target = ORL
 					transfer_troops = yes
 				}
+				every_state = {
+					limit = { is_core_of = ORL } 
+					remove_core_of = ORL 
+				}
 				country_event = { id = RUS_SWRW_mech.18 days = 7 }
 			}
 		}
 		if = {
 			limit = {
-				has_war_with = GER
-				SHI = { exists = yes }
+				country_exists = SHI
 			}
 			if = {
 				limit = { is_neighbor_of = SHI }
@@ -1019,19 +1024,26 @@ first_every_day_script_TaS 	= {
 					target = SHI
 					transfer_troops = yes
 				}
+				every_state = {
+					limit = { is_core_of = SHI } 
+					remove_core_of = SHI 
+				}
 				country_event = { id = RUS_SWRW_mech.19 days = 30 }
 			}
 		}
 		if = {
 			limit = {
-				has_war_with = GER
-				POV = { exists = yes }
+				country_exists = POV
 			}
 			if = {
 				limit = { is_neighbor_of = POV }
 				annex_country = {
 					target = POV
 					transfer_troops = yes
+				}
+				every_state = {
+					limit = { is_core_of = POV } 
+					remove_core_of = POV 
 				}
 				country_event = { id = RUS_SWRW_mech.21 days = 21 }
 			}
