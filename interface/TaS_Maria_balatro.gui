@@ -1,0 +1,56 @@
+guiTypes = {
+	containerWindowType = {
+		name = "MAR_Maria_GUI_Opener"
+		size = { width = 220 height = 128 }
+		position = { x = 0 y = 289 }
+
+		buttonType = {
+			name = "MAR_Maria_GUI_Opener"
+			quadTextureSprite = "GFX_MAR_Maria_GUI_opener_button" 
+			position = { x = 275 y = 64 }
+			centerposition = yes
+			#scale = 0.70
+			pdx_tooltip = MAR_Maria_GUI_Opener_TT
+		}
+		iconType = {
+			name = "gui_alert"
+			spriteType = "GFX_gui_alert"
+			position = { x=189 y=-16 }
+		}
+	}
+	containerWindowType = {
+		name = "MAR_Maria_GUI"
+		size = { width = 1000 height = 600 }
+		position = { x = 190 y = 28 }
+		moveable = yes
+		
+		background = {
+			name = "Background"
+			quadTextureSprite = "GFX_tiled_window_thin_border2"
+		}
+		containerWindowType = {
+			name = "window_title"
+			size = { width = 482 height = 50 }
+			position = { x = 11 y = 15 }
+			instantTextBoxType = {
+				name = "gui_window_title"
+				position = { x = 0 y = 8 }
+				maxWidth = 600
+				maxHeight = 40
+				format = center
+				font = "aldrich_36_outline"
+				text = MAR_gui_title
+			}
+		}
+	}
+	containerWindowType = {
+		name = "MAR_Maria_GUI_interaction_menu"
+		size = { width = 1000 height = 250 }
+		position = { x = 50 y = 329 }
+		moveable = yes
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_thin_border2"
+		}
+	}
+}
