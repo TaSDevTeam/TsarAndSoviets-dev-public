@@ -17,17 +17,17 @@ guiTypes = {
 		}
 			
 		iconType = {
-			name = "progress_scale_frame"
+			name = "prog_scale_frame"
 			position = { x = 23 y = 75 }
-			quadtexturesprite = "GFX_nuke_progress_frame"
+			spriteType = "GFX_nuke_progress_frame"
 			pdx_tooltip = "TaS_nuke_progress_tt"
 			pdx_tooltip_delayed = "TaS_nuke_progress_tt_delayed"
 		}
 		
 		iconType = {
 			name = "nuke_progress_scale"
-			position = { x = 94 y = 88 }
-			quadtexturesprite = "GFX_nuke_progress_scale"
+			position = { x = 94 y = 87 }
+			spriteType = "GFX_nuke_progress_scale"
 			pdx_tooltip = "TaS_nuke_progress_tt"
 			pdx_tooltip_delayed = "TaS_nuke_progress_tt_delayed"
 		}
@@ -35,7 +35,7 @@ guiTypes = {
 		iconType = {
 			name = "current_stage_icon"
 			position = { x = 23 y = 75 }
-			quadtexturesprite = "GFX_nuke_progress_stage_1"
+			spriteType = "GFX_nuke_progress_stage_1"
 			pdx_tooltip = "TaS_nuke_progress_tt"
 			pdx_tooltip_delayed = "TaS_nuke_progress_tt_delayed"
 		}

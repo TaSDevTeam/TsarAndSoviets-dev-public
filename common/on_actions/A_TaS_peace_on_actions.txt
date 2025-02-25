@@ -959,6 +959,10 @@ on_actions = {
 							leave_faction = yes
 							leave_zollverein = yes
 							remove_faction_status = yes
+							remove_ideas = ROM_Scars_Of_Vienna
+							remove_ideas = ROM_Ghosts_Of_The_Past
+							remove_ideas = ROM_Antonescus_Territorial_Remnant
+							remove_ideas = ROM_King_And_Pawn
 							if = {
 								limit = { 
 									country_exists = TNS
@@ -1100,11 +1104,11 @@ on_actions = {
 							}
 							else = {
 								GRM = {
-									GRM_Radu_Ciuceanu = {
+									GRM_Mircea_Ionescu_Quintus = {
 										set_nationality = ROM
 									}
 								}
-								promote_character = GRM_Radu_Ciuceanu
+								promote_character = GRM_Mircea_Ionescu_Quintus
 								set_politics = {
 									ruling_party = liberalism
 								}
@@ -1113,7 +1117,7 @@ on_actions = {
 									popularity = 0.35
 								}
 								add_country_leader_role = {
-									character = GRM_Radu_Ciuceanu
+									character = GRM_Mircea_Ionescu_Quintus
 									promote_leader = yes
 									country_leader = {
 										#desc = "POLITICS_Radu_Ciuceanu_DESC"
@@ -1177,6 +1181,10 @@ on_actions = {
 						HUN = {	
 							leave_zollverein = yes
 							remove_faction_status = yes
+							remove_ideas = HUN_Broken_Yoke
+							remove_ideas = HUN_Transylvanian_Issue
+							remove_ideas = HUN_social_upheaval
+							remove_ideas = HUN_german_fist
 							if = {
 								limit = { FROM = { has_government = socialist } }
 								GAU = {
@@ -1308,10 +1316,7 @@ on_actions = {
 						#NOT = { SER = { is_in_faction_with = GER } }
 					}
 					FROM = {
-						white_peace = ROOT
-						leave_faction = yes
-						leave_zollverein = yes
-						remove_faction_status = yes
+						white_peace = ROOT		
 						if = {
 							limit = { is_subject_of = GER }
 							GER = {
@@ -1319,6 +1324,40 @@ on_actions = {
 							}
 						}
 						SER = {	
+							leave_faction = yes
+							leave_zollverein = yes
+							remove_faction_status = yes
+							remove_ideas = SER_The_Clock_Ticks
+							remove_ideas = SER_government_of_anything_but_salvation
+							remove_ideas = SER_Serbia_Shall_Not_be_Pacified
+							remove_ideas = SER_National_Liberation_Army
+							remove_ideas = SER_SOPO_Terrorism
+							remove_ideas = SER_Generational_Divide
+							remove_ideas = SER_Resurgent_Nationalism
+							remove_ideas = SER_SPS_Dominance
+							remove_ideas = SER_The_Return_of_the_Kingdom
+							remove_ideas = SER_Yugoslav_Rebirth
+							remove_ideas = SER_Anti_German_Resistance
+							remove_ideas = SER_majka_srbija
+							remove_ideas = SER_Refugee_Question
+							remove_ideas = SER_Reichsfestung_Belgrad
+							remove_ideas = SER_Banat_Deutsche
+							remove_ideas = SER_Reactionary_Remnants
+							remove_ideas = SER_Serbian_Collaborators
+							remove_ideas = SER_The_Crown_In_Exile
+							remove_ideas = SER_Our_Island_Of_Freedom
+							remove_ideas = SER_Return_Of_The_Kingdom
+							remove_ideas = SER_Thin_Facade_Of_Constitutionalism_I
+							remove_ideas = SER_Thin_Facade_Of_Constitutionalism_II
+							remove_ideas = SER_A_Divided_Front
+							remove_ideas = SER_Death_To_Fascism_Freedom_To_The_People
+							remove_ideas = SER_Between_Revolutionaries_And_Royalists
+							remove_ideas = SER_Milos_against_Murad
+							remove_ideas = SER_Rebirth_of_a_Nation
+							remove_ideas = SER_Our_Great_Teachers_Legacy
+							remove_ideas = SER_The_Fatherland_In_Disarray
+							remove_ideas = SER_All_For_One
+							remove_ideas = SER_Zealots_Conservatives_and_Conformists
 							if = {
 								limit = { FROM = { has_government = socialist } }
 								GSE = {
@@ -1414,15 +1453,20 @@ on_actions = {
 						#NOT = { BUL = { is_in_faction_with = GER } }
 					}
 					FROM = {
-						leave_faction = yes
-						leave_zollverein = yes
-						remove_faction_status = yes
 						white_peace = ROOT
 						BUL = {	
+							leave_faction = yes
+							leave_zollverein = yes
+							remove_faction_status = yes
 							every_owned_state = {
 								limit = { is_core_of = BUL }
 								BUL = { transfer_state = PREV }
-							}	
+							}		
+							remove_ideas = BUL_meet_in_budapest
+							remove_ideas = BUL_rusting_sword_of_damocles
+							remove_ideas = BUL_king_of_rubies_without_shine
+							remove_ideas = BUL_empires_cradle_now_a_grave
+							remove_ideas = BUL_endless_roots_of_radicals
 							if = {
 								limit = { FROM = { has_government = socialist } }
 								GBU = {

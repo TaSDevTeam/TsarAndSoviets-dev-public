@@ -1,15 +1,15 @@
 spriteTypes = {
-	spriteType = {
-		name = "GFX_nuke_progress_frame"
-		textureFile = "gfx/interface/nuke_gui/prog_frame.dds"
-	}
 	progressbartype = {
 		name = "GFX_nuke_progress_scale"  
 		texturefile1 = "gfx/interface/nuke_gui/prog_scale.dds"
-		texturefile2 = "gfx/interface/blank.dds"
+		texturefile2 = "gfx/interface/nuke_gui/prog_scale_empty.dds"
 		size = { x = 403 y = 44 }
 		effectfile = "gfx/FX/progress.lua"
 		horizontal = yes
+	}
+	spriteType = {
+		name = "GFX_nuke_progress_frame" 
+		textureFile = "gfx/interface/nuke_gui/nuke_prog_frame.dds"
 	}
 	spriteType = {
 		name = "GFX_nuke_progress_stage_1"  

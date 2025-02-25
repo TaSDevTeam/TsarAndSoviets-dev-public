@@ -1117,6 +1117,8 @@ TaS_nuke_development_start = {
 	
 	set_variable = { TaS_RUS_nuclear_program_phase = 1 }
 	
+	add_to_variable = { TaS_nuke_gui_dirty = 1 }
+	
 	set_country_flag = RUS_started_nukes_new
 }
 
