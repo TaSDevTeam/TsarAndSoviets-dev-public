@@ -3776,7 +3776,16 @@ TaS_WRW2_territorial_reclamation = {
 					has_global_flag = TNO_TURKES_KENES_OVER_USA_WINS 
 					has_global_flag = TNO_TURKES_KENES_OVER_NEUTRALITY 
 					has_global_flag = TNO_TURKES_KENES_OVER_GER_WINS 
+					has_global_flag = TK_GER_Victory
+					has_global_flag = TK_USA_Victory
+					has_global_flag = TK_JAP_Victory
 				}
+				TRK = { has_war = no }
+				KRK = { has_war = no }
+				KYR = { has_war = no }
+				TAJ = { has_war = no }
+				UZB = { has_war = no }
+				UTL = { has_war = no }
 			}
 		}
 		ai_will_do = {
@@ -3792,7 +3801,10 @@ TaS_WRW2_territorial_reclamation = {
 			hidden_effect = {
 				if = {
 					limit = {
-						has_global_flag = TNO_TURKES_KENES_OVER_GER_WINS 
+						OR = {
+							has_global_flag = TNO_TURKES_KENES_OVER_GER_WINS 
+							has_global_flag = TK_GER_Victory
+						}
 					}
 					country_event = {
 						id = MAR_Turkestan.1 days = 3
@@ -3800,7 +3812,10 @@ TaS_WRW2_territorial_reclamation = {
 				}
 				if = {
 					limit = {
-						has_global_flag = TNO_TURKES_KENES_OVER_NEUTRALITY 
+						OR = {
+							has_global_flag = TNO_TURKES_KENES_OVER_NEUTRALITY 
+							has_global_flag = TK_JAP_Victory
+						}
 					}
 					country_event = {
 						id = MAR_Turkestan.2 days = 3
@@ -3808,7 +3823,10 @@ TaS_WRW2_territorial_reclamation = {
 				}
 				if = {
 					limit = {
-						has_global_flag = TNO_TURKES_KENES_OVER_USA_WINS 
+						OR = {
+							has_global_flag = TNO_TURKES_KENES_OVER_USA_WINS 
+							has_global_flag = TK_USA_Victory
+						}
 					}
 					country_event = {
 						id = MAR_Turkestan.3 days = 3
