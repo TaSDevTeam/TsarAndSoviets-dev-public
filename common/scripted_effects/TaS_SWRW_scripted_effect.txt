@@ -255,6 +255,9 @@ TaS_SWRW_start_the_war = {
 	}
 }
 TaS_SWRW_american_germany = {
+	MAR = {
+		set_country_flag = MAR_swrw_democracy_time_achievement
+	}
 	ZNE = { 
 		add_ideas = OFN_Mandate
 		transfer_state = 1813
@@ -2147,6 +2150,22 @@ SWRW_clear_war_stuff = {
 			modifier = CAU_muslim_resistance_modifier
 		}
 	}
+	every_state = {
+		limit = { is_core_of = VVV } 
+		remove_core_of = VVV 
+	}
+	every_state = {
+		limit = { is_core_of = SHI } 
+		remove_core_of = SHI 
+	}
+	every_state = {
+		limit = { is_core_of = ORL } 
+		remove_core_of = ORL 
+	}
+	every_state = {
+		limit = { is_core_of = POV } 
+		remove_core_of = POV 
+	}
 	SWRW_remove_army_size_modifier = yes
 }
 SWRW_add_RUS_coldwar_GUI = {
@@ -2802,7 +2821,7 @@ SWRW_force_effects_for_capitulated = {
 						ideology = communist
 						popularity = 0.35
 					}
-					retire_country_leader = yes
+					#retire_country_leader = yes
 					add_country_leader_role = {
 						character = GBU_Todor_Zhivkov
 						promote_leader = yes

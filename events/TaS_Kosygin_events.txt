@@ -2623,6 +2623,7 @@ country_event = { #р
 		ai_chance = { factor = 1 }
 		MAR_calculate_ogas_dynmod_effects = yes
 		clr_country_flag = MAR_ogas_dev_started
+		set_country_flag = MAR_OGAS_completed_achievement
 	}
 }
 
@@ -2674,6 +2675,7 @@ country_event = { #Rus win
 			econ_gdp_growth_change = yes
 			TNO_improve_poverty_low = yes
 			TaS_fopo_remove_uar_influence_battle_tab = yes
+			set_country_flag = MAR_middle_east_total_win
 		}
 		GER = {
 			set_temp_variable = { gdp_growth_temp = -0.35 }
