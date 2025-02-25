@@ -741,7 +741,6 @@ shared_focus = {
 	x = 13
 	y = 4
 	completion_reward = {
-		add_ideas = Sphere_Observer
 		TNO_improve_industrial_equipment_high = yes	
 		set_temp_variable = { temp_econ_spending_amount = 0.15 }
         econ_spend_money_once_effect_raw_money = yes
@@ -761,7 +760,6 @@ shared_focus = {
 	x = 15
 	y = 4
 	completion_reward = {
-		add_ideas = OFN_Observer
 		TNO_improve_poverty_med = yes
 		set_temp_variable = { pus_temp = 1 }
 		econ_pus_change = yes
@@ -1144,6 +1142,7 @@ shared_focus = {
 	x = 33
 	y = 3
 	completion_reward = {
+		add_ideas = OFN_Observer
 		set_temp_variable = { gdp_growth_temp = 0.1 }
 		econ_gdp_growth_change = yes
 		TNO_improve_poverty_low = yes	
@@ -1204,6 +1203,7 @@ shared_focus = {
 	x = 35
 	y = 3
 	completion_reward = {
+		add_ideas = Sphere_Observer
 		set_temp_variable = { gdp_growth_temp = 0.5 }
         econ_gdp_growth_change = yes
 		TNO_improve_industrial_equipment_med = yes	
