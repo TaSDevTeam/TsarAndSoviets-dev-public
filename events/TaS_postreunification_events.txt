@@ -1542,15 +1542,13 @@ country_event = { #Technical stuff no loc
 				}
 			}
 		}
-		USA = {
-			country_event = { id = MAR_Japan.9 days = 3 }
-		}
-		JAP = {
-			country_event = { id = MAR_Japan.9 days = 3 }
-		}
 		MAR = {
-			country_event = { id = MAR_Japan.9 days = 3 }
+			country_event = { id = MAR_Japan.9 }
 		}
+		add_to_array = { global.MAN_contenders = MAN }
+		add_to_array = { global.MAN_contenders = MJP }
+		add_to_array = { global.MAN_contenders = HAN }
+		add_to_array = { global.MAN_contenders = PFF }
 		ZZZ = {
 			if = {
 				limit = { 
@@ -1603,6 +1601,7 @@ country_event = { #Technical stuff no loc
 			set_country_flag = TNO_eliminate_building_demand
 			set_country_flag = can_not_use_econ_system
 			set_country_flag = MAN_katastrophe
+			country_lock_all_division_template = yes
 			set_politics = {
 				ruling_party = socialist
 				last_election = "1961.1.20"
@@ -1617,12 +1616,14 @@ country_event = { #Technical stuff no loc
 			set_cosmetic_tag = MAN_katastrophe
 			transfer_state = 1641
 			transfer_state = 149
+			transfer_state = 1600
+			set_capital = { state = 1600 remember_old_capital = no }
 		}
 		ZZZ = {
 			country_event = { id = MAR_Japan.7 days = 5 }
 		}
 	}
-	option = { #IT'S ogre
+	option = { #IT'S NOT ogre
 		name = MAR_Japan.6.b
 		trigger = {
 			NOT = {
@@ -1673,6 +1674,34 @@ country_event = { #Technical stuff no loc
 	option = {
 		name = MAR_Japan.8.a
 		ai_chance = { factor = 1 }
+		HAN = {
+			transfer_units_fraction = {
+				target = ZZZ
+				size = 0
+				army_ratio = 1.0
+			}
+		}
+		MAN = {
+			transfer_units_fraction = {
+				target = ZZZ
+				size = 0
+				army_ratio = 1.0
+			}
+		}
+		PFF = {
+			transfer_units_fraction = {
+				target = ZZZ
+				size = 0
+				army_ratio = 1.0
+			}
+		}
+		MJP = {
+			transfer_units_fraction = {
+				target = ZZZ
+				size = 0
+				army_ratio = 1.0
+			}
+		}
 		PJP = {
 			annex_country = {
 				target = HAN
@@ -1766,19 +1795,18 @@ country_event = { #MANCHU CW STARTS GET UP GUYS
 		name = MAR_Japan.9.a
 		ai_chance = { factor = 1 }
 		TaS_fopo_add_manchurian_civil_war_tab = yes
-		#USA = {
-		#	set_temp_variable = { Victory_ID = 50 }
-		#	set_temp_variable = { Victory_Outcome = 0 }
-		#	set_temp_variable = { Victory_Points = 0}
-		#	Cold_War_GUI_ManipulateVictory = yes
-		#	TaS_fopo_add_manchurian_civil_war_tab = yes
-		#}
-		JAP = {
-			set_temp_variable = { Victory_ID = 50 }
-			set_temp_variable = { Victory_Outcome = 0 }
-			set_temp_variable = { Victory_Points = 0}
-			Cold_War_GUI_ManipulateVictory = yes
-			TaS_fopo_add_manchurian_civil_war_tab = yes
+		set_temp_variable = { target = HAN }
+		TNO_increase_volunteer_cap_3 = yes
+		hidden_effect = {
+			JAP = {
+				set_temp_variable = { Victory_ID = 50 }
+				set_temp_variable = { Victory_Outcome = 0 }
+				set_temp_variable = { Victory_Points = 0}
+				Cold_War_GUI_ManipulateVictory = yes
+				TaS_fopo_add_manchurian_civil_war_tab = yes
+				set_temp_variable = { target = MJP }
+				TNO_increase_volunteer_cap_2 = yes
+			}
 		}
 	}
 }

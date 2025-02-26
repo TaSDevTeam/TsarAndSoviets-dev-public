@@ -729,6 +729,9 @@ TaS_SWRW_Manchu_CW_MJP_win = {
 			MJP = {
 				add_state_core = PREV
 			}
+			remove_core_of = MAN
+			remove_core_of = HAN
+			remove_core_of = PFF
 		}
 		country_lock_all_division_template = yes
 		add_ideas = MJP_chained_forever
@@ -801,6 +804,9 @@ TaS_SWRW_Manchu_CW_HAN_win = {
 			MJP = {
 				add_state_core = PREV
 			}
+			remove_core_of = MAN
+			remove_core_of = HAN
+			remove_core_of = PFF
 		}
 	}
 	JAP = {
@@ -813,6 +819,9 @@ TaS_SWRW_Manchu_CW_HAN_win = {
 			HAN = {
 				add_state_core = PREV
 			}
+			remove_core_of = MAN
+			remove_core_of = MJP
+			remove_core_of = PFF
 		}
 		
 		add_ideas = MAN_liberty
@@ -892,6 +901,9 @@ TaS_SWRW_Manchu_CW_PFF_win = {
 			MJP = {
 				add_state_core = PREV
 			}
+			remove_core_of = MAN
+			remove_core_of = HAN
+			remove_core_of = PFF
 		}
 	}
 	JAP = {
@@ -904,6 +916,9 @@ TaS_SWRW_Manchu_CW_PFF_win = {
 			PFF = {
 				add_state_core = PREV
 			}
+			remove_core_of = MAN
+			remove_core_of = MJP
+			remove_core_of = HAN
 		}
 		
 		add_ideas = MAN_liberty
@@ -976,6 +991,9 @@ TaS_SWRW_Manchu_CW_MAN_win = {
 			MJP = {
 				add_state_core = PREV
 			}
+			remove_core_of = MAN
+			remove_core_of = HAN
+			remove_core_of = PFF
 		}
 	}
 	JAP = {
@@ -983,12 +1001,15 @@ TaS_SWRW_Manchu_CW_MAN_win = {
 	}
 	MAN = {
 		econ_join_sphere_USA = yes
-		add_ideas = OFN_observer
+		#add_ideas = OFN_observer
 		set_capital = { state = 801 }
 		every_owned_state = {
 			MAN = {
 				add_state_core = PREV
 			}
+			remove_core_of = PFF
+			remove_core_of = MJP
+			remove_core_of = HAN
 		}
 
 		add_ideas = MAN_liberty

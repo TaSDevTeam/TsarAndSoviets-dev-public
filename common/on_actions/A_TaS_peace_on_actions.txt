@@ -374,6 +374,70 @@ on_actions = {
 					limit = {
 						FROM = {
 							OR = {
+								tag = MAN
+								tag = MJP
+								tag = HAN
+								tag = PFF
+							}
+						}
+						ROOT = {
+							OR = {
+								tag = MAN
+								tag = MJP
+								tag = HAN
+								tag = PFF
+							}
+						}
+					}
+					FROM = {
+						every_enemy_country = {
+							limit = {
+								original_tag = ROOT
+							}
+							remove_from_array = { global.MAN_contenders = THIS }
+							FROM = {
+								white_peace = PREV
+								annex_country = {
+									target = PREV
+									transfer_troops = no
+								}
+							}
+						}
+
+						if = {
+							limit = {
+								check_variable = { global.MAN_contenders^num = 1 }
+							}
+							clear_array = global.MAN_contenders
+
+							if = {
+								limit = { country_exists = MAN }
+								TaS_SWRW_Manchu_CW_MAN_win = yes
+							}
+							else_if = {
+								limit = { country_exists = MJP }
+								TaS_SWRW_Manchu_CW_MJP_win = yes
+							}
+							else_if = {
+								limit = { country_exists = HAN }
+								TaS_SWRW_Manchu_CW_HAN_win = yes
+							}
+							else_if = {
+								limit = { country_exists = PFF }
+								TaS_SWRW_Manchu_CW_PFF_win = yes
+							}
+							remove_ideas = MAN_civil_war
+							FROM = {
+								set_capital = { state = 328 remember_old_capital = no }
+							}
+						}
+					}
+					set_global_flag = skip_default_capitulation
+				}
+				else_if = {
+					limit = {
+						FROM = {
+							OR = {
 								original_tag = MAN
 								original_tag = MJP
 								original_tag = HAN
