@@ -1936,6 +1936,15 @@ on_actions = {
 								add_core_of = NAL
 							}
 						}
+						if = {
+							limit = { IND = { has_idea = OFN_Independent_Member } }
+							add_ideas = OFN_Independent_Member
+							USA = { add_to_faction = NAL }
+						}
+						else_if = {
+							limit = { IND = { has_idea = OFN_Observer } }
+							add_ideas = OFN_Observer
+						}
 					}
 					else = {
 						NAL = {
@@ -2035,6 +2044,15 @@ on_actions = {
 						}
 						else = {
 							econ_join_sphere_USA = yes
+							if = {
+								limit = { IND = { has_idea = OFN_Independent_Member } }
+								add_ideas = OFN_Independent_Member
+								USA = { add_to_faction = NAL }
+							}
+							else_if = {
+								limit = { IND = { has_idea = OFN_Observer } }
+								add_ideas = OFN_Observer
+							}
 						}
 						every_owned_state = {
 							remove_core_of = AFG
