@@ -4089,7 +4089,8 @@ TaS_WRW2_territorial_reclamation = {
 		icon = GFX_antarctica
 		visible = {
 			has_global_flag = Antarctica_Germany_Rescued_NS
-			has_global_flag = TaS_WRW2_Russian_victory
+			has_global_flag = GER_its_joever
+			NOT = { has_global_flag = TaS_SWRW_democracy_time }
 		}
 		fire_only_once = yes
 		ai_will_do = {

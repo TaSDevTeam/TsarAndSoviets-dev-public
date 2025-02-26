@@ -258,6 +258,28 @@ TaS_SWRW_american_germany = {
 	MAR = {
 		set_country_flag = MAR_swrw_democracy_time_achievement
 	}
+	AAG = {
+		every_owned_state = {
+			remove_core_of = AAG
+			add_core_of = AAO
+		}
+	}
+	AAB = {
+		every_owned_state = {
+			remove_core_of = AAB
+			add_core_of = AAO
+		}
+	}
+	AAO = {
+		annex_country = {
+			target = AAG
+			transfer_troops = no	
+		}
+		annex_country = {
+			target = AAB
+			transfer_troops = no
+		}
+	}
 	ZNE = { 
 		add_ideas = OFN_Mandate
 		transfer_state = 1813
