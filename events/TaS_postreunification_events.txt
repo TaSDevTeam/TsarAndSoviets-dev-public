@@ -2216,7 +2216,7 @@ country_event = { #3 round success
 			transfer_state = 408
 			transfer_state = 409
 			transfer_state = 1644
-			transfer_state = 1647
+			transfer_state = 1646
 			if = {
 				limit = { has_country_flag = FE_demilitarize_amur }
 				1364 = { set_demilitarized_zone = yes }
@@ -2224,7 +2224,7 @@ country_event = { #3 round success
 				408 = { set_demilitarized_zone = yes }
 				409 = { set_demilitarized_zone = yes }
 				1644 = { set_demilitarized_zone = yes }
-				1647 = { set_demilitarized_zone = yes }
+				1646 = { set_demilitarized_zone = yes }
 			}
 			if = {
 				limit = { has_country_flag = FE_korean_resettlement }
@@ -2382,6 +2382,12 @@ country_event = { #4 round success
 				561 = { set_demilitarized_zone = yes }
 				563 = { set_demilitarized_zone = yes }
 				889 = { set_demilitarized_zone = yes }
+				1364 = { set_demilitarized_zone = yes }
+				657 = { set_demilitarized_zone = yes }
+				408 = { set_demilitarized_zone = yes }
+				409 = { set_demilitarized_zone = yes }
+				1644 = { set_demilitarized_zone = yes }
+				1646 = { set_demilitarized_zone = yes }
 			}
 			if = {
 				limit = { has_country_flag = FE_double_administrartion }
@@ -3434,6 +3440,7 @@ country_event = { #german nuclear ultimatum
 
 	option = { #yes
 		name = MAR_2WRW.7.a
+		custom_effect_tooltip = SWRW_we_cant_risk_everything_tt
 		ai_chance = {
 			factor = 90	
 			modifier = {
@@ -3499,6 +3506,17 @@ country_event = { #german nuclear ultimatum
 			}
 		}
 		clr_global_flag = nukes_disabled
+		custom_effect_tooltip = SWRW_you_dont_behave_yourself_tt
+		hidden_effect = {
+			country_event = { id = nuclearwar.5 hours = 12 }
+			GER = { 
+				set_country_flag = allout_nuclearstrike
+				load_focus_tree = ZZZ_blank_focus
+			}
+			MAR = {
+				load_focus_tree = ZZZ_blank_focus
+			}
+		}
 	}
 }
 
