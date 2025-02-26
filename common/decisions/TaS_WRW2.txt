@@ -2005,6 +2005,92 @@ TaS_WRW2_fate_and_coring_of_territories = {
 			TNO_improve_admin_efficiency_low = yes
 		}
 	}
+	MAR_coring_integrate_Lvov = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 1391
+		}
+
+		visible = {
+			owns_state = 1391
+			NOT = {
+				AND = {
+					91 = {
+						is_core_of = ROOT
+					}
+					89 = {
+						is_core_of = ROOT
+					}
+					1394 = {
+						is_core_of = ROOT
+					}
+					1393 = {
+						is_core_of = ROOT
+					}
+					1392 = {
+						is_core_of = ROOT
+					}
+					1391 = {
+						is_core_of = ROOT
+					}
+					1388 = {
+						is_core_of = ROOT
+					}
+					1387 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		on_map_mode = map_and_decisions_view
+		highlight_states = {
+			highlight_state_targets = {
+				state = 91
+				state = 89
+				state = 1394
+				state = 1393
+				state = 1392
+				state = 1391
+				state = 1388
+				state = 1387
+			}
+		}
+
+		modifier = {
+			stability_weekly = -0.0035
+			political_power_gain = -0.25
+			gdp_growth_modifier = -0.15
+		}
+
+		cost = 75
+
+		ai_will_do = {
+			factor = 200
+		}
+
+		days_remove = 90
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Lutsk remove"
+			add_state_core = 91
+			add_state_core = 89
+			add_state_core = 1394
+			add_state_core = 1393
+			add_state_core = 1392
+			add_state_core = 1391
+			add_state_core = 1388
+			add_state_core = 1387
+			
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 0.25 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_low = yes
+		}
+	}
 	MAR_coring_integrate_Pskov = {
 
 		icon = GFX_decision_generic_form_nation
