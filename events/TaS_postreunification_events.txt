@@ -289,6 +289,7 @@ country_event = { #Offer ceasefire - yes
 
 	option = {
 		name = MAR_AFG.1.a
+		set_global_flag = RUS_AFG_war_ended
 		ai_chance = {
 			factor = 1
 			modifier = {
@@ -348,6 +349,7 @@ country_event = { #conditional surrender
 
 	option = {
 		name = MAR_AFG.2.a
+		set_global_flag = RUS_AFG_war_ended
 		ai_chance = {
 			factor = 1
 			modifier = {
@@ -436,13 +438,14 @@ country_event = { #unconditional surrender
 	option = {
 		ai_chance = { factor = 1 }
 		name = MAR_AFG.3.a
+		set_global_flag = RUS_AFG_war_ended
 		AFG = { save_global_event_target_as = losing_country }
 		RUS = {
 			save_global_event_target_as = winning_country
 			white_peace = AFG
 		}
 		if = {
-			limit = { MTR = { exists = yes } } 
+			limit = { country_exists = MTR } 
 			MTR = {
 				transfer_state = 1885
 				transfer_state = 1465

@@ -2524,24 +2524,24 @@ SWRW_force_effects_for_capitulated = {
 						NOT = { TNS = { is_subject_of = GER } } #очевидно если Приднестровье не сожралось при капитуляции германии значит оно румынское #а вот теперь хуй
 					}
 					if = {
-						limit = { MUK = { exists = yes } }
+						limit = { country_exists = MUK }
 						MUK = {
 							annex_country = {
 								target = TNS
 								transfer_troops = no
 							}
+							transfer_state = 198
+							transfer_state = 1965
+							transfer_state = 1966
+							transfer_state = 1282
+							transfer_state = 192
+							
 							add_state_core = 198
 							add_state_core = 1965
 							add_state_core = 1966
-							if = {
-								limit = { MUK = { owns_state = 1282 } }
-								add_state_core = 1282
-								add_state_core = 192
-							}
-							else_if = {
-								limit = { MUK = { owns_state = 192 } }
-								add_state_core = 192
-							}
+							add_state_core = 1282
+							add_state_core = 192
+							
 							transfer_state = 80
 							transfer_state = 1286
 							transfer_state = 78
@@ -2564,18 +2564,18 @@ SWRW_force_effects_for_capitulated = {
 								target = TNS
 								transfer_troops = no
 							}
+							transfer_state = 198
+							transfer_state = 1965
+							transfer_state = 1966
+							transfer_state = 1282
+							transfer_state = 192
+							
 							add_state_core = 198
 							add_state_core = 1965
 							add_state_core = 1966
-							if = {
-								limit = { MUK = { owns_state = 1282 } }
-								add_state_core = 1282
-								add_state_core = 192
-							}
-							else_if = {
-								limit = { MUK = { owns_state = 192 } }
-								add_state_core = 192
-							}
+							add_state_core = 1282
+							add_state_core = 192
+							
 							transfer_state = 80
 							transfer_state = 1286
 							transfer_state = 78

@@ -1369,7 +1369,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			add_ideas = RUSAlliance_Observer
 		}
 		GHL = {
-			econ_join_sphere_MAR = yes
+			econ_join_sphere_USA = yes
 			transfer_state = 36
 			transfer_state = 7
 			transfer_state = 35
@@ -1404,7 +1404,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 				}
 			}
 			TNO_startup_nation = yes
-			add_ideas = RUSAlliance_Observer
+			add_ideas = OFN_Independent_Member
 		}
 		GCZ = {
 			econ_join_sphere_MAR = yes
@@ -1548,6 +1548,12 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			set_temp_variable = { Victory_Outcome = 5 }
 			set_temp_variable = { Victory_Points = 500 }
 			Cold_War_GUI_ManipulateVictory = yes
+		}
+		USA = {
+			add_to_faction = GHL
+			add_to_array = {
+				global.OFN_members = GHL
+			}
 		}
 		if = {
 			limit = {

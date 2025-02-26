@@ -144,10 +144,11 @@ on_actions = {
 					RUS = {
 						white_peace = AFG
 						log = "TaS Peace deal RUS-AFG"	
+						set_global_flag = RUS_AFG_war_ended
 					}
 					RUS = {
 						if = {
-							limit = { MTR = { exists = yes } } 
+							limit = { country_exists = MTR } } 
 							MTR = {
 								transfer_state = 1885
 								transfer_state = 1465
@@ -969,24 +970,24 @@ on_actions = {
 									NOT = { TNS = { is_subject_of = GER } } #очевидно если Приднестровье не сожралось при капитуляции германии значит оно румынское #а вот теперь хуй
 								}
 								if = {
-									limit = { MUK = { exists = yes } }
+									limit = { country_exists = MUK }
 									MUK = {
 										annex_country = {
 											target = TNS
 											transfer_troops = no
 										}
+										transfer_state = 198
+										transfer_state = 1965
+										transfer_state = 1966
+										transfer_state = 1282
+										transfer_state = 192
+										
 										add_state_core = 198
 										add_state_core = 1965
 										add_state_core = 1966
-										if = {
-											limit = { MUK = { owns_state = 1282 } }
-											add_state_core = 1282
-											add_state_core = 192
-										}
-										else_if = {
-											limit = { MUK = { owns_state = 192 } }
-											add_state_core = 192
-										}
+										add_state_core = 1282
+										add_state_core = 192
+										
 										transfer_state = 80
 										transfer_state = 1286
 										transfer_state = 78
@@ -1009,18 +1010,18 @@ on_actions = {
 											target = TNS
 											transfer_troops = no
 										}
+										transfer_state = 198
+										transfer_state = 1965
+										transfer_state = 1966
+										transfer_state = 1282
+										transfer_state = 192
+										
 										add_state_core = 198
 										add_state_core = 1965
 										add_state_core = 1966
-										if = {
-											limit = { MUK = { owns_state = 1282 } }
-											add_state_core = 1282
-											add_state_core = 192
-										}
-										else_if = {
-											limit = { MUK = { owns_state = 192 } }
-											add_state_core = 192
-										}
+										add_state_core = 1282
+										add_state_core = 192
+										
 										transfer_state = 80
 										transfer_state = 1286
 										transfer_state = 78

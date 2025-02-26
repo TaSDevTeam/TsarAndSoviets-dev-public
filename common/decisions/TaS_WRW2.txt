@@ -3958,6 +3958,9 @@ TaS_WRW2_territorial_reclamation = {
 				has_country_flag = MAR_has_turkestan
 				has_country_flag = MAR_allied_turkestan
 			}
+			NOT = {
+				has_global_flag = RUS_AFG_war_ended
+			}
 		}
 		fire_only_once = yes
 		ai_will_do = {

@@ -4,9 +4,7 @@ AFG_russian_invasion = {
 		tag = AFG
 	}
 	visible = {
-		OR = {
-			has_war_with = RUS
-		}
+		has_war_with = MAR
 	}
 }
 
@@ -16,6 +14,6 @@ TUR_russian_invasion = {
 		tag = TUR
 	}
 	visible = {
-		has_war_with = RUS
+		has_war_with = MAR
 	}
 }
