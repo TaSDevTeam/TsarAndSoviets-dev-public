@@ -2199,7 +2199,7 @@ TaS_2WRW_form_ost_zones = {
 	custom_effect_tooltip = TaS_2WRW_form_ost_zones_tt
 	hidden_effect = {
 		if = {
-			limit = { RUS = { owns_state = 1397 } }
+			limit = { MAR = { owns_state = 1397 } }
 			MBP = {
 				transfer_state = 1440
 				transfer_state = 13
@@ -2495,6 +2495,7 @@ TaS_2WRW_set_zone_laws = {
 }
 
 TaS_2WRW_set_autonomy_laws = {
+	remove_ideas = MAR_military_administration
 	set_variable = { TNO_economy_type = token:Econ_Type_Corporatism }
 	set_variable = { TNO_economy_subtype = token:Econ_Subtype_Dirigisme }
 	
@@ -2879,7 +2880,7 @@ TaS_2WRW_free_baltics = {
 		
 		1401 = {
 			add_manpower = -134330
-			set_variable = { nationality = 169 }
+			set_variable = { nationality = 268 }
 		}
 		
 		1421 = {

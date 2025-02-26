@@ -4936,7 +4936,7 @@ country_event = { #Baltics
 			
 			1401 = {
 				add_manpower = -134330
-				set_variable = { nationality = 169 }
+				set_variable = { nationality = 268 }
 			}
 			
 			1421 = {
@@ -5006,7 +5006,7 @@ country_event = { #Baltics
 			
 			1401 = {
 				add_manpower = -134330
-				set_variable = { nationality = 169 }
+				set_variable = { nationality = 268 }
 			}
 			
 			1421 = {
@@ -5294,6 +5294,13 @@ country_event = { #Ukraine
 				transfer_state = 228
 				transfer_state = 218
 			}
+			if = {
+				limit = { MAR = { controls_state = 196 } }
+				MUK = {
+					transfer_state = 196
+					add_state_core = 196
+				}
+			}
 			RUS = { end_puppet = MUK } 
 			MUK = {
 				every_owned_state = {
@@ -5568,6 +5575,13 @@ country_event = { #Crimnea
 			annex_country = {
 				target = MTV
 				transfer_troops = yes
+			}
+			if = {
+				limit = { MUK = { NOT = { is_subject_of = RUS } } }
+				MUK = {
+					transfer_state = 196
+					add_state_core = 196
+				}
 			}
 		}
 		196 = {
@@ -6080,7 +6094,7 @@ country_event = { #Turkish Straits
 					popularity = 0.15
 				}
 				econ_join_sphere_MAR = yes
-				retire_country_leader = yes
+				#retire_country_leader = yes
 				promote_character = MTU_Ahmet_Isvan
 				add_country_leader_role = {
 					character = MTU_Ahmet_Isvan
