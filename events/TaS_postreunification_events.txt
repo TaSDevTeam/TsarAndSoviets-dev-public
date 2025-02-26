@@ -14,7 +14,7 @@ country_event = { #Kenes over - Germans
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Turkestan.1"}
 	title = MAR_Turkestan.1.t
 	desc = MAR_Turkestan.1.d
-	#picture = GFX_report_event_generic_command_table
+	picture = GFX_event_MAR_Turkestan_1
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -30,7 +30,7 @@ country_event = { #Kenes over - Japs
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Turkestan.2"}
 	title = MAR_Turkestan.2.t
 	desc = MAR_Turkestan.2.d
-	#picture = GFX_report_event_generic_command_table
+	picture = GFX_event_MAR_Turkestan_2
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -98,7 +98,7 @@ country_event = { #Kenes over - Turks/Americans
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Turkestan.3"}
 	title = MAR_Turkestan.3.t
 	desc = MAR_Turkestan.3.d
-	picture = GFX_report_event_generic_command_table
+	picture = GFX_event_MAR_Turkestan_3
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -120,7 +120,7 @@ country_event = { #Kenes over - Turks/Americans - they agreed
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Turkestan.4"}
 	title = MAR_Turkestan.4.t
 	desc = MAR_Turkestan.4.d
-	picture = GFX_report_event_generic_sign_treaty1
+	picture = GFX_event_MAR_Turkestan_4
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -169,7 +169,7 @@ country_event = { #Kenes over - Turks/Americans - they didn't agree
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Turkestan.5"}
 	title = MAR_Turkestan.5.t
 	desc = MAR_Turkestan.5.d
-	picture = report_event_generic_sign_treaty2
+	picture = GFX_event_MAR_Turkestan_5
 
 	fire_only_once = yes
 	is_triggered_only = yes
