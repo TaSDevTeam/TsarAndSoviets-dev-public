@@ -14,7 +14,7 @@ country_event = { #Kenes over - Germans
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Turkestan.1"}
 	title = MAR_Turkestan.1.t
 	desc = MAR_Turkestan.1.d
-	#picture = GFX_report_event_generic_command_table
+	picture = GFX_event_MAR_Turkestan_1
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -30,7 +30,7 @@ country_event = { #Kenes over - Japs
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Turkestan.2"}
 	title = MAR_Turkestan.2.t
 	desc = MAR_Turkestan.2.d
-	#picture = GFX_report_event_generic_command_table
+	picture = GFX_event_MAR_Turkestan_2
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -98,7 +98,7 @@ country_event = { #Kenes over - Turks/Americans
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Turkestan.3"}
 	title = MAR_Turkestan.3.t
 	desc = MAR_Turkestan.3.d
-	picture = GFX_report_event_generic_command_table
+	picture = GFX_event_MAR_Turkestan_3
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -120,7 +120,7 @@ country_event = { #Kenes over - Turks/Americans - they agreed
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Turkestan.4"}
 	title = MAR_Turkestan.4.t
 	desc = MAR_Turkestan.4.d
-	picture = GFX_report_event_generic_sign_treaty1
+	picture = GFX_event_MAR_Turkestan_4
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -169,7 +169,7 @@ country_event = { #Kenes over - Turks/Americans - they didn't agree
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_Turkestan.5"}
 	title = MAR_Turkestan.5.t
 	desc = MAR_Turkestan.5.d
-	picture = report_event_generic_sign_treaty2
+	picture = GFX_event_MAR_Turkestan_5
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -289,6 +289,7 @@ country_event = { #Offer ceasefire - yes
 
 	option = {
 		name = MAR_AFG.1.a
+		set_global_flag = RUS_AFG_war_ended
 		ai_chance = {
 			factor = 1
 			modifier = {
@@ -348,6 +349,7 @@ country_event = { #conditional surrender
 
 	option = {
 		name = MAR_AFG.2.a
+		set_global_flag = RUS_AFG_war_ended
 		ai_chance = {
 			factor = 1
 			modifier = {
@@ -436,13 +438,14 @@ country_event = { #unconditional surrender
 	option = {
 		ai_chance = { factor = 1 }
 		name = MAR_AFG.3.a
+		set_global_flag = RUS_AFG_war_ended
 		AFG = { save_global_event_target_as = losing_country }
 		RUS = {
 			save_global_event_target_as = winning_country
 			white_peace = AFG
 		}
 		if = {
-			limit = { MTR = { exists = yes } } 
+			limit = { country_exists = MTR } 
 			MTR = {
 				transfer_state = 1885
 				transfer_state = 1465
@@ -1539,15 +1542,13 @@ country_event = { #Technical stuff no loc
 				}
 			}
 		}
-		USA = {
-			country_event = { id = MAR_Japan.9 days = 3 }
-		}
-		JAP = {
-			country_event = { id = MAR_Japan.9 days = 3 }
-		}
 		MAR = {
-			country_event = { id = MAR_Japan.9 days = 3 }
+			country_event = { id = MAR_Japan.9 }
 		}
+		add_to_array = { global.MAN_contenders = MAN }
+		add_to_array = { global.MAN_contenders = MJP }
+		add_to_array = { global.MAN_contenders = HAN }
+		add_to_array = { global.MAN_contenders = PFF }
 		ZZZ = {
 			if = {
 				limit = { 
@@ -1600,6 +1601,7 @@ country_event = { #Technical stuff no loc
 			set_country_flag = TNO_eliminate_building_demand
 			set_country_flag = can_not_use_econ_system
 			set_country_flag = MAN_katastrophe
+			country_lock_all_division_template = yes
 			set_politics = {
 				ruling_party = socialist
 				last_election = "1961.1.20"
@@ -1614,12 +1616,14 @@ country_event = { #Technical stuff no loc
 			set_cosmetic_tag = MAN_katastrophe
 			transfer_state = 1641
 			transfer_state = 149
+			transfer_state = 1600
+			set_capital = { state = 1600 remember_old_capital = no }
 		}
 		ZZZ = {
 			country_event = { id = MAR_Japan.7 days = 5 }
 		}
 	}
-	option = { #IT'S ogre
+	option = { #IT'S NOT ogre
 		name = MAR_Japan.6.b
 		trigger = {
 			NOT = {
@@ -1670,6 +1674,34 @@ country_event = { #Technical stuff no loc
 	option = {
 		name = MAR_Japan.8.a
 		ai_chance = { factor = 1 }
+		HAN = {
+			transfer_units_fraction = {
+				target = ZZZ
+				size = 0
+				army_ratio = 1.0
+			}
+		}
+		MAN = {
+			transfer_units_fraction = {
+				target = ZZZ
+				size = 0
+				army_ratio = 1.0
+			}
+		}
+		PFF = {
+			transfer_units_fraction = {
+				target = ZZZ
+				size = 0
+				army_ratio = 1.0
+			}
+		}
+		MJP = {
+			transfer_units_fraction = {
+				target = ZZZ
+				size = 0
+				army_ratio = 1.0
+			}
+		}
 		PJP = {
 			annex_country = {
 				target = HAN
@@ -1763,19 +1795,18 @@ country_event = { #MANCHU CW STARTS GET UP GUYS
 		name = MAR_Japan.9.a
 		ai_chance = { factor = 1 }
 		TaS_fopo_add_manchurian_civil_war_tab = yes
-		#USA = {
-		#	set_temp_variable = { Victory_ID = 50 }
-		#	set_temp_variable = { Victory_Outcome = 0 }
-		#	set_temp_variable = { Victory_Points = 0}
-		#	Cold_War_GUI_ManipulateVictory = yes
-		#	TaS_fopo_add_manchurian_civil_war_tab = yes
-		#}
-		JAP = {
-			set_temp_variable = { Victory_ID = 50 }
-			set_temp_variable = { Victory_Outcome = 0 }
-			set_temp_variable = { Victory_Points = 0}
-			Cold_War_GUI_ManipulateVictory = yes
-			TaS_fopo_add_manchurian_civil_war_tab = yes
+		set_temp_variable = { target = HAN }
+		TNO_increase_volunteer_cap_3 = yes
+		hidden_effect = {
+			JAP = {
+				set_temp_variable = { Victory_ID = 50 }
+				set_temp_variable = { Victory_Outcome = 0 }
+				set_temp_variable = { Victory_Points = 0}
+				Cold_War_GUI_ManipulateVictory = yes
+				TaS_fopo_add_manchurian_civil_war_tab = yes
+				set_temp_variable = { target = MJP }
+				TNO_increase_volunteer_cap_2 = yes
+			}
 		}
 	}
 }
@@ -2185,7 +2216,7 @@ country_event = { #3 round success
 			transfer_state = 408
 			transfer_state = 409
 			transfer_state = 1644
-			transfer_state = 1647
+			transfer_state = 1646
 			if = {
 				limit = { has_country_flag = FE_demilitarize_amur }
 				1364 = { set_demilitarized_zone = yes }
@@ -2193,7 +2224,7 @@ country_event = { #3 round success
 				408 = { set_demilitarized_zone = yes }
 				409 = { set_demilitarized_zone = yes }
 				1644 = { set_demilitarized_zone = yes }
-				1647 = { set_demilitarized_zone = yes }
+				1646 = { set_demilitarized_zone = yes }
 			}
 			if = {
 				limit = { has_country_flag = FE_korean_resettlement }
@@ -2351,6 +2382,12 @@ country_event = { #4 round success
 				561 = { set_demilitarized_zone = yes }
 				563 = { set_demilitarized_zone = yes }
 				889 = { set_demilitarized_zone = yes }
+				1364 = { set_demilitarized_zone = yes }
+				657 = { set_demilitarized_zone = yes }
+				408 = { set_demilitarized_zone = yes }
+				409 = { set_demilitarized_zone = yes }
+				1644 = { set_demilitarized_zone = yes }
+				1646 = { set_demilitarized_zone = yes }
 			}
 			if = {
 				limit = { has_country_flag = FE_double_administrartion }
@@ -3403,6 +3440,7 @@ country_event = { #german nuclear ultimatum
 
 	option = { #yes
 		name = MAR_2WRW.7.a
+		custom_effect_tooltip = SWRW_we_cant_risk_everything_tt
 		ai_chance = {
 			factor = 90	
 			modifier = {
@@ -3468,6 +3506,17 @@ country_event = { #german nuclear ultimatum
 			}
 		}
 		clr_global_flag = nukes_disabled
+		custom_effect_tooltip = SWRW_you_dont_behave_yourself_tt
+		hidden_effect = {
+			country_event = { id = nuclearwar.5 hours = 12 }
+			GER = { 
+				set_country_flag = allout_nuclearstrike
+				load_focus_tree = ZZZ_blank_focus
+			}
+			MAR = {
+				load_focus_tree = ZZZ_blank_focus
+			}
+		}
 	}
 }
 
@@ -4933,7 +4982,7 @@ country_event = { #Baltics
 			
 			1401 = {
 				add_manpower = -134330
-				set_variable = { nationality = 169 }
+				set_variable = { nationality = 268 }
 			}
 			
 			1421 = {
@@ -5003,7 +5052,7 @@ country_event = { #Baltics
 			
 			1401 = {
 				add_manpower = -134330
-				set_variable = { nationality = 169 }
+				set_variable = { nationality = 268 }
 			}
 			
 			1421 = {
@@ -5291,6 +5340,13 @@ country_event = { #Ukraine
 				transfer_state = 228
 				transfer_state = 218
 			}
+			if = {
+				limit = { MAR = { controls_state = 196 } }
+				MUK = {
+					transfer_state = 196
+					add_state_core = 196
+				}
+			}
 			RUS = { end_puppet = MUK } 
 			MUK = {
 				every_owned_state = {
@@ -5565,6 +5621,13 @@ country_event = { #Crimnea
 			annex_country = {
 				target = MTV
 				transfer_troops = yes
+			}
+			if = {
+				limit = { MUK = { NOT = { is_subject_of = RUS } } }
+				MUK = {
+					transfer_state = 196
+					add_state_core = 196
+				}
 			}
 		}
 		196 = {
@@ -6077,7 +6140,7 @@ country_event = { #Turkish Straits
 					popularity = 0.15
 				}
 				econ_join_sphere_MAR = yes
-				retire_country_leader = yes
+				#retire_country_leader = yes
 				promote_character = MTU_Ahmet_Isvan
 				add_country_leader_role = {
 					character = MTU_Ahmet_Isvan

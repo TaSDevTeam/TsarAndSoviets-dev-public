@@ -538,6 +538,32 @@ MAR_install_mil_turkestan = {
 			transfer_state = 2125
 			add_state_core = 2125
 		}
+		if = {
+			limit = {
+				RUS = { controls_state = 2461 }
+			}
+			MTR = {
+				transfer_state = 1885
+				transfer_state = 1465
+				transfer_state = 2461
+				every_owned_state = {
+					remove_core_of = AFG
+					add_core_of = MTR
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				RUS = { controls_state = 1465 }
+			}
+			MTR = {
+				transfer_state = 1465
+				every_owned_state = {
+					remove_core_of = AFG
+					add_core_of = MTR
+				}
+			}
+		}
 		add_ideas = RUSAlliance_Military_Government
 		econ_join_sphere_MAR = yes
 	}

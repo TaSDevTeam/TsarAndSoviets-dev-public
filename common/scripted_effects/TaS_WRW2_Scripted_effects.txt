@@ -1369,7 +1369,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			add_ideas = RUSAlliance_Observer
 		}
 		GHL = {
-			econ_join_sphere_MAR = yes
+			econ_join_sphere_USA = yes
 			transfer_state = 36
 			transfer_state = 7
 			transfer_state = 35
@@ -1404,7 +1404,7 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 				}
 			}
 			TNO_startup_nation = yes
-			add_ideas = RUSAlliance_Observer
+			add_ideas = OFN_Independent_Member
 		}
 		GCZ = {
 			econ_join_sphere_MAR = yes
@@ -1548,6 +1548,12 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			set_temp_variable = { Victory_Outcome = 5 }
 			set_temp_variable = { Victory_Points = 500 }
 			Cold_War_GUI_ManipulateVictory = yes
+		}
+		USA = {
+			add_to_faction = GHL
+			add_to_array = {
+				global.OFN_members = GHL
+			}
 		}
 		if = {
 			limit = {
@@ -2193,7 +2199,7 @@ TaS_2WRW_form_ost_zones = {
 	custom_effect_tooltip = TaS_2WRW_form_ost_zones_tt
 	hidden_effect = {
 		if = {
-			limit = { RUS = { owns_state = 1397 } }
+			limit = { MAR = { owns_state = 1397 } }
 			MBP = {
 				transfer_state = 1440
 				transfer_state = 13
@@ -2489,6 +2495,7 @@ TaS_2WRW_set_zone_laws = {
 }
 
 TaS_2WRW_set_autonomy_laws = {
+	remove_ideas = MAR_military_administration
 	set_variable = { TNO_economy_type = token:Econ_Type_Corporatism }
 	set_variable = { TNO_economy_subtype = token:Econ_Subtype_Dirigisme }
 	
@@ -2873,7 +2880,7 @@ TaS_2WRW_free_baltics = {
 		
 		1401 = {
 			add_manpower = -134330
-			set_variable = { nationality = 169 }
+			set_variable = { nationality = 268 }
 		}
 		
 		1421 = {

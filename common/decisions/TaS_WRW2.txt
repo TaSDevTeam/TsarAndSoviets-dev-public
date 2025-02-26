@@ -2005,6 +2005,92 @@ TaS_WRW2_fate_and_coring_of_territories = {
 			TNO_improve_admin_efficiency_low = yes
 		}
 	}
+	MAR_coring_integrate_Lvov = {
+
+		icon = GFX_decision_generic_form_nation
+
+		available = {
+			controls_state = 1391
+		}
+
+		visible = {
+			owns_state = 1391
+			NOT = {
+				AND = {
+					91 = {
+						is_core_of = ROOT
+					}
+					89 = {
+						is_core_of = ROOT
+					}
+					1394 = {
+						is_core_of = ROOT
+					}
+					1393 = {
+						is_core_of = ROOT
+					}
+					1392 = {
+						is_core_of = ROOT
+					}
+					1391 = {
+						is_core_of = ROOT
+					}
+					1388 = {
+						is_core_of = ROOT
+					}
+					1387 = {
+						is_core_of = ROOT
+					}
+				}
+			}
+		}
+
+		on_map_mode = map_and_decisions_view
+		highlight_states = {
+			highlight_state_targets = {
+				state = 91
+				state = 89
+				state = 1394
+				state = 1393
+				state = 1392
+				state = 1391
+				state = 1388
+				state = 1387
+			}
+		}
+
+		modifier = {
+			stability_weekly = -0.0035
+			political_power_gain = -0.25
+			gdp_growth_modifier = -0.15
+		}
+
+		cost = 75
+
+		ai_will_do = {
+			factor = 200
+		}
+
+		days_remove = 90
+		fire_only_once = yes
+
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_coring_integrate_Lutsk remove"
+			add_state_core = 91
+			add_state_core = 89
+			add_state_core = 1394
+			add_state_core = 1393
+			add_state_core = 1392
+			add_state_core = 1391
+			add_state_core = 1388
+			add_state_core = 1387
+			
+			add_stability = 0.025
+			set_temp_variable = { gdp_growth_temp = 0.25 }
+			econ_gdp_growth_change = yes
+			TNO_improve_admin_efficiency_low = yes
+		}
+	}
 	MAR_coring_integrate_Pskov = {
 
 		icon = GFX_decision_generic_form_nation
@@ -3776,7 +3862,16 @@ TaS_WRW2_territorial_reclamation = {
 					has_global_flag = TNO_TURKES_KENES_OVER_USA_WINS 
 					has_global_flag = TNO_TURKES_KENES_OVER_NEUTRALITY 
 					has_global_flag = TNO_TURKES_KENES_OVER_GER_WINS 
+					has_global_flag = TK_GER_Victory
+					has_global_flag = TK_USA_Victory
+					has_global_flag = TK_JAP_Victory
 				}
+				TRK = { has_war = no }
+				KRK = { has_war = no }
+				KYR = { has_war = no }
+				TAJ = { has_war = no }
+				UZB = { has_war = no }
+				UTL = { has_war = no }
 			}
 		}
 		ai_will_do = {
@@ -3792,7 +3887,10 @@ TaS_WRW2_territorial_reclamation = {
 			hidden_effect = {
 				if = {
 					limit = {
-						has_global_flag = TNO_TURKES_KENES_OVER_GER_WINS 
+						OR = {
+							has_global_flag = TNO_TURKES_KENES_OVER_GER_WINS 
+							has_global_flag = TK_GER_Victory
+						}
 					}
 					country_event = {
 						id = MAR_Turkestan.1 days = 3
@@ -3800,7 +3898,10 @@ TaS_WRW2_territorial_reclamation = {
 				}
 				if = {
 					limit = {
-						has_global_flag = TNO_TURKES_KENES_OVER_NEUTRALITY 
+						OR = {
+							has_global_flag = TNO_TURKES_KENES_OVER_NEUTRALITY 
+							has_global_flag = TK_JAP_Victory
+						}
 					}
 					country_event = {
 						id = MAR_Turkestan.2 days = 3
@@ -3808,7 +3909,10 @@ TaS_WRW2_territorial_reclamation = {
 				}
 				if = {
 					limit = {
-						has_global_flag = TNO_TURKES_KENES_OVER_USA_WINS 
+						OR = {
+							has_global_flag = TNO_TURKES_KENES_OVER_USA_WINS 
+							has_global_flag = TK_USA_Victory
+						}
 					}
 					country_event = {
 						id = MAR_Turkestan.3 days = 3
@@ -3940,6 +4044,9 @@ TaS_WRW2_territorial_reclamation = {
 				has_country_flag = MAR_has_turkestan
 				has_country_flag = MAR_allied_turkestan
 			}
+			NOT = {
+				has_global_flag = RUS_AFG_war_ended
+			}
 		}
 		fire_only_once = yes
 		ai_will_do = {
@@ -3982,7 +4089,8 @@ TaS_WRW2_territorial_reclamation = {
 		icon = GFX_antarctica
 		visible = {
 			has_global_flag = Antarctica_Germany_Rescued_NS
-			has_global_flag = TaS_WRW2_Russian_victory
+			has_global_flag = GER_its_joever
+			NOT = { has_global_flag = TaS_SWRW_democracy_time }
 		}
 		fire_only_once = yes
 		ai_will_do = {

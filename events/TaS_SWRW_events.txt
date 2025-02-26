@@ -1717,6 +1717,314 @@ country_event = { #Moscow Belozersky
 	}
 }
 
+country_event = { #Serbia wants to quit
+	id = TaS_SWRW.11
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.11"}
+	title = TaS_SWRW.11.t
+	desc = TaS_SWRW.11.d
+	picture = GFX_report_event_generic_peace_deal
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #yes, without anything
+		name = TaS_SWRW.11.a
+		ai_chance = { factor = 1 }
+		SER = {
+			hidden_effect = {
+				if = {
+					limit = { SER = { is_subject_of = GER } }
+					GER = {
+						end_puppet = SER
+					}
+				}
+				leave_faction = yes
+				leave_zollverein = yes
+				econ_leave_sphere = yes
+				if = {
+					limit = { has_idea = SGR_zollverein_basic }
+					leave_zollverein = yes
+				}
+				remove_faction_status = yes
+			}
+			white_peace = RUS 
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.16
+				}
+			}
+		}
+	}
+	option = { #demand something
+		name = TaS_SWRW.11.b
+		ai_chance = { factor = 1 }
+		random_list = {
+			7 = {
+				custom_effect_tooltip = SWRW_DEMANDS_tt
+				set_country_flag = SER_demands
+				SER = {
+					hidden_effect = {
+						if = {
+							limit = { SER = { is_subject_of = GER } }
+							GER = {
+								end_puppet = SER
+							}
+						}
+						leave_faction = yes
+						leave_zollverein = yes
+						econ_leave_sphere = yes
+						if = {
+							limit = { has_idea = SGR_zollverein_basic }
+							leave_zollverein = yes
+						}
+						remove_faction_status = yes
+					}
+					white_peace = RUS 
+				}
+				hidden_effect = {
+					every_country  = {
+						news_event = {
+							id = MAR_2WRW_world_news.16
+						}
+					}
+				}
+			}
+			3 = {
+				custom_effect_tooltip = SWRW_DEMANDS_FAIL_tt
+				set_country_flag = SER_refuse
+			}
+		}
+	}
+	option = { #keep it going
+		name = TaS_SWRW.11.c
+		ai_chance = { factor = 1 }
+		set_country_flag = SER_refuse
+	}
+}
+
+country_event = { #Hungary wants to quit
+	id = TaS_SWRW.12
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.12"}
+	title = TaS_SWRW.12.t
+	desc = TaS_SWRW.12.d
+	picture = GFX_report_event_generic_peace_deal
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #yes, without anything
+		name = TaS_SWRW.12.a
+		ai_chance = { factor = 1 }
+		HUN = {
+			white_peace = RUS 
+			hidden_effect = {
+				leave_faction = yes
+				leave_zollverein = yes
+				econ_leave_sphere = yes
+				if = {
+					limit = { has_idea = SGR_zollverein_basic }
+					leave_zollverein = yes
+				}
+				remove_faction_status = yes
+			}
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.17
+				}
+			}
+		}
+	}
+	option = { #demand something
+		name = TaS_SWRW.12.b
+		ai_chance = { factor = 1 }
+		random_list = {
+			7 = {
+				custom_effect_tooltip = SWRW_DEMANDS_tt
+				set_country_flag = HUN_demands
+				HUN = {
+					white_peace = RUS 
+					hidden_effect = {
+						leave_faction = yes
+						leave_zollverein = yes
+						econ_leave_sphere = yes
+						if = {
+							limit = { has_idea = SGR_zollverein_basic }
+							leave_zollverein = yes
+						}
+						remove_faction_status = yes
+					}
+				}
+				hidden_effect = {
+					every_country  = {
+						news_event = {
+							id = MAR_2WRW_world_news.17
+						}
+					}
+				}
+			}
+			3 = {
+				custom_effect_tooltip = SWRW_DEMANDS_FAIL_tt
+				set_country_flag = HUN_refuse
+			}
+		}
+	}
+	option = { #keep it going
+		name = TaS_SWRW.12.c
+		ai_chance = { factor = 1 }
+		set_country_flag = HUN_refuse
+	}
+}
+
+country_event = { #UK wants to quit
+	id = TaS_SWRW.13
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.13"}
+	title = TaS_SWRW.13.t
+	desc = TaS_SWRW.13.d
+	picture = GFX_report_event_generic_peace_deal
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #well
+		name = TaS_SWRW.13.a
+		ai_chance = { factor = 1 }
+		ENG = {
+			white_peace = RUS 
+			hidden_effect = {
+				leave_faction = yes
+				leave_zollverein = yes
+				econ_leave_sphere = yes
+				if = {
+					limit = { has_idea = SGR_zollverein_basic }
+					leave_zollverein = yes
+				}
+				remove_faction_status = yes
+			}
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.18
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Romania wants to quit
+	id = TaS_SWRW.14
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.14"}
+	title = TaS_SWRW.14.t
+	desc = TaS_SWRW.14.d
+	picture = GFX_report_event_generic_peace_deal
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #yes, without anything
+		name = TaS_SWRW.14.a
+		ai_chance = { factor = 1 }
+		ROM = {
+			white_peace = RUS 
+			hidden_effect = {
+				leave_faction = yes
+				leave_zollverein = yes
+				econ_leave_sphere = yes
+				if = {
+					limit = { has_idea = SGR_zollverein_basic }
+					leave_zollverein = yes
+				}
+				remove_faction_status = yes
+			}
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.19
+				}
+			}
+		}
+	}
+	option = { #demand something
+		name = TaS_SWRW.14.b
+		ai_chance = { factor = 1 }
+		random_list = {
+			7 = {
+				custom_effect_tooltip = SWRW_DEMANDS_tt
+				set_country_flag = ROM_demands
+				ROM = {
+					white_peace = RUS 
+					hidden_effect = {
+						leave_faction = yes
+						leave_zollverein = yes
+						econ_leave_sphere = yes
+						if = {
+							limit = { has_idea = SGR_zollverein_basic }
+							leave_zollverein = yes
+						}
+						remove_faction_status = yes
+					}
+				}
+				hidden_effect = {
+					every_country  = {
+						news_event = {
+							id = MAR_2WRW_world_news.17
+						}
+					}
+				}
+			}
+			3 = {
+				custom_effect_tooltip = SWRW_DEMANDS_FAIL_tt
+				set_country_flag = ROM_refuse
+			}
+		}
+	}
+	option = { #keep it going
+		name = TaS_SWRW.14.c
+		ai_chance = { factor = 1 }
+		set_country_flag = ROM_refuse
+	}
+}
+
+country_event = { #France wants to quit
+	id = TaS_SWRW.15
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.15"}
+	title = TaS_SWRW.15.t
+	desc = TaS_SWRW.15.d
+	picture = GFX_report_event_generic_peace_deal
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #well
+		name = TaS_SWRW.15.a
+		ai_chance = { factor = 1 }
+		FRA = {
+			white_peace = RUS 
+			hidden_effect = {
+				leave_faction = yes
+				leave_zollverein = yes
+				econ_leave_sphere = yes
+				if = {
+					limit = { has_idea = SGR_zollverein_basic }
+					leave_zollverein = yes
+				}
+				remove_faction_status = yes
+			}
+		}
+		hidden_effect = {
+			every_country  = {
+				news_event = {
+					id = MAR_2WRW_world_news.20
+				}
+			}
+		}
+	}
+}
 
 country_event = { #Bulgaria wants to quit
 	id = TaS_SWRW.16
@@ -1730,6 +2038,7 @@ country_event = { #Bulgaria wants to quit
 
 	option = { #yes, without anything
 		name = TaS_SWRW.16.a
+		ai_chance = { factor = 1 }
 		BUL = {
 			white_peace = RUS 
 			hidden_effect = {
@@ -1772,6 +2081,7 @@ country_event = { #Bulgaria wants to quit
 	}
 	option = { #demand something
 		name = TaS_SWRW.16.b
+		ai_chance = { factor = 1 }
 		random_list = {
 			7 = {
 				custom_effect_tooltip = SWRW_DEMANDS_tt
@@ -1824,296 +2134,52 @@ country_event = { #Bulgaria wants to quit
 	}
 	option = { #keep it going
 		name = TaS_SWRW.16.c
+		ai_chance = { factor = 1 }
 		set_country_flag = BUL_refuse
 	}
 }
 
-country_event = { #Serbia wants to quit
-	id = TaS_SWRW.11
-	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.11"}
-	title = TaS_SWRW.11.t
-	desc = TaS_SWRW.11.d
+
+country_event = { #Do we REALLY want to quit?: UK
+	id = TaS_SWRW.17
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.17"}
+	title = TaS_SWRW.17.t
+	desc = TaS_SWRW.17.d
 	picture = GFX_report_event_generic_peace_deal
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
-	option = { #yes, without anything
-		name = TaS_SWRW.11.a
-		SER = {
-			hidden_effect = {
-				if = {
-					limit = { SER = { is_subject_of = GER } }
-					GER = {
-						end_puppet = SER
-					}
-				}
-				leave_faction = yes
-				leave_zollverein = yes
-				econ_leave_sphere = yes
-				if = {
-					limit = { has_idea = SGR_zollverein_basic }
-					leave_zollverein = yes
-				}
-				remove_faction_status = yes
-			}
-			white_peace = RUS 
-		}
-		hidden_effect = {
-			every_country  = {
-				news_event = {
-					id = MAR_2WRW_world_news.16
-				}
-			}
-		}
+	option = { #actually yes
+		name = TaS_SWRW.17.a
+		ai_chance = { factor = 1 }
+		RUS = { country_event = { id = TaS_SWRW.13 } }
 	}
-	option = { #demand something
-		name = TaS_SWRW.11.b
-		random_list = {
-			7 = {
-				custom_effect_tooltip = SWRW_DEMANDS_tt
-				set_country_flag = SER_demands
-				SER = {
-					hidden_effect = {
-						if = {
-							limit = { SER = { is_subject_of = GER } }
-							GER = {
-								end_puppet = SER
-							}
-						}
-						leave_faction = yes
-						leave_zollverein = yes
-						econ_leave_sphere = yes
-						if = {
-							limit = { has_idea = SGR_zollverein_basic }
-							leave_zollverein = yes
-						}
-						remove_faction_status = yes
-					}
-					white_peace = RUS 
-				}
-				hidden_effect = {
-					every_country  = {
-						news_event = {
-							id = MAR_2WRW_world_news.16
-						}
-					}
-				}
-			}
-			3 = {
-				custom_effect_tooltip = SWRW_DEMANDS_FAIL_tt
-				set_country_flag = SER_refuse
-			}
-		}
-	}
-	option = { #keep it going
-		name = TaS_SWRW.11.c
-		set_country_flag = SER_refuse
+	option = { #not really
+		name = TaS_SWRW.17.b
+		ai_chance = { factor = 1 }
+		add_stability = -0.05
 	}
 }
 
-country_event = { #Hungary wants to quit
-	id = TaS_SWRW.12
-	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.12"}
-	title = TaS_SWRW.12.t
-	desc = TaS_SWRW.12.d
+country_event = { #Do we REALLY want to quit?: France
+	id = TaS_SWRW.18
+	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.18"}
+	title = TaS_SWRW.18.t
+	desc = TaS_SWRW.18.d
 	picture = GFX_report_event_generic_peace_deal
 
 	fire_only_once = yes
 	is_triggered_only = yes
 
-	option = { #yes, without anything
-		name = TaS_SWRW.12.a
-		HUN = {
-			white_peace = RUS 
-			hidden_effect = {
-				leave_faction = yes
-				leave_zollverein = yes
-				econ_leave_sphere = yes
-				if = {
-					limit = { has_idea = SGR_zollverein_basic }
-					leave_zollverein = yes
-				}
-				remove_faction_status = yes
-			}
-		}
-		hidden_effect = {
-			every_country  = {
-				news_event = {
-					id = MAR_2WRW_world_news.17
-				}
-			}
-		}
+	option = { #actually yes
+		name = TaS_SWRW.18.a
+		ai_chance = { factor = 1 }
+		RUS = { country_event = { id = TaS_SWRW.15 } }
 	}
-	option = { #demand something
-		name = TaS_SWRW.12.b
-		random_list = {
-			7 = {
-				custom_effect_tooltip = SWRW_DEMANDS_tt
-				set_country_flag = HUN_demands
-				HUN = {
-					white_peace = RUS 
-					hidden_effect = {
-						leave_faction = yes
-						leave_zollverein = yes
-						econ_leave_sphere = yes
-						if = {
-							limit = { has_idea = SGR_zollverein_basic }
-							leave_zollverein = yes
-						}
-						remove_faction_status = yes
-					}
-				}
-				hidden_effect = {
-					every_country  = {
-						news_event = {
-							id = MAR_2WRW_world_news.17
-						}
-					}
-				}
-			}
-			3 = {
-				custom_effect_tooltip = SWRW_DEMANDS_FAIL_tt
-				set_country_flag = HUN_refuse
-			}
-		}
-	}
-	option = { #keep it going
-		name = TaS_SWRW.12.c
-		set_country_flag = HUN_refuse
-	}
-}
-
-country_event = { #UK wants to quit
-	id = TaS_SWRW.13
-	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.13"}
-	title = TaS_SWRW.13.t
-	desc = TaS_SWRW.13.d
-	picture = GFX_report_event_generic_peace_deal
-
-	fire_only_once = yes
-	is_triggered_only = yes
-
-	option = { #well
-		name = TaS_SWRW.13.a
-		ENG = {
-			white_peace = RUS 
-			hidden_effect = {
-				leave_faction = yes
-				leave_zollverein = yes
-				econ_leave_sphere = yes
-				if = {
-					limit = { has_idea = SGR_zollverein_basic }
-					leave_zollverein = yes
-				}
-				remove_faction_status = yes
-			}
-		}
-		hidden_effect = {
-			every_country  = {
-				news_event = {
-					id = MAR_2WRW_world_news.18
-				}
-			}
-		}
-	}
-}
-
-country_event = { #Romania wants to quit
-	id = TaS_SWRW.14
-	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.14"}
-	title = TaS_SWRW.14.t
-	desc = TaS_SWRW.14.d
-	picture = GFX_report_event_generic_peace_deal
-
-	fire_only_once = yes
-	is_triggered_only = yes
-
-	option = { #yes, without anything
-		name = TaS_SWRW.14.a
-		ROM = {
-			white_peace = RUS 
-			hidden_effect = {
-				leave_faction = yes
-				leave_zollverein = yes
-				econ_leave_sphere = yes
-				if = {
-					limit = { has_idea = SGR_zollverein_basic }
-					leave_zollverein = yes
-				}
-				remove_faction_status = yes
-			}
-		}
-		hidden_effect = {
-			every_country  = {
-				news_event = {
-					id = MAR_2WRW_world_news.19
-				}
-			}
-		}
-	}
-	option = { #demand something
-		name = TaS_SWRW.14.b
-		random_list = {
-			7 = {
-				custom_effect_tooltip = SWRW_DEMANDS_tt
-				set_country_flag = ROM_demands
-				ROM = {
-					white_peace = RUS 
-					hidden_effect = {
-						leave_faction = yes
-						leave_zollverein = yes
-						econ_leave_sphere = yes
-						if = {
-							limit = { has_idea = SGR_zollverein_basic }
-							leave_zollverein = yes
-						}
-						remove_faction_status = yes
-					}
-				}
-				hidden_effect = {
-					every_country  = {
-						news_event = {
-							id = MAR_2WRW_world_news.17
-						}
-					}
-				}
-			}
-			3 = {
-				custom_effect_tooltip = SWRW_DEMANDS_FAIL_tt
-				set_country_flag = ROM_refuse
-			}
-		}
-	}
-	option = { #keep it going
-		name = TaS_SWRW.14.c
-		set_country_flag = ROM_refuse
-	}
-}
-
-country_event = { #France wants to quit
-	id = TaS_SWRW.15
-	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_SWRW.15"}
-	title = TaS_SWRW.15.t
-	desc = TaS_SWRW.15.d
-	picture = GFX_report_event_generic_peace_deal
-
-	fire_only_once = yes
-	is_triggered_only = yes
-
-	option = { #well
-		name = TaS_SWRW.15.a
-		FRA = {
-			white_peace = RUS 
-			leave_faction = yes
-			econ_leave_sphere = yes
-		}
-		hidden_effect = {
-			every_country  = {
-				news_event = {
-					id = MAR_2WRW_world_news.20
-				}
-			}
-		}
+	option = { #not really
+		name = TaS_SWRW.18.b
+		ai_chance = { factor = 1 }
+		add_stability = -0.05
 	}
 }

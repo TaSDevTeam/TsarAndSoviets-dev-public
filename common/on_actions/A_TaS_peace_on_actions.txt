@@ -144,10 +144,11 @@ on_actions = {
 					RUS = {
 						white_peace = AFG
 						log = "TaS Peace deal RUS-AFG"	
+						set_global_flag = RUS_AFG_war_ended
 					}
 					RUS = {
 						if = {
-							limit = { MTR = { exists = yes } } 
+							limit = { country_exists = MTR }
 							MTR = {
 								transfer_state = 1885
 								transfer_state = 1465
@@ -368,6 +369,70 @@ on_actions = {
 							}
 						}
 						set_global_flag = skip_default_capitulation
+				}
+				else_if = {
+					limit = {
+						FROM = {
+							OR = {
+								tag = MAN
+								tag = MJP
+								tag = HAN
+								tag = PFF
+							}
+						}
+						ROOT = {
+							OR = {
+								tag = MAN
+								tag = MJP
+								tag = HAN
+								tag = PFF
+							}
+						}
+					}
+					FROM = {
+						every_enemy_country = {
+							limit = {
+								original_tag = ROOT
+							}
+							remove_from_array = { global.MAN_contenders = THIS }
+							FROM = {
+								white_peace = PREV
+								annex_country = {
+									target = PREV
+									transfer_troops = no
+								}
+							}
+						}
+
+						if = {
+							limit = {
+								check_variable = { global.MAN_contenders^num = 1 }
+							}
+							clear_array = global.MAN_contenders
+
+							if = {
+								limit = { country_exists = MAN }
+								TaS_SWRW_Manchu_CW_MAN_win = yes
+							}
+							else_if = {
+								limit = { country_exists = MJP }
+								TaS_SWRW_Manchu_CW_MJP_win = yes
+							}
+							else_if = {
+								limit = { country_exists = HAN }
+								TaS_SWRW_Manchu_CW_HAN_win = yes
+							}
+							else_if = {
+								limit = { country_exists = PFF }
+								TaS_SWRW_Manchu_CW_PFF_win = yes
+							}
+							remove_ideas = MAN_civil_war
+							FROM = {
+								set_capital = { state = 328 remember_old_capital = no }
+							}
+						}
+					}
+					set_global_flag = skip_default_capitulation
 				}
 				else_if = {
 					limit = {
@@ -969,24 +1034,24 @@ on_actions = {
 									NOT = { TNS = { is_subject_of = GER } } #очевидно если Приднестровье не сожралось при капитуляции германии значит оно румынское #а вот теперь хуй
 								}
 								if = {
-									limit = { MUK = { exists = yes } }
+									limit = { country_exists = MUK }
 									MUK = {
 										annex_country = {
 											target = TNS
 											transfer_troops = no
 										}
+										transfer_state = 198
+										transfer_state = 1965
+										transfer_state = 1966
+										transfer_state = 1282
+										transfer_state = 192
+										
 										add_state_core = 198
 										add_state_core = 1965
 										add_state_core = 1966
-										if = {
-											limit = { MUK = { owns_state = 1282 } }
-											add_state_core = 1282
-											add_state_core = 192
-										}
-										else_if = {
-											limit = { MUK = { owns_state = 192 } }
-											add_state_core = 192
-										}
+										add_state_core = 1282
+										add_state_core = 192
+										
 										transfer_state = 80
 										transfer_state = 1286
 										transfer_state = 78
@@ -1009,18 +1074,18 @@ on_actions = {
 											target = TNS
 											transfer_troops = no
 										}
+										transfer_state = 198
+										transfer_state = 1965
+										transfer_state = 1966
+										transfer_state = 1282
+										transfer_state = 192
+										
 										add_state_core = 198
 										add_state_core = 1965
 										add_state_core = 1966
-										if = {
-											limit = { MUK = { owns_state = 1282 } }
-											add_state_core = 1282
-											add_state_core = 192
-										}
-										else_if = {
-											limit = { MUK = { owns_state = 192 } }
-											add_state_core = 192
-										}
+										add_state_core = 1282
+										add_state_core = 192
+										
 										transfer_state = 80
 										transfer_state = 1286
 										transfer_state = 78
@@ -1871,6 +1936,15 @@ on_actions = {
 								add_core_of = NAL
 							}
 						}
+						if = {
+							limit = { IND = { has_idea = OFN_Independent_Member } }
+							add_ideas = OFN_Independent_Member
+							USA = { add_to_faction = NAL }
+						}
+						else_if = {
+							limit = { IND = { has_idea = OFN_Observer } }
+							add_ideas = OFN_Observer
+						}
 					}
 					else = {
 						NAL = {
@@ -1970,6 +2044,15 @@ on_actions = {
 						}
 						else = {
 							econ_join_sphere_USA = yes
+							if = {
+								limit = { IND = { has_idea = OFN_Independent_Member } }
+								add_ideas = OFN_Independent_Member
+								USA = { add_to_faction = NAL }
+							}
+							else_if = {
+								limit = { IND = { has_idea = OFN_Observer } }
+								add_ideas = OFN_Observer
+							}
 						}
 						every_owned_state = {
 							remove_core_of = AFG
