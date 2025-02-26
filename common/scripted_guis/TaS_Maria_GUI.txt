@@ -27,10 +27,6 @@ scripted_gui = {
 				}
 				else = { set_country_flag = MAR_Maria_balatro_visible }
 				set_country_flag = MAR_Maria_balatro_Opener_Clear
-				#set_temp_variable = { alert_id = token:Alert_PrestolTimeoutSoon }
-				#remove_TNO_alert = yes
-				#set_temp_variable = { alert_id = token:Alert_PrestolActionAvailable }
-				#remove_TNO_alert = yes
 			}
 		}
 
@@ -44,27 +40,36 @@ scripted_gui = {
 			has_country_flag = MAR_Maria_balatro_visible
 		}
 		triggers = {
-			card_one_not_active_visible = { check_variable = { test_test_test = 1 } }
-			card_one_button_visible = { check_variable = { test_test_test = 2 } }
+			card_one_not_active_visible = { check_variable = { MAR_card_array^0 = 0 } }
+			card_one_button_visible = { check_variable = { MAR_card_array^0 = 1 } }
+			card_two_not_active_visible = { check_variable = { MAR_card_array^1 = 0 } }
+			card_two_button_visible = { check_variable = { MAR_card_array^1 = 1 } }
+			card_three_not_active_visible = { check_variable = { MAR_card_array^2 = 0 } }
+			card_three_button_visible = { check_variable = { MAR_card_array^2 = 1 } }
+			card_four_not_active_visible = { check_variable = { MAR_card_array^3 = 0 } }
+			card_four_button_visible = { check_variable = { MAR_card_array^3 = 1 } }
+			card_five_not_active_visible = { check_variable = { MAR_card_array^4 = 0 } }
+			card_five_button_visible = { check_variable = { MAR_card_array^4 = 1 } }
+			card_six_not_active_visible = { check_variable = { MAR_card_array^5 = 0 } }
+			card_six_button_visible = { check_variable = { MAR_card_array^5 = 1 } }
+			card_seven_not_active_visible = { check_variable = { MAR_card_array^6 = 0 } }
+			card_seven_button_visible = { check_variable = { MAR_card_array^6 = 1 } }
+			card_eight_not_active_visible = { check_variable = { MAR_card_array^7 = 0 } }
+			card_eight_button_visible = { check_variable = { MAR_card_array^7 = 1 } }
+			card_nine_not_active_visible = { check_variable = { MAR_card_array^8 = 0 } }
+			card_nine_button_visible = { check_variable = { MAR_card_array^8 = 1 } }
+			card_ten_not_active_visible = { check_variable = { MAR_card_array^9 = 0 } }
+			card_ten_button_visible = { check_variable = { MAR_card_array^9 = 1 } }
 		}
 		effects = {
-			card_one_button_click = {
+			gui_close_button_click = {
 				if = {
-					limit = { has_country_flag = MAR_Maria_balatro_interaction_visible }
-					clr_country_flag = MAR_Maria_balatro_interaction_visible
+					limit = { has_country_flag = MAR_Maria_balatro_visible }
+					clr_country_flag = MAR_Maria_balatro_visible
 				}
-				else = { set_country_flag = MAR_Maria_balatro_interaction_visible }
+				else = { set_country_flag = MAR_Maria_balatro_visible }
+				set_country_flag = MAR_Maria_balatro_Opener_Clear
 			}
-		}
-	}
-	
-	MAR_Maria_GUI_interaction_menu = {
-		context_type = player_context
-		window_name = "MAR_Maria_GUI_interaction_menu"
-		
-		visible = {
-			tag = MAR
-			has_country_flag = MAR_Maria_balatro_interaction_visible
 		}
 	}
 }
