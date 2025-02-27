@@ -159,6 +159,18 @@ TaS_SWRW_start_the_war = {
 			}
 			add_ideas = SWRW_cant_join
 		}
+		BOR = {
+			if = {
+				limit = { is_in_faction_with = GER }
+				add_ideas = SWRW_cant_join 
+			}
+		}
+		PAK = {
+			if = {
+				limit = { is_in_faction_with = GER }
+				add_ideas = SWRW_cant_join 
+			}
+		}
 		load_focus_tree = MAR_second_patriotic_war
 		mark_focus_tree_layout_dirty = yes		
 	}
@@ -2170,6 +2182,10 @@ SWRW_clear_war_stuff = {
 		limit = { is_in_faction_with = USA }
 		set_temp_variable = { target = RUS }
 		TNO_clear_and_recall_volunteers = yes
+	}
+	every_country = {
+		limit = { has_idea = SWRW_cant_join }
+		remove_ideas = SWRW_cant_join
 	}
 	USA = {
 		set_temp_variable = { target = RUS }

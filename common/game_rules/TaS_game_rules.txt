@@ -916,6 +916,168 @@ SWRW_WAR_RESULT = {
 	}
 }
 
+SWRW_RUS_ROM_LEAVE = { 
+	name = SWRW_RUS_ROM_LEAVE
+	group = "RULE_GROUP_TAS_BEREZNIKI_SWRW"
+	option = {
+		name = DEFAULT
+		text = "RULE_OPTION_SWRW_RUS_ROM_LEAVE_RANDOM"
+		desc = "RULE_OPTION_SWRW_RUS_ROM_LEAVE_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = SWRW_RUS_ROM_LEAVE_ACCEPT
+		text = "RULE_OPTION_SWRW_RUS_ROM_LEAVE_ACCEPT"
+		desc = "RULE_OPTION_SWRW_RUS_ROM_LEAVE_ACCEPT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = SWRW_RUS_ROM_LEAVE_ACCEPT_CONCESSIONS
+		text = "RULE_OPTION_SWRW_RUS_ROM_LEAVE_ACCEPT_CONCESSIONS"
+		desc = "RULE_OPTION_SWRW_RUS_ROM_LEAVE_ACCEPT_CONCESSIONS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = SWRW_RUS_ROM_LEAVE_DECLINE
+		text = "RULE_OPTION_SWRW_RUS_ROM_LEAVE_DECLINE"
+		desc = "RULE_OPTION_SWRW_RUS_ROM_LEAVE_DECLINE_DESC"
+		allow_achievements = yes
+	}
+}
+
+SWRW_RUS_HUN_LEAVE = { 
+	name = SWRW_RUS_HUN_LEAVE
+	group = "RULE_GROUP_TAS_BEREZNIKI_SWRW"
+	option = {
+		name = DEFAULT
+		text = "RULE_OPTION_SWRW_RUS_HUN_LEAVE_RANDOM"
+		desc = "RULE_OPTION_SWRW_RUS_HUN_LEAVE_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = SWRW_RUS_HUN_LEAVE_ACCEPT
+		text = "RULE_OPTION_SWRW_RUS_HUN_LEAVE_ACCEPT"
+		desc = "RULE_OPTION_SWRW_RUS_HUN_LEAVE_ACCEPT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = SWRW_RUS_HUN_LEAVE_ACCEPT_CONCESSIONS
+		text = "RULE_OPTION_SWRW_RUS_HUN_LEAVE_ACCEPT_CONCESSIONS"
+		desc = "RULE_OPTION_SWRW_RUS_HUN_LEAVE_ACCEPT_CONCESSIONS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = SWRW_RUS_HUN_LEAVE_DECLINE
+		text = "RULE_OPTION_SWRW_RUS_HUN_LEAVE_DECLINE"
+		desc = "RULE_OPTION_SWRW_RUS_HUN_LEAVE_DECLINE_DESC"
+		allow_achievements = yes
+	}
+}
+
+SWRW_RUS_SER_LEAVE = { 
+	name = SWRW_RUS_SER_LEAVE
+	group = "RULE_GROUP_TAS_BEREZNIKI_SWRW"
+	option = {
+		name = DEFAULT
+		text = "RULE_OPTION_SWRW_RUS_SER_LEAVE_RANDOM"
+		desc = "RULE_OPTION_SWRW_RUS_SER_LEAVE_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = SWRW_RUS_SER_LEAVE_ACCEPT
+		text = "RULE_OPTION_SWRW_RUS_SER_LEAVE_ACCEPT"
+		desc = "RULE_OPTION_SWRW_RUS_SER_LEAVE_ACCEPT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = SWRW_RUS_SER_LEAVE_ACCEPT_CONCESSIONS
+		text = "RULE_OPTION_SWRW_RUS_SER_LEAVE_ACCEPT_CONCESSIONS"
+		desc = "RULE_OPTION_SWRW_RUS_SER_LEAVE_ACCEPT_CONCESSIONS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = SWRW_RUS_SER_LEAVE_DECLINE
+		text = "RULE_OPTION_SWRW_RUS_SER_LEAVE_DECLINE"
+		desc = "RULE_OPTION_SWRW_RUS_SER_LEAVE_DECLINE_DESC"
+		allow_achievements = yes
+	}
+}
+
+SWRW_RUS_BUL_LEAVE = { 
+	name = SWRW_RUS_BUL_LEAVE
+	group = "RULE_GROUP_TAS_BEREZNIKI_SWRW"
+	option = {
+		name = DEFAULT
+		text = "RULE_OPTION_SWRW_RUS_BUL_LEAVE_RANDOM"
+		desc = "RULE_OPTION_SWRW_RUS_BUL_LEAVE_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = SWRW_RUS_BUL_LEAVE_ACCEPT
+		text = "RULE_OPTION_SWRW_RUS_BUL_LEAVE_ACCEPT"
+		desc = "RULE_OPTION_SWRW_RUS_BUL_LEAVE_ACCEPT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = SWRW_RUS_BUL_LEAVE_ACCEPT_CONCESSIONS
+		text = "RULE_OPTION_SWRW_RUS_BUL_LEAVE_ACCEPT_CONCESSIONS"
+		desc = "RULE_OPTION_SWRW_RUS_BUL_LEAVE_ACCEPT_CONCESSIONS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = SWRW_RUS_BUL_LEAVE_DECLINE
+		text = "RULE_OPTION_SWRW_RUS_BUL_LEAVE_DECLINE"
+		desc = "RULE_OPTION_SWRW_RUS_BUL_LEAVE_DECLINE_DESC"
+		allow_achievements = yes
+	}
+}
+
+SWRW_RUS_ENG_LEAVE = { 
+	name = SWRW_RUS_ENG_LEAVE
+	group = "RULE_GROUP_TAS_BEREZNIKI_SWRW"
+	option = {
+		name = DEFAULT
+		text = "RULE_OPTION_SWRW_RUS_ENG_LEAVE_RANDOM"
+		desc = "RULE_OPTION_SWRW_RUS_ENG_LEAVE_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = SWRW_RUS_ENG_LEAVE
+		text = "RULE_OPTION_SWRW_RUS_ENG_LEAVE"
+		desc = "RULE_OPTION_SWRW_RUS_ENG_LEAVE_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = SWRW_RUS_ENG_NOT_LEAVE
+		text = "RULE_OPTION_SWRW_RUS_ENG_NOT_LEAVE"
+		desc = "RULE_OPTION_SWRW_RUS_ENG_NOT_LEAVE_DESC"
+		allow_achievements = yes
+	}
+}
+
+SWRW_RUS_FRA_LEAVE = { 
+	name = SWRW_RUS_FRA_LEAVE
+	group = "RULE_GROUP_TAS_BEREZNIKI_SWRW"
+	option = {
+		name = DEFAULT
+		text = "RULE_OPTION_SWRW_RUS_FRA_LEAVE_RANDOM"
+		desc = "RULE_OPTION_SWRW_RUS_FRA_LEAVE_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = SWRW_RUS_FRA_LEAVE
+		text = "RULE_OPTION_SWRW_RUS_FRA_LEAVE"
+		desc = "RULE_OPTION_SWRW_RUS_FRA_LEAVE_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = SWRW_RUS_FRA_NOT_LEAVE
+		text = "RULE_OPTION_SWRW_RUS_FRA_NOT_LEAVE"
+		desc = "RULE_OPTION_SWRW_RUS_FRA_NOT_LEAVE_DESC"
+		allow_achievements = yes
+	}
+}
+
 SWRW_GER_COLLAPSE_INTERVENTION = { 
 	name = SWRW_GER_COLLAPSE_INTERVENTION
 	group = "RULE_GROUP_TAS_BEREZNIKI_SWRW"

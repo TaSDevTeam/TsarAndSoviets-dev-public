@@ -6987,7 +6987,7 @@ news_event = {
 	}
 }
 
-news_event = { #Free space
+news_event = { #France leaves war
 	id = MAR_2WRW_world_news.21
 	title = MAR_2WRW_world_news.21.t
 	desc = MAR_2WRW_world_news.21.d
@@ -6997,6 +6997,26 @@ news_event = { #Free space
 	
 	option = {
 		name = MAR_2WRW_world_news.21.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = MAR
+					tag = GER
+				}
+			}
+		}
+	}
+	option = {
+		name = MAR_2WRW_world_news.21.b
+		trigger = {
+			tag = GER
+		}
+	}
+	option = {
+		name = MAR_2WRW_world_news.21.c
+		trigger = {
+			tag = MAR
+		}
 	}
 }
 
