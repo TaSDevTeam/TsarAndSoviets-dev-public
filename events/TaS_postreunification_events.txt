@@ -1795,8 +1795,15 @@ country_event = { #MANCHU CW STARTS GET UP GUYS
 		name = MAR_Japan.9.a
 		ai_chance = { factor = 1 }
 		TaS_fopo_add_manchurian_civil_war_tab = yes
-		set_temp_variable = { target = HAN }
-		TNO_increase_volunteer_cap_3 = yes
+		if = {
+			limit = { has_government = despotism }
+			set_temp_variable = { target = HAN }
+			TNO_increase_volunteer_cap_3 = yes
+		}
+		else = {
+			set_temp_variable = { target = PFF }
+			TNO_increase_volunteer_cap_3 = yes
+		}
 		hidden_effect = {
 			JAP = {
 				set_temp_variable = { Victory_ID = 50 }
