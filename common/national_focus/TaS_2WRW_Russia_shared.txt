@@ -557,6 +557,21 @@ shared_focus = {
 	cost = 3.58
 	prerequisite = {focus = MAR_warprep_friends_around_the_world }
 	mutually_exclusive = { focus = MAR_warprep_chrysanthemum_friendship }
+	available = {
+		OR = {
+			AND = {
+				has_country_leader = {
+					character = MAR_advisor_Kosygin
+					ruling_only = yes
+				}
+				has_country_flag = MAR_Kosygin_choose_USA
+			}
+			has_country_leader = {
+				character = MAR_Sergey_Belozerskiy
+				ruling_only = yes
+			}
+		}
+	}
 	x = 4
 	y = 2
 	completion_reward = {
@@ -582,6 +597,13 @@ shared_focus = {
 	cost = 3.58
 	prerequisite = {focus = MAR_warprep_friends_around_the_world }
 	mutually_exclusive = { focus = MAR_warprep_better_call_sam }
+	available = {
+		has_country_leader = {
+			character = MAR_advisor_Kosygin
+			ruling_only = yes
+		}
+		has_country_flag = MAR_Kosygin_choose_JAP
+	}
 	x = 6
 	y = 2
 	completion_reward = {

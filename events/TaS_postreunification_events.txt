@@ -3831,25 +3831,23 @@ country_event = { #TUR: The broken deal
 		ai_chance = {
 			factor = 1
 		}
-		RUS = {
-			transfer_state = 1293
-		}
-		start_border_war = {
-			change_state_after_war = no
-			attacker = {
-				state = 1293
-				num_provinces = 2
-				on_win = MAR_ultimatums.106
-				on_lose = MAR_ultimatums.107
-			}
-
-			defender = {
-				state = 1565
-				num_provinces = 2
-				#on_win = MAR_ultimatums.107
-				on_lose = MAR_ultimatums.108
-			}
-		}
+		country_event = { id = MAR_ultimatums.106 days = 3 }
+		#start_border_war = {
+		#	change_state_after_war = no
+		#	attacker = {
+		#		state = 1293
+		#		num_provinces = 2
+		#		on_win = MAR_ultimatums.106
+		#		on_lose = MAR_ultimatums.107
+		#	}
+		#
+		#	defender = {
+		#		state = 1565
+		#		num_provinces = 2
+		#		on_win = MAR_ultimatums.107
+		#		on_lose = MAR_ultimatums.108
+		#	}
+		#}
 	}
 }
 

@@ -988,7 +988,11 @@ TaS_SWRW_Manchu_CW_PFF_win = {
 		TaS_fopo_remove_manchurian_civil_war_tab = yes
 		if = {
 			limit = { has_government = socialist }
-			FROM = { econ_join_sphere_MAR = yes }
+			PFF = { 
+				econ_join_sphere_MAR = yes 
+				add_ideas = RUSAlliance_Independent_Member
+			}
+			add_to_faction = PFF
 		}
 		clr_country_flag = RUS_something_goes_wrong
 		set_temp_variable = { target = PFF }
@@ -1894,9 +1898,18 @@ SWRW_turkey_peacedeal = {
 		add_state_core = 1243
 		add_state_core = 2148
 		add_state_core = 1446
+		if = {
+			limit = {
+				NOT = { check_variable = { ECON_SPHERE_LEADER = MAR } }
+				econ_join_sphere_MAR = yes
+			}
+		}
 	}
 	every_country = {
-		limit = { controls_state = 291 }
+		limit = { 
+			controls_state = 291
+			NOT = { is_subject_of = ITA }
+		}
 		transfer_state = 1993
 		transfer_state = 1334
 		transfer_state = 1781
@@ -1910,6 +1923,12 @@ SWRW_turkey_peacedeal = {
 		add_state_core = 1779
 		add_state_core = 1780
 		add_state_core = 781
+		if = {
+			limit = {
+				NOT = { check_variable = { ECON_SPHERE_LEADER = MAR } }
+				econ_join_sphere_MAR = yes
+			}
+		}
 	}
 	GRM = {
 		transfer_state = 341
@@ -3111,7 +3130,7 @@ SWRW_force_effects_for_capitulated = {
 			every_country = {
 				limit = {
 					controls_state = 291
-					check_variable = { ECON_SPHERE_LEADER = RUS }
+					check_variable = { ECON_SPHERE_LEADER = MAR }
 				}
 				transfer_state = 2126
 				transfer_state = 413

@@ -2792,7 +2792,7 @@ country_event = { #F tuva and zeya
 						}
 						random_owned_controlled_state = {
 							create_unit = {
-								division = "division_template = \"Infantry Division\" start_experience_factor = 0.6 start_equipment_factor = 1"
+								division = "division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
 								owner = MJP
 								count = 18
 							}
@@ -4623,17 +4623,94 @@ country_event = { #Kosygin - MGB - Japan goes to Siberia
 				}
 				571 = { set_demilitarized_zone = yes }
 			}	
-			MAN = {
-				transfer_state = 806
-				transfer_state = 408
-				transfer_state = 1644
-				transfer_state = 409
-				transfer_state = 657
-				transfer_state = 1646
-				transfer_state = 1364
-				every_owned_state = {
-					add_core_of = MAN
-					remove_core_of = KRS
+			if = {
+				limit = { MAR = { has_country_flag = MAR_Kosygin_choose_JAP } }
+				MAN = {
+					transfer_state = 806
+					transfer_state = 408
+					transfer_state = 1644
+					transfer_state = 409
+					transfer_state = 657
+					transfer_state = 1646
+					transfer_state = 1364
+					every_owned_state = {
+						add_core_of = MAN
+						remove_core_of = KRS
+					}
+				}
+			}
+			else = {
+				MJP = {
+					transfer_state = 806
+					transfer_state = 408
+					transfer_state = 1644
+					transfer_state = 409
+					transfer_state = 657
+					transfer_state = 1646
+					transfer_state = 1364
+					every_owned_state = {
+						add_core_of = MJP
+						remove_core_of = KRS
+					}
+				}
+				hidden_effect = {
+					set_global_flag = MJP_retakes_Manchuria
+					if = {
+						limit = {
+							OR = {
+								HAN = { exists = yes }
+								MAN = { exists = yes }
+								PFF = { exists = yes }
+							}
+						}
+						MJP = {
+							division_template = {
+								name = "Infantry Division"
+								priority = 2
+								regiments = {
+									infantry = { x = 0 y = 0 }
+									infantry = { x = 0 y = 1 }
+									infantry = { x = 0 y = 2 }
+									infantry = { x = 1 y = 0 }
+									infantry = { x = 1 y = 1 }
+									infantry = { x = 1 y = 2 }
+								}
+								support = {
+									recon = { x = 0 y = 0 }
+									artillery = { x = 0 y = 1 }
+									logistics_company = { x = 0 y = 2 }
+								}
+							}
+							random_owned_controlled_state = {
+								create_unit = {
+									division = "division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
+									owner = MJP
+									count = 18
+								}
+							}	
+							if = { 
+								limit = { PFF = { exists = yes } }
+								declare_war_on = {
+									target = PFF
+									type = annex_everything
+								}
+							}
+							else_if = { 
+								limit = { MAN = { exists = yes } }
+								declare_war_on = {
+									target = MAN
+									type = annex_everything
+								}
+							}
+							else = { 
+								declare_war_on = {
+									target = HAN
+									type = annex_everything
+								}
+							}
+							
+						}
+					}
 				}
 			}
 			MEN = {
