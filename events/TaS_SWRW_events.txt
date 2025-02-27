@@ -1729,7 +1729,21 @@ country_event = { #Serbia wants to quit
 
 	option = { #yes, without anything
 		name = TaS_SWRW.11.a
-		ai_chance = { factor = 1 }
+		ai_chance = { 
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = { rule = SWRW_RUS_SER_LEAVE option = SWRW_RUS_SER_LEAVE_ACCEPT }
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = SWRW_RUS_SER_LEAVE option = SWRW_RUS_SER_LEAVE_ACCEPT_CONCESSIONS }
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = SWRW_RUS_SER_LEAVE option = SWRW_RUS_SER_LEAVE_DECLINE }
+			}
+		}
 		SER = {
 			hidden_effect = {
 				if = {
@@ -1759,9 +1773,30 @@ country_event = { #Serbia wants to quit
 	}
 	option = { #demand something
 		name = TaS_SWRW.11.b
-		ai_chance = { factor = 1 }
+		ai_chance = { 
+			factor = 1
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = SWRW_RUS_SER_LEAVE option = SWRW_RUS_SER_LEAVE_ACCEPT }
+			}
+			modifier = {
+				factor = 1000
+				has_game_rule = { rule = SWRW_RUS_SER_LEAVE option = SWRW_RUS_SER_LEAVE_ACCEPT_CONCESSIONS }
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = SWRW_RUS_SER_LEAVE option = SWRW_RUS_SER_LEAVE_DECLINE }
+			}
+		}
 		random_list = {
 			7 = {
+				modifier = {
+					factor = 200
+					has_game_rule = {
+						rule = SWRW_RUS_SER_LEAVE
+						option = SWRW_RUS_SER_LEAVE_ACCEPT_CONCESSIONS
+					}
+				}
 				custom_effect_tooltip = SWRW_DEMANDS_tt
 				set_country_flag = SER_demands
 				SER = {
@@ -1792,6 +1827,13 @@ country_event = { #Serbia wants to quit
 				}
 			}
 			3 = {
+				modifier = {
+					factor = 0
+					has_game_rule = {
+						rule = SWRW_RUS_SER_LEAVE
+						option = SWRW_RUS_SER_LEAVE_DECLINE
+					}
+				}
 				custom_effect_tooltip = SWRW_DEMANDS_FAIL_tt
 				set_country_flag = SER_refuse
 			}
@@ -1799,7 +1841,21 @@ country_event = { #Serbia wants to quit
 	}
 	option = { #keep it going
 		name = TaS_SWRW.11.c
-		ai_chance = { factor = 1 }
+		ai_chance = { 
+			factor = 1
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = SWRW_RUS_SER_LEAVE option = SWRW_RUS_SER_LEAVE_ACCEPT }
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = SWRW_RUS_SER_LEAVE option = SWRW_RUS_SER_LEAVE_ACCEPT_CONCESSIONS }
+			}
+			modifier = {
+				factor = 1000
+				has_game_rule = { rule = SWRW_RUS_SER_LEAVE option = SWRW_RUS_SER_LEAVE_DECLINE }
+			}
+		}
 		set_country_flag = SER_refuse
 	}
 }
@@ -1816,7 +1872,21 @@ country_event = { #Hungary wants to quit
 
 	option = { #yes, without anything
 		name = TaS_SWRW.12.a
-		ai_chance = { factor = 1 }
+		ai_chance = { 
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = { rule = SWRW_RUS_SER_LEAVE option = SWRW_RUS_SER_LEAVE_ACCEPT }
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = SWRW_RUS_SER_LEAVE option = SWRW_RUS_SER_LEAVE_ACCEPT_CONCESSIONS }
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = SWRW_RUS_SER_LEAVE option = SWRW_RUS_SER_LEAVE_DECLINE }
+			}
+		}
 		HUN = {
 			white_peace = RUS 
 			hidden_effect = {
@@ -1840,9 +1910,30 @@ country_event = { #Hungary wants to quit
 	}
 	option = { #demand something
 		name = TaS_SWRW.12.b
-		ai_chance = { factor = 1 }
+		ai_chance = { 
+			factor = 1
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = SWRW_RUS_HUN_LEAVE option = SWRW_RUS_HUN_LEAVE_ACCEPT }
+			}
+			modifier = {
+				factor = 1000
+				has_game_rule = { rule = SWRW_RUS_HUN_LEAVE option = SWRW_RUS_HUN_LEAVE_ACCEPT_CONCESSIONS }
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = SWRW_RUS_HUN_LEAVE option = SWRW_RUS_HUN_LEAVE_DECLINE }
+			}
+		}
 		random_list = {
 			7 = {
+				modifier = {
+					factor = 200
+					has_game_rule = {
+						rule = SWRW_RUS_HUN_LEAVE
+						option = SWRW_RUS_HUN_LEAVE_ACCEPT_CONCESSIONS
+					}
+				}
 				custom_effect_tooltip = SWRW_DEMANDS_tt
 				set_country_flag = HUN_demands
 				HUN = {
@@ -1867,6 +1958,13 @@ country_event = { #Hungary wants to quit
 				}
 			}
 			3 = {
+				modifier = {
+					factor = 0
+					has_game_rule = {
+						rule = SWRW_RUS_HUN_LEAVE
+						option = SWRW_RUS_HUN_LEAVE_ACCEPT_CONCESSIONS
+					}
+				}
 				custom_effect_tooltip = SWRW_DEMANDS_FAIL_tt
 				set_country_flag = HUN_refuse
 			}
@@ -1874,7 +1972,21 @@ country_event = { #Hungary wants to quit
 	}
 	option = { #keep it going
 		name = TaS_SWRW.12.c
-		ai_chance = { factor = 1 }
+		ai_chance = { 
+			factor = 1
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = SWRW_RUS_HUN_LEAVE option = SWRW_RUS_HUN_LEAVE_ACCEPT }
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = SWRW_RUS_HUN_LEAVE option = SWRW_RUS_HUN_LEAVE_ACCEPT_CONCESSIONS }
+			}
+			modifier = {
+				factor = 1000
+				has_game_rule = { rule = SWRW_RUS_HUN_LEAVE option = SWRW_RUS_HUN_LEAVE_DECLINE }
+			}
+		}
 		set_country_flag = HUN_refuse
 	}
 }
@@ -1927,7 +2039,21 @@ country_event = { #Romania wants to quit
 
 	option = { #yes, without anything
 		name = TaS_SWRW.14.a
-		ai_chance = { factor = 1 }
+		ai_chance = { 
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = { rule = SWRW_RUS_ROM_LEAVE option = SWRW_RUS_ROM_LEAVE_ACCEPT }
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = SWRW_RUS_ROM_LEAVE option = SWRW_RUS_ROM_LEAVE_ACCEPT_CONCESSIONS }
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = SWRW_RUS_ROM_LEAVE option = SWRW_RUS_ROM_LEAVE_DECLINE }
+			}
+		}
 		ROM = {
 			white_peace = RUS 
 			hidden_effect = {
@@ -1951,9 +2077,30 @@ country_event = { #Romania wants to quit
 	}
 	option = { #demand something
 		name = TaS_SWRW.14.b
-		ai_chance = { factor = 1 }
+		ai_chance = { 
+			factor = 1
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = SWRW_RUS_ROM_LEAVE option = SWRW_RUS_ROM_LEAVE_ACCEPT }
+			}
+			modifier = {
+				factor = 1000
+				has_game_rule = { rule = SWRW_RUS_ROM_LEAVE option = SWRW_RUS_ROM_LEAVE_ACCEPT_CONCESSIONS }
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = SWRW_RUS_ROM_LEAVE option = SWRW_RUS_ROM_LEAVE_DECLINE }
+			}
+		}
 		random_list = {
-			7 = {
+			7 = {	
+				modifier = {
+					factor = 200
+					has_game_rule = {
+						rule = SWRW_RUS_ROM_LEAVE
+						option = SWRW_RUS_ROM_LEAVE_ACCEPT_CONCESSIONS
+					}
+				}
 				custom_effect_tooltip = SWRW_DEMANDS_tt
 				set_country_flag = ROM_demands
 				ROM = {
@@ -1978,6 +2125,13 @@ country_event = { #Romania wants to quit
 				}
 			}
 			3 = {
+				modifier = {
+					factor = 0
+					has_game_rule = {
+						rule = SWRW_RUS_ROM_LEAVE
+						option = SWRW_RUS_ROM_LEAVE_ACCEPT_CONCESSIONS
+					}
+				}
 				custom_effect_tooltip = SWRW_DEMANDS_FAIL_tt
 				set_country_flag = ROM_refuse
 			}
@@ -1985,7 +2139,21 @@ country_event = { #Romania wants to quit
 	}
 	option = { #keep it going
 		name = TaS_SWRW.14.c
-		ai_chance = { factor = 1 }
+		ai_chance = { 
+			factor = 1
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = SWRW_RUS_ROM_LEAVE option = SWRW_RUS_ROM_LEAVE_ACCEPT }
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = SWRW_RUS_ROM_LEAVE option = SWRW_RUS_ROM_LEAVE_ACCEPT_CONCESSIONS }
+			}
+			modifier = {
+				factor = 1000
+				has_game_rule = { rule = SWRW_RUS_ROM_LEAVE option = SWRW_RUS_ROM_LEAVE_DECLINE }
+			}
+		}
 		set_country_flag = ROM_refuse
 	}
 }
@@ -2019,7 +2187,7 @@ country_event = { #France wants to quit
 		hidden_effect = {
 			every_country  = {
 				news_event = {
-					id = MAR_2WRW_world_news.20
+					id = MAR_2WRW_world_news.21
 				}
 			}
 		}
@@ -2038,7 +2206,21 @@ country_event = { #Bulgaria wants to quit
 
 	option = { #yes, without anything
 		name = TaS_SWRW.16.a
-		ai_chance = { factor = 1 }
+		ai_chance = { 
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = { rule = SWRW_RUS_BUL_LEAVE option = SWRW_RUS_BUL_LEAVE_ACCEPT }
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = SWRW_RUS_BUL_LEAVE option = SWRW_RUS_BUL_LEAVE_ACCEPT_CONCESSIONS }
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = SWRW_RUS_BUL_LEAVE option = SWRW_RUS_BUL_LEAVE_DECLINE }
+			}
+		}
 		BUL = {
 			white_peace = RUS 
 			hidden_effect = {
@@ -2081,9 +2263,30 @@ country_event = { #Bulgaria wants to quit
 	}
 	option = { #demand something
 		name = TaS_SWRW.16.b
-		ai_chance = { factor = 1 }
+		ai_chance = { 
+			factor = 1
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = SWRW_RUS_BUL_LEAVE option = SWRW_RUS_BUL_LEAVE_ACCEPT }
+			}
+			modifier = {
+				factor = 1000
+				has_game_rule = { rule = SWRW_RUS_BUL_LEAVE option = SWRW_RUS_BUL_LEAVE_ACCEPT_CONCESSIONS }
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = SWRW_RUS_BUL_LEAVE option = SWRW_RUS_BUL_LEAVE_DECLINE }
+			}
+		}
 		random_list = {
 			7 = {
+				modifier = {
+					factor = 200
+					has_game_rule = {
+						rule = SWRW_RUS_BUL_LEAVE
+						option = SWRW_RUS_BUL_LEAVE_ACCEPT_CONCESSIONS
+					}
+				}
 				custom_effect_tooltip = SWRW_DEMANDS_tt
 				set_country_flag = BUL_demands
 				BUL = {
@@ -2127,6 +2330,13 @@ country_event = { #Bulgaria wants to quit
 				}
 			}
 			3 = {
+				modifier = {
+					factor = 0
+					has_game_rule = {
+						rule = SWRW_RUS_BUL_LEAVE
+						option = SWRW_RUS_BUL_LEAVE_ACCEPT_CONCESSIONS
+					}
+				}
 				custom_effect_tooltip = SWRW_DEMANDS_FAIL_tt
 				set_country_flag = BUL_refuse
 			}
@@ -2134,7 +2344,21 @@ country_event = { #Bulgaria wants to quit
 	}
 	option = { #keep it going
 		name = TaS_SWRW.16.c
-		ai_chance = { factor = 1 }
+		ai_chance = { 
+			factor = 1
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = SWRW_RUS_BUL_LEAVE option = SWRW_RUS_BUL_LEAVE_ACCEPT }
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = SWRW_RUS_BUL_LEAVE option = SWRW_RUS_BUL_LEAVE_ACCEPT_CONCESSIONS }
+			}
+			modifier = {
+				factor = 1000
+				has_game_rule = { rule = SWRW_RUS_BUL_LEAVE option = SWRW_RUS_BUL_LEAVE_DECLINE }
+			}
+		}
 		set_country_flag = BUL_refuse
 	}
 }
@@ -2152,12 +2376,32 @@ country_event = { #Do we REALLY want to quit?: UK
 
 	option = { #actually yes
 		name = TaS_SWRW.17.a
-		ai_chance = { factor = 1 }
+		ai_chance = { 
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = { rule = SWRW_RUS_ENG_LEAVE option = SWRW_RUS_ENG_LEAVE }
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = SWRW_RUS_ENG_LEAVE option = SWRW_RUS_ENG_NOT_LEAVE }
+			}
+		}
 		RUS = { country_event = { id = TaS_SWRW.13 } }
 	}
 	option = { #not really
 		name = TaS_SWRW.17.b
-		ai_chance = { factor = 1 }
+		ai_chance = { 
+			factor = 1
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = SWRW_RUS_ENG_LEAVE option = SWRW_RUS_ENG_LEAVE }
+			}
+			modifier = {
+				factor = 1000
+				has_game_rule = { rule = SWRW_RUS_ENG_LEAVE option = SWRW_RUS_ENG_NOT_LEAVE }
+			}
+		}
 		add_stability = -0.05
 	}
 }
@@ -2174,12 +2418,32 @@ country_event = { #Do we REALLY want to quit?: France
 
 	option = { #actually yes
 		name = TaS_SWRW.18.a
-		ai_chance = { factor = 1 }
+		ai_chance = { 
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = { rule = SWRW_RUS_FRA_LEAVE option = SWRW_RUS_FRA_LEAVE }
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = SWRW_RUS_FRA_LEAVE option = SWRW_RUS_FRA_NOT_LEAVE }
+			}
+		}
 		RUS = { country_event = { id = TaS_SWRW.15 } }
 	}
 	option = { #not really
 		name = TaS_SWRW.18.b
-		ai_chance = { factor = 1 }
+		ai_chance = { 
+			factor = 1
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = SWRW_RUS_FRA_LEAVE option = SWRW_RUS_FRA_LEAVE }
+			}
+			modifier = {
+				factor = 1000
+				has_game_rule = { rule = SWRW_RUS_FRA_LEAVE option = SWRW_RUS_FRA_NOT_LEAVE }
+			}
+		}
 		add_stability = -0.05
 	}
 }

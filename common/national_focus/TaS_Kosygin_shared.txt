@@ -1114,6 +1114,8 @@ shared_focus = {
 	x = 33
 	y = 2
 	completion_reward = {
+		custom_effect_tooltip = MAR_Kosygin_choose_USA_tt
+		set_country_flag = MAR_Kosygin_choose_USA
 		USA = {
 			add_opinion_modifier = {
 				target = MAR
@@ -1170,6 +1172,8 @@ shared_focus = {
 	x = 35
 	y = 2
 	completion_reward = {
+		custom_effect_tooltip = MAR_Kosygin_choose_Japan_tt
+		set_country_flag = MAR_Kosygin_choose_JAP
 		JAP = {
 			add_opinion_modifier = {
 				target = MAR
@@ -2231,6 +2235,9 @@ shared_focus = {
 	mutually_exclusive = {
 		focus = MAR_kosrus_neon_sphere
 	}
+	available = {
+		has_country_flag = MAR_Kosygin_choose_USA
+	}
 	x = 8
 	y = 2
 	
@@ -2270,6 +2277,9 @@ shared_focus = {
 	}
 	mutually_exclusive = {
 		focus = MAR_kosrus_sunny_america
+	}
+	available = {
+		has_country_flag = MAR_Kosygin_choose_JAP
 	}
 	x = 10
 	y = 2

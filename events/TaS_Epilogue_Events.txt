@@ -1,7 +1,7 @@
 add_namespace = TaS_GEREpilogue
 add_namespace = TaS_GEREpilogue_news
 
-add_namespace = MAR_Collapse
+add_namespace = MAR_Collapse 
 add_namespace = TaS_RUSEpilogue
 add_namespace = TaS_RUSEpilogue_news
 
@@ -1862,6 +1862,57 @@ country_event = { #Novgorod Theatry
 			clr_country_flag = BUL_demands
 			clr_country_flag = BUL_refuse
 			FIN = { clr_country_flag = oh_fuck_the_russians_are_coming }
+			
+			859 = { set_state_name = STATE_859_ger }
+			set_province_name = { id = 9248 name = VICTORY_POINTS_9248_ger }
+			set_province_name = { id = 11071 name = VICTORY_POINTS_11071_ger }
+
+			858 = { set_state_name = STATE_858_ger }
+			set_province_name = { id = 166 name = VICTORY_POINTS_166_ger }
+
+			214 = { set_state_name = STATE_214_ger }
+			set_province_name = { id = 3338 name = VICTORY_POINTS_3338_ger }
+			set_province_name = { id = 3168 name = VICTORY_POINTS_3168_ger }
+			set_province_name = { id = 312 name = VICTORY_POINTS_312_ger }
+
+			861 = { set_state_name = STATE_861_ger }
+			set_province_name = { id = 72 name = VICTORY_POINTS_72_ger }
+			set_province_name = { id = 9130 name = VICTORY_POINTS_9130_ger }
+			set_province_name = { id = 11074 name = VICTORY_POINTS_11074_ger }
+
+			860 = { set_state_name = STATE_860_ger }
+			set_province_name = { id = 9124 name = VICTORY_POINTS_9124_ger }
+
+			857 = { set_state_name = STATE_857_ger }
+			set_province_name = { id = 9131 name = VICTORY_POINTS_9131_ger }
+			set_province_name = { id = 11107 name = VICTORY_POINTS_11107_ger }
+			set_province_name = { id = 11189 name = VICTORY_POINTS_11189_ger }
+
+			351 = { set_state_name = STATE_351_ger }
+			set_province_name = { id = 11075 name = VICTORY_POINTS_11075_ger }
+
+			856 = { set_state_name = STATE_856_ger }
+			set_province_name = { id = 3190 name = VICTORY_POINTS_3190_ger }
+			set_province_name = { id = 6077 name = VICTORY_POINTS_6077_ger }
+
+			855 = { set_state_name = STATE_855_ger }
+			set_province_name = { id = 270 name = VICTORY_POINTS_270_ger }
+			set_province_name = { id = 9368 name = VICTORY_POINTS_9368_ger }
+
+			252 = { set_state_name = STATE_252_ger }
+			set_province_name = { id = 11375 name = VICTORY_POINTS_11375_ger }
+			set_province_name = { id = 6327 name = VICTORY_POINTS_6327_ger }
+
+			256 = { set_state_name = STATE_256_ger }
+			set_province_name = { id = 3282 name = VICTORY_POINTS_3282_ger }
+			set_province_name = { id = 9259 name = VICTORY_POINTS_9259_ger }
+
+			250 = { set_state_name = STATE_250_ger }
+			set_province_name = { id = 6226 name = VICTORY_POINTS_6226_ger }
+			set_province_name = { id = 392 name = VICTORY_POINTS_392_ger }
+
+			755 = { set_state_name = STATE_755_ger }
+			set_province_name = { id = 6502 name = VICTORY_POINTS_6502_ger }
 		}
 		TaS_WRW2_Peace_Yall = yes
 		add_political_power = -100
@@ -2741,7 +2792,7 @@ country_event = { #F tuva and zeya
 						}
 						random_owned_controlled_state = {
 							create_unit = {
-								division = "division_template = \"Infantry Division\" start_experience_factor = 0.6 start_equipment_factor = 1"
+								division = "division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
 								owner = MJP
 								count = 18
 							}
@@ -4572,17 +4623,94 @@ country_event = { #Kosygin - MGB - Japan goes to Siberia
 				}
 				571 = { set_demilitarized_zone = yes }
 			}	
-			MAN = {
-				transfer_state = 806
-				transfer_state = 408
-				transfer_state = 1644
-				transfer_state = 409
-				transfer_state = 657
-				transfer_state = 1646
-				transfer_state = 1364
-				every_owned_state = {
-					add_core_of = MAN
-					remove_core_of = KRS
+			if = {
+				limit = { MAR = { has_country_flag = MAR_Kosygin_choose_JAP } }
+				MAN = {
+					transfer_state = 806
+					transfer_state = 408
+					transfer_state = 1644
+					transfer_state = 409
+					transfer_state = 657
+					transfer_state = 1646
+					transfer_state = 1364
+					every_owned_state = {
+						add_core_of = MAN
+						remove_core_of = KRS
+					}
+				}
+			}
+			else = {
+				MJP = {
+					transfer_state = 806
+					transfer_state = 408
+					transfer_state = 1644
+					transfer_state = 409
+					transfer_state = 657
+					transfer_state = 1646
+					transfer_state = 1364
+					every_owned_state = {
+						add_core_of = MJP
+						remove_core_of = KRS
+					}
+				}
+				hidden_effect = {
+					set_global_flag = MJP_retakes_Manchuria
+					if = {
+						limit = {
+							OR = {
+								HAN = { exists = yes }
+								MAN = { exists = yes }
+								PFF = { exists = yes }
+							}
+						}
+						MJP = {
+							division_template = {
+								name = "Infantry Division"
+								priority = 2
+								regiments = {
+									infantry = { x = 0 y = 0 }
+									infantry = { x = 0 y = 1 }
+									infantry = { x = 0 y = 2 }
+									infantry = { x = 1 y = 0 }
+									infantry = { x = 1 y = 1 }
+									infantry = { x = 1 y = 2 }
+								}
+								support = {
+									recon = { x = 0 y = 0 }
+									artillery = { x = 0 y = 1 }
+									logistics_company = { x = 0 y = 2 }
+								}
+							}
+							random_owned_controlled_state = {
+								create_unit = {
+									division = "division_template = \"Infantry Division\" start_experience_factor = 1 start_equipment_factor = 1"
+									owner = MJP
+									count = 18
+								}
+							}	
+							if = { 
+								limit = { PFF = { exists = yes } }
+								declare_war_on = {
+									target = PFF
+									type = annex_everything
+								}
+							}
+							else_if = { 
+								limit = { MAN = { exists = yes } }
+								declare_war_on = {
+									target = MAN
+									type = annex_everything
+								}
+							}
+							else = { 
+								declare_war_on = {
+									target = HAN
+									type = annex_everything
+								}
+							}
+							
+						}
+					}
 				}
 			}
 			MEN = {

@@ -3928,7 +3928,10 @@ TaS_WRW2_territorial_reclamation = {
 		cost = 25
 		fire_only_once = yes
 		visible = {
-			has_government = despotism
+			OR = {
+				has_government = despotism
+				has_country_flag = MAR_Kosygin_choose_USA
+			}
 		}
 		available = {
 		
@@ -3966,6 +3969,7 @@ TaS_WRW2_territorial_reclamation = {
 		fire_only_once = yes
 		visible = {
 			has_government = socialist
+			has_country_flag = MAR_Kosygin_choose_JAP
 		}
 		available = {
 		
@@ -5906,7 +5910,7 @@ TaS_SWRW_far_eastern_negotiations = {
 	SWRW_FEnegotiations_ask_for_ofn_support = {
 		icon = GFX_decision_generic_building
 		visible = {
-			check_variable = { MAR_USA_relations_focus > 0 }
+			always = yes
 		}
 		fire_only_once = yes
 		cost = 50
@@ -5937,11 +5941,9 @@ TaS_SWRW_far_eastern_negotiations = {
 			set_temp_variable = { temp_econ_spending_amount = 0.1 }
 			econ_spend_money_once_effect_raw_money = yes
 			
-			set_temp_variable = { swrw_corpo_temp = 2.5 }
-			multiply_temp_variable = { swrw_corpo_temp = MAR_USA_relations_focus }
+			set_temp_variable = { swrw_corpo_temp = 1.5 }
 			TaS_SWRW_change_corpo_jap = yes
-			set_temp_variable = { swrw_diplo_temp = 2.5 }
-			multiply_temp_variable = { swrw_diplo_temp = MAR_USA_relations_focus }
+			set_temp_variable = { swrw_diplo_temp = 1.5 }
 			TaS_SWRW_change_diplo_jap = yes
 			add_to_variable = { swrw_fe_actions = -1 }
 		}

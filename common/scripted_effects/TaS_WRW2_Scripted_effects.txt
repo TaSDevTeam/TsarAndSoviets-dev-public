@@ -1544,10 +1544,13 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			add_to_faction = BRL
 			add_to_faction = PUS
 			SWRW_add_RUS_coldwar_GUI = yes
-			set_temp_variable = { Victory_ID = 53 }
-			set_temp_variable = { Victory_Outcome = 5 }
-			set_temp_variable = { Victory_Points = 500 }
-			Cold_War_GUI_ManipulateVictory = yes
+			if = {
+				limit = {
+					FRA = { check_variable = { ECON_SPHERE_LEADER = MAR } }
+				}
+				add_to_faction = FRA
+				FRA = { add_ideas = RUSAlliance_Independent_Member }
+			}
 		}
 		USA = {
 			add_to_faction = GHL
@@ -2045,6 +2048,13 @@ TaS_WRW2_German_Collapse_Kosygin = {
 			add_to_faction = GAU
 			add_to_faction = GCZ
 			add_to_faction = GHL
+			if = {
+				limit = {
+					FRA = { check_variable = { ECON_SPHERE_LEADER = MAR } }
+				}
+				add_to_faction = FRA
+				FRA = { add_ideas = RUSAlliance_Independent_Member }
+			}
 			SWRW_add_RUS_coldwar_GUI = yes
 		}
 		every_country = {

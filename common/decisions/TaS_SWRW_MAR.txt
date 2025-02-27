@@ -3279,7 +3279,7 @@ MAR_SWRW_category = {
 				if = {
 					limit = {
 						MCW = {
-							surrender_progress > 0.7
+							surrender_progress > 0.6
 						}
 						has_war_with = SER
 						OR = {
@@ -3292,7 +3292,7 @@ MAR_SWRW_category = {
 				if = {
 					limit = {
 						MCW = {
-							surrender_progress > 0.9
+							surrender_progress > 0.8
 						}
 						has_war_with = HUN
 						OR = {
@@ -3317,7 +3317,16 @@ MAR_SWRW_category = {
 							}	
 						}
 					}
-					country_event = { id = TaS_SWRW.13 }
+					ENG = { country_event = { id = TaS_SWRW.17 } }
+				}
+				if = {
+					limit = {
+						UKR = {
+							surrender_progress > 0.2
+						}
+						has_war_with = FRA
+					}
+					FRA = { country_event = { id = TaS_SWRW.18 } }
 				}
 				if = {
 					limit = {

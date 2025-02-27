@@ -1795,8 +1795,15 @@ country_event = { #MANCHU CW STARTS GET UP GUYS
 		name = MAR_Japan.9.a
 		ai_chance = { factor = 1 }
 		TaS_fopo_add_manchurian_civil_war_tab = yes
-		set_temp_variable = { target = HAN }
-		TNO_increase_volunteer_cap_3 = yes
+		if = {
+			limit = { has_government = despotism }
+			set_temp_variable = { target = HAN }
+			TNO_increase_volunteer_cap_3 = yes
+		}
+		else = {
+			set_temp_variable = { target = PFF }
+			TNO_increase_volunteer_cap_3 = yes
+		}
 		hidden_effect = {
 			JAP = {
 				set_temp_variable = { Victory_ID = 50 }
@@ -3831,25 +3838,23 @@ country_event = { #TUR: The broken deal
 		ai_chance = {
 			factor = 1
 		}
-		RUS = {
-			transfer_state = 1293
-		}
-		start_border_war = {
-			change_state_after_war = no
-			attacker = {
-				state = 1293
-				num_provinces = 2
-				on_win = MAR_ultimatums.106
-				on_lose = MAR_ultimatums.107
-			}
-
-			defender = {
-				state = 1565
-				num_provinces = 2
-				#on_win = MAR_ultimatums.107
-				on_lose = MAR_ultimatums.108
-			}
-		}
+		country_event = { id = MAR_ultimatums.106 days = 3 }
+		#start_border_war = {
+		#	change_state_after_war = no
+		#	attacker = {
+		#		state = 1293
+		#		num_provinces = 2
+		#		on_win = MAR_ultimatums.106
+		#		on_lose = MAR_ultimatums.107
+		#	}
+		#
+		#	defender = {
+		#		state = 1565
+		#		num_provinces = 2
+		#		on_win = MAR_ultimatums.107
+		#		on_lose = MAR_ultimatums.108
+		#	}
+		#}
 	}
 }
 
@@ -3926,10 +3931,10 @@ country_event = { #TUR: Batumi occupied what to do
 		name = MAR_ultimatums.108.a 
 		ai_chance = {
 			factor = 1
-		}
-		modifier = {
-			factor = 0
-			has_country_flag = SWRW_TUR_dont_negotiate_with_rus	
+			modifier = {
+				factor = 0
+				has_country_flag = SWRW_TUR_dont_negotiate_with_rus	
+			}
 		}
 		every_country = {
 			limit = { is_ai = no }
@@ -3944,12 +3949,12 @@ country_event = { #TUR: Batumi occupied what to do
 		name = MAR_ultimatums.108.b 
 		ai_chance = {
 			factor = 1	
+			modifier = {
+				factor = 100
+				has_country_flag = SWRW_TUR_dont_negotiate_with_rus	
+			}
 		}
 		RUS = { country_event = { id = MAR_ultimatums.109 days = 2 } }
-		modifier = {
-			factor = 100
-			has_country_flag = SWRW_TUR_dont_negotiate_with_rus	
-		}
 	}
 }
 
@@ -6987,7 +6992,7 @@ news_event = {
 	}
 }
 
-news_event = { #Free space
+news_event = { #France leaves war
 	id = MAR_2WRW_world_news.21
 	title = MAR_2WRW_world_news.21.t
 	desc = MAR_2WRW_world_news.21.d
@@ -6997,6 +7002,26 @@ news_event = { #Free space
 	
 	option = {
 		name = MAR_2WRW_world_news.21.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = MAR
+					tag = GER
+				}
+			}
+		}
+	}
+	option = {
+		name = MAR_2WRW_world_news.21.b
+		trigger = {
+			tag = GER
+		}
+	}
+	option = {
+		name = MAR_2WRW_world_news.21.c
+		trigger = {
+			tag = MAR
+		}
 	}
 }
 
