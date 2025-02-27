@@ -18,13 +18,13 @@ GER_Panic_strat = {
 
 	ai_strategy = {
 		type = prepare_for_war
-		id = RUS
+		id = MAR
 		value = 1000
 	}
 }
 MAR_zapad_71 = {
 	allowed = {
-		tag = RUS
+		tag = MAR
 	}
 	enable = {
 		date > 1971.9.01
@@ -47,7 +47,7 @@ MAR_zapad_71 = {
 }
 MAR_sever_72 = {
 	allowed = {
-		tag = RUS
+		tag = MAR
 	}
 	enable = {
 		date > 1972.9.01
@@ -70,7 +70,7 @@ MAR_sever_72 = {
 }
 MAR_vostok_73 = {
 	allowed = {
-		tag = RUS
+		tag = MAR
 	}
 	enable = {
 		date > 1973.6.01
@@ -95,7 +95,7 @@ MAR_vostok_73 = {
 }
 MAR_volga_74 = {
 	allowed = {
-		tag = RUS
+		tag = MAR
 	}
 	enable = {
 		date > 1973.3.01
@@ -124,7 +124,7 @@ GER_war_strat = {
 		}
 	}
 	enable = {
-		RUS = {
+		MAR = {
 			has_war_with = GER
 		}
 	}
@@ -132,13 +132,13 @@ GER_war_strat = {
 
 	ai_strategy = {
 		type = consider_weak
-		id = RUS
+		id = MAR
 		value = 1000
 	}
 
 	ai_strategy = {
 		type = conquer
-		id = RUS
+		id = MAR
 		value = 1000
 	}
 }
@@ -148,7 +148,7 @@ GER_allies_war_strat = {
 		is_in_faction_with = GER
 	}
 	enable = {
-		RUS = {
+		MAR = {
 			has_war_with = GER
 		}
 	}
@@ -156,7 +156,7 @@ GER_allies_war_strat = {
 
 	ai_strategy = {
 		type = front_unit_request
-		tag = RUS
+		tag = MAR
 		value = 100
 	}
 

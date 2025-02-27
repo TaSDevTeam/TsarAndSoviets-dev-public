@@ -183,7 +183,7 @@ TaS_SWRW_start_the_war = {
 		RUS = {
 			division_template = {
 				name = "Morskaya Desantnaya Brigada"
-				division_names_group = RUS_marines
+				#division_names_group = RUS_marines
 				is_locked = yes
 				regiments = {
 					marine = { x = 0 y = 0 }
@@ -1901,8 +1901,8 @@ SWRW_turkey_peacedeal = {
 		if = {
 			limit = {
 				NOT = { check_variable = { ECON_SPHERE_LEADER = MAR } }
-				econ_join_sphere_MAR = yes
-			}
+			} 
+			econ_join_sphere_MAR = yes
 		}
 	}
 	every_country = {
@@ -1926,8 +1926,8 @@ SWRW_turkey_peacedeal = {
 		if = {
 			limit = {
 				NOT = { check_variable = { ECON_SPHERE_LEADER = MAR } }
-				econ_join_sphere_MAR = yes
 			}
+			econ_join_sphere_MAR = yes
 		}
 	}
 	GRM = {

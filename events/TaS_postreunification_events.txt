@@ -3924,10 +3924,10 @@ country_event = { #TUR: Batumi occupied what to do
 		name = MAR_ultimatums.108.a 
 		ai_chance = {
 			factor = 1
-		}
-		modifier = {
-			factor = 0
-			has_country_flag = SWRW_TUR_dont_negotiate_with_rus	
+			modifier = {
+				factor = 0
+				has_country_flag = SWRW_TUR_dont_negotiate_with_rus	
+			}
 		}
 		every_country = {
 			limit = { is_ai = no }
@@ -3942,12 +3942,12 @@ country_event = { #TUR: Batumi occupied what to do
 		name = MAR_ultimatums.108.b 
 		ai_chance = {
 			factor = 1	
+			modifier = {
+				factor = 100
+				has_country_flag = SWRW_TUR_dont_negotiate_with_rus	
+			}
 		}
 		RUS = { country_event = { id = MAR_ultimatums.109 days = 2 } }
-		modifier = {
-			factor = 100
-			has_country_flag = SWRW_TUR_dont_negotiate_with_rus	
-		}
 	}
 }
 

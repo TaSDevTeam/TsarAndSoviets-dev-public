@@ -1547,9 +1547,9 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			if = {
 				limit = {
 					FRA = { check_variable = { ECON_SPHERE_LEADER = MAR } }
-					add_to_faction = FRA
-					FRA = { add_ideas = RUSAlliance_Independent_Member }
 				}
+				add_to_faction = FRA
+				FRA = { add_ideas = RUSAlliance_Independent_Member }
 			}
 		}
 		USA = {
@@ -2051,9 +2051,9 @@ TaS_WRW2_German_Collapse_Kosygin = {
 			if = {
 				limit = {
 					FRA = { check_variable = { ECON_SPHERE_LEADER = MAR } }
-					add_to_faction = FRA
-					FRA = { add_ideas = RUSAlliance_Independent_Member }
 				}
+				add_to_faction = FRA
+				FRA = { add_ideas = RUSAlliance_Independent_Member }
 			}
 			SWRW_add_RUS_coldwar_GUI = yes
 		}

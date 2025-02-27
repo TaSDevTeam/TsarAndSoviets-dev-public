@@ -1733,15 +1733,15 @@ country_event = { #Serbia wants to quit
 			factor = 1
 			modifier = {
 				factor = 1000
-				has_game_rule = { rule = SWRW_RUS_SER_LEAVE option = RULE_OPTION_SWRW_RUS_SER_LEAVE_ACCEPT }
+				has_game_rule = { rule = SWRW_RUS_SER_LEAVE option = SWRW_RUS_SER_LEAVE_ACCEPT }
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = SWRW_RUS_SER_LEAVE option = RULE_OPTION_SWRW_RUS_SER_LEAVE_ACCEPT_CONCESSIONS }
+				has_game_rule = { rule = SWRW_RUS_SER_LEAVE option = SWRW_RUS_SER_LEAVE_ACCEPT_CONCESSIONS }
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = SWRW_RUS_SER_LEAVE option = RULE_OPTION_SWRW_RUS_SER_LEAVE_DECLINE }
+				has_game_rule = { rule = SWRW_RUS_SER_LEAVE option = SWRW_RUS_SER_LEAVE_DECLINE }
 			}
 		}
 		SER = {
@@ -1777,15 +1777,15 @@ country_event = { #Serbia wants to quit
 			factor = 1
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = SWRW_RUS_SER_LEAVE option = RULE_OPTION_SWRW_RUS_SER_LEAVE_ACCEPT }
+				has_game_rule = { rule = SWRW_RUS_SER_LEAVE option = SWRW_RUS_SER_LEAVE_ACCEPT }
 			}
 			modifier = {
 				factor = 1000
-				has_game_rule = { rule = SWRW_RUS_SER_LEAVE option = RULE_OPTION_SWRW_RUS_SER_LEAVE_ACCEPT_CONCESSIONS }
+				has_game_rule = { rule = SWRW_RUS_SER_LEAVE option = SWRW_RUS_SER_LEAVE_ACCEPT_CONCESSIONS }
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = SWRW_RUS_SER_LEAVE option = RULE_OPTION_SWRW_RUS_SER_LEAVE_DECLINE }
+				has_game_rule = { rule = SWRW_RUS_SER_LEAVE option = SWRW_RUS_SER_LEAVE_DECLINE }
 			}
 		}
 		random_list = {
@@ -1794,7 +1794,7 @@ country_event = { #Serbia wants to quit
 					factor = 200
 					has_game_rule = {
 						rule = SWRW_RUS_SER_LEAVE
-						option = RULE_OPTION_SWRW_RUS_SER_LEAVE_ACCEPT_CONCESSIONS
+						option = SWRW_RUS_SER_LEAVE_ACCEPT_CONCESSIONS
 					}
 				}
 				custom_effect_tooltip = SWRW_DEMANDS_tt
@@ -1831,7 +1831,7 @@ country_event = { #Serbia wants to quit
 					factor = 0
 					has_game_rule = {
 						rule = SWRW_RUS_SER_LEAVE
-						option = RULE_OPTION_SWRW_RUS_SER_LEAVE_DECLINE
+						option = SWRW_RUS_SER_LEAVE_DECLINE
 					}
 				}
 				custom_effect_tooltip = SWRW_DEMANDS_FAIL_tt
@@ -1845,15 +1845,15 @@ country_event = { #Serbia wants to quit
 			factor = 1
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = SWRW_RUS_SER_LEAVE option = RULE_OPTION_SWRW_RUS_SER_LEAVE_ACCEPT }
+				has_game_rule = { rule = SWRW_RUS_SER_LEAVE option = SWRW_RUS_SER_LEAVE_ACCEPT }
 			}
 			modifier = {
 				factor = 0
-				has_game_rule = { rule = SWRW_RUS_SER_LEAVE option = RULE_OPTION_SWRW_RUS_SER_LEAVE_ACCEPT_CONCESSIONS }
+				has_game_rule = { rule = SWRW_RUS_SER_LEAVE option = SWRW_RUS_SER_LEAVE_ACCEPT_CONCESSIONS }
 			}
 			modifier = {
 				factor = 1000
-				has_game_rule = { rule = SWRW_RUS_SER_LEAVE option = RULE_OPTION_SWRW_RUS_SER_LEAVE_DECLINE }
+				has_game_rule = { rule = SWRW_RUS_SER_LEAVE option = SWRW_RUS_SER_LEAVE_DECLINE }
 			}
 		}
 		set_country_flag = SER_refuse
