@@ -4312,8 +4312,8 @@ country_event = { #IR*: Returnal of some state that borders turkmenistan
 		if = {
 			limit = { MTR = { exists = yes } } 
 			MTR = {
-				transfer_state = 1465
-				1465 = {
+				transfer_state = 2125
+				2125 = {
 					remove_core_of = PER
 					add_core_of = MTR
 				}
@@ -4322,7 +4322,7 @@ country_event = { #IR*: Returnal of some state that borders turkmenistan
 		else_if = {
 			limit = { TRK = { is_in_faction_with = RUS } } 
 			TRK = {
-				transfer_state = 1465
+				transfer_state = 2125
 				2125 = {
 					remove_core_of = PER
 					add_core_of = TRK
