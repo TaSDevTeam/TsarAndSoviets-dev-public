@@ -25,6 +25,7 @@ MAR_Order_category = {
 	
 	visible = {
 		has_country_flag = MAR_order_decisions_available
+		NOT = { has_country_flag = MAR_order_decisions_lock }
 	}
 	
 	visible_when_empty = no

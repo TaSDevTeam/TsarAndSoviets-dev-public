@@ -50,3 +50,80 @@ MAR_maria_gui_setup = {
 	add_to_array = { MAR_card_array_eco_power = 0 } # 8 Solzhenitsyn
 	add_to_array = { MAR_card_array_eco_power = 0 } # 9 Talantov
 }
+
+MAR_nah_actually_change_my_mind_plz = {
+	clr_country_flag = MAR_Maria_balatro
+	clr_country_flag = MAR_order_decisions_lock
+	
+	MAR_advisor_Kosygin = {
+		set_nationality = MAR	
+	}
+	drop_cosmetic_tag = yes
+	set_cosmetic_tag = MAR_ser_bel
+	set_politics = {
+		ruling_party = despotism
+	}
+	set_popularities = {
+		despotism = 54
+		socialist = 17
+		paternalism = 22
+		fascism = 7
+	}
+	set_party_name = { 
+		ideology = despotism
+		long_name = MAR_VSM_ruling_party_long
+		name = MAR_VSM_ruling_party
+	}
+	set_party_name = { 
+		ideology = paternalism
+		long_name = MAR_paternalism_zemsky_party_long
+		name = MAR_paternalism_zemsky_party
+	}
+	add_country_leader_role = {
+		character = MAR_Sergey_Belozerskiy
+		promote_leader = yes
+			country_leader = {
+			desc = "POLITICS_SERGEY_BELOZERSKI_DESC"
+			expire = "1999.1.1"
+			ideology = despotism_mladorossi_autocracy_subtype
+			traits = {
+				char_general
+			}
+		}
+	}
+	retire_character = MAR_Maria_Romanova
+	MAR_Kazem_Bek = {
+		promote_character = {
+			ideology = paternalism_mladorossi_idea_subtype
+		}
+	}
+	MAR_Sergey_Belozerskiy = {
+		set_portraits = {
+			civilian = { large = "gfx/leaders/MAR/Portrait_Berezniki_Belozerskid.dds" }
+		}
+	}
+	set_character_name = {
+		character = MAR_Sergey_Belozerskiy
+		name = TaS_leader_name_Sergey_Belozerskiy_Tsar
+	}
+	remove_all_ministers = yes
+	
+	remove_ideas = MAR_shattered_order
+	add_dynamic_modifier = { modifier = MAR_military_order_modifier }
+	force_update_dynamic_modifier = yes
+	
+	add_ideas = MAR_Vladimir_Gil_sec
+	add_ideas = MAR_Alexander_Kazembek_hog
+	add_ideas = MAR_Pyotr_Demichev_for
+	add_ideas = MAR_Alexey_Kosygin_eco
+	
+	load_focus_tree = MAR_Belozerski_tree
+	mark_focus_tree_layout_dirty = yes
+	
+	complete_national_focus = MAR_the_first_decrees
+	complete_national_focus = MAR_integration_of_officials
+	complete_national_focus = MAR_freedom_of_choice
+	complete_national_focus = MAR_the_new_soviets
+	complete_national_focus = MAR_governates_borders
+	complete_national_focus = MAR_scapegoats
+}
