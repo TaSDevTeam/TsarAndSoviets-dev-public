@@ -293,7 +293,7 @@ TaS_SWRW_american_germany = {
 		}
 	}
 	ZNE = { 
-		add_ideas = OFN_Mandate
+		add_ideas = OFN_Dependent_Member
 		transfer_state = 1813
 		transfer_state = 1814
 		transfer_state = 188
@@ -707,6 +707,15 @@ TaS_SWRW_american_germany = {
 		add_to_faction = GCZ
 		add_to_faction = BRL
 	}
+	if = {
+	    limit = { 
+		    ENG = { 
+			    is_in_faction_with = USA 
+				is_in_faction_with = FRA 
+			}
+		}	
+		transfer_state = 1994 #Ибо это их нацрегион лол
+	}	
 	RUS = {
 		add_to_faction = PUS
 		SWRW_add_RUS_coldwar_GUI = yes
