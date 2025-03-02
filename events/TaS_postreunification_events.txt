@@ -476,33 +476,35 @@ country_event = { #unconditional surrender
 				transfer_state = 2461
 			}
 		}
-		AFG = {
-			if = {
-				limit = {
-					OR = {
-						has_cosmetic_tag = AFG_republic_amin
-						has_cosmetic_tag = AFG_islamist
-						AND = {
-							has_country_leader = {
-								character = AFG_Mohammed_Zahir_Shah
-								ruling_only = yes
+		hidden_effect = {
+			AFG = {
+				if = {
+					limit = {
+						OR = {
+							has_cosmetic_tag = AFG_republic_amin
+							has_cosmetic_tag = AFG_islamist
+							AND = {
+								has_country_leader = {
+									character = AFG_Mohammed_Zahir_Shah
+									ruling_only = yes
+								}
+								has_government = despotism
 							}
-							has_government = despotism
-						}
-						AND = {
-							has_cosmetic_tag = AFG_republic
-							or = {
-								has_government = fascism
-								has_government = national_socialism
+							AND = {
+								has_cosmetic_tag = AFG_republic
+								or = {
+									has_government = fascism
+									has_government = national_socialism
+								}
 							}
 						}
 					}
+					set_global_flag = ACW_twoside
+					country_event = { id = MAR_AFG.4 days = 30 }
 				}
-				set_global_flag = ACW_twoside
-				country_event = { id = MAR_AFG.4 days = 180 }
-			}
-			else = {
-				country_event = { id = MAR_AFG.7 days = 180 }
+				else = {
+					country_event = { id = MAR_AFG.7 days = 30 }
+				}
 			}
 		}
 		#IND = {
@@ -1402,6 +1404,8 @@ country_event = { #Technical stuff no loc
 			transfer_state = 1638
 			transfer_state = 1637
 			transfer_state = 801
+			transfer_state = 146
+			transfer_state = 1645
 			TNO_startup_nation = yes
 			load_oob = HAN_second_cw
 		}
@@ -3690,9 +3694,11 @@ country_event = { #FIN: They refused
 			target = FIN
 			type = annex_everything
 		}
-		every_country = {
-			limit = { is_ai = no }
-			news_event = { id = MAR_2WRW_world_news.44 }
+		hidden_effect = {
+			every_country = {
+				limit = { is_ai = no }
+				news_event = { id = MAR_2WRW_world_news.44 }
+			}
 		}
 	}
 }
@@ -3735,7 +3741,7 @@ country_event = { #TUR: Russia requests to buy Batumi
 		}
 	}
 	option = { #Not okay
-		name = MAR_ultimatums.100.b 
+		name = MAR_ultimatums.103.b 
 		ai_chance = {
 			factor = 4
 			modifier = {
@@ -3894,7 +3900,7 @@ country_event = { #TUR: Batumi taken
 				add_state_core = 1565
 			}
 		}
-		1565 = { set_demilitarized_zone = yes }
+		hidden_effect = { TUR = { country_event = { id = MAR_ultimatums.108 days = 3 } } }
 	}
 }
 
@@ -3972,12 +3978,13 @@ country_event = { #TUR: Turkey gather troops
 		ai_chance = {
 			factor = 1
 		}
-		every_country = {
-			limit = { is_ai = no }
-			news_event = { id = MAR_2WRW_world_news.45 }
+		hidden_effect = {
+			every_country = {
+				limit = { is_ai = no }
+				news_event = { id = MAR_2WRW_world_news.45 }
+			}
 		}
 		TUR = { transfer_state = 1565 }
-		1565 = { set_demilitarized_zone = no }
 		RUS = {
 			remove_state_claim = 1565
 		}
@@ -4002,9 +4009,11 @@ country_event = { #TUR: Turkey gather troops
 			target = TUR
 			type = annex_everything
 		}
-		every_country = {
-			limit = { is_ai = no }
-			news_event = { id = MAR_2WRW_world_news.46 }
+		hidden_effect = {
+			every_country = {
+				limit = { is_ai = no }
+				news_event = { id = MAR_2WRW_world_news.46 }
+			}
 		}
 	}
 	
@@ -4024,9 +4033,11 @@ country_event = { #TUR: fuck let's goooooooo
 		ai_chance = {
 			factor = 1
 		}
-		every_country = {
-			limit = { is_ai = no }
-			news_event = { id = MAR_2WRW_world_news.46 }
+		hidden_effect = {
+			every_country = {
+				limit = { is_ai = no }
+				news_event = { id = MAR_2WRW_world_news.46 }
+			}
 		}
 		declare_war_on = {
 			target = RUS
@@ -4243,9 +4254,11 @@ country_event = { #ROM: They Refused
 			target = ROM
 			type = annex_everything
 		}
-		every_country = {
-			limit = { is_ai = no }
-			news_event = { id = MAR_2WRW_world_news.47 }
+		hidden_effect = {
+			every_country = {
+				limit = { is_ai = no }
+				news_event = { id = MAR_2WRW_world_news.47 }
+			}
 		}
 	}
 }
@@ -4282,6 +4295,16 @@ country_event = { #POL: Returnal of Galicia
 				add_state_core = 1388
 				add_state_core = 1387
 			}
+			if = {
+				limit = {
+					OR = {
+						HUN = {	is_in_faction_with = RUS }
+						has_country_flag = HUN_demands
+					}
+				}
+				transfer_state = 73
+				add_state_core = 73
+			}
 		}
 		else = {
 			RUS = {
@@ -4293,6 +4316,15 @@ country_event = { #POL: Returnal of Galicia
 				transfer_state = 1391
 				transfer_state = 1388
 				transfer_state = 1387
+			}
+			if = {
+				limit = {
+					OR = {
+						HUN = {	is_in_faction_with = RUS }
+						has_country_flag = HUN_demands 
+					}
+				}
+				transfer_state = 73
 			}
 		}
 	}
@@ -4352,134 +4384,136 @@ country_event = { #AAG: Evacuation
 
 	option = { #huuuray!
 		name = MAR_ultimatums.116.a 
-		XYZ = {
-			AAG_Pavel_Senko = {
-				set_nationality = AAG
-			}
-		}
-		GER = { end_puppet = AAG }
-		AAG = {
-			remove_ideas = AAG_Precarious_Supply_Situation
-			remove_ideas = AAG_Alone_in_the_Cold
-			remove_ideas = AAG_Combat_Boost
-			remove_ideas = AAG_Aircraft_Testing_Site
-			remove_ideas = GER_SGR_safe_seas
-			remove_ideas = Pakt_Military_Authority
-			set_party_name = { 
-				ideology = paternalism
-				long_name = AAG_RUS_Party_long
-				name = AAG_RUS_Party
-			}
-			set_party_name = { 
-				ideology = socialist
-				long_name = AAG_RUS_Party_long
-				name = AAG_RUS_Party
-			}
-			leave_faction = yes
-			remove_faction_status = yes
-			econ_join_sphere_MAR = yes
-			annex_country = {
-				target = AAB
-				transfer_troops = no
-			}
-			transfer_state = 2089
-			transfer_state = 2063
-			transfer_state = 2076
-			add_state_core = 2089
-			add_state_core = 2063
-			add_state_core = 2076
-			if = {
-				limit = { RUS = { has_government = socialist } }
-				set_politics = {
-					ruling_party = socialist
+		hidden_effect = {
+			XYZ = {
+				AAG_Pavel_Senko = {
+					set_nationality = AAG
 				}
-				set_popularities = {
-					paternalism = 25
-					socialist = 75
+			}
+			GER = { end_puppet = AAG }
+			AAG = {
+				remove_ideas = AAG_Precarious_Supply_Situation
+				remove_ideas = AAG_Alone_in_the_Cold
+				remove_ideas = AAG_Combat_Boost
+				remove_ideas = AAG_Aircraft_Testing_Site
+				remove_ideas = GER_SGR_safe_seas
+				remove_ideas = Pakt_Military_Authority
+				set_party_name = { 
+					ideology = paternalism
+					long_name = AAG_RUS_Party_long
+					name = AAG_RUS_Party
 				}
-				retire_country_leader = yes
-				promote_character = AAG_Pavel_Senko
-				set_cosmetic_tag = AAG_RUS_Kosygin
-			}
-			else = {
-				set_politics = {
-					ruling_party = paternalism
+				set_party_name = { 
+					ideology = socialist
+					long_name = AAG_RUS_Party_long
+					name = AAG_RUS_Party
 				}
-				set_popularities = {
-					paternalism = 75
-					socialist = 25
+				leave_faction = yes
+				remove_faction_status = yes
+				econ_join_sphere_MAR = yes
+				annex_country = {
+					target = AAB
+					transfer_troops = no
 				}
-				retire_country_leader = yes	
-				promote_character = AAG_Pavel_Senko
-				set_cosmetic_tag = AAG_RUS
+				transfer_state = 2089
+				transfer_state = 2063
+				transfer_state = 2076
+				add_state_core = 2089
+				add_state_core = 2063
+				add_state_core = 2076
+				if = {
+					limit = { RUS = { has_government = socialist } }
+					set_politics = {
+						ruling_party = socialist
+					}
+					set_popularities = {
+						paternalism = 25
+						socialist = 75
+					}
+					retire_country_leader = yes
+					promote_character = AAG_Pavel_Senko
+					set_cosmetic_tag = AAG_RUS_Kosygin
+				}
+				else = {
+					set_politics = {
+						ruling_party = paternalism
+					}
+					set_popularities = {
+						paternalism = 75
+						socialist = 25
+					}
+					retire_country_leader = yes	
+					promote_character = AAG_Pavel_Senko
+					set_cosmetic_tag = AAG_RUS
+				}
+				if = {
+					limit = { controls_state = 2027 }
+					2027 = { set_state_name = STATE_2027_rus }
+					set_province_name = { id = 17800 name = VICTORY_POINTS_17800_rus }
+				}
+				if = {
+					limit = { controls_state = 2028 }
+					2028 = { set_state_name = STATE_2028_rus }
+					set_province_name = { id = 17794 name = VICTORY_POINTS_17794_rus }
+					set_province_name = { id = 17807 name = VICTORY_POINTS_17807_rus }
+					set_province_name = { id = 17810 name = VICTORY_POINTS_17810_rus }
+				}
+				if = {
+					limit = { controls_state = 2029 }
+					2029 = { set_state_name = STATE_2029_rus }
+				}
+				if = {
+					limit = { controls_state = 2030 }
+					2030 = { set_state_name = STATE_2030_rus }
+					set_province_name = { id = 17785 name = VICTORY_POINTS_17785_rus }
+				}
+				if = {
+					limit = { controls_state = 2056 }
+					2056 = { set_state_name = STATE_2056_rus }
+					set_province_name = { id = 17799 name = VICTORY_POINTS_17799_rus }
+					set_province_name = { id = 17792 name = VICTORY_POINTS_17792_rus }
+				}
+				if = {
+					limit = { controls_state = 2057 }
+					2057 = { set_state_name = STATE_2057_rus }
+					set_province_name = { id = 17804 name = VICTORY_POINTS_17804_rus }
+				}
+				if = {
+					limit = { controls_state = 2062 }
+					2062 = { set_state_name = STATE_2062_rus }
+					set_province_name = { id = 17742 name = VICTORY_POINTS_17742_rus }
+					set_province_name = { id = 17695 name = VICTORY_POINTS_17695_rus }
+				}
+				if = {
+					limit = { controls_state = 2076 }
+					2076 = { set_state_name = STATE_2076_rus }
+					set_province_name = { id = 17772 name = VICTORY_POINTS_17772_rus }
+				}
+				if = {
+					limit = { controls_state = 2453 }
+					2453 = { set_state_name = STATE_2453_rus }
+				}
+				if = {
+					limit = { controls_state = 2424 }
+					2424 = { set_state_name = STATE_2424_rus }
+				}
 			}
-			if = {
-				limit = { controls_state = 2027 }
-				2027 = { set_state_name = STATE_2027_rus }
-				set_province_name = { id = 17800 name = VICTORY_POINTS_17800_rus }
+			AAG = {
+				get_current_government_type = yes
+				save_party_popularities = yes
+				add_ideas = RUSAlliance_Military_Government
 			}
-			if = {
-				limit = { controls_state = 2028 }
-				2028 = { set_state_name = STATE_2028_rus }
-				set_province_name = { id = 17794 name = VICTORY_POINTS_17794_rus }
-				set_province_name = { id = 17807 name = VICTORY_POINTS_17807_rus }
-				set_province_name = { id = 17810 name = VICTORY_POINTS_17810_rus }
-			}
-			if = {
-				limit = { controls_state = 2029 }
-				2029 = { set_state_name = STATE_2029_rus }
-			}
-			if = {
-				limit = { controls_state = 2030 }
-				2030 = { set_state_name = STATE_2030_rus }
-				set_province_name = { id = 17785 name = VICTORY_POINTS_17785_rus }
-			}
-			if = {
-				limit = { controls_state = 2056 }
-				2056 = { set_state_name = STATE_2056_rus }
-				set_province_name = { id = 17799 name = VICTORY_POINTS_17799_rus }
-				set_province_name = { id = 17792 name = VICTORY_POINTS_17792_rus }
-			}
-			if = {
-				limit = { controls_state = 2057 }
-				2057 = { set_state_name = STATE_2057_rus }
-				set_province_name = { id = 17804 name = VICTORY_POINTS_17804_rus }
-			}
-			if = {
-				limit = { controls_state = 2062 }
-				2062 = { set_state_name = STATE_2062_rus }
-				set_province_name = { id = 17742 name = VICTORY_POINTS_17742_rus }
-				set_province_name = { id = 17695 name = VICTORY_POINTS_17695_rus }
-			}
-			if = {
-				limit = { controls_state = 2076 }
-				2076 = { set_state_name = STATE_2076_rus }
-				set_province_name = { id = 17772 name = VICTORY_POINTS_17772_rus }
-			}
-			if = {
-				limit = { controls_state = 2453 }
-				2453 = { set_state_name = STATE_2453_rus }
-			}
-			if = {
-				limit = { controls_state = 2424 }
-				2424 = { set_state_name = STATE_2424_rus }
-			}
-		}
-		AAG = {
-			get_current_government_type = yes
-			save_party_popularities = yes
-			add_ideas = RUSAlliance_Military_Government
-		}
-		RUS = {
-			set_autonomy = {
-				target = AAG
-				autonomy_state = autonomy_antarctic_territory
+			RUS = {
+				set_autonomy = {
+					target = AAG
+					autonomy_state = autonomy_antarctic_territory
+				}	
+				add_to_faction = AAG
 			}	
-			add_to_faction = AAG
-		}	
-		AAG = {
-			restore_previous_government_type = yes
-			apply_party_popularities = yes
+			AAG = {
+				restore_previous_government_type = yes
+				apply_party_popularities = yes
+			}
 		}
 	}
 }
@@ -4591,10 +4625,7 @@ country_event = { #Primorie
 		}
 		trigger = {
 			NOT = {
-				has_country_leader = {
-					character = MAR_advisor_Kosygin
-					ruling_only = yes
-				} 
+				has_country_flag = MAR_Kosygin_choose_JAP
 			}
 		}
 		set_country_flag = Primorie_fate_is_done
@@ -4733,7 +4764,7 @@ country_event = { #Moscowien
 				add_manpower = -283615
 				set_variable = { nationality = 151 }
 			}
-			1421 = {
+			243 = {
 				add_manpower = -75238
 				set_variable = { nationality = 151 }
 			}
@@ -5062,7 +5093,7 @@ country_event = { #Baltics
 			
 			1421 = {
 				add_manpower = -84755
-				set_variable = { nationality = 268 }
+				set_variable = { nationality = 151 }
 			}
 			209 = {
 				add_manpower = -94755

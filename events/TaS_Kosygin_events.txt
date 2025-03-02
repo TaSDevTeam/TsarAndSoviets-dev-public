@@ -2677,7 +2677,7 @@ country_event = { #Rus win
 			econ_gdp_growth_change = yes
 			TaS_fopo_remove_uar_influence_battle_tab = yes
 			if = {
-				limit = { RUS = { is_faction_leader = yes } }
+				limit = { MAR = { is_faction_leader = yes } }
 				add_ideas = RUSAlliance_Observer
 			}
 			else = {

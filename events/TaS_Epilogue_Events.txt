@@ -7230,6 +7230,14 @@ country_event = {#General - Franco-German War
 				limit = { is_ai = no }
 				news_event = { id = TaS_GERCollapse_news.37 }
 			}
+			every_country = {
+				limit = {
+					is_in_faction_with = GER
+					NOT = { is_subject_of = GER }
+				}
+				add_ideas = SWRW_cant_join
+			}
+			
 			FRA = {
 				division_template = {
 					name = "Infantry Division"

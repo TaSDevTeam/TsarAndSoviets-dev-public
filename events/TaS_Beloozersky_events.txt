@@ -1023,7 +1023,12 @@ country_event = { # Operative situation: Civil War
 			target = KZR
 			type = annex_everything
 		}
-		news_event = { id = berez_kazahk_news.1 days = 1 }
+		hidden_effect = {
+			every_country = {
+				limit = { is_ai = no }
+				news_event = { id = berez_kazahk_news.1 }
+			}
+		}
 	}	
 }
 

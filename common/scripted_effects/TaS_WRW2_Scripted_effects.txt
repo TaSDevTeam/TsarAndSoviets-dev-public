@@ -764,6 +764,7 @@ TaS_WRW2_total_capitulation = {
 				remove_core_of = GER
 				add_core_of = FRA
 			}
+			set_capital = { state = 786 remember_old_capital = no }
 		}
 		if = {
 			limit = {
@@ -2363,7 +2364,7 @@ TaS_2WRW_form_ost_zones = {
 				}
 				else_if = {
 					limit = {
-						MAR = { owns_state = 1292 }
+						MAR = { owns_state = 1282 }
 					}
 					transfer_state = 1282
 					transfer_state = 198

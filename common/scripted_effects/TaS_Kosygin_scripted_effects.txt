@@ -270,7 +270,7 @@ MAR_Prestol_start = {
 		}
 		tno_worsen_admin_efficiency = yes
 		promote_character = MAR_Taboritsky_dummy
-		activate_mission = MAR_put_down_taboritskys_bandits
+		#activate_mission = MAR_put_down_taboritskys_bandits
 		#activate_mission = MAR_biweekly_prestol_tick
 		
 		add_ideas = MAR_prestol_dynmod_dummy
@@ -608,6 +608,22 @@ TaS_Kosygin_westrussian_collapse = {
 			} 
 		}
 	}
+	else_if = {
+		limit = {
+			country_exists = FIN	
+			MAR = { controls_state = 1359 }
+		}
+		FIN = {
+			transfer_state = 1359
+			transfer_state = 215
+			transfer_state = 1887
+			every_owned_state = {
+				FIN = {
+					add_state_core = PREV
+				}
+			} 
+		}
+	}
 	if = {
 		limit = {
 			country_exists = RFI	
@@ -694,8 +710,25 @@ TaS_Kosygin_westrussian_collapse = {
 			} 
 		}
 	}
+	if = {
+		limit = {
+			AND = { 
+				country_exists = WSB
+				MAR = { controls_state = 652 }
+			}
+		}
+		WSB = {
+			transfer_state = 652
+			transfer_state = 852
+			transfer_state = 849
+			every_owned_state = {
+				WSB = {
+					add_state_core = PREV
+				}
+			} 
+		}
+	}
 	ONG = {
-		transfer_state = 1887
 		transfer_state = 859
 		transfer_state = 858
 		transfer_state = 214

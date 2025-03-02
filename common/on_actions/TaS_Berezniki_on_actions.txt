@@ -345,7 +345,16 @@ on_actions = {
 				if = {
 					limit = {
 						FROM.FROM = {
-							state = 1811
+							OR = {
+								state = 1811
+								state = 42
+								state = 8
+								state = 51
+								state = 35
+								state = 74
+								state = 1809
+								state = 72
+							}
 						}
 						
 					}

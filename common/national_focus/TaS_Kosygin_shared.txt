@@ -1992,8 +1992,15 @@ shared_focus = {
 	completion_reward = {
 		add_political_power = 100
 		583 = { set_variable = { nationality = 151 } }
+		1808 = { set_variable = { nationality = 151 } }
+		1807 = { set_variable = { nationality = 151 } }
 		588 = { set_variable = { nationality = 151 } }
 		590 = { set_variable = { nationality = 151 } }
+		
+		1806 = { set_variable = { nationality = 435 } }
+		
+		404 = { set_variable = { nationality = 180 } }
+		589 = { set_variable = { nationality = 180 } }
 		country_event = {
 			id = MAR_Kosygin.55
 			days = 0
@@ -2359,7 +2366,7 @@ shared_focus = {
 				RFI = {
 					add_ideas = RUSAlliance_Independent_Member
 				}
-				add_to_faction = MKZ
+				add_to_faction = RFI
 			}
 			if = {
 				limit = { IRA = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
