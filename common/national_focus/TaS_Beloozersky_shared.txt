@@ -1577,7 +1577,7 @@ shared_focus = {
 		MKZ = {
 			set_temp_variable = { gdp_growth_temp = 1.5 }
 			econ_gdp_growth_change = yes
-			set_temp_variable = { temp_econ_GDP_boost_flat = 1.5 }
+			set_temp_variable = { temp_econ_GDP_boost_flat = 0.5 }
 			econ_GDP_boost_once_flat = yes	
 		}
 		country_event = { 
@@ -1778,9 +1778,9 @@ shared_focus = {
 				}
 			}
 			MKZ = {
-				set_temp_variable = { gdp_growth_temp = 4.5 }
+				set_temp_variable = { gdp_growth_temp = 2.5 }
 				econ_gdp_growth_change = yes
-				set_temp_variable = { temp_econ_GDP_boost_flat = 1 }
+				set_temp_variable = { temp_econ_GDP_boost_flat = 0.9 }
 				econ_GDP_boost_once_flat = yes	
 			}	
 		}
@@ -1804,7 +1804,7 @@ shared_focus = {
 			days = 0
 		}
 		MKZ = {
-			set_temp_variable = { temp_econ_GDP_boost_flat = 2.5 }
+			set_temp_variable = { temp_econ_GDP_boost_flat = 1.5 }
 			econ_GDP_boost_once_flat = yes	
 		}
 	}

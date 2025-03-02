@@ -458,7 +458,7 @@ shared_focus = {
 		has_completed_focus = MAR_kospol_universal_good
 	}
 	completion_reward = {
-		add_ideas = { MAR_Nikolai_Maslennikov_eco } #потом заменю на того кого надо
+		#add_ideas = { MAR_Nikolai_Maslennikov_eco } #потом заменю на того кого надо
 		set_temp_variable = { gdp_growth_temp = 0.75 }
         econ_gdp_growth_change = yes
 		country_event = {
@@ -1625,19 +1625,7 @@ shared_focus = {
 		#	id = MAR_Kosygin.50
 		#	days = 0
 		#}
-		custom_effect_tooltip = RUS_RWS_nukes_expand_the_dalur_mines_tt
-		572 = {
-			add_extra_state_shared_building_slots = 2
-			add_building_construction = {
-				type = infrastructure
-				level = 2
-				instant_build = yes
-			}
-			add_resource = {
-				 type = uranium
-				 amount = 8
-			}
-		}
+		custom_effect_tooltip = RUS_RWS_nukes_address_the_uranium_problem_tt
 		hidden_effect = {
 			if = {	
 				limit = { check_variable = { TaS_RUS_nuclear_program_phase < 3 } }
@@ -1660,9 +1648,19 @@ shared_focus = {
 	x = 17
 	y = 1
 	completion_reward = {
-		custom_effect_tooltip = RUS_RWS_nukes_source_foreign_materials_tt
-		add_stability = -0.03
-		add_political_power = -25
+		custom_effect_tooltip = RUS_RWS_nukes_expand_the_dalur_mines_tt
+		572 = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+			add_resource = {
+				type = uranium
+				amount = 8
+			}
+		}
 		hidden_effect = {
 			if = {	
 				limit = { check_variable = { TaS_RUS_nuclear_program_phase < 3 } }
@@ -1688,7 +1686,7 @@ shared_focus = {
 	x = 17
 	y = 2
 	completion_reward = {
-		custom_effect_tooltip = RUS_RWS_nukes_address_the_uranium_problem_tt
+		custom_effect_tooltip = RUS_RWS_nukes_source_foreign_materials_tt
 		hidden_effect = {
 			if = {	
 				limit = { check_variable = { TaS_RUS_nuclear_program_phase < 3 } }
@@ -1867,9 +1865,9 @@ shared_focus = {
 			}
 		}
 		MKZ = {
-			set_temp_variable = { gdp_growth_temp = 4.5 }
+			set_temp_variable = { gdp_growth_temp = 2.5 }
 			econ_gdp_growth_change = yes
-			set_temp_variable = { temp_econ_GDP_boost_flat = 1 }
+			set_temp_variable = { temp_econ_GDP_boost_flat = 0.5 }
 			econ_GDP_boost_once_flat = yes	
 		}	
 		custom_effect_tooltip = MAR_Belozerskiy_add_2_inf_in_Kazakhstan
@@ -1918,7 +1916,7 @@ shared_focus = {
 		MKZ = {
 			set_temp_variable = { gdp_growth_temp = 1.5 }
 			econ_gdp_growth_change = yes
-			set_temp_variable = { temp_econ_GDP_boost_flat = 1.5 }
+			set_temp_variable = { temp_econ_GDP_boost_flat = 0.9 }
 			econ_GDP_boost_once_flat = yes	
 		}
 		country_event = {
@@ -1977,7 +1975,7 @@ shared_focus = {
 			add_extra_state_shared_building_slots = 3
 		}
 		MKZ = {
-			set_temp_variable = { temp_econ_GDP_boost_flat = 2.5 }
+			set_temp_variable = { temp_econ_GDP_boost_flat = 1.5 }
 			econ_GDP_boost_once_flat = yes	
 		}
 	}

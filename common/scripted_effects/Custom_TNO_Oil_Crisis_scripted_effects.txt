@@ -855,6 +855,13 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 				TNO_clear_num_volunteers = yes
 			}
 		}
+		for_each_scope_loop = {
+			array = global.OIL_supported_by_MAR
+			MAR = {
+				set_temp_variable = { target = PREV }
+				TNO_clear_num_volunteers = yes
+			}
+		}
 		ITA = {
 			set_temp_variable = { target = YEM }
 			TNO_clear_num_volunteers = yes

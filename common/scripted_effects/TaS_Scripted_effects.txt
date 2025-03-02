@@ -980,8 +980,14 @@ first_every_day_script_TaS 	= {
 			}
 			
 			if = {
-				limit = { check_variable = { MAR_prestol_clock_time = 0 } }
-				country_event = { id = MAR_Kosygin_Prestol.16 random_days = 5 }
+				limit = { 
+					check_variable = { MAR_prestol_clock_time = 0 }
+					OR = {
+						has_country_flag = MAR_prestol_active
+						NOT = { has_country_flag = MAR_prestol_tabby_ded }
+					}
+				}
+				country_event = { id = MAR_Kosygin_Prestol.16 }
 			}
 			if = {
 				limit = {

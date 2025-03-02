@@ -99,17 +99,31 @@ scripted_gui = {
 				else = { set_country_flag = MAR_Prestol_GUI_visible }
 				set_country_flag = MAR_Prestol_GUI_Opener_Clear
 			}
-			prestol_map_state_click = {
-				set_variable = { insurgency_state_selected = MAR_map_grid_array^idx }
-				set_variable = { insurgency_state_selected_i = idx }
-				
-				add_to_variable = { MAR_prestol_dirty_var = 1 }
-				
+			prestol_map_state_click = {			
 				if = {
-					limit = { has_country_flag = MAR_state_interaction_open }
+					limit = { 
+						has_country_flag = MAR_state_interaction_open
+						check_variable = { MAR_map_grid_array^idx = insurgency_state_selected }
+						check_variable = { idx = insurgency_state_selected_i }
+					}
 					clr_country_flag = MAR_state_interaction_open
 				}
-				else = { set_country_flag = MAR_state_interaction_open }
+				else_if = {
+					limit = {
+						has_country_flag = MAR_state_interaction_open
+					}
+					set_variable = { insurgency_state_selected = MAR_map_grid_array^idx }
+					set_variable = { insurgency_state_selected_i = idx }
+						
+					add_to_variable = { MAR_prestol_dirty_var = 1 }
+				}
+				else = {
+					set_variable = { insurgency_state_selected = MAR_map_grid_array^idx }
+					set_variable = { insurgency_state_selected_i = idx }
+						
+					add_to_variable = { MAR_prestol_dirty_var = 1 }
+					set_country_flag = MAR_state_interaction_open 
+				}
 				
 				log = "[?insurgency_state_selected]"
 			}
@@ -247,7 +261,7 @@ scripted_gui = {
 					add_to_variable = { insurgency_strength = change_strenghth_temp }
 					
 					custom_effect_tooltip = MAR_prestol_power_change
-					custom_effect_tooltip = MAR_prestol_power_trend_change
+					custom_effect_tooltip = MAR_prestol_power_trend_change_negative
 					
 					add_to_variable = { MAR_Had_RecentAction = 1 }
 					MAR_clamp_insurgency_strength = yes
@@ -268,7 +282,7 @@ scripted_gui = {
 					add_to_variable = { insurgency_strength = change_strenghth_temp }
 					add_to_variable = { MAR_Had_RecentAction = 1 }
 					
-					custom_effect_tooltip = MAR_prestol_power_change
+					custom_effect_tooltip = MAR_prestol_power_change_negative
 					custom_effect_tooltip = MAR_prestol_power_trend_change
 					MAR_clamp_insurgency_strength = yes
 				}

@@ -16,7 +16,7 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = RUS_luftwaffe_bombings
+			picture = generic_intensified_bombing
 			modifier = {
 				war_support_factor = -0.05
 				army_org_factor = -0.1
@@ -36,7 +36,7 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = SRT_Partisan_Alliance
+			picture = generic_time_bomb
 			modifier = {
 				stability_factor = -0.07
 				army_attack_factor = -0.03
@@ -55,7 +55,7 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = GBE_militia_based_army
+			picture = generic_militia_based_army
 			modifier = {
 				experience_gain_army_factor = -0.1
 				planning_speed = -0.1
@@ -74,7 +74,7 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = GBE_militia_based_army
+			picture = generic_militia_based_army
 			modifier = {
 				experience_gain_army_factor = 0.2
 				planning_speed = 0.1
@@ -88,7 +88,7 @@ ideas = {
 			on_add = {log = "[GetDateText]: [Root.GetName]: add idea JAP_OC_american_technicians"}
 			allowed = { always = no }
 			removal_cost = -1
-			picture = ARL_breakneck_industrialization
+			picture = generic_breakneck_industrialization
 			modifier = {
 				research_speed_factor = 0.05
 				industrial_capacity_factory = 0.2
@@ -120,7 +120,7 @@ ideas = {
 			}
 			removal_cost = -1
 
-			picture = generic_army_problems
+			picture = generic_intensified_bombing
 
 			modifier = {
 				planning_speed = -0.15
@@ -175,7 +175,7 @@ ideas = {
 			}
 			allowed = { always = no }
 			removal_cost = -1
-			picture = generic_Japanese_Spies
+			picture = generic_time_bomb
 			modifier = {
 				industrial_capacity_factory = -0.1
 				army_attack_factor = -0.025
@@ -189,11 +189,11 @@ ideas = {
 
 		MAR_partisan_attacks = {
 			on_add = {
-				log = "[GetDateText]: [Root.GetName]: add idea MAR_sabotage_effort"
+				log = "[GetDateText]: [Root.GetName]: add idea MAR_partisan_attacks"
 			}
 			allowed = { always = no }
 			removal_cost = -1
-			picture = generic_Japanese_Spies
+			picture = generic_time_bomb
 			modifier = {
 				army_org_regain = -0.075
 				army_defence_factor = -0.05
@@ -203,11 +203,11 @@ ideas = {
 
 		MAR_army_infiltrartion = {
 			on_add = {
-				log = "[GetDateText]: [Root.GetName]: add idea MAR_sabotage_effort"
+				log = "[GetDateText]: [Root.GetName]: add idea MAR_army_infiltrartion"
 			}
 			allowed = { always = no }
 			removal_cost = -1
-			picture = generic_Japanese_Spies
+			picture = generic_time_bomb
 			modifier = {
 				army_attack_factor = -0.1
 				army_org_factor = -0.1

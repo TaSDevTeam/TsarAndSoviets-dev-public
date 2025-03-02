@@ -197,7 +197,6 @@ MAR_MGB_Okhranka_category = {
 		fire_only_once = yes
 		cost = var:MAR_decision_cost_three	
 		days_remove = 21
-		
 		remove_effect = {
 			hidden_effect = {
 				IF = {
@@ -772,7 +771,7 @@ MAR_MGB_Okhranka_category = {
 		icon = GFX_decision_generic_corruption
 		
 		visible = {
-			always = yes
+			NOT = { has_country_flag = MAR_MGB_yurla_operation_complete_flag }
 		}
 		
 		ai_will_do = {

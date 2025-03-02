@@ -38,6 +38,12 @@ TaS_fopo_add_congo_cw_tab = {
 TaS_fopo_remove_congo_cw_tab = {
 	set_temp_variable = { conflict_id = token:GC_CongoCW }
 	TNO_remove_fopo_conflict_tab = yes
+	set_temp_variable = { target = CPR }
+	TNO_clear_num_volunteers = yes
+	set_temp_variable = { target = KTG }
+	TNO_clear_num_volunteers = yes
+	set_temp_variable = { target = KSI }
+	TNO_clear_num_volunteers = yes			
 }
 TaS_fopo_add_iberian_wars_tab = {
 	set_temp_variable = { conflict_id = token:GC_IberianWars }
@@ -2048,6 +2054,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 			add_to_faction = GAU
 			add_to_faction = GCZ
 			add_to_faction = GHL
+			add_to_faction = GPL
 			if = {
 				limit = {
 					FRA = { check_variable = { ECON_SPHERE_LEADER = MAR } }

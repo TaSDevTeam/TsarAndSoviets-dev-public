@@ -281,6 +281,8 @@ country_event = {#Aftermaths
 				}
 			}
 			add_popularity = { ideology = despotism_1 popularity = -1 }
+			add_popularity = { ideology = despotism popularity = -1 }
+			add_popularity = { ideology = communist popularity = -1 }
 			set_country_flag = MAR_prestol_focus_tree
 			mark_focus_tree_layout_dirty = yes
 		}
@@ -1677,13 +1679,15 @@ country_event = { #262 event 2
 			set_variable = { kosygin_reception = 1 }
 			MAR_clamp_insurgency_strength = yes
 		}
-		add_popularity = {
-			ideology = ultranationalism_2
-			popularity = -1
-		}
-		add_popularity = {
-			ideology = national_socialism
-			popularity = 0.01
+		hidden_effect = {
+			add_popularity = {
+				ideology = ultranationalism_2
+				popularity = -1
+			}
+			add_popularity = {
+				ideology = national_socialism
+				popularity = 0.01
+			}
 		}
 		MAR_prestol_calc_nationwide_strength = yes
 	}
@@ -1732,13 +1736,15 @@ country_event = { #214 event 2
 		}
 		add_political_power = 50
 		MAR_prestol_calc_nationwide_strength = yes
-		add_popularity = {
-			ideology = despotism_2
-			popularity = -1
-		}
-		add_popularity = {
-			ideology = national_socialism
-			popularity = 0.01
+		hidden_effect = {
+			add_popularity = {
+				ideology = despotism_2
+				popularity = -1
+			}
+			add_popularity = {
+				ideology = national_socialism
+				popularity = 0.01
+			}
 		}
 	}
 }
@@ -1784,13 +1790,15 @@ country_event = { #397 event 2
 			set_variable = { kosygin_reception = 1 }
 			MAR_clamp_insurgency_strength = yes
 		}
-		add_popularity = {
-			ideology = ultranationalism_1
-			popularity = -1
-		}
-		add_popularity = {
-			ideology = national_socialism
-			popularity = 0.01
+		hidden_effect = {
+			add_popularity = {
+				ideology = ultranationalism_1
+				popularity = -1
+			}
+			add_popularity = {
+				ideology = national_socialism
+				popularity = 0.01
+			}
 		}
 		add_political_power = 50
 		hidden_effect = {
@@ -1853,13 +1861,15 @@ country_event = { #252 event 2
 		add_political_power = 50
 		TNO_improve_poverty_low = yes
 		MAR_prestol_calc_nationwide_strength = yes
-		add_popularity = {
-			ideology = communist_1
-			popularity = -1
-		}
-		add_popularity = {
-			ideology = national_socialism
-			popularity = 0.01
+		hidden_effect = {
+			add_popularity = {
+				ideology = communist_1
+				popularity = -1
+			}
+			add_popularity = {
+				ideology = national_socialism
+				popularity = 0.01
+			}
 		}
 	}
 }
@@ -1919,13 +1929,15 @@ country_event = { #753 event 2
 		}
 		add_manpower = var:tempRandom
 		MAR_prestol_calc_nationwide_strength = yes
-		add_popularity = {
-			ideology = national_socialism_1
-			popularity = -1
-		}
-		add_popularity = {
-			ideology = national_socialism
-			popularity = 0.01
+		hidden_effect = {
+			add_popularity = {
+				ideology = national_socialism_1
+				popularity = -1
+			}
+			add_popularity = {
+				ideology = national_socialism
+				popularity = 0.01
+			}
 		}
 	}
 }
@@ -1971,13 +1983,15 @@ country_event = { #850 event 2
 			set_variable = { kosygin_reception = 1 }
 			MAR_clamp_insurgency_strength = yes
 		}
-		add_popularity = {
-			ideology = national_socialism_2
-			popularity = -1
-		}
-		add_popularity = {
-			ideology = national_socialism
-			popularity = 0.01
+		hidden_effect = {
+			add_popularity = {
+				ideology = national_socialism_2
+				popularity = -1
+			}
+			add_popularity = {
+				ideology = national_socialism
+				popularity = 0.01
+			}
 		}
 		add_political_power = 50
 		hidden_effect = {
@@ -2537,7 +2551,6 @@ country_event = { #
 	option = { #
 		name = MAR_Kosygin_OGAS.5.a
 		ai_chance = { factor = 1 }
-		
 	}
 }
 
