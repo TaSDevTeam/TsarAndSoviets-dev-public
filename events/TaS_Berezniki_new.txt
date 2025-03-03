@@ -2646,8 +2646,26 @@ country_event = { # MAR_final_vibori MARIA WIN
 			limit = { has_idea = MAR_regent_without_tsar_3 }
 			remove_ideas = MAR_regent_without_tsar_3
 		}		
-		set_country_flag = MAR_Path_not_done
-		TNO_Country_Closing_Screen_Show = yes
+		if = {
+			limit = {	
+				NOT = {
+					has_game_rule = {
+						rule = april_fools_content_status
+						option = APRIL_FOOLS_ENABLED
+					}
+				}
+			}
+			set_country_flag = MAR_Path_not_done
+			TNO_Country_Closing_Screen_Show = yes
+		}	
+		else = {
+			hidden_effect = {
+				country_event = { id = MAR_maria.1 days = 17 }
+				country_event = { id = MAR_maria.2 days = 31 }
+				country_event = { id = MAR_maria.3 days = 44 }
+				country_event = { id = MAR_maria.4 days = 56 }
+			}
+		}
 	}
 }
 
