@@ -1862,8 +1862,8 @@ country_event = { #FE partisans
 		657 = { set_demilitarized_zone = yes }
 		1646 = { set_demilitarized_zone = yes }
 		if = {
-			limit = { MAN = { controls_state = 1344 }
-			1344 = { set_demilitarized_zone = yes }
+			limit = { MAN = { controls_state = 1364 } }
+			1364 = { set_demilitarized_zone = yes }
 		}
 		country_event = {
 			id = MAR_Japan.11 days = 14
@@ -2002,8 +2002,8 @@ country_event = { #victory in FE #kosygin
 		}
 		set_country_flag = MAR_has_primorie
 		hidden_effect = { #to be sure nothing wrong happens to vps
-			1344 = {
-				set_state_name = STATE_1344_rus
+			1364 = {
+				set_state_name = STATE_1364_rus
 				set_province_name = { id = 7763 name = VICTORY_POINTS_7763_rus }
 				set_province_name = { id = 19466 name = VICTORY_POINTS_19466_rus }
 			}
@@ -2057,8 +2057,8 @@ country_event = { #victory in FE
 		}
 		set_country_flag = MAR_has_primorie
 		hidden_effect = { #to be sure nothing wrong happens to vps
-			1344 = {
-				set_state_name = STATE_1344_rus
+			1364 = {
+				set_state_name = STATE_1364_rus
 				set_province_name = { id = 7763 name = VICTORY_POINTS_7763_rus }
 				set_province_name = { id = 19466 name = VICTORY_POINTS_19466_rus }
 			}
@@ -3529,13 +3529,13 @@ country_event = { #TOTALEN surrender
 		else = {
 			TaS_WRW2_German_Collapse_Beloozersky = yes
 		}
-		hidden_effect = {
-			every_country  = {
-				news_event = {
-					id = berez_world_news.5
-				}
-			}
-		}
+		#hidden_effect = {
+		#	every_country  = {
+		#		news_event = {
+		#			id = berez_world_news.5
+		#		}
+		#	}
+		#}
 	}
 }
 
@@ -4374,6 +4374,7 @@ country_event = { #POL: Returnal of Galicia
 
 	option = { #well, shit
 		name = MAR_ultimatums.114.a 
+		set_variable = { 1391.nationality = 380 }
 		if = {
 			limit = { MUK = { owns_state = 1428 } }
 			MUK = {

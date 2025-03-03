@@ -735,6 +735,9 @@ shared_focus = {
 	id = MAR_koseco_jap_partners
 	icon = GFX_MAR_kosecon_japan_partners
 	cost = 3
+	available = {
+		has_completed_focus = MAR_kosfor_pearl_of_Asia
+	}
 	prerequisite = {
 		focus = MAR_koseco_support_kulaks
 	}
@@ -754,6 +757,9 @@ shared_focus = {
 	id = MAR_koseco_usa_friends
 	icon = GFX_MAR_kosecon_american_friends
 	cost = 3
+	available = {
+		has_completed_focus = MAR_kosfor_birthplace_of_democracy
+	}
 	prerequisite = {
 		focus = MAR_koseco_support_kulaks
 	}
@@ -775,8 +781,6 @@ shared_focus = {
 	cost = 3
 	prerequisite = {
 		focus = MAR_koseco_jap_partners
-	}
-	prerequisite = {
 		focus = MAR_koseco_usa_friends
 	}
 	x = 14
@@ -2404,6 +2408,10 @@ shared_focus = {
 			if = {
 				limit = { AZA = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
 				AZA = {	add_ideas = RUSAlliance_Observer }
+			}
+			if = {
+				limit = { AYA = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+				AYA = {	add_ideas = RUSAlliance_Observer }
 			}
 			if = {
 				limit = { SNI = { check_variable = { ECON_SPHERE_LEADER = MAR } } }

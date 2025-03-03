@@ -1621,7 +1621,9 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			limit = { MBL = { exists = yes } }
 			MBL = {
 				transfer_state = 97
+				add_state_core = 97
 			}
+			set_variable = { 97.nationality = 345 }
 			97 = { set_state_name = STATE_97_rus }
 			set_province_name = { id = 11301 name = VICTORY_POINTS_11301_rus }
 			set_province_name = { id = 11329 name = VICTORY_POINTS_11329_rus }
@@ -1631,7 +1633,9 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			limit = { MBL = { exists = no } }
 			RUS = {
 				transfer_state = 97
+				add_state_core = 97
 			}
+			set_variable = { 97.nationality = 345 }
 			97 = { set_state_name = STATE_97_rus }
 			set_province_name = { id = 11301 name = VICTORY_POINTS_11301_rus }
 			set_province_name = { id = 11329 name = VICTORY_POINTS_11329_rus }
@@ -2108,6 +2112,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 				transfer_state = 97
 				add_state_core = 97
 			}
+			set_variable = { 97.nationality = 345 }
 			97 = { set_state_name = STATE_97_rus }
 			set_province_name = { id = 11301 name = VICTORY_POINTS_11301_rus }
 			set_province_name = { id = 11329 name = VICTORY_POINTS_11329_rus }
@@ -2119,6 +2124,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 				transfer_state = 97
 				add_state_core = 97
 			}
+			set_variable = { 97.nationality = 345 }
 			97 = { set_state_name = STATE_97_rus }
 			set_province_name = { id = 11301 name = VICTORY_POINTS_11301_rus }
 			set_province_name = { id = 11329 name = VICTORY_POINTS_11329_rus }

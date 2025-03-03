@@ -103,6 +103,72 @@ country_event = { #god damn it finland
 	}
 }
 
+country_event = { #god damn it japan
+	id = MAR_forpol.200
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_forpol.200" }
+	title = MAR_forpol.200.t
+	desc = MAR_forpol.200.d
+	picture = GFX_report_event_YUN_Long_Yun
+	trigger = {
+		tag = FST
+		country_exists = YUN
+		YUN = {
+			controls_state = 608
+			NOT = { has_war_with = JAP }
+		}
+		NOT = { has_global_flag = YUN_NPA_GAW_Crisis }
+	}
+	mean_time_to_happen = {
+		days = 2 
+	}
+	fire_only_once = yes
+	
+	option = { #Hippity Hoppity FE is now our property
+		name = MAR_forpol.200.a
+		ai_chance = { factor = 1 }
+		transfer_state = 1364
+		transfer_state = 657
+		transfer_state = 1646
+		transfer_state = 1644
+		transfer_state = 409
+		transfer_state = 408
+		transfer_state = 809
+		
+		add_state_core = 1644
+		add_state_core = 409
+		add_state_core = 408
+		add_state_core = 809
+		if = {
+			limit = { 
+				MAR = { #Berezniki stops being a Japanese pussy if it fucking collapses
+					has_country_flag = MAR_Kosygin_choose_JAP
+				}
+			}
+			MAR = { country_event = { id = MAR_forpol.201 } }
+		}
+	}
+}
+
+country_event = { #god damn it japan pt.2
+	id = MAR_forpol.201
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_forpol.201" }
+	title = MAR_forpol.201.t
+	desc = MAR_forpol.201.d
+	picture = GFX_report_event_YUN_Long_Yun
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #well, well, well
+		name = MAR_forpol.201.a
+		ai_chance = { factor = 1 }
+		remove_ideas = Sphere_Observer
+		set_temp_variable = { gdp_growth_temp = -0.5 } #наказание за просчёт нахуй
+		econ_gdp_growth_change = yes
+		clr_country_flag = MAR_Kosygin_choose_JAP
+		set_country_flag = MAR_Kosygin_choose_USA
+	}
+}
+
 country_event = { #any help? 
 	id = berez_dobrovoltsy.1
 	immediate = {log = "[GetDateText]: [Root.GetName]: berez_dobrovoltsy.1"}
@@ -445,8 +511,8 @@ country_event = { #SSudan 1
 		name = berez_dobrovoltsy.22.a
 		hidden_effect = {
 			if = {
-				limit = { country_exists = ANA }
-				ANA = {
+				limit = { country_exists = AZA }
+				AZA = {
 					set_temp_variable = { gdp_growth_temp = 0.1 }
 					econ_gdp_growth_change = yes
 				}
