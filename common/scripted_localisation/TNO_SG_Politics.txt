@@ -44,6 +44,21 @@ defined_text = {
 		trigger = { has_government = national_socialism }
 		localization_key = "[GetSubIdeologyLocNationalSocialism]"
 	}
+	text = {
+		trigger = { has_government = accelerationism }
+		localization_key = "[GetSubIdeologyLocAccelerationism]"
+	}
+}
+
+defined_text = {
+	name = GetSubIdeologyLocAccelerationism
+	text = {
+		trigger = { has_country_leader_ideology = accelerationism_madoka_cult_subtype }
+		localization_key = accelerationism_madoka_cult_subtype
+	}
+	text = {
+		localization_key = accelerationism
+	}
 }
 
 defined_text = {

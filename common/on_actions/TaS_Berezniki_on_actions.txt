@@ -117,7 +117,18 @@ on_actions = {
 							limit = {
 								is_russian_nation = yes
 							}
-							hidden_effect = { country_event = { id = RUS_SWRW_mech.1 } }
+							hidden_effect = { 
+								country_event = { id = RUS_SWRW_mech.1 }
+								if = {
+									limit = {	
+										has_game_rule = {
+											rule = april_fools_content_status
+											option = APRIL_FOOLS_ENABLED
+										}
+									}
+									country_event = { id = SWRW_april_fools.1 }
+								}	
+							}
 						}
 					}
 				}

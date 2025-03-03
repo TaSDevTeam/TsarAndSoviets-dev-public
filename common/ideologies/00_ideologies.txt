@@ -1,4 +1,31 @@
 ideologies = {
+	#####################################
+	#          ACCELERATIONISM          #
+	#####################################
+	accelerationism_1 = {
+		types = { accelerationism_1_subtype = {} }
+		dynamic_faction_names = {}
+		color = { 210 210 210 }
+		ai_neutral = yes
+		can_be_boosted = no
+	}
+	accelerationism = {
+		types = {
+			accelerationism_subtype = {}
+			accelerationism_madoka_cult_subtype = { can_be_randomly_selected = no }
+		}
+		dynamic_faction_names = {}
+		color = { 225 225 225 }
+		ai_neutral = yes
+		can_be_boosted = no
+	}
+	accelerationism_2 = {
+		types = { accelerationism_2_subtype = {} }
+		dynamic_faction_names = {}
+		color = { 235 235 235 }
+		ai_neutral = yes
+		can_be_boosted = no
+	}
 	########################################
 	#          National Socialism          #
 	########################################

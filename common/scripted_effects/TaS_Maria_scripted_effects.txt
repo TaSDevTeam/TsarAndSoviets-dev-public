@@ -127,3 +127,453 @@ MAR_nah_actually_change_my_mind_plz = {
 	complete_national_focus = MAR_governates_borders
 	complete_national_focus = MAR_scapegoats
 }
+MAR_prewar_get_states = {
+	MCW = {
+		every_owned_state = {
+			set_state_flag = GET_TRVTHNUKED_BITCH
+		}
+	}
+	OST = {
+		every_owned_state = {
+			set_state_flag = GET_TRVTHNUKED_BITCH
+		}
+	}
+	BLR = {
+		every_owned_state = {
+			set_state_flag = GET_TRVTHNUKED_BITCH
+		}
+	}
+	UKR = {
+		every_owned_state = {
+			set_state_flag = GET_TRVTHNUKED_BITCH
+		}
+	}
+	CAU = {
+		every_owned_state = {
+			set_state_flag = GET_TRVTHNUKED_BITCH
+		}
+	}
+	TNS = {
+		every_owned_state = {
+			set_state_flag = GET_TRVTHNUKED_BITCH
+		}
+	}
+	196 = { set_state_flag = GET_TRVTHNUKED_BITCH }
+	137 = { set_state_flag = GET_TRVTHNUKED_BITCH }
+	1532 = { set_state_flag = GET_TRVTHNUKED_BITCH }
+}
+MAR_German_Collapse_TRVTHNUKE = {
+	189 = { clr_state_flag = GET_TRVTHNUKED_BITCH }
+	1401 = { clr_state_flag = GET_TRVTHNUKED_BITCH }
+	2451 = { clr_state_flag = GET_TRVTHNUKED_BITCH }
+	11 = { clr_state_flag = GET_TRVTHNUKED_BITCH }
+	1400 = { clr_state_flag = GET_TRVTHNUKED_BITCH }
+	96 = { clr_state_flag = GET_TRVTHNUKED_BITCH }
+	79 = { clr_state_flag = GET_TRVTHNUKED_BITCH }
+	1403 = { clr_state_flag = GET_TRVTHNUKED_BITCH }
+	1406 = { clr_state_flag = GET_TRVTHNUKED_BITCH }
+	95 = { clr_state_flag = GET_TRVTHNUKED_BITCH }
+	1407 = { clr_state_flag = GET_TRVTHNUKED_BITCH }
+	95 = { clr_state_flag = GET_TRVTHNUKED_BITCH }
+	93 = { clr_state_flag = GET_TRVTHNUKED_BITCH }
+	1431 = { clr_state_flag = GET_TRVTHNUKED_BITCH }
+	199 = { clr_state_flag = GET_TRVTHNUKED_BITCH }
+	NRL = {
+		annex_country = {
+			target = RUS
+			transfer_troops = no
+		}
+		set_cosmetic_tag = NRL_trvthnuke
+	}
+	every_state = {
+		limit = { has_state_flag = GET_TRVTHNUKED_BITCH }
+		transfer_state_to = MCW
+		add_core_of = MCW
+	}
+	MCW = {
+		set_cosmetic_tag = MCW_trvthnuke
+	}
+	CHY = {
+		set_cosmetic_tag = CHY_trvthnuke
+		transfer_state = 232
+		add_state_core = 232
+	}
+	OMO = {
+		set_cosmetic_tag = OMO_trvthnuke
+		transfer_state = 644
+		add_state_core = 644
+	}
+	#NORGE
+	APF = {
+		set_cosmetic_tag = APF_trvthnuke
+		transfer_state = 144
+		transfer_state = 2142
+		transfer_state = 896
+		transfer_state = 2141
+		transfer_state = 94
+		transfer_state = 143
+		every_owned_state = {
+			add_core_of = PREV
+		}
+	}
+	GNR = {
+		set_cosmetic_tag = GNR_trvthnuke
+		transfer_state = 2139
+		transfer_state = 110
+		transfer_state = 2140
+		transfer_state = 2138
+		transfer_state = 142
+		transfer_state = 2134
+		transfer_state = 899
+		transfer_state = 2136
+		transfer_state = 2137
+		transfer_state = 2135
+		transfer_state = 898
+		every_owned_state = {
+			add_core_of = PREV
+		}
+	}
+	ISS = {
+		set_cosmetic_tag = ISS_trvthnuke
+		transfer_state = 2132
+		transfer_state = 2133
+		transfer_state = 897
+		every_owned_state = {
+			add_core_of = PREV
+		}
+	}
+	#OST GERMANY
+	MBL = {
+		set_cosmetic_tag = MBL_trvthnuke
+		transfer_state = 1400
+		transfer_state = 96
+		transfer_state = 79
+		transfer_state = 1403
+		transfer_state = 1406
+		transfer_state = 95
+		transfer_state = 1407
+		every_owned_state = {
+			add_core_of = PREV
+		}
+	}
+	LIT = {
+		set_cosmetic_tag = LIT_trvthnuke
+		transfer_state = 189
+		transfer_state = 2451
+		transfer_state = 11
+		transfer_state = 101
+		transfer_state = 97
+		transfer_state = 5
+		transfer_state = 1401
+		every_owned_state = {
+			add_core_of = PREV
+		}
+	}
+	MUK = {
+		set_cosmetic_tag = MUK_trvthnuke
+		transfer_state = 1431
+		transfer_state = 93
+		transfer_state = 199
+		transfer_state = 91
+		transfer_state = 89
+		transfer_state = 1394
+		transfer_state = 1393
+		transfer_state = 1392
+		transfer_state = 1391
+		transfer_state = 1388
+		transfer_state = 1387
+		every_owned_state = {
+			add_core_of = PREV
+		}
+	}
+	GPL = {
+		set_cosmetic_tag = GPL_trvthnuke
+		transfer_state = 1390
+		transfer_state = 1384
+		transfer_state = 1386
+		transfer_state = 1389
+		transfer_state = 92
+		transfer_state = 90
+		transfer_state = 1385
+		transfer_state = 88
+		transfer_state = 1382
+		transfer_state = 1383
+		transfer_state = 1381
+		transfer_state = 10
+		transfer_state = 1380
+		transfer_state = 87
+		transfer_state = 2261
+		every_owned_state = {
+			add_core_of = PREV
+		}
+	}
+	PUS = {
+		set_cosmetic_tag = PUS_trvthnuke
+		transfer_state = 85
+		transfer_state = 63
+		every_owned_state = {
+			add_core_of = PREV
+		}
+	}
+	GSV = {
+		set_cosmetic_tag = GSV_trvthnuke
+		transfer_state = 71
+		transfer_state = 70
+		transfer_state = 664
+		transfer_state = 1762
+		transfer_state = 1763
+		transfer_state = 2211
+		transfer_state = 2212
+		every_owned_state = {
+			add_core_of = PREV
+		}
+	}
+	###NORD GERMANY
+	GSI = {
+		set_cosmetic_tag = GSI_trvthnuke
+		transfer_state = 66
+		transfer_state = 67
+		every_owned_state = {
+			add_core_of = PREV
+		}
+	}
+	GCZ = {
+		set_cosmetic_tag = GCZ_trvthnuke
+		transfer_state = 75
+		transfer_state = 9
+		transfer_state = 69
+		every_owned_state = {
+			add_core_of = PREV
+		}
+	}
+	BRL = {
+		set_cosmetic_tag = BRL_trvthnuke
+		transfer_state = 64
+		every_owned_state = {
+			add_core_of = PREV
+		}
+	}
+	ZNE = {
+		set_cosmetic_tag = ZNE_trvthnuke
+		transfer_state = 61
+		transfer_state = 776
+		transfer_state = 1813
+		transfer_state = 1814
+		transfer_state = 60
+		transfer_state = 65
+		every_owned_state = {
+			add_core_of = PREV
+		}
+	}
+	DEN = {
+		set_cosmetic_tag = DEN_trvthnuke
+		transfer_state = 37
+		transfer_state = 99
+		transfer_state = 774
+		transfer_state = 990
+		transfer_state = 1372
+		transfer_state = 991
+		transfer_state = 2463
+		transfer_state = 744
+		every_owned_state = {
+			add_core_of = PREV
+		}
+	}
+	GDN = {
+		set_cosmetic_tag = GDN_trvthnuke
+		transfer_state = 58
+		transfer_state = 775
+		transfer_state = 188
+		every_owned_state = {
+			add_core_of = PREV
+		}
+	}
+	GWS = {
+		set_cosmetic_tag = GWS_trvthnuke
+		transfer_state = 59
+		transfer_state = 56
+		transfer_state = 1373
+		transfer_state = 1886
+		transfer_state = 36
+		transfer_state = 7
+		every_owned_state = {
+			add_core_of = PREV
+		}
+	}
+	GRH = {
+		set_cosmetic_tag = GRH_trvthnuke
+		transfer_state = 1810
+		transfer_state = 1809
+		transfer_state = 51
+		transfer_state = 57
+		transfer_state = 1815
+		every_owned_state = {
+			add_core_of = PREV
+		}
+	}
+	###SUD GERMANY
+	RMN = {
+		set_cosmetic_tag = RMN_trvthnuke
+		transfer_state = 158
+		transfer_state = 1323
+		transfer_state = 735
+		transfer_state = 2471
+		transfer_state = 159
+		every_owned_state = {
+			add_core_of = PREV
+		}
+	}
+	AUS = {
+		set_cosmetic_tag = AUS_trvthnuke
+		transfer_state = 160
+		transfer_state = 39
+		transfer_state = 116
+		every_owned_state = {
+			add_core_of = PREV
+		}
+	}
+	SLO = {
+		set_cosmetic_tag = SLO_trvthnuke
+		transfer_state = 2111
+		transfer_state = 98
+		transfer_state = 770
+		transfer_state = 102
+		every_owned_state = {
+			add_core_of = PREV
+		}
+	}
+	DSH = {
+		set_cosmetic_tag = DSH_trvthnuke
+		transfer_state = 86
+		transfer_state = 62
+		transfer_state = 1772
+		every_owned_state = {
+			add_core_of = PREV
+		}
+	}
+	GAU = {
+		set_cosmetic_tag = GAU_trvthnuke
+		transfer_state = 4
+		transfer_state = 1025
+		transfer_state = 152
+		every_owned_state = {
+			add_core_of = PREV
+		}
+	}
+	GBV = {
+		set_cosmetic_tag = GBV_trvthnuke
+		transfer_state = 153
+		transfer_state = 52
+		transfer_state = 53
+		transfer_state = 1026
+		transfer_state = 54
+		every_owned_state = {
+			add_core_of = PREV
+		}
+	}
+	GWF = {
+		set_cosmetic_tag = GWF_trvthnuke
+		transfer_state = 68
+		transfer_state = 50
+		every_owned_state = {
+			add_core_of = PREV
+		}
+	}
+	GRA = {
+		set_cosmetic_tag = GRA_trvthnuke
+		transfer_state = 72
+		transfer_state = 2128
+		every_owned_state = {
+			add_core_of = PREV
+		}
+	}
+	GBW = {
+		set_cosmetic_tag = GBW_trvthnuke
+		transfer_state = 2129
+		transfer_state = 1299
+		transfer_state = 2130
+		every_owned_state = {
+			add_core_of = PREV
+		}
+	}
+	GSU = {
+		set_cosmetic_tag = GSU_trvthnuke
+		transfer_state = 1298
+		transfer_state = 3
+		transfer_state = 151
+		every_owned_state = {
+			add_core_of = PREV
+		}
+	}
+	AGS = {
+		set_cosmetic_tag = AGS_trvthnuke
+		transfer_state = 1811
+		every_owned_state = {
+			add_core_of = PREV
+		}
+	}
+	LHH = {
+		set_cosmetic_tag = LHH_trvthnuke
+		transfer_state = 42
+		transfer_state = 55
+		every_owned_state = {
+			add_core_of = PREV
+		}
+	}
+	OKL = {
+		set_cosmetic_tag = OKL_trvthnuke
+		transfer_state = 8
+		every_owned_state = {
+			add_core_of = PREV
+		}
+	}
+	###WEZT GERMANY BURGOND
+	GHL = {
+		set_cosmetic_tag = GHL_trvthnuke
+		transfer_state = 74
+		transfer_state = 35
+		transfer_state = 6
+		transfer_state = 1734
+		transfer_state = 34
+		every_owned_state = {
+			add_core_of = PREV
+		}
+	}
+	BEL = {
+		set_cosmetic_tag = BEL_trvthnuke
+		transfer_state = 29
+		transfer_state = 1733
+		every_owned_state = {
+			add_core_of = PREV
+		}
+	}
+	SSN = {
+		set_cosmetic_tag = SSN_trvthnuke
+		transfer_state = 18
+		every_owned_state = {
+			add_core_of = PREV
+		}
+	}
+	SSL = {
+		set_cosmetic_tag = SSL_trvthnuke
+		transfer_state = 17
+		transfer_state = 1812
+		transfer_state = 28
+		every_owned_state = {
+			add_core_of = PREV
+		}
+	}
+}
+
+MAR_Japanese_Collapse_FIRST_TRVTHNUKE = {
+
+}
+
+MAR_Japanese_Collapse_SECOND_TRVTHNUKE = {
+
+}
+
+MAR_American_Collapse_TRVTHNUKE = {
+
+}
+

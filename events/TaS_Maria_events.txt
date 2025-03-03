@@ -1,6 +1,6 @@
 add_namespace = MAR_maria
 add_namespace = maria_magica
-
+add_namespace = SWRW_april_fools
 #########################################################
 ###／人◕ ‿‿ ◕人＼ - <Do you want to make a contract?> ###
 #########################################################
@@ -626,7 +626,7 @@ country_event = { #Catching the waves - unnamed radio amateur, John Alexander ra
 	}
 }
 
-country_event = { #Actually I didn't plan this event but i want a nice round number. Despair - unnamed clumsy factory worker
+country_event = { #free space my man
 	id = maria_magica.20
 	immediate = { log = "[GetDateText]: [Root.GetName]: event maria_magica.20" }
 	title = maria_magica.20.t
@@ -638,6 +638,168 @@ country_event = { #Actually I didn't plan this event but i want a nice round num
 	
 	option = { #
 		name = maria_magica.20.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+
+country_event = { #A strange opportunity	
+	id = SWRW_april_fools.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event SWRW_april_fools.1" }
+	title = SWRW_april_fools.1.t
+	desc = SWRW_april_fools.1.d
+	picture = GFX_event_SWRW_april_fools_1
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = SWRW_april_fools.1.a
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = SWRW_go_to_bornholm_tt
+		set_country_flag = SWRW_go_to_bornholm
+	}
+}
+
+country_event = { #Sea Lions
+	id = SWRW_april_fools.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event SWRW_april_fools.2" }
+	title = SWRW_april_fools.2.t
+	desc = SWRW_april_fools.2.d
+	picture = GFX_event_SWRW_april_fools_2
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = SWRW_april_fools.2.a
+		ai_chance = { factor = 1 }
+		country_event = { id = SWRW_april_fools.3 }
+	}
+}
+
+country_event = { #There's a hole, comrade Nikonov
+	id = SWRW_april_fools.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event SWRW_april_fools.3" }
+	title = SWRW_april_fools.3.t
+	desc = SWRW_april_fools.3.d
+	picture = GFX_event_SWRW_april_fools_3
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = SWRW_april_fools.3.a
+		ai_chance = { factor = 1 }
+		country_event = { id = SWRW_april_fools.4 }
+	}
+}
+
+country_event = { #Strange Item
+	id = SWRW_april_fools.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event SWRW_april_fools.4" }
+	title = SWRW_april_fools.4.t
+	desc = SWRW_april_fools.4.d
+	picture = GFX_event_SWRW_april_fools_4
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = SWRW_april_fools.4.a
+		ai_chance = { factor = 1 }
+		country_event = { id = SWRW_april_fools.5 }
+	}
+}
+
+country_event = { #Recursion
+	id = SWRW_april_fools.5
+	immediate = { log = "[GetDateText]: [Root.GetName]: event SWRW_april_fools.5" }
+	title = SWRW_april_fools.5.t
+	desc = SWRW_april_fools.5.d
+	picture = GFX_event_SWRW_april_fools_5
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = SWRW_april_fools.5.a
+		custom_effect_tooltip = SWRW_flashforward_to_postger_tt
+		hidden_effect = {
+			SWRW_force_effects_for_capitulated = yes
+			TaS_WRW2_Peace_Yall = yes
+			TaS_WRW2_total_capitulation = yes
+			FRA = {
+				transfer_state = 15
+				transfer_state = 16
+				transfer_state = 788
+				transfer_state = 1625
+				transfer_state = 1626
+				transfer_state = 1635
+				transfer_state = 17
+				transfer_state = 18
+				transfer_state = 29
+				transfer_state = 1733
+				transfer_state = 34
+				transfer_state = 1812
+				transfer_state = 28
+				transfer_state = 1994
+				every_owned_state = {
+					add_core_of = FRA
+				}
+			}
+			TaS_WRW2_German_Collapse_Beloozersky = yes
+		}
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { #On the Call
+	id = SWRW_april_fools.6
+	immediate = { log = "[GetDateText]: [Root.GetName]: event SWRW_april_fools.6" }
+	title = SWRW_april_fools.6.t
+	desc = SWRW_april_fools.6.d
+	picture = GFX_event_SWRW_april_fools_6
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = SWRW_april_fools.6.a
+		ai_chance = { factor = 1 }
+		country_event = { id = SWRW_april_fools.7 }
+	}
+}
+
+country_event = { #HOLY SHIT THE SKIES
+	id = SWRW_april_fools.7
+	immediate = { log = "[GetDateText]: [Root.GetName]: event SWRW_april_fools.7" }
+	title = SWRW_april_fools.7.t
+	desc = SWRW_april_fools.7.d
+	picture = GFX_event_SWRW_april_fools_7
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = SWRW_april_fools.7.a
+		ai_chance = { factor = 1 }
+		country_event = { id = SWRW_april_fools.8 }
+	}
+}
+
+country_event = { #Brave New World
+	id = SWRW_april_fools.8
+	immediate = { log = "[GetDateText]: [Root.GetName]: event SWRW_april_fools.8" }
+	title = SWRW_april_fools.8.t
+	desc = SWRW_april_fools.8.d
+	picture = GFX_event_SWRW_april_fools_8
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = SWRW_april_fools.8.a
 		ai_chance = { factor = 1 }
 	}
 }
