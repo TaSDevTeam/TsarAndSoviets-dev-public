@@ -64,8 +64,8 @@
  WAR_NAME_GER_POV:0 "Volgodonsk Uprising"
  
  ###assorted things
- TaS_2WRW_manchuria_spawn_states_tt:0 "We will see what the situation of forces in the Far East is"
- TaS_2WRW_manchuria_start_rebelion_tt:0 "The confrontation between partisans and the Japanese will enter an open stage"
+ TaS_2WRW_manchuria_spawn_states_tt:0 "§YWe will see what the situation of forces in the Far East is§!"
+ TaS_2WRW_manchuria_start_rebelion_tt:0 "§RThe confrontation between partisans and the Japanese will enter an open stage§!"
  TaS_WRW2_total_capitulation_tt:0 "We have won! We will reclaim all the territories that belonged to us before the Great Patriotic War!"
  TaS_WRW2_Peace_Yall_tt:0 "We will make peace with all members of the pact"
  TaS_WRW2_PEACE_TOTAL_TOOLTIP:0 "It has finally happened! The German hydra has finally fallen!"
@@ -114,6 +114,10 @@
  MAR_the_throne:0 "Interregnum"
  POLITICS_THE_RUSSIAN_THRONE_DESC:0 ""
  undecided_future:0 "Undecided Future"
+ 
+ SWRW_wehrmacht_fail:0 "Army Collapse"
+ SWRW_war_weariness:0 "War Weariness"
+ SWRW_swift_attack:0 "Swift Attack"
   
  #reclamation
  TaS_WRW2_territorial_reclamation:0 "Territorial Reclamation"  
@@ -135,7 +139,8 @@
  MAR_all_fates_decided_tt:0 "§YWe have determined the fate of all liberated territories§!"  
 
  TaS_WRW2_Antarctic_Rescue_Mission:0 "Organize a Rescue Mission in Antarctica"  
- TaS_WRW2_Antarctic_Rescue_Mission_desc:0 "After Germany's defeat in the war, they have more urgent issues than supporting their colony at the South Pole. We can take advantage of this by arranging the evacuation of German personnel from Antarctica. Despite the ambitiousness of the idea, this will accomplish two tasks simultaneously: we will organize our own mission in the territory of 'New Swabia,' and we will show Russia as a humanistic superpower concerned with the fate of the war-uninvolved population of the defeated enemy"  
+ TaS_WRW2_Antarctic_Rescue_Mission_desc:0 "After Germany's defeat in the war, they have more urgent issues than supporting their colony at the South Pole. We can take advantage of this by arranging the evacuation of German personnel from Antarctica. Despite the ambitiousness of the idea, this will accomplish two tasks simultaneously: we will organize our own mission in the territory of 'Neuschwabenland,' and we will show Russia as a humanistic superpower concerned with the fate of the war-uninvolved population of the defeated enemy"  
+ TaS_WRW2_Antarctic_Rescue_Mission:0 "§YThe territory of Neuschwabenland will come under our control§!"
 
  TaS_WRW2_Demands_to_Finland:0 "Demands to [FIN.GetFlag]Finland"  
  TaS_WRW2_Demands_to_Finland_desc:0 "After the Soviet-Finnish War of 1940 and the capture of Vyborg, mutual territorial claims were obvious. As a result of the First Great Patriotic War, in addition to Vyborg, we lost the entire territory of Karelia and the Kola Peninsula. During the Second Time of Troubles, we managed to reclaim part of the lost territories, but it is only a small fragment. In the case of Finland's audacious refusal, one might recall the return of the Grand Duchy of Finland, right?"  
@@ -342,6 +347,8 @@ MAR_AFG.1.d: "After several rounds of negotiations, a treaty on the status of th
  PJP_paternalism_party_long:0 "Primorye People's Liberation Army"
 
  # Russian Decision
+ MAR_FE_doing_stuff:0 "We doing any of the decisions"
+ 
  MAR_FErebels_mission:0 "§RBeginning of the uprising!§!"
  MAR_FE_Boli_planned_attack:0 "Storming of Khabarovsk"
  MAR_FE_Japs_storming_boli_tt:0 "§RThe Japanese§! will begin the assault on §GKhabarovsk§!"
@@ -358,6 +365,9 @@ MAR_AFG.1.d: "After several rounds of negotiations, a treaty on the status of th
  MAR_FE_send_army_instructors: "Send Army Advisors"
  MAR_FE_send_industrial_support: "Economic Support for [FROM.GetNameDef]"
  MAR_FE_cold_of_the_taiga: "Adaptation of the RA in the Conflict"
+ 
+ MAR_send_volunteer_corps_rebels_tt:0 "Since the beginning of the uprising, the partisans will have two additional infantry divisions"
+ MAR_send_partisans_rebels_tt:0 "From the beginning of the rebellion, the enemy side will receive negative bonuses to the army"
 
  ## Tab
  BoP_Tab_ForeignPolicy:0 "Global Conflicts"
@@ -1482,6 +1492,7 @@ MAR_AFG.1.d: "After several rounds of negotiations, a treaty on the status of th
  MAR_coring_integrate_Zhitomir:0 "Integration of §YZhitomir§!"
  MAR_coring_integrate_Lutsk:0 "Integration of §YLutsk§!"
  MAR_coring_integrate_Lvov:0 "Integration of §YLvov§!"
+ MAR_coring_integrate_Bessarabia:0 "Integration of §YBessarabia§!"
  MAR_coring_integrate_Kherson:0 "Integration of §YKherson§!"
  MAR_coring_integrate_Crimea:0 "Integration of §YCrimea§!"
  MAR_coring_integrate_Odessa:0 "Integration of §YOdessa§!"

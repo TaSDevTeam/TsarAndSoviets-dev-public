@@ -458,7 +458,7 @@ shared_focus = {
 		has_completed_focus = MAR_kospol_universal_good
 	}
 	completion_reward = {
-		add_ideas = { MAR_Nikolai_Maslennikov_eco } #потом заменю на того кого надо
+		#add_ideas = { MAR_Nikolai_Maslennikov_eco } #потом заменю на того кого надо
 		set_temp_variable = { gdp_growth_temp = 0.75 }
         econ_gdp_growth_change = yes
 		country_event = {
@@ -735,6 +735,9 @@ shared_focus = {
 	id = MAR_koseco_jap_partners
 	icon = GFX_MAR_kosecon_japan_partners
 	cost = 3
+	available = {
+		has_completed_focus = MAR_kosfor_pearl_of_Asia
+	}
 	prerequisite = {
 		focus = MAR_koseco_support_kulaks
 	}
@@ -754,6 +757,9 @@ shared_focus = {
 	id = MAR_koseco_usa_friends
 	icon = GFX_MAR_kosecon_american_friends
 	cost = 3
+	available = {
+		has_completed_focus = MAR_kosfor_birthplace_of_democracy
+	}
 	prerequisite = {
 		focus = MAR_koseco_support_kulaks
 	}
@@ -775,8 +781,6 @@ shared_focus = {
 	cost = 3
 	prerequisite = {
 		focus = MAR_koseco_jap_partners
-	}
-	prerequisite = {
 		focus = MAR_koseco_usa_friends
 	}
 	x = 14
@@ -1492,9 +1496,9 @@ shared_focus = {
 	x = 10
 	y = 2
 	completion_reward = {
-		tno_conscription_worsen = yes
-		TNO_improve_conscription_policy_effectiveness_med = yes
-		tno_trade_laws_improve = yes
+		TNO_improve_conscription_policy_effectiveness_high = yes
+		TNO_improve_conscription_policy_effectiveness_monthly_low = yes
+		TNO_improve_trade_laws_policy_effectiveness_high = yes
 	}
 }
 shared_focus = {
@@ -1625,19 +1629,7 @@ shared_focus = {
 		#	id = MAR_Kosygin.50
 		#	days = 0
 		#}
-		custom_effect_tooltip = RUS_RWS_nukes_expand_the_dalur_mines_tt
-		572 = {
-			add_extra_state_shared_building_slots = 2
-			add_building_construction = {
-				type = infrastructure
-				level = 2
-				instant_build = yes
-			}
-			add_resource = {
-				 type = uranium
-				 amount = 8
-			}
-		}
+		custom_effect_tooltip = RUS_RWS_nukes_address_the_uranium_problem_tt
 		hidden_effect = {
 			if = {	
 				limit = { check_variable = { TaS_RUS_nuclear_program_phase < 3 } }
@@ -1660,9 +1652,19 @@ shared_focus = {
 	x = 17
 	y = 1
 	completion_reward = {
-		custom_effect_tooltip = RUS_RWS_nukes_source_foreign_materials_tt
-		add_stability = -0.03
-		add_political_power = -25
+		custom_effect_tooltip = RUS_RWS_nukes_expand_the_dalur_mines_tt
+		572 = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+			add_resource = {
+				type = uranium
+				amount = 8
+			}
+		}
 		hidden_effect = {
 			if = {	
 				limit = { check_variable = { TaS_RUS_nuclear_program_phase < 3 } }
@@ -1688,7 +1690,7 @@ shared_focus = {
 	x = 17
 	y = 2
 	completion_reward = {
-		custom_effect_tooltip = RUS_RWS_nukes_address_the_uranium_problem_tt
+		custom_effect_tooltip = RUS_RWS_nukes_source_foreign_materials_tt
 		hidden_effect = {
 			if = {	
 				limit = { check_variable = { TaS_RUS_nuclear_program_phase < 3 } }
@@ -1867,9 +1869,9 @@ shared_focus = {
 			}
 		}
 		MKZ = {
-			set_temp_variable = { gdp_growth_temp = 4.5 }
+			set_temp_variable = { gdp_growth_temp = 2.5 }
 			econ_gdp_growth_change = yes
-			set_temp_variable = { temp_econ_GDP_boost_flat = 1 }
+			set_temp_variable = { temp_econ_GDP_boost_flat = 0.5 }
 			econ_GDP_boost_once_flat = yes	
 		}	
 		custom_effect_tooltip = MAR_Belozerskiy_add_2_inf_in_Kazakhstan
@@ -1918,7 +1920,7 @@ shared_focus = {
 		MKZ = {
 			set_temp_variable = { gdp_growth_temp = 1.5 }
 			econ_gdp_growth_change = yes
-			set_temp_variable = { temp_econ_GDP_boost_flat = 1.5 }
+			set_temp_variable = { temp_econ_GDP_boost_flat = 0.9 }
 			econ_GDP_boost_once_flat = yes	
 		}
 		country_event = {
@@ -1977,7 +1979,7 @@ shared_focus = {
 			add_extra_state_shared_building_slots = 3
 		}
 		MKZ = {
-			set_temp_variable = { temp_econ_GDP_boost_flat = 2.5 }
+			set_temp_variable = { temp_econ_GDP_boost_flat = 1.5 }
 			econ_GDP_boost_once_flat = yes	
 		}
 	}
@@ -1994,8 +1996,15 @@ shared_focus = {
 	completion_reward = {
 		add_political_power = 100
 		583 = { set_variable = { nationality = 151 } }
+		1808 = { set_variable = { nationality = 151 } }
+		1807 = { set_variable = { nationality = 151 } }
 		588 = { set_variable = { nationality = 151 } }
 		590 = { set_variable = { nationality = 151 } }
+		
+		1806 = { set_variable = { nationality = 435 } }
+		
+		404 = { set_variable = { nationality = 180 } }
+		589 = { set_variable = { nationality = 180 } }
 		country_event = {
 			id = MAR_Kosygin.55
 			days = 0
@@ -2073,10 +2082,17 @@ shared_focus = {
 	y = 1
 	
 	completion_reward = {
-		custom_effect_tooltip = MAR_kosrus_expanding_ogas_tt
-		add_to_variable = { MAR_ogas_dynomod_array_two^0 = 0.01 }
-		add_to_variable = { MAR_ogas_dynomod_array_two^2 = 0.05 }
-		add_to_variable = { MAR_ogas_dynomod_array_two^8 = 0.05 }
+		if = {
+			limit = { has_dynamic_modifier = { modifier = MAR_ogas_modifier } }
+			custom_effect_tooltip = MAR_kosrus_expanding_ogas_tt
+			add_to_variable = { MAR_ogas_dynomod_array_two^0 = 0.01 }
+			add_to_variable = { MAR_ogas_dynomod_array_two^2 = 0.05 }
+			add_to_variable = { MAR_ogas_dynomod_array_two^8 = 0.05 }
+		}
+		else = {
+			set_temp_variable = { gdp_growth_temp = 1.5 }
+			econ_gdp_growth_change = yes
+		}
 		random_owned_state = {
 			add_state_modifier = {
 				modifier = {
@@ -2256,7 +2272,7 @@ shared_focus = {
 		country_event = { id = MAR_Kosygin.95 days = 3 }
 		give_resource_rights = { receiver = USA state = 887 }
 		give_resource_rights = { receiver = USA state = 570 }
-		set_temp_variable = { gdp_growth_temp = 2 }
+		set_temp_variable = { gdp_growth_temp = 0.5 }
 		econ_gdp_growth_change = yes
 	}
 
@@ -2299,7 +2315,7 @@ shared_focus = {
 		country_event = { id = MAR_Kosygin.96 days = 3 }
 	    give_resource_rights = { receiver = JAP state = 563 }
 		give_resource_rights = { receiver = JAP state = 564 }
-		set_temp_variable = { gdp_growth_temp = 2 }
+		set_temp_variable = { gdp_growth_temp = 0.5 }
 		econ_gdp_growth_change = yes
 	}
 
@@ -2361,7 +2377,7 @@ shared_focus = {
 				RFI = {
 					add_ideas = RUSAlliance_Independent_Member
 				}
-				add_to_faction = MKZ
+				add_to_faction = RFI
 			}
 			if = {
 				limit = { IRA = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
@@ -2392,6 +2408,10 @@ shared_focus = {
 			if = {
 				limit = { AZA = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
 				AZA = {	add_ideas = RUSAlliance_Observer }
+			}
+			if = {
+				limit = { AYA = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+				AYA = {	add_ideas = RUSAlliance_Observer }
 			}
 			if = {
 				limit = { SNI = { check_variable = { ECON_SPHERE_LEADER = MAR } } }

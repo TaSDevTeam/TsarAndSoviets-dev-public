@@ -41,7 +41,7 @@ shared_focus = {
 		add_ideas = MAR_Anatoly_Vavilov_high_command
 		add_ideas = MAR_Valentin_Ardashev_high_command
 		add_ideas = MAR_Joseph_Beyrle_high_command
-		add_ideas = MAR_Joseph_Beyrle_army_chief
+		hidden_effect = { add_ideas = MAR_Joseph_Beyrle_army_chief }
 		add_ideas = MAR_Alexander_Rutskoj_air_chief
 		if = {
 			limit = { has_government = despotism }

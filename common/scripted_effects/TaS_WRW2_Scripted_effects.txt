@@ -38,6 +38,12 @@ TaS_fopo_add_congo_cw_tab = {
 TaS_fopo_remove_congo_cw_tab = {
 	set_temp_variable = { conflict_id = token:GC_CongoCW }
 	TNO_remove_fopo_conflict_tab = yes
+	set_temp_variable = { target = CPR }
+	TNO_clear_num_volunteers = yes
+	set_temp_variable = { target = KTG }
+	TNO_clear_num_volunteers = yes
+	set_temp_variable = { target = KSI }
+	TNO_clear_num_volunteers = yes			
 }
 TaS_fopo_add_iberian_wars_tab = {
 	set_temp_variable = { conflict_id = token:GC_IberianWars }
@@ -87,6 +93,7 @@ TaS_OIL_get_supported_factions = {
 		add_to_array = { global.OIL_supported_by_MAR = BIR }
 		add_to_array = { global.OIL_supported_by_MAR = EGB }
 		add_to_array = { global.OIL_supported_by_MAR = SDS }
+		add_to_array = { global.OIL_supported_by_MAR = AYA }
 	}
 }
 TaS_2WRW_manchuria_spawn_states = {
@@ -100,10 +107,12 @@ TaS_2WRW_manchuria_spawn_states = {
 		add_state_core = 1646
 		transfer_state = 409
 		add_state_core = 409
-		inherit_technology = MAR
-		load_oob = PFF_revolt
-		every_owned_state = {
-			set_demilitarized_zone = no
+		hidden_effect = {
+			inherit_technology = MAR
+			load_oob = PFF_revolt
+			every_owned_state = {
+				set_demilitarized_zone = no
+			}
 		}
 		TNO_startup_nation = yes
 	}	
@@ -115,10 +124,27 @@ TaS_2WRW_manchuria_spawn_states = {
 		add_state_core = 408
 		transfer_state = 809
 		add_state_core = 809
-		inherit_technology = JAP
-		load_oob = MJP_revolt
-		every_owned_state = {
-			set_demilitarized_zone = no
+		hidden_effect = {
+			809 = {
+				set_state_name = STATE_809
+				set_province_name = { id = 957 name = VICTORY_POINTS_957 }
+			}
+			408 = {
+				set_state_name = STATE_408
+				set_province_name = { id = 6961 name = VICTORY_POINTS_6961 }
+				set_province_name = { id = 11750 name = VICTORY_POINTS_11750_man }
+			}
+			1644 = {
+				set_state_name = STATE_1644
+				set_province_name = { id = 9604 name = VICTORY_POINTS_9604 }
+				set_province_name = { id = 7868 name = VICTORY_POINTS_7868 }
+				set_province_name = { id = 11575 name = VICTORY_POINTS_11575 }
+			}
+			inherit_technology = JAP
+			load_oob = MJP_revolt
+			every_owned_state = {
+				set_demilitarized_zone = no
+			}
 		}
 		TNO_startup_nation = yes
 	}	
@@ -758,6 +784,7 @@ TaS_WRW2_total_capitulation = {
 				remove_core_of = GER
 				add_core_of = FRA
 			}
+			set_capital = { state = 786 remember_old_capital = no }
 		}
 		if = {
 			limit = {
@@ -1594,7 +1621,9 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			limit = { MBL = { exists = yes } }
 			MBL = {
 				transfer_state = 97
+				add_state_core = 97
 			}
+			set_variable = { 97.nationality = 345 }
 			97 = { set_state_name = STATE_97_rus }
 			set_province_name = { id = 11301 name = VICTORY_POINTS_11301_rus }
 			set_province_name = { id = 11329 name = VICTORY_POINTS_11329_rus }
@@ -1604,7 +1633,9 @@ TaS_WRW2_German_Collapse_Beloozersky = {
 			limit = { MBL = { exists = no } }
 			RUS = {
 				transfer_state = 97
+				add_state_core = 97
 			}
+			set_variable = { 97.nationality = 345 }
 			97 = { set_state_name = STATE_97_rus }
 			set_province_name = { id = 11301 name = VICTORY_POINTS_11301_rus }
 			set_province_name = { id = 11329 name = VICTORY_POINTS_11329_rus }
@@ -2048,6 +2079,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 			add_to_faction = GAU
 			add_to_faction = GCZ
 			add_to_faction = GHL
+			add_to_faction = GPL
 			if = {
 				limit = {
 					FRA = { check_variable = { ECON_SPHERE_LEADER = MAR } }
@@ -2080,6 +2112,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 				transfer_state = 97
 				add_state_core = 97
 			}
+			set_variable = { 97.nationality = 345 }
 			97 = { set_state_name = STATE_97_rus }
 			set_province_name = { id = 11301 name = VICTORY_POINTS_11301_rus }
 			set_province_name = { id = 11329 name = VICTORY_POINTS_11329_rus }
@@ -2091,6 +2124,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 				transfer_state = 97
 				add_state_core = 97
 			}
+			set_variable = { 97.nationality = 345 }
 			97 = { set_state_name = STATE_97_rus }
 			set_province_name = { id = 11301 name = VICTORY_POINTS_11301_rus }
 			set_province_name = { id = 11329 name = VICTORY_POINTS_11329_rus }
@@ -2356,7 +2390,7 @@ TaS_2WRW_form_ost_zones = {
 				}
 				else_if = {
 					limit = {
-						MAR = { owns_state = 1292 }
+						MAR = { owns_state = 1282 }
 					}
 					transfer_state = 1282
 					transfer_state = 198

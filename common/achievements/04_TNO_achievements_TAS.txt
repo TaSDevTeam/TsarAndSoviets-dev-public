@@ -132,8 +132,22 @@ MAR_greater_than_before = {
 		tag = MAR
 	}
 
-	happened = {
-		has_country_flag = MAR_annexed_them_all_achievement
+	happened = { #по стейтам тригеррам
+		controls_state = 91 #галиция и Украина
+		controls_state = 2194 #ЦА
+		controls_state = 2461 #Афганистан
+		controls_state = 198 #Румыния
+		controls_state = 97 #Белосток
+		controls_state = 2125 #Иран
+		controls_state = 1448 #Закавказье
+		controls_state = 1397 #Прибалтика
+		controls_state = 1404 #Беларусь
+		controls_state = 1532 #Таврида
+		controls_state = 111 #Финляндия
+		controls_state = 341 #Царьград
+		controls_state = 183 #Кипр, ох ебать а я и забыл лол
+		controls_state = 2098 #СЕВЕР
+		controls_state = 809 #Владивосток
 	}
 }
 

@@ -281,6 +281,8 @@ country_event = {#Aftermaths
 				}
 			}
 			add_popularity = { ideology = despotism_1 popularity = -1 }
+			add_popularity = { ideology = despotism popularity = -1 }
+			add_popularity = { ideology = communist popularity = -1 }
 			set_country_flag = MAR_prestol_focus_tree
 			mark_focus_tree_layout_dirty = yes
 		}
@@ -756,7 +758,6 @@ country_event = {#thaw
 	option = {
 		name = MAR_Kosygin.45.a
 		ai_chance = { factor = 1 }	
-		add_stability = -0.03	
 	}
 }
 
@@ -1527,7 +1528,7 @@ country_event = { #Alexei, tsar of all russias
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.92" }
 	title = MAR_Kosygin.92.t
 	desc = MAR_Kosygin.92.d
-	picture = GFX_event_MAR_Kosygin_92
+	picture = GFX_report_event_RUS_double_headed_eagle
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -1544,7 +1545,7 @@ country_event = { #Training
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.93" }
 	title = MAR_Kosygin.93.t
 	desc = MAR_Kosygin.93.d
-	picture = GFX_event_MAR_Kosygin_93
+	picture = GFX_report_event_RUS_special_forces
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -1560,7 +1561,7 @@ country_event = { #Building the F-E
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.94" }
 	title = MAR_Kosygin.94.t
 	desc = MAR_Kosygin.94.d
-	picture = GFX_event_MAR_Kosygin_94
+	picture = GFX_report_event_RUS_republic_navy
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -1576,7 +1577,7 @@ country_event = { #On the beaches of California
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.95" }
 	title = MAR_Kosygin.95.t
 	desc = MAR_Kosygin.95.d
-	picture = GFX_event_MAR_Kosygin_95
+	picture = GFX_report_event_USA_los_angeles
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -1592,7 +1593,7 @@ country_event = { #In the mounts of Kanto
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.96" }
 	title = MAR_Kosygin.96.t
 	desc = MAR_Kosygin.96.d
-	picture = GFX_event_MAR_Kosygin_96
+	picture = GFX_report_event_JAP_mount_fuji
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -1608,7 +1609,7 @@ country_event = { #Tsars speech
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_Kosygin.97" }
 	title = MAR_Kosygin.97.t
 	desc = MAR_Kosygin.97.d
-	picture = GFX_event_MAR_Kosygin_97
+	picture = GFX_report_event_RUS_motherland_calls_poster
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -1677,13 +1678,15 @@ country_event = { #262 event 2
 			set_variable = { kosygin_reception = 1 }
 			MAR_clamp_insurgency_strength = yes
 		}
-		add_popularity = {
-			ideology = ultranationalism_2
-			popularity = -1
-		}
-		add_popularity = {
-			ideology = national_socialism
-			popularity = 0.01
+		hidden_effect = {
+			add_popularity = {
+				ideology = ultranationalism_2
+				popularity = -1
+			}
+			add_popularity = {
+				ideology = national_socialism
+				popularity = 0.01
+			}
 		}
 		MAR_prestol_calc_nationwide_strength = yes
 	}
@@ -1732,13 +1735,15 @@ country_event = { #214 event 2
 		}
 		add_political_power = 50
 		MAR_prestol_calc_nationwide_strength = yes
-		add_popularity = {
-			ideology = despotism_2
-			popularity = -1
-		}
-		add_popularity = {
-			ideology = national_socialism
-			popularity = 0.01
+		hidden_effect = {
+			add_popularity = {
+				ideology = despotism_2
+				popularity = -1
+			}
+			add_popularity = {
+				ideology = national_socialism
+				popularity = 0.01
+			}
 		}
 	}
 }
@@ -1784,13 +1789,15 @@ country_event = { #397 event 2
 			set_variable = { kosygin_reception = 1 }
 			MAR_clamp_insurgency_strength = yes
 		}
-		add_popularity = {
-			ideology = ultranationalism_1
-			popularity = -1
-		}
-		add_popularity = {
-			ideology = national_socialism
-			popularity = 0.01
+		hidden_effect = {
+			add_popularity = {
+				ideology = ultranationalism_1
+				popularity = -1
+			}
+			add_popularity = {
+				ideology = national_socialism
+				popularity = 0.01
+			}
 		}
 		add_political_power = 50
 		hidden_effect = {
@@ -1853,13 +1860,15 @@ country_event = { #252 event 2
 		add_political_power = 50
 		TNO_improve_poverty_low = yes
 		MAR_prestol_calc_nationwide_strength = yes
-		add_popularity = {
-			ideology = communist_1
-			popularity = -1
-		}
-		add_popularity = {
-			ideology = national_socialism
-			popularity = 0.01
+		hidden_effect = {
+			add_popularity = {
+				ideology = communist_1
+				popularity = -1
+			}
+			add_popularity = {
+				ideology = national_socialism
+				popularity = 0.01
+			}
 		}
 	}
 }
@@ -1919,13 +1928,15 @@ country_event = { #753 event 2
 		}
 		add_manpower = var:tempRandom
 		MAR_prestol_calc_nationwide_strength = yes
-		add_popularity = {
-			ideology = national_socialism_1
-			popularity = -1
-		}
-		add_popularity = {
-			ideology = national_socialism
-			popularity = 0.01
+		hidden_effect = {
+			add_popularity = {
+				ideology = national_socialism_1
+				popularity = -1
+			}
+			add_popularity = {
+				ideology = national_socialism
+				popularity = 0.01
+			}
 		}
 	}
 }
@@ -1971,13 +1982,15 @@ country_event = { #850 event 2
 			set_variable = { kosygin_reception = 1 }
 			MAR_clamp_insurgency_strength = yes
 		}
-		add_popularity = {
-			ideology = national_socialism_2
-			popularity = -1
-		}
-		add_popularity = {
-			ideology = national_socialism
-			popularity = 0.01
+		hidden_effect = {
+			add_popularity = {
+				ideology = national_socialism_2
+				popularity = -1
+			}
+			add_popularity = {
+				ideology = national_socialism
+				popularity = 0.01
+			}
 		}
 		add_political_power = 50
 		hidden_effect = {
@@ -2537,7 +2550,6 @@ country_event = { #
 	option = { #
 		name = MAR_Kosygin_OGAS.5.a
 		ai_chance = { factor = 1 }
-		
 	}
 }
 
@@ -2664,7 +2676,7 @@ country_event = { #Rus win
 			econ_gdp_growth_change = yes
 			TaS_fopo_remove_uar_influence_battle_tab = yes
 			if = {
-				limit = { RUS = { is_faction_leader = yes } }
+				limit = { MAR = { is_faction_leader = yes } }
 				add_ideas = RUSAlliance_Observer
 			}
 			else = {

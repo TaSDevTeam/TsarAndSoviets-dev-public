@@ -2939,7 +2939,6 @@ MAR_SWRW_category = {
 			custom_effect_tooltip = TaS_WRW2_suez_tt
 			965 = { set_demilitarized_zone = yes }
 			1784 = { set_demilitarized_zone = yes }
-			1786 = { set_demilitarized_zone = yes }
 			every_country = {
 				limit = { is_in_faction_with = GER }
 				add_timed_idea = {
@@ -3784,7 +3783,6 @@ MAR_SWRW_category = {
 		icon = generic_assault
 		priority = 45
 		available = {
-			controls_state = 208
 			controls_state = 1402
 			controls_state = 257
 		}
@@ -3794,7 +3792,6 @@ MAR_SWRW_category = {
 			controls_state = 195
 			controls_state = 1421
 			NOT = {
-				controls_state = 208
 				controls_state = 1402
 				controls_state = 257
 			}
@@ -3803,7 +3800,6 @@ MAR_SWRW_category = {
 		is_good = no
 		highlight_states = {
 			highlight_state_targets = {
-				state = 208
 				state = 1402
 				state = 257
 			}

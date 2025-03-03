@@ -1851,6 +1851,12 @@ RUS_DecisionCategory_Smuta = {
 					}
 				}
 			}
+			custom_trigger_tooltip = {
+				tooltip = WRS_no_possible_peace_tt
+				NOT = {
+					has_country_flag = INVASION_KOM_DISALLOWED
+				}
+			}
 		}
 
 		fire_only_once = yes
@@ -3414,7 +3420,7 @@ RUS_DecisionCategory_Smuta = {
 				has_war_with = VOL
 			}
 		}
-		days_remove = 35
+		days_remove = 15
 		fire_only_once = yes
 		cost = 25
 		complete_effect = {
@@ -3454,7 +3460,7 @@ RUS_DecisionCategory_Smuta = {
 				has_war_with = KOM
 			}
 		}
-		days_remove = 35
+		days_remove = 15
 		fire_only_once = yes
 		cost = 25
 		complete_effect = {
@@ -3488,7 +3494,7 @@ RUS_DecisionCategory_Smuta = {
 				has_war_with = BKR
 			}
 		}
-		days_remove = 35
+		days_remove = 15
 		fire_only_once = yes
 		cost = 25
 		complete_effect = {

@@ -1577,7 +1577,7 @@ shared_focus = {
 		MKZ = {
 			set_temp_variable = { gdp_growth_temp = 1.5 }
 			econ_gdp_growth_change = yes
-			set_temp_variable = { temp_econ_GDP_boost_flat = 1.5 }
+			set_temp_variable = { temp_econ_GDP_boost_flat = 0.5 }
 			econ_GDP_boost_once_flat = yes	
 		}
 		country_event = { 
@@ -1778,9 +1778,9 @@ shared_focus = {
 				}
 			}
 			MKZ = {
-				set_temp_variable = { gdp_growth_temp = 4.5 }
+				set_temp_variable = { gdp_growth_temp = 2.5 }
 				econ_gdp_growth_change = yes
-				set_temp_variable = { temp_econ_GDP_boost_flat = 1 }
+				set_temp_variable = { temp_econ_GDP_boost_flat = 0.9 }
 				econ_GDP_boost_once_flat = yes	
 			}	
 		}
@@ -1803,8 +1803,18 @@ shared_focus = {
 			id = berez_kazahk.5
 			days = 0
 		}
+		583 = { set_variable = { nationality = 151 } }
+		1808 = { set_variable = { nationality = 151 } }
+		1807 = { set_variable = { nationality = 151 } }
+		588 = { set_variable = { nationality = 151 } }
+		590 = { set_variable = { nationality = 151 } }
+		
+		1806 = { set_variable = { nationality = 435 } }
+		
+		404 = { set_variable = { nationality = 180 } }
+		589 = { set_variable = { nationality = 180 } }
 		MKZ = {
-			set_temp_variable = { temp_econ_GDP_boost_flat = 2.5 }
+			set_temp_variable = { temp_econ_GDP_boost_flat = 1.5 }
 			econ_GDP_boost_once_flat = yes	
 		}
 	}

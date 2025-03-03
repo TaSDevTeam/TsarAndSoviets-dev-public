@@ -2142,7 +2142,8 @@ MAR_Order_category = {
 			add_stability = 0.025
 			add_war_support = -0.1
 			country_event = { id = MAR_Kosygin.66 }
-			custom_effect_tooltip = MAR_Order_open_new_decisions
+			custom_effect_tooltip = MAR_Order_open_new_decision
+			set_country_flag = MAR_order_Kosygin_two
 			swap_ideas = {
 				remove_idea = tno_religious_rights_state_religion
 				add_idea = tno_religious_rights_pluralism	
@@ -2159,7 +2160,7 @@ MAR_Order_category = {
 				ruling_only = yes
 			}
 			has_country_flag = W_RUSSIA_UNIFIED
-			has_country_flag = MAR_order_Kosygin
+			has_country_flag = MAR_order_Kosygin_two
 		}
 		
 		ai_will_do = {
@@ -2188,7 +2189,7 @@ MAR_Order_category = {
 		}
 	}
 	MAR_Order_allseeing_eye = {
-		icon = GFX_decision_generic_CCTV
+		icon = GFX_decision_generic_cctv
 		fire_only_once = yes
 		visible = {
 			has_country_leader = {
@@ -2196,7 +2197,7 @@ MAR_Order_category = {
 				ruling_only = yes
 			}
 			has_country_flag = W_RUSSIA_UNIFIED
-			has_country_flag = MAR_order_Kosygin
+			has_country_flag = MAR_order_Kosygin_two
 		}
 		
 		ai_will_do = {
@@ -2228,7 +2229,7 @@ MAR_Order_category = {
 				ruling_only = yes
 			}
 			has_country_flag = W_RUSSIA_UNIFIED
-			has_country_flag = MAR_order_Kosygin
+			has_country_flag = MAR_order_Kosygin_two
 		}
 		
 		ai_will_do = {
@@ -2259,7 +2260,7 @@ MAR_Order_category = {
 				ruling_only = yes
 			}
 			has_country_flag = RUS_RUSSIA_UNIFIED
-			has_country_flag = MAR_order_Kosygin
+			has_country_flag = MAR_order_Kosygin_two
 		}
 		
 		ai_will_do = {
@@ -2292,7 +2293,20 @@ MAR_Order_category = {
 				ruling_only = yes
 			}
 			has_country_flag = RUS_RUSSIA_UNIFIED
-			has_country_flag = MAR_order_Kosygin
+			has_country_flag = MAR_order_Kosygin_two
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAR_KAZ_ours
+				OR = {
+					406 = { 
+						is_owned_and_controlled_by = MAR
+					}
+					406 = { 
+						is_owned_and_controlled_by = MKZ
+					}
+				}
+			}
 		}
 		
 		ai_will_do = {
@@ -2346,37 +2360,37 @@ MAR_category_prestol_terrorists = {
 			
 		}
 	}
-	MAR_put_down_taboritskys_bandits = {
-		icon = GFX_decision_revolt
-		activation = { always = no }
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = MAR_taboritskys_insurgency_trigger
-				OR = {
-					NOT = {
-						has_country_flag = MAR_prestol_active
-					}
-					has_country_flag = MAR_prestol_tabby_ded
-				}
-			}
-		}
-		priority = 300
-		days_mission_timeout = MAR_tabby_timeout
-		is_good = no
-
-		timeout_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision Timeout MAR_put_down_taboritskys_bandits"
-			custom_effect_tooltip = MAR_taboritskys_insurgency_failure_tt
-			country_event = { id = MAR_Kosygin_Prestol.16 days = 5 }
-		}
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision MAR_put_down_taboritskys_bandits"
-			custom_effect_tooltip = MAR_taboritskys_insurgency_success_tt
-			#hidden_effect = {
-			#	country_event = { id = MAR_Kosygin_Prestol.15 days = 5 }
-			#}
-		}
-	}
+	#MAR_put_down_taboritskys_bandits = {
+	#	icon = GFX_decision_revolt
+	#	activation = { always = no }
+	#	available = {
+	#		custom_trigger_tooltip = {
+	#			tooltip = MAR_taboritskys_insurgency_trigger
+	#			OR = {
+	#				NOT = {
+	#					has_country_flag = MAR_prestol_active
+	#				}
+	#				has_country_flag = MAR_prestol_tabby_ded
+	#			}
+	#		}
+	#	}
+	#	priority = 300
+	#	days_mission_timeout = MAR_tabby_timeout
+	#	is_good = no
+	#
+	#	timeout_effect = {
+	#		log = "[GetDateText]: [Root.GetName]: Decision Timeout MAR_put_down_taboritskys_bandits"
+	#		custom_effect_tooltip = MAR_taboritskys_insurgency_failure_tt
+	#		country_event = { id = MAR_Kosygin_Prestol.16 days = 5 }
+	#	}
+	#	complete_effect = {
+	#		log = "[GetDateText]: [Root.GetName]: Decision MAR_put_down_taboritskys_bandits"
+	#		custom_effect_tooltip = MAR_taboritskys_insurgency_success_tt
+	#		#hidden_effect = {
+	#		#	country_event = { id = MAR_Kosygin_Prestol.15 days = 5 }
+	#		#}
+	#	}
+	#}
 	
 	MAR_AI_prestol_decision_one = {
 		icon = GFX_decision_revolt
@@ -2431,7 +2445,7 @@ MAR_category_prestol_terrorists = {
 					add_to_variable = { insurgency_strength = change_strenghth_temp }
 					
 					custom_effect_tooltip = MAR_prestol_power_change
-					custom_effect_tooltip = MAR_prestol_power_trend_change
+					custom_effect_tooltip = MAR_prestol_power_trend_change_negative
 				}
 			}
 		}
@@ -2865,8 +2879,9 @@ MAR_ogas_deccat = {
 			}
 		}
 		cost = 25
-		days_remove = 90
-		fire_only_once = yes
+		days_remove = 45
+		fire_only_once = no
+		days_re_enable = 90
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_first_spying_for_superpowers"
 			custom_effect_tooltip = MAR_ogas_first_stage_spies_tt
@@ -3045,7 +3060,8 @@ MAR_ogas_deccat = {
 		}		
 		cost = 25
 		days_remove = 45
-		fire_only_once = yes
+		fire_only_once = no
+		days_re_enable = 90
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_first_our_previous_ideas"
 			set_temp_variable = { temp_econ_spending_amount = 0.2 }
@@ -3088,7 +3104,8 @@ MAR_ogas_deccat = {
 		}
 		cost = 25
 		days_remove = 60
-		fire_only_once = yes
+		fire_only_once = no
+		days_re_enable = 60
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_first_sort_the_designs"
 			set_temp_variable = { temp_econ_spending_amount = 0.1 } 
@@ -3257,7 +3274,8 @@ MAR_ogas_deccat = {
 		}
 		cost = 25
 		days_remove = 60
-		fire_only_once = yes
+		fire_only_once = no
+		days_re_enable = 60
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_second_math_analyze"
 			set_temp_variable = { temp_econ_spending_amount = 0.005 } 
@@ -3342,8 +3360,9 @@ MAR_ogas_deccat = {
 			}
 		}
 		cost = 25
-		days_remove = 75
-		fire_only_once = yes
+		days_remove = 30
+		fire_only_once = no
+		days_re_enable = 75
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_second_glushkovs_seminars"
 			set_temp_variable = { temp_econ_spending_amount = 0.01 } 
@@ -3475,8 +3494,9 @@ MAR_ogas_deccat = {
 			}
 		}
 		cost = 25
-		days_remove = 60
-		fire_only_once = yes
+		days_remove = 45
+		fire_only_once = no
+		days_re_enable = 60
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_third_cybergrad_kazan"
 			set_temp_variable = { temp_econ_spending_amount = 0.25 } 
@@ -3571,8 +3591,9 @@ MAR_ogas_deccat = {
 			}
 		}
 		cost = 25
-		days_remove = 75
-		fire_only_once = yes
+		days_remove = 60
+		fire_only_once = no
+		days_re_enable = 45
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_third_expand_the_institutions"
 			set_temp_variable = { temp_econ_spending_amount = 0.15 } 
@@ -3614,8 +3635,9 @@ MAR_ogas_deccat = {
 			}
 		}
 		cost = 25
-		days_remove = 60
-		fire_only_once = yes
+		days_remove = 45
+		fire_only_once = no
+		days_re_enable = 45
 		complete_effect = {
 			set_temp_variable = { temp_econ_spending_amount = 0.275 } 
 			econ_spend_money_once_effect_raw_money = yes
@@ -3707,10 +3729,10 @@ MAR_ogas_deccat = {
 			set_temp_variable = { MAR_ogas_char_to_change = 3 } 
 			set_temp_variable = { temp_char_gained = 0.02 } 
 			MAR_OGAS_char_change = yes
-			250 = {
+			249 = {
 				add_building_construction = {
 					type = infrastructure
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 				add_state_modifier = {
@@ -3739,7 +3761,8 @@ MAR_ogas_deccat = {
 		}
 		cost = 25
 		days_remove = 60
-		fire_only_once = yes
+		fire_only_once = no
+		days_re_enable = 60
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_foutrh_test_the_factory"
 			set_temp_variable = { temp_econ_spending_amount = 0.075 } 
@@ -3873,7 +3896,9 @@ MAR_ogas_deccat = {
 			}
 		}
 		cost = 25
-		days_remove = 45
+		days_remove = 30
+		fire_only_once = no
+		days_re_enable = 30
 		fire_only_once = yes
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_foutrh_stress_test_kazan"
@@ -3932,7 +3957,9 @@ MAR_ogas_deccat = {
 			}
 		}
 		cost = 25
-		days_remove = 60
+		days_remove = 30
+		fire_only_once = no
+		days_re_enable = 60
 		fire_only_once = yes
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_intergrate_into_civil_economics"
@@ -4063,6 +4090,8 @@ MAR_ogas_deccat = {
 		}
 		cost = 25
 		days_remove = 45
+		fire_only_once = no
+		days_re_enable = 45
 		fire_only_once = yes
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_fifth_integrate_into_education"
@@ -4673,7 +4702,7 @@ MAR_yug_excersices_category = {
 				producer = MAR
 			}
 			country_event = { id = berez_kazahk.16 days = 7 }
-			news_event = { id = berez_kazahk.20 days = 3 }
+			country_event = { id = berez_kazahk.20 days = 3 }
 		}
 	}
 }
@@ -5703,17 +5732,17 @@ RUS_nuke_development_category_facelift = {
 			add_equipment_to_stockpile = {
 				type = ICBM_equipment
 				amount = 50
-				producer = RUS
+				producer = MAR
 			}
 			add_equipment_to_stockpile = {
 				type = MRBM_equipment
 				amount = 100
-				producer = RUS
+				producer = MAR
 			}
 			add_equipment_to_stockpile = {
 				type = SRBM_equipment
 				amount = 200
-				producer = RUS
+				producer = MAR
 			}
 			
 			hidden_effect = {

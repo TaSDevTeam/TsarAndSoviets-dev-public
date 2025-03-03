@@ -210,6 +210,15 @@ TaS_SWRW_start_the_war = {
 					count = 3
 				}
 			}
+			2098 = {
+				create_unit = {
+					division = "division_template = \"Morskaya Desantnaya Brigada\" start_experience_factor = 1 start_equipment_factor = 1"
+					allow_spawning_on_enemy_provs = yes
+					prioritize_location = 11047
+					owner = RUS
+					count = 1
+				}
+			}
 		}
 	}
 	GER = {
@@ -293,7 +302,8 @@ TaS_SWRW_american_germany = {
 		}
 	}
 	ZNE = { 
-		add_ideas = OFN_Mandate
+		add_ideas = OFN_Dependent_Member
+		econ_join_sphere_USA = yes
 		transfer_state = 1813
 		transfer_state = 1814
 		transfer_state = 188
@@ -463,7 +473,7 @@ TaS_SWRW_american_germany = {
 		}
 	}
 	GPL = {
-		#econ_join_sphere_USA = yes
+		econ_join_sphere_USA = yes
 		transfer_state = 87
 		transfer_state = 67
 		transfer_state = 88
@@ -707,6 +717,15 @@ TaS_SWRW_american_germany = {
 		add_to_faction = GCZ
 		add_to_faction = BRL
 	}
+	if = {
+	    limit = { 
+		    ENG = { 
+			    is_in_faction_with = USA 
+				is_in_faction_with = FRA 
+			}
+		}	
+		transfer_state = 1994 #Ибо это их нацрегион лол
+	}	
 	RUS = {
 		add_to_faction = PUS
 		SWRW_add_RUS_coldwar_GUI = yes
@@ -833,7 +852,7 @@ TaS_SWRW_Manchu_CW_HAN_win = {
 		econ_join_sphere_JAP = yes
 		add_ideas = Sphere_Imp_Protectorate
 		add_ideas = MAN_Kwantung_Army
-		set_capital = { state = 328 }
+		set_capital = { state = 1265 }
 		every_owned_state = {
 			MJP = {
 				add_state_core = PREV
@@ -848,7 +867,7 @@ TaS_SWRW_Manchu_CW_HAN_win = {
 	}
 	HAN = {
 		set_cosmetic_tag = HAN_cw_victory
-		set_capital = { state = 801 }
+		set_capital = { state = 328 }
 		every_owned_state = {
 			HAN = {
 				add_state_core = PREV
@@ -915,9 +934,6 @@ TaS_SWRW_Manchu_CW_PFF_win = {
 		transfer_state = 610
 		transfer_state = 1713
 		transfer_state = 1641
-		transfer_state = 1715
-		transfer_state = 328
-		transfer_state = 717
 		
 		country_lock_all_division_template = yes
 		add_ideas = MJP_chained_forever
@@ -944,7 +960,7 @@ TaS_SWRW_Manchu_CW_PFF_win = {
 		add_to_faction = MJP
 	}
 	PFF = {
-		#set_cosmetic_tag = HAN_cw_victory
+		set_cosmetic_tag = PFF_cw_victory
 		set_capital = { state = 801 }
 		every_owned_state = {
 			PFF = {
@@ -2054,6 +2070,10 @@ SWRW_finland_peacedeal = {
 		else = {
 			set_cosmetic_tag = FIN_MIL
 		}
+		set_variable = {
+			TNO_economy_type = token:Econ_Type_Corporatism
+			TNO_economy_subtype = token:Econ_Subtype_Dirigisme
+		}
 		econ_join_sphere_MAR = yes
 		remove_ideas = FIN_An_Unsatisfactory_Answer
 		remove_ideas = FIN_Second_Crisis_Of_Democracy
@@ -2190,6 +2210,14 @@ SWRW_clear_war_stuff = {
 		delete_unit_template_and_units = {
 			division_template = "Morskaya Desantnaya Brigada"
 			disband = yes
+		}
+	}
+	MAR = {
+		every_country = {
+			if = {
+				limit = { MAR = { has_wargoal_against = PREV } }
+				MAR = { remove_wargoal = { target = PREV type = all } }
+			}
 		}
 	}
 	every_country = {
@@ -2452,7 +2480,7 @@ SWRW_add_RUS_coldwar_calculate_victories = {
 		}
 	}
 }
-SWRW_force_effects_for_capitulated = {
+SWRW_force_effects_for_capitulated = { 
 	if = {
 		limit = { HUN = { has_capitulated = yes } }
 		RUS = {
@@ -2497,64 +2525,32 @@ SWRW_force_effects_for_capitulated = {
 				}
 				else = {
 					GHU = {
-						GHU_Istvan_Horthy = {
-							set_nationality = HUN
-						}
+						#GHU_Istvan_Horthy = {
+						#	set_nationality = HUN
+						#}
 						GHU_Geraldine = {
 							set_nationality = HUN
 						}
 					}
-					promote_character = GHU_Istvan_Horthy
+					#promote_character = GHU_Istvan_Horthy
 					promote_character = GHU_Geraldine
-					if = {
-						limit = {
-							NOT = {
-								HUN = {
-									has_country_leader = {
-										character = GHU_Istvan_Horthy 
-										ruling_only = yes
-									}
-								}
-							}
-						}
-						set_politics = {
-							ruling_party = paternalism
-						}
-						add_popularity = {
-							ideology = paternalism
-							popularity = 0.35
-						}
-						add_country_leader_role = {
-							character = GHU_Istvan_Horthy
-							promote_leader = yes
-							country_leader = {
-								#desc = "POLITICS_Istvan_Horthy_DESC"
-								ideology = paternalism_semi_constitutional_monarchy_subtype
-								traits = { }
-								expire = "1999.1.1.1"
-							}
+					set_politics = {
+						ruling_party = paternalism
+					}
+					add_popularity = {
+						ideology = paternalism
+						popularity = 0.35
+					}
+					add_country_leader_role = {
+						character = GHU_Geraldine
+						promote_leader = yes
+						country_leader = {
+							#desc = "POLITICS_Istvan_Horthy_DESC"
+							ideology = paternalism_semi_constitutional_monarchy_subtype
+							traits = { }
+							expire = "1999.1.1.1"
 						}
 					}
-					else = {
-						set_politics = {
-							ruling_party = paternalism
-						}
-						add_popularity = {
-							ideology = paternalism
-							popularity = 0.35
-						}
-						add_country_leader_role = {
-							character = GHU_Geraldine
-							promote_leader = yes
-							country_leader = {
-								#desc = "POLITICS_Istvan_Horthy_DESC"
-								ideology = paternalism_semi_constitutional_monarchy_subtype
-								traits = { }
-								expire = "1999.1.1.1"
-							}
-						}
-					}
-					
 					set_cosmetic_tag = HUN_GHU_Belooz
 					
 				}
@@ -2572,6 +2568,10 @@ SWRW_force_effects_for_capitulated = {
 				get_current_government_type = yes
 				save_party_popularities = yes
 				add_ideas = RUSAlliance_Dependent_Member
+				set_variable = {
+					TNO_economy_type = token:Econ_Type_Corporatism
+					TNO_economy_subtype = token:Econ_Subtype_Dirigisme
+				}
 				RUS = {
 					set_autonomy = {
 						target = HUN
@@ -2776,6 +2776,10 @@ SWRW_force_effects_for_capitulated = {
 				get_current_government_type = yes
 				save_party_popularities = yes
 				add_ideas = RUSAlliance_Dependent_Member
+				set_variable = {
+					TNO_economy_type = token:Econ_Type_Corporatism
+					TNO_economy_subtype = token:Econ_Subtype_Dirigisme
+				}
 				RUS = {
 					set_autonomy = {
 						target = ROM
@@ -2802,37 +2806,7 @@ SWRW_force_effects_for_capitulated = {
 				leave_faction = yes
 				leave_zollverein = yes
 				remove_faction_status = yes
-				remove_ideas = SER_The_Clock_Ticks
-				remove_ideas = SER_government_of_anything_but_salvation
-				remove_ideas = SER_Serbia_Shall_Not_be_Pacified
-				remove_ideas = SER_National_Liberation_Army
-				remove_ideas = SER_SOPO_Terrorism
-				remove_ideas = SER_Generational_Divide
-				remove_ideas = SER_Resurgent_Nationalism
-				remove_ideas = SER_SPS_Dominance
-				remove_ideas = SER_The_Return_of_the_Kingdom
-				remove_ideas = SER_Yugoslav_Rebirth
-				remove_ideas = SER_Anti_German_Resistance
-				remove_ideas = SER_majka_srbija
-				remove_ideas = SER_Refugee_Question
-				remove_ideas = SER_Reichsfestung_Belgrad
-				remove_ideas = SER_Banat_Deutsche
-				remove_ideas = SER_Reactionary_Remnants
-				remove_ideas = SER_Serbian_Collaborators
-				remove_ideas = SER_The_Crown_In_Exile
-				remove_ideas = SER_Our_Island_Of_Freedom
-				remove_ideas = SER_Return_Of_The_Kingdom
-				remove_ideas = SER_Thin_Facade_Of_Constitutionalism_I
-				remove_ideas = SER_Thin_Facade_Of_Constitutionalism_II
-				remove_ideas = SER_A_Divided_Front
-				remove_ideas = SER_Death_To_Fascism_Freedom_To_The_People
-				remove_ideas = SER_Between_Revolutionaries_And_Royalists
-				remove_ideas = SER_Milos_against_Murad
-				remove_ideas = SER_Rebirth_of_a_Nation
-				remove_ideas = SER_Our_Great_Teachers_Legacy
-				remove_ideas = SER_The_Fatherland_In_Disarray
-				remove_ideas = SER_All_For_One
-				remove_ideas = SER_Zealots_Conservatives_and_Conformists
+				remove_all_ideas = yes
 				if = {
 					limit = { RUS = { has_government = socialist } }
 					GSE = {
@@ -2901,6 +2875,10 @@ SWRW_force_effects_for_capitulated = {
 				get_current_government_type = yes
 				save_party_popularities = yes
 				add_ideas = RUSAlliance_Dependent_Member
+				set_variable = {
+					TNO_economy_type = token:Econ_Type_Corporatism
+					TNO_economy_subtype = token:Econ_Subtype_Dirigisme
+				}
 				RUS = {
 					set_autonomy = {
 						target = SER
@@ -3000,6 +2978,10 @@ SWRW_force_effects_for_capitulated = {
 				get_current_government_type = yes
 				save_party_popularities = yes
 				add_ideas = RUSAlliance_Dependent_Member
+				set_variable = {
+					TNO_economy_type = token:Econ_Type_Corporatism
+					TNO_economy_subtype = token:Econ_Subtype_Dirigisme
+				}
 				RUS = {
 					set_autonomy = {
 						target = BUL
@@ -3033,6 +3015,10 @@ SWRW_force_effects_for_capitulated = {
 			get_current_government_type = yes
 			save_party_popularities = yes
 			add_ideas = RUSAlliance_Dependent_Member
+			set_variable = {
+				TNO_economy_type = token:Econ_Type_Corporatism
+				TNO_economy_subtype = token:Econ_Subtype_Dirigisme
+			}
 			RUS = {
 				set_autonomy = {
 					target = MAC
@@ -3045,7 +3031,10 @@ SWRW_force_effects_for_capitulated = {
 		}
 	}
 	if = {
-		limit = { FIN = { has_capitulated = yes } }
+		limit = {
+			FIN = { has_capitulated = yes } 
+			NOT = { country_exists = RFI }
+		}
 		RUS = {
 			transfer_state = 216
 			transfer_state = 215
@@ -3059,7 +3048,18 @@ SWRW_force_effects_for_capitulated = {
 		}
 	}
 	if = {
-		limit = { PER = { has_capitulated = yes } }
+		limit = {
+			PER = { has_capitulated = yes }
+			NOT = {
+				OR = {
+					country_exists = IRL
+					country_exists = IRC
+					country_exists = IRB
+					country_exists = IRA
+					country_exists = IRI
+				}	
+			}
+		}
 		RUS = {
 			white_peace = PER
 			PER = {	
@@ -3108,6 +3108,10 @@ SWRW_force_effects_for_capitulated = {
 				get_current_government_type = yes
 				save_party_popularities = yes
 				add_ideas = RUSAlliance_Dependent_Member
+				set_variable = {
+					TNO_economy_type = token:Econ_Type_Corporatism
+					TNO_economy_subtype = token:Econ_Subtype_Dirigisme
+				}
 				RUS = {
 					set_autonomy = {
 						target = PER

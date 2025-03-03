@@ -578,6 +578,9 @@ MAR_install_mil_turkestan = {
 		}	
 		add_to_faction = MTR
 	}	
+	MAR = {
+		set_country_flag = MAR_has_turkestan
+	}
 	MTR = {
 		restore_previous_government_type = yes
 		apply_party_popularities = yes
@@ -620,7 +623,6 @@ MAR_Turkestan_govern = {
 			popularity = 0.15
 		}
 		MAR = {
-			set_country_flag = MAR_has_turkestan
 			MTR = { save_party_popularities = yes }
 			set_autonomy = {
 				target = MTR
@@ -680,9 +682,6 @@ MAR_Turkestan_autonomy = {
 			name = MTR_despotism_postmil_party
 		}
 		econ_join_sphere_MAR = yes
-		MAR = {
-			set_country_flag = MAR_has_turkestan
-		}
 		add_popularity = {
 			ideology = progressivism
 			popularity = 0.45
@@ -980,8 +979,14 @@ first_every_day_script_TaS 	= {
 			}
 			
 			if = {
-				limit = { check_variable = { MAR_prestol_clock_time = 0 } }
-				country_event = { id = MAR_Kosygin_Prestol.16 random_days = 5 }
+				limit = { 
+					check_variable = { MAR_prestol_clock_time = 0 }
+					OR = {
+						has_country_flag = MAR_prestol_active
+						NOT = { has_country_flag = MAR_prestol_tabby_ded }
+					}
+				}
+				country_event = { id = MAR_Kosygin_Prestol.16 }
 			}
 			if = {
 				limit = {
