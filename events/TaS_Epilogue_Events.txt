@@ -6544,7 +6544,7 @@ country_event = {#General - Russia - Opportunities ahead
 	desc = TaS_GERCollapse.28.d
 	is_triggered_only = yes
 	fire_only_once = yes
-	
+	picture = GFX_report_event_RUS_tanks
 	option = { #Let's go 
 		name = TaS_GERCollapse.28.a
 		ai_chance = {
@@ -6634,7 +6634,7 @@ country_event = {#General - US Embassy
 					id = TaS_GERCollapse_news.29
 				}
 			}
-			country_event = { id = TaS_GERCollapse.29 days = 7}
+			country_event = { id = TaS_GERCollapse.30 days = 7}
 		}
 	}
 }

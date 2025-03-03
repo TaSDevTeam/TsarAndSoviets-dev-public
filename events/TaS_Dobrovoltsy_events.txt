@@ -443,9 +443,20 @@ country_event = { #SSudan 1
 	picture = GFX_event_MAR_dobr20
 	option = { #very cool
 		name = berez_dobrovoltsy.22.a
-		AZA = {
-			set_temp_variable = { gdp_growth_temp = 0.1 }
-			econ_gdp_growth_change = yes
+		hidden_effect = {
+			if = {
+				limit = { country_exists = ANA }
+				ANA = {
+					set_temp_variable = { gdp_growth_temp = 0.1 }
+					econ_gdp_growth_change = yes
+				}
+			}
+			else = {
+				AYA = {
+					set_temp_variable = { gdp_growth_temp = 0.1 }
+					econ_gdp_growth_change = yes
+				}
+			}
 		}
 		MAR = {
 			set_temp_variable = { gdp_growth_temp = 0.02 }
@@ -1005,7 +1016,7 @@ country_event = { #iran
 		days = 2 
 	}
 	fire_only_once = yes
-	picture = GFX_MAR_forpol_1
+	picture = GFX_report_event_RUS_soviet_soldiers_4
 	option = { #yes
 		name = MAR_forpol.1.a
 		TaS_fopo_add_iranian_civil_war_tab = yes
@@ -1018,7 +1029,7 @@ country_event = { ### Iran victory
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_forpol.2"}
 	title = MAR_forpol.2.t
 	desc = MAR_forpol.2.d
-	picture = GFX_report_event_germany_army_2
+	picture = GFX_report_event_RUS_soviet_officers_2
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -1049,7 +1060,7 @@ country_event = { ### Iran defeat
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_forpol.3"}
 	title = MAR_forpol.3.t
 	desc = MAR_forpol.3.d
-	picture = GFX_report_event_germany_anarchy
+	picture = GFX_report_event_generic_riots
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -1140,7 +1151,7 @@ country_event = { #france CW BEL join
 		days = 2 
 	}
 	fire_only_once = yes
-	picture = GFX_event_MAR_dobr2
+	picture = GFX_report_event_RUS_soviet_soldiers_3
 	option = { #yes
 		name = MAR_forpol.700.a
 		TaS_fopo_add_france_civil_war_tab = yes
@@ -1156,7 +1167,7 @@ country_event = { #france CW BEL win
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_forpol.701"}
 	title = MAR_forpol.701.t
 	desc = MAR_forpol.701.d
-	picture = GFX_event_MAR_dobr2
+	picture = GFX_report_event_RUS_soviet_officers_2
 
 	fire_only_once = yes
 	#is_triggered_only = yes
@@ -1192,7 +1203,7 @@ country_event = { #france CW BEL lose
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_forpol.702"}
 	title = MAR_forpol.702.t
 	desc = MAR_forpol.702.d
-	picture = GFX_event_MAR_dobr2
+	picture = GFX_report_event_generic_riots
 
 	fire_only_once = yes
 	#is_triggered_only = yes
@@ -1242,7 +1253,7 @@ country_event = { #france CW KOS join
 		days = 2 
 	}	
 	fire_only_once = yes
-	picture = GFX_event_MAR_dobr2
+	picture = GFX_report_event_RUS_soviet_soldiers_3
 	option = { #yes
 		name = MAR_forpol.710.a
 		TaS_fopo_add_france_civil_war_tab = yes
@@ -1259,7 +1270,7 @@ country_event = { #france CW KOS win
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_forpol.711"}
 	title = MAR_forpol.711.t
 	desc = MAR_forpol.711.d
-	picture = GFX_event_MAR_dobr2
+	picture = GFX_report_event_RUS_soviet_officers_2
 
 	fire_only_once = yes
 	#is_triggered_only = yes
@@ -1295,7 +1306,7 @@ country_event = { #france CW KOS lose
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_forpol.712"}
 	title = MAR_forpol.712.t
 	desc = MAR_forpol.712.d
-	picture = GFX_event_MAR_dobr2
+	picture = GFX_report_event_generic_riots
 
 	fire_only_once = yes
 	#is_triggered_only = yes
@@ -1336,7 +1347,7 @@ country_event = { ### Iran victory
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_forpol.8"}
 	title = MAR_forpol.8.t
 	desc = MAR_forpol.8.d
-	picture = GFX_report_event_germany_army_2
+	picture = GFX_report_event_RUS_soviet_officers_2
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -1362,7 +1373,7 @@ country_event = { ### Iran defeat
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_forpol.9"}
 	title = MAR_forpol.9.t
 	desc = MAR_forpol.9.d
-	picture = GFX_report_event_germany_anarchy
+	picture = GFX_report_event_generic_riots
 
 	fire_only_once = yes
 	is_triggered_only = yes

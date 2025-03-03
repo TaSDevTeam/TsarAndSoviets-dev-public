@@ -273,6 +273,7 @@ MAR_foreign_policy_category = {
 			}
 		}
 		remove_effect = {
+			custom_effect_tooltip = MAR_send_volunteer_corps_rebels_tt
 			add_to_variable = { MAR_FErebels_adddivisions = 2 }
 			clr_country_flag = MARFE_doing_stuff
 		}
@@ -306,6 +307,7 @@ MAR_foreign_policy_category = {
 			}
 		}
 		remove_effect = {
+			custom_effect_tooltip = MAR_send_partisans_rebels_tt
 			add_to_variable = { MAR_FErebels_addpartisans = 1 }
 			clr_country_flag = MARFE_doing_stuff
 		}
@@ -1930,29 +1932,13 @@ MAR_foreign_policy_category = {
 			add_command_power = 25
 			add_stability = -0.02
 
-			set_temp_variable = { target = NYM }
-			TNO_increase_volunteer_cap_1 = yes
-
-			set_temp_variable = { target = EGB }
-			TNO_increase_volunteer_cap_1 = yes
-
-			set_temp_variable = { target = SYR }
-			TNO_increase_volunteer_cap_1 = yes
-
-			set_temp_variable = { target = BIR }
-			TNO_increase_volunteer_cap_1 = yes
-
-			set_temp_variable = { target = OMB }
-			TNO_increase_volunteer_cap_1 = yes
-
-			set_temp_variable = { target = GUL }
-			TNO_increase_volunteer_cap_1 = yes
-
-			set_temp_variable = { target = PAL }
-			TNO_increase_volunteer_cap_1 = yes
-
-			set_temp_variable = { target = SDS }
-			TNO_increase_volunteer_cap_1 = yes
+			for_each_scope_loop = {
+				array = global.OIL_supported_by_MAR
+				MAR = {
+					set_temp_variable = { target = PREV }
+					TNO_increase_volunteer_cap_1 = yes
+				}
+			}
 
 			add_to_variable = {
 				MAR_OC_volunteer_sent = 1

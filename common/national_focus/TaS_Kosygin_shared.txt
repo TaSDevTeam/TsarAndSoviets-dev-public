@@ -1492,9 +1492,9 @@ shared_focus = {
 	x = 10
 	y = 2
 	completion_reward = {
-		tno_conscription_worsen = yes
-		TNO_improve_conscription_policy_effectiveness_med = yes
-		tno_trade_laws_improve = yes
+		TNO_improve_conscription_policy_effectiveness_high = yes
+		TNO_improve_conscription_policy_effectiveness_monthly_low = yes
+		TNO_improve_trade_laws_policy_effectiveness_high = yes
 	}
 }
 shared_focus = {
@@ -2078,10 +2078,17 @@ shared_focus = {
 	y = 1
 	
 	completion_reward = {
-		custom_effect_tooltip = MAR_kosrus_expanding_ogas_tt
-		add_to_variable = { MAR_ogas_dynomod_array_two^0 = 0.01 }
-		add_to_variable = { MAR_ogas_dynomod_array_two^2 = 0.05 }
-		add_to_variable = { MAR_ogas_dynomod_array_two^8 = 0.05 }
+		if = {
+			limit = { has_dynamic_modifier = { modifier = MAR_ogas_modifier } }
+			custom_effect_tooltip = MAR_kosrus_expanding_ogas_tt
+			add_to_variable = { MAR_ogas_dynomod_array_two^0 = 0.01 }
+			add_to_variable = { MAR_ogas_dynomod_array_two^2 = 0.05 }
+			add_to_variable = { MAR_ogas_dynomod_array_two^8 = 0.05 }
+		}
+		else = {
+			set_temp_variable = { gdp_growth_temp = 1.5 }
+			econ_gdp_growth_change = yes
+		}
 		random_owned_state = {
 			add_state_modifier = {
 				modifier = {
@@ -2261,7 +2268,7 @@ shared_focus = {
 		country_event = { id = MAR_Kosygin.95 days = 3 }
 		give_resource_rights = { receiver = USA state = 887 }
 		give_resource_rights = { receiver = USA state = 570 }
-		set_temp_variable = { gdp_growth_temp = 2 }
+		set_temp_variable = { gdp_growth_temp = 0.5 }
 		econ_gdp_growth_change = yes
 	}
 
@@ -2304,7 +2311,7 @@ shared_focus = {
 		country_event = { id = MAR_Kosygin.96 days = 3 }
 	    give_resource_rights = { receiver = JAP state = 563 }
 		give_resource_rights = { receiver = JAP state = 564 }
-		set_temp_variable = { gdp_growth_temp = 2 }
+		set_temp_variable = { gdp_growth_temp = 0.5 }
 		econ_gdp_growth_change = yes
 	}
 

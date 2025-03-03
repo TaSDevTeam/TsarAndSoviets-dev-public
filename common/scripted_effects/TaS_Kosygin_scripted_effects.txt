@@ -8,7 +8,7 @@ MAR_OGAS_setup = {
 	add_to_array = { MAR_ogas_stages_status_array = 0 } # 4
 	add_to_array = { MAR_ogas_stages_status_array = 0 } # 5
 
-	set_variable = { MAR_ogas_gain = 0.02 }
+	set_variable = { MAR_ogas_gain = 0.04 }
 	set_variable = { MAR_ogas_char_gain = 0.002 }
 	
 	set_variable = { MAR_ogas_current_stage = 1 }
@@ -1395,41 +1395,43 @@ UAR_initialize_Faction_Mechanic = {
 
 	set_global_flag = UAR_Faction_Start_Flag
 	TaS_fopo_add_uar_influence_battle_tab = yes
-	UAR = {
-		TaS_fopo_add_uar_influence_battle_tab = yes
-		clear_array = UAR_faction_influence_array
-		add_to_array = { UAR_faction_influence_array = 30 } # indepentent 0
-		add_to_array = { UAR_faction_influence_array = 15 } # pro-russian 1
-		add_to_array = { UAR_faction_influence_array = 25 } # pro-pakt 2
-		
-		clear_array = UAR_faction_influence_gain_array
-		add_to_array = { UAR_faction_influence_gain_array = 2 } # indepentent 0
-		add_to_array = { UAR_faction_influence_gain_array = 1.5 } # pro-russian 1
-		add_to_array = { UAR_faction_influence_gain_array = 1 } # pro-pakt 2
-		
-		if = {
-			limit = { has_country_flag = MAR_leads_uar }
-			add_to_variable = { UAR_faction_influence_array^1 = 20 }
+	hidden_effect = {
+		UAR = {
+			TaS_fopo_add_uar_influence_battle_tab = yes
+			clear_array = UAR_faction_influence_array
+			add_to_array = { UAR_faction_influence_array = 30 } # indepentent 0
+			add_to_array = { UAR_faction_influence_array = 15 } # pro-russian 1
+			add_to_array = { UAR_faction_influence_array = 25 } # pro-pakt 2
+			
+			clear_array = UAR_faction_influence_gain_array
+			add_to_array = { UAR_faction_influence_gain_array = 2 } # indepentent 0
+			add_to_array = { UAR_faction_influence_gain_array = 1.5 } # pro-russian 1
+			add_to_array = { UAR_faction_influence_gain_array = 1 } # pro-pakt 2
+			
+			if = {
+				limit = { has_country_flag = MAR_leads_uar }
+				add_to_variable = { UAR_faction_influence_array^1 = 20 }
+			}
+			else_if = { 
+				limit = { has_country_flag = GER_leads_uar }
+				add_to_variable = { UAR_faction_influence_array^2 = 20 }
+			}
 		}
-		else_if = { 
-			limit = { has_country_flag = GER_leads_uar }
-			add_to_variable = { UAR_faction_influence_array^2 = 20 }
+		GER = {
+			TaS_fopo_add_uar_influence_battle_tab = yes
 		}
-	}
-	GER = {
-		TaS_fopo_add_uar_influence_battle_tab = yes
-	}
-	GER = {
-		activate_mission = GER_Faction_timer_Mission
-	}
-	MAR = {
-		activate_mission = MAR_Faction_timer_Mission
-	}
-	UAR = {
-		activate_mission = UAR_Faction_timer_Mission
-	}
-	every_country = {
-		news_event = { id = berez_dobrovoltsy_world_news.17 }
+		GER = {
+			activate_mission = GER_Faction_timer_Mission
+		}
+		MAR = {
+			activate_mission = MAR_Faction_timer_Mission
+		}
+		UAR = {
+			activate_mission = UAR_Faction_timer_Mission
+		}
+		every_country = {
+			news_event = { id = berez_dobrovoltsy_world_news.17 }
+		}
 	}
 }
 

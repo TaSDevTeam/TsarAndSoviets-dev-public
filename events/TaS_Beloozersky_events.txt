@@ -1010,7 +1010,7 @@ country_event = { # Operative situation: Civil War
 	desc = berez_kazahk.11.d
 	fire_only_once = yes
 	is_triggered_only = yes
-	#picture = GFX_event_MAR_Kazah_otdel
+	picture = GFX_report_event_RUS_soviet_mech_infantry_6
 
 	option = {
 		name = berez_kazahk.11.a
@@ -1039,7 +1039,7 @@ country_event = { # Operative situation: Russians
 	desc = berez_kazahk.12.d
 	fire_only_once = yes
 	is_triggered_only = yes
-	#picture = GFX_event_MAR_Kazah_otdel
+	picture = GFX_report_event_RUS_the_motherland_calls
 
 	option = {
 		name = berez_kazahk.12.a
@@ -1062,7 +1062,7 @@ country_event = { # Operative situation: Kazakhs
 	desc = berez_kazahk.13.d
 	fire_only_once = yes
 	is_triggered_only = yes
-	#picture = GFX_event_MAR_Kazah_otdel
+	picture = GFX_report_event_generic_peace_deal
 
 	option = { #lets talk to 'em
 		name = berez_kazahk.13.a
@@ -1080,7 +1080,7 @@ country_event = { # Question one: elites
 	desc = berez_kazahk.14.d
 	fire_only_once = yes
 	is_triggered_only = yes
-	#picture = GFX_event_MAR_Kazah_otdel
+	picture = GFX_report_event_generic_peace_deal
 
 	option = { #fuck 'em
 		name = berez_kazahk.14.a
@@ -1135,7 +1135,7 @@ country_event = { # Question two: muscle-play
 	desc = berez_kazahk.15.d
 	fire_only_once = yes
 	is_triggered_only = yes
-	#picture = GFX_event_MAR_Kazah_otdel
+	picture = GFX_report_event_generic_peace_deal
 
 	option = { #don't do anything
 		name = berez_kazahk.15.a
@@ -1187,7 +1187,7 @@ country_event = { # Question three: national question
 	desc = berez_kazahk.16.d
 	fire_only_once = yes
 	is_triggered_only = yes
-	#picture = GFX_event_MAR_Kazah_otdel
+	picture = GFX_report_event_generic_peace_deal
 
 	option = { #integration
 		name = berez_kazahk.16.a
@@ -1239,7 +1239,7 @@ country_event = { # talks failed
 	desc = berez_kazahk.17.d
 	fire_only_once = yes
 	is_triggered_only = yes
-	#picture = GFX_event_MAR_Kazah_otdel
+	picture = GFX_report_event_RUS_soviet_soldiers_4
 
 	option = { #oh dear
 		name = berez_kazahk.17.a
@@ -1264,7 +1264,7 @@ country_event = { # talks success
 	desc = berez_kazahk.18.d
 	fire_only_once = yes
 	is_triggered_only = yes
-	#picture = GFX_event_MAR_Kazah_otdel
+	picture = GFX_report_event_RUS_soviet_officers_2
 
 	option = { #nice
 		name = berez_kazahk.18.a
@@ -1287,7 +1287,7 @@ country_event = { # talks kinda success
 	desc = berez_kazahk.19.d
 	fire_only_once = yes
 	is_triggered_only = yes
-	#picture = GFX_event_MAR_Kazah_otdel
+	picture = GFX_report_event_RUS_soviet_officer_pistol
 	
 	option = { #oh dear
 		name = berez_kazahk.19.a
@@ -1334,7 +1334,7 @@ country_event = {
 	desc = berez_kazahk.20.d
 	fire_only_once = yes
 	is_triggered_only = yes
-	#picture = GFX_event_MAR_BLZ_FAVOUR1
+	picture = GFX_report_event_RUS_soviet_tanks_3
 	
 	option = {
 		hidden_effect = {
@@ -1568,7 +1568,7 @@ country_event = { # All-Russian Mladorossi Party
 	desc = MAR_epilogue.4.d
 	fire_only_once = yes
 	is_triggered_only = yes
-	#picture = GFX_MAR_Bel_epilogue_4
+	picture = GFX_report_event_RUS_democracy
 
 	option = {
 		name = MAR_epilogue.4.a
@@ -1583,7 +1583,7 @@ country_event = { # Amnesty
 	desc = MAR_epilogue.5.d
 	fire_only_once = yes
 	is_triggered_only = yes
-	#picture = GFX_MAR_Bel_epilogue_5
+	picture = GFX_report_event_RUS_nkvd_officer
 
 	option = {
 		name = MAR_epilogue.5.a
@@ -1598,7 +1598,7 @@ country_event = { # RusTour
 	desc = MAR_epilogue.6.d
 	fire_only_once = yes
 	is_triggered_only = yes
-	#picture = GFX_MAR_Bel_epilogue_6
+	picture = GFX_report_event_RUS_soviet_train
 
 	option = {
 		name = MAR_epilogue.6.a
@@ -1613,7 +1613,7 @@ country_event = { # International Recognition
 	desc = MAR_epilogue.7.d
 	fire_only_once = yes
 	is_triggered_only = yes
-	#picture = GFX_MAR_Bel_epilogue_7
+	picture = GFX_report_event_USA_congress_4
 
 	option = {
 		name = MAR_epilogue.7.a
@@ -1628,7 +1628,7 @@ country_event = { # New Congress
 	desc = MAR_epilogue.8.d
 	fire_only_once = yes
 	is_triggered_only = yes
-	#picture = GFX_MAR_Bel_epilogue_8
+	picture = GFX_report_event_RUS_state_duma
 
 	option = {
 		name = MAR_epilogue.8.a

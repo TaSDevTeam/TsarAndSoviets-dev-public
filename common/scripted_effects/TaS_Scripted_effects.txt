@@ -578,6 +578,9 @@ MAR_install_mil_turkestan = {
 		}	
 		add_to_faction = MTR
 	}	
+	MAR = {
+		set_country_flag = MAR_has_turkestan
+	}
 	MTR = {
 		restore_previous_government_type = yes
 		apply_party_popularities = yes
@@ -620,7 +623,6 @@ MAR_Turkestan_govern = {
 			popularity = 0.15
 		}
 		MAR = {
-			set_country_flag = MAR_has_turkestan
 			MTR = { save_party_popularities = yes }
 			set_autonomy = {
 				target = MTR
@@ -680,9 +682,6 @@ MAR_Turkestan_autonomy = {
 			name = MTR_despotism_postmil_party
 		}
 		econ_join_sphere_MAR = yes
-		MAR = {
-			set_country_flag = MAR_has_turkestan
-		}
 		add_popularity = {
 			ideology = progressivism
 			popularity = 0.45
