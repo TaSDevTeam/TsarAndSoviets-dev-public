@@ -1773,6 +1773,16 @@ country_event = { #Serbia wants to quit
 	}
 	option = { #demand something
 		name = TaS_SWRW.11.b
+		trigger = {
+		    SER = {
+			    NOT = {
+				    OR = {
+				        has_government = national_socialism
+					    has_government = fascism
+					}	
+				}	
+			}
+		}
 		ai_chance = { 
 			factor = 1
 			modifier = {
@@ -1910,6 +1920,16 @@ country_event = { #Hungary wants to quit
 	}
 	option = { #demand something
 		name = TaS_SWRW.12.b
+		trigger = {
+		    HUN = {
+			    NOT = {
+				    OR = {
+				        has_government = national_socialism
+					    has_government = fascism
+					}	
+				}	
+			}
+		}
 		ai_chance = { 
 			factor = 1
 			modifier = {
@@ -2263,6 +2283,16 @@ country_event = { #Bulgaria wants to quit
 	}
 	option = { #demand something
 		name = TaS_SWRW.16.b
+		trigger = {
+		    BUL = {
+			    NOT = {
+				    OR = {
+				        has_government = national_socialism
+					    has_government = fascism
+					}	
+				}	
+			}
+		}
 		ai_chance = { 
 			factor = 1
 			modifier = {
