@@ -1,0 +1,1406 @@
+#####################
+### Starting Tree ###
+#####################
+
+###intro tree
+###fopo tree
+###pol tree
+###mil tree
+
+
+###intro tree
+shared_focus = {
+	id = GWF_start_from_scratch
+	icon = GFX_GWF_start_from_scratch
+	cost = 4
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	
+	x = 9
+	y = 0
+	completion_reward = {
+	
+	}
+}
+
+shared_focus = { 
+	id = GWF_asses_situation
+	icon = GFX_GWF_asses_situation
+	cost = 3
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_start_from_scratch
+	}
+	relative_position_id = GWF_start_from_scratch
+	x = 0
+	y = 1
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = GWF_to_find_exit
+	icon = GFX_GWF_to_find_exit
+	cost = 3
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_asses_situation
+	}
+	relative_position_id = GWF_asses_situation
+	x = -1
+	y = 1
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = GWF_contact_incubator
+	icon = GFX_GWF_contact_incubator
+	cost = 3
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_asses_situation
+	}
+	relative_position_id = GWF_asses_situation
+	x = 1
+	y = 1
+	completion_reward = {
+		
+	}
+}
+
+###pol tree
+shared_focus = {
+	id = GWF_look_inside
+	icon = GFX_GWF_contact_incubator
+	cost = 4
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_to_find_exit
+	}
+	prerequisite = {
+		focus = GWF_contact_incubator
+	}
+	relative_position_id = GWF_start_from_scratch
+	x = -7
+	y = 3
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = GWF_only_my_struggle
+	icon = GFX_GWF_only_my_struggle
+	cost = 4
+	available_if_capitulated = no
+	mutually_exclusive = {
+		focus = GWF_one_cant_do_all_the_job
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_look_inside
+	}
+	relative_position_id = GWF_look_inside
+	x = -2
+	y = 1
+	completion_reward = {
+		
+    }
+}
+
+shared_focus = {
+	id = GWF_bare_minimum
+	icon = GFX_GWF_bare_minimum
+	cost = 4
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_only_my_struggle
+	}
+	relative_position_id = GWF_only_my_struggle
+	x = 0
+	y = 1
+	completion_reward = {
+		
+    }
+}
+
+shared_focus = {
+	id = GWF_controllable_chaos
+	icon = GFX_GWF_controllable_chaos
+	cost = 4
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_bare_minimum
+	}
+	relative_position_id = GWF_bare_minimum
+	x = -1
+	y = 1
+	completion_reward = {
+		
+    }
+}
+
+shared_focus = {
+	id = GWF_humanity_aside
+	icon = GFX_GWF_humanity_aside
+	cost = 4
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_bare_minimum
+	}
+	relative_position_id = GWF_bare_minimum
+	x = 1
+	y = 1
+	completion_reward = {
+		
+    }
+}
+
+shared_focus = {
+	id = GWF_one_cant_do_all_the_job
+	icon = GFX_GWF_one_cant_do_all_the_job
+	cost = 4
+	available_if_capitulated = no
+	mutually_exclusive = {
+		focus = GWF_only_my_struggle
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_look_inside
+	}
+	relative_position_id = GWF_look_inside
+	x = 2
+	y = 1
+	completion_reward = {
+		
+    }
+}
+
+shared_focus = {
+	id = GWF_administrative_business
+	icon = GFX_GWF_administrative_business
+	cost = 4
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_one_cant_do_all_the_job
+	}
+	relative_position_id = GWF_one_cant_do_all_the_job
+	x = 0
+	y = 1
+	completion_reward = {
+		
+    }
+}
+
+shared_focus = {
+	id = GWF_church_of_ring
+	icon = GFX_GWF_church_of_ring
+	cost = 4
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_administrative_business
+	}
+	relative_position_id = GWF_administrative_business
+	x = -1
+	y = 1
+	completion_reward = {
+		
+    }
+}
+
+shared_focus = {
+	id = GWF_support_from_outside
+	icon = GFX_GWF_support_from_outside
+	cost = 4
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_administrative_business
+	}
+	relative_position_id = GWF_administrative_business
+	x = 1
+	y = 1
+	completion_reward = {
+		
+    }
+}
+
+shared_focus = {
+	id = GWF_operation_umbra
+	icon = GFX_GWF_operation_umbra
+	cost = 3
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_look_inside
+	}
+	relative_position_id = GWF_look_inside
+	x = 0
+	y = 2
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = GWF_my_own_realm
+	icon = GFX_GWF_my_own_realm
+	cost = 3
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_controllable_chaos
+		focus = GWF_support_from_outside
+	}
+	prerequisite = {
+		focus = GWF_church_of_ring
+		focus = GWF_humanity_aside
+	}
+	prerequisite = {
+		focus = GWF_operation_umbra
+	}
+	relative_position_id = GWF_operation_umbra
+	x = 0
+	y = 2
+	completion_reward = {
+		
+	}
+}
+
+###fopo tree
+shared_focus = {
+	id = GWF_look_outside
+	icon = GFX_GWF_look_outside
+	cost = 4
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_to_find_exit
+	}
+	prerequisite = {
+		focus = GWF_contact_incubator
+	}
+	relative_position_id = GWF_start_from_scratch
+	x = 0
+	y = 3
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = GWF_visit_vienna
+	icon = GFX_GWF_visit_vienna
+	cost = 4
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_look_outside
+	}
+	relative_position_id = GWF_look_outside
+	x = -2
+	y = 1
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = GWF_attack_italians
+	icon = GFX_GWF_attack_italians
+	cost = 4
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_visit_vienna
+	}
+	relative_position_id = GWF_visit_vienna
+	x = 0
+	y = 1
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = GWF_union_of_samefaced
+	icon = GFX_GWF_union_of_samefaced
+	cost = 4
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_look_outside
+	}
+	relative_position_id = GWF_look_outside
+	x = 0
+	y = 1
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = GWF_can_cern_answer
+	icon = GFX_GWF_can_cern_answer
+	cost = 4
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_union_of_samefaced
+	}
+	relative_position_id = GWF_union_of_samefaced
+	x = 0
+	y = 1
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = GWF_unholy_alliance
+	icon = GFX_GWF_unholy_alliance
+	cost = 4
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_look_outside
+	}
+	relative_position_id = GWF_look_outside
+	x = 2
+	y = 1
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = GWF_redbus_luxembourg
+	icon = GFX_GWF_redbus_luxembourg
+	cost = 4
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_unholy_alliance
+	}
+	relative_position_id = GWF_unholy_alliance
+	x = 0
+	y = 1
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = GWF_stuttgart_convention
+	icon = GFX_GWF_stuttgart_convention
+	cost = 4
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_can_cern_answer
+	}
+	prerequisite = {
+		focus = GWF_attack_italians
+	}
+	prerequisite = {
+		focus = GWF_redbus_luxembourg
+	}
+	relative_position_id = GWF_can_cern_answer
+	x = 0
+	y = 1
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = GWF_operations_in_bavaria
+	icon = GFX_GWF_operations_in_bavaria
+	cost = 4
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_stuttgart_convention
+	}
+	relative_position_id = GWF_stuttgart_convention
+	x = -1
+	y = 1
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = GWF_plan_b
+	icon = GFX_GWF_plan_b
+	cost = 4
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_stuttgart_convention
+	}
+	relative_position_id = GWF_stuttgart_convention
+	x = 1
+	y = 1
+	completion_reward = {
+
+	}
+}
+
+###mil tree
+shared_focus = {
+	id = GWF_look_at_powers
+	icon = GFX_GWF_look_at_powers
+	cost = 4
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_to_find_exit
+	}
+	prerequisite = {
+		focus = GWF_contact_incubator
+	}
+	relative_position_id = GWF_start_from_scratch
+	x = 7
+	y = 3
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = GWF_magical_girl_army
+	icon = GFX_GWF_magical_girl_army
+	cost = 4
+	available_if_capitulated = no
+	mutually_exclusive = {
+		focus = GWF_human_army
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_look_at_powers
+	}
+	relative_position_id = GWF_look_at_powers
+	x = -2
+	y = 1
+	completion_reward = {
+		
+    }
+}
+
+shared_focus = {
+	id = GWF_its_good_to_lie
+	icon = GFX_GWF_its_good_to_lie
+	cost = 4
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_magical_girl_army
+	}
+	relative_position_id = GWF_magical_girl_army
+	x = 0
+	y = 1
+	completion_reward = {
+		
+    }
+}
+
+shared_focus = {
+	id = GWF_control_witch_problem
+	icon = GFX_GWF_control_witch_problem
+	cost = 4
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_its_good_to_lie
+	}
+	relative_position_id = GWF_its_good_to_lie
+	x = -1
+	y = 1
+	completion_reward = {
+		
+    }
+}
+
+shared_focus = {
+	id = GWF_inarmy_concurention
+	icon = GFX_GWF_inarmy_concurention
+	cost = 4
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_its_good_to_lie
+	}
+	relative_position_id = GWF_its_good_to_lie
+	x = 1
+	y = 1
+	completion_reward = {
+		
+    }
+}
+
+shared_focus = {
+	id = GWF_human_army
+	icon = GFX_GWF_human_army
+	cost = 4
+	available_if_capitulated = no
+	mutually_exclusive = {
+		focus = GWF_magical_girl_army
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_look_at_powers
+	}
+	relative_position_id = GWF_look_at_powers
+	x = 2
+	y = 1
+	completion_reward = {
+		
+    }
+}
+
+shared_focus = {
+	id = GWF_play_from_shadows
+	icon = GFX_GWF_play_from_shadows
+	cost = 4
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_human_army
+	}
+	relative_position_id = GWF_human_army
+	x = 0
+	y = 1
+	completion_reward = {
+		
+    }
+}
+
+shared_focus = {
+	id = GWF_peoples_milita
+	icon = GFX_GWF_peoples_milita
+	cost = 4
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_play_from_shadows
+	}
+	relative_position_id = GWF_play_from_shadows
+	x = -1
+	y = 1
+	completion_reward = {
+		
+    }
+}
+
+shared_focus = {
+	id = GWF_from_shit_and_sticks
+	icon = GFX_GWF_from_shit_and_sticks
+	cost = 4
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_play_from_shadows
+	}
+	relative_position_id = GWF_play_from_shadows
+	x = 1
+	y = 1
+	completion_reward = {
+		
+    }
+}
+
+shared_focus = {
+	id = GWF_operation_rapinam
+	icon = GFX_GWF_operation_rapinam
+	cost = 3
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_look_at_powers
+	}
+	relative_position_id = GWF_look_at_powers
+	x = 0
+	y = 2
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = GWF_hounds_pack
+	icon = GFX_GWF_hounds_pack
+	cost = 3
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_inarmy_concurention
+		focus = GWF_from_shit_and_sticks
+	}
+	prerequisite = {
+		focus = GWF_control_witch_problem
+		focus = GWF_peoples_milita
+	}
+	prerequisite = {
+		focus = GWF_operation_rapinam
+	}
+	relative_position_id = GWF_operation_rapinam
+	x = 0
+	y = 2
+	completion_reward = {
+		
+	}
+}
+
+shared_focus = {
+	id = GWF_operation_occasus
+	icon = GFX_GWF_operation_occasus
+	cost = 3
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_my_own_realm
+	}
+	prerequisite = {
+		focus = GWF_operations_in_bavaria
+	}
+	prerequisite = {
+		focus = GWF_plan_b
+	}
+	prerequisite = {
+		focus = GWF_hounds_pack
+	}
+	relative_position_id = GWF_stuttgart_convention
+	x = 0
+	y = 2
+	completion_reward = {
+		
+	}
+}
+
+###WAR TREE
+shared_focus = {
+	id = GWF_our_time_has_come
+	icon = GFX_GWF_our_time_has_come
+	cost = 1
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	x = 6
+	y = 0
+	completion_reward = {
+	
+	}
+}
+
+shared_focus = {
+	id = GWF_embrace_troops
+	icon = GFX_GWF_embrace_troops
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_our_time_has_come
+	}
+	relative_position_id = GWF_our_time_has_come
+	x = -3
+	y = 1
+	completion_reward = {
+	
+	}
+}
+
+shared_focus = {
+	id = GWF_allies_help
+	icon = GFX_GWF_allies_help
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_our_time_has_come
+	}
+	relative_position_id = GWF_our_time_has_come
+	x = -1
+	y = 1
+	completion_reward = {
+	
+	}
+}
+
+shared_focus = {
+	id = GWF_sabotage_enemies
+	icon = GFX_GWF_sabotage_enemies	
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_our_time_has_come
+	}
+	relative_position_id = GWF_our_time_has_come
+	x = 1
+	y = 1
+	completion_reward = {
+	
+	}
+}
+
+shared_focus = {
+	id = GWF_expand_industry
+	icon = GFX_GWF_sabotage_enemies	
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_our_time_has_come
+	}
+	relative_position_id = GWF_our_time_has_come
+	x = 3
+	y = 1
+	completion_reward = {
+	
+	}
+}
+
+shared_focus = {
+	id = GWF_carrot_and_stick
+	icon = GFX_GWF_embrace_troops
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_embrace_troops
+	}
+	relative_position_id = GWF_embrace_troops
+	x = 1
+	y = 1
+	completion_reward = {
+	
+	}
+}
+
+shared_focus = {
+	id = GWF_capital_attacks
+	icon = GFX_GWF_allies_help
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_allies_help
+	}
+	prerequisite = {
+		focus = GWF_sabotage_enemies
+	}
+	relative_position_id = GWF_our_time_has_come
+	x = 0
+	y = 2
+	completion_reward = {
+	
+	}
+}
+
+shared_focus = {
+	id = GWF_work_or_die
+	icon = GFX_GWF_sabotage_enemies	
+	cost = 2
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_expand_industry
+	}
+	relative_position_id = GWF_expand_industry
+	x = -1
+	y = 1
+	completion_reward = {
+	
+	}
+}
+
+shared_focus = {
+	id = GWF_personal_involvement
+	icon = GFX_GWF_personal_involvement
+	cost = 2
+	available_if_capitulated = no
+	mutually_exclusive = {
+		focus = GWF_total_mobilisation
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_carrot_and_stick
+	}
+	relative_position_id = GWF_our_time_has_come
+	x = -3
+	y = 3
+	completion_reward = {
+	
+	}
+}
+
+shared_focus = {
+	id = GWF_total_mobilisation
+	icon = GFX_GWF_total_mobilisation
+	cost = 2
+	available_if_capitulated = no
+	mutually_exclusive = {
+		focus = GWF_personal_involvement
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_carrot_and_stick
+	}
+	relative_position_id = GWF_our_time_has_come
+	x = -1
+	y = 3
+	completion_reward = {
+	
+	}
+}
+
+shared_focus = {
+	id = GWF_release_witches
+	icon = GFX_GWF_release_witches
+	cost = 2
+	available_if_capitulated = no
+	mutually_exclusive = {
+		focus = GWF_second_sun
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_work_or_die
+	}
+	relative_position_id = GWF_our_time_has_come
+	x = 1
+	y = 3
+	completion_reward = {
+	
+	}
+}
+
+shared_focus = {
+	id = GWF_second_sun
+	icon = GFX_GWF_second_sun
+	cost = 2
+	available_if_capitulated = no
+	mutually_exclusive = {
+		focus = GWF_release_witches
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_work_or_die
+	}
+	relative_position_id = GWF_our_time_has_come
+	x = 3
+	y = 3
+	completion_reward = {
+	
+	}
+}
+
+shared_focus = {
+	id = GWF_great_betrayal
+	icon = GFX_GWF_our_time_has_come
+	cost = 1
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_release_witches
+		focus = GWF_second_sun
+	}
+	prerequisite = {
+		focus = GWF_personal_involvement
+		focus = GWF_total_mobilisation
+	}
+	relative_position_id = GWF_our_time_has_come
+	x = 0
+	y = 4
+	completion_reward = {
+	
+	}
+}
+
+###LAST TREE
+
+shared_focus = {
+	id = GWF_burned_field
+	icon = GFX_GWF_burned_field
+	cost = 1
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	
+	x = 9
+	y = 0
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = GWF_end_the_surviours
+	icon = GFX_GWF_end_the_surviours
+	cost = 1
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_burned_field
+	}
+	relative_position_id = GWF_burned_field
+	x = -1
+	y = 1
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = GWF_close_the_curtains
+	icon = GFX_GWF_close_the_curtains
+	cost = 1
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_burned_field
+	}
+	relative_position_id = GWF_burned_field
+	x = 1
+	y = 1
+	completion_reward = {
+
+	}
+}
+
+
+shared_focus = {
+	id = GWF_prepare_everything
+	icon = GFX_GWF_prepare_everything
+	cost = 1
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_end_the_surviours
+	}
+	prerequisite = {
+		focus = GWF_close_the_curtains
+	}
+	relative_position_id = GWF_burned_field
+	x = 0
+	y = 2
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = GWF_end_the_unloyal
+	icon = GFX_GWF_end_the_unloyal
+	cost = 1
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_prepare_everything
+	}
+	relative_position_id = GWF_prepare_everything
+	x = -2
+	y = 1
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = GWF_SS_experience
+	icon = GFX_GWF_SS_experience
+	cost = 1
+	available_if_capitulated = no
+	mutually_exclusive = {
+		focus = GWF_find_the_compromise
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_end_the_unloyal
+	}
+	relative_position_id = GWF_end_the_unloyal
+	x = -1
+	y = 1
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = GWF_find_the_compromise
+	icon = GFX_GWF_find_the_compromise
+	cost = 1
+	available_if_capitulated = no
+	mutually_exclusive = {
+		focus = GWF_SS_experience
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_end_the_unloyal
+	}
+	relative_position_id = GWF_end_the_unloyal
+	x = 1 
+	y = 1
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = GWF_subdue_the_useful
+	icon = GFX_GWF_subdue_the_useful
+	cost = 1
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_find_the_compromise
+		focus = GWF_SS_experience
+	}
+	relative_position_id = GWF_end_the_unloyal
+	x = 0
+	y = 2
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = GWF_useless_instruments
+	icon = GFX_GWF_useless_instruments
+	cost = 1
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_prepare_everything
+	}
+	relative_position_id = GWF_prepare_everything
+	x = 2
+	y = 1
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = GWF_should_be_thrown_out
+	icon = GFX_GWF_should_be_thrown_out
+	cost = 1
+	available_if_capitulated = no
+	mutually_exclusive = {
+		focus = GWF_will_have_new_meaning
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_useless_instruments
+	}
+	relative_position_id = GWF_useless_instruments
+	x = -1
+	y = 1
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = GWF_will_have_new_meaning
+	icon = GFX_GWF_will_have_new_meaning
+	cost = 1
+	available_if_capitulated = no
+	mutually_exclusive = {
+		focus = GWF_should_be_thrown_out
+	}
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_useless_instruments
+	}
+	relative_position_id = GWF_useless_instruments
+	x = 1
+	y = 1
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = GWF_incubator_free_zone
+	icon = GFX_GWF_incubator_free_zone
+	cost = 1
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_will_have_new_meaning
+		focus = GWF_should_be_thrown_out
+	}
+	relative_position_id = GWF_useless_instruments
+	x = 0
+	y = 2
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = GWF_total_expansion
+	icon = GFX_GWF_total_expansion
+	cost = 1
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_prepare_everything
+	}
+	relative_position_id = GWF_prepare_everything
+	x = 0
+	y = 1
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = GWF_my_own_universe
+	icon = GFX_GWF_my_own_universe
+	cost = 1
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_total_expansion
+	}
+	relative_position_id = GWF_total_expansion
+	x = 0
+	y = 2
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = GWF_break_the_celling
+	icon = GFX_GWF_break_the_celling
+	cost = 1
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_subdue_the_useful
+	}
+	prerequisite = {
+		focus = GWF_my_own_universe
+	}
+	prerequisite = {
+		focus = GWF_incubator_free_zone
+	}
+	relative_position_id = GWF_my_own_universe
+	x = -1
+	y = 1
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = GWF_search_everywhere
+	icon = GFX_GWF_search_everywhere
+	cost = 1
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_subdue_the_useful
+	}
+	prerequisite = {
+		focus = GWF_my_own_universe
+	}
+	prerequisite = {
+		focus = GWF_incubator_free_zone
+	}
+	relative_position_id = GWF_my_own_universe
+	x = 1
+	y = 1
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = GWF_this_isnt_working
+	icon = GFX_GWF_this_isnt_working
+	cost = 1
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_search_everywhere
+	}
+	prerequisite = {
+		focus = GWF_break_the_celling
+	}
+	relative_position_id = GWF_my_own_universe
+	x = 0
+	y = 2
+	completion_reward = {
+
+	}
+}
+
+shared_focus = {
+	id = GWF_fateful_meeting
+	icon = GFX_GWF_fateful_meeting
+	cost = 1
+	available_if_capitulated = no
+	ai_will_do = {
+		factor = 1
+	}
+	prerequisite = {
+		focus = GWF_this_isnt_working
+	}
+	allow_branch = {
+		has_country_flag = GWF_Homura_almost_the_end
+	}
+	relative_position_id = GWF_this_isnt_working
+	x = 0
+	y = 2
+	completion_reward = {
+
+	}
+}

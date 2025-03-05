@@ -1111,6 +1111,45 @@ MAR_debug_category = {
 			#load_focus_tree = MAR_Maria_Regional
 		}
 	}
+	MAR_GWF_initial_tree_load = {
+		icon = GFX_decision_generic_industry
+
+		allowed = {
+			original_tag = MAR
+		}
+		fire_only_once = no
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: MAR_GWF_initial_tree_load"
+			load_focus_tree = {	tree = GWF_Homura_Initial keep_completed = no }
+		}
+	}
+	MAR_GWF_war_tree_load = {
+		icon = GFX_decision_generic_industry
+
+		allowed = {
+			original_tag = MAR
+		}
+		fire_only_once = no
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: MAR_GWF_war_tree_load"
+			load_focus_tree = {	tree = GWF_Homura_War keep_completed = no }
+		}
+	}
+	MAR_GWF_final_tree_load = {
+		icon = GFX_decision_generic_industry
+
+		allowed = {
+			original_tag = MAR
+		}
+		fire_only_once = no
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: MAR_GWF_final_tree_load"
+			load_focus_tree = {	tree = GWF_Homura_Final keep_completed = no }
+		}
+	}
 	
 }
 
