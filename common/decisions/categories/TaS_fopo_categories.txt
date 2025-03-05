@@ -53,27 +53,4 @@ UAR_foreign_policy_category = {
 	priority = 100010
 }
 
-IRC_buy_russian_equipment_category = {
-	icon = GFX_decision_category_generic_political_actions
 
-	allowed = {
-		tag = IRC
-	}
-
-	visible = {
-		has_country_flag = IRC_russian_sales
-	}
-}
-
-
-IRA_buy_russian_equipment_category = {
-	icon = GFX_decision_category_generic_political_actions
-
-	allowed = {
-		tag = IRA
-	}
-
-	visible = {
-		has_country_flag = IRA_russian_sales
-	}
-}

@@ -1675,6 +1675,10 @@ country_event = { #Novgorod Theatry
 			white_peace = MAR
 		}
 		hidden_effect = {
+			set_temp_variable = { temp_credit_rating_min = 1 }
+			set_temp_variable = { temp_credit_rating_max = 5 }
+			econ_set_min_credit_rating = yes
+			econ_set_max_credit_rating = yes
 			every_country = {
 				limit = { has_war_with = GER }
 				white_peace = GER

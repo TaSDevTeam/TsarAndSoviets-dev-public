@@ -162,6 +162,23 @@ on_actions = {
 								transfer_state = 1465
 								transfer_state = 2461
 								every_owned_state = {
+									limit = { is_core_of = AFG }
+									remove_core_of = AFG
+									add_core_of = MTR
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								country_exists = TRK 
+								TRK = { is_in_faction_with = MAR }
+							}
+							TRK = {
+								transfer_state = 1885
+								transfer_state = 1465
+								transfer_state = 2461
+								every_owned_state = {
+									limit = { is_core_of = AFG }
 									remove_core_of = AFG
 									add_core_of = MTR
 								}
@@ -1817,7 +1834,29 @@ on_actions = {
 						set_cosmetic_tag = MUJ_Victory
 						every_owned_state = {
 							remove_core_of = AFG
+							remove_core_of = NAL
 							add_core_of = MUJ
+						}
+						if = {
+							limit = {
+								OR = {
+									AZH = { is_in_faction_with = JAP }
+									IND = { is_in_faction_with = JAP }
+									NOT = { country_exists = PAK }
+								}
+							}
+							add_ideas = Sphere_Coequal
+							JAP = { add_to_faction = MUJ }
+						}
+						else_if = {
+							limit = {
+								OR = {
+									AZH = { is_in_faction_with = JAP }
+									IND = { is_in_faction_with = JAP }
+									IND = { has_idea = Sphere_Observer }
+								}
+								add_ideas = Sphere_Observer
+							}
 						}
 					} 
 					USA = {
@@ -1940,6 +1979,34 @@ on_actions = {
 							original_tag = NAL
 						}
 						has_global_flag = ACW_twoside
+					}
+					AFG = {
+						econ_join_sphere_JAP = yes
+						every_owned_state = {
+							remove_core_of = MUJ
+							remove_core_of = NAL
+						}
+						if = {
+							limit = {
+								OR = {
+									AZH = { is_in_faction_with = JAP }
+									IND = { is_in_faction_with = JAP }
+									NOT = { country_exists = PAK }
+								}
+							}
+							add_ideas = Sphere_Coequal
+							JAP = { add_to_faction = MUJ }
+						}
+						else_if = {
+							limit = {
+								OR = {
+									AZH = { is_in_faction_with = JAP }
+									IND = { is_in_faction_with = JAP }
+									IND = { has_idea = Sphere_Observer }
+								}
+								add_ideas = Sphere_Observer
+							}
+						}
 					}
 					USA = {
 						set_temp_variable = { Victory_ID = 52 }
@@ -2168,6 +2235,14 @@ on_actions = {
 						every_owned_state = {
 							add_core_of = PREV
 						}
+						if = {
+							limit = { has_idea = Sphere_Observer }
+							swap_ideas = {
+								remove_idea = Sphere_Observer
+								add_idea = Sphere_Coequal
+							}
+							JAP = { add_to_faction = PREV }
+						}	
 					}	
 					FROM = {
 						annex_country = {

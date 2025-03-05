@@ -557,7 +557,7 @@ country_event = { #Northern Rebellion #AMIN/ZAHIR NUP/FUNDAMENTALISTS/DAOUD PRO-
 	}	
 }
 
-country_event = { #Daoud pro-pakt coup #start of the CW
+country_event = { #Daoud coup #start of the CW
 	id = MAR_AFG.5
 	immediate = {log = "[GetDateText]: [Root.GetName]: event MAR_AFG.5"}
 	title = MAR_AFG.5.t
@@ -606,17 +606,28 @@ country_event = { #Daoud pro-pakt coup #start of the CW
 			AFG_Mohammad_Daoud_Khan = { promote_character = national_socialism_subtype }
 			set_cosmetic_tag = AFG_republic
 			if = {
-				limit = { has_global_flag = german_civil_war_speervic }
+				limit = {
+					has_global_flag = german_civil_war_speervic
+					country_exists = GER
+				}
 				join_zollverein = yes
 				every_country = {
 					limit = { is_subject_of = AFG }
 					join_zollverein = yes
 				}
 			}
-			econ_join_sphere_GER = yes
-			every_country = {
-				limit = { is_subject_of = AFG }
+			else_if = {
+				limit = {
+					country_exists = GER
+				}
 				econ_join_sphere_GER = yes
+				every_country = {
+					limit = { is_subject_of = AFG }
+					econ_join_sphere_GER = yes
+				}
+			}
+			else = {
+				add_stability = -0.1
 			}
 			if = {
 				limit = {
