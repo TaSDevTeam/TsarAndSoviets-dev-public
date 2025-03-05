@@ -10,9 +10,11 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAR_regent_ne_car
+			picture = generic_devastated_building
 			modifier = {
-				army_speed_factor = 0.15
+				surrender_limit = -0.2
+				stability_weekly = -0.001
+				political_power_factor = -0.15
 			}
 		}
 		### Unique
@@ -25,9 +27,14 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAR_regent_ne_car
+			picture = PRM_warrior_priests
 			modifier = {
-				army_speed_factor = 0.15
+				army_speed_factor = 0.1
+			}
+			targeted_modifier = {
+				tag = GNR
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.05
 			}
 		}
 		GNR_ze_new_order = {
@@ -39,9 +46,11 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAR_regent_ne_car
+			picture = generic_international_diplomacy
 			modifier = {
-				army_speed_factor = 0.15
+				gdp_growth_modifier = 0.5
+				taxable_population_factor = 0.5
+				poverty_taxation_rate_modifier = 1
 			}
 		}
 		ISS_nothing_ever_happens = {
@@ -53,9 +62,10 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAR_regent_ne_car
+			picture = generic_broken_rifle
 			modifier = {
-				army_speed_factor = 0.15
+				stability_factor = 1
+				war_support_factor = -0.5
 			}
 		}
 		DEN_i_didnt_make_anything_funnier = {
@@ -67,9 +77,9 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAR_regent_ne_car
+			picture = generic_vacant_administration
 			modifier = {
-				army_speed_factor = 0.15
+				stability_factor = -1
 			}
 		}
 		
@@ -82,9 +92,11 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAR_regent_ne_car
+			picture = RUS_not_one_step_back
 			modifier = {
-				army_speed_factor = 0.15
+				surrender_limit = 0.4
+				war_support_factor = 0.15
+				army_core_defence_factor = 0.2
 			}
 		}
 		LIT_fragile_union = {
@@ -96,23 +108,25 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAR_regent_ne_car
+			picture = generic_democracy_of_the_gentry
 			modifier = {
-				army_speed_factor = 0.15
+				political_power_factor = -0.15
 			}
 		}
 		MUK_copium_resources = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea MUK_copium_resources" }
 			allowed = {
-				always = no
+				always = no	
 			}
 			allowed_civil_war = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAR_regent_ne_car
+			picture = generic_oil_for_food
 			modifier = {
-				army_speed_factor = 0.15
+				political_power_factor = -0.15
+				gdp_growth_modifier = 0.5
+				free_production_units_modifier = 2
 			}
 		}
 		PUS_crazy_to_be_first = {
@@ -124,8 +138,9 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAR_regent_ne_car
+			picture = generic_terror_werewolves
 			modifier = {
+				army_defence_factor = 0.05
 				army_speed_factor = 0.15
 			}
 		}
@@ -138,9 +153,12 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAR_regent_ne_car
+			picture = generic_money_check
 			modifier = {
-				army_speed_factor = 0.15
+				consumer_goods_use_modifier = 0.05
+				production_speed_buildings_factor = 0.15
+				production_factory_max_efficiency_factor = 0.05
+				inflation_rate_modifier = -0.25
 			}
 		}
 		GSV_ressurected_fuhrer = {
@@ -152,9 +170,9 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAR_regent_ne_car
+			picture = GER_garrisons_1
 			modifier = {
-				army_speed_factor = 0.15
+				war_support_factor = 0.15
 			}
 		}
 		
@@ -167,9 +185,9 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAR_regent_ne_car
+			picture = GER_moon_landing
 			modifier = {
-				army_speed_factor = 0.15
+				stability_weekly = 0.001
 			}
 		}
 		ZNE_freie_deutsche_jugend = {
@@ -181,9 +199,10 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAR_regent_ne_car
+			picture = generic_communist_party_membership
 			modifier = {
-				army_speed_factor = 0.15
+				monthly_population = 0.15
+				political_power_gain = 0.025
 			}
 		}
 		BRL_i_have_no_values = {
@@ -195,9 +214,11 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAR_regent_ne_car
+			picture = generic_purged_intelligentsia_communist
 			modifier = {
-				army_speed_factor = 0.15
+				stability_factor = -0.1
+				trade_opinion_factor = 0.5
+				opinion_gain_monthly_factor = 0.3
 			}
 		}
 		GCZ_greatest_union = {
@@ -209,9 +230,10 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAR_regent_ne_car
+			picture = generic_benevolent_authoritarianism
 			modifier = {
-				army_speed_factor = 0.15
+				monthly_population = 0.05
+				political_power_gain = 0.005
 			}
 		}
 		GDN_wrong_place_wront_time = {
@@ -223,9 +245,10 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAR_regent_ne_car
+			picture = generic_benevolent_dictatorship
 			modifier = {
-				army_speed_factor = 0.15
+				army_core_attack_factor = 0.2
+				army_core_defence_factor = 0.2
 			}
 		}
 		GWS_goodwill_soldiers = {
@@ -237,9 +260,12 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAR_regent_ne_car
+			picture = generic_adventure_capitalism
 			modifier = {
-				army_speed_factor = 0.15
+				army_morale_factor = 0.1
+				army_org_factor = -0.02
+				army_org_regain = 0.05
+				gdp_growth_modifier = 1
 			}
 		}
 		GRH_true_communism = {
@@ -251,9 +277,9 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAR_regent_ne_car
+			picture = generic_adventure_capitalism
 			modifier = {
-				army_speed_factor = 0.15
+				stability_weekly = -0.01
 			}
 		}
 		
@@ -266,9 +292,12 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAR_regent_ne_car
+			picture = generic_islamic_brigades
 			modifier = {
-				army_speed_factor = 0.15
+				land_reinforce_rate	= 1
+				army_morale_factor	= 0.1
+				army_attack_factor = 0.05
+				army_speed_factor = 0.1
 			}
 		}
 		GBV_dont_lose_your_ass = {
@@ -280,9 +309,9 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAR_regent_ne_car
+			picture = generic_token_soldiers
 			modifier = {
-				army_speed_factor = 0.15
+				land_night_attack = 0.75
 			}
 		}
 		GAU_what_the_fuck_are_we = {
@@ -294,9 +323,11 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAR_regent_ne_car
+			picture = generic_government_burning_down
 			modifier = {
-				army_speed_factor = 0.15
+				stability_weekly = -0.01
+				political_power_factor = -0.05
+				admin_efficiency_monthly_rate = -0.05
 			}
 		}
 		DSH_far_from_home = {
@@ -308,9 +339,10 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAR_regent_ne_car
+			picture = generic_isolation
 			modifier = {
-				army_speed_factor = 0.15
+				conscription_factor = -0.75
+				army_attack_factor = 0.20
 			}
 		}
 		GRA_grave_enemy = {
@@ -322,9 +354,14 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAR_regent_ne_car
+			picture = generic_time_bomb
 			modifier = {
 				army_speed_factor = 0.15
+			}
+			targeted_modifier = {
+				tag = GSU
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.05
 			}
 		}
 		GSU_research_zone = {
@@ -336,9 +373,16 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAR_regent_ne_car
+			picture = generic_blueprint
 			modifier = {
-				army_speed_factor = 0.15
+				research_speed_factor = 0.15
+				industrial_capacity_factory = 0.2
+			}
+			research_bonus = { industry = 0.25 }
+			research_bonus = { electronics = 0.25 }
+			targeted_modifier = {
+				tag = GRA
+				defense_bonus_against = 0.05
 			}
 		}
 		AGS_elons_vision = {
@@ -350,9 +394,11 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAR_regent_ne_car
+			picture = generic_nuclear_explosion
 			modifier = {
-				army_speed_factor = 0.15
+				gdp_growth_modifier = 0.5
+				misc_income_modifier = 0.05
+				free_production_units_modifier = 3
 			}
 		}
 		OKL_allah_suryah_bashar = {
@@ -364,9 +410,11 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAR_regent_ne_car
+			picture = generic_stabilization_regime
 			modifier = {
-				army_speed_factor = 0.15
+				drift_defence_factor = 0.2
+				political_power_gain = 0.01
+				army_core_defence_factor = 0.05
 			}
 		}
 		GBW_courts_of_ancap = {
@@ -378,9 +426,10 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAR_regent_ne_car
+			picture = generic_oil_spill
 			modifier = {
-				army_speed_factor = 0.15
+				stability_factor = -1
+				admin_efficiency_monthly_rate = -1
 			}
 		}
 		AUS_money_must_flow = {
@@ -392,9 +441,11 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAR_regent_ne_car
+			picture = generic_burning_money
 			modifier = {
-				army_speed_factor = 0.15
+				misc_income_modifier = 0.25
+				political_power_factor = -0.1
+				poverty_monthly_rate = 0.01
 			}
 		}	
 		RMN_fragile_power = {
@@ -406,9 +457,10 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAR_regent_ne_car
+			picture = generic_democracy_survives
 			modifier = {
-				army_speed_factor = 0.15
+				admin_efficiency_monthly_rate = -0.1
+				stability_factor = -0.1
 			}
 		}
 		
@@ -421,9 +473,10 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAR_regent_ne_car
+			picture = generic_bloated_high_command
 			modifier = {
-				army_speed_factor = 0.15
+				drift_defence_factor = 0.15
+				political_power_gain = 0.15
 			}
 		}
 		BEL_schizophrenia = {
@@ -435,9 +488,11 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAR_regent_ne_car
+			picture = generic_chained_minds
 			modifier = {
-				army_speed_factor = 0.15
+				stability_factor = -0.05
+				conscription_factor = -0.025
+				army_morale_factor = -0.05
 			}
 		}
 		SSN_perfect_harmony = {
@@ -449,9 +504,9 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAR_regent_ne_car
+			picture = generic_constitutional_monarchy
 			modifier = {
-				army_speed_factor = 0.15
+				stability_factor = -0.01
 			}
 		}
 		SSL_best_toilet_seller = {
@@ -463,9 +518,29 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAR_regent_ne_car
+			picture = generic_planned_economy
 			modifier = {
-				army_speed_factor = 0.15
+				gdp_growth_modifier = 1.5
+				misc_costs_percent_of_GDP_modifier = 0.06
+			}
+		}
+	}
+	hidden_ideas = {
+		GER_doomed_to_fail = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GER_doomed_to_fail" }
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = generic_napalm
+			modifier = {
+				army_defence_factor = -0.75
+				army_attack_factor = -0.75
+				army_org_factor = -0.75
+				army_morale_factor = -0.75
 			}
 		}
 	}

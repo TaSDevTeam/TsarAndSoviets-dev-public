@@ -1181,21 +1181,45 @@ MAR_German_Collapse_TRVTHNUKE = {
 	}
 	APF = { add_ideas = APF_call_of_north }
 	GNR = {	add_ideas = GNR_ze_new_order }
-	ISS = {	add_ideas = ISS_nothing_ever_happens }
-	MBL = {	add_ideas = MBL_last_tsar }
+	ISS = {	
+		add_ideas = ISS_nothing_ever_happens
+		add_ideas = GER_doomed_to_fail
+	}
+	MBL = {
+		add_ideas = MBL_last_tsar
+		add_ideas = GER_doomed_to_fail
+	}
 	LIT = {	add_ideas = LIT_fragile_union }
-	MUK = {	add_ideas = MUK_copium_resources }
+	MUK = {	
+		add_ideas = MUK_copium_resources
+		add_ideas = GER_doomed_to_fail
+	}
 	GPL = {	add_ideas = GPL_price_to_decide }
 	PUS = {	add_ideas = PUS_crazy_to_be_first }
-	GSV = {	add_ideas = GSV_ressurected_fuhrer }
+	GSV = {	
+		add_ideas = GSV_ressurected_fuhrer
+		add_ideas = GER_doomed_to_fail
+	}
 	GSI = {	add_ideas = GSI_successful_trick }
-	GCZ = {	add_ideas = GCZ_greatest_union }
+	GCZ = {	
+		add_ideas = GCZ_greatest_union
+		add_ideas = GER_doomed_to_fail
+	}
 	BRL = {	add_ideas = BRL_i_have_no_values }
-	ZNE = {	add_ideas = ZNE_freie_deutsche_jugend }
-	DEN = {	add_ideas = DEN_i_didnt_make_anything_funnier }
+	ZNE = {	
+		add_ideas = ZNE_freie_deutsche_jugend 
+		add_ideas = GER_doomed_to_fail
+	}
+	DEN = {	
+		add_ideas = DEN_i_didnt_make_anything_funnier
+		add_ideas = GER_doomed_to_fail
+	}
 	GDN = {	add_ideas = GDN_wrong_place_wront_time }
 	GWS = {	add_ideas = GWS_goodwill_soldiers }
-	GRH = {	add_ideas = GRH_true_communism }
+	GRH = {
+		add_ideas = GRH_true_communism
+		add_ideas = GER_doomed_to_fail
+	}
 	RMN = {	add_ideas = RMN_fragile_power }
 	AUS = {	add_ideas = AUS_money_must_flow }
 	DSH = {	add_ideas = DSH_far_from_home }
@@ -1209,8 +1233,14 @@ MAR_German_Collapse_TRVTHNUKE = {
 	OKL = {	add_ideas = OKL_allah_suryah_bashar }
 	GHL = {	add_ideas = GHL_NAFO }
 	BEL = {	add_ideas = BEL_schizophrenia }
-	SSN = {	add_ideas = SSN_perfect_harmony }
-	SSL = {	add_ideas = SSL_best_toilet_seller }
+	SSN = {
+		add_ideas = SSN_perfect_harmony
+		add_ideas = GER_doomed_to_fail
+	}
+	SSL = {
+		add_ideas = SSL_best_toilet_seller
+		add_ideas = GER_doomed_to_fail
+	}
 }
 
 MAR_Japanese_Collapse_FIRST_TRVTHNUKE = {
