@@ -3267,13 +3267,6 @@ MAR_SWRW_category = {
 							controls_state = 1442
 						}
 						has_war_with = BUL
-						BUL = { 
-						    NOT = {
-							    OR = {
-								    has_government = fascism
-									has_government = national_socialism
-								}
-						}	}	
 						OR = {
 							NOT = { has_country_flag = BUL_demands }
 							NOT = { has_country_flag = BUL_refuse }
@@ -3288,13 +3281,6 @@ MAR_SWRW_category = {
 							surrender_progress > 0.6
 						}
 						has_war_with = SER
-						SER = { 
-						    NOT = {
-							    OR = {
-								    has_government = fascism
-									has_government = national_socialism
-								}
-						}
 						OR = {
 							NOT = { has_country_flag = SER_demands }
 							NOT = { has_country_flag = SER_refuse }
@@ -3308,13 +3294,6 @@ MAR_SWRW_category = {
 							surrender_progress > 0.8
 						}
 						has_war_with = HUN
-						HUN = { 
-						    NOT = {
-							    OR = {
-								    has_government = fascism
-									has_government = national_socialism
-								}
-						}
 						OR = {
 							NOT = { has_country_flag = HUN_demands }
 							NOT = { has_country_flag = HUN_refuse }
