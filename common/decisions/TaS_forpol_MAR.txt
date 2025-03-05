@@ -1217,700 +1217,576 @@ MAR_foreign_policy_category = {
 }
 
 MAR_foreign_policy_category = {
-
-	MAR_IRCW_send_the_volunteers = {
-		available = {
-			has_country_flag = MAR_IR_CW_ACTIVE
-		}
-		cost = 50
-		fire_only_once = yes
-
+	MAR_ICW_send_weapons = {
+		icon = GFX_decision_market_infantry
 		visible = {
-			has_country_flag = MAR_IR_CW_ACTIVE
 			TNO_fopo_iran_selected = yes
 			NOT = { has_government = socialist }
 		}
+		available = {
+			has_equipment = { infantry_equipment > 599 }
+			has_equipment = { anti_tank_equipment > 349 }
+			has_equipment = { support_equipment > 299 }
+			has_equipment = { artillery_equipment > 99 }
+		}
+
+		custom_cost_trigger = { command_power > 2.99 }
+		custom_cost_text = decision_cost_3_cp
+		days_remove = 3
+		days_re_enable = 14
+
+		highlight_states = {
+			highlight_states_trigger = {
+				is_owned_and_controlled_by = IRC
+				is_capital = yes
+			}
+		}
+
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision MAR_IRCW_send_the_volunteers"
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_ICW_send_weapons"
+			hidden_effect = { add_command_power = -3 }
+		}
+		remove_effect = {
+			send_equipment = {
+				type = infantry_equipment
+				amount = 600
+				target = IRC
+			}
+			send_equipment = {
+				type = anti_tank_equipment
+				amount = 350
+				target = IRC
+			}
+			send_equipment = {
+				type = support_equipment
+				amount = 300
+				target = IRC
+			}
+			send_equipment = {
+				type = artillery_equipment
+				amount = 100
+				target = IRC
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+	}
+
+	MAR_ICW_send_vehicles = {
+		icon = GFX_decision_market_motorized
+		visible = {
+			TNO_fopo_iran_selected = yes
+			NOT = { has_government = socialist }
+		}
+		available = {
+			has_equipment = { motorized_equipment > 199 }
+			has_equipment = { MBT_chassis > 99 }
+		}
+
+		custom_cost_trigger = { command_power > 2.99 }
+		custom_cost_text = decision_cost_3_cp
+		days_remove = 6
+		days_re_enable = 30
+
+		highlight_states = {
+			highlight_states_trigger = {
+				is_owned_and_controlled_by = IRC
+				is_capital = yes
+			}
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_ICW_send_vehicles"
+			hidden_effect = { add_command_power = -3 }
+		}
+		remove_effect = {
+			send_equipment = {
+				type = motorized_equipment
+				amount = 200
+				target = IRC
+			}
+			send_equipment = {
+				type = MBT_chassis
+				amount = 100
+				target = IRC
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+	}
+
+	MAR_ICW_iranian_expeditionary_corps = {
+		icon = GFX_decision_generic_prepare_civil_war
+		visible = {
+			TNO_fopo_iran_selected = yes
+			NOT = { has_government = socialist }
+		}
+		available = {
+			has_manpower > 10000
+		}
+
+		custom_cost_trigger = { command_power > 19.99 }
+		custom_cost_text = decision_cost_20_cp
+		fire_only_once = yes
+		days_remove = 3
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_ICW_iranian_expeditionary_corps"
+			hidden_effect = { add_command_power = -20 }
+		}
+		remove_effect = {
 			set_temp_variable = { target = IRC }
 			TNO_increase_volunteer_cap_1 = yes
-			#custom_effect_tooltip = "TNO_increase_volunteers_IRL_1"
-			set_country_flag = MAR_IRCW_volunteers_sent
+
+			set_country_flag = MAR_iran_volunteers
 		}
 		ai_will_do = {
 			factor = 200
 		}
 	}
 
-	MAR_IRCW_increase_the_volunteers = {
-
-		available = {
-			has_country_flag = MAR_IR_CW_ACTIVE
-		}
-
-		cost = 75
-		fire_only_once = yes
-
+	MAR_ICW_expand_the_iranian_expeditionary_corps = {
+		icon = GFX_decision_generic_prepare_civil_war
 		visible = {
-			has_country_flag = MAR_IRCW_volunteers_sent
 			TNO_fopo_iran_selected = yes
+			has_country_flag = MAR_iran_volunteers
 			NOT = { has_government = socialist }
 		}
-		ai_will_do = {
-			factor = 40
-		}
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision MAR_IRCW_increase_the_volunteers"
-			set_country_flag = MAR_IRCW_volunteers_increased
-			if = {
-				limit = {
-					is_ai = no
-				}
-
-				set_temp_variable = { target = IRC }
-				TNO_increase_volunteer_cap_1 = yes
-				#custom_effect_tooltip = "TNO_increase_volunteers_IRL_1"
-			}
-			else = {
-				IRC = {
-					load_oob = USA_Iranian_Advisors
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 200
-		}
-	}
-
-	MAR_IRCW_max_volunteers = {
-
 		available = {
-			has_country_flag = MAR_IR_CW_ACTIVE
+			set_temp_variable = { target = IRC }
+			TNO_volunteer_cap_less_4 = yes
 		}
-		ai_will_do = {
-			factor = 40
-		}
-		cost = 75
-		fire_only_once = yes
 
-		visible = {
-			has_country_flag = MAR_IRCW_volunteers_increased
-			TNO_fopo_iran_selected = yes
-			NOT = { has_government = socialist }
-		}
+		cost = 50
+		days_re_enable = 30
+		days_remove = 3
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision MAR_IRCW_max_volunteers"
-			if = {
-				limit = {
-					is_ai = no
-				}
-				set_temp_variable = { target = IRC }
-				TNO_increase_volunteer_cap_1 = yes
-				#custom_effect_tooltip = "TNO_increase_volunteers_IRL_1"
-			}
-			else = {
-				IRC = {
-					load_oob = USA_Iranian_Advisors
-				}
-			}
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_ICW_expand_the_iranian_expeditionary_corps"
+		}
+		remove_effect = {
+			set_temp_variable = { target = IRC }
+			TNO_increase_volunteer_cap_1 = yes
 		}
 		ai_will_do = {
 			factor = 200
 		}
 	}
-	
-	MAR_IRCW_authorize_equipment_send = {
-	
-		available = {
+
+	MAR_ICW_create_the_russian_airgroupe_in_iran = {
+		icon = GFX_decision_market_helicopter
+		visible = {
+			TNO_fopo_iran_selected = yes
+			NOT = { has_government = socialist }
 		}
-		cost = 25
-		days_remove = 5
+		available = { has_country_flag = MAR_iran_volunteers }
+
+		custom_cost_trigger = { command_power > 19.99 }
+		custom_cost_text = decision_cost_20_cp
 		fire_only_once = yes
-
-		visible = {
-			TNO_fopo_iran_selected = yes
-			NOT = { has_government = socialist }
-		}
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision MAR_IRCW_send_guns"
-			set_country_flag = MAR_IRCW_arming_IRC
-		}
-	}
-	
-	MAR_IRCW_authorize_equipment_sale = {
-	
-		available = {
-		}
-		cost = 25
-		days_remove = 5
-		fire_only_once = yes
-
-		visible = {
-			TNO_fopo_iran_selected = yes
-			NOT = { has_government = socialist }
-		}
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision MAR_IRCW_send_guns"
-			IRC = {
-				set_country_flag = IRC_russian_sales
-			}	
-		}
-	}
-	
-	MAR_IRCW_send_guns = {
-
-		available = {
-			has_country_flag = MAR_IRCW_arming_IRC
-		}
-		cost = 25
-		days_remove = 5
-		days_re_enable = 30
-
-		visible = {
-			has_country_flag = MAR_IRCW_arming_IRC
-			TNO_fopo_iran_selected = yes
-			NOT = { has_government = socialist }
-		}
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision MAR_IRCW_send_guns"
-			MAR = {
-				send_equipment = {
-					equipment = infantry_equipment
-					amount = 1000
-					target = IRC
-				}
-			}
-		}
-	}
-
-	MAR_IRCW_send_infantry_at = {
-
-		available = {
-			has_country_flag = MAR_IRCW_arming_IRC
-		}
-		cost = 25
-		days_remove = 5
-		days_re_enable = 30
-
-		visible = {
-			has_country_flag = MAR_IRCW_arming_IRC
-			TNO_fopo_iran_selected = yes
-			NOT = { has_government = socialist }
-		}
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision MAR_IRCW_send_weapons"
-			MAR = {
-				send_equipment = {
-					equipment = anti_tank_equipment
-					amount = 400
-					target = IRL
-				}
-			}
-
-		}
-	}
-
-	MAR_IRCW_loans = {
-
-		available = {
-			has_country_flag = MAR_IRCW_sending_loans
-		}
-
-		cost = 10
 		days_remove = 7
-		days_re_enable = 60
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_ICW_create_the_russian_airgroupe_in_iran"
+			hidden_effect = { add_command_power = -20 }
+		}
+		remove_effect = {
+			set_country_flag = MAR_ICW_squadron
+			air_experience = 25
+			add_equipment_to_stockpile = {
+				type = tac_bomber_equipment
+				amount = 100
+				producer = MAR
+			}
+			add_equipment_to_stockpile = {
+				type = CAS_equipment
+				amount = 50
+				producer = MAR
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+	}
+
+	MAR_ICW_operation_sun_of_desert = {
+		icon = GFX_decision_generic_ignite_civil_war
+		visible = {
+			TNO_fopo_iran_selected = yes
+			NOT = { has_government = socialist }
+		}
+		available = { has_country_flag = MAR_ICW_squadron }
+
+		custom_cost_trigger = { command_power > 14.99 }
+		custom_cost_text = decision_cost_15_cp
+		fire_only_once = yes
+		days_remove = 7
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_ICW_operation_sun_of_desert"
+			hidden_effect = { add_command_power = -15 }
+		}
+		remove_effect = {
+			every_other_country = {
+				limit = { has_war_with = IRC }
+				add_timed_idea = { idea = MAR_Plane_Bombing days = 90 }
+				TNO_worsen_poverty_high = yes
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+	}
+
+	MAR_ICW_group_of_military_advisors = {
+		icon = GFX_decision_generic_military_parade
 
 		visible = {
 			TNO_fopo_iran_selected = yes
 			NOT = { has_government = socialist }
 		}
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision MAR_IRCW_loans"
-			set_temp_variable = { temp_econ_spending_amount = 0.01 }
-			econ_spend_money_once_effect_raw_money = yes
-			custom_effect_tooltip = 8_IRCW_USA_tt
+		custom_cost_trigger = {
+			has_political_power > 19.99
+			command_power > 4.99
 		}
-	}
-
-	### More Equipment ###
-	MAR_IRCW_support_equipment = {
-
-		available = {
-			has_country_flag = MAR_IRCW_arming_IRC
-		}
-
-		cost = 25
+		custom_cost_text = decision_cost_5_cp_20_pp
+		fire_only_once = no
 		days_remove = 7
 		days_re_enable = 90
-
-		visible = {
-			has_country_flag = MAR_IRCW_arming_IRC
-			TNO_fopo_iran_selected = yes
-			NOT = { has_government = socialist }
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_ICW_group_of_military_advisors"
+			hidden_effect = { add_command_power = -5 add_political_power = -20 }
 		}
-
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision MAR_IRCW_support_equipment"
-			MAR = {
-				send_equipment = {
-					equipment = support_equipment
-					amount = 90
-					target = IRC
-				}
+			IRC = {
+				add_command_power = 20
+				add_timed_idea = { idea = MAR_military_advisors days = 90 }
+				TNO_improve_training_policy_effectiveness_high = yes
 			}
 		}
 		ai_will_do = {
-			factor = 200
+			factor = 20
 		}
 	}
 
-	MAR_IRCW_anti_air = {
-
-		available = {
-			has_country_flag = MAR_IRCW_arming_IRC
-		}
-
-		cost = 25
-		days_remove = 7
-		days_re_enable = 60
-
+	MAR_ICW_russian_industrial_aid = {
+		icon = GFX_decision_generic_industry
 		visible = {
-			has_country_flag = MAR_IRCW_arming_IRC
 			TNO_fopo_iran_selected = yes
 			NOT = { has_government = socialist }
 		}
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision MAR_IRCW_anti_air"
-			MAR = {
-				send_equipment = {
-					equipment = anti_air_equipment
-					amount = 50
-					target = IRC
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 200
-		}
-	}
-
-	MAR_IRCW_artillery = {
-
-		available = {
-			has_country_flag = MAR_IRCW_arming_IRC
-		}
-
-		cost = 25
-		days_remove = 7
-		days_re_enable = 60
-
-		visible = {
-			has_country_flag = MAR_IRCW_arming_IRC
-			TNO_fopo_iran_selected = yes
-			NOT = { has_government = socialist }
-		}
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision MAR_IRCW_artillery"
-			MAR = {
-				send_equipment = {
-					equipment = artillery_equipment
-					amount = 50
-					target = IRC
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 200
-		}
-	}
-	MAR_IRCW_loosening_regulations = {
-
-		available = {
-			has_country_flag = MAR_IRCW_arming_IRC
-		}
-
+		cost = 20
 		fire_only_once = yes
-		cost = 100
-
-		visible = {
-			has_country_flag = MAR_IRCW_arming_IRC
-			TNO_fopo_iran_selected = yes
-			NOT = { has_government = socialist }
-		}
+		days_remove = 25
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision USA)IRCW_losening_regulations"
-			custom_effect_tooltip = USA_IRCW_loosening_regulations_tt
-			hidden_effect = {
-				IRC = {
-					set_country_flag = IRC_no_regulations
-				}
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_ICW_russian_industrial_aid"
+			set_temp_variable = { temp_econ_spending_amount = 0.025 }
+			econ_spend_money_once_effect_raw_money = yes
+		}
+		remove_effect = {
+			add_command_power = 25
+			IRC = {
+				add_ideas = MAR_technician_aid
+				TNO_improve_industrial_equipment_high = yes
+				TNO_improve_industrial_expertise_med = yes
 			}
+		}
+		ai_will_do = {
+			factor = 20
 		}
 	}
 }
 
 MAR_foreign_policy_category = {
-
-	MAR_IRCW_send_the_volunteers_kosygin = {
-		available = {
-			has_country_flag = MAR_IR_CW_ACTIVE
-		}
-		cost = 50
-		fire_only_once = yes
-
+	MAR_Kosygin_ICW_send_weapons = {
+		icon = GFX_decision_market_infantry
 		visible = {
-			has_country_flag = MAR_IR_CW_ACTIVE
 			TNO_fopo_iran_selected = yes
 			has_government = socialist
 		}
+		available = {
+			has_equipment = { infantry_equipment > 599 }
+			has_equipment = { anti_tank_equipment > 349 }
+			has_equipment = { support_equipment > 299 }
+			has_equipment = { artillery_equipment > 99 }
+		}
+
+		custom_cost_trigger = { command_power > 2.99 }
+		custom_cost_text = decision_cost_3_cp
+		days_remove = 3
+		days_re_enable = 14
+
+		highlight_states = {
+			highlight_states_trigger = {
+				is_owned_and_controlled_by = IRA
+				is_capital = yes
+			}
+		}
+
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision MAR_IRCW_send_the_volunteers"
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_Kosygin_ICW_send_weapons"
+			hidden_effect = { add_command_power = -3 }
+		}
+		remove_effect = {
+			send_equipment = {
+				type = infantry_equipment
+				amount = 600
+				target = IRA
+			}
+			send_equipment = {
+				type = anti_tank_equipment
+				amount = 350
+				target = IRA
+			}
+			send_equipment = {
+				type = support_equipment
+				amount = 300
+				target = IRA
+			}
+			send_equipment = {
+				type = artillery_equipment
+				amount = 100
+				target = IRA
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+	}
+
+	MAR_Kosygin_ICW_send_vehicles = {
+		icon = GFX_decision_market_motorized
+		visible = {
+			TNO_fopo_iran_selected = yes
+			has_government = socialist
+		}
+		available = {
+			has_equipment = { motorized_equipment > 199 }
+			has_equipment = { MBT_chassis > 99 }
+		}
+
+		custom_cost_trigger = { command_power > 2.99 }
+		custom_cost_text = decision_cost_3_cp
+		days_remove = 6
+		days_re_enable = 30
+
+		highlight_states = {
+			highlight_states_trigger = {
+				is_owned_and_controlled_by = IRA
+				is_capital = yes
+			}
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_Kosygin_ICW_send_vehicles"
+			hidden_effect = { add_command_power = -3 }
+		}
+		remove_effect = {
+			send_equipment = {
+				type = motorized_equipment
+				amount = 200
+				target = IRA
+			}
+			send_equipment = {
+				type = MBT_chassis
+				amount = 100
+				target = IRA
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+	}
+
+	MAR_Kosygin_ICW_iranian_expeditionary_corps = {
+		icon = GFX_decision_generic_prepare_civil_war
+		visible = {
+			TNO_fopo_iran_selected = yes
+			has_government = socialist
+		}
+		available = {
+			has_manpower > 10000
+		}
+
+		custom_cost_trigger = { command_power > 19.99 }
+		custom_cost_text = decision_cost_20_cp
+		fire_only_once = yes
+		days_remove = 3
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_Kosygin_ICW_iranian_expeditionary_corps"
+			hidden_effect = { add_command_power = -20 }
+		}
+		remove_effect = {
 			set_temp_variable = { target = IRA }
 			TNO_increase_volunteer_cap_1 = yes
-			#custom_effect_tooltip = "TNO_increase_volunteers_IRL_1"
-			set_country_flag = MAR_IRCW_volunteers_sent
+
+			set_country_flag = MAR_Kosygin_iran_volunteers
 		}
 		ai_will_do = {
 			factor = 200
 		}
 	}
 
-	MAR_IRCW_increase_the_volunteers_kosygin = {
-
-		available = {
-			has_country_flag = MAR_IR_CW_ACTIVE
-		}
-
-		cost = 75
-		fire_only_once = yes
-
+	MAR_Kosygin_ICW_expand_the_iranian_expeditionary_corps = {
+		icon = GFX_decision_generic_prepare_civil_war
 		visible = {
-			has_country_flag = MAR_IRCW_volunteers_sent
 			TNO_fopo_iran_selected = yes
+			has_country_flag = MAR_Kosygin_iran_volunteers
 			has_government = socialist
 		}
-		ai_will_do = {
-			factor = 40
-		}
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision MAR_IRCW_increase_the_volunteers"
-			set_country_flag = MAR_IRCW_volunteers_increased
-			if = {
-				limit = {
-					is_ai = no
-				}
-
-				set_temp_variable = { target = IRA }
-				TNO_increase_volunteer_cap_1 = yes
-				#custom_effect_tooltip = "TNO_increase_volunteers_IRL_1"
-			}
-			else = {
-				IRA = {
-					load_oob = USA_Iranian_Advisors
-				}
-			}
-		}
-	}
-
-	MAR_IRCW_max_volunteers_kosygin = {
-
 		available = {
-			has_country_flag = MAR_IR_CW_ACTIVE
+			set_temp_variable = { target = IRA }
+			TNO_volunteer_cap_less_4 = yes
 		}
-		ai_will_do = {
-			factor = 40
-		}
-		cost = 75
-		fire_only_once = yes
 
-		visible = {
-			has_country_flag = MAR_IRCW_volunteers_increased
-			TNO_fopo_iran_selected = yes
-			has_government = socialist
-		}
+		cost = 50
+		days_re_enable = 30
+		days_remove = 3
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision MAR_IRCW_max_volunteers"
-			if = {
-				limit = {
-					is_ai = no
-				}
-				set_temp_variable = { target = IRA }
-				TNO_increase_volunteer_cap_1 = yes
-				#custom_effect_tooltip = "TNO_increase_volunteers_IRL_1"
-			}
-			else = {
-				IRA = {
-					load_oob = USA_Iranian_Advisors
-				}
-			}
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_Kosygin_ICW_expand_the_iranian_expeditionary_corps"
+		}
+		remove_effect = {
+			set_temp_variable = { target = IRA }
+			TNO_increase_volunteer_cap_1 = yes
 		}
 		ai_will_do = {
 			factor = 200
 		}
 	}
-	
-	MAR_IRCW_authorize_equipment_send_kosygin = {
-	
-		available = {
+
+	MAR_Kosygin_ICW_create_the_russian_airgroupe_in_iran = {
+		icon = GFX_decision_MAR_Kosyginket_helicopter
+		visible = {
+			TNO_fopo_iran_selected = yes
+			has_government = socialist
 		}
-		cost = 25
-		days_remove = 5
+		available = { has_country_flag = MAR_Kosygin_iran_volunteers }
+
+		custom_cost_trigger = { command_power > 19.99 }
+		custom_cost_text = decision_cost_20_cp
 		fire_only_once = yes
-
-		visible = {
-			TNO_fopo_iran_selected = yes
-			MAR = { has_government = socialist }
-		}
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision MAR_IRCW_send_guns"
-			set_country_flag = MAR_IRCW_arming_IRA
-		}
-		ai_will_do = {
-			factor = 200
-		}
-	}
-	
-	MAR_IRCW_authorize_equipment_sale_kosygin = { 
-	
-		available = {
-		}
-		cost = 25
-		days_remove = 5
-		fire_only_once = yes
-
-		visible = {
-			TNO_fopo_iran_selected = yes
-			has_government = socialist
-		}
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision MAR_IRCW_send_guns"
-			IRA = {
-				set_country_flag = IRC_russian_sales
-			}	
-		}
-		ai_will_do = {
-			factor = 200
-		}
-	}
-	
-	MAR_IRCW_send_guns_kosygin = {
-
-		available = {
-			has_country_flag = MAR_IRCW_arming_IRA
-		}
-		cost = 25
-		days_remove = 5
-		days_re_enable = 30
-
-		visible = {
-			has_country_flag = MAR_IRCW_arming_IRA
-			TNO_fopo_iran_selected = yes
-			has_government = socialist
-		}
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision MAR_IRCW_send_guns"
-			MAR = {
-				send_equipment = {
-					equipment = infantry_equipment
-					amount = 1000
-					target = IRA
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 200
-		}
-	}
-
-	MAR_IRCW_send_infantry_at_kosygin = {
-
-		available = {
-			has_country_flag = MAR_IRCW_arming_IRA
-		}
-		cost = 25
-		days_remove = 5
-		days_re_enable = 30
-
-		visible = {
-			has_country_flag = MAR_IRCW_arming_IRA
-			TNO_fopo_iran_selected = yes
-			has_government = socialist
-		}
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision MAR_IRCW_send_weapons"
-			MAR = {
-				send_equipment = {
-					equipment = anti_tank_equipment
-					amount = 400
-					target = IRL
-				}
-			}
-
-		}
-		ai_will_do = {
-			factor = 200
-		}
-	}
-
-	MAR_IRCW_loans_kosygin = {
-
-		available = {
-			has_country_flag = MAR_IRCW_sending_loans
-		}
-
-		cost = 10
 		days_remove = 7
-		days_re_enable = 60
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_Kosygin_ICW_create_the_russian_airgroupe_in_iran"
+			hidden_effect = { add_command_power = -20 }
+		}
+		remove_effect = {
+			set_country_flag = MAR_Kosygin_ICW_squadron
+			air_experience = 25
+			add_equipment_to_stockpile = {
+				type = tac_bomber_equipment
+				amount = 100
+				producer = MAR_Kosygin
+			}
+			add_equipment_to_stockpile = {
+				type = CAS_equipment
+				amount = 50
+				producer = MAR_Kosygin
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+	}
+
+	MAR_Kosygin_ICW_operation_sun_of_desert = {
+		icon = GFX_decision_generic_ignite_civil_war
+		visible = {
+			TNO_fopo_iran_selected = yes
+			has_government = socialist
+		}
+		available = { has_country_flag = MAR_Kosygin_ICW_squadron }
+
+		custom_cost_trigger = { command_power > 14.99 }
+		custom_cost_text = decision_cost_15_cp
+		fire_only_once = yes
+		days_remove = 7
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_Kosygin_ICW_operation_sun_of_desert"
+			hidden_effect = { add_command_power = -15 }
+		}
+		remove_effect = {
+			every_other_country = {
+				limit = { has_war_with = IRA }
+				add_timed_idea = { idea = MAR_Plane_Bombing days = 90 }
+				TNO_worsen_poverty_high = yes
+			}
+		}
+		ai_will_do = {
+			factor = 20
+		}
+	}
+
+	MAR_Kosygin_ICW_group_of_military_advisors = {
+		icon = GFX_decision_generic_military_parade
 
 		visible = {
 			TNO_fopo_iran_selected = yes
 			has_government = socialist
 		}
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision MAR_IRCW_loans"
-			set_temp_variable = { temp_econ_spending_amount = 0.01 }
-			econ_spend_money_once_effect_raw_money = yes
+		custom_cost_trigger = {
+			has_political_power > 19.99
+			command_power > 4.99
 		}
-		ai_will_do = {
-			factor = 200
-		}
-	}
-
-	### More Equipment ###
-	MAR_IRCW_support_equipment_kosygin = {
-
-		available = {
-			has_country_flag = MAR_IRCW_arming_IRA
-		}
-
-		cost = 25
+		custom_cost_text = decision_cost_5_cp_20_pp
+		fire_only_once = no
 		days_remove = 7
 		days_re_enable = 90
-
-		visible = {
-			has_country_flag = MAR_IRCW_arming_IRA
-			TNO_fopo_iran_selected = yes
-			has_government = socialist
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_Kosygin_ICW_group_of_military_advisors"
+			hidden_effect = { add_command_power = -5 add_political_power = -20 }
 		}
-
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision MAR_IRCW_support_equipment"
-			MAR = {
-				send_equipment = {
-					equipment = support_equipment
-					amount = 90
-					target = IRA
-				}
+			IRA = {
+				add_command_power = 20
+				add_timed_idea = { idea = MAR_military_advisors days = 90 }
+				TNO_improve_training_policy_effectiveness_high = yes
 			}
 		}
 		ai_will_do = {
-			factor = 200
+			factor = 20
 		}
 	}
 
-	MAR_IRCW_anti_air_kosygin = {
-
-		available = {
-			has_country_flag = MAR_IRCW_arming_IRA
-		}
-
-		cost = 25
-		days_remove = 7
-		days_re_enable = 60
-
+	MAR_Kosygin_ICW_russian_industrial_aid = {
+		icon = GFX_decision_generic_industry
 		visible = {
-			has_country_flag = MAR_IRCW_arming_IRA
 			TNO_fopo_iran_selected = yes
 			has_government = socialist
 		}
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision MAR_IRCW_anti_air"
-			MAR = {
-				send_equipment = {
-					equipment = anti_air_equipment
-					amount = 50
-					target = IRA
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 200
-		}
-	}
-
-	MAR_IRCW_artillery_kosygin = {
-
-		available = {
-			has_country_flag = MAR_IRCW_arming_IRA
-		}
-
-		cost = 25
-		days_remove = 7
-		days_re_enable = 60
-
-		visible = {
-			has_country_flag = MAR_IRCW_arming_IRA
-			TNO_fopo_iran_selected = yes
-			has_government = socialist
-		}
-
-		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision MAR_IRCW_artillery"
-			MAR = {
-				send_equipment = {
-					equipment = artillery_equipment
-					amount = 50
-					target = IRA
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 200
-		}
-	}
-	
-	MAR_IRCW_loosening_regulations_kosygin = {
-
-		available = {
-			has_country_flag = MAR_IRCW_arming_IRA
-		}
-
+		cost = 20
 		fire_only_once = yes
-		cost = 100
-
-		visible = {
-			has_country_flag = MAR_IRCW_arming_IRA
-			TNO_fopo_iran_selected = yes
-			has_government = socialist
-		}
+		days_remove = 25
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision USA)IRCW_losening_regulations"
-			custom_effect_tooltip = USA_IRCW_loosening_regulations_tt
-			hidden_effect = {
-				IRA = {
-					set_country_flag = IRA_no_regulations
-				}
+			log = "[GetDateText]: [Root.GetName]: Decision MAR_Kosygin_ICW_russian_industrial_aid"
+			set_temp_variable = { temp_econ_spending_amount = 0.025 }
+			econ_spend_money_once_effect_raw_money = yes
+		}
+		remove_effect = {
+			add_command_power = 25
+			IRA = {
+				add_ideas = MAR_technician_aid
+				TNO_improve_industrial_equipment_high = yes
+				TNO_improve_industrial_expertise_med = yes
 			}
+		}
+		ai_will_do = {
+			factor = 20
 		}
 	}
 }
+
+
 
 MAR_foreign_policy_category = {
 	MAR_Kosygin_OC_increase_commitment = {

@@ -361,7 +361,7 @@ TaS_SWRW_american_germany = {
 		set_party_name = {
 			ideology = paternalism
 			long_name = ZNE_usa_party_long
-			name = ZNE_usa_party
+			name = 
 		}		
 		set_cosmetic_tag = ZNE_usa
 		add_ideas = TaS_Post2WRW_werewolf_activity
@@ -567,6 +567,8 @@ TaS_SWRW_american_germany = {
 		transfer_state = 1763
 		transfer_state = 2211
 		transfer_state = 2212
+		add_ideas = OFN_Independent_Member
+		econ_join_sphere_USA = yes
 		TNO_startup_nation = yes
 		every_owned_state = {
 			GSV = {
@@ -708,6 +710,10 @@ TaS_SWRW_american_germany = {
 			econ_join_sphere_USA = yes
 		}
 	}
+	NOR = {
+		add_ideas = OFN_Independent_Member
+		econ_join_sphere_USA = yes
+	}
 	USA = {
 		add_to_faction = ZNE
 		add_to_faction = GHL
@@ -716,6 +722,8 @@ TaS_SWRW_american_germany = {
 		add_to_faction = GSG
 		add_to_faction = GCZ
 		add_to_faction = BRL
+		add_to_faction = GSV
+		add_to_faction = NOR
 	}
 	if = {
 	    limit = { 
@@ -2295,6 +2303,11 @@ SWRW_add_RUS_coldwar_GUI = {
 			add_to_array = { global.PowerProjection_Tags = THIS.id }
 			add_to_array = { global.PowerProjection_X = 299 }
 			add_to_array = { global.PowerProjection_Y = 8 }
+			
+			set_temp_variable = { temp_credit_rating_min = 3 }
+			set_temp_variable = { temp_credit_rating_max = 10 }
+			econ_set_min_credit_rating = yes
+			econ_set_max_credit_rating = yes
 		}
 		SWRW_add_RUS_coldwar_calculate_victories = yes
 	}

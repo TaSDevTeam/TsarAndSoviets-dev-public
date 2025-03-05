@@ -2349,6 +2349,10 @@ shared_focus = {
 		add_political_power = 100
 		TNO_improve_admin_efficiency_med = yes
 		custom_effect_tooltip = SWRW_we_will_create_alliance_tt
+		set_temp_variable = { temp_credit_rating_min = 2 }
+		set_temp_variable = { temp_credit_rating_max = 8 }
+		econ_set_min_credit_rating = yes
+		econ_set_max_credit_rating = yes
 		hidden_effect = {
 			remove_faction_status = yes
 			create_faction = RUSAlliance_MAR

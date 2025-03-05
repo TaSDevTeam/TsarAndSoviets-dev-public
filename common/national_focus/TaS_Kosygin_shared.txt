@@ -2339,6 +2339,10 @@ shared_focus = {
 	    add_war_support = 0.1
 		country_event = { id = MAR_Kosygin.97 days = 3 }
 		custom_effect_tooltip = SWRW_we_will_create_alliance_tt
+		set_temp_variable = { temp_credit_rating_min = 2 }
+		set_temp_variable = { temp_credit_rating_max = 8 }
+		econ_set_min_credit_rating = yes
+		econ_set_max_credit_rating = yes
 		hidden_effect = {
 			remove_faction_status = yes
 			create_faction = RUSAlliance_MAR
