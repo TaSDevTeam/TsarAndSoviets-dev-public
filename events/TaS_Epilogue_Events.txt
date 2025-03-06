@@ -6578,6 +6578,34 @@ country_event = {#General - Russia - Opportunities ahead
 			target = SLO
 			type = annex_everything
 		}
+		if = {
+			limit = { country_exists = GGN }
+			declare_war_on = {
+				target = GGN
+				type = annex_everything
+			}
+		}
+		if = {
+			limit = { country_exists = POL }
+			declare_war_on = {
+				target = POL
+				type = annex_everything
+			}
+		}
+		if = {
+			limit = { country_exists = HOL }
+			declare_war_on = {
+				target = HOL
+				type = annex_everything
+			}
+		}
+		if = {
+			limit = { country_exists = DEN }
+			declare_war_on = {
+				target = DEN
+				type = annex_everything
+			}
+		}
 		hidden_effect = {
 			every_country  = {
 				news_event = {

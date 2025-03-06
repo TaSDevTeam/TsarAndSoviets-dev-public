@@ -1799,7 +1799,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 			set_cosmetic_tag = ZNE_Kosygin
 			set_variable = {
 				TNO_economy_type = token:Econ_Type_Planned
-				TNO_economy_subtype = token:Econ_Subtype_War_Communism
+				TNO_economy_subtype = token:Econ_Subtype_Worker_Directed
 			}
 			TNO_startup_nation = yes
 			add_ideas = RUSAlliance_Dependent_Member
@@ -1873,6 +1873,7 @@ TaS_WRW2_German_Collapse_Kosygin = {
 			if = {
 				limit = { has_global_flag = GER_brandt_is_kil }
 				kill_country_leader = yes
+				promote_character = GRH_Gunter_Guillaume
 			}
 			add_popularity = {
 				ideology = progressivism
@@ -1995,7 +1996,8 @@ TaS_WRW2_German_Collapse_Kosygin = {
 			remove_ideas = TaS_Post2WRW_GCZ_czechia_revival
 			remove_ideas = TaS_Post2WRW_GCZ_sudetenland_genocide
 			set_variable = {
-				TNO_economy_type = token:Econ_Type_Planned
+				TNO_economy_type = token:Econ_Type_Corporatism
+				TNO_economy_subtype = token:Econ_Subtype_Socialized_Economy
 			}
 			TNO_startup_nation = yes
 			add_ideas = RUSAlliance_Independent_Member
@@ -2025,8 +2027,8 @@ TaS_WRW2_German_Collapse_Kosygin = {
 			}
 			remove_ideas = TaS_Post2WRW_GDN_antimonarch_protests
 			set_variable = {
-				TNO_economy_type = token:Econ_Type_Planned
-				TNO_economy_subtype = token:Econ_Subtype_Worker_Directed
+				TNO_economy_type = token:Econ_Type_Corporatism
+				TNO_economy_subtype = token:Econ_Subtype_Socialized_Economy
 			}
 			add_ideas = RUSAlliance_Independent_Member
 		}
@@ -2063,8 +2065,8 @@ TaS_WRW2_German_Collapse_Kosygin = {
 			remove_ideas = TaS_Post2WRW_GHL_careless_monach
 			remove_ideas = TaS_Post2WRW_GHL_holland_identity
 			set_variable = {
-				TNO_economy_type = token:Econ_Type_Planned
-				TNO_economy_subtype = token:Econ_Subtype_Worker_Directed
+				TNO_economy_type = token:Econ_Type_Corporatism
+				TNO_economy_subtype = token:Econ_Subtype_Socialized_Economy
 			}
 			TNO_startup_nation = yes
 			add_ideas = RUSAlliance_Independent_Member

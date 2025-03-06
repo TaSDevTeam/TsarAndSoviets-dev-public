@@ -2460,6 +2460,10 @@ shared_focus = {
 				CPR = {	add_ideas = RUSAlliance_Observer }
 			}
 			if = {
+				limit = { FRA = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+				FRA = {	add_ideas = RUSAlliance_Observer }
+			}
+			if = {
 				limit = { CAF = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
 				CAF = {	add_ideas = RUSAlliance_Observer }
 			}

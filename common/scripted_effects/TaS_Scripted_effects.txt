@@ -1478,3 +1478,137 @@ state_control_effect_2099 = {
 		reset_state_name = yes
 	}
 }
+
+MAR_test_observer_fuck = {
+	remove_faction_status = yes
+	create_faction = RUSAlliance_MAR
+	add_ideas = RUSAlliance_Leader
+	if = {
+		limit = { 
+			MKZ = {
+				has_country_leader = {
+					character = MKZ_Military_Administration 
+					ruling_only = yes
+				}
+			}
+		}
+		MKZ = { add_ideas = RUSAlliance_Military_Government }
+		add_to_faction = MKZ
+	}
+	else_if = {
+		limit = { 
+			MKZ = {
+				has_country_leader = {
+					character = MKZ_Nursultan_Nazarbayev
+					ruling_only = yes
+				}
+			}
+			
+		}
+		MKZ = { add_ideas = RUSAlliance_Dependent_Member }
+		add_to_faction = MKZ
+	}
+	if = {
+		limit = { UAR = { has_country_flag = UAR_join_rus_when_created } }
+		UAR = { add_ideas = RUSAlliance_Observer }
+	}
+	if = {
+		limit = { has_country_flag = MAR_RFI_alliance }
+		RFI = {
+			add_ideas = RUSAlliance_Independent_Member
+		}
+		add_to_faction = MKZ
+	}
+	if = {
+		limit = { IRA = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+		IRA = {	add_ideas = RUSAlliance_Independent_Member }
+		add_to_faction = IRA
+	}
+	if = {
+		limit = { IRC = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+		IRC = { add_ideas = RUSAlliance_Independent_Member }
+		add_to_faction = IRC
+	}
+	if = {
+		limit = { SAU = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+		SAU = {	add_ideas = RUSAlliance_Observer }
+	}
+	if = {
+		limit = { OMI = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+		OMI = {	add_ideas = RUSAlliance_Observer }
+	}
+	if = {
+		limit = { EGQ = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+		EGQ = {	add_ideas = RUSAlliance_Observer }
+	}
+	if = {
+		limit = { SDF = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+		SDF = {	add_ideas = RUSAlliance_Observer }
+	}
+	if = {
+		limit = { AZA = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+		AZA = {	add_ideas = RUSAlliance_Observer }
+	}
+	if = {
+		limit = { SNI = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+		SNI = {	add_ideas = RUSAlliance_Observer }
+	}
+	if = {
+		limit = { KUR = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+		if = {
+			limit = { KUR = { has_government = despotism } }
+			KUR = { add_ideas = RUSAlliance_Military_Government }
+			add_to_faction = KUR
+		}
+		else = {
+			KUR = { add_ideas = RUSAlliance_Dependent_Member }
+			add_to_faction = KUR
+		}	
+	}
+	if = {
+		limit = { KSI = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+		KSI = {	add_ideas = RUSAlliance_Observer }
+	}
+	if = {
+		limit = { KTG = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+		KTG = {	add_ideas = RUSAlliance_Observer }
+	}
+	if = {
+		limit = { FRM = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+		FRM = {	add_ideas = RUSAlliance_Observer }
+	}
+	if = {
+		limit = { FRV = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+		FRV = {	add_ideas = RUSAlliance_Observer }
+	}
+	if = {
+		limit = { CPR = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+		CPR = {	add_ideas = RUSAlliance_Observer }
+	}
+	if = {
+		limit = { FRA = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+		FRA = {	add_ideas = RUSAlliance_Observer }
+	}
+	if = {
+		limit = { CAF = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+		CAF = {	add_ideas = RUSAlliance_Observer }
+	}
+	if = {
+		limit = { KSI = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+		KSI = {	add_ideas = RUSAlliance_Observer }
+	}
+	if = {
+		limit = { KTG = { check_variable = { ECON_SPHERE_LEADER = MAR } } }
+		KTG = {	add_ideas = RUSAlliance_Observer }
+	}
+	if = {
+		limit = { 
+			CPR = { check_variable = { ECON_SPHERE_LEADER = MAR } }
+			GAB = { is_subject_of = CPR }
+		}
+		GAB = { #я ебал в рот в on_peace лезть
+			econ_join_sphere_MAR = yes
+			add_ideas = RUSAlliance_Observer
+		}
+	}
+}

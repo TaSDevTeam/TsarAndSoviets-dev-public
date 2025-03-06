@@ -458,11 +458,7 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 				}
 			}
 		}
-		else_if = { #Anyanya (despot) victory
-		 	limit = {
-		 		AYA = { exists = yes }
-		 		AZA = { exists = no }
-			}
+		else = { #Anyanya (despot) victory
 			if = {
 				limit = {
 					check_variable = { MAR.MAR_OC_participation > 49 }

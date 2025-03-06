@@ -441,12 +441,6 @@ UAR_foreign_policy_category = {
 					days = 1
 				}
 			}
-			GER = {
-				country_event = {
-					id = MAR_Kosygin_UAR.2
-					days = 1
-				}
-			}
 		}
 	}
 
@@ -476,12 +470,6 @@ UAR_foreign_policy_category = {
 					days = 1
 				}
 			}
-			GER = {
-				country_event = {
-					id = MAR_Kosygin_UAR.3
-					days = 1
-				}
-			}
 		}
 	}
 
@@ -506,12 +494,6 @@ UAR_foreign_policy_category = {
 		}
 		timeout_effect = {
 			MAR = {
-				country_event = {
-					id = MAR_Kosygin_UAR.4
-					days = 1
-				}
-			}
-			GER = {
 				country_event = {
 					id = MAR_Kosygin_UAR.4
 					days = 1
@@ -558,12 +540,6 @@ UAR_foreign_policy_category = {
 						days = 1
 					}
 				}
-				GER = {
-					country_event = {
-						id = MAR_Kosygin_UAR.4
-						days = 1
-					}
-				}
 			}
 			else_if = { #russkie wins
 				limit = { 
@@ -577,12 +553,6 @@ UAR_foreign_policy_category = {
 						days = 1
 					}
 				}
-				GER = {
-					country_event = {
-						id = MAR_Kosygin_UAR.2
-						days = 1
-					}
-				}
 			}
 			else_if = { #The Pakt overpowers 
 				limit = { 
@@ -591,12 +561,6 @@ UAR_foreign_policy_category = {
 					}
 				}
 				MAR = {
-					country_event = {
-						id = MAR_Kosygin_UAR.4
-						days = 1
-					}
-				}
-				GER = {
 					country_event = {
 						id = MAR_Kosygin_UAR.4
 						days = 1
