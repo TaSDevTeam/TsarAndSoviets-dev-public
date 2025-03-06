@@ -736,7 +736,8 @@ shared_focus = {
 	icon = GFX_MAR_kosecon_japan_partners
 	cost = 3
 	available = {
-		has_completed_focus = MAR_kosfor_pearl_of_Asia
+		custom_effect_tooltip = MAR_Kosygin_choose_JAP_tt
+		has_country_flag = MAR_Kosygin_choose_JAP
 	}
 	prerequisite = {
 		focus = MAR_koseco_support_kulaks
@@ -758,7 +759,8 @@ shared_focus = {
 	icon = GFX_MAR_kosecon_american_friends
 	cost = 3
 	available = {
-		has_completed_focus = MAR_kosfor_birthplace_of_democracy
+		custom_effect_tooltip = MAR_Kosygin_choose_USA_tt
+		has_country_flag = MAR_Kosygin_choose_USA
 	}
 	prerequisite = {
 		focus = MAR_koseco_support_kulaks
