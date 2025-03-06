@@ -125,22 +125,22 @@ MAR_calculate_ogas_dynmod_effects = {
 	}
 	# Country scope dynmods
 	clear_array = MAR_ogas_dynomod_array_one
-	add_to_array = { MAR_ogas_dynomod_array_one = 0.3 } # research_speed
-	add_to_array = { MAR_ogas_dynomod_array_one = 0.2 } # polital power gain
-	add_to_array = { MAR_ogas_dynomod_array_one = -0.2 } # personnel cost modifier
+	add_to_array = { MAR_ogas_dynomod_array_one = 0.2 } # research_speed
+	add_to_array = { MAR_ogas_dynomod_array_one = 0.15 } # polital power gain
+	add_to_array = { MAR_ogas_dynomod_array_one = -0.1 } # personnel cost modifier
 	clear_array = MAR_ogas_dynomod_array_two
-	add_to_array = { MAR_ogas_dynomod_array_two = 7.5 } # gdp_growth_modifier 
-	add_to_array = { MAR_ogas_dynomod_array_two = -5 } # inflation_rate_modifier 
-	add_to_array = { MAR_ogas_dynomod_array_two = 0.4 } # industrial_capacity_factory 
-	add_to_array = { MAR_ogas_dynomod_array_two = -0.3 } # social_program_cost_factor 
-	add_to_array = { MAR_ogas_dynomod_array_two = -0.3 } # admin_program_cost_factor
-	add_to_array = { MAR_ogas_dynomod_array_two = 0.4 } # production_factory_max_efficiency_factor
-	add_to_array = { MAR_ogas_dynomod_array_two = 0.1 } # poverty_monthly_rate 
-	add_to_array = { MAR_ogas_dynomod_array_two = 0.2 } # production_units_to_GDP_ratio_modifier
-	add_to_array = { MAR_ogas_dynomod_array_two = 0.5 } # production_speed_buildings_factor
+	add_to_array = { MAR_ogas_dynomod_array_two = 5.0 } # gdp_growth_modifier 
+	add_to_array = { MAR_ogas_dynomod_array_two = -2.5 } # inflation_rate_modifier 
+	add_to_array = { MAR_ogas_dynomod_array_two = 0.25 } # industrial_capacity_factory 
+	add_to_array = { MAR_ogas_dynomod_array_two = -0.15 } # social_program_cost_factor 
+	add_to_array = { MAR_ogas_dynomod_array_two = -0.15 } # admin_program_cost_factor
+	add_to_array = { MAR_ogas_dynomod_array_two = 0.2 } # production_factory_max_efficiency_factor
+	add_to_array = { MAR_ogas_dynomod_array_two = 0.05 } # poverty_monthly_rate 
+	add_to_array = { MAR_ogas_dynomod_array_two = 0.1 } # production_units_to_GDP_ratio_modifier
+	add_to_array = { MAR_ogas_dynomod_array_two = 0.25 } # production_speed_buildings_factor
 	clear_array = MAR_ogas_dynomod_array_three
-	add_to_array = { MAR_ogas_dynomod_array_three = 3 } # misc_costs_modifier
-	add_to_array = { MAR_ogas_dynomod_array_three = -0.2 } # stability
+	add_to_array = { MAR_ogas_dynomod_array_three = 5 } # misc_costs_modifier
+	add_to_array = { MAR_ogas_dynomod_array_three = -0.3 } # stability
 	
 	set_variable = { ogas_chars_temp_one = MAR_ogas_characteristics_array^1 }
 	set_variable = { ogas_chars_temp_two = MAR_ogas_characteristics_array^2 }

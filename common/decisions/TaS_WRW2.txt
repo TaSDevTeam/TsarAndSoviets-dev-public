@@ -538,8 +538,8 @@ TaS_WRW2_fate_and_coring_of_territories = {
 		}
 
 		visible = {
-			
 			owns_state = 1885
+			has_country_flag = AFG_indefinite_occupation
 			NOT = {
 				AND = {
 					1465 = {
@@ -4112,9 +4112,8 @@ TaS_WRW2_territorial_reclamation = {
 				has_country_flag = MAR_has_turkestan
 				has_country_flag = MAR_allied_turkestan
 			}
-			NOT = {
-				has_global_flag = RUS_AFG_war_ended
-			}
+			NOT = { has_global_flag = RUS_AFG_war_ended	}
+			NOT = { AFG = {	has_idea = AFG_The_Two_Mohammeds } }
 		}
 		fire_only_once = yes
 		ai_will_do = {
@@ -4181,7 +4180,10 @@ TaS_WRW2_territorial_reclamation = {
 		visible = {
 			has_global_flag = TaS_WRW2_Russian_victory
 			NOT = {
-				FIN = { exists = no }
+				OR = {
+					FIN = { exists = no }
+					FIN = { is_in_faction_with = RUS }
+				}
 			}
 		}
 		available = {

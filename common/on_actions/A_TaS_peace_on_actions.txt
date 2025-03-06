@@ -192,33 +192,7 @@ on_actions = {
 							}
 						}
 						AFG = {
-							if = {
-								limit = {
-									OR = {
-										has_cosmetic_tag = AFG_republic_amin
-										has_cosmetic_tag = AFG_islamist
-										AND = {
-											has_country_leader = {
-												character = AFG_Mohammed_Zahir_Shah
-												ruling_only = yes
-											}
-											has_government = despotism
-										}
-										AND = {
-											has_cosmetic_tag = AFG_republic
-											or = {
-												has_government = fascism
-												has_government = national_socialism
-											}
-										}
-									}
-								}
-								set_global_flag = ACW_twoside
-								country_event = { id = MAR_AFG.4 days = 180 }
-							}
-							else = {
-								country_event = { id = MAR_AFG.7 days = 180 }
-							}
+							country_event = { id = MAR_AFG.4 days = 30 }
 						}
 						#IND = {
 						#	transfer_state = 1898
@@ -292,108 +266,108 @@ on_actions = {
 					set_global_flag = skip_default_capitulation
 				}
 				else_if = {
-						limit = {
-							FROM = {
-								original_tag = PFF
-							}
-							ROOT = { 
-								original_tag = PJP
-							}
-							AND = {
-								PFF = { NOT = { has_cosmetic_tag = PFF_Second_CW } }
-								PJP = { NOT = { has_country_flag = MAN_katastrophe } }
-							}
-						}
+					limit = {
 						FROM = {
-							white_peace = ROOT
-							annex_country = {
-								target = ROOT
-								transfer_troops = no
-							}
+							original_tag = PFF
 						}
-						MAN = {		
+						ROOT = { 
+							original_tag = PJP
+						}
+						AND = {
+							PFF = { NOT = { has_cosmetic_tag = PFF_Second_CW } }
+							PJP = { NOT = { has_country_flag = MAN_katastrophe } }
+						}
+					}
+					FROM = {
+						white_peace = ROOT
+						annex_country = {
+							target = ROOT
+							transfer_troops = no
+						}
+					}
+					MAN = {		
+						country_event = {
+							id = MAR_Japan.1 days = 30
+						}					
+					}
+					JAP = {
+						set_temp_variable = { Victory_ID = 49 }
+						set_temp_variable = { Victory_Outcome = 1 }
+						set_temp_variable = { Victory_Points = -100 }
+						Cold_War_GUI_ManipulateVictory = yes
+						TaS_fopo_remove_far_eastern_revolt_tab = yes
+						set_temp_variable = { target = PJP }
+						TNO_clear_and_recall_volunteers = yes
+					}
+					MAR = {
+						if = {
+							limit = { has_government = despotism }
 							country_event = {
-								id = MAR_Japan.1 days = 30
-							}					
-						}
-						JAP = {
-							set_temp_variable = { Victory_ID = 49 }
-							set_temp_variable = { Victory_Outcome = 1 }
-							set_temp_variable = { Victory_Points = -100 }
-							Cold_War_GUI_ManipulateVictory = yes
-							TaS_fopo_remove_far_eastern_revolt_tab = yes
-							set_temp_variable = { target = PJP }
-							TNO_clear_and_recall_volunteers = yes
-						}
-						MAR = {
-							if = {
-								limit = { has_government = despotism }
-								country_event = {
-									id = MAR_Japan.17 days = 2
-								}
-							}
-							else_if = {
-								limit = { has_government = socialist }
-								country_event = {
-									id = MAR_Japan.16 days = 2
-								}
-							}
-							TaS_fopo_remove_far_eastern_revolt_tab = yes
-							set_temp_variable = { target = PFF }
-							TNO_clear_and_recall_volunteers = yes
-						}
-						every_country  = {
-							news_event = {
-								id = MAR_2WRW_world_news.31
+								id = MAR_Japan.17 days = 2
 							}
 						}
-						set_global_flag = skip_default_capitulation
+						else_if = {
+							limit = { has_government = socialist }
+							country_event = {
+								id = MAR_Japan.16 days = 2
+							}
+						}
+						TaS_fopo_remove_far_eastern_revolt_tab = yes
+						set_temp_variable = { target = PFF }
+						TNO_clear_and_recall_volunteers = yes
+					}
+					every_country  = {
+						news_event = {
+							id = MAR_2WRW_world_news.31
+						}
+					}
+					set_global_flag = skip_default_capitulation
 				}
 				else_if = {
-						limit = {
-							FROM = {
-								original_tag = PJP
-							}
-							ROOT = { 
-								original_tag = PFF
-							}
-							AND = {
-								PFF = { NOT = { has_cosmetic_tag = PFF_Second_CW } }
-								PJP = { NOT = { has_country_flag = MAN_katastrophe } }
-							}
-						}
+					limit = {
 						FROM = {
-							white_peace = ROOT
-							annex_country = {
-								target = ROOT
-								transfer_troops = no
-							}
+							original_tag = PJP
 						}
-						MAR = {
-							transfer_state = 1364
-							set_country_flag = MAR_has_primorie
-							TaS_fopo_remove_far_eastern_revolt_tab = yes
-							clr_country_flag = RUS_something_goes_wrong
-							set_temp_variable = { target = PFF }
-							TNO_clear_and_recall_volunteers = yes
+						ROOT = { 
+							original_tag = PFF
 						}
-						JAP = {
-							transfer_state = 809
-							add_state_core = 809
-							set_temp_variable = { Victory_ID = 49 }
-							set_temp_variable = { Victory_Outcome = 5 }
-							set_temp_variable = { Victory_Points = 50 }
-							Cold_War_GUI_ManipulateVictory = yes
-							TaS_fopo_remove_far_eastern_revolt_tab = yes
-							set_temp_variable = { target = PJP }
-							TNO_clear_and_recall_volunteers = yes
-						}	
-						every_country  = {
-							news_event = {
-								id = MAR_2WRW_world_news.32
-							}
+						AND = {
+							PFF = { NOT = { has_cosmetic_tag = PFF_Second_CW } }
+							PJP = { NOT = { has_country_flag = MAN_katastrophe } }
 						}
-						set_global_flag = skip_default_capitulation
+					}
+					FROM = {
+						white_peace = ROOT
+						annex_country = {
+							target = ROOT
+							transfer_troops = no
+						}
+					}
+					MAR = {
+						transfer_state = 1364
+						set_country_flag = MAR_has_primorie
+						TaS_fopo_remove_far_eastern_revolt_tab = yes
+						clr_country_flag = RUS_something_goes_wrong
+						set_temp_variable = { target = PFF }
+						TNO_clear_and_recall_volunteers = yes
+					}
+					JAP = {
+						transfer_state = 809
+						add_state_core = 809
+						set_temp_variable = { Victory_ID = 49 }
+						set_temp_variable = { Victory_Outcome = 5 }
+						set_temp_variable = { Victory_Points = 50 }
+						Cold_War_GUI_ManipulateVictory = yes
+						TaS_fopo_remove_far_eastern_revolt_tab = yes
+						set_temp_variable = { target = PJP }
+						TNO_clear_and_recall_volunteers = yes
+					}	
+					every_country  = {
+						news_event = {
+							id = MAR_2WRW_world_news.32
+						}
+					}
+					set_global_flag = skip_default_capitulation
 				}
 				else_if = {
 					limit = {
@@ -1647,459 +1621,237 @@ on_actions = {
 					}
 					set_global_flag = skip_default_capitulation
 				}
-				
 				else_if = {
 					limit = {
 						FROM = {
-							original_tag = RUS
-						}
-						ROOT = { 
-							original_tag = AFG
-						}
-						has_global_flag = ACW_twoside
-					}
-					
-					RUS = {
-						white_peace = AFG
-						AFG = {
-							white_peace = RUS
-							transfer_state = 1469
-							transfer_state = 2190
-							transfer_state = 1884
-							transfer_state = 1470
-							XYZ = {
-								AFG_Nur_Muhammad_Taraki = {
-									set_nationality = AFG
-								}
-							}
-							set_politics = {
-								ruling_party = communist
-								last_election = "1969.8.29"
-								election_frequency = 48
-								elections_allowed = no
-							}
-							set_popularities = {
-								communist = 65
-								fascism = 10
-								despotism = 15
-								ultranationalism = 10
-							}
-							set_party_name = {
-								ideology = communist
-								name = AFG_communist_party_endgame
-								long_name = AFG_communist_party_endgame_long
-							}
-							set_party_name = {
-								ideology = despotism
-								name = AFG_despotism_party
-								long_name = AFG_despotism_party_long
-							}
-							set_party_name = {
-								ideology = fascism
-								name = AFG_national_socialism_party
-								long_name = AFG_national_socialism_party_long
-							}
-							set_party_name = {
-								ideology = ultranationalism
-								name = AFG_ultranationalism_party_endgame
-								long_name = AFG_ultranationalism_party_endgame_long
-							}
-							add_country_leader_role = {
-								character = AFG_Nur_Muhammad_Taraki
-								promote_leader = yes
-								country_leader = {
-									ideology = communist_national_communism_subtype
-									expire = "1999.1.1"
-								}
-							}
-							set_cosmetic_tag = AFG_republic
-							econ_join_sphere_MAR = yes
-							get_current_government_type = yes
-							save_party_popularities = yes
-							add_ideas = RUSAlliance_Dependent_Member
-							RUS = {
-								set_autonomy = {
-									target = AFG
-									autonomy_state = autonomy_satellite
-								}	
-								add_to_faction = AFG
-							}		
-							restore_previous_government_type = yes
-							apply_party_popularities = yes
-						}
-					}	
-					
-					set_global_flag = skip_default_capitulation
-				}
-				else_if = {
-					limit = {
-						FROM = {
-							original_tag = AFG
-						}
-						ROOT = { 
 							OR = {
-								original_tag = NAL
-								original_tag = MUJ
+								tag = AFG
+								tag = MUJ
+								tag = NAL
 							}
 						}
-						NAL = { exists = no }
-						MUJ = { exists = no }
-						NOT = { has_global_flag = ACW_twoside }
-					}
-					if = {
-						limit = {
-							MAR = { has_country_flag = MAR_support_AFG }
-							NOT = { has_global_flag = ACW_twoside }
-						}
-						AFG = { econ_join_sphere_MAR = yes }
-						USA = {
-							set_temp_variable = { Victory_ID = 52 }
-							set_temp_variable = { Victory_Outcome = 2 }
-							set_temp_variable = { Victory_Points = -50 }
-							Cold_War_GUI_ManipulateVictory = yes
-							TaS_fopo_remove_manchurian_civil_war_tab = yes
-							set_temp_variable = { target = NAL }
-							TNO_clear_and_recall_volunteers = yes
-						}
-						JAP = {
-							set_temp_variable = { Victory_ID = 52 }
-							set_temp_variable = { Victory_Outcome = 2 }
-							set_temp_variable = { Victory_Points = -50 }
-							Cold_War_GUI_ManipulateVictory = yes
-							TaS_fopo_remove_manchurian_civil_war_tab = yes
-							set_temp_variable = { target = MUJ }
-							TNO_clear_and_recall_volunteers = yes
-						}
-						MAR = {
-							set_temp_variable = { target = AFG }
-							TNO_clear_and_recall_volunteers = yes
-							set_temp_variable = { target = NAL }
-							TNO_clear_and_recall_volunteers = yes
-						}
-						every_country  = {
-							news_event = {
-								id = MAR_2WRW_world_news.28
-							}
-						}
-					}
-					else = {
-						USA = {
-							set_temp_variable = { Victory_ID = 52 }
-							set_temp_variable = { Victory_Outcome = 2 }
-							set_temp_variable = { Victory_Points = -50 }
-							Cold_War_GUI_ManipulateVictory = yes
-							TaS_fopo_remove_manchurian_civil_war_tab = yes
-							set_temp_variable = { target = NAL }
-							TNO_clear_and_recall_volunteers = yes
-						}
-						JAP = {
-							set_temp_variable = { Victory_ID = 52 }
-							set_temp_variable = { Victory_Outcome = 2 }
-							set_temp_variable = { Victory_Points = -50 }
-							Cold_War_GUI_ManipulateVictory = yes
-							TaS_fopo_remove_manchurian_civil_war_tab = yes
-							set_temp_variable = { target = MUJ }
-							TNO_clear_and_recall_volunteers = yes
-						}
-						MAR = {
-							set_temp_variable = { target = AFG }
-							TNO_clear_and_recall_volunteers = yes
-							set_temp_variable = { target = NAL }
-							TNO_clear_and_recall_volunteers = yes
-						}
-						every_country  = {
-							news_event = {
-								id = MAR_2WRW_world_news.28
-							}
-						}
-					}
-					set_global_flag = skip_default_capitulation
-				}
-				else_if = {
-					limit = {
-						FROM = {
-							original_tag = MUJ
-						}
-						ROOT = { 
+						ROOT = {
 							OR = {
-								original_tag = NAL
-								original_tag = AFG
+								tag = AFG
+								tag = MUJ
+								tag = NAL
 							}
 						}
-						AFG = { exists = no }
-						NAL = { exists = no }
 					}
-					MUJ = {
-						econ_join_sphere_JAP = yes
-						set_cosmetic_tag = MUJ_Victory
-						every_owned_state = {
-							remove_core_of = AFG
-							remove_core_of = NAL
-							add_core_of = MUJ
-						}
-						if = {
+					FROM = {
+						every_enemy_country = {
 							limit = {
-								OR = {
-									AZH = { is_in_faction_with = JAP }
-									IND = { is_in_faction_with = JAP }
-									NOT = { country_exists = PAK }
+								original_tag = ROOT
+							}
+							remove_from_array = { global.AFG_contenders = THIS }
+							FROM = {
+								white_peace = PREV
+								annex_country = {
+									target = PREV
+									transfer_troops = no
 								}
 							}
-							add_ideas = Sphere_Coequal
-							JAP = { add_to_faction = MUJ }
 						}
-						else_if = {
-							limit = {
-								OR = {
-									AZH = { is_in_faction_with = JAP }
-									IND = { is_in_faction_with = JAP }
-									IND = { has_idea = Sphere_Observer }
-								}
-							}
-							add_ideas = Sphere_Observer
-						}
-					} 
-					USA = {
-						set_temp_variable = { Victory_ID = 52 }
-						set_temp_variable = { Victory_Outcome = 2 }
-						set_temp_variable = { Victory_Points = -50 }
-						Cold_War_GUI_ManipulateVictory = yes
-						TaS_fopo_remove_manchurian_civil_war_tab = yes
-						set_temp_variable = { target = NAL }
-						TNO_clear_and_recall_volunteers = yes
-					}
-					JAP = {
-						set_temp_variable = { Victory_ID = 52 }
-						set_temp_variable = { Victory_Outcome = 4 }
-						set_temp_variable = { Victory_Points = 100 }
-						Cold_War_GUI_ManipulateVictory = yes
-						TaS_fopo_remove_manchurian_civil_war_tab = yes
-						set_temp_variable = { target = MUJ }
-						TNO_clear_and_recall_volunteers = yes
-					}
-					MAR = {
-						set_temp_variable = { target = AFG }
-						TNO_clear_and_recall_volunteers = yes
-						set_temp_variable = { target = NAL }
-						TNO_clear_and_recall_volunteers = yes
-					}
-					every_country  = {
-						news_event = {
-							id = MAR_2WRW_world_news.29
-						}
-					}
-					set_global_flag = skip_default_capitulation
-				}
-				else_if = {
-					limit = {
-						FROM = {
-							original_tag = NAL
-						}
-						ROOT = { 
-							OR = {
-								original_tag = MUJ
-								original_tag = AFG
-							}
-						}
-						MUJ = { exists = no }
-						AFG = { exists = no }
-						NOT = { has_global_flag = ACW_twoside }
-					}
-					USA = {
-						set_temp_variable = { Victory_ID = 52 }
-						set_temp_variable = { Victory_Outcome = 4 }
-						set_temp_variable = { Victory_Points = 50 }
-						Cold_War_GUI_ManipulateVictory = yes
-						TaS_fopo_remove_manchurian_civil_war_tab = yes
-						set_temp_variable = { target = NAL }
-						TNO_clear_and_recall_volunteers = yes
-					}
-					JAP = {
-						set_temp_variable = { Victory_ID = 52 }
-						set_temp_variable = { Victory_Outcome = 2 }
-						set_temp_variable = { Victory_Points = -50 }
-						Cold_War_GUI_ManipulateVictory = yes
-						TaS_fopo_remove_manchurian_civil_war_tab = yes
-						set_temp_variable = { target = MUJ }
-						TNO_clear_and_recall_volunteers = yes
-					}
-					MAR = {
-						set_temp_variable = { target = AFG }
-						TNO_clear_and_recall_volunteers = yes
-						set_temp_variable = { target = NAL }
-						TNO_clear_and_recall_volunteers = yes
-					}
-					if = {
-						limit = {
-							MAR = { has_country_flag = MAR_support_AFG }
-							NOT = { has_global_flag = ACW_twoside }
-						}
-						NAL = { 
-							set_cosmetic_tag = NAL_Victory
-							econ_join_sphere_USA = yes
-							every_owned_state = {
-								remove_core_of = AFG
-								add_core_of = NAL
-							}
-						}
-						if = {
-							limit = { IND = { has_idea = OFN_Independent_Member } }
-							add_ideas = OFN_Independent_Member
-							USA = { add_to_faction = NAL }
-						}
-						else_if = {
-							limit = { IND = { has_idea = OFN_Observer } }
-							add_ideas = OFN_Observer
-						}
-					}
-					else = {
-						NAL = {
-							set_cosmetic_tag = NAL_Victory
-							econ_join_sphere_MAR = yes 
-							add_ideas = RUSAlliance_Observer
-							every_owned_state = {
-								remove_core_of = AFG
-								add_core_of = NAL
-							}
-						}
-					}
-					every_country  = {
-						news_event = {
-							id = MAR_2WRW_world_news.27
-						}
-					}
-					set_global_flag = skip_default_capitulation
-				}
-				else_if = {
-					limit = {
-						FROM = {
-							original_tag = AFG
-						}
-						ROOT = { 
-							original_tag = NAL
-						}
-						has_global_flag = ACW_twoside
-					}
-					AFG = {
-						econ_join_sphere_JAP = yes
-						every_owned_state = {
-							remove_core_of = MUJ
-							remove_core_of = NAL
-						}
+
 						if = {
 							limit = {
-								OR = {
-									AZH = { is_in_faction_with = JAP }
-									IND = { is_in_faction_with = JAP }
-									NOT = { country_exists = PAK }
-								}
+								check_variable = { global.AFG_contenders^num = 1 }
 							}
-							add_ideas = Sphere_Coequal
-							JAP = { add_to_faction = MUJ }
-						}
-						else_if = {
-							limit = {
-								OR = {
-									AZH = { is_in_faction_with = JAP }
-									IND = { is_in_faction_with = JAP }
-									IND = { has_idea = Sphere_Observer }
-								}
-							}
-							add_ideas = Sphere_Observer
-						}
-					}
-					USA = {
-						set_temp_variable = { Victory_ID = 52 }
-						set_temp_variable = { Victory_Outcome = 2 }
-						set_temp_variable = { Victory_Points = -50 }
-						Cold_War_GUI_ManipulateVictory = yes
-						TaS_fopo_remove_manchurian_civil_war_tab = yes
-						set_temp_variable = { target = NAL }
-						TNO_clear_and_recall_volunteers = yes
-					}
-					JAP = {
-						set_temp_variable = { Victory_ID = 52 }
-						set_temp_variable = { Victory_Outcome = 4 }
-						set_temp_variable = { Victory_Points = 100 }
-						Cold_War_GUI_ManipulateVictory = yes
-						TaS_fopo_remove_manchurian_civil_war_tab = yes
-						set_temp_variable = { target = AFG }
-						TNO_clear_and_recall_volunteers = yes
-					}
-					MAR = {
-						set_temp_variable = { target = NAL }
-						TNO_clear_and_recall_volunteers = yes
-					}	
-					every_country  = {
-						news_event = {
-							id = MAR_2WRW_world_news.28
-						}
-					}
-					set_global_flag = skip_default_capitulation
-				}
-				else_if = {
-					limit = {
-						FROM = {
-							original_tag = NAL
-						}
-						ROOT = { 
-							original_tag = AFG
-						}
-						has_global_flag = ACW_twoside
-					}
-					USA = {
-						set_temp_variable = { Victory_ID = 52 }
-						set_temp_variable = { Victory_Outcome = 4 }
-						set_temp_variable = { Victory_Points = 50 }
-						Cold_War_GUI_ManipulateVictory = yes
-						TaS_fopo_remove_manchurian_civil_war_tab = yes
-						set_temp_variable = { target = NAL }
-						TNO_clear_and_recall_volunteers = yes
-					}
-					JAP = {
-						set_temp_variable = { Victory_ID = 52 }
-						set_temp_variable = { Victory_Outcome = 2 }
-						set_temp_variable = { Victory_Points = -50 }
-						Cold_War_GUI_ManipulateVictory = yes
-						TaS_fopo_remove_manchurian_civil_war_tab = yes
-						set_temp_variable = { target = AFG }
-						TNO_clear_and_recall_volunteers = yes
-					}
-					MAR = {
-						set_temp_variable = { target = NAL }
-						TNO_clear_and_recall_volunteers = yes
-					}
-					NAL = {
-						set_cosmetic_tag = NAL_Victory
-						if = {
-							limit = { MAR = { has_country_flag = MAR_support_NAL } }
-							econ_join_sphere_MAR = yes
-							add_ideas = RUSAlliance_Observer
-						}
-						else = {
-							econ_join_sphere_USA = yes
+							clear_array = global.AFG_contenders
+
 							if = {
-								limit = { IND = { has_idea = OFN_Independent_Member } }
-								add_ideas = OFN_Independent_Member
-								USA = { add_to_faction = NAL }
+								limit = { country_exists = AFG }
+								USA = {
+									set_temp_variable = { Victory_ID = 52 }
+									set_temp_variable = { Victory_Outcome = 2 }
+									set_temp_variable = { Victory_Points = -100 }
+									Cold_War_GUI_ManipulateVictory = yes
+									TaS_fopo_remove_afghanistan_civil_war_tab = yes
+									set_temp_variable = { target = NAL }
+									TNO_clear_and_recall_volunteers = yes
+								}
+								JAP = {
+									set_temp_variable = { Victory_ID = 52 }
+									set_temp_variable = { Victory_Outcome = 2 }
+									set_temp_variable = { Victory_Points = -100 }
+									Cold_War_GUI_ManipulateVictory = yes
+									TaS_fopo_remove_afghanistan_civil_war_tab = yes
+									set_temp_variable = { target = MUJ }
+									TNO_clear_and_recall_volunteers = yes
+								}
+								MAR = {
+									set_temp_variable = { target = AFG }
+									TNO_clear_and_recall_volunteers = yes
+									TaS_fopo_remove_afghanistan_civil_war_tab = yes
+								}
+								AFG = { 
+									econ_join_sphere_MAR = yes
+									every_owned_state = {
+										remove_core_of = NAL
+										remove_core_of = MUJ
+									}
+									MAR = { add_to_faction = AFG }
+									transfer_state = 1885
+									transfer_state = 2461
+									add_ideas = RUSAlliance_Independent_Member
+								}
+								every_country  = {
+									limit = { is_ai = no }
+									news_event = {
+										id = MAR_2WRW_world_news.28
+									}
+								}
 							}
 							else_if = {
-								limit = { IND = { has_idea = OFN_Observer } }
-								add_ideas = OFN_Observer
+								limit = { country_exists = MUJ }
+								USA = {
+									set_temp_variable = { Victory_ID = 52 }
+									set_temp_variable = { Victory_Outcome = 2 }
+									set_temp_variable = { Victory_Points = -100 }
+									Cold_War_GUI_ManipulateVictory = yes
+									TaS_fopo_remove_afghanistan_civil_war_tab = yes
+									set_temp_variable = { target = NAL }
+									TNO_clear_and_recall_volunteers = yes
+								}
+								JAP = {
+									set_temp_variable = { Victory_ID = 52 }
+									set_temp_variable = { Victory_Outcome = 4 }
+									set_temp_variable = { Victory_Points = 100 }
+									Cold_War_GUI_ManipulateVictory = yes
+									TaS_fopo_remove_afghanistan_civil_war_tab = yes
+									set_temp_variable = { target = MUJ }
+									TNO_clear_and_recall_volunteers = yes
+								}
+								MAR = {
+									set_temp_variable = { target = AFG }
+									TNO_clear_and_recall_volunteers = yes
+									TaS_fopo_remove_afghanistan_civil_war_tab = yes
+									set_country_flag = AFG_indefinite_occupation
+								}
+								MUJ = {
+									econ_join_sphere_JAP = yes
+									set_cosmetic_tag = MUJ_Victory
+									every_owned_state = {
+										remove_core_of = AFG
+										remove_core_of = NAL
+										add_core_of = MUJ
+									}
+									if = {
+										limit = {
+											OR = {
+												AZH = { is_in_faction_with = JAP }
+												IND = { is_in_faction_with = JAP }
+												NOT = { country_exists = PAK }
+											}
+										}
+										add_ideas = Sphere_Coequal
+										JAP = { add_to_faction = MUJ }
+									}
+									else_if = {
+										limit = {
+											OR = {
+												AZH = { is_in_faction_with = JAP }
+												IND = { is_in_faction_with = JAP }
+												IND = { has_idea = Sphere_Observer }
+											}
+										}
+										add_ideas = Sphere_Observer
+									}
+								} 
+								every_country  = {
+									limit = { is_ai = no }
+									news_event = {
+										id = MAR_2WRW_world_news.29
+									}
+								}
 							}
-						}
-						every_owned_state = {
-							remove_core_of = AFG
-							add_core_of = NAL
-						}
-					}	
-					every_country  = {
-						news_event = {
-							id = MAR_2WRW_world_news.27
+							else_if = {
+								limit = { country_exists = NAL }
+								USA = {
+									set_temp_variable = { Victory_ID = 52 }
+									set_temp_variable = { Victory_Outcome = 4 }
+									set_temp_variable = { Victory_Points = 100 }
+									Cold_War_GUI_ManipulateVictory = yes
+									TaS_fopo_remove_afghanistan_civil_war_tab = yes
+									set_temp_variable = { target = NAL }
+									TNO_clear_and_recall_volunteers = yes
+								}
+								JAP = {
+									set_temp_variable = { Victory_ID = 52 }
+									set_temp_variable = { Victory_Outcome = 2 }
+									set_temp_variable = { Victory_Points = -100 }
+									Cold_War_GUI_ManipulateVictory = yes
+									TaS_fopo_remove_afghanistan_civil_war_tab = yes
+									set_temp_variable = { target = MUJ }
+									TNO_clear_and_recall_volunteers = yes
+								}
+								MAR = {
+									set_temp_variable = { target = AFG }
+									TNO_clear_and_recall_volunteers = yes
+									TaS_fopo_remove_afghanistan_civil_war_tab = yes
+									set_country_flag = AFG_indefinite_occupation
+								}
+								NAL = { 
+									set_cosmetic_tag = NAL_Victory
+									econ_join_sphere_USA = yes
+									every_owned_state = {
+										remove_core_of = AFG
+										remove_core_of = MUJ
+										add_core_of = NAL
+									}
+									if = {
+										limit = { IND = { has_idea = OFN_Independent_Member } }
+										add_ideas = OFN_Independent_Member
+										USA = { add_to_faction = NAL }
+									}
+									else_if = {
+										limit = { IND = { has_idea = OFN_Observer } }
+										add_ideas = OFN_Observer
+									}
+								}
+								every_country  = {
+									limit = { is_ai = no }
+									news_event = {
+										id = MAR_2WRW_world_news.27
+									}
+								}
+							}
+							FROM = {
+								set_capital = { state = 267 remember_old_capital = no }
+							}
 						}
 					}
 					set_global_flag = skip_default_capitulation
 				}
+				else_if = {
+					limit = {
+						FROM = {
+							OR = {
+								tag = AFG
+								tag = MUJ
+								tag = NAL
+							}
+						}
+						ROOT = {
+							OR = {
+								tag = AFG
+								tag = MUJ
+								tag = NAL
+							}
+						}
+					}
+					FROM = {
+						annex_country = {
+							target = ROOT
+							transfer_troops = no
+						}
+						every_owned_state = {
+							limit = { is_core_of = ROOT }
+							remove_core_of = ROOT
+						}
+					}
+					set_global_flag = skip_default_capitulation
+				}	
 				else_if = {
 					limit = {
 						FROM = {

@@ -818,40 +818,13 @@ defined_text = {
 		trigger = {
 			check_variable = { selected_conflict_id = token:GC_AfghanistanCivilWar }
 			tag = MAR
-			MUJ = { exists = no }
 		}
-		localization_key = MAR_afgan_cw_category_twoside_desc
+		localization_key = MAR_kosygin_afgan_cw_category_desc
 	}
 	text = {
 		trigger = {
 			check_variable = { selected_conflict_id = token:GC_AfghanistanCivilWar }
 			tag = USA
-			MUJ = { exists = no }
-		}
-		localization_key = USA_afgan_cw_category_twoside_desc
-	}
-	text = {
-		trigger = {
-			check_variable = { selected_conflict_id = token:GC_AfghanistanCivilWar }
-			tag = JAP
-			MUJ = { exists = no }
-		}
-		localization_key = JAP_afgan_cw_category_twoside_desc
-	}
-	text = {
-		trigger = {
-			check_variable = { selected_conflict_id = token:GC_AfghanistanCivilWar }
-			tag = MAR
-			MUJ = { exists = yes }
-			MAR = { has_country_flag = MAR_support_NAL }
-		}
-		localization_key = MAR_afgan_cw_category_desc
-	}
-	text = {
-		trigger = {
-			check_variable = { selected_conflict_id = token:GC_AfghanistanCivilWar }
-			tag = USA
-			MUJ = { exists = yes }
 		}
 		localization_key = USA_afgan_cw_category_desc
 	}
@@ -859,18 +832,8 @@ defined_text = {
 		trigger = {
 			check_variable = { selected_conflict_id = token:GC_AfghanistanCivilWar }
 			tag = JAP
-			MUJ = { exists = yes }
 		}
 		localization_key = JAP_afgan_cw_category_desc
-	}
-	text = {
-		trigger = {
-			check_variable = { selected_conflict_id = token:GC_AfghanistanCivilWar }
-			tag = MAR
-			MUJ = { exists = yes }
-			MAR = { has_country_flag = MAR_support_AFG }
-		}
-		localization_key = MAR_kosygin_afgan_cw_category_desc
 	}
 	text = {
 		localization_key = ""
@@ -1861,59 +1824,22 @@ defined_text = {
 		trigger = {
 			check_variable = { selected_conflict_id = token:GC_AfghanistanCivilWar }
 			tag = MAR
-			MUJ = { exists = no }
-		}
-		localization_key = "GFX_fopo_afghanistan_civil_war_icon_twoside_rus"
-	}
-	text = {
-		trigger = {
-			check_variable = { selected_conflict_id = token:GC_AfghanistanCivilWar }
-			tag = USA
-			MUJ = { exists = no }
-		}
-		localization_key = "GFX_fopo_afghanistan_civil_war_icon_twoside_rus"
-	}
-	text = {
-		trigger = {
-			check_variable = { selected_conflict_id = token:GC_AfghanistanCivilWar }
-			tag = JAP
-			MUJ = { exists = no }
-		}
-		localization_key = "GFX_fopo_afghanistan_civil_war_icon_twoside_jap"
-	}
-	text = {
-		trigger = {
-			check_variable = { selected_conflict_id = token:GC_AfghanistanCivilWar }
-			tag = MAR
-			MUJ = { exists = yes }
-			MAR = { has_country_flag = MAR_support_NAL }
-		}
-		localization_key = "GFX_fopo_afghanistan_civil_war_icon_rus"
-	}
-	text = {
-		trigger = {
-			check_variable = { selected_conflict_id = token:GC_AfghanistanCivilWar }
-			tag = USA
-			MUJ = { exists = yes }
-		}
-		localization_key = "GFX_fopo_afghanistan_civil_war_icon_rus"
-	}
-	text = {
-		trigger = {
-			check_variable = { selected_conflict_id = token:GC_AfghanistanCivilWar }
-			tag = JAP
-			MUJ = { exists = yes }
-		}
-		localization_key = "GFX_fopo_afghanistan_civil_war_icon_jap"
-	}
-	text = {
-		trigger = {
-			check_variable = { selected_conflict_id = token:GC_AfghanistanCivilWar }
-			tag = MAR
-			MUJ = { exists = yes }
-			MAR = { has_country_flag = MAR_support_AFG }
 		}
 		localization_key = "GFX_fopo_afghanistan_civil_war_icon_kosygin"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_conflict_id = token:GC_AfghanistanCivilWar }
+			tag = USA
+		}
+		localization_key = "GFX_fopo_afghanistan_civil_war_icon_rus"
+	}
+	text = {
+		trigger = {
+			check_variable = { selected_conflict_id = token:GC_AfghanistanCivilWar }
+			tag = JAP
+		}
+		localization_key = "GFX_fopo_afghanistan_civil_war_icon_jap"
 	}
 	text = {
 		localization_key = "GFX_fopo_blank_icon"

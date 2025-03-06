@@ -1,5 +1,5 @@
 division_template = {
-	name = "Royal Infantry Division"
+	name = "Infantry Division"
 	division_names_group = MUJ_infantry
 	regiments = {
 		infantry = { x = 0 y = 0 }
@@ -16,7 +16,7 @@ division_template = {
 }
 
 division_template = {
-	name = "Royal Mountaineer Divison"
+	name = "Mountaineer Divison"
 	division_names_group = MUJ_mountaineers
 	regiments = {
 		mountaineers = { x = 0 y = 0 }
@@ -32,7 +32,7 @@ division_template = {
 }
 
 division_template = {
-	name = "Royal Motorized Divison"
+	name = "Motorized Divison"
 	division_names_group = MUJ_motorized
 	regiments = {
 		motorized = { x = 0 y = 0 }
@@ -68,7 +68,7 @@ units = {
 			is_name_ordered = yes
 			name_order = 1
 		}
-		location = "15992"
+		location = "14757"
 		division_template = "Tribal Infantry Division"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.7
@@ -79,7 +79,7 @@ units = {
 			is_name_ordered = yes
 			name_order = 2
 		}
-		location = "15992"
+		location = "2062"
 		division_template = "Tribal Infantry Division"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.7
@@ -90,7 +90,7 @@ units = {
 			is_name_ordered = yes
 			name_order = 3
 		}
-		location = "15992"
+		location = "1948"
 		division_template = "Tribal Infantry Division"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.6
@@ -101,7 +101,62 @@ units = {
 			is_name_ordered = yes
 			name_order = 4
 		}
-		location = "15992"
+		location = "2078"
+		division_template = "Tribal Infantry Division"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.6
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 5
+		}
+		location = "5064"
+		division_template = "Tribal Infantry Division"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.6
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 6
+		}
+		location = "15994"
+		division_template = "Tribal Infantry Division"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.6
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 7
+		}
+		location = "16003"
+		division_template = "Tribal Infantry Division"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.6
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 8
+		}
+		location = "16002"
+		division_template = "Tribal Infantry Division"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.6
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 9
+		}
+		location = "15995"
 		division_template = "Tribal Infantry Division"
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.6
@@ -112,10 +167,10 @@ units = {
 			is_name_ordered = yes
 			name_order = 1
 		}
-		location = "5105"
-		division_template = "Royal Mountaineer Divison"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.8
+		location = "5064"
+		division_template = "Mountaineer Divison"
+		start_experience_factor = 0.7
+		start_equipment_factor = 1
 	}
 
 	division = {
@@ -123,20 +178,20 @@ units = {
 			is_name_ordered = yes
 			name_order = 1
 		}
-		location = "15993"
-		division_template = "Royal Infantry Division"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.8
+		location = "2062"
+		division_template = "Infantry Division"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1
 	}
 	division = {
 		division_name = {
 			is_name_ordered = yes
 			name_order = 2
 		}
-		location = "15993"
-		division_template = "Royal Infantry Division"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.8
+		location = "5105"
+		division_template = "Infantry Division"
+		start_experience_factor = 0.4
+		start_equipment_factor = 1
 	}
 }
 

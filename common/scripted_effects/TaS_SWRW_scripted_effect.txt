@@ -2057,6 +2057,11 @@ SWRW_finland_peacedeal = {
 		}
 	}
 	FIN = {
+		remove_faction_status = yes
+		if = {
+			limit = { has_idea = SGR_zollverein_basic }
+			leave_zollverein = yes
+		}
 		set_politics = {
 			ruling_party = despotism
 		}
@@ -2115,6 +2120,12 @@ SWRW_turkey_fail_peacedeal = {
 	ARM = {
 		transfer_state = 1554
 		add_state_core = 1554
+	}
+	TUR = {
+		transfer_state = 1565
+		1565 = {
+			remove_core_of = RUS
+		}
 	}
 	1293 = { set_demilitarized_zone = yes }
 	231 = { set_demilitarized_zone = yes }
@@ -3166,7 +3177,11 @@ SWRW_force_effects_for_capitulated = {
 		}
 	}
 	if = {
-		limit = { UTL = { has_capitulated = yes } }
+		limit = {
+			UTL = { has_capitulated = yes }
+			NOT = { RUS = { has_country_flag = MAR_has_central_asia } }
+			NOT = { country_exists = TRK }
+		}
 		RUS = {
 			MAR_install_mil_turkestan = yes
 			set_country_flag = MAR_has_central_asia

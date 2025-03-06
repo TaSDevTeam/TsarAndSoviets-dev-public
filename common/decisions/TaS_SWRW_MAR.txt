@@ -1063,7 +1063,7 @@ MAR_SWRW_category = {
 				check_variable = { swrw_preparation_category = 1 }
 				is_ai = yes
 			}
-			#has_country_flag = SWRW_decisions_bunkers
+			has_country_flag = MAR_Turkestan_German
 		}
 		available = {
 			has_war = no
@@ -2444,9 +2444,6 @@ MAR_SWRW_category = {
 					add_compliance = -30
 					add_resistance = 30
 				}
-			}
-			GER = {
-				add_ideas = SWRW_war_partisans 
 			}
 			add_to_variable = { MAR_Sended_diversants = 1 }
 		}
