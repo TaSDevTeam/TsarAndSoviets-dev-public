@@ -6297,6 +6297,15 @@ country_event = { #Turkish Straits
 					ideology = paternalism
 					popularity = 0.15
 				}
+				every_country = {
+				    if = {
+					    limit = {
+						    check_variable = { ECON_SPHERE_LEADER = TUR }
+					    }
+					    clr_country_flag = HAS_ECON_SPHERE
+					    clear_variable = ECON_SPHERE_LEADER
+					}	
+				}
 				econ_join_sphere_MAR = yes
 				#retire_country_leader = yes
 				promote_character = MTU_Ahmet_Isvan
