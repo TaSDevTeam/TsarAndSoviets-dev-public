@@ -95,6 +95,20 @@ TaS_OIL_get_supported_factions = {
 		add_to_array = { global.OIL_supported_by_MAR = SDS }
 		add_to_array = { global.OIL_supported_by_MAR = AYA }
 	}
+	for_each_scope_loop = {
+		array = global.OIL_supported_by_MAR
+
+		meta_effect = {
+			text = {
+				add_ai_strategy = {
+					id = "[Target_tag]"
+					type = send_volunteers_desire
+					value = 500
+				}
+			}
+			Target_tag = "[FROM.GetTag]"
+		}
+	}
 }
 TaS_2WRW_manchuria_spawn_states = {
 	custom_effect_tooltip = TaS_2WRW_manchuria_spawn_states_tt
