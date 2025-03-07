@@ -1,0 +1,106 @@
+GWF_Homura_deccat = {
+	#powers
+	GWF_Homura_powers_effigy = {
+		icon = GFX_GWF_Homura_powers_effigy
+		visible = {
+			check_variable = { GWF_Homura_cat = 1 }
+		}
+		fire_only_once = yes
+		
+		available = {
+			always = no
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete GWF_Homura_powers_effigy... wait that's wrong"
+		}
+	}
+	#mind
+	GWF_Homura_mind_effigy = {
+		icon = GFX_GWF_Homura_mind_effigy
+		visible = {
+			check_variable = { GWF_Homura_cat = 1 }
+		}
+		fire_only_once = yes
+		
+		available = {
+			always = no
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete GWF_Homura_mind_effigy... wait that's wrong"
+		}
+	}
+}
+
+GWF_Opposition_deccat = {
+	GWF_current_opposition_effigy = {
+		icon = GFX_GWF_current_opposition_effigy
+		visible = {
+			always = yes
+		}
+		fire_only_once = yes
+		
+		available = {
+			always = no
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete GWF_current_opposition_effigy... wait that's wrong"
+		}
+	}
+}
+
+GWF_BigGame_deccat = {
+	GWF_current_round_effigy = {
+		icon = GFX_GWF_current_round_effigy
+		visible = {
+			always = yes
+		}
+		fire_only_once = yes
+		
+		available = {
+			always = no
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete GWF_current_round_effigy... wait that's wrong"
+		}
+	}
+}
+
+GWF_SGW_deccat = {
+	GWF_sgw_effigy = {
+		icon = GFX_GWF_sgw_effigy
+		visible = {
+			always = yes
+		}
+		fire_only_once = yes
+		
+		available = {
+			always = no
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete GWF_sgw_effigy... wait that's wrong"
+		}
+	}
+}
+
+GWF_army_deccat = {
+	GWF_army_effigy = {
+		icon = GFX_GWF_army_effigy
+		visible = {
+			always = yes
+		}
+		fire_only_once = yes
+		
+		available = {
+			always = no
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete GWF_army_effigy... wait that's wrong"
+		}
+	}
+}
