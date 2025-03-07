@@ -1,0 +1,122 @@
+guiTypes = {
+	containerWindowType = {
+		name = "GWF_Homura_gui_window_container"
+		size = { width = 482 height = 600 }
+		position = { x = 0 y = 0 }
+		
+		containerWindowType = {
+			name = "GWF_Homura_gui_picture_container"
+			position = { x = 75 y = 5 }
+			
+			iconType = {
+				name = "GWF_Homura_one_gui_picture"
+				position = { x = 0 y = 0 }
+				spriteType = "GFX_hameru_one"
+				pdx_tooltip = GWF_homura_one_tt
+				pdx_tooltip_delayed = GWF_homura_one_tt_desc
+			}
+			
+			iconType = {
+				name = "GWF_Homura_two_gui_picture"
+				position = { x = 0 y = 0 }
+				spriteType = "GFX_hameru_two"
+				pdx_tooltip = GWF_homura_two_tt
+				pdx_tooltip_delayed = GWF_homura_two_tt_desc
+			}
+			
+			iconType = {
+				name = "GWF_Homura_three_gui_picture"
+				position = { x = -20 y = -20 }
+				spriteType = "GFX_hameru_three"
+				pdx_tooltip = GWF_homura_three_tt
+				pdx_tooltip_delayed = GWF_homura_three_tt_desc
+			}
+			
+			buttonType = {
+				name = "GWF_Homura_change_style_button"
+				position = { x = -52 y = 365 }
+				spriteType = "GFX_change_style"
+				pdx_tooltip = GWF_Homura_change_style_button_tt
+				pdx_tooltip_delayed = GWF_Homura_change_style_button_tt_desc
+			}
+		}
+		
+		containerWindowType = {
+			name = "GWF_Homura_gui_scale_one_container"
+			position = { x = 23 y = 440 }
+			
+			iconType = {
+				name = "GWF_Homura_gui_scale_one_frame"
+				position = { x = 0 y = 0 }
+				spriteType = "GFX_homura_scale_frame"
+				pdx_tooltip = GWF_homura_scale_one_tt
+				pdx_tooltip_delayed = GWF_homura_scale_one_tt_desc
+			}
+			
+			iconType = {
+				name = "GWF_Homura_gui_scale_one_scale"
+				position = { x = 62 y = 17 }
+				spriteType = "GFX_homura_scale"
+				pdx_tooltip = GWF_homura_scale_one_tt
+				pdx_tooltip_delayed = GWF_homura_scale_one_tt_desc
+			}
+			
+			buttonType = {
+				name = "GWF_Homura_gui_scale_one_icon"
+				position = { x = 5 y = 4 }
+				spriteType = "GFX_soulgem"
+				pdx_tooltip = GWF_homura_scale_one_switch_tt
+				pdx_tooltip_delayed = GWF_homura_scale_one_switch_tt_desc
+			}
+			
+			instantTextboxType = {
+				name = "GWF_Homura_gui_scale_one_title"
+				position = { x = 62 y = 50 }
+				font = "aldrich_24_outline"
+				text = "SILUSHKA BOGATYRSKAYA"
+				maxWidth = 412
+				maxHeight = 30
+				format = left
+			}
+		}
+		
+		containerWindowType = {
+			name = "GWF_Homura_gui_scale_two_container"
+			position = { x = 23 y = 510 }
+			
+			iconType = {
+				name = "GWF_Homura_gui_scale_two_frame"
+				position = { x = 0 y = 0 }
+				spriteType = "GFX_homura_scale_frame"
+				pdx_tooltip = GWF_homura_scale_two_tt
+				pdx_tooltip_delayed = GWF_homura_scale_two_tt_desc
+			}
+			
+			iconType = {
+				name = "GWF_Homura_gui_scale_two_scale"
+				position = { x = 62 y = 17 }
+				spriteType = "GFX_homura_scale"
+				pdx_tooltip = GWF_homura_scale_two_tt
+				pdx_tooltip_delayed = GWF_homura_scale_two_tt_desc
+			}
+			
+			buttonType = {
+				name = "GWF_Homura_gui_scale_two_icon"
+				position = { x = 4 y = 4 }
+				spriteType = "GFX_timeshield"
+				pdx_tooltip = GWF_homura_scale_two_switch_tt
+				pdx_tooltip_delayed = GWF_homura_scale_two_switch_tt_desc
+			}
+			
+			instantTextboxType = {
+				name = "GWF_Homura_gui_scale_two_title"
+				position = { x = 62 y = 50 }
+				font = "aldrich_24_outline"
+				text = "SILUSHKA MENTALNAYA"
+				maxWidth = 412
+				maxHeight = 30
+				format = left
+			}
+		}
+	}
+}

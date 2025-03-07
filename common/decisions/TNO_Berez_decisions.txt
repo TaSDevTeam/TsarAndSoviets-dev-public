@@ -1151,6 +1151,74 @@ MAR_debug_category = {
 		}
 	}
 	
+	MAR_waiter_send_me_to_stuttgart_please = {
+		icon = GFX_decision_generic_industry
+
+		allowed = {
+			original_tag = MAR
+		}
+		fire_only_once = no
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: MAR_waiter_send_me_to_stuttgart_please"
+			XYI = {
+				GWF_Akemi_Homura = {
+					set_nationality = GWF
+				}
+				GWF_Kyubey = {
+					set_nationality = GWF
+				}
+				GWF_Contollable_Chaos = {
+					set_nationality = GWF
+				}
+				GWF_Sayaka_Miki = {
+					set_nationality = GWF
+				}
+				GWF_Hans_Filbinger = {
+					set_nationality = GWF
+				}
+				GWF_Otto_Tetsurstamm = {
+					set_nationality = GWF
+				}
+				GWF_Arthur_Juz = {
+					set_nationality = GWF
+				}
+			}
+			GWF = {
+				set_cosmetic_tag = GWF_trvthnuke
+				set_country_flag = country_has_trvthnuked
+				transfer_state = 68
+				transfer_state = 50
+				every_owned_state = {
+					add_core_of = PREV
+				}
+				promote_character = GWF_Akemi_Homura
+				set_politics = {
+					ruling_party = accelerationism
+					elections_allowed = no
+				}
+				set_party_name = {
+					ideology = accelerationism
+					long_name = GWF_AprilFools_party_long
+					name = GWF_AprilFools_party
+				}
+				
+				remove_all_ideas = yes
+				remove_all_ministers = yes
+				set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Corporatism }
+				econ_type_change = yes
+				set_temp_variable = { TNO_economy_subtype_temp = token:Econ_Subtype_Dirigisme }
+				econ_subtype_change = yes
+				set_temp_variable = { global.ruling_party_pop_temp = 1 }
+				change_ruling_party_pop_modified = yes
+				add_ideas = GER_collapsed_universe
+				load_focus_tree = {	tree = GWF_Homura_Initial keep_completed = no }
+				
+				change_tag_from = ROOT
+			}
+		}
+	}
+	
 }
 
 

@@ -1,25 +1,9 @@
 GWF_Homura_deccat = {
-	#powers
-	GWF_Homura_powers_effigy = {
-		icon = GFX_GWF_Homura_powers_effigy
-		visible = {
-			check_variable = { GWF_Homura_cat = 1 }
-		}
-		fire_only_once = yes
-		
-		available = {
-			always = no
-		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision complete GWF_Homura_powers_effigy... wait that's wrong"
-		}
-	}
 	#mind
 	GWF_Homura_mind_effigy = {
 		icon = GFX_GWF_Homura_mind_effigy
 		visible = {
-			check_variable = { GWF_Homura_cat = 1 }
+			check_variable = { GWF_Homura_cat = 1 } 
 		}
 		fire_only_once = yes
 		
@@ -29,6 +13,22 @@ GWF_Homura_deccat = {
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision complete GWF_Homura_mind_effigy... wait that's wrong"
+		}
+	}
+	#powers
+	GWF_Homura_powers_effigy = {
+		icon = GFX_GWF_Homura_powers_effigy
+		visible = {
+			check_variable = { GWF_Homura_cat = 2 }
+		}
+		fire_only_once = yes
+		
+		available = {
+			always = no
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision complete GWF_Homura_powers_effigy... wait that's wrong"
 		}
 	}
 }

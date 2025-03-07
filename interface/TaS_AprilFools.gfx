@@ -1,0 +1,56 @@
+spriteTypes = { 
+	spriteType = {
+		name = "GFX_decision_category_homura_icon" 
+		textureFile = "gfx/interface/aprilfools_gui/decision_category_homura_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_hameru_one" 
+		textureFile = "gfx/interface/aprilfools_gui/hameru_one.dds"
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_hameru_two" 
+		textureFile = "gfx/interface/aprilfools_gui/hameru_two.dds"
+		noOfFrames = 3
+		animation_rate_fps = 1
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 4.0
+		alwaystransparent = no
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_hameru_three" 
+		textureFile = "gfx/interface/aprilfools_gui/hameru_three.dds"
+		noOfFrames = 14
+		animation_rate_fps = 4
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+		alwaystransparent = no
+	}
+	spriteType = {
+		name = "GFX_homura_scale_frame" 
+		textureFile = "gfx/interface/aprilfools_gui/homura_scale_frame.dds"
+	}
+	progressbartype = {
+		name = "GFX_homura_scale" 
+		texturefile1 = "gfx/interface/aprilfools_gui/homura_scale.dds"
+		texturefile2 = "gfx/interface/aprilfools_gui/homura_scale_empty.dds"
+		color = { 0.0 0.0 0.0 }
+		colortwo = { 0.0 0.0 0.0 }
+		size = { x = 412 y = 30 }
+		effectfile = "gfx/FX/progress.lua"
+		horizontal = yes
+	}
+	spriteType = {
+		name = "GFX_timeshield" 
+		textureFile = "gfx/interface/aprilfools_gui/timeshield.dds"
+	}
+	spriteType = {
+		name = "GFX_soulgem" 
+		textureFile = "gfx/interface/aprilfools_gui/soulgem.dds"
+	}
+	spriteType = {
+		name = "GFX_change_style" 
+		textureFile = "gfx/interface/aprilfools_gui/change_style.dds"
+	}
+}
