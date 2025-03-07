@@ -188,19 +188,19 @@ shared_focus = {
 			set_temp_variable = { target = GER }
 			TNO_increase_volunteer_cap_2 = yes
 		}
-		DOM = {
-			limit = {	
-				has_government = fascism
+		if = {
+			limit = { DOM = { has_government = fascism } }
+			DOM = {
+				set_temp_variable = { target = GER }
+				TNO_increase_volunteer_cap_2 = yes
 			}
-			set_temp_variable = { target = GER }
-			TNO_increase_volunteer_cap_2 = yes
 		}
-		IBR = {
-			limit = {	
-				has_completed_focus = IBR_under_the_shadow_of_the_hugemon
+		if = {
+			limit = { DOM = { has_completed_focus = IBR_under_the_shadow_of_the_hugemon } }
+			IBR = {
+				set_temp_variable = { target = GER }
+				TNO_increase_volunteer_cap_2 = yes
 			}
-			set_temp_variable = { target = GER }
-			TNO_increase_volunteer_cap_2 = yes
 		}
 		country_event = { id = GER_SWRW.4 }
 	}

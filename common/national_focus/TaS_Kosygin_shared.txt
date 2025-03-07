@@ -736,8 +736,10 @@ shared_focus = {
 	icon = GFX_MAR_kosecon_japan_partners
 	cost = 3
 	available = {
-		custom_effect_tooltip = MAR_Kosygin_choose_JAP_tt
-		has_country_flag = MAR_Kosygin_choose_JAP
+		custom_trigger_tooltip = {
+			tooltip = MAR_Kosygin_choose_JAP_tt
+			has_country_flag = MAR_Kosygin_choose_JAP
+		}
 	}
 	prerequisite = {
 		focus = MAR_koseco_support_kulaks
@@ -759,8 +761,10 @@ shared_focus = {
 	icon = GFX_MAR_kosecon_american_friends
 	cost = 3
 	available = {
-		custom_effect_tooltip = MAR_Kosygin_choose_USA_tt
-		has_country_flag = MAR_Kosygin_choose_USA
+		custom_trigger_tooltip = {
+			tooltip = MAR_Kosygin_choose_USA_tt
+			has_country_flag = MAR_Kosygin_choose_USA
+		}
 	}
 	prerequisite = {
 		focus = MAR_koseco_support_kulaks
