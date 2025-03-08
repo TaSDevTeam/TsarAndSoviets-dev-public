@@ -1,0 +1,139 @@
+ideas = {
+	country = {
+		##initial
+		GWF_chaos_in_stuttgart = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GWF_chaos_in_stuttgart" }
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = MAN_civil_war
+			modifier = {
+				political_power_factor = -0.15
+				academic_base_monthly_rate = -1
+				industrial_expertise_monthly_rate = -1
+				army_professionalism_monthly_rate = -1
+				admin_efficiency_monthly_rate = -1
+			}
+		}
+		GWF_chaos_in_stuttgart_1 = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GWF_chaos_in_stuttgart" }
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = MAN_civil_war
+			modifier = {
+				political_power_factor = -0.05
+				academic_base_monthly_rate = -0.25
+				industrial_expertise_monthly_rate = -0.25
+				army_professionalism_monthly_rate = -0.25
+				admin_efficiency_monthly_rate = -0.25
+			}
+		}
+		GWF_for_madoka = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GWF_for_madoka" }
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = MAN_civil_war
+			modifier = {
+				stability_factor = -0.15
+				army_core_defence_factor = 0.3
+			}
+		}
+		GWF_southgerman_tension = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GWF_southgerman_tension" }
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = MAN_civil_war
+			modifier = {
+				manpower_weekly = 150
+				war_support_factor = 0.15
+			}
+		}
+		##later
+		GWF_human_army = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GWF_human_army" }
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = MAN_civil_war
+			modifier = {
+				army_attack_factor = -0.05
+				army_defence_factor = -0.05
+				army_org_factor = -0.05
+				recruitable_population = 0.15
+			}
+		}
+		GWF_meguca_army = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GWF_meguca_army" }
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = MAN_civil_war
+			modifier = {
+				army_attack_factor = 2
+				army_defence_factor = 2
+				army_org_factor = 2
+				recruitable_population = -0.95
+			}
+		}
+		GWF_southgerman_war = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GWF_southgerman_war" }
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = MAN_civil_war
+			modifier = {
+				surrender_limit = 0.5
+				army_speed_factor = -0.1
+			}
+		}
+		
+		GWF_Homura_modifier_dummy = {
+			allowed = {
+				always = no
+			}
+			on_remove = { remove_dynamic_modifier = { modifier = GWF_Homura_modifier } }
+			removal_cost = -1
+			picture = generic_mysterious_insurgency
+		}
+		GWF_opposition_modifier_dummy = {
+			allowed = {
+				always = no
+			}
+			on_remove = { remove_dynamic_modifier = { modifier = GWF_opposition_modifier } }
+			removal_cost = -1
+			picture = MAR_ogas
+		}
+		
+	}
+}

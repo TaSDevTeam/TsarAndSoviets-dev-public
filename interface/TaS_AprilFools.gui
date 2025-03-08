@@ -119,4 +119,117 @@ guiTypes = {
 			}
 		}
 	}
+	
+	containerWindowType = {
+		name = "GWF_opposition_gui_window_container"
+		size = { width = 482 height = 470 }
+		position = { x = 0 y = 0 }
+		
+		containerWindowType = {
+			name = "GWF_opposition_gui_endezeit_container"
+			position = { x = 140 y = 5 }
+			
+			instantTextboxType = {
+				name = "GWF_opposition_gui_endezeit_title"
+				position = { x = 0 y = 200 }
+				font = "aldrich_24_outline"
+				text = "SILA EBLANOV"
+				maxWidth = 200
+				maxHeight = 30
+				format = center
+			}
+			
+			buttonType = {
+				name = "GWF_opposition_gui_endezeit_button"
+				position = { x = 0 y = 0 }
+				spriteType = "GFX_endezeit"
+				pdx_tooltip = GWF_opposition_gui_endezeit_button_tt
+				pdx_tooltip_delayed = GWF_opposition_gui_endezeit_button_tt_desc
+			}
+			
+			iconType = {
+				name = "GWF_opposition_gui_endezeit_selected"
+				position = { x = 0 y = 0 }
+				spriteType = "GFX_endezeit_selected"
+				alwaystransparent = yes
+			}
+		}
+		
+		containerWindowType = {
+			name = "GWF_opposition_gui_raf_container"
+			position = { x = 20 y = 205 }
+			
+			instantTextboxType = {
+				name = "GWF_opposition_gui_raf_title"
+				position = { x = 0 y = 200 }
+				font = "aldrich_24_outline"
+				text = "SILA EBLANOV"
+				maxWidth = 200
+				maxHeight = 30
+				format = center
+			}
+			
+			buttonType = {
+				name = "GWF_opposition_gui_raf_button"
+				position = { x = 0 y = 0 }
+				spriteType = "GFX_raf"
+				pdx_tooltip = GWF_opposition_gui_raf_button_tt
+				pdx_tooltip_delayed = GWF_opposition_gui_raf_button_tt_desc
+			}
+			
+			iconType = {
+				name = "GWF_opposition_gui_raf_selected"
+				position = { x = 0 y = 0 }
+				spriteType = "GFX_raf_selected"
+				alwaystransparent = yes
+			}
+			
+			iconType = {
+				name = "GWF_opposition_gui_raf_destroyed"
+				position = { x = 0 y = 0 }
+				spriteType = "GFX_raf_destroyed"
+				pdx_tooltip = GWF_opposition_gui_raf_destroyed_tt
+				pdx_tooltip_delayed = GWF_opposition_gui_raf_destroyed_desc
+			}
+		}
+		
+		containerWindowType = {
+			name = "GWF_opposition_gui_gim_container"
+			position = { x = 280 y = 205 }
+			
+			instantTextboxType = {
+				name = "GWF_opposition_gui_gim_title"
+				position = { x = 0 y = 200 }
+				font = "aldrich_24_outline"
+				text = "SILA EBLANOV"
+				maxWidth = 200
+				maxHeight = 30
+				format = center
+			}
+			
+			buttonType = {
+				name = "GWF_opposition_gui_gim_button"
+				position = { x = 0 y = 0 }
+				spriteType = "GFX_gim"
+				pdx_tooltip = GWF_opposition_gui_gim_button_tt
+				pdx_tooltip_delayed = GWF_opposition_gui_gim_button_tt_desc
+			}
+			
+			iconType = {
+				name = "GWF_opposition_gui_gim_selected"
+				position = { x = 0 y = 0 }
+				spriteType = "GFX_gim_selected"
+				alwaystransparent = yes
+			}
+			
+			iconType = {
+				name = "GWF_opposition_gui_gim_destroyed"
+				position = { x = 0 y = 0 }
+				spriteType = "GFX_gim_destroyed"
+				pdx_tooltip = GWF_opposition_gui_gim_destroyed_tt
+				pdx_tooltip_delayed = GWF_opposition_gui_gim_destroyed_desc
+			}
+		}
+	}
+
 }
