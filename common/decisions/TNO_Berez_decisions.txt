@@ -1183,6 +1183,9 @@ MAR_debug_category = {
 				GWF_Arthur_Juz = {
 					set_nationality = GWF
 				}
+				GRA_Andreas_Baader = {
+					set_nationality = GWF
+				}
 			}
 			GWF = {
 				set_cosmetic_tag = GWF_trvthnuke
@@ -1193,6 +1196,19 @@ MAR_debug_category = {
 					add_core_of = PREV
 				}
 				promote_character = GWF_Akemi_Homura
+				GWF_Otto_Ernst_Remer = {
+					promote_character = national_socialism_revolutionary_nazism_subtype
+				}
+				GRA_Andreas_Baader = {
+					promote_character = communist_guevarism_subtype
+				}
+				set_character_name = {
+					character = GWF_Sayaka_Miki
+					name = GWF_Sayaka_Miki_hidden
+				}
+				GWF_Sayaka_Miki = {
+					promote_character = paternalism_provisional_government_subtype
+				}
 				set_politics = {
 					ruling_party = accelerationism
 					elections_allowed = no
@@ -1202,16 +1218,38 @@ MAR_debug_category = {
 					long_name = GWF_AprilFools_party_long
 					name = GWF_AprilFools_party
 				}
-				
+				set_party_name = {
+					ideology = national_socialism
+					long_name = GWF_AprilFools_ns_party_long
+					name = GWF_AprilFools_ns_party
+				}
+				set_party_name = {
+					ideology = communist
+					long_name = GWF_AprilFools_comm_party_long
+					name = GWF_AprilFools_comm_party
+				}
+				set_party_name = {
+					ideology = paternalism
+					long_name = GWF_AprilFools_pat_party_long
+					name = GWF_AprilFools_pat_party
+				}
 				remove_all_ideas = yes
-				remove_all_ministers = yes
 				set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Corporatism }
 				econ_type_change = yes
 				set_temp_variable = { TNO_economy_subtype_temp = token:Econ_Subtype_Dirigisme }
 				econ_subtype_change = yes
-				set_temp_variable = { global.ruling_party_pop_temp = 1 }
-				change_ruling_party_pop_modified = yes
-				add_ideas = GER_collapsed_universe
+				
+				set_popularities = {
+					accelerationism = 43
+					national_socialism = 19
+					communist = 17
+					paternalism = 21
+				}
+				
+				add_ideas = GWF_chaos_in_stuttgart
+				add_ideas = GWF_for_madoka
+				add_ideas = GWF_southgerman_tension
+				
 				load_focus_tree = {	tree = GWF_Homura_Initial keep_completed = no }
 				
 				change_tag_from = ROOT

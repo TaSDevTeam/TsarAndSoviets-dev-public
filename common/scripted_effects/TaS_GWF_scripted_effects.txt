@@ -1,0 +1,74 @@
+GWF_calculate_oppo_dynmod_effects = {
+	if = {
+		limit = { NOT = { has_idea = GWF_opposition_modifier_dummy } }
+		add_ideas = GWF_opposition_modifier_dummy
+		add_dynamic_modifier = {
+			modifier = GWF_opposition_modifier
+			scope = MAR
+		}
+	}
+	
+	# Country scope dynmods
+	clear_array = GWF_opposition_modifier_array
+	add_to_array = { GWF_opposition_modifier_array = 0.2 } # Resistance Target
+	add_to_array = { GWF_opposition_modifier_array = 0.3 } # Supply consumption factor
+	add_to_array = { GWF_opposition_modifier_array = -0.2 } # Resource gain efficiency
+	add_to_array = { GWF_opposition_modifier_array = -0.3 } # Stability
+	add_to_array = { GWF_opposition_modifier_array = -5 } # GDP growth
+	add_to_array = { GWF_opposition_modifier_array = 0.2 } # Misc military costs
+	
+	set_variable = { total_opposition_strength = ROOT.endezeit_strenght }
+	add_to_variable = { total_opposition_strength = ROOT.raf_stranght }
+	add_to_variable = { total_opposition_strength = ROOT.gim_stranght }
+	divide_variable = { total_opposition_strength = 300 }
+	
+	for_each_loop = {
+		array = GWF_opposition_modifier_array
+		multiply_variable = { GWF_opposition_modifier_array^i = total_opposition_strength }
+	}
+	
+	force_update_dynamic_modifier = yes
+}
+
+GWF_calculate_homura_dynmod_effects = {
+	if = {
+		limit = { NOT = { has_idea = GWF_Homura_modifier_dummy } }
+		add_ideas = GWF_Homura_modifier_dummy
+		add_dynamic_modifier = {
+			modifier = GWF_Homura_modifier
+			scope = MAR
+		}
+	}
+
+	clear_array = GWF_Homura_modifier_array_one
+	add_to_array = { GWF_Homura_modifier_array_one = 0.1 } # research_speed_factor
+	add_to_array = { GWF_Homura_modifier_array_one = 0.25 } # political_power_factor
+	add_to_array = { GWF_Homura_modifier_array_one = -0.1 } # personnel_cost_modifier
+	add_to_array = { GWF_Homura_modifier_array_one = 1 } # command_power_gain
+	add_to_array = { GWF_Homura_modifier_array_one = 0.15 } # stability_factor
+	clear_array = GWF_Homura_modifier_array_two
+	add_to_array = { GWF_Homura_modifier_array_two = 0.15 } # army_attack_factor
+	add_to_array = { GWF_Homura_modifier_array_two = 0.15 } # army_defence_factor
+	add_to_array = { GWF_Homura_modifier_array_two = 0.15 } # army_org_factor
+	add_to_array = { GWF_Homura_modifier_array_two = 0.1 } # land_reinforce_rate
+	add_to_array = { GWF_Homura_modifier_array_two = -0.1 } # required_garrison_factor
+	
+	set_temp_variable = { homura_mental_stat = GWF_Homura_mental }
+	add_to_temp_variable = { homura_mental_stat = -50 } 
+	divide_variable = { homura_mental_stat = 50 }
+	
+	set_temp_variable = { homura_physics_stat = GWF_Homura_physics }
+	add_to_temp_variable = { homura_physics_stat = -50 } 
+	divide_variable = { homura_physics_stat = 50 }
+	
+	for_each_loop = {
+		array = GWF_Homura_modifier_array_one
+		multiply_variable = { GWF_Homura_modifier_array_one^i = homura_mental_stat }
+	}
+	for_each_loop = {
+		array = GWF_Homura_modifier_array_two
+		multiply_variable = { GWF_Homura_modifier_array_two^i = homura_physics_stat }
+	}
+	force_update_dynamic_modifier = yes
+}
+
