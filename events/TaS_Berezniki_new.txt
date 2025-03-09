@@ -2555,6 +2555,16 @@ country_event = { # MAR_final_vibori WIN SEREGA BELII
 			long_name = MAR_VSM_ruling_party_long
 			name = MAR_VSM_ruling_party
 		}
+		set_party_name = { 
+			ideology = socialist
+			long_name = MAR_socialist_party_long
+			name = MAR_socialist_party
+		}
+		set_party_name = { 
+			ideology = paternalism
+			long_name = MAR_VSM_ruling_party_long
+			name = MAR_VSM_ruling_party
+		}
 		set_country_flag = MAR_POLITICS_RESOLVED
 		add_country_leader_role = {
 			character = MAR_Sergey_Belozerskiy
@@ -2630,6 +2640,16 @@ country_event = { # MAR_final_vibori MARIA WIN
 			long_name = MAR_VSM_ruling_party_long
 			name = MAR_VSM_ruling_party
 		}
+		set_party_name = { 
+			ideology = despotism_1
+			long_name = MAR_despotism_party_long
+			name = MAR_despotism_party
+		}
+		set_party_name = { 
+			ideology = socialist
+			long_name = MAR_socialist_party_long
+			name = MAR_socialist_party
+		}
 		set_country_flag = MAR_POLITICS_RESOLVED		
 		promote_character = MAR_Maria_Romanova
 		remove_ideas = MAR_Cyril_Yelita_Vilchkovsky_hog
@@ -2670,6 +2690,16 @@ country_event = { # MAR_final_vibori ROMANOV WIN
 			ideology = socialist
 			long_name = MAR_VSM_ruling_party_long
 			name = MAR_VSM_ruling_party
+		}
+		set_party_name = { 
+			ideology = despotism_1
+			long_name = MAR_despotism_party_long
+			name = MAR_despotism_party
+		}
+		set_party_name = { 
+			ideology = paternalism
+			long_name = MAR_paternalism_party_long
+			name = MAR_paternalism_party
 		}
 		add_popularity = {
 			ideology = socialist
