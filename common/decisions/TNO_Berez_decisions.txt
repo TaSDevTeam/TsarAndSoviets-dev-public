@@ -1093,11 +1093,7 @@ MAR_experiments_category = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = MAR_exp_condition_tt
-				check_variable = {
-					var = MAR_exp_counter
-					value = 2
-					compare = less_than
-				}
+				NOT = { has_country_flag = MAR_EXP_ongoing }
 			}
 		}
 		
@@ -1118,9 +1114,9 @@ MAR_experiments_category = {
 		complete_effect = {
 			clr_country_flag = MAR_EXP_FL_SS_NOT_STARTED
 			set_country_flag = MAR_EXP_FL_SS_STARTED
-			add_to_variable = { national_debt = 1 }
-			add_to_variable = { MAR_exp_counter = 1 }
-			custom_effect_tooltip = MAR_EXP_TT_EXPENCIVE
+			set_country_flag = MAR_EXP_ongoing
+			set_temp_variable = { temp_econ_spending_amount = 0.75 }
+			econ_spend_money_once_effect_raw_money = yes
 		}
 		
 		days_remove = 120
@@ -1165,7 +1161,7 @@ MAR_experiments_category = {
 						}
 					}
 				}
-				add_to_variable = { MAR_exp_counter = -1 }
+				clr_country_flag = MAR_EXP_ongoing
 			}
 			custom_effect_tooltip = MAR_EXP_RESULTS_IN_TT
 		}
@@ -1179,11 +1175,7 @@ MAR_experiments_category = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = MAR_exp_condition_tt
-				check_variable = {
-					var = MAR_exp_counter
-					value = 2
-					compare = less_than
-				}
+				NOT = { has_country_flag = MAR_EXP_ongoing }
 			}
 		}
 		
@@ -1204,10 +1196,10 @@ MAR_experiments_category = {
 		complete_effect = {
 			clr_country_flag = MAR_EXP_FL_TE_NOT_STARTED
 			set_country_flag = MAR_EXP_FL_TE_STARTED
+			set_country_flag = MAR_EXP_ongoing
 			set_temp_variable = { temp_econ_spending_amount = 0.5 }
 			econ_spend_money_once_effect_raw_money = yes
-			add_to_variable = { MAR_exp_counter = 1 }
-			custom_effect_tooltip = MAR_EXP_TT_EXPENCIVE
+	
 		}
 		
 		days_remove = 180
@@ -1252,7 +1244,7 @@ MAR_experiments_category = {
 						}
 					}
 				}
-				add_to_variable = { MAR_exp_counter = -1 }
+				clr_country_flag = MAR_EXP_ongoing
 			}
 			custom_effect_tooltip = MAR_EXP_RESULTS_IN_TT
 		}
@@ -1266,11 +1258,7 @@ MAR_experiments_category = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = MAR_exp_condition_tt
-				check_variable = {
-					var = MAR_exp_counter
-					value = 2
-					compare = less_than
-				}
+				NOT = { has_country_flag = MAR_EXP_ongoing }
 			}
 		}
 		
@@ -1291,10 +1279,9 @@ MAR_experiments_category = {
 		complete_effect = {
 			clr_country_flag = MAR_EXP_FL_FC_NOT_STARTED
 			set_country_flag = MAR_EXP_FL_FC_STARTED
-			set_temp_variable = { temp_econ_spending_amount = 1 }
+			set_country_flag = MAR_EXP_ongoing
+			set_temp_variable = { temp_econ_spending_amount = 0.25 }
 			econ_spend_money_once_effect_raw_money = yes
-			add_to_variable = { MAR_exp_counter = 1 }
-			custom_effect_tooltip = MAR_EXP_TT_EXPENCIVE
 		}
 		
 		days_remove = 200
@@ -1334,7 +1321,7 @@ MAR_experiments_category = {
 						}
 					}
 				}
-				add_to_variable = { MAR_exp_counter = -1 }
+				clr_country_flag = MAR_EXP_ongoing
 			}
 			custom_effect_tooltip = MAR_EXP_RESULTS_IN_TT
 		}
@@ -1348,11 +1335,7 @@ MAR_experiments_category = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = MAR_exp_condition_tt
-				check_variable = {
-					var = MAR_exp_counter
-					value = 2
-					compare = less_than
-				}
+				NOT = { has_country_flag = MAR_EXP_ongoing }
 			}
 		}
 		
@@ -1373,10 +1356,9 @@ MAR_experiments_category = {
 		complete_effect = {
 			clr_country_flag = MAR_EXP_FL_LS_NOT_STARTED
 			set_country_flag = MAR_EXP_FL_LS_STARTED
-			set_temp_variable = { temp_econ_spending_amount = 0.5 }
+			set_country_flag = MAR_EXP_ongoing
+			set_temp_variable = { temp_econ_spending_amount = 0.35 }
 			econ_spend_money_once_effect_raw_money = yes
-			add_to_variable = { MAR_exp_counter = 1 }
-			custom_effect_tooltip = MAR_EXP_TT_EXPENCIVE
 		}
 		
 		days_remove = 200
@@ -1416,7 +1398,7 @@ MAR_experiments_category = {
 						}
 					}
 				}
-				add_to_variable = { MAR_exp_counter = -1 }
+				clr_country_flag = MAR_EXP_ongoing
 			}
 			custom_effect_tooltip = MAR_EXP_RESULTS_IN_TT
 		}
@@ -1430,11 +1412,7 @@ MAR_experiments_category = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = MAR_exp_condition_tt
-				check_variable = {
-					var = MAR_exp_counter
-					value = 2
-					compare = less_than
-				}
+				NOT = { has_country_flag = MAR_EXP_ongoing }
 			}
 		}
 		
@@ -1455,10 +1433,9 @@ MAR_experiments_category = {
 		complete_effect = {
 			clr_country_flag = MAR_EXP_FL_TF_NOT_STARTED
 			set_country_flag = MAR_EXP_FL_TF_STARTED
-			set_temp_variable = { temp_econ_spending_amount = 2 }
+			set_country_flag = MAR_EXP_ongoing
+			set_temp_variable = { temp_econ_spending_amount = 0.75 }
 			econ_spend_money_once_effect_raw_money = yes
-			add_to_variable = { MAR_exp_counter = 1 }
-			custom_effect_tooltip = MAR_EXP_TT_EXPENCIVE
 		}
 		
 		days_remove = 300
@@ -1503,7 +1480,7 @@ MAR_experiments_category = {
 						}
 					}
 				}
-				add_to_variable = { MAR_exp_counter = -1 }
+				clr_country_flag = MAR_EXP_ongoing
 			}
 			custom_effect_tooltip = MAR_EXP_RESULTS_IN_TT
 		}
@@ -1517,11 +1494,7 @@ MAR_experiments_category = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = MAR_exp_condition_tt
-				check_variable = {
-					var = MAR_exp_counter
-					value = 2
-					compare = less_than
-				}
+				NOT = { has_country_flag = MAR_EXP_ongoing }
 			}
 		}
 		
@@ -1542,10 +1515,9 @@ MAR_experiments_category = {
 		complete_effect = {
 			clr_country_flag = MAR_EXP_FL_ED_NOT_STARTED
 			set_country_flag = MAR_EXP_FL_ED_STARTED
-			set_temp_variable = { temp_econ_spending_amount = 1.5 }
+			set_country_flag = MAR_EXP_ongoing
+			set_temp_variable = { temp_econ_spending_amount = 0.5 }
 			econ_spend_money_once_effect_raw_money = yes
-			add_to_variable = { MAR_exp_counter = 1 }
-			custom_effect_tooltip = MAR_EXP_TT_EXPENCIVE
 		}
 		
 		days_remove = 300
@@ -1590,7 +1562,7 @@ MAR_experiments_category = {
 						}
 					}
 				}
-				add_to_variable = { MAR_exp_counter = -1 }
+				clr_country_flag = MAR_EXP_ongoing
 			}
 			custom_effect_tooltip = MAR_EXP_RESULTS_IN_TT
 		}
@@ -1604,11 +1576,7 @@ MAR_experiments_category = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = MAR_exp_condition_tt
-				check_variable = {
-					var = MAR_exp_counter
-					value = 2
-					compare = less_than
-				}
+				NOT = { has_country_flag = MAR_EXP_ongoing }
 			}
 		}
 		
@@ -1629,10 +1597,9 @@ MAR_experiments_category = {
 		complete_effect = {
 			clr_country_flag = MAR_EXP_FL_NL_NOT_STARTED
 			set_country_flag = MAR_EXP_FL_NL_STARTED
-			set_temp_variable = { temp_econ_spending_amount = 0.5 }
+			set_country_flag = MAR_EXP_ongoing
+			set_temp_variable = { temp_econ_spending_amount = 0.35 }
 			econ_spend_money_once_effect_raw_money = yes
-			add_to_variable = { MAR_exp_counter = 1 }
-			custom_effect_tooltip = MAR_EXP_TT_EXPENCIVE
 		}
 		
 		days_remove = 120
@@ -1672,7 +1639,7 @@ MAR_experiments_category = {
 						}
 					}
 				}
-				add_to_variable = { MAR_exp_counter = -1 }
+				clr_country_flag = MAR_EXP_ongoing
 			}
 			custom_effect_tooltip = MAR_EXP_RESULTS_IN_TT
 		}
@@ -2854,7 +2821,7 @@ MAR_ogas_deccat = {
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_first_spying_for_superpowers"
 			custom_effect_tooltip = MAR_ogas_first_stage_spies_tt
-			set_temp_variable = { temp_econ_spending_amount = 0.15 }
+			set_temp_variable = { temp_econ_spending_amount = 0.25 }
 			econ_spend_money_once_effect_raw_money = yes
 		}
 		modifier = {
@@ -2922,7 +2889,7 @@ MAR_ogas_deccat = {
 		fire_only_once = yes
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_first_trip_to_guandong"
-			set_temp_variable = { temp_econ_spending_amount = 0.002 }
+			set_temp_variable = { temp_econ_spending_amount = 0.15 }
 			econ_spend_money_once_effect_raw_money = yes
 		}
 		modifier = {
@@ -2967,7 +2934,7 @@ MAR_ogas_deccat = {
 		fire_only_once = yes
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_first_imperial_academy"
-			set_temp_variable = { temp_econ_spending_amount = 0.3 }  
+			set_temp_variable = { temp_econ_spending_amount = 0.45 }  
 			econ_spend_money_once_effect_raw_money = yes
 		}
 		modifier = {
@@ -3034,7 +3001,7 @@ MAR_ogas_deccat = {
 		days_re_enable = 90
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_first_our_previous_ideas"
-			set_temp_variable = { temp_econ_spending_amount = 0.2 }
+			set_temp_variable = { temp_econ_spending_amount = 0.35 }
 			econ_spend_money_once_effect_raw_money = yes
 		}
 		modifier = {
@@ -3078,7 +3045,7 @@ MAR_ogas_deccat = {
 		days_re_enable = 60
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_first_sort_the_designs"
-			set_temp_variable = { temp_econ_spending_amount = 0.1 } 
+			set_temp_variable = { temp_econ_spending_amount = 0.25 } 
 			econ_spend_money_once_effect_raw_money = yes
 		}
 		modifier = {
@@ -3137,7 +3104,7 @@ MAR_ogas_deccat = {
 		fire_only_once = yes
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_second_talk_with_ibm"
-			set_temp_variable = { temp_econ_spending_amount = 0.15 } 
+			set_temp_variable = { temp_econ_spending_amount = 0.35 } 
 			econ_spend_money_once_effect_raw_money = yes
 		}
 		modifier = {
@@ -3198,7 +3165,7 @@ MAR_ogas_deccat = {
 		fire_only_once = yes
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_second_get_all_the_nerds_in_the_one_place"
-			set_temp_variable = { temp_econ_spending_amount = 0.1 } 
+			set_temp_variable = { temp_econ_spending_amount = 0.25 } 
 			econ_spend_money_once_effect_raw_money = yes
 		}
 		modifier = {
@@ -3249,7 +3216,7 @@ MAR_ogas_deccat = {
 		days_re_enable = 60
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_second_math_analyze"
-			set_temp_variable = { temp_econ_spending_amount = 0.005 } 
+			set_temp_variable = { temp_econ_spending_amount = 0.35 } 
 			econ_spend_money_once_effect_raw_money = yes
 		}
 		modifier = {
@@ -3336,7 +3303,7 @@ MAR_ogas_deccat = {
 		days_re_enable = 75
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_second_glushkovs_seminars"
-			set_temp_variable = { temp_econ_spending_amount = 0.01 } 
+			set_temp_variable = { temp_econ_spending_amount = 0.15 } 
 			econ_spend_money_once_effect_raw_money = yes
 		}
 		modifier = {
@@ -3470,7 +3437,7 @@ MAR_ogas_deccat = {
 		days_re_enable = 60
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_third_cybergrad_kazan"
-			set_temp_variable = { temp_econ_spending_amount = 0.25 } 
+			set_temp_variable = { temp_econ_spending_amount = 0.45 } 
 			econ_spend_money_once_effect_raw_money = yes
 		}
 		modifier = {
@@ -3567,7 +3534,7 @@ MAR_ogas_deccat = {
 		days_re_enable = 45
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_third_expand_the_institutions"
-			set_temp_variable = { temp_econ_spending_amount = 0.15 } 
+			set_temp_variable = { temp_econ_spending_amount = 0.25 } 
 			econ_spend_money_once_effect_raw_money = yes
 		}
 		modifier = {
@@ -3678,7 +3645,7 @@ MAR_ogas_deccat = {
 		fire_only_once = yes
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_foutrh_stress_test_kazan"
-			set_temp_variable = { temp_econ_spending_amount = 0.175 } 
+			set_temp_variable = { temp_econ_spending_amount = 0.45 } 
 			econ_spend_money_once_effect_raw_money = yes
 		}
 		modifier = {
@@ -3736,7 +3703,7 @@ MAR_ogas_deccat = {
 		days_re_enable = 60
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_foutrh_test_the_factory"
-			set_temp_variable = { temp_econ_spending_amount = 0.075 } 
+			set_temp_variable = { temp_econ_spending_amount = 0.1 } 
 			econ_spend_money_once_effect_raw_money = yes
 		}
 		modifier = {
@@ -3782,7 +3749,7 @@ MAR_ogas_deccat = {
 		fire_only_once = yes
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_foutrh_develop_army_verison"
-			set_temp_variable = { temp_econ_spending_amount = 0.375 } 
+			set_temp_variable = { temp_econ_spending_amount = 0.5 } 
 			econ_spend_money_once_effect_raw_money = yes
 		}
 		modifier = {
@@ -3824,15 +3791,15 @@ MAR_ogas_deccat = {
 		days_remove = 60
 		fire_only_once = yes
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: MAR_ogas_foutrh_stress_test_kazan"
-			set_temp_variable = { temp_econ_spending_amount = 0.035 } 
+			log = "[GetDateText]: [Root.GetName]: MAR_ogas_foutrh_test_it_in_sgvuz"
+			set_temp_variable = { temp_econ_spending_amount = 0.1 } 
 			econ_spend_money_once_effect_raw_money = yes
 		}
 		modifier = {
 			research_speed_factor = -0.05
 		}
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_foutrh_stress_test_kazan"
+			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_foutrh_test_it_in_sgvuz"
 			TNO_improve_research_facilities_high = yes
 			set_temp_variable = { temp_progress_gained = 0.07 } 
 			MAR_OGAS_progress_change = yes
@@ -3872,15 +3839,15 @@ MAR_ogas_deccat = {
 		days_re_enable = 30
 		fire_only_once = yes
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: MAR_ogas_foutrh_stress_test_kazan"
-			set_temp_variable = { temp_econ_spending_amount = 0.1 } 
+			log = "[GetDateText]: [Root.GetName]: MAR_ogas_foutrh_do_the_debug"
+			set_temp_variable = { temp_econ_spending_amount = 0.35 } 
 			econ_spend_money_once_effect_raw_money = yes
 		}
 		modifier = {
 			research_speed_factor = -0.05
 		}
 		remove_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_foutrh_stress_test_kazan"
+			log = "[GetDateText]: [Root.GetName]: Decision Remove MAR_ogas_foutrh_do_the_debug"
 			TNO_improve_research_facilities_high = yes
 			TNO_improve_research_facilities_high = yes
 			set_temp_variable = { temp_progress_gained = 0.05 } 
@@ -3934,7 +3901,7 @@ MAR_ogas_deccat = {
 		fire_only_once = yes
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_intergrate_into_civil_economics"
-			set_temp_variable = { temp_econ_spending_amount = 0.375 } 
+			set_temp_variable = { temp_econ_spending_amount = 0.6 } 
 			econ_spend_money_once_effect_raw_money = yes
 		}
 		modifier = {
@@ -3980,7 +3947,7 @@ MAR_ogas_deccat = {
 		fire_only_once = yes
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_intergrate_into_millitary_economics"
-			set_temp_variable = { temp_econ_spending_amount = 0.25 } 
+			set_temp_variable = { temp_econ_spending_amount = 0.35 } 
 			econ_spend_money_once_effect_raw_money = yes
 		}
 		modifier = {
@@ -4023,7 +3990,7 @@ MAR_ogas_deccat = {
 		fire_only_once = yes
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_intergrate_into_army"
-			set_temp_variable = { temp_econ_spending_amount = 0.175 } 
+			set_temp_variable = { temp_econ_spending_amount = 0.3 } 
 			econ_spend_money_once_effect_raw_money = yes
 		}
 		remove_effect = {
@@ -4066,7 +4033,7 @@ MAR_ogas_deccat = {
 		fire_only_once = yes
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_fifth_integrate_into_education"
-			set_temp_variable = { temp_econ_spending_amount = 0.075 } 
+			set_temp_variable = { temp_econ_spending_amount = 0.15 } 
 			econ_spend_money_once_effect_raw_money = yes
 		}
 		modifier = {
@@ -4110,7 +4077,7 @@ MAR_ogas_deccat = {
 		fire_only_once = yes
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: MAR_ogas_fifth_semiconductor_valley"
-			set_temp_variable = { temp_econ_spending_amount = 0.195 } 
+			set_temp_variable = { temp_econ_spending_amount = 1 } 
 			econ_spend_money_once_effect_raw_money = yes
 		}
 		modifier = {
@@ -4127,6 +4094,19 @@ MAR_ogas_deccat = {
 					type = offices
 					level = 1
 					instant_build = yes
+				}
+				add_building_construction = {
+					type = schools
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				set_temp_variable = { state_value_multiplier_temp = 1.15 }
+				econ_state_value_change_multiply_specified_state = yes
+				add_state_modifier = {
+					modifier = {
+						state_GDP_growth_factor_modifier = 0.2
+					}
 				}
 			}
 			set_temp_variable = { temp_progress_gained = 0.1 } 
