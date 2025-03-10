@@ -6,19 +6,24 @@ TaS_WRW2_GER_epilogue = {
 			factor = 0
 		}
 
-		allowed = {
-			NOT = { tag = MAR }
-		}
-
 		visible = {
 			
 		}
 
 		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision TaS_play_guot"
-			hidden_effect = {
-				MAR = {
-					change_tag_from = ROOT
+			log = "[GetDateText]: [Root.GetName]: Decision TaS_return_to_berezniki"
+			if = {
+				limit = { original_tag = MAR }
+				custom_effect_tooltip = TaS_return_to_berezniki_tt
+				hidden_effect = {
+					set_variable = { global.postgervisits = 100 }
+				}
+			}
+			else = {
+				hidden_effect = {
+					MAR = {
+						change_tag_from = ROOT
+					}
 				}
 			}
 		}
@@ -469,14 +474,13 @@ TaS_WRW2_GER_epilogue = {
     	activation = {
     		has_global_flag = PostGER_second_cw
 			NOT = { has_global_flag = PostGER_warsended }
-			is_ai = no
     	}
 		cancel_trigger = {
 			has_global_flag = PostGER_warsended
 		}		
     	is_good = no
 	
-    	days_mission_timeout = 365
+    	days_mission_timeout = 180
 	
 		timeout_effect = {
     		log = "[GetDateText]: [Root.GetName]: TaS_PostGER_second_cw mission timer elapsed" 

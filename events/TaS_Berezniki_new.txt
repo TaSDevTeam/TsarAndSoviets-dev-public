@@ -1638,6 +1638,119 @@ country_event = { # MAR_Mladorosskay_mechta
 			limit = { has_government = socialist }
 			load_focus_tree = MAR_Kosygin_Regional
 		}
+		hidden_effect = {
+			if = {
+				limit = { check_variable = { KOM.KOM_leader_status^6 > 1 } }
+				KOM = {
+					KOM_Igor_Shafarevich = {
+						set_nationality = MAR
+					}
+				}
+				KOM_Igor_Shafarevich = {
+					remove_country_leader_role = { ideology = paternalism_national_conservatism_subtype }
+					remove_country_leader_role = { ideology = despotism_aristocratic_conservatism_subtype }
+					add_country_leader_role = {
+						country_leader = {
+							expire = "1999.1.1"
+							ideology = conservatism_paternalistic_conservatism_subtype
+							id = -1
+						}
+						promote_leader = yes
+					}
+				}
+			}
+			else = {
+				VYT = {
+					VYT_Aleksandr_Solzhenitsyn = {
+						set_nationality = MAR
+					}
+				}
+				VYT_Aleksandr_Solzhenitsyn = {
+					add_country_leader_role = {
+						country_leader = {
+							expire = "1999.1.1"
+							ideology = conservatism_paternalistic_conservatism_subtype
+							id = -1
+						}
+						promote_leader = yes
+					}
+				}
+			}
+			if = {
+				limit = { check_variable = { KOM.KOM_leader_status^3 > 1 } }
+				KOM = {
+					KOM_Nikolai_Voznesensky = {
+						set_nationality = MAR
+					}
+				}
+				KOM_Nikolai_Voznesensky = {
+					remove_country_leader_role = { ideology = progressivism_reformist_socialism_subtype }
+					add_country_leader_role = {
+						country_leader = {
+							expire = "1999.1.1"
+							ideology = progressivism_reformist_socialism_subtype
+							id = -1
+						}
+						promote_leader = yes
+					}
+				}
+			}
+			else = {
+				XYZ = {
+					MAR_Zainab_Biisheva = {
+						set_nationality = MAR
+					}
+				}
+				MAR_Zainab_Biisheva = {
+					remove_country_leader_role = { ideology = progressivism_popular_front_subtype }
+					add_country_leader_role = {
+						country_leader = {
+							expire = "1999.1.1"
+							ideology = progressivism_reformist_socialism_subtype
+							id = -1
+						}
+						promote_leader = yes
+					}
+				}
+			}
+			if = {
+				limit = { check_variable = { KOM.KOM_leader_status^5 > 1 } }
+				KOM = {
+					KOM_Svetlana_Stalina = {
+						set_nationality = MAR
+					}
+				}
+				KOM_Svetlana_Stalina = {
+					remove_country_leader_role = { ideology = liberal_conservatism_big_tent_subtype }
+					add_country_leader_role = {
+						country_leader = {
+							expire = "1999.1.1"
+							ideology = liberal_conservatism_big_tent_subtype
+							id = -1
+						}
+						promote_leader = yes
+					}
+				}
+			}
+			else = {
+				XYZ = {
+					MAR_Anatoly_Patrushev = {
+						set_nationality = MAR
+					}
+				}
+				MAR_Anatoly_Patrushev = {
+					remove_country_leader_role = { ideology = conservatism_paternalistic_conservatism_subtype }
+					add_country_leader_role = {
+						country_leader = {
+							expire = "1999.1.1"
+							ideology = liberal_conservatism_big_tent_subtype
+							id = -1
+						}
+						promote_leader = yes
+					}
+				}
+			}
+		}
 	}
 }
 

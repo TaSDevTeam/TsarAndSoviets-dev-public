@@ -843,8 +843,8 @@ shared_focus = {
 		factor = 1
 	}
 	available = {
-			RUS_Smuta_ScriptedTrigger_OnlyOneContenderLeft = yes
-		}
+		RUS_Smuta_ScriptedTrigger_OnlyOneContenderLeft = yes
+	}
 	prerequisite = {
         focus = MAR_people_for_peoples_tsar
         focus = MAR_party_for_tsarina_and_regent
@@ -911,8 +911,9 @@ shared_focus = {
 	completion_reward = {
 		RUS_Smuta_Disable = yes
 		country_event = {
-				id = MAR_smuta.9
-				days = 1
-			}
+			id = MAR_smuta.9
+			days = 1
+		}
+		
 	}
 }
