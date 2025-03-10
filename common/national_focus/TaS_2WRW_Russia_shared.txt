@@ -8,8 +8,11 @@ shared_focus = {
 	y = 0
 	completion_reward = {
 		country_event = { id = RUS_SWRW_preparation.1 }
-		set_temp_variable = { TabName = token:BoP_Tab_SWRW }
-		TNO_BoP_AddTab = yes
+		custom_effect_tooltip = MAR_warprep_calm_before_the_storm_tt
+		hidden_effect = {
+			set_temp_variable = { TabName = token:BoP_Tab_SWRW }
+			TNO_BoP_AddTab = yes
+		}
 		set_variable = { TaS_swrw_stage = 1 }
 		set_variable = { swrw_preparation_category = 1 }
 		set_variable = { SWRW_suspicion_gain = -5 }
@@ -674,10 +677,33 @@ shared_focus = {
 	icon = GFX_MAR_warprep_so_kill_him
 	cost = 3.58
 	prerequisite = {focus = MAR_warprep_dance_on_the_ravaged_land }
+	available = {
+		GER = {
+			OR ={
+				has_completed_focus = SGR_koalition_der_nationen
+				has_completed_focus = BOR_autumn_in_germany
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = SWRW_readiness_tt
+			check_variable = { SWRW_readiness_var > 74.99 }
+		}
+		custom_trigger_tooltip = {
+			tooltip = SWRW_issues_done_tt
+			has_country_flag = MAR_has_primorie
+			OR = {
+				has_country_flag = MAR_has_turkestan
+				has_country_flag = MAR_Turkestan_German
+				has_country_flag = MAR_Turkestan_cucked
+			}
+		}
+	}
 	x = 3
 	y = 5
 	completion_reward = {
 		#set_country_flag = TaSWRW2_War_Prep_Tree_Complete
+		set_country_flag = TaS_starting_war
+		custom_effect_tooltip = MAR_warprep_so_kill_him_tt
 		country_event = { id = RUS_SWRW_preparation.7 }
 		GER = {
 			add_war_support = -0.15

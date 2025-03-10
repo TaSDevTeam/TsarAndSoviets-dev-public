@@ -3952,26 +3952,21 @@ TaS_WRW2_territorial_reclamation = {
 				if = {
 					limit = {
 						OR = {
-							has_global_flag = TNO_TURKES_KENES_OVER_GER_WINS 
-							has_global_flag = TK_GER_Victory
+							AND = {
+								has_global_flag = TNO_TURKES_KENES_OVER_GER_WINS 
+								country_exists = UTL
+							}
+							AND = {
+								has_global_flag = TK_GER_Victory
+								country_exists = UTL	
+							}	
 						}
 					}
 					country_event = {
 						id = MAR_Turkestan.1 days = 3
 					}
 				}
-				if = {
-					limit = {
-						OR = {
-							has_global_flag = TNO_TURKES_KENES_OVER_NEUTRALITY 
-							has_global_flag = TK_JAP_Victory
-						}
-					}
-					country_event = {
-						id = MAR_Turkestan.2 days = 3
-					}
-				}
-				if = {
+				else_if = {
 					limit = {
 						OR = {
 							has_global_flag = TNO_TURKES_KENES_OVER_USA_WINS 
@@ -3980,6 +3975,11 @@ TaS_WRW2_territorial_reclamation = {
 					}
 					country_event = {
 						id = MAR_Turkestan.3 days = 3
+					}
+				}	
+				else = {
+					country_event = {
+						id = MAR_Turkestan.2 days = 3
 					}
 				}
 			}

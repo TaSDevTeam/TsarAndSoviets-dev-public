@@ -11,6 +11,10 @@ GER_Panic_strat = {
 			OR = {
 				has_active_mission = TaS_SWRW_germs_panick
 				has_country_flag = TaS_starting_war
+				focus_progress = {
+					focus = MAR_warprep_so_kill_him
+					progress > 0
+				}
 			}
 		}
 	}

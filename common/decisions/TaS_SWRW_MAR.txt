@@ -4,11 +4,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_launch_attack_on_germany = {
 		icon = GFX_decision_generic_assault
 		visible = {
-			GER = {
-				exists = yes
-			}
-			#has_country_flag = TaSWRW2_War_Prep_Tree_Complete
-			check_variable = { TaS_swrw_stage = 1 }
+			is_debug = yes
 		}
 		available = {
 			GER = {
