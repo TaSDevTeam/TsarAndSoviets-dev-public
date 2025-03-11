@@ -15,6 +15,30 @@ GWF_Homura_deccat = {
 			log = "[GetDateText]: [Root.GetName]: Decision complete GWF_Homura_mind_effigy... wait that's wrong"
 		}
 	}
+	GWF_Homura_mind_make_a_speech = {
+		icon = GWF_Homura_mind_make_a_speech
+		visible = {
+			check_variable = { GWF_Homura_cat = 1 } 
+		}
+		available = {
+			check_variable = { GWF_Homura_cat = 1 } 
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 5
+		days_re_enable = 10
+		complete_effect = { 
+			set_temp_variable = { opp_to_change = 1 }
+			set_temp_variable = { temp_stat_gained = -2.5 }
+			GWF_homura_change_stats = yes
+		}
+		remove_effect = {
+			add_political_power = 50
+			add_command_power = 5
+		}
+	}
+	
 	#powers
 	GWF_Homura_powers_effigy = {
 		icon = GFX_GWF_Homura_powers_effigy

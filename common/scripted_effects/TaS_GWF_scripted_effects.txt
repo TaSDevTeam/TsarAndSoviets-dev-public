@@ -17,9 +17,9 @@ GWF_calculate_oppo_dynmod_effects = {
 	add_to_array = { GWF_opposition_modifier_array = -5 } # GDP growth
 	add_to_array = { GWF_opposition_modifier_array = 0.2 } # Misc military costs
 	
-	set_variable = { total_opposition_strength = ROOT.endezeit_strenght }
-	add_to_variable = { total_opposition_strength = ROOT.raf_stranght }
-	add_to_variable = { total_opposition_strength = ROOT.gim_stranght }
+	set_variable = { total_opposition_strength = ROOT.endezeit_strength }
+	add_to_variable = { total_opposition_strength = ROOT.raf_strength }
+	add_to_variable = { total_opposition_strength = ROOT.gim_strength }
 	divide_variable = { total_opposition_strength = 300 }
 	
 	for_each_loop = {
@@ -30,6 +30,67 @@ GWF_calculate_oppo_dynmod_effects = {
 	force_update_dynamic_modifier = yes
 }
 
+GWF_opposition_change_stats = {
+	if = {
+		limit = { check_variable = { opp_to_change = 1 } } #endzeit
+		if = {
+			limit = { check_variable = { temp_stat_gained < 0 } }
+			multiply_temp_variable = { temp_stat_gained_txt = -1 }
+			custom_effect_tooltip = GWF_homura_endzeit_decrease_tt
+		}
+		else = {
+			custom_effect_tooltip = GWF_homura_endzeit_growth_tt
+		}
+	}
+	if = {
+		limit = { check_variable = { opp_to_change = 2 } } #gim
+		if = {
+			limit = { check_variable = { temp_stat_gained < 0 } }
+			multiply_temp_variable = { temp_stat_gained_txt = -1 }
+			custom_effect_tooltip = GWF_homura_gim_decrease_tt
+		}
+		else = {
+			custom_effect_tooltip = GWF_homura_gim_growth_tt
+		}
+	}
+	if = {
+		limit = { check_variable = { opp_to_change = 3 } } #raf
+		if = {
+			limit = { check_variable = { temp_stat_gained < 0 } }
+			multiply_temp_variable = { temp_stat_gained_txt = -1 }
+			custom_effect_tooltip = GWF_homura_raf_decrease_tt
+		}
+		else = {
+			custom_effect_tooltip = GWF_homura_raf_growth_tt
+		}
+	}
+	GWF_calculate_oppo_dynmod_effects = yes
+	
+}
+
+GWF_opposition_change_weekly_stats = {
+	if = {
+		limit = { check_variable = { temp_weekly_gained < 0 } }
+		multiply_temp_variable = { temp_weekly_gained_txt = -1 }
+		custom_effect_tooltip = GWF_homura_weekly_decrease_tt
+	}
+	else = {
+		custom_effect_tooltip = GWF_homura_weekly_growth_tt
+	}
+}
+
+GWF_start_homura_gui = {
+	set_country_flag = GWF_Homura_gui_active
+	
+	set_variable = { homura_mental_stat = 78 }
+	set_variable = { homura_physics_stat = 82 }
+	set_variable = { GWF_Homura_cat = 1 }
+	set_variable = { GWF_Homura_style = 2}
+	
+	GWF_calculate_homura_dynmod_effects = yes
+	add_to_variable = { GWF_Homura_GUI_dirty = 1 }
+	
+}
 GWF_calculate_homura_dynmod_effects = {
 	if = {
 		limit = { NOT = { has_idea = GWF_Homura_modifier_dummy } }
@@ -72,3 +133,125 @@ GWF_calculate_homura_dynmod_effects = {
 	force_update_dynamic_modifier = yes
 }
 
+GWF_homura_change_stats = {
+	if = {
+		limit = { check_variable = { opp_to_change = 1 } } #mental
+		add_to_variable = { homura_mental_stat = temp_stat_gained }
+		if = {
+			limit = { check_variable = { temp_stat_gained < 0 } }
+			multiply_temp_variable = { temp_stat_gained_txt = -1 }
+			custom_effect_tooltip = GWF_homura_mental_decrease_tt
+		}
+		else = {
+			custom_effect_tooltip = GWF_homura_mental_growth_tt
+		}
+	}
+	if = {
+		limit = { check_variable = { opp_to_change = 2 } } #phys
+		add_to_variable = { homura_physics_stat = temp_stat_gained }
+		if = {
+			limit = { check_variable = { temp_stat_gained < 0 } }
+			multiply_temp_variable = { temp_stat_gained_txt = -1 }
+			custom_effect_tooltip = GWF_homura_phys_decrease_tt 
+		}
+		else = {
+			custom_effect_tooltip = GWF_homura_phys_growth_tt
+		}
+	}
+	add_to_variable = { GWF_Homura_GUI_dirty = 1 }
+	GWF_calculate_homura_dynmod_effects = yes
+}
+
+GWF_homura_change_weekly_stats = {
+	add_to_variable = { GWF_homura_weekly_stats = temp_weekly_gained }
+	if = {
+		limit = { check_variable = { temp_weekly_gained < 0 } }
+		multiply_temp_variable = { temp_weekly_gained_txt = -1 }
+		custom_effect_tooltip = GWF_homura_weekly_stat_decrease_tt
+	}
+	else = {
+		custom_effect_tooltip = GWF_homura_weekly_stat_growth_tt
+	}
+}
+
+GWF_start_great_game = {
+	set_country_flag = GWF_BigGame_gui_active
+	clear_array = GWF_map_grid_array
+	add_to_array = { GWF_map_grid_array = AGS }
+	add_to_array = { GWF_map_grid_array = AUS }
+	add_to_array = { GWF_map_grid_array = DSH }
+	add_to_array = { GWF_map_grid_array = GAU }
+	add_to_array = { GWF_map_grid_array = GBV }
+	add_to_array = { GWF_map_grid_array = GBW }
+	add_to_array = { GWF_map_grid_array = GRA }
+	add_to_array = { GWF_map_grid_array = GSU }
+	add_to_array = { GWF_map_grid_array = GWF }
+	add_to_array = { GWF_map_grid_array = LHH }
+	add_to_array = { GWF_map_grid_array = OKL }
+	add_to_array = { GWF_map_grid_array = RMN }
+	add_to_array = { GWF_map_grid_array = SLO }
+	# Statuses: 1 ; 2 ; 3 
+	
+	AGS = { set_variable = { gui_display_frame = 5000 } }
+	AUS = { set_variable = { gui_display_frame = 5000 } }
+	DSH = { set_variable = { gui_display_frame = 1000 } }
+	GAU = { set_variable = { gui_display_frame = 1000 } }
+	GBV = { set_variable = { gui_display_frame = 5000 } }
+	GBW = { set_variable = { gui_display_frame = 5000 } }
+	GRA = { set_variable = { gui_display_frame = 1000 } }
+	GSU = { set_variable = { gui_display_frame = 1000 } }
+	GWF = { set_variable = { gui_display_frame = 8000 } }
+	LHH = { set_variable = { gui_display_frame = 9000 } }
+	OKL = { set_variable = { gui_display_frame = 1000 } }
+	RMN = { set_variable = { gui_display_frame = 5000 } }
+	SLO = { set_variable = { gui_display_frame = 5000 } }
+	
+	clear_array = GWF_map_x
+	clear_array = GWF_map_y
+	add_to_array = { GWF_map_x = 66 } #AGS
+	add_to_array = { GWF_map_x = 191 } #AUS
+	add_to_array = { GWF_map_x = 247 } #DSH
+	add_to_array = { GWF_map_x = 272 } #GAU
+	add_to_array = { GWF_map_x = 146 } #GBV
+	add_to_array = { GWF_map_x = 72 } #GBW
+	add_to_array = { GWF_map_x = 96 } #GRA
+	add_to_array = { GWF_map_x = 48 } #GSU
+	add_to_array = { GWF_map_x = 119 } #GWF
+	add_to_array = { GWF_map_x = 52 } #LHH
+	add_to_array = { GWF_map_x = 37 } #OKL
+	add_to_array = { GWF_map_x = 30 } #RMN
+	add_to_array = { GWF_map_x = 291 } #SLO
+	
+	add_to_array = { GWF_map_y = 53 }
+	add_to_array = { GWF_map_y = 172 }
+	add_to_array = { GWF_map_y = 130 }
+	add_to_array = { GWF_map_y = 75 }
+	add_to_array = { GWF_map_y = 22 }
+	add_to_array = { GWF_map_y = 175 }
+	add_to_array = { GWF_map_y = 54 }
+	add_to_array = { GWF_map_y = 145 }
+	add_to_array = { GWF_map_y = 65 }
+	add_to_array = { GWF_map_y = 5 }
+	add_to_array = { GWF_map_y = 37 }
+	add_to_array = { GWF_map_y = 194 }
+	add_to_array = { GWF_map_y = 187 }
+	
+	set_variable = { GWF_x_axis = 200 }
+	set_variable = { GWF_round_support = 50 }
+	
+	log = "[?GWF_map_grid_array^1.GetTag]"
+}
+
+GWF_great_game_clamp_vars = {
+	round_variable = GWF_round_support
+	clamp_variable = { var = GWF_round_support min = 0 max = 100 }
+
+	set_variable = { GWF_x_axis = 4.44 } #(481-37)/100
+	multiply_variable = { GWF_x_axis = GWF_round_support }
+	round_variable = GWF_x_axis
+	add_to_variable = { GWF_x_axis = 37 }
+}
+
+GWF_great_game_to_the_next_round = {
+
+}

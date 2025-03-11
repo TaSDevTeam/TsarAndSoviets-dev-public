@@ -16,7 +16,7 @@ GWF_Opposition_deccat = {
 	priority = { base = 20 }
 }
 
-GWF_BigGame_deccat = {
+GWF_BigGame_deccat = { ###########№################
 	icon = GFX_decision_category_biggame_icon
 	picture = GFX_decision_category_biggame_pic
 	scripted_gui = GWF_BigGame_GUI
@@ -29,7 +29,7 @@ GWF_BigGame_deccat = {
 GWF_SGW_deccat = {
 	icon = GFX_decision_category_homura_icon
 	#picture = GFX_decision_category_ogas_pic
-	scripted_gui = GWF_Homura_GUI
+	#scripted_gui = GWF_Homura_GUI
 	allowed = { tag = GWF }
 	visible = { has_country_flag = GWF_SGW_gui_active }
 	visible_when_empty = yes

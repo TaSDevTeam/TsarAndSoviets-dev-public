@@ -231,5 +231,82 @@ guiTypes = {
 			}
 		}
 	}
+	containerWindowType = {
+		name = "GWF_big_game_gui_window_container"
+		size = { width = 482 height = 700 }
+		position = { x = -30 y = 0 }
+		
+		containerWindowType = {
+			name = "GWF_big_game_title_status"
+			position = { x = 20 y = 0 }
+			
+			instantTextboxType = {
+				name = "GWF_big_game_title"
+				position = { x = 0 y = 0 }
+				font = "aldrich_36_outline"
+				text = "RAUND EBLANOV"
+				maxWidth = 482
+				maxHeight = 50
+				format = center
+			}
+			
+			iconType = {
+				name = "GWF_big_game_round_bg"
+				spriteType = "GFX_homura_great_game_round_bg"
+				position = { x = 80 y = 36 }
+				pdx_tooltip = "GWF_big_game_round_bg_tt"
+			}
+				
+			iconType = {
+				name = "GWF_big_game_scale"
+				spriteType = "GFX_homura_great_game_scale"
+				position = { x = 37 y = 96 }
+				pdx_tooltip = "GWF_big_game_scale_tt"
+			}
 
+			iconType = {
+				name = "GWF_big_game_scale_frame"
+				spriteType = "GFX_homura_great_game_scale_frame"
+				position = { x = 35 y = 95 }
+			}
+			
+			iconType = {
+				name = "GWF_big_game_scale_tick"
+				spriteType = "GFX_homura_great_game_scale_tick"
+			}
+		}
+		
+		
+		containerWindowType = {
+			name = "map"
+			size = { width = 462 height = 700 }
+			position = { x = 69 y = 140 }
+			
+			iconType = {
+				name = "map_background"
+				position = { x = 0 y = 0 }
+				spriteType = "GFX_great_game_map_bg"
+				alwaystransparent = yes
+			}
+			iconType = {
+				name = "map_background_two"
+				position = { x = 29 y = 5 }
+				spriteType = "GFX_great_game_map_bg_two"
+				alwaystransparent = yes
+			}
+			
+			gridboxtype = {
+				name = "big_game_map_gridbox"
+				slotsize = { width = 0 height = 0 }
+			}
+		}
+	}
+	containerWindowType = {
+		name = "GWF_map_entry"
+		iconType = {
+			name = "gwf_map_state"
+			spriteType = "GFX_blank"
+			pdx_tooltip = GWF_map_state_tt
+		}
+	}
 }

@@ -95,5 +95,223 @@ spriteTypes = {
 		textureFile = "gfx/interface/aprilfools_gui/endezeit_selected.dds"
 	}
 	
-	###GREAT GAME GUI (TOTALLY NOT STOLEN)
+	###GREAT GAME GUI (actually unique)
+	spriteType = {
+		name = "GFX_great_game_map_bg" 
+		textureFile = "gfx/interface/aprilfools_gui/great_game/great_game_map_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_great_game_map_bg_two" 
+		textureFile = "gfx/interface/aprilfools_gui/great_game/great_game_map_bg_two.dds"
+	}
+	
+	progressbartype = {
+		name = GFX_map_state_AGS
+		textureFile1 = "gfx/interface/aprilfools_gui/great_game/map_state_AGS.dds"
+		textureFile2 = "gfx/interface/aprilfools_gui/great_game/colors.dds"
+		color = { 0.010 0.0 0.0 0.10 }
+		colortwo = { 0.059 0.034 1 1 }
+		size = { 
+			x = 59
+			y = 34
+		}
+		effectFile = "gfx/FX/gng_map_fill.lua"
+		steps = 10000
+	}
+	
+	progressbartype = {
+		name = GFX_map_state_AUS
+		textureFile1 = "gfx/interface/aprilfools_gui/great_game/map_state_AUS.dds"
+		textureFile2 = "gfx/interface/aprilfools_gui/great_game/colors.dds"
+		color = { 0.010 0.0 0.0 0.10 }
+		colortwo = { 0.107 0.092 1 1 }
+		size = { 
+			x = 107
+			y = 92
+		}
+		effectFile = "gfx/FX/gng_map_fill.lua"
+		steps = 10000
+	}
+	
+	progressbartype = {
+		name = GFX_map_state_DSH
+		textureFile1 = "gfx/interface/aprilfools_gui/great_game/map_state_DSH.dds"
+		textureFile2 = "gfx/interface/aprilfools_gui/great_game/colors.dds"
+		color = { 0.010 0.0 0.0 0.10 }
+		colortwo = { 0.145 0.070 1 1 }
+		size = { 
+			x = 145
+			y = 70
+		}
+		effectFile = "gfx/FX/gng_map_fill.lua"
+		steps = 10000
+	}
+	
+	progressbartype = {
+		name = GFX_map_state_GAU
+		textureFile1 = "gfx/interface/aprilfools_gui/great_game/map_state_GAU.dds"
+		textureFile2 = "gfx/interface/aprilfools_gui/great_game/colors.dds"
+		color = { 0.010 0.0 0.0 0.10 }
+		colortwo = { 0.141 0.081 1 1 }
+		size = { 
+			x = 141
+			y = 81
+		}
+		effectFile = "gfx/FX/gng_map_fill.lua"
+		steps = 10000
+	}
+	
+	progressbartype = {
+		name = GFX_map_state_GBV
+		textureFile1 = "gfx/interface/aprilfools_gui/great_game/map_state_GBV.dds"
+		textureFile2 = "gfx/interface/aprilfools_gui/great_game/colors.dds"
+		color = { 0.010 0.0 0.0 0.10 }
+		colortwo = { 0.161 0.162 1 1 }
+		size = { 
+			x = 161
+			y = 162
+		}
+		effectFile = "gfx/FX/gng_map_fill.lua"
+		steps = 10000
+	}
+	
+	progressbartype = {
+		name = GFX_map_state_GBW
+		textureFile1 = "gfx/interface/aprilfools_gui/great_game/map_state_GBW.dds"
+		textureFile2 = "gfx/interface/aprilfools_gui/great_game/colors.dds"
+		color = { 0.010 0.0 0.0 0.10 }
+		colortwo = { 0.119 0.049 1 1 }
+		size = { 
+			x = 119
+			y = 49
+		}
+		effectFile = "gfx/FX/gng_map_fill.lua"
+		steps = 10000
+	}
+	
+	progressbartype = {
+		name = GFX_map_state_GRA
+		textureFile1 = "gfx/interface/aprilfools_gui/great_game/map_state_GRA.dds"
+		textureFile2 = "gfx/interface/aprilfools_gui/great_game/colors.dds"
+		color = { 0.010 0.0 0.0 0.10 }
+		colortwo = { 0.076 0.095 1 1 }
+		size = { 
+			x = 76
+			y = 95
+		}
+		effectFile = "gfx/FX/gng_map_fill.lua"
+		steps = 10000
+	}
+	
+	progressbartype = {
+		name = GFX_map_state_GSU
+		textureFile1 = "gfx/interface/aprilfools_gui/great_game/map_state_GSU.dds"
+		textureFile2 = "gfx/interface/aprilfools_gui/great_game/colors.dds" 
+		color = { 0.010 0.0 0.0 0.10 }
+		colortwo = { 0.115 0.062 1 1 }
+		size = { 
+			x = 115
+			y = 62
+		}
+		effectFile = "gfx/FX/gng_map_fill.lua"
+		steps = 10000
+	}
+	
+	progressbartype = {
+		name = GFX_map_state_GWF
+		textureFile1 = "gfx/interface/aprilfools_gui/great_game/map_state_GWF.dds"
+		textureFile2 = "gfx/interface/aprilfools_gui/great_game/colors.dds"
+		color = { 0.010 0.0 0.0 0.10 }
+		colortwo = { 0.102 0.096 1 1 }
+		size = { 
+			x = 102
+			y = 96
+		}
+		effectFile = "gfx/FX/gng_map_fill.lua"
+		steps = 10000
+	}
+	
+	progressbartype = {
+		name = GFX_map_state_LHH
+		textureFile1 = "gfx/interface/aprilfools_gui/great_game/map_state_LHH.dds"
+		textureFile2 = "gfx/interface/aprilfools_gui/great_game/colors.dds"
+		color = { 0.010 0.0 0.0 0.10 }
+		colortwo = { 0.117 0.064 1 1 }
+		size = { 
+			x = 117
+			y = 64
+		}
+		effectFile = "gfx/FX/gng_map_fill.lua"
+		steps = 10000
+	}
+	
+	progressbartype = {
+		name = GFX_map_state_OKL
+		textureFile1 = "gfx/interface/aprilfools_gui/great_game/map_state_OKL.dds"
+		textureFile2 = "gfx/interface/aprilfools_gui/great_game/colors.dds"
+		color = { 0.010 0.0 0.0 0.10 }
+		colortwo = { 0.024 0.029 1 1 }
+		size = { 
+			x = 24
+			y = 29
+		}
+		effectFile = "gfx/FX/gng_map_fill.lua"
+		steps = 10000
+	}
+	
+	progressbartype = {
+		name = GFX_map_state_RMN
+		textureFile1 = "gfx/interface/aprilfools_gui/great_game/map_state_RMN.dds"
+		textureFile2 = "gfx/interface/aprilfools_gui/great_game/colors.dds"
+		color = { 0.010 0.0 0.0 0.10 }
+		colortwo = { 0.193 0.118 1 1 }
+		size = { 
+			x = 193
+			y = 118
+		}
+		effectFile = "gfx/FX/gng_map_fill.lua"
+		steps = 10000
+	}
+	
+	progressbartype = {
+		name = GFX_map_state_SLO
+		textureFile1 = "gfx/interface/aprilfools_gui/great_game/map_state_SLO.dds"
+		textureFile2 = "gfx/interface/aprilfools_gui/great_game/colors.dds"
+		color = { 0.010 0.0 0.0 0.10 }
+		colortwo = { 0.094 0.052 1 1 }
+		size = { 
+			x = 94
+			y = 52
+		}
+		effectFile = "gfx/FX/gng_map_fill.lua"
+		steps = 10000
+	}
+	
+	spriteType = {
+		name = "GFX_homura_great_game_round_bg" 
+		textureFile = "gfx/interface/aprilfools_gui/great_game/homura_great_game_round_bg.dds"
+	}
+	
+	
+	spriteType = {
+		name = "GFX_homura_great_game_scale_frame"
+		textureFile = "gfx/interface/aprilfools_gui/great_game/homura_great_game_scale_frame.dds"
+	}
+	spriteType = {
+		name = "GFX_homura_great_game_scale_tick"
+		textureFile = "gfx/interface/aprilfools_gui/great_game/homura_great_game_scale_tick.dds"
+	}
+	progressbartype = {
+		name = "GFX_homura_great_game_scale"
+		textureFile1 = "gfx/interface/aprilfools_gui/great_game/homura_great_game_scale.dds"
+		textureFile2 = "gfx/interface/aprilfools_gui/great_game/homura_great_game_scale_bg.dds"
+		color = { 0.0 0.0 0.0 }
+		colortwo = { 0.0 0.0 0.0 }
+		size = { 
+			x = 448
+			y = 27
+		}
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = yes
+	}
 }

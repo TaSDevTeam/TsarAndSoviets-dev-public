@@ -1183,6 +1183,8 @@ MAR_debug_category = {
 				GWF_Arthur_Juz = {
 					set_nationality = GWF
 				}
+			}
+			GRA = {
 				GRA_Andreas_Baader = {
 					set_nationality = GWF
 				}
@@ -1197,17 +1199,38 @@ MAR_debug_category = {
 				}
 				promote_character = GWF_Akemi_Homura
 				GWF_Otto_Ernst_Remer = {
-					promote_character = national_socialism_revolutionary_nazism_subtype
+					add_country_leader_role = {
+						country_leader = {
+							expire = "1999.1.1"
+							ideology = national_socialism_revolutionary_nazism_subtype
+							id = -1
+						}
+						promote_leader = yes
+					}
 				}
 				GRA_Andreas_Baader = {
-					promote_character = communist_guevarism_subtype
+					add_country_leader_role = {
+						country_leader = {
+							expire = "1999.1.1"
+							ideology = communist_guevarism_subtype
+							id = -1
+						}
+						promote_leader = yes
+					}
 				}
 				set_character_name = {
 					character = GWF_Sayaka_Miki
 					name = GWF_Sayaka_Miki_hidden
 				}
 				GWF_Sayaka_Miki = {
-					promote_character = paternalism_provisional_government_subtype
+					add_country_leader_role = {
+						country_leader = {
+							expire = "1999.1.1"
+							ideology = paternalism_provisional_government_subtype
+							id = -1
+						}
+						promote_leader = yes
+					}
 				}
 				set_politics = {
 					ruling_party = accelerationism
