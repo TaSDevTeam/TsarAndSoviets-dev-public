@@ -21,7 +21,11 @@ shared_focus = {
 	x = 9
 	y = 0
 	completion_reward = {
-	
+		country_event = { id = GWF.1 }
+		add_political_power = 50
+		set_country_leader_description = {
+			desc = "AprilFools_Akemi_Homura_DESC_actual"
+		}
 	}
 }
 
@@ -40,7 +44,8 @@ shared_focus = {
 	x = 0
 	y = 1
 	completion_reward = {
-		
+		add_stability = -0.025
+		add_war_support = -0.025
 	}
 }
 
@@ -59,7 +64,9 @@ shared_focus = {
 	x = -1
 	y = 1
 	completion_reward = {
-		
+		country_event = { id = GWF.2 }
+		custom_effect_tooltip = GWF_to_find_exit_tt
+		GWF_start_homura_gui = yes
 	}
 }
 
@@ -78,7 +85,8 @@ shared_focus = {
 	x = 1
 	y = 1
 	completion_reward = {
-		
+		country_event = { id = GWF.3 }
+		add_ideas = GWF_Kyubey_hog
 	}
 }
 
@@ -101,7 +109,10 @@ shared_focus = {
 	x = -7
 	y = 3
 	completion_reward = {
-
+		country_event = { id = GWF.4 }
+		custom_effect_tooltip = GWF_look_inside_tt
+		set_temp_variable = { gdp_growth_temp = 0.50 }
+        econ_gdp_growth_change = yes
 	}
 }
 
@@ -123,7 +134,15 @@ shared_focus = {
 	x = -2
 	y = 1
 	completion_reward = {
-		
+		custom_effect_tooltip = GWF_only_my_struggle_tt
+		set_country_flag = GWF_lone_warrior
+		set_temp_variable = { opp_to_change = 1 }
+		set_temp_variable = { temp_stat_gained = 2.5 }
+		GWF_homura_change_stats = yes
+		set_temp_variable = { opp_to_change = 2 }
+		set_temp_variable = { temp_stat_gained = 2.5 }
+		GWF_homura_change_stats = yes
+		country_event = { id = GWF.5 }
     }
 }
 
@@ -142,7 +161,12 @@ shared_focus = {
 	x = 0
 	y = 1
 	completion_reward = {
-		
+		TNO_worsen_admin_efficiency_med = yes
+		add_political_power = 100
+		set_temp_variable = { pus_temp = 1 }
+		econ_pus_change = yes
+		set_temp_variable = { money_reserves_temp = 0.15 } 
+		econ_money_reserves_change_raw_money = yes
     }
 }
 
@@ -161,7 +185,21 @@ shared_focus = {
 	x = -1
 	y = 1
 	completion_reward = {
-		
+		set_temp_variable = { pus_temp = 1 }
+		econ_pus_change = yes
+		swap_ideas = {
+			remove_idea = GWF_Generic_Vacant_for
+			add_idea = GWF_Contollable_Chaos_for
+		}
+		swap_ideas = {
+			remove_idea = GWF_Generic_Vacant_eco
+			add_idea = GWF_Contollable_Chaos_eco
+		}
+		swap_ideas = {
+			remove_idea = GWF_Generic_Vacant_sec
+			add_idea = GWF_Contollable_Chaos_sec
+		}
+		country_event = { id = GWF.6 }
     }
 }
 
@@ -180,7 +218,15 @@ shared_focus = {
 	x = 1
 	y = 1
 	completion_reward = {
+		set_temp_variable = { money_reserves_temp = 0.25 } 
+		econ_money_reserves_change_raw_money = yes
 		
+		set_temp_variable = { opp_to_change = 1 }
+		set_temp_variable = { temp_stat_gained = 2.5 }
+		GWF_homura_change_stats = yes
+		set_temp_variable = { opp_to_change = 2 }
+		set_temp_variable = { temp_stat_gained = 2.5 }
+		GWF_homura_change_stats = yes
     }
 }
 
@@ -202,7 +248,31 @@ shared_focus = {
 	x = 2
 	y = 1
 	completion_reward = {
+		custom_effect_tooltip = GWF_one_cant_do_all_the_job_tt
 		
+		set_country_flag = GWF_madoka_church
+		set_temp_variable = { opp_to_change = 1 }
+		set_temp_variable = { temp_stat_gained = -2.5 }
+		GWF_homura_change_stats = yes
+		set_temp_variable = { opp_to_change = 2 }
+		set_temp_variable = { temp_stat_gained = -2.5 }
+		GWF_homura_change_stats = yes
+		hidden_effect = {
+			GWF_Homura_Akemi = {
+				remove_country_leader_role = { ideology = accelerationism_madoka_cult_subtype }
+				add_country_leader_role = {
+					country_leader = {
+						desc = "AprilFools_Akemi_Homura_DESC_actual"
+						expire = "1999.1.1"
+						ideology = accelerationism_church_of_ring_subtype
+						id = -1
+						traits = { lucifier }
+					}
+					promote_leader = yes
+				}	
+			}
+		}
+		country_event = { id = GWF.7 }
     }
 }
 
@@ -221,7 +291,14 @@ shared_focus = {
 	x = 0
 	y = 1
 	completion_reward = {
-		
+		TNO_improve_admin_efficiency_med = yes
+		set_temp_variable = { inflation_temp = 0.25 }
+		econ_inflation_change = yes
+		set_temp_variable = { gdp_growth_temp = 0.75 }
+        econ_gdp_growth_change = yes
+		set_temp_variable = { pus_temp = 1 }
+		econ_pus_change = yes
+		country_event = { id = GWF.8 }
     }
 }
 
@@ -240,7 +317,9 @@ shared_focus = {
 	x = -1
 	y = 1
 	completion_reward = {
-		
+		add_stability = 0.05
+		add_political_power = 50
+		country_event = { id = GWF.9 }
     }
 }
 
@@ -259,7 +338,21 @@ shared_focus = {
 	x = 1
 	y = 1
 	completion_reward = {
-		
+		add_popularity = {
+			ideology = communist
+			popularity = 0.03
+		}
+		add_popularity = {
+			ideology = national_socialism
+			popularity = 0.02
+		}
+		set_temp_variable = { money_reserves_temp = 0.25 } 
+		econ_money_reserves_change_raw_money = yes
+		TNO_improve_poverty_low = yes
+		swap_ideas = {
+			remove_idea = GWF_Generic_Vacant_for
+			add_idea = GWF_Hans_Filbinger
+		}
     }
 }
 
@@ -278,7 +371,28 @@ shared_focus = {
 	x = 0
 	y = 2
 	completion_reward = {
-		
+		hidden_effect = {
+			if = {
+				limit = {
+					check_variable = {
+						GWF.GWF_Homura_mental > GWF.GWF_umbra_second_treshold
+					}
+				}
+				country_event = { id = GWF.11 }
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						GWF.GWF_Homura_mental > GWF.GWF_umbra_treshold
+					}
+				}
+				country_event = { id = GWF.12 }
+			}
+			else = {
+				country_event = { id = GWF.13 }
+			}
+		}
+		custom_effect_tooltip = GWF_operation_umbra_tt
 	}
 }
 
@@ -305,7 +419,8 @@ shared_focus = {
 	x = 0
 	y = 2
 	completion_reward = {
-		
+		add_political_power = 50
+		country_event = { id = GWF.10 }
 	}
 }
 
@@ -328,7 +443,7 @@ shared_focus = {
 	x = 0
 	y = 3
 	completion_reward = {
-
+		country_event = { id = GWF.14 }
 	}
 }
 
@@ -347,7 +462,8 @@ shared_focus = {
 	x = -2
 	y = 1
 	completion_reward = {
-
+		country_event = { id = GWF.15 }
+		add_political_power = 25
 	}
 }
 
@@ -366,7 +482,7 @@ shared_focus = {
 	x = 0
 	y = 1
 	completion_reward = {
-
+	
 	}
 }
 
@@ -385,7 +501,8 @@ shared_focus = {
 	x = 0
 	y = 1
 	completion_reward = {
-
+		country_event = { id = GWF.16 }
+		add_command_power = 15
 	}
 }
 
@@ -423,7 +540,7 @@ shared_focus = {
 	x = 2
 	y = 1
 	completion_reward = {
-
+		country_event = { id = GWF.17 }
 	}
 }
 
@@ -442,7 +559,29 @@ shared_focus = {
 	x = 0
 	y = 1
 	completion_reward = {
-
+		country_event = { id = GWF.18 }
+		OKL = {
+			add_manpower = 15000
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 1000
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 500
+			}
+		}
+		LHH = {
+			add_manpower = -15000
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = -1000
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = -500
+			}
+		}
 	}
 }
 
@@ -467,7 +606,7 @@ shared_focus = {
 	x = 0
 	y = 1
 	completion_reward = {
-
+		country_event = { id = GWF.19 }
 	}
 }
 
@@ -486,7 +625,7 @@ shared_focus = {
 	x = -1
 	y = 1
 	completion_reward = {
-
+		country_event = { id = GWF.20 }
 	}
 }
 
@@ -528,7 +667,7 @@ shared_focus = {
 	x = 7
 	y = 3
 	completion_reward = {
-
+		country_event = { id = GWF.21 }
 	}
 }
 
@@ -550,7 +689,8 @@ shared_focus = {
 	x = -2
 	y = 1
 	completion_reward = {
-		
+		custom_effect_tooltip = GWF_magical_girl_army_tt	
+		country_event = { id = GWF.22 }
     }
 }
 
@@ -569,7 +709,7 @@ shared_focus = {
 	x = 0
 	y = 1
 	completion_reward = {
-		
+		country_event = { id = GWF.23 }
     }
 }
 
@@ -607,7 +747,7 @@ shared_focus = {
 	x = 1
 	y = 1
 	completion_reward = {
-		
+		country_event = { id = GWF.24 }
     }
 }
 
@@ -629,7 +769,7 @@ shared_focus = {
 	x = 2
 	y = 1
 	completion_reward = {
-		
+		country_event = { id = GWF.25 }
     }
 }
 
@@ -667,7 +807,7 @@ shared_focus = {
 	x = -1
 	y = 1
 	completion_reward = {
-		
+		country_event = { id = GWF.26 }
     }
 }
 
@@ -705,7 +845,28 @@ shared_focus = {
 	x = 0
 	y = 2
 	completion_reward = {
-		
+		hidden_effect = {
+			if = {
+				limit = {
+					check_variable = {
+						GWF.GWF_Homura_physics > GWF.GWF_rapinam_second_treshold
+					}
+				}
+				country_event = { id = GWF.28 }
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						GWF.GWF_Homura_mental > GWF.GWF_rapinam_treshold
+					}
+				}
+				country_event = { id = GWF.29 }
+			}
+			else = {
+				country_event = { id = GWF.30 }
+			}
+		}
+		custom_effect_tooltip = GWF_operation_umbra_tt	
 	}
 }
 
@@ -732,7 +893,7 @@ shared_focus = {
 	x = 0
 	y = 2
 	completion_reward = {
-		
+		country_event = { id = GWF.27 }
 	}
 }
 
@@ -760,7 +921,7 @@ shared_focus = {
 	x = 0
 	y = 2
 	completion_reward = {
-		
+		country_event = { id = GWF.31 }
 	}
 }
 
@@ -776,7 +937,7 @@ shared_focus = {
 	x = 6
 	y = 0
 	completion_reward = {
-	
+		country_event = { id = GWF.32 }
 	}
 }
 
@@ -795,7 +956,7 @@ shared_focus = {
 	x = -3
 	y = 1
 	completion_reward = {
-	
+		country_event = { id = GWF.33 }
 	}
 }
 
@@ -893,7 +1054,7 @@ shared_focus = {
 	x = 0
 	y = 2
 	completion_reward = {
-	
+		country_event = { id = GWF.34 }
 	}
 }
 
@@ -912,7 +1073,7 @@ shared_focus = {
 	x = -1
 	y = 1
 	completion_reward = {
-	
+		country_event = { id = GWF.35 }
 	}
 }
 
@@ -934,7 +1095,7 @@ shared_focus = {
 	x = -3
 	y = 3
 	completion_reward = {
-	
+		country_event = { id = GWF.36 }
 	}
 }
 
@@ -956,7 +1117,7 @@ shared_focus = {
 	x = -1
 	y = 3
 	completion_reward = {
-	
+		country_event = { id = GWF.37 }
 	}
 }
 
@@ -978,7 +1139,7 @@ shared_focus = {
 	x = 1
 	y = 3
 	completion_reward = {
-	
+		country_event = { id = GWF.38 }
 	}
 }
 
@@ -1000,7 +1161,7 @@ shared_focus = {
 	x = 3
 	y = 3
 	completion_reward = {
-	
+		country_event = { id = GWF.39 }
 	}
 }
 
@@ -1024,7 +1185,13 @@ shared_focus = {
 	x = 0
 	y = 4
 	completion_reward = {
-	
+		if = {
+			limit = { check_variable = { GWF_evil_flags > 2 } }
+			country_event = { id = GWF.40 }
+		}
+		else = {
+			country_event = { id = GWF.41 }
+		}
 	}
 }
 
@@ -1042,7 +1209,7 @@ shared_focus = {
 	x = 9
 	y = 0
 	completion_reward = {
-
+		country_event = { id = GWF.42 }
 	}
 }
 
@@ -1061,7 +1228,7 @@ shared_focus = {
 	x = -1
 	y = 1
 	completion_reward = {
-
+		country_event = { id = GWF.43 }
 	}
 }
 
@@ -1080,7 +1247,7 @@ shared_focus = {
 	x = 1
 	y = 1
 	completion_reward = {
-
+		country_event = { id = GWF.44 }
 	}
 }
 
@@ -1144,7 +1311,7 @@ shared_focus = {
 	x = -1
 	y = 1
 	completion_reward = {
-
+		country_event = { id = GWF.45 }
 	}
 }
 
@@ -1166,7 +1333,7 @@ shared_focus = {
 	x = 1 
 	y = 1
 	completion_reward = {
-
+		country_event = { id = GWF.46 }
 	}
 }
 
@@ -1186,7 +1353,7 @@ shared_focus = {
 	x = 0
 	y = 2
 	completion_reward = {
-
+		country_event = { id = GWF.47 }
 	}
 }
 
@@ -1227,7 +1394,7 @@ shared_focus = {
 	x = -1
 	y = 1
 	completion_reward = {
-
+		country_event = { id = GWF.48 }
 	}
 }
 
@@ -1249,7 +1416,7 @@ shared_focus = {
 	x = 1
 	y = 1
 	completion_reward = {
-
+		country_event = { id = GWF.49 }
 	}
 }
 
@@ -1269,7 +1436,7 @@ shared_focus = {
 	x = 0
 	y = 2
 	completion_reward = {
-
+		country_event = { id = GWF.50 }
 	}
 }
 
@@ -1307,7 +1474,7 @@ shared_focus = {
 	x = 0
 	y = 2
 	completion_reward = {
-
+		country_event = { id = GWF.51 }
 	}
 }
 
@@ -1332,7 +1499,7 @@ shared_focus = {
 	x = -1
 	y = 1
 	completion_reward = {
-
+		country_event = { id = GWF.52 }
 	}
 }
 
@@ -1357,7 +1524,7 @@ shared_focus = {
 	x = 1
 	y = 1
 	completion_reward = {
-
+		country_event = { id = GWF.53 }
 	}
 }
 
@@ -1379,7 +1546,7 @@ shared_focus = {
 	x = 0
 	y = 2
 	completion_reward = {
-
+		country_event = { id = GWF.54 }
 	}
 }
 
@@ -1401,6 +1568,6 @@ shared_focus = {
 	x = 0
 	y = 2
 	completion_reward = {
-
+		
 	}
 }

@@ -250,3 +250,16 @@ MAR_collapse_will_be_gone_state = {
 		state = 2199
 	}
 }
+
+GWF_Homura_mental_more_than_Y = {
+	custom_trigger_tooltip = {
+		tooltip = GWF_Homura_mental_more_than_Y_tt
+		check_variable = { GWF.GWF_Homura_mental > Y }
+	}
+}
+GWF_Homura_physics_more_than_Y = {
+	custom_trigger_tooltip = {
+		tooltip = GWF_Homura_physics_more_than_Y_tt
+		check_variable = { GER.GWF_Homura_physics < Y }
+	}
+}

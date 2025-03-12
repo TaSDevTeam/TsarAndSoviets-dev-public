@@ -1,7 +1,7 @@
 GWF_Homura_deccat = {
 	#mind
 	GWF_Homura_mind_effigy = {        
-		icon = GFX_GWF_Homura_mind_effigy
+		icon = GFX_soulgem
 		visible = {
 			check_variable = { GWF_Homura_cat = 1 } 
 		}
@@ -16,12 +16,13 @@ GWF_Homura_deccat = {
 		}
 	}
 	GWF_Homura_mind_make_a_speech = {
-		icon = GWF_Homura_mind_make_a_speech
+		icon = generic_reassurance
 		visible = {
 			check_variable = { GWF_Homura_cat = 1 } 
 		}
 		available = {
-			check_variable = { GWF_Homura_cat = 1 } 
+			set_temp_variable = { Y = 10 }
+			GWF_Homura_mental_more_than_Y = yes
 		}
 		ai_will_do = {
 			factor = 200
@@ -38,10 +39,242 @@ GWF_Homura_deccat = {
 			add_command_power = 5
 		}
 	}
+	GWF_Homura_help_with_researches = {
+		icon = generic_research
+		visible = {
+			check_variable = { GWF_Homura_cat = 1 } 
+		}
+		available = {
+			set_temp_variable = { Y = 10 }
+			GWF_Homura_mental_more_than_Y = yes
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 90
+		days_re_enable = 10
+		cost = 15
+		modifier = {
+			research_speed_factor = 0.15
+		}
+		complete_effect = { 
+			set_temp_variable = { opp_to_change = 1 }
+			set_temp_variable = { temp_stat_gained = -2 }
+			GWF_homura_change_stats = yes
+			
+			set_temp_variable = { opp_to_change = 1 }
+			set_temp_variable = { temp_stat_gained = -0.5 }
+			GWF_homura_change_weekly_stats = yes
+			
+		}
+		remove_effect = {
+			set_temp_variable = { opp_to_change = 1 }
+			set_temp_variable = { temp_stat_gained = 0.5 }
+			GWF_homura_change_weekly_stats = yes
+		}
+	}
 	
+	GWF_Homura_rally_the_troops = {
+		icon = generic_military_parade
+		visible = {
+			check_variable = { GWF_Homura_cat = 1 } 
+		}
+		available = {
+			set_temp_variable = { Y = 10 }
+			GWF_Homura_mental_more_than_Y = yes
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 60
+		days_re_enable = 10
+		cost = 10
+		modifier = {
+			weekly_manpower = 500
+		}
+		complete_effect = { 
+			set_temp_variable = { opp_to_change = 1 }
+			set_temp_variable = { temp_stat_gained = -2.5 }
+			GWF_homura_change_stats = yes
+			
+			set_temp_variable = { opp_to_change = 1 }
+			set_temp_variable = { temp_stat_gained = -0.25 }
+			GWF_homura_change_weekly_stats = yes
+			
+		}
+		remove_effect = {
+			set_temp_variable = { opp_to_change = 1 }
+			set_temp_variable = { temp_stat_gained = 0.25 }
+			GWF_homura_change_weekly_stats = yes
+		}
+	}
+	
+	GWF_Homura_fix_the_economy = {
+		icon = generic_money
+		visible = {
+			check_variable = { GWF_Homura_cat = 1 } 
+		}
+		available = {
+			set_temp_variable = { Y = 10 }
+			GWF_Homura_mental_more_than_Y = yes
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 60
+		days_re_enable = 10
+		cost = 10
+		modifier = {
+			free_production_units_modifier = 5
+		}
+		complete_effect = { 
+			set_temp_variable = { opp_to_change = 1 }
+			set_temp_variable = { temp_stat_gained = -5 }
+			GWF_homura_change_stats = yes		
+		}
+		remove_effect = {
+			set_temp_variable = { gdp_growth_temp = 1 }
+			econ_gdp_growth_change = yes
+		}
+	}
+	
+	GWF_Homura_chill = {
+		icon = generic_bus
+		visible = {
+			check_variable = { GWF_Homura_cat = 1 } 
+		}
+		available = {
+			set_temp_variable = { Y = 3 }
+			GWF_Homura_mental_more_than_Y = yes
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 35
+		days_re_enable = 10
+		cost = 30
+		modifier = {
+			weekly_manpower = 500
+		}
+		complete_effect = { 
+			set_temp_variable = { opp_to_change = 1 }
+			set_temp_variable = { temp_stat_gained = 2.5 }
+			GWF_homura_change_stats = yes
+			
+			set_temp_variable = { opp_to_change = 1 }
+			set_temp_variable = { temp_stat_gained = 2 }
+			GWF_homura_change_weekly_stats = yes
+			
+			add_stability = -0.05
+		}
+		remove_effect = {
+			set_temp_variable = { opp_to_change = 1 }
+			set_temp_variable = { temp_stat_gained = -2 }
+			GWF_homura_change_weekly_stats = yes
+			
+			set_temp_variable = { opp_to_change = 2 }
+			set_temp_variable = { temp_stat_gained = 1.5 }
+			GWF_homura_change_stats = yes
+		}
+	}
+	
+	GWF_Homura_i_dont_care = {
+		icon = generic_phone_call
+		visible = {
+			check_variable = { GWF_Homura_cat = 1 } 
+			has_country_flag = GWF_lone_warrior
+		}
+		available = {
+			set_temp_variable = { Y = 3 }
+			GWF_Homura_mental_more_than_Y = yes
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 30
+		days_re_enable = 10
+		cost = 25
+		modifier = {
+			free_production_units_modifier = 5
+		}
+		complete_effect = { 
+			set_temp_variable = { opp_to_change = 1 }
+			set_temp_variable = { temp_stat_gained = 5 }
+			GWF_homura_change_stats = yes
+
+			set_temp_variable = { gdp_growth_temp = -0.25 }
+			econ_gdp_growth_change = yes
+			
+			add_stability = -0.05
+		}
+		remove_effect = {
+			set_temp_variable = { opp_to_change = 2 }
+			set_temp_variable = { temp_stat_gained = 1}
+			GWF_homura_change_stats = yes
+		}
+	}
+	
+	GWF_Homura_go_to_ratenhaus = {
+		icon = generic_building_offices
+		visible = {
+			check_variable = { GWF_Homura_cat = 1 } 
+			has_country_flag = GWF_madoka_church
+		}
+		available = {
+			set_temp_variable = { Y = 10 }
+			GWF_Homura_mental_more_than_Y = yes
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 30
+		days_re_enable = 10
+		cost = 5
+		modifier = {
+			political_power_gain = 0.25
+		}
+		complete_effect = { 
+			set_temp_variable = { opp_to_change = 1 }
+			set_temp_variable = { temp_stat_gained = -2.5 }
+			GWF_homura_change_stats = yes
+		}
+		remove_effect = {
+			add_stability = 0.05
+			TNO_improve_admin_efficiency_low = yes
+		}
+	}
+	
+	GWF_Homura_help_with_church = {
+		icon = generic_podium
+		visible = {
+			check_variable = { GWF_Homura_cat = 1 } 
+			has_country_flag = GWF_madoka_church
+		}
+		available = {
+			set_temp_variable = { Y = 10 }
+			GWF_Homura_mental_more_than_Y = yes
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 14
+		days_re_enable = 10
+		cost = 35
+		modifier = {
+			political_power_gain = 0.1
+		}
+		complete_effect = { 
+			set_temp_variable = { opp_to_change = 1 }
+			set_temp_variable = { temp_stat_gained = 1.5 }
+			GWF_homura_change_stats = yes
+		}
+		remove_effect = {
+			add_stability = 0.025
+		}
+	}
 	#powers
 	GWF_Homura_powers_effigy = {
-		icon = GFX_GWF_Homura_powers_effigy
+		icon = GFX_timeshield
 		visible = {
 			check_variable = { GWF_Homura_cat = 2 }
 		}
@@ -53,6 +286,190 @@ GWF_Homura_deccat = {
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision complete GWF_Homura_powers_effigy... wait that's wrong"
+		}
+	}
+	GWF_Homura_hunt_witches = {
+		icon = generic_assassination
+		visible = {
+			check_variable = { GWF_Homura_cat = 2 } 
+		}
+		available = {
+			set_temp_variable = { Y = 10 }
+			GWF_Homura_physics_more_than_Y = yes
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 14
+		days_re_enable = 10
+		cost = 15
+		complete_effect = { 
+			set_temp_variable = { opp_to_change = 2 }
+			set_temp_variable = { temp_stat_gained = -2.5 }
+			GWF_homura_change_stats = yes
+		}
+		remove_effect = {
+			add_stability = 0.025
+			set_temp_variable = { opp_to_change = 1 }
+			set_temp_variable = { temp_stat_gained = 2.5 }
+			GWF_homura_change_stats = yes
+		}
+	}
+	GWF_Homura_find_weapons = {
+		icon = generic_arms_trade_increase
+		visible = {
+			check_variable = { GWF_Homura_cat = 2 } 
+		}
+		available = {
+			set_temp_variable = { Y = 10 }
+			GWF_Homura_physics_more_than_Y = yes
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 21
+		days_re_enable = 10
+		cost = 15
+		complete_effect = { 
+			set_temp_variable = { opp_to_change = 2 }
+			set_temp_variable = { temp_stat_gained = -2.5 }
+			GWF_homura_change_stats = yes
+		}
+		remove_effect = {
+			add_stability = 0.025
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 250
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 75
+			}
+		}
+	}
+	GWF_Homura_scavange_for_loot = {
+		icon = generic_investors
+		visible = {
+			check_variable = { GWF_Homura_cat = 2 } 
+		}
+		available = {
+			set_temp_variable = { Y = 10 }
+			GWF_Homura_physics_more_than_Y = yes
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 60
+		days_re_enable = 10
+		cost = 20
+		complete_effect = { 
+			set_temp_variable = { opp_to_change = 2 }
+			set_temp_variable = { temp_stat_gained = -7.5 }
+			GWF_homura_change_stats = yes
+		}
+		remove_effect = {
+			set_temp_variable = { gdp_growth_temp = 0.25 }
+			econ_gdp_growth_change = yes
+			set_temp_variable = { pus_temp = 1 }
+			econ_pus_change = yes
+		}
+	}
+	GWF_Homura_stay_where_stay = {
+		icon = generic_decrease
+		visible = {
+			check_variable = { GWF_Homura_cat = 2 } 
+		}
+		available = {
+			set_temp_variable = { Y = 3 }
+			GWF_Homura_physics_more_than_Y = yes
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 60
+		days_re_enable = 10
+		cost = 40
+		complete_effect = { 
+			set_temp_variable = { opp_to_change = 2 }
+			set_temp_variable = { temp_stat_gained = 2.5 }
+			GWF_homura_change_stats = yes
+			
+			set_temp_variable = { opp_to_change = 2 }
+			set_temp_variable = { temp_stat_gained = -2 }
+			GWF_homura_change_weekly_stats = yes
+			
+			add_war_support = -0.05
+		}
+		remove_effect = {
+			set_temp_variable = { opp_to_change = 1 }
+			set_temp_variable = { temp_stat_gained = 2 }
+			GWF_homura_change_weekly_stats = yes
+		}
+	}
+	
+	GWF_Homura_kill_some_bandits = {
+		icon = generic_assault
+		visible = {
+			check_variable = { GWF_Homura_cat = 2 } 
+			has_country_flag = GWF_lone_warrior
+		}
+		available = {
+			set_temp_variable = { Y = 10 }
+			GWF_Homura_physics_more_than_Y = yes
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 14
+		days_re_enable = 10
+		cost = 40
+		complete_effect = { 
+			set_temp_variable = { opp_to_change = 2 }
+			set_temp_variable = { temp_stat_gained = -2.5 }
+			GWF_homura_change_stats = yes
+		}
+		remove_effect = {
+			set_temp_variable = { opp_to_change = 1 }
+			set_temp_variable = { temp_stat_gained = 1.5 }
+			GWF_homura_change_stats = yes
+			
+			add_manpower = -25
+		}
+	}
+	
+	GWF_Homura_beat_raiders = {
+		icon = generic_defend
+		visible = {
+			check_variable = { GWF_Homura_cat = 2 } 
+			has_country_flag = GWF_madoka_church
+		}
+		available = {
+			set_temp_variable = { Y = 10 }
+			GWF_Homura_physics_more_than_Y = yes
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 14
+		days_re_enable = 10
+		cost = 40
+		complete_effect = { 
+			set_temp_variable = { opp_to_change = 2 }
+			set_temp_variable = { temp_stat_gained = -2.5 }
+			GWF_homura_change_stats = yes
+		}
+		remove_effect = {
+			set_temp_variable = { opp_to_change = 1 }
+			set_temp_variable = { temp_stat_gained = 1.5 }
+			GWF_homura_change_stats = yes
+			
+			add_stability = 0.025
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 100
+			}
+			
+			add_manpower = -25
 		}
 	}
 }

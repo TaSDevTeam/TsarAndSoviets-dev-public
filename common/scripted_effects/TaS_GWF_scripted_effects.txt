@@ -31,6 +31,7 @@ GWF_calculate_oppo_dynmod_effects = {
 }
 
 GWF_opposition_change_stats = {
+	set_temp_variable = { temp_stat_gained_txt = temp_stat_gained }
 	if = {
 		limit = { check_variable = { opp_to_change = 1 } } #endzeit
 		if = {
@@ -82,8 +83,8 @@ GWF_opposition_change_weekly_stats = {
 GWF_start_homura_gui = {
 	set_country_flag = GWF_Homura_gui_active
 	
-	set_variable = { homura_mental_stat = 78 }
-	set_variable = { homura_physics_stat = 82 }
+	set_variable = { GWF_Homura_mental = 78 }
+	set_variable = { GWF_Homura_physics = 82 }
 	set_variable = { GWF_Homura_cat = 1 }
 	set_variable = { GWF_Homura_style = 2}
 	
@@ -105,7 +106,7 @@ GWF_calculate_homura_dynmod_effects = {
 	add_to_array = { GWF_Homura_modifier_array_one = 0.1 } # research_speed_factor
 	add_to_array = { GWF_Homura_modifier_array_one = 0.25 } # political_power_factor
 	add_to_array = { GWF_Homura_modifier_array_one = -0.1 } # personnel_cost_modifier
-	add_to_array = { GWF_Homura_modifier_array_one = 1 } # command_power_gain
+	add_to_array = { GWF_Homura_modifier_array_one = 0.3 } # command_power_gain
 	add_to_array = { GWF_Homura_modifier_array_one = 0.15 } # stability_factor
 	clear_array = GWF_Homura_modifier_array_two
 	add_to_array = { GWF_Homura_modifier_array_two = 0.15 } # army_attack_factor
@@ -116,11 +117,11 @@ GWF_calculate_homura_dynmod_effects = {
 	
 	set_temp_variable = { homura_mental_stat = GWF_Homura_mental }
 	add_to_temp_variable = { homura_mental_stat = -50 } 
-	divide_variable = { homura_mental_stat = 50 }
+	divide_temp_variable = { homura_mental_stat = 50 }
 	
 	set_temp_variable = { homura_physics_stat = GWF_Homura_physics }
 	add_to_temp_variable = { homura_physics_stat = -50 } 
-	divide_variable = { homura_physics_stat = 50 }
+	divide_temp_variable = { homura_physics_stat = 50 }
 	
 	for_each_loop = {
 		array = GWF_Homura_modifier_array_one
@@ -134,9 +135,10 @@ GWF_calculate_homura_dynmod_effects = {
 }
 
 GWF_homura_change_stats = {
+	set_temp_variable = { temp_stat_gained_txt = temp_stat_gained }
 	if = {
 		limit = { check_variable = { opp_to_change = 1 } } #mental
-		add_to_variable = { homura_mental_stat = temp_stat_gained }
+		add_to_variable = { GWF_Homura_mental = temp_stat_gained }
 		if = {
 			limit = { check_variable = { temp_stat_gained < 0 } }
 			multiply_temp_variable = { temp_stat_gained_txt = -1 }
@@ -148,7 +150,7 @@ GWF_homura_change_stats = {
 	}
 	if = {
 		limit = { check_variable = { opp_to_change = 2 } } #phys
-		add_to_variable = { homura_physics_stat = temp_stat_gained }
+		add_to_variable = { GWF_Homura_physics = temp_stat_gained }
 		if = {
 			limit = { check_variable = { temp_stat_gained < 0 } }
 			multiply_temp_variable = { temp_stat_gained_txt = -1 }
@@ -163,14 +165,30 @@ GWF_homura_change_stats = {
 }
 
 GWF_homura_change_weekly_stats = {
-	add_to_variable = { GWF_homura_weekly_stats = temp_weekly_gained }
+	set_temp_variable = { temp_stat_gained_txt = temp_stat_gained }
 	if = {
-		limit = { check_variable = { temp_weekly_gained < 0 } }
-		multiply_temp_variable = { temp_weekly_gained_txt = -1 }
-		custom_effect_tooltip = GWF_homura_weekly_stat_decrease_tt
+		limit = { check_variable = { opp_to_change = 1 } } #mental
+		add_to_variable = { GWF_homura_weekly_mental = temp_stat_gained }
+		if = {
+			limit = { check_variable = { temp_stat_gained < 0 } }
+			multiply_temp_variable = { temp_stat_gained_txt = -1 }
+			custom_effect_tooltip = GWF_homura_weekly_mental_decrease_tt
+		}
+		else = {
+			custom_effect_tooltip = GWF_homura_weekly_mental_growth_tt
+		}
 	}
-	else = {
-		custom_effect_tooltip = GWF_homura_weekly_stat_growth_tt
+	if = {
+		limit = { check_variable = { opp_to_change = 2 } } #phys
+		add_to_variable = { GWF_homura_weekly_physics = temp_stat_gained }
+		if = {
+			limit = { check_variable = { temp_stat_gained < 0 } }
+			multiply_temp_variable = { temp_stat_gained_txt = -1 }
+			custom_effect_tooltip = GWF_homura_weekly_phys_decrease_tt 
+		}
+		else = {
+			custom_effect_tooltip = GWF_homura_weekly_phys_growth_tt
+		}
 	}
 }
 

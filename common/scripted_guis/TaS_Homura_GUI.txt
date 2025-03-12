@@ -9,8 +9,8 @@ scripted_gui = {
 			GWF_Homura_three_gui_picture_visible = { check_variable = { GWF_Homura_style = 3 } }
 		}
 		properties = {
-			GWF_Homura_gui_scale_one_scale = { frame = homura_mental_stat }
-			GWF_Homura_gui_scale_two_scale = { frame = homura_physics_stat }
+			GWF_Homura_gui_scale_one_scale = { frame = GWF_Homura_mental }
+			GWF_Homura_gui_scale_two_scale = { frame = GWF_Homura_physics }
 		}
 		effects = {
 			GWF_Homura_change_style_button_click = {

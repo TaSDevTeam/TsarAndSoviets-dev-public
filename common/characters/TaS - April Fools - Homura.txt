@@ -42,7 +42,7 @@ characters = {
 		advisor = {
 			slot = economy_minister
 			traits = { economy_minister }
-			idea_token = GWF_Generic_Vacant_eco
+			idea_token = GWF_Contollable_Chaos_eco
 			ledger = civilian
 			cost = -1
 			can_be_fired = no
@@ -53,7 +53,7 @@ characters = {
 		advisor = {
 			slot = foreign_minister
 			traits = { foreign_minister }
-			idea_token = GWF_Generic_Vacant_for
+			idea_token = GWF_Contollable_Chaos_for
 			ledger = civilian
 			cost = -1
 			can_be_fired = no
@@ -64,7 +64,7 @@ characters = {
 		advisor = {
 			slot = security_minister
 			traits = { security_minister }
-			idea_token = GWF_Generic_Vacant_sec
+			idea_token = GWF_Contollable_Chaos_sec
 			ledger = civilian
 			cost = -1
 			can_be_fired = no
@@ -82,7 +82,7 @@ characters = {
 	GWF_Hans_Filbinger = {
 		name = GWF_Hans_Filbinger
 		portraits = {
-			civilian = { large = "GFX_idea_GWF_Hans_Filbinger"	}
+			civilian = { small = "GFX_idea_Generic_Position_Vacant"	}
 		}
 		advisor = {
 			slot = foreign_minister
