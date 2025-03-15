@@ -690,7 +690,7 @@ GWF_southgerman_war: "Южногерманская война"
 GWF_southgerman_war_desc: "Южногерманская война"
 
 GWF_opposition_modifier_dummy: "Активное сопротивление"
-GWF_opposition_modifier_dummy_desc: "§FЭффективность добычи ресурсов: [?MAR_prestol_dynomod_array^2|2R%+=]\nПотребление припасов: [?MAR_prestol_dynomod_array^1|2R%-=]\nСтабильность: [?MAR_prestol_dynomod_array^3|2R%+=]\nУрон по гарнизонам: [?MAR_prestol_dynomod_array^0|2R%-=]\nРост ВВП: [?MAR_prestol_dynomod_array^4|2R+=]§R%§!\nПрочие военные расходы: §R$[?MAR_prestol_dynomod_array^5|3R-]B§!\n--------------\n§!Саяка блтяььабабвбаю, баадер и рёмер тоже пидорасы"
+GWF_opposition_modifier_dummy_desc: "§FЭффективность добычи ресурсов: [?GWF_opposition_modifier_array^2|2R%+=]\nПотребление припасов: [?GWF_opposition_modifier_array^1|2R%-=]\nСтабильность: [?GWF_opposition_modifier_array^2|2R%+=]\nУрон по гарнизонам: [?GWF_opposition_modifier_array^0|2R%-=]\nРост ВВП: [?GWF_opposition_modifier_array^4|2R+=]§R%§!\nПрочие военные расходы: §R$[?GWF_opposition_modifier_array^5|3R-]B§!\n--------------\n§!Саяка блтяььабабвбаю, баадер и рёмер тоже пидорасы"
 
 GWF_Homura_modifier_dummy: "Состояние дьявола"
 GWF_Homura_modifier_dummy_desc: "§FЭффекты, зависящие от психологического состояния §lХомуры§!\n--------------\nТемпы исследований: [?GWF_Homura_modifier_array_one^0|.1%=+]\nПрирост политической власти: [?GWF_Homura_modifier_array_one^1|.1%=+]\nМодификатор расходов на персонал: [?GWF_Homura_modifier_array_one^2|.1%=-]\nПрирост коммандного ресурса: [?GWF_Homura_modifier_array_one^3|.1%=+]\nСтабильность: [?GWF_Homura_modifier_array_one^4|.1%=+]\n--------------\nЭффекты, зависящие от физического состояния §lХомуры§!\n--------------\nАтака дивизий: [?GWF_Homura_modifier_array_two^0|.1%=+]\nЗащита дивизий: [?GWF_Homura_modifier_array_two^1|.1%=+]\nОрганзиция дивизий: [?GWF_Homura_modifier_array_two^2|.1%=+]\nТемпы восстановления дивизий: [?GWF_Homura_modifier_array_two^3|.1%=+]\nНеобходимо гарнизонов: [?GWF_Homura_modifier_array_two^4|.1%=-]\n--------------\n§!Хомура Акеми - тоже, в каком смысле, человек. Будучи главным стержнем собственного царства, стоит следить за её состоянием, чтобы не было проблем."
@@ -845,6 +845,7 @@ GWF_this_isnt_working_desc: ""
 GWF_fateful_meeting_desc: ""
 
 ##ГУИшки
+#Первая
 GWF_Homura_deccat: "Состояние демона"
 
 GWF_homura_one_tt: "§lХомура Акеми§!"
@@ -889,6 +890,8 @@ GWF_Homura_mental_more_than_Y_tt: "Ментальное состояние §lХ
 GWF_Homura_physics_more_than_Y_tt: "Физическое состояние §lХомуры§! больше, чем §Y[?Y]§!"]
 
 GWF_Homura_mind_effigy: "Решения §Yментального состояния§!"
+GWF_Homura_witchifying_imminent: "Опасно низкое ментальное состояние"
+GWF_Homura_witchifying_imminent_tt: "§RКогда-то этому спектаклю должен был прийти конец§!"
 GWF_Homura_mind_make_a_speech: "Произнести речь"
 GWF_Homura_help_with_researches: "Помочь с исследованиями"
 GWF_Homura_rally_the_troops: "Воодушевить войска"
@@ -899,9 +902,74 @@ GWF_Homura_go_to_ratenhaus: "Посетить сессию парламента"
 GWF_Homura_help_with_church: "Помочь в организации церкви"
 
 GWF_Homura_powers_effigy: "Решения §Yфизического состояния§!"
+GWF_Homura_coup_imminent: "Опасно маленькая сила"
+GWF_Homura_coup_imminent_tt: "§RКогда-то этому спектаклю должен был прийти конец§!"
 GWF_Homura_hunt_witches: "Охота на ведьм"
 GWF_Homura_find_weapons: "Искать оружие"
 GWF_Homura_scavange_for_loot: "Найти ресурсы"
 GWF_Homura_stay_where_stay: "Остаться в Ратуше"
 GWF_Homura_kill_some_bandits: "Поохотиться на бандитов"
 GWF_Homura_beat_raiders: "Отразить рейд"
+#Вторая
+GWF_Opposition_deccat: "Борьба с сопротивлением"
+
+endezeit_title: "Сила фракции: §Y[?endezeit_strength]%§!"
+GWF_opposition_gui_endezeit_button_tt: "§BКонец времён§!"
+GWF_opposition_gui_endezeit_button_tt_desc: "§BКонец времён§!"
+
+raf_title: "Сила фракции: §Y[?raf_strength]%§!"
+GWF_opposition_gui_raf_button_tt: "§eФракция Красной Армии§!"
+GWF_opposition_gui_raf_button_tt_desc: "§eФракция Красной Армии§!"
+
+gim_title: "Сила фракции: §Y[?gim_strength]%§!"
+GWF_opposition_gui_gim_button_tt: "§sНемецкое Имперское Движение§!"
+GWF_opposition_gui_gim_button_tt_desc: "§sНемецкое Имперское Движение§!"
+
+GWF_opposition_decrease_tt: "Сила выбранной фракции §Gуменьшится§! на §G[?temp_stat_gained_txt]%§!"
+GWF_opposition_growth_tt: "Сила выбранной фракции §Rувеличится§! на §R[?temp_stat_gained_txt]%§!"
+
+GWF_oppo_decision_again_tt: "§YРешение будет снова доступно для выбора§!"
+GWF_opposition_final_attack_raf: "Нанести последний удар"
+GWF_opposition_final_attack_gim: "Нанести последний удар"
+GWF_opposition_final_attack_endezeit: "Нанести последний удар"
+GWF_opposition_final_attack_available_tt: "Сила выбранной фракции §Gменьше 15%§!"
+GWF_opposition_final_attack_available_endezeit_tt: "Мы §Rуничтожили§! остальные §eдве§! §sфракции§!"
+
+GWF_current_opposition_effigy: "[GET_OPPO_TITLE]"
+GWF_opposition_attack_cells: "Атаковать ячейки"
+GWF_opposition_anti_propagranda: "Распространять пропаганду против сопротивления"
+GWF_opposition_attack_logistics: "Разрушить цепочки поставок"
+GWF_opposition_send_spies: "Послать двойных агентво"
+
+#Третья
+GWF_BigGame_deccat: "Большая Игра"
+GWF_big_game_title: "§YРАУНД [GET_ROUND_TITLE]§!"
+GWF_big_game_round_one: "1: ПАДАНИЯ"
+GWF_big_game_round_two: "2: ВЕНЕЦИЯ"
+GWF_big_game_round_three: "3: СААРЛАНД"
+GWF_big_game_round_four: "4: ШВЕЙЦАРИЯ"
+GWF_big_game_round_five: "5: БАВАРИЯ"
+GWF_big_game_round_na: "ПОШЕЛ НАХУЙ"
+
+GWF_current_round_effigy: "Решения текущего раунда"
+GWF_BigGame_mission: "Осталось времени:"
+GWF_BigGame_mission_tt: "Будет подведён итог текущего раунда.\n§YПорог для победы:§! \n§YОжидаемый результат:§!"
+GWF_biggame_diplomatic_meeting: "Дипломатическая встреча"
+GWF_biggame_diplomatic_meeting_tt: "Наше влияние будет §Gувеличено§! на случайную величину от §Y3§! до §Y7§!"
+GWF_biggame_financial_help: "Финансовая помощь"
+GWF_biggame_financial_help_tt: "Наше влияние будет §Gувеличено§! на случайную величину от §Y2§! до §Y5§!"
+GWF_biggame_promise_mil_help: "Обещать военную поддержку"
+GWF_biggame_promise_mil_help_tt: "Наше влияние будет §Gувеличено§! на случайную величину от §Y3§! до §Y5§!"
+GWF_biggame_sabotage_enemy: "Саботировать вражеские действия"
+GWF_biggame_sabotage_enemy_tt: "Наше влияние будет §Gувеличено§! на случайную величину от §R-3§! до §G3§!"
+GWF_biggame_threaten_diplomats: "Угрожать дипломатам"
+GWF_biggame_threaten_diplomats_tt: "Наше влияние будет §Gувеличено§! на случайную величину от §R-5§! до §G5§!"
+GWF_biggame_direct_actions: "Прямые действия"
+GWF_biggame_direct_actions_tt: "Ценой в §R3§! единицы нашего влияния, мы заставим пропустить врага один ход"
+GWF_biggame_tick: "Действия врага"
+GWF_biggame_tick_tt: "Наше влияние будет §Rснижено§! на случайную величину от §R5§! до §R1§!"
+GWF_biggame_tick_skipped_tt: "Благодаря §Yнашим действиям§!, этот шаг врага §Gбудет пропущен§!"
+
+magical_girls: "Магическая пехота"
+magical_girls_desc: "Это не нарушение правил ведения войны, если твои солдаты технически перестали быть людьми"
+magical_infantry_technologies: "Магическая пехота"

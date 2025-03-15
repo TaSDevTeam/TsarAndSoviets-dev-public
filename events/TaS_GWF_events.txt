@@ -1,6 +1,6 @@
 add_namespace = GWF
 
-country_event = { #
+country_event = { #GWF_start_from_scratch
 	id = GWF.1
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.1" }
 	title = GWF.1.t
@@ -17,7 +17,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_to_find_exit
 	id = GWF.2
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.2" }
 	title = GWF.2.t
@@ -34,7 +34,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_contact_incubator
 	id = GWF.3
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.3" }
 	title = GWF.3.t
@@ -51,7 +51,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_look_inside
 	id = GWF.4
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.4" }
 	title = GWF.4.t
@@ -68,7 +68,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_only_my_struggle
 	id = GWF.5
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.5" }
 	title = GWF.5.t
@@ -85,7 +85,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_security_forces
 	id = GWF.6
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.6" }
 	title = GWF.6.t
@@ -102,7 +102,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_one_cant_do_all_the_job
 	id = GWF.7
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.7" }
 	title = GWF.7.t
@@ -119,7 +119,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_administrative_business
 	id = GWF.8
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.8" }
 	title = GWF.8.t
@@ -136,7 +136,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_church_of_ring
 	id = GWF.9
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.9" }
 	title = GWF.9.t
@@ -153,7 +153,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_my_own_realm
 	id = GWF.10
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.10" }
 	title = GWF.10.t
@@ -170,7 +170,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_operation_umbra
 	id = GWF.11
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.11" }
 	title = GWF.11.t
@@ -187,7 +187,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_operation_umbra
 	id = GWF.12
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.12" }
 	title = GWF.12.t
@@ -204,7 +204,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_operation_umbra
 	id = GWF.13
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.13" }
 	title = GWF.13.t
@@ -221,7 +221,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_look_outside
 	id = GWF.14
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.14" }
 	title = GWF.14.t
@@ -238,7 +238,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_visit_vienna
 	id = GWF.15
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.15" }
 	title = GWF.15.t
@@ -255,7 +255,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_union_of_samefaced
 	id = GWF.16
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.16" }
 	title = GWF.16.t
@@ -268,11 +268,11 @@ country_event = { #
 	option = { #
 		name = GWF.16.a
 		ai_chance = { factor = 1 }
-		
+		add_ideas = Homura_Alliance_Member
 	}
 }
 
-country_event = { #
+country_event = { #GWF_unholy_alliance
 	id = GWF.17
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.17" }
 	title = GWF.17.t
@@ -289,7 +289,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_redbus_luxembourg
 	id = GWF.18
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.18" }
 	title = GWF.18.t
@@ -306,7 +306,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_stuttgart_convention
 	id = GWF.19
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.19" }
 	title = GWF.19.t
@@ -323,7 +323,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #FREE SPACE
 	id = GWF.20
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.20" }
 	title = GWF.20.t
@@ -340,7 +340,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_look_at_powers
 	id = GWF.21
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.21" }
 	title = GWF.21.t
@@ -357,7 +357,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_magical_girl_army
 	id = GWF.22
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.22" }
 	title = GWF.22.t
@@ -374,7 +374,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_its_good_to_lie
 	id = GWF.23
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.23" }
 	title = GWF.23.t
@@ -391,7 +391,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_inarmy_concurention
 	id = GWF.24
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.24" }
 	title = GWF.24.t
@@ -408,7 +408,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_human_army
 	id = GWF.25
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.25" }
 	title = GWF.25.t
@@ -425,7 +425,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_peoples_milita
 	id = GWF.26
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.26" }
 	title = GWF.26.t
@@ -442,7 +442,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_hounds_pack
 	id = GWF.27
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.27" }
 	title = GWF.27.t
@@ -459,7 +459,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_operation_rapinam
 	id = GWF.28
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.28" }
 	title = GWF.28.t
@@ -476,7 +476,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_operation_rapinam
 	id = GWF.29
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.29" }
 	title = GWF.29.t
@@ -493,7 +493,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_operation_rapinam
 	id = GWF.30
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.30" }
 	title = GWF.30.t
@@ -510,7 +510,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_operation_occasus
 	id = GWF.31
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.31" }
 	title = GWF.31.t
@@ -527,7 +527,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_our_time_has_come
 	id = GWF.32
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.32" }
 	title = GWF.32.t
@@ -544,7 +544,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #FREE SPACE
 	id = GWF.33
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.33" }
 	title = GWF.33.t
@@ -561,7 +561,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_capital_attacks
 	id = GWF.34
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.34" }
 	title = GWF.34.t
@@ -578,7 +578,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_work_or_die
 	id = GWF.35
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.35" }
 	title = GWF.35.t
@@ -595,7 +595,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_personal_involvement
 	id = GWF.36
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.36" }
 	title = GWF.36.t
@@ -612,7 +612,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_total_mobilisation
 	id = GWF.37
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.37" }
 	title = GWF.37.t
@@ -629,7 +629,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_release_witches
 	id = GWF.38
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.38" }
 	title = GWF.38.t
@@ -646,7 +646,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_second_sun
 	id = GWF.39
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.39" }
 	title = GWF.39.t
@@ -663,7 +663,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_great_betrayal
 	id = GWF.40
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.40" }
 	title = GWF.40.t
@@ -680,7 +680,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_great_betrayal
 	id = GWF.41
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.41" }
 	title = GWF.41.t
@@ -697,7 +697,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_burned_field
 	id = GWF.42
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.42" }
 	title = GWF.42.t
@@ -714,7 +714,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_end_the_surviours
 	id = GWF.43
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.43" }
 	title = GWF.43.t
@@ -731,7 +731,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_close_the_curtains
 	id = GWF.44
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.44" }
 	title = GWF.44.t
@@ -748,7 +748,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_SS_experience
 	id = GWF.45
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.45" }
 	title = GWF.45.t
@@ -765,7 +765,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_find_the_compromise
 	id = GWF.46
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.46" }
 	title = GWF.46.t
@@ -782,7 +782,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_subdue_the_useful
 	id = GWF.47
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.47" }
 	title = GWF.47.t
@@ -799,7 +799,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_should_be_thrown_out
 	id = GWF.48
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.48" }
 	title = GWF.48.t
@@ -816,7 +816,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_will_have_new_meaning
 	id = GWF.49
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.49" }
 	title = GWF.49.t
@@ -833,7 +833,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_incubator_free_zone
 	id = GWF.50
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.50" }
 	title = GWF.50.t
@@ -850,7 +850,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_my_own_universe
 	id = GWF.51
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.51" }
 	title = GWF.51.t
@@ -867,7 +867,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_break_the_celling
 	id = GWF.52
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.52" }
 	title = GWF.52.t
@@ -884,7 +884,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_search_everywhere
 	id = GWF.53
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.53" }
 	title = GWF.53.t
@@ -901,7 +901,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_this_isnt_working
 	id = GWF.54
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.54" }
 	title = GWF.54.t
@@ -918,7 +918,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_fateful_meeting - neutral/good
 	id = GWF.55
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.55" }
 	title = GWF.55.t
@@ -935,7 +935,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_fateful_meeting - planning - neutral/good
 	id = GWF.56
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.56" }
 	title = GWF.56.t
@@ -952,7 +952,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_fateful_meeting - attack
 	id = GWF.57
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.57" }
 	title = GWF.57.t
@@ -969,7 +969,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_fateful_meeting - battle
 	id = GWF.58
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.58" }
 	title = GWF.58.t
@@ -986,7 +986,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_fateful_meeting - bad
 	id = GWF.59
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.59" }
 	title = GWF.59.t
@@ -1003,7 +1003,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GWF_fateful_meeting - planning - bad
 	id = GWF.60
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.60" }
 	title = GWF.60.t
@@ -1020,7 +1020,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #BAD ENDING
 	id = GWF.61
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.61" }
 	title = GWF.61.t
@@ -1037,7 +1037,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #NEUTRAL ENDING
 	id = GWF.62
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.62" }
 	title = GWF.62.t
@@ -1054,7 +1054,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GOOD ENDING
 	id = GWF.63
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.63" }
 	title = GWF.63.t
@@ -1071,7 +1071,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #GOOD ENDING - EPILOGUE
 	id = GWF.64
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.64" }
 	title = GWF.64.t
@@ -1088,7 +1088,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #FAIL ONE - MENTAL
 	id = GWF.65
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.65" }
 	title = GWF.65.t
@@ -1105,7 +1105,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #FAIL TWO - PHYSICAL
 	id = GWF.66
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.66" }
 	title = GWF.66.t
@@ -1122,7 +1122,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #FAIL THREE - LAST FIGHT
 	id = GWF.67
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.67" }
 	title = GWF.67.t
@@ -1139,7 +1139,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #OPPOSITION FIGHT - GIM GOODEND
 	id = GWF.68
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.68" }
 	title = GWF.68.t
@@ -1156,7 +1156,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #OPPOSITION FIGHT - GIM BADEND
 	id = GWF.69
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.69" }
 	title = GWF.69.t
@@ -1173,7 +1173,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #OPPOSITION FIGHT - RAF GOODEND
 	id = GWF.70
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.70" }
 	title = GWF.70.t
@@ -1190,7 +1190,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #OPPOSITION FIGHT - RAF BADEND
 	id = GWF.71
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.71" }
 	title = GWF.71.t
@@ -1207,7 +1207,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #OPPOSITION FIGHT - ENDZEIT GOODEND
 	id = GWF.72
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.72" }
 	title = GWF.72.t
@@ -1224,7 +1224,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #OPPOSITION FIGHT - ENDZEIT BADEND
 	id = GWF.73
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.73" }
 	title = GWF.73.t
@@ -1241,7 +1241,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #TAMURA FLAVOUR
 	id = GWF.74
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.74" }
 	title = GWF.74.t
@@ -1258,7 +1258,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #NAGISA FLAVOUR
 	id = GWF.75
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.75" }
 	title = GWF.75.t
@@ -1275,7 +1275,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #SPEER(AL-RYEINI) FLAVOUR???
 	id = GWF.76
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.76" }
 	title = GWF.76.t
@@ -1343,7 +1343,7 @@ country_event = { #
 	}
 }
 
-country_event = { #
+country_event = { #NO MORE EVENTS FROM HERE I BEG
 	id = GWF.80
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.80" }
 	title = GWF.80.t

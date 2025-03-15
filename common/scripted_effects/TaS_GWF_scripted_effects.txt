@@ -1,82 +1,190 @@
-GWF_calculate_oppo_dynmod_effects = {
-	if = {
-		limit = { NOT = { has_idea = GWF_opposition_modifier_dummy } }
-		add_ideas = GWF_opposition_modifier_dummy
-		add_dynamic_modifier = {
-			modifier = GWF_opposition_modifier
-			scope = MAR
+GWF_initiate = {
+	XYI = {
+		GWF_Akemi_Homura = {
+			set_nationality = GWF
+		}
+		GWF_Kyubey = {
+			set_nationality = GWF
+		}
+		GWF_Contollable_Chaos = {
+			set_nationality = GWF
+		}
+		GWF_Sayaka_Miki = {
+			set_nationality = GWF
+		}
+		GWF_Hans_Filbinger = {
+			set_nationality = GWF
+		}
+		GWF_Otto_Tetsurstamm = {
+			set_nationality = GWF
+		}
+		GWF_Arthur_Juz = {
+			set_nationality = GWF
 		}
 	}
-	
-	# Country scope dynmods
-	clear_array = GWF_opposition_modifier_array
-	add_to_array = { GWF_opposition_modifier_array = 0.2 } # Resistance Target
-	add_to_array = { GWF_opposition_modifier_array = 0.3 } # Supply consumption factor
-	add_to_array = { GWF_opposition_modifier_array = -0.2 } # Resource gain efficiency
-	add_to_array = { GWF_opposition_modifier_array = -0.3 } # Stability
-	add_to_array = { GWF_opposition_modifier_array = -5 } # GDP growth
-	add_to_array = { GWF_opposition_modifier_array = 0.2 } # Misc military costs
-	
-	set_variable = { total_opposition_strength = ROOT.endezeit_strength }
-	add_to_variable = { total_opposition_strength = ROOT.raf_strength }
-	add_to_variable = { total_opposition_strength = ROOT.gim_strength }
-	divide_variable = { total_opposition_strength = 300 }
-	
-	for_each_loop = {
-		array = GWF_opposition_modifier_array
-		multiply_variable = { GWF_opposition_modifier_array^i = total_opposition_strength }
+	GRA = {
+		GRA_Andreas_Baader = {
+			set_nationality = GWF
+		}
 	}
-	
-	force_update_dynamic_modifier = yes
-}
+	GWF = {
+		division_template = {
+			name = "Infanterie-Division"
+			regiments = {
+				infantry = { x = 0 y = 0 }
+				infantry = { x = 0 y = 1 }
+				infantry = { x = 0 y = 2 }
+				infantry = { x = 1 y = 0 }
+				infantry = { x = 1 y = 1 }
+				infantry = { x = 1 y = 2 }
+				infantry = { x = 2 y = 0 }
+				infantry = { x = 2 y = 1 }
+				infantry = { x = 2 y = 2 }
+			}
+			support = {
+				engineer = { x = 0 y = 0 }
+				artillery = { x = 0 y = 1 }
+				anti_tank = { x = 0 y = 2 }
+			}
+		}
 
-GWF_opposition_change_stats = {
-	set_temp_variable = { temp_stat_gained_txt = temp_stat_gained }
-	if = {
-		limit = { check_variable = { opp_to_change = 1 } } #endzeit
-		if = {
-			limit = { check_variable = { temp_stat_gained < 0 } }
-			multiply_temp_variable = { temp_stat_gained_txt = -1 }
-			custom_effect_tooltip = GWF_homura_endzeit_decrease_tt
+		division_template = {
+			name = "Militärpolizei-Division"
+			regiments = {
+				light_infantry = { x = 0 y = 0 }
+				light_infantry = { x = 0 y = 1 }
+				light_infantry = { x = 0 y = 2 }
+				light_infantry = { x = 1 y = 0 }
+				light_infantry = { x = 1 y = 1 }
+			}
+			support = {
+				military_police = { x = 0 y = 0 }
+			}
+			priority = 0
 		}
-		else = {
-			custom_effect_tooltip = GWF_homura_endzeit_growth_tt
+		inherit_technology = GER
+		set_cosmetic_tag = GWF_trvthnuke
+		set_country_flag = country_has_trvthnuked
+		transfer_state = 68
+		transfer_state = 50
+		set_capital = { state = 50 remember_old_capital = no }
+		50 = {
+			create_unit = {
+				division = "division_template = \"Militärpolizei-Division\" start_experience_factor = 0.3 start_equipment_factor = 0.6"
+				owner = GWF
+				count = 2
+			}
 		}
-	}
-	if = {
-		limit = { check_variable = { opp_to_change = 2 } } #gim
-		if = {
-			limit = { check_variable = { temp_stat_gained < 0 } }
-			multiply_temp_variable = { temp_stat_gained_txt = -1 }
-			custom_effect_tooltip = GWF_homura_gim_decrease_tt
+		68 = {
+			create_unit = {
+				division = "division_template = \"Infanterie-Division\" start_experience_factor = 0.4 start_equipment_factor = 0.7"
+				owner = GWF
+				count = 1
+			}
 		}
-		else = {
-			custom_effect_tooltip = GWF_homura_gim_growth_tt
+		every_owned_state = {
+			add_core_of = PREV
 		}
-	}
-	if = {
-		limit = { check_variable = { opp_to_change = 3 } } #raf
-		if = {
-			limit = { check_variable = { temp_stat_gained < 0 } }
-			multiply_temp_variable = { temp_stat_gained_txt = -1 }
-			custom_effect_tooltip = GWF_homura_raf_decrease_tt
+		promote_character = GWF_Akemi_Homura
+		GWF_Otto_Ernst_Remer = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "1999.1.1"
+					ideology = national_socialism_revolutionary_nazism_subtype
+					id = -1
+				}
+				promote_leader = yes
+			}
 		}
-		else = {
-			custom_effect_tooltip = GWF_homura_raf_growth_tt
+		GRA_Andreas_Baader = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "1999.1.1"
+					ideology = communist_guevarism_subtype
+					id = -1
+				}
+				promote_leader = yes
+			}
 		}
-	}
-	GWF_calculate_oppo_dynmod_effects = yes
-	
-}
-
-GWF_opposition_change_weekly_stats = {
-	if = {
-		limit = { check_variable = { temp_weekly_gained < 0 } }
-		multiply_temp_variable = { temp_weekly_gained_txt = -1 }
-		custom_effect_tooltip = GWF_homura_weekly_decrease_tt
-	}
-	else = {
-		custom_effect_tooltip = GWF_homura_weekly_growth_tt
+		set_character_name = {
+			character = GWF_Sayaka_Miki
+			name = GWF_Sayaka_Miki_hidden
+		}
+		GWF_Sayaka_Miki = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "1999.1.1"
+					ideology = paternalism_provisional_government_subtype
+					id = -1
+				}
+				promote_leader = yes
+			}
+		}
+		set_politics = {
+			ruling_party = accelerationism
+			elections_allowed = no
+		}
+		set_party_name = {
+			ideology = accelerationism
+			long_name = GWF_AprilFools_party_long
+			name = GWF_AprilFools_party
+		}
+		set_party_name = {
+			ideology = national_socialism
+			long_name = GWF_AprilFools_ns_party_long
+			name = GWF_AprilFools_ns_party
+		}
+		set_party_name = {
+			ideology = communist
+			long_name = GWF_AprilFools_comm_party_long
+			name = GWF_AprilFools_comm_party
+		}
+		set_party_name = {
+			ideology = paternalism
+			long_name = GWF_AprilFools_pat_party_long
+			name = GWF_AprilFools_pat_party
+		}
+		remove_all_ideas = yes
+		set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Corporatism }
+		econ_type_change = yes
+		set_temp_variable = { TNO_economy_subtype_temp = token:Econ_Subtype_Dirigisme }
+		econ_subtype_change = yes
+		
+		set_popularities = {
+			accelerationism = 43
+			national_socialism = 19
+			communist = 17
+			paternalism = 21
+		}
+		
+		add_ideas = GWF_chaos_in_stuttgart
+		add_ideas = GWF_for_madoka
+		add_ideas = GWF_southgerman_tension
+		country_lock_all_division_template = yes
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 1554
+		}
+		add_equipment_to_stockpile = {
+			type = support_equipment
+			amount = 82
+		}
+		add_equipment_to_stockpile = {
+			type = anti_tank_equipment
+			amount = 156
+		}
+		add_equipment_to_stockpile = {
+			type = motorized_equipment
+			amount = 78
+		}
+		load_focus_tree = {	tree = GWF_Homura_Initial keep_completed = no }
+		add_ideas = { #yes its very important #WOKEmura
+			tno_women_combat_roles
+			tno_racial_integration_integrated_military
+			tno_lgbt_rights_equal_rights
+			tno_minorities_equal_rights
+		}
+		change_tag_from = ROOT
 	}
 }
 
@@ -147,6 +255,7 @@ GWF_homura_change_stats = {
 		else = {
 			custom_effect_tooltip = GWF_homura_mental_growth_tt
 		}
+		clamp_variable = { var = GWF_Homura_mental min = 0 max = 100 }
 	}
 	if = {
 		limit = { check_variable = { opp_to_change = 2 } } #phys
@@ -159,6 +268,7 @@ GWF_homura_change_stats = {
 		else = {
 			custom_effect_tooltip = GWF_homura_phys_growth_tt
 		}
+		clamp_variable = { var = GWF_Homura_physics min = 0 max = 100 }
 	}
 	add_to_variable = { GWF_Homura_GUI_dirty = 1 }
 	GWF_calculate_homura_dynmod_effects = yes
@@ -192,6 +302,79 @@ GWF_homura_change_weekly_stats = {
 	}
 }
 
+GWF_start_oppo_gui = {
+	set_country_flag = GWF_Opposition_gui_active
+	
+	set_variable = { endezeit_strength = 100 }
+	set_variable = { raf_strength = 100 }
+	set_variable = { gim_strength = 100 }	
+	set_variable = { GWF_oppo_cat = 1 }
+	
+	GWF_calculate_oppo_dynmod_effects = yes
+	add_to_variable = { GWF_Opposition_GUI_dirty = 1 }
+	
+}
+
+GWF_calculate_oppo_dynmod_effects = {
+	if = {
+		limit = { NOT = { has_idea = GWF_opposition_modifier_dummy } }
+		add_ideas = GWF_opposition_modifier_dummy
+		add_dynamic_modifier = {
+			modifier = GWF_opposition_modifier
+			scope = MAR
+		}
+	}
+	
+	# Country scope dynmods
+	clear_array = GWF_opposition_modifier_array
+	add_to_array = { GWF_opposition_modifier_array = 0.2 } # Resistance Target
+	add_to_array = { GWF_opposition_modifier_array = 0.3 } # Supply consumption factor
+	add_to_array = { GWF_opposition_modifier_array = -0.2 } # Resource gain efficiency
+	add_to_array = { GWF_opposition_modifier_array = -0.3 } # Stability
+	add_to_array = { GWF_opposition_modifier_array = -5 } # GDP growth
+	add_to_array = { GWF_opposition_modifier_array = 0.2 } # Misc military costs
+	
+	set_variable = { total_opposition_strength = ROOT.endezeit_strength }
+	add_to_variable = { total_opposition_strength = ROOT.raf_strength }
+	add_to_variable = { total_opposition_strength = ROOT.gim_strength }
+	divide_variable = { total_opposition_strength = 300 }
+	
+	for_each_loop = {
+		array = GWF_opposition_modifier_array
+		multiply_variable = { GWF_opposition_modifier_array^i = total_opposition_strength }
+	}
+	
+	force_update_dynamic_modifier = yes
+}
+
+GWF_opposition_change_stats = {
+	set_temp_variable = { temp_stat_gained_txt = temp_stat_gained }
+	if = {
+		limit = { check_variable = { opp_to_change = 1 } } #endzeit
+		add_to_variable = { endezeit_strength = temp_stat_gained }
+		clamp_variable = { var = endezeit_strength min = 0 max = 100 }
+	}
+	if = {
+		limit = { check_variable = { opp_to_change = 2 } } #gim
+		add_to_variable = { gim_strength = temp_stat_gained }
+		clamp_variable = { var = gim_strength min = 0 max = 100 }
+	}
+	if = {
+		limit = { check_variable = { opp_to_change = 3 } } #raf
+		add_to_variable = { raf_strength = temp_stat_gained }
+		clamp_variable = { var = raf_strength min = 0 max = 100 }
+	}
+	if = {
+		limit = { check_variable = { temp_stat_gained < 0 } }
+		multiply_temp_variable = { temp_stat_gained_txt = -1 }
+		custom_effect_tooltip = GWF_opposition_decrease_tt
+	}
+	else = {
+		custom_effect_tooltip = GWF_opposition_growth_tt
+	}
+	GWF_calculate_oppo_dynmod_effects = yes
+	
+}
 GWF_start_great_game = {
 	set_country_flag = GWF_BigGame_gui_active
 	clear_array = GWF_map_grid_array
@@ -255,9 +438,15 @@ GWF_start_great_game = {
 	add_to_array = { GWF_map_y = 187 }
 	
 	set_variable = { GWF_x_axis = 200 }
-	set_variable = { GWF_round_support = 50 }
+	set_variable = { GWF_round_support = 45 }
 	
-	log = "[?GWF_map_grid_array^1.GetTag]"
+	set_variable = { GWF_BigGame_round = 1 }
+	add_to_variable = { GWF_BigGame_GUI_dirty = 1 }
+	
+	RMN = { set_variable = { gui_display_frame = 6000 } }
+	set_variable = { BigGame_round_timeout = 60 }
+	activate_mission = GWF_BigGame_mission
+	GWF_great_game_clamp_vars = yes
 }
 
 GWF_great_game_clamp_vars = {
@@ -268,8 +457,24 @@ GWF_great_game_clamp_vars = {
 	multiply_variable = { GWF_x_axis = GWF_round_support }
 	round_variable = GWF_x_axis
 	add_to_variable = { GWF_x_axis = 37 }
+	add_to_variable = { GWF_BigGame_GUI_dirty = 1 }
+}
+
+GWF_great_game_change_support = {
+	add_to_variable = { GWF_round_support = GWFBiggameAddition }
+	GWF_great_game_clamp_vars = yes
 }
 
 GWF_great_game_to_the_next_round = {
-
+	if = {
+		limit = { check_variable = { GWF_BigGame_round = 1 } }
+		if = { 
+			limit = { check_variable = { GWF_round_support > 50 } }
+			RMN = { set_variable = { gui_display_frame = 3000 } }
+		}
+		else = {
+			RMN = { set_variable = { gui_display_frame = 2000 } }
+		}
+		add_to_variable = { GWF_BigGame_GUI_dirty = 1 }
+	}
 }

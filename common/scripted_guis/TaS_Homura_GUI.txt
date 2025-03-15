@@ -38,26 +38,26 @@ scripted_gui = {
 		window_name = "GWF_opposition_gui_window_container"
 		dirty = GWF_Opposition_GUI_dirty
 		triggers = {
-			GWF_opposition_gui_endezeit_selected_visible = { check_variable = { GWF_oppo_cat = 3 } }
-		
-			GWF_opposition_gui_raf_button_visible = { NOT = { has_country_flag = GWF_raf_shattered } }
-			GWF_opposition_gui_raf_selected_visible = { check_variable = { GWF_oppo_cat = 1 } }
-			GWF_opposition_gui_raf_destroyed_visible = { has_country_flag = GWF_raf_shattered }
+			GWF_opposition_gui_endezeit_selected_visible = { check_variable = { GWF_oppo_cat = 1 } }
 			
 			GWF_opposition_gui_gim_button_visible = { NOT = { has_country_flag = GWF_gim_shattered } }
 			GWF_opposition_gui_gim_selected_visible = { check_variable = { GWF_oppo_cat = 2 } }
 			GWF_opposition_gui_gim_destroyed_visible = { has_country_flag = GWF_gim_shattered }
+			
+			GWF_opposition_gui_raf_button_visible = { NOT = { has_country_flag = GWF_raf_shattered } }
+			GWF_opposition_gui_raf_selected_visible = { check_variable = { GWF_oppo_cat = 3 } }
+			GWF_opposition_gui_raf_destroyed_visible = { has_country_flag = GWF_raf_shattered }
 		}
 		effects = {
-			GWF_opposition_gui_raf_button_click = {
-				set_variable = { GWF_oppo_cat = 1 }
-				add_to_variable = { GWF_Opposition_GUI_dirty = 1 }
-			}
 			GWF_opposition_gui_gim_button_click = {
 				set_variable = { GWF_oppo_cat = 2 }
 				add_to_variable = { GWF_Opposition_GUI_dirty = 1 }
 			}
 			GWF_opposition_gui_endezeit_button_click = {
+				set_variable = { GWF_oppo_cat = 1 }
+				add_to_variable = { GWF_Opposition_GUI_dirty = 1 }
+			}
+			GWF_opposition_gui_raf_button_click = {
 				set_variable = { GWF_oppo_cat = 3 }
 				add_to_variable = { GWF_Opposition_GUI_dirty = 1 }
 			}
@@ -68,6 +68,22 @@ scripted_gui = {
 		context_type = decision_category
 		window_name = "GWF_big_game_gui_window_container"
 		dirty = GWF_BigGame_GUI_dirty
+		triggers = {
+			GWF_homura_great_game_round_one_disabled_visible = { NOT = { check_variable = { GWF_BigGame_round = 1 } } } 
+			GWF_homura_great_game_round_one_active_visible = { check_variable = { GWF_BigGame_round = 1 } }
+			
+			GWF_homura_great_game_round_two_disabled_visible = { NOT = { check_variable = { GWF_BigGame_round = 2 } } } 
+			GWF_homura_great_game_round_two_active_visible = { check_variable = { GWF_BigGame_round = 2 } }
+			
+			GWF_homura_great_game_round_three_disabled_visible = { NOT = { check_variable = { GWF_BigGame_round = 3 } } } 
+			GWF_homura_great_game_round_three_active_visible = { check_variable = { GWF_BigGame_round = 3 } }
+		
+			GWF_homura_great_game_round_four_disabled_visible = { NOT = { check_variable = { GWF_BigGame_round = 4 } } } 
+			GWF_homura_great_game_round_four_active_visible = { check_variable = { GWF_BigGame_round = 4 } }
+			
+			GWF_homura_great_game_round_five_disabled_visible = { NOT = { check_variable = { GWF_BigGame_round = 5 } } } 
+			GWF_homura_great_game_round_five_active_visible = { check_variable = { GWF_BigGame_round = 5 } }
+		}
 		dynamic_lists = {
 			big_game_map_gridbox = { 
 				array = GWF_map_grid_array
@@ -88,7 +104,7 @@ scripted_gui = {
 			}
 			GWF_big_game_scale_tick = { # Start is at x = 37 y = 263, end is at x = 481 y = 263
 				x = GWF_x_axis
-				y = 95
+				y = 93
 			}
 		}
 	}

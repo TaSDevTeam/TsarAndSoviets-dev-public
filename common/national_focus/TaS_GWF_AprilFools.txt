@@ -66,7 +66,9 @@ shared_focus = {
 	completion_reward = {
 		country_event = { id = GWF.2 }
 		custom_effect_tooltip = GWF_to_find_exit_tt
-		GWF_start_homura_gui = yes
+		hidden_effect = {
+			GWF_start_homura_gui = yes
+		}
 	}
 }
 
@@ -113,6 +115,9 @@ shared_focus = {
 		custom_effect_tooltip = GWF_look_inside_tt
 		set_temp_variable = { gdp_growth_temp = 0.50 }
         econ_gdp_growth_change = yes
+		hidden_effect = { 
+			GWF_start_oppo_gui = yes
+		}
 	}
 }
 
@@ -147,8 +152,8 @@ shared_focus = {
 }
 
 shared_focus = {
-	id = GWF_bare_minimum
-	icon = GFX_GWF_bare_minimum
+	id = GWF_humanity_aside
+	icon = GFX_GWF_humanity_aside
 	cost = 4
 	available_if_capitulated = no
 	ai_will_do = {
@@ -179,9 +184,9 @@ shared_focus = {
 		factor = 1
 	}
 	prerequisite = {
-		focus = GWF_bare_minimum
+		focus = GWF_humanity_aside
 	}
-	relative_position_id = GWF_bare_minimum
+	relative_position_id = GWF_humanity_aside
 	x = -1
 	y = 1
 	completion_reward = {
@@ -199,12 +204,11 @@ shared_focus = {
 			remove_idea = GWF_Generic_Vacant_sec
 			add_idea = GWF_Contollable_Chaos_sec
 		}
-		country_event = { id = GWF.6 }
     }
 }
 
 shared_focus = {
-	id = GWF_humanity_aside
+	id = GWF_security_forces
 	icon = GFX_GWF_humanity_aside
 	cost = 4
 	available_if_capitulated = no
@@ -212,9 +216,9 @@ shared_focus = {
 		factor = 1
 	}
 	prerequisite = {
-		focus = GWF_bare_minimum
+		focus = GWF_humanity_aside
 	}
-	relative_position_id = GWF_bare_minimum
+	relative_position_id = GWF_humanity_aside
 	x = 1
 	y = 1
 	completion_reward = {
@@ -227,6 +231,8 @@ shared_focus = {
 		set_temp_variable = { opp_to_change = 2 }
 		set_temp_variable = { temp_stat_gained = 2.5 }
 		GWF_homura_change_stats = yes
+		
+		country_event = { id = GWF.6 }
     }
 }
 
@@ -443,6 +449,12 @@ shared_focus = {
 	x = 0
 	y = 3
 	completion_reward = {
+		custom_effect_tooltip = GWF_look_outside_tt
+		create_faction = Homura_Alliance
+		hidden_effect = {
+			GWF_start_great_game = yes
+			LHH = { create_faction = Speer_Alliance } 
+		}
 		country_event = { id = GWF.14 }
 	}
 }
@@ -482,7 +494,21 @@ shared_focus = {
 	x = 0
 	y = 1
 	completion_reward = {
-	
+		DSH = {
+			add_stability = -0.05
+			add_war_support = -0.05
+			add_manpower = -1500
+			set_temp_variable = { temp_econ_spending_amount = 0.25 }
+			econ_spend_money_once_effect_raw_money = yes
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = -1000
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = -500
+			}
+		}
 	}
 }
 
@@ -521,7 +547,13 @@ shared_focus = {
 	x = 0
 	y = 1
 	completion_reward = {
-
+		GSU = {
+			set_temp_variable = { temp_econ_spending_amount = 0.45 }
+			econ_spend_money_once_effect_raw_money = yes
+		}
+		set_temp_variable = { opp_to_change = 1 }
+		set_temp_variable = { temp_stat_gained = 2.5 }
+		GWF_homura_change_stats = yes
 	}
 }
 
@@ -625,7 +657,7 @@ shared_focus = {
 	x = -1
 	y = 1
 	completion_reward = {
-		country_event = { id = GWF.20 }
+		
 	}
 }
 
@@ -770,6 +802,7 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		country_event = { id = GWF.25 }
+		country_lock_all_division_template = no
     }
 }
 
@@ -956,7 +989,7 @@ shared_focus = {
 	x = -3
 	y = 1
 	completion_reward = {
-		country_event = { id = GWF.33 }
+	
 	}
 }
 
@@ -1568,6 +1601,6 @@ shared_focus = {
 	x = 0
 	y = 2
 	completion_reward = {
-		
+		country_event = { id = GWF.55 }
 	}
 }

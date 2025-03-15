@@ -137,4 +137,24 @@ ideas = {
 		}
 		
 	}
+	hidden_ideas = {
+		Homura_Alliance_Member = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea Homura_Alliance_Member" }
+			allowed = { always = no }
+			allowed_civil_war = { always = no }
+
+			modifier = {
+				annual_gdp_growth_factor = 0.1
+			}
+		}
+		Speer_Alliance_Member = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea Speer_Alliance_Member" }
+			allowed = { always = no }
+			allowed_civil_war = { always = no }
+
+			modifier = {
+				annual_gdp_growth_factor = 0.1
+			}
+		}
+	}
 }

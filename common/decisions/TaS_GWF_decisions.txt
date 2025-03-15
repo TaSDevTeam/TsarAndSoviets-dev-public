@@ -1,4 +1,4 @@
-GWF_Homura_deccat = {
+GWF_Homura_deccat = { ####
 	#mind
 	GWF_Homura_mind_effigy = {        
 		icon = GFX_soulgem
@@ -15,6 +15,32 @@ GWF_Homura_deccat = {
 			log = "[GetDateText]: [Root.GetName]: Decision complete GWF_Homura_mind_effigy... wait that's wrong"
 		}
 	}
+	
+	GWF_Homura_witchifying_imminent = {
+		icon = generic_red_skull 
+    	available = {
+			check_variable = { GWF_Homura_mental > 5 }
+    	}
+	
+    	activation = {
+    		check_variable = { GWF_Homura_mental < 5.01 }
+    	}
+		
+    	is_good = no
+	
+    	days_mission_timeout = 14
+		timeout_effect = {
+    		log = "[GetDateText]: [Root.GetName]: GWF_Homura_witchifying_imminent mission timer elapsed" 
+			custom_effect_tooltip = GWF_Homura_witchifying_imminent_tt
+			hidden_effect = {
+				
+			}
+    	}
+		complete_effect = {
+			
+    	}
+  	}
+	
 	GWF_Homura_mind_make_a_speech = {
 		icon = generic_reassurance
 		visible = {
@@ -273,6 +299,31 @@ GWF_Homura_deccat = {
 		}
 	}
 	#powers
+	GWF_Homura_coup_imminent = {
+		icon = generic_red_skull 
+    	available = {
+			
+    	}
+	
+    	activation = {
+    		check_variable = { GWF_Homura_physics < 5.01 }
+    	}
+		
+    	is_good = no
+	
+    	days_mission_timeout = 14
+		timeout_effect = {
+    		log = "[GetDateText]: [Root.GetName]: GWF_Homura_witchifying_imminent mission timer elapsed" 
+			custom_effect_tooltip = GWF_Homura_coup_imminent_tt
+			hidden_effect = {
+				
+			}
+    	}
+		complete_effect = {
+			
+    	}
+  	}
+	
 	GWF_Homura_powers_effigy = {
 		icon = GFX_timeshield
 		visible = {
@@ -476,7 +527,7 @@ GWF_Homura_deccat = {
 
 GWF_Opposition_deccat = {
 	GWF_current_opposition_effigy = {
-		icon = GFX_GWF_current_opposition_effigy
+		icon = generic_defend
 		visible = {
 			always = yes
 		}
@@ -488,6 +539,200 @@ GWF_Opposition_deccat = {
 
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision complete GWF_current_opposition_effigy... wait that's wrong"
+		}
+	}
+	GWF_opposition_final_attack_raf = {
+		icon = generic_assault
+		visible = {
+			check_variable = { GWF_oppo_cat = 3 }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GWF_opposition_final_attack_available_tt
+				check_variable = { raf_strength < 15 }
+			}
+			
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 14
+		fire_only_once = yes
+		cost = 15
+		complete_effect = { 
+			set_temp_variable = { opp_to_change = 1 }
+			set_temp_variable = { temp_stat_gained = -2.5 }
+			GWF_homura_change_stats = yes
+			set_temp_variable = { opp_to_change = 2 }
+			set_temp_variable = { temp_stat_gained = -2.5 }
+			GWF_homura_change_stats = yes
+		}
+		remove_effect = {
+			add_stability = 0.025
+		}
+	}
+	GWF_opposition_final_attack_gim = {
+		icon = generic_assault
+		visible = {
+			check_variable = { GWF_oppo_cat = 2 }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GWF_opposition_final_attack_available_tt
+				check_variable = { gim_strength < 15 }
+			}
+			
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 14
+		fire_only_once = yes
+		cost = 15
+		complete_effect = { 
+			set_temp_variable = { opp_to_change = 1 }
+			set_temp_variable = { temp_stat_gained = -2.5 }
+			GWF_homura_change_stats = yes
+			set_temp_variable = { opp_to_change = 2 }
+			set_temp_variable = { temp_stat_gained = -2.5 }
+			GWF_homura_change_stats = yes
+		}
+		remove_effect = {
+			add_stability = 0.025
+		}
+	}
+	GWF_opposition_final_attack_endezeit = {
+		icon = generic_assault
+		visible = {
+			check_variable = { GWF_oppo_cat = 1 }
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GWF_opposition_final_attack_available_tt
+				check_variable = { endezeit_strength < 15 }
+			}
+			custom_trigger_tooltip = {
+				tooltip = GWF_opposition_final_attack_available_endezeit_tt
+				has_country_flag = GWF_gim_shattered
+				has_country_flag = GWF_raf_shattered
+			}
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 14
+		fire_only_once = yes
+		cost = 15
+		complete_effect = { 
+			set_temp_variable = { opp_to_change = 1 }
+			set_temp_variable = { temp_stat_gained = -2.5 }
+			GWF_homura_change_stats = yes
+			set_temp_variable = { opp_to_change = 2 }
+			set_temp_variable = { temp_stat_gained = -2.5 }
+			GWF_homura_change_stats = yes
+		}
+		remove_effect = {
+			add_stability = 0.025
+		}
+	}
+	GWF_opposition_attack_cells = { ###########
+		icon = generic_use_force
+		available = {
+			set_temp_variable = { Y = 10 }
+			GWF_Homura_physics_more_than_Y = yes
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 21
+		custom_cost_trigger = { command_power > 4.99 }
+		custom_cost_text = decision_cost_5_cp
+		complete_effect = { 
+			add_command_power = -5
+			set_temp_variable = { opp_to_change = 2 }
+			set_temp_variable = { temp_stat_gained = -3.5 }
+			GWF_homura_change_stats = yes
+			set_temp_variable = { opp_to_change = GWF_oppo_cat }
+			set_temp_variable = { temp_stat_gained = -7.5 }
+			GWF_opposition_change_stats = yes
+		}
+		remove_effect = {
+			add_stability = 0.025
+			custom_effect_tooltip = GWF_oppo_decision_again_tt
+		}
+	}
+	GWF_opposition_anti_propagranda = {
+		icon = generic_propaganda
+		available = {
+			set_temp_variable = { Y = 10 }
+			GWF_Homura_mental_more_than_Y = yes
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 21
+		cost = 25
+		complete_effect = { 
+			set_temp_variable = { opp_to_change = 1 }
+			set_temp_variable = { temp_stat_gained = -3.5 }
+			GWF_homura_change_stats = yes
+			set_temp_variable = { opp_to_change = GWF_oppo_cat }
+			set_temp_variable = { temp_stat_gained = -5 }
+			GWF_opposition_change_stats = yes
+		}
+		remove_effect = {
+			add_stability = 0.025
+			custom_effect_tooltip = GWF_oppo_decision_again_tt
+		}
+	}
+	GWF_opposition_attack_logistics = {
+		icon = generic_supply
+		available = {
+			set_temp_variable = { Y = 10 }
+			GWF_Homura_physics_more_than_Y = yes
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 21
+		custom_cost_trigger = { command_power > 2.99 }
+		custom_cost_text = decision_cost_3_cp
+		complete_effect = { 
+			add_command_power = -3
+			set_temp_variable = { opp_to_change = 2 }
+			set_temp_variable = { temp_stat_gained = -1.5 }
+			GWF_homura_change_stats = yes
+			set_temp_variable = { opp_to_change = GWF_oppo_cat }
+			set_temp_variable = { temp_stat_gained = -5 }
+			GWF_opposition_change_stats = yes
+		}
+		remove_effect = {
+			add_stability = 0.025
+			custom_effect_tooltip = GWF_oppo_decision_again_tt
+		}
+	}
+	GWF_opposition_send_spies = {
+		icon = generic_prepare_civil_war
+		available = {
+			set_temp_variable = { Y = 10 }
+			GWF_Homura_mental_more_than_Y = yes
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 21
+		cost = 15
+		complete_effect = { 
+			set_temp_variable = { opp_to_change = 1 }
+			set_temp_variable = { temp_stat_gained = -1 }
+			GWF_homura_change_stats = yes
+			set_temp_variable = { opp_to_change = GWF_oppo_cat }
+			set_temp_variable = { temp_stat_gained = -2.5 }
+			GWF_opposition_change_stats = yes
+		}
+		remove_effect = {
+			add_stability = 0.025
+			custom_effect_tooltip = GWF_oppo_decision_again_tt
 		}
 	}
 }
@@ -508,6 +753,283 @@ GWF_BigGame_deccat = {
 			log = "[GetDateText]: [Root.GetName]: Decision complete GWF_current_round_effigy... wait that's wrong"
 		}
 	}
+	GWF_BigGame_mission = { ##
+		icon = generic_clock
+		priority = 300
+		allowed = {
+			tag = GWF
+		}			
+		available = {
+			always = no
+		}			
+		activation = {
+			has_global_flag = GWF_BigGame_gui_active
+		}
+		
+		days_mission_timeout = BigGame_round_timeout
+		is_good = no 
+
+		timeout_effect = {
+			custom_effect_tooltip = GWF_BigGame_mission_tt
+			hidden_effect = {
+	
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	GWF_biggame_diplomatic_meeting = {
+		icon = generic_shake_hands
+		available = {
+			set_temp_variable = { Y = 10 }
+			GWF_Homura_mental_more_than_Y = yes
+			custom_effect_tooltip = {
+				tooltip = GWF_biggame_dont_doing_more
+				NOT = { has_country_flag = GWF_action_active }
+			}
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 7
+		cost = 25
+		complete_effect = { 
+			set_temp_variable = { opp_to_change = 1 }
+			set_temp_variable = { temp_stat_gained = -2.5 }
+			GWF_homura_change_stats = yes
+			
+			set_country_flag = GWF_action_active
+		}
+		remove_effect = {
+			randomize_temp_variable = {
+				var = GWFBiggameAddition
+				distribution = uniform
+				min = 3
+				max = 7
+			}
+			GWF_great_game_change_support = yes
+			custom_effect_tooltip = GWF_biggame_diplomatic_meeting_tt
+			clr_country_flag = GWF_action_active
+		}
+	}
+	GWF_biggame_financial_help = {
+		icon = generic_corruption
+		available = {
+			custom_effect_tooltip = {
+				tooltip = GWF_biggame_dont_doing_more
+				NOT = { has_country_flag = GWF_action_active }
+			}
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 7
+		cost = 15
+		complete_effect = { 
+			set_temp_variable = { temp_econ_spending_amount = 0.05 }
+			econ_spend_money_once_effect_raw_money = yes
+			
+			set_country_flag = GWF_action_active
+		}
+		remove_effect = {
+			randomize_temp_variable = {
+				var = GWFBiggameAddition
+				distribution = uniform
+				min = 2
+				max = 5
+			}
+			GWF_great_game_change_support = yes
+			custom_effect_tooltip = GWF_biggame_financial_help_tt
+			clr_country_flag = GWF_action_active
+		}
+	}
+	GWF_biggame_promise_mil_help = {
+		icon = generic_military_parade
+		available = {
+			custom_effect_tooltip = {
+				tooltip = GWF_biggame_dont_doing_more
+				NOT = { has_country_flag = GWF_action_active }
+			}
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 7
+		custom_cost_trigger = { command_power > 4.99 }
+		custom_cost_text = decision_cost_5_cp
+		complete_effect = { 
+			add_command_power = -5
+			add_war_support = -0.005
+			set_temp_variable = { temp_econ_spending_amount = 0.015 }
+			econ_spend_money_once_effect_raw_money = yes
+			
+			set_country_flag = GWF_action_active
+		}
+		remove_effect = {
+			randomize_temp_variable = {
+				var = GWFBiggameAddition
+				distribution = uniform
+				min = 3
+				max = 5
+			}
+			GWF_great_game_change_support = yes
+			custom_effect_tooltip = GWF_biggame_promise_mil_help_tt
+			clr_country_flag = GWF_action_active
+		}
+	}
+	GWF_biggame_sabotage_enemy = {
+		icon = generic_border_war
+		available = {
+			set_temp_variable = { Y = 10 }
+			GWF_Homura_physics_more_than_Y = yes
+			custom_effect_tooltip = {
+				tooltip = GWF_biggame_dont_doing_more
+				NOT = { has_country_flag = GWF_action_active }
+			}
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 7
+		cost = 20
+		complete_effect = { 
+			add_stability = -0.005
+			set_temp_variable = { opp_to_change = 2 }
+			set_temp_variable = { temp_stat_gained = -1.5 }
+			GWF_homura_change_stats = yes
+			set_temp_variable = { temp_econ_spending_amount = 0.01 }
+			econ_spend_money_once_effect_raw_money = yes
+			
+			set_country_flag = GWF_action_active
+		}
+		remove_effect = {
+			randomize_temp_variable = {
+				var = GWFBiggameAddition
+				distribution = uniform
+				min = -3
+				max = 3
+			}
+			GWF_great_game_change_support = yes
+			custom_effect_tooltip = GWF_biggame_sabotage_enemy_tt
+			clr_country_flag = GWF_action_active
+		}
+	}
+	GWF_biggame_threaten_diplomats = {
+		icon = generic_civil_support	
+		available = {
+			set_temp_variable = { Y = 10 }
+			GWF_Homura_mental_more_than_Y = yes
+			custom_effect_tooltip = {
+				tooltip = GWF_biggame_dont_doing_more
+				NOT = { has_country_flag = GWF_action_active }
+			}
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 7
+		custom_cost_trigger = { command_power > 2.99 }
+		custom_cost_text = decision_cost_3_cp
+		complete_effect = { 
+			add_command_power = -3
+			set_temp_variable = { opp_to_change = 1 }
+			set_temp_variable = { temp_stat_gained = -1.5 }
+			GWF_homura_change_stats = yes
+			set_temp_variable = { temp_econ_spending_amount = 0.005 }
+			econ_spend_money_once_effect_raw_money = yes
+			
+			set_country_flag = GWF_action_active
+		}
+		remove_effect = {
+			randomize_temp_variable = {
+				var = GWFBiggameAddition
+				distribution = uniform
+				min = -5
+				max = 5
+			}
+			GWF_great_game_change_support = yes
+			custom_effect_tooltip = GWF_biggame_threaten_diplomats_tt
+			clr_country_flag = GWF_action_active
+		}
+	}
+	GWF_biggame_direct_actions = {
+		icon = generic_document_burn	
+		available = {
+			set_temp_variable = { Y = 10 }
+			GWF_Homura_mental_more_than_Y = yes
+			set_temp_variable = { Y = 10 }
+			GWF_Homura_physics_more_than_Y = yes
+			custom_effect_tooltip = {
+				tooltip = GWF_biggame_dont_doing_more
+				NOT = { has_country_flag = GWF_action_active }
+			}
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 7
+		cost = 30
+		complete_effect = { 
+			set_temp_variable = { opp_to_change = 1 }
+			set_temp_variable = { temp_stat_gained = -2.5 }
+			GWF_homura_change_stats = yes
+			set_temp_variable = { opp_to_change = 1 }
+			set_temp_variable = { temp_stat_gained = -2.5 }
+			GWF_homura_change_stats = yes
+			
+			set_country_flag = GWF_action_active
+		}
+		remove_effect = {
+			randomize_temp_variable = {
+				var = GWFBiggameAddition
+				distribution = uniform
+				min = -3
+				max = -2
+			}
+			GWF_great_game_change_support = yes
+			custom_effect_tooltip = GWF_biggame_direct_actions_tt
+			clr_country_flag = GWF_action_active
+			set_country_flag = skip_enemy_turn
+		}
+	}
+	GWF_biggame_tick = {
+		icon = generic_timer	
+    	available = {
+			always = false
+    	}
+	
+    	activation = {
+    		has_country_flag = GWF_BigGame_gui_active
+    	}
+		
+    	is_good = no
+	
+    	days_mission_timeout = 7
+	
+		timeout_effect = { 
+    		log = "[GetDateText]: [Root.GetName]: GWF_biggame_tick mission timer elapsed" 
+			if = {
+				limit = { not = { has_country_flag = skip_enemy_turn } }
+				randomize_temp_variable = {
+					var = GWFBiggameAddition
+					distribution = uniform
+					min = -5
+					max = -1
+				}
+				GWF_great_game_change_support = yes
+				custom_effect_tooltip = GWF_biggame_tick_tt
+			}
+			else = {
+				custom_effect_tooltip = GWF_biggame_tick_skipped_tt
+			}
+    	}
+	
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Mission GWF_biggame_tick Completed (Should never happen for this mission, please report if you see this in the log.)"
+    	}
+  	}
 }
 
 GWF_SGW_deccat = {

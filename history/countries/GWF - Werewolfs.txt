@@ -1,11 +1,16 @@
 ﻿capital = 28
 
-
+#German endo/exo
+set_country_flag = german_names
 # Vacant
 recruit_character = GWF_Generic_Vacant
 fill_empty_minister_nochecks = yes 
-
+###Playable
+set_country_flag = tno_playable_country
 set_country_flag = is_postger_nation
+###Nuclear
+set_country_flag = tno_can_research_nuclear_tech
+
 
 
 add_manpower = 75000
@@ -38,54 +43,92 @@ recruit_character = GWF_Otto_Ernst_Remer
 add_ideas = {
 	### Standard ###
 	TaS_Post2WRW_GWF_for_the_reich
-
-	### Political ###
+	## Laws
+	# Political
 	tno_political_parties_one_party_state
-	tno_religious_rights_state_religion
-	tno_trade_unions_illegal
-	tno_immigration_closed_borders
-	tno_slavery_penal_labor
-	tno_public_meetings_outlawed
-	tno_press_rights_propaganda_press
-	tno_vote_franchise_no_voting
-	#MILITARY
-	tno_conscription_service_by_requirement
+	tno_religious_rights_suppression_of_churches
+	tno_trade_unions_state_controlled
+	tno_immigration_ethnic_immigration
+	tno_slavery_chattel
+	tno_public_meetings_regulated
+	tno_press_rights_state_press_only
+	tno_vote_franchise_registered_voting
+	# Military
+	tno_conscription_broadened_conscription
 	tno_military_supervision_kill_em_all
-	tno_training_advanced_training_methods
+	tno_training_basic_training
 	tno_draft_exemptions_none
-	#SOCIAL
-	tno_health_care_support_for_emergencies
+	# Social
+	tno_health_care_low_income_protections
 	tno_education_public_education
-	tno_penal_system_overt_oppression
+	tno_penal_system_harsh_penal_code
 	tno_gender_rights_traditional_roles
 	tno_security_political_control
-	tno_regulations_utterly_unregulated
-	#ECONOMIC
-	tno_trade_laws_closed_economy
-	tno_income_taxation_flat_taxes
-	tno_minimum_wage_no_minimum_wage
-	tno_max_workhours_unlimited_work_day
-	tno_pensions_no_pensions
+	tno_regulations_token_regulations
+	# Economic
+	tno_trade_laws_limited_exports
+	tno_income_taxation_high_income_weighted
+	tno_minimum_wage_trinket_minimum_wage
+	tno_max_workhours_14_hour_work_day
+	tno_pensions_low_pensions
 	tno_unemployment_no_subsidies
-	#MISC
-	tno_refugees_banned
+	# Misc
+	tno_refugees_skilled
 	tno_women_banned
-	tno_racial_integration_segregated_regiments
-	tno_safety_no_regulations
-	tno_pollution_no_controls
+	tno_racial_integration_none
+	tno_safety_minimal_regulations
+	tno_pollution_good_regulations
 	tno_lgbt_rights_lgbt_outlawed
 	tno_minorities_oppression
-	tno_child_labor_legal
-
-	### Social Development ###
-	
-	tno_army_professionalism_spartan_discipline
-	tno_industrial_expertise_experienced
-	tno_industrial_equipment_factory_complexes
-	tno_agriculture_basic_mechanized
-	tno_research_facilities_basic
-	tno_academic_base_basic_literacy
+	tno_child_labor_restricted
+	## Societal Development
+	tno_army_professionalism_political_interference
+	tno_industrial_expertise_nascent
+	tno_industrial_equipment_power_tools
 	tno_admin_efficiency_illegitimate_administration
+	tno_agriculture_basic_mechanized
+	tno_healthcare_rudimentary
+	tno_research_facilities_outdated
+	tno_academic_base_basic_literacy
 }
+
+### Policy Effectiveness
+set_country_flag = tno_defined_startup_effectiveness
+
+### Political
+set_variable = { tno_political_parties_effectiveness = 80 }
+set_variable = { tno_religious_rights_effectiveness = 33 }
+set_variable = { tno_trade_unions_effectiveness = 100 }
+set_variable = { tno_immigration_effectiveness = 100 }
+set_variable = { tno_slavery_effectiveness = 90 }
+set_variable = { tno_public_meetings_effectiveness = 70 }
+set_variable = { tno_press_rights_effectiveness = 85 }
+set_variable = { tno_vote_franchise_effectiveness = 100 }
+
+### Military
+set_variable = { tno_conscription_effectiveness = 90 }
+set_variable = { tno_military_supervision_effectiveness = 90 }
+set_variable = { tno_training_effectiveness = 55 }
+set_variable = { tno_draft_exemptions_effectiveness = 80 }
+
+### Social
+set_variable = { tno_health_care_effectiveness = 65 }
+set_variable = { tno_education_effectiveness = 60 }
+set_variable = { tno_penal_system_effectiveness = 85 }
+set_variable = { tno_gender_rights_effectiveness = 80 }
+set_variable = { tno_security_effectiveness = 80 }
+
+### Economic
+set_variable = { tno_trade_laws_effectiveness = 80 }
+set_variable = { tno_income_taxation_effectiveness = 40 }
+set_variable = { tno_minimum_wage_effectiveness = 45 }
+set_variable = { tno_max_workhours_effectiveness = 60 }
+set_variable = { tno_pensions_effectiveness = 55 }
+set_variable = { tno_unemployment_effectiveness = 55 }
+set_variable = { tno_regulations_effectiveness = 87 }
+
+set_variable = { income_tax_rate = 0.30 }
+set_variable = { business_tax_rate = 0.32 }
+set_variable = { sales_tax_rate = 0.035 }
 
 TNO_startup_nation = yes

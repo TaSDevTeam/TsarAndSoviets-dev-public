@@ -133,7 +133,7 @@ guiTypes = {
 				name = "GWF_opposition_gui_endezeit_title"
 				position = { x = 0 y = 200 }
 				font = "aldrich_24_outline"
-				text = "SILA EBLANOV"
+				text = endezeit_title
 				maxWidth = 200
 				maxHeight = 30
 				format = center
@@ -163,7 +163,7 @@ guiTypes = {
 				name = "GWF_opposition_gui_raf_title"
 				position = { x = 0 y = 200 }
 				font = "aldrich_24_outline"
-				text = "SILA EBLANOV"
+				text = raf_title
 				maxWidth = 200
 				maxHeight = 30
 				format = center
@@ -201,7 +201,7 @@ guiTypes = {
 				name = "GWF_opposition_gui_gim_title"
 				position = { x = 0 y = 200 }
 				font = "aldrich_24_outline"
-				text = "SILA EBLANOV"
+				text = gim_title
 				maxWidth = 200
 				maxHeight = 30
 				format = center
@@ -233,18 +233,18 @@ guiTypes = {
 	}
 	containerWindowType = {
 		name = "GWF_big_game_gui_window_container"
-		size = { width = 482 height = 700 }
-		position = { x = -30 y = 0 }
+		size = { width = 482 height = 500 }
+		position = { x = 0 y = 0 }
 		
 		containerWindowType = {
 			name = "GWF_big_game_title_status"
-			position = { x = 20 y = 0 }
+			position = { x = 0 y = 0 }
 			
 			instantTextboxType = {
 				name = "GWF_big_game_title"
 				position = { x = 0 y = 0 }
 				font = "aldrich_36_outline"
-				text = "RAUND EBLANOV"
+				text = GWF_big_game_title
 				maxWidth = 482
 				maxHeight = 50
 				format = center
@@ -253,7 +253,7 @@ guiTypes = {
 			iconType = {
 				name = "GWF_big_game_round_bg"
 				spriteType = "GFX_homura_great_game_round_bg"
-				position = { x = 80 y = 36 }
+				position = { x = 126 y = 36 }
 				pdx_tooltip = "GWF_big_game_round_bg_tt"
 			}
 				
@@ -263,11 +263,65 @@ guiTypes = {
 				position = { x = 37 y = 96 }
 				pdx_tooltip = "GWF_big_game_scale_tt"
 			}
-
 			iconType = {
 				name = "GWF_big_game_scale_frame"
 				spriteType = "GFX_homura_great_game_scale_frame"
 				position = { x = 35 y = 95 }
+			}
+			
+			iconType = {
+				name = "GWF_homura_great_game_round_one_active"
+				spriteType = "GFX_homura_great_game_round_one_active"
+				position = { x = 128 y = 38 }
+			}
+			iconType = {
+				name = "GWF_homura_great_game_round_one_disabled"
+				spriteType = "GFX_homura_great_game_round_one_disabled"
+				position = { x = 128 y = 38 }
+			}
+			
+			iconType = {
+				name = "GWF_homura_great_game_round_two_active"
+				spriteType = "GFX_homura_great_game_round_two_active"
+				position = { x = 180 y = 38 }
+			}
+			iconType = {
+				name = "GWF_homura_great_game_round_two_disabled"
+				spriteType = "GFX_homura_great_game_round_two_disabled"
+				position = { x = 180 y = 38 }
+			}
+			
+			iconType = {
+				name = "GWF_homura_great_game_round_three_active"
+				spriteType = "GFX_homura_great_game_round_three_active"
+				position = { x = 232 y = 38 }
+			}
+			iconType = {
+				name = "GWF_homura_great_game_round_three_disabled"
+				spriteType = "GFX_homura_great_game_round_three_disabled"
+				position = { x = 232 y = 38 }
+			}
+			
+			iconType = {
+				name = "GWF_homura_great_game_round_four_active"
+				spriteType = "GFX_homura_great_game_round_four_active"
+				position = { x = 284 y = 38 }
+			}
+			iconType = {
+				name = "GWF_homura_homura_great_game_round_four_disabled"
+				spriteType = "GFX_homura_great_game_round_four_disabled"
+				position = { x = 284 y = 38 }
+			}
+			
+			iconType = {
+				name = "GWF_homura_great_game_round_five_active"
+				spriteType = "GFX_homura_great_game_round_five_active"
+				position = { x = 336 y = 38 }
+			}
+			iconType = {
+				name = "GWF_homura_homura_great_game_round_five_disabled"
+				spriteType = "GFX_homura_great_game_round_five_disabled"
+				position = { x = 336 y = 38 }
 			}
 			
 			iconType = {
@@ -280,7 +334,7 @@ guiTypes = {
 		containerWindowType = {
 			name = "map"
 			size = { width = 462 height = 700 }
-			position = { x = 69 y = 140 }
+			position = { x = 49 y = 140 }
 			
 			iconType = {
 				name = "map_background"
