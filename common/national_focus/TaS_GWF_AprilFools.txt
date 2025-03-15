@@ -192,24 +192,15 @@ shared_focus = {
 	completion_reward = {
 		set_temp_variable = { pus_temp = 1 }
 		econ_pus_change = yes
-		swap_ideas = {
-			remove_idea = GWF_Generic_Vacant_for
-			add_idea = GWF_Contollable_Chaos_for
-		}
-		swap_ideas = {
-			remove_idea = GWF_Generic_Vacant_eco
-			add_idea = GWF_Contollable_Chaos_eco
-		}
-		swap_ideas = {
-			remove_idea = GWF_Generic_Vacant_sec
-			add_idea = GWF_Contollable_Chaos_sec
-		}
+		add_ideas = GWF_Contollable_Chaos_for
+		add_ideas = GWF_Contollable_Chaos_eco
+		add_ideas = GWF_Contollable_Chaos_sec
     }
 }
 
 shared_focus = {
 	id = GWF_security_forces
-	icon = GFX_GWF_humanity_aside
+	icon = GFX_GWF_security_forces
 	cost = 4
 	available_if_capitulated = no
 	ai_will_do = {
@@ -224,6 +215,7 @@ shared_focus = {
 	completion_reward = {
 		set_temp_variable = { money_reserves_temp = 0.25 } 
 		econ_money_reserves_change_raw_money = yes
+		TNO_improve_security_policy_effectiveness_high = yes
 		
 		set_temp_variable = { opp_to_change = 1 }
 		set_temp_variable = { temp_stat_gained = 2.5 }
@@ -451,9 +443,13 @@ shared_focus = {
 	completion_reward = {
 		custom_effect_tooltip = GWF_look_outside_tt
 		create_faction = Homura_Alliance
+		add_ideas = Homura_Alliance_Member
 		hidden_effect = {
 			GWF_start_great_game = yes
-			LHH = { create_faction = Speer_Alliance } 
+			LHH = { 
+				create_faction = Speer_Alliance
+				add_ideas = Speer_Alliance_Member
+			} 
 		}
 		country_event = { id = GWF.14 }
 	}
@@ -476,6 +472,18 @@ shared_focus = {
 	completion_reward = {
 		country_event = { id = GWF.15 }
 		add_political_power = 25
+		GAU = {
+			set_variable = { gui_display_frame = 3000 }
+			add_ideas = Homura_Alliance_Member
+			GWF = { add_to_faction = GAU }
+		}
+		hidden_effect = {
+			DSH = {
+				set_variable = { gui_display_frame = 2000 }
+				add_ideas = Speer_Alliance_Member
+				LHH = { add_to_faction = DSH }
+			}	
+		}
 	}
 }
 
@@ -529,6 +537,18 @@ shared_focus = {
 	completion_reward = {
 		country_event = { id = GWF.16 }
 		add_command_power = 15
+		GRA = {
+			set_variable = { gui_display_frame = 3000 }
+			add_ideas = Homura_Alliance_Member
+			GWF = { add_to_faction = GRA }
+		}
+		hidden_effect = {
+			GSU = {
+				set_variable = { gui_display_frame = 2000 }
+				add_ideas = Speer_Alliance_Member
+				LHH = { add_to_faction = GSU }
+			}	
+		}
 	}
 }
 
@@ -573,6 +593,11 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		country_event = { id = GWF.17 }
+		OKL = {
+			set_variable = { gui_display_frame = 3000 }
+			add_ideas = Homura_Alliance_Member
+			GWF = { add_to_faction = OKL }
+		}
 	}
 }
 
@@ -639,6 +664,10 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		country_event = { id = GWF.19 }
+		every_country = {
+			limit = { is_in_faction_with = GWF }
+			add_war_support = 0.05
+		}
 	}
 }
 
@@ -657,7 +686,31 @@ shared_focus = {
 	x = -1
 	y = 1
 	completion_reward = {
-		
+		GBV = {
+			if = { 
+				limit = { is_in_faction_with = GWF }
+				add_manpower = 15000
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 1000
+				}
+				add_equipment_to_stockpile = {
+					type = anti_tank_equipment
+					amount = 500
+				}
+			}
+			else = {
+				add_manpower = -15000
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = -1000
+				}
+				add_equipment_to_stockpile = {
+					type = anti_tank_equipment
+					amount = -500
+				}
+			}
+		}
 	}
 }
 
@@ -676,7 +729,28 @@ shared_focus = {
 	x = 1
 	y = 1
 	completion_reward = {
-
+		50 = {
+			set_building_level = {
+				type = bunker
+				level = 2
+				province = {
+					all_provinces = yes
+					limit_to_border = yes
+					level < 2
+				}
+			}
+		}
+		68 = {
+			set_building_level = {
+				type = bunker
+				level = 2
+				province = {
+					all_provinces = yes
+					limit_to_border = yes
+					level < 2
+				}
+			}
+		}
 	}
 }
 
@@ -722,6 +796,53 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		custom_effect_tooltip = GWF_magical_girl_army_tt	
+		set_country_flag = GWF_army_deccat_active
+		set_technology = { magical_infantry_technologies = 1 }
+		add_ideas = GWF_meguca_army
+		hidden_effect = {
+			set_variable = { GWF_meguca_manpower = 100 }
+			set_variable = { GWF_meguca_weekly_manpower = 50 }
+			division_template = {
+				name = "Lichtmagie-Division"
+				regiments = {
+					magical_girls = { x = 0 y = 0 }
+					magical_girls = { x = 0 y = 1 }
+					magical_girls = { x = 0 y = 2 }
+				}
+			}
+			division_template = {
+				name = "Magie-Division"
+				regiments = {
+					magical_girls = { x = 0 y = 0 }
+					magical_girls = { x = 0 y = 1 }
+					magical_girls = { x = 1 y = 0 }
+					magical_girls = { x = 1 y = 1 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					artillery = { x = 0 y = 1 }
+				}
+				priority = 1
+			}
+		}
+		capital_scope = {
+			create_unit = {
+				division = "division_template = \"Magie-Division\" start_experience_factor = 0.7 start_equipment_factor = 1"
+				owner = GWF
+				count = 1
+			}	
+		}
+		add_field_marshal_role = {
+			character = GWF_Akemi_Homura
+			traits = {
+				politically_connected
+			}
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
 		country_event = { id = GWF.22 }
     }
 }
@@ -742,6 +863,16 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		country_event = { id = GWF.23 }
+		set_temp_variable = { Y = 250 }
+		custom_effect_tooltip = GWF_meguca_manpower_increase_tt
+		add_to_variable = { GWF_meguca_manpower = Y }
+		capital_scope = {
+			create_unit = {
+				division = "division_template = \"Magie-Division\" start_experience_factor = 0.7 start_equipment_factor = 1"
+				owner = GWF
+				count = 1
+			}	
+		}
     }
 }
 
@@ -760,7 +891,13 @@ shared_focus = {
 	x = -1
 	y = 1
 	completion_reward = {
-		
+		capital_scope = {
+			create_unit = {
+				division = "division_template = \"Lichtmagie-Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				owner = GWF
+				count = 1
+			}	
+		}
     }
 }
 
@@ -780,6 +917,16 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		country_event = { id = GWF.24 }
+		set_temp_variable = { Y = -50 }
+		custom_effect_tooltip = GWF_meguca_manpower_decrease_tt
+		add_to_variable = { GWF_meguca_manpower = Y }
+		capital_scope = {
+			create_unit = {
+				division = "division_template = \"Lichtmagie-Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				owner = GWF
+				count = 1
+			}	
+		}
     }
 }
 
@@ -803,6 +950,31 @@ shared_focus = {
 	completion_reward = {
 		country_event = { id = GWF.25 }
 		country_lock_all_division_template = no
+		add_ideas = GWF_human_army
+		add_field_marshal_role = {
+			character = GWF_Otto_Tetsurstamm
+			traits = {
+				politically_connected
+				commando
+			}
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 2
+		}
+		add_corps_commander_role = {
+			character = GWF_Arthur_Juz
+			traits = {
+				politically_connected
+				commando
+			}
+			skill = 1
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
     }
 }
 
@@ -821,7 +993,8 @@ shared_focus = {
 	x = 0
 	y = 1
 	completion_reward = {
-		
+		TNO_improve_army_professionalism_med = yes
+		TNO_improve_training_policy_effectiveness_high = yes
     }
 }
 
@@ -841,6 +1014,18 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		country_event = { id = GWF.26 }
+		capital_scope = {
+			create_unit = {
+				division = "division_template = \"Militärpolizei-Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				owner = GWF
+				count = 2
+			}	
+			create_unit = {
+				division = "division_template = \"Infanterie-Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				owner = GWF
+				count = 1
+			}
+		}
     }
 }
 
@@ -859,7 +1044,16 @@ shared_focus = {
 	x = 1
 	y = 1
 	completion_reward = {
-		
+		set_temp_variable = { pus_temp = 1 }
+		econ_pus_change = yes
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 1500
+		}
+		add_equipment_to_stockpile = {
+			type = anti_tank_equipment
+			amount = 500
+		}
     }
 }
 
@@ -927,6 +1121,7 @@ shared_focus = {
 	y = 2
 	completion_reward = {
 		country_event = { id = GWF.27 }
+		TNO_improve_army_professionalism_med = yes
 	}
 }
 

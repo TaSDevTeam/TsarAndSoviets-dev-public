@@ -24,6 +24,7 @@ GWF_Homura_deccat = { ####
 	
     	activation = {
     		check_variable = { GWF_Homura_mental < 5.01 }
+			has_country_flag = GWF_Homura_gui_active
     	}
 		
     	is_good = no
@@ -302,11 +303,12 @@ GWF_Homura_deccat = { ####
 	GWF_Homura_coup_imminent = {
 		icon = generic_red_skull 
     	available = {
-			
+			check_variable = { GWF_Homura_physics > 5 }
     	}
 	
     	activation = {
     		check_variable = { GWF_Homura_physics < 5.01 }
+			has_country_flag = GWF_Homura_gui_active
     	}
 		
     	is_good = no
@@ -569,6 +571,13 @@ GWF_Opposition_deccat = {
 		}
 		remove_effect = {
 			add_stability = 0.025
+			if = {
+				limit = { has_country_flag = GWF_lone_warrior }
+				country_event = { id = GWF.71 } 
+			}	
+			else = {
+				country_event = { id = GWF.70 } 
+			}
 		}
 	}
 	GWF_opposition_final_attack_gim = {
@@ -599,6 +608,13 @@ GWF_Opposition_deccat = {
 		}
 		remove_effect = {
 			add_stability = 0.025
+			if = {
+				limit = { has_country_flag = GWF_lone_warrior }
+				country_event = { id = GWF.69 } 
+			}	
+			else = {
+				country_event = { id = GWF.68 } 
+			}
 		}
 	}
 	GWF_opposition_final_attack_endezeit = {
@@ -633,6 +649,13 @@ GWF_Opposition_deccat = {
 		}
 		remove_effect = {
 			add_stability = 0.025
+			if = {
+				limit = { has_country_flag = GWF_lone_warrior }
+				country_event = { id = GWF.73 } 
+			}	
+			else = {
+				country_event = { id = GWF.72 } 
+			}
 		}
 	}
 	GWF_opposition_attack_cells = { ###########
@@ -760,7 +783,7 @@ GWF_BigGame_deccat = {
 			tag = GWF
 		}			
 		available = {
-			always = no
+			NOT = { has_global_flag = GWF_BigGame_gui_active }
 		}			
 		activation = {
 			has_global_flag = GWF_BigGame_gui_active
@@ -772,7 +795,7 @@ GWF_BigGame_deccat = {
 		timeout_effect = {
 			custom_effect_tooltip = GWF_BigGame_mission_tt
 			hidden_effect = {
-	
+				GWF_great_game_to_the_next_round = yes
 			}
 		}
 
@@ -997,7 +1020,7 @@ GWF_BigGame_deccat = {
 	GWF_biggame_tick = {
 		icon = generic_timer	
     	available = {
-			always = false
+			NOT = { has_global_flag = GWF_BigGame_gui_active }
     	}
 	
     	activation = {
@@ -1051,19 +1074,213 @@ GWF_SGW_deccat = {
 }
 
 GWF_army_deccat = {
-	GWF_army_effigy = {
-		icon = GFX_GWF_army_effigy
+	GWF_army_train_light_meguca_division = {
+		icon = generic_military_hat_simple
 		visible = {
-			always = yes
+			
 		}
-		fire_only_once = yes
-		
 		available = {
-			always = no
+			set_temp_variable = { Y = 400 }
+			GWF_meguca_manpower_more_than_Y = yes 
+			has_equipment = { infantry_equipment > 1000 }
 		}
-
-		complete_effect = {
-			log = "[GetDateText]: [Root.GetName]: Decision complete GWF_army_effigy... wait that's wrong"
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 35
+		days_re_enable = 10
+		cost = 20
+		modifier = {
+			political_power_gain = -0.15
+			experience_gain_army_factor = 0.05
+		}
+		complete_effect = { 
+			set_temp_variable = { Y = -300 }
+			custom_effect_tooltip = GWF_meguca_manpower_increase_tt
+			add_to_variable = { GWF_meguca_manpower = Y }
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -1000
+			}
+		}
+		remove_effect = {
+			capital_scope = {
+				create_unit = {
+					division = "division_template = \"Lichtmagie-Division\" start_experience_factor = 0.3 start_equipment_factor = 1"
+					owner = GWF
+					count = 1
+				}	
+			}
+		}
+	}
+	GWF_army_train_normal_meguca_division = {
+		icon = generic_military_hat
+		visible = {
+			
+		}
+		available = {
+			set_temp_variable = { Y = 400 }
+			GWF_meguca_manpower_more_than_Y = yes 
+			has_equipment = { infantry_equipment > 1000 }
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 70
+		days_re_enable = 14
+		cost = 40
+		modifier = {
+			political_power_gain = -0.2
+			experience_gain_army_factor = 0.1
+		}
+		complete_effect = { 
+			set_temp_variable = { Y = -400 }
+			custom_effect_tooltip = GWF_meguca_manpower_increase_tt
+			add_to_variable = { GWF_meguca_manpower = Y }
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -1000
+			}
+		}
+		remove_effect = {
+			capital_scope = {
+				create_unit = {
+					division = "division_template = \"Magie-Division\" start_experience_factor = 0.7 start_equipment_factor = 1"
+					owner = GWF
+					count = 1
+				}	
+			}
+			army_experience = 5
+		}
+	}
+	GWF_army_increase_recruitment = {
+		icon = generic_military_parade
+		visible = {
+			
+		}
+		available = {
+			has_manpower > 1000
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 28
+		days_re_enable = 28
+		cost = 25
+		modifier = {
+			weekly_manpower = -100
+			experience_gain_army_factor = -0.025
+		}
+		complete_effect = { 
+			set_temp_variable = { temp_econ_spending_amount = 0.15 }
+			econ_spend_money_once_effect_raw_money = yes
+			TNO_worsen_army_professionalism_low = yes
+		}
+		remove_effect = {
+			set_temp_variable = { Y = 100 }
+			custom_effect_tooltip = GWF_meguca_manpower_increase_tt
+			add_to_variable = { GWF_meguca_manpower = Y }
+			
+			set_temp_variable = { Y = 40 }
+			custom_effect_tooltip = GWF_meguca_manpower_weekly_increase_tt
+			add_to_variable = { GWF_meguca_weekly_manpower = Y }
+		}
+	}
+	GWF_army_increase_quality  = {
+		icon = generic_military_parade
+		visible = {
+			
+		}
+		available = {
+			set_temp_variable = { Y = 100 }
+			GWF_meguca_manpower_more_than_Y = yes 
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 28
+		days_re_enable = 28
+		cost = 25
+		modifier = {
+			command_power_gain = 0.15
+			experience_gain_army_factor = 0.025
+		}
+		complete_effect = { 
+			set_temp_variable = { temp_econ_spending_amount = 0.1 }
+			set_temp_variable = { Y = -10 }
+			custom_effect_tooltip = GWF_meguca_manpower_weekly_decrease_tt
+			add_to_variable = { GWF_meguca_weekly_manpower = Y }
+			set_temp_variable = { Y = -50 }
+			custom_effect_tooltip = GWF_meguca_manpower_decrease_tt
+			add_to_variable = { GWF_meguca_manpower = Y }
+		}
+		remove_effect = {
+			TNO_improve_training_policy_effectiveness_high = yes
+			TNO_improve_army_professionalism_med = yes
+			army_experience = 10
+		}
+	}
+	GWF_expand_human_manpower = {
+		icon = generic_assault
+		visible = {
+			
+		}
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 28
+		days_re_enable = 28
+		cost = 25
+		modifier = {
+			command_power_gain = -0.1
+		}
+		complete_effect = { 
+			set_temp_variable = { temp_econ_spending_amount = 0.15 }
+			TNO_worsen_training_policy_effectiveness_low = yes
+		}
+		remove_effect = {
+			add_manpower = 5000
+			army_experience = 5
+		}
+	}
+	GWF_army_create_human_division = {
+		icon = generic_building_army_base
+		visible = {
+			
+		}
+		available = {
+			has_manpower > 5000
+			has_equipment = { infantry_equipment > 1000 }
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		days_remove = 35
+		days_re_enable = 35
+		cost = 40
+		modifier = {
+			political_power_gain = -0.2
+			experience_gain_army_factor = 0.1
+		}
+		complete_effect = { 
+			add_manpower = -5000
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -1000
+			}
+		}
+		remove_effect = {
+			capital_scope = {
+				create_unit = {
+					division = "division_template = \"Militärpolizei-Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = GWF
+					count = 1
+				}	
+			}
+			army_experience = 5
 		}
 	}
 }

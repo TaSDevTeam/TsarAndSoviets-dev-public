@@ -193,6 +193,10 @@ GWF_start_homura_gui = {
 	
 	set_variable = { GWF_Homura_mental = 78 }
 	set_variable = { GWF_Homura_physics = 82 }
+	
+	set_variable = { GWF_homura_weekly_mental = -1 }
+	set_variable = { GWF_homura_weekly_physics = -1 }
+	
 	set_variable = { GWF_Homura_cat = 1 }
 	set_variable = { GWF_Homura_style = 2}
 	
@@ -445,6 +449,7 @@ GWF_start_great_game = {
 	
 	RMN = { set_variable = { gui_display_frame = 6000 } }
 	set_variable = { BigGame_round_timeout = 60 }
+	set_variable = { BigGame_round_threshold = 55 }
 	activate_mission = GWF_BigGame_mission
 	GWF_great_game_clamp_vars = yes
 }
@@ -464,17 +469,294 @@ GWF_great_game_change_support = {
 	add_to_variable = { GWF_round_support = GWFBiggameAddition }
 	GWF_great_game_clamp_vars = yes
 }
-
+GWF_great_game_reset = {
+	set_variable = { BigGame_GWF_wins = 0 }
+	set_variable = { BigGame_LHH_wins = 0 }
+	
+	RMN = {
+		leave_faction = yes 
+		remove_ideas = Homura_Alliance_Member
+		remove_ideas = Speer_Alliance_Member
+		set_variable = { gui_display_frame = 5000 }
+	}
+	AUS = {
+		leave_faction = yes 
+		remove_ideas = Homura_Alliance_Member
+		remove_ideas = Speer_Alliance_Member
+		set_variable = { gui_display_frame = 5000 }
+	}
+	AGS = {
+		leave_faction = yes 
+		remove_ideas = Homura_Alliance_Member
+		remove_ideas = Speer_Alliance_Member
+		set_variable = { gui_display_frame = 5000 }
+	}
+	GBW = {
+		leave_faction = yes 
+		remove_ideas = Homura_Alliance_Member
+		remove_ideas = Speer_Alliance_Member
+		set_variable = { gui_display_frame = 5000 }
+	}	
+	GBV = {
+		leave_faction = yes 
+		remove_ideas = Homura_Alliance_Member
+		remove_ideas = Speer_Alliance_Member
+		set_variable = { gui_display_frame = 5000 }
+	}
+	SLO = {
+		leave_faction = yes 
+		remove_ideas = Homura_Alliance_Member
+		remove_ideas = Speer_Alliance_Member
+		set_variable = { gui_display_frame = 5000 }
+	}
+	GWF_start_great_game = YES
+}
 GWF_great_game_to_the_next_round = {
 	if = {
 		limit = { check_variable = { GWF_BigGame_round = 1 } }
 		if = { 
-			limit = { check_variable = { GWF_round_support > 50 } }
-			RMN = { set_variable = { gui_display_frame = 3000 } }
+			limit = { check_variable = { GWF_round_support > BigGame_round_threshold } }
+			add_to_variable = { BigGame_GWF_wins = 1 }
+			RMN = { 
+				set_variable = { gui_display_frame = 3000 }
+				set_politics = {
+					ruling_party = accelerationism
+					elections_allowed = no
+				}
+				add_ideas = Homura_Alliance_Member
+				GWF = { add_to_faction = RMN }
+			}
 		}
 		else = {
-			RMN = { set_variable = { gui_display_frame = 2000 } }
+			add_to_variable = { BigGame_LHH_wins = 1 }
+			RMN = {
+				set_variable = { gui_display_frame = 2000 }
+				XYI_Pontius_Pilat = {
+					remove_country_leader_role = { ideology = despotism_interim_government_subtype }
+					add_country_leader_role = {
+						country_leader = {
+							desc = "AprilFools_Pontius_Pilat_DESC"
+							expire = "1999.1.1"
+							ideology = despotism_personalistic_dictatorship_subtype
+							id = -1
+						}
+						promote_leader = yes
+					}
+				}
+				add_ideas = Speer_Alliance_Member
+				LHH = { add_to_faction = RMN }
+			}
 		}
+		set_variable = { GWF_round_support = 45 }
+		add_to_variable = { GWF_BigGame_round = 1 }
 		add_to_variable = { GWF_BigGame_GUI_dirty = 1 }
+		
+		AUS = { set_variable = { gui_display_frame = 6000 } }
+		set_variable = { BigGame_round_timeout = 60 }
+		set_variable = { BigGame_round_threshold = 60 }
+		activate_mission = GWF_BigGame_mission
+		GWF_great_game_clamp_vars = yes
+		add_to_variable = { GWF_BigGame_GUI_dirty = 1 }
+	}
+	else_if = {
+		limit = { check_variable = { GWF_BigGame_round = 2 } }
+		if = { 
+			limit = { check_variable = { GWF_round_support > BigGame_round_threshold } }
+			AUS = { set_variable = { gui_display_frame = 3000 } }
+			add_to_variable = { BigGame_GWF_wins = 1 }
+			if = {
+				limit = { RMN = { is_in_faction_with = GWF } }
+				RMN = { 
+					annex_country = {
+						target = AUS
+						transfer_troops = yes
+					}
+					every_owned_state = {
+						limit = { is_core_of = AUS }
+						add_core_of = RMN
+						remove_core_of = AUS
+					}
+					set_cosmetic_tag = RMN_trvthnuke_Bebey
+				}
+			}
+			else = {
+				AUS = {
+					XYI_Bebey = {
+						set_nationality = AUS
+					}
+					set_politics = {
+						ruling_party = accelerationism
+						elections_allowed = no
+					}
+					set_party_name = {
+						ideology = accelerationism
+						long_name = RMN_accelerationism_party_long
+						name = RMN_accelerationism_party
+					}
+					add_ideas = Homura_Alliance_Member
+					GWF = { add_to_faction = AUS }
+					set_cosmetic_tag = RMN_trvthnuke_Bebey
+				}
+			}
+		}
+		else = {
+			add_to_variable = { BigGame_LHH_wins = 1 }
+			AUS = {
+				set_variable = { gui_display_frame = 2000 }
+				add_ideas = Speer_Alliance_Member
+				LHH = { add_to_faction = AUS }
+			}
+		}
+		set_variable = { GWF_round_support = 40 }
+		add_to_variable = { GWF_BigGame_round = 1 }
+		add_to_variable = { GWF_BigGame_GUI_dirty = 1 }
+		
+		AGS = { set_variable = { gui_display_frame = 6000 } }
+		set_variable = { BigGame_round_timeout = 60 }
+		set_variable = { BigGame_round_threshold = 60 }
+		activate_mission = GWF_BigGame_mission
+		GWF_great_game_clamp_vars = yes
+		add_to_variable = { GWF_BigGame_GUI_dirty = 1 }
+	}
+	else_if = {
+		limit = { check_variable = { GWF_BigGame_round = 3 } }
+		if = {
+			add_to_variable = { BigGame_GWF_wins = 1 }
+			limit = { check_variable = { GWF_round_support > BigGame_round_threshold } }
+			AGS = { 
+				set_variable = { gui_display_frame = 3000 }
+				add_ideas = Homura_Alliance_Member
+				GWF = { add_to_faction = AGS }
+			}
+		}
+		else = {
+			add_to_variable = { BigGame_LHH_wins = 1 }
+			AGS = {
+				set_variable = { gui_display_frame = 2000 }
+				set_politics = {
+					ruling_party = progressivism
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = progressivism
+					popularity = 0.5
+				}
+				set_party_name = {
+					ideology = progressivism
+					long_name = AGS_AprilFools_party_long
+					name = AGS_AprilFools_party
+				}
+				add_ideas = Speer_Alliance_Member
+				LHH = { add_to_faction = AGS }
+			}
+		}
+		set_variable = { GWF_round_support = 40 }
+		add_to_variable = { GWF_BigGame_round = 1 }
+		add_to_variable = { GWF_BigGame_GUI_dirty = 1 }
+		
+		GBW = { set_variable = { gui_display_frame = 6000 } }
+		set_variable = { BigGame_round_timeout = 60 }
+		set_variable = { BigGame_round_threshold = 65 }
+		activate_mission = GWF_BigGame_mission
+		GWF_great_game_clamp_vars = yes
+		add_to_variable = { GWF_BigGame_GUI_dirty = 1 }
+	}
+	else_if = {
+		limit = { check_variable = { GWF_BigGame_round = 4 } }
+		if = { 
+			limit = { check_variable = { GWF_round_support > BigGame_round_threshold } }
+			add_to_variable = { BigGame_GWF_wins = 1 }
+			GBW = { 
+				set_variable = { gui_display_frame = 3000 }
+				add_ideas = Homura_Alliance_Member
+				GWF = { add_to_faction = GBW }
+				XYI_Mikhail_Svetov = { 
+					remove_country_leader_role = { ideology = accelerationism_anarcho_capitalism_subtype }
+					add_country_leader_role = {
+						country_leader = {
+							desc = "AprilFools_Mikhail_Svetov_DESC"
+							expire = "1999.1.1"
+							ideology = accelerationism_anarcho_etatism_subtype
+							id = -1
+						}
+						promote_leader = yes
+					}
+				}
+			}
+		}
+		else = {
+			add_to_variable = { BigGame_LHH_wins = 1 }
+			GBW = {
+				set_variable = { gui_display_frame = 2000 }
+				add_ideas = Speer_Alliance_Member
+				XYI_Mikhail_Svetov = { remove_country_leader_role = { ideology = accelerationism_anarcho_capitalism_subtype } }
+				promote_character = XYI_Mikhail_Pozharsky
+				LHH = { add_to_faction = GBW }
+			}
+		}
+		set_variable = { GWF_round_support = 35 }
+		add_to_variable = { GWF_BigGame_round = 1 }
+		add_to_variable = { GWF_BigGame_GUI_dirty = 1 }
+		
+		GBV = { set_variable = { gui_display_frame = 6000 } }
+		set_variable = { BigGame_round_timeout = 70 }
+		set_variable = { BigGame_round_threshold = 70 }
+		activate_mission = GWF_BigGame_mission
+		GWF_great_game_clamp_vars = yes
+		add_to_variable = { GWF_BigGame_GUI_dirty = 1 }
+	}
+	else = {
+		if = { 
+			limit = { check_variable = { GWF_round_support > BigGame_round_threshold } }
+			add_to_variable = { BigGame_GWF_wins = 1 }
+			GBV = { 
+				set_variable = { gui_display_frame = 3000 }
+				add_ideas = Homura_Alliance_Member
+				GWF = { add_to_faction = GBV }
+				retire_character = XYI_Ernst_Rohm
+				promote_character = XYI_Billy_Herrington
+			}
+		}
+		else = {
+			add_to_variable = { BigGame_LHH_wins = 1 }
+			GBV = {
+				set_variable = { gui_display_frame = 2000 }
+				add_ideas = Speer_Alliance_Member
+				LHH = { add_to_faction = GBV }
+			}
+		}
+		if = {
+			limit = { check_variable = { BigGame_GWF_wins > BigGame_LHH_wins } }
+			SLO = {
+				set_variable = { gui_display_frame = 3000 }
+				add_ideas = Homura_Alliance_Member
+				GWF = { add_to_faction = SLO }
+			}
+		}
+		else = {
+			SLO = {
+				set_variable = { gui_display_frame = 2000 }
+				add_ideas = Speer_Alliance_Member
+				LHH = { add_to_faction = SLO }
+			}
+		}
+		clr_country_flag = GWF_Opposition_gui_active
+		add_to_variable = { GWF_BigGame_GUI_dirty = 1 }
+	}	
+}
+
+weekly_script_GWF = {
+	if = {
+		limit = { has_country_flag = GWF_Homura_gui_active }
+		set_temp_variable = { opp_to_change = 1 }
+		set_temp_variable = { temp_stat_gained = GWF_homura_weekly_mental }
+		GWF_homura_change_stats = yes
+		set_temp_variable = { opp_to_change = 2 }
+		set_temp_variable = { temp_stat_gained = GWF_homura_weekly_physics }
+		GWF_homura_change_stats = yes
+	}
+	if = {
+		limit = { has_country_flag = GWF_army_deccat_active }
+		add_to_variable = { GWF_meguca_manpower = GWF_meguca_weekly_manpower }
 	}
 }

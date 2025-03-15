@@ -268,7 +268,6 @@ country_event = { #GWF_union_of_samefaced
 	option = { #
 		name = GWF.16.a
 		ai_chance = { factor = 1 }
-		add_ideas = Homura_Alliance_Member
 	}
 }
 
@@ -1152,7 +1151,38 @@ country_event = { #OPPOSITION FIGHT - GIM GOODEND
 	option = { #
 		name = GWF.68.a
 		ai_chance = { factor = 1 }
-		
+		set_variable = { gim_strength = 0 }
+		set_country_flag = GWF_gim_shattered
+		add_to_variable = { GWF_Opposition_GUI_dirty = 1 }
+		GWF_calculate_oppo_dynmod_effects = yes
+		hidden_effect = {
+			scoped_play_song = "glass_break"
+		}
+		GWF_Otto_Ernst_Remer = {
+			add_advisor_role = {
+				advisor = {
+					slot = security_minister
+					idea_token = GRA_Andreas_Baader_eco
+					traits = {
+						security_minister
+						sec_spymaster
+					}
+					ledger = civilian
+					cost = -1
+					can_be_fired = no
+					ai_will_do = { factor = 0 }
+				}
+				activate = yes
+			}
+			add_corps_commander_role = {
+				skill = 3
+				attack_skill = 2
+				defense_skill = 2
+				planning_skill = 3
+				logistics_skill = 3
+				traits = { }
+			}
+		}
 	}
 }
 
@@ -1169,7 +1199,18 @@ country_event = { #OPPOSITION FIGHT - GIM BADEND
 	option = { #
 		name = GWF.69.a
 		ai_chance = { factor = 1 }
-		
+		set_variable = { gim_strength = 0 }
+		GWF_calculate_oppo_dynmod_effects = yes
+		set_country_flag = GWF_gim_shattered
+		add_to_variable = { GWF_Opposition_GUI_dirty = 1 }
+		kill_ideology_leader = national_socialism
+		add_popularity = {
+			ideology = national_socialism
+			popularity = -1
+		}
+		hidden_effect = {
+			scoped_play_song = "glass_break"
+		}
 	}
 }
 
@@ -1186,7 +1227,38 @@ country_event = { #OPPOSITION FIGHT - RAF GOODEND
 	option = { #
 		name = GWF.70.a
 		ai_chance = { factor = 1 }
-		
+		set_variable = { raf_strength = 0 }
+		GWF_calculate_oppo_dynmod_effects = yes
+		set_country_flag = GWF_raf_shattered
+		add_to_variable = { GWF_Opposition_GUI_dirty = 1 }
+		hidden_effect = {
+			scoped_play_song = "glass_break"
+		}
+		GRA_Andreas_Baader = {
+			add_advisor_role = {
+				advisor = {
+					slot = economy_minister
+					idea_token = GRA_Andreas_Baader_eco
+					traits = {
+						economy_minister
+						eco_reformer
+					}
+					ledger = civilian
+					cost = -1
+					can_be_fired = no
+					ai_will_do = { factor = 0 }
+				}
+				activate = yes
+			}
+			add_corps_commander_role = {
+				skill = 2
+				attack_skill = 1
+				defense_skill = 2
+				planning_skill = 3
+				logistics_skill = 1
+				traits = { }
+			}
+		}
 	}
 }
 
@@ -1203,13 +1275,32 @@ country_event = { #OPPOSITION FIGHT - RAF BADEND
 	option = { #
 		name = GWF.71.a
 		ai_chance = { factor = 1 }
-		
+		set_variable = { raf_strength = 0 }
+		GWF_calculate_oppo_dynmod_effects = yes
+		set_country_flag = GWF_raf_shattered
+		add_to_variable = { GWF_Opposition_GUI_dirty = 1 }
+		kill_ideology_leader = communist
+		add_popularity = {
+			ideology = communist
+			popularity = -1
+		}
+		hidden_effect = {
+			scoped_play_song = "glass_break"
+		}
 	}
 }
 
 country_event = { #OPPOSITION FIGHT - ENDZEIT GOODEND
 	id = GWF.72
-	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.72" }
+	immediate = { 
+		log = "[GetDateText]: [Root.GetName]: event GWF.72"
+		hidden_effect = {
+			set_character_name = {
+				character = GWF_Sayaka_Miki
+				name = GWF_Sayaka_Miki
+			}
+		}
+	}
 	title = GWF.72.t
 	desc = GWF.72.desc
 	#picture = 
@@ -1220,13 +1311,38 @@ country_event = { #OPPOSITION FIGHT - ENDZEIT GOODEND
 	option = { #
 		name = GWF.72.a
 		ai_chance = { factor = 1 }
-		
+		set_variable = { endezeit_strength = 0 }
+		remove_ideas = GWF_opposition_modifier_dummy
+		clr_country_flag = GWF_Opposition_gui_active 
+		set_party_name = {
+			ideology = paternalism
+			long_name = GWF_AprilFools_pat_party_two_long
+			name = GWF_AprilFools_pat_party_two
+		}
+		GWF_Sayaka_Miki = {
+			add_field_marshall_role = {
+				skill = 3
+				attack_skill = 2
+				defense_skill = 2
+				planning_skill = 1
+				logistics_skill = 3
+				traits = { }
+			}
+		}
 	}
 }
 
 country_event = { #OPPOSITION FIGHT - ENDZEIT BADEND
 	id = GWF.73
-	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.73" }
+	immediate = { 
+		log = "[GetDateText]: [Root.GetName]: event GWF.73"
+		hidden_effect = {
+			set_character_name = {
+				character = GWF_Sayaka_Miki
+				name = GWF_Sayaka_Miki
+			}
+		}
+	}
 	title = GWF.73.t
 	desc = GWF.73.desc
 	#picture = 
@@ -1237,7 +1353,17 @@ country_event = { #OPPOSITION FIGHT - ENDZEIT BADEND
 	option = { #
 		name = GWF.73.a
 		ai_chance = { factor = 1 }
-		
+		set_variable = { endezeit_strength = 0 }
+		remove_ideas = GWF_opposition_modifier_dummy
+		clr_country_flag = GWF_Opposition_gui_active 
+		hidden_effect = {
+			scoped_play_song = "glass_break"
+		}
+		add_popularity = {
+			ideology = paternalism
+			popularity = -1
+		}
+		kill_ideology_leader = paternalism
 	}
 }
 

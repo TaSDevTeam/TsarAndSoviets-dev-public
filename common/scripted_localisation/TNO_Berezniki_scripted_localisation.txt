@@ -958,4 +958,24 @@ defined_text = {
 	}
 	localization_key = GWF_big_game_round_na
 }
-
+defined_text = {
+	name = GET_ROUND_RESULT
+	text = {
+		trigger = {
+			check_variable = { GWF_round_support > BigGame_round_threshold }
+		}
+		localization_key = round_succ
+	}
+	text = {
+		trigger = {
+			check_variable = { GWF_round_support = BigGame_round_threshold }
+		}
+		localization_key = round_succ
+	}
+	text = {
+		trigger = {
+			check_variable = { GWF_round_support < BigGame_round_threshold }
+		}
+		localization_key = round_fail
+	}
+}
