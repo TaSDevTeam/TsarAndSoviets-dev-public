@@ -7,6 +7,17 @@ ideas = {
 				ai_call_ally_desire_factor = -10000
 			}
 		}
+		FRA_stop_being_beaten_by_germany = {
+			cancel = {
+				NOT = { has_war_with = GER }
+			}
+			modifier = {
+				army_org_factor = 0.75
+				army_attack_factor = 0.75
+				army_defence_factor = 0.75
+				army_speed_factor = 0.2
+			}
+		}
 	}
 	country = { 
 		SWRW_increased_arms_prodution = {

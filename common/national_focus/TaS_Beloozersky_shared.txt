@@ -287,8 +287,8 @@ shared_focus = {
 ###Economy Tree
 
 shared_focus = {
-	id = MAR_reanimating_the_economy
-	icon = GFX_MAR_reanimating_the_economy
+	id = MAR_econom_prikaz
+	icon = GFX_MAR_econom_prikaz
 	cost = 4
 	x = 12
 	y = 0
@@ -314,7 +314,7 @@ shared_focus = {
 	icon = GFX_MAR_restoration_of_science
 	cost = 5
 	prerequisite = {
-		focus = MAR_reanimating_the_economy
+		focus = MAR_econom_prikaz
 	}
 	x = 16
 	y = 1
@@ -338,7 +338,7 @@ shared_focus = {
 	icon = GFX_MAR_remake_education
 	cost = 5
 	prerequisite = {
-		focus = MAR_reanimating_the_economy
+		focus = MAR_econom_prikaz
 	}
 	x = 14
 	y = 1
@@ -392,11 +392,11 @@ shared_focus = {
 	}
 }	
 shared_focus = {
-	id = MAR_econom_prikaz
-	icon = GFX_MAR_econom_prikaz
+	id = MAR_reanimating_the_economy
+	icon = GFX_MAR_reanimating_the_economy
 	cost = 4
 	prerequisite = {
-		focus = MAR_reanimating_the_economy
+		focus = MAR_econom_prikaz
 	}
 	x = 12
 	y = 1
@@ -413,9 +413,9 @@ shared_focus = {
 shared_focus = {
 	id = MAR_open_doors
 	icon = GFX_MAR_open_doors
-	cost = 3
+	cost = 4
 	prerequisite = {
-		focus = MAR_econom_prikaz
+		focus = MAR_reanimating_the_economy
 	}
 	x = 12
 	y = 2
@@ -455,7 +455,7 @@ shared_focus = {
 shared_focus = {
 	id = MAR_foreign_know_how
 	icon = GFX_MAR_foreign_know_how
-	cost = 3.00
+	cost = 4
 	prerequisite = {
 		focus = MAR_attract_investments
 	}
@@ -496,7 +496,7 @@ shared_focus = {
 shared_focus = {
 	id = MAR_support_small_business
 	icon = GFX_MAR_support_small_business
-	cost = 3.00
+	cost = 4
 	prerequisite = {
 		focus = MAR_mts
 	}
@@ -517,7 +517,7 @@ shared_focus = {
 shared_focus = {
 	id = MAR_stabilize_ruble
 	icon = GFX_MAR_stabilize_ruble
-	cost = 3.00
+	cost = 4
 	prerequisite = {
 		focus = MAR_foreign_know_how
 	}
@@ -558,7 +558,7 @@ shared_focus = {
 shared_focus = {
 	id = MAR_resurrection_of_infrastructure
 	icon = GFX_MAR_resurrection_of_infrastructure
-	cost = 3.00
+	cost = 4
 	prerequisite = {
 		focus = MAR_heavy_industry
 	}
@@ -672,7 +672,7 @@ shared_focus = {
 shared_focus = {
 	id = MAR_age_of_prosperity
 	icon = GFX_MAR_age_of_prosperity
-	cost = 3.00
+	cost = 4
 	prerequisite = {
 		focus = MAR_stabilize_ruble
 	}
@@ -768,7 +768,7 @@ shared_focus = {
 shared_focus = {
 	id = MAR_modern_war_methods
 	icon = GFX_MAR_modern_war_methods
-	cost = 3.00
+	cost = 4
 	prerequisite = {
 		focus = MAR_experimental_design_bureau
 	}
@@ -786,7 +786,7 @@ shared_focus = {
 shared_focus = {
 	id = MAR_tank_factories
 	icon = GFX_MAR_tank_factories
-	cost = 3.00
+	cost = 4
 	prerequisite = {
 		focus = MAR_modern_war_methods
 	}
@@ -820,7 +820,7 @@ shared_focus = {
 shared_focus = {
 	id = MAR_aircraft_industry
 	icon = GFX_MAR_aircraft_industry
-	cost = 3.00
+	cost = 4
 	prerequisite = {
 		focus = MAR_training_advancements
 	}
@@ -855,7 +855,7 @@ shared_focus = {
 shared_focus = {
 	id = MAR_tsar_guard
 	icon = GFX_MAR_tsar_guard
-	cost = 3.00
+	cost = 4
 	prerequisite = {
 		focus = MAR_arms_standarts
 	}
@@ -877,7 +877,7 @@ shared_focus = {
 shared_focus = {
 	id = MAR_ural_guard_lessons
 	icon = GFX_MAR_ural_guard_lessons
-	cost = 3.00
+	cost = 4
 	prerequisite = {
 		focus = MAR_tsar_guard
 	}
@@ -941,7 +941,7 @@ shared_focus = {
 shared_focus = {
 	id = MAR_reestablish_trading_channels
 	icon = GFX_MAR_reestablish_trading_channels
-	cost = 3.58
+	cost = 4
 	prerequisite = {
 		focus = MAR_embassy_prikaz
 	}
@@ -972,7 +972,7 @@ shared_focus = {
 shared_focus = {
 	id = MAR_two_eagles_meeting
 	icon = GFX_MAR_two_eagles_meeting
-	cost = 3.58
+	cost = 4
 	prerequisite = {
 		focus = MAR_reestablish_trading_channels
 	}
@@ -992,7 +992,7 @@ shared_focus = {
 shared_focus = {
 	id = MAR_ofn_support
 	icon = GFX_MAR_ofn_support
-	cost = 3.58
+	cost = 4
 	prerequisite = {
 		focus = MAR_two_eagles_meeting
 	}
@@ -1010,7 +1010,7 @@ shared_focus = {
 shared_focus = {
 	id = MAR_russian_volunteers
 	icon = GFX_MAR_russian_volunteers
-	cost = 3.58
+	cost = 4
 	prerequisite = {
 		focus = MAR_reestablish_trading_channels
 	}
@@ -1031,7 +1031,7 @@ shared_focus = {
 shared_focus = {
 	id = MAR_infiltrate_the_reich
 	icon = GFX_MAR_infiltrate_the_reich
-	cost = 3.58
+	cost = 4
 	prerequisite = {
 		focus = MAR_russian_volunteers
 	}
@@ -1227,7 +1227,7 @@ shared_focus = {
 				}
 			}
 		}
-		873 = {
+		973 = {
             add_building_construction = {
 			    type = infrastructure
 			    level = 2
@@ -1776,13 +1776,13 @@ shared_focus = {
 						state_GDP_growth_factor_modifier = 0.05
 					}
 				}
-			}
-			MKZ = {
-				set_temp_variable = { gdp_growth_temp = 2.5 }
-				econ_gdp_growth_change = yes
-				set_temp_variable = { temp_econ_GDP_boost_flat = 0.9 }
-				econ_GDP_boost_once_flat = yes	
 			}	
+		}
+		MKZ = {
+			set_temp_variable = { gdp_growth_temp = 2.5 }
+			econ_gdp_growth_change = yes
+			set_temp_variable = { temp_econ_GDP_boost_flat = 0.9 }
+			econ_GDP_boost_once_flat = yes	
 		}
 		custom_effect_tooltip = MAR_Belozerskiy_add_2_inf_in_Kazakhstan
 	}
@@ -1830,6 +1830,7 @@ shared_focus = {
 	y = 3
 	completion_reward = {
 		add_stability = 0.10
+		RUS_integration_cost_days_decrease = yes
 	}
 }
 shared_focus = {

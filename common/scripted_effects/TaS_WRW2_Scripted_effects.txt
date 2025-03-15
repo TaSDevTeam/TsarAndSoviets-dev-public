@@ -750,6 +750,11 @@ TaS_WRW2_total_capitulation = {
 		transfer_state = 2099
 		add_state_core = 2099
 		2099 = { set_variable = { nationality = 151 } }
+		
+		transfer_state = 257
+		transfer_state = 222
+		transfer_state = 1441
+		transfer_state = 224
 		if = {
 			limit = { 
 				country_exists = TNS
@@ -2640,9 +2645,10 @@ TaS_2WRW_set_autonomy_laws = {
 }
 
 TaS_2WRW_set_free_laws = {
-	set_variable = { TNO_economy_subtype = token:Econ_Subtype_Dirigisme }
 	set_variable = { TNO_economy_type = token:Econ_Type_Corporatism }
-	clear_variable = TNO_economy_subtype 
+	econ_type_change = yes
+	set_variable = { TNO_economy_subtype = token:Econ_Subtype_Dirigisme }
+	econ_subtype_change = yes
 	
 	set_variable = { income_tax_rate = 0.30 }
 	set_variable = { business_tax_rate = 0.32 }
@@ -2780,6 +2786,11 @@ TaS_2WRW_free_baltics = {
 		}
 	}
 	EST = {
+		add_timed_idea = {
+			idea = MAR_economic_recovery
+			days = 900
+		}
+		set_variable = { national_debt = 0 }
 		transfer_state = 1440
 		transfer_state = 13
 		transfer_state = 191
@@ -2816,6 +2827,26 @@ TaS_2WRW_free_baltics = {
 			long_name = EST_free_party_long
 			name = EST_free_party
 		}
+		set_party_name = { 
+			ideology = conservatism 
+			long_name = EST_free_party_long
+			name = EST_free_party
+		}
+		set_party_name = { 
+			ideology = liberal_conservatism 
+			long_name = EST_free_party_long
+			name = EST_free_party
+		}
+		set_party_name = { 
+			ideology = despotism 
+			long_name = EST_free_party_long
+			name = EST_free_party
+		}
+		set_party_name = { 
+			ideology = fascism 
+			long_name = EST_free_party_long
+			name = EST_free_party
+		}
 		EST_Tonis_Kint = {
 			promote_character = yes
 		}
@@ -2824,6 +2855,11 @@ TaS_2WRW_free_baltics = {
 		TNO_startup_nation = yes
 	}
 	LAT = {
+		add_timed_idea = {
+			idea = MAR_economic_recovery
+			days = 900
+		}
+		set_variable = { national_debt = 0 }
 		transfer_state = 12
 		transfer_state = 1402
 		transfer_state = 943
@@ -2861,6 +2897,21 @@ TaS_2WRW_free_baltics = {
 			long_name = LAT_free_party_long
 			name = LAT_free_party
 		}
+		set_party_name = { 
+			ideology = liberalism 
+			long_name = LAT_free_party_long
+			name = LAT_free_party
+		}
+		set_party_name = { 
+			ideology = paternalism 
+			long_name = LAT_free_party_long
+			name = LAT_free_party
+		}
+		set_party_name = { 
+			ideology = conservatism 
+			long_name = LAT_free_party_long
+			name = LAT_free_party
+		}
 		LAT_Anatols_Dinbergs = {
 			promote_character = yes
 		}
@@ -2869,6 +2920,11 @@ TaS_2WRW_free_baltics = {
 		TNO_startup_nation = yes
 	}
 	LIT = {
+		add_timed_idea = {
+			idea = MAR_economic_recovery
+			days = 900
+		}
+		set_variable = { national_debt = 0 }
 		transfer_state = 96
 		transfer_state = 1400
 		transfer_state = 189
@@ -2895,8 +2951,8 @@ TaS_2WRW_free_baltics = {
 			liberalism = 13
 			conservatism = 56
 			liberal_conservatism = 19
-			paternalism = 11
-			despotism = 1
+			paternalism = 12
+			despotism = 0
 			fascism = 0
 			national_socialism = 0
 			ultranationalism = 0
@@ -2904,6 +2960,21 @@ TaS_2WRW_free_baltics = {
 		}
 		set_party_name = { 
 			ideology = conservatism 
+			long_name = LIT_free_party_long
+			name = LIT_free_party
+		}
+		set_party_name = { 
+			ideology = liberalism 
+			long_name = LIT_free_party_long
+			name = LIT_free_party
+		}
+		set_party_name = { 
+			ideology = liberal_conservatism 
+			long_name = LIT_free_party_long
+			name = LIT_free_party
+		}
+		set_party_name = { 
+			ideology = paternalism 
 			long_name = LIT_free_party_long
 			name = LIT_free_party
 		}

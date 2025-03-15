@@ -1,4 +1,24 @@
 TaS_WRW2_fate_and_coring_of_territories = { 
+	MAR_question_of_capitals = {
+		icon = generic_building_offices
+		fire_only_once = yes
+		visible = {
+			has_country_flag = MCW_fate_is_done
+		}
+		available = {
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision timeout MAR_question_of_capitals"
+			country_event = { id = MAR_territorial_fate.13 }
+		}
+	}
+	
+	
 	MAR_fate_of_turkestan = {
 		icon = GFX_decision_generic_assault
 		fire_only_once = yes
@@ -4133,6 +4153,13 @@ TaS_WRW2_territorial_reclamation = {
 			declare_war_on = { target = AFG type = annex_everything }
 			add_timed_idea = { idea = SWRW_mountainous_war days = 120 }
 			activate_mission = TaS_WRW2_afgan_war
+			AFG = {
+				set_country_flag = {
+					flag = AFG_WAR_TIMEOUT
+					value = 1 
+					days = 45
+				}
+			}
 		}
 	}
 	TaS_WRW2_afgan_war = {
@@ -4247,6 +4274,10 @@ TaS_WRW2_territorial_reclamation = {
 		}
 		ai_will_do = {
 			factor = 200
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
 		}
 		fire_only_once = yes
 		cost = 50
