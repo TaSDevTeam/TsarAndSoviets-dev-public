@@ -12,6 +12,7 @@ AFG_russian_invasion = {
 				}
 			}
 			NOT = { surrender_progress > 0.20 }
+			NOT = { has_country_flag = AFG_WAR_TIMEOUT }
 			OR = {
 				TAJ = { exists = no }
 				KYR = { exists = no }
@@ -66,6 +67,7 @@ AFG_russian_invasion = {
 		available = {
 			surrender_progress > 0.20
 			NOT = { surrender_progress > 0.50 }
+			NOT = { has_country_flag = AFG_WAR_TIMEOUT }
 		}
 
 		visible = {
@@ -115,6 +117,7 @@ AFG_russian_invasion = {
 
 		available = {
 			surrender_progress > 0.50
+			NOT = { has_country_flag = AFG_WAR_TIMEOUT }
 		}
 
 		visible = {
@@ -170,6 +173,7 @@ TUR_russian_invasion = {
 			RUS = {
 				casualties > 25000
 			}
+			NOT = { has_country_flag = TUR_WAR_TIMEOUT }
 		}
 
 		visible = {

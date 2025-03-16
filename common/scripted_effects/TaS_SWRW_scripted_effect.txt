@@ -347,16 +347,7 @@ TaS_SWRW_american_germany = {
 			elections_allowed = no
 		}
 		set_popularities = {
-			communist = 0
-			ultranationalism = 0
-			socialist = 0
-			progressivism = 0
-			liberalism = 0
-			conservatism = 20
-			paternalism = 40
-			despotism = 10
-			fascism = 20
-			national_socialism = 10
+			paternalism = 100
 		}
 		set_party_name = {
 			ideology = paternalism
@@ -368,6 +359,8 @@ TaS_SWRW_american_germany = {
 		add_ideas = TaS_Post2WRW_ZNE_strangers_among_own
 		add_ideas = TaS_Post2WRW_fast_denazification
 		TNO_startup_nation = yes
+		set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
+		econ_type_change = yes
 		every_owned_state = {
 			ZNE = {
 				add_state_core = PREV
@@ -394,24 +387,15 @@ TaS_SWRW_american_germany = {
 			name = BRL_usa_party
 		}	
 		set_popularities = {
-			communist = 0
-			ultranationalism = 0
-			socialist = 0
-			progressivism = 0
-			liberalism = 0
-			conservatism = 20
-			paternalism = 10
-			despotism = 40
-			fascism = 20
-			national_socialism = 10
+			despotism = 100
 		}
 		set_cosmetic_tag = GCZ_usa
 		promote_character = GCZ_USA_Creighton_Abrams
 		OFN_MANDATE_set_starting_laws = yes
 		inherit_technology = USA
 		econ_join_sphere_USA = yes
-		set_temp_variable = { TNO_economy_subtype_temp = token:Econ_Subtype_American_Capitalism }
-		econ_subtype_change = yes
+		set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
+		econ_type_change = yes
 		add_ideas = OFN_Mandate
 		add_ideas = TaS_Post2WRW_werewolf_activity
 		add_ideas = TaS_Post2WRW_GCZ_golden_city_liberated
@@ -421,6 +405,20 @@ TaS_SWRW_american_germany = {
 			GCZ = {
 				add_state_core = PREV
 			}
+		}
+		GCZ = {
+			get_current_government_type = yes
+			save_party_popularities = yes
+		}
+		USA = {
+			set_autonomy = {
+				target = GCZ
+				autonomy_state = autonomy_military_government
+			}	
+		}	
+		GCZ = {
+			restore_previous_government_type = yes
+			apply_party_popularities = yes
 		}
 		
 	}
@@ -448,6 +446,8 @@ TaS_SWRW_american_germany = {
 				add_state_core = PREV
 			}
 		}
+		set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
+		econ_type_change = yes
 	}
 	GSG = {
 		add_ideas = OFN_Dependent_Member
@@ -508,6 +508,7 @@ TaS_SWRW_american_germany = {
 			}
 		}
 		remove_ideas = TaS_Post2WRW_commie_activity
+		add_ideas = TaS_Post2WRW_werewolf_activity
 	}
 	#if = {
 	#	limit = {
@@ -529,6 +530,7 @@ TaS_SWRW_american_germany = {
 	PUS = {
 		TNO_startup_nation = yes
 		transfer_state = 5
+		add_state_core = 5
 		5 = { set_state_name = STATE_5_rus }
 		add_ideas = RUSAlliance_Dependent_Member
 		set_province_name = { id = 6332 name = VICTORY_POINTS_6332_rus }
@@ -596,16 +598,7 @@ TaS_SWRW_american_germany = {
 			name = BRL_usa_party
 		}	
 		set_popularities = {
-			communist = 0
-			ultranationalism = 0
-			socialist = 0
-			progressivism = 0
-			liberalism = 0
-			conservatism = 20
-			paternalism = 10
-			despotism = 40
-			fascism = 20
-			national_socialism = 10
+			despotism = 100
 		}
 		set_cosmetic_tag = BRL_usa
 		promote_character = BRL_USA_William_Westmoreland
@@ -620,6 +613,20 @@ TaS_SWRW_american_germany = {
 			BRL = {
 				add_state_core = PREV
 			}
+		}
+		BRL = {
+			get_current_government_type = yes
+			save_party_popularities = yes
+		}
+		USA = {
+			set_autonomy = {
+				target = BRL
+				autonomy_state = autonomy_military_government
+			}	
+		}	
+		BRL = {
+			restore_previous_government_type = yes
+			apply_party_popularities = yes
 		}
 	}
 	if = {
@@ -649,6 +656,7 @@ TaS_SWRW_american_germany = {
 	else = {
 		CUR = {
 			set_cosmetic_tag = SUR_kingdom_of_netherlands
+			remove_ideas = CUR_Exiles_in_the_Antilles
 			transfer_state = 36
 			transfer_state = 7
 			transfer_state = 1886
@@ -678,6 +686,11 @@ TaS_SWRW_american_germany = {
 			transfer_state = 6
 			transfer_state = 1734
 			transfer_state = 34
+			every_owned_state = {
+				GCZ = {
+					add_state_core = PREV
+				}
+			}
 			set_politics = {
 				ruling_party = paternalism
 				last_election = "1933.3.5"
@@ -690,16 +703,7 @@ TaS_SWRW_american_germany = {
 				name = GFR_usa_party
 			}	
 			set_popularities = {
-				communist = 0
-				ultranationalism = 0
-				socialist = 0
-				progressivism = 0
-				liberalism = 0
-				conservatism = 20
-				paternalism = 50
-				despotism = 10
-				fascism = 10
-				national_socialism = 10
+				paternalism = 100
 			}
 			TNO_startup_nation = yes
 			add_ideas = OFN_Dependent_Member
@@ -708,6 +712,8 @@ TaS_SWRW_american_germany = {
 			OFN_MANDATE_set_starting_laws = yes
 			inherit_technology = USA
 			econ_join_sphere_USA = yes
+			set_variable = { TNO_economy_type = token:Econ_Type_Capitalism }
+			econ_type_change = yes
 		}
 	}
 	NOR = {
@@ -724,6 +730,7 @@ TaS_SWRW_american_germany = {
 		add_to_faction = BRL
 		add_to_faction = GSV
 		add_to_faction = NOR
+		add_to_faction = GFR
 	}
 	if = {
 	    limit = { 
@@ -1062,7 +1069,7 @@ TaS_SWRW_Manchu_CW_MAN_win = {
 		add_to_faction = MJP
 	}
 	MAN = {
-		econ_join_sphere_USA = yes
+		#econ_join_sphere_USA = yes
 		#add_ideas = OFN_observer
 		set_capital = { state = 801 }
 		every_owned_state = {
@@ -2091,6 +2098,7 @@ SWRW_finland_peacedeal = {
 		remove_ideas = FIN_An_Unsatisfactory_Answer
 		remove_ideas = FIN_Second_Crisis_Of_Democracy
 		remove_ideas = FIN_The_Growth_Regime
+		remove_ideas = BOR_FIN_military_attache
 	} 
 	FIN = {
 		get_current_government_type = yes

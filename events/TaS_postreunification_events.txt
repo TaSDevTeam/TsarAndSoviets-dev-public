@@ -935,6 +935,10 @@ country_event = { #Technical stuff no loc
 			}
 			set_cosmetic_tag = MAN_Second_CW
 			remove_ideas = MAN_Chained_To_Rising_Sun
+			swap_ideas = {
+				remove_idea = Sphere_Imp_Protectorate
+			    add_idea = Sphere_Core_Member
+			}
 		}
 		country_event = {
 			id = MAR_Japan.4 days = 21
@@ -1073,9 +1077,10 @@ country_event = { #Technical stuff no loc
 			leave_faction = yes
 			econ_leave_sphere = yes
 			remove_ideas = MAN_Chained_To_Rising_Sun
-			remove_ideas = Sphere_Imp_Protectorate
+			remove_ideas = Sphere_Core_Member
 			remove_ideas = MAN_Kwantung_Army
 			remove_ideas = MAN_Vices_Of_Modernity
+			set_variable = { national_debt = 0 }
 		}
 		
 		country_event = {
@@ -1099,6 +1104,7 @@ country_event = { #Technical stuff no loc
 		#TaS_2WRW_spawn_divs_second_cw = yes
 		set_global_flag = TaS_MAN_second_cw
 		HAN = {
+			set_variable = { national_debt = 0 }
 			add_ideas = MAN_civil_war
 			set_cosmetic_tag = HAN_Second_CW
 			set_politics = {
@@ -1137,6 +1143,7 @@ country_event = { #Technical stuff no loc
 			load_oob = HAN_second_cw
 		}
 		MJP = {
+			set_variable = { national_debt = 0 }
 			add_ideas = MAN_civil_war
 			transfer_state = 1265
 			transfer_state = 716
@@ -1144,6 +1151,7 @@ country_event = { #Technical stuff no loc
 			load_oob = MJP_second_cw
 		}
 		PFF = {
+			set_variable = { national_debt = 0 }
 			clr_country_flag = is_russian_nation
 			add_ideas = MAN_civil_war
 			set_cosmetic_tag = PFF_Second_CW
@@ -3811,6 +3819,13 @@ country_event = { #TUR: Turkey gather troops
 			target = TUR
 			type = annex_everything
 		}
+		TUR = {
+			set_country_flag = {
+				flag = TUR_WAR_TIMEOUT
+				value = 1 
+				days = 45
+			}
+		}
 		hidden_effect = {
 			every_country = {
 				limit = { is_ai = no }
@@ -3848,6 +3863,11 @@ country_event = { #TUR: fuck let's goooooooo
 		add_timed_idea = {
 			idea = SWRW_swift_attack
 			days = 30
+		}
+		set_country_flag = {
+			flag = TUR_WAR_TIMEOUT
+			value = 1 
+			days = 45
 		}
 		1565 = { set_demilitarized_zone = no }
 	}
@@ -3896,6 +3916,10 @@ country_event = { #TUR: Ceasefire
 			econ_join_sphere_MAR = yes
 			add_ideas = RUSAlliance_Dependent_Member
 			RUS = { add_to_faction = ARM }
+			transfer_state = 230
+			transfer_state = 1568
+			transfer_state = 1567
+			add_state_core = 1567
 		}
 	}
 	option = { #not yet
@@ -3939,22 +3963,30 @@ country_event = { #ROM: Russia Demands
 		if = {
 			limit = { MUK = { controls_state = 1428 } }
 			MUK = {
-				transfer_state = 1285
-				transfer_state = 1286
-				transfer_state = 78
-				add_state_core = 1285
-				add_state_core = 1286
-				add_state_core = 78
-				
 				transfer_state = 198
 				transfer_state = 1965
 				transfer_state = 1966
-				transfer_state = 1285
+				transfer_state = 1282
 				transfer_state = 192
+				
 				add_state_core = 198
 				add_state_core = 1965
 				add_state_core = 1966
+				add_state_core = 1282
+				add_state_core = 192
+				
+				transfer_state = 80
+				transfer_state = 1286
+				transfer_state = 78
+				transfer_state = 1285
+				transfer_state = 1282
+				transfer_state = 192
+				
+				add_state_core = 80
+				add_state_core = 1286
+				add_state_core = 78
 				add_state_core = 1285
+				add_state_core = 1282
 				add_state_core = 192
 			}
 			RUS = {
@@ -3970,18 +4002,31 @@ country_event = { #ROM: Russia Demands
 		}
 		else = {
 			RUS = {
-				transfer_state = 1285
-				transfer_state = 1286
-				transfer_state = 78
-				add_state_core = 1285
-				add_state_core = 1286
-				add_state_core = 78
-				
 				transfer_state = 198
 				transfer_state = 1965
 				transfer_state = 1966
-				transfer_state = 1285
+				transfer_state = 1282
 				transfer_state = 192
+				
+				add_state_core = 198
+				add_state_core = 1965
+				add_state_core = 1966
+				add_state_core = 1282
+				add_state_core = 192
+				
+				transfer_state = 80
+				transfer_state = 1286
+				transfer_state = 78
+				transfer_state = 1285
+				transfer_state = 1282
+				transfer_state = 192
+				
+				add_state_core = 80
+				add_state_core = 1286
+				add_state_core = 78
+				add_state_core = 1285
+				add_state_core = 1282
+				add_state_core = 192
 				
 				remove_state_claim = 1285
 				remove_state_claim = 1286
@@ -5525,6 +5570,7 @@ country_event = { #Caucasus
 				}
 			}
 			MCS = {
+				TaS_2WRW_set_autonomy_laws = yes
 				every_owned_state = {
 					MCS = {
 						add_state_core = PREV
@@ -6233,6 +6279,56 @@ country_event = { #Turkish Straits
 	}
 }
 
+country_event = { #Capital
+	id = MAR_territorial_fate.13
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_territorial_fate.13" }
+	title = MAR_territorial_fate.13.t
+	desc = MAR_territorial_fate.13.d
+	picture = GFX_report_event_RUS_double_headed_eagle 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #Moscow
+		name = MAR_territorial_fate.12.a
+		ai_chance = { factor = 1 }
+		set_capital = { state = 1442 }
+		1442 = {
+			add_building_construction = {
+			    type = infrastructure
+			    level = 2
+			    instant_build = yes
+            }
+			add_state_modifier = {
+				modifier = {
+					state_GDP_growth_factor_modifier = 0.05
+				}
+			}
+		}
+	}
+	option = { #Petersburg
+		name = MAR_territorial_fate.12.b
+		ai_chance = { factor = 1 }
+		set_capital = { state = 195 }
+		195 = {
+			add_building_construction = {
+			    type = infrastructure
+			    level = 2
+			    instant_build = yes
+            }
+			add_state_modifier = {
+				modifier = {
+					state_GDP_growth_factor_modifier = 0.05
+				}
+			}
+		}
+	}
+	option = { #Vyatka
+		name = MAR_territorial_fate.12.c
+		ai_chance = { factor = 1 }
+		add_stability = 0.01
+	}
+}
 ##MAR_2WRW_world_news
 news_event = { 
 	id = MAR_2WRW_world_news.1
