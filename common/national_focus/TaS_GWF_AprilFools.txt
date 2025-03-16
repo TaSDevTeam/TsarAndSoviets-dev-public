@@ -509,7 +509,7 @@ shared_focus = {
 			set_temp_variable = { temp_econ_spending_amount = 0.25 }
 			econ_spend_money_once_effect_raw_money = yes
 			add_equipment_to_stockpile = {
-				type = infantry_equipment_1
+				type = infantry_equipment
 				amount = -1000
 			}
 			add_equipment_to_stockpile = {
@@ -620,7 +620,7 @@ shared_focus = {
 		OKL = {
 			add_manpower = 15000
 			add_equipment_to_stockpile = {
-				type = infantry_equipment_1
+				type = infantry_equipment
 				amount = 1000
 			}
 			add_equipment_to_stockpile = {
@@ -631,7 +631,7 @@ shared_focus = {
 		LHH = {
 			add_manpower = -15000
 			add_equipment_to_stockpile = {
-				type = infantry_equipment_1
+				type = infantry_equipment
 				amount = -1000
 			}
 			add_equipment_to_stockpile = {
@@ -1166,6 +1166,7 @@ shared_focus = {
 	y = 0
 	completion_reward = {
 		country_event = { id = GWF.32 }
+		add_war_support = 0.05
 	}
 }
 
@@ -1184,7 +1185,14 @@ shared_focus = {
 	x = -3
 	y = 1
 	completion_reward = {
-	
+		if = {
+			limit = { has_idea = GWF_meguca_army }
+			set_temp_variable = { Y = 1200 }
+			custom_effect_tooltip = GWF_meguca_manpower_increase_tt
+		}
+		else = {
+			add_manpower = 35000
+		}
 	}
 }
 
@@ -1203,7 +1211,19 @@ shared_focus = {
 	x = -1
 	y = 1
 	completion_reward = {
-	
+		every_country = {
+			limit = { is_in_faction_with = GWF }
+			send_equipment = {
+				equipment = infantry_equipment
+				amount = 150
+				target = GWF
+			}
+			send_equipment = {
+				equipment = anti_tank_equipment
+				amount = 50
+				target = GWF
+			}
+		}
 	}
 }
 
@@ -1222,7 +1242,22 @@ shared_focus = {
 	x = 1
 	y = 1
 	completion_reward = {
-	
+		every_country = {
+			limit = { is_in_faction_with = LHH }
+			add_manpower = -1500
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -250
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = -35
+			}
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = -100
+			}
+		}
 	}
 }
 
@@ -1241,7 +1276,10 @@ shared_focus = {
 	x = 3
 	y = 1
 	completion_reward = {
-	
+		set_temp_variable = { pus_temp = 1 }
+		econ_pus_change = yes
+		set_temp_variable = { temp_econ_spending_amount = 0.25 }
+		econ_spend_money_once_effect_raw_money = yes		
 	}
 }
 
@@ -1260,7 +1298,8 @@ shared_focus = {
 	x = 1
 	y = 1
 	completion_reward = {
-	
+		TNO_improve_army_professionalism_high = yes
+		TNO_improve_training_policy_effectiveness_monthly_med = yes
 	}
 }
 
@@ -1283,6 +1322,17 @@ shared_focus = {
 	y = 2
 	completion_reward = {
 		country_event = { id = GWF.34 }
+		every_country = {
+			limit = { is_in_faction_with = LHH }
+			capital_scope = {
+				damage_building = {
+					type = infrastructure
+					damage = 2
+				}
+				add_manpower = -5000
+			}
+			add_war_support = -0.05
+		}
 	}
 }
 
@@ -1302,6 +1352,21 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		country_event = { id = GWF.35 }
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 1500
+		}
+		add_equipment_to_stockpile = {
+			type = anti_tank_equipment
+			amount = 250
+		}
+		add_equipment_to_stockpile = {
+			type = support_equipment
+			amount = 250
+		}
+		set_temp_variable = { pus_temp = 1 }
+		econ_pus_change = yes
+		TNO_worsen_max_workhours_policy_effectiveness_high = yes
 	}
 }
 
@@ -1324,6 +1389,10 @@ shared_focus = {
 	y = 3
 	completion_reward = {
 		country_event = { id = GWF.36 }
+		add_timed_idea = {
+			idea = GWF_Homura_personal
+			days = 45
+		}
 	}
 }
 
@@ -1334,6 +1403,9 @@ shared_focus = {
 	available_if_capitulated = no
 	mutually_exclusive = {
 		focus = GWF_personal_involvement
+	}
+	available = {
+		has_completed_focus = GWF_human_army
 	}
 	ai_will_do = {
 		factor = 1
@@ -1346,6 +1418,9 @@ shared_focus = {
 	y = 3
 	completion_reward = {
 		country_event = { id = GWF.37 }
+		tno_conscription_clear = yes
+		add_ideas = { tno_conscription_service_by_requirement }
+		TNO_improve_conscription_policy_effectiveness_low = yes
 	}
 }
 
@@ -1368,6 +1443,16 @@ shared_focus = {
 	y = 3
 	completion_reward = {
 		country_event = { id = GWF.38 }
+		every_country = {
+			limit = { is_in_faction_with = LHH }
+			capital_scope = {
+				add_manpower = -50000
+			}
+			add_ideas = GWF_apocalypse
+			add_stability = -0.25
+		}
+		set_temp_variable = { gdp_growth_temp = -2.5 }
+		econ_gdp_growth_change = yes
 	}
 }
 
@@ -1390,6 +1475,16 @@ shared_focus = {
 	y = 3
 	completion_reward = {
 		country_event = { id = GWF.39 }
+		every_country = {
+			limit = { is_in_faction_with = LHH }
+			capital_scope = {
+				add_manpower = -50000
+			}
+			add_ideas = GWF_apocalypse
+			add_stability = -0.25
+		}
+		set_temp_variable = { gdp_growth_temp = -2.5 }
+		econ_gdp_growth_change = yes
 	}
 }
 
@@ -1438,6 +1533,11 @@ shared_focus = {
 	y = 0
 	completion_reward = {
 		country_event = { id = GWF.42 }
+		every_owned_state = {
+			GWF = {
+				add_state_core = PREV
+			}
+		}
 	}
 }
 
@@ -1517,51 +1617,13 @@ shared_focus = {
 	x = -2
 	y = 1
 	completion_reward = {
-
-	}
-}
-
-shared_focus = {
-	id = GWF_SS_experience
-	icon = GFX_GWF_SS_experience
-	cost = 1
-	available_if_capitulated = no
-	mutually_exclusive = {
-		focus = GWF_find_the_compromise
-	}
-	ai_will_do = {
-		factor = 1
-	}
-	prerequisite = {
-		focus = GWF_end_the_unloyal
-	}
-	relative_position_id = GWF_end_the_unloyal
-	x = -1
-	y = 1
-	completion_reward = {
-		country_event = { id = GWF.45 }
-	}
-}
-
-shared_focus = {
-	id = GWF_find_the_compromise
-	icon = GFX_GWF_find_the_compromise
-	cost = 1
-	available_if_capitulated = no
-	mutually_exclusive = {
-		focus = GWF_SS_experience
-	}
-	ai_will_do = {
-		factor = 1
-	}
-	prerequisite = {
-		focus = GWF_end_the_unloyal
-	}
-	relative_position_id = GWF_end_the_unloyal
-	x = 1 
-	y = 1
-	completion_reward = {
-		country_event = { id = GWF.46 }
+		if = {
+			limit = { check_variable = { GWF_evil_flags > 2 } }
+			country_event = { id = GWF.45 }
+		}
+		else = {
+			country_event = { id = GWF.46 }
+		}
 	}
 }
 
@@ -1574,12 +1636,11 @@ shared_focus = {
 		factor = 1
 	}
 	prerequisite = {
-		focus = GWF_find_the_compromise
-		focus = GWF_SS_experience
+		focus = GWF_end_the_unloyal
 	}
 	relative_position_id = GWF_end_the_unloyal
 	x = 0
-	y = 2
+	y = 1
 	completion_reward = {
 		country_event = { id = GWF.47 }
 	}
@@ -1600,51 +1661,13 @@ shared_focus = {
 	x = 2
 	y = 1
 	completion_reward = {
-
-	}
-}
-
-shared_focus = {
-	id = GWF_should_be_thrown_out
-	icon = GFX_GWF_should_be_thrown_out
-	cost = 1
-	available_if_capitulated = no
-	mutually_exclusive = {
-		focus = GWF_will_have_new_meaning
-	}
-	ai_will_do = {
-		factor = 1
-	}
-	prerequisite = {
-		focus = GWF_useless_instruments
-	}
-	relative_position_id = GWF_useless_instruments
-	x = -1
-	y = 1
-	completion_reward = {
-		country_event = { id = GWF.48 }
-	}
-}
-
-shared_focus = {
-	id = GWF_will_have_new_meaning
-	icon = GFX_GWF_will_have_new_meaning
-	cost = 1
-	available_if_capitulated = no
-	mutually_exclusive = {
-		focus = GWF_should_be_thrown_out
-	}
-	ai_will_do = {
-		factor = 1
-	}
-	prerequisite = {
-		focus = GWF_useless_instruments
-	}
-	relative_position_id = GWF_useless_instruments
-	x = 1
-	y = 1
-	completion_reward = {
-		country_event = { id = GWF.49 }
+		if = {
+			limit = { check_variable = { GWF_evil_flags > 2 } }
+			country_event = { id = GWF.48 }
+		}
+		else = {
+			country_event = { id = GWF.49 }
+		}
 	}
 }
 
@@ -1657,14 +1680,15 @@ shared_focus = {
 		factor = 1
 	}
 	prerequisite = {
-		focus = GWF_will_have_new_meaning
-		focus = GWF_should_be_thrown_out
+		focus = GWF_useless_instruments
 	}
 	relative_position_id = GWF_useless_instruments
 	x = 0
-	y = 2
+	y = 1
 	completion_reward = {
 		country_event = { id = GWF.50 }
+		remove_ideas = GWF_Kyubey_hog
+		add_ideas = GWF_Generic_Vacant_hog
 	}
 }
 
@@ -1683,7 +1707,7 @@ shared_focus = {
 	x = 0
 	y = 1
 	completion_reward = {
-
+		
 	}
 }
 
@@ -1700,7 +1724,7 @@ shared_focus = {
 	}
 	relative_position_id = GWF_total_expansion
 	x = 0
-	y = 2
+	y = 1
 	completion_reward = {
 		country_event = { id = GWF.51 }
 	}

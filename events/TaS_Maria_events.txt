@@ -1,6 +1,9 @@
 add_namespace = MAR_maria
 add_namespace = maria_magica
 add_namespace = SWRW_april_fools
+
+add_namespace = SWRW_april_fools_news
+
 #########################################################
 ###／人◕ ‿‿ ◕人＼ - <Do you want to make a contract?> ###
 #########################################################
@@ -20,7 +23,7 @@ country_event = { #The end of one, start of another
 	option = { #
 		name = MAR_maria.1.a
 		ai_chance = { factor = 1 }
-		retire_country_character = MAR_advisor_Kosygin
+		retire_character = MAR_advisor_Kosygin
 	}
 }
 
@@ -312,14 +315,21 @@ country_event = { #Dubia - Maria
 	title = maria_magica.1.t
 	desc = maria_magica.1.d
 	picture = GFX_event_maria_magica_1
-	
-	is_triggered_only = yes
+	trigger = {
+		tag = MAR
+		NOT = { has_completed_focus = MAR_to_urgent_matters }
+		focus_progress = {
+			focus = MAR_to_urgent_matters
+			progress > 0.02
+		}
+	}
 	fire_only_once = yes
 	
 	option = { #
 		name = maria_magica.1.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = maria_magica1_tt
+		hidden_effect = { country_event = { id = maria_magica.2 } }
 	}
 }
 
@@ -336,7 +346,8 @@ country_event = { #Somnium - Maria
 	option = { #
 		name = maria_magica.2.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = maria_magica2_tt
+		hidden_effect = { country_event = { id = maria_magica.3 } }
 	}
 }
  
@@ -353,7 +364,8 @@ country_event = { #Conventus - Maria
 	option = { #
 		name = maria_magica.3.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = maria_magica3_tt
+		hidden_effect = { country_event = { id = maria_magica.4 days = 7 } }
 	}
 }
 
@@ -370,7 +382,8 @@ country_event = { #Votum - Maria
 	option = { #
 		name = maria_magica.4.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = maria_magica4_tt
+		hidden_effect = { country_event = { id = maria_magica.5 days = 34 } }
 	}
 }
 
@@ -387,7 +400,8 @@ country_event = { #Two dynasties - Belozersky and Vladimir
 	option = { #
 		name = maria_magica.5.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = maria_magica5_tt
+		hidden_effect = { country_event = { id = maria_magica.6 days = 11 } }
 	}
 }
 
@@ -404,7 +418,8 @@ country_event = { #First attemps - Maria
 	option = { #
 		name = maria_magica.6.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = maria_magica6_tt
+		hidden_effect = { country_event = { id = maria_magica.7 days = 43 } }
 	}
 }
 
@@ -421,7 +436,8 @@ country_event = { #Searches - Maria
 	option = { #
 		name = maria_magica.7.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = maria_magica7_tt
+		hidden_effect = { country_event = { id = maria_magica.8 days = 36 } }
 	}
 }
 
@@ -438,7 +454,8 @@ country_event = { #Companions - Maria and Sophia
 	option = { #
 		name = maria_magica.8.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = maria_magica8_tt
+		hidden_effect = { country_event = { id = maria_magica.9 days = 95 } }
 	}
 }
 
@@ -455,7 +472,8 @@ country_event = { #Team - Maria and Sophia
 	option = { #
 		name = maria_magica.9.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = maria_magica9_tt
+		hidden_effect = { country_event = { id = maria_magica.10 days = 74 } }
 	}
 }
 
@@ -472,11 +490,12 @@ country_event = { #Catastrophe - Maria and Sophia
 	option = { #
 		name = maria_magica.10.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = maria_magica10_tt
+		hidden_effect = { country_event = { id = maria_magica.11 days = 56 } }
 	}
 }
 
-country_event = { #We will meet each other soon later - Maria and Sophia
+country_event = { #Long Night - Maria and Sophia
 	id = maria_magica.11
 	immediate = { log = "[GetDateText]: [Root.GetName]: event maria_magica.11" }
 	title = maria_magica.11.t
@@ -489,7 +508,31 @@ country_event = { #We will meet each other soon later - Maria and Sophia
 	option = { #
 		name = maria_magica.11.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = maria_magica11_tt
+		214 = {
+			damage_building = {
+				type = infrastructure
+				damage = 2
+			}
+			damage_building = {
+				type = naval_base
+				damage = 1
+			}
+			damage_building = {
+				type = dockyard
+				damage = 1
+			}
+			add_state_modifier = {
+				modifier = {
+					state_GDP_growth_factor_modifier = -0.05
+				}
+			}
+		}
+		hidden_effect = {
+			country_event = { id = maria_magica.12 days = 800 }
+			country_event = { id = maria_magica.13 days = 142 }
+			news_event = { id = SWRW_april_fools_news.2 }
+		}
 	}
 }
 
@@ -506,7 +549,7 @@ country_event = { #Farewell - Maria
 	option = { #
 		name = maria_magica.12.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = maria_magica12_tt
 	}
 }
 
@@ -523,7 +566,8 @@ country_event = { #In the MVD - Lt. Prokopov
 	option = { #
 		name = maria_magica.13.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = maria_magica13_tt
+		hidden_effect = { country_event = { id = maria_magica.14 days = 31 } }
 	}
 }
 
@@ -540,7 +584,8 @@ country_event = { #Investigation - Lt. Prokopov
 	option = { #
 		name = maria_magica.14.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = maria_magica14_tt
+		hidden_effect = { country_event = { id = maria_magica.15 days = 43 } }
 	}
 }
 
@@ -557,7 +602,8 @@ country_event = { #Walking around - Lt. Prokopov
 	option = { #
 		name = maria_magica.15.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = maria_magica15_tt
+		hidden_effect = { country_event = { id = maria_magica.16 hours = 2 } }
 	}
 }
 
@@ -574,7 +620,12 @@ country_event = { #What the... - First Lt. Prokopov
 	option = { #
 		name = maria_magica.16.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = maria_magica16_tt
+		hidden_effect = {
+			country_event = { id = maria_magica.17 days = 341 }
+			country_event = { id = maria_magica.18 days = 98 }
+			country_event = { id = maria_magica.17 days = 231 }
+		}
 	}
 }
 
@@ -591,6 +642,7 @@ country_event = { #Vow - Monach Prokopov
 	option = { #
 		name = maria_magica.17.a
 		ai_chance = { factor = 1 }
+		custom_effect_tooltip = maria_magica17_tt
 	}
 }
 
@@ -605,8 +657,9 @@ country_event = { #The White Beast - Grishka and Father Innokentiy
 	fire_only_once = yes
 	
 	option = { #
-		name = maria_magica.17.a
+		name = maria_magica.18.a
 		ai_chance = { factor = 1 }
+		custom_effect_tooltip = maria_magica18_tt
 	}
 }
 
@@ -623,6 +676,7 @@ country_event = { #Catching the waves - unnamed radio amateur, John Alexander ra
 	option = { #
 		name = maria_magica.19.a
 		ai_chance = { factor = 1 }
+		custom_effect_tooltip = maria_magica19_tt
 	}
 }
 
@@ -674,7 +728,7 @@ country_event = { #Sea Lions
 	option = { #
 		name = SWRW_april_fools.2.a
 		ai_chance = { factor = 1 }
-		country_event = { id = SWRW_april_fools.3 }
+		country_event = { id = SWRW_april_fools.3 hours = 3 }
 	}
 }
 
@@ -691,7 +745,7 @@ country_event = { #There's a hole, comrade Nikonov
 	option = { #
 		name = SWRW_april_fools.3.a
 		ai_chance = { factor = 1 }
-		country_event = { id = SWRW_april_fools.4 }
+		country_event = { id = SWRW_april_fools.4 hours = 2 }
 	}
 }
 
@@ -708,7 +762,7 @@ country_event = { #Strange Item
 	option = { #
 		name = SWRW_april_fools.4.a
 		ai_chance = { factor = 1 }
-		country_event = { id = SWRW_april_fools.5 }
+		country_event = { id = SWRW_april_fools.5 hours = 6 }
 	}
 }
 
@@ -748,7 +802,43 @@ country_event = { #Recursion
 					add_core_of = FRA
 				}
 			}
+			every_country = {
+				limit = {
+					is_in_faction_with = GER 
+				}
+				econ_leave_sphere = yes
+				leave_faction = yes	
+				remove_faction_status = yes
+				if = {
+					limit = { has_global_flag = german_civil_war_speervic }
+					leave_zollverein = yes
+				}
+			}
+			every_country = {
+				limit = {
+					check_variable = { econ_sphere_leader = GER }
+				}
+				econ_leave_sphere = yes
+				if = {
+					limit = { has_global_flag = german_civil_war_speervic }
+					leave_zollverein = yes
+				}
+			}
+			every_country = {
+				limit = {
+					has_idea = Pakt_Observer
+				}
+				remove_ideas = Pakt_Observer
+			}
+			GER = {
+				dismantle_faction = yes
+			}
 			TaS_WRW2_German_Collapse_Beloozersky = yes
+			
+			BRL = {
+				change_tag_from = ROOT
+				country_event = { id = SWRW_april_fools.6 days = 3 }
+			}	
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -767,7 +857,8 @@ country_event = { #On the Call
 	option = { #
 		name = SWRW_april_fools.6.a
 		ai_chance = { factor = 1 }
-		country_event = { id = SWRW_april_fools.7 }
+		custom_effect_tooltip = SWRW_april_fools6_tt
+		hidden_effect = { country_event = { id = SWRW_april_fools.7 hours = 12 } }
 	}
 }
 
@@ -783,8 +874,13 @@ country_event = { #HOLY SHIT THE SKIES
 	
 	option = { #
 		name = SWRW_april_fools.7.a
+		custom_effect_tooltip = SWRW_april_fools7_tt
 		ai_chance = { factor = 1 }
-		country_event = { id = SWRW_april_fools.8 }
+		hidden_effect = {
+			country_event = { id = SWRW_april_fools.8 days = 10 }
+			MAR_no_more_russia_bros = yes
+			MAR_German_Collapse_TRVTHNUKE = yes
+		}
 	}
 }
 
@@ -801,5 +897,63 @@ country_event = { #Brave New World
 	option = { #
 		name = SWRW_april_fools.8.a
 		ai_chance = { factor = 1 }
+		custom_effect_tooltip = SWRW_april_fools8_tt
+		hidden_effect = {
+			GWF_initiate = yes
+		}
+	}
+}
+
+##news_events 
+
+news_event = { #Something happened in Bornholme
+	id = SWRW_april_fools_news.1
+	title = SWRW_april_fools_news.1.t
+	desc = SWRW_april_fools_news.1.d
+	picture = GFX_SWRW_april_fools_news_001
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = SWRW_april_fools_news.1.a
+	}
+}
+
+news_event = { # Walpurgisnacht: Arkhangelsk
+	id = SWRW_april_fools_news.2
+	title = SWRW_april_fools_news.2.t
+	desc = SWRW_april_fools_news.2.d
+	picture = SWRW_april_fools_news_002
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = SWRW_april_fools_news.2.a
+	}
+}
+
+news_event = { #Something DEFINETELY happened in Bornholme
+	id = SWRW_april_fools_news.3
+	title = SWRW_april_fools_news.3.t
+	desc = SWRW_april_fools_news.3.d
+	picture = SWRW_april_fools_news_003
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = SWRW_april_fools_news.1.a
+	}
+}
+
+news_event = { # Gay frogs died sadge
+	id = SWRW_april_fools_news.4
+	title = SWRW_april_fools_news.4.t
+	desc = SWRW_april_fools_news.4.d
+	picture = SWRW_april_fools_news_004
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = SWRW_april_fools_news.4.a
 	}
 }

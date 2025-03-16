@@ -1638,6 +1638,17 @@ country_event = { # MAR_Mladorosskay_mechta
 			limit = { has_government = socialist }
 			load_focus_tree = MAR_Kosygin_Regional
 		}
+		if = {
+			limit = { 
+				has_game_rule = {
+					rule = april_fools_content_status
+					option = APRIL_FOOLS_ENABLED
+				}
+				has_government = paternalism
+			}
+			load_focus_tree = MAR_Maria_Regional
+		}
+		
 		hidden_effect = {
 			if = {
 				limit = { check_variable = { KOM.KOM_leader_status^6 > 1 } }

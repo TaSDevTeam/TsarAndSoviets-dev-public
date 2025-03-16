@@ -166,7 +166,31 @@ change_ruling_party_pop_modified = {
 		PARTY = "[?current_gov.GetTokenKey]"
 	}	
 }
-
+MAR_no_more_russia_bros = {
+	every_country = {
+		limit = {
+			is_in_faction_with = MAR 
+		}
+		econ_leave_sphere = yes
+		leave_faction = yes	
+		remove_faction_status = yes
+	}
+	every_country = {
+		limit = {
+			check_variable = { econ_sphere_leader = MAR }
+		}
+		econ_leave_sphere = yes
+	}
+	every_country = {
+		limit = {
+			has_idea = RUSAlliance_Observer
+		}
+		remove_ideas = RUSAlliance_Observer
+	}
+	MAR = {
+		dismantle_faction = yes
+	}
+}
 MAR_German_Collapse_TRVTHNUKE = {
 	189 = { clr_state_flag = GET_TRVTHNUKED_BITCH }
 	1401 = { clr_state_flag = GET_TRVTHNUKED_BITCH }
@@ -335,6 +359,14 @@ MAR_German_Collapse_TRVTHNUKE = {
 	NRL = {
 		annex_country = {
 			target = RUS
+			transfer_troops = no
+		}
+		annex_country = {
+			target = MKZ
+			transfer_troops = no
+		}
+		annex_country = {
+			target = MTR
 			transfer_troops = no
 		}
 		set_cosmetic_tag = NRL_trvthnuke

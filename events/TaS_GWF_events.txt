@@ -1,4 +1,5 @@
 add_namespace = GWF
+add_namespace = GER_AF_skeleton
 
 country_event = { #GWF_start_from_scratch
 	id = GWF.1
@@ -522,7 +523,21 @@ country_event = { #GWF_operation_occasus
 	option = { #
 		name = GWF.31.a
 		ai_chance = { factor = 1 }
-		
+		load_focus_tree = GWF_Homura_War
+		every_country = {
+			limit = { is_in_faction_with = GWF }
+			declare_war_on = {
+				target = LHH
+				type = annex_everything
+			}
+		}	
+		every_country = {
+			limit = { is_in_faction_with = LHH }
+			declare_war_on = {
+				target = GWF
+				type = annex_everything
+			}
+		}	
 	}
 }
 
@@ -662,7 +677,7 @@ country_event = { #GWF_second_sun
 	}
 }
 
-country_event = { #GWF_great_betrayal
+country_event = { #GWF_great_betrayal EVIL
 	id = GWF.40
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.40" }
 	title = GWF.40.t
@@ -675,11 +690,16 @@ country_event = { #GWF_great_betrayal
 	option = { #
 		name = GWF.40.a
 		ai_chance = { factor = 1 }
-		
+		every_country = {
+			limit = { is_in_faction_with = GWF } 
+			every_owned_state = {
+				transfer_state_to = GWF
+			}
+		}
 	}
 }
 
-country_event = { #GWF_great_betrayal
+country_event = { #GWF_great_betrayal GOOD
 	id = GWF.41
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.41" }
 	title = GWF.41.t
@@ -692,7 +712,12 @@ country_event = { #GWF_great_betrayal
 	option = { #
 		name = GWF.41.a
 		ai_chance = { factor = 1 }
-		
+		every_country = {
+			limit = { is_in_faction_with = GWF } 
+			every_owned_state = {
+				transfer_state_to = GWF
+			}
+		}
 	}
 }
 
@@ -1826,3 +1851,689 @@ country_event = { #
 	}
 }
 
+country_event = { #Norway CW - Klaus Schwab vs Chudjak
+	id = GER_AF_skeleton.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_AF_skeleton.1" }
+	title = GER_AF_skeleton.1.t
+	desc = GER_AF_skeleton.1.desc
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_AF_skeleton.1.a
+		ai_chance = { factor = 1 }
+		GNR = {
+			declare_war_on = {
+				target = APF
+				type = annex_everything
+			}
+		}
+		APF = {
+			declare_war_on = {
+				target = GNR
+				type = annex_everything
+			}
+		}
+	}
+}
+country_event = { #Norway CW - winner invades boringness
+	id = GER_AF_skeleton.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_AF_skeleton.2" }
+	title = GER_AF_skeleton.2.t
+	desc = GER_AF_skeleton.2.desc
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_AF_skeleton.1.a
+		ai_chance = { factor = 1 }
+		declare_war_on = {
+			target = ISS
+			type = annex_everything
+		}
+	}
+}
+
+country_event = { #Norway CW - winner wants denmark
+	id = GER_AF_skeleton.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_AF_skeleton.3" }
+	title = GER_AF_skeleton.3.t
+	desc = GER_AF_skeleton.3.desc
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_AF_skeleton.1.a
+		ai_chance = { factor = 1 }
+		declare_war_on = {
+			target = DEN
+			type = annex_everything
+		}
+		division_template = {
+			name = "Marines"
+			is_locked = yes
+			regiments = {
+				marine = { x = 0 y = 0 }
+				marine = { x = 0 y = 1 }
+				marine = { x = 0 y = 2 }
+				marine = { x = 1 y = 0 }
+				marine = { x = 1 y = 1 }
+				marine = { x = 1 y = 2 }
+			}
+			support = {
+				signal_company = { x = 0 y = 0 }
+				engineer = { x = 0 y = 1 }
+				artillery = { x = 0 y = 2 }
+			}
+		}
+		1372 = {
+			create_unit = {
+				division = "division_template = \"Marines\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				allow_spawning_on_enemy_provs = yes
+				prioritize_location = 394
+				owner = ROOT
+				count = 1
+			}
+			create_unit = {
+				division = "division_template = \"Marines\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				allow_spawning_on_enemy_provs = yes
+				prioritize_location = 6235
+				owner = ROOT
+				count = 1
+			}
+		}
+		99 = {
+			create_unit = {
+				division = "division_template = \"Marines\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				allow_spawning_on_enemy_provs = yes
+				prioritize_location = 6364
+				owner = ROOT
+				count = 1
+			}
+		}
+		991 = {
+			create_unit = {
+				division = "division_template = \"Marines\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				allow_spawning_on_enemy_provs = yes
+				prioritize_location = 3325
+				owner = ROOT
+				count = 1
+			}
+		}
+		2463 = {
+			create_unit = {
+				division = "division_template = \"Marines\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				allow_spawning_on_enemy_provs = yes
+				prioritize_location = 5621
+				owner = ROOT
+				count = 2
+			}
+			create_unit = {
+				division = "division_template = \"Marines\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				allow_spawning_on_enemy_provs = yes
+				prioritize_location = 6393
+				owner = ROOT
+				count = 2
+			}
+		}
+	}
+}
+
+country_event = { #Burgundian CW - battle royale dumbass
+	id = GER_AF_skeleton.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_AF_skeleton.4" }
+	title = GER_AF_skeleton.4.t
+	desc = GER_AF_skeleton.4.desc
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_AF_skeleton.4.a
+		ai_chance = { factor = 1 }
+		GHL = {
+			declare_war_on = {
+				target = BEL
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = SSN
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = SSL
+				type = annex_everything
+			}
+		}
+		BEL = {
+			declare_war_on = {
+				target = GHL
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = SSN
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = SSL
+				type = annex_everything
+			}
+		}
+		SSN = {
+			declare_war_on = {
+				target = GHL
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = BEL
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = SSL
+				type = annex_everything
+			}
+		}
+		SSL = {
+			declare_war_on = {
+				target = GHL
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = BEL
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = SSN
+				type = annex_everything
+			}
+		}
+	}
+}
+
+country_event = { #Northern German CW - Afton invades Meinhoff
+	id = GER_AF_skeleton.5
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_AF_skeleton.5" }
+	title = GER_AF_skeleton.5.t
+	desc = GER_AF_skeleton.5.desc
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_AF_skeleton.1.a
+		ai_chance = { factor = 1 }
+		GWS = {
+			declare_war_on = {
+				target = GRH
+				type = annex_everything
+			}
+		}
+	}
+}
+
+country_event = { #Northern German CW - Honnecker invades Berlin
+	id = GER_AF_skeleton.6
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_AF_skeleton.6" }
+	title = GER_AF_skeleton.6.t
+	desc = GER_AF_skeleton.6.desc
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_AF_skeleton.6.a
+		ai_chance = { factor = 1 }
+		ZNE = {
+			declare_war_on = {
+				target = BRL
+				type = annex_everything
+			}
+		}
+	}
+}
+
+country_event = { #Northern German CW - Silesia invades Czechia
+	id = GER_AF_skeleton.7
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_AF_skeleton.7" }
+	title = GER_AF_skeleton.7.t
+	desc = GER_AF_skeleton.7.desc
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_AF_skeleton.7.a
+		ai_chance = { factor = 1 }
+		GSI = {
+			declare_war_on = {
+				target = GCZ
+				type = annex_everything
+			}
+		}
+	}
+}
+country_event = { #Northern German CW - Afton/Meinhoff wants Mesa
+	id = GER_AF_skeleton.8
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_AF_skeleton.8" }
+	title = GER_AF_skeleton.8.t
+	desc = GER_AF_skeleton.8.desc
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_AF_skeleton.8.a
+		ai_chance = { factor = 1 }
+		declare_war_on = {
+			target = GDN
+			type = annex_everything
+		}
+	}
+}
+
+country_event = { #Northern German CW - Honecker/Bateman wants Czechia
+	id = GER_AF_skeleton.9
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_AF_skeleton.9" }
+	title = GER_AF_skeleton.9.t
+	desc = GER_AF_skeleton.9.desc
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_AF_skeleton.9.a
+		ai_chance = { factor = 1 }
+		declare_war_on = {
+			target = GCZ
+			type = annex_everything
+		}
+		declare_war_on = {
+			target = GSI
+			type = annex_everything
+		}
+	}
+}
+
+country_event = { #Northern German CW - winner invades west 
+	id = GER_AF_skeleton.10
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_AF_skeleton.10" }
+	title = GER_AF_skeleton.10.t
+	desc = GER_AF_skeleton.10.desc
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_AF_skeleton.10.a
+		ai_chance = { factor = 1 }
+		declare_war_on = {
+			target = GWS
+			type = annex_everything
+		}
+		declare_war_on = {
+			target = GRH
+			type = annex_everything
+		}
+		declare_war_on = {
+			target = GDN
+			type = annex_everything
+		}
+	}
+}
+
+country_event = { #Northern German CW - NGE vs NDN
+	id = GER_AF_skeleton.11
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_AF_skeleton.1" }
+	title = GER_AF_skeleton.11.t
+	desc = GER_AF_skeleton.11.desc
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_AF_skeleton.9.a
+		ai_chance = { factor = 1 }
+		declare_war_on = {
+			target = NDN
+			type = annex_everything
+		}
+		division_template = {
+			name = "Marines"
+			is_locked = yes
+			regiments = {
+				marine = { x = 0 y = 0 }
+				marine = { x = 0 y = 1 }
+				marine = { x = 0 y = 2 }
+				marine = { x = 1 y = 0 }
+				marine = { x = 1 y = 1 }
+				marine = { x = 1 y = 2 }
+			}
+			support = {
+				signal_company = { x = 0 y = 0 }
+				engineer = { x = 0 y = 1 }
+				artillery = { x = 0 y = 2 }
+			}
+		}
+		898	= {
+			create_unit = {
+				division = "division_template = \"Marines\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				allow_spawning_on_enemy_provs = yes
+				prioritize_location = 9296
+				owner = ROOT
+				count = 1
+			}
+			create_unit = {
+				division = "division_template = \"Marines\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				allow_spawning_on_enemy_provs = yes
+				prioritize_location = 11367
+				owner = ROOT
+				count = 1
+			}
+		}
+		2136 = {
+			create_unit = {
+				division = "division_template = \"Marines\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				allow_spawning_on_enemy_provs = yes
+				prioritize_location = 11176
+				owner = ROOT
+				count = 1
+			}
+		}
+		899 = {
+			create_unit = {
+				division = "division_template = \"Marines\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				allow_spawning_on_enemy_provs = yes
+				prioritize_location = 6151
+				owner = ROOT
+				count = 1
+			}
+		}
+		2135 = {
+			create_unit = {
+				division = "division_template = \"Marines\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				allow_spawning_on_enemy_provs = yes
+				prioritize_location = 14
+				owner = ROOT
+				count = 1
+			}
+			create_unit = {
+				division = "division_template = \"Marines\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				allow_spawning_on_enemy_provs = yes
+				prioritize_location = 9174
+				owner = ROOT
+				count = 1
+			}
+		}
+		2132 = {
+			create_unit = {
+				division = "division_template = \"Marines\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				allow_spawning_on_enemy_provs = yes
+				prioritize_location = 18368
+				owner = ROOT
+				count = 1
+			}
+		}
+		143 = {
+			create_unit = {
+				division = "division_template = \"Marines\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				allow_spawning_on_enemy_provs = yes
+				prioritize_location = 3022
+				owner = ROOT
+				count = 1
+			}
+		}
+		142 = {
+			create_unit = {
+				division = "division_template = \"Marines\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				allow_spawning_on_enemy_provs = yes
+				prioritize_location = 122
+				owner = ROOT
+				count = 1
+			}
+		}
+	}
+}
+
+country_event = { #Eastern German CW - Everyone against Ukraine
+	id = GER_AF_skeleton.12
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_AF_skeleton.12" }
+	title = GER_AF_skeleton.12.t
+	desc = GER_AF_skeleton.12.desc
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_AF_skeleton.12.a
+		ai_chance = { factor = 1 }
+		PUS = {
+			declare_war_on = {
+				target = MUK
+				type = annex_everything
+			}
+		}
+		LIT = {
+			declare_war_on = {
+				target = MUK
+				type = annex_everything
+			}
+		}
+		GPL = {
+			declare_war_on = {
+				target = MUK
+				type = annex_everything
+			}
+		}
+		GSV = {
+			declare_war_on = {
+				target = MUK
+				type = annex_everything
+			}
+		}
+		MBL = {
+			declare_war_on = {
+				target = MUK
+				type = annex_everything
+			}
+		}
+	}
+}
+
+country_event = { #Eastern German CW - Everyone against Belarus
+	id = GER_AF_skeleton.13
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_AF_skeleton.13" }
+	title = GER_AF_skeleton.13.t
+	desc = GER_AF_skeleton.13.desc
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_AF_skeleton.12.a
+		ai_chance = { factor = 1 }
+		PUS = {
+			declare_war_on = {
+				target = MBL
+				type = annex_everything
+			}
+		}
+		LIT = {
+			declare_war_on = {
+				target = MBL
+				type = annex_everything
+			}
+		}
+		GPL = {
+			declare_war_on = {
+				target = MBL
+				type = annex_everything
+			}
+		}
+		GSV = {
+			declare_war_on = {
+				target = MBL
+				type = annex_everything
+			}
+		}
+	}
+}
+
+country_event = { #Eastern German CW - Everyone against Bydlo
+	id = GER_AF_skeleton.14
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_AF_skeleton.14" }
+	title = GER_AF_skeleton.14.t
+	desc = GER_AF_skeleton.14.desc
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_AF_skeleton.12.a
+		ai_chance = { factor = 1 }
+		PUS = {
+			declare_war_on = {
+				target = LIT
+				type = annex_everything
+			}
+		}
+		GPL = {
+			declare_war_on = {
+				target = LIT
+				type = annex_everything
+			}
+		}
+		GSV = {
+			declare_war_on = {
+				target = LIT
+				type = annex_everything
+			}
+		}
+	}
+}
+
+country_event = { #Eastern German CW - Everyone against Poland
+	id = GER_AF_skeleton.15
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_AF_skeleton.15" }
+	title = GER_AF_skeleton.15.t
+	desc = GER_AF_skeleton.15.desc
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_AF_skeleton.12.a
+		ai_chance = { factor = 1 }
+		PUS = {
+			declare_war_on = {
+				target = GPL
+				type = annex_everything
+			}
+		}
+		GSV = {
+			declare_war_on = {
+				target = GPL
+				type = annex_everything
+			}
+		}
+	}
+}
+
+country_event = { #Russia... reunifies
+	id = GER_AF_skeleton.16
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_AF_skeleton.16" }
+	title = GER_AF_skeleton.16.t
+	desc = GER_AF_skeleton.16.desc
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_AF_skeleton.16.solzhenitsyn
+		ai_chance = { factor = 1 }
+		
+	}
+	option = { #
+		name = GER_AF_skeleton.16.yezhov
+		ai_chance = { factor = 1 }
+		
+	}
+	option = { #
+		name = GER_AF_skeleton.16.mayakovskiy
+		ai_chance = { factor = 1 }
+		
+	}
+	option = { #
+		name = GER_AF_skeleton.16.sablin
+		ai_chance = { factor = 1 }
+		
+	}
+	option = { #
+		name = GER_AF_skeleton.16.dirlewanger
+		ai_chance = { factor = 1 }
+		
+	}
+	option = { #
+		name = GER_AF_skeleton.16.batov
+		ai_chance = { factor = 1 }
+		
+	}
+	option = { #
+		name = GER_AF_skeleton.16.pavlenko
+		ai_chance = { factor = 1 }
+		
+	}
+	option = { #
+		name = GER_AF_skeleton.16.communes
+		ai_chance = { factor = 1 }
+		
+	}
+	option = { #
+		name = GER_AF_skeleton.16.yeltsin
+		ai_chance = { factor = 1 }
+		
+	}
+	option = { #
+		name = GER_AF_skeleton.16.buckharin
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Third Westrussian War
+	id = GER_AF_skeleton.17
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_AF_skeleton.17" }
+	title = GER_AF_skeleton.17.t
+	desc = GER_AF_skeleton.17.desc
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_AF_skeleton.12.a
+		ai_chance = { factor = 1 }
+		annex_country = {
+			target = MCW
+			transfer_troops = no
+		}
+	}
+}
