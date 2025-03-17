@@ -411,6 +411,23 @@ defined_text = {
 		localization_key = GFX_Speer_Alliance_Member
 	}
 	
+	text = {
+		trigger = { has_idea = United_Nations_USA }
+		localization_key = GFX_United_Nations_USA
+	}
+	text = {
+		trigger = { has_idea = United_Nations_JAP }
+		localization_key = GFX_United_Nations_JAP
+	}
+	text = {
+		trigger = { has_idea = United_Nations_Member }
+		localization_key = GFX_United_Nations_Member
+	}
+	text = {
+		trigger = { has_idea = United_Nations_Bordering_Member }
+		localization_key = GFX_United_Nations_Bordering_Member
+	}
+	
 	#Generic
 	text = {
 		localization_key = "GFX_generic_faction_small"

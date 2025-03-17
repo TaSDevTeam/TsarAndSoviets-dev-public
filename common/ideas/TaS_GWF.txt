@@ -10,8 +10,8 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAN_civil_war
-			modifier = {
+			picture = GWF_chaos_in_stuttgart
+			modifier = {	
 				political_power_factor = -0.15
 				academic_base_monthly_rate = -1
 				industrial_expertise_monthly_rate = -1
@@ -28,7 +28,7 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAN_civil_war
+			picture = GWF_chaos_in_stuttgart
 			modifier = {
 				political_power_factor = -0.05
 				academic_base_monthly_rate = -0.25
@@ -46,7 +46,7 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAN_civil_war
+			picture = GWF_for_madoka
 			modifier = {
 				stability_factor = -0.15
 				army_core_defence_factor = 0.3
@@ -78,7 +78,7 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAN_civil_war
+			picture = generic_officer_expansion
 			modifier = {
 				army_attack_factor = -0.05
 				army_defence_factor = -0.05
@@ -95,7 +95,7 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAN_civil_war
+			picture = GWF_meguca_army
 			modifier = {
 				army_attack_factor = 0.25
 				army_defence_factor = 0.25
@@ -112,7 +112,7 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAN_civil_war
+			picture = GWF_southgerman_war
 			modifier = {
 				surrender_limit = 0.5
 				army_speed_factor = -0.1
@@ -127,7 +127,7 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAN_civil_war
+			picture = GWF_Homura_personal	
 			modifier = {
 				army_attack_factor = 0.25
 				army_defence_factor = 0.25
@@ -144,7 +144,7 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = MAN_civil_war
+			picture = GWF_nuclear_destruction
 			modifier = {
 				weekly_manpower = -5000
 				monthly_population = -0.75
@@ -157,7 +157,7 @@ ideas = {
 			}
 			on_remove = { remove_dynamic_modifier = { modifier = GWF_Homura_modifier } }
 			removal_cost = -1
-			picture = generic_mysterious_insurgency
+			picture = GFX_Homura_Alliance_Member
 		}
 		GWF_opposition_modifier_dummy = {
 			allowed = {
@@ -165,7 +165,7 @@ ideas = {
 			}
 			on_remove = { remove_dynamic_modifier = { modifier = GWF_opposition_modifier } }
 			removal_cost = -1
-			picture = MAR_ogas
+			picture = generic_mysterious_insurgency
 		}
 		
 	}
@@ -181,6 +181,43 @@ ideas = {
 		}
 		Speer_Alliance_Member = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea Speer_Alliance_Member" }
+			allowed = { always = no }
+			allowed_civil_war = { always = no }
+
+			modifier = {
+				annual_gdp_growth_factor = 0.1
+			}
+		}
+		
+		United_Nations_USA = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea United_Nations_USA" }
+			allowed = { always = no }
+			allowed_civil_war = { always = no }
+
+			modifier = {
+				annual_gdp_growth_factor = 0.1
+			}
+		}
+		United_Nations_JAP = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea United_Nations_JAP" }
+			allowed = { always = no }
+			allowed_civil_war = { always = no }
+
+			modifier = {
+				annual_gdp_growth_factor = 0.1
+			}
+		}
+		United_Nations_Member = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea United_Nations_Member" }
+			allowed = { always = no }
+			allowed_civil_war = { always = no }
+
+			modifier = {
+				annual_gdp_growth_factor = 0.1
+			}
+		}
+		United_Nations_Bordering_Member = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea United_Nations_Bordering_Member" }
 			allowed = { always = no }
 			allowed_civil_war = { always = no }
 

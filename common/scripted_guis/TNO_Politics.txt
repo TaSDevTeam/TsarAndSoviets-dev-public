@@ -198,6 +198,15 @@ scripted_gui = {
 				is_in_faction = yes
 				has_idea = Speer_Alliance_Member
 			}
+			faction_icon_United_Nations_visible = {
+				is_in_faction = yes
+				OR = {
+					has_idea = United_Nations_USA
+					has_idea = United_Nations_JAP
+					has_idea = United_Nations_Member
+					has_idea = United_Nations_Bordering_Member
+				}
+			}
 			faction_icon_generic_visible = {
 				is_in_faction = yes
 				#is_subject = no
@@ -273,6 +282,10 @@ scripted_gui = {
 					has_idea = HRF_Faction
 					has_idea = Homura_Alliance_Member
 					has_idea = Speer_Alliance_Member
+					has_idea = United_Nations_USA
+					has_idea = United_Nations_JAP
+					has_idea = United_Nations_Member
+					has_idea = United_Nations_Bordering_Member
 				}
 			}
 			current_faction_status_visible = {
