@@ -410,7 +410,7 @@ defined_text = { #Add more Diplo Incidents Here
 	}
 	text = {
 		trigger = { check_variable = { global.TNO_Cold_War_GUI_Tension_Tab_Incidents_List^TNO_Cold_War_GUI_Tension_Incidents_i = 34 } }
-		localization_key = "TNO_Cold_War_GUI_Tension_ID_German_American_Agreenment_Over_England"
+		localization_key = "TNO_Cold_War_GUI_Tension_ID_German_American_Agreement_Over_England"
 	}
 	text = {
 		trigger = { check_variable = { global.TNO_Cold_War_GUI_Tension_Tab_Incidents_List^TNO_Cold_War_GUI_Tension_Incidents_i = 35 } }
@@ -493,6 +493,10 @@ defined_text = { #Add more Diplo Incidents Here
 		localization_key = "TNO_Cold_War_GUI_Tension_ID_Kissinger_proxy_conflicts_clause"
 	}
 	text = {
+		trigger = { check_variable = { global.TNO_Cold_War_GUI_Tension_Tab_Incidents_List^TNO_Cold_War_GUI_Tension_Incidents_i = 55 } }
+		localization_key = "TNO_Cold_War_GUI_Tension_ID_WW3"
+	}
+	text = {
 		trigger = { check_variable = { global.TNO_Cold_War_GUI_Tension_Tab_Incidents_List^TNO_Cold_War_GUI_Tension_Incidents_i = 56 } }
 		localization_key = "TNO_Cold_War_GUI_Tension_ID_American_Embargo_Lifted"
 	}
@@ -501,8 +505,12 @@ defined_text = { #Add more Diplo Incidents Here
 		localization_key = "TNO_Cold_War_GUI_Tension_ID_SAW_Escalation"
 	}
 	text = {
-		trigger = { check_variable = { global.TNO_Cold_War_GUI_Tension_Tab_Incidents_List^TNO_Cold_War_GUI_Tension_Incidents_i = 55 } }
-		localization_key = "TNO_Cold_War_GUI_Tension_ID_WW3"
+		trigger = { check_variable = { global.TNO_Cold_War_GUI_Tension_Tab_Incidents_List^TNO_Cold_War_GUI_Tension_Incidents_i = 58 } }
+		localization_key = "TNO_Cold_War_GUI_Tension_ID_Operation_Big_Stick"
+	}
+	text = {
+		trigger = { check_variable = { global.TNO_Cold_War_GUI_Tension_Tab_Incidents_List^TNO_Cold_War_GUI_Tension_Incidents_i = 59 } }
+		localization_key = "TNO_Cold_War_GUI_Tension_ID_South_China_Sea_Incident"
 	}
 }
 

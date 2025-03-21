@@ -1322,77 +1322,11 @@ defined_text = {
 			add_to_temp_variable = { i = 1 }
 			set_temp_variable = { months = econ_graph_months^i }
 			modulo_temp_variable = { months = 12 }
-			check_variable = { months = 0 }
 		}
-		localization_key = econ_month_0
-	}
-	text = {
-		trigger = {
-			check_variable = { months = 1 }
-		}
-		localization_key = econ_month_1
-	}
-	text = {
-		trigger = {
-			check_variable = { months = 2 }
-		}
-		localization_key = econ_month_2
-	}
-	text = {
-		trigger = {
-			check_variable = { months = 3 }
-		}
-		localization_key = econ_month_3
-	}
-	text = {
-		trigger = {
-			check_variable = { months = 4 }
-		}
-		localization_key = econ_month_4
-	}
-	text = {
-		trigger = {
-			check_variable = { months = 5 }
-		}
-		localization_key = econ_month_5
-	}
-	text = {
-		trigger = {
-			check_variable = { months = 6 }
-		}
-		localization_key = econ_month_6
-	}
-	text = {
-		trigger = {
-			check_variable = { months = 7 }
-		}
-		localization_key = econ_month_7
-	}
-	text = {
-		trigger = {
-			check_variable = { months = 8 }
-		}
-		localization_key = econ_month_8
-	}
-	text = {
-		trigger = {
-			check_variable = { months = 9 }
-		}
-		localization_key = econ_month_9
-	}
-	text = {
-		trigger = {
-			check_variable = { months = 10 }
-		}
-		localization_key = econ_month_10
-	}
-	text = {
-		trigger = {
-			check_variable = { months = 11 }
-		}
-		localization_key = econ_month_11
+		localization_key = "econ_month_[?months]"
 	}
 }
+
 
 
 defined_text = {
@@ -3318,73 +3252,7 @@ defined_text = {
 defined_text = {
 	name = GetCreditRatingValue
 	text = {
-		trigger = {
-			check_variable = { credit_rating = 11 }
-		}
-		localization_key = TNO_econ_credit_11
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating = 10 }
-		}
-		localization_key = TNO_econ_credit_10
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating = 9 }
-		}
-		localization_key = TNO_econ_credit_9
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating = 8 }
-		}
-		localization_key = TNO_econ_credit_8
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating = 7 }
-		}
-		localization_key = TNO_econ_credit_7
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating = 6 }
-		}
-		localization_key = TNO_econ_credit_6
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating = 5 }
-		}
-		localization_key = TNO_econ_credit_5
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating = 4 }
-		}
-		localization_key = TNO_econ_credit_4
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating = 3 }
-		}
-		localization_key = TNO_econ_credit_3
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating = 2 }
-		}
-		localization_key = TNO_econ_credit_2
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating = 1 }
-		}
-		localization_key = TNO_econ_credit_1
-	}
-	text = {
-		localization_key = "ERROR"
+		localization_key = "TNO_econ_credit_[?credit_rating]"
 	}
 }
 
@@ -3405,134 +3273,14 @@ defined_text = {
 defined_text = {
 	name = GetCreditRatingMax
 	text = {
-		trigger = {
-			check_variable = { credit_rating_max = 10 }
-		}
-		localization_key = TNO_econ_credit_10
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating_max = 9 }
-		}
-		localization_key = TNO_econ_credit_9
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating_max = 8 }
-		}
-		localization_key = TNO_econ_credit_8
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating_max = 7 }
-		}
-		localization_key = TNO_econ_credit_7
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating_max = 6 }
-		}
-		localization_key = TNO_econ_credit_6
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating_max = 5 }
-		}
-		localization_key = TNO_econ_credit_5
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating_max = 4 }
-		}
-		localization_key = TNO_econ_credit_4
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating_max = 3 }
-		}
-		localization_key = TNO_econ_credit_3
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating_max = 2 }
-		}
-		localization_key = TNO_econ_credit_2
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating_max = 1 }
-		}
-		localization_key = TNO_econ_credit_1
-	}
-	text = {
-		localization_key = "ERROR"
+		localization_key = "TNO_econ_credit_[?credit_rating_max]"
 	}
 }
 
 defined_text = {
 	name = GetCreditRatingMin
 	text = {
-		trigger = {
-			check_variable = { credit_rating_min = 10 }
-		}
-		localization_key = TNO_econ_credit_10
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating_min = 9 }
-		}
-		localization_key = TNO_econ_credit_9
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating_min = 8 }
-		}
-		localization_key = TNO_econ_credit_8
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating_min = 7 }
-		}
-		localization_key = TNO_econ_credit_7
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating_min = 6 }
-		}
-		localization_key = TNO_econ_credit_6
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating_min = 5 }
-		}
-		localization_key = TNO_econ_credit_5
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating_min = 4 }
-		}
-		localization_key = TNO_econ_credit_4
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating_min = 3 }
-		}
-		localization_key = TNO_econ_credit_3
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating_min = 2 }
-		}
-		localization_key = TNO_econ_credit_2
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating_min = 1 }
-		}
-		localization_key = TNO_econ_credit_1
-	}
-	text = {
-		localization_key = "ERROR"
+		localization_key = "TNO_econ_credit_[?credit_rating_min]"
 	}
 }
 
@@ -3599,268 +3347,28 @@ defined_text = {
 defined_text = {
 	name = GetGERCreditRatingLoc
 	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 10 }
-		}
-		localization_key = TNO_GER_ladder_10
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 9 }
-		}
-		localization_key = TNO_GER_ladder_9
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 8 }
-		}
-		localization_key = TNO_GER_ladder_8
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 7 }
-		}
-		localization_key = TNO_GER_ladder_7
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 6 }
-		}
-		localization_key = TNO_GER_ladder_6
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 5 }
-		}
-		localization_key = TNO_GER_ladder_5
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 4 }
-		}
-		localization_key = TNO_GER_ladder_4
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 3 }
-		}
-		localization_key = TNO_GER_ladder_3
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 2 }
-		}
-		localization_key = TNO_GER_ladder_2
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 1 }
-		}
-		localization_key = TNO_GER_ladder_1
-	}
-	text = {
-		localization_key = "ERROR"
+		localization_key = "TNO_GER_ladder_[?ladder_credit_rating]"
 	}
 }
 
 defined_text = {
 	name = GetJAPCreditRatingLoc
 	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 10 }
-		}
-		localization_key = TNO_JAP_ladder_10
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 9 }
-		}
-		localization_key = TNO_JAP_ladder_9
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 8 }
-		}
-		localization_key = TNO_JAP_ladder_8
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 7 }
-		}
-		localization_key = TNO_JAP_ladder_7
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 6 }
-		}
-		localization_key = TNO_JAP_ladder_6
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 5 }
-		}
-		localization_key = TNO_JAP_ladder_5
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 4 }
-		}
-		localization_key = TNO_JAP_ladder_4
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 3 }
-		}
-		localization_key = TNO_JAP_ladder_3
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 2 }
-		}
-		localization_key = TNO_JAP_ladder_2
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 1 }
-		}
-		localization_key = TNO_JAP_ladder_1
-	}
-	text = {
-		localization_key = "ERROR"
+		localization_key = "TNO_JAP_ladder_[?ladder_credit_rating]"
 	}
 }
 
 defined_text = {
 	name = GetUSACreditRatingLoc
 	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 10 }
-		}
-		localization_key = TNO_USA_ladder_10
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 9 }
-		}
-		localization_key = TNO_USA_ladder_9
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 8 }
-		}
-		localization_key = TNO_USA_ladder_8
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 7 }
-		}
-		localization_key = TNO_USA_ladder_7
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 6 }
-		}
-		localization_key = TNO_USA_ladder_6
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 5 }
-		}
-		localization_key = TNO_USA_ladder_5
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 4 }
-		}
-		localization_key = TNO_USA_ladder_4
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 3 }
-		}
-		localization_key = TNO_USA_ladder_3
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 2 }
-		}
-		localization_key = TNO_USA_ladder_2
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 1 }
-		}
-		localization_key = TNO_USA_ladder_1
-	}
-	text = {
-		localization_key = "ERROR"
+		localization_key = "TNO_USA_ladder_[?ladder_credit_rating]"
 	}
 }
 
 defined_text = {
 	name = GetLadderCreditRatingLongTT
 	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 10 }
-		}
-		localization_key = TNO_credit_long_tt_10
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 9 }
-		}
-		localization_key = TNO_credit_long_tt_9
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 8 }
-		}
-		localization_key = TNO_credit_long_tt_8
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 7 }
-		}
-		localization_key = TNO_credit_long_tt_7
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 6 }
-		}
-		localization_key = TNO_credit_long_tt_6
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 5 }
-		}
-		localization_key = TNO_credit_long_tt_5
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 4 }
-		}
-		localization_key = TNO_credit_long_tt_4
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 3 }
-		}
-		localization_key = TNO_credit_long_tt_3
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 2 }
-		}
-		localization_key = TNO_credit_long_tt_2
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 1 }
-		}
-		localization_key = TNO_credit_long_tt_1
-	}
-	text = {
-		localization_key = "ERROR"
+		localization_key = "TNO_credit_long_tt_[?ladder_credit_rating]"
 	}
 }
 
@@ -3868,67 +3376,7 @@ defined_text = {
 defined_text = {
 	name = GetLadderCreditRatingValue
 	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 10 }
-		}
-		localization_key = TNO_econ_credit_10
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 9 }
-		}
-		localization_key = TNO_econ_credit_9
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 8 }
-		}
-		localization_key = TNO_econ_credit_8
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 7 }
-		}
-		localization_key = TNO_econ_credit_7
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 6 }
-		}
-		localization_key = TNO_econ_credit_6
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 5 }
-		}
-		localization_key = TNO_econ_credit_5
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 4 }
-		}
-		localization_key = TNO_econ_credit_4
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 3 }
-		}
-		localization_key = TNO_econ_credit_3
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 2 }
-		}
-		localization_key = TNO_econ_credit_2
-	}
-	text = {
-		trigger = {
-			check_variable = { ladder_credit_rating = 1 }
-		}
-		localization_key = TNO_econ_credit_1
-	}
-	text = {
-		localization_key = "ERROR"
+		localization_key = "TNO_econ_credit_[?ladder_credit_rating]"
 	}
 }
 
@@ -4065,64 +3513,7 @@ defined_text = {
 defined_text = {
 	name = GetNextLevelCreditUpgrade
 	text = {
-		trigger = {
-			check_variable = { credit_rating = 9 }
-		}
-		localization_key = TNO_econ_credit_10
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating = 8 }
-		}
-		localization_key = TNO_econ_credit_9
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating = 7 }
-		}
-		localization_key = TNO_econ_credit_8
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating = 6 }
-		}
-		localization_key = TNO_econ_credit_7
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating = 5 }
-		}
-		localization_key = TNO_econ_credit_6
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating = 4 }
-		}
-		localization_key = TNO_econ_credit_5
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating = 3 }
-		}
-		localization_key = TNO_econ_credit_4
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating = 2 }
-		}
-		localization_key = TNO_econ_credit_3
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating = 1 }
-		}
-		localization_key = TNO_econ_credit_2
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating = 0 }
-		}
-		localization_key = "ERROR"
+		localization_key = "TNO_econ_credit_[?credit_rating]"
 	}
 }
 
@@ -4130,63 +3521,10 @@ defined_text = {
 	name = GetNextLevelCreditDowngrade
 	text = {
 		trigger = {
-			check_variable = { credit_rating = 10 }
+			set_temp_variable = { credit_rating_temp = credit_rating }
+			subtract_from_temp_variable = { credit_rating_temp = 1 }
 		}
-		localization_key = TNO_econ_credit_9
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating = 9 }
-		}
-		localization_key = TNO_econ_credit_8
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating = 8 }
-		}
-		localization_key = TNO_econ_credit_7
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating = 7 }
-		}
-		localization_key = TNO_econ_credit_6
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating = 6 }
-		}
-		localization_key = TNO_econ_credit_5
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating = 5 }
-		}
-		localization_key = TNO_econ_credit_4
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating = 4 }
-		}
-		localization_key = TNO_econ_credit_3
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating = 3 }
-		}
-		localization_key = TNO_econ_credit_2
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating = 2 }
-		}
-		localization_key = TNO_econ_credit_1
-	}
-	text = {
-		trigger = {
-			check_variable = { credit_rating = 0 }
-		}
-		localization_key = "ERROR"
+		localization_key = "TNO_econ_credit_[?credit_rating_temp]"
 	}
 }
 
@@ -4244,6 +3582,23 @@ defined_text = {
 	}
 	text = {
 		localization_key = debt_ceiling_txt_number_value
+	}
+}
+
+defined_text = {
+	name = GetDebtCeilingExactValue
+	text = {
+		trigger = {
+			check_variable = { debt_ceiling > 10 }
+		}
+		localization_key = debt_ceiling_txt_number_value_exact_text
+	}
+	text = {
+		trigger = {
+			set_temp_variable = { exact_debt_ceiling = debt_ceiling }
+			multiply_temp_variable = { exact_debt_ceiling = THIS.GDP }
+		}
+		localization_key = debt_ceiling_txt_number_value_exact
 	}
 }
 
@@ -5301,64 +4656,13 @@ defined_text = {
 
 defined_text = {
 	name = Get_Central_Bank_Policy
-
-	text = {
-		trigger = {
-			check_variable = { selected_central_bank_id = 1 }
-		}
-		localization_key = Central_Bank_Policy_1
-	}
-
-	text = {
-		trigger = {
-			check_variable = { selected_central_bank_id = 2 }
-		}
-		localization_key = Central_Bank_Policy_2
-	}
-
-	text = {
-		trigger = {
-			check_variable = { selected_central_bank_id = 3 }
-		}
-		localization_key = Central_Bank_Policy_3
-	}
-
-	# Default - 0
-	text = {
-		trigger = { check_variable = { selected_central_bank_id = 0 } }
-		localization_key = Central_Bank_Policy_0
-	}
+	text = { localization_key = "Central_Bank_Policy_[?selected_central_bank_id]" }
 }
 
 
 defined_text = {
 	name = Get_Central_Bank_Policy_tt
-	text = {
-		trigger = {
-			check_variable = { selected_central_bank_id = 1 }
-		}
-		localization_key = Central_Bank_Policy_1_tt
-	}
-
-	text = {
-		trigger = {
-			check_variable = { selected_central_bank_id = 2 }
-		}
-		localization_key = Central_Bank_Policy_2_tt
-	}
-
-	text = {
-		trigger = {
-			check_variable = { selected_central_bank_id = 3 }
-		}
-		localization_key = Central_Bank_Policy_3_tt
-	}
-
-	# Default - 0
-	text = {
-		trigger = { always = yes }
-		localization_key = Central_Bank_Policy_0_tt
-	}
+	text = { localization_key = "Central_Bank_Policy_[?selected_central_bank_id]_tt" }
 }
 
 defined_text = {

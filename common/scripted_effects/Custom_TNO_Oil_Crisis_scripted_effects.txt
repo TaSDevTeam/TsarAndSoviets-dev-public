@@ -437,6 +437,34 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 		 	limit = {
 		 		AYA = { exists = no }
 		 		AZA = { exists = yes }
+				OR = {
+					COG = { check_variable = { ECON_SPHERE_LEADER = USA } }
+					RPS = { check_variable = { ECON_SPHERE_LEADER = USA } }
+					RPS = { is_in_faction_with = USA }
+					NOT = { AZA = { check_variable = { ECON_SPHERE_LEADER = JAP } } }
+				}
+		 	}
+			AZA = { econ_join_sphere_USA = yes }
+		}
+		if = { #Anyanya victory
+		 	limit = {
+		 		AZA = { exists = no }
+		 		AYA = { exists = yes }
+				OR = {
+					COG = { check_variable = { ECON_SPHERE_LEADER = USA } }
+					RPS = { check_variable = { ECON_SPHERE_LEADER = USA } }
+					RPS = { is_in_faction_with = USA }
+					NOT = { AYA = { check_variable = { ECON_SPHERE_LEADER = JAP } } }
+				}
+		 	}
+			AYA = { econ_join_sphere_USA = yes }
+		}
+		#Can join Japan through its focus tree
+		
+		if = { #Azania (authdem) victory
+		 	limit = {
+		 		AYA = { exists = no }
+		 		AZA = { exists = yes }
 		 	}
 		 	if = {
 				limit = {
@@ -677,64 +705,132 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 			}
 		}
 		
-		if = {
+		if = { #Palestine victory
 			limit = {
-				OR = {
-					country_exists = SLB
-					AND = {
-						LEB = {
-							has_country_leader = {
-								character = LEB_Rashid_Karami 
-								ruling_only = yes
-							}
-						}
+				PAL = { exists = yes }
+				PAL = {
+					OR = {
+						has_government = socialist
+						has_government = communist
 					}
 				}
-				check_variable = { GER.BOR_OC_participation > 39 }
 			}
 			if = {
-				limit = { country_exists = SLB }
-				SLB = {
-					if = {
-						limit = {
-							NOT = { is_subject_of = ITA }
-							has_global_flag = german_civil_war_speervic
-						}
-						join_zollverein = yes
-					}	
-					else = {
-						econ_join_sphere_GER = yes
+				limit = { 
+					check_variable = { GER.BOR_OC_participation > 39 }
+					OR = {
+						NOT = { MAR = { has_government = socialist } }
+						check_variable = { GER.BOR_OC_participation > MAR.MAR_OC_participation }
 					}
 				}
-			}
-			else = {
-				LEB = {
+				PAL = {
 					if = {
-						limit = {
-							NOT = { is_subject_of = ITA }
-							has_global_flag = german_civil_war_speervic
-						}
+						limit = { has_global_flag = german_civil_war_speervic }
 						join_zollverein = yes
-					}	
-					else = {
-						econ_join_sphere_GER = yes
 					}
+					econ_join_sphere_GER = yes
 				}
 			}
-		}
-		else_if = {
-			limit = {
-				check_variable = { MAR.MAR_OC_participation > 59 }
-				check_variable = { GER.BOR_OC_participation < MAR.MAR_OC_participation }
-			}
-			if = {
-				limit = { country_exists = SLB }
-				SLB = {
+			else_if = {
+				limit = { MAR = { has_government = socialist } }
+				PAL = {
 					econ_join_sphere_MAR = yes
 				}
 			}
-			else = {
-				LEB = {
+		}
+
+		if = { #Gulf States
+			limit = {
+				GUL = { exists = yes }
+				GUL = { has_government = progressivism }
+			}
+			if = {
+				limit = { 
+					check_variable = { GER.BOR_OC_participation > 39 }
+					OR = {
+						NOT = { MAR = { has_government = socialist } }
+						check_variable = { GER.BOR_OC_participation > MAR.MAR_OC_participation }
+					}
+				}
+				GUL = {
+					if = {
+						limit = { has_global_flag = german_civil_war_speervic }
+						join_zollverein = yes
+					}
+					econ_join_sphere_GER = yes
+				}
+			}
+			else_if = {
+				limit = { MAR = { has_government = socialist } }
+				GUL = {
+					econ_join_sphere_MAR = yes
+				}
+			}
+		}
+
+		if = { #Jordan
+			limit = {
+				JOR = { exists = yes }
+				JOR = {
+					OR = {
+						has_government = socialist
+						has_government = communist
+					}
+				}
+			}
+			if = {
+				limit = { 
+					check_variable = { GER.BOR_OC_participation > 39 }
+					OR = {
+						NOT = { MAR = { has_government = socialist } }
+						check_variable = { GER.BOR_OC_participation > MAR.MAR_OC_participation }
+					}
+				}
+				JOR = {
+					if = {
+						limit = { has_global_flag = german_civil_war_speervic }
+						join_zollverein = yes
+					}
+					econ_join_sphere_GER = yes
+				}
+			}
+			else_if = {
+				limit = { MAR = { has_government = socialist } }
+				JOR = {
+					econ_join_sphere_MAR = yes
+				}
+			}
+		}
+
+		if = { #Lebanon Ba'athists
+			limit = {
+				SLB = { exists = yes }
+				SLB = {
+					OR = {
+						has_government = socialist
+						has_government = communist
+					}
+				}
+			}
+			if = {
+				limit = { 
+					check_variable = { GER.BOR_OC_participation > 39 }
+					OR = {
+						NOT = { MAR = { has_government = socialist } }
+						check_variable = { GER.BOR_OC_participation > MAR.MAR_OC_participation }
+					}
+				}
+				SLB = {
+					if = {
+						limit = { has_global_flag = german_civil_war_speervic }
+						join_zollverein = yes
+					}
+					econ_join_sphere_GER = yes
+				}
+			}
+			else_if = {
+				limit = { MAR = { has_government = socialist } }
+				SLB = {
 					econ_join_sphere_MAR = yes
 				}
 			}
@@ -825,10 +921,13 @@ OIL_check_remove_forpol_tab = { #Ends the Oil Crisis in the ME if all civil wars
 				limit = { has_idea = USA_OilCrisis_UAR_Leaders_Targeted_2 }
 				remove_ideas = USA_OilCrisis_UAR_Leaders_Targeted_2
 			}
-			# every_country = { # Hidden event to clear the Oil Cisis modifier for nations that don't have specific content to remove it yet
-			# 	limit = { has_dynamic_modifier = { modifier = TNO_Oil_Crisis_dynamic_modifier } }
-			# 	country_event = { id = OIL.601 days = 120 }
-			# }
+			every_country = { # Hidden event to clear the Oil Cisis modifier for nations that don't have specific content to remove it yet
+			 	limit = {
+					has_dynamic_modifier = { modifier = TNO_Oil_Crisis_dynamic_modifier }
+					NOT = { has_country_flag = tno_playable_country }
+				}
+				country_event = { id = OIL.601 days = 120 }
+			}
 			# Clearing German AI volunteers
 			EGB = { delete_unit_template_and_units = { division_template = "German Volunteers" } clear_variable = german_volunteers_num }
 			SDS = { delete_unit_template_and_units = { division_template = "German Volunteers" } clear_variable = german_volunteers_num }

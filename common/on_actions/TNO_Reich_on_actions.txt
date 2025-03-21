@@ -362,7 +362,7 @@ on_actions = {
 					}
 				}
 				else_if = { # Nuremberg
-					limit = { FROM.FROM = { state = 54 } }
+					limit = { FROM.FROM = { state = 1026 } }
 					if = { # Captured
 						limit = { FROM = { tag = BGR } }
 						FROM = { country_event = { id = gcwcapture.2 days = 1 } }

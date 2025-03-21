@@ -10,4 +10,4 @@ dependencies={
 	"The New Order: Last Days Of Europe (RUSSIAN)"
 }
 name="Tsar and Soviets Development Edition"
-supported_version="1.15.*"
+supported_version="1.16.*"

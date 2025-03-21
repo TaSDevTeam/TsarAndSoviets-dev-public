@@ -1,4 +1,4 @@
-MAR_foreign_policy_category = {
+MAR_BoP_category = {
 	MAR_FErebels_mission = {
 		icon = GFX_decision_generic_ignite_civil_war
 		visible = {
@@ -511,7 +511,7 @@ MAR_foreign_policy_category = {
 	}
 }
 
-MAR_foreign_policy_category = {
+MAR_BoP_category = {
 
 	MAR_meeting_with_generals_MCW = {
 		icon = GFX_decision_handshake
@@ -676,7 +676,7 @@ MAR_foreign_policy_category = {
 	
 }
 
-MAR_foreign_policy_category = {
+MAR_BoP_category = {
 
 	MAR_meeting_with_generals_MCW_kosygin = {
 		icon = GFX_decision_handshake
@@ -836,7 +836,7 @@ MAR_foreign_policy_category = {
 	}
 }
 
-MAR_foreign_policy_category = {
+MAR_BoP_category = {
 
 	UAR_Faction_MAR_Pro_RUS_Propaganda = {
 		icon = GFX_decision_handshake
@@ -1216,7 +1216,7 @@ MAR_foreign_policy_category = {
 	}
 }
 
-MAR_foreign_policy_category = {
+MAR_BoP_category = {
 	MAR_ICW_send_weapons = {
 		icon = GFX_decision_market_infantry
 		visible = {
@@ -1501,7 +1501,7 @@ MAR_foreign_policy_category = {
 	}
 }
 
-MAR_foreign_policy_category = {
+MAR_BoP_category = {
 	MAR_Kosygin_ICW_send_weapons = {
 		icon = GFX_decision_market_infantry
 		visible = {
@@ -1788,7 +1788,7 @@ MAR_foreign_policy_category = {
 
 
 
-MAR_foreign_policy_category = {
+MAR_BoP_category = {
 	MAR_Kosygin_OC_increase_commitment = {
 		icon = GFX_decision_generic_prepare_civil_war
 		visible = {
@@ -2064,7 +2064,7 @@ MAR_foreign_policy_category = {
 	}
 }
 
-MAR_foreign_policy_category = {
+MAR_BoP_category = {
 
 	MAR_OC_increase_commitment = {
 		icon = GFX_decision_generic_prepare_civil_war
@@ -2343,7 +2343,7 @@ MAR_foreign_policy_category = {
 	}
 }
 
-MAR_foreign_policy_category = {
+MAR_BoP_category = {
 
 	MAR_meeting_with_generals_CCW = {
 		icon = GFX_decision_handshake
@@ -2687,298 +2687,7 @@ MAR_foreign_policy_category = {
 	}
 }
 
-MAR_foreign_policy_category = {
-	MAR_Arm_Spanish_Militia = {
-		icon = GFX_decision_black_market_infantry_purchase
-		visible = {
-			TNO_fopo_IBW_selected = yes
-		}
-
-		available = {
-			always = yes
-		}
-
-		cost = 50
-
-		days_remove = 35
-		fire_only_once = yes
-
-		complete_effect = {
-			send_equipment = {
-				equipment = infantry_equipment
-				amount = 1500
-				target = SPR
-			}
-		}
-		ai_will_do = {
-			factor = 10
-		}
-	}
-	MAR_Equip_Spanish_Air_Forces = {
-		icon = GFX_decision_black_market_helicopter_purchase
-		visible = {
-			TNO_fopo_IBW_selected = yes
-		}
-
-		available = {
-			always = yes
-			SPR = {
-				any_controlled_state = {
-					air_base > 1
-				}
-			}
-		}
-
-		cost = 50
-
-		days_remove = 35
-		fire_only_once = yes
-
-		complete_effect = {
-			send_equipment = {
-				equipment = jet_fighter_equipment_1
-				amount = 25
-				target = SPR
-			}
-		}
-		ai_will_do = {
-			factor = 10
-		}
-	}
-	MAR_Form_Republican_Tank_Corps = {
-		icon = GFX_decision_black_market_armor_purchase
-		visible = {
-			TNO_fopo_IBW_selected = yes
-		}
-
-		available = {
-			always = yes
-		}
-
-		cost = 50
-
-		days_remove = 35
-		fire_only_once = yes
-
-		complete_effect = {
-			send_equipment = {
-				equipment = MBT_chassis
-				amount = 50
-				target = SPR
-			}
-		}
-		ai_will_do = {
-			factor = 10
-		}
-	}
-	MAR_Send_Russian_Advisors = {
-		icon = GFX_decision_generic_assault
-		visible = {
-			TNO_fopo_IBW_selected = yes
-		}
-
-		available = {
-			always = yes
-		}
-
-		cost = 50
-
-		days_remove = 10
-		fire_only_once = yes
-
-		complete_effect = {
-			custom_effect_tooltip = USA_send_peacekeepers_tt
-			hidden_effect = {
-				set_temp_variable = { target = SPR }
-				set_temp_variable = { to_add = 1}
-				TNO_add_num_volunteers = yes
-				SPR = {
-					add_timed_idea = { idea = MAR_military_advisors days = 180 }
-				}
-			}
-
-		}
-		ai_will_do = {
-			factor = 10
-		}
-	}
-	MAR_Send_Peacekeepers= {
-		icon = GFX_decision_generic_assault
-		visible = {
-			TNO_fopo_IBW_selected = yes
-		}
-
-		available = {
-			always = yes
-		}
-
-		cost = 50
-
-		days_remove = 10
-		fire_only_once = yes
-
-		complete_effect = {
-			custom_effect_tooltip = MAR_send_peacekeepers_tt
-			hidden_effect = {
-				set_temp_variable = { target = SPR }
-				set_temp_variable = { to_add = 1}
-				TNO_add_num_volunteers = yes
-				SPR = { set_country_flag = MAR_supported_SPR }
-			}
-		}
-		ai_will_do = {
-			factor = 10
-		}
-	}
-	MAR_Arm_Portugese_Militia = {
-		icon = GFX_decision_black_market_infantry_purchase
-		visible = {
-			TNO_fopo_IBW_selected = yes
-			PPR = { exists = yes }
-		}
-
-		available = {
-			always = yes
-		}
-
-		cost = 50
-
-		days_remove = 35
-		fire_only_once = yes
-
-		complete_effect = {
-			send_equipment = {
-				equipment = infantry_equipment
-				amount = 1500
-				target = PPR
-			}
-		}
-		ai_will_do = {
-			factor = 10
-		}
-	}
-	MAR_Equip_Portugese_Air_Forces = {
-		icon = GFX_decision_black_market_helicopter_purchase
-		visible = {
-			TNO_fopo_IBW_selected = yes
-			PPR = { exists = yes }
-		}
-
-		available = {
-			always = yes
-			PPR = {
-				any_controlled_state = {
-					air_base > 1
-				}
-			}
-		}
-
-		cost = 50
-
-		days_remove = 35
-		fire_only_once = yes
-
-		complete_effect = {
-			send_equipment = {
-				equipment = jet_fighter_equipment_1
-				amount = 25
-				target = PPR
-			}
-		}
-		ai_will_do = {
-			factor = 10
-		}
-	}
-	MAR_Form_Portugese_Tank_Corps = {
-		icon = GFX_decision_black_market_armor_purchase
-		visible = {
-			TNO_fopo_IBW_selected = yes
-			PPR = { exists = yes }
-		}
-
-		available = {
-			always = yes
-		}
-
-		cost = 50
-
-		days_remove = 35
-		fire_only_once = yes
-
-		complete_effect = {
-			send_equipment = {
-				equipment = MBT_chassis
-				amount = 500
-				target = SPR
-			}
-		}
-		ai_will_do = {
-			factor = 10
-		}
-	}
-	MAR_Send_Russian_Advisors_Portugal = {
-		icon = GFX_decision_generic_assault
-		visible = {
-			TNO_fopo_IBW_selected = yes
-			PPR = { exists = yes }
-		}
-
-		available = {
-			always = yes
-		}
-
-		cost = 50
-
-		days_remove = 10
-		fire_only_once = yes
-
-		complete_effect = {
-			custom_effect_tooltip = USA_send_peacekeepers_tt
-			hidden_effect = {
-				set_temp_variable = { target = PPR }
-				set_temp_variable = { to_add = 1}
-				TNO_add_num_volunteers = yes
-				SPR = {
-					add_timed_idea = { idea = MAR_military_advisors days = 180 }
-				}
-			}
-
-		}
-		ai_will_do = {
-			factor = 10
-		}
-	}
-	MAR_Send_Peacekeepers_Portugal = {
-		icon = GFX_decision_generic_assault
-		visible = {
-			TNO_fopo_IBW_selected = yes
-			PPR = { exists = yes }
-		}
-
-		available = {
-			always = yes
-		}
-
-		cost = 50
-
-		days_remove = 10
-		fire_only_once = yes
-
-		complete_effect = {
-			custom_effect_tooltip = USA_send_peacekeepers_tt
-			hidden_effect = {
-				set_temp_variable = { target = PPR }
-				set_temp_variable = { to_add = 1}
-				TNO_add_num_volunteers = yes
-				PPR = { set_country_flag = MAR_supported_PPR }
-			}
-		}
-		ai_will_do = {
-			factor = 10
-		}
-	}
-}
-MAR_foreign_policy_category = {
+MAR_BoP_category = {
 	# / Generic Decisions
 	MAR_FrenchReclamation_Decision_SupportSupplyLines = {
 		icon = GFX_decision_generic_supply
@@ -3349,7 +3058,7 @@ MAR_foreign_policy_category = {
 	}
 }
 
-MAR_foreign_policy_category = {
+MAR_BoP_category = {
 	MAR_meeting_with_generals_ACW = {
 		icon = GFX_decision_handshake
 		visible = {
