@@ -1,3 +1,17 @@
+GWF_debug_deccat = {
+	icon = GFX_decision_category_generic_political_actions
+	picture = GFX_GWF_decision_category_debug_picture
+	allowed = {	tag = GWF }
+	visible = {
+		is_debug = yes
+		is_ai = no
+	}
+	visible_when_empty = yes
+	priority = {
+		base = 150
+	}
+}
+
 GWF_Homura_deccat = {
 	icon = GFX_decision_category_homura_icon
 	scripted_gui = GWF_Homura_GUI
@@ -16,7 +30,7 @@ GWF_Opposition_deccat = {
 	priority = { base = 20 }
 }
 
-GWF_BigGame_deccat = { ###########№################
+GWF_BigGame_deccat = { ###########№###################№
 	icon = GFX_decision_category_generic_chess
 	picture = GFX_decision_category_biggame_pic
 	scripted_gui = GWF_BigGame_GUI

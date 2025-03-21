@@ -86,6 +86,12 @@ defined_text = {
 		}
 		localization_key = "GFX_Anarchy_ENG_Dissapearance"
 	}
+	text = {
+		trigger = {
+			TNO_anarchy_GWF_witch = yes
+		}
+		localization_key = "GFX_Anarchy_GWF_witch"
+	}
 }
 
 defined_text = {
@@ -174,6 +180,12 @@ defined_text = {
 		}
 		localization_key = TNO_anarchy_ENG_Dissapearance_tt
 	}	
+	text = {
+		trigger = {
+			TNO_anarchy_GWF_witch = yes
+		}
+		localization_key = TNO_anarchy_GWF_witch_tt
+	}
 }
 
 defined_text = {
@@ -261,5 +273,11 @@ defined_text = {
 			TNO_anarchy_ENG_Dissapearance = yes
 		}
 		localization_key = TNO_anarchy_ENG_Dissapearance_tt_delayed
+	}
+	text = {
+		trigger = {
+			TNO_anarchy_GWF_witch = yes
+		}
+		localization_key = TNO_anarchy_GWF_witch_tt_delayed
 	}
 }

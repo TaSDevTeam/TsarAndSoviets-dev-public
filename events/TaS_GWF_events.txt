@@ -323,7 +323,7 @@ country_event = { #GWF_stuttgart_convention
 	}
 }
 
-country_event = { #FREE SPACE
+country_event = { #GWF_control_witch_problem
 	id = GWF.20
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.20" }
 	title = GWF.20.t
@@ -336,7 +336,7 @@ country_event = { #FREE SPACE
 	option = { #
 		name = GWF.20.a
 		ai_chance = { factor = 1 }
-		
+		hidden_effect = { country_event = { id = GWF.33 days = 34 } }
 	}
 }
 
@@ -692,8 +692,11 @@ country_event = { #GWF_great_betrayal EVIL
 		ai_chance = { factor = 1 }
 		every_country = {
 			limit = { is_in_faction_with = GWF } 
-			every_owned_state = {
-				transfer_state_to = GWF
+			GWF = {
+				annex_country = {
+					target = PREV
+					transfer_troops = no
+				}
 			}
 		}
 	}
@@ -714,8 +717,11 @@ country_event = { #GWF_great_betrayal GOOD
 		ai_chance = { factor = 1 }
 		every_country = {
 			limit = { is_in_faction_with = GWF } 
-			every_owned_state = {
-				transfer_state_to = GWF
+			GWF = {
+				annex_country = {
+					target = PREV
+					transfer_troops = yes
+				}
 			}
 		}
 	}
@@ -1125,7 +1131,38 @@ country_event = { #FAIL ONE - MENTAL
 	option = { #
 		name = GWF.65.a
 		ai_chance = { factor = 1 }
-		
+		hidden_effect = {
+			remove_all_ideas = yes
+			fill_empty_minister_nochecks = yes 
+			create_country_leader = {
+				name = "Anarchy"
+				desc = "POLITICS_ANARCHY_DESC"
+				picture = "Portrait_ZZZ_Anarchy.dds"
+				expire = "3000.1.1"
+				ideology = socialist_subtype
+				traits = { }
+			}
+			set_variable = { TNO_economy_type = token:Econ_Type_Planned }
+			set_variable = { TNO_economy_subtype = token:Econ_Subtype_Anarchic }
+			set_country_flag = TNO_eliminate_building_demand
+			set_country_flag = can_not_use_econ_system
+			set_country_flag = GWF_witch
+			country_lock_all_division_template = yes
+			set_politics = {
+				ruling_party = socialist
+				last_election = "1961.1.20"
+				election_frequency = 48
+				elections_allowed = yes
+
+			}
+			set_popularities = {
+				socialist = 100
+			}
+			add_ideas = ZZZ_anarchy
+			set_cosmetic_tag = MAN_katastrophe
+			transfer_state = 1600
+			set_capital = { state = 1600 remember_old_capital = no }
+		}
 	}
 }
 

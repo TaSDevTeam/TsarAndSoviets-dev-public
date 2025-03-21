@@ -1,3 +1,45 @@
+GWF_debug_deccat = {
+	GWF_initial_tree_load = {
+		icon = GFX_decision_generic_industry
+
+		allowed = {
+			original_tag = GWF
+		}
+		fire_only_once = no
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: GWF_initial_tree_load"
+			load_focus_tree = {	tree = GWF_Homura_Initial keep_completed = no }
+		}
+	}
+	GWF_war_tree_load = {
+		icon = GFX_decision_generic_industry
+
+		allowed = {
+			original_tag = GWF
+		}
+		fire_only_once = no
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: GWF_war_tree_load"
+			load_focus_tree = {	tree = GWF_Homura_War keep_completed = no }
+		}
+	}
+	GWF_final_tree_load = {
+		icon = GFX_decision_generic_industry
+
+		allowed = {
+			original_tag = GWF
+		}
+		fire_only_once = no
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: GWF_final_tree_load"
+			load_focus_tree = {	tree = GWF_Homura_Final keep_completed = no }
+		}
+	}
+}	
+
 GWF_Homura_deccat = { ####
 	#mind
 	GWF_Homura_mind_effigy = {        
@@ -34,7 +76,7 @@ GWF_Homura_deccat = { ####
     		log = "[GetDateText]: [Root.GetName]: GWF_Homura_witchifying_imminent mission timer elapsed" 
 			custom_effect_tooltip = GWF_Homura_witchifying_imminent_tt
 			hidden_effect = {
-				
+				country_event = { id = GWF.65 }
 			}
     	}
 		complete_effect = {
