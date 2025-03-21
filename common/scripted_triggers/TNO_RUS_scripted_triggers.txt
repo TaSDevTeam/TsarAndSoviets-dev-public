@@ -186,6 +186,38 @@ is_moskowien_splits = {
 	}
 }
 
+is_after_midnight_nation = {
+	OR = {
+		tag = TMA
+		tag = TMB
+		tag = TMC
+		tag = TMD
+		tag = TME
+		tag = TMF
+		tag = TMG
+		tag = TMH
+		tag = TMI
+		tag = TMJ
+		tag = TMK
+		tag = TML
+		tag = TMM
+		tag = TMN
+		tag = TMO
+		tag = TMP
+		tag = TMQ
+		tag = TMR
+		tag = TMS
+		tag = TMT
+		tag = TMU
+		tag = TMV
+		tag = TMW
+		tag = TMX
+		tag = TMY
+		tag = VIL
+		tag = KOM
+	}
+}
+
 can_form_southern_urals = {
 	AND = {
 		owns_state = 582
@@ -629,7 +661,13 @@ CSB_FST_is_compatible = {
 				}
 				FST = {
 					original_tag = MAG
-					has_government = paternalism
+					OR = {
+						has_government = paternalism
+						has_country_leader = {
+							character = MAG_Mitchell_Werbell
+							ruling_only = yes
+						}
+					}
 				}
 			}
 			AND = {
@@ -729,9 +767,9 @@ RWS_SIB_is_compatible = {
 				OR = {
 					SIB = {
 						original_tag = MAG
-						OR = {
-							has_government = fascism
-							has_government = despotism
+						has_country_leader = {
+							character = MAG_Mikhail_Matkovsky
+							ruling_only = yes
 						}
 					}
 					SIB = {
@@ -803,9 +841,9 @@ RWS_SIB_is_compatible = {
 					SIB = {
 						original_tag = MAG
 						NOT = {
-							OR = {
-								has_government = fascism
-								has_government = despotism
+							has_country_leader = {
+								character = MAG_Mikhail_Matkovsky
+								ruling_only = yes
 							}
 						}
 					}
@@ -837,9 +875,9 @@ RWS_SIB_is_compatible = {
 					SIB = {
 						original_tag = MAG
 						NOT = {
-							OR = {
-								has_government = fascism
-								has_government = despotism
+							has_country_leader = {
+								character = MAG_Mikhail_Matkovsky
+								ruling_only = yes
 							}
 						}
 					}
@@ -863,9 +901,9 @@ RWS_SIB_is_compatible = {
 					SIB = {
 						original_tag = MAG
 						NOT = {
-							OR = {
-								has_government = fascism
-								has_government = despotism
+							has_country_leader = {
+								character = MAG_Mikhail_Matkovsky
+								ruling_only = yes
 							}
 						}
 					}
@@ -912,9 +950,9 @@ RWS_SIB_is_compatible = {
 					SIB = {
 						original_tag = MAG
 						NOT = {
-							OR = {
-								has_government = fascism
-								has_government = despotism
+							has_country_leader = {
+								character = MAG_Mikhail_Matkovsky
+								ruling_only = yes
 							}
 						}
 					}
@@ -930,7 +968,7 @@ RWS_SIB_is_compatible = {
 			AND = {
 				RWS = {
 					original_tag = SVR
-					has_government = paternalism
+					has_government = despotism
 				}
 				OR = {
 					SIB = {
@@ -952,9 +990,9 @@ RWS_SIB_is_compatible = {
 					SIB = {
 						original_tag = MAG
 						NOT = {
-							OR = {
-								has_government = fascism
-								has_government = despotism
+							has_country_leader = {
+								character = MAG_Mikhail_Matkovsky
+								ruling_only = yes
 							}
 						}
 					}
@@ -988,9 +1026,9 @@ RWS_SIB_is_compatible = {
 					SIB = {
 						original_tag = MAG
 						NOT = {
-							OR = {
-								has_government = fascism
-								has_government = despotism
+							has_country_leader = {
+								character = MAG_Mikhail_Matkovsky
+								ruling_only = yes
 							}
 						}
 					}
@@ -1094,7 +1132,6 @@ RWS_SIB_is_compatible = {
 
 is_russian_state = {
 	OR = {
-		state = 213
 		state = 214
 		state = 215
 		state = 249
@@ -1165,7 +1202,6 @@ is_russian_state = {
 		state = 567
 		state = 758
 		#state = 329
-		state = 814
 		state = 566
 		state = 565
 		state = 564
@@ -1416,7 +1452,7 @@ RUS_consider_communist_regime = {
 		}
 		AND = {
 			original_tag = SVR
-			has_government = paternalism
+			has_government = despotism
 		}
 	}
 }

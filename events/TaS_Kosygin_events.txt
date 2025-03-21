@@ -1791,12 +1791,12 @@ country_event = { #397 event 2
 		}
 		hidden_effect = {
 			add_popularity = {
-				ideology = ultranationalism_1
-				popularity = -1
-			}
-			add_popularity = {
 				ideology = national_socialism
 				popularity = 0.01
+			}
+			add_popularity = {
+				ideology = ultranationalism
+				popularity = -1
 			}
 		}
 		add_political_power = 50
@@ -2093,21 +2093,17 @@ country_event = { #success
 		set_country_flag = MAR_order_Kosygin
 		hidden_effect = {
 			add_popularity = {
-				ideology = ultranationalism_2
-				popularity = -1
-			}
-			add_popularity = {
 				ideology = despotism_2
-				popularity = -1
-			}
-			add_popularity = {
-				ideology = ultranationalism_1
 				popularity = -1
 			}
 			add_popularity = {
 				ideology = communist_1
 				popularity = -1
 			}
+			add_popularity = {
+				ideology = ultranationalism
+				popularity = -1
+			}	
 			add_popularity = {
 				ideology = national_socialism
 				popularity = -1

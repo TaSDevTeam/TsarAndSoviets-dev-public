@@ -221,10 +221,7 @@ defined_text = {
 		localization_key = "TNO_Puerto_Plata_Invasion_GUI_GER"
 	}
 	text = {
-		trigger = {
-			check_variable = { selected_conflict_id = token:GC_FranceCW }
-			not = { tag = MAR }
-		}
+		trigger = { check_variable = { selected_conflict_id = token:GC_FranceCW } NOT = { tag = MAR } }
 		localization_key = "TNO_FrenchReclamation_DecisionGUI"
 	}
 	text = {
@@ -244,17 +241,14 @@ defined_text = {
 		localization_key = "TNO_Channel_Crisis_GUI"
 	}
 	text = {
+		trigger = { check_variable = { selected_conflict_id = token:GC_SubcontinentalCrisis } }
+		localization_key = "TNO_Subcontinental_Crisis_GUI"
+	}
+	text = {
 		trigger = {
 			check_variable = { TNO_active_conflicts^num = 0 }
 		}
 		localization_key = "TNO_fopo_no_conflict"
-	}
-	text = {
-		trigger = {
-			check_variable = { selected_conflict_id = token:GC_FranceCW }
-			tag = MAR
-		}
-		localization_key = "TNO_fopo_generic_conflict"
 	}
 	text = {
 		localization_key = "TNO_fopo_generic_conflict"
@@ -689,6 +683,18 @@ defined_text = {
 	#	trigger = { check_variable = { selected_conflict_id = token:GC_ChannelCrisis } tag = USA }
 	#	localization_key = USA_Channel_Crisis_desc
 	#}
+	text = {
+		trigger = { check_variable = { selected_conflict_id = token:GC_IndianCW } tag = USA }
+		localization_key = USA_INDCW_desc
+	}
+	text = {
+		trigger = { check_variable = { selected_conflict_id = token:GC_IndianCW } tag = JAP }
+		localization_key = JAP_INDCW_desc
+	}
+	text = {
+		trigger = { check_variable = { selected_conflict_id = token:GC_OperationBQ } tag = GER }
+		localization_key = GER_OBQ_desc
+	}
 	#TaS stuff
 	text = {
 		trigger = { check_variable = { selected_conflict_id = token:GC_FarEasternRevolt } tag = MAR }
@@ -989,7 +995,7 @@ defined_text = {
 	}
 	text = { # Reichsstaat African Cabal
 		trigger = { check_variable = { selected_conflict_id = token:GC_ReichsstaatCabal } }
-		localization_key = "GFX_fopo_reichstaat_african_cabal_sidebar"
+		localization_key = "GFX_fopo_reichsstaat_african_cabal_sidebar"
 	}
 	text = { # England Influence Battle
 		trigger = { check_variable = { selected_conflict_id = token:GC_EnglandInfluenceBattle } }
@@ -998,6 +1004,14 @@ defined_text = {
 	text = { # Not intended to be used but will leave this here in case it does show up
 		trigger = { check_variable = { selected_conflict_id = token:GC_ChannelCrisis } }
 		localization_key = "GFX_fopo_england_influence_battle_sidebar"
+	}
+	text = { # Indian Civil War
+		trigger = { check_variable = { selected_conflict_id = token:GC_IndianCW } }
+		localization_key = "GFX_fopo_indian_civil_war_sidebar"
+	}
+	text = { # Operation Bin Qasim
+		trigger = { check_variable = { selected_conflict_id = token:GC_OperationBQ } }
+		localization_key = "GFX_fopo_operation_bin_qasim_sidebar"
 	}
 	#TaS stuff
 	text = {
@@ -1659,6 +1673,26 @@ defined_text = {
 		trigger = { check_variable = { conflict_id = token:GC_Haitian_Civil_War } tag = USA }
 		localization_key = "GFX_fopo_haitianwar_usa"
 	}
+	text = { # Operation Bin Qasim - Pakt
+		trigger = { check_variable = { conflict_id = token:GC_OperationBQ } tag = GER }
+		localization_key = "GFX_fopo_indian_civil_war_GER"
+	}
+	text = { # Indian Civil War - Japan
+		trigger = { check_variable = { conflict_id = token:GC_IndianCW } tag = JAP }
+		localization_key = "GFX_fopo_indian_civil_war_JAP"
+	}
+	text = { # Indian Civil War - USA
+		trigger = { check_variable = { conflict_id = token:GC_IndianCW } tag = USA }
+		localization_key = "GFX_fopo_indian_civil_war_USA"
+	}
+	text = { # Subcontinental Crisis - Pakt
+		trigger = { check_variable = { conflict_id = token:GC_SubcontinentalCrisis } tag = GER }
+		localization_key = "GFX_fopo_subcontinental_crisis_icon_pakt"
+	}
+	text = { # Subcontinental Crisis - Japan
+		trigger = { check_variable = { conflict_id = token:GC_SubcontinentalCrisis } tag = JAP }
+		localization_key = "GFX_fopo_subcontinental_crisis_icon_cps"
+	}
 	#TaS stuff
 	text = {
 		trigger = { check_variable = { conflict_id = token:GC_FarEasternRevolt } tag = MAR }
@@ -2049,6 +2083,23 @@ defined_text = {
 	text = {
 		localization_key = PP_Insurgency_Strength_None_tooltip
 	}
+}
+
+defined_text = {
+	name = GetPPMexican_American_Cooperation
+	text = {
+		trigger = { check_variable = { MEX.PP_mexican_american_cooperation > 15 } }
+		localization_key = "high_ma_pp_cooperation"
+	}
+	text = {
+		trigger = { check_variable = { MEX.PP_mexican_american_cooperation > 10 } }
+		localization_key = "decent_ma_pp_cooperation"
+	}
+	text = {
+		trigger = { check_variable = { MEX.PP_mexican_american_cooperation > 5 } }
+		localization_key = "poor_ma_pp_cooperation"
+	}
+	text = { localization_key = "no_ma_pp_cooperation" }
 }
 
 # Mozambique US Supported Faction
@@ -3258,6 +3309,10 @@ defined_text = {
 		trigger = { ZZZ = { has_active_mission = ZZZ_PPI_Invasion_Ends } }
 		localization_key = USA_PPI_Invasion_Ends
 	}
+	text = {
+		trigger = { ZZZ = { has_active_mission = ZZZ_PPI_DOM_CAL_Negotiations } }
+		localization_key = USA_PPI_DOM_CAL_Negotiations
+	}
 }
 
 defined_text = {
@@ -3274,46 +3329,210 @@ defined_text = {
 		trigger = { ZZZ = { has_active_mission = ZZZ_PPI_Invasion_Ends } }
 		localization_key = ZZZ_PP_Mission_3
 	}
+	text = {
+		trigger = { ZZZ = { has_active_mission = ZZZ_PPI_DOM_CAL_Negotiations } }
+		localization_key = ZZZ_PP_Mission_4
+	}
+}
+
+defined_text = {
+	name = GetLegionaryOffice
+	text = {
+		trigger = { MEX = { check_variable = { PPI_Office_Number = 0 } } }
+		localization_key = PPI_Office_1
+	}
+	text = {
+		trigger = { MEX = { check_variable = { PPI_Office_Number = 1 } } }
+		localization_key = PPI_Office_2
+	}
+	text = {
+		trigger = { MEX = { check_variable = { PPI_Office_Number = 2 } } }
+		localization_key = PPI_Office_3
+	}
+}
+
+defined_text = {
+	name = GetLegionaryOfficeDesc
+	text = {
+		trigger = { MEX = { check_variable = { PPI_Office_Number = 0 } } }
+		localization_key = PPI_Office_1_desc
+	}
+	text = {
+		trigger = { MEX = { check_variable = { PPI_Office_Number = 1 } } }
+		localization_key = PPI_Office_2_desc
+	}
+	text = {
+		trigger = { MEX = { check_variable = { PPI_Office_Number = 2 } } }
+		localization_key = PPI_Office_3_desc
+	}
+}
+
+defined_text = {
+	name = GetCubanColumnNumber
+	text = {
+		trigger = { MEX = { check_variable = { PPI_Cuban_Column_Number = 0 } } }
+		localization_key = PPI_Cuban_Column_1
+	}
+	text = {
+		trigger = { MEX = { check_variable = { PPI_Cuban_Column_Number = 1 } } }
+		localization_key = PPI_Cuban_Column_2
+	}
+}
+
+defined_text = {
+	name = GetCubanColumnNumberDesc
+	text = {
+		trigger = { MEX = { check_variable = { PPI_Cuban_Column_Number = 0 } } }
+		localization_key = PPI_Cuban_Column_1_desc
+	}
+	text = {
+		trigger = { MEX = { check_variable = { PPI_Cuban_Column_Number = 1 } } }
+		localization_key = PPI_Cuban_Column_2_desc
+	}
+}
+
+defined_text = {
+	name = GetColumnNumber
+	text = {
+		trigger = { MEX = { check_variable = { PPI_Column_Number = 0 } } }
+		localization_key = PPI_Column_1
+	}
+	text = {
+		trigger = { MEX = { check_variable = { PPI_Column_Number = 1 } } }
+		localization_key = PPI_Column_2
+	}
+	text = {
+		trigger = { MEX = { check_variable = { PPI_Column_Number = 2 } } }
+		localization_key = PPI_Column_3
+	}
+}
+
+defined_text = {
+	name = GetColumnNumberDesc
+	text = {
+		trigger = { MEX = { check_variable = { PPI_Column_Number = 0 } } }
+		localization_key = PPI_Column_1_desc
+	}
+	text = {
+		trigger = { MEX = { check_variable = { PPI_Column_Number = 1 } } }
+		localization_key = PPI_Column_2_desc
+	}
+	text = {
+		trigger = { MEX = { check_variable = { PPI_Column_Number = 2 } } }
+		localization_key = PPI_Column_3_desc
+	}
+}
+
+defined_text = {
+	name = GetTrainingColumnNumber
+	text = {
+		trigger = { MEX = { has_country_flag = MEX_PPI_Legion_4_trained } }
+		localization_key = PPI_Column_3
+	}
+	text = {
+		trigger = { MEX = { has_country_flag = MEX_PPI_Legion_3_trained } }
+		localization_key = PPI_Column_2
+	}
+	text = {
+		localization_key = PPI_Column_1
+	}
+}
+
+defined_text = {
+	name = GetTrainingColumnNumberDesc
+	text = {
+		trigger = { MEX = { has_country_flag = MEX_PPI_Legion_4_trained } }
+		localization_key = PPI_Column_3_t_desc
+	}
+	text = {
+		trigger = { MEX = { has_country_flag = MEX_PPI_Legion_3_trained } }
+		localization_key = PPI_Column_2_t_desc
+	}
+	text = {
+		localization_key = PPI_Column_1_t_desc
+	}
+}
+
+defined_text = {
+	name = GetLegionBase
+	text = {
+		trigger = { MEX = { check_variable = { PPI_Base_Number = 0 } } }
+		localization_key = PPI_Base_1
+	}
+	text = {
+		trigger = { MEX = { check_variable = { PPI_Base_Number = 1 } } }
+		localization_key = PPI_Base_2
+	}
+	text = {
+		trigger = { MEX = { check_variable = { PPI_Base_Number = 2 } } }
+		localization_key = PPI_Base_3
+	}
+}
+defined_text = {
+	name = GetLegionBaseDesc
+	text = {
+		trigger = { MEX = { check_variable = { PPI_Base_Number = 0 } } }
+		localization_key = PPI_BaseDesc_1
+	}
+	text = {
+		trigger = { MEX = { check_variable = { PPI_Base_Number = 1 } } }
+		localization_key = PPI_BaseDesc_2
+	}
+	text = {
+		trigger = { MEX = { check_variable = { PPI_Base_Number = 2 } } }
+		localization_key = PPI_BaseDesc_3
+	}
+}
+
+defined_text = { # I put this here since there's no better file for it.
+	name = GetDOMModernizingMilitaryDesc
+	text = {
+		trigger = { MEX = { has_country_flag = MEX_Trujillo_Conspiracy_34_happened } }
+		localization_key = DOM_Modernizing_Military_pupo_roman_desc
+	}
+	text = {
+		localization_key = DOM_Modernizing_Military_normal_desc
+	}
 }
 
 defined_text = {
 	name = GetChannelCrisisDesc
 	text = {
-		trigger = { 
-			tag = ENG 
+		trigger = {
+			tag = ENG
 			has_global_flag = channel_crisis_ongoing_buildup
 		}
 		localization_key = ENG_Channel_Crisis_buildup_desc
 	}
 	text = {
-		trigger = { 
-			tag = GER 
+		trigger = {
+			tag = GER
 			has_global_flag = channel_crisis_ongoing_buildup
 		}
 		localization_key = GER_Channel_Crisis_buildup_desc
 	}
 	text = {
-		trigger = { 
-			tag = USA 
+		trigger = {
+			tag = USA
 			has_global_flag = channel_crisis_ongoing_buildup
 		}
 		localization_key = USA_Channel_Crisis_buildup_desc
 	}
 	text = {
-		trigger = { 
-			tag = ENG 
+		trigger = {
+			tag = ENG
 		}
 		localization_key = ENG_Channel_Crisis_confrontation_desc
 	}
 	text = {
-		trigger = { 
-			tag = GER 
+		trigger = {
+			tag = GER
 		}
 		localization_key = GER_Channel_Crisis_confrontation_desc
 	}
 	text = {
-		trigger = { 
-			tag = USA 
+		trigger = {
+			tag = USA
 		}
 		localization_key = USA_Channel_Crisis_confrontation_desc
 	}
@@ -3356,7 +3575,7 @@ defined_text = {
 	text = {
 		localization_key = "Channel_Crisis_Reject_text"
 	}
-	
+
 }
 
 defined_text = {
@@ -3463,7 +3682,7 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			NOT = { 
+			NOT = {
 				has_global_flag = channel_crisis_ongoing_buildup
 				tag = GER
 			}
@@ -3510,5 +3729,180 @@ defined_text = {
 	#}
 	text = {
 		localization_key = concession_spy_exchange_desc
+	}
+}
+
+# Subcontinental Crisis Scripted Loc
+defined_text = {
+	name = GetSubcontinentalCrisisDesc
+	text = {
+		trigger = { 
+			tag = AZH
+			has_global_flag = subcontinental_crisis_ongoing_buildup
+		}
+		localization_key = AZH_Subcontinental_Crisis_buildup_desc
+	}
+	text = {
+		trigger = { 
+			tag = PAK
+			has_global_flag = subcontinental_crisis_ongoing_buildup
+		}
+		localization_key = PAK_Subcontinental_Crisis_buildup_desc
+	}
+	text = {
+		trigger = { 
+			tag = GER
+			has_global_flag = subcontinental_crisis_ongoing_buildup
+		}
+		localization_key = GER_Subcontinental_Crisis_buildup_desc
+	}
+	text = {
+		trigger = {
+			tag = JAP
+			has_global_flag = subcontinental_crisis_ongoing_buildup
+		}
+		localization_key = JAP_Subcontinental_Crisis_buildup_desc
+	}
+	text = {
+		trigger = { 
+			tag = AZH
+		}
+		localization_key = AZH_Subcontinental_Crisis_confrontation_desc
+	}
+	text = {
+		trigger = { 
+			tag = PAK
+		}
+		localization_key = PAK_Subcontinental_Crisis_confrontation_desc
+	}
+	text = {
+		trigger = { 
+			tag = GER
+		}
+		localization_key = GER_Subcontinental_Crisis_confrontation_desc
+	}
+	text = {
+		trigger = { 
+			tag = JAP
+		}
+		localization_key = JAP_Subcontinental_Crisis_confrontation_desc
+	}
+}
+
+defined_text = {
+	name = get_SC_current_phase_loc
+	text = {
+		trigger = {
+			has_global_flag = subcontinental_crisis_ongoing_buildup
+		}
+		localization_key = subcontinental_crisis_buildup
+	}
+	text = {
+		localization_key = subcontinental_crisis_confrontation
+	}
+}
+
+defined_text = {
+	name = Get_sc_display_image
+	text = {
+		trigger = {
+			has_global_flag = subcontinental_crisis_ongoing_buildup
+		}
+		localization_key = "GFX_subcontinental_crisis_topbar_image_1"
+	}
+	text = {
+		localization_key = "GFX_subcontinental_crisis_topbar_image_2"
+	}
+}
+
+defined_text = {
+	name = Get_SC_Zeroes_Amount
+	text = {
+		trigger = {
+			check_variable = { SC_display_two = 100 }
+		}
+		localization_key = ""
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				var = SC_display_two
+				value = 9
+				compare = less_than_or_equals
+			}
+		}
+		localization_key = "00"
+	}
+	text = {
+		localization_key = "0"
+	}
+}
+
+defined_text = {
+	name = GetSubcontinentalCrisis_player_readiness_tt
+	text = {
+		trigger = {
+			OR = {
+				tag = GER
+				tag = PAK
+			}
+		}
+		localization_key = SC_player_readiness_pakt_tt
+	}
+	text = {
+		localization_key = SC_player_readiness_cps_tt
+	}
+}
+
+defined_text = {
+	name = GetSubcontinentalCrisis_opposing_tt
+	text = {
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						tag = GER
+						tag = PAK
+					}
+				}
+				check_variable = { PAK.SC_current_uncertainty = 100 }
+			}
+			else = {
+				check_variable = { JAP.SC_current_uncertainty = 100 }
+			}
+		}
+		localization_key = SC_opposing_readiness_no_info_tt
+	}
+	text = {
+		trigger = {
+			OR = {
+				tag = GER
+				tag = PAK
+			}
+			check_variable = { PAK.SC_current_uncertainty = 0 }
+		}
+		localization_key = SC_opposing_readiness_full_info_pakt_tt
+	}
+	text = {
+		trigger = {
+			OR = {
+				tag = AZH
+				tag = JAP
+			}
+			check_variable = { JAP.SC_current_uncertainty = 0 }
+		}
+		localization_key = SC_opposing_readiness_full_info_cps_tt
+	}
+	text = {
+		trigger = {
+			OR = {
+				tag = GER
+				tag = PAK
+			}
+		}
+		localization_key = SC_opposing_readiness_for_pakt_tt
+	}
+	text = {
+		localization_key = SC_opposing_readiness_for_cps_tt
 	}
 }

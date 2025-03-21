@@ -1454,26 +1454,20 @@ WRS_west_russian_collapse = {
 	set_global_flag = TNO_RUS_west_russia_collapse
 	custom_effect_tooltip = WRS_west_russian_collapse_tt
 	hidden_effect = {
+		every_country = { #Failsafe
+			limit = { has_war_with = ONG }
+			white_peace = ONG
+		}
 		FIN = {
 			if = { # Finland is beaten by Russia, but then Russia is somehow beaten by Onega need to give Finland their shit back
 				limit = { NOT = { FIN = { owns_state = 1359 } } }
-				add_state_core = 213
 				add_state_core = 215
-				add_state_core = 216
-				add_state_core = 1724
-				add_state_core = 722
 				add_state_core = 1359
-				transfer_state = 213
+				add_state_core = 1887
 				transfer_state = 215
-				transfer_state = 216
-				transfer_state = 1724
-				transfer_state = 722
 				transfer_state = 1359
+				transfer_state = 1887
 			}
-			transfer_state = 146
-			transfer_state = 213
-			transfer_state = 215
-			transfer_state = 216
 		}
 		ONG = {
 			transfer_state = 214
@@ -1492,7 +1486,6 @@ WRS_west_russian_collapse = {
 			transfer_state = 870
 			transfer_state = 859
 			transfer_state = 858
-			transfer_state = 1887
 			country_event = { id = ONG.50 }
 			remove_ideas = RUS_the_izhevsk_arsenal
 			remove_ideas = RUS_gorky_tank_factory
@@ -1512,7 +1505,7 @@ WRS_west_russian_collapse = {
 			add_ideas = RUS_shattered_ambitions
 			load_focus_tree = ZZZ_blank_focus
 			set_variable = { national_debt = 0 } # clear debt for successor
-			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
+			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Planned }
 			econ_type_change = yes
 			promote_character = BKR_ONG_Faizrakhman_Zagafuranov
 		}
@@ -1530,8 +1523,8 @@ WRS_west_russian_collapse = {
 				popularity = 0.5
 			}
 			set_variable = { national_debt = 0 } # clear debt for successor
-			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
-			econ_type_change = yes
+			set_temp_variable = { TNO_economy_subtype_temp = token:Econ_Subtype_Dirigisme }
+			econ_subtype_change = yes
 			remove_all_ministers = yes
 			add_ideas = RUS_shattered_ambitions
 			load_focus_tree = ZZZ_blank_focus
@@ -1588,7 +1581,7 @@ WRS_west_russian_collapse = {
 
 			}
 			set_variable = { national_debt = 0 } # clear debt for successor
-			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
+			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Planned }
 			econ_type_change = yes
 			add_ideas = RUS_shattered_ambitions
 			load_focus_tree = ZZZ_blank_focus
@@ -1626,7 +1619,7 @@ WRS_west_russian_collapse = {
 				popularity = 0.25
 			}
 			set_variable = { national_debt = 0 } # clear debt for successor
-			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
+			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Planned }
 			econ_type_change = yes
 			add_ideas = RUS_shattered_ambitions
 			load_focus_tree = ZZZ_blank_focus
@@ -1667,8 +1660,6 @@ WRS_west_russian_collapse = {
 			add_state_core = 854
 			transfer_state = 854
 			set_cosmetic_tag = VOL_ANARCHY
-			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
-			econ_type_change = yes
 			add_ideas = RUS_shattered_ambitions
 			load_focus_tree = ZZZ_blank_focus
 			set_politics = {
@@ -1798,7 +1789,7 @@ WRS_west_russian_collapse = {
 				popularity = 0.5
 			}
 			set_variable = { national_debt = 0 } # clear debt for successor
-			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
+			set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Planned }
 			econ_type_change = yes
 			add_ideas = RUS_shattered_ambitions
 			load_focus_tree = ZZZ_blank_focus
@@ -3527,7 +3518,7 @@ RUS_fire_southern_urals_aftermath_magnitogorsk_despotism = {
 		}
 		if = {
 			limit = {
-				has_government = paternalism
+				has_government = despotism
 			}
 			###Post-Magnitogorsk Events Here
 		}
@@ -3790,7 +3781,7 @@ RUS_fire_southern_urals_aftermath_magnitogorsk_communist = {
 		}
 		if = {
 			limit = {
-				has_government = paternalism
+				has_government = despotism
 			}
 			###Post-NKVD Magnitogorsk Events Here
 		}
@@ -4053,7 +4044,7 @@ RUS_fire_southern_urals_aftermath_orenburg_socialist = {
 		}
 		if = {
 			limit = {
-				has_government = paternalism
+				has_government = despotism
 			}
 			###Post-LibSoc Orenburg Events Here
 		}
@@ -4316,7 +4307,7 @@ RUS_fire_southern_urals_aftermath_orenburg_communist = {
 		}
 		if = {
 			limit = {
-				has_government = paternalism
+				has_government = despotism
 			}
 			###Post-AuthSoc Orenburg Events Here
 		}
@@ -4579,7 +4570,7 @@ RUS_fire_southern_urals_aftermath_orenburg_authdem = {
 		}
 		if = {
 			limit = {
-				has_government = paternalism
+				has_government = despotism
 			}
 			###Post-AuthDem Orenburg Events Here
 		}
@@ -4837,7 +4828,7 @@ RUS_fire_southern_urals_aftermath_ural_league = {
 		}
 		if = {
 			limit = {
-				has_government = paternalism
+				has_government = despotism
 			}
 			###Post-Ural League Events Here
 		}
@@ -5095,7 +5086,7 @@ RUS_fire_southern_urals_aftermath_orsk = {
 		}
 		if = {
 			limit = {
-				has_government = paternalism
+				has_government = despotism
 			}
 			###Post-Orsk Events Here
 		}
@@ -5188,6 +5179,7 @@ VP_change_outman = {
 				set_state_name = STATE_1646_rus
 			}
 			set_province_name = { id = 7672 name = VICTORY_POINTS_7672_rus }
+			set_province_name = { id = 4805 name = VICTORY_POINTS_4805_rus }
 			if = {
 				limit = {
 					ROOT = {
@@ -5214,6 +5206,7 @@ VP_change_outman = {
 			}
 			reset_province_name = 12263
 			reset_province_name = 7672
+			reset_province_name = 4805
 		}
 	}
 	if = {
@@ -6576,7 +6569,7 @@ RUS_select_superregional_cosmetic_tag = {
 		}
 		if = {
 			limit = {
-				has_government = paternalism
+				has_government = despotism
 			}
 			set_cosmetic_tag = SVR_RUS
 		}
@@ -6967,7 +6960,7 @@ RUS_select_superregional_focus_tree = {
 		}
 		if = {
 			limit = {
-				has_government = paternalism
+				has_government = despotism
 			}
 			hidden_effect = {
 				load_focus_tree = SVR_superregional_tree_batov
@@ -7175,7 +7168,15 @@ RUS_select_superregional_focus_tree = {
 		}
 		if = {
 			limit = {
-				has_government = despotism
+				AND = {
+					has_government = despotism
+					NOT = {
+						has_country_leader = {
+							character = MAG_Mitchell_Werbell
+							ruling_only = yes
+						}
+					}
+				}
 			}
 			hidden_effect = {
 				load_focus_tree = { tree = MAG_superregional_matkovsky_tree keep_completed = no }
@@ -7575,7 +7576,7 @@ RUS_select_final_news_event = {
 		}
 		if = {
 			limit = {
-				has_government = paternalism
+				has_government = despotism
 			}
 			hidden_effect = {
 				every_country = {
@@ -7929,6 +7930,12 @@ RUS_select_final_news_event = {
 					has_government = despotism
 					has_government = fascism
 				}
+				NOT = {
+					has_country_leader = {
+						character = MAG_Mitchell_Werbell
+						ruling_only = yes
+					}
+				}
 			}
 			hidden_effect = {
 				every_country = {
@@ -8210,7 +8217,7 @@ RUS_select_final_cosmetic_tag = {
 		}
 		if = {
 			limit = {
-				has_government = paternalism
+				has_government = despotism
 			}
 			set_cosmetic_tag = SVR_RUS
 		}
@@ -8856,6 +8863,40 @@ RUS_capitulation_effect = {
 		set_global_flag = skip_default_capitulation
 	}
 
+	else_if = {
+		limit = {
+			ROOT = {
+				AND = {
+					tag = ZLT
+					has_cosmetic_tag = ZLT_SERENE_REPUBLIC
+				}
+			}
+		}
+		FROM = {
+			annex_country = {
+				target = ROOT
+				transfer_troops = no
+			}
+			annex_country = {
+				target = OMS
+				transfer_troops = no
+			}
+			annex_country = {
+				target = SVR
+				transfer_troops = no
+			}
+			annex_country = {
+				target = TYM
+				transfer_troops = no
+			}
+			annex_country = {
+				target = YGR
+				transfer_troops = no
+			}
+		}
+		set_global_flag = skip_default_capitulation
+	}
+
 	# SBA Collapse Wars
 	else_if = {
 		limit = {
@@ -8933,6 +8974,12 @@ RUS_capitulation_effect = {
 				ROOT = { tag = ALT }
 				FROM = { tag = NOV }
 			}
+			FROM = {
+				annex_country ={
+					target = ROOT
+					transfer_troops = no
+				}
+			}
 			KEM = {
 				country_event = {
 					id = SBA.118
@@ -8944,6 +8991,12 @@ RUS_capitulation_effect = {
 			limit = {
 				ROOT = { tag = NOV }
 				FROM = { tag = ALT }
+			}
+			FROM = {
+				annex_country ={
+					target = ROOT
+					transfer_troops = no
+				}
 			}
 			KEM = {
 				country_event = {
@@ -9468,6 +9521,23 @@ RUS_capitulation_effect = {
 			}
 		}
 		set_global_flag = skip_default_capitulation
+	}
+	if = {
+		limit = {
+			AMR = { owns_state = 657 }
+			NOT = { AMR = { owns_state = 561 } }
+		}
+		FROM = {
+			annex_country = {
+				target = AMR
+				transfer_troops = no
+			}
+		}
+	}
+	every_state = {
+		limit = { is_claimed_by = ROOT }
+		add_claim_by = FRON
+		remove_claim_by = ROOT
 	}
 
 	# Reset the war weariness

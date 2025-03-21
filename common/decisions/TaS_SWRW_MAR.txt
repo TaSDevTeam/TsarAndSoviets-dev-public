@@ -1,4 +1,4 @@
-MAR_SWRW_category = {
+MAR_BoP_category = {
 	### STAGE ONE ###
 	### MIL DECISIONS ###
 	TaS_WRW2_launch_attack_on_germany = {
@@ -63,11 +63,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_zapad_excersices = {
 		icon = GFX_zapad
 		visible = {
-			check_variable = { TaS_swrw_stage = 1 }
-			OR = {
-				check_variable = { swrw_preparation_category = 1 }
-				is_ai = yes
-			}
+			TaS_SWRW_frontlines_preparation_selected = yes
 			date > 1971.01.01
 			date < 1972.01.01
 		}
@@ -169,11 +165,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_sever_excersices = {
 		icon = GFX_sever
 		visible = {
-			check_variable = { TaS_swrw_stage = 1 }
-			OR = {
-				check_variable = { swrw_preparation_category = 1 }
-				is_ai = yes
-			}
+			TaS_SWRW_frontlines_preparation_selected = yes
 			date > 1972.01.01
 			date < 1973.01.01
 		}
@@ -275,11 +267,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_vostok_excersices = {
 		icon = GFX_vostok
 		visible = {
-			check_variable = { TaS_swrw_stage = 1 }
-			OR = {
-				check_variable = { swrw_preparation_category = 1 }
-				is_ai = yes
-			}
+			TaS_SWRW_frontlines_preparation_selected = yes
 			date > 1973.01.01
 			date < 1974.01.01
 		}
@@ -389,11 +377,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_volga_excersices = {
 		icon = GFX_volga
 		visible = {
-			check_variable = { TaS_swrw_stage = 1 }
-			OR = {
-				check_variable = { swrw_preparation_category = 1 }
-				is_ai = yes
-			}
+			TaS_SWRW_frontlines_preparation_selected = yes
 			date > 1974.01.01
 			date < 1975.01.01
 		}
@@ -496,12 +480,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_establish_northborders_fortifications = {
 		icon = GFX_decision_generic_destroy_fort
 		visible = {
-			check_variable = { TaS_swrw_stage = 1 }
-			OR = {
-				check_variable = { swrw_preparation_category = 1 }
-				is_ai = yes
-			}
-			#has_country_flag = SWRW_decisions_bunkers
+			TaS_SWRW_frontlines_preparation_selected = yes
 		}
 		available = {
 			has_war = no
@@ -760,12 +739,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_establish_southborders_fortifications = {
 		icon = GFX_decision_generic_destroy_fort
 		visible = {
-			check_variable = { TaS_swrw_stage = 1 }
-			OR = {
-				check_variable = { swrw_preparation_category = 1 }
-				is_ai = yes
-			}
-			#has_country_flag = SWRW_decisions_bunkers
+			TaS_SWRW_frontlines_preparation_selected = yes
 		}
 		available = {
 			has_war = no
@@ -1054,11 +1028,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_establish_centralasian_fortifications = {
 		icon = GFX_decision_generic_destroy_fort
 		visible = {
-			check_variable = { TaS_swrw_stage = 1 }
-			OR = {
-				check_variable = { swrw_preparation_category = 1 }
-				is_ai = yes
-			}
+			TaS_SWRW_frontlines_preparation_selected = yes
 			has_country_flag = MAR_Turkestan_German
 		}
 		available = {
@@ -1280,12 +1250,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_establish_fallback_fortifications = {
 		icon = GFX_decision_generic_destroy_fort
 		visible = {
-			#has_country_flag = SWRW_decisions_bunkers
-			check_variable = { TaS_swrw_stage = 1 }
-			OR = {
-				check_variable = { swrw_preparation_category = 1 }
-				is_ai = yes
-			}
+			TaS_SWRW_frontlines_preparation_selected = yes
 		}
 		available = {
 			has_completed_focus = MAR_warprep_prepare_for_the_worst
@@ -1580,11 +1545,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_mobilize_airmobile_units = {
 		icon = GFX_decision_generic_hangar
 		visible = {
-			check_variable = { TaS_swrw_stage = 1 }
-			OR = {
-				check_variable = { swrw_preparation_category = 1 }
-				is_ai = yes
-			}
+			TaS_SWRW_frontlines_preparation_selected = yes
 		}
 		available = {
 			has_war = no
@@ -1679,12 +1640,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_millitary_production_contracts = {
 		icon = GFX_decision_generic_arms_trade_increase
 		visible = {
-			#has_country_flag = SWRW_decisions_leviathan
-			check_variable = { TaS_swrw_stage = 1 }
-			OR = {
-				check_variable = { swrw_preparation_category = 1 }
-				is_ai = yes
-			}
+			TaS_SWRW_frontlines_preparation_selected = yes
 		}
 		available = {
 			has_completed_focus = MAR_warprep_leviathan_of_eurasia
@@ -1754,12 +1710,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_radars_constuction = {
 		icon = GFX_radar
 		visible = {
-			#has_country_flag = SWRW_decisions_leviathan
-			check_variable = { TaS_swrw_stage = 1 }
-			OR = {
-				check_variable = { swrw_preparation_category = 1 }
-				is_ai = yes
-			}
+			TaS_SWRW_frontlines_preparation_selected = yes
 		}
 		available = {
 			has_war = no
@@ -1838,12 +1789,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_raise_additional_reserves = {
 		icon = GFX_decision_generic_military_parade
 		visible = {
-			#has_country_flag = SWRW_decisions_mobilisation
-			check_variable = { TaS_swrw_stage = 1 }
-			OR = {
-				check_variable = { swrw_preparation_category = 2 }
-				is_ai = yes
-			}
+			TaS_SWRW_homefront_preparation_selected = yes
 		}
 		available = {
 			has_war = no
@@ -1892,12 +1838,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_draft_propaganda = {
 		icon = GFX_recruit
 		visible = {
-			#has_country_flag = SWRW_decisions_mobilisation
-			check_variable = { TaS_swrw_stage = 1 }
-			OR = {
-				check_variable = { swrw_preparation_category = 2 }
-				is_ai = yes
-			}
+			TaS_SWRW_homefront_preparation_selected = yes
 		}
 		available = {
 			has_war = no
@@ -1946,12 +1887,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_develop_front_railways = {
 		icon = GFX_decision_generic_supply
 		visible = {
-			#has_country_flag = SWRW_decisions_logistics
-			check_variable = { TaS_swrw_stage = 1 }
-			OR = {
-				check_variable = { swrw_preparation_category = 2 }
-				is_ai = yes
-			}
+			TaS_SWRW_homefront_preparation_selected = yes
 		}
 		available = {
 			has_war = no
@@ -2066,12 +2002,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_develop_front_infrastructure = {
 		icon = GFX_decision_generic_infrastructure
 		visible = {
-			#has_country_flag = SWRW_decisions_logistics
-			check_variable = { TaS_swrw_stage = 1 }
-			OR = {
-				check_variable = { swrw_preparation_category = 2 }
-				is_ai = yes
-			}
+			TaS_SWRW_homefront_preparation_selected = yes
 		}
 		available = {
 			has_war = no
@@ -2178,12 +2109,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_prepare_industrial_centers = {
 		icon = GFX_decision_generic_factory_blue
 		visible = {
-			#has_country_flag = SWRW_decisions_leviathan
-			check_variable = { TaS_swrw_stage = 1 }
-			OR = {
-				check_variable = { swrw_preparation_category = 2 }
-				is_ai = yes
-			}
+			TaS_SWRW_homefront_preparation_selected = yes
 		}
 		available = {
 			has_war = no
@@ -2233,11 +2159,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_prepare_economics = {
 		icon = GFX_decision_generic_money
 		visible = {
-			check_variable = { TaS_swrw_stage = 1 }
-			OR = {
-				check_variable = { swrw_preparation_category = 2 }
-				is_ai = yes
-			}
+			TaS_SWRW_homefront_preparation_selected = yes
 		}
 		available = {
 			has_war = no
@@ -2281,12 +2203,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_mobilize_economics = {
 		icon = GFX_decision_generic_military_parade
 		visible = {
-			#has_country_flag = SWRW_decisions_mobilisation
-			check_variable = { TaS_swrw_stage = 1 }
-			OR = {
-				check_variable = { swrw_preparation_category = 2 }
-				is_ai = yes
-			}
+			TaS_SWRW_homefront_preparation_selected = yes
 		}
 		available = {
 			has_war = no
@@ -2332,11 +2249,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_buy_equipment = {
 		icon = GFX_decision_generic_tools
 		visible = {
-			check_variable = { TaS_swrw_stage = 1 }
-			OR = {
-				check_variable = { swrw_preparation_category = 2 }
-				is_ai = yes
-			}
+			TaS_SWRW_homefront_preparation_selected = yes
 		}
 		available = {
 			has_war = no
@@ -2381,12 +2294,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_send_partisans = {	
 		icon = GFX_decision_generic_revolt
 		visible = {
-			#has_country_flag = SWRW_decisions_ger
-			check_variable = { TaS_swrw_stage = 1 }
-			OR = {
-				check_variable = { swrw_preparation_category = 3 }
-				is_ai = yes
-			}
+			TaS_SWRW_diplomacy_preparation_selected = yes
 		}
 		available = {
 			has_war = no
@@ -2447,12 +2355,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_block_the_barentsevo_sea = {	
 		icon = GFX_decision_generic_landmines
 		visible = {
-			#has_country_flag = SWRW_decisions_ger
-			check_variable = { TaS_swrw_stage = 1 }
-			OR = {
-				check_variable = { swrw_preparation_category = 3 }
-				is_ai = yes
-			}
+			TaS_SWRW_diplomacy_preparation_selected = yes
 		}
 		available = {
 			has_war = no
@@ -2489,12 +2392,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_buy_guns = {	
 		icon = GFX_decision_market_infantry
 		visible = {
-			#has_country_flag = SWRW_decisions_usa
-			check_variable = { TaS_swrw_stage = 1 }
-			OR = {
-				check_variable = { swrw_preparation_category = 3 }
-				is_ai = yes
-			}
+			TaS_SWRW_diplomacy_preparation_selected = yes
 			NOT = { has_completed_focus = MAR_warprep_chrysanthemum_friendship }
 		}
 		available = {
@@ -2577,12 +2475,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_test_technology = {	
 		icon = GFX_decision_generic_tank
 		visible = {
-			#has_country_flag = SWRW_decisions_usa
-			check_variable = { TaS_swrw_stage = 1 }
-			OR = {
-				check_variable = { swrw_preparation_category = 3 }
-				is_ai = yes
-			}
+			TaS_SWRW_diplomacy_preparation_selected = yes
 			NOT = { has_completed_focus = MAR_warprep_chrysanthemum_friendship }
 		}
 		available = {
@@ -2662,12 +2555,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_buy_guns_jap = {	
 		icon = GFX_decision_market_infantry
 		visible = {
-			#has_country_flag = SWRW_decisions_jap
-			check_variable = { TaS_swrw_stage = 1 }
-			OR = {
-				check_variable = { swrw_preparation_category = 3 }
-				is_ai = yes
-			}
+			TaS_SWRW_diplomacy_preparation_selected = yes
 			NOT = { has_completed_focus = MAR_warprep_better_call_sam }
 		}
 		available = {
@@ -2757,12 +2645,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_test_technology_jap = {	
 		icon = GFX_decision_generic_tank
 		visible = {
-			#has_country_flag = SWRW_decisions_jap
-			check_variable = { TaS_swrw_stage = 1 }
-			OR = {
-				check_variable = { swrw_preparation_category = 3 }
-				is_ai = yes
-			}
+			TaS_SWRW_diplomacy_preparation_selected = yes
 			NOT = { has_completed_focus = MAR_warprep_better_call_sam }
 		}
 		available = {
@@ -2842,12 +2725,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_international_recruiting = {
 		icon = generic_workers
 		visible = {
-			#SWRW_decisions_fopo
-			check_variable = { TaS_swrw_stage = 1 }
-			OR = {
-				check_variable = { swrw_preparation_category = 3 }
-				is_ai = yes
-			}
+			TaS_SWRW_diplomacy_preparation_selected = yes
 		}
 		available = {
 			has_completed_focus = MAR_warprep_friends_around_the_world
@@ -2886,12 +2764,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_block_suez = {
 		icon = generic_battleship
 		visible = {
-			#has_country_flag = #SWRW_decisions_fopo
-			check_variable = { TaS_swrw_stage = 1 }
-			OR = {
-				check_variable = { swrw_preparation_category = 3 }
-				is_ai = yes
-			}
+			TaS_SWRW_diplomacy_preparation_selected = yes
 			OR = {
 				UAR = {
 					check_variable = { ECON_SPHERE_LEADER = MAR }
@@ -2945,12 +2818,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_chill_down_germs = {
 		icon = generic_pakt_business
 		visible = {
-			#has_country_flag = SWRW_decisions_fopo
-			check_variable = { TaS_swrw_stage = 1 }
-			OR = {
-				check_variable = { swrw_preparation_category = 3 }
-				is_ai = yes
-			}
+			TaS_SWRW_diplomacy_preparation_selected = yes
 		}
 		available = {
 			has_completed_focus = MAR_warprep_friends_around_the_world
@@ -3018,11 +2886,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_chill_down_germs_little = {
 		icon = generic_pakt_business
 		visible = {
-			check_variable = { TaS_swrw_stage = 1 }
-			OR = {
-				check_variable = { swrw_preparation_category = 3 }
-				is_ai = yes
-			}
+			TaS_SWRW_diplomacy_preparation_selected = yes
 		}
 		available = {
 			divisions_in_state = {
@@ -3369,11 +3233,7 @@ MAR_SWRW_category = {
 		icon = generic_assault
 		priority = 51
 		visible = {
-			OR = {
-				check_variable = { WRW_deccat = 1 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_frontlines_war_selected = yes
 		}
 		available = {
 			controls_state = 246
@@ -3412,11 +3272,7 @@ MAR_SWRW_category = {
 	}
 	SWRW_take_tichwin = {
 		visible = {
-			OR = {
-				check_variable = { WRW_deccat = 1 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_frontlines_war_selected = yes
 		}
 		icon = generic_assault
 		priority = 50
@@ -3456,11 +3312,7 @@ MAR_SWRW_category = {
 	}
 	SWRW_push_to_paulusburg = {
 		visible = {
-			OR = {
-				check_variable = { WRW_deccat = 1 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_frontlines_war_selected = yes
 		}
 		icon = generic_assault
 		priority = 49
@@ -3506,11 +3358,7 @@ MAR_SWRW_category = {
 	}
 	SWRW_push_to_penza = {
 		visible = {
-			OR = {
-				check_variable = { WRW_deccat = 1 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_frontlines_war_selected = yes
 		}
 		icon = generic_assault
 		priority = 48
@@ -3559,11 +3407,7 @@ MAR_SWRW_category = {
 		icon = generic_assault
 		priority = 47
 		visible = {
-			OR = {
-				check_variable = { WRW_deccat = 1 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_frontlines_war_selected = yes
 		}
 		available = {
 			controls_state = 224
@@ -3611,11 +3455,7 @@ MAR_SWRW_category = {
 	}
 	SWRW_march_over_moscow = {
 		visible = {
-			OR = {
-				check_variable = { WRW_deccat = 1 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_frontlines_war_selected = yes
 		}
 		icon = generic_assault
 		priority = 46
@@ -3664,11 +3504,7 @@ MAR_SWRW_category = {
 	}
 	SWRW_onto_oryol = {
 		visible = {
-			OR = {
-				check_variable = { WRW_deccat = 1 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_frontlines_war_selected = yes
 		}
 		icon = generic_assault
 		priority = 45
@@ -3718,11 +3554,7 @@ MAR_SWRW_category = {
 	### RK Ostland
 	SWRW_push_to_petrograd = {
 		visible = {
-			OR = {
-				check_variable = { WRW_deccat = 1 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_frontlines_war_selected = yes
 		}
 		icon = generic_assault
 		priority = 45
@@ -3767,11 +3599,7 @@ MAR_SWRW_category = {
 	}
 	SWRW_take_pskov = {
 		visible = {
-			OR = {
-				check_variable = { WRW_deccat = 1 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_frontlines_war_selected = yes
 		}
 		icon = generic_assault
 		priority = 45
@@ -3813,11 +3641,7 @@ MAR_SWRW_category = {
 	}
 	SWRW_storm_smolensk = {
 		visible = {
-			OR = {
-				check_variable = { WRW_deccat = 1 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_frontlines_war_selected = yes
 		}
 		icon = generic_assault
 		priority = 45
@@ -3864,11 +3688,7 @@ MAR_SWRW_category = {
 	
 	SWRW_charge_into_the_caucasus = {
 		visible = {
-			OR = {
-				check_variable = { WRW_deccat = 1 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_frontlines_war_selected = yes
 		}
 		icon = generic_assault
 		priority = 44
@@ -3930,11 +3750,7 @@ MAR_SWRW_category = {
 	
 	SWRW_blitz_to_baku = {
 		visible = {
-			OR = {
-				check_variable = { WRW_deccat = 1 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_frontlines_war_selected = yes
 		}
 		icon = generic_assault
 		priority = 44
@@ -3998,11 +3814,7 @@ MAR_SWRW_category = {
 	
 	SWRW_take_tbilisi = {
 		visible = {
-			OR = {
-				check_variable = { WRW_deccat = 1 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_frontlines_war_selected = yes
 		}
 		icon = generic_assault
 		priority = 44
@@ -4063,11 +3875,7 @@ MAR_SWRW_category = {
 	
 	SWRW_secure_sevastopol = {
 		visible = {
-			OR = {
-				check_variable = { WRW_deccat = 1 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_frontlines_war_selected = yes
 		}
 		icon = generic_assault
 		priority = 43
@@ -4115,11 +3923,7 @@ MAR_SWRW_category = {
 	
 	SWRW_push_to_poltava = {
 		visible = {
-			OR = {
-				check_variable = { WRW_deccat = 1 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_frontlines_war_selected = yes
 		}
 		icon = generic_assault
 		priority = 41
@@ -4171,11 +3975,7 @@ MAR_SWRW_category = {
 	}
 	SWRW_take_zaporizhia = {
 		visible = {
-			OR = {
-				check_variable = { WRW_deccat = 1 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_frontlines_war_selected = yes
 		}
 		icon = generic_assault
 		priority = 41
@@ -4232,11 +4032,7 @@ MAR_SWRW_category = {
 	}
 	SWRW_liberate_kiev = {
 		visible = {
-			OR = {
-				check_variable = { WRW_deccat = 1 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_frontlines_war_selected = yes
 		}
 		icon = generic_assault
 		priority = 41
@@ -4292,11 +4088,7 @@ MAR_SWRW_category = {
 	}
 	RUS_past_the_dniepr = {
 		visible = {
-			OR = {
-				check_variable = { WRW_deccat = 1 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_frontlines_war_selected = yes
 		}
 		icon = generic_assault
 		priority = 40
@@ -4349,11 +4141,7 @@ MAR_SWRW_category = {
 	
 	SWRW_into_volhynia = {
 		visible = {
-			OR = {
-				check_variable = { WRW_deccat = 1 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_frontlines_war_selected = yes
 		}
 		icon = generic_assault
 		priority = 40
@@ -4417,11 +4205,7 @@ MAR_SWRW_category = {
 	
 	SWRW_blitz_belarus = {
 		visible = {
-			OR = {
-				check_variable = { WRW_deccat = 1 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_frontlines_war_selected = yes
 		}
 		icon = generic_assault
 		priority = 39
@@ -4495,11 +4279,7 @@ MAR_SWRW_category = {
 	
 	SWRW_race_to_riga = {
 		visible = {
-			OR = {
-				check_variable = { WRW_deccat = 1 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_frontlines_war_selected = yes
 		}
 		icon = generic_assault
 		priority = 38
@@ -4577,11 +4357,7 @@ MAR_SWRW_category = {
 	
 	SWRW_liberate_lithuania = {
 		visible = {
-			OR = {
-				check_variable = { WRW_deccat = 1 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_frontlines_war_selected = yes
 		}
 		icon = generic_assault
 		priority = 38
@@ -4647,11 +4423,7 @@ MAR_SWRW_category = {
 	
 	SWRW_march_on_galicia = {
 		visible = {
-			OR = {
-				check_variable = { WRW_deccat = 1 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_frontlines_war_selected = yes
 		}
 		icon = generic_assault
 		priority = 38
@@ -4722,11 +4494,7 @@ MAR_SWRW_category = {
 	
 	SWRW_remember_1758 = {
 		visible = {
-			OR = {
-				check_variable = { WRW_deccat = 1 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_frontlines_war_selected = yes
 		}
 		icon = generic_assault
 		priority = 38
@@ -4778,11 +4546,7 @@ MAR_SWRW_category = {
 	
 	SWRW_heart_of_poland = {
 		visible = {
-			OR = {
-				check_variable = { WRW_deccat = 1 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_frontlines_war_selected = yes
 		}
 		icon = generic_assault
 		priority = 38
@@ -4863,11 +4627,7 @@ MAR_SWRW_category = {
 	
 	SWRW_gate_of_berlin = {
 		visible = {
-			OR = {
-				check_variable = { WRW_deccat = 1 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_frontlines_war_selected = yes
 		}
 		icon = generic_assault
 		priority = 38
@@ -4921,11 +4681,7 @@ MAR_SWRW_category = {
 	
 	SWRW_battle_of_germania = {
 		visible = {
-			OR = {
-				check_variable = { WRW_deccat = 1 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_frontlines_war_selected = yes
 		}
 		icon = generic_assault
 		priority = 38
@@ -4978,11 +4734,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_activate_plan_spb = {
 		icon = GFX_nevsky
 		visible = {
-			OR = {
-				check_variable = { WRW_deccat = 1 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_frontlines_war_selected = yes
 		}
 		available = {
 			has_war = yes
@@ -5053,11 +4805,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_activate_plan_msk = {
 		icon = GFX_pozharskiy_minin
 		visible = {
-			OR = {
-				check_variable = { WRW_deccat = 1 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_frontlines_war_selected = yes
 		}
 		available = {
 			has_war = yes
@@ -5131,11 +4879,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_activate_plan_volga = {
 		icon = GFX_donskoy
 		visible = {
-			OR = {
-				check_variable = { WRW_deccat = 1 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_frontlines_war_selected = yes
 		}
 		available = {
 			has_war = yes
@@ -5209,11 +4953,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_activate_plan_kiev = {
 		icon = GFX_svyatoslav
 		visible = {
-			OR = {
-				check_variable = { WRW_deccat = 1 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_frontlines_war_selected = yes
 		}
 		available = {
 			has_war = yes
@@ -5287,11 +5027,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_activate_plan_riga = {
 		icon = GFX_grozny
 		visible = {
-			OR = {
-				check_variable = { WRW_deccat = 1 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_frontlines_war_selected = yes
 		}
 		available = {
 			has_war = yes
@@ -5372,6 +5108,7 @@ MAR_SWRW_category = {
 			#}
 			#check_variable = { MAR_Sended_diversants = 1 }
 			#check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_frontlines_war_selected = yes
 			is_debug = yes
 		}
 		available = {
@@ -5398,12 +5135,8 @@ MAR_SWRW_category = {
 	TaS_WRW2_activate_partisans_VVV = {
 		icon = GFX_decision_generic_assault
 		visible = {
-			OR = {
-				check_variable = { WRW_deccat = 1 }
-				is_ai = yes
-			}
+			TaS_SWRW_frontlines_war_selected = yes
 			check_variable = { MAR_Sended_diversants = 1 }
-			check_variable = { TaS_swrw_stage = 2 }	
 		}
 		available = {
 			has_war = yes
@@ -5438,12 +5171,8 @@ MAR_SWRW_category = {
 	TaS_WRW2_activate_partisans_ORL = {
 		icon = GFX_decision_generic_assault
 		visible = {
-			OR = {
-				check_variable = { WRW_deccat = 1 }
-				is_ai = yes
-			}
+			TaS_SWRW_frontlines_war_selected = yes
 			check_variable = { MAR_Sended_diversants = 1 }
-			check_variable = { TaS_swrw_stage = 2 }
 		}
 		available = {
 			has_war = yes
@@ -5478,12 +5207,8 @@ MAR_SWRW_category = {
 	TaS_WRW2_activate_partisans_SHI = {
 		icon = GFX_decision_generic_assault
 		visible = {
-			OR = {
-				check_variable = { WRW_deccat = 1 }
-				is_ai = yes
-			}
+			TaS_SWRW_frontlines_war_selected = yes
 			check_variable = { MAR_Sended_diversants = 1 }
-			check_variable = { TaS_swrw_stage = 2 }
 		}
 		available = {
 			has_war = yes
@@ -5518,12 +5243,8 @@ MAR_SWRW_category = {
 	TaS_WRW2_activate_partisans_POV = {
 		icon = GFX_decision_generic_assault
 		visible = {
-			OR = {
-				check_variable = { WRW_deccat = 1 }
-				is_ai = yes
-			}
+			TaS_SWRW_frontlines_war_selected = yes
 			check_variable = { MAR_Sended_diversants = 1 }
-			check_variable = { TaS_swrw_stage = 2 }
 		}
 		available = {
 			has_war = yes
@@ -5559,12 +5280,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_raid_in_the_germany = {
 		icon = GFX_decision_generic_bombing
 		visible = {
-			OR = {
-				check_variable = { WRW_deccat = 1 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
-			is_russian_nation = yes 
+			TaS_SWRW_frontlines_war_selected = yes
 		}
 		available = {
 			has_war = yes
@@ -5817,12 +5533,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_offer_total_capitulation = {
 		icon = GFX_decision_generic_military_parade
 		visible = {
-			OR = {
-				check_variable = { WRW_deccat = 3 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
-			is_russian_nation = yes
+			TaS_SWRW_diplomacy_war_selected = yes
 		}
 		available = {
 			has_war = yes
@@ -5856,12 +5567,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_ask_for_ofn_help = {
 		icon = GFX_decision_generic_ofn_stationing
 		visible = {
-			is_russian_nation = yes
-			OR = {
-				check_variable = { WRW_deccat = 3 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_diplomacy_war_selected = yes
 		}
 		available = {
 			has_war = yes
@@ -5885,12 +5591,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_form_the_internation_legion = {
 		icon = GFX_decision_generic_building_army_base
 		visible = {
-			is_russian_nation = yes
-			OR = {
-				check_variable = { WRW_deccat = 3 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_diplomacy_war_selected = yes
 			NOT = { has_country_flag = legion_fully_formed }
 		}
 		available = {
@@ -5964,12 +5665,7 @@ MAR_SWRW_category = {
 	TaS_WRW2_ask_for_german_isolation = {
 		icon = GFX_decision_generic_protest
 		visible = {
-			is_russian_nation = yes
-			OR = {
-				check_variable = { WRW_deccat = 3 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_diplomacy_war_selected = yes
 		}
 		available = {
 			has_war = yes
@@ -6010,12 +5706,7 @@ MAR_SWRW_category = {
 		icon = GFX_decision_generic_propaganda
 		cost = 50
 		visible = {
-			is_russian_nation = yes
-			OR = {
-				check_variable = { WRW_deccat = 3 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_diplomacy_war_selected = yes
 		}
 		ai_will_do = {
 			factor = 200
@@ -6048,12 +5739,7 @@ MAR_SWRW_category = {
 		icon = GFX_decision_generic_propaganda
 		cost = 50
 		visible = {
-			is_russian_nation = yes
-			OR = {
-				check_variable = { WRW_deccat = 2 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_homefront_war_selected = yes
 		}
 		ai_will_do = {
 			factor = 200
@@ -6088,12 +5774,7 @@ MAR_SWRW_category = {
 		icon = GFX_decision_generic_political_action
 		cost = 50
 		visible = {
-			is_russian_nation = yes
-			OR = {
-				check_variable = { WRW_deccat = 2 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_homefront_war_selected = yes
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -6124,12 +5805,7 @@ MAR_SWRW_category = {
 		icon = GFX_decision_generic_economy_graph
 		cost = 50
 		visible = {
-			is_russian_nation = yes
-			OR = {
-				check_variable = { WRW_deccat = 2 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_homefront_war_selected = yes
 		}
 		ai_will_do = {
 			factor = 200
@@ -6147,12 +5823,7 @@ MAR_SWRW_category = {
 		icon = GFX_decision_generic_factory_blue
 		cost = 50
 		visible = {
-			is_russian_nation = yes
-			OR = {
-				check_variable = { WRW_deccat = 2 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_homefront_war_selected = yes
 		}
 		ai_will_do = {
 			factor = 200
@@ -6171,12 +5842,7 @@ MAR_SWRW_category = {
 		priority = 70
 		icon = GFX_decision_generic_supply
 		visible = {
-			is_russian_nation = yes
-			OR = {
-				check_variable = { WRW_deccat = 2 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_homefront_war_selected = yes
 		}
 		available = {
 			has_war = yes
@@ -6249,12 +5915,7 @@ MAR_SWRW_category = {
 		icon = GFX_decision_generic_money
 		cost = 50
 		visible = {
-			is_russian_nation = yes
-			OR = {
-				check_variable = { WRW_deccat = 2 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_homefront_war_selected = yes
 		}
 		ai_will_do = {
 			factor = 200
@@ -6294,12 +5955,7 @@ MAR_SWRW_category = {
 		priority = 60
 		icon = GFX_decision_generic_building_prisons
 		visible = {
-			is_russian_nation = yes
-			OR = {
-				check_variable = { WRW_deccat = 2 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_homefront_war_selected = yes
 		}
 		available = {
 			has_war = yes
@@ -6365,12 +6021,7 @@ MAR_SWRW_category = {
 		icon = GFX_decision_generic_political_action
 		cost = 0
 		visible = {
-			is_russian_nation = yes
-			OR = {
-				check_variable = { WRW_deccat = 2 }
-				is_ai = yes
-			}
-			check_variable = { TaS_swrw_stage = 2 }
+			TaS_SWRW_homefront_war_selected = yes
 			OR = {
 				has_government = paternalism
 				has_government = conservatism

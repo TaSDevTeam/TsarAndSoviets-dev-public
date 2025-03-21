@@ -3509,6 +3509,17 @@ country_event = { #FIN: They refused
 				limit = { is_ai = no }
 				news_event = { id = MAR_2WRW_world_news.44 }
 			}
+			FIN = {
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = SWRW_RUS_ULTIMATUM_FIN_WAR
+							option = SWRW_RUS_ULTIMATUM_FIN_WAR_FAIL
+						}
+						apply_war_buff_with_15_divisions = yes
+					}
+				}
+			}
 		}
 	}
 }
@@ -3819,17 +3830,27 @@ country_event = { #TUR: Turkey gather troops
 			target = TUR
 			type = annex_everything
 		}
-		TUR = {
-			set_country_flag = {
-				flag = TUR_WAR_TIMEOUT
-				value = 1 
-				days = 45
-			}
-		}
+		
 		hidden_effect = {
 			every_country = {
 				limit = { is_ai = no }
 				news_event = { id = MAR_2WRW_world_news.46 }
+			}
+			TUR = {
+				set_country_flag = {
+					flag = TUR_WAR_TIMEOUT
+					value = 1 
+					days = 45
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = SWRW_RUS_ULTIMATUM_TUR_WAR
+							option = SWRW_RUS_ULTIMATUM_TUR_WAR_FAIL
+						}
+						apply_war_buff_with_15_divisions = yes
+					}
+				}
 			}
 		}
 	}
@@ -3869,6 +3890,15 @@ country_event = { #TUR: fuck let's goooooooo
 			value = 1 
 			days = 45
 		}
+		if = {
+			limit = {
+				has_game_rule = {
+					rule = SWRW_RUS_ULTIMATUM_TUR_WAR
+					option = SWRW_RUS_ULTIMATUM_TUR_WAR_FAIL
+				}
+				apply_war_buff_with_15_divisions = yes
+			}
+		}
 		1565 = { set_demilitarized_zone = no }
 	}
 }
@@ -3885,6 +3915,30 @@ country_event = { #TUR: Ceasefire
 
 	option = { #well, shit
 		name = MAR_ultimatums.111.a 
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = SWRW_RUS_ULTIMATUM_TUR_WAR
+					option = SWRW_RUS_ULTIMATUM_TUR_WAR_CEASEFIRE
+				}
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = SWRW_RUS_ULTIMATUM_TUR_WAR
+					option = SWRW_RUS_ULTIMATUM_TUR_WAR_WIN
+				}
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = SWRW_RUS_ULTIMATUM_TUR_WAR
+					option = SWRW_RUS_ULTIMATUM_TUR_WAR_FAIL
+				}
+			}
+		}
 		RUS = {
 			white_peace = TUR
 		}
@@ -3924,6 +3978,23 @@ country_event = { #TUR: Ceasefire
 	}
 	option = { #not yet
 		name = MAR_ultimatums.111.b 
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = SWRW_RUS_ULTIMATUM_TUR_WAR
+					option = SWRW_RUS_ULTIMATUM_TUR_WAR_WIN
+				}
+			}
+			modifier = {
+				factor = 1000
+				has_game_rule = {
+					rule = SWRW_RUS_ULTIMATUM_TUR_WAR
+					option = SWRW_RUS_ULTIMATUM_TUR_WAR_FAIL
+				}
+			}
+		}
 		trigger = {
 			RUS = {
 				casualties < 50000

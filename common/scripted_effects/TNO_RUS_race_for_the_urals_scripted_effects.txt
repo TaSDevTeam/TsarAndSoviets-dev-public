@@ -268,7 +268,7 @@ RUS_urals_set_malenkov_receptiveness = {
 				limit = {
 					OR = {
 						has_government = conservatism
-						has_government = liberalism
+						has_government = liberal_conservatism
 					}
 				}
 				set_variable = { RUS_urals_receptiveness^0 = 0.3 }
@@ -471,7 +471,7 @@ RUS_urals_set_burba_receptiveness = {
 				limit = {
 					OR = {
 						has_government = conservatism
-						has_government = liberalism
+						has_government = liberal_conservatism
 					}
 				}
 				set_variable = { RUS_urals_receptiveness^0 = 1 }
@@ -671,7 +671,7 @@ RUS_urals_set_council_receptiveness = {
 				limit = {
 					OR = {
 						has_government = conservatism
-						has_government = liberalism
+						has_government = liberal_conservatism
 					}
 				}
 				set_variable = { RUS_urals_receptiveness^0 = 0.1 }
@@ -878,7 +878,7 @@ RUS_urals_set_league_receptiveness = {
 				limit = {
 					OR = {
 						has_government = conservatism
-						has_government = liberalism
+						has_government = liberal_conservatism
 					}
 				}
 				set_variable = { RUS_urals_receptiveness^1 = 0.9 }
@@ -1078,7 +1078,7 @@ RUS_urals_set_lysenko_receptiveness = {
 				limit = {
 					OR = {
 						has_government = conservatism
-						has_government = liberalism
+						has_government = liberal_conservatism
 					}
 				}
 				set_variable = { RUS_urals_receptiveness^2 = 0.1 }
@@ -1278,7 +1278,7 @@ RUS_urals_set_nkvd_receptiveness = {
 				limit = {
 					OR = {
 						has_government = conservatism
-						has_government = liberalism
+						has_government = liberal_conservatism
 					}
 				}
 				set_variable = { RUS_urals_receptiveness^2 = 0.05 }
@@ -1785,7 +1785,7 @@ RUS_add_influence_tick_orsk = {
 ## MISC ##
 ##########
 
-RUS_puppet_keep_ideology = { # remove "_placeholder" when files are finished
+RUS_puppet_keep_ideology = { 
 	THIS = {
 		if = {
 			limit = {
@@ -1810,6 +1810,12 @@ RUS_puppet_keep_ideology = { # remove "_placeholder" when files are finished
 				has_government = liberalism
 			}
 			set_temp_variable = { rulinggamerparty = 4 }
+		}
+		if = {
+			limit = {
+				has_government = liberal_conservatism
+			}
+			set_temp_variable = { rulinggamerparty = 5 }
 		}
 		if = {
 			limit = {
@@ -1922,6 +1928,22 @@ RUS_puppet_keep_ideology = { # remove "_placeholder" when files are finished
 			}
 			if = {
 				limit = {
+					check_variable = { rulinggamerparty = 5 }
+				}
+				set_politics = {
+					ruling_party = liberal_conservatism
+				}
+				add_popularity = {
+					ideology = liberal_conservatism
+					popularity = 0.35
+				}
+				add_popularity = {
+					ideology = ultranationalism
+					popularity = -0.5
+				}
+			}
+			if = {
+				limit = {
 					check_variable = { rulinggamerparty = 6 }
 				}
 				set_politics = {
@@ -2010,10 +2032,6 @@ RUS_puppet_keep_ideology = { # remove "_placeholder" when files are finished
 				add_popularity = {
 					ideology = ultranationalism
 					popularity = 0.35
-				}
-				add_popularity = {
-					ideology = ultranationalism
-					popularity = -0.5
 				}
 			}
 		}
