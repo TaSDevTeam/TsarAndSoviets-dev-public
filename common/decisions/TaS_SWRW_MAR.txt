@@ -3089,6 +3089,9 @@ MAR_BoP_category = {
 	SWRW_do_the_funny = {
 		priority = 1000
 		icon = generic_civil_support_dark_red
+		visible = {
+			has_country_flag = SWRW_go_to_bornholm
+		}
 		allowed = {
 			tag = MAR
 		}
