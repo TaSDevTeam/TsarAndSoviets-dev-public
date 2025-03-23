@@ -1865,7 +1865,7 @@ TaS_SWRW_frontlines_preparation_selected = {
 			TNO_BoP_Viewing_SWRW = yes
 		}
 		AND = {
-			has_idea = BoP_Tab_SACW
+			check_variable = { TaS_swrw_stage = 1 }
 			is_ai = yes
 		}
 	}
@@ -1879,7 +1879,7 @@ TaS_SWRW_homefront_preparation_selected = {
 			TNO_BoP_Viewing_SWRW = yes
 		}
 		AND = {
-			has_idea = BoP_Tab_SACW
+			check_variable = { TaS_swrw_stage = 1 }
 			is_ai = yes
 		}
 	}
@@ -1893,7 +1893,7 @@ TaS_SWRW_diplomacy_preparation_selected = {
 			TNO_BoP_Viewing_SWRW = yes
 		}
 		AND = {
-			has_idea = BoP_Tab_SACW
+			check_variable = { TaS_swrw_stage = 1 }
 			is_ai = yes
 		}
 	}
@@ -1907,7 +1907,7 @@ TaS_SWRW_frontlines_war_selected = {
 			TNO_BoP_Viewing_SWRW = yes
 		}
 		AND = {
-			has_idea = BoP_Tab_SACW
+			check_variable = { TaS_swrw_stage = 2 }
 			is_ai = yes
 		}
 	}
@@ -1921,7 +1921,7 @@ TaS_SWRW_homefront_war_selected = {
 			TNO_BoP_Viewing_SWRW = yes
 		}
 		AND = {
-			has_idea = BoP_Tab_SACW
+			check_variable = { TaS_swrw_stage = 2 }
 			is_ai = yes
 		}
 	}
@@ -1935,7 +1935,7 @@ TaS_SWRW_diplomacy_war_selected = {
 			TNO_BoP_Viewing_SWRW = yes
 		}
 		AND = {
-			has_idea = BoP_Tab_SACW
+			check_variable = { TaS_swrw_stage = 2 }
 			is_ai = yes
 		}
 	}
