@@ -969,6 +969,7 @@ country_event = { #Technical stuff no loc
 			set_cosmetic_tag = MJP_Second_CW
 			transfer_state = 810
 			add_state_core = 810
+			econ_join_sphere_JAP = yes
 			TNO_startup_nation = yes
 			set_politics = {
 				ruling_party = ultranationalism
@@ -1175,6 +1176,8 @@ country_event = { #Technical stuff no loc
 				long_name = PFF_communist_party_long
 				name = PFF_communist_party
 			}
+			set_temp_variable = { TNO_economy_subtype_temp = token:Econ_Subtype_War_Communism }
+			econ_subtype_change = yes
 			if = {
 				limit = {
 					has_game_rule = {

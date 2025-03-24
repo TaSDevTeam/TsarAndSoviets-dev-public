@@ -144,7 +144,7 @@ MAR_BoP_category = {
 			TaS_SWRW_change_readiness = yes 
 			set_temp_variable = { SWRW_suspicion_temp = 5 }
 			TaS_SWRW_change_suspicion = yes
-			custom_effect_tooltip = Tas_WRW2_excersices_tt
+			custom_effect_tooltip = TaS_WRW2_excersices_tt
 			TNO_improve_army_professionalism_med = yes
 			399 = {
 				add_building_construction = {
@@ -246,7 +246,7 @@ MAR_BoP_category = {
 			TaS_SWRW_change_readiness = yes 
 			set_temp_variable = { SWRW_suspicion_temp = 5 }
 			TaS_SWRW_change_suspicion = yes
-			custom_effect_tooltip = Tas_WRW2_excersices_tt
+			custom_effect_tooltip = TaS_WRW2_excersices_tt
 			TNO_improve_army_professionalism_med = yes
 			262 = {
 				add_building_construction = {
@@ -356,7 +356,7 @@ MAR_BoP_category = {
 			TaS_SWRW_change_readiness = yes 
 			set_temp_variable = { SWRW_suspicion_temp = 3 }
 			TaS_SWRW_change_suspicion = yes
-			custom_effect_tooltip = Tas_WRW2_excersices_tt
+			custom_effect_tooltip = TaS_WRW2_excersices_tt
 			TNO_improve_army_professionalism_med = yes
 			564 = {
 				add_building_construction = {
@@ -458,7 +458,7 @@ MAR_BoP_category = {
 			TaS_SWRW_change_readiness = yes 
 			set_temp_variable = { SWRW_suspicion_temp = 7 }
 			TaS_SWRW_change_suspicion = yes
-			custom_effect_tooltip = Tas_WRW2_excersices_tt
+			custom_effect_tooltip = TaS_WRW2_excersices_tt
 			TNO_improve_army_professionalism_med = yes
 			250 = {
 				add_building_construction = {
@@ -509,7 +509,7 @@ MAR_BoP_category = {
 			TaS_SWRW_change_readiness = yes 
 			set_temp_variable = { SWRW_suspicion_temp = 5}
 			TaS_SWRW_change_suspicion = yes
-			custom_effect_tooltip = Tas_WRW2_fortifications_tt
+			custom_effect_tooltip = TaS_WRW2_fortifications_tt
 			set_temp_variable = { pus_temp = 3 }
 			econ_pus_change = yes
 			set_temp_variable = { temp_econ_spending_amount = 0.25 }
@@ -768,7 +768,7 @@ MAR_BoP_category = {
 		remove_effect = {
 			set_temp_variable = { SWRW_readiness_temp = 5 }
 			TaS_SWRW_change_readiness = yes 
-			custom_effect_tooltip = Tas_WRW2_fortifications_tt
+			custom_effect_tooltip = TaS_WRW2_fortifications_tt
 			set_temp_variable = { pus_temp = 3 }
 			econ_pus_change = yes
 			set_temp_variable = { SWRW_suspicion_temp = 5 }
@@ -1060,7 +1060,7 @@ MAR_BoP_category = {
 			TaS_SWRW_change_readiness = yes 
 			set_temp_variable = { SWRW_suspicion_temp = 3 }
 			TaS_SWRW_change_suspicion = yes
-			custom_effect_tooltip = Tas_WRW2_fortifications_tt
+			custom_effect_tooltip = TaS_WRW2_fortifications_tt
 			set_temp_variable = { pus_temp = 3 }
 			econ_pus_change = yes
 			406 = {
@@ -1281,7 +1281,7 @@ MAR_BoP_category = {
 			TaS_SWRW_change_readiness = yes 
 			set_temp_variable = { SWRW_suspicion_temp = 3 }
 			TaS_SWRW_change_suspicion = yes
-			custom_effect_tooltip = Tas_WRW2_fortifications_tt
+			custom_effect_tooltip = TaS_WRW2_fortifications_tt
 			set_temp_variable = { pus_temp = 3 }
 			econ_pus_change = yes
 			406 = {
@@ -1567,7 +1567,7 @@ MAR_BoP_category = {
 			TaS_SWRW_change_readiness = yes 
 			set_temp_variable = { SWRW_suspicion_temp = 5 }
 			TaS_SWRW_change_suspicion = yes
-			custom_effect_tooltip = Tas_WRW2_airmobile_units_tt
+			custom_effect_tooltip = TaS_WRW2_airmobile_units_tt
 			set_temp_variable = { pus_temp = 5 }
 			econ_pus_change = yes
 			air_experience = 15
@@ -1692,7 +1692,7 @@ MAR_BoP_category = {
 			TaS_SWRW_change_readiness = yes 
 			set_temp_variable = { SWRW_suspicion_temp = 5 }
 			TaS_SWRW_change_suspicion = yes
-			custom_effect_tooltip = Tas_WRW2_production_contracts_tt 
+			custom_effect_tooltip = TaS_WRW2_production_contracts_tt 
 			add_timed_idea = {
 				idea = SWRW_increased_arms_prodution
 				days = 365
@@ -1744,7 +1744,7 @@ MAR_BoP_category = {
 			TaS_SWRW_change_readiness = yes 
 			set_temp_variable = { SWRW_suspicion_temp = 5 }
 			TaS_SWRW_change_suspicion = yes
-			custom_effect_tooltip = Tas_WRW2_radars_tt
+			custom_effect_tooltip = TaS_WRW2_radars_tt
 			set_temp_variable = { pus_temp = 4 }
 			econ_pus_change = yes
 			set_technology = { radar_1950 = 1 }
@@ -4787,7 +4787,7 @@ MAR_BoP_category = {
 
 		cancel_effect = {
 			clr_country_flag = MAR_started_spb_offensive
-			Tas_WRW2_decrease_depression = yes
+			TaS_WRW2_decrease_depression = yes
 			set_temp_variable = { temp_devastation_gain_gained = -0.25 }
 			TaS_WRW2_change_devastation_gain = yes
 		}
@@ -4796,7 +4796,7 @@ MAR_BoP_category = {
 
 		timeout_effect = {
 			clr_country_flag = MAR_started_spb_offensive
-			Tas_WRW2_increase_depression = yes
+			TaS_WRW2_increase_depression = yes
 		}
 		ai_will_do = {
 			factor = 1
@@ -4861,7 +4861,7 @@ MAR_BoP_category = {
 
 		cancel_effect = {
 			clr_country_flag = MAR_started_MSK_offensive
-			Tas_WRW2_decrease_depression = yes
+			TaS_WRW2_decrease_depression = yes
 			set_temp_variable = { temp_devastation_gain_gained = -0.25 }
 			TaS_WRW2_change_devastation_gain = yes
 		}
@@ -4870,7 +4870,7 @@ MAR_BoP_category = {
 
 		timeout_effect = {
 			clr_country_flag = MAR_started_MSK_offensive
-			Tas_WRW2_increase_depression = yes
+			TaS_WRW2_increase_depression = yes
 		}
 		ai_will_do = {
 			factor = 1
@@ -4935,7 +4935,7 @@ MAR_BoP_category = {
 
 		cancel_effect = {
 			clr_country_flag = MAR_started_CAU_offensive
-			Tas_WRW2_decrease_depression = yes
+			TaS_WRW2_decrease_depression = yes
 			set_temp_variable = { temp_devastation_gain_gained = -0.25 }
 			TaS_WRW2_change_devastation_gain = yes
 		}
@@ -4944,7 +4944,7 @@ MAR_BoP_category = {
 
 		timeout_effect = {
 			clr_country_flag = MAR_started_CAU_offensive
-			Tas_WRW2_increase_depression = yes
+			TaS_WRW2_increase_depression = yes
 		}
 		ai_will_do = {
 			factor = 1
@@ -5009,7 +5009,7 @@ MAR_BoP_category = {
 
 		cancel_effect = {
 			clr_country_flag = MAR_started_UKR_offensive
-			Tas_WRW2_decrease_depression = yes
+			TaS_WRW2_decrease_depression = yes
 			set_temp_variable = { temp_devastation_gain_gained = -0.25 }
 			TaS_WRW2_change_devastation_gain = yes
 		}
@@ -5018,7 +5018,7 @@ MAR_BoP_category = {
 
 		timeout_effect = {
 			clr_country_flag = MAR_started_UKR_offensive
-			Tas_WRW2_increase_depression = yes
+			TaS_WRW2_increase_depression = yes
 		}
 		ai_will_do = {
 			factor = 1
@@ -5083,7 +5083,7 @@ MAR_BoP_category = {
 
 		cancel_effect = {
 			clr_country_flag = MAR_started_OST_offensive
-			Tas_WRW2_decrease_depression = yes
+			TaS_WRW2_decrease_depression = yes
 			set_temp_variable = { temp_devastation_gain_gained = -0.25 }
 			TaS_WRW2_change_devastation_gain = yes
 		}
@@ -5092,7 +5092,7 @@ MAR_BoP_category = {
 
 		timeout_effect = {
 			clr_country_flag = MAR_started_OST_offensive
-			Tas_WRW2_increase_depression = yes
+			TaS_WRW2_increase_depression = yes
 		}
 		ai_will_do = {
 			factor = 1
