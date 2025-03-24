@@ -4426,6 +4426,10 @@ TaS_WRW2_territorial_reclamation = {
 		}
 		ai_will_do = {
 			factor = 200
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
 		}
 		fire_only_once = yes
 		cost = 25
@@ -4440,6 +4444,10 @@ TaS_WRW2_territorial_reclamation = {
 				type = annex_everything
 			}
 			hidden_effect = {
+				PER = { 
+					leave_faction = yes
+					remove_faction_status = yes
+				}
 				every_country = {
 					limit = { is_ai = no }
 					news_event = { id = MAR_2WRW_world_news.51 }

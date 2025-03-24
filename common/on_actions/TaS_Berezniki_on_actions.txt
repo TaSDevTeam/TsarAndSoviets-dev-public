@@ -393,6 +393,22 @@ on_actions = {
 								transfer_state = 1812
 								transfer_state = 28
 								transfer_state = 1994
+								if = {
+									limit = { has_country_flag = FRA_in_OFN }
+									USA = { add_to_faction = FRA }
+								}
+								if = {
+									limit = { has_country_flag = FRA_in_CPS }
+									JAP = { add_to_faction = FRA }
+								}
+								if = {
+									limit = { has_country_flag = FRA_in_RMP }
+									JAP = { add_to_faction = FRA }
+								}
+								if = {
+									limit = { has_country_flag = FRA_in_ECN }
+									MAR = { add_to_faction = FRA }
+								}
 								every_owned_state = {
 									add_core_of = FRA
 								}

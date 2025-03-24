@@ -911,55 +911,55 @@ TaS_2WRW_start_guot_invasion = {
 			add_ideas = { TaS_Post2WRW_RUS_for_liberation }
 			random_owned_controlled_state = {
 				create_unit = {
-					division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+					division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.8 start_equipment_factor = 1"
 					owner = ZNE
 				}
 				create_unit = {
-					division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+					division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.8 start_equipment_factor = 1"
 					owner = ZNE
 				}
 				create_unit = {
-					division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+					division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.8 start_equipment_factor = 1"
 					owner = ZNE
 				}
 				create_unit = {
-					division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+					division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.8 start_equipment_factor = 1"
 					owner = ZNE
 				}
 				create_unit = {
-					division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+					division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.8 start_equipment_factor = 1"
 					owner = ZNE
 				}
 				create_unit = {
-					division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+					division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.8 start_equipment_factor = 1"
 					owner = ZNE
 				}
 				create_unit = {
-					division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+					division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.8 start_equipment_factor = 1"
 					owner = ZNE
 				}
 				create_unit = {
-					division = "division_template = \"Bronetankovaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+					division = "division_template = \"Bronetankovaya Diviziya\" start_experience_factor = 0.8 start_equipment_factor = 1"
 					owner = ZNE
 				}
 				create_unit = {
-					division = "division_template = \"Bronetankovaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+					division = "division_template = \"Bronetankovaya Diviziya\" start_experience_factor = 0.8 start_equipment_factor = 1"
 					owner = ZNE
 				}
 				create_unit = {
-					division = "division_template = \"Bronetankovaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+					division = "division_template = \"Bronetankovaya Diviziya\" start_experience_factor = 0.8 start_equipment_factor = 1"
 					owner = ZNE
 				}
 				create_unit = {
-					division = "division_template = \"Bronetankovaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+					division = "division_template = \"Bronetankovaya Diviziya\" start_experience_factor = 0.8 start_equipment_factor = 1"
 					owner = ZNE
 				}
 				create_unit = {
-					division = "division_template = \"Bronetankovaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+					division = "division_template = \"Bronetankovaya Diviziya\" start_experience_factor = 0.8 start_equipment_factor = 1"
 					owner = ZNE
 				}
 				create_unit = {
-					division = "division_template = \"Bronetankovaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+					division = "division_template = \"Bronetankovaya Diviziya\" start_experience_factor = 0.8 start_equipment_factor = 1"
 					owner = ZNE
 				}
 			}
@@ -968,15 +968,15 @@ TaS_2WRW_start_guot_invasion = {
 			add_ideas = { TaS_Post2WRW_RUS_for_liberation }
 			random_owned_controlled_state = {
 				create_unit = {
-					division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+					division = "division_template = \"Pekhotnaya Diviziya\" start_experience_factor = 0.8 start_equipment_factor = 1"
 					owner = BRL
 				}
 				create_unit = {
-					division = "division_template = \"Bronetankovaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+					division = "division_template = \"Bronetankovaya Diviziya\" start_experience_factor = 0.8 start_equipment_factor = 1"
 					owner = BRL
 				}
 				create_unit = {
-					division = "division_template = \"Bronetankovaya Diviziya\" start_experience_factor = 0.6 start_equipment_factor = 1"
+					division = "division_template = \"Bronetankovaya Diviziya\" start_experience_factor = 0.8 start_equipment_factor = 1"
 					owner = BRL
 				}
 			}
@@ -1018,6 +1018,7 @@ TaS_2WRW_start_guot_invasion = {
 				target = GSU
 				type = annex_everything
 			}
+			leave_faction = yes
 		}
 	}
 }
@@ -1033,6 +1034,16 @@ TaS_2WRW_kill_germany = {
 	}
 	GWF = {
 		kill_country_leader = yes
+		transfer_state = 1601
+		set_capital = { state = 1601 remember_old_capital = no }
+		country_lock_all_division_template = yes
+		set_country_flag = TNO_eliminate_building_demand
+		set_country_flag = can_not_use_econ_system
+		transfer_units_fraction = {
+			target = ZZZ
+			size = 0
+			army_ratio = 1.0
+		}
 		create_country_leader = {
 			name = "[NO SIGNAL]"
 			picture = "gfx/leaders/POSTWRW2/Portrait_No_Signal.dds"
@@ -1055,7 +1066,9 @@ TaS_2WRW_kill_germany = {
 		transfer_state = 69
 		transfer_state = 9
 		transfer_state = 75
-		transfer_state = 74
+		add_state_core = 69
+		add_state_core = 9
+		add_state_core = 75
 	}
 	775 = { add_manpower = -1430912 }
 	188 = { add_manpower = -816734 }
@@ -1090,7 +1103,6 @@ TaS_2WRW_czech_ssr = {
 			transfer_state = 75
 			transfer_state = 9
 			transfer_state = 69
-			transfer_state = 74
 			set_cosmetic_tag = GCZ_ssr
 		}
 		GCZ = {
@@ -1246,14 +1258,11 @@ TaS_2WRW_remove_schnitzel = {
 				ruling_party = ultranationalism
 			}
 		}
-		#282 = { set_state_name = STATE_282_kkk set_variable = { nationality = 82 } }
 		1025 = { set_state_name = STATE_1052_czech }
 		set_province_name = { id = 11666 name = VICTORY_POINTS_11666_czech }
 		69 = { set_state_name = STATE_89_czech set_variable = { nationality = 9999 } }
 		69 = { add_manpower = -315000 }
 		set_province_name = { id = 11432 name = VICTORY_POINTS_11432_czech }
-		74 = { set_state_name = STATE_74_czech set_variable = { nationality = 9999 } }
-		74 = { add_manpower = -123400 }
 		set_province_name = { id = 3414 name = VICTORY_POINTS_3414_czech }
 		
 		set_province_name = { id = 6418 name = VICTORY_POINTS_6418_czech }
