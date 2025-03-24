@@ -1690,7 +1690,10 @@ on_actions = {
 										remove_core_of = NAL
 										remove_core_of = MUJ
 									}
-									MAR = { add_to_faction = AFG }
+									MAR = { 
+										add_to_faction = AFG
+										add_state_core = 1465
+									}
 									transfer_state = 1885
 									transfer_state = 2461
 									add_ideas = RUSAlliance_Independent_Member

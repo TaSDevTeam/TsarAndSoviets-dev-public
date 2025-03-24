@@ -3,7 +3,7 @@ TaS_WRW2_GER_epilogue = {
 		icon = GFX_Postger_guot
 
 		ai_will_do = {
-			factor = 0
+			factor = 100
 		}
 
 		visible = {
@@ -13,10 +13,44 @@ TaS_WRW2_GER_epilogue = {
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName]: Decision TaS_return_to_berezniki"
 			if = {
-				limit = { original_tag = MAR }
+				limit = { 
+					original_tag = MAR
+				}
 				custom_effect_tooltip = TaS_return_to_berezniki_tt
 				hidden_effect = {
-					set_variable = { global.postgervisits = 100 }
+					BRL = {
+						country_event = { id = TaS_GEREpilogue.1 }
+					}
+					ZNE = {
+						country_event = { id = TaS_GEREpilogue.4 }
+					}	
+					GCZ = {
+						country_event = { id = TaS_GEREpilogue.8 }
+					}
+					GWS = {
+						country_event = { id = TaS_GEREpilogue.12 }
+					}
+					GBW = {
+						country_event = { id = TaS_GEREpilogue.15 }
+					}
+					GRH = {
+						country_event = { id = TaS_GEREpilogue.18 }
+					}
+					GBV = {
+						country_event = { id = TaS_GEREpilogue.21 }
+					}
+					GAU = {
+						country_event = { id = TaS_GEREpilogue.24 }
+					}
+					GWF = {
+						country_event = { id = TaS_GEREpilogue.27 days = 30 }
+					}
+					GRA = {
+						country_event = { id = TaS_GEREpilogue.28 days = 30 }
+					}
+					GSU = {
+						country_event = { id = TaS_GEREpilogue.29 days = 30 }
+					}
 				}
 			}
 			else = {
@@ -30,7 +64,10 @@ TaS_WRW2_GER_epilogue = {
 	}
 	TaS_play_guot = {
 		icon = GFX_Postger_guot
-		visible = { BRL = { exists = yes }}
+		visible = { 
+			BRL = { exists = yes }
+				is_ai = no
+			}
 		ai_will_do = {
 			factor = 0
 		}
@@ -41,7 +78,7 @@ TaS_WRW2_GER_epilogue = {
 
 		visible = {
 			NOT = { has_global_flag = PostGER_second_cw }
-			#has_global_flag = PostGER_belooz_epilogue
+			is_ai = no
 		}
 
 		complete_effect = {
@@ -85,7 +122,7 @@ TaS_WRW2_GER_epilogue = {
 
 		visible = {
 			NOT = { has_global_flag = PostGER_second_cw }
-			#has_global_flag = PostGER_belooz_epilogue
+			is_ai = no
 		}
 
 		complete_effect = {
@@ -118,7 +155,7 @@ TaS_WRW2_GER_epilogue = {
 
 		visible = {
 			NOT = { has_global_flag = PostGER_second_cw }
-			#has_global_flag = PostGER_belooz_epilogue
+			is_ai = no
 		}
 
 		complete_effect = {
@@ -162,7 +199,7 @@ TaS_WRW2_GER_epilogue = {
 
 		visible = {
 			NOT = { has_global_flag = PostGER_second_cw }
-			#has_global_flag = PostGER_belooz_epilogue
+			is_ai = no
 		}
 
 		complete_effect = {
@@ -195,7 +232,7 @@ TaS_WRW2_GER_epilogue = {
 
 		visible = {
 			NOT = { has_global_flag = PostGER_second_cw }
-			#has_global_flag = PostGER_belooz_epilogue
+			is_ai = no
 		}
 
 		complete_effect = {
@@ -239,7 +276,7 @@ TaS_WRW2_GER_epilogue = {
 
 		visible = {
 			NOT = { has_global_flag = PostGER_second_cw }
-			#has_global_flag = PostGER_belooz_epilogue
+			is_ai = no
 		}
 
 		complete_effect = {
@@ -283,7 +320,7 @@ TaS_WRW2_GER_epilogue = {
 
 		visible = {
 			NOT = { has_global_flag = PostGER_second_cw }
-			#has_global_flag = PostGER_belooz_epilogue
+			is_ai = no
 		}
 
 		complete_effect = {
@@ -316,7 +353,7 @@ TaS_WRW2_GER_epilogue = {
 
 		visible = {
 			NOT = { has_global_flag = PostGER_second_cw }
-			#has_global_flag = PostGER_belooz_epilogue
+			is_ai = no
 		}
 
 		complete_effect = {
@@ -349,7 +386,7 @@ TaS_WRW2_GER_epilogue = {
 
 		visible = {
 			NOT = { has_global_flag = PostGER_second_cw }
-			#has_global_flag = PostGER_belooz_epilogue
+			is_ai = no
 		}
 
 		complete_effect = {
@@ -382,7 +419,7 @@ TaS_WRW2_GER_epilogue = {
 
 		visible = {
 			NOT = { has_global_flag = PostGER_second_cw }
-			#has_global_flag = PostGER_belooz_epilogue
+			is_ai = no
 		}
 
 		complete_effect = {
@@ -415,7 +452,7 @@ TaS_WRW2_GER_epilogue = {
 
 		visible = {
 			NOT = { has_global_flag = PostGER_second_cw }
-			#has_global_flag = PostGER_belooz_epilogue
+			is_ai = no
 		}
 
 		complete_effect = {
@@ -474,6 +511,7 @@ TaS_WRW2_GER_epilogue = {
     	activation = {
     		has_global_flag = PostGER_second_cw
 			NOT = { has_global_flag = PostGER_warsended }
+			is_ai = no
     	}
 		cancel_trigger = {
 			has_global_flag = PostGER_warsended
@@ -509,6 +547,7 @@ TaS_WRW2_GER_epilogue = {
 			NOT = { tag = GCZ }
 			NOT = { tag = ZNE }
 			NOT = { tag = BRL }
+			country_exists = GCZ
 		}
 		fire_only_once = yes
 		ai_will_do = {
@@ -539,7 +578,7 @@ TaS_WRW2_GER_epilogue = {
 				owns_state = 75
 			}
 		}
-		allowed = {
+		visible = {
 			NOT = { tag = MAR }
 		}
 		#visible = { has_global_flag = PostGER_second_cw }
@@ -555,8 +594,12 @@ TaS_WRW2_GER_epilogue = {
 			hidden_effect = {
 				add_manpower = 150000
 			}
+			every_owned_state = {
+				add_core_of = ROOT
+			}
 			GER_select_unified_cosmotag = yes
 			GER_select_unification_news_event = yes
+			set_capital = { state = 55 }	
 			if = {
 				limit = {
 					NOT = {
@@ -598,6 +641,31 @@ TaS_WRW2_GER_epilogue = {
 					}
 					promote_character = yes
 				}
+			}
+			if = {
+				limit = { original_tag = ZNE }
+				annex_country = {
+					target = BRL
+					transfer_troops = yes
+				}
+				MAR = {
+					MAR_Kessler_Heinz = { 
+						set_nationality = ZNE
+					}
+					add_to_faction = ZNE
+				}
+				set_cosmetic_tag = ZNE_Germany
+				retire_country_leader = yes
+				add_country_leader_role = {
+					character = MAR_Kessler_Heinz
+					promote_leader = yes
+					country_leader = {
+						ideology = despotism_military_junta_subtype
+						expire = "1999.1.1"
+						traits = { }
+					}
+				}
+				set_capital = { state = 64 } 
 			}
 		}
 	}

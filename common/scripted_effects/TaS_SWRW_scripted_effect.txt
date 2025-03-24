@@ -2187,6 +2187,7 @@ SWRW_clear_war_stuff = {
 		remove_ideas = SWRW_GER_oper_succ_4
 		remove_ideas = SWRW_GER_oper_succ_5
 		remove_ideas = SWRW_epidemics
+		
 		every_country = {
 			limit = { is_subject_of = GER }
 			remove_ideas = SWRW_reichskommisariat
@@ -2195,7 +2196,7 @@ SWRW_clear_war_stuff = {
 			remove_ideas = SWRW_muslim_warriors
 		}
 	}
-	RUS = {
+	MAR = {
 		set_temp_variable = { TabName = token:BoP_Tab_SWRW }
 		TNO_BoP_RemoveTab = yes
 		SWRW_remove_army_size_modifier = yes
@@ -2222,6 +2223,8 @@ SWRW_clear_war_stuff = {
 		remove_ideas = SWRW_offensive_against_ger
 		remove_ideas = SWRW_influx_of_refugees
 		remove_ideas = SWRW_epidemics
+		remove_ideas = MAR_go_oper
+		
 		delete_unit_template_and_units = {
 			division_template = "OFN Infantry Volunteers"
 			disband = no

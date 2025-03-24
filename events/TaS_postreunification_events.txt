@@ -658,6 +658,7 @@ country_event = { #Hezb-e-Islami breaks off
 				set_demilitarized_zone = no
 			}
 		}
+		country_event = { id = MAR_AFG.7 days = 7 }
 	}	
 }
 
@@ -678,6 +679,7 @@ country_event = { #so it begins
 		add_to_array = { global.AFG_contenders = MUJ }
 		add_to_array = { global.AFG_contenders = NAL }
 		AFG = {
+			set_capital = { state = 1474 }
 			load_oob = AFG_acw
 			declare_war_on = {
 				target = NAL
@@ -3519,8 +3521,8 @@ country_event = { #FIN: They refused
 							rule = SWRW_RUS_ULTIMATUM_FIN_WAR
 							option = SWRW_RUS_ULTIMATUM_FIN_WAR_FAIL
 						}
-						apply_war_buff_with_15_divisions = yes
 					}
+					apply_war_buff_with_15_divisions = yes
 				}
 			}
 		}
@@ -3851,8 +3853,8 @@ country_event = { #TUR: Turkey gather troops
 							rule = SWRW_RUS_ULTIMATUM_TUR_WAR
 							option = SWRW_RUS_ULTIMATUM_TUR_WAR_FAIL
 						}
-						apply_war_buff_with_15_divisions = yes
 					}
+					apply_war_buff_with_15_divisions = yes
 				}
 			}
 		}
@@ -3899,8 +3901,8 @@ country_event = { #TUR: fuck let's goooooooo
 					rule = SWRW_RUS_ULTIMATUM_TUR_WAR
 					option = SWRW_RUS_ULTIMATUM_TUR_WAR_FAIL
 				}
-				apply_war_buff_with_15_divisions = yes
 			}
+			apply_war_buff_with_15_divisions = yes
 		}
 		1565 = { set_demilitarized_zone = no }
 	}
@@ -3970,6 +3972,7 @@ country_event = { #TUR: Ceasefire
 			}
 		}
 		ARM = {
+			leave_faction = yes
 			econ_join_sphere_MAR = yes
 			add_ideas = RUSAlliance_Dependent_Member
 			RUS = { add_to_faction = ARM }
@@ -3999,8 +4002,14 @@ country_event = { #TUR: Ceasefire
 			}
 		}
 		trigger = {
-			RUS = {
-				casualties < 50000
+			OR = {
+				RUS = {
+					casualties < 50000
+				}
+				has_game_rule = {
+					rule = SWRW_RUS_ULTIMATUM_TUR_WAR
+					option = SWRW_RUS_ULTIMATUM_TUR_WAR_WIN
+				}
 			}
 		}
 	}

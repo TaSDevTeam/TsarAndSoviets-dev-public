@@ -79,4 +79,9 @@ add_ideas = {
 	tno_academic_base_basic_literacy
 	tno_admin_efficiency_deficient_administrative_systems
 }
+
+#econtype
+set_variable = { TNO_economy_type = token:Econ_Type_Capitalism }
+set_variable = { TNO_economy_subtype = token:Econ_Subtype_Subsistence_Economy }
+
 TNO_startup_nation = yes
