@@ -727,7 +727,7 @@ country_event = { #GWF_great_betrayal GOOD
 	}
 }
 
-country_event = { #GWF_burned_field
+country_event = { #GWF_burned_field FREE SPACE
 	id = GWF.42
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.42" }
 	title = GWF.42.t
@@ -880,7 +880,7 @@ country_event = { #GWF_incubator_free_zone
 	}
 }
 
-country_event = { #GWF_my_own_universe
+country_event = { #GWF_my_own_universe FREE SPACE FOR NOW
 	id = GWF.51
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.51" }
 	title = GWF.51.t
@@ -982,7 +982,7 @@ country_event = { #GWF_fateful_meeting - planning - neutral/good
 	}
 }
 
-country_event = { #GWF_fateful_meeting - attack
+country_event = { #GWF_fateful_meeting - bad
 	id = GWF.57
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.57" }
 	title = GWF.57.t
@@ -999,7 +999,7 @@ country_event = { #GWF_fateful_meeting - attack
 	}
 }
 
-country_event = { #GWF_fateful_meeting - battle
+country_event = { #GWF_fateful_meeting - planning - bad
 	id = GWF.58
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.58" }
 	title = GWF.58.t
@@ -1016,7 +1016,7 @@ country_event = { #GWF_fateful_meeting - battle
 	}
 }
 
-country_event = { #GWF_fateful_meeting - bad
+country_event = { #GWF_fateful_meeting - beggining of end
 	id = GWF.59
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.59" }
 	title = GWF.59.t
@@ -1033,7 +1033,7 @@ country_event = { #GWF_fateful_meeting - bad
 	}
 }
 
-country_event = { #GWF_fateful_meeting - planning - bad
+country_event = { #GWF_fateful_meeting - paratrooper
 	id = GWF.60
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.60" }
 	title = GWF.60.t
@@ -1050,7 +1050,7 @@ country_event = { #GWF_fateful_meeting - planning - bad
 	}
 }
 
-country_event = { #BAD ENDING
+country_event = { #GWF_fateful_meeting - last fight
 	id = GWF.61
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.61" }
 	title = GWF.61.t
@@ -1067,7 +1067,7 @@ country_event = { #BAD ENDING
 	}
 }
 
-country_event = { #NEUTRAL ENDING
+country_event = { #GWF_fateful_meeting - Crimes and Punishment
 	id = GWF.62
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.62" }
 	title = GWF.62.t
@@ -1084,7 +1084,7 @@ country_event = { #NEUTRAL ENDING
 	}
 }
 
-country_event = { #GOOD ENDING
+country_event = { #GWF_fateful_meeting - Closed forever
 	id = GWF.63
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.63" }
 	title = GWF.63.t
@@ -1101,7 +1101,7 @@ country_event = { #GOOD ENDING
 	}
 }
 
-country_event = { #GOOD ENDING - EPILOGUE
+country_event = { #GWF_fateful_meeting - In their places
 	id = GWF.64
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.64" }
 	title = GWF.64.t
@@ -1183,7 +1183,7 @@ country_event = { #FAIL TWO - PHYSICAL
 	}
 }
 
-country_event = { #FAIL THREE - LAST FIGHT
+country_event = { #FREE SPACE MY MAN
 	id = GWF.67
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.67" }
 	title = GWF.67.t
@@ -1429,7 +1429,7 @@ country_event = { #OPPOSITION FIGHT - ENDZEIT BADEND
 	}
 }
 
-country_event = { #TAMURA FLAVOUR
+country_event = { #BAD END
 	id = GWF.74
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.74" }
 	title = GWF.74.t
@@ -1446,7 +1446,7 @@ country_event = { #TAMURA FLAVOUR
 	}
 }
 
-country_event = { #NAGISA FLAVOUR
+country_event = { #NEURAL BAD END
 	id = GWF.75
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.75" }
 	title = GWF.75.t
@@ -1463,7 +1463,7 @@ country_event = { #NAGISA FLAVOUR
 	}
 }
 
-country_event = { #SPEER(AL-RYEINI) FLAVOUR???
+country_event = { #NEURAL GOOD END
 	id = GWF.76
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.76" }
 	title = GWF.76.t
@@ -1480,7 +1480,7 @@ country_event = { #SPEER(AL-RYEINI) FLAVOUR???
 	}
 }
 
-country_event = { #
+country_event = { #GOOD END
 	id = GWF.77
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.77" }
 	title = GWF.77.t

@@ -7,7 +7,6 @@ scripted_gui = {
 
 		visible = {
 			tag = MAR
-			#NOT = { has_country_flag = BRG_domestic_GUI_disabled }
 		}
 
 		triggers = {
@@ -18,14 +17,6 @@ scripted_gui = {
 			MAR_Prestol_GUI_Opener_visible = {
 				has_country_flag = MAR_prestol_active
 			}
-
-			#TNO_Burgundy_Domestic_GUI_Opener_Button_click_enabled = {
-			#	NOT = { has_country_flag = BRG_Revolt_Happened }
-			#}
-
-			#TNO_BRG_gui_alert_visible = {
-			#	any_owned_state = { has_state_flag = BRG_State_Doesnt_Have_Enough_Cops }
-			#}
 		}
 
 		effects = {

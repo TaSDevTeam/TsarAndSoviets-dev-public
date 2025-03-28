@@ -23,6 +23,7 @@ shared_focus = {
 	completion_reward = {
 		country_event = { id = GWF.1 }
 		add_political_power = 50
+		custom_effect_tooltip = GWF_start_from_scratch_tt
 		set_country_leader_description = {
 			desc = "AprilFools_Akemi_Homura_DESC_actual"
 		}
@@ -44,6 +45,7 @@ shared_focus = {
 	x = 0
 	y = 1
 	completion_reward = {
+		custom_effect_tooltip = GWF_asses_situation_tt	
 		add_stability = -0.025
 		add_war_support = -0.025
 	}
@@ -88,6 +90,7 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		country_event = { id = GWF.3 }
+		custom_effect_tooltip = GWF_contact_incubator_tt
 		add_ideas = GWF_Kyubey_hog
 	}
 }
@@ -166,6 +169,7 @@ shared_focus = {
 	x = 0
 	y = 1
 	completion_reward = {
+		custom_effect_tooltip = GWF_humanity_aside_tt
 		TNO_worsen_admin_efficiency_med = yes
 		add_political_power = 100
 		set_temp_variable = { inflation_temp = -2 }
@@ -190,6 +194,7 @@ shared_focus = {
 	x = -1
 	y = 1
 	completion_reward = {
+		custom_effect_tooltip = GWF_controllable_chaos_tt
 		set_temp_variable = { pus_temp = 1 }
 		econ_pus_change = yes
 		set_temp_variable = { money_reserves_temp = 0.5 } 
@@ -215,6 +220,7 @@ shared_focus = {
 	x = 1
 	y = 1
 	completion_reward = {
+		custom_effect_tooltip = GWF_security_forces_tt
 		set_temp_variable = { money_reserves_temp = 0.25 } 
 		econ_money_reserves_change_raw_money = yes
 		TNO_improve_security_policy_effectiveness_high = yes
@@ -297,6 +303,8 @@ shared_focus = {
 	x = 0
 	y = 1
 	completion_reward = {
+		custom_effect_tooltip = GWF_administrative_business_tt
+		
 		TNO_improve_admin_efficiency_med = yes
 		set_temp_variable = { inflation_temp = 0.25 }
 		econ_inflation_change = yes
@@ -337,6 +345,8 @@ shared_focus = {
 	x = -1
 	y = 1
 	completion_reward = {
+		custom_effect_tooltip = GWF_church_of_ring_tt
+		
 		add_stability = 0.05
 		add_political_power = 50
 		country_event = { id = GWF.9 }
@@ -364,6 +374,7 @@ shared_focus = {
 	x = 1
 	y = 1
 	completion_reward = {
+		custom_effect_tooltip = GWF_support_from_outside_tt
 		add_popularity = {
 			ideology = communist
 			popularity = 0.03
@@ -439,6 +450,7 @@ shared_focus = {
 	x = 0
 	y = 2
 	completion_reward = {
+		custom_effect_tooltip = GWF_my_own_realm_tt
 		add_political_power = 100
 		if = {
 			limit = { has_country_flag = GWF_madoka_church } 
@@ -504,6 +516,7 @@ shared_focus = {
 	x = -2
 	y = 1
 	completion_reward = {
+		custom_effect_tooltip = GWF_visit_vienna_tt
 		country_event = { id = GWF.15 }
 		add_political_power = 25
 		GAU = {
@@ -536,6 +549,7 @@ shared_focus = {
 	x = 0
 	y = 1
 	completion_reward = {
+		custom_effect_tooltip = GWF_attack_italians_tt
 		DSH = {
 			add_stability = -0.05
 			add_war_support = -0.05
@@ -569,6 +583,7 @@ shared_focus = {
 	x = 0
 	y = 1
 	completion_reward = {
+		custom_effect_tooltip = GWF_union_of_samefaced_tt
 		country_event = { id = GWF.16 }
 		add_command_power = 15
 		GRA = {
@@ -601,6 +616,7 @@ shared_focus = {
 	x = 0
 	y = 1
 	completion_reward = {
+		custom_effect_tooltip = GWF_can_cern_answer_tt
 		GSU = {
 			set_temp_variable = { temp_econ_spending_amount = 0.45 }
 			econ_spend_money_once_effect_raw_money = yes
@@ -626,6 +642,7 @@ shared_focus = {
 	x = 2
 	y = 1
 	completion_reward = {
+		custom_effect_tooltip = GWF_unholy_alliance_tt
 		country_event = { id = GWF.17 }
 		OKL = {
 			set_variable = { gui_display_frame = 3000 }
@@ -650,6 +667,7 @@ shared_focus = {
 	x = 0
 	y = 1
 	completion_reward = {
+		custom_effect_tooltip = GWF_redbus_luxembourg_tt
 		country_event = { id = GWF.18 }
 		OKL = {
 			add_manpower = 15000
@@ -697,6 +715,7 @@ shared_focus = {
 	x = 0
 	y = 1
 	completion_reward = {
+		custom_effect_tooltip = GWF_stuttgart_convention_tt
 		country_event = { id = GWF.19 }
 		every_country = {
 			limit = { is_in_faction_with = GWF }
@@ -720,6 +739,7 @@ shared_focus = {
 	x = -1
 	y = 1
 	completion_reward = {
+		custom_effect_tooltip = GWF_operations_in_bavaria_tt
 		GBV = {
 			if = { 
 				limit = { is_in_faction_with = GWF }
@@ -763,6 +783,7 @@ shared_focus = {
 	x = 1
 	y = 1
 	completion_reward = {
+		custom_effect_tooltip = GWF_plan_b_tt
 		50 = {
 			set_building_level = {
 				type = bunker
@@ -807,6 +828,7 @@ shared_focus = {
 	x = 7
 	y = 3
 	completion_reward = {
+		custom_effect_tooltip = GWF_look_at_powers_tt
 		country_event = { id = GWF.21 }
 		add_war_support = 0.025
 	}
@@ -897,6 +919,7 @@ shared_focus = {
 	x = 0
 	y = 1
 	completion_reward = {
+		custom_effect_tooltip = GWF_its_good_to_lie_tt	
 		country_event = { id = GWF.23 }
 		set_temp_variable = { Y = 450 }
 		custom_effect_tooltip = GWF_meguca_manpower_increase_tt
@@ -931,6 +954,7 @@ shared_focus = {
 	x = -1
 	y = 1
 	completion_reward = {
+		custom_effect_tooltip = GWF_control_witch_problem_tt	
 		set_temp_variable = { Y = -50 }
 		custom_effect_tooltip = GWF_meguca_manpower_decrease_tt
 		add_to_variable = { GWF_meguca_manpower = Y }
@@ -960,6 +984,8 @@ shared_focus = {
 	x = 1
 	y = 1
 	completion_reward = {
+		custom_effect_tooltip = GWF_inarmy_concurention_tt	
+		
 		country_event = { id = GWF.24 }
 		set_temp_variable = { Y = -50 }
 		custom_effect_tooltip = GWF_meguca_manpower_decrease_tt
@@ -992,6 +1018,7 @@ shared_focus = {
 	x = 2
 	y = 1
 	completion_reward = {
+		custom_effect_tooltip = GWF_human_army_tt	
 		country_event = { id = GWF.25 }
 		country_lock_all_division_template = no
 		add_ideas = GWF_human_army
@@ -1037,6 +1064,7 @@ shared_focus = {
 	x = 0
 	y = 1
 	completion_reward = {
+		custom_effect_tooltip = GWF_play_from_shadows_tt	
 		TNO_improve_army_professionalism_med = yes
 		TNO_improve_training_policy_effectiveness_high = yes
 		add_doctrine_cost_reduction = {
@@ -1062,6 +1090,7 @@ shared_focus = {
 	x = -1
 	y = 1
 	completion_reward = {
+		custom_effect_tooltip = GWF_peoples_milita_tt
 		country_event = { id = GWF.26 }
 		add_manpower = 15000
 		capital_scope = {
@@ -1094,6 +1123,7 @@ shared_focus = {
 	x = 1
 	y = 1
 	completion_reward = {
+		custom_effect_tooltip = GWF_from_shit_and_sticks_tt
 		set_temp_variable = { pus_temp = 1 }
 		econ_pus_change = yes
 		add_equipment_to_stockpile = {
@@ -1158,6 +1188,7 @@ shared_focus = {
 	x = 0
 	y = 2
 	completion_reward = {
+		custom_effect_tooltip = GWF_hounds_pack_tt
 		if = {
 			limit = { has_idea = GWF_human_army } 
 			TNO_improve_training_policy_effectiveness_monthly_med = yes
@@ -1222,7 +1253,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GWF_embrace_troops
-	icon = GFX_GWF_embrace_troops
+	icon = GFX_focus_generic_black_ops
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
@@ -1248,7 +1279,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GWF_allies_help
-	icon = GFX_GWF_allies_help
+	icon = GFX_focus_generic_building_a_stockpile
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
@@ -1279,7 +1310,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GWF_sabotage_enemies
-	icon = GFX_GWF_sabotage_enemies	
+	icon = GFX_focus_generic_burning_house_village
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
@@ -1313,7 +1344,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GWF_expand_industry
-	icon = GFX_GWF_sabotage_enemies	
+	icon = GFX_focus_generic_factories_smoking
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
@@ -1335,7 +1366,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GWF_carrot_and_stick
-	icon = GFX_GWF_embrace_troops
+	icon = GFX_focus_generic_begin_the_trials
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
@@ -1355,7 +1386,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GWF_capital_attacks
-	icon = GFX_GWF_allies_help
+	icon = GFX_GWF_capital_attacks
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
@@ -1388,7 +1419,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GWF_work_or_die
-	icon = GFX_GWF_sabotage_enemies	
+	icon = GFX_focus_generic_german_factory_darkness
 	cost = 2
 	available_if_capitulated = no
 	ai_will_do = {
@@ -1540,7 +1571,7 @@ shared_focus = {
 
 shared_focus = {
 	id = GWF_great_betrayal
-	icon = GFX_GWF_our_time_has_come
+	icon = GFX_GWF_great_betrayal
 	cost = 1
 	available_if_capitulated = no
 	ai_will_do = {
@@ -1582,7 +1613,7 @@ shared_focus = {
 	x = 9
 	y = 0
 	completion_reward = {
-		country_event = { id = GWF.42 }
+		#country_event = { id = GWF.42 }
 		every_owned_state = {
 			GWF = {
 				add_state_core = PREV
@@ -1776,7 +1807,7 @@ shared_focus = {
 	x = 0
 	y = 1
 	completion_reward = {
-		country_event = { id = GWF.51 }
+		#country_event = { id = GWF.51 }
 	}
 }
 
@@ -1864,7 +1895,10 @@ shared_focus = {
 		focus = GWF_this_isnt_working
 	}
 	allow_branch = {
-		has_country_flag = GWF_Homura_almost_the_end
+		OR = {
+			has_country_flag = GWF_Homura_almost_the_end
+			is_debug = yes
+		}
 	}
 	relative_position_id = GWF_this_isnt_working
 	x = 0
