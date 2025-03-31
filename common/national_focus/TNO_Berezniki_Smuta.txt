@@ -558,6 +558,13 @@ shared_focus = {
 				option = MAR_ZEMSKY_SOBOR_CHOICE_BELOZERSKY
 			}
 		}
+		modifier = {
+			factor = 0
+			has_game_rule = {
+				rule = april_fools_content_status
+				option = APRIL_FOOLS_ENABLED
+			}
+		}
 	}
 	mutually_exclusive = {
         focus = MAR_meeting_with_bourgeoisie
@@ -645,6 +652,13 @@ shared_focus = {
 	available_if_capitulated = no
 	ai_will_do = {
 		factor = 0
+		modifier = {
+			factor = 1000
+			has_game_rule = {
+				rule = april_fools_content_status
+				option = APRIL_FOOLS_ENABLED
+			}
+		}
 	}
 	available = {	
 		custom_trigger_tooltip = {
@@ -758,6 +772,13 @@ shared_focus = {
 			has_game_rule = {
 				rule = MAR_ZEMSKY_SOBOR_CHOICE
 				option = MAR_ZEMSKY_SOBOR_CHOICE_BELOZERSKY
+			}
+		}
+		modifier = {
+			factor = 0
+			has_game_rule = {
+				rule = april_fools_content_status
+				option = APRIL_FOOLS_ENABLED
 			}
 		}
 	}

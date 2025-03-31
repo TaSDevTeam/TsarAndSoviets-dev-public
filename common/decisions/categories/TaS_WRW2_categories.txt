@@ -108,6 +108,12 @@ TaS_WRW2_GER_epilogue = {
 	visible = {
 		has_global_flag = WRW2_german_collapse
 		NOT = { has_global_flag = PostGER_kosygin_epilogue }
+		NOT = { 
+			has_game_rule = {
+				rule = april_fools_content_status
+				option = APRIL_FOOLS_ENABLED
+			}
+		}
 	}
 	
 	visible_when_empty = yes

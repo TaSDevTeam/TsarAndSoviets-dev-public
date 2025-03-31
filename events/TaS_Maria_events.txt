@@ -2,7 +2,7 @@ add_namespace = MAR_maria
 add_namespace = maria_magica
 add_namespace = SWRW_april_fools
 
-add_namespace = SWRW_april_fools_news
+add_namespace = AprilFools_news
 
 #########################################################
 ###／人◕ ‿‿ ◕人＼ - <Do you want to make a contract?> ###
@@ -304,6 +304,7 @@ country_event = { # YOU WON'T RUN AWAY FROM FATE OF BEING FAKE CONTENT FOR THE S
 	option = { #
 		name = MAR_maria.17.a
 		ai_chance = { factor = 1 }
+		MAR_nah_actually_change_my_mind_plz = yes
 	}
 }
 
@@ -383,7 +384,14 @@ country_event = { #Votum - Maria
 		name = maria_magica.4.a
 		ai_chance = { factor = 1 }
 		custom_effect_tooltip = maria_magica4_tt
-		hidden_effect = { country_event = { id = maria_magica.5 days = 34 } }
+		hidden_effect = { 
+			country_event = { id = maria_magica.5 days = 34 }
+			every_country = {
+				limit = { is_ai = no }
+				news_event = { id = AprilFools_news.1 days = 7 }
+			}
+			MAR_nah_actually_change_my_mind_plz = yes
+		}
 	}
 }
 
@@ -531,7 +539,7 @@ country_event = { #Long Night - Maria and Sophia
 		hidden_effect = {
 			country_event = { id = maria_magica.12 days = 800 }
 			country_event = { id = maria_magica.13 days = 142 }
-			news_event = { id = SWRW_april_fools_news.2 }
+			news_event = { id = AprilFools_news.2 }
 		}
 	}
 }
@@ -677,6 +685,12 @@ country_event = { #Catching the waves - unnamed radio amateur, John Alexander ra
 		name = maria_magica.19.a
 		ai_chance = { factor = 1 }
 		custom_effect_tooltip = maria_magica19_tt
+		hidden_effect = { 
+			every_country = {
+				limit = { is_ai = no }
+				news_event = { id = AprilFools_news.4 days = 720 }
+			}
+		}
 	}
 }
 
@@ -802,6 +816,31 @@ country_event = { #Recursion
 					add_core_of = FRA
 				}
 			}
+			GNR = {	
+				annex_country = {
+					target = NOR
+					transfer_troops = yes
+				}
+				every_owned_state = {
+					limit = {
+						NOT = {
+							state = 2097
+							state = 2098
+						}
+					}
+					add_core_of = GNR
+					remove_core_of = NOR
+				}
+				econ_join_sphere_MAR = yes
+				add_ideas = RUSAlliance_Independent_Member
+			}
+			RUS = {
+				transfer_state = 2097
+				transfer_state = 2098
+				add_state_core = 2097
+				add_state_core = 2098
+				add_to_faction = GNR
+			}
 			every_country = {
 				limit = {
 					is_in_faction_with = GER 
@@ -832,6 +871,193 @@ country_event = { #Recursion
 			}
 			GER = {
 				dismantle_faction = yes
+			}
+			if = {
+				limit = { 
+					GRO = { exists = yes }
+					COG = { exists = no }
+				}
+				COG = {
+					COG_USA_Joseph_Ileo = {
+						set_nationality = GRO
+					}
+				}
+				GRO = {
+					GER = { end_puppet = GRO }
+					
+					set_cosmetic_tag = GRO_free
+					promote_character = COG_USA_Joseph_Ileo
+					set_popularities = {
+						progressivism = 13
+						liberalism = 20
+						conservatism = 41
+						paternalism = 15
+						despotism = 11
+					}
+					set_party_name = {
+						ideology = progressivism
+						long_name = GRO_free_progressivism_party_long
+						name = GRO_free_progressivism_party
+					}
+					set_party_name = {
+						ideology = liberalism
+						long_name = GRO_free_liberalism_party_long
+						name = GRO_free_liberalism_party
+					}
+					set_party_name = {
+						ideology = conservatism
+						long_name = GRO_free_conservatism_party_long
+						name = GRO_free_conservatism_party
+					}
+					set_party_name = {
+						ideology = paternalism
+						long_name = GRO_free_paternalism_party_long
+						name = GRO_free_paternalism_party
+					}
+					set_party_name = {
+						ideology = despotism
+						long_name = GRO_free_despotism_party_long
+						name = GRO_free_despotism_party
+					}
+					meta_effect = { #sets up next election date in country ui
+						text = {
+							set_politics = {
+								ruling_party = conservatism
+								last_election = "[current_election_date]"
+								elections_allowed = yes
+								election_frequency = 48
+							}
+						}
+						current_election_date = "[?global.date.GetDateStringNoHour]"
+					}
+
+					hidden_effect = {
+						set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
+						econ_type_change = yes
+						TNO_startup_nation = yes
+					}
+				}
+			}
+			else_if = {
+				limit = { COG = { is_subject_of = GER } }
+				COG = {
+					COG_USA_Joseph_Ileo = {
+						set_nationality = COG
+					}
+				}
+				COG = {
+					GER = { end_puppet = COG }
+					
+					set_cosmetic_tag = GRO_free
+					promote_character = COG_USA_Joseph_Ileo
+					set_popularities = {
+						progressivism = 13
+						liberalism = 20
+						conservatism = 41
+						paternalism = 15
+						despotism = 11
+					}
+					set_party_name = {
+						ideology = progressivism
+						long_name = GRO_free_progressivism_party_long
+						name = GRO_free_progressivism_party
+					}
+					set_party_name = {
+						ideology = liberalism
+						long_name = GRO_free_liberalism_party_long
+						name = GRO_free_liberalism_party
+					}
+					set_party_name = {
+						ideology = conservatism
+						long_name = GRO_free_conservatism_party_long
+						name = GRO_free_conservatism_party
+					}
+					set_party_name = {
+						ideology = paternalism
+						long_name = GRO_free_paternalism_party_long
+						name = GRO_free_paternalism_party
+					}
+					set_party_name = {
+						ideology = despotism
+						long_name = GRO_free_despotism_party_long
+						name = GRO_free_despotism_party
+					}
+					meta_effect = { #sets up next election date in country ui
+						text = {
+							set_politics = {
+								ruling_party = conservatism
+								last_election = "[current_election_date]"
+								elections_allowed = yes
+								election_frequency = 48
+							}
+						}
+						current_election_date = "[?global.date.GetDateStringNoHour]"
+					}
+
+					hidden_effect = {
+						set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
+						econ_type_change = yes
+						TNO_startup_nation = yes
+					}
+				}
+			}
+			else = {
+				COG = {
+					annex_country = {
+						target = GRO
+						transfer_troops = no
+					}
+					every_owned_state = {
+						remove_core_of = GRO
+						add_core_of = COG
+					}
+				}
+			}
+			if = {
+				limit = { MDG = { exists = yes } }
+				MAD = {
+					annex_country = {
+						target = MDG
+						transfer_troops = no
+					}
+					transfer_state = 706
+					transfer_state = 707
+					every_owned_state = {
+						remove_core_of = MDG
+						remove_core_of = GER
+						add_core_of = MAD
+					}
+					set_party_name = {
+						ideology = communist
+						long_name = MAD_communist_oc_party_long
+						name = MAD_communist_oc_party
+					}
+					set_politics = {
+						ruling_party = communist
+						elections_allowed = no
+					}
+					promote_character = {
+						character = MAD_Didier_Ratsiraka
+						ideology = communist_marxism_leninism_subtype
+					}
+					set_popularities = {
+						communist = 100
+					}
+					set_cosmetic_tag = MAD_arema
+					set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Planned }
+					econ_type_change = yes
+				}
+			}
+			else = {
+				MAD = {
+					transfer_state = 706
+					transfer_state = 707
+					every_owned_state = {
+						remove_core_of = MDG
+						remove_core_of = GER
+						add_core_of = MAD
+					}
+				}
 			}
 			TaS_WRW2_German_Collapse_Beloozersky = yes
 			
@@ -907,53 +1133,131 @@ country_event = { #Brave New World
 ##news_events 
 
 news_event = { #Something happened in Bornholme
-	id = SWRW_april_fools_news.1
-	title = SWRW_april_fools_news.1.t
-	desc = SWRW_april_fools_news.1.d
-	picture = GFX_SWRW_april_fools_news_001
+	id = AprilFools_news.1
+	title = AprilFools_news.1.t
+	desc = AprilFools_news.1.d
+	picture = GFX_AprilFools_news_001
 	
 	is_triggered_only = yes
 	
 	option = {
-		name = SWRW_april_fools_news.1.a
+		name = AprilFools_news.1.a
 	}
 }
 
 news_event = { # Walpurgisnacht: Arkhangelsk
-	id = SWRW_april_fools_news.2
-	title = SWRW_april_fools_news.2.t
-	desc = SWRW_april_fools_news.2.d
-	picture = SWRW_april_fools_news_002
+	id = AprilFools_news.2
+	title = AprilFools_news.2.t
+	desc = AprilFools_news.2.d
+	picture = AprilFools_news_002
 	
 	is_triggered_only = yes
 	
 	option = {
-		name = SWRW_april_fools_news.2.a
+		name = AprilFools_news.2.a
 	}
 }
 
 news_event = { #Something DEFINETELY happened in Bornholme
-	id = SWRW_april_fools_news.3
-	title = SWRW_april_fools_news.3.t
-	desc = SWRW_april_fools_news.3.d
-	picture = SWRW_april_fools_news_003
+	id = AprilFools_news.3
+	title = AprilFools_news.3.t
+	desc = AprilFools_news.3.d
+	picture = AprilFools_news_003
 	
 	is_triggered_only = yes
 	
 	option = {
-		name = SWRW_april_fools_news.1.a
+		name = AprilFools_news.1.a
 	}
 }
 
 news_event = { # Gay frogs died sadge
-	id = SWRW_april_fools_news.4
-	title = SWRW_april_fools_news.4.t
-	desc = SWRW_april_fools_news.4.d
-	picture = SWRW_april_fools_news_004
+	id = AprilFools_news.4
+	title = AprilFools_news.4.t
+	desc = AprilFools_news.4.d
+	picture = AprilFools_news_004
 	
 	is_triggered_only = yes
 	
 	option = {
-		name = SWRW_april_fools_news.4.a
+		name = AprilFools_news.4.a
+	}
+}
+
+news_event = { # USA-JPN Conference
+	id = AprilFools_news.5
+	title = AprilFools_news.5.t
+	desc = AprilFools_news.5.d
+	picture = AprilFools_news_005
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = AprilFools_news.5.a
+	}
+}
+
+news_event = { # UN-GOC creation
+	id = AprilFools_news.6
+	title = AprilFools_news.6.t
+	desc = AprilFools_news.6.d
+	picture = AprilFools_news_006
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = AprilFools_news.6.a
+	}
+}
+
+news_event = { # Russia is back
+	id = AprilFools_news.7
+	title = AprilFools_news.7.t
+	desc = AprilFools_news.7.d
+	picture = AprilFools_news_007
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = AprilFools_news.7.a
+	}
+}
+
+news_event = { # Neutral-Good end
+	id = AprilFools_news.8
+	title = AprilFools_news.8.t
+	desc = AprilFools_news.8.d
+	picture = AprilFools_news_008
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = AprilFools_news.8.a
+	}
+}
+
+news_event = { # Neutral-Bad end
+	id = AprilFools_news.9
+	title = AprilFools_news.9.t
+	desc = AprilFools_news.9.d
+	picture = AprilFools_news_009
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = AprilFools_news.9.a
+	}	
+}
+
+news_event = { # SCP-1173
+	id = AprilFools_news.10
+	title = AprilFools_news.10.t
+	desc = AprilFools_news.10.d
+	picture = AprilFools_news_010
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = AprilFools_news.5.a
 	}
 }

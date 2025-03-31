@@ -1,0 +1,66 @@
+scripted_gui = {
+
+	univreset_upper_left_visible = {
+		context_type = player_context
+		parent_window_token = top_bar
+		window_name = "TaS_topbar_univreset"
+
+		visible = {
+			OR = {
+				has_global_flag = GWF_good_end
+				has_global_flag = GWF_bad_end
+			}
+		}
+	}
+
+	univreset_upper_right_visible = {
+		context_type = player_context
+		parent_window_token = top_bar
+		window_name = "TaS_right_view_univreset"
+
+		visible = {
+			OR = {
+				has_global_flag = GWF_good_end
+				has_global_flag = GWF_bad_end
+			}
+		}
+	}
+
+	univreset_bottom_right_visible = {
+		context_type = player_context
+		parent_window_token = top_bar
+		window_name = "TaS_bottom_right_view_univreset"
+
+		visible = {
+			OR = {
+				has_global_flag = GWF_good_end
+				has_global_flag = GWF_bad_end
+			}
+		}
+	}
+
+	univreset_bottom_center_visible = {
+		context_type = player_context
+		parent_window_token = top_bar
+		window_name = "TaS_bottom_center_view_univreset"
+
+		visible = {
+			OR = {
+				has_global_flag = GWF_good_end
+				has_global_flag = GWF_bad_end
+			}
+		}
+	}
+
+	da_bar_visible = {
+		context_type = player_context
+		parent_window_token = top_bar
+		window_name = "TaS_bar_top_univreset"
+
+		visible = {
+			NOT = {
+				has_global_flag = TaS_my_world_is_on_fire_how_about_yours
+			}
+		}
+	}
+}

@@ -825,8 +825,8 @@ GWF_BigGame_deccat = {
 			tag = GWF
 		}			
 		available = {
-			NOT = { has_global_flag = GWF_BigGame_gui_active }
-		}			
+			always = no
+		}				
 		activation = {
 			has_global_flag = GWF_BigGame_gui_active
 		}
@@ -850,7 +850,7 @@ GWF_BigGame_deccat = {
 		available = {
 			set_temp_variable = { Y = 10 }
 			GWF_Homura_mental_more_than_Y = yes
-			custom_effect_tooltip = {
+			custom_trigger_tooltip = {
 				tooltip = GWF_biggame_dont_doing_more
 				NOT = { has_country_flag = GWF_action_active }
 			}
@@ -882,7 +882,7 @@ GWF_BigGame_deccat = {
 	GWF_biggame_financial_help = {
 		icon = generic_corruption
 		available = {
-			custom_effect_tooltip = {
+			custom_trigger_tooltip = {
 				tooltip = GWF_biggame_dont_doing_more
 				NOT = { has_country_flag = GWF_action_active }
 			}
@@ -913,7 +913,7 @@ GWF_BigGame_deccat = {
 	GWF_biggame_promise_mil_help = {
 		icon = generic_military_parade
 		available = {
-			custom_effect_tooltip = {
+			custom_trigger_tooltip = {
 				tooltip = GWF_biggame_dont_doing_more
 				NOT = { has_country_flag = GWF_action_active }
 			}
@@ -949,7 +949,7 @@ GWF_BigGame_deccat = {
 		available = {
 			set_temp_variable = { Y = 10 }
 			GWF_Homura_physics_more_than_Y = yes
-			custom_effect_tooltip = {
+			custom_trigger_tooltip = {
 				tooltip = GWF_biggame_dont_doing_more
 				NOT = { has_country_flag = GWF_action_active }
 			}
@@ -986,7 +986,7 @@ GWF_BigGame_deccat = {
 		available = {
 			set_temp_variable = { Y = 10 }
 			GWF_Homura_mental_more_than_Y = yes
-			custom_effect_tooltip = {
+			custom_trigger_tooltip = {
 				tooltip = GWF_biggame_dont_doing_more
 				NOT = { has_country_flag = GWF_action_active }
 			}
@@ -1026,7 +1026,7 @@ GWF_BigGame_deccat = {
 			GWF_Homura_mental_more_than_Y = yes
 			set_temp_variable = { Y = 10 }
 			GWF_Homura_physics_more_than_Y = yes
-			custom_effect_tooltip = {
+			custom_trigger_tooltip = {
 				tooltip = GWF_biggame_dont_doing_more
 				NOT = { has_country_flag = GWF_action_active }
 			}
@@ -1061,14 +1061,15 @@ GWF_BigGame_deccat = {
 	}
 	GWF_biggame_tick = {
 		icon = generic_timer	
-    	available = {
-			NOT = { has_global_flag = GWF_BigGame_gui_active }
-    	}
-	
-    	activation = {
-    		has_country_flag = GWF_BigGame_gui_active
-    	}
-		
+    	allowed = {
+			tag = GWF
+		}			
+		available = {
+			always = no
+		}				
+		activation = {
+			has_global_flag = GWF_BigGame_gui_active
+		}		
     	is_good = no
 	
     	days_mission_timeout = 7
@@ -1085,6 +1086,7 @@ GWF_BigGame_deccat = {
 				}
 				GWF_great_game_change_support = yes
 				custom_effect_tooltip = GWF_biggame_tick_tt
+				activate_mission = GWF_biggame_tick
 			}
 			else = {
 				custom_effect_tooltip = GWF_biggame_tick_skipped_tt
@@ -1325,4 +1327,65 @@ GWF_army_deccat = {
 			army_experience = 5
 		}
 	}
+}
+
+GER_trvthnuke_deccat = {
+	GER_trvthnuke_form_NDN = {
+		icon = generic_military_parade
+		visible = {
+			is_NDN_nation = yes
+		}	
+		available = {
+			can_form_NDN = yes
+		}
+		fire_only_once = yes
+		complete_effect = {
+			every_owned_state = { add_core_of = ROOT }	
+			save_global_event_target_as = GER_AprilFools_Norwegian_Unifier
+		}
+	}
+	GER_trvthnuke_form_NGE = {
+		icon = generic_military_parade
+		visible = {
+			is_NGE_nation = yes
+		}	
+		available = {
+			can_form_NGE = yes
+		}
+		fire_only_once = yes
+		complete_effect = {
+			every_owned_state = { add_core_of = ROOT }
+			save_global_event_target_as = GER_AprilFools_Northern_Unifier
+			country_event = { id = GER_AF_skeleton.11 days = 30	}
+		}
+	}
+	GER_trvthnuke_form_WGE = {
+		icon = generic_military_parade
+		visible = {
+			is_WGE_nation = yes
+		}	
+		available = {
+			can_form_WGE = yes
+		}
+		fire_only_once = yes
+		complete_effect = {
+			every_owned_state = { add_core_of = ROOT }	
+			save_global_event_target_as = GER_AprilFools_Western_Unifier
+		}
+	}
+	GER_trvthnuke_form_EGE = {
+		icon = generic_military_parade
+		visible = {
+			is_EGE_nation = yes
+		}	
+		available = {
+			can_form_EGE = yes
+		}
+		fire_only_once = yes
+		complete_effect = {
+			every_owned_state = { add_core_of = ROOT }		
+			save_global_event_target_as = GER_AprilFools_Eastern_Unifier
+		}
+	}
+	
 }

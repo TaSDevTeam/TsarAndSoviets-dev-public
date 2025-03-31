@@ -15,6 +15,9 @@ GWF_initiate = {
 		GWF_Hans_Filbinger = {
 			set_nationality = GWF
 		}
+		GWF_Wilhelm_Mohnke = {
+			set_nationality = GWF
+		}
 		GWF_Otto_Tetsurstamm = {
 			set_nationality = GWF
 		}
@@ -451,6 +454,7 @@ GWF_start_great_game = {
 	set_variable = { BigGame_round_timeout = 60 }
 	set_variable = { BigGame_round_threshold = 55 }
 	activate_mission = GWF_BigGame_mission
+	activate_mission = GWF_BigGame_tick
 	GWF_great_game_clamp_vars = yes
 }
 
@@ -509,7 +513,7 @@ GWF_great_game_reset = {
 		remove_ideas = Speer_Alliance_Member
 		set_variable = { gui_display_frame = 5000 }
 	}
-	GWF_start_great_game = YES
+	GWF_start_great_game = yes
 }
 GWF_great_game_to_the_next_round = {
 	if = {
@@ -676,7 +680,7 @@ GWF_great_game_to_the_next_round = {
 						country_leader = {
 							desc = "AprilFools_Mikhail_Svetov_DESC"
 							expire = "1999.1.1"
-							ideology = accelerationism_anarcho_etatism_subtype
+							ideology = accelerationism_anarcho_etatism_svetov_subtype
 							id = -1
 						}
 						promote_leader = yes
@@ -690,7 +694,18 @@ GWF_great_game_to_the_next_round = {
 				set_variable = { gui_display_frame = 2000 }
 				add_ideas = Speer_Alliance_Member
 				XYI_Mikhail_Svetov = { remove_country_leader_role = { ideology = accelerationism_anarcho_capitalism_subtype } }
-				promote_character = XYI_Mikhail_Pozharsky
+				XYI_Mikhail_Pozharsky = { 
+					remove_country_leader_role = { ideology = accelerationism_anarcho_capitalism_subtype }
+					add_country_leader_role = {
+						country_leader = {
+							desc = "AprilFools_Mikhail_Svetov_DESC"
+							expire = "1999.1.1"
+							ideology = accelerationism_anarcho_etatism_pozharsky_subtype
+							id = -1
+						}
+						promote_leader = yes
+					}
+				}
 				LHH = { add_to_faction = GBW }
 			}
 		}

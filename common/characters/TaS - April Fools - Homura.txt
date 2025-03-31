@@ -82,7 +82,10 @@ characters = {
 	GWF_Hans_Filbinger = {
 		name = GWF_Hans_Filbinger
 		portraits = {
-			civilian = { small = "GFX_idea_Generic_Position_Vacant"	}
+			civilian = { 
+				large = "gfx/leaders/AprilFools/Portrait_Hans_Filbinger.png"
+				small = "GFX_idea_GWF_Hans_Filbinger"
+			}
 		}
 		advisor = {
 			slot = foreign_minister
@@ -91,6 +94,24 @@ characters = {
 			traits = {
 				foreign_minister
 				useful_figurehead
+			}
+			ledger = civilian
+			cost = -1
+			can_be_fired = no
+			ai_will_do = { factor = 0 }
+		}
+	}
+	GWF_Wilhelm_Mohnke = {
+		name = GWF_Wilhelm_Mohnke
+		portraits = {
+			civilian = { small = "GFX_idea_GWF_Wilhelm_Mohnke" }
+		}
+		advisor = {
+			slot = security_minister
+			idea_token = GWF_Wilhelm_Mohnke_sec
+			allowed = { original_tag = GWF }
+			traits = {
+				security_minister
 			}
 			ledger = civilian
 			cost = -1

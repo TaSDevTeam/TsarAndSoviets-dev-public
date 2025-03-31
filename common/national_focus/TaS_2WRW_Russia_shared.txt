@@ -688,9 +688,18 @@ shared_focus = {
 				}
 			}
 		}
-		custom_trigger_tooltip = {
-			tooltip = SWRW_readiness_tt
-			check_variable = { SWRW_readiness_var > 74.99 }
+		OR = {
+			custom_trigger_tooltip = {
+				tooltip = SWRW_readiness_tt
+				check_variable = { SWRW_readiness_var > 74.99 }
+			}
+			custom_trigger_tooltip = {
+				tooltip = SWRW_skip_preparation_tt
+				has_game_rule = {
+					rule = april_fools_content_status
+					option = APRIL_FOOLS_ENABLED
+				}
+			}
 		}
 		custom_trigger_tooltip = {
 			tooltip = SWRW_issues_done_tt
@@ -709,6 +718,12 @@ shared_focus = {
 		set_country_flag = TaS_starting_war
 		custom_effect_tooltip = MAR_warprep_so_kill_him_tt
 		country_event = { id = RUS_SWRW_preparation.7 }
+		hidden_effect = {
+			every_country = {
+				limit = { is_ai = no }
+				news_event = { id = AprilFools_news.3 days = 45 }
+			}
+		}
 		GER = {
 			add_war_support = -0.15
 			add_stability = -0.15

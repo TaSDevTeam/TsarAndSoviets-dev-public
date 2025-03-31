@@ -9,7 +9,7 @@ add_namespace = TaS_GERCollapse
 add_namespace = TaS_GERCollapse_news
 
 country_event = {#GUOT New order
-	id = TaS_GEREpilogue.1
+	id = TaS_GEREpilogue.1 
 	immediate = {log = "[GetDateText]: [Root.GetName]: event TaS_GEREpilogue.1"}
 	title = TaS_GEREpilogue.1.t
 	desc = TaS_GEREpilogue.1.d
@@ -7622,6 +7622,69 @@ country_event = {#General - German evacuation from Africa
 				}
 				GRO = {
 					GER = { end_puppet = GRO }
+					
+					set_cosmetic_tag = GRO_free
+					promote_character = COG_USA_Joseph_Ileo
+					set_popularities = {
+						progressivism = 13
+						liberalism = 20
+						conservatism = 41
+						paternalism = 15
+						despotism = 11
+					}
+					set_party_name = {
+						ideology = progressivism
+						long_name = GRO_free_progressivism_party_long
+						name = GRO_free_progressivism_party
+					}
+					set_party_name = {
+						ideology = liberalism
+						long_name = GRO_free_liberalism_party_long
+						name = GRO_free_liberalism_party
+					}
+					set_party_name = {
+						ideology = conservatism
+						long_name = GRO_free_conservatism_party_long
+						name = GRO_free_conservatism_party
+					}
+					set_party_name = {
+						ideology = paternalism
+						long_name = GRO_free_paternalism_party_long
+						name = GRO_free_paternalism_party
+					}
+					set_party_name = {
+						ideology = despotism
+						long_name = GRO_free_despotism_party_long
+						name = GRO_free_despotism_party
+					}
+					meta_effect = { #sets up next election date in country ui
+						text = {
+							set_politics = {
+								ruling_party = conservatism
+								last_election = "[current_election_date]"
+								elections_allowed = yes
+								election_frequency = 48
+							}
+						}
+						current_election_date = "[?global.date.GetDateStringNoHour]"
+					}
+
+					hidden_effect = {
+						set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
+						econ_type_change = yes
+						TNO_startup_nation = yes
+					}
+				}
+			}
+			else_if = {
+				limit = { COG = { is_subject_of = GER } }
+				COG = {
+					COG_USA_Joseph_Ileo = {
+						set_nationality = COG
+					}
+				}
+				COG = {
+					GER = { end_puppet = COG }
 					
 					set_cosmetic_tag = GRO_free
 					promote_character = COG_USA_Joseph_Ileo

@@ -278,7 +278,7 @@ GWF_meguca_manpower_more_than_Y = {
 	}
 }
 
-is_GDN_nation = {
+is_NDN_nation = {
 	OR = {
 		tag = APF
 		tag = GNR
@@ -333,7 +333,7 @@ is_SGE_nation = {
 	}
 }
 
-can_form_GDN = {
+can_form_NDN = {
 	AND = {
 		owns_state = 144
 		owns_state = 2142

@@ -235,6 +235,17 @@ country_event = { #GWF_look_outside
 	option = { #
 		name = GWF.14.a
 		ai_chance = { factor = 1 }
+		hidden_effect = { #triggers the fopo skeletons
+			ZZZ = { 
+				country_event = { id = GER_AF_skeleton.1 days = 47 }
+				country_event = { id = GER_AF_skeleton.4 days = 34 }
+				country_event = { id = GER_AF_skeleton.5 days = 73 }
+				country_event = { id = GER_AF_skeleton.6 days = 75 }
+				country_event = { id = GER_AF_skeleton.7 days = 69 }
+				country_event = { id = GER_AF_skeleton.12 days = 69 }
+				country_event = { id = GER_AF_skeleton.17 days = 365 }
+			}
+		}
 		
 	}
 }
@@ -961,7 +972,7 @@ country_event = { #GWF_fateful_meeting - neutral/good
 	option = { #
 		name = GWF.55.a
 		ai_chance = { factor = 1 }
-		
+		country_event = { id = GWF.56 days = 2 }
 	}
 }
 
@@ -978,7 +989,7 @@ country_event = { #GWF_fateful_meeting - planning - neutral/good
 	option = { #
 		name = GWF.56.a
 		ai_chance = { factor = 1 }
-		
+		country_event = { id = GWF.59 days = 2 }
 	}
 }
 
@@ -995,7 +1006,7 @@ country_event = { #GWF_fateful_meeting - bad
 	option = { #
 		name = GWF.57.a
 		ai_chance = { factor = 1 }
-		
+		country_event = { id = GWF.58 days = 2 }
 	}
 }
 
@@ -1012,7 +1023,7 @@ country_event = { #GWF_fateful_meeting - planning - bad
 	option = { #
 		name = GWF.58.a
 		ai_chance = { factor = 1 }
-		
+		country_event = { id = GWF.59 days = 2 }
 	}
 }
 
@@ -1029,7 +1040,7 @@ country_event = { #GWF_fateful_meeting - beggining of end
 	option = { #
 		name = GWF.59.a
 		ai_chance = { factor = 1 }
-		
+		country_event = { id = GWF.60 days = 2 }
 	}
 }
 
@@ -1046,7 +1057,7 @@ country_event = { #GWF_fateful_meeting - paratrooper
 	option = { #
 		name = GWF.60.a
 		ai_chance = { factor = 1 }
-		
+		country_event = { id = GWF.61 days = 2 }
 	}
 }
 
@@ -1063,7 +1074,17 @@ country_event = { #GWF_fateful_meeting - last fight
 	option = { #
 		name = GWF.61.a
 		ai_chance = { factor = 1 }
-		
+		if = {
+			limit = { check_variable = { GWF_evil_flags = 0 } }
+			country_event = { id = GWF.64 days = 2 }
+		}
+		else_if = {
+			limit = { check_variable = { GWF_evil_flags = 4 } }
+			country_event = { id = GWF.62 days = 2 }
+		}
+		else = {
+			country_event = { id = GWF.63 days = 2 }
+		}
 	}
 }
 
@@ -1080,7 +1101,17 @@ country_event = { #GWF_fateful_meeting - Crimes and Punishment
 	option = { #
 		name = GWF.62.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = GWF_fate_sealed_tt
+		custom_effect_tooltip = GWF_it_will_be_laggy_bro_tt
+		set_global_flag = GWF_bad_end
+		every_state = {
+			transfer_state_to = ZZZ
+			add_core_of = ZZZ
+		}
+		ZZZ = {
+			change_tag_from = ROOT
+			country_event = { id = GWF.74 days = 10 }
+		}
 	}
 }
 
@@ -1097,7 +1128,66 @@ country_event = { #GWF_fateful_meeting - Closed forever
 	option = { #
 		name = GWF.63.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = GWF_fate_sealed_tt
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = GWF_lone_warrior
+					check_variable = { GWF_evil_flags > 2 }
+				}
+			}
+			country_event = { id = GWF.75 days = 14 }
+			hidden_effect = {
+				set_cosmetic_tag = GWF_trvthnuke_neutralbad
+			}
+		}
+		else = {
+			country_event = { id = GWF.76 days = 14 }
+			custom_effect_tooltip = GWF_time_to_clean_up_tt
+			hidden_effect = { 
+				set_cosmetic_tag = GWF_trvthnuke_neutralgood
+				set_politics = {
+					ruling_party = despotism
+					last_election = "1933.2.16"
+					election_frequency = 36
+					elections_allowed = no
+				}
+				add_country_leader_role = {
+					character = GWF_Hans_Filbinger
+					promote_leader = yes
+					country_leader = {
+						desc = "POLITICS_APRILFOOLS_LEADER_GENERIC_DESC"
+						ideology = despotism_interim_government_subtype
+						expire = "1999.1.1"
+						traits = { }
+					}
+				}
+				set_party_name = {
+					ideology = despotism
+					long_name = GWF_AprilFools_desp_party_long
+					name = GWF_AprilFools_desp_party
+				}
+				set_party_name = {
+					ideology = accelerationism
+					long_name = GWF_AprilFools_party_three_long
+					name = GWF_AprilFools_party_three
+				}
+				set_party_name = {
+					ideology = communist
+					long_name = GWF_AprilFools_comm_party_two_long
+					name = GWF_AprilFools_comm_party_two
+				}
+				set_party_name = {
+					ideology = paternalism
+					long_name = GWF_AprilFools_pat_party_three_long
+					name = GWF_AprilFools_pat_party_three
+				}
+				add_popularity = {
+					ideology = despotism
+					popularity = 0.45
+				}
+			}
+		}
 	}
 }
 
@@ -1114,7 +1204,18 @@ country_event = { #GWF_fateful_meeting - In their places
 	option = { #
 		name = GWF.64.a
 		ai_chance = { factor = 1 }
-		
+		custom_effect_tooltip = GWF_fate_sealed_tt
+		custom_effect_tooltip = GWF_it_will_be_laggy_bro_tt
+		set_global_flag = GWF_good_end
+		every_state = {
+			transfer_state_to = ZZZ
+			add_core_of = ZZZ
+		}
+		ZZZ = {
+			set_cosmetic_tag = ZZZ_good
+			change_tag_from = ROOT
+			country_event = { id = GWF.77 days = 10 }
+		}
 	}
 }
 
@@ -1382,7 +1483,7 @@ country_event = { #OPPOSITION FIGHT - ENDZEIT GOODEND
 			name = GWF_AprilFools_pat_party_two
 		}
 		GWF_Sayaka_Miki = {
-			add_field_marshall_role = {
+			add_field_marshal_role = {
 				skill = 3
 				attack_skill = 2
 				defense_skill = 2
@@ -1442,7 +1543,7 @@ country_event = { #BAD END
 	option = { #
 		name = GWF.74.a
 		ai_chance = { factor = 1 }
-		
+		TNO_Country_Closing_Screen_Show = yes
 	}
 }
 
@@ -1459,7 +1560,8 @@ country_event = { #NEURAL BAD END
 	option = { #
 		name = GWF.75.a
 		ai_chance = { factor = 1 }
-		
+		set_country_flag = GWF_neutral_bad_end
+		TNO_Country_Closing_Screen_Show = yes
 	}
 }
 
@@ -1476,7 +1578,8 @@ country_event = { #NEURAL GOOD END
 	option = { #
 		name = GWF.76.a
 		ai_chance = { factor = 1 }
-		
+		set_country_flag = GWF_neutral_good_end
+		TNO_Country_Closing_Screen_Show = yes
 	}
 }
 
@@ -1493,7 +1596,7 @@ country_event = { #GOOD END
 	option = { #
 		name = GWF.77.a
 		ai_chance = { factor = 1 }
-		
+		TNO_Country_Closing_Screen_Show = yes
 	}
 }
 
@@ -2244,6 +2347,10 @@ country_event = { #Northern German CW - NGE vs NDN
 	option = { #
 		name = GER_AF_skeleton.9.a
 		ai_chance = { factor = 1 }
+		annex_country = {
+			target = EGE
+			transfer_troops = no
+		}
 		declare_war_on = {
 			target = NDN
 			type = annex_everything
@@ -2388,6 +2495,7 @@ country_event = { #Eastern German CW - Everyone against Ukraine
 				type = annex_everything
 			}
 		}
+		country_event = { id = GER_AF_skeleton.13 days = 14 }
 	}
 }
 
@@ -2402,7 +2510,7 @@ country_event = { #Eastern German CW - Everyone against Belarus
 	fire_only_once = yes
 	
 	option = { #
-		name = GER_AF_skeleton.12.a
+		name = GER_AF_skeleton.13.a
 		ai_chance = { factor = 1 }
 		PUS = {
 			declare_war_on = {
@@ -2428,6 +2536,7 @@ country_event = { #Eastern German CW - Everyone against Belarus
 				type = annex_everything
 			}
 		}
+		country_event = { id = GER_AF_skeleton.14 days = 14 }
 	}
 }
 
@@ -2442,7 +2551,7 @@ country_event = { #Eastern German CW - Everyone against Bydlo
 	fire_only_once = yes
 	
 	option = { #
-		name = GER_AF_skeleton.12.a
+		name = GER_AF_skeleton.14.a
 		ai_chance = { factor = 1 }
 		PUS = {
 			declare_war_on = {
@@ -2462,6 +2571,7 @@ country_event = { #Eastern German CW - Everyone against Bydlo
 				type = annex_everything
 			}
 		}
+		country_event = { id = GER_AF_skeleton.15 days = 14 }
 	}
 }
 
@@ -2476,7 +2586,7 @@ country_event = { #Eastern German CW - Everyone against Poland
 	fire_only_once = yes
 	
 	option = { #
-		name = GER_AF_skeleton.12.a
+		name = GER_AF_skeleton.15.a
 		ai_chance = { factor = 1 }
 		PUS = {
 			declare_war_on = {
@@ -2490,10 +2600,11 @@ country_event = { #Eastern German CW - Everyone against Poland
 				type = annex_everything
 			}
 		}
+		country_event = { id = GER_AF_skeleton.16 days = 14 }
 	}
 }
 
-country_event = { #Russia... reunifies
+country_event = { #Eastern German CW - Freezing Conflict(literally)
 	id = GER_AF_skeleton.16
 	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_AF_skeleton.16" }
 	title = GER_AF_skeleton.16.t
@@ -2504,60 +2615,72 @@ country_event = { #Russia... reunifies
 	fire_only_once = yes
 	
 	option = { #
-		name = GER_AF_skeleton.16.solzhenitsyn
+		name = GER_AF_skeleton.16.a
 		ai_chance = { factor = 1 }
-		
-	}
-	option = { #
-		name = GER_AF_skeleton.16.yezhov
-		ai_chance = { factor = 1 }
-		
-	}
-	option = { #
-		name = GER_AF_skeleton.16.mayakovskiy
-		ai_chance = { factor = 1 }
-		
-	}
-	option = { #
-		name = GER_AF_skeleton.16.sablin
-		ai_chance = { factor = 1 }
-		
-	}
-	option = { #
-		name = GER_AF_skeleton.16.dirlewanger
-		ai_chance = { factor = 1 }
-		
-	}
-	option = { #
-		name = GER_AF_skeleton.16.batov
-		ai_chance = { factor = 1 }
-		
-	}
-	option = { #
-		name = GER_AF_skeleton.16.pavlenko
-		ai_chance = { factor = 1 }
-		
-	}
-	option = { #
-		name = GER_AF_skeleton.16.communes
-		ai_chance = { factor = 1 }
-		
-	}
-	option = { #
-		name = GER_AF_skeleton.16.yeltsin
-		ai_chance = { factor = 1 }
-		
-	}
-	option = { #
-		name = GER_AF_skeleton.16.buckharin
-		ai_chance = { factor = 1 }
-		
+		GPL = {
+			set_cosmetic_tag = GPL_frozen
+			remove_all_ideas = yes
+			fill_empty_minister_nochecks = yes 
+			create_country_leader = {
+				name = "Anarchy"
+				desc = "POLITICS_ANARCHY_DESC"
+				picture = "Portrait_ZZZ_Anarchy.dds"
+				expire = "3000.1.1"
+				ideology = socialist_subtype
+				traits = { }
+			}
+			set_variable = { TNO_economy_type = token:Econ_Type_Planned }
+			set_variable = { TNO_economy_subtype = token:Econ_Subtype_Anarchic }
+			set_country_flag = TNO_eliminate_building_demand
+			set_country_flag = can_not_use_econ_system
+			set_country_flag = GWF_witch
+			country_lock_all_division_template = yes
+			set_politics = {
+				ruling_party = socialist
+				last_election = "1961.1.20"
+				election_frequency = 48
+				elections_allowed = yes
+
+			}
+			set_popularities = {
+				socialist = 100
+			}
+			add_ideas = ZZZ_anarchy
+			
+			annex_country = { 
+				target = PUS
+				transfer_troops = no
+			}
+			annex_country = { 
+				target = LIT
+				transfer_troops = no
+			}
+			annex_country = { 
+				target = MBL
+				transfer_troops = no
+			}
+			annex_country = { 
+				target = MUK
+				transfer_troops = no
+			}
+			annex_country = { 
+				target = GSV
+				transfer_troops = no
+			}
+		}
 	}
 }
 
-country_event = { #Third Westrussian War
+country_event = { #Russia... reunifies
 	id = GER_AF_skeleton.17
-	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_AF_skeleton.17" }
+	immediate = { 
+		log = "[GetDateText]: [Root.GetName]: event GER_AF_skeleton.17"
+		country_event = { id = GER_AF_skeleton.18 days = 45 }
+		every_country = {
+			limit = { is_ai = no }
+			news_event = { id = AprilFools_news.7 days = 3 }
+		}
+	}
 	title = GER_AF_skeleton.17.t
 	desc = GER_AF_skeleton.17.desc
 	#picture = 
@@ -2566,7 +2689,69 @@ country_event = { #Third Westrussian War
 	fire_only_once = yes
 	
 	option = { #
-		name = GER_AF_skeleton.12.a
+		name = GER_AF_skeleton.17.solzhenitsyn
+		ai_chance = { factor = 1 }
+		
+	}
+	option = { #
+		name = GER_AF_skeleton.17.yezhov
+		ai_chance = { factor = 1 }
+		
+	}
+	option = { #
+		name = GER_AF_skeleton.17.mayakovskiy
+		ai_chance = { factor = 1 }
+		
+	}
+	option = { #
+		name = GER_AF_skeleton.17.sablin
+		ai_chance = { factor = 1 }
+		
+	}
+	option = { #
+		name = GER_AF_skeleton.17.dirlewanger
+		ai_chance = { factor = 1 }
+		
+	}
+	option = { #
+		name = GER_AF_skeleton.17.batov
+		ai_chance = { factor = 1 }
+		
+	}
+	option = { #
+		name = GER_AF_skeleton.17.pavlenko
+		ai_chance = { factor = 1 }
+		
+	}
+	option = { #
+		name = GER_AF_skeleton.17.communes
+		ai_chance = { factor = 1 }
+		
+	}
+	option = { #
+		name = GER_AF_skeleton.17.yeltsin
+		ai_chance = { factor = 1 }
+		
+	}
+	option = { #
+		name = GER_AF_skeleton.17.buckharin
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = { #Third Westrussian War
+	id = GER_AF_skeleton.18
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_AF_skeleton.17" }
+	title = GER_AF_skeleton.18.t
+	desc = GER_AF_skeleton.17.desc
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_AF_skeleton.18.a
 		ai_chance = { factor = 1 }
 		annex_country = {
 			target = MCW
@@ -2574,3 +2759,101 @@ country_event = { #Third Westrussian War
 		}
 	}
 }
+
+country_event = { #USA-JAP conference
+	id = GER_AF_skeleton.19
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_AF_skeleton.19" }
+	title = GER_AF_skeleton.19.t
+	desc = GER_AF_skeleton.19.desc
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_AF_skeleton.19.a
+		ai_chance = { factor = 1 }
+		set_temp_variable = { tension_WT = -50 }
+ 		set_temp_variable = { tension_superpower_1 = JAP }
+ 		set_temp_variable = { tension_superpower_2 = USA }
+ 		set_temp_variable = { tension_id = 100 }
+ 		TNO_change_tension = yes
+		every_country = {
+			limit = { is_ai = no }
+			news_event = { id = AprilFools_news.5 days = 3 }
+			country_event = { id = GER_AF_skeleton.20 days = 35 }
+		}
+	}
+}
+
+country_event = { #USA-JAP conference
+	id = GER_AF_skeleton.20
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_AF_skeleton.20" }
+	title = GER_AF_skeleton.20.t
+	desc = GER_AF_skeleton.20.desc
+	#picture = 
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = GER_AF_skeleton.20.a
+		ai_chance = { factor = 1 }
+		CHI = { #kill off that thing for god's sake
+			annex_country = {
+				target = GNG
+				transfer_troops = yes
+			}
+		}
+		every_country = {
+			limit = { 
+				NOT = { has_country_flag = country_has_trvthnuked }
+				check_variable = { GDP > 1 }
+			}
+			leave_faction = yes
+			remove_faction_status = yes
+			every_country = {
+				white_peace = PREV
+			}
+		}
+
+		USA = {
+			create_faction = United_Nations
+			add_ideas = United_Nations_USA
+			add_to_faction = JAP
+		}
+		JAP = {
+			add_ideas = United_Nations_JAP
+		}
+		every_country = {
+			limit = {
+				NOT = { has_country_flag = country_has_trvthnuked }
+			}
+			USA = { add_to_faction = PREV }
+			add_ideas = United_Nations_Member
+		}
+		every_country = {
+			limit = {
+				OR = {
+					original_tag = FRA
+					original_tag = ITA
+					original_tag = HUN
+					original_tag = ROM
+					original_tag = TNS
+					original_tag = SWE
+					original_tag = FIN
+					original_tag = TUR
+					original_tag = AFG
+					original_tag = NAL
+					original_tag = MUJ
+					original_tag = MEN
+					original_tag = MAN
+					original_tag = CRO
+				}
+			}
+			remove_ideas = United_Nations_Member
+			add_ideas = United_Nations_Bordering_Member
+		}
+	}
+}
+

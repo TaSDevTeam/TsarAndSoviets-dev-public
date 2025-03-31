@@ -108,6 +108,11 @@ MAR_nah_actually_change_my_mind_plz = {
 	}
 	remove_all_ministers = yes
 	
+	add_ideas = MAR_Alexander_Kazembek_hog
+	add_ideas = MAR_Pyotr_Demichev_for
+	add_ideas = MAR_Nikolai_Maslennikov_eco
+	add_ideas = MAR_Vladimir_Gil_sec
+	
 	remove_ideas = MAR_shattered_order
 	add_dynamic_modifier = { modifier = MAR_military_order_modifier }
 	force_update_dynamic_modifier = yes
@@ -601,7 +606,6 @@ MAR_German_Collapse_TRVTHNUKE = {
 		every_owned_state = {
 			add_core_of = PREV
 		}
-		promote_character = XYI_Joseph_Goebbels
 		set_politics = {
 			ruling_party = national_socialism
 			elections_allowed = no
@@ -611,6 +615,7 @@ MAR_German_Collapse_TRVTHNUKE = {
 			long_name = GSV_AprilFools_party_long
 			name = GSV_AprilFools_party
 		}
+		promote_character = XYI_Joseph_Goebbels
 	}
 
 	GSI = {
@@ -1010,7 +1015,6 @@ MAR_German_Collapse_TRVTHNUKE = {
 		every_owned_state = {
 			add_core_of = PREV
 		}
-		promote_character = XYI_Elon_Musk
 		set_politics = {
 			ruling_party = paternalism
 			elections_allowed = no
@@ -1019,6 +1023,9 @@ MAR_German_Collapse_TRVTHNUKE = {
 			ideology = paternalism
 			long_name = AGS_AprilFools_party_long
 			name = AGS_AprilFools_party
+		}
+		XYI_Elon_Musk = {
+			promote_character = { ideology = paternalism_right_wing_populism_subtype }
 		}
 	}
 

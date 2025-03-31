@@ -380,6 +380,7 @@ spriteTypes = {
 		texturefile = "gfx/interface/aprilfools_gui/GWF_magical_infantry_technologies_medium.dds"
 	}
 
+	#FACTION 
 	SpriteType = {
 		name = "GFX_Homura_Alliance_Member"
 		texturefile = "gfx/interface/ideas/faction/Homura_Alliance_Member.dds"
@@ -406,6 +407,7 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/faction/United_Nations_Bordering_Member.dds"
 	}	
 	
+	#IDEAS 
 	spriteType = {
 		name = "GFX_idea_GWF_chaos_in_stuttgart"
 		textureFile = "gfx/interface/ideas/GWF/GWF_chaos_in_stuttgart.dds"
@@ -430,12 +432,32 @@ spriteTypes = {
 		name = "GFX_idea_GWF_southgerman_war"
 		textureFile = "gfx/interface/ideas/GWF/GWF_southgerman_war.dds"
 	}
+	spriteType = {
+		name = "GFX_idea_GWF_Kyubey"
+		textureFile = "gfx/interface/ideas/GWF/GWF_Kyubey.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_GWF_Otto_Ernst_Remer"
+		textureFile = "gfx/interface/ideas/GWF/GWF_Otto_Ernst_Remer.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_GWF_Wilhelm_Mohnke"
+		textureFile = "gfx/interface/ideas/GWF/GWF_Wilhelm_Mohnke.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_GWF_Andreas_Baader"
+		textureFile = "gfx/interface/ideas/GWF/GWF_Andreas_Baader.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_GWF_Hans_Filbinger"
+		textureFile = "gfx/interface/ideas/GWF/GWF_Hans_Filbinger.dds"
+	}
 	
 	spriteType = {
 		name = "GFX_GWF_decision_category_debug_picture"
 		textureFile = "gfx/interface/aprilfools_gui/decision_category_debug_picture.dds"
 	}
-	
+	### FOCUS TREE
 	spriteType = {
 		name = "GFX_GWF_start_from_scratch"
 		textureFile = "gfx/interface/goals/GWF/GWF_start_from_scratch.dds"
@@ -627,5 +649,47 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_GWF_fateful_meeting"
 		textureFile = "gfx/interface/goals/GWF/GWF_fateful_meeting.dds"
+	}
+	
+	##EVENT PICTURES
+	spriteType = {
+		name = "GFX_AprilFools_news_001"
+		textureFile = "gfx/event_pictures/postger/AprilFools_news_001.dds"
+	}
+	spriteType = {
+		name = "GFX_AprilFools_news_002"
+		textureFile = "gfx/event_pictures/postger/AprilFools_news_002.dds"
+	}
+	spriteType = {
+		name = "GFX_AprilFools_news_003"
+		textureFile = "gfx/event_pictures/postger/AprilFools_news_003.dds"
+	}
+	spriteType = {
+		name = "GFX_AprilFools_news_004"
+		textureFile = "gfx/event_pictures/postger/AprilFools_news_004.dds"
+	}
+	spriteType = {
+		name = "GFX_AprilFools_news_005"
+		textureFile = "gfx/event_pictures/postger/AprilFools_news_005.dds"
+	}
+	spriteType = {
+		name = "GFX_AprilFools_news_006"
+		textureFile = "gfx/event_pictures/postger/AprilFools_news_006.dds"
+	}
+	spriteType = {
+		name = "GFX_AprilFools_news_007"
+		textureFile = "gfx/event_pictures/postger/AprilFools_news_007.dds"
+	}
+	spriteType = {
+		name = "GFX_AprilFools_news_008"
+		textureFile = "gfx/event_pictures/postger/AprilFools_news_008.dds"
+	}
+	spriteType = {
+		name = "GFX_AprilFools_news_009"
+		textureFile = "gfx/event_pictures/postger/AprilFools_news_009.dds"
+	}
+	spriteType = {
+		name = "GFX_AprilFools_news_010"
+		textureFile = "gfx/event_pictures/postger/AprilFools_news_010.dds"
 	}
 }

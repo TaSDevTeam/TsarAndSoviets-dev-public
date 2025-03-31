@@ -140,6 +140,10 @@ defined_text = {
 		localization_key = "[Get_TNO_CountryClosing_epilogue_AAG]"
 	}
 	text = {
+		trigger = { original_tag = GWF }
+		localization_key = "[Get_TNO_CountryClosing_epilogue_GWF]"
+	}
+	text = {
 		localization_key = TNO_CountryClosing_epilogue_generic
 	}
 }
@@ -604,7 +608,31 @@ defined_text = {
 defined_text = {
 	name = Get_TNO_CountryClosing_picture_GWF
 	text = {
+		trigger = {
+			NOT = {
+				has_game_rule = {
+					rule = april_fools_content_status
+					option = APRIL_FOOLS_ENABLED
+				}
+			}
+		}
 		localization_key = "GFX_CountryClosing_picture_GWF_reunification"
+	}
+	text = {
+		trigger = { has_global_flag = GWF_good_end }
+		localization_key = "GFX_CountryClosing_picture_GWF_good_end"
+	}
+	text = {
+		trigger = { has_country_flag = GWF_neutral_good_end }
+		localization_key = "GFX_CountryClosing_picture_GWF_neutral_good_end"
+	}
+	text = {
+		trigger = { has_global_flag = GWF_neutral_bad_end }
+		localization_key = "GFX_CountryClosing_picture_GWF_neutral_bad_end"
+	}
+	text = {
+		trigger = { has_global_flag = GWF_bad_end }
+		localization_key = "GFX_CountryClosing_picture_GWF_bad_end"
 	}
 }
 defined_text = {
@@ -901,6 +929,37 @@ defined_text = {
 	}
 	text = {
 		localization_key = TNO_CountryClosing_epilogue_AAG_Failure
+	}
+}
+
+defined_text = {
+	name = Get_TNO_CountryClosing_epilogue_GWF
+	text = {
+		trigger = {
+			NOT = {
+				has_game_rule = {
+					rule = april_fools_content_status
+					option = APRIL_FOOLS_ENABLED
+				}
+			}
+		}
+		localization_key = TNO_CountryClosing_epilogue_generic
+	}
+	text = {
+		trigger = { has_global_flag = GWF_good_end }
+		localization_key = TNO_CountryClosing_epilogue_generic_GWF_good_end
+	}
+	text = {
+		trigger = { has_country_flag = GWF_neutral_good_end }
+		localization_key = TNO_CountryClosing_epilogue_generic_GWF_neutral_good_end
+	}
+	text = {
+		trigger = { has_global_flag = GWF_neutral_bad_end }
+		localization_key = TNO_CountryClosing_epilogue_generic_GWF_neutral_bad_end
+	}
+	text = {
+		trigger = { has_global_flag = GWF_bad_end }
+		localization_key = TNO_CountryClosing_epilogue_generic_GWF_bad_end
 	}
 }
 

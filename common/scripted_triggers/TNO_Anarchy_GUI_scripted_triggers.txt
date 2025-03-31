@@ -14,7 +14,14 @@ TNO_is_anarchy_visible = {
 		TNO_anarchy_ENG_Dissapearance = yes
 		original_tag = MDM
 		TNO_anarchy_AAN_default = yes
+		
+		TNO_anarchy_NRL_pepel = yes
+		TNO_anarchy_MCW_pkhy = yes
 		TNO_anarchy_GWF_witch = yes
+		TNO_anarchy_GPL_frozen = yes
+		TNO_anarchy_ZZZ_reseted_universe_bad = yes
+		TNO_anarchy_ZZZ_reseted_universe_good = yes
+		TNO_anarchy_XYI_paskhalochka = yes
 	}
 }
 
@@ -48,6 +55,7 @@ TNO_anarchy_NRL_default = {
 		character = NRL_No_Authority
 		ruling_only = yes
 	}
+	NOT = { has_cosmetic_tag = NRL_trvthnuke }
 }
 
 TNO_anarchy_VIL_after_midnight = {
@@ -97,7 +105,29 @@ TNO_anarchy_ENG_Dissapearance = {
 	original_tag = ENG
 	has_cosmetic_tag = ENG_Dissapearance
 }
+
+TNO_anarchy_NRL_pepel = {
+	original_tag = NRL
+	has_cosmetic_tag = NRL_trvthnuke
+}
+TNO_anarchy_MCW_pkhy = {
+	original_tag = MCW
+	has_cosmetic_tag = MCW_trvthnuke
+}
 TNO_anarchy_GWF_witch = {
 	original_tag = GWF
 	has_cosmetic_tag = GWF_witch
+}
+TNO_anarchy_GPL_frozen = {
+	original_tag = GPL
+	has_cosmetic_tag = GPL_frozen
+}
+TNO_anarchy_ZZZ_reseted_universe_bad = {
+	has_global_flag = GWF_bad_end
+}
+TNO_anarchy_ZZZ_reseted_universe_good = {
+	has_global_flag = GWF_good_end
+}
+TNO_anarchy_XYI_paskhalochka = {
+	original_tag = XYI
 }

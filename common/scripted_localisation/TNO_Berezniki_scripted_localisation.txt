@@ -902,6 +902,8 @@ defined_text = {
 	}
 }
 
+##APRIL FOOLS BRUV
+
 defined_text = {
 	name = GET_OPPO_TITLE
 	text = {
@@ -956,7 +958,15 @@ defined_text = {
 		}
 		localization_key = GWF_big_game_round_five
 	}
-	localization_key = GWF_big_game_round_na
+	text = {
+		trigger = {
+			OR = {
+				check_variable = { GWF_BigGame_round > 5 }
+				check_variable = { GWF_BigGame_round < 1 }
+			}
+		}
+		localization_key = GWF_big_game_round_na
+	}
 }
 defined_text = {
 	name = GET_ROUND_RESULT
@@ -1001,3 +1011,17 @@ defined_text = {
 		localization_key = gim_title
 	}
 }
+
+defined_text = {
+	name = GET_GWF_GREAT_BETRAYAL_DESC
+	text = {
+		trigger = { check_variable = { GWF_evil_flags > 2 } }
+		localization_key = GWF_great_betrayal_desc_evil
+	}
+	text = {
+		trigger = { check_variable = { GWF_evil_flags < 3 } }
+		localization_key = GWF_great_betrayal_desc_not_evil
+	}
+}
+
+

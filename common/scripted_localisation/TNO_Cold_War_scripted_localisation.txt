@@ -512,6 +512,11 @@ defined_text = { #Add more Diplo Incidents Here
 		trigger = { check_variable = { global.TNO_Cold_War_GUI_Tension_Tab_Incidents_List^TNO_Cold_War_GUI_Tension_Incidents_i = 59 } }
 		localization_key = "TNO_Cold_War_GUI_Tension_ID_South_China_Sea_Incident"
 	}
+	
+	text = {
+		trigger = { check_variable = { global.TNO_Cold_War_GUI_Tension_Tab_Incidents_List^TNO_Cold_War_GUI_Tension_Incidents_i = 100 } }
+		localization_key = "TNO_Cold_War_GUI_Tension_ID_AprilFools_Germany"
+	}
 }
 
 defined_text = {

@@ -273,6 +273,15 @@ TaS_SWRW_start_the_war = {
 				#}
 			}
 		}
+		if = {
+			limit = {
+				has_game_rule = {
+					rule = april_fools_content_status
+					option = APRIL_FOOLS_ENABLED
+				}
+			}
+			MAR_prewar_get_states = yes
+		}
 	}
 }
 TaS_SWRW_american_germany = {
