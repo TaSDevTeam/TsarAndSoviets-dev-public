@@ -51,7 +51,7 @@ GWF_SGW_deccat = {
 
 GWF_army_deccat = {
 	icon = GFX_decision_category_generic_army_reform
-	picture = GFX_decision_category_ogas_pic
+	picture = GFX_GWF_army_deccat_picture
 	allowed = { tag = GWF }
 	visible = { has_country_flag = GWF_army_deccat_active }
 	visible_when_empty = yes
