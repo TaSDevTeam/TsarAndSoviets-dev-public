@@ -1002,6 +1002,32 @@ defined_text = {
 		trigger = { has_idea = RUSAlliance_Observer }
 		localization_key = RUSAlliance_Observer_effect
 	}
+	#APRIL FOOLS
+	text = {
+		trigger = { has_idea = Homura_Alliance_Member }
+		localization_key = Homura_Alliance_Member_effect
+	}
+	text = {
+		trigger = { has_idea = Speer_Alliance_Member }
+		localization_key = Speer_Alliance_Member_effect
+	}
+	
+	text = {
+		trigger = { has_idea = United_Nations_USA }
+		localization_key = United_Nations_USA_effect
+	}
+	text = {
+		trigger = { has_idea = United_Nations_JAP }
+		localization_key = United_Nations_JAP_effect
+	}
+	text = {
+		trigger = { has_idea = United_Nations_Member }
+		localization_key = United_Nations_Member_effect
+	}
+	text = {
+		trigger = { has_idea = United_Nations_Bordering_Member }
+		localization_key = United_Nations_Bordering_Member_effect
+	}
 }
 
 defined_text = {
@@ -1363,6 +1389,7 @@ defined_text = {
 		trigger = { has_idea = RUSAlliance_Observer }
 		localization_key = RUSAlliance_Observer_desc
 	}
+	#APRIL FOOLS
 	###Fallback/generic
 	text = {
 		localization_key = Generic_Faction_desc

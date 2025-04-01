@@ -122,6 +122,9 @@ shared_focus = {
 		hidden_effect = { 
 			GWF_start_oppo_gui = yes
 		}
+		set_temp_variable = { opp_to_change = 1 }
+		set_temp_variable = { temp_stat_gained = -0.5 }
+		GWF_homura_change_weekly_stats = yes
 	}
 }
 
@@ -525,6 +528,9 @@ shared_focus = {
 		else = {
 			custom_effect_tooltip = GWF_my_own_realm_tt
 		}
+		set_temp_variable = { opp_to_change = 1 }
+		set_temp_variable = { temp_stat_gained = -0.5 }
+		GWF_homura_change_weekly_stats = yes
 	}
 }
 
@@ -781,6 +787,12 @@ shared_focus = {
 			limit = { is_in_faction_with = GWF }
 			add_war_support = 0.05
 		}
+		set_temp_variable = { opp_to_change = 1 }
+		set_temp_variable = { temp_stat_gained = -0.5 }
+		GWF_homura_change_weekly_stats = yes
+		set_temp_variable = { opp_to_change = 2 }
+		set_temp_variable = { temp_stat_gained = -0.5 }
+		GWF_homura_change_weekly_stats = yes
 	}
 }
 
@@ -917,6 +929,7 @@ shared_focus = {
 		set_technology = { magical_infantry_technologies = 1 }
 		add_ideas = GWF_meguca_army
 		hidden_effect = {
+			add_manpower = -100000
 			set_variable = { GWF_meguca_manpower = 100 }
 			set_variable = { GWF_meguca_weekly_manpower = 50 }
 			division_template = {
@@ -1222,7 +1235,7 @@ shared_focus = {
 				country_event = { id = GWF.30 }
 			}
 		}
-		custom_effect_tooltip = GWF_operation_umbra_tt	
+		custom_effect_tooltip = GWF_operation_rapinam_tt	
 	}
 }
 
@@ -1310,6 +1323,13 @@ shared_focus = {
 	completion_reward = {
 		country_event = { id = GWF.32 }
 		add_war_support = 0.05
+		set_country_flag = GWF_Homura_gui_dontcare_already
+		set_temp_variable = { opp_to_change = 1 }
+		set_temp_variable = { temp_stat_gained = -0.5 }
+		GWF_homura_change_weekly_stats = yes
+		set_temp_variable = { opp_to_change = 2 }
+		set_temp_variable = { temp_stat_gained = -0.5 }
+		GWF_homura_change_weekly_stats = yes
 	}
 }
 
@@ -1321,6 +1341,7 @@ shared_focus = {
 	ai_will_do = {
 		factor = 1
 	}
+	bypass = { has_war = no }
 	prerequisite = {
 		focus = GWF_our_time_has_come
 	}
@@ -1349,6 +1370,7 @@ shared_focus = {
 	ai_will_do = {
 		factor = 1
 	}
+	bypass = { has_war = no }
 	prerequisite = {
 		focus = GWF_our_time_has_come
 	}
@@ -1390,6 +1412,7 @@ shared_focus = {
 	ai_will_do = {
 		factor = 1
 	}
+	bypass = { has_war = no }
 	prerequisite = {
 		focus = GWF_our_time_has_come
 	}
@@ -1434,6 +1457,7 @@ shared_focus = {
 	ai_will_do = {
 		factor = 1
 	}
+	bypass = { has_war = no }
 	prerequisite = {
 		focus = GWF_our_time_has_come
 	}
@@ -1468,6 +1492,7 @@ shared_focus = {
 	ai_will_do = {
 		factor = 1
 	}
+	bypass = { has_war = no }
 	prerequisite = {
 		focus = GWF_embrace_troops
 	}
@@ -1500,6 +1525,7 @@ shared_focus = {
 	ai_will_do = {
 		factor = 1
 	}
+	bypass = { has_war = no }
 	prerequisite = {
 		focus = GWF_allies_help
 	}
@@ -1533,6 +1559,7 @@ shared_focus = {
 	ai_will_do = {
 		factor = 1
 	}
+	bypass = { has_war = no }
 	prerequisite = {
 		focus = GWF_expand_industry
 	}
@@ -1593,6 +1620,7 @@ shared_focus = {
 	ai_will_do = {
 		factor = 1
 	}
+	bypass = { has_war = no }
 	prerequisite = {
 		focus = GWF_carrot_and_stick
 	}
@@ -1623,6 +1651,7 @@ shared_focus = {
 	ai_will_do = {
 		factor = 1
 	}
+	bypass = { has_war = no }
 	prerequisite = {
 		focus = GWF_carrot_and_stick
 	}
@@ -1650,6 +1679,7 @@ shared_focus = {
 	ai_will_do = {
 		factor = 1
 	}
+	bypass = { has_war = no }
 	prerequisite = {
 		focus = GWF_work_or_die
 	}
@@ -1685,6 +1715,7 @@ shared_focus = {
 	ai_will_do = {
 		factor = 1
 	}
+	bypass = { has_war = no }
 	prerequisite = {
 		focus = GWF_work_or_die
 	}
@@ -1736,6 +1767,9 @@ shared_focus = {
 		else = {
 			country_event = { id = GWF.41 }
 		}
+		hidden_effect = {
+			NGE = { add_ideas = GER_NGE_div_spam }
+		}
 	}
 }
 
@@ -1764,6 +1798,12 @@ shared_focus = {
 			limit = { has_idea = GWF_chaos_in_stuttgart_1 }
 			remove_ideas = GWF_chaos_in_stuttgart_1
 		}
+		set_temp_variable = { opp_to_change = 1 }
+		set_temp_variable = { temp_stat_gained = -0.5 }
+		GWF_homura_change_weekly_stats = yes
+		set_temp_variable = { opp_to_change = 2 }
+		set_temp_variable = { temp_stat_gained = -0.5 }
+		GWF_homura_change_weekly_stats = yes
 	}
 }
 

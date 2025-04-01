@@ -15,7 +15,7 @@ country_event = { #The end of one, start of another
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_maria.1" }
 	title = MAR_maria.1.t
 	desc = MAR_maria.1.d
-	picture = GFX_event_MAR_maria_1
+	picture = GFX_event_MAR_Kosygin_44
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -32,7 +32,7 @@ country_event = { #Unexpected tango
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_maria.2" }
 	title = MAR_maria.2.t
 	desc = MAR_maria.2.d
-	picture = GFX_event_MAR_maria_2
+	picture = GFX_event_Zemsobor_12
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -73,7 +73,7 @@ country_event = { #Icy welcome
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_maria.4" }
 	title = MAR_maria.4.t
 	desc = MAR_maria.4.d
-	picture = GFX_event_MAR_maria_4
+	picture = GFX_report_event_RUS_church
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -126,7 +126,7 @@ country_event = { #Politics of adults
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_maria.7" }
 	title = MAR_maria.7.t
 	desc = MAR_maria.7.d
-	picture = GFX_event_MAR_maria_7
+	picture = GFX_event_MAR_smuta_11
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -143,7 +143,7 @@ country_event = { #Sports competition
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_maria.8" }
 	title = MAR_maria.8.t
 	desc = MAR_maria.8.d
-	picture = GFX_event_MAR_maria_8
+	picture = GFX_event_Belozero
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -315,7 +315,7 @@ country_event = { #Dubia - Maria
 	immediate = { log = "[GetDateText]: [Root.GetName]: event maria_magica.1" }
 	title = maria_magica.1.t
 	desc = maria_magica.1.d
-	picture = GFX_event_maria_magica_1
+	picture = GFX_report_event_mansion
 	trigger = {
 		tag = MAR
 		NOT = { has_completed_focus = MAR_to_urgent_matters }
@@ -339,7 +339,7 @@ country_event = { #Somnium - Maria
 	immediate = { log = "[GetDateText]: [Root.GetName]: event maria_magica.2" }
 	title = maria_magica.2.t
 	desc = maria_magica.2.d
-	picture = GFX_event_maria_magica_2
+	picture = GFX_report_event_witch_labyrinth
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -357,7 +357,7 @@ country_event = { #Conventus - Maria
 	immediate = { log = "[GetDateText]: [Root.GetName]: event maria_magica.3" }
 	title = maria_magica.3.t
 	desc = maria_magica.3.d
-	picture = GFX_event_maria_magica_3
+	picture = GFX_report_event_kyubey
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -375,7 +375,7 @@ country_event = { #Votum - Maria
 	immediate = { log = "[GetDateText]: [Root.GetName]: event maria_magica.4" }
 	title = maria_magica.4.t
 	desc = maria_magica.4.d
-	picture = GFX_event_maria_magica_4
+	picture = GFX_report_event_clock
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -388,7 +388,7 @@ country_event = { #Votum - Maria
 			country_event = { id = maria_magica.5 days = 34 }
 			every_country = {
 				limit = { is_ai = no }
-				news_event = { id = AprilFools_news.1 days = 7 }
+				news_event = { id = AprilFools_news.1 days = 14 }
 			}
 			MAR_nah_actually_change_my_mind_plz = yes
 		}
@@ -400,7 +400,7 @@ country_event = { #Two dynasties - Belozersky and Vladimir
 	immediate = { log = "[GetDateText]: [Root.GetName]: event maria_magica.5" }
 	title = maria_magica.5.t
 	desc = maria_magica.5.d
-	picture = GFX_event_maria_magica_5
+	picture = GFX_report_event_VYT_vladimir_romanov
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -418,7 +418,7 @@ country_event = { #First attemps - Maria
 	immediate = { log = "[GetDateText]: [Root.GetName]: event maria_magica.6" }
 	title = maria_magica.6.t
 	desc = maria_magica.6.d
-	picture = GFX_event_maria_magica_6
+	picture = GFX_report_event_mansion
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -436,7 +436,7 @@ country_event = { #Searches - Maria
 	immediate = { log = "[GetDateText]: [Root.GetName]: event maria_magica.7" }
 	title = maria_magica.7.t
 	desc = maria_magica.7.d
-	picture = GFX_event_maria_magica_7
+	picture = GFX_report_event_vyatka
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -454,7 +454,7 @@ country_event = { #Companions - Maria and Sophia
 	immediate = { log = "[GetDateText]: [Root.GetName]: event maria_magica.8" }
 	title = maria_magica.8.t
 	desc = maria_magica.8.d
-	picture = GFX_event_maria_magica_8
+	picture = GFX_report_event_vyatka_industrial
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -472,7 +472,7 @@ country_event = { #Team - Maria and Sophia
 	immediate = { log = "[GetDateText]: [Root.GetName]: event maria_magica.9" }
 	title = maria_magica.9.t
 	desc = maria_magica.9.d
-	picture = GFX_event_maria_magica_9
+	picture = GFX_report_event_witch_labyrinth
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -490,7 +490,7 @@ country_event = { #Catastrophe - Maria and Sophia
 	immediate = { log = "[GetDateText]: [Root.GetName]: event maria_magica.10" }
 	title = maria_magica.10.t
 	desc = maria_magica.10.d
-	picture = GFX_event_maria_magica_10
+	picture = GFX_report_event_vyatka_rural
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -508,7 +508,7 @@ country_event = { #Long Night - Maria and Sophia
 	immediate = { log = "[GetDateText]: [Root.GetName]: event maria_magica.11" }
 	title = maria_magica.11.t
 	desc = maria_magica.11.d
-	picture = GFX_event_maria_magica_11
+	picture = GFX_report_event_walpurgisnacht
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -549,7 +549,7 @@ country_event = { #Farewell - Maria
 	immediate = { log = "[GetDateText]: [Root.GetName]: event maria_magica.12" }
 	title = maria_magica.12.t
 	desc = maria_magica.12.d
-	picture = GFX_event_maria_magica_12
+	picture = GFX_report_event_generic_hills
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -558,6 +558,9 @@ country_event = { #Farewell - Maria
 		name = maria_magica.12.a
 		ai_chance = { factor = 1 }
 		custom_effect_tooltip = maria_magica12_tt
+		hidden_effect = {
+			country_event = { id = maria_magica.20 days = 10 }
+		}
 	}
 }
 
@@ -566,7 +569,7 @@ country_event = { #In the MVD - Lt. Prokopov
 	immediate = { log = "[GetDateText]: [Root.GetName]: event maria_magica.13" }
 	title = maria_magica.13.t
 	desc = maria_magica.13.d
-	picture = GFX_event_maria_magica_13
+	picture = GFX_report_event_mvd
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -584,7 +587,7 @@ country_event = { #Investigation - Lt. Prokopov
 	immediate = { log = "[GetDateText]: [Root.GetName]: event maria_magica.14" }
 	title = maria_magica.14.t
 	desc = maria_magica.14.d
-	picture = GFX_event_maria_magica_14
+	picture = GFX_report_event_GER_documents
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -602,7 +605,7 @@ country_event = { #Walking around - Lt. Prokopov
 	immediate = { log = "[GetDateText]: [Root.GetName]: event maria_magica.15" }
 	title = maria_magica.15.t
 	desc = maria_magica.15.d
-	picture = GFX_event_maria_magica_15
+	picture = GFX_report_event_vyatka_industrial
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -620,7 +623,7 @@ country_event = { #What the... - First Lt. Prokopov
 	immediate = { log = "[GetDateText]: [Root.GetName]: event maria_magica.16" }
 	title = maria_magica.16.t
 	desc = maria_magica.16.d
-	picture = GFX_event_maria_magica_16
+	picture = GFX_report_event_witch_labyrinth_1
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -642,7 +645,7 @@ country_event = { #Vow - Monach Prokopov
 	immediate = { log = "[GetDateText]: [Root.GetName]: event maria_magica.17" }
 	title = maria_magica.17.t
 	desc = maria_magica.17.d
-	picture = GFX_event_maria_magica_17
+	picture = GFX_report_event_RUS_orthodox_monk
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -659,7 +662,7 @@ country_event = { #The White Beast - Grishka and Father Innokentiy
 	immediate = { log = "[GetDateText]: [Root.GetName]: event maria_magica.18" }
 	title = maria_magica.18.t
 	desc = maria_magica.18.d
-	picture = GFX_event_maria_magica_18
+	picture = GFX_report_event_vyatka_rural
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -676,7 +679,7 @@ country_event = { #Catching the waves - unnamed radio amateur, John Alexander ra
 	immediate = { log = "[GetDateText]: [Root.GetName]: event maria_magica.19" }
 	title = maria_magica.19.t
 	desc = maria_magica.19.d
-	picture = GFX_event_maria_magica_19
+	picture = GFX_report_event_generic_radio1
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -688,35 +691,49 @@ country_event = { #Catching the waves - unnamed radio amateur, John Alexander ra
 		hidden_effect = { 
 			every_country = {
 				limit = { is_ai = no }
-				news_event = { id = AprilFools_news.4 days = 720 }
+				news_event = { id = AprilFools_news.4 days = 200 }
 			}
 		}
 	}
 }
 
-country_event = { #free space my man
+country_event = { #do you want it fast or how god intende d
 	id = maria_magica.20
 	immediate = { log = "[GetDateText]: [Root.GetName]: event maria_magica.20" }
 	title = maria_magica.20.t
 	desc = maria_magica.20.d
-	picture = GFX_event_maria_magica_20
+	picture = GFX_report_event_bornholme
 	
 	is_triggered_only = yes
 	fire_only_once = yes
 	
-	option = { #
+	option = { #lets go fast
 		name = maria_magica.20.a
 		ai_chance = { factor = 1 }
+		set_global_flag = AprilFools_shortcut
+		custom_effect_tooltip = AprilFools_shortcut_tt
+		hidden_effect = {
+			every_country = {
+				limit = { is_ai = no }
+				news_event = { id = AprilFools_news.3 }
+			}
+			country_event = { id = SWRW_april_fools.2 days = 14 }
+		}
+	}
+	option = { #no lets play up to 2wrw
+		name = maria_magica.20.b
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = AprilFools_no_shortcut_tt
 	}
 }
 
 
-country_event = { #A strange opportunity	
+country_event = { #A strange opportunity again
 	id = SWRW_april_fools.1
 	immediate = { log = "[GetDateText]: [Root.GetName]: event SWRW_april_fools.1" }
 	title = SWRW_april_fools.1.t
 	desc = SWRW_april_fools.1.d
-	picture = GFX_event_SWRW_april_fools_1
+	picture = GFX_report_event_bornholme
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -731,10 +748,40 @@ country_event = { #A strange opportunity
 
 country_event = { #Sea Lions
 	id = SWRW_april_fools.2
-	immediate = { log = "[GetDateText]: [Root.GetName]: event SWRW_april_fools.2" }
+	immediate = { 
+		log = "[GetDateText]: [Root.GetName]: event SWRW_april_fools.2" 
+		hidden_effect = {
+			if = {
+				limit = { has_global_flag = AprilFools_shortcut }
+				transfer_state = 744
+				division_template = {
+					name = "Morskiye L'vy"
+					is_locked = yes
+					regiments = {
+						marine = { x = 0 y = 0 }
+						marine = { x = 0 y = 1 }
+					}
+					support = {
+						signal_company = { x = 0 y = 0 }
+					}
+				}
+				744 = {
+					create_unit = {
+						division = "division_template = \"Morskiye L'vy\" start_experience_factor = 1 start_equipment_factor = 1"
+						allow_spawning_on_enemy_provs = yes
+						prioritize_location = 6361
+						owner = RUS
+						count = 1
+					}
+				}
+			}
+			MAR_prewar_get_states = yes
+		}
+	}
+		
 	title = SWRW_april_fools.2.t
 	desc = SWRW_april_fools.2.d
-	picture = GFX_event_SWRW_april_fools_2
+	picture = GFX_report_event_RUS_marines
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -743,6 +790,9 @@ country_event = { #Sea Lions
 		name = SWRW_april_fools.2.a
 		ai_chance = { factor = 1 }
 		country_event = { id = SWRW_april_fools.3 hours = 3 }
+		custom_effect_tooltip = AprilFools_time_doesnt_matter_now_tt
+		set_global_flag = AprilFools_time_doesnt_matter_now
+		hidden_effect = { scoped_play_song = "glass_break" }
 	}
 }
 
@@ -751,7 +801,7 @@ country_event = { #There's a hole, comrade Nikonov
 	immediate = { log = "[GetDateText]: [Root.GetName]: event SWRW_april_fools.3" }
 	title = SWRW_april_fools.3.t
 	desc = SWRW_april_fools.3.d
-	picture = GFX_event_SWRW_april_fools_3
+	picture = GFX_report_event_OMS_bunker_city
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -768,7 +818,7 @@ country_event = { #Strange Item
 	immediate = { log = "[GetDateText]: [Root.GetName]: event SWRW_april_fools.4" }
 	title = SWRW_april_fools.4.t
 	desc = SWRW_april_fools.4.d
-	picture = GFX_event_SWRW_april_fools_4
+	picture = GFX_report_event_GNG_generic_computer_2
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -785,7 +835,7 @@ country_event = { #Recursion
 	immediate = { log = "[GetDateText]: [Root.GetName]: event SWRW_april_fools.5" }
 	title = SWRW_april_fools.5.t
 	desc = SWRW_april_fools.5.d
-	picture = GFX_event_SWRW_april_fools_5
+	picture = GFX_event_MAR_Kosygin_49
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -794,6 +844,21 @@ country_event = { #Recursion
 		name = SWRW_april_fools.5.a
 		custom_effect_tooltip = SWRW_flashforward_to_postger_tt
 		hidden_effect = {
+			if = {
+				limit = { has_global_flag = AprilFools_shortcut }
+				MAR = {
+					unite_russia = yes
+					MAR_install_mil_kazakhstan = yes
+					MAR_install_mil_turkestan = yes
+					transfer_state = 1364
+					transfer_state = 657
+					transfer_state = 1646
+					transfer_state = 409
+					transfer_state = 1644
+					transfer_state = 408
+					transfer_state = 809
+				}
+			}
 			SWRW_force_effects_for_capitulated = yes
 			TaS_WRW2_Peace_Yall = yes
 			TaS_WRW2_total_capitulation = yes
@@ -1063,8 +1128,10 @@ country_event = { #Recursion
 			
 			BRL = {
 				change_tag_from = ROOT
-				country_event = { id = SWRW_april_fools.6 days = 3 }
 			}	
+			BRL = {
+				country_event = { id = SWRW_april_fools.6 days = 1 }
+			}
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -1075,7 +1142,7 @@ country_event = { #On the Call
 	immediate = { log = "[GetDateText]: [Root.GetName]: event SWRW_april_fools.6" }
 	title = SWRW_april_fools.6.t
 	desc = SWRW_april_fools.6.d
-	picture = GFX_event_SWRW_april_fools_6
+	picture = GFX_PostGER_7_pic
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -1093,7 +1160,7 @@ country_event = { #HOLY SHIT THE SKIES
 	immediate = { log = "[GetDateText]: [Root.GetName]: event SWRW_april_fools.7" }
 	title = SWRW_april_fools.7.t
 	desc = SWRW_april_fools.7.d
-	picture = GFX_event_SWRW_april_fools_7
+	picture = GFX_report_event_srbm_nuclear_rocket
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -1103,7 +1170,7 @@ country_event = { #HOLY SHIT THE SKIES
 		custom_effect_tooltip = SWRW_april_fools7_tt
 		ai_chance = { factor = 1 }
 		hidden_effect = {
-			country_event = { id = SWRW_april_fools.8 days = 10 }
+			country_event = { id = SWRW_april_fools.8 days = 7 }
 			MAR_no_more_russia_bros = yes
 			MAR_German_Collapse_TRVTHNUKE = yes
 		}
@@ -1115,7 +1182,7 @@ country_event = { #Brave New World
 	immediate = { log = "[GetDateText]: [Root.GetName]: event SWRW_april_fools.8" }
 	title = SWRW_april_fools.8.t
 	desc = SWRW_april_fools.8.d
-	picture = GFX_event_SWRW_april_fools_8
+	picture = GFX_report_event_PRM_hyperborea_map
 	
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -1167,7 +1234,7 @@ news_event = { #Something DEFINETELY happened in Bornholme
 	is_triggered_only = yes
 	
 	option = {
-		name = AprilFools_news.1.a
+		name = AprilFools_news.3.a
 	}
 }
 

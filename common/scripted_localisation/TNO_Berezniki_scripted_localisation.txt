@@ -1024,4 +1024,46 @@ defined_text = {
 	}
 }
 
+defined_text = {
+	name = GWF_umbra_prediction
+	text = {
+		trigger = {
+			check_variable = { GWF_Homura_mental > GWF_umbra_treshold }
+		}
+		localization_key = round_succ
+	}
+	text = {
+		trigger = {
+			check_variable = { GWF_Homura_mental = GWF_umbra_treshold }
+		}
+		localization_key = round_succ
+	}
+	text = {
+		trigger = {
+			check_variable = { GWF_Homura_mental < GWF_umbra_treshold }
+		}
+		localization_key = round_fail
+	}
+}
+defined_text = {
+	name = GWF_rapinam_prediction
+	text = {
+		trigger = {
+			check_variable = { GWF_Homura_physics > GWF_rapinam_treshold }
+		}
+		localization_key = round_succ
+	}
+	text = {
+		trigger = {
+			check_variable = { GWF_Homura_physics = GWF_rapinam_treshold }
+		}
+		localization_key = round_succ
+	}
+	text = {
+		trigger = {
+			check_variable = { GWF_Homura_physics < GWF_rapinam_treshold }
+		}
+		localization_key = round_fail
+	}
+}
 

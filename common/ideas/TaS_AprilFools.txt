@@ -526,7 +526,7 @@ ideas = {
 		}
 	}
 	hidden_ideas = {
-		GER_doomed_to_fail = {
+		GER_doomed_to_fail = { #not really already
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GER_doomed_to_fail" }
 			allowed = {
 				always = no
@@ -537,10 +537,74 @@ ideas = {
 			removal_cost = -1
 			picture = generic_napalm
 			modifier = {
-				army_defence_factor = -0.75
-				army_attack_factor = -0.75
-				army_org_factor = -0.75
-				army_morale_factor = -0.75
+				army_defence_factor = -0.1
+				army_attack_factor = -0.1
+				army_org_factor = -0.1
+				army_morale_factor = -0.1
+			}
+		}
+		MAR_smuta_buff = { #Smuta must end so fast as posible
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea MAR_smuta_buff" }
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = generic_napalm
+			modifier = {
+				army_defence_factor = 0.15
+				army_attack_factor = 0.15
+				army_org_factor = 0.15
+				army_morale_factor = 0.15
+				army_speed_factor = 0.15
+			}
+		}
+		GER_LHH_buff_full = { #lhh got fucked
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GER_LHH_buff_full" }
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = generic_napalm
+			modifier = {
+				army_core_attack_factor = 0.25
+				army_core_defence_factor = 0.25
+				army_org_factor = 0.1
+			}
+		}
+		GER_LHH_buff_part = { #lhh got fucked
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GER_LHH_buff_part" }
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = generic_napalm
+			modifier = {
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+				army_org_factor = 0.05
+			}
+		}
+		GER_NGE_div_spam = { 
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea GER_NGE_div_spam" }
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = generic_napalm
+			modifier = {
+				training_time_army_factor = -0.75
 			}
 		}
 	}

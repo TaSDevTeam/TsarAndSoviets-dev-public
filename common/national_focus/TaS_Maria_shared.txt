@@ -1,6 +1,6 @@
 shared_focus = {
 	id = MAR_the_true_heir
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_the_true_heir
 	cost = 3
 	x = 8
 	y = 0
@@ -11,8 +11,8 @@ shared_focus = {
 }	
 shared_focus = {
 	id = MAR_golden_cage
-	icon = GFX_goal_unknown
-	cost = 3
+	icon = GFX_MAR_golden_cage
+	cost = 2
 	prerequisite = {focus = MAR_the_true_heir}
 	relative_position_id = MAR_the_true_heir
 	x = -1
@@ -26,8 +26,8 @@ shared_focus = {
 }	
 shared_focus = {
 	id = MAR_and_the_keybearer
-	icon = GFX_goal_unknown
-	cost = 3
+	icon = GFX_MAR_and_the_keybearer
+	cost = 2
 	prerequisite = {focus = MAR_the_true_heir}
 	relative_position_id = MAR_the_true_heir
 	x = 1
@@ -39,7 +39,7 @@ shared_focus = {
 }	
 shared_focus = {
 	id = MAR_all_royal_court
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_all_royal_court
 	cost = 3
 	prerequisite = {focus = MAR_golden_cage}
 	prerequisite = {focus = MAR_and_the_keybearer}
@@ -56,8 +56,8 @@ shared_focus = {
 }	
 shared_focus = {
 	id = MAR_kazembeks_people
-	icon = GFX_goal_unknown
-	cost = 3
+	icon = GFX_MAR_kazembeks_people
+	cost = 2
 	prerequisite = {focus = MAR_all_royal_court}
 	relative_position_id = MAR_all_royal_court
 	x = -1
@@ -76,8 +76,8 @@ shared_focus = {
 }	
 shared_focus = {
 	id = MAR_old_bosses
-	icon = GFX_goal_unknown
-	cost = 3
+	icon = GFX_MAR_old_bosses
+	cost = 2
 	prerequisite = {focus = MAR_all_royal_court}
 	relative_position_id = MAR_all_royal_court
 	x = 1
@@ -97,8 +97,8 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_the_functionary
-	icon = GFX_goal_unknown
-	cost = 3
+	icon = GFX_MAR_the_functionary
+	cost = 2
 	prerequisite = {focus = MAR_kazembeks_people}
 	relative_position_id = MAR_kazembeks_people
 	x = -1
@@ -115,8 +115,8 @@ shared_focus = {
 }	
 shared_focus = {
 	id = MAR_vox_populi
-	icon = GFX_goal_unknown
-	cost = 3
+	icon = GFX_MAR_vox_populi
+	cost = 2
 	prerequisite = {focus = MAR_all_royal_court}
 	relative_position_id = MAR_all_royal_court
 	x = 0
@@ -146,8 +146,8 @@ shared_focus = {
 }
 shared_focus = {
 	id = MAR_judas_will_be_in_heaven
-	icon = GFX_goal_unknown
-	cost = 3
+	icon = GFX_MAR_judas_will_be_in_heaven
+	cost = 2
 	prerequisite = {focus = MAR_old_bosses}
 	relative_position_id = MAR_old_bosses
 	x = 1
@@ -168,7 +168,7 @@ shared_focus = {
 
 shared_focus = {
 	id = MAR_to_urgent_matters
-	icon = GFX_goal_unknown
+	icon = GFX_MAR_to_urgent_matters
 	cost = 10
 	prerequisite = {focus = MAR_the_functionary}
 	prerequisite = {focus = MAR_vox_populi }

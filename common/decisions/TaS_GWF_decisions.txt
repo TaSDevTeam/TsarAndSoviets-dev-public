@@ -58,7 +58,7 @@ GWF_Homura_deccat = { ####
 		}
 	}
 	
-	GWF_Homura_witchifying_imminent = {
+	GWF_Homura_witchifying_imminent = {   ##
 		icon = generic_red_skull 
     	available = {
 			check_variable = { GWF_Homura_mental > 5 }
@@ -67,6 +67,7 @@ GWF_Homura_deccat = { ####
     	activation = {
     		check_variable = { GWF_Homura_mental < 5.01 }
 			has_country_flag = GWF_Homura_gui_active
+			NOT = { has_country_flag = GWF_Homura_gui_dontcare_already }
     	}
 		
     	is_good = no
@@ -351,6 +352,7 @@ GWF_Homura_deccat = { ####
     	activation = {
     		check_variable = { GWF_Homura_physics < 5.01 }
 			has_country_flag = GWF_Homura_gui_active
+			NOT = { has_country_flag = GWF_Homura_gui_dontcare_already }
     	}
 		
     	is_good = no
@@ -360,7 +362,7 @@ GWF_Homura_deccat = { ####
     		log = "[GetDateText]: [Root.GetName]: GWF_Homura_witchifying_imminent mission timer elapsed" 
 			custom_effect_tooltip = GWF_Homura_coup_imminent_tt
 			hidden_effect = {
-				
+				country_event = { id = GWF.66 }
 			}
     	}
 		complete_effect = {
@@ -490,14 +492,14 @@ GWF_Homura_deccat = { ####
 			GWF_homura_change_stats = yes
 			
 			set_temp_variable = { opp_to_change = 2 }
-			set_temp_variable = { temp_stat_gained = -2 }
+			set_temp_variable = { temp_stat_gained = 2 }
 			GWF_homura_change_weekly_stats = yes
 			
 			add_war_support = -0.05
 		}
 		remove_effect = {
 			set_temp_variable = { opp_to_change = 1 }
-			set_temp_variable = { temp_stat_gained = 2 }
+			set_temp_variable = { temp_stat_gained = -2 }
 			GWF_homura_change_weekly_stats = yes
 		}
 	}
@@ -828,9 +830,8 @@ GWF_BigGame_deccat = {
 			always = no
 		}				
 		activation = {
-			has_global_flag = GWF_BigGame_gui_active
+			has_country_flag = GWF_BigGame_gui_active
 		}
-		
 		days_mission_timeout = BigGame_round_timeout
 		is_good = no 
 
@@ -1066,10 +1067,10 @@ GWF_BigGame_deccat = {
 		}			
 		available = {
 			always = no
-		}				
+		}	
 		activation = {
-			has_global_flag = GWF_BigGame_gui_active
-		}		
+			has_country_flag = GWF_BigGame_gui_active
+		}
     	is_good = no
 	
     	days_mission_timeout = 7
@@ -1086,10 +1087,17 @@ GWF_BigGame_deccat = {
 				}
 				GWF_great_game_change_support = yes
 				custom_effect_tooltip = GWF_biggame_tick_tt
-				activate_mission = GWF_biggame_tick
+				if = {
+					limit = { has_country_flag = GWF_BigGame_gui_active }
+					activate_mission = GWF_biggame_tick
+				}
 			}
 			else = {
 				custom_effect_tooltip = GWF_biggame_tick_skipped_tt
+				if = {
+					limit = { has_country_flag = GWF_BigGame_gui_active }
+					activate_mission = GWF_biggame_tick
+				}
 			}
     	}
 	
@@ -1139,7 +1147,7 @@ GWF_army_deccat = {
 			experience_gain_army_factor = 0.05
 		}
 		complete_effect = { 
-			set_temp_variable = { Y = -300 }
+			set_temp_variable = { Y = -400 }
 			custom_effect_tooltip = GWF_meguca_manpower_increase_tt
 			add_to_variable = { GWF_meguca_manpower = Y }
 			add_equipment_to_stockpile = {
@@ -1163,7 +1171,7 @@ GWF_army_deccat = {
 			
 		}
 		available = {
-			set_temp_variable = { Y = 400 }
+			set_temp_variable = { Y = 500 }
 			GWF_meguca_manpower_more_than_Y = yes 
 			has_equipment = { infantry_equipment > 1000 }
 		}
@@ -1178,7 +1186,7 @@ GWF_army_deccat = {
 			experience_gain_army_factor = 0.1
 		}
 		complete_effect = { 
-			set_temp_variable = { Y = -400 }
+			set_temp_variable = { Y = -500 }
 			custom_effect_tooltip = GWF_meguca_manpower_increase_tt
 			add_to_variable = { GWF_meguca_manpower = Y }
 			add_equipment_to_stockpile = {
@@ -1221,11 +1229,11 @@ GWF_army_deccat = {
 			TNO_worsen_army_professionalism_low = yes
 		}
 		remove_effect = {
-			set_temp_variable = { Y = 100 }
+			set_temp_variable = { Y = 75 }
 			custom_effect_tooltip = GWF_meguca_manpower_increase_tt
 			add_to_variable = { GWF_meguca_manpower = Y }
 			
-			set_temp_variable = { Y = 40 }
+			set_temp_variable = { Y = 25 }
 			custom_effect_tooltip = GWF_meguca_manpower_weekly_increase_tt
 			add_to_variable = { GWF_meguca_weekly_manpower = Y }
 		}
@@ -1270,7 +1278,7 @@ GWF_army_deccat = {
 			
 		}
 		available = {
-			
+			has_army_experience > 4.99
 		}
 		ai_will_do = {
 			factor = 200
@@ -1284,10 +1292,11 @@ GWF_army_deccat = {
 		complete_effect = { 
 			set_temp_variable = { temp_econ_spending_amount = 0.15 }
 			TNO_worsen_training_policy_effectiveness_low = yes
+			army_experience = -5
 		}
 		remove_effect = {
 			add_manpower = 5000
-			army_experience = 5
+			army_experience = 2.5
 		}
 	}
 	GWF_army_create_human_division = {
@@ -1338,6 +1347,7 @@ GER_trvthnuke_deccat = {
 		available = {
 			can_form_NDN = yes
 		}
+		ai_will_do = { factor = 100 }
 		fire_only_once = yes
 		complete_effect = {
 			every_owned_state = { add_core_of = ROOT }	
@@ -1352,6 +1362,7 @@ GER_trvthnuke_deccat = {
 		available = {
 			can_form_NGE = yes
 		}
+		ai_will_do = { factor = 100 }
 		fire_only_once = yes
 		complete_effect = {
 			every_owned_state = { add_core_of = ROOT }
@@ -1367,6 +1378,7 @@ GER_trvthnuke_deccat = {
 		available = {
 			can_form_WGE = yes
 		}
+		ai_will_do = { factor = 100 }
 		fire_only_once = yes
 		complete_effect = {
 			every_owned_state = { add_core_of = ROOT }	
@@ -1381,6 +1393,7 @@ GER_trvthnuke_deccat = {
 		available = {
 			can_form_EGE = yes
 		}
+		ai_will_do = { factor = 100 }
 		fire_only_once = yes
 		complete_effect = {
 			every_owned_state = { add_core_of = ROOT }		

@@ -197,8 +197,8 @@ GWF_start_homura_gui = {
 	set_variable = { GWF_Homura_mental = 78 }
 	set_variable = { GWF_Homura_physics = 82 }
 	
-	set_variable = { GWF_homura_weekly_mental = -1 }
-	set_variable = { GWF_homura_weekly_physics = -1 }
+	set_variable = { GWF_homura_weekly_mental = 1 }
+	set_variable = { GWF_homura_weekly_physics = 1 }
 	
 	set_variable = { GWF_Homura_cat = 1 }
 	set_variable = { GWF_Homura_style = 2}
@@ -307,6 +307,7 @@ GWF_homura_change_weekly_stats = {
 			custom_effect_tooltip = GWF_homura_weekly_phys_growth_tt
 		}
 	}
+	add_to_variable = { GWF_Homura_GUI_dirty = 1 }
 }
 
 GWF_start_oppo_gui = {
@@ -379,6 +380,7 @@ GWF_opposition_change_stats = {
 	else = {
 		custom_effect_tooltip = GWF_opposition_growth_tt
 	}
+	add_to_variable = { GWF_Opposition_GUI_dirty = 1 }
 	GWF_calculate_oppo_dynmod_effects = yes
 	
 }
@@ -522,6 +524,7 @@ GWF_great_game_to_the_next_round = {
 			limit = { check_variable = { GWF_round_support > BigGame_round_threshold } }
 			add_to_variable = { BigGame_GWF_wins = 1 }
 			RMN = { 
+				promote_character = XYI_Bebey
 				set_variable = { gui_display_frame = 3000 }
 				set_politics = {
 					ruling_party = accelerationism
@@ -584,10 +587,12 @@ GWF_great_game_to_the_next_round = {
 				}
 			}
 			else = {
-				AUS = {
+				RMN = {
 					XYI_Bebey = {
 						set_nationality = AUS
 					}
+				}
+				AUS = {
 					set_politics = {
 						ruling_party = accelerationism
 						elections_allowed = no
@@ -700,7 +705,7 @@ GWF_great_game_to_the_next_round = {
 						country_leader = {
 							desc = "AprilFools_Mikhail_Svetov_DESC"
 							expire = "1999.1.1"
-							ideology = accelerationism_anarcho_etatism_pozharsky_subtype
+							ideology = accelerationism_anarcho_etatism_pozharskiy_subtype
 							id = -1
 						}
 						promote_leader = yes
@@ -755,7 +760,24 @@ GWF_great_game_to_the_next_round = {
 				LHH = { add_to_faction = SLO }
 			}
 		}
-		clr_country_flag = GWF_Opposition_gui_active
+		if = {
+			limit = { check_variable = { BigGame_LHH_wins = 0 } }
+			every_country = {
+				limit = { is_in_faction_with = LHH }
+				add_ideas = GER_LHH_buff_full
+			}
+		}
+		else_if = {
+			limit = { check_variable = { BigGame_LHH_wins < 2.1 } }
+			every_country = {
+				limit = { is_in_faction_with = LHH }
+				add_ideas = GER_LHH_buff_part
+			}
+		}
+		else = {
+			LHH = { add_war_support = 0.05 }
+		}
+		clr_country_flag = GWF_BigGame_gui_active
 		add_to_variable = { GWF_BigGame_GUI_dirty = 1 }
 	}	
 }

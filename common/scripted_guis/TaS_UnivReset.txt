@@ -51,16 +51,14 @@ scripted_gui = {
 			}
 		}
 	}
-
-	da_bar_visible = {
+	
+	timegone_upper_right_visible = {
 		context_type = player_context
 		parent_window_token = top_bar
-		window_name = "TaS_bar_top_univreset"
+		window_name = "TaS_right_view_timegone"
 
 		visible = {
-			NOT = {
-				has_global_flag = TaS_my_world_is_on_fire_how_about_yours
-			}
+			has_global_flag = AprilFools_time_doesnt_matter_now
 		}
 	}
 }
