@@ -188,6 +188,8 @@ GWF_initiate = {
 			tno_minorities_equal_rights
 		}
 		change_tag_from = ROOT
+		set_variable = { GWF.GWF_umbra_treshold = 55 }
+		set_variable = { GWF.GWF_rapinam_treshold = 65 }
 	}
 }
 
@@ -654,6 +656,10 @@ GWF_great_game_to_the_next_round = {
 					ideology = progressivism
 					long_name = AGS_AprilFools_party_long
 					name = AGS_AprilFools_party
+				}
+				promote_character = {
+					character = XYI_Elon_Musk
+					ideology = progressivism_left_wing_populism_subtype
 				}
 				add_ideas = Speer_Alliance_Member
 				LHH = { add_to_faction = AGS }

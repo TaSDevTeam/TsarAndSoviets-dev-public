@@ -3,6 +3,8 @@ add_namespace = MAR_postbomb
 add_namespace = MAR_smuta
 add_namespace = MAR_smuta_occupation
 add_namespace =	MAR_zemsky_sobor
+add_namespace =	MAR_flavour_slop
+
 country_event = { #red line
 	id = MAR_initial.1
 	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_initial.1" }
@@ -2875,5 +2877,68 @@ country_event = { # MAR_final_vibori ROMANOV WIN
 			limit = { has_idea = MAR_regent_without_tsar_3 }
 			remove_ideas = MAR_regent_without_tsar_3
 		}
+	}
+}
+
+country_event = { #sesbian lex
+	id = MAR_flavour_slop.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_flavour_slop.1" }
+	title = MAR_flavour_slop.1.t
+	desc = MAR_flavour_slop.1.d
+	picture = GFX_report_event_RUS_female_soldiers_1
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_flavour_slop.1.a
+		ai_chance = { factor = 1 }
+	}
+}
+country_event = { #Tikhiy DAN pt.1
+	id = MAR_flavour_slop.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_flavour_slop.2" }
+	title = MAR_flavour_slop.2.t
+	desc = MAR_flavour_slop.2.d
+	picture = GFX_report_event_generic_bar
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_flavour_slop.2.a
+		ai_chance = { factor = 1 }
+		hidden_effect = { country_event = { id = MAR_flavour_slop.3 hours = 2 } }
+	}
+}
+country_event = { #Tikhiy DAN pt.2
+	id = MAR_flavour_slop.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_flavour_slop.3" }
+	title = MAR_flavour_slop.3.t
+	desc = MAR_flavour_slop.3.d
+	picture = GFX_report_event_generic_flatcap_worker
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_flavour_slop.3.a
+		ai_chance = { factor = 1 }
+		hidden_effect = { country_event = { id = MAR_flavour_slop.4 hours = 6 } }
+	}
+}
+country_event = { #Tikhiy DAN pt.3
+	id = MAR_flavour_slop.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event MAR_flavour_slop.4" }
+	title = MAR_flavour_slop.4.t
+	desc = MAR_flavour_slop.4.d
+	picture = GFX_report_event_GNG_blood_on_ground
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = { #
+		name = MAR_flavour_slop.4.a
+		ai_chance = { factor = 1 }
 	}
 }

@@ -1,5 +1,6 @@
 add_namespace = GWF
 add_namespace = GER_AF_skeleton
+add_namespace = GWF_univ_reset
 
 country_event = { #GWF_start_from_scratch
 	id = GWF.1
@@ -14,7 +15,7 @@ country_event = { #GWF_start_from_scratch
 	option = { #
 		name = GWF.1.a
 		ai_chance = { factor = 1 }
-		hidden_effect = { country_event = { id = GWF.80 days = 47 }
+		hidden_effect = { country_event = { id = GWF.80 days = 62 } }
 	}
 }
 
@@ -1022,7 +1023,8 @@ country_event = { #GWF_this_isnt_working
 	option = { #
 		name = GWF.54.a
 		ai_chance = { factor = 1 }
-		
+		set_country_flag = GWF_Homura_almost_the_end
+		mark_focus_tree_layout_dirty = yes
 	}
 }
 
@@ -1157,7 +1159,10 @@ country_event = { #GWF_fateful_meeting - last fight
 
 country_event = { #GWF_fateful_meeting - Crimes and Punishment
 	id = GWF.62
-	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.62" }
+	immediate = { 
+		log = "[GetDateText]: [Root.GetName]: event GWF.62"
+		hidden_effect = { set_global_flag = tno_speed_warning }
+	}
 	title = GWF.62.t
 	desc = GWF.62.desc
 	picture = GFX_report_event_rip_doka
@@ -1171,13 +1176,12 @@ country_event = { #GWF_fateful_meeting - Crimes and Punishment
 		custom_effect_tooltip = GWF_fate_sealed_tt
 		custom_effect_tooltip = GWF_it_will_be_laggy_bro_tt
 		set_global_flag = GWF_bad_end
-		every_state = {
-			transfer_state_to = ZZZ
-			add_core_of = ZZZ
-		}
-		ZZZ = {
-			change_tag_from = ROOT
-			country_event = { id = GWF.74 days = 10 }
+		hidden_effect = {
+			scoped_play_song = "tas_song_venit_inevitabilitas"
+			ZZZ = {		
+				change_tag_from = ROOT
+				country_event = { id = GWF_univ_reset.21 days = 2 }
+			}
 		}
 	}
 }
@@ -1263,7 +1267,10 @@ country_event = { #GWF_fateful_meeting - Closed forever
 
 country_event = { #GWF_fateful_meeting - In their places
 	id = GWF.64
-	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.64" }
+	immediate = { 
+		log = "[GetDateText]: [Root.GetName]: event GWF.64"
+		hidden_effect = { set_global_flag = tno_speed_warning }
+	}
 	title = GWF.64.t
 	desc = GWF.64.desc
 	picture = GFX_report_event_space
@@ -1277,14 +1284,13 @@ country_event = { #GWF_fateful_meeting - In their places
 		custom_effect_tooltip = GWF_fate_sealed_tt
 		custom_effect_tooltip = GWF_it_will_be_laggy_bro_tt
 		set_global_flag = GWF_good_end
-		every_state = {
-			transfer_state_to = ZZZ
-			add_core_of = ZZZ
-		}
-		ZZZ = {
-			set_cosmetic_tag = ZZZ_good
-			change_tag_from = ROOT
-			country_event = { id = GWF.77 days = 10 }
+		hidden_effect = {
+			scoped_play_song = "tas_song_venit_inevitabilitas"
+			ZZZ = {
+				set_cosmetic_tag = ZZZ_good
+				change_tag_from = ROOT
+				country_event = { id = GWF_univ_reset.21 }
+			}
 		}
 	}
 }
@@ -1353,7 +1359,7 @@ country_event = { #FAIL TWO - PHYSICAL
 		hidden_effect = {
 			GRA = {
 				annex_country = {
-					targer = GWF
+					target = GWF
 					transfer_troops = no
 				}
 				every_owned_state = {
@@ -1732,7 +1738,7 @@ country_event = { #NO MORE EVENTS FROM HERE I BEG
 	option = { #
 		name = GWF.80.a
 		ai_chance = { factor = 1 }
-		hidden_effect = { country_event = { id = GWF.81 days = 15 } }
+		hidden_effect = { country_event = { id = GWF.81 days = 3 } }
 	}
 }
 
@@ -1749,7 +1755,7 @@ country_event = { #
 	option = { #
 		name = GWF.81.a
 		ai_chance = { factor = 1 }
-		hidden_effect = { country_event = { id = GWF.82 days = 15 } }
+		hidden_effect = { country_event = { id = GWF.82 days = 8 } }
 	}
 }
 
@@ -1766,7 +1772,7 @@ country_event = { #
 	option = { #
 		name = GWF.82.a
 		ai_chance = { factor = 1 }
-		hidden_effect = { country_event = { id = GWF.83 days = 15 } }
+		hidden_effect = { country_event = { id = GWF.83 days = 1 } }
 	}
 }
 
@@ -2589,16 +2595,16 @@ country_event = { #Northern German CW - Afton/Meinhoff wants Mesa
 		declare_war_on = {
 			target = GDN
 			type = annex_everything
-			add_ai_strategy = {
-				type = consider_weak
-				id = GDN
-				value = 200
-			}
-			add_ai_strategy = {
-				type = conquer
-				id = GDN
-				value = 200
-			}
+		}
+		add_ai_strategy = {
+			type = consider_weak
+			id = GDN
+			value = 200
+		}
+		add_ai_strategy = {
+			type = conquer
+			id = GDN
+			value = 200
 		}
 	}
 }
@@ -3448,3 +3454,551 @@ country_event = { #USA-JAP conference
 	}
 }
 
+country_event = { #anarchy annexation events
+	id = GWF_univ_reset.21
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF_univ_reset.21" }
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+		ZZZ = {
+			country_event = { id = GWF_univ_reset.22 days = 1 }
+		}
+		every_state = {
+			limit = {
+				OR = {
+					is_owned_by = JAP
+					is_owned_by = TUR
+					is_owned_by = USA
+					is_owned_by = GER
+					is_owned_by = IND
+					is_owned_by = ITA
+					is_owned_by = SAF
+					is_owned_by = CHI
+					is_owned_by = ENG
+					is_owned_by = FEN
+					is_owned_by = BRA
+					is_owned_by = IBR
+					is_owned_by = RUS
+					is_owned_by = BRG
+
+				}
+				OR = {
+					OR = {
+						has_state_category = metropolis
+						has_state_category = megalopolis
+						has_state_category = large_city
+					}
+					is_capital = yes
+				}
+			}
+			ZZZ = {
+				transfer_state = PREV
+			}
+			ZZZ = {
+				transfer_state = 784
+				transfer_state = 458
+				transfer_state = 448
+				transfer_state = 114
+				transfer_state = 450
+				transfer_state = 461
+				transfer_state = 118
+				transfer_state = 290
+				transfer_state = 341
+				transfer_state = 658
+				transfer_state = 12
+				transfer_state = 202
+				transfer_state = 897
+				transfer_state = 388
+				transfer_state = 381
+				transfer_state = 389
+				transfer_state = 390
+				transfer_state = 384
+				transfer_state = 307
+				transfer_state = 544
+				transfer_state = 295
+				transfer_state = 778
+				transfer_state = 275
+				transfer_state = 934
+				transfer_state = 729
+				transfer_state = 326
+				transfer_state = 289
+				transfer_state = 137
+				transfer_state = 1532
+				transfer_state = 685
+				transfer_state = 965
+				transfer_state = 1160
+				transfer_state = 774
+				transfer_state = 779
+			}
+		}
+	}
+}
+country_event = { #anarchy annexation events
+	id = GWF_univ_reset.22
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF_univ_reset.22" }
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+		country_event = { id = GWF_univ_reset.23 days = 1 }
+		every_state = {
+			limit = {
+				any_neighbor_state = {
+					is_owned_by = ZZZ
+				}
+				NOT = {
+					is_owned_by = ZZZ
+				}
+			}
+			set_state_flag = ADJACENT_TO_ANARCHY
+		}
+	}
+}
+country_event = { #anarchy annexation events
+	id = GWF_univ_reset.23
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF_univ_reset.23" }
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+		country_event = { id = GWF_univ_reset.24 hours = 12 }
+		every_state = {
+			limit = {
+				has_state_flag = ADJACENT_TO_ANARCHY
+				NOT = {
+					is_owned_by = ZZZ
+				}
+			}
+			ZZZ = {
+				transfer_state = PREV
+			}
+		}
+	}
+}
+country_event = { #anarchy annexation events
+	id = GWF_univ_reset.24
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF_univ_reset.24" }
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+		country_event = { id = GWF_univ_reset.25 hours = 12 }
+		every_state = {
+			limit = {
+				any_neighbor_state = {
+					is_owned_by = ZZZ
+				}
+				NOT = {
+					is_owned_by = ZZZ
+				}
+			}
+			set_state_flag = ADJACENT_TO_ANARCHY
+		}
+		every_state = {
+			limit = {
+				OR = {
+					is_owned_by = VIN
+					is_owned_by = AST
+					is_owned_by = RUS
+					is_owned_by = WRS
+					is_owned_by = KAZ
+					is_owned_by = KZR
+					is_owned_by = AMR
+					is_owned_by = KMC
+					is_owned_by = NZL
+					is_owned_by = ROM
+					is_owned_by = EGY
+					is_owned_by = CAO
+					is_owned_by = IEA
+					is_owned_by = WOL
+					is_owned_by = PER
+					is_owned_by = INS
+					is_owned_by = BUR
+					is_owned_by = AZH
+					is_owned_by = CAN
+					is_owned_by = GUY
+					is_owned_by = QIN
+					is_owned_by = MEX
+					is_owned_by = ARG
+					is_owned_by = UKR
+					is_owned_by = TOM
+					is_owned_by = OMS
+					is_owned_by = TYM
+					is_owned_by = MCW
+					is_owned_by = PER
+					is_owned_by = SAU
+					is_owned_by = OST
+					is_owned_by = FRA
+					is_owned_by = IRE
+				}
+				OR = {
+					AND = {
+						OR = {
+							has_state_category = metropolis
+							has_state_category = megalopolis
+							has_state_category = large_city
+						}
+						state_population > 2000000
+					}
+					is_capital = yes
+				}
+			}
+			ZZZ = {
+				transfer_state = PREV
+			}
+		}
+	}
+}
+country_event = { #anarchy annexation events
+	id = GWF_univ_reset.25
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF_univ_reset.25" }
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+		country_event = { id = GWF_univ_reset.26 hours = 12 }
+		every_state = {
+			limit = {
+				has_state_flag = ADJACENT_TO_ANARCHY
+				NOT = {
+					is_owned_by = ZZZ
+				}
+			}
+			ZZZ = {
+				transfer_state = PREV
+			}
+		}
+	}
+}
+country_event = { #anarchy annexation events
+	id = GWF_univ_reset.26
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF_univ_reset.26" }
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+		country_event = { id = GWF_univ_reset.27 days = 1 }
+		every_state = {
+			limit = {
+				any_neighbor_state = {
+					is_owned_by = ZZZ
+				}
+				NOT = {
+					is_owned_by = ZZZ
+				}
+			}
+			set_state_flag = ADJACENT_TO_ANARCHY
+		}
+		ZZZ = {
+			transfer_state = 334
+			transfer_state = 817
+			transfer_state = 820
+			transfer_state = 669
+			transfer_state = 327
+			transfer_state = 628
+			transfer_state = 627
+			transfer_state = 945
+			transfer_state = 944
+		}
+	}
+}
+country_event = { #anarchy annexation events
+	id = GWF_univ_reset.27
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF_univ_reset.27" }
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+		country_event = { id = GWF_univ_reset.28 days = 1 }
+		every_state = {
+			limit = {
+				has_state_flag = ADJACENT_TO_ANARCHY
+				NOT = {
+					is_owned_by = ZZZ
+				}
+			}
+			ZZZ = {
+				transfer_state = PREV
+			}
+		}
+	}
+}
+country_event = { #anarchy annexation events
+	id = GWF_univ_reset.28
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF_univ_reset.28" }
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+		country_event = { id = GWF_univ_reset.29 days = 1 }
+		every_state = {
+			limit = {
+				any_neighbor_state = {
+					is_owned_by = ZZZ
+				}
+				NOT = {
+					is_owned_by = ZZZ
+				}
+			}
+			set_state_flag = ADJACENT_TO_ANARCHY
+		}
+		every_state = {
+			limit = {
+				OR = {
+					is_owned_by = INS
+					is_owned_by = ROM
+					is_owned_by = MST
+					is_owned_by = MOS
+					is_owned_by = PAU
+					is_owned_by = IRQ
+					is_owned_by = YEM
+					is_owned_by = VEN
+				}
+				OR = {
+					AND = {
+						OR = {
+							has_state_category = metropolis
+							has_state_category = megalopolis
+							has_state_category = large_city
+						}
+						state_population > 2000000
+					}
+					is_capital = yes
+				}
+			}
+			ZZZ = {
+				transfer_state = PREV
+			}
+		}
+	}
+}
+country_event = { #anarchy annexation events
+	id = GWF_univ_reset.29
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF_univ_reset.29" }
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+		country_event = { id = GWF_univ_reset.30 days = 1 }
+		every_state = {
+			limit = {
+				has_state_flag = ADJACENT_TO_ANARCHY
+				NOT = {
+					is_owned_by = ZZZ
+				}
+			}
+			ZZZ = {
+				transfer_state = PREV
+			}
+		}
+	}
+}
+country_event = { #anarchy annexation events
+	id = GWF_univ_reset.30
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF_univ_reset.30" }
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+		country_event = { id = GWF_univ_reset.31 days = 1 }
+		every_state = {
+			limit = {
+				any_neighbor_state = {
+					is_owned_by = ZZZ
+				}
+				NOT = {
+					is_owned_by = ZZZ
+				}
+			}
+			set_state_flag = ADJACENT_TO_ANARCHY
+		}
+	}
+}
+country_event = { #anarchy annexation events
+	id = GWF_univ_reset.31
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF_univ_reset.31" }
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+		country_event = { id = GWF_univ_reset.32 days = 1 }
+		every_state = {
+			limit = {
+				has_state_flag = ADJACENT_TO_ANARCHY
+				NOT = {
+					is_owned_by = ZZZ
+				}
+			}
+			ZZZ = {
+				transfer_state = PREV
+			}
+		}
+	}
+}
+country_event = { #anarchy annexation events
+	id = GWF_univ_reset.32
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF_univ_reset.32" }
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+		country_event = { id = GWF_univ_reset.33 days = 1 }
+		every_state = {
+			limit = {
+				any_neighbor_state = {
+					is_owned_by = ZZZ
+				}
+				NOT = {
+					is_owned_by = ZZZ
+				}
+			}
+			set_state_flag = ADJACENT_TO_ANARCHY
+		}
+	}
+}
+country_event = { #anarchy annexation events
+	id = GWF_univ_reset.33
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF_univ_reset.33" }
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+		country_event = { id = GWF_univ_reset.34 days = 1 }
+		every_state = {
+			limit = {
+				has_state_flag = ADJACENT_TO_ANARCHY
+				NOT = {
+					is_owned_by = ZZZ
+				}
+			}
+			ZZZ = {
+				transfer_state = PREV
+			}
+		}
+	}
+}
+country_event = { #anarchy annexation events
+	id = GWF_univ_reset.34
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF_univ_reset.34" }
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+		country_event = { id = GWF_univ_reset.35 days = 1 }
+		every_state = {
+			limit = {
+				any_neighbor_state = {
+					is_owned_by = ZZZ
+				}
+				NOT = {
+					is_owned_by = ZZZ
+				}
+			}
+			set_state_flag = ADJACENT_TO_ANARCHY
+		}
+	}
+}
+country_event = { #anarchy annexation events
+	id = GWF_univ_reset.35
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF_univ_reset.35" }
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+		country_event = { id = GWF_univ_reset.36 days = 1 }
+		every_state = {
+			limit = {
+				has_state_flag = ADJACENT_TO_ANARCHY
+				NOT = {
+					is_owned_by = ZZZ
+				}
+			}
+			ZZZ = {
+				transfer_state = PREV
+			}
+		}
+	}
+}
+country_event = { #anarchy annexation events
+	id = GWF_univ_reset.36
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF_univ_reset.36" }
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+		country_event = { id = GWF_univ_reset.37 days = 1 }
+		every_state = {
+			ZZZ = {
+				transfer_state = PREV
+			}
+		}
+	}
+}
+country_event = { #anarchy annexation events
+	id = GWF_univ_reset.37
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF_univ_reset.37" }
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+		country_event = { id = GWF_univ_reset.38 days = 1 }
+		for_each_loop = {
+			array = global.anarchy_states_17
+			log = "[GetDateText]: [?v.GetName] was lost to Anarchy"
+			var:v = { ZZZ = { transfer_state = PREV } }
+		}
+	}
+}
+country_event = { #anarchy annexation events
+	id = GWF_univ_reset.38
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF_univ_reset.38" }
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+		country_event = { id = GWF_univ_reset.39 days = 1 }
+		for_each_loop = {
+			array = global.anarchy_states_18
+			log = "[GetDateText]: [?v.GetName] was lost to Anarchy"
+			var:v = { ZZZ = { transfer_state = PREV } }
+		}
+	}
+}
+country_event = { #anarchy annexation events
+	id = GWF_univ_reset.39
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF_univ_reset.39" }
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+		country_event = { id = GWF_univ_reset.40 days = 1 }
+		for_each_loop = {
+			array = global.anarchy_states_19
+			log = "[GetDateText]: [?v.GetName] was lost to Anarchy"
+			var:v = { ZZZ = { transfer_state = PREV } }
+		}
+	}
+}
+country_event = { #anarchy annexation events
+	id = GWF_univ_reset.40
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF_univ_reset.40" }
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+		for_each_loop = {
+			array = global.anarchy_states_20
+			log = "[GetDateText]: [?v.GetName] was lost to Anarchy"
+			var:v = { ZZZ = { transfer_state = PREV } }
+		}
+		if = {
+			limit = { has_global_flag = GWF_good_end }
+			country_event = { id = GWF.77 days = 3 }
+		}
+		else = {
+			country_event = { id = GWF.74 days = 3 }
+		}
+		
+	}
+}

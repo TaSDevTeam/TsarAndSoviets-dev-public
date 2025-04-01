@@ -627,7 +627,7 @@ defined_text = {
 		localization_key = "GFX_CountryClosing_picture_GWF_neutral_good_end"
 	}
 	text = {
-		trigger = { has_global_flag = GWF_neutral_bad_end }
+		trigger = { has_country_flag = GWF_neutral_bad_end }
 		localization_key = "GFX_CountryClosing_picture_GWF_neutral_bad_end"
 	}
 	text = {
@@ -954,7 +954,7 @@ defined_text = {
 		localization_key = TNO_CountryClosing_epilogue_generic_GWF_neutral_good_end
 	}
 	text = {
-		trigger = { has_global_flag = GWF_neutral_bad_end }
+		trigger = { has_country_flag = GWF_neutral_bad_end }
 		localization_key = TNO_CountryClosing_epilogue_generic_GWF_neutral_bad_end
 	}
 	text = {

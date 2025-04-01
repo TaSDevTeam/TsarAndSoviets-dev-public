@@ -1245,6 +1245,11 @@ MAR_German_Collapse_TRVTHNUKE = {
 				instant_build = yes
 			}
 		}
+		remove_faction_status = yes
+		leave_faction = yes
+		econ_leave_sphere = yes
+		inherit_technology = GER
+		set_research_slots = 2
 	}
 	every_country = {
 		limit = { is_SGE_nation = yes }
@@ -1261,6 +1266,7 @@ MAR_German_Collapse_TRVTHNUKE = {
 				instant_build = yes
 			}
 		}
+		set_research_slots = 3
 	}
 	APF = { add_ideas = APF_call_of_north }
 	GNR = {	add_ideas = GNR_ze_new_order }
@@ -1330,14 +1336,14 @@ MAR_German_Collapse_TRVTHNUKE = {
 }
 
 MAR_Japanese_Collapse_FIRST_TRVTHNUKE = {
-
+	add_political_power = 5
 }
 
 MAR_Japanese_Collapse_SECOND_TRVTHNUKE = {
-
+	add_political_power = 5
 }
 
 MAR_American_Collapse_TRVTHNUKE = {
-
+	add_political_power = 5
 }
 
