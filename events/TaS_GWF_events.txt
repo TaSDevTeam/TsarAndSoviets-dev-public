@@ -574,17 +574,35 @@ country_event = { #GWF_operation_occasus
 		ai_chance = { factor = 1 }
 		load_focus_tree = GWF_Homura_War
 		every_country = {
-			limit = { is_in_faction_with = GWF }
+			limit = { 
+				OR = {
+					is_in_faction_with = GWF
+					original_tag = GWF
+				}
+			}
 			declare_war_on = {
 				target = LHH
 				type = annex_everything
 			}
+			swap_ideas = {
+				remove_idea = GWF_southgerman_tension
+				add_idea = GWF_southgerman_war
+			}
 		}	
 		every_country = {
-			limit = { is_in_faction_with = LHH }
+			limit = { 
+				OR = {
+					is_in_faction_with = LHH
+					original_tag = LHH
+				}
+			}
 			declare_war_on = {
 				target = GWF
 				type = annex_everything
+			}
+			swap_ideas = {
+				remove_idea = GWF_southgerman_tension
+				add_idea = GWF_southgerman_war
 			}
 		}	
 	}
@@ -897,6 +915,7 @@ country_event = { #GWF_great_betrayal GOOD
 			}
 		}
 		load_focus_tree = GWF_Homura_Final
+		remove_ideas = GWF_southgerman_war
 	}
 }
 
@@ -2216,6 +2235,23 @@ country_event = { #Norway CW - Klaus Schwab vs Chudjak
 				id = APF
 				value = 200
 			}
+			random_controlled_state = {
+				create_unit = {
+					division = "division_template = \"Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = GNR
+					count = 3
+				}
+				create_unit = {
+					division = "division_template = \"Motorized Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = GNR
+					count = 3
+				}
+				create_unit = {
+					division = "division_template = \"Light Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = GNR
+					count = 6
+				}
+			}
 		}
 		APF = {
 			declare_war_on = {
@@ -2231,6 +2267,23 @@ country_event = { #Norway CW - Klaus Schwab vs Chudjak
 				type = conquer
 				id = GNR
 				value = 200
+			}
+			random_controlled_state = {
+				create_unit = {
+					division = "division_template = \"Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = APF
+					count = 2
+				}
+				create_unit = {
+					division = "division_template = \"Motorized Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = APF
+					count = 1
+				}
+				create_unit = {
+					division = "division_template = \"Light Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = APF
+					count = 8
+				}
 			}
 		}
 	}
@@ -2261,6 +2314,25 @@ country_event = { #Norway CW - winner invades boringness
 			type = conquer
 			id = ISS
 			value = 200
+		}
+		ISS = {
+			random_controlled_state = {
+				create_unit = {
+					division = "division_template = \"Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = ISS
+					count = 6
+				}
+				create_unit = {
+					division = "division_template = \"Motorized Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = ISS
+					count = 1
+				}
+				create_unit = {
+					division = "division_template = \"Light Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = ISS
+					count = 1
+				}
+			}
 		}
 	}
 }
@@ -2418,6 +2490,23 @@ country_event = { #Burgundian CW - battle royale dumbass
 				id = SSL
 				value = 200
 			}
+			random_controlled_state = {
+				create_unit = {
+					division = "division_template = \"Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = GHL
+					count = 3
+				}
+				create_unit = {
+					division = "division_template = \"Motorized Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = GHL
+					count = 2
+				}
+				create_unit = {
+					division = "division_template = \"Light Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = GHL
+					count = 4
+				}
+			}
 		}
 		BEL = {
 			declare_war_on = {
@@ -2461,6 +2550,23 @@ country_event = { #Burgundian CW - battle royale dumbass
 				type = conquer
 				id = SSL
 				value = 200
+			}
+			random_controlled_state = {
+				create_unit = {
+					division = "division_template = \"Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = BEL
+					count = 1
+				}
+				create_unit = {
+					division = "division_template = \"Motorized Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = BEL
+					count = 5
+				}
+				create_unit = {
+					division = "division_template = \"Light Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = BEL
+					count = 1
+				}
 			}
 		}
 		SSN = {
@@ -2506,6 +2612,23 @@ country_event = { #Burgundian CW - battle royale dumbass
 				id = SSL
 				value = 200
 			}
+			random_controlled_state = {
+				create_unit = {
+					division = "division_template = \"Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = SSN
+					count = 1
+				}
+				create_unit = {
+					division = "division_template = \"Motorized Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = SSN
+					count = 1
+				}
+				create_unit = {
+					division = "division_template = \"Light Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = SSN
+					count = 1
+				}
+			}
 		}
 		SSL = {
 			declare_war_on = {
@@ -2550,6 +2673,23 @@ country_event = { #Burgundian CW - battle royale dumbass
 				id = GHL
 				value = 200
 			}
+			random_controlled_state = {
+				create_unit = {
+					division = "division_template = \"Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = SSL
+					count = 2
+				}
+				create_unit = {
+					division = "division_template = \"Motorized Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = SSL
+					count = 2
+				}
+				create_unit = {
+					division = "division_template = \"Light Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = SSL
+					count = 1
+				}
+			}
 		}
 	}
 }
@@ -2582,6 +2722,23 @@ country_event = { #Northern German CW - Afton invades Meinhoff
 				id = GRH
 				value = 200
 			}
+			random_controlled_state = {
+				create_unit = {
+					division = "division_template = \"Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = GWS
+					count = 3
+				}
+				create_unit = {
+					division = "division_template = \"Motorized Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = GWS
+					count = 3
+				}
+				create_unit = {
+					division = "division_template = \"Light Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = GWS
+					count = 2
+				}
+			}
 		}
 		GRH = {
 			add_ai_strategy = {
@@ -2593,6 +2750,23 @@ country_event = { #Northern German CW - Afton invades Meinhoff
 				type = conquer
 				id = GWS
 				value = 200
+			}
+			random_controlled_state = {
+				create_unit = {
+					division = "division_template = \"Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = GRH
+					count = 1
+				}
+				create_unit = {
+					division = "division_template = \"Motorized Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = GRH
+					count = 1
+				}
+				create_unit = {
+					division = "division_template = \"Light Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = GRH
+					count = 7
+				}
 			}
 		}
 	}
@@ -2626,6 +2800,24 @@ country_event = { #Northern German CW - Honnecker invades Berlin
 				id = BRL
 				value = 200
 			}
+			random_controlled_state = {
+				create_unit = {
+					division = "division_template = \"Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = ZNE
+					count = 2
+				}
+				create_unit = {
+					division = "division_template = \"Motorized Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = ZNE
+					count = 1
+				}
+				create_unit = {
+					division = "division_template = \"Light Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = ZNE
+					count = 4
+				}
+			}
+			
 		}
 		BRL = {
 			add_ai_strategy = {
@@ -2637,6 +2829,23 @@ country_event = { #Northern German CW - Honnecker invades Berlin
 				type = conquer
 				id = ZNE
 				value = 200
+			}
+			random_controlled_state = {
+				create_unit = {
+					division = "division_template = \"Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = BRL
+					count = 4
+				}
+				create_unit = {
+					division = "division_template = \"Motorized Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = BRL
+					count = 6
+				}
+				create_unit = {
+					division = "division_template = \"Light Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = BRL
+					count = 3
+				}
 			}
 		}
 	}
@@ -2670,6 +2879,23 @@ country_event = { #Northern German CW - Silesia invades Czechia
 				id = GCZ
 				value = 200
 			}
+			random_controlled_state = {
+				create_unit = {
+					division = "division_template = \"Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = GSI
+					count = 4
+				}
+				create_unit = {
+					division = "division_template = \"Motorized Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = GSI
+					count = 2
+				}
+				create_unit = {
+					division = "division_template = \"Light Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = GSI
+					count = 2
+				}
+			}
 		}
 		GCZ = {
 			add_ai_strategy = {
@@ -2681,6 +2907,23 @@ country_event = { #Northern German CW - Silesia invades Czechia
 				type = conquer
 				id = GSI
 				value = 200
+			}
+			random_controlled_state = {
+				create_unit = {
+					division = "division_template = \"Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = GCZ
+					count = 2
+				}
+				create_unit = {
+					division = "division_template = \"Motorized Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = GCZ
+					count = 1
+				}
+				create_unit = {
+					division = "division_template = \"Light Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = GCZ
+					count = 5
+				}
 			}
 		}
 	}
@@ -2711,6 +2954,23 @@ country_event = { #Northern German CW - Afton/Meinhoff wants Mesa
 			type = conquer
 			id = GDN
 			value = 200
+		}
+		random_controlled_state = {
+			create_unit = {
+				division = "division_template = \"Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				owner = ROOT
+				count = 6
+			}
+			create_unit = {
+				division = "division_template = \"Motorized Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				owner = ROOT
+				count = 1
+			}
+			create_unit = {
+				division = "division_template = \"Light Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 1"
+				owner = ROOT
+				count = 1
+			}
 		}
 	}
 }
@@ -2819,7 +3079,7 @@ country_event = { #Northern German CW - winner invades west
 
 country_event = { #Northern German CW - NGE vs NDN
 	id = GER_AF_skeleton.11
-	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_AF_skeleton.1" }
+	immediate = { log = "[GetDateText]: [Root.GetName]: event GER_AF_skeleton.11" }
 	title = GER_AF_skeleton.11.t
 	desc = GER_AF_skeleton.11.desc
 	#picture = 
@@ -2828,24 +3088,55 @@ country_event = { #Northern German CW - NGE vs NDN
 	fire_only_once = yes
 	
 	option = { #
-		name = GER_AF_skeleton.9.a
+		name = GER_AF_skeleton.11.a
 		ai_chance = { factor = 1 }
+		ISS = { add_ideas = GER_doomed_to_fail }
+		GNR = { add_ideas = GER_doomed_to_fail }
+		APF = { add_ideas = GER_doomed_to_fail }
 		annex_country = {
 			target = EGE
 			transfer_troops = no
 		}
 		declare_war_on = {
-			target = NDN
+			target = ISS
 			type = annex_everything
 		}
 		add_ai_strategy = {
 			type = consider_weak
-			id = NDN
+			id = ISS
 			value = 200
 		}
 		add_ai_strategy = {
 			type = conquer
-			id = NDN
+			id = ISS
+			value = 200
+		}
+		declare_war_on = {
+			target = APF
+			type = annex_everything
+		}
+		add_ai_strategy = {
+			type = consider_weak
+			id = APF
+			value = 200
+		}
+		add_ai_strategy = {
+			type = conquer
+			id = APF
+			value = 200
+		}
+		declare_war_on = {
+			target = GNR
+			type = annex_everything
+		}
+		add_ai_strategy = {
+			type = consider_weak
+			id = GNR
+			value = 200
+		}
+		add_ai_strategy = {
+			type = conquer
+			id = GNR
 			value = 200
 		}
 		division_template = {
