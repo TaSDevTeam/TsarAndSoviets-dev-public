@@ -691,7 +691,7 @@ country_event = { #Catching the waves - unnamed radio amateur, John Alexander ra
 		hidden_effect = { 
 			every_country = {
 				limit = { is_ai = no }
-				news_event = { id = AprilFools_news.4 days = 200 }
+				news_event = { id = AprilFools_news.4 }
 			}
 		}
 	}
@@ -743,6 +743,12 @@ country_event = { #A strange opportunity again
 		ai_chance = { factor = 1 }
 		custom_effect_tooltip = SWRW_go_to_bornholm_tt
 		set_country_flag = SWRW_go_to_bornholm
+		hidden_effect = {
+			every_country = {
+				limit = { is_ai = no }
+				news_event = { id = AprilFools_news.3 }
+			}
+		}
 	}
 }
 

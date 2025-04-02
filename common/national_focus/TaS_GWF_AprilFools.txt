@@ -147,6 +147,7 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		custom_effect_tooltip = GWF_only_my_struggle_tt
+		custom_effect_tooltip = GWF_add_evil_tt
 		set_country_flag = GWF_lone_warrior
 		set_temp_variable = { opp_to_change = 1 }
 		set_temp_variable = { temp_stat_gained = 2.5 }
@@ -298,7 +299,7 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		custom_effect_tooltip = GWF_one_cant_do_all_the_job_tt
-		
+		custom_effect_tooltip = GWF_no_evil_tt
 		set_country_flag = GWF_madoka_church
 		set_temp_variable = { opp_to_change = 1 }
 		set_temp_variable = { temp_stat_gained = -2.5 }
@@ -924,7 +925,8 @@ shared_focus = {
 	x = -2
 	y = 1
 	completion_reward = {
-		custom_effect_tooltip = GWF_magical_girl_army_tt	
+		custom_effect_tooltip = GWF_magical_girl_army_tt
+		custom_effect_tooltip = GWF_add_evil_tt
 		set_country_flag = GWF_army_deccat_active
 		set_technology = { magical_infantry_technologies = 1 }
 		add_ideas = GWF_meguca_army
@@ -1093,6 +1095,7 @@ shared_focus = {
 	y = 1
 	completion_reward = {
 		custom_effect_tooltip = GWF_human_army_tt	
+		custom_effect_tooltip = GWF_add_evil_tt
 		country_event = { id = GWF.25 }
 		country_lock_all_division_template = no
 		add_ideas = GWF_human_army
@@ -1646,7 +1649,7 @@ shared_focus = {
 		focus = GWF_personal_involvement
 	}
 	available = {
-		has_completed_focus = GWF_human_army
+		has_idea = GWF_human_army
 	}
 	ai_will_do = {
 		factor = 1
@@ -1659,6 +1662,7 @@ shared_focus = {
 	x = -1
 	y = 3
 	completion_reward = {
+		custom_effect_tooltip = GWF_add_evil_tt
 		country_event = { id = GWF.37 }
 		tno_conscription_clear = yes
 		add_ideas = { tno_conscription_service_by_requirement }
@@ -1687,6 +1691,7 @@ shared_focus = {
 	x = 1
 	y = 3
 	completion_reward = {
+		custom_effect_tooltip = GWF_add_evil_tt
 		country_event = { id = GWF.38 }
 		every_country = {
 			limit = { is_in_faction_with = LHH }
@@ -1723,6 +1728,7 @@ shared_focus = {
 	x = 3
 	y = 3
 	completion_reward = {
+		custom_effect_tooltip = GWF_add_evil_tt
 		country_event = { id = GWF.39 }
 		every_country = {
 			limit = { is_in_faction_with = LHH }
@@ -1867,7 +1873,7 @@ shared_focus = {
 	x = 0
 	y = 2
 	completion_reward = {
-
+		add_stability = -0.1
 	}
 }
 

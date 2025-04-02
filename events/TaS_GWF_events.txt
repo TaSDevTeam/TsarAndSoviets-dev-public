@@ -728,7 +728,53 @@ country_event = { #GWF_second_sun
 
 country_event = { #GWF_great_betrayal EVIL
 	id = GWF.40
-	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.40" }
+	immediate = { 
+		log = "[GetDateText]: [Root.GetName]: event GWF.40"
+		hidden_effect = {
+			if = { 
+				limit = { NOT = { GBV = { is_in_faction_with = GWF } } }
+				annex_country = {
+					target = GBV
+					transfer_troops = no
+				}
+			}
+			if = { 
+				limit = { NOT = { GBW = { is_in_faction_with = GWF } } }
+				annex_country = {
+					target = GBW
+					transfer_troops = no
+				}
+			}
+			if = { 
+				limit = { NOT = { SLO = { is_in_faction_with = GWF } } }
+				annex_country = {
+					target = SLO
+					transfer_troops = no
+				}
+			}
+			if = { 
+				limit = { NOT = { AUS = { is_in_faction_with = GWF } } }
+				annex_country = {
+					target = AUS
+					transfer_troops = no
+				}
+			}
+			if = { 
+				limit = { NOT = { RMN = { is_in_faction_with = GWF } } }
+				annex_country = {
+					target = RMN
+					transfer_troops = no
+				}
+			}
+			if = { 
+				limit = { NOT = { AGS = { is_in_faction_with = GWF } } }
+				annex_country = {
+					target = AGS
+					transfer_troops = no
+				}
+			}
+		}
+	}
 	title = GWF.40.t
 	desc = GWF.40.desc
 	picture = GFX_report_event_salamander
@@ -757,12 +803,59 @@ country_event = { #GWF_great_betrayal EVIL
 				type = annex_everything
 			}
 		}
+		load_focus_tree = GWF_Homura_Final
 	}
 }
 
 country_event = { #GWF_great_betrayal GOOD
 	id = GWF.41
-	immediate = { log = "[GetDateText]: [Root.GetName]: event GWF.41" }
+	immediate = { 
+		log = "[GetDateText]: [Root.GetName]: event GWF.41"
+		hidden_effect = {
+			if = { 
+				limit = { NOT = { GBV = { is_in_faction_with = GWF } } }
+				annex_country = {
+					target = GBV
+					transfer_troops = no
+				}
+			}
+			if = { 
+				limit = { NOT = { GBW = { is_in_faction_with = GWF } } }
+				annex_country = {
+					target = GBW
+					transfer_troops = no
+				}
+			}
+			if = { 
+				limit = { NOT = { SLO = { is_in_faction_with = GWF } } }
+				annex_country = {
+					target = SLO
+					transfer_troops = no
+				}
+			}
+			if = { 
+				limit = { NOT = { AUS = { is_in_faction_with = GWF } } }
+				annex_country = {
+					target = AUS
+					transfer_troops = no
+				}
+			}
+			if = { 
+				limit = { NOT = { RMN = { is_in_faction_with = GWF } } }
+				annex_country = {
+					target = RMN
+					transfer_troops = no
+				}
+			}
+			if = { 
+				limit = { NOT = { AGS = { is_in_faction_with = GWF } } }
+				annex_country = {
+					target = AGS
+					transfer_troops = no
+				}
+			}
+		}
+	}
 	title = GWF.41.t
 	desc = GWF.41.desc
 	picture = GFX_report_event_salamander
@@ -803,6 +896,7 @@ country_event = { #GWF_great_betrayal GOOD
 				}
 			}
 		}
+		load_focus_tree = GWF_Homura_Final
 	}
 }
 
@@ -1653,6 +1747,12 @@ country_event = { #NEURAL BAD END
 		ai_chance = { factor = 1 }
 		set_country_flag = GWF_neutral_bad_end
 		TNO_Country_Closing_Screen_Show = yes
+		hidden_effect = {
+			every_country = {
+				limit = { is_ai = no }
+				news_event = { id = AprilFools_news.9 }
+			}
+		}
 	}
 }
 
@@ -1671,6 +1771,12 @@ country_event = { #NEURAL GOOD END
 		ai_chance = { factor = 1 }
 		set_country_flag = GWF_neutral_good_end
 		TNO_Country_Closing_Screen_Show = yes
+		hidden_effect = {
+			every_country = {
+				limit = { is_ai = no }
+				news_event = { id = AprilFools_news.8 }
+			}
+		}
 	}
 }
 
@@ -3204,7 +3310,7 @@ country_event = { #Russia... reunifies
 		country_event = { id = GER_AF_skeleton.18 days = 45 }
 		every_country = {
 			limit = { is_ai = no }
-			news_event = { id = AprilFools_news.7 days = 3 }
+			news_event = { id = AprilFools_news.7 }
 		}
 		set_country_flag = NRL_pepel_awakens
 	}
@@ -3375,7 +3481,7 @@ country_event = { #USA-JAP conference
  		TNO_change_tension = yes
 		every_country = {
 			limit = { is_ai = no }
-			news_event = { id = AprilFools_news.5 days = 3 }
+			news_event = { id = AprilFools_news.5 }
 			country_event = { id = GER_AF_skeleton.20 days = 35 }
 		}
 	}
@@ -3394,62 +3500,9 @@ country_event = { #USA-JAP conference
 	option = { #
 		name = GER_AF_skeleton.20.a
 		ai_chance = { factor = 1 }
-		CHI = { #kill off that thing for god's sake
-			annex_country = {
-				target = GNG
-				transfer_troops = yes
-			}
-		}
 		every_country = {
-			limit = { 
-				NOT = { has_country_flag = country_has_trvthnuked }
-				check_variable = { GDP > 1 }
-				NOT = { tag = ZZZ }
-				NOT = { tag = AAO }	
-			}
-			leave_faction = yes
-			remove_faction_status = yes
-			every_country = {
-				white_peace = PREV
-			}
-		}
-
-		USA = {
-			create_faction = United_Nations
-			add_ideas = United_Nations_USA
-			add_to_faction = JAP
-		}
-		JAP = {
-			add_ideas = United_Nations_JAP
-		}
-		every_country = {
-			limit = {
-				NOT = { has_country_flag = country_has_trvthnuked }
-			}
-			USA = { add_to_faction = PREV }
-			add_ideas = United_Nations_Member
-		}
-		every_country = {
-			limit = {
-				OR = {
-					original_tag = FRA
-					original_tag = ITA
-					original_tag = HUN
-					original_tag = ROM
-					original_tag = TNS
-					original_tag = SWE
-					original_tag = FIN
-					original_tag = TUR
-					original_tag = AFG
-					original_tag = NAL
-					original_tag = MUJ
-					original_tag = MEN
-					original_tag = MAN
-					original_tag = CRO
-				}
-			}
-			remove_ideas = United_Nations_Member
-			add_ideas = United_Nations_Bordering_Member
+			limit = { is_ai = no }
+			news_event = { id = AprilFools_news.6 }
 		}
 	}
 }
