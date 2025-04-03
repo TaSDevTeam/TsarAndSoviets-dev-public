@@ -1230,22 +1230,35 @@ shared_focus = {
 		focus = MAR_kosfor_from_America_with_love
 		focus = MAR_kosfor_tokyo_embassy
 	}
-	bypass = {
-		IND = {
-		    country_exists = no 
-		}	
-	}
 	x = 34
 	y = 4
 	completion_reward = {
-		IND = {
-			add_opinion_modifier = {
-				target = MAR
-				modifier = RUS_recognition
+		if = {
+			limit = { 
+				has_country_flag = MAR_Kosygin_choose_JAP
+				country_exists = AZH
 			}
-			reverse_add_opinion_modifier = {
-				target = MAR
-				modifier = RUS_recognition	
+			AZH = {
+				add_opinion_modifier = {
+					target = MAR
+					modifier = RUS_recognition
+				}
+				reverse_add_opinion_modifier = {
+					target = MAR
+					modifier = RUS_recognition	
+				}
+			}
+		}
+		else = {
+			IND = {
+				add_opinion_modifier = {
+					target = MAR
+					modifier = RUS_recognition
+				}
+				reverse_add_opinion_modifier = {
+					target = MAR
+					modifier = RUS_recognition	
+				}
 			}
 		}
 		country_event = {

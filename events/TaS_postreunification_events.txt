@@ -4919,7 +4919,6 @@ country_event = { #Baltics
 						long_name = MUK_despotism_postmil_party_long
 						name = MUK_despotism_postmil_party
 					}
-					retire_country_leader = yes
 					MBP_Aleksandrs_Drizulis = {
 						promote_character = yes
 					}
@@ -6372,25 +6371,8 @@ country_event = { #Capital
 	is_triggered_only = yes
 	fire_only_once = yes
 	
-	option = { #Moscow
-		name = MAR_territorial_fate.12.a
-		ai_chance = { factor = 1 }
-		set_capital = { state = 1442 }
-		1442 = {
-			add_building_construction = {
-			    type = infrastructure
-			    level = 2
-			    instant_build = yes
-            }
-			add_state_modifier = {
-				modifier = {
-					state_GDP_growth_factor_modifier = 0.05
-				}
-			}
-		}
-	}
 	option = { #Petersburg
-		name = MAR_territorial_fate.12.b
+		name = MAR_territorial_fate.13.a
 		ai_chance = { factor = 1 }
 		set_capital = { state = 195 }
 		195 = {
@@ -6399,15 +6381,38 @@ country_event = { #Capital
 			    level = 2
 			    instant_build = yes
             }
-			add_state_modifier = {
-				modifier = {
-					state_GDP_growth_factor_modifier = 0.05
-				}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = offices
+				level = 1
+				instant_build = yes
 			}
+			set_temp_variable = { state_value_multiplier_temp = 1.25 }
+			econ_state_value_change_multiply = yes
+		}
+	}
+	option = { #Moscow
+		name = MAR_territorial_fate.13.b
+		ai_chance = { factor = 1 }
+		set_capital = { state = 1442 }
+		1442 = {
+			add_building_construction = {
+			    type = infrastructure
+			    level = 2
+			    instant_build = yes
+            }
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = offices
+				level = 1
+				instant_build = yes
+			}
+			set_temp_variable = { state_value_multiplier_temp = 1.15 }
+			econ_state_value_change_multiply = yes
 		}
 	}
 	option = { #Vyatka
-		name = MAR_territorial_fate.12.c
+		name = MAR_territorial_fate.13.c
 		ai_chance = { factor = 1 }
 		add_stability = 0.01
 	}

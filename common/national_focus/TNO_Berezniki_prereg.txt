@@ -394,6 +394,7 @@ shared_focus = {
 		country_event = { id = MAR_initial.31 days = 2 }
 		tno_gender_rights_improve = yes
 		tno_women_improve = yes
+		add_manpower = 5000
 		hidden_effect = { 
 			country_event = { id = MAR_flavour_slop.1 days = 51  }
 		}
@@ -787,6 +788,7 @@ shared_focus = {
 	y = 5
 	completion_reward = {
 		country_event = { id = MAR_initial.41 days = 7 }
+		add_manpower = 5000
 		hidden_effect = {
 			division_template = {
 				name = "Dzhentelmeni Udachi"
@@ -933,6 +935,7 @@ shared_focus = {
 	completion_reward = {
 		country_event = { id = MAR_initial.45 days = 0 }
 		add_political_power = 25
+		add_manpower = 5000
 		custom_effect_tooltip = MAR_cossack_brigades_tt
 		hidden_effect = {
 			398 = {
